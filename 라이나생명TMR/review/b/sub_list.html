@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>라이나생명</title>
+<link rel="stylesheet" href="css/m_mobile.css" type="text/css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		var ht = 0;
+		var scTimer;
+
+		setTimeout(function () {  window.scrollTo(1);}, 1000);
+
+		var showBanner = function(){
+			$('.two_btn').css({display:'block', opacity:0}).animate({opacity:1}, {queue:false, duration: 400, easing:'easeOutCubic'});				
+		}
+
+		$(document).on('touchstart mousedown', function(e) {
+			$('.two_btn').css('display','none');	
+		});
+
+		$(document).scroll(function(e){
+			$('.two_btn').css('display','none');	
+			clearTimeout(scTimer);
+
+		 	var $top = $(window).scrollTop();
+		
+			scTimer = setTimeout(showBanner,300)
+		 });
+
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<a href="m_main.html"><img src="img/img01.png" alt="" /></a>		
+		<div style="">
+			<a href="sub_view.html"><img src="img/img02.png" alt="" /></a>
+			<a href="sub_view.html"><img src="img/img03.png" alt="" /></a>
+			<a href="sub_view.html"><img src="img/img04.png" alt="" /></a>		
+		</div>
+		<!-- 하단 고정 버튼 -->
+		<div class="two_btn">
+			<div class="left_btn2">
+				<a href="#"><img src="img/img07.png" alt="" /></a>
+			</div>
+		</div>
+		<div>
+			<a href="sub_view.html"><img src="img/img11.png" alt="" /></a>
+		</div>
+		
+	</div>
+</body>
+</html>
