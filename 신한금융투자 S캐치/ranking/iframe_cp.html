@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>랭킹존 - 펜더멘털 랭킹 - 신규서비스명</title>
+	<meta name="Title" content="신한금융투자"/>
+	<meta name="Description" content="신한금융투자"/>
+	<meta name="Keywords" content="신한금융투자"/>
+	<meta name="Author" content="신한금융투자"/>
+	<meta name="Robots" content="All"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+		});
+	</script>
+</head>
+<body class="iframe" style="width:800px;">
+		<!-- 검색 Start -->
+		<div class="SearchBoxType1">
+			<fieldset>
+				<legend>검색</legend>
+				<div class="search" id="HiddenSearch" style="display:none;">
+					<dl>
+						<dt class="block1"><img src="../img/ranking/txt_search_01.gif" alt="시장" /></dt>
+						<dd class="block2">
+							<label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked="checked" />전체</label>
+							<label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" />KOSPI</label>
+							<label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" />KOSDAQ</label>
+						</dd>
+						<dt class="block3"><img src="../img/ranking/txt_search_02.gif" alt="규모" /></dt>
+						<dd class="block4">
+							<label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" checked="checked" />전체</label>
+							<label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="1" type="radio" />대형주</label>
+							<label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="1" type="radio" />중형주</label>
+							<label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="1" type="radio" />소형주</label>
+						</dd>
+						<dt class="block5"><img src="../img/ranking/txt_search_03.gif" alt="업종" /></dt>
+						<dd class="block6">
+							<select style="width:100px;">
+								<option>전체</option>
+							</select>
+						</dd>
+					</dl>
+					<img src="../img/button/search_01.gif" alt="검색" class="btn" onclick="alert('여기')" />
+				</div>
+			</fieldset>
+		
+			<div class="btn"><img src="../img/button/search_close_01.gif" alt="검색옵션" onclick="showSearch(this)" /></div>
+		</div>
+		<!--// 검색 End -->
+				
+		<!-- Sorting Start -->
+		<div class="SortingBox">
+			<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// Sorting End -->
+		
+		<!-- Table Start -->
+		<div class="tableType1">
+			<table summary="저 PER은 순위, 종목명, 전일종가, 12개월 선행 EPS, 12개월 선행 PER, PER, PBR로 구성된 랭킹 리스트이며, 차트, 실주문, 포트폴리오 버튼을 제공합니다.">
+				<caption>저PER</caption>
+				
+				<colgroup>
+					<col width="30" />
+					<col width="50" />
+					<col width="*" />
+					<col width="90" span="3" />
+					<col width="60" span="2" />
+					<col width="120" />
+				</colgroup>
+				
+				<thead>
+					<tr>
+						<th><label class="label_check solo" for="checkbox-00"><input id="checkbox-00" value="1" type="checkbox" title="전체선택" /></label></th>
+						<th><img src="../img/ranking/th_01_off.gif" alt="순위" /></th>
+						<th><img src="../img/ranking/th_03_off.gif" alt="종목명" /></th>
+						<th><a href="#" title="전일종가 기준 정렬하기"><img src="../img/ranking/th_24_off.gif" alt="전일종가" /></a></th>
+						<th><a href="#" title="12개월 선행 EPS 기준 정렬하기"><img src="../img/ranking/th_25_off.gif" alt="12개월 선행 EPS" /></a></th>
+						<th class="sel"><a href="#" title="12개월 선행 PER 기준 정렬하기"><img src="../img/ranking/th_26_on.gif" alt="12개월 선행 PER" /></a></th>
+						<th><img src="../img/ranking/th_27_off.gif" alt="PER" /></th>
+						<th><img src="../img/ranking/th_28_off.gif" alt="PBR" /></th>
+						<th><img src="../img/ranking/th_09_off.gif" alt="바로가기" /></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><label class="label_check solo" for="checkbox-01"><input id="checkbox-01" value="1" type="checkbox" title="" checked="checked" /></label></td>
+						<td class="grade"><strong>1</strong></td>
+						<td class="l"><a href="#" class="type">SK하이닉스</a></td>
+						<td class="r">1,000,000</td>
+						<td class="r">1,444</td>
+						<td class="r sel">1,191</td>
+						<td class="r">- 1,444</td>
+						<td class="r">1,191</td>
+						<td>
+							<a href="#chartView" onclick="showChart();return false;"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</td>
+					</tr>
+					<!-- 차트 보임 -->
+					<tr id="chartView" class="chartView" style="display:none;">
+						<td colspan="9">
+							<div class="OutBox">
+								<dl>
+									<dt>LG화학</dt>
+									<dd class="num">(068270)</dd>
+									<dd class="price">227,900원</dd>
+									<dd class="grade"><img src="../img/icon/up_05.gif" alt="상승" /> <strong class="up">16,600</strong></dd><!-- 이미지번호 05번 상승/하락 이미지번호 06번 급상승/급하락, 상승 class="up" / 하락 class="down" -->
+									<dd class="percent">14.91%</dd>
+									<dd class="btn"><a href="#"><img src="../img/button/view_01.gif" alt="차트 상세보기" /></a></dd>
+								</dl>
+								
+								<div class="ClearBlock"><!-- Clear Block --></div>
+								
+								<!-- 차트 -->
+								<img src="../img/ranking/temp_01.gif" alt="" />
+								<!--// 차트 -->
+							</div>
+						</td>
+					</tr>
+					<!--// 차트 보임 -->
+					<tr>
+						<td><label class="label_check solo" for="checkbox-02"><input id="checkbox-02" value="1" type="checkbox" title="" /></label></td>
+						<td class="grade"><strong>2</strong></td>
+						<td class="l"><a href="#" class="type">현대차</a></td>
+						<td class="r">127,900</td>
+						<td class="r">1,444</td>
+						<td class="r sel">1,191</td>
+						<td class="r">- 1,444</td>
+						<td class="r">1,191</td>
+						<td>
+							<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td><label class="label_check solo" for="checkbox-03"><input id="checkbox-03" value="1" type="checkbox" title="" /></label></td>
+						<td class="grade"><strong>3</strong></td>
+						<td class="l"><a href="#" class="type">현대차</a></td>
+						<td class="r">127,900</td>
+						<td class="r">1,444</td>
+						<td class="r sel">1,191</td>
+						<td class="r">- 1,444</td>
+						<td class="r">1,191</td>
+						<td>
+							<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td><label class="label_check solo" for="checkbox-04"><input id="checkbox-04" value="1" type="checkbox" title="" /></label></td>
+						<td class="grade">99</td>
+						<td class="l"><a href="#" class="type">현대차</a></td>
+						<td class="r">127,900</td>
+						<td class="r">1,444</td>
+						<td class="r sel">1,444</td>
+						<td class="r">- 1,444</td>
+						<td class="r">1,191</td>
+						<td>
+							<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td><label class="label_check solo" for="checkbox-05"><input id="checkbox-05" value="1" type="checkbox" title="" /></label></td>
+						<td class="grade">100</td>
+						<td class="l"><a href="#" class="type">현대차</a></td>
+						<td class="r">127,900</td>
+						<td class="r">1,444</td>
+						<td class="r sel">1,444</td>
+						<td class="r">- 1,444</td>
+						<td class="r">1,191</td>
+						<td>
+							<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</td>
+					</tr>
+								
+					<!-- 검색결과 없음 -->
+					<tr>
+						<td colspan="9" class="noData">검색된 <span>종목</span>이 없습니다.</td>
+					</tr>
+					<!--// 검색결과 없음 -->
+				</tbody>
+			</table>
+		</div>
+		<!--// Table End -->
+					
+		<!-- Button Start -->
+		<div class="BtnType1">
+			<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+		</div>
+		
+		<div class="BtnType3">
+			<a href="#"><img src="../img/button/grade_01_on.gif" alt="1위~50위" /></a>
+			<img src="../img/bullet/cross_01.gif" alt="/" />
+			<a href="#"><img src="../img/button/grade_02_off.gif" alt="51위~100위" /></a>
+		</div>
+		<!--// Button End -->
+		
+		<div class="Vspace40"><!-- Vertical Space --></div>
+		
+		<div class="msgBoxType2 msgBoxRound">
+			알쏭달쏭 주식 용어가 어려우세요?  신한금융투자 증권용어사전을 통해 궁금증을 풀어보세요. <a href="#"><img src="../img/button/dic_01.gif" alt="증권용어 사전 바로가기" /></a>
+		</div>
+	</div>
+	<!--// End -->
+</body>
+</html>

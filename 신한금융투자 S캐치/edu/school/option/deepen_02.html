@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 심화과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="deepen_01.html">1장. 선물가격결정</a></li>
+			<li><a href="deepen_02.html" class="sel">2장. 선물 베이시스와 괴리율</a></li>
+			<li><a href="deepen_03.html">3장. 선물 괴리도와 괴리율</a></li>
+			<li><a href="deepen_04.html">4장. 옵션 가격결정요인</a></li>
+			<li><a href="deepen_05.html">5장. 옵션 가격결정모형</a></li>
+			<li><a href="deepen_06.html">6장. 옵션 풋콜패러티</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_02.gif" alt="선물 베이시스와 괴리율" /></h2>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_12.gif" alt="베이시스란?" /></h3>	
+	
+	<div class="imgOutBox" style="margin-bottom:20px;"><img src="../img/edu/img_futures_deepen_06.jpg" alt="" /></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_09.gif" alt="베이시스 = 실제선물가격 - KOSPI 200지수, 이론베이시스 = 선물이론가격 - KOSPI 200지수" /></h4>
+		
+	<p class="cDepthTxt2">
+		그래프에서 보듯이 실제 선물가격과 KOSPI 200가격이 화살표크기만큼 차이가 나는데 그 차이를 베이시스라고 하죠<br />
+		그리고 선물이론가와 KOSPI 200지수의 차이를 이론베이시스라고 하구요.  
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_10.gif" alt="이론베이시스 = 이자비용 - 배당수입 >0, 만기일 이론베이시스 = 0" /></h4>
+	
+	<p class="cDepthTxt2">
+		앞에서 선물이론가 = KOSPI200 지수+이자비용-배당수입이라고 했으니까, 다시말하면 이론베이시스 = 선물이론가 - KOSPI 200지수 = 이자비용-배당수입이죠. 따라서, 만기가 가까워질수록 베이시스는 0에 가까워지고, 만기일에는
+		0이 되죠.<br />
+		또한, 보통 이자비용이 배당수입보다 크기때문에 이론적으로 베이시스는 0 보다 큽니다. 하지만, 실제선물가격과 KOSPI 200지수의 차이인 베이시스는 실제선물가격이 시장참여자들의 수급에 의하여 결정되므로 0보다 크기도 하고, 작기도 합니다. 그렇다면 베이시스크기를 비교해볼까요? 
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_11.gif" alt="백워데이션(역조시장) : 베이시스<0, A일과 B일사이로 장세하락예측이 시장을 지배할 때 발생"></h4>
+	
+	<p class="cDepthTxt2">
+		A일과 B일 사이에서는 실제선물가격이 KOSPI 200가격보다 작죠? 대체로 미래시장이 하락할 것이라는 예측이 지배적인 상황에서 이러한 현상이 발생되고, 이를 백워데이션(역조시장) 이라고 합니다. 
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_12.gif" alt="콘탱고(정상시장) : 베이시스>0, B일이후로 장세상승예측이 시장을 지배할 때 발생" /></h4>
+	
+	<p class="cDepthTxt2">
+		B일 이후에는 실제선물가격이 KOSPI 200가격보다 크죠? 대체로 미래시장이 상승할 것이라는 예측이 지배적인 상황에서 이러한 현상이 발생되고, 이를 콘탱고(정상시장) 이라고 합니다.  
+	</p>
+	
+	</body>
+</html>

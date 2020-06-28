@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물/옵션 기초과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="basic_01.html">1장. 선물거래 정의 및 특징 </a></li>
+			<li><a href="basic_02.html">2장. 선물거래 개요 및 상품종류</a></li>
+			<li><a href="basic_03.html">3장. 선물상품 비교</a></li>
+			<li><a href="basic_04.html">4장. 선물 결제</a></li>
+			<li><a href="basic_05.html">5장. 옵션 개념</a></li>
+			<li><a href="basic_06.html" class="sel">6장. 옵션거래 개요 및 옵션과 선물의 차이</a></li>
+			<li><a href="basic_07.html">7장. 옵션가격(프리미엄) </a></li>
+			<li><a href="basic_08.html">8장. 옵션의 이익구조</a></li>
+			<li><a href="basic_09.html">9장. 옵션 결제</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fbasic_06.gif" alt="옵션거래 개요 및 옵션과 선물의 차이" /></h2>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_13.gif" alt="옵션거래 개요" /></h3>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_05.gif" alt="옵션 상품의 종류" /></h4>
+	
+	<table class="table_type1">
+		<colgroup>
+			<col width="20%" />
+			<col width="40%" span="2" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>구분</th>
+				<th colspan="2">대상상품</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th rowspan="3">옵션상품</th>
+				<td class="sub">주가지수</td>
+				<td class="sub">KOSPI200옵션</td>
+			</tr>
+			<tr>
+				<td class="sub">주식</td>
+				<td class="sub">개별주식옵션</td>
+			</tr>
+			<tr>
+				<td class="subFirst">통화</td>
+				<td>미국달러옵션</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<h5 class="cDepthType1">KOSPI200옵션</h5>
+	
+	<p class="cDepthTxt3">KOSPI200옵션은 유가증권시장에 상장된 주권 200종목의 시가총액 기준으로 산출된 코스피 200지수를 거래대상으로 하는 상품입니다. 코스피 200 옵션은 주가지수를 거래대상으로 하고 있어 최종결제방법으로 현금결제를 채택하고 있습니다.</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">코스피200지수</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">코스피200 X 10만원(거래승수)</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">최근연속 3개월 및 3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15(최종거래일 09:00 ~ 14:50)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 두번째 목요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">권리행사</th>
+				<td class="bg Lcon">최종거래일에만 가능(European 형)</td>
+			</tr>
+			<tr>
+				<th>결제방법</th>
+				<td class="Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th class="bg">가격제한폭</th>
+				<td class="bg Lcon">+- 15%에 해당하는 옵션이론가격</td>
+			</tr>
+			<tr>
+				<th>증거금율</th>
+				<td class="Lcon">
+					<ul>
+						<li>위탁증거금률 15%</li>
+						<li>유지증거금률 10%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<h5 class="cDepthType1">개별주식옵션</h5>
+	
+	<p class="cDepthTxt3">유가증권시장에 상장되어 있고 유통주식수가 1,000만주 이상, 소액주주수가 10,000명 이상, 1년간 총거래대금이 5,000억원 이상인 보통주식 중에서 시가총액과 재무상태 등을 감안하여 선정한 33개 기업이 발행한 주식을 거래대상으로 하는 상품입니다. </p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon"><strong>33개 기업</strong>(2008. 10.13일 기준)<br />
+				강원랜드, KB금융지주, 기아자동차, 대한항공, 삼성물산, 삼성전기, 삼성전자, 삼성증권, 삼성화재해상보험, 삼성SDI, 신한금융지주, KT, KT&G, POSCO, 하나금융지주, 한국가스공사, 한국전력공사, 한국타이어, 한진해운, 현대모비스, 현대자동차, 현대중공업, CJ, GS홀딩스, 현대제철, LG, LG전자, LG화학, SK에너지, SK텔레콤, 엘지디스플레이, 우리금융지주, 신세계</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">기초주권가격 X 10 (거래승수)</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">6월 이내의 4개 결제월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15(최종거래일 09:00 ~ 14:50)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 두번째 목요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">권리행사</th>
+				<td class="bg Lcon">최종거래일에만 가능(European 형)</td>
+			</tr>
+			<tr>
+				<th>결제방법</th>
+				<td class="Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th class="bg">가격제한폭</th>
+				<td class="bg Lcon">+- 18%</td>
+			</tr>
+			<tr>
+				<th>증거금율</th>
+				<td class="Lcon">
+					<ul>
+						<li>위탁증거금률 18%</li>
+						<li>유지증거금률 12%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<h5 class="cDepthType1">미국달러옵션</h5>
+	
+	<p class="cDepthTxt3">미국달러옵션은 미리 정한 환율로 최종거래일에 달러화를 매수 또는 매도할 수 있는 권리를 매매하는 것입니다. 매입할 수 있는 권리를 콜옵션, 매도할 수 있는 권리를 풋옵션, 미리 정한 환율을 옵션의 행사가격이라고 합니다.</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">미국달러화(USD)</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">US $10,000</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">최근 연속 3개월 및 3,6,9,12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15(최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 월요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">권리행사</th>
+				<td class="bg Lcon">최종거래일에만 행사가능(European 형)</td>
+			</tr>
+			<tr>
+				<th>결제방법</th>
+				<td class="Lcon">인수도결제</td>
+			</tr>
+			<tr>
+				<th class="bg">가격제한폭</th>
+				<td class="bg Lcon">+- 4.5%</td>
+			</tr>
+			<tr>
+				<th>증거금율</th>
+				<td class="Lcon">
+					<ul>
+						<li>위탁증거금률 4.5%</li>
+						<li>유지증거금률 3%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<div class="Vspace25"><!-- --></div>
+		
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_14.gif" alt="옵션과 선물의 차이" /></h3>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_06.gif" alt="KOSPI200 선물 VS KOSPI200 옵션" /></h4>
+	<p class="cDepthTxt2">주가지수선물이 시장대표성, 차익거래의 용이성을 고려하여 KOSPI200지수를 대상으로 거래가 이루어지듯이 주가지수옵션도 KOSPI200지수를 대상으로 한 거래가 활발히 되고 있습니다. 이렇게 KOSPI200 선물, 옵션은 KOSPI200을 기초자산으로 하는 거래이고, 현금으로 결제된다는 점은 같습니다. 그렇다면 두 상품의 차이점은 무엇인지 살펴보도록 하겠습니다.</p>
+	
+	<div class="Vspace10"><!-- --></div>		
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_07.gif" alt="KOSPI 200 옵션과 KOSPI 200 선물의 차이점" /></h4>
+	
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="40%" span="2" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th>KOSPI200 옵션</th>
+				<th>KOSPI200 선물</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>매매대상</th>
+				<td class="Lcon">KOSPI200 지수를 매도, 매수 할 수 있는 권리</td>
+				<td class="Lcon">KOSPI200 지수</td>
+			</tr>
+			<tr>
+				<th class="bg">권리와 의무</th>
+				<td class="bg Lcon">
+					<ul>
+						<li><strong>매수자</strong> : 옵션행사 할 수 있는 권리만 보유</li>
+						<li><strong>매도자</strong> : 매수자가 권리행사시 응할 의무만 보유</li>
+					</ul>
+				</td>
+				<td class="bg Lcon">매수, 매도 쌍방이 권리와 동시에 의무도 보유</td>
+			</tr>
+			<tr>
+				<th>결제방법</th>
+				<td class="Lcon">
+					<ul>
+						<li>만기 : 권리행사 </li>
+						<li>평상시 : 매매체결시에만 매수, 매도대금 결제 </li>
+					</ul>
+				</td>
+				<td class="Lcon">
+					<ul>
+						<li>만기 : 최종결제 </li>
+						<li>평상시 : 일일정산으로 당일손익결제 </li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th class="bg">거래대금및 증거금</th>
+				<td class="bg Lcon">매매체결시 매수자가 매도자에게 프리미엄 지급<br />
+					보유포지션 위험에 따라 매도자에게 증거금 부과</td>
+				<td class="bg Lcon">매매체결시 거래대금결제 없음<br />
+					보유포지션 위험에 따라 증거금납부</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="tbCommentBottom">
+		<ul>
+			<li>직접적인 매매대상이 KOSPI200지수가 아니라 KOSPI 200지수를 매도, 매수할 수 있는 권리(OPTION)라는 점에서 KOSPI 200 옵션은 KOSPI 200 선물과 다릅니다.</li>
+			<li>KOSPI 200 옵션은 계약체결에 따른 권리와 의무가 분리되는 상품인데 반해 KOSPI 200 선물은 권리와 의무가 동시에 부과됩니다.</li>
+			<li>KOSPI 200 옵션은 만기까지 보유시 권리행사에 의한 결제를 하고, KOSPI 200 선물은 만기일 KOSPI 200지수와 선물종가의 차이에 의하여 최종결제를 합니다. 또한 KOSPI 200 선물은 일일정산으로 당일손익이 정산차금이라는 항목으로 매일매일 결제되는데 반하여 KOSPI 200 옵션은 매매체결 후 매매대금만 결제될 뿐 미실현 손익이 결제되지 않습니다.</li>
+			<li>KOSPI 200 선물은 매매체결 후 보유포지션의 노출위험에 따라 증거금을 납부하고, 일일정산을 하기 때문에 매매체결시 거래대금결제와 같은 행위가 전혀 없는 반면,  KOSPI 200 옵션은 매매체결시 매수자가 매도자에게 거래대금인 프리미엄을 지급하고, 보유포지션의 노출위험에 따라 증거금을 납부합니다. 매수자는 노출위험이 프리미엄만큼이므로 더 이상의 증거금납부가 없고, 매도자의 경우 위험이 무한정이므로 변화하는 위험도만큼 증거금을 납부해야 합니다.</li>
+		</ul>
+	</div>
+	
+	</body>
+</html>	

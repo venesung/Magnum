@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>종목발굴 - 리서치 추천 - 신규서비스명</title>
+	<meta name="Title" content="신한금융투자"/>
+	<meta name="Description" content="신한금융투자"/>
+	<meta name="Keywords" content="신한금융투자"/>
+	<meta name="Author" content="신한금융투자"/>
+	<meta name="Robots" content="All"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+		});
+	</script>
+</head>
+<body class="iframe" style="width:800px;">
+
+<h2 class="fLeft"><img src="../img/discover/title_report_08.gif" alt="신규종목 리포트" /></h2>
+	
+<div class="fRight">
+	<a href="#"><img src="../img/button/init_01.gif" alt="검색초기화" /></a>
+</div>
+<div class="Vspace15"><!-- Clear Block --></div>
+
+<!-- 검색 Start -->
+<div class="SearchBoxType4">
+	<fieldset>
+		<legend>검색</legend>
+		<div class="search">
+			<dl>
+				<dt><img src="../img/discover/txt_search_10.gif" alt="Market" /></dt>
+				<dd>
+					<label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked="checked" />전체</label>
+					<label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" />KOSPI</label>
+					<label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" />KOSDAQ</label>
+				</dd>
+				<dt><img src="../img/discover/txt_search_11.gif" alt="조회기간 설정" /></dt>
+				<dd>
+					<label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" checked="checked" />전체</label>
+					<label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="1" type="radio" />대형주</label>
+					<label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="1" type="radio" />중형주</label>
+					<label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="1" type="radio" />소형주</label>
+					<!--
+					<label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" checked="checked" />전체</label>
+					<label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="1" type="radio" />KOSDAQ 100</label>
+					<label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="1" type="radio" />KOSDAQ Mid 300</label>
+					<label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="1" type="radio" />KOSDAQ Small</label>
+					-->
+				</dd>
+				<dt class="sel"><img src="../img/discover/txt_search_12.gif" alt="종목명/코드" /></dt>
+				<dd>
+					<input type="text" class="box" style="width:200px;" onclick="chBorder(this)" />
+					<a href="#"><img src="../img/button/search_05.gif" alt="종목검색" /></a>
+					
+					<!-- 자동완성 Start -->
+					<ul class="AutoList" style="z-index:999999;">
+						<li><span>A066570</span> SK 하이닉스</li>
+						<li><span>A066570</span> SK 하이닉스</li>
+						<li><span>A066570</span> SK 하이닉스</li>
+						<li><span>A066570</span> SK 하이닉스</li>
+					</ul>
+					<!--// 자동완성 End -->
+				</dd>
+				<dt class="sel"><img src="../img/discover/txt_search_13.gif" alt="증권사" /></dt>
+				<dd>
+					<select style="width:100px;">
+						<option>전체</option>
+					</select>
+				</dd>								
+			</dl>
+			<img src="../img/button/search_02.gif" alt="검색" class="btn" onclick="alert('여기')" />
+		</div>
+	</fieldset>
+</div>
+<!--// 검색 End -->
+
+<!-- 검색 결과 Start -->
+<div class="sResultData">총 <strong><span>13</span>종목</strong>이 검색되었습니다.</div>
+
+<div class="SpaceForResult"><!-- Vertical Space --></div>
+
+<!-- Table Start -->
+<div class="tableType3">
+	<table summary="당일 전증권사 신규종목리포트로서 종목명, 전일종가, 목표가, 증권사별 리포트 내용, 투자의견, 일자로 구성된 리스트이며 차트, 실주문, 포트폴리오 버튼을 제공합니다.">
+		<caption>신규종목리포트</caption>
+		
+		<colgroup>
+			<col width="100" />
+			<col width="*" />
+			<col width="70" />
+			<col width="90" />
+		</colgroup>
+		
+		<thead>
+			<tr>
+				<th colspan="4" class="report">
+					<dl>
+						<dt><label class="label_check" for="checkbox-01"><input id="checkbox-01" value="1" type="checkbox" title="" />대신증권</label>(005930)</dt>
+						<dd>전일종가 : <strong>1,293,000</strong></dd>
+						<dd>목표가 : <strong>1,334,000</strong></dd>
+						<dd class="btn">
+							<a href="#chartView" onclick="showChart();return false;"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</dd>
+					</dl>
+					
+				</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<!-- 차트 보임 -->
+			<tr id="chartView" class="chartView" style="display:none;">
+				<td colspan="4">
+					<div class="OutBox">
+						<dl>
+							<dt>LG화학</dt>
+							<dd class="num">(068270)</dd>
+							<dd class="price">227,900원</dd>
+							<dd class="grade"><img src="../img/icon/up_05.gif" alt="상승" /> <strong class="up">16,600</strong></dd><!-- 이미지번호 05번 상승/하락 이미지번호 06번 급상승/급하락, 상승 class="up" / 하락 class="down" -->
+							<dd class="percent">14.91%</dd>
+							<dd class="btn"><a href="#"><img src="../img/button/view_01.gif" alt="차트 상세보기" /></a></dd>
+						</dl>
+						
+						<div class="ClearBlock"><!-- Clear Block --></div>
+						
+						<!-- 차트 -->
+						<img src="../img/ranking/temp_01.gif" alt="" />
+						<!--// 차트 -->
+					</div>
+				</td>
+			</tr>
+			<!--// 차트 보임 -->
+			
+			<tr>
+				<td class="l">대신증권</td>
+				<td class="l">2차전지 폴리머전지 중심으로 수요 견조, 갤럭시 S3, 아이폰 5 등의 모멘텀도 건재 SMD 지분매각으로 동사의 디스카운트 요인이었던 불확실성 해소</td>
+				<td class="c">매수</td>
+				<td class="c">2012.02.02</td>
+			</tr>
+			<tr>
+				<td class="l">HMC투자증권</td>
+				<td class="l">2차전지 폴리머전지의 디스카운트 요인이었던 불확실성 해소</td>
+				<td class="c">HOLD</td>
+				<td class="c">2012.02.02</td>
+			</tr>
+		</tbody>
+		
+	</table>
+</div>
+<!--// Table End -->
+
+<div class="Vspace10"><!-- Vertical Space --></div>
+
+<!-- Table Start -->
+<div class="tableType3">
+	<table summary="당일 전증권사 신규종목리포트로서 종목명, 전일종가, 목표가, 증권사별 리포트 내용, 투자의견, 일자로 구성된 리스트이며 차트, 실주문, 포트폴리오 버튼을 제공합니다.">
+		<caption>신규종목리포트</caption>
+		
+		<colgroup>
+			<col width="100" />
+			<col width="*" />
+			<col width="70" />
+			<col width="90" />
+		</colgroup>
+		
+		<thead>
+			<tr>
+				<th colspan="4" class="report">
+					<dl>
+						<dt><label class="label_check" for="checkbox-02"><input id="checkbox-02" value="1" type="checkbox" title="" />두산</label>(005930)</dt>
+						<dd>전일종가 : <strong>1,293,000</strong></dd>
+						<dd>목표가 : <strong>1,334,000</strong></dd>
+						<dd class="btn">
+							<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+							<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+							<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+						</dd>
+					</dl>
+					
+				</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<!-- 차트 보임 -->
+			<tr id="chartView" class="chartView" style="display:none;">
+				<td colspan="4">
+					<div class="OutBox">
+						<dl>
+							<dt>LG화학</dt>
+							<dd class="num">(068270)</dd>
+							<dd class="price">227,900원</dd>
+							<dd class="grade"><img src="../img/icon/up_05.gif" alt="상승" /> <strong class="up">16,600</strong></dd><!-- 이미지번호 05번 상승/하락 이미지번호 06번 급상승/급하락, 상승 class="up" / 하락 class="down" -->
+							<dd class="percent">14.91%</dd>
+							<dd class="btn"><a href="#"><img src="../img/button/view_01.gif" alt="차트 상세보기" /></a></dd>
+						</dl>
+						
+						<div class="ClearBlock"><!-- Clear Block --></div>
+						
+						<!-- 차트 -->
+						<img src="../img/ranking/temp_01.gif" alt="" />
+						<!--// 차트 -->
+					</div>
+				</td>
+			</tr>
+			<!--// 차트 보임 -->
+			
+			<tr>
+				<td class="l">대신증권</td>
+				<td class="l">2차전지 폴리머전지 중심으로 수요 견조, 갤럭시 S3, 아이폰 5 등의 모멘텀도 건재 SMD 지분매각으로 동사의 디스카운트 요인이었던 불확실성 해소</td>
+				<td class="c">매수</td>
+				<td class="c">2012.02.02</td>
+			</tr>
+			<tr>
+				<td class="l">HMC투자증권</td>
+				<td class="l">2차전지 폴리머전지의 디스카운트 요인이었던 불확실성 해소</td>
+				<td class="c">HOLD</td>
+				<td class="c">2012.02.02</td>
+			</tr>
+		</tbody>
+		
+	</table>
+</div>
+<!--// Table End -->
+					
+<!-- Button Start -->
+<div class="BtnType1">
+	<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+</div>
+<!--// Button End -->
+
+<!-- Button Start -->
+<div class="BtnType3">
+	<a href="#">이전</a>
+	|
+	<a href="#">다음</a>
+</div>
+<!--// Button End -->
+
+</body>
+</html>

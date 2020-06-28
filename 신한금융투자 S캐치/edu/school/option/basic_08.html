@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물/옵션 기초과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="basic_01.html">1장. 선물거래 정의 및 특징 </a></li>
+			<li><a href="basic_02.html">2장. 선물거래 개요 및 상품종류</a></li>
+			<li><a href="basic_03.html">3장. 선물상품 비교</a></li>
+			<li><a href="basic_04.html">4장. 선물 결제</a></li>
+			<li><a href="basic_05.html">5장. 옵션 개념</a></li>
+			<li><a href="basic_06.html">6장. 옵션거래 개요 및 옵션과 선물의 차이</a></li>
+			<li><a href="basic_07.html">7장. 옵션가격(프리미엄) </a></li>
+			<li><a href="basic_08.html" class="sel">8장. 옵션의 이익구조</a></li>
+			<li><a href="basic_09.html">9장. 옵션 결제</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fbasic_08.gif" alt="옵션의 이익구조" /></h2>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_fbasic_02.gif" alt="콜옵션 이익구조" />
+		<strong>A :</strong> 콜옵션은 사고자 하는 권리라고 했는데, 얼마가 되어야 이익이 발생하고 손실은 또 얼마나 발생하는거야?
+	</div>
+	
+	<div class="Vspace10"><!-- --></div>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_19.gif" alt="콜옵션 매수자" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_08.gif" alt="손익구조" /></h4>
+	<p class="cDepthTxt2">앞에서 콜옵션의 매수자는 계약시점에서 살권리를 사는 대가로 프리미엄을 지급하고, 만기시점에서 미리 정한 가격으로 살 권리를 행사시 이익이 발생하면 권리를 행사하여 이익을 실현시키고, 손실이 발생하면 권리를 포기하여 계약을 종료시킨다고 배웠습니다. 이러한 콜옵션 매수자의 KOSPI 200 지수 변화에 따라 손익이 어떻게 변하는지 알아 보도록 하죠.</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>KOSPI 200지수 > 권리행사가격</th>
+				<th>KOSPI 200지수 <img src="../img/edu/i_0208_code1.gif" alt="" align="top" /> 권리행사가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>매수시점</th>
+				<td>-프리미엄</td>
+				<td>-프리미엄</td>
+			</tr>
+			<tr>
+				<th class="bg">만기시점</th>
+				<td class="bg">KOSPI 200지수 - 권리행사가격</td>
+				<td class="bg">0</td>
+			</tr>
+			<tr>
+				<th rowspan="2">손익</th>
+				<td class="sub"><strong class="orange">KOSPI 200지수 - 권리행사가격 - 프리미엄</strong></td>
+				<td class="sub"><strong class="orange">- 프리미엄</strong></td>
+			</tr>
+			<tr>
+				<td class="subFirst"><span class="ornage">주가가 상승할수록 이익무한정 증가</span></td>
+				<td><span class="ornage">주가가 하락하면 손실한정(프리미엄)</span></td>
+			</tr>
+			<tr>
+				<th class="bg">손익분기점</th>
+				<td class="bg" colspan="2">권리행사가격 + 프리미엄</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<p class="cDepthTxt2">콜옵션매수자는 만기시점에서 KOSPI 200지수가 권리행사가격보다 크면 권리행사를 하고, 이 경우 (KOSPI 200지수 - 권리행사가격) - 콜옵션프리미엄만큼 이익을 볼 수 있습니다. 반면 만기시점에서 KOSPI 200지수가 권리행사가격보다 작으면 시장에서 더 싸게 살 수 있으므로 권리행사를 포기하고, 이 경우 콜옵션을 살 때 지불한 프리미엄만큼만 손실을 보게 됩니다. 즉, <span class="orange">콜옵션 매수자는 KOSPI 200 지수가 권리행사가격보다 작거나 같은 영역에서는 프리미엄만큼만 손실을 보고(손실한정), KOSPI 200지수가 권리행사가격보다 큰 영역(주가가 상승했을 때) KOSPI 200 지수 - 권리행사가격 - 프리미엄의 이익을 실현하게 됩니다. 이 때 KOSPI 200지수가 상승할수록 이익은 무한대로 증가하게 됩니다.</span><br />
+		<br />또한 콜옵션 매수자의 손익이 0 이 되는 시점(손익분기점)은 KOSPI 200지수 - 권리행사가격 - 프리미엄 = 0이 되는 시점이므로 KOSPI 200지수 = 권리행사가격 + 프리미엄인 지수대가 됩니다. 즉, 권리행사가격에 매수시 지불한 프리미엄만큼만 주가가 상승해주면 콜옵션매수자는 손익분기점에 도달하고, 그 이상 상승시 이익이 발생하게 됩니다.</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_09.gif" alt="손익그래프" /></h4>
+	
+	<div class="fl" style="width:270px;padding-left:20px;">
+		<p class="tbCommentTop">행사가격이 200, 매수가격이 5P인 콜옵션매수자의 만기손익 그래프</p>
+		<table class="table_type1">
+			<thead>
+				<tr>
+					<th>KOSPI200</th>
+					<th>195</th>
+					<th>200</th>
+					<th>205</th>
+					<th>210</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>매수시점</td>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+				</tr>
+				<tr>
+					<td class="bg" rowspan="3">만기시점</td>
+					<td class="bg sub" colspan="2">권리포기</td>
+					<td class="bg sub" colspan="2">권리행사</td>
+				</tr>
+				<tr>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">5P</td>
+					<td class="bg sub">10P</td>
+				</tr>
+				<tr>
+					<td class="bg subFirst"></td>
+					<td class="bg"></td>
+					<td class="bg">205-200</td>
+					<td class="bg">210-200</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>총손익</th>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>0P</td>
+					<td>5P</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div class="fr imgOutBox" style="width:400px;"><img src="../img/edu/i_0208_img01.gif" alt="" align="top" /></div>
+	
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_20.gif" alt="콜옵션 매도자" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_08.gif" alt="손익구조" /></h4>
+	<p class="cDepthTxt2">콜옵션 매도자는 매수자와 대칭적인 손익구조를 갖게 됩니다. 즉, 매수자가 이익이 발생하면 매도자는 동금액만큼 손실이 발생되고, 매수자가 손실이 발생하면 동금액만큼 이익이 발생합니다. 따라서, 콜옵션 매도자는 주가가 상승했을 때 손실이 무한대로 증가하고, 주가가 하락했을 때 이익은 매도시 지급받은 프리미엄으로 한정됩니다.<br />
+			또한 콜옵션 매도자의 손익이 0 이 되는 시점(손익분기점)은 KOSPI 200지수 - 권리행사가격 - 프리미엄 = 0이 되는 시점이므로 KOSPI 200지수 = 권리행사가격 + 프리미엄인 지수대가 됩니다. 즉, 권리행사가격에 매도시 수취한 프리미엄을 더한 금액 이하로 주가가 하락해주면 콜옵션매도자는 손익분기점에 도달하고, 그 이하로 하락시 이익이 발생하게 됩니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_09.gif" alt="손익그래프" /></h4>
+	<p class="cDepthTxt2">콜옵션 매도자의 만기손익도는 매수자의 손익도를 X축으로 접었을 때 그려지는 손익도로 아래와 같습니다.</p>
+	
+	<div class="fl" style="width:270px;padding-left:20px;">
+		<p class="tbCommentTop">행사가격이 200, 매도가격이 5P인 콜옵션매도자의 만기손익 그래프</p>
+		<table class="table_type1">
+			<thead>
+				<tr>
+					<th>KOSPI200</th>
+					<th>195</th>
+					<th>200</th>
+					<th>205</th>
+					<th>210</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>매도시점</td>
+					<td>5P</td>
+					<td>5P</td>
+					<td>5P</td>
+					<td>5P</td>
+				</tr>
+				<tr>
+					<td class="bg" rowspan="3">만기시점</td>
+					<td class="bg sub" colspan="2">의무없음</td>
+					<td class="bg sub" colspan="2">의무이행</td>
+				</tr>
+				<tr>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">-5P</td>
+					<td class="bg sub">-10P</td>
+				</tr>
+				<tr>
+					<td class="bg subFirst"></td>
+					<td class="bg"></td>
+					<td class="bg">-(205-200)</td>
+					<td class="bg">-(210-200)</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>총손익</th>
+					<td>5P</td>
+					<td>5P</td>
+					<td>0P</td>
+					<td>-5P</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div class="fr imgOutBox" style="width:400px;"><img src="../img/edu/i_0208_img02.gif" alt="" align="top" /></div>
+	
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>	
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_fbasic_03.gif" alt="풋옵션 이익구조" />
+		<strong>A :</strong> 풋옵션은 팔고자 하는 권리라고 했는데, 얼마가 되어야 이익이 발생하고, 손실은 또 얼마나 발생하는거야?
+	</div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_21.gif" alt="풋옵션 매수자" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_08.gif" alt="손익구조" /></h4>
+	
+	<p class="cDepthTxt2">앞에서 풋옵션의 매수자는 계약시점에서 팔 권리를 사는 대가로 프리미엄을 지급하고, 만기시점에서 미리 정한 가격으로 팔 권리를 행사시 이익이 발생하면 권리를 행사하여 이익을 실현시키고, 손실이 발생하면 권리를 포기하여 계약을 종료시킨다고 배웠습니다. 이러한 풋옵션 매수자의 KOSPI 200 지수 변화에 따라 손익이 어떻게 변하는지 알아보도록 하죠.</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>권리행사가격 > KOSPI 200지수</th>
+				<th>권리행사가격  <img src="../img/edu/i_0208_code1.gif" alt="" align="top" /> KOSPI 200지수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>매수시점</th>
+				<td>-프리미엄</td>
+				<td>-프리미엄</td>
+			</tr>
+			<tr>
+				<th class="bg">만기시점</th>
+				<td class="bg">권리행사가격 - KOSPI 200지수</td>
+				<td class="bg">0</td>
+			</tr>
+			<tr>
+				<th rowspan="2">손익</th>
+				<td class="sub"><strong class="orange">권리행사가격 - KOSPI 200지수 - 프리미엄</strong></td>
+				<td class="sub"><strong class="orange">- 프리미엄</strong></td>
+			</tr>
+			<tr>
+				<td class="subFirst"><span class="ornage">주가가 하락할수록 이익무한정 증가</span></td>
+				<td><span class="ornage">주가가 상승하면 손실한정(프리미엄)</span></td>
+			</tr>
+			<tr>
+				<th class="bg">손익분기점</th>
+				<td class="bg" colspan="2">권리행사가격 - 프리미엄</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<p class="cDepthTxt2">풋옵션매수자는 만기시점에서 권리행사가격이 KOSPI 200지수보다 크면 권리행사를 하고, 이 경우 (권리행사가격 -KOSPI 200지수) - 풋옵션프리미엄만큼 이익을 볼 수 있습니다. 반면 만기시점에서 권리행사가격이 KOSPI 200지수보다 작으면 시장에서 더 비싸게 팔 수 있으므로 권리행사를 포기하고, 이 경우 풋옵션을 살 때 지불한 프리미엄만큼만 손실을 보게 됩니다. 즉, 풋옵션 매수자는 <span class="orange">권리행사가격이 KOSPI 200지수보다 작거나 같은 영역에서는 프리미엄만큼만 손실을 보고(손실한정), 권리행사가격이 KOSPI 200지수보다 큰 영역(주가가 하락했을 때) 권리행사가격 - KOSPI 200지수 - 프리미엄의 이익을 실현하게 됩니다. 이 때 KOSPI 200지수가 하락할수록 이익은 무한대로 증가하게 됩니다.</span><br />
+	또한 풋옵션 매수자의 손익이 0 이 되는 시점(손익분기점)은 권리행사가격 - KOSPI 200지수 - 프리미엄 = 0이 되는 시점이므로 KOSPI 200지수 = 권리행사가격 - 프리미엄인 지수대가 됩니다. 즉, 권리행사가격에 매수시 지불한 프리미엄만큼만 주가가 하락해주면 풋옵션매수자는 손익분기점에 도달하고, 그 이상 하락시 이익이 발생하게 됩니다.</p>
+			
+	<div class="Vspace10"><!-- --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_09.gif" alt="손익그래프" /></h4>
+	<div class="fl" style="width:270px;padding-left:20px;">
+		<p class="tbCommentTop">행사가격이 200, 매수가격이 5P인 콜옵션매수자의 만기손익 그래프</p>
+		<table class="table_type1">
+			<thead>
+				<tr>
+					<th>KOSPI200</th>
+					<th>195</th>
+					<th>200</th>
+					<th>205</th>
+					<th>210</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>매수시점</td>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+				</tr>
+				<tr>
+					<td class="bg" rowspan="3">만기시점</td>
+					<td class="bg sub" colspan="2">권리행사</td>
+					<td class="bg sub" colspan="2">권리포기</td>
+				</tr>
+				<tr>
+					<td class="bg sub">5P</td>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">0</td>
+					<td class="bg sub">0</td>
+				</tr>
+				<tr>
+					<td class="bg subFirst">200-195</td>
+					<td class="bg">200-200</td>
+					<td class="bg"></td>
+					<td class="bg"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>총손익</th>
+					<td>0P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+					<td>-5P</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div class="fr imgOutBox" style="width:400px;"><img src="../img/edu/i_0209_img01.gif" alt="" align="top" /></div>
+
+	<div class="Vspace25"><!-- --></div>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_22.gif" alt="풋옵션 매도자" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_08.gif" alt="손익구조" /></h4>
+	
+	<p class="cDepthTxt2">풋옵션 매도자는 매수자와 대칭적인 손익구조를 갖게됩니다. 즉, 매수자가 이익이 발생하면 매도자는 동금액만큼 손실이 발생되고, 매수자가 손실이 발생하면 동금액만큼 이익이 발생합니다. 따라서, 풋옵션 매도자는 주가가 하락했을 때 손실이 무한대로 증가하고, 주가가 상승했을 때 이익은 매도시 지급받은 프리미엄으로 한정됩니다.<br />
+			또한 풋옵션 매도자의 손익이 0 이 되는 시점(손익분기점)은 권리행사가격 - KOSPI 200 - 프리미엄 = 0 이 되는 시점이므로 KOSPI 200지수 = 권리행사가격 - 프리미엄인 지수대가 됩니다. 즉, 권리행사가격에 매도시 수취한 프리미엄을 뺀 금액 이상으로 주가가 상승해주면 풋옵션매도자는 손익분기점에 도달하고, 그 이상으로 상승시 이익이 발생하게 됩니다.</p>
+			
+	<div class="Vspace10"><!-- --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_09.gif" alt="손익그래프" /></h4>
+	
+	<div class="fl" style="width:270px;padding-left:20px;">
+		<table class="table_type1">
+			<thead>
+				<tr>
+					<th>KOSPI200</th>
+					<th>195</th>
+					<th>200</th>
+					<th>205</th>
+					<th>210</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>매도시점</td>
+					<td>5P</td>
+					<td>5P</td>
+					<td>5P</td>
+					<td>5P</td>
+				</tr>
+				<tr>
+					<td class="bg" rowspan="3">만기시점</td>
+					<td class="bg sub" colspan="2">의무이행</td>
+					<td class="bg sub" colspan="2">의무없음</td>
+				</tr>
+				<tr>
+					<td class="bg sub">-5P</td>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">0P</td>
+					<td class="bg sub">0P</td>
+				</tr>
+				<tr>
+					<td class="bg subFirst">195-200</td>
+					<td class="bg">200-200</td>
+					<td class="bg"></td>
+					<td class="bg"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>총손익</th>
+					<td>0P</td>
+					<td>5P</td>
+					<td>5P</td>
+					<td>5P</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div class="fr imgOutBox" style="width:400px;"><img src="../img/edu/i_0209_img02.gif" alt="" align="top" /></div>
+	
+	</body>
+</html>	

@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>신한금융투자 온라인서비스 플랫폼</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+		});
+	</script>
+	
+	<!--[if IE 6]>
+	<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('.tab'); // png 쓰이는 부분
+	</script>
+	<![endif]-->
+	
+	
+	<script type="text/javascript" src="../js/jquery.corner.js"></script> <!-- Round 처리 -->
+
+</head>
+<body style="background:none;width:800px;padding:20px;">
+
+<div style="background:#000;color:#fff;font-weight:bold;padding:10px 20px;margin-bottom:20px;">Title Guide</div>
+
+1. 이미지만 있는 경우
+<h2 class="title"><img src="../img/expert/stitle_trade_01.gif" alt="" /></h2>
+
+
+2. 텍스트 + 이미지
+<h2 class="title2">홍길동 <img src="../img/expert/stitle_trade_02.gif" alt="투자의 달인 매매내역" /></h2>
+
+<div style="background:#000;color:#fff;font-weight:bold;padding:10px 20px;margin-bottom:20px;">Tab Guide</div>
+
+<!-- Tab Start -->
+1. 단독사용될때
+<ul class="tabType1">
+	<li><a href="#"><img src="../img/temp_tab_on.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a></li>
+</ul>
+<div class="ClearBlock"><!-- Clear Block --></div>
+
+
+2. 서브탭을 갖고 있을때
+<ul class="tabType1 top45">
+	<li><a href="#"><img src="../img/temp_tab_on.gif" alt="" /></a>
+		<ul>
+			<li class="start"><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+		</ul>
+	</li>
+	<li><a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a></li>
+</ul>
+<ul class="tabType1">
+	<li><a href="#"><img src="../img/temp_tab_on_2.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a>
+		<ul>
+			<li class="start"><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+		</ul>
+	</li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a></li>
+</ul>
+<ul class="tabType1">
+	<li><a href="#"><img src="../img/temp_tab_on_2.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a></li>
+	<li><a href="#"><img src="../img/temp_tab_off_2.gif" alt="" /></a>
+		<ul class="right">
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+			<li class="start"><a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a></li>
+		</ul>
+	</li>
+</ul>
+<!--// Tab End -->
+
+<br /><br />
+<div class="tabType1">
+	<a href="#"><img src="../img/temp_tab_on_3.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_tab_off_3.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_tab_off_3.gif" alt="" /></a>
+</div>
+
+<br /><br />
+3. CP용 서브 탭
+
+<div class="tabType_cp">
+	<a href="#"><img src="../img/temp_tab_on.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_tab_off.gif" alt="" /></a>
+</div>
+<div class="tabType_cp_sub">
+	<a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a>
+	<a href="#"><img src="../img/temp_txt_01.gif" alt="" /></a>
+</div>
+
+<script type="text/javascript">
+/*
+	$(document).ready(function() {
+		$(".tabType1 img").mouseover(function() {
+			var newSrc = $(this).attr("src").replace("off","on");	
+			$(this).attr("src",newSrc);
+		});
+		$(".tabType1 img").mouseout(function() {
+			var newSrc = $(this).attr("src").replace("on","off");	
+			$(this).attr("src",newSrc);
+		});
+	});
+	*/
+</script>
+
+<!--
+				
+				<select class='select31' name='exp11' width='300' onchange='clickMe()'>
+					<option value=''>Select a Planet</option>
+					<option value='mercury'>Mercury</option>
+
+					<option value='venus'>Venus</option>
+					<option value='earth'>Earth</option>
+					<option value='mars'>Mars</option>
+					<option value='jupiter'>Jupiter</option>
+					<option value='saturn'>Saturn</option>
+				</select>
+				
+				<style type="text/css">
+				/* theme: mytheme */
+				.mytheme{ border:1px solid #668d32; color:#333; font-size:13px; background-color:#e9e9e9; background-image:url('../js/jcombox_img/round.gif'); }
+				.mytheme-hover{ border-color:#008040;color:#668d32; background-image:url('../js/jcombox_img/round_hover.gif'); }
+				.mytheme.current{ background-color:#668d32!important; color:#fff!important; }
+				.mytheme.menu { border:1pxsolid#668d32; }
+			</style>
+</div>
+-->
+
+<br /><br />
+
+<div style="background:#000;color:#fff;font-weight:bold;padding:10px 20px;margin-bottom:20px;">랭킹 전용 게시판 Guide</div>
+
+<!-- Sorting Start -->
+<div class="SortingBox">
+	<div class="fLeft">
+		<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+	</div>
+	<div class="fRight">
+	<select class="select" style="width:150px;">
+		<option value="분기 실적 호전주 조건 검색">분기 실적 호전주 조건 검색</option>
+		<option value="-_-">-_-</option>
+		<option value="-0-">-0-</option>
+	</select>
+	</div>
+	<div class="ClearBlock"><!-- Clear Block --></div>
+</div>
+<!--// Sorting End -->
+
+<!-- Table Start -->
+<div class="tableType1">
+	<table summary="">
+		<caption></caption>
+		
+		<thead>
+			<tr>
+				<th><label class="label_check solo" for="checkbox-01"><input id="checkbox-01" value="1" type="checkbox" title="전체선택" /></label></th>
+				<th><img src="../img/temp_txt_01.gif" alt="" /></th>
+				<th><img src="../img/temp_txt_02.gif" alt="" /></th>
+				<th><img src="../img/temp_txt_02.gif" alt="" /></th>
+				<th class="sel"><a href="#" title="현재가 기준 정렬"><img src="../img/temp_txt_01_on.gif" alt="" /></a></th>
+				<th><a href="#" title="현재가 기준 정렬"><img src="../img/temp_txt_01.gif" alt="" /></a></th>
+				<th><img src="../img/temp_txt_01.gif" alt="" /></th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td><label class="label_check solo" for="checkbox-02"><input id="checkbox-02" value="1" type="checkbox" title="" checked="checked" /></label></td>
+				<td class="grade"><strong>1</strong></td>
+				<td><span class="up"><img src="../img/icon/up_01.gif" alt="상승" /> 12</span></td>
+				<td class="l"><a href="#" class="type">종목명의 경우</a></td>
+				<td class="r sel"><span class="up">▲ 200,000</span></td>
+				<td class="r">123,000</td>
+				<td class="r"><span class="up">3.45%</span></td>
+			</tr>
+			<tr>
+				<td><label class="label_check solo" for="checkbox-03"><input id="checkbox-03" value="1" type="checkbox" title="" /></label></td>
+				<td class="grade"><strong>2</strong></td>
+				<td><span class="down"><img src="../img/icon/down_01.gif" alt="하락" /> 12</span></td>
+				<td class="l"><a href="#" class="type">종목명의 경우</a></td>
+				<td class="r sel"><span class="down">▼ 200,000</span></td>
+				<td class="r">123,000</td>
+				<td class="r"><span class="down">- 3.45%</span></td>
+			</tr>
+			<tr>
+				<td><label class="label_check solo" for="checkbox-04"><input id="checkbox-04" value="1" type="checkbox" title="" /></label></td>
+				<td class="grade"><strong>3</strong></td>
+				<td><img src="../img/icon/same_01.gif" alt="변동없음" /> 0</td>
+				<td class="l"><a href="#" class="type">종목명의 경우</a></td>
+				<td class="r sel"><span class="up">▲ 200,000</span></td>
+				<td class="r">123,000</td>
+				<td class="r"><span class="up">3.45%</span></td>
+			</tr>
+			<tr>
+				<td><label class="label_check solo" for="checkbox-05"><input id="checkbox-05" value="1" type="checkbox" title="" /></label></td>
+				<td class="grade">4</td>
+				<td><img src="../img/icon/same_01.gif" alt="변동없음" /> 0</td>
+				<td class="l"><a href="#" class="type">종목명의 경우</a></td>
+				<td class="r sel">200,000</td>
+				<td class="r">123,000</td>
+				<td class="r">0%</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--// Table End -->
+					
+<!-- Button Start -->
+<div class="BtnType1">
+	<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+</div>
+
+<div class="BtnType3">
+	<a href="#" class="rank1_on"><span>1위~50위</span></a>
+	<img src="../img/bullet/cross_01.gif" alt="/" />
+	<a href="#" class="rank2"><span>51위~100위</span></a>
+</div>
+<!--// Button End -->
+
+
+	<!--script>
+		var backData = 0;
+		
+		$("thead tr th").click(function(){
+			
+			if(backData != 0) {
+					$("thead tr th:nth-child(" + backData + ")").removeClass("sel");
+					$("tbody tr td:nth-child(" + backData + ")").removeClass("sel");
+				}
+			var index = $("thead tr th").index(this);
+			//alert(index)
+			
+			var cIndex = index + 1;
+			//$("thead tr th:nth-child(" + cIndex + ")").children().attr("src").replace("off","on");	
+			$("thead tr th:nth-child(" + cIndex + ")").addClass("sel");
+			$("tbody tr td:nth-child(" + cIndex + ")").addClass("sel");
+			
+			backData = cIndex;
+		});
+	</script-->
+
+
+
+
+
+
+        <fieldset>
+            <label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked="checked" /> This is option A...</label>
+            <label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" /> 가나다</label>
+            <label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" /> or simply choose option C</label>
+        </fieldset>
+<br /><br />		
+	
+<div style="background:#000;color:#fff;font-weight:bold;padding:10px 20px;margin-bottom:20px;">Table Guide</div>
+	
+1. 가로형 테이블	
+<!-- Table Start -->
+<div class="tableType2">
+	<table summary="">
+		<caption></caption>
+		
+		<tbody>
+			<tr>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td class="l">좌측정렬</td>
+				<td class="c">기본폰트 #666</td>
+			</tr>
+			<tr>
+				<th colspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td colspan="2"><strong>강조색 #444</strong></td>
+			</tr>
+			<tr>
+				<th rowspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td>기본우측</td>
+				<td class="l">좌측정렬</td>
+			</tr>
+			<tr>
+				<th class="line"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td>기본우측</td>
+				<td>기본우측</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--// Table End -->
+<br /><br />
+
+2. 세로형 테이블
+<!-- Table Start -->
+<div class="tableType3">
+	<table summary="">
+		<caption></caption>
+		
+		<thead>
+			<tr>
+				<th rowspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th class="sub" colspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th rowspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th rowspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+			</tr>
+			<tr>
+				<th class="line"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>기본우측</td>
+				<td class="l" colspan="2">좌측정렬</td>
+				<td>기본우측</td>
+				<td><span class="up">▲ 기본우측</span></td>
+			</tr>
+			<tr>
+				<td>기본우측</td>
+				<td>기본우측</td>
+				<td class="c" colspan="2">센터정렬</td>
+				<td><span class="down">▼ 기본우측</span></td>
+			</tr>
+			<tr>
+				<td>기본우측</td>
+				<td>기본우측</td>
+				<td>기본우측</td>
+				<td colspan="2">기본우측</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--// Table End -->
+<br /><br />
+
+3. 가로 + 세로형 테이블
+<!-- Table Start -->
+<div class="tableType3">
+	<table summary="">
+		<caption></caption>
+		
+		<thead>
+			<tr>
+				<th rowspan="3"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th class="sub block" colspan="2"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th rowspan="3" class="block"><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<th rowspan="3"><img src="../img/temp_txt_03.gif" alt="" /></th>
+			</tr>
+			<tr>
+				<th class="sub block">block이 선언될 경우 line과 이중으로 먹이지 않도록 주의</th>
+				<th class="sub">기본색 #333</th>
+			</tr>
+			<tr>
+				<th class="line block"><span>한단계 하락 #999</span></th>
+				<th><span class="up">테이블 헤더</span></th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td class="l" colspan="2">좌측정렬</td>
+				<td class="block">기본우측</td>
+				<td><span class="up">▲ 기본우측</span></td>
+			</tr>
+			<tr>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td>기본우측</td>
+				<td class="c" colspan="2">센터정렬</td>
+				<td><span class="down">▼ 기본우측</span></td>
+			</tr>
+			<tr>
+				<th><img src="../img/temp_txt_03.gif" alt="" /></th>
+				<td>기본우측</td>
+				<td>기본우측</td>
+				<td colspan="2" class="block">기본우측</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--// Table End -->		
+		
+</body>
+</html>

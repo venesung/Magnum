@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 심화과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="deepen_01.html">1장. 선물가격결정</a></li>
+			<li><a href="deepen_02.html">2장. 선물 베이시스와 괴리율</a></li>
+			<li><a href="deepen_03.html" class="sel">3장. 선물 괴리도와 괴리율</a></li>
+			<li><a href="deepen_04.html">4장. 옵션 가격결정요인</a></li>
+			<li><a href="deepen_05.html">5장. 옵션 가격결정모형</a></li>
+			<li><a href="deepen_06.html">6장. 옵션 풋콜패러티</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_03.gif" alt="선물 괴리도와 괴리율" /></h2>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_04.gif" alt="괴리도와 괴리율이란?" />
+		실제 선물가격은 시장수급에 의하여 시장참여자의 예측이 반영되어 결정되고, 선물이론가격은 KOSPI 200 지수+이자비용-배당수입으로 결정된다는 것을 앞서 살펴보았습니다.<br />
+		따라서, 실제 선물가격과 선물이론가격사이에는 차이가 발생될 수 있습니다.<br />
+		이러한 차이를 괴리도라고 하고, 비율로 산출한 것을 괴리율이라고 합니다.<br />
+		
+		<strong>괴리도 = 실제 선물가격 - 선물 이론가격</strong><br />
+		<strong>괴리율 = (실제 선물가격/선물이론가격 - 1)</strong>
+	</div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_13.gif" alt="베이시스와 괴리율이 왜 중요합니까?" /></h3>
+	
+	<div class="cDepthTxt">
+		<ul class="cDepthBul">
+			<li><strong>베이시스의 활용</strong><br />
+				베이시스는 만기가 되면 0이 되어 실제 선물가격 = KOSPI 200지수 = 선물이론가격이 됩니다. 따라서, 베이시스가 (+)라면 실제선물가격 > KOSPI 200지수이고, 만기에 실제선물가격 = KOSPI 200 지수가 되어야 하므로 선물은 고평가되어 있고, KOSPI 200지수는 저평가되어있다고 볼 수 있죠.<br />
+				그래서 고평가된 선물을 팔고, 저평가된 KOSPI 200지수에 해당하는 Basket을 구성하여 매수하는 매수차익거래가 유입되죠. 반대로 베이시스가 (-)라면 실제선물가격 < KOSPI 200지수이고, 만기에 실제선물가격 = KOSPI 200 지수가 되어야 하므로 선물은 저평가되어 있고, KOSPI 200지수는 고평가 되어있다고 볼 수 있죠.<br />
+				그래서 저평가된 선물을 사고, 고평가된 KOSPI 200지수에 해당하는 Basket을 구성하여 매도하는 매도차익거래가 유입되죠.
+			</li>
+			<li><strong>괴리율의 활용</strong><br />
+				괴리율도 베이시스와 동일하게 실제 선물가격의 고평가, 저평가여부를 판단하여 매수/매도차익거래가 유발되게하는 지표로 활용됩니다.
+			</li>
+		</ul>		
+	</div>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_14.gif" alt="HTS에서 베이시스와 괴리율 살펴보기" /></h3>
+	
+	<p class="cDepthTxt">goodi 2004의 2000번 화면에서 베이시스와 괴리도/괴리율이 얼마인지 알 수 있습니다.</p>
+	
+	<div class="imgOutBox" style="margin:10px 0px 15px 0px;"><img src="../img/edu/img_futures_deepen_07.jpg" alt="" /></div>
+	
+	<div class="cDepthTxt">
+		<p>베이시스와 괴리율을 산출하기 위한 기본지표인 KOSPI200지수, 실제선물가격, 선물이론가격을 살펴보도록 하죠. KOSPI200지수는 220.80, 선물 이론가격은 221.75입니다.</p>
+		
+		<div class="designEdu2"><strong>베이시스 = </strong>실제선물가격 - KOSPI200지수, 221.50 - 221.80 = -0.03</div>
+		<div class="designEdu2"><strong>이론베이시스 = </strong>선물이론가격 - KOSPI200지수, 221.75 - 221.80 = -0.05</div>
+		<div class="designEdu2"><strong>괴리도 = </strong>실제선물가격 - 선물이론가격, 221.50 - 221.75 = -0.25</div>
+		<div class="designEdu2"><strong>괴리율 = </strong>(실제선물가격/선물이론가격-1)*100, (221.50/221.75 - 1)*100 = -0.113</div>
+	</div>
+	
+
+	</body>
+</html>

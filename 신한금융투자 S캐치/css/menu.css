@@ -1,0 +1,313 @@
+@charset "EUC-KR";
+
+/* Left Menu */
+div.LeftArea div.menu {width:160px;background:#222;border-bottom:1px solid #444;padding:32px 0 47px 0;}
+div.LeftArea li {height:48px;}
+div.LeftArea li a {display:block;height:48px;}
+div.LeftArea li span {position:absolute;left:-9999px;}
+div.LeftArea li.menu1 a {background:url(../img/menu/menu.gif) no-repeat 0 0;}
+div.LeftArea li.menu2 a {background:url(../img/menu/menu.gif) no-repeat 0 -49px;}
+div.LeftArea li.menu3 a {background:url(../img/menu/menu.gif) no-repeat 0 -97px;}
+div.LeftArea li.menu4 a {background:url(../img/menu/menu.gif) no-repeat 0 -143px;}
+div.LeftArea li.menu5 a {background:url(../img/menu/menu.gif) no-repeat 0 -191px;}
+div.LeftArea li.menu6 a {background:url(../img/menu/menu.gif) no-repeat 0 -239px;}
+div.LeftArea li.menu7 a {background:url(../img/menu/menu.gif) no-repeat 0 -287px;}
+div.LeftArea li.menu1 a:hover, div.LeftArea li.menu1 a.sel {background-position:right 0;}
+div.LeftArea li.menu2 a:hover, div.LeftArea li.menu2 a.sel {background-position:right -49px;}
+div.LeftArea li.menu3 a:hover, div.LeftArea li.menu3 a.sel {background-position:right -97px;}
+div.LeftArea li.menu4 a:hover, div.LeftArea li.menu4 a.sel {background-position:right -143px;}
+div.LeftArea li.menu5 a:hover, div.LeftArea li.menu5 a.sel {background-position:right -191px;}
+div.LeftArea li.menu6 a:hover, div.LeftArea li.menu6 a.sel {background-position:right -239px;}
+div.LeftArea li.menu7 a:hover, div.LeftArea li.menu7 a.sel {background-position:right -287px;}
+
+div.subMenu ul {width:144px;margin-left:16px;border-bottom:1px solid #ddd;}
+
+div.subMenu li {height:48px;line-height:0;font-size:0;overflow:hidden;} /* 서브메뉴 떨어질때 여기 overflow 없앰 됨 */
+
+div.subMenu li a {display:block;height:48px;}
+div.subMenu span {position:absolute;left:-9999px;}
+
+#LeftMenu_2, #LeftMenu_3, #LeftMenu_4, #LeftMenu_5, #LeftMenu_6, #LeftMenu_7, #LeftMenu_8 {display:none;} /* 서브메뉴 Hidden */
+
+/* 랭킹존 */
+div.subMenu li.sub_rank_1 a {background:url(../img/menu/rank.gif) no-repeat 0 0;}
+div.subMenu li.sub_rank_2 a {background:url(../img/menu/rank.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_rank_3 a {background:url(../img/menu/rank.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_rank_4 a {background:url(../img/menu/rank.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_rank_1 a:hover, div.subMenu li.sub_rank_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_rank_2 a:hover, div.subMenu li.sub_rank_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_rank_3 a:hover, div.subMenu li.sub_rank_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_rank_4 a:hover, div.subMenu li.sub_rank_4 a.sel {background-position:right -144px;}
+
+div.subMenu li ul {margin:0 0 24px 0;border-bottom:none;}
+div.subMenu li li, div.subMenu li li a, div.subMenu li li a:hover, div.subMenu li li a.sel {height:24px;}
+
+div.subMenu li li.sub_rank_1_1 a {background:url(../img/menu/rank_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_rank_1_2 a {background:url(../img/menu/rank_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_rank_1_3 a {background:url(../img/menu/rank_1.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_rank_1_4 a {background:url(../img/menu/rank_1.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_rank_1_5 a {background:url(../img/menu/rank_1.gif) no-repeat 0 -96px;}
+div.subMenu li li.sub_rank_1_6 a {background:url(../img/menu/rank_1.gif) no-repeat 0 -120px;}
+div.subMenu li li.sub_rank_1_1 a:hover, div.subMenu li li.sub_rank_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_rank_1_2 a:hover, div.subMenu li li.sub_rank_1_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_rank_1_3 a:hover, div.subMenu li li.sub_rank_1_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_rank_1_4 a:hover, div.subMenu li li.sub_rank_1_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_rank_1_5 a:hover, div.subMenu li li.sub_rank_1_5 a.sel {background-position:right -96px;}
+div.subMenu li li.sub_rank_1_6 a:hover, div.subMenu li li.sub_rank_1_6 a.sel {background-position:right -120px;}
+
+div.subMenu li li.sub_rank_2_1 a {background:url(../img/menu/rank_2.gif) no-repeat 0 0;}
+div.subMenu li li.sub_rank_2_2 a {background:url(../img/menu/rank_2.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_rank_2_3 a {background:url(../img/menu/rank_2.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_rank_2_4 a {background:url(../img/menu/rank_2.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_rank_2_5 a {background:url(../img/menu/rank_2.gif) no-repeat 0 -96px;}
+div.subMenu li li.sub_rank_2_6 a {background:url(../img/menu/rank_2.gif) no-repeat 0 -120px;}
+div.subMenu li li.sub_rank_2_1 a:hover, div.subMenu li li.sub_rank_2_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_rank_2_2 a:hover, div.subMenu li li.sub_rank_2_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_rank_2_3 a:hover, div.subMenu li li.sub_rank_2_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_rank_2_4 a:hover, div.subMenu li li.sub_rank_2_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_rank_2_5 a:hover, div.subMenu li li.sub_rank_2_5 a.sel {background-position:right -96px;}
+div.subMenu li li.sub_rank_2_6 a:hover, div.subMenu li li.sub_rank_2_6 a.sel {background-position:right -120px;}
+
+div.subMenu li li.sub_rank_3_1 a {background:url(../img/menu/rank_3.gif) no-repeat 0 0;}
+div.subMenu li li.sub_rank_3_2 a {background:url(../img/menu/rank_3.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_rank_3_1 a:hover, div.subMenu li li.sub_rank_3_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_rank_3_2 a:hover, div.subMenu li li.sub_rank_3_2 a.sel {background-position:right -24px;}
+
+/* 종목발굴 */
+div.subMenu li.sub_discover_1 a {background:url(../img/menu/discover.gif) no-repeat 0 0;}
+div.subMenu li.sub_discover_2 a {background:url(../img/menu/discover.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_discover_3 a {background:url(../img/menu/discover.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_discover_1 a:hover, div.subMenu li.sub_discover_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_discover_2 a:hover, div.subMenu li.sub_discover_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_discover_3 a:hover, div.subMenu li.sub_discover_3 a.sel {background-position:right -96px;}
+
+div.subMenu li li.sub_discover_1_1 a {background:url(../img/menu/discover_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_discover_1_2 a {background:url(../img/menu/discover_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_discover_1_3 a {background:url(../img/menu/discover_1.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_discover_1_4 a {background:url(../img/menu/discover_1.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_discover_1_5 a {background:url(../img/menu/discover_1.gif) no-repeat 0 -96px;}
+/*div.subMenu li li.sub_discover_1_6 a {background:url(../img/menu/discover_1.gif) no-repeat 0 -120px;}*/
+div.subMenu li li.sub_discover_1_1 a:hover, div.subMenu li li.sub_discover_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_discover_1_2 a:hover, div.subMenu li li.sub_discover_1_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_discover_1_3 a:hover, div.subMenu li li.sub_discover_1_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_discover_1_4 a:hover, div.subMenu li li.sub_discover_1_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_discover_1_5 a:hover, div.subMenu li li.sub_discover_1_5 a.sel {background-position:right -96px;}
+/*div.subMenu li li.sub_discover_1_6 a:hover, div.subMenu li li.sub_discover_1_6 a.sel {background-position:right -120px;}*/
+
+div.subMenu li li.sub_discover_2_1 a {background:url(../img/menu/discover_2.gif) no-repeat 0 0;}
+div.subMenu li li.sub_discover_2_2 a {background:url(../img/menu/discover_2.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_discover_2_3 a {background:url(../img/menu/discover_2.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_discover_2_4 a {background:url(../img/menu/discover_2.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_discover_2_5 a {background:url(../img/menu/discover_2.gif) no-repeat 0 -96px;}
+div.subMenu li li.sub_discover_2_6 a {background:url(../img/menu/discover_2.gif) no-repeat 0 -120px;}
+div.subMenu li li.sub_discover_2_1 a:hover, div.subMenu li li.sub_discover_2_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_discover_2_2 a:hover, div.subMenu li li.sub_discover_2_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_discover_2_3 a:hover, div.subMenu li li.sub_discover_2_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_discover_2_4 a:hover, div.subMenu li li.sub_discover_2_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_discover_2_5 a:hover, div.subMenu li li.sub_discover_2_5 a.sel {background-position:right -96px;}
+div.subMenu li li.sub_discover_2_6 a:hover, div.subMenu li li.sub_discover_2_6 a.sel {background-position:right -120px;}
+
+div.subMenu li li.sub_discover_3_1 a {background:url(../img/menu/discover_3.gif) no-repeat 0 0;}
+div.subMenu li li.sub_discover_3_2 a {background:url(../img/menu/discover_3.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_discover_3_3 a {background:url(../img/menu/discover_3.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_discover_3_4 a {background:url(../img/menu/discover_3.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_discover_3_1 a:hover, div.subMenu li li.sub_discover_3_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_discover_3_2 a:hover, div.subMenu li li.sub_discover_3_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_discover_3_3 a:hover, div.subMenu li li.sub_discover_3_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_discover_3_4 a:hover, div.subMenu li li.sub_discover_3_4 a.sel {background-position:right -72px;}
+
+/* 투자의 달인 */
+div.subMenu li.sub_expert_1 a {background:url(../img/menu/expert.gif) no-repeat 0 0;}
+div.subMenu li.sub_expert_2 a {background:url(../img/menu/expert.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_expert_3 a {background:url(../img/menu/expert.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_expert_4 a {background:url(../img/menu/expert.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_expert_5 a {background:url(../img/menu/expert.gif) no-repeat 0 -192px;}
+div.subMenu li.sub_expert_6 a {background:url(../img/menu/expert.gif) no-repeat 0 -240px;}
+div.subMenu li.sub_expert_7 a {background:url(../img/menu/expert.gif) no-repeat 0 -288px;}
+div.subMenu li.sub_expert_1 a:hover, div.subMenu li.sub_expert_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_expert_2 a:hover, div.subMenu li.sub_expert_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_expert_3 a:hover, div.subMenu li.sub_expert_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_expert_4 a:hover, div.subMenu li.sub_expert_4 a.sel {background-position:right -144px;}
+div.subMenu li.sub_expert_5 a:hover, div.subMenu li.sub_expert_5 a.sel {background-position:right -192px;}
+div.subMenu li.sub_expert_6 a:hover, div.subMenu li.sub_expert_6 a.sel {background-position:right -240px;}
+div.subMenu li.sub_expert_7 a:hover, div.subMenu li.sub_expert_7 a.sel {background-position:right -288px;}
+
+div.subMenu li li.sub_expert_1_1 a {background:url(../img/menu/expert_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_1_2 a {background:url(../img/menu/expert_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_expert_1_3 a {background:url(../img/menu/expert_1.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_expert_1_1 a:hover, div.subMenu li li.sub_expert_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_expert_1_2 a:hover, div.subMenu li li.sub_expert_1_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_expert_1_3 a:hover, div.subMenu li li.sub_expert_1_3 a.sel {background-position:right -48px;}
+
+div.subMenu li li.sub_expert_3_1 a {background:url(../img/menu/expert_3.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_3_2 a {background:url(../img/menu/expert_3.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_expert_3_1 a:hover, div.subMenu li li.sub_expert_3_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_expert_3_2 a:hover, div.subMenu li li.sub_expert_3_2 a.sel {background-position:right -24px;}
+
+div.subMenu li li.sub_expert_4_1 a {background:url(../img/menu/expert_4.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_4_2 a {background:url(../img/menu/expert_4.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_expert_4_1 a:hover, div.subMenu li li.sub_expert_4_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_expert_4_2 a:hover, div.subMenu li li.sub_expert_4_2 a.sel {background-position:right -24px;}
+
+div.subMenu li li.sub_expert_5_1 a {background:url(../img/menu/expert_5.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_5_2 a {background:url(../img/menu/expert_5.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_expert_5_1 a:hover, div.subMenu li li.sub_expert_5_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_expert_5_2 a:hover, div.subMenu li li.sub_expert_5_2 a.sel {background-position:right -24px;}
+
+div.subMenu li li.sub_expert_6_1 a {background:url(../img/menu/expert_6.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_6_1 a:hover, div.subMenu li li.sub_expert_6_1 a.sel {background-position:right 0;}
+
+div.subMenu li li.sub_expert_7_2 {height:40px;}
+div.subMenu li li.sub_expert_7_1 a {background:url(../img/menu/expert_7.gif) no-repeat 0 0;}
+div.subMenu li li.sub_expert_7_2 a {height:40px !important;background:url(../img/menu/expert_7.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_expert_7_1 a:hover, div.subMenu li li.sub_expert_7_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_expert_7_2 a:hover, div.subMenu li li.sub_expert_7_2 a.sel {height:40px !important;background-position:right -24px;}
+
+/* 투자컨설팅 */
+/*div.subMenu li.sub_counsel_1 a {background:url(../img/menu/counsel.gif) no-repeat 0 0;}*/
+div.subMenu li.sub_counsel_2 a {background:url(../img/menu/counsel.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_counsel_3 a {background:url(../img/menu/counsel.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_counsel_4 a {background:url(../img/menu/counsel.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_counsel_5 a {background:url(../img/menu/counsel.gif) no-repeat 0 -192px;}
+/*div.subMenu li.sub_counsel_1 a:hover, div.subMenu li.sub_counsel_1 a.sel {background-position:right 0;}*/
+div.subMenu li.sub_counsel_2 a:hover, div.subMenu li.sub_counsel_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_counsel_3 a:hover, div.subMenu li.sub_counsel_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_counsel_4 a:hover, div.subMenu li.sub_counsel_4 a.sel {background-position:right -144px;}
+div.subMenu li.sub_counsel_5 a:hover, div.subMenu li.sub_counsel_5 a.sel {background-position:right -192px;}
+
+/* 교육방송 */
+div.subMenu li.sub_edu_1 a {background:url(../img/menu/edu.gif) no-repeat 0 0;}
+div.subMenu li.sub_edu_2 a {background:url(../img/menu/edu.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_edu_3 a {background:url(../img/menu/edu.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_edu_4 a {background:url(../img/menu/edu.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_edu_5 a {background:url(../img/menu/edu.gif) no-repeat 0 -192px;}
+div.subMenu li.sub_edu_6 a {background:url(../img/menu/edu.gif) no-repeat 0 -240px;}
+div.subMenu li.sub_edu_1 a:hover, div.subMenu li.sub_edu_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_edu_2 a:hover, div.subMenu li.sub_edu_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_edu_3 a:hover, div.subMenu li.sub_edu_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_edu_4 a:hover, div.subMenu li.sub_edu_4 a.sel {background-position:right -144px;}
+div.subMenu li.sub_edu_5 a:hover, div.subMenu li.sub_edu_5 a.sel {background-position:right -192px;}
+div.subMenu li.sub_edu_6 a:hover, div.subMenu li.sub_edu_6 a.sel {background-position:right -240px;}
+
+div.subMenu li li.sub_edu_1_1 a {background:url(../img/menu/edu_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_edu_1_2 a {background:url(../img/menu/edu_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_edu_1_3 a {background:url(../img/menu/edu_1.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_edu_1_4 a {background:url(../img/menu/edu_1.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_edu_1_5 a {background:url(../img/menu/edu_1.gif) no-repeat 0 -96px;}
+div.subMenu li li.sub_edu_1_1 a:hover, div.subMenu li li.sub_edu_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_edu_1_2 a:hover, div.subMenu li li.sub_edu_1_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_edu_1_3 a:hover, div.subMenu li li.sub_edu_1_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_edu_1_4 a:hover, div.subMenu li li.sub_edu_1_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_edu_1_5 a:hover, div.subMenu li li.sub_edu_1_5 a.sel {background-position:right -96px;}
+
+div.subMenu li li.sub_edu_3_1 a {background:url(../img/menu/edu_3.gif) no-repeat 0 0;}
+div.subMenu li li.sub_edu_3_2 a {background:url(../img/menu/edu_3.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_edu_3_3 a {background:url(../img/menu/edu_3.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_edu_3_4 a {background:url(../img/menu/edu_3.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_edu_3_5 a {background:url(../img/menu/edu_3.gif) no-repeat 0 -96px;}
+div.subMenu li li.sub_edu_3_6 a {background:url(../img/menu/edu_3.gif) no-repeat 0 -120px;}
+div.subMenu li li.sub_edu_3_1 a:hover, div.subMenu li li.sub_edu_3_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_edu_3_2 a:hover, div.subMenu li li.sub_edu_3_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_edu_3_3 a:hover, div.subMenu li li.sub_edu_3_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_edu_3_4 a:hover, div.subMenu li li.sub_edu_3_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_edu_3_5 a:hover, div.subMenu li li.sub_edu_3_5 a.sel {background-position:right -96px;}
+div.subMenu li li.sub_edu_3_6 a:hover, div.subMenu li li.sub_edu_3_6 a.sel {background-position:right -120px;}
+
+div.subMenu li li.sub_edu_5_1 a {background:url(../img/menu/edu_5.gif) no-repeat 0 0;}
+div.subMenu li li.sub_edu_5_2 a {background:url(../img/menu/edu_5.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_edu_5_1 a:hover, div.subMenu li li.sub_edu_5_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_edu_5_2 a:hover, div.subMenu li li.sub_edu_5_2 a.sel {background-position:right -24px;}
+
+/*div.subMenu li li.sub_edu_6_6 {height:40px;}*/
+div.subMenu li li.sub_edu_6_1 a {background:url(../img/menu/edu_6.gif) no-repeat 0 0;}
+div.subMenu li li.sub_edu_6_2 a {background:url(../img/menu/edu_6.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_edu_6_3 a {background:url(../img/menu/edu_6.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_edu_6_4 a {background:url(../img/menu/edu_6.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_edu_6_5 a {background:url(../img/menu/edu_6.gif) no-repeat 0 -96px;}
+/*div.subMenu li li.sub_edu_6_6 a {height:40px !important;background:url(../img/menu/edu_6.gif) no-repeat 0 -120px;}*/
+div.subMenu li li.sub_edu_6_1 a:hover, div.subMenu li li.sub_edu_6_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_edu_6_2 a:hover, div.subMenu li li.sub_edu_6_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_edu_6_3 a:hover, div.subMenu li li.sub_edu_6_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_edu_6_4 a:hover, div.subMenu li li.sub_edu_6_4 a.sel {background-position:right -72px;}
+div.subMenu li li.sub_edu_6_5 a:hover, div.subMenu li li.sub_edu_6_5 a.sel {background-position:right -96px;}
+/*div.subMenu li li.sub_edu_6_6 a:hover, div.subMenu li li.sub_edu_6_6 a.sel {height:40px;background-position:right -120px;}*/
+
+/* 자자의 하루공감 */
+div.subMenu li.sub_day_1 a {background:url(../img/menu/day.gif) no-repeat 0 0;}
+div.subMenu li.sub_day_2 a {background:url(../img/menu/day.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_day_3 a {background:url(../img/menu/day.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_day_4 a {background:url(../img/menu/day.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_day_5 a {background:url(../img/menu/day.gif) no-repeat 0 -192px;}
+div.subMenu li.sub_day_1 a:hover, div.subMenu li.sub_day_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_day_2 a:hover, div.subMenu li.sub_day_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_day_3 a:hover, div.subMenu li.sub_day_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_day_4 a:hover, div.subMenu li.sub_day_4 a.sel {background-position:right -144px;}
+div.subMenu li.sub_day_5 a:hover, div.subMenu li.sub_day_5 a.sel {background-position:right -192px;}
+
+/*
+div.subMenu li li.sub_day_2_1 a {background:url(../img/menu/day_2.gif) no-repeat 0 0;}
+div.subMenu li li.sub_day_2_2 a {background:url(../img/menu/day_2.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_day_2_3 a {background:url(../img/menu/day_2.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_day_2_4 a {background:url(../img/menu/day_2.gif) no-repeat 0 -72px;}
+div.subMenu li li.sub_day_2_1 a:hover, div.subMenu li li.sub_day_2_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_day_2_2 a:hover, div.subMenu li li.sub_day_2_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_day_2_3 a:hover, div.subMenu li li.sub_day_2_3 a.sel {background-position:right -48px;}
+div.subMenu li li.sub_day_2_4 a:hover, div.subMenu li li.sub_day_2_4 a.sel {background-position:right -72px;}
+*/
+
+div.subMenu li li.sub_day_5_1 a {background:url(../img/menu/day_5.gif) no-repeat 0 0;}
+div.subMenu li li.sub_day_5_2 a {background:url(../img/menu/day_5.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_day_5_1 a:hover, div.subMenu li li.sub_day_5_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_day_5_2 a:hover, div.subMenu li li.sub_day_5_2 a.sel {background-position:right -24px;}
+
+/* 마이페이지 */
+div.subMenu li.sub_my_1 a {background:url(../img/menu/my.gif) no-repeat 0 0;}
+div.subMenu li.sub_my_2 a {background:url(../img/menu/my.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_my_3 a {background:url(../img/menu/my.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_my_4 a {background:url(../img/menu/my.gif) no-repeat 0 -144px;}
+div.subMenu li.sub_my_5 a {background:url(../img/menu/my.gif) no-repeat 0 -192px;}
+div.subMenu li.sub_my_6 a {background:url(../img/menu/my.gif) no-repeat 0 -240px;}
+div.subMenu li.sub_my_7 a {background:url(../img/menu/my.gif) no-repeat 0 -288px;}
+div.subMenu li.sub_my_8 a {background:url(../img/menu/my.gif) no-repeat 0 -336px;}
+div.subMenu li.sub_my_9 a {background:url(../img/menu/my.gif) no-repeat 0 -384px;}
+div.subMenu li.sub_my_1 a:hover, div.subMenu li.sub_my_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_my_2 a:hover, div.subMenu li.sub_my_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_my_3 a:hover, div.subMenu li.sub_my_3 a.sel {background-position:right -96px;}
+div.subMenu li.sub_my_4 a:hover, div.subMenu li.sub_my_4 a.sel {background-position:right -144px;}
+div.subMenu li.sub_my_5 a:hover, div.subMenu li.sub_my_5 a.sel {background-position:right -192px;}
+div.subMenu li.sub_my_6 a:hover, div.subMenu li.sub_my_6 a.sel {background-position:right -240px;}
+div.subMenu li.sub_my_7 a:hover, div.subMenu li.sub_my_7 a.sel {background-position:right -288px;}
+div.subMenu li.sub_my_8 a:hover, div.subMenu li.sub_my_8 a.sel {background-position:right -336px;}
+div.subMenu li.sub_my_9 a:hover, div.subMenu li.sub_my_9 a.sel {background-position:right -384px;}
+
+div.subMenu li li.sub_my_1_1 a {background:url(../img/menu/my_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_my_1_2 a {background:url(../img/menu/my_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_my_1_1 a:hover, div.subMenu li li.sub_my_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_my_1_2 a:hover, div.subMenu li li.sub_my_1_2 a.sel {background-position:right -24px;}
+
+div.subMenu li li.sub_my_3_1 a {background:url(../img/menu/my_3.gif) no-repeat 0 0;}
+/*div.subMenu li li.sub_my_3_2 a {background:url(../img/menu/my_3.gif) no-repeat 0 -24px;}*/
+div.subMenu li li.sub_my_3_3 a {background:url(../img/menu/my_3.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_my_3_1 a:hover, div.subMenu li li.sub_my_3_1 a.sel {background-position:right 0;}
+/*div.subMenu li li.sub_my_3_2 a:hover, div.subMenu li li.sub_my_3_2 a.sel {background-position:right -24px;}*/
+div.subMenu li li.sub_my_3_3 a:hover, div.subMenu li li.sub_my_3_3 a.sel {background-position:right -48px;}
+
+div.subMenu li li.sub_my_7_1 a {background:url(../img/menu/my_7.gif) no-repeat 0 0;}
+div.subMenu li li.sub_my_7_2 a {background:url(../img/menu/my_7.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_my_7_1 a:hover, div.subMenu li li.sub_my_7_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_my_7_2 a:hover, div.subMenu li li.sub_my_7_2 a.sel {background-position:right -24px;}
+
+/* S캐치 서비스안내 */
+div.subMenu li.sub_join_1 a {background:url(../img/menu/join.gif) no-repeat 0 0;}
+div.subMenu li.sub_join_2 a {background:url(../img/menu/join.gif) no-repeat 0 -48px;}
+div.subMenu li.sub_join_3 a {background:url(../img/menu/join.gif) no-repeat 0 -96px;}
+div.subMenu li.sub_join_1 a:hover, div.subMenu li.sub_join_1 a.sel {background-position:right 0;}
+div.subMenu li.sub_join_2 a:hover, div.subMenu li.sub_join_2 a.sel {background-position:right -48px;}
+div.subMenu li.sub_join_3 a:hover, div.subMenu li.sub_join_3 a.sel {background-position:right -96px;}
+
+div.subMenu li li.sub_join_1_1 a {background:url(../img/menu/join_1.gif) no-repeat 0 0;}
+div.subMenu li li.sub_join_1_2 a {background:url(../img/menu/join_1.gif) no-repeat 0 -24px;}
+div.subMenu li li.sub_join_1_3 a {background:url(../img/menu/join_1.gif) no-repeat 0 -48px;}
+div.subMenu li li.sub_join_1_1 a:hover, div.subMenu li li.sub_join_1_1 a.sel {background-position:right 0;}
+div.subMenu li li.sub_join_1_2 a:hover, div.subMenu li li.sub_join_1_2 a.sel {background-position:right -24px;}
+div.subMenu li li.sub_join_1_3 a:hover, div.subMenu li li.sub_join_1_3 a.sel {background-position:right -48px;}

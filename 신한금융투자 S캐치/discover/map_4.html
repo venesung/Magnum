@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>종목발굴 - 주식 Map - 신규서비스명</title>
+	<meta name="Title" content="신한금융투자"/>
+	<meta name="Description" content="신한금융투자"/>
+	<meta name="Keywords" content="신한금융투자"/>
+	<meta name="Author" content="신한금융투자"/>
+	<meta name="Robots" content="All"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script><!-- LNB 관련 -->
+	<script type="text/javascript" src="../js/shicNavi.js"></script><!-- LNB 관련 -->
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+			
+			shicNavi = new shicNavi(1,0,3);
+		});
+	</script>
+</head>
+<body>
+
+	<a href="#SkipToContents" id="accessibility">본문 바로가기</a>
+	
+	<div class="Wrapper">
+		<!-- Left Start -->
+		<script type="text/javascript" src="../js/temp_left.js"></script><!-- 테스트용임 -->
+		<!--// Left End -->
+		
+		<!-- MovingArea Start -->
+		<div class="RightArea">
+			<!-- SubMenu Start -->
+			<script type="text/javascript" src="../js/temp_left_sub.js"></script><!-- 테스트용임 -->
+			<!--// SubMenu End -->
+			
+			<div class="ContentsArea">
+				<!-- History Start -->
+				<div class="curPos">
+					<ul>
+						<li class="home"><a href="#"><span>메인페이지로</span></a></li>
+						<li><a href="#">종목발굴</a></li>
+						<li><a href="#">주식 Map</a></li>
+						<li class="end">차트 패턴 검색</li>
+					</ul>
+					
+					<div class="fRight">
+						<a href="#"><img src="../img/button/msg_01.gif" alt="15자 투자톡톡!" /></a>
+						<a href="#"><img src="../img/button/print_01.gif" alt="인쇄하기" /></a>
+						<a href="http://www.shinhaninvest.com" target="_blank"><img src="../img/common/logo.gif" alt="신한금융투자" /></a>
+						
+						<script type="text/javascript" src="../js/temp_msg.js"></script><!-- 테스트용임 -->
+					</div>
+					
+					<script type="text/javascript" src="../js/temp_search.js"></script><!-- 테스트용임 -->
+				</div>
+				<!--// History End -->
+				
+				<!-- Page Title Start -->
+				<div class="pageTitle bgTypeDis1">
+					<h1><img src="../img/title/discover_04.gif" alt="차트 패턴 검색" /></h1>
+					<p><img src="../img/title/discover_04_txt.gif" alt="기술적 분석을 통해 특정한 차트패턴을 나타내는 종목을 다양하게 검색할 수 있습니다." /></p>
+				</div>
+				<!--// Page Title End -->
+				
+				<!-- Contents Start -->
+				<div id="SkipToContents">
+					<!-- Tab Start -->
+					<div class="ChartList" id="OverTabType">
+						<ul>
+							<li class="on"><a href="#"><img src="../img/discover/cList_01_on.gif" alt="상승지속" class="on" /></a></li><!-- 선택됐을 경우 class="on" 이미지명 _on -->
+							<li><a href="#"><img src="../img/discover/cList_02_off.gif" alt="이중바닥형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_03_off.gif" alt="조정후상승" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_04_off.gif" alt="하락후상승" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_05_off.gif" alt="조정후재상승" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_06_off.gif" alt="횡보후상승" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_07_off.gif" alt="반등시도" /></a></li>
+							<li><a  href="#"><img src="../img/discover/cList_08_off.gif" alt="V바닥형" /></a></li>
+							
+							<li><a href="#"><img src="../img/discover/cList_09_off.gif" alt="역머리어깨형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_10_off.gif" alt="역쌍봉형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_11_off.gif" alt="강세이등삼각" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_12_off.gif" alt="상승사각깃발" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_13_off.gif" alt="상승직사각형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_14_off.gif" alt="횡보후재상승" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_15_off.gif" alt="하락지속" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_16_off.gif" alt="이중천정형" /></a></li>
+							
+							<li><a href="#"><img src="../img/discover/cList_17_off.gif" alt="V천정형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_18_off.gif" alt="반등실패" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_19_off.gif" alt="횡보후하락" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_20_off.gif" alt="머리어깨형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_21_off.gif" alt="쌍봉형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_22_off.gif" alt="약세이등삼각" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_23_off.gif" alt="확장삼각형" /></a></li>
+							<li><a href="#"><img src="../img/discover/cList_24_off.gif" alt="하락직사각형" /></a></li>
+						</ul>
+					</div>
+					<!--// Tab End -->
+					
+					<!-- Search Start -->
+					<div class="SearchBoxType5">
+						<fieldset>
+							<legend>검색</legend>
+							
+							<dl>
+								<dt><label for="아래 select랑 id 일치시켜주세요."><img src="../img/discover/txt_search_14.gif" alt="대상" /></label></dt>
+								<dd>
+									<select class="select" style="width:50px;" id="위에 label에 for값이랑 일치시켜주세요.">
+										<option value="전체">전체</option>
+										<option value="코스피">코스피</option>
+										<option value="코스닥">코스닥</option>
+									</select>
+								</dd>
+								
+								<dt><label for="아래 select랑 id 일치시켜주세요."><img src="../img/discover/txt_search_15.gif" alt="차트" /></label></dt>
+								<dd>
+									<select class="select" style="width:30px;">
+										<option value="일">일</option>
+										<option value="주">주</option>
+										<option value="월">월</option>
+									</select>
+								</dd>
+								
+								<dt><label for="아래 select랑 id 일치시켜주세요."><img src="../img/discover/txt_search_16.gif" alt="유사도" /></label></dt>
+								<dd>
+									<select class="select" style="width:80px;">
+										<option value="60% 이상">60% 이상</option>
+										<option value="70% 이상">70% 이상</option>
+										<option value="80% 이상">80% 이상</option>
+										<option value="90% 이상">90% 이상</option>
+									</select>
+								</dd>
+								
+								<dd class="btn"><a href="#"><img src="../img/button/search_03.gif" alt="검색하기" /></a></dd>
+							</dl>							
+						</fieldset>
+						<div class="ClearBlock"><!-- Clear Block --></div>
+					</div>
+					<!--// Search End -->
+					
+					<!-- Chart Start -->
+					<div class="ChartBoxType2">
+						<dl>
+							<dt>LG화학</dt>
+							<dd class="code">(068270)</dd>
+							<dd class="percent">유사도 (61.60%)</dd>
+							
+							<dd class="chart">
+								<img src="../img/discover/dummy_chart.gif" alt="CHART" style="width:784px;height:199px;" />
+							</dd>
+						</dl>
+						<div class="ClearBlock"><!-- Clear Block --></div>
+					</div>
+					<!--// Chart End -->
+					
+					<div class="Vspace40"><!-- Clear Block --></div>
+					
+					<!-- 검색 결과 Start -->
+					<div class="fLeft sResultData">검색결과 : <strong><span>13</span>종목</strong></div>
+					<div class="fRight dayData">
+						<strong>2012.05.24 14:30</strong> 기준
+						<a href="#"><img src="../img/button/reload_02.gif" alt="새로고침" /></a>
+					</div>
+					<!--// 검색 결과 End -->
+					
+					<div class="SpaceForResult"><!-- Vertical Space --></div>
+					
+					<!-- Table Start -->
+					<div class="tableType1">
+						<table summary="차트패턴 검색은 종목명, 현재가, 전일비, 등락률, 업종, 유사도로 구성된 리스트이며, 차트, 실주문, 포트폴리오 버튼을 제공합니다.">
+							<caption>차트 패턴 검색</caption>
+							
+							<colgroup>
+								<col width="60" />
+								<col width="*" />
+								<col width="85" span="3" />
+								<col width="90" />
+								<col width="70" />
+								<col width="110" />
+							</colgroup>
+							
+							<thead>
+								<tr>
+									<th><label class="label_check solo" for="checkbox-00"><input id="checkbox-00" value="1" type="checkbox" title="전체선택" /></label></th>
+									<th><img src="../img/discover/th_01.gif" alt="종목명" /></th>
+									<th><img src="../img/discover/th_04.gif" alt="현재가" /></th>
+									<th><img src="../img/discover/th_43.gif" alt="전일비" /></th>
+									<th><img src="../img/discover/th_44.gif" alt="등락률" /></th>
+									<th><img src="../img/discover/th_53.gif" alt="업종" /></th>
+									<th><img src="../img/discover/th_54.gif" alt="유사도" /></th>
+									<th><img src="../img/discover/th_34.gif" alt="바로가기" /></th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-01"><input id="checkbox-01" value="1" type="checkbox" title="" checked="checked" /></label></td>
+									<td class="l"><a href="#" class="type">LS네트웍스전환상환2우B</a></td>
+									<td class="r">127,900</td>
+									<td class="r"><span class="up"><img src="../img/icon/up_02.gif" alt="상승" /> 200,000</span></td>
+									<td class="r"><span class="up">13.45%</span></td>
+									<td>전기가스업</td>
+									<td class="r"><strong>90.6%</strong></td>
+									<td>
+										<a href="#chartView" onclick="showChart();return false;"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<!-- 차트 보임 -->
+								<tr id="chartView" class="chartView" style="display:none;">
+									<td colspan="8">
+										<div class="OutBox">
+											<dl>
+												<dt>LG화학</dt>
+												<dd class="num">(068270)</dd>
+												<dd class="price">227,900원</dd>
+												<dd class="grade"><img src="../img/icon/up_05.gif" alt="상승" /> <strong class="up">16,600</strong></dd><!-- 이미지번호 05번 상승/하락 이미지번호 06번 급상승/급하락, 상승 class="up" / 하락 class="down" -->
+												<dd class="percent">14.91%</dd>
+												<dd class="btn"><a href="#"><img src="../img/button/view_01.gif" alt="차트 상세보기" /></a></dd>
+											</dl>
+											
+											<div class="ClearBlock"><!-- Clear Block --></div>
+											
+											<!-- 차트 -->
+											<img src="../img/ranking/temp_01.gif" alt="" />
+											<!--// 차트 -->
+										</div>
+									</td>
+								</tr>
+								<!--// 차트 보임 -->
+								<tr>
+									<td><label class="label_check solo" for="checkbox-02"><input id="checkbox-02" value="1" type="checkbox" title="" /></label></td>
+									<td class="l"><a href="#" class="type">안랩</a></td>
+									<td class="r">127,900</td>
+									<td class="r"><span class="up"><img src="../img/icon/up_02.gif" alt="상승" /> 150</span></td>
+									<td class="r"><span class="up">3.45%</span></td>
+									<td>서비스업</td>
+									<td class="r"><strong>80.6%</strong></td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-03"><input id="checkbox-03" value="1" type="checkbox" title="" /></label></td>
+									<td class="l"><a href="#" class="type">KOSEF 미국달러선물</a></td>
+									<td class="r">127,900</td>
+									<td class="r"><span class="down"><img src="../img/icon/down_02.gif" alt="하락" /> 150</span></td>
+									<td class="r"><span class="down">- 3.45%</span></td>
+									<td>서비스업</td>
+									<td class="r"><strong>70.3%</strong></td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-04"><input id="checkbox-04" value="1" type="checkbox" title="" /></label></td>
+									<td class="l"><a href="#" class="type">KOSEF 미국달러선물</a></td>
+									<td class="r">27,900</td>
+									<td class="r"><span class="down"><img src="../img/icon/down_01.gif" alt="하락" /> 150</span></td>
+									<td class="r"><span class="down">- 3.45%</span></td>
+									<td>서비스업</td>
+									<td class="r"><strong>65.9%</strong></td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-05"><input id="checkbox-05" value="1" type="checkbox" title="" /></label></td>
+									<td class="l"><a href="#" class="type">KOSEF 미국달러선물</a></td>
+									<td class="r">27,900</td>
+									<td class="r"><span class="up"><img src="../img/icon/up_01.gif" alt="상승" /> 150</span></td>
+									<td class="r"><span class="up">3.45%</span></td>
+									<td>서비스업</td>
+									<td class="r"><strong>50.4%</strong></td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								
+								<!-- 검색결과 없음 -->
+								<tr>
+									<td colspan="8" class="noData">검색된 <span>종목</span>이 없습니다.</td>
+								</tr>
+								<!--// 검색결과 없음 -->
+							</tbody>
+						</table>
+					</div>
+					<!--// Table End -->
+					
+					<!-- Button Start -->
+					<div class="BtnType1">
+						<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+					</div>
+					<!--// Button End -->
+					<!-- Paging Start -->
+					<div class="paging">
+						<a href="#" class="start"><img src="../img/button/prev_01.gif" alt="처음으로" /></a>
+						<a href="#" class="prev"><img src="../img/button/prev_02.gif" alt="이전" /></a>
+						
+						<a href="#">1</a>
+						<a href="#" class="sel">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">7</a>
+						<a href="#">8</a>
+						<a href="#">9</a>
+						<a href="#" class="noBar">10</a>
+						
+						<a href="#" class="next"><img src="../img/button/next_02.gif" alt="다음" /></a>
+						<a href="#" class="end"><img src="../img/button/next_01.gif" alt="마지막으로" /></a>
+					</div>
+					<!--// Paging End -->
+					
+				</div>
+				<!--// Contents End -->
+				
+				<!-- Footer Start -->
+				<div class="FooterArea"><img src="../img/temp_footer.jpg" alt="" /></div>
+				<!--// Footer End -->
+			</div>
+			
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// MovingArea End -->
+	</div>
+
+</body>
+</html>

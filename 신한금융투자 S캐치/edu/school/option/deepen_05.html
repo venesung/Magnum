@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 심화과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="deepen_01.html">1장. 선물가격결정</a></li>
+			<li><a href="deepen_02.html">2장. 선물 베이시스와 괴리율</a></li>
+			<li><a href="deepen_03.html">3장. 선물 괴리도와 괴리율</a></li>
+			<li><a href="deepen_04.html">4장. 옵션 가격결정요인</a></li>
+			<li><a href="deepen_05.html" class="sel">5장. 옵션 가격결정모형</a></li>
+			<li><a href="deepen_06.html">6장. 옵션 풋콜패러티</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_05.gif" alt="옵션가격결정모형" /></h2>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_02.gif" alt="옵션가격결정모형" />
+		옵션의 가격결정은 블랙-숄즈(Black-Scholes)에 의해 처음으로 정형화된 모습을 갖추었고, 1973년 처음으로 블랙숄즈모형이 소개된 후 이의 단점을 보완하고자 여러 다른 모형들이 시도되었으나, 블랙-숄즈모형이 옵션거래자들 사이에 가장 널리 쓰이고 있습니다.
+	</div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_01.gif" alt="블랙-숄즈(Black-Scholes) 모형" /></h3>
+	<p class="cDepthTxt">블랙-숄즈 모형은 콜옵션(풋옵션)의 가치를 결정하기 위해 주식가격의 등락과 관계없이 항상 콜옵션(풋옵션)과 동일한 투자수익률을 낳게 해주는 포트폴리오를 구성하여 아래와 같은 가정하에 옵션의 가격을 산출합니다. 실제 산출과정이 복잡하여 대체로 가정과 결과만을 알고 있으면 됩니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_01.gif" alt="가정" /></h4>
+	<div class="cDepthTxt2"><ul class="cDepthBul">
+		<li>기초자산의 거래가 불연속적이 아니라 지속적으로 이루어지므로 항상 가격변동이 일어나고 있다.</li>
+		<li>기초자산의 1일 가격변동치가 로그정규분포(Lognormal Distribution)를 따른다.</li>
+		<li>옵션 잔존기간 동안 무위험이자율은 변하지 않는다.</li>
+		<li>가격의 변동성은 옵션의 잔존기간 동안 고정되어 있다.</li>
+		<li>옵션 잔존기간 동안 주식배당금이나 쿠폰지불금 같은 배당금의 지불이 없다.</li>
+		<li>옵션의 행사는 단지 만기일에만 할 수 있는 유럽식 옵션의 가격을 산정한다.(KOSPI 200 옵션도 유럽식입니다.)</li>
+	</ul></div>
+	
+	<div class="Vspace5"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_02.gif" alt="결과" /></h4>
+		
+	<div class="cDepthTxt2"><img src="../img/edu/img_futures_deepen_09.jpg" alt="" /></div>
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_02.gif" alt="이항(Binomial) 모형" /></h3>
+	<p class="cDepthTxt">
+		블랙-숄즈모형과 함께 만기이전에 옵션을 행사할 수 있는 미국식옵션의 가치를 설명할 수 있는 모형이 이항(Binomial)모형입니다.<br />
+		이항모형은 대상자산의 가격이 단순히 일정비율로 오르거나 내리는 이항분포(Binomial Distribution)에 따른다는 가정하에 개발된 모형으로 블랙-숄즈모형에 비해 산출이 간단하기 때문에 블랙-숄즈모형을 대체하여 많이 사용되고 있습니다. 증권거래소에서 증거금산출을 위한 옵션가격 산출시 이항모형에 의하여 산출하고 있으며, 대부분의 증권사에서 제시하는 이론가는 블랙-숄즈모형에 의해 산출된 이론가를 제시하고 있습니다.<br />
+		당사의 HTS에서 제시하는 이론가도 블랙-숄즈모형에 의해 산출됩니다.
+	</p>
+	
+	<div class="Vspace35"><!-- Vertical Space --></div>
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_06.gif" alt="옵션의 이론가, 민감도, 변동성" /></h2>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_01.gif" alt="옵션의 이론가, 변동성, 민감도란?" />
+		<strong>A:</strong> 옵션은 선물에 비해 가격결정도 복잡하고, 변동성이 어떻고, 민감도가 어떻고 하는데...<br />
+		<strong>B:</strong> 맞아... 나도 그런 얘기 많이 들어봤는데 도대체 다른 세상 얘기하는거 같고, 너무 어렵더라구, <br />
+		&nbsp;&nbsp;&nbsp; 기회가 있음 그게 무슨 말인지 알고 싶었는데...
+	</div>
+	
+	<div class="stepEdu1"><img src="../img/edu/img_step01_01.gif" alt="01 옵션 이론가" /></div>
+	
+	<!-- step1 Start -->
+	<p>기초자산가격, 권리행사가격, 잔존기간, 단기금리, 변동성 변수를 앞서 살펴본 이론가산출모형에 대입하여 옵션이론가를 산출합니다.<br />
+	투자자의 입장에서는 시장가격과 이론가의 차이를 보고, 고평가여부에 따라 옵션을 매수할 것인지 매도할 것인지 판단할 수 있기 때문에 옵션의 적정 이론가산출이 중요합니다.<br />
+	그런데, 다른 변수들은 모두 쉽게 찾을 수 있는 변수들이지만 변동성에 대해서는 모든 사람이 동의하는 값을 찾는 것이 쉽지 않습니다. 동일한 블랙-숄즈모형을 사용하여 각 증권사들이 이론가를 산출하지만, 값이 다른 이유는 변동성산출방식에 차이가 있기 때문입니다. 즉, 옵션가격결정모형을 이용할 때 가장 중요한 것이 가격변동성을 알아내는 일입니다. 이러한 변동성 산출방법에 대하여 알아보도록 하겠습니다.</p>
+	<!-- step1 End -->
+	
+	<div class="stepEdu1"><img src="../img/edu/img_step01_02.gif" alt="옵션의 이론가, 민감도, 변동성 step2" /></div>
+	
+	<!-- step2 Start -->
+	<p>옵션가격을 산출하는데 가장 중요한 변수가 되는 것이 변동성이라고 했습니다. 이러한 변동성은 변동성의 변화에 대해 옵션가격이 얼마나 민감하게 반응하는가를 평가하여 옵션을 포함한 최적의 포트폴리오를 구성하거나, 시장의 옵션가격이 정당하게 평가되고 있는가를 판단하여 이에 대응하는 적절한 옵션포지션을 유지하기 위해서 추정을 합니다. 변동성은 추정에 의하여 산출하는데 역사적 변동성(Historical Volatility)과 내재변동성(Implied Volatility)을 주로 사용합니다. 각각의 추정방법과 추정시 논쟁이 되는 사항들, 각 변동성들의 활용법에 대하여 알아보도록 하겠습니다.</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_04.gif" alt="역사적 변동성(Historical Volatility)" /></h3>
+	<p class="cDepthTxt">
+		역사적 변동성은 과거에 기초자산이 변해 왔던 행태가 미래에도 비슷하게 되풀이될 것이라는 가정하에 계산되는 것입니다.<br />
+		과거 가격자료를 이용하여 변동성을 구하는 방법으로, 보편적으로 종가의 수익률을 이용하여 표준편차를 구하여 역사적 변동성을 산출합니다. 역사적 변동성을 산출해보도록 하죠.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_03.gif" alt="추정방법" /></h4>
+	
+	<div class="cDepthTxt2"><ul class="cDepthBul">
+		<li><img src="../img/edu/img_futures_deepen_11.jpg" alt="" align="right" style="margin-bottom:20px;" />먼저 일별 수익율을 구합니다.</li>
+		<li class="clear"><img src="../img/edu/img_futures_deepen_12.jpg" alt="" align="right" style="margin-bottom:20px;" />일별 수익율의 평균을 구한 후 표준편차를 계산하여 변동성을 산출합니다.</li>
+		<li class="clear"><img src="../img/edu/img_futures_deepen_13.jpg" alt="" align="right" />위에서 산출한 표준편차 σ는 일별수익율로 구해졌으므로 옵션가격모형에서 사용하기 위해 연율로 환산합니다.</li>
+	</ul></div>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+		
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_04.gif" alt="논쟁사항" /></h4>
+	<p class="cDepthTxt2">
+		상기 방법에 따라 역사적 변동성산출시 얼마 동안의 과거자료를 이용하여 변동성을 구하느냐, 일별수익율을 이용하여 구해진 표준편차를 연이율로 환산할 때 trading days를 Calendar Day로 하느냐, Trading Day로 하느냐에 따라 변동성값이 달라집니다.따라서 어떠한 방법이 맞는지에 대하여 꾸준한 논쟁이 되고있습니다.<br /><br />
+		각 논쟁사항들을 살펴보도록 하죠.<br /><br />
+	</p>
+	
+	<h5 class="cDepthType1"><strong class="code">ISSUE 01</strong> 얼마 동안의 과거자료를 사용하여 변동성을 산출하는가?</h5>
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_14.jpg" alt="" vspace="20" /></div>
+	<p class="cDepthTxt3">즉, T를 얼마로 사용하느냐의 문제인데 최근 90일 내지 180일간의 일별종가 수익율을 사용하는 것이 보편적입니다.<br /><br /></p>
+	
+	<h5 class="cDepthType1"><strong class="code">ISSUE 02</strong> 표준편차를 연이율로 환산시 Calendar days와 Trading days중 어느 것을 사용하여 변동성을 산출하는가?</h5>
+	<p class="cDepthTxt3">
+		주가의 변동성이 주식의 미래수익율에 영향을 주는 새로운 정보가 무작위로 시장에 알려짐에 따라 야기된다는 주장과 주로 거래에 의해 발생된다는 주장이 일부 분석가들 사이에서 제기되고 있고, 결국 이러한 주장은 거래가 이루어질 때와 이루어지 않을 때 변동성이 같으냐는 분석을 야기시켰습니다.<br /><br />
+		실증분석결과 변동성이 상당부분 거래자체에 의해서 야기된다는 결론을 도출하였고, 따라서, 옵션가치를 평가시 비거래일은 무시하고 거래일별 변동성을 이용하여 산출해야한다는 결론을 도출하게 되었습니다.<br />
+		즉, 표준편차를 연이율로 환산시 Trading days를 사용하여 도출하고 1년동안의 거래일수로 당사에서는 250일을 사용합니다.
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_05.gif" alt="내재 변동성(Implied Volatility)" /></h3>
+	<p class="cDepthTxt">앞서 역사적 변동성 산출시 자료수가 많을수록 미래예측성이 떨어진다고 했는데, 그러한 점을 보완하기 위해서 내재변동성을 사용합니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_03.gif" alt="추정방법" /></h4>
+	<p class="cDepthTxt2">내재변동성은 옵션가격모형에서 각 변수들을 입력한 상태에서 역으로 산출해냅니다. 즉, 기초자산가격, 권리행사가격, 잔존기간, 단기금리, 변동성 변수를 옵션 이론가산출모형에 대입하여 옵션이론가를 산출하는데, 여기에서 옵션이론가대신 현재 시장에서 거래되고 있는 가격을 이용하여 변동성을 추정해내면 됩니다.</p>
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_15.jpg" alt="" vspace="20" /></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_05.gif" alt="내재변동성 활용법" /></h4>
+	<h5 class="cDepthType1">활용법 1</h5>
+	<p class="cDepthTxt3">역사적 변동성은 단 하나의 값이 산출되지만, 내재변동성은 콜옵션이냐, 풋옵션이냐, 권리행사가격이 얼마인가, 잔존기간이 얼마인가에 따라 다른 값이 산출됩니다. 따라서 옵션들의 가치에 대한 상대비교를 가능하게 해주는 장점이 있습니다.</p>
+	<div class="textTotable"><!-- Vertical Space --></div>
+	<h5 class="cDepthType1">활용법 2</h5>
+	<p class="cDepthTxt3">투자자들은 내재변동성을 상대적으로 고평가 되어 있다고 판단되는 옵션을 매도하고, 저평가되어있다고 판단되는 옵션을 매수하는데 활용할 수 있습니다. 즉, 내재변동성은 옵션기준물의 위험(Risk)정도에 대한 시장참가자들의 평가를 대변해 주는 지표입니다.</p>
+	<div class="textTotable"><!-- Vertical Space --></div>
+	<h5 class="cDepthType1">활용법 3</h5>
+	<p class="cDepthTxt3">내재변동성은 계산방법에서 알 수 있듯이 옵션이론가산출모형을 만족시키는 값을 계속 대입하여 수치최적화 방법을 통해 산출되기 때문에 계산방법이 어렵고, 일치된 값을 갖지 못하는 경우가 발생하기 때문에 실제적으로는 대표되는 내재변동성을 구하기 위해 여러가지 상이한 행사가격으로부터 구해진 여러 개의 내재변동성을 가중평균하여 사용하는 것이 일반적입니다. 주로 ATM옵션의 가중치를 크게하여 대표내재변동성을 산출, 활용합니다.</p>
+	<!-- step2 End -->
+	
+	<div class="stepEdu1"><img src="../img/edu/img_step01_03.gif" alt="03 옵션의 민감도" /></div>
+
+	<!-- step3 Start -->
+	<p>
+		옵션거래자들은 미래 짧은 기간 동안 기초자산의 가격이 조금 변하더라도 자신들이 관리하는 포트폴리오의 가치가 변하지 않도록 하는데 포커스를 맞춥니다. 이러한 행위를 헤징(Hedging)이라고 하고, 이러한 헤징을 하는데 고려하는 요소들이 옵션의 민감도입니다.<br />
+		즉, 옵션가격결정모형에서 일부 변수들이 변할 때 가격이 변하는데 얼마만큼 변하는지 알 수 있다면 이를 상쇄시켜줄 수 있는 만큼 Hedging을 하여 포트폴리오의 위험을 최소화시킬 수 있겠죠. 그래서 옵션의 민감도가 옵션거래에 있어 중요한 Factor로 활용됩니다.<br />
+		그렇다면 옵션의 민감도를 알아볼까요?
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_06.gif" alt="델타" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_06.gif" alt="의미" /></h4>
+	<p class="cDepthTxt2">기초자산 가격변화에 대한 옵션가격의 변화. 옵션가격을 기초자산가격의 함수로 나타내는 곡선의 기울기</p>
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_16.jpg" alt="" vspace="20" /></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_07.gif" alt="활용" /></h4>
+	<h5 class="cDepthType1">포트폴리오 헤징</h5>
+	<p class="cDepthTxt3">KOSPI 200 콜옵션의 델타가 0.6이라고 할 때, KOSPI200 지수가 1포인트 오르면 가격은 60%인 0.6포인트만큼 상승한다는 것을 의미합니다. 상기 콜옵션을 10계약 매수하여 보유하고 있는 투자자의 경우 주가가 하락할 경우 60%인 6P손실이 발생될 수 있습니다. 이러한 포트폴리오 손실발생을 막기위해 옵션델타와 반대방향으로 선물포지션을 취하는 것이 포트폴리오 헤징입니다.<br />
+	<img src="../img/edu/img_futures_deepen_17.jpg" alt="" vspace="20" /><br />
+	
+	즉, 선물 6계약 매도를 하면 주가하락시 옵션손실(옵션델타)이 선물이익(선물델타)으로 상쇄되어 포트폴리오의 가치가 변화되지 않게 됩니다.(포지션델타 0) 이렇게 포지션델타가 0인 경우를 델타중립포지션이라고 합니다.<br />
+	그런데, 델타가 변하므로 투자자의 포지션이 델타중립된 기간이 매우 짧아서, 주기적으로 재조정 해야합니다. 이렇게 재조정하는 과정에서 다른 민감도Factor를 활용하게 됩니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_08.gif" alt="속성" /></h4>
+	<h5 class="cDepthType1">델타와 기초자산가격</h5>
+	<p class="cDepthTxt3">기초자산가격이 오르면 콜옵션은 행사가치가 올라가면서 ITM옵션이 되고, 델타는 1에 가까워지고, 풋옵션은 행사가치가 떨어지면서 OTM옵션이 되고 델타는 0에 가까워집니다. 즉, 델타는 옵션이 행사될(ITM옵션이 될) 확률이라고 볼 수 있습니다.</p>	
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_18.jpg" alt="" vspace="20" /></div>
+
+	<h5 class="cDepthType1">델타와 잔존기간</h5>
+	<p class="cDepthTxt3">일반적으로 ITM, OTM옵션은 만기에 비례하여 ATM화가 진행됩니다. 즉, 만기가 길어질수록 콜옵션은 0.5에 근접하고, 풋옵션은 -0.5에 근접하게 됩니다.</p>
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_19.jpg" alt="" vspace="20" /></div>
+	
+	<h5 class="cDepthType1">델타와 변동성</h5>
+	<p class="cDepthTxt3">
+		델타와 변동성간의 관계는 델타와 잔존기간간의 관계와 정확히 일치합니다.<br />		 
+		따라서, 델타중립포지션은 기초자산가격의 변화뿐 아니라 시간의 경과 또는 변동성의 변화에 따라서도 중립상태가 붕괴될 수 있고, 옵션가격모델을 이용하여 델타를 추출하려면 변동성을 투입해야 하는데 투입하는 변동성이 정확하지 않으면 그로부터 추출한 델타값을 통해 델타중립적 포지션을 구성해도 무의미하게 됩니다.<br />
+		즉, 델타중립적 포지션이 현재 또는 미래 시장여건에 대한 예측을 토대로 하는 또 하나의 추정량에 불과하므로 과신해서는 안됩니다.
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_20.gif" alt="감마" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_06.gif" alt="의미" /></h4>
+	<div class="cDepthTxt2">
+		기초자산 가격변화에 대한 델타의 변화. 옵션가격을 기초자산가격의 함수로 나타내는 곡선의 변화속도
+		
+		<div class="designEdu2" style="text-align:center;"><img src="../img/edu/img_futures_deepen_20.gif" alt="" /></div>
+	
+		델타가 현재의 방향위험을 의미하는 반면, 감마는 기초자산가격이 변화하는 경우 방향위험이 어떻게 변화할 것인가를 의미합니다.<br />		 
+		만일 감마가 작으면 델타는 천천히 변하고 포트폴리오의 가격변동위험노출이 작기 때문에 포지션헤징의 필요성이 적지만, 감마의 절대치가 크면, 델타는 기초자산의 가격변화에 민감해지고, 포지션을 재조정하지 않고 일정기간 방치해놓으면 매우 위험해집니다. 그래서 기관투자자들의 경우 보유포지션의 감마값을 매우 철저하게 점검하여 포지션을 구성합니다.<br />		 
+		감마값을 0으로 만들면, 기초자산의 가격이 큰 폭으로 변해도 포트폴리오의 가치는 거의 변하지 않게되는 포지션을 구성할 수 있습니다.
+	</div>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_08.gif" alt="속성" /></h4>
+	<h5 class="cDepthType1">감마와 기초자산가격</h5>
+	<p class="cDepthTxt3">
+		옵션커브를 보면 기울기의 변화가 양극단에서 미미한 것을 알 수 있습니다.<br />
+		감마는 이러한 기울기의 변화도를 의미하기 때문에 콜풋에 관계없이 ATM에서 가장 크고, ITM이나 OTM으로 갈수록 작아지게 되어 ATM을 중심으로 오른쪽 그래프와 같이 종모양을 형성합니다.
+	</p>	
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_21.jpg" alt="" vspace="20" /></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_21.gif" alt="세타" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_06.gif" alt="의미" /></h4>
+	<p class="cDepthTxt2">
+		잔존기간이 감소함에 따른 옵션가격의 변화 , 시간가치의 감소속도<br />
+		만기에 가까워질수록 옵션가치는 감소하므로 옵션의 세타는 거의 대부분 음수입니다. 즉, 옵션이 소모성상품이라는 것을 나타내주는 민감도지표가 세타입니다. 세타는 델타와는 다른 유형의 헤징수단으로 시간의 경과에 대해서는 불확실성이 존재하지 않기 때문에 시간경과가 미치는 영향은 헤지할 필요가 없어 보이기도 합니다.<br />
+		하지만, 델타중립인 포트폴리오의 경우 세타가 큰 양수이면 감마는 절대값이 큰 음수가 되는 경향이 있고, 반대로 감마가 절대값이 큰 음수이면 세타는 큰 양수가 되는 경향이 있습니다. 즉, 포트폴리오가 델타중립일 때 세타는 감마의 대용치로 사용되기도 합니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_08.gif" alt="속성" /></h4>
+	<h5 class="cDepthType1">세타와 감마와의 관계</h5>
+	<p class="cDepthTxt3">
+		모든 옵션포지션은 가격변동과 시간가치소멸간의 상반적 관계구조하에 놓여있습니다. 대상자산의 가격변동을 원하는 투자자는 시간가치가 손실되는 것을 받아들여야 하고, 그 반대의 경우도 성립합니다. 따라서 어떤 투자자든 가격변동과 시간가치가 동시에 유리하게 움직이는 포지션을 보유할 수 없게 됩니다.<br />
+		예를 들어 델타가 1에 가깝다는 것은 향후 지수가 어떻게 변하더라도 델타가 크게 변할 수 없는 것을 의미하고, 감마도 매우 작아집니다. 반면, 만기에 가까워지면 감마는 매우 커지게 되어 기초자산이 조금만 상승하여도 옵션가격은 크게 변하지만 시간가치는 급속하게 감소하게 됩니다. 즉, 세타와 감마는 ‘대칭적 상반관계’를 유지하고 있기 때문에 감마가 커지면 세타도 커지고, 감마가 작아지면 세타도 작아집니다.
+	</p>	
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_22.gif" alt="베가" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_06.gif" alt="의미" /></h4>
+	<p class="cDepthTxt2">
+		변동성의 변화에 따른 옵션가격의 변화<br />
+		기초자산의 가격이 변하기 때문에, 만기가 가까워지기 때문에 옵션가격이 변하기도 하지만, 변동성의 변화로 인하여 옵션가격이 변하기도 합니다. 이러한 변동성의 변화에 따른 옵션가격의 변화를 측정한 것이 베가입니다.<br />
+		베가는 포지션이 Long이면 (+)값을 즉 변동성이 증가하기를 바라는 포지션이고, Short이면 (-)값을 갖게 되어 변동성이 감소하기를 바라는 포지션이 됩니다. 또한 베가의 절대값이 크면 작은 변동성의 변화에 대해 포트폴리오의 가치는 급변하고, 절대값이 작으면 변동성의 변화가 포트폴리오의 가치에 미치는 영향은 비교적 작게 됩니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_08.gif" alt="속성" /></h4>
+	<h5 class="cDepthType1">베가와 내재가치</h5>
+	<p class="cDepthTxt3">감마와 마찬가지로 ITM이나 OTM옵션이 OTM이나 ITM으로 변화할 가능성은 낮아지게 되고, 따라서 베가는 ATM옵션이 가장 높습니다. 하지만, 변동성변화에 대한 옵션가격변화율은 OTM쪽이 가장 높습니다.</p>	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	<h5 class="cDepthType1">베가와 잔존기간</h5>
+	<p class="cDepthTxt3">
+		만기일이 가까워질수록 옵션계약의 효력이 조만간 사라지기 때문에 변동성이 급변하더라도 옵션가격은 거의 변화하지 않습니다. 따라서 베가는 잔존기간과 비례합니다. <br />
+		즉, 잔존기간이 길수록 베가는 커지고, 잔존기간이 짧을수록 베가는 작아집니다.<br />
+		실제 시장에서 만기일을 앞두고 OTM종목에 대한 집중적인 매수세가 유입되어 내재변동성이 높게 형성되는 경우가 종종 나타나지만, 옵션가격은 전일에 비해 그다지 움직이지 않고 있는 것을 볼 수 있는데, 이는 잔존기간에 비례하는 베가의 속성을 나타내는 사례라고 볼 수 있습니다.
+	</p>	
+	<div class="Vspace10"><!-- Vertical Space --></div>	
+	<h5 class="cDepthType1">베가와 변동성</h5>
+	<p class="cDepthTxt3">베가는 변동성이 높을수록 커지는데, 이는 시장이 안정적일 때는 변동성이 변화하더라도 옵션가격변화가 그다지 크지 않고, 변동성자체가 매우 큰 급변하는 시장에서는 변동성에 대한 옵션가격의 변화도 높다는 것을 의미합니다. 변동성의 측정이 어렵고, 일치된 변동성 값도 존재하지 않기 때문에 베가의 중요도는 그만큼 낮아져있습니다.</p>	
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_10.gif" alt="로(p)" /></h3>
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_06.gif" alt="의미" /></h4>
+	<p class="cDepthTxt2">
+		이자율의 변화에 따른 옵션가격의 변화<br />
+		옵션가격은 대체로 금리변화에 대해 비탄력적이고, 금리 상승시 실물자산보유비용이 상승하기 때문에 발생되는 옵션가격 상승요인과 기초자산가격하락에 따른 옵션가격하락요인이 동시에 작용하기 때문에 이자율 변화가 옵션가격에 미치는 영향은 다소 모호하고, 따라서 중요도는 가장 떨어집니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_deepen_08.gif" alt="속성" /></h4>
+	<h5 class="cDepthType1">로와 잔존기간</h5>
+	<p class="cDepthTxt3">금리변화가 옵션가격에 영향을 미치는 것은 보유하는데 기회비용을 부담해야 하는 데서 비롯됩니다. 따라서, 잔존기간이 길수록 옵션가격이 비싸고 그에 따라 부담하는 기회비용이 높을 수밖에 없으므로 잔존기간이 길수록 로값은 커지고, 잔존기간이 짧을수록 로값은 작아집니다.</p>	
+<div class="Vspace10"><!-- Vertical Space --></div>	
+	<h5 class="cDepthType1">로와 내재가치</h5>
+	<p class="cDepthTxt3">내재가치가 큰 옵션일수록 보유하는데 부담하는 기회비용이 증가하므로 로값의 크기는 ITM옵션이 가장 크고, ATM옵션, OTM옵션 순이 됩니다.</p>
+	<!-- step3 End -->	
+	
+	<div class="stepEdu1"><img src="../img/edu/img_step01_04.gif" alt="옵션의 이론가, 민감도, 변동성 step4" /></div>
+	
+	<!-- step4 Start -->
+	<p>goodi 2004의 2100번 화면에서 옵션의 이론가, 변동성, 민감도를 살펴볼 수 있습니다.</p>
+	<div class="imgOutBox" style="margin-top:10px;"><img src="../img/edu/img_futures_deepen_22.jpg" alt="" /></div>
+	
+	<div class="tbCommentBottom">
+		<ul class="cDepthBul">
+			<li><strong>01. </strong>옵션가격모형에 기초자산가격인 KOSPI200지수 (225.54), 권리행사가격(225),잔존기간(10일), 금융비용(2.46%), 변동성(17.46 역사적변동성 HV)을 대입하여 산출한 값이 표시되어있는 이론가</li>
+			<li><strong>02. </strong>HV는 역사적변동성, IV는 내재변동성</li>
+			<li><strong>03. </strong>옵션가격모형의 변수들(KOSPI200지수, 권리행사가격, 잔존기간, 금융비용, 변동성)의 변화에 따른 옵션가격의 변화를 나타내는 민감도 조회. 주로 델타, 감마, 쎄타 활용</li>
+		</ul>
+	</div>
+	
+	<!-- step4 End -->	
+	
+	</body>
+</html>

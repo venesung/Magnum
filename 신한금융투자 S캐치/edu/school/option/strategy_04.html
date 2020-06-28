@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 투자전략</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="strategy_01.html">1장. 선물 헤지거래</a></li>
+			<li><a href="strategy_02.html">2장. 선물 투기거래</a></li>
+			<li><a href="strategy_03.html">3장. 선물 스프레드거래</a></li>
+			<li><a href="strategy_04.html" class="sel">4장. 선물 차익거래</a></li>
+			<li><a href="strategy_05.html">5장. 옵션 방향성전략</a></li>
+			<li><a href="strategy_06.html">6장. 옵션 변동성전략</a></li>
+			<li><a href="strategy_07.html">7장. 옵션 차익거래와 헤지거래</a></li>
+			<li><a href="strategy_08.html">8장. 옵션 합성전략</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_str_04.gif" alt="선물 차익거래" /></h2>
+	
+	<div class="designEdu1">
+		<strong>A:</strong> KOSPI 200지수로 선물을 구성한 이유가 차익거래를 용이하게 하기 위해서라고 하고, 가끔 뉴스에서 
+보면 차익거래물량이<br />&nbsp;&nbsp;&nbsp;&nbsp;얼마가 쏟아져나왔다 그러던데…<br />
+		<strong>B:</strong> 선물과 현물가격의 차이가 베이시스라고 앞에서 배웠고, 이 베이시스가 만기에는 0이 된다고 했잖아? 
+이점을 이용해서<br />&nbsp;&nbsp;&nbsp;&nbsp;거래하는 것이 차익거래야.
+	</div>
+	
+	<p>
+		선물옵션개념잡기에서 베이시스와 괴리율에 대해서 이미 살펴보았습니다. 선물가격은 이론적으로 KOSPI 200지수+이자비용-배당수입으로 결정되지만, 실제 선물가격은 시장수급에 의하여 시장참여자의 예측이 반영되어 결정되므로 실제 선물가격과 선물이론가격사이에는 차이가 발생될 수 있고, 만기일에는 실제선물가격과 선물이론가격, KOSPI 200지수가 모두 일치되게 됩니다. 이러한 점을 이용하여 가격들간의 차이가 발생할 때 고평가된 상품을 팔고, 저평가된 상품을 매수하여 무위험이익을 실현할 수 있습니다.<br />
+		이러한 목적으로 행해지는 거래를 차익거래라고 합니다. 차익거래는 항상 주식과 선물이 연계하여 행해지고, 이로 인하여 비정상적으로 발생된 가격차이가 정상화되는 기능을 하게됩니다.<br />
+		차익거래는 KOSPI 200지수와 주가지수선물가격의 차이가 비정상적일때(선물의 이론가격과 실제가격 사이에 일시적인 괴리가 발생했을 경우에) 주식과 주가지수선물을 동시에 거래하여 무위험수익을 얻는 거래를 말합니다.<br />
+		이러한 차익거래는 주식을 매수하느냐 매도하느냐에 따라 매수차익거래, 매도차익거래로 나눌 수 있습니다. 각각에 대하여 알아보도록 하죠.
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_str_05.gif" alt="매수차익거래" /></h3>	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_str_03.gif" alt="매수차익거래 구축과 만기시점에서의 최종손익" /></h4>
+	<p class="cDepthTxt2">
+		선물가격이 KOSPI 200현물지수에 비해 비정상적으로 높은 경우 상대적으로 싼(저평가된) 현물(주식)을 매수하고 동시에 비싼(고평가된) 선물을 매도하는 거래를 매수차익거래라 합니다.<br />
+		상대적으로 싼 현물은 가격이 상승하고, 상대적으로 비싼 선물은 가격이 하락하여 만기일에는 현물과 선물의 가격이 동일해집니다. 따라서, 현재발생한 가격차이에서 비용(이자비용)을 차감하고, 수입(배당수입)을 더한만큼 무위험이익을 실현할 수 있습니다.<br />
+		이러한 매수차익거래포지션 구축과 만기시점에서의 최종손익을 도표로 요약하면 아래와 같습니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="15%" />
+		<col width="25%" />
+		<col width="30%" />
+		<col width="30%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>차익거래 포지션 구축</th>
+				<th>차익거래 포지션청산</th>
+				<th>최종손익</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th class="sub2">현물</th>
+				<td class="sub Lcon">저평가된 주식매수</td>
+				<td class="sub Lcon">(KOSPI 200 현물가격-이자비용+배당수입) 금액만큼 매도</td>
+				<td rowspan="3" class="Lcon">진입한 시점의 현물과 선물가격차이에 이자비용을 차감하고 배당수입을 더 한금액만큼 무위험이익실현</td>
+			</tr>
+			<tr>
+				<th class="sub2">선물</th>
+				<td class="sub Lcon">고평가된 선물매도</td>
+				<td class="sub Lcon">KOSPI 200 현물지수로 매수청산</td>
+			</tr>
+			<tr>
+				<th>구축/청산 조건</th>
+				<td class="Lcon">선물고평가<br />베이시스나 괴리율이 (+)</td>
+				<td class="Lcon">만기시점, 선물저평가<br />베이시스나 괴리율이 (-)</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		9월 만기를 1달 앞둔 시점에서 KOSPI 200 지수가 100P이고, 선물 9월물 가격이 102P,단기금리 연 9%, 배당수익율 연 3%일 때 50억원어치 주식을 매수하는 매수차익거래를 통하여 무위험이익실현이 가능한지 알아보죠.
+	</div>
+		
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="8%" />
+		<col width="14%" />
+		<col width="27%" />
+		<col width="12%" />
+		<col width="27%" />
+		<col width="12%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>포지션</th>
+				<th colspan="2">9월 만기시 KOSPI 200 지수가 105P로 종료시</th>
+				<th colspan="2">9월 만기시 KOSPI 200 지수가 95P로 종료시</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th rowspan="2">현물</th>
+				<td rowspan="2">주식50억매수</td>
+				<td class="sub Lcon">
+					주식매매이익 : 2.5억<br />
+					주식매수를 위한 이자비용 : -0.375억<br />
+					주식보유로 인한 배당수입 : 0.125억 
+				</td>
+				<td class="sub">2.25억 이익</td>
+				<td class="sub Lcon">
+					주식매매손실 : -2.5억<br /> 
+					주식매수를 위한 이자비용 : -0.375억<br /> 
+					주식보유로 인한 배당수입 : 0.125억
+				</td>
+				<td class="sub">2.75억 손실</td>
+			</tr>
+			<tr>
+				<td class="subFirst Lcon" colspan="2">
+					손익 : 2.5억 = 52.5억(현물시가 5%상승) - 50억<br />
+					이자비용 : -0.375억 = 50억*9%*1/12<br />
+					배당수입 : 0.125억 = 50억*3%*1/12
+				</td>
+				<td colspan="2" class="Lcon">
+					손익 : -2.5억 = 47.5억(현물시가5%하락)-50억<br />
+					이자비용 : -0.375억 = 50억*9%*1/12<br />
+					배당수입 : 0.125억 = 50억*3%*1/12 
+				</td>
+			</tr>
+			<tr>
+				<th class="bg" rowspan="2">선물</th>
+				<td class="bg" rowspan="2">KOSPI 200선물 98계약 매도</td>
+				<td class="bg sub">1.47억 손실</td>
+				<td class="bg sub">1.47억 손실</td>
+				<td class="bg sub">3.43억 이익</td>
+				<td class="bg sub">3.43억 이익</td>
+			</tr>
+			<tr>
+				<td class="bg subFirst Lcon" colspan="2">
+					선물 최종결제가격 : 105P<br />
+					손익 : -1.47억 = (102P-105P)*98계약*50만원
+				</td>
+				<td class="bg Lcon" colspan="2">
+					선물최종결제가격 : 95P<br />
+					손익 : 3.43억 = (102P-95P)*98계약*50만원
+				</td>
+			</tr>
+			<tr>
+				<th>만기손익</th>
+				<td></td>
+				<td colspan="2">0.78억 이익발생</td>
+				<td colspan="2">0.68억 이익발생</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<ul class="cDepthBul">
+		<li>
+			<strong>매수차익거래포지션 구축</strong><br />
+			먼저 선물가격과 선물이론가격이 괴리가 발생되는지 살펴보면, 현재 선물가격은 102P인데, 선물이론가격은 100.5P(=KOSPI 200+이자비용-배당수입= 100P + (9%*1/12) - (3%*1/12) )인데 반해 현재 선물가격이 102P로 괴리율이 0보다 큰 상태이므로 매수차익거래포지션을 구축하여 무위험이익을 획득할 수 있죠.<br />
+			KOSPI 200 선물지수가 102P일때 50억상당의 선물수량은 98계약(98계약*102P*50만원 = 50억)이므로 선물매도 98계약, KOSPI 200지수와 유사한 현물Basket현물매수 50억으로 매수차익거래포지션 구축하게 됩니다.
+		</li>
+		<li>
+			<strong>만기시점에서의 최종손익</strong><br />
+			상기 도표에서 알 수 있듯이 9월만기 시점에서 KOSPI 200지수가 상승,하락여부와 상관없이 무위험수익이 발생됩니다. 하지만, 실제로 차익거래시 주식Basket이 체결되면서 발생되는 오류, Basket구성에 있어 KOSPI 200지수와 괴리, 매매비용발생 등으로 괴리율이 0보다 크다고 하여 무조건 매수차익거래 수익이 발생되지 않으므로 차익거래시 주의를 요합니다.
+		</li>
+	</ul>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_str_06.gif" alt="매도차익거래" /></h3>	
+	<p class="cDepthTxt">
+		선물가격이 KOSPI 200현물지수에 비해 비정상적으로 낮은 경우 상대적으로 비싼(고평가된) 현물(주식)을 매도하고 동시에 싼(저평가된) 선물을 매수하는 거래를 매도차익거래라 합니다.<br />
+		상대적으로 비싼 현물은 가격이 하락하고, 상대적으로 싼 선물은 가격이 상승하여 만기일에는 현물과 선물의 가격이 동일해집니다. 따라서, 현재발생한 가격차이만큼 무위험이익을 실현할 수 있습니다.<br />
+		보통 매도차익거래는 대차 등을 통해 주식을 빌려와서 매도를 해야하므로 매수차익거래 청산을 위한 경우가 아니라면 괴리율이 (-)인 상태가 오랫동안 지속되더라도 쉽게 행할 수 없는 투자전략입니다. 따라서, 괴리율이 (+)인 상태(선물가격이 KOSPI 200현물지수에 비해 비정상적으로 높은경우)에는 매수차익거래가 쉽게 유발되어 괴리폭을 좁히지만, 괴리율이 (-)인 상태에서는 매도차익거래가 주식대차와 같은 어려움 때문에 쉽게 유발되지 못하고, 괴리상태가 오래 지속되는 특징이 있습니다.<br />
+		이러한 매도차익거래포지션 구축과 만기시점에서의 최종손익을 도표로 요약하면 아래와 같습니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="15%" />
+		<col width="25%" />
+		<col width="30%" />
+		<col width="30%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>차익거래 포지션 구축</th>
+				<th>차익거래 포지션청산</th>
+				<th>최종손익</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th class="sub2">현물</th>
+				<td class="sub">고평가된 주식매도</td>
+				<td class="sub">(KOSPI 200 현물가격+이자비용-배당수입) 금액만큼 매수</td>
+				<td rowspan="3" class="Lcon">진입한 시점의 현물과 선물가격차이에 이자비용을 차감하고 배당수입을 더 한금액만큼 무위험이익실현</td>
+			</tr>
+			<tr>
+				<th class="sub2">선물</th>
+				<td class="sub">고평가된 선물매수</td>
+				<td class="sub">KOSPI 200 현물지수로 매도청산</td>
+			</tr>
+			<tr>
+				<th>구축/청산 조건</th>
+				<td>선물저평가<br />베이시스나 괴리율이 (-)</td>
+				<td>만기시점, 선물고평가<br />베이시스나 괴리율이 (+)</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	</body>
+</html>

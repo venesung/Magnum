@@ -1,0 +1,107 @@
+// 라디오버튼, 체크박스 이미지화 Start
+
+function setupLabel() {
+	if ($('.label_check input').length) {
+		$('.label_check').each(function(){ 
+			$(this).removeClass('c_on');
+		});
+		$('.label_check input:checked').each(function(){ 
+			$(this).parent('label').addClass('c_on');
+		});                
+	};
+	if ($('.label_radio input').length) {
+		$('.label_radio').each(function(){ 
+			$(this).removeClass('r_on');
+		});
+		$('.label_radio input:checked').each(function(){ 
+			$(this).parent('label').addClass('r_on');
+		});
+	};
+};
+$(document).ready(function(){
+	$('body').addClass('has-js');
+	$('.label_check, .label_radio').click(function(){
+		setupLabel();
+	});
+	setupLabel(); 
+	
+	// 좌측배경 반복
+	var cHeight = $(".RightArea").innerHeight();
+	//alert(cHeight)
+	$(".LeftArea").css("height", cHeight + "px")
+});
+// 라디오버튼, 체크박스 이미지화 End
+
+
+/* 좌측배경 반복 */
+$(window).resize(function() {
+	var cHeight = $(".RightArea").innerHeight();
+	$(".LeftArea").css("height", cHeight + "px")
+});
+
+/* 화면 좌측 이동 */
+function slideLayout(){
+	//console.log($(".RightArea").css("left"))
+	
+	if($(".RightArea").css("left") == "160px") {
+		$(".RightArea").stop().animate({left: '80px'},1000);
+	} else {
+		$(".RightArea").stop().animate({left: '160px'},1000);
+	}
+};
+
+/* 차트보기 */
+function showChart() {
+	$(".chartView").toggle();
+}
+
+/* Footer */
+function showFooter(str) {
+	$("#" + str).toggle();
+}
+
+/* 종목 상세 뉴스 공시 탭 */
+function showTotalLayer(str,num){
+	for(i=1; i< 3; i++) {
+		$("#Btn" + str + "Tab" + i).attr("src", "../img/type/tab_" + str + "_0" + i + "_off.gif");
+		$("#" + str + "Tab_" + i).css("top","-9999px");
+	}
+	$("#Btn" + str + "Tab" + num).attr("src", "../img/type/tab_" + str + "_0" + num + "_on.gif");
+	$("#" + str + "Tab_" + num).css("top","0px");
+}
+
+/* 검색보기 */
+function showSearch(obj) {
+		//console.log(obj.src)
+		if(document.getElementById("HiddenSearch").style.display == "none") {
+			$("#HiddenSearch").slideDown();
+			obj.src = "../img/button/search_open_01.gif"
+		} else {
+			$("#HiddenSearch").slideUp();	
+			obj.src = "../img/button/search_close_01.gif"
+		}
+}
+
+/* 탭 오버 */
+$(document).ready(function(){
+	$("#OverTabType img").mouseover(function() {
+		//console.log($(this).hasClass("on"))
+		var imgback = $(this).attr("src");
+		if(!$(this).hasClass("on")) {
+				//console.log(imgback.substring(0,imgback.lastIndexOf('_')) + '_over.' + imgback.substring(imgback.lastIndexOf('.') + 1))
+			
+			$(this).attr("src",imgback.substring(0,imgback.lastIndexOf('_')) + '_over.' + imgback.substring(imgback.lastIndexOf('.') + 1))
+			//alert($(this).attr("src"))	
+		}
+	});
+	$("#OverTabType img").mouseout(function() {
+		//console.log($(this).attr("src"))
+		var imgback = $(this).attr("src");
+		if(!$(this).hasClass("on")) {
+			$(this).attr("src",imgback.substring(0,imgback.lastIndexOf('_')) + '_off.' + imgback.substring(imgback.lastIndexOf('.') + 1))
+		}
+	});
+});
+
+/* Top 버튼 */
+

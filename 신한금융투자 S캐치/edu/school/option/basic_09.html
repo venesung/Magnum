@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물/옵션 기초과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="basic_01.html">1장. 선물거래 정의 및 특징 </a></li>
+			<li><a href="basic_02.html">2장. 선물거래 개요 및 상품종류</a></li>
+			<li><a href="basic_03.html">3장. 선물상품 비교</a></li>
+			<li><a href="basic_04.html">4장. 선물 결제</a></li>
+			<li><a href="basic_05.html">5장. 옵션 개념</a></li>
+			<li><a href="basic_06.html">6장. 옵션거래 개요 및 옵션과 선물의 차이</a></li>
+			<li><a href="basic_07.html">7장. 옵션가격(프리미엄) </a></li>
+			<li><a href="basic_08.html">8장. 옵션의 이익구조</a></li>
+			<li><a href="basic_09.html" class="sel">9장. 옵션 결제</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fbasic_09.gif" alt="옵션 결제" /></h2>
+	
+	<div class="designEdu1">
+		<strong>A:</strong> 선물거래는 만기까지 보유하지 않고 중간에 청산거래를 통해 결제의무를 이행하거나 만기 최종결제에 의해 결제의무를<br />&nbsp;&nbsp;&nbsp;&nbsp;이행하는데 옵션도 그런거야?<br />
+		<strong>B:</strong> 옵션거래는 선물과 달리 만기최종결제가 아니라 만기에 권리행사, 권리포기로 결제의무를 이행하게 돼. 선물처럼 무조건<br />&nbsp;&nbsp;&nbsp;&nbsp;만기지수로 결제가 되는게 아니라 행사여부를 선택하여 결제할 수 있는거지.
+	</div>
+		
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_23.gif" alt="청산거래를 통한 결제의무 이행" /></h3>
+	<p class="cDepthTxt">옵션은 최종거래일(만기일)이전에 청산하여 거래를 종료시킬 수 있습니다.<br />
+	이 경우 옵션매수자는 진입일 익일에 옵션매수대금을 지급하고, 옵션매도를 통해 거래를 종료시킨 익일 옵션매도대금이 결제되어 손익이 확정됩니다.<br />
+	옵션매도자는 진입일 익일에 옵션매도대금을 수취하고, 옵션매수를 통해 거래를 종료시킨 익일 옵션매수대금이 결제되어 손익이 확정됩니다.<br />
+	이렇게 최종거래일 이전에 청산거래를 통해 거래를 종료시키는 매수자와 매도자별 결제과정과 손익을 아래의 표로 살펴보도록 하죠.
+	</p>
+		
+	<div class="textTotable"><!-- --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>옵션 매수자</th>
+				<th>옵션 매도자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>진입</th>
+				<td>진입일 익일 매수대금지급</td>
+				<td>진입일 익일 매도대금수취</td>
+			</tr>
+			<tr>
+				<th class="bg">만기이전청산	</th>
+				<td class="bg">청산익일 매도대금수취</td>
+				<td class="bg">청산익일 매수대금지급</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>손익</th>
+				<td class="c">(매도가-매수가)*계약수*10만원</td>
+				<td class="c">(매도가-매수가)*계약수*10만원</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace25"><!-- --></div>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_24.gif" alt="권리행사/의무이행을 통한 결제의무 이행" /></h3>
+	<p class="cDepthTxt">만기까지 청산하지않고, 보유하고 있는 미결제약정의 거래를 종료시키는 방법으로 권리행사/의무이행에 의해 결제의무를 이행할 수 있습니다.<br />
+	이 경우 옵션매수자는 진입일 익일에 옵션매수대금을 지급하고, 만기일에 행사가치가 양수일 경우 권리행사를 하여 거래를 종료시키고, 권리행사차금을 익일 수취하여 손익이 확정됩니다.<br />
+	옵션매도자는 진입일 익일에 옵션매도대금을 수취하고, 만기일에 옵션매수자가 권리행사를 할 경우 그에 대한 의무이행을 하여 거래를 종료시키고, 권리행사차금을 익일 지급하여 손익이 확정됩니다.<br />
+	이렇게 최종거래일에 권리행사와 의무이행(권리배정)을 통해 거래를 종료시키는 매수자와 매도자별 결제과정과 손익을 아래의 표로 살펴보도록 하죠.
+	</p>		
+		
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>옵션 매수자</th>
+				<th>옵션 매도자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>진입</th>
+				<td>진입일 익일 매수대금지급</td>
+				<td>진입일 익일 매도대금수취</td>
+			</tr>
+			<tr>
+				<th class="bg">만기일<br />권리행사/권리배정</th>
+				<td class="bg">행사가치가 양수일 경우<br />만기익일 권리행사차금수취</td>
+				<td class="bg">매수자가 권리행사할 경우<br />만기익일 권리행사차금 지급</td>
+			</tr>
+			<tr>
+				<th>권리행사차금</th>
+				<td colspan="2"><span class="orange">ㅣKOSPI200지수-권리행사가격ㅣ*계약수*10만원</span></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>손익</th>
+				<td class="c">권리행사차금 -매수가*계약수*10만원</td>
+				<td class="c">매도가*계약수*10만원 - 권리행사차금</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace25"><!-- --></div>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_25.gif" alt="권리포기/의무소멸을 통한 결제의무 이행" /></h3>
+	<p class="cDepthTxt">만기까지 청산하지않고 보유하고 있는 미결제약정의 거래를 종료시키는 방법으로 권리포기/의무소멸에 의해 결제의무를 이행할 수 있습니다.<br />
+	이 경우 옵션매수자는 진입일 익일에 옵션매수대금을 지급하고, 만기일에 행사가치가 0일 경우 권리포기를 하여 거래를 종료시키고, 진입시 지급한 매수대금을 손실금액으로 손익이 확정됩니다.<br />
+	옵션매도자는 진입일 익일에 옵션매도대금을 수취하고, 만기일에 옵션매수자가 권리포기를 할 경우 그에 대한 의무소멸이 되어 거래가 종료되고, 진입시 수취한 매도대금을 이익금액으로 손익이 확정됩니다.<br />
+	즉, 진입일에만 매수자와 매도자간의 프리미엄을 지급,수취하고, 만기일에는 아무런 결제행위없이 거래가 종료됩니다. 이렇게 최종거래일에 권리포기와 의무소멸을 통해 거래를 종료시키는 매수자와 매도자별 결제과정과 손익을 아래의 표로 살펴보도록 하죠.
+	</p>		
+		
+	<div class="Vspace10"><!-- --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>옵션 매수자</th>
+				<th>옵션 매도자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>진입</th>
+				<td>진입일 익일 매수대금지급</td>
+				<td>진입일 익일 매도대금수취</td>
+			</tr>
+			<tr>
+				<th class="bg" rowspan="2">만기일<br />권리포기/의무소멸</th>
+				<td class="bg sub">행사가치가 0일 경우<br />권리포기로 결제완료</td>
+				<td class="bg sub">매수자가 권리포기할 경우<br />의무소멸로 결제완료</td>
+			</tr>
+			<tr>
+				<td class="bg subFirst" colspan="2"><span class="orange">만기와 관련한 결제행위없이 거래종료됨</span></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>손익</th>
+				<td class="c">-매수가*계약수*10만원</td>
+				<td class="c">매도가*계약수*10만원</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<p class="cDepthTxt">옵션매도자는 옵션매수자가 권리포기를 할 경우 그에 대한 의무소멸이 되어 거래가 종료시키고, 이익금액이 진입시 수취한 매도대금으로 확정됩니다.</p>
+	
+	
+	
+	
+	
+	</body>
+</html>	

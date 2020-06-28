@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>신한금융투자 온라인서비스 플랫폼</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+		});
+	</script>
+	
+	<!--[if IE 6]>
+	<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('.tab'); // png 쓰이는 부분
+	</script>
+	<![endif]-->
+
+</head>
+<body style="background:none;width:800px;padding:20px;">
+
+1. 팝업 최소사이즈는 400px 그외는 inline으로 지정.
+
+<!-- Layer Popup Start -->
+<div id="" class="PopOutBox">
+	<!-- Title Start -->
+	<div class="popHeading">
+		<h2><img src="../img/popup/temp_01.gif" alt="" /></h2>
+		<a href="#" class="close"><img src="../img/popup/close_01.gif" alt="레이어 닫기" /></a>
+		<div class="ClearBlock"><!-- Clear Block --></div>
+	</div>
+	<!--// Title End -->
+	
+	<!-- Contents Start -->
+	<div class="popContents">
+	-0-
+	</div>
+	<!--// Contents End -->
+</div>
+<!--// Layer Popup End -->
+
+<div class="Vspace40"><!-- Clear Block --></div>
+
+2. 캘린더 : 일별
+
+<!-- Calendar Start -->
+<div class="calendar">
+	<!-- search Start -->
+	<div class="calSearch">
+		<div>
+			<ul>
+				<li><a href="#">2012.06</a></li>
+				<li><a href="#">2012.07</a></li>
+				<li><a href="#">2012.08</a></li>
+				<li><a href="#">2012.09</a></li>
+				<li><a href="#">2012.10</a></li>
+				<li><a href="#">2012.11</a></li>
+				<li><a href="#">2012.12</a></li>
+			</ul>
+		</div>
+		<a href="#" class="prev"><img src="../img/popup/cal_prev.gif" alt="이전" /></a>
+		<a href="#" class="next"><img src="../img/popup/cal_next.gif" alt="다음" /></a>
+		
+	</div>
+	<!--// search End -->
+	
+	<table summary="">
+		<caption>달력</caption>
+		<colgroup>
+			<col width="28" span="7" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col"><img src="../img/popup/cal_sun.gif" alt="sun" /></th>
+				<th scope="col"><img src="../img/popup/cal_mon.gif" alt="mon" /></th>
+				<th scope="col"><img src="../img/popup/cal_tue.gif" alt="tue" /></th>
+				<th scope="col"><img src="../img/popup/cal_wed.gif" alt="wed" /></th>
+				<th scope="col"><img src="../img/popup/cal_thu.gif" alt="thu" /></th>
+				<th scope="col"><img src="../img/popup/cal_fri.gif" alt="fri" /></th>
+				<th scope="col"><img src="../img/popup/cal_sat.gif" alt="sat" /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="off"><a href="#">27</a></td>
+				<td class="off"><a href="#">28</a></td>
+				<td class="off"><a href="#">29</a></td>
+				<td class="off"><a href="#">30</a></td>
+				<td class="off"><a href="#">31</a></td>
+				<td><a href="#">1</a></td>
+				<td class="sat"><a href="#">2</a></td>
+			</tr>
+			<tr>
+				<td class="sun"><a href="#">3</a></td>
+				<td><a href="#">4</a></td>
+				<td><a href="#">5</a></td>
+				<td><a href="#">6</a></td>
+				<td><a href="#">7</a></td>
+				<td><a href="#">8</a></td>
+				<td class="sat"><a href="#">9</a></td>
+			</tr>
+			<tr>
+				<td class="sun"><a href="#">10</a></td>
+				<td><a href="#">11</a></td>
+				<td><a href="#">12</a></td>
+				<td><a href="#">13</a></td>
+				<td><a href="#">14</a></td>
+				<td><a href="#">15</a></td>
+				<td class="sat"><a href="#">16</a></td>
+			</tr>
+			<tr>
+				<td class="sun"><a href="#">17</a></td>
+				<td><a href="#">18</a></td>
+				<td><a href="#">19</a></td>
+				<td><a href="#">20</a></td>
+				<td><a href="#">21</a></td>
+				<td><a href="#">22</a></td>
+				<td class="sat"><a href="#">23</a></td>
+			</tr>
+			<tr>
+				<td class="sun"><a href="#">24</a></td>
+				<td><a href="#">25</a></td>
+				<td class="selected"><a href="#">26</a></td>
+				<td><a href="#">27</a></td>
+				<td><a href="#">28</a></td>
+				<td><a href="#">29</a></td>
+				<td class="sat"><a href="#">30</a></td>
+			</tr>
+			<tr>
+				<td class="sun off"><a href="#">1</a></td>
+				<td class="off"><a href="#">2</a></td>
+				<td class="off"><a href="#">3</a></td>
+				<td class="off"><a href="#">4</a></td>
+				<td class="off"><a href="#">5</a></td>
+				<td class="off"><a href="#">6</a></td>
+				<td class="sat off"><a href="#">7</a></td>
+			</tr>		
+		</tbody>
+	</table>
+</div>
+<!--// Calendar End -->
+
+<div class="Vspace40"><!-- Clear Block --></div>
+
+2. 캘린더 : 월별
+
+<!-- Calendar Start -->
+<div class="calendar" >
+	<!-- search Start -->
+	<div class="calSearch month">
+		<div>
+			<ul>
+				<li><a href="#">2012</a></li>
+				<li><a href="#">2013</a></li>
+			</ul>
+		</div>
+		<a href="#" class="prev"><img src="../img/popup/cal_prev.gif" alt="이전" /></a>
+		<a href="#" class="next"><img src="../img/popup/cal_next.gif" alt="다음" /></a>
+		
+	</div>
+	<!--// search End -->
+	
+	<!-- monthList Start -->
+	<div class="monthList">
+		<ul>
+			<li><a href="#">1월</a></li>
+			<li><a href="#">2월</a></li>
+			<li><a href="#">3월</a></li>
+			<li><a href="#">4월</a></li>
+			<li><a href="#">5월</a></li>
+			<li><a href="#">6월</a></li>
+			<li><a href="#">7월</a></li>
+			<li><a href="#">8월</a></li>
+			<li><a href="#">9월</a></li>
+			<li class="selected"><a href="#">10월</a></li>
+			<li><a href="#">11월</a></li>
+			<li><a href="#">12월</a></li>			
+		</ul>
+	</div>
+	<!--// monthList Start -->
+	
+</div>
+<!--// Calendar End -->
+
+<div class="Vspace40"><!-- Clear Block --></div>
+
+
+2. 캘린더 : 연별
+
+<!-- Calendar Start -->
+<div class="calendar" >
+	<!-- search Start -->
+	<div class="calSearch year">
+		<div>
+			<ul>
+				<li>2010 <span>~</span> 2019</li>
+				<li>2020 <span>~</span> 2029</li>
+			</ul>
+		</div>
+		<a href="#" class="prev"><img src="../img/popup/cal_prev.gif" alt="이전" /></a>
+		<a href="#" class="next"><img src="../img/popup/cal_next.gif" alt="다음" /></a>
+		
+	</div>
+	<!--// search End -->
+	
+	<!-- monthList Start -->
+	<div class="monthList yearList">
+		<ul>
+			<li class="off"><a href="#">2009</a></li>
+			<li><a href="#">2010</a></li>
+			<li><a href="#">2011</a></li>
+			<li><a href="#">2012</a></li>
+			<li><a href="#">2013</a></li>
+			<li><a href="#">2014</a></li>
+			<li><a href="#">2015</a></li>
+			<li><a href="#">2016</a></li>
+			<li><a href="#">2017</a></li>
+			<li><a href="#">2018</a></li>
+			<li class="selected"><a href="#">2019</a></li>
+			<li class="off"><a href="#">2020</a></li>
+	
+		</ul>
+	</div>
+	<!--// monthList Start -->
+	
+</div>
+<!--// Calendar End -->
+
+<div class="Vspace40"><!-- Clear Block --></div>
+
+3. 메신저
+
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="../css/ie8.css" media="all" /><![endif]-->
+
+<!-- Messenger Start -->
+<div class="TalkBox">
+	<!-- Header Start -->
+	<dl class="Top">
+		<dt><img src="../img/messenger/title.gif" alt="15자 투자톡톡!" /></dt>
+		<dd class="help"><a href="#"><img src="../img/messenger/help.gif" alt="15자 투자톡톡이란?" /></a></dd>
+		<dd class="date">2012.06.30</dd>
+		<dd class="close"><a href="#"><img src="../img/messenger/btn_close_01.gif" alt="닫기" /></a></dd>
+	</dl>
+	<!--// Header End -->
+	
+	<!-- content Start -->
+	<div class="Middle">
+		<!-- Start -->
+		<div class="msgBlock">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>이건나</strong> / 14:21</dt>
+				<dd class="msg">내가쓴글임내가쓴글임내가쓴글임</dd>
+				<dd class="btn"><span>
+					<a href="#"><img src="../img/messenger/btn_write.png" alt="글쓰기" /></a>
+					<a href="#"><img src="../img/messenger/btn_del.png" alt="삭제" /></a>
+				</span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+			
+			<!-- 댓글 입력 -->
+			<div class="write" style="display:none;">
+				<input type="text" value="15자 이내로 작성해 주세요." title="댓글입력" /><a 
+				href="#"><img src="../img/messenger/btn_write_01.gif" alt="입력" /></a>
+			</div>
+			<!--// 댓글 입력 -->
+		</div>
+		<!--// End -->
+		
+		<!-- Start : 배경다름 -->
+		<div class="msgBlock bgType2">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>홍길동</strong> / 14:21</dt>
+				<dd class="msg">내가쓴글임내가쓴글임내가쓴글임</dd>
+				<dd class="btn"><span><a href="#"><img src="../img/messenger/btn_write.png" alt="쓰기" /></a></span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+			
+			<!-- 댓글 입력 -->
+			<div class="write" style="display:none;">
+				<input type="text" value="15자 이내로 작성해 주세요." title="댓글입력" /><a 
+				href="#"><img src="../img/messenger/btn_write_01.gif" alt="입력" /></a>
+			</div>
+			<!--// 댓글 입력 -->
+		</div>
+		<!--// End : 배경다름 -->
+		
+		<!-- Start -->
+		<div class="msgBlock">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>홍길동</strong> / 14:21</dt>
+				<dd class="msg">댓글쓰기를 눌렀을 경우</dd>
+				<dd class="btn"><span><a href="#"><img src="../img/messenger/btn_close_02.png" alt="닫기" /></a></span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+			
+			<!-- 댓글 입력 -->
+			<div class="write">
+				<input type="text" value="15자 이내로 작성해 주세요." title="댓글입력" /><a 
+				href="#"><img src="../img/messenger/btn_write_01.gif" alt="입력" /></a>
+			</div>
+			<!--// 댓글 입력 -->
+		</div>
+		<!--// End -->
+			
+		<!-- Start : 댓글 -->
+		<div class="msgBlock Reply">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>홍길동</strong> / 14:21</dt>
+				<dd class="msg">댓글이 본인글이면 삭제버튼이</dd>
+				<dd class="btn"><span><a href="#"><img src="../img/messenger/btn_del.png" alt="삭제" /></a></span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// End : 댓글 -->
+		
+		<!-- Start : 댓글 -->
+		<div class="msgBlock Reply">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>홍길동</strong> / 14:21</dt>
+				<dd class="msg">댓글이 본인 글이 아니면..</dd>
+				<dd class="reply">&nbsp;</dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// End : 댓글 -->
+		
+		<!-- Start : 댓글 -->
+		<div class="msgBlock Reply">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl class="Admin">
+				<dt><strong>운영자</strong> / 14:21</dt>
+				<dd class="msg">운영자 본인이면 삭제버튼이..</dd>
+				<dd class="btn"><span><a href="#"><img src="../img/messenger/btn_del.png" alt="삭제" /></a></span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// End : 댓글 -->
+		
+		<!-- Start : 댓글 -->
+		<div class="msgBlock Reply">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl class="Admin">
+				<dt><strong>운영자</strong> / 14:21</dt>
+				<dd class="msg">남들이 볼때 운영자</dd>
+				<dd class="reply">&nbsp;</dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// End : 댓글 -->
+		
+		<!-- Start : 배경다름 -->
+		<div class="msgBlock bgType2">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl class="Admin"><!-- 관리자일 경우 -->
+				<dt><strong>운영자</strong> / 14:21</dt>
+				<dd class="msg">운영자가 쓴글도 댓글쓰기는 나와야지</dd>
+				<dd class="btn"><span><a href="#"><img src="../img/messenger/btn_write.png" alt="쓰기" /></a></span></dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+			
+			<!-- 댓글 입력 -->
+			<div class="write" style="display:none;">
+				<input type="text" value="15자 이내로 작성해 주세요." title="댓글입력" /><a 
+				href="#"><img src="../img/messenger/btn_write_01.gif" alt="입력" /></a>
+			</div>
+			<!--// 댓글 입력 -->
+		</div>
+			
+		<!-- Start : 댓글 -->
+		<div class="msgBlock bgType2 Reply">
+			<div class="pic">
+				<img src="../img/messenger/temp_01.jpg" alt="" class="pic" /><!-- 사진 SIZE : 34 x 34 -->
+				<img src="../img/messenger/bg_my.gif" alt="내가 쓴글 표시" class="myTalk" style="display:none;" /><!-- 내가 쓴 글일 경우에만 나타남 -->
+			</div>
+			<dl>
+				<dt><strong>홍길동</strong> / 14:21</dt>
+				<dd class="msg">댓글이 본인 글이 아니면..</dd>
+				<dd class="reply">&nbsp;</dd>
+			</dl>
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// End : 댓글 -->
+		<!--// End : 배경다름 -->
+	</div>
+	<!--// content End -->
+	
+	<!-- Footer Start -->
+	<div class="Bottom">
+	 	<span><a href="#"><img src="../img/messenger/btn_reload.gif" alt="새로고침" /></a></span>
+	 	<span>
+			<input type="text" title="검색" value="15자 이내로 작성해 주세요." />
+			<a href="#"><img src="../img/messenger/btn_send.gif" alt="보내기" /></a>
+		</span> 
+	</div>
+	<!--// Footer End -->
+</div>
+
+<!--// Messenger End -->
+
+<br /><br /><br /><br /><br />
+</body>
+</html>

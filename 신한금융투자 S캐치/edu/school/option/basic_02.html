@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물/옵션 기초과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="basic_01.html">1장. 선물거래 정의 및 특징 </a></li>
+			<li><a href="basic_02.html" class="sel">2장. 선물거래 개요 및 상품종류</a></li>
+			<li><a href="basic_03.html">3장. 선물상품 비교</a></li>
+			<li><a href="basic_04.html">4장. 선물 결제</a></li>
+			<li><a href="basic_05.html">5장. 옵션 개념</a></li>
+			<li><a href="basic_06.html">6장. 옵션거래 개요 및 옵션과 선물의 차이</a></li>
+			<li><a href="basic_07.html">7장. 옵션가격(프리미엄) </a></li>
+			<li><a href="basic_08.html">8장. 옵션의 이익구조</a></li>
+			<li><a href="basic_09.html">9장. 옵션 결제</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fbasic_02.gif" alt="선물거래 개요 및 상품종류" /></h2>
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_03.gif" alt="선물거래 개요" /></h3>
+	<p class="cDepthTxt">선물계약의 거래대상이 되는 상품에 따라 크게 전통적인 상품선물(Commodity Futures)과 금융선물(Financial Futures)로 구분할 수 있습니다. 전통적인 상품선물은 농축산물, 임산물, 비철금속, 귀금속, 에너지 등을 거래대상 품목으로 정하고 있으며 금융선물은 통화, 금리, 주가지수 등의 금융상품을 거래대상으로 하고 있습니다.</p>
+		
+	<div class="Vspace20"><!-- --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_04.gif" alt="선물상품의 종류" /></h3>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="20%" />	
+		<col width="20%" />	
+		<col width="40%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th colspan="2">구분</th>
+				<th colspan="2">대상상품</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="6">선물상품</td>
+				<td rowspan="4" class="sub">금융선물</td>
+				<td class="sub">주가지수</td>
+				<td class="sub Lcon">KOSPI200주간 &middot; 야간선물,  스타지수 선물</td>
+			</tr>
+			<tr>
+				<td class="sub">주식</td>
+				<td class="sub Lcon">개별주식선물</td>
+			</tr>
+			<tr>
+				<td class="sub">금리</td>
+				<td class="sub Lcon">3년 국채, 5년 국채, 10년 국채, 통안증권</td>
+			</tr>
+			<tr>
+				<td class="sub">통화</td>
+				<td class="sub Lcon">달러, 엔, 유로</td>
+			</tr>
+			<tr>
+				<td rowspan="2" class="subFirst">상품선물</td>
+				<td class="sub">귀금속</td>
+				<td class="sub Lcon">금, mini-금</td>
+			</tr>
+			<tr>
+				<td class="subFirst">축산물</td>
+				<td class="Lcon">돼지</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="tbCommentBottom">위 상품은 거래소에 상장되어 신한금융투자에서 거래 가능한 선물상품입니다.</div>
+		
+	<div class="Vspace10"><!-- --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_02.gif" alt="금융선물" /></h4>
+	<h5 class="cDepthType1">KOSPI200주간선물</h5>
+	<div class="cDepthTxt3">KOSPI200 주가지수선물은 실물이 아닌 추상물이기 때문에 상품인수도가 아닌 현금결제를 통해 계약을 종결시키므로 결제가 용이하고, 현물주식을 살때보다 훨씬 적은 돈으로 주가지수선물을 거래할 수 있어 레버리지 효과가 큽니다.</div>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">코스피 200지수</td>
+			</tr>
+			<tr>
+				<th class="bg">1계약금액</th>
+				<td class="bg Lcon">코스피 200 X 50만원(거래승수)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">각 결제월의 2번째 목요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 10%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 15%</li>
+						<li>위탁증거금률 10%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">KOSPI200야간선물</h5>
+	<p class="cDepthTxt3">KOSPI200야간선물거래는 정규거래가 종료한 후인 야간시간에 미국 CME 그룹과 연계하여 KOSPI200선물을 거래할 수 있도록 만든 제도입니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">코스피 200지수 (스프레드거래 불가)</td>
+			</tr>
+			<tr>
+				<th class="bg">1계약금액</th>
+				<td class="bg Lcon">코스피 200 X 50만원(거래승수)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">각 결제월의 2번째 목요일<br />정규시장 최종거래일 직전 시장이 글로벌시장 최종거래일</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">18시 ~ 05시 (한국기준)</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 15%</li>
+						<li>위탁증거금률 10%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">스타지수 선물</h5>
+	<p class="cDepthTxt3">스타지수선물은 코스닥시장에 상장된 종목 중에서 시장대표성, 유동성 및 재무건전성이 우량한 30개 종목을 구성종목으로 하는 스타지수를 거래대상으로 하는 상품입니다. 스타지수선물은 주가지수를 거래대상으로 하고 있으며, 최종결제방식은 현금결제방식을 채택하고 있습니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">스타지수(코스닥시장본부 발표)</td>
+			</tr>
+			<tr>
+				<th class="bg">1계약금액</th>
+				<td class="bg Lcon">스타지수 X 1만원 (거래승수)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">각 결제월의 2번째 목요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 10%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 15%</li>
+						<li>위탁증거금률 10%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">주식선물</h5>
+	<p class="cDepthTxt3">주식선물은 기존 KOSPI200지수선물이 커버하지 못했던 개별주식에 대한 위험 헤지를 보다 정밀하고 효과적으로 할 수 있도록 고안된 상품입니다. 또한 계약당 증거금이 지수 선물에 비해 크게 낮아져 그 동안 ‘높은 문턱’으로 인해 지수선물 시장에 접근이 어려웠던 개인 투자자들에게도 새로운 투자기회를 제공할 수 있는 상품입니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>대상자산</th>
+				<td class="Lcon">25개 기업 (2009. 12. 14 기준)<br />
+				KB 금융지주, 삼성전자, 신세계, 신한금융지주, SK텔레콤, 우리금융지주, LG전자, 엘지디스플레이, KT, KT&G, 포스코, 하나금융지주, 한국전력공사, 현대중공업, 현대자동차, 기아자동차, 대우증권, 대한항공, 두산인프라코어, 삼성물산, 하이닉스반도체, 현대제철, GS건설, NHN, SK에너지</td>
+			</tr>
+			<tr>
+				<th class="bg">1계약금액</th>
+				<td class="bg Lcon">주식선물가격 X 10 (거래승수)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">각 결제월의 2번째 목요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 15%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 18%</li>
+						<li>유지증거금률 12%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">3년 국채 선물</h5>
+	<p class="cDepthTxt3">3년 국채선물은 만기일 기준으로 잔존기간 3년의 국고채를 대상으로 거래하는 계약을 말합니다. 국고채는 정부가 발행하는 채권으로 유가증권시장본부와 같은 장내유통시장 또는 증권회사 등을 통한 장외유통시장에서 거래가 되고 있습니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">표면금리 8%, 6개월단위 이자지급방식의 3년 만기 국고채 </td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">액면 1억원</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15(최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 화요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 1.5%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 1.5%</li>
+						<li>유지증거금률 1.0%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">5년국채 선물</h5>
+	<p class="cDepthTxt3">5년국채선물은 만기일 기준으로 잔존기간 5년의 국고채를 대상으로 거래하는 계약을 말합니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">표면금리 8%, 6개월단위 이자지급방식의 5년 만기 국고채</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">액면 1억원</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15(최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 화요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 1.8%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 1.8%</li>
+						<li>유지증거금률 1.2%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">10년국채 선물</h5>
+	<p class="cDepthTxt3">10년국채선물은 만기일 기준으로 잔존기간 10년의 국고채를 대상으로 거래하는 계약을 말합니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">표면금리 5%, 6개월단위 이자지급방식의 10년 만기 국고채</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">액면 5천만원</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15 (최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 화요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">인수도결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 2.7%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 2.7%</li>
+						<li>유지증거금률 1.8%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">통안증권 선물</h5>
+	<p class="cDepthTxt3">한국은행이 발행하는 364일 통화안전증권의 유통수익률을 거래대상으로 하는 상품으로, 투자자에게 단기금리 변동에 대한 위험관리수단을 제공합니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">364일물 통안증권 금리</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">액면 2억원</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">가격표시방법</th>
+				<td class="bg Lcon">100 - R / R은 유통수익률에 100을 곱한 수치</td>
+			</tr>
+			<tr>
+				<th>거래시간</th>
+				<td class="Lcon">09:00 ~ 15:15 (최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th class="bg">최종거래일</th>
+				<td class="bg Lcon">결제월의 세번째 화요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th>결제방법</th>
+				<td class="Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th class="bg">최종결제가격</th>
+				<td class="bg Lcon">100-R (R:최종거래일에 한국금융투자협회가 발표하는 364일물 통안증권수익률)의 평균에 100을 곱한 수치</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 0.3%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 0.3%</li>
+						<li>유지증거금률 0.2%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">미국달러선물</h5>
+	<p class="cDepthTxt3">미래의 일정시점에 인수도할 미국 달러화를 현재시점에서 미리 매수하거나 매도하는 계약입니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">미국달러화(USD)</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">US $10,000</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">최근 연속 6개월 및 3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15 (최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 월요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">인수도결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 4.5%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 4.5%</li>
+						<li>유지증거금률 3%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<h5 class="cDepthType1">엔/유로선물</h5>
+	<p class="cDepthTxt3">미국달러선물과 마찬가지로 엔선물은 엔/원, 유로선물은 유로/원 환율변동을 관리할 수 있도록 엔화와 유로화를 거래대상으로 하는 원화대가의 선물거래입니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="40%" span="2" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>엔선물</th>
+				<th>유로선물</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">일본엔화</td>
+				<td class="Lcon">유로화</td>
+			</tr>
+			<tr>
+				<th class="bg">거래단위</th>
+				<td class="bg Lcon">1,000,000엔</td>
+				<td class="bg Lcon">10,000유로</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon" colspan="2">최근 연속 6개월 및 3, 6, 9, 12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon" colspan="2">09:00 ~ 15:15 (최종거래일 09:00 ~ 11:30)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon" colspan="2">결제월의 세번째 월요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon" colspan="2">인수도결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon" colspan="2">+- 5.25%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon" colspan="2">
+					<ul>
+						<li>유지(거래)증거금률 3.5%</li>
+						<li>개시증거금률 5.25%</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th>인수도결제방법</th>
+				<td class="Lcon" colspan="2">
+					<ul>
+						<li>외화 : 외국통화별(엔 or 유로)로 결제</li>
+						<li>인수도금액 : 통화선물의 상품별 인수도금액간 차감결제</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fbasic_03.gif" alt="상품선물" /></h4>
+	
+	<h5 class="cDepthType1">돈육선물</h5>
+	<p class="cDepthTxt3">돈육선물은 돼지 가격의 변동 위험을 위하여 사전에 약속된 미래의 특정시점에 1계약당 1,000kg에 해당하는 돈육 대표가격을 사거나 팔 것을 약정하는 선물거래입니다. 실제 돼지를 사고파는 것이 아닌 돈육의 가격을 거래대상으로 하는 선물거래입니다.</p>
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="80%" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>항목</th>
+				<th>거래제도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td class="Lcon">돈육대표가격</td>
+			</tr>
+			<tr>
+				<th class="bg">계약크기</th>
+				<td class="bg Lcon">1,000 kg</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td class="Lcon">최근 연속 6개월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">10:15 ~ 15:15</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td class="Lcon">결제월의 세번째 수요일(공휴일인 경우 순차적으로 앞당김)</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>가격제한폭</th>
+				<td class="Lcon">+- 21%</td>
+			</tr>
+			<tr>
+				<th class="bg">증거금율</th>
+				<td class="bg Lcon">
+					<ul>
+						<li>위탁증거금률 21%</li>
+						<li>유지증거금률 14%</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace10"><!-- --></div>
+	
+	<h5 class="cDepthType1">금선물과 미니금선물</h5>
+	<div class="cDepthTxt3">
+		<ul class="cDepthBul">
+			<li>금선물은 미래의 일정시점에 인수도할 금을 현재 선물시장을 통해 매매하는 계약입니다. 금가격의 변동 리스크에 노출된 기업은 금선물을 이용하여 해지할 수 있고, 투자자는 재테크의 수단으로 금선물을 활용할 수 있습니다. </li>
+			<li>미니금선물은 표준 금선물과 기초자산은 동일(순도 99.99%금괴)하지만 거래단위가 축소된 금선물거래입니다.</li>
+		</ul>
+	</div>
+	<div class="Vspace5"><!-- --></div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="40%" span="2" />	
+	</colgroup>
+		<thead>
+			<tr>
+				<th>구분</th>
+				<th>표준금선물</th>
+				<th>미니금선물</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>거래대상</th>
+				<td colspan="2">순도 99.99%의 금괴</td>
+			</tr>
+			<tr>
+				<th class="bg">계약크기</th>
+				<td class="bg Lcon">1kg</td>
+				<td class="bg Lcon">100g</td>
+			</tr>
+			<tr>
+				<th>결제월</th>
+				<td colspan="2">최근 연속 2개월 및 2,4,6,8,10,12월</td>
+			</tr>
+			<tr>
+				<th class="bg">거래시간</th>
+				<td class="bg Lcon">09:00 ~ 15:15<br />(최종거래일 09:00 ~ 11:30)</td>
+				<td class="bg Lcon">09:00 ~ 15:15<br />(최종거래일 09:00 ~ 15:15)</td>
+			</tr>
+			<tr>
+				<th>최종거래일</th>
+				<td colspan="2">각 결제월의 세번째 수요일</td>
+			</tr>
+			<tr>
+				<th class="bg">결제방법</th>
+				<td class="bg Lcon">실물인수도</td>
+				<td class="bg Lcon">현금결제</td>
+			</tr>
+			<tr>
+				<th>미결제약정수량</th>
+				<td class="Lcon">300계약</td>
+				<td class="Lcon">3,000계약</td>
+			</tr>
+			<tr>
+				<th class="bg">최소순위험증거금</th>
+				<td class="bg Lcon">5만원</td>
+				<td class="bg Lcon">1만원</td>
+			</tr>
+			<tr>
+				<th>증거금율</th>
+				<td class="Lcon">
+					<ul>
+						<li>위탁증거금률 9%</li>
+						<li>유지증거금률 6%</li>
+					</ul>
+				</td>
+				<td class="Lcon">표준금선물 제도와 동일하나, 최종거래일 최종결제대비 별도의 증거금 징수</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	</body>
+</html>

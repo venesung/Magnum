@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물/옵션 기초과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="basic_01.html">1장. 선물거래 정의 및 특징 </a></li>
+			<li><a href="basic_02.html">2장. 선물거래 개요 및 상품종류</a></li>
+			<li><a href="basic_03.html">3장. 선물상품 비교</a></li>
+			<li><a href="basic_04.html" class="sel">4장. 선물 결제</a></li>
+			<li><a href="basic_05.html">5장. 옵션 개념</a></li>
+			<li><a href="basic_06.html">6장. 옵션거래 개요 및 옵션과 선물의 차이</a></li>
+			<li><a href="basic_07.html">7장. 옵션가격(프리미엄) </a></li>
+			<li><a href="basic_08.html">8장. 옵션의 이익구조</a></li>
+			<li><a href="basic_09.html">9장. 옵션 결제</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fbasic_04.gif" alt="선물 결제" /></h2>
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_07.gif" alt="미결제약정 만기일까지 보유 vs 미결제약정 만기 전 청산" /></h3>
+	
+	<p class="cDepthTxt">선물거래는 장래에 인수도하기로 약속한 날, 즉 만기일까지 보유한 후 최종결제를 할 수도 있지만, 중간에 청산을 통해서 결제의무에서 벗어날 수 있습니다. 지금부터는 거래를 종료시키는 방법에 대해서 살펴보겠습니다.</p>
+	
+	<div class="imgOutBox" style="margin-top:10px;"><img src="../img/edu/i_0106_img01.gif" alt="" /></div>
+	
+	<div class="tbCommentBottom">
+		<ul>
+			<li>
+				<strong>1. 청산거래를 통한 결제의무 이행</strong><br />
+				최종거래일(만기일)이전에 매도하여 거래를 종료시킬 수 있습니다. 이 경우 정산차금에 의하여 손익을 정산합니다. 정산차금이 무엇인지는 다음페이지에서 알아보도록 하겠습니다.
+			</li>
+			<li>
+				<strong>2. 만기최종결제</strong><br />
+				최종거래일까지 청산하지 않은 미결제약정을 결제하는 것으로 이러한 미결제약정에 대해서는 (최종거래일의 KOSPI 200 현물지수-선물종가)*50만원을 한 금액을 매도자로부터 수취하여 거래를 종료시킬 수 있습니다. 이 경우 최종결제차금에 의하여 손익을 정산합니다. 최종결제차금이 무엇인지는 다음페이지에서 알아보도록 하겠습니다.
+			</li>
+		</ul>
+	</div>
+	
+	<div class="Vspace15"><!-- --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_08.gif" alt="일일정산은 어떻게 하는 겁니까?" /></h3>
+	<p class="cDepthTxt">일일정산이란 선물거래에서 시장가격의 변동에 따라 발생하는 손익을 매일매일 결제하는 것을 말합니다. 이러한 일일 정산과정을 살펴볼까요?</p>
+	
+	<div class="Vspace10"><!-- --></div>
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>당일차금</th>
+				<th>갱신차금</th>
+				<th>최종결제1,000,00원차금</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>대상</td>
+				<td class="Lcon">당일 매도/매수분</td>
+				<td class="Lcon">전일 미결제약정</td>
+				<td class="Lcon">최종거래일에 소멸되지않고 남은 미결제약정</td>
+			</tr>
+			<tr>
+				<td class="bg">정산방법</td>
+				<td class="bg Lcon">당일 매도/매수가격을 당일 선물종가로 평가하여 결제</td>
+				<td class="bg Lcon">전일종가로 평가된 전일미결제약정을 당일 선물종가로 평가하여 결제</td>
+				<td class="bg Lcon">만기일 선물종가로 평가된 미결제약정을 다시 최종 KOSPI 200 현물지수로 평가하여 결제</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="4">정산차금 (일일정산)   +    최종결제차금 (만기결제)</th>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace15"><!-- --></div>
+	<p class="cDepthTxt">위에 도표에서 보듯이 당일차금, 갱신차금, 최종결제차금이라는 항목으로 계산된 손익으로 일일결제를 합니다.<br /><br />
+	<span class="orange">당일차금은 당일 매도,매수한 거래에 대하여 당일 체결가격과 당일종가의 차이로 평가하여 정산하고, 갱신차금은 전일 가지고 넘어온 미결제약정에 대하여 전일선물종가와 당일선물종가의 차이로 평가하여 정산하며, 최종결제차금은 최종거래일에 소멸되지 않고 남은 미결제약정에 대하여 만기일 선물종가로 평가된 미결제약정을 다시 최종 KOSPI 200 현물지수와의 차이로 평가하여 정산을 합니다.</span><br />
+	<br />매일매일 일어나는 정산과정인 일일정산은 당일차금과 갱신차금을 합해서 결제하고, 이를 정산차금이라고 합니다. 그리고, 최종거래일인 만기일에는 일일정산인 정산차금과 최종결제일에만 발생되는 최종결제차금을 합해서 결제가 이루어집니다.</p>
+	
+	<div class="Vspace20"><!-- --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_09.gif" alt="정산차금이 어떻게 산출되나요?" /></h3>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		전일 매수미결제약정 1계약을 보유하고 있고, 전일 선물종가가 200P였습니다.<br />
+		오늘이 선물 최종거래일이고, 당일 선물종가는 200P, KOSPI200현물지수는 202P일 때 일일정산되는 금액을 구해볼까요?
+	</div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="16%" />
+		<col width="28%" span="3" />
+	</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th>당일차금</th>
+				<th>갱신차금</th>
+				<th>정산차금</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">대상</td>
+				<td class="sub Lcon">당일 매도/매수 미결제약정</td>
+				<td class="sub Lcon">전일 미결제약정</td>
+				<td class="sub Lcon"></td>
+			</tr>
+			<tr>
+				<td class="subFirst">당일 매도 2계약 @201P</td>
+				<td class="Lcon">전일매수 1계약</td>
+				<td class="Lcon"></td>
+			</tr>
+			<tr>
+				<td class="bg" rowspan="2">정산방법</td>
+				<td class="bg Lcon sub">당일 미결제약정을 당일 선물종가(200P)로 평가</td>
+				<td class="bg Lcon sub">전일종가(200P)로 평가된 전일 미결제약정을 당일 선물 종가(200P)로 평가</td>
+				<td class="bg Lcon sub">당일차금+갱신차금</td>
+			</tr>
+			<tr>
+				<td class="bg Lcon subFirst">당일선물종가 200P<br />(201P-200P)*2계약*50만원</td>
+				<td class="bg Lcon">전일선물종가 200P, 당일선물종가 200P이므로 (200P- 200P)*1계약*50만원</td>
+				<td class="bg Lcon"></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>결제금액</th>
+				<td>1,000,000원</td>
+				<td>0</td>
+				<td>1,000,000원</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		전일 매수미결제약정 1계약을 가지고 있고, 전일 선물종가가 200P였습니다. <br />
+		오늘이 선물 최종거래일이고, 당일 선물종가는 201P 현물지수는 202P일 때 일일정산되는 금액을 구해볼까요?
+	</div>
+	
+	<table class="table_type1">
+	<colgroup>
+		<col width="16%" />
+		<col width="28%" span="3" />
+	</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th>당일차금</th>
+				<th>갱신차금</th>
+				<th>정산차금</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">대상</td>
+				<td class="sub Lcon">당일 매도/매수 미결제약정</td>
+				<td class="sub Lcon">전일 미결제약정</td>
+				<td class="sub Lcon" rowspan="2">최종거래일에 소멸 안되고 남은 미결제약정 매수 1계약</td>
+			</tr>
+			<tr>
+				<td class="subFirst">당일 매도/매수 없음</td>
+				<td class="Lcon">전일매수 1계약</td>
+			</tr>
+			<tr>
+				<td class="bg" rowspan="2">정산방법</td>
+				<td class="bg Lcon sub">당일 미결제약정을 당일 선물종가로 평가하여 결제</td>
+				<td class="bg Lcon sub">전일종가로 평가된 전일 미결제약정을 당일 선물 종가로 평가하여 결제</td>
+				<td class="bg Lcon sub">만기일 선물종가로 평가된 미결제약정을 다시 최종 <span class="red">KOSPI200현물지수로 평가</span>하여 결제 </td>
+			</tr>
+			<tr>
+				<td class="bg Lcon subFirst">-</td>
+				<td class="bg Lcon">전일선물종가 200P, 당일선물종가 201P이므로 (201P- 200P)*1계약*50만원</td>
+				<td class="bg Lcon">선물종가 201P, KOSPI200 현물지수 202P이므로 (202P-201P)*1계약*50만원</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>결제금액</th>
+				<td colspan="2">정산차금 500,000원</td>
+				<td>500,000원</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	<p class="cDepthTxt">이번에는 최종거래일이므로 당일차금, 갱신차금, 최종결제차금을 모두 산출해야 되겠네요.<br />
+	먼저 당일차금은 당일매도/매수분에 대하여 당일매도/매수가격대비 당일 선물종가로 계산한다고 했죠? 그런데, 당일 매도/매수한 내역이 없어서 <span class="orange">당일차금은 0</span>이 되겠죠.<br />
+	갱신차금은 전일 미결제약정에 대하여 전일종가대비 당일 선물종가로 계산한다고 했죠? 상기표에서 계산결과 <span class="orange">갱신차금 500,000원</span>이 산출됩니다. 따라서, <span class="orange">정산차금은 당일차금과 갱신차금을 합산한 500,000원</span>으로 산출되죠.<br />
+	최종결제차금은 최종거래일까지 소멸되지 않고 남은 미결제약정에 대하여 선물종가와 KOSPI 200 현물지수의 차이로 손익을 산출하죠. 위의 표에서 계산결과 <span class="orange">최종결제차금이 500,000원</span>이 산출되었네요.<br />
+	따라서, <span class="orange">만기일에 정산차금과 최종결제차금을 합한 1,000,000원이 결제되어 익일 계좌에 입금</span>됩니다.
+	</p>
+		
+	<div class="Vspace20"><!-- --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fbasic_10.gif" alt="왜 일일정산을 하는거죠?" /></h3>
+	<p class="cDepthTxt">현물거래에 비해 레버리지효과가 크기 때문에 최종거래일에 한꺼번에 손익을 결제할 경우 결제불이행위험성이 높아집니다. 따라서, 매일 종가로 손익을 정산하여 결제금액을 소액화하는 겁니다.<br />
+	즉, 선물가격의 변화에 따른 손실을 언제든지 보전해줄 수 있는 수준으로 증거금이 유지되도록 하여 결제불이행을 방지하기 위해 일일정산을 합니다.<br />
+	그림으로 살펴볼까요?</p>
+	
+	<div class="imgOutBox" style="margin-top:10px;"><img src="../img/edu/i_0106_img02.gif" alt="" /></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>

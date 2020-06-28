@@ -1,0 +1,190 @@
+@charset "EUC-KR";
+
+/* Layer Popup */
+div.PopOutBox {width:400px;}
+div.PopOutBox div.popHeading {height:64px;background:#3e3e3e;}
+div.PopOutBox div.popHeading h2 {float:left;padding:17px 0 0 24px;}
+div.PopOutBox div.popHeading h2 span.name {display:inline-block;font-size:15px;color:#ccc;padding:5px 0 0 10px;}
+div.PopOutBox div.popHeading h2.text {background:url(../img/popup/bg_title_01.gif) repeat-x 0 0;padding:0;color:#fff;font-size:20px;margin:17px 0 0 24px;}
+div.PopOutBox div.popHeading h2.text img {vertical-align:middle;margin-top:-1px;}
+*:first-child+html div.PopOutBox div.popHeading h2.text {background:url(../img/popup/bg_title_01.gif) repeat-x 0 2px;margin:15px 0 0 24px;} /* ie 7 핵 */
+*:first-child+html div.PopOutBox div.popHeading h2.text img {margin-top:2px;} /* ie 7 핵 */
+div.PopOutBox div.popHeading .close {float:right;margin:24px 24px 0 0;}
+div.PopOutBox div.popContents {max-height:540px;overflow-y:auto;background:#fff;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc;padding:24px;}
+h3.popup {padding-bottom:16px;font-size:0;line-height:0;}
+h3.popup a.btn {display:inline-block;margin:-3px 0 0 8px;}
+div.popContents h3.text {padding-bottom:16px;}
+div.popContents h3.text img {vertical-align:middle;margin-top:-3px;}
+div.popContents h3.text span {font-size:14px;color:#2b6aaf;}
+
+/* 투자교육 약도보기 */
+p.MapEduBox {border-top:2px solid #666;border-bottom:1px solid #aaa;padding:13px 0 13px 16px;} 
+
+/* 종목찾기 */
+div.popContents .SearchBoxType4 {margin-bottom:16px;}
+div.popContents .SearchBoxType4 div.search {padding:15px 0 5px 24px;}
+div.popContents .SearchBoxType4 dt {width:55px;}
+div.tableType3.scrollable {height:285px;overflow-y:scroll;border-left:1px solid #aaa;border-right:1px solid #aaa;border-bottom:1px solid #aaa;}
+div.tableType3.scrollable tbody td.l {padding-left:28px;}
+
+div.BtnTypeSearch {background:#f4f4f4;border-top:1px solid #aaa;border-bottom:1px solid #aaa;margin-top:16px;padding:8px 16px;}
+div.BtnTypeSearch .ClearBlock {height:3px;}
+div.BtnTypeSearch img {margin-right:-1px;}
+
+div.popContents div.standard {text-align:right;padding-bottom:8px;}
+div.popContents div.standard dt {display:inline;}
+div.popContents div.standard dt img {margin-top:1px;}
+*:first-child+html div.popContents div.standard dt img {margin-top:3px;} /* ie 7 핵 */
+div.popContents div.standard dd {display:inline;font-size:14px;color:#2b6aaf;line-height:14px;padding-left:4px;}
+
+/* 참가자 리스트 */
+div.SearchNameList {height:208px;margin-top:16px;overflow-y:scroll;border:1px solid #aaa;}
+div.SearchNameList ul {float:left;background:url(../img/popup/bg_search_01.gif)}
+div.SearchNameList ul li {float:left;height:35px;padding:0 15px;}
+div.SearchNameList ul li a {display:inline-block;padding-top:6px;}
+div.SearchNameList .noResult {text-align:center;padding-top:90px;}
+
+/* 주소검색 */
+div.adressList {height:205px;border:1px solid #aaa;overflow-y:scroll;} 
+div.adressList li a{display:block;padding:6px 9px;}
+div.adressList li a:hover {background:#b2b2b2;color:#fff;text-decoration:none;}
+
+/* 프로필 */
+div.pProfile {border-top:2px solid #666;padding-top:16px;zoom:1;}
+div.pProfile div.pic {float:left;width:120px;}
+div.pProfile div.pic img {width:84px;height:84px;border:8px solid #dbdbdb;}
+div.pProfile div.data {float:left;width:220px;}
+div.pProfile div.data th {width:60px;text-align:left;vertical-align:top;padding:4px 0 8px 0;}
+div.pProfile div.data td {vertical-align:top;font-size:13px;}
+div.pProfile div.data td strong {font-weight:normal;color:#e43535;}
+
+ul.pQuestion li {background:url(../img/popup/bg_profile_01.gif) no-repeat;padding:0 0 15px 54px;}
+ul.pQuestion li:first-child {background-position:left -2px;border-top:1px solid #aaa;}
+ul.pQuestion li.end {padding-bottom:0;}
+ul.pQuestion li dt {font-size:14px;color:#333;font-weight:bold;padding-top:14px;}
+ul.pQuestion li dt span {color:#999;}
+ul.pQuestion li dd {background:url(../img/popup/bg_profile_02.gif) no-repeat 0 8px;padding:4px 0 0 13px;}
+
+/* 추천하는 사람들 */
+ul.PeopleList li {float:left;width:75px;height:75px;text-align:center;margin:0 16px 16px 0;cursor:pointer;position:relative;}
+ul.PeopleList li.end {margin-right:0;}
+ul.PeopleList li img {position:absolute;left:0;top:0;}
+ul.PeopleList li span {position:absolute;width:75px;left:0;top:57px;font-weight:bold;font-size:11px;color:#fff;}
+ul.PeopleList li div.imgBlock {position:absolute;left:0;bottom:0;width:75px;height:19px;background:url(../img/expert/bg_trade_02.png) no-repeat;}
+ul.PeopleList li.sel div.imgBlock {width:75px;height:75px;background:url(../img/expert/bg_trade_03.gif) no-repeat;}
+ul.PeopleList li.sel span {color:#333;}
+ul.PeopleList li:hover {opacity:.5;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=50)";}
+ul.PeopleList li.sel:hover {opacity:1;filter:;-ms-filter:;}
+
+div.PeopleView {height:67px;background:url(../img/popup/bg_people_01.gif) no-repeat right 16px;border-top:1px solid #666;padding-top:16px;}
+div.PeopleView div.pic {float:left;width:80px;}
+div.PeopleView div.data {float:left;padding-top:7px;}
+div.PeopleView div.data a {font-weight:bold;}
+div.PeopleView div.data span {background:url(../img/popup/bg_people_02.gif) no-repeat 6px 3px;color:#999;padding-left:17px;}
+div.PeopleView div.data p {padding-top:4px;}
+div.PeopleView div.data strong {font-weight:normal;color:#2b6aaf;}
+
+/* 포트폴리오 Reset */
+dl.pResetType dt {border-bottom:2px solid #666;padding-bottom:10px;margin-bottom:11px;}
+dl.pResetType dd {background:url(../img/bullet/square_01.gif) no-repeat 13px 8px;padding:0 0 3px 23px;}
+dl.pResetType dd.etc {background:none;font-size:11px;color:#999;padding:9px 0 0 13px;}
+dl.pResetType dd.point {background:none;font-size:11px;color:#2b6aaf;padding:5px 0 15px 13px;}
+p.pResetType {border-top:1px solid #666;color:#333;padding-top:16px;}
+
+/* 닉네임 중복확인 */
+p.pInfoNick {background:url(../img/popup/bg_nick_01.gif) no-repeat 0 16px;font-weight:bold;color:#333;font-size:14px;padding:16px 0 30px 39px;}
+p.pInfoNick strong {color:#e43535;}
+
+/* 공감레터 미리보기 */
+h1.popup {height:51px;background:#333439;padding:0 0 0 20px;font-size:15px;color:#ccc;padding-top:20px;}
+h1.popup strong {color:#fff;font-size:20px;padding-right:6px;}
+div.logo {text-align:right;margin-top:-71px;}
+div.NewsLetter {padding:20px;}
+
+/* 투자성향 및 상품위험등급 확인 */
+div.NormalPopup {padding:25px 20px;} /* 일반팝업 여백 */
+p.GradeMsg1 {padding-bottom:16px;}
+p.GradeMsg1 img {vertical-align:middle;margin-top:-2px;}
+p.GradeMsg1 strong {display:inline-block;color:#fff;padding:1px 4px 4px 4px;}
+p.GradeMsg1 strong.gType1 {background:#ed0c0c;}
+p.GradeMsg1 strong.gType2 {background:#ed610c;}
+p.GradeMsg1 strong.gType3 {background:#b2b300;}
+p.GradeMsg1 strong.gType4 {background:#168a3e;}
+p.GradeMsg1 strong.gType5 {background:#0067b4;}
+p.GradeMsg2 {border-top:2px solid #666;border-bottom:1px solid #666;padding:16px;}
+p.GradeMsg2 strong {color:#2b6aaf;}
+
+/* 달력 */
+div.calendar {width:202px;padding:4px;background:#3e3e3e;} 
+div.calendar .calSearch {width:182px;height:32px;padding:8px 0 0 0;margin:0 auto;position:relative;}
+div.calendar .calSearch div {width:65px;margin:0 auto;overflow:hidden;}
+div.calendar .calSearch div ul {width:1000px;}
+div.calendar .calSearch div li {float:left;margin:0 20px 0 0;font-size:16px;font-weight:bold;color:#fff;}
+div.calendar .calSearch div li a {font-size:16px;font-weight:bold;color:#fff;}
+div.calendar .calSearch div li span {color:#a5a5a5;}
+div.calendar .calSearch .prev {position:absolute;top:12px;left:0;}
+div.calendar .calSearch .next {position:absolute;top:12px;right:0;}
+div.calendar table {width:202px;border-top:1px solid #5b6775;}
+div.calendar th {height:20px;background:#6e8399;border:0;}
+div.calendar th img {vertical-align:middle;}
+div.calendar td {height:27px;padding:0;background:#fff;border-right:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;text-align:center;}
+div.calendar td.sat {border-right:0;}
+div.calendar a {font-size:13px;color:#333;}
+div.calendar td.sat a {color:#2b6aaf;}
+div.calendar td.sun a {color:#e43535;}
+div.calendar td.off a,div.calendar li.off a{color:#999;}
+div.calendar td.selected {background:#317bcb;}
+div.calendar td.selected a {color:#fff;font-weight:bold;}
+
+div.calendar .calSearch.month div {width:40px;}
+div.calendar .calSearch.year div {width:106px;*width:108px;}
+
+div.calendar .monthList {padding:16px 14px 14px 16px;background:#fff;overflow:hidden;_zoom:1;}
+div.calendar .monthList li {float:left;width:39px;height:29px;padding:10px 0 0 0;margin:0 2px 2px 0;border:1px solid #e7e7e7;text-align:center;}
+div.calendar .monthList li.selected {background:#317bcb;}
+div.calendar .monthList li.selected a {color:#fff;font-weight:bold;}
+
+div.calendar .monthList.yearList {padding:16px 0 14px 10px;}
+div.calendar .monthList.yearList li {width:42px} 
+
+/* 15자 토크 */
+div.TalkBox {width:328px;background:#fff;border:4px solid #3e3e3e;color:#333;font-size:11px;position:absolute;right:75px;top:50px;z-index:10000;}
+
+div.TalkBox dl.Top {height:36px;background:#3e3e3e;}
+div.TalkBox dl.Top dt {float:left;width:124px;padding:6px 0 0 12px;}
+div.TalkBox dl.Top dd.help {float:left;width:60px;padding:8px 0 0 0;}
+div.TalkBox dl.Top dd.date {float:left;width:85px;text-align:right;font-size:14px;color:#ccc;padding:6px 0 0 0;}
+div.TalkBox dl.Top dd.close {float:right;width:35px;text-align:right;padding:8px 12px 0 0;}
+
+div.TalkBox div.Middle {height:463px;overflow-y:scroll;}
+div.TalkBox div.Middle .msgBlock {background:#dadfe4 url(../img/messenger/bg_01.gif) repeat-y;border-top:1px solid #8b8e92;_zoom:1;min-height:63px;}
+div.TalkBox div.Middle .msgBlock div.pic {float:left;width:60px;height:64px;background:url(../img/messenger/bg_pic.gif) no-repeat 12px 8px;}
+div.TalkBox div.Middle .msgBlock div.pic img.pic {float:right;width:34px;height:34px;margin:11px 11px 0 0;}
+div.TalkBox div.Middle .msgBlock .myTalk {float:left;margin-top:21px;}
+div.TalkBox div.Middle .msgBlock dl {float:left;}
+div.TalkBox div.Middle .msgBlock dt {padding:7px 0 4px 9px;}
+div.TalkBox div.Middle .msgBlock dd.msg {float:left;height:24px;background:url(../img/messenger/bg_talk_left_01.gif) no-repeat;padding:5px 0 0 17px;_height:22px;_padding:7px 0 0 17px;}
+*:first-child+html div.TalkBox div.Middle .msgBlock dd.msg {height:22px;padding:7px 0 0 17px} /* ie 7 핵 */
+div.TalkBox div.Middle .msgBlock dd.btn {float:left;height:22px;background:url(../img/messenger/bg_talk_right_01.gif) no-repeat right 0;text-align:center;padding:7px 10px 0 10px;}
+div.TalkBox div.Middle .msgBlock dd.btn span {display:block;background:url(../img/messenger/bg_bar_01.gif) no-repeat;padding-left:9px;}
+div.TalkBox div.Middle .msgBlock dd.reply {float:left;width:8px;height:29px;background:url(../img/messenger/bg_talk_right_01.gif) no-repeat right 0;}
+div.TalkBox div.Middle .msgBlock dl.Admin dd.msg {background:url(../img/messenger/bg_talk_left_02.gif) no-repeat;color:#fff;}
+div.TalkBox div.Middle .msgBlock dl.Admin dd.btn {background:url(../img/messenger/bg_talk_right_02.gif) no-repeat right 0;}
+div.TalkBox div.Middle .msgBlock dl.Admin dd.reply {background:url(../img/messenger/bg_talk_right_02.gif) no-repeat right 0;}
+
+div.TalkBox div.Middle .bgType2 {background:#e9ecef url(../img/messenger/bg_02.gif) repeat-y;} /* 배경다름 */
+
+div.TalkBox div.Middle .write {padding:0 0 8px 68px;} /* 댓글입력 */
+div.TalkBox div.Middle .write input {width:173px;height:24px;background:url(../img/messenger/bg_input02.gif) no-repeat;border:none;padding:0 0 0 8px;margin-right:2px;font-size:11px;color:#333;line-height:24px;}
+div.TalkBox div.Middle .write img {vertical-align:middle;}
+
+div.TalkBox div.Middle div.Reply {background-image:url(../img/messenger/bg_reply_01.gif);background-repeat:no-repeat;border-top:none;_zoom:1;} /* 댓글 */
+div.TalkBox div.Middle div.bgType2.Reply {background-image:url(../img/messenger/bg_reply_02.gif);}
+div.TalkBox div.Middle div.Reply div.pic {width:84px;background:url(../img/messenger/bg_pic.gif) no-repeat 36px 8px;}
+
+div.TalkBox .Bottom {width:320px;height:34px;padding:10px 0 0 8px;margin:0 auto;border-top:1px solid #cdcfd1;background:#fff;}
+div.TalkBox .Bottom input {width:217px;height:24px;background:url(../img/messenger/bg_input01.gif) no-repeat 0 0;padding:0 0 0 8px;border:0px;color:#333;font-size:11px;line-height:24px;}
+
+/* 전문에러 */
+p.errorBox {background:url(../img/popup/bg_error_01.gif) no-repeat 8px center;border-top:2px solid #666;border-bottom:1px solid #aaa;margin-bottom:25px;color:#2b6aaf;font-size:15px;padding:19px 0 14px 98px;}
+p.errorBox img {display:block;margin-bottom:10px;}

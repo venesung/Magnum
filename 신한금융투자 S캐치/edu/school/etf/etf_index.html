@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/>
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" href="css/goodi.css" type="text/css" />
+	</head>
+
+	<body>
+		<!-- //우측버튼모음 -->
+		<script type="text/javascript">
+			function myhome(snsKind){
+				var snsTitle = encodeURIComponent("신한금융투자");
+				var snsURL = encodeURIComponent("http://www.shinhaninvest.com/pop/etf/etf_index.html");
+				var snsTag = encodeURIComponent("요즘 뜨는 이야기! 지금은 ETF 시대");
+				if(snsKind == "twitter") {
+					window.open("http://twitter.com/home/?status=" + snsTitle + ":" + snsURL);
+				}
+				else if(snsKind == "me2day") {
+					window.open("http://me2day.net/posts/new?new_post[body]=" + snsTitle + ":" + snsURL + "&new_post[tags]=" + snsTag);
+				}
+				else if(snsKind == "facebook") {
+					window.open("http://www.facebook.com/sharer.php?u=" + snsURL + "&t=" + snsTitle);
+				}
+			}
+			function copy(URL){
+				window.clipboardData.setData("Text", URL);
+				alert("주소가 복사되었습니다.");
+				return;
+			}
+		</script>
+		<map id="rmenu" name="rmenu">
+			<!--area shape="rect" coords="75,377,283,437" target="_blank" href="/index.html?menuCode=M12778993864145" onfocus="this.blur();" alt="연합 실전투자대회" /-->
+			<area shape="rect" coords="1025,64,1051,90" href="javascript:myhome('twitter');" alt="트위터" />
+			<area shape="rect" coords="1025,94,1051,117" href="javascript:myhome('facebook');" alt="페이스북" />
+			<area shape="rect" coords="1025,124,1051,147" href="javascript:myhome('me2day');" alt="미투데이" />
+			<area shape="rect" coords="1025,151,1051,182" href="javascript:void(copy('http://www.shinhaninvest.com/pop/etf/etf_index.html'));" alt="주소복사" />
+			<area shape="rect" coords="510,405,738,436" href="etf_list.html" alt="ETF 자세히 알아보기" />
+		</map>
+		<!-- //우측버튼모음 -->
+
+		<div><img src="img/etf_main01.jpg" alt="" usemap="#rmenu" /></div>
+		<div><img src="img/etf_main02.jpg" alt="" usemap="#smenu" /></div>
+		<map id="smenu" name="smenu">
+			<area shape="rect" coords="126,67,287,107" href="etf_10.html" onfocus="this.blur();" alt="10편 ETF활용전략" />
+		</map>
+	</body>
+</html>
+
+

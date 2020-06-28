@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 투자전략</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="strategy_01.html" class="sel">1장. 선물 헤지거래</a></li>
+			<li><a href="strategy_02.html">2장. 선물 투기거래</a></li>
+			<li><a href="strategy_03.html">3장. 선물 스프레드거래</a></li>
+			<li><a href="strategy_04.html">4장. 선물 차익거래</a></li>
+			<li><a href="strategy_05.html">5장. 옵션 방향성전략</a></li>
+			<li><a href="strategy_06.html">6장. 옵션 변동성전략</a></li>
+			<li><a href="strategy_07.html">7장. 옵션 차익거래와 헤지거래</a></li>
+			<li><a href="strategy_08.html">8장. 옵션 합성전략</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_str_01.gif" alt="선물 헤지거래" /></h2>
+	<div class="designEdu1">
+		<strong>A:</strong> 기관들이 헤지목적으로 선물을 매도하고, 이런 기사가 신문에 나오던데 헤지목적의 선물매도라는게 무슨 의미지? <br />
+		<strong>B:</strong> 주식을 보유하고 있으면 가격변동에 따라 손익이 발생하잖아? 이러한 주가변동에 따른 위험을 회피하기위해 하는 선물거래를<br />&nbsp;&nbsp;&nbsp;&nbsp;헤지거래라고 하는거야. 
+	</div>
+	
+	<p>
+		주식을 보유하고 있는 투자자의 경우 주가하락시 손실이 발생하게 되는데, 이에 대비하여 보유주식에 해당하는 금액만큼의 선물을 매도하면 보유주식에서 발생하는 손실을 선물매도포지션에서 발생하는 이익으로 상쇄시켜 가격변동위험을 회피할 수 있습니다. 이러한 목적으로 행해지는 선물거래를 헤지거래라고 합니다.<br />
+		헤지거래는 현재의 현물포지션이나 장래에 취할 포지션에서 발생되는 가격변동위험을 피하기 위하여 반대되는 손익구조를 가진 선물포지션을 취하는 것을 말합니다.<br />
+		이러한 헤지거래는 선물포지션의 방향에 따라 매도헤지, 매수헤지로 나눌 수 있습니다. 각 헤지거래에 대하여 알아보도록 하겠습니다.
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_str_02.gif" alt="매도 헤지" /></h3>	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_str_01.gif" alt="매도헤지 구축과 손익변화" /></h4>
+	<p class="cDepthTxt2">매도헤지란, 현물시장에서 매수포지션을 보유하고 있는 투자자가 해당현물에 대응하는 선물을 매도하는 것을 말합니다. 이는 현물가격이 하락할 위험에 대비하는 것으로 현물가격이 하락하여 손실이 발생하여도 이와 반대포지션을 취한 선물에서 현물포지션의 손실을 상쇄하여 포지션손익에 변동이 없습니다. 이러한 매도헤지포지션 구축과정과 손익변화를 도표로 요약하면 아래와 같습니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="45%" />
+		<col width="45%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>포지션</th>
+				<th>가격하락시 손익</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>현물</th>
+				<td>매수포지션 (가격하락시 위험노출)</td>
+				<td>손실</td>
+			</tr>
+			<tr>
+				<th class="bg">선물</th>
+				<td class="bg">현물과 반대방향인 매도포지션 취함</td>
+				<td class="bg">이익</td>
+			</tr>
+			<tr>
+				<th>헤지결과</th>
+				<td>현물매수 + 선물매도</td>
+				<td>가격하락으로 인한 현물손실분을 선물이익으로 상쇄</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>	
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		50억상당의 KOSPI 200주식을 보유하고 있는 투자자가 향후 가격하락에 대한 위험을 헤지하고자 50억상당의 선물을 매도하였을 경우 1개월 후 과연 주가변동위험을 회피할 수 있는지 손익변동을 알아보죠
+	</div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="30%" />
+		<col width="30%" />
+		<col width="30%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>포지션</th>
+				<th>1개월 후 10%주가하락</th>
+				<th>1개월 후 10%주가상승</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th rowspan="2">현물</th>
+				<td rowspan="2">50억 매수</td>
+				<td class="sub">5억 손실</td>
+				<td class="sub">5억이익</td>
+			</tr>
+			<tr>
+				<td class="subFirst">현물시가가 10%하락한 45억</td>
+				<td>현물가격이 10%상승한 55억</td>
+			</tr>
+			<tr>
+				<th class="bg" rowspan="2">선물</th>
+				<td class="bg" rowspan="2">100계약 매도(헤지포지션)</td>
+				<td class="bg sub">5억이익</td>
+				<td class="bg sub">5억 손실</td>
+			</tr>
+			<tr>
+				<td class="bg subFirst">선물가격이 10%하락한 90P</td>
+				<td class="bg">선물가격이 10%상승한 110P</td>
+			</tr>
+			<tr>
+				<th rowspan="2">헤지결과</th>
+				<td rowspan="2">현물매수(50억)+선물매도(100계약)</td>
+				<td class="sub">현물손실을 선물이익이 상쇄</td>
+				<td class="sub">현물이익을 선물손실이 상쇄</td>
+			</tr>
+			<tr>
+				<td class="subFirst" colspan="2">총손익 변동없음</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<ul class="cDepthBul">
+		<li>
+			<strong>매도헤지포지션 구축</strong><br />
+			KOSPI 200 선물지수가 100P일때 50억상당의 선물수량은 100계약(100계약*100P*50만원 = 50억)이므로 선물매도 100계약으로 매도헤지포지션 구축하게 됩니다.
+		</li>
+		<li>
+			<strong>주가변동에 따른 포지션손익</strong><br />
+			상기 도표에서 알 수 있듯이 가격하락시 대차상환을 위한 현물매수비용 감소로 인한 현물이익을 선물손실이 상쇄시키고, 가격상승시 현물매수비용 증가로 인한 현물손실을 선물이익이 상쇄시켜 포지션손익에 변동이 없음을 확인할 수 있습니다.
+		</li>
+	</ul>	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_str_03.gif" alt="매수 헤지" /></h3>	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_str_02.gif" alt="매수헤지 구축과 손익변화" /></h4>
+	<p class="cDepthTxt2">
+		매수헤지란, 현물시장에서 매도포지션을 보유하고 있거나, 향후 매수할 계획이 있는 투자자가 해당 현물에 대응하는 선물을 매수하는 것을 말합니다. 이는 현물가격이 상승할 위험에 대비하는 것으로 현물가격이 상승하여 손실이 발생하여도 이와 반대포지션을 취한 선물에서 현물포지션의 손실을 상쇄하여 포지션손익에 변동이 없습니다.<br />
+		이러한 매수헤지포지션 구축과정과 손익변화를 도표로 요약하면 아래와 같습니다.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="45%" />
+		<col width="45%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>포지션</th>
+				<th>가격상승 손익</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>현물</th>
+				<td>매도포지션을 보유하고 있거나 향후 매수 계획<br />(가격상승시 위험노출)</td>
+				<td>손실</td>
+			</tr>
+			<tr>
+				<th class="bg">선물</th>
+				<td class="bg">현물과 반대방향인 매수포지션 취함</td>
+				<td class="bg">이익</td>
+			</tr>
+			<tr>
+				<th>헤지결과</th>
+				<td>현물매도 + 선물매수</td>
+				<td>가격상승으로 인한 현물손실분을 선물이익으로 상쇄</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		50억상당의 KOSPI 200주식을 대차하여 매도포지션을 보유하고 있어 향후 주식을 매수하여 대차상환을 해야하는 투자자가 향후 가격상승에 대한 위험을 헤지하고자 50억상당의 선물을 매수하였을 경우 1개월 후 과연 주가변동위험을 회피할 수 있는지 손익변동을 알아보죠.
+	</div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="30%" />
+		<col width="30%" />
+		<col width="30%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>포지션</th>
+				<th>1개월 후 10%주가하락</th>
+				<th>1개월 후 10%주가상승</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th rowspan="2">현물</th>
+				<td rowspan="2">50억 매도</td>
+				<td class="sub">5억이익</td>
+				<td class="sub">5억 손실</td>
+			</tr>
+			<tr>
+				<td class="subFirst">현물시가가 10%하락한 45억</td>
+				<td>현물가격이 10%상승한 55억</td>
+			</tr>
+			<tr>
+				<th class="bg" rowspan="2">선물</th>
+				<td class="bg" rowspan="2">100계약 매수(헤지포지션)</td>
+				<td class="bg sub">5억 손실</td>
+				<td class="bg sub">5억이익</td>
+			</tr>
+			<tr>
+				<td class="bg subFirst">선물가격이 10%하락한 90P</td>
+				<td class="bg">선물가격이 10%상승한 110P</td>
+			</tr>
+			<tr>
+				<th rowspan="2">헤지결과</th>
+				<td rowspan="2">현물매수(50억)+선물매도(100계약)</td>
+				<td class="sub">현물이익을 선물손실이 상쇄</td>
+				<td class="sub">현물손실을 선물이익이 상쇄</td>
+			</tr>
+			<tr>
+				<td class="subFirst" colspan="2">총손익 변동없음</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<ul class="cDepthBul">
+		<li>
+			<strong>매수헤지포지션 구축</strong><br />
+			KOSPI 200 선물지수가 100P일때 50억상당의 선물수량은 100계약(100계약*100P*50만원 = 50억)이므로 선물매수 100계약으로 매수헤지포지션 구축하게 됩니다.
+		</li>
+		<li>
+			<strong>주가변동에 따른 포지션손익</strong><br />
+			상기 도표에서 알 수 있듯이 가격하락시 대차상환을 위한 현물매수비용 감소로 인한 현물이익을 선물손실이 상쇄시키고, 가격상승시 현물매수비용 증가로 인한 현물손실을 선물이익이 상쇄시켜 포지션손익에 변동이 없음을 확인할 수 있습니다.
+		</li>
+	</ul>
+	
+	</body>
+</html>

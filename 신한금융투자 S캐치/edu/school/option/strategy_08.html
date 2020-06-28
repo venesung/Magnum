@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 투자전략</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="strategy_01.html">1장. 선물 헤지거래</a></li>
+			<li><a href="strategy_02.html">2장. 선물 투기거래</a></li>
+			<li><a href="strategy_03.html">3장. 선물 스프레드거래</a></li>
+			<li><a href="strategy_04.html">4장. 선물 차익거래</a></li>
+			<li><a href="strategy_05.html">5장. 옵션 방향성전략</a></li>
+			<li><a href="strategy_06.html">6장. 옵션 변동성전략</a></li>
+			<li><a href="strategy_07.html">7장. 옵션 차익거래와 헤지거래</a></li>
+			<li><a href="strategy_08.html" class="sel">8장. 옵션 합성전략</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_str_08.gif" alt="옵션 합성전략" /></h2>
+	<div class="designEdu1">
+		<strong>A:</strong> 차익거래에서 합성을 해서 고평가된 상품은 매도하고, 저평가된 상품은 매수한다고 했는데 어떻게 하면<br />
+		&nbsp;&nbsp;&nbsp; 그런 합성포지션이 나오는거지?<br />
+		<strong>B:</strong> 기초자산과 파생상품을 적절하게 결합해서 대상자산과 동일한 수익구조를 만들어 내는건데, 어떻게 결합해야 되는지<br />
+		&nbsp;&nbsp;&nbsp; 한번 알아볼까?
+	</div>
+	
+	<p>
+		합성전략은 옵션을 합성하여 선물과 동일한 상품을 만들거나, 선물과 옵션을 합성하여 옵션과 동일한 상품을 만들어내어 동일손익을 획득하는 것을 말합니다.<br />
+		예를 들어 선물매수와 풋옵션매수를 결합하면 콜매수와 동일한 손익구조를 가지는 합성콜매수포지션이 되고, 이 전략은 콜매수를 사용하는 경우와 동일하게 향후 시장이 큰 폭으로 상승할 것이라고 예상할 경우 사용하게 됩니다. 다만, 콜매수를 사용하는 경우보다 포지션구축시 발생하는 호가갭으로 인한 손실, 매매수수료 등의 비용이 더 발생하게 된다는 점을 감안하여 전략을 구축해야 되겠죠.<br />
+		그렇다면 어떤 상품들을 합성하면 동일한 수익구조를 만드는 합성포지션을 만들 수 있는지 아래표를 통해서 살펴보도록 하죠.
+	</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_str_01.gif" alt="합성전략" /></h3>	
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th>합성포지션</th>
+				<th>구성방법</th>
+				<th>합성포지션</th>
+				<th>구성방법</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>합성콜매수</th>
+				<td>풋매수 + 선물매수</td>
+				<th>합성풋매도</th>
+				<td>콜매도 + 선물매수</td>
+			</tr>
+			<tr>
+				<th class="bg">합성콜매도</th>
+				<td class="bg">풋매도 + 선물매도</td>
+				<th class="bg">합성선물매수</th>
+				<td class="bg">콜매수 + 풋매도</td>
+			</tr>
+			<tr>
+				<th>합성풋매수</th>
+				<td>콜매수 + 선물매도</td>
+				<th>합성선물매도</th>
+				<td>콜매도 + 풋매수</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	</body>
+</html>

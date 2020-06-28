@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 심화과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="deepen_01.html" class="sel">1장. 선물가격결정</a></li>
+			<li><a href="deepen_02.html">2장. 선물 베이시스와 괴리율</a></li>
+			<li><a href="deepen_03.html">3장. 선물 괴리도와 괴리율</a></li>
+			<li><a href="deepen_04.html">4장. 옵션 가격결정요인</a></li>
+			<li><a href="deepen_05.html">5장. 옵션 가격결정모형</a></li>
+			<li><a href="deepen_06.html">6장. 옵션 풋콜패러티</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_01.gif" alt="선물가격결정" /></h2>
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_03.gif" alt="선물가격결정" />
+		A: 선물은 미래가격이니까 그 기회비용을 감안하면 더 비싸겠지? 근데 얼마나 더 비쌀까?<br />
+		B: 현물이 아닌 선물을 거래해서 감소되는 비용과 놓치는 이익이 있는데 선물가격은 현물가격에 감소되는 비용만큼 더하고,<br />
+		&nbsp;&nbsp;&nbsp; 놓치는 이익만큼 빼면 되지 않을까?
+	</div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="45%" />
+		<col width="45%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>KOSPI 200에 해당하는 주식 매입하여 1년보유</th>
+				<th>1년 후 인도를 조건으로 하는 KOSPI 200 선물구입</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>비용</th>
+				<td>매입비용에 해당하는 금융비용발생</td>
+				<td>실제 인도는 1년 후에 발생되므로 금융비용 발생안함</td>
+			</tr>
+			<tr>
+				<th class="bg">이익</th>
+				<td class="bg">보유기간 동안 배당이익발생</td>
+				<td class="bg">실물보유기간이 없으므로 배당이익 발생안함</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+		
+	<p>
+		즉, 자금이 없는 상태에서 주식을 매입하려면 은행에서 자금차입을 해야하고, 그에 따른 이자비용이 들어가지만, KOSPI 200선물을 구입하면 인도시점에서 자금이 필요하므로 현재상태에서 자금차입으로 인한 이자비용지출은 Save할 수 있습니다.<br />
+		그만큼 KOSPI 200 선물가격은 현물가격보다 높아야 되겠죠?<br />
+		또 한가지, 주식을 매입해서 실물로 보유하고 있으면 배당수익이 발생하지만, KOSPI 200 선물을 구입하면 실물을 보유하고 있는 것이 아니라 미래인도시점에서 실물을 구입하는 것이므로 배당수익은 발생하지 않습니다.<br />
+		그만큼 KOSPI 200 선물가격은 현물가격보다 낮아야 되겠죠?<br />
+		그래서, 현물을 매입할 때 필요한 금액인 KOSPI 200지수에 금융비용을 더하고, 현물이 아닌 선물을 보유함으로 인해서 놓치는 이익인 배당수입을 차감하여 KOSPI 200선물의 이론가격을 산출합니다.
+	</p>	
+	
+	<div class="designEdu2"><strong>KOSPI 200 선물의 이론가격 = </strong>KOSPI 200 지수 + 금융비용 - 배당수입</div>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<div class="designEdu1">
+		A: KOSPI 200이론가격은 KOSPI200지수에 이자율을 더하고 배당지수를 빼면되는구나! <br />
+		&nbsp;&nbsp;&nbsp; 그런데 왜 실제 선물가격은 이론가격이랑 틀린걸까<br />
+		B: 물론 이론적인 가격이 존재하지만, 실제가격은 매수자와 매도자의 호가에 의해 결정되기 때문이야.<br />
+		&nbsp;&nbsp;&nbsp; 투자자들의 심리가 반영이 되어 실제가격이 결정되기 때문에 차이가 있어
+	</div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_11.gif" alt="HTS에서 선물현재가 보기" /></h3>
+	
+	<p class="cDepthTxt">당사의 HTS인 Goodi 2004의 2000번화면(KOSPI200 선물현재가)을 살펴보도록 하죠.</p>
+	
+	<div class="imgOutBox" style="margin:10px 0px 15px 0px;"><img src="../img/edu/img_futures_deepen_03.jpg" alt="" /></div>
+	
+	<p class="cDepthTxt">투자자들의 예상이 반영된 매도자와 매수자의 호가에 의해 균형을 이루는 가격인 102.10에서 선물가격이 결정되었네요. 그럼 선물이론가는 얼마일까요? 선물이론가는 KOSPI200지수+이자비용-배당수입라고 앞서 배웠습니다. 배운산식에 의해서 계산을 해보면 선물이론가는 102.36으로 실제선물가격인 102.10과 차이가 발생합니다. 이 차이에 대해서 다음페이지에서 살펴보도록 하겠습니다.</p>
+	
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_04.jpg" alt="" vspace="20" /></div>
+	
+	</body>
+</html>

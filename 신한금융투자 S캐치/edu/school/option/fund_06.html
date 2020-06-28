@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 자금관리</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="fund_01.html">1장. 증거금 의미</a></li>
+			<li><a href="fund_02.html">2장. 위탁증거금</a></li>
+			<li><a href="fund_03.html">3장. 최소증거금율 증거금</a></li>
+			<li><a href="fund_04.html">4장. 주문가능금액과 출금가능금액</a></li>
+			<li><a href="fund_05.html">5장. 추가증거금 </a></li>
+			<li><a href="fund_06.html" class="sel">6장. 증거금가계산 활용</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fund_06.gif" alt="증거금가계산 활용" /></h2>
+	
+	<div class="designEdu1">
+		<strong>A:</strong> 추가증거금이 발생하는지, 내가 이 주문을 내고나서 여유자금이 남아있는지 이런 것들을 미리 알 수 없을까?<br />
+		<strong>B:</strong> 증거금가 계산이라는게 있어서 그 기능을 활용하면 네가 원하는 것들을 미리 알아서 사전에 자금 부족발생을 막을 수 있어.<br /><br />
+	</div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_11.gif" alt="증거금가계산 순서" /></h3>	
+	<p class="cDepthTxt">현재 미결제에 새로운 주문을 입력한 후에 주문가능금액여력이 남아있을지, 포지션을 Overnight할 때 추가증거금이 발생하지는 않을지 등을 확인하고자 할 때 증거금가계산을 통해 시뮬레이션을 해볼 수 있습니다.<br />
+	<img src="../img/edu/img_futures_fund_09.jpg" alt="" vspace="25"  /></p>	
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_12.gif" alt="증거금가계산 조건설정과 활용방법" /></h3>	
+	<p class="cDepthTxt">어떠한 목적으로 증거금가계산을 활용하느냐에 따라 그에 맞는 정확한 조건을 설정해야 원하는 결과값을 조회하여 실제로 주문실행이나 미결제를 Overnight할 때 자금부족현성이 발생되지 않습니다. 아래표에서 목적별로 어떻게 조건을 설정하고, 어떠한 항목들을 확인해야 하는지에 대하여 요약하여 제공해드리니 습득하시고, 효율적으로 증거금가계산기능을 활용하시기 바랍니다.</p>		
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="20%" />
+		<col width="40%" />
+		<col width="40%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th>조건설정</th>
+				<th>사용목적</th>
+				<th>확인항목</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>금일증거금</th>
+				<td class="Lcon">
+					1. 현재 미결제상태에서 주문입력후 자금여력이 얼마나 생기는지 확인하고 싶을 경우<br />
+					2. 추가증거금 발생한 상태에서 어떤 종목을 청산하면 해소되는지 확인하고 싶을 경우
+				</td>
+				<td class="Lcon">
+					1. 주문가능금액의 변동전후금액 확인<br />
+					2. 추가증거금 변동전후금액 확인
+				</td>
+			</tr>
+			<tr>
+				<th class="bg" rowspan="2">익일증거금</th>
+				<td class="bg sub Lcon">현재 미결제상태에서 또는 종목을 추가하여 Over-night시 익일 추가증거금이 발생되는지 확인하고 싶을 경우</td>
+				<td class="bg sub Lcon">변동 후의 추가증거금발생금액 확인</td>
+			</tr>
+			<tr>
+				<td class="bg subFirst Lcon" colspan="2">
+					활용TIP<br />
+					추가증거금발생을 막기 위해서는 3시15분전까지 동시호가로 인한 가격변동과 이론가차이로 인한 오차분을 감안하여 변동 후 정산기준금과 유지증거금의 차액을 입금처리
+				</td>
+			</tr>
+			<tr>
+				<th rowspan="2">KOSPI 200 </th>
+				<td class="sub Lcon">KOSPI200지수가 일정수준에 도달시 익일 추가증거금이 발생되는지 확인하고 싶을 경우추가증거금 발생여부 확인</td>
+				<td class="sub Lcon">변동 후의 추가증거금발생금액 확인</td>
+			</tr>
+			<tr>
+				<td class="subFirst Lcon" colspan="2">
+					주의<br />
+					<ul>
+						<li>장기적인 추가증거금발생지수확인을 위해서는 사용불가(이론가산정을 위한 변수오차가 커짐)</li>
+						<li>선물의 경우 선물정산가격과 KOSPI200지수가 동일하다는 가정하에 추가증거금발생여부를 가정산하므로, 백워데이션이나 콘탱고일 경우 오차발생(매수보유시 : 백워데이션일경우 금액이 커짐, 매도보유시 : 콘탱고일경우 금액이 커짐)</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_13.gif" alt="goodi 2004 에서 증거금가계산 하기" /></h3>	
+	<p class="cDepthTxt">Goodi 2004의 5461화면(증거금 가계산 조회)에서 앞에서 살펴본 과정을 통해 증거금가계산을 할 수 있습니다.</p>		
+	
+	<div class="imgOutBox" style="margin:10px 0px 25px 0px;"><img src="../img/edu/img_futures_fund_10.jpg" alt=""  /></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_14.gif" alt="goodi Fx 에서 증거금가계산 하기" /></h3>	
+	<p class="cDepthTxt">goodi Fx의 메뉴에서 계좌를 선택한 후 증거금 및 가계산조회화면을 열어 세번째 탭에 있는 증거금가계산에서 원하는 종목을 추가하여 증거금을 가계산해볼 수 있습니다.</p>		
+	
+	<div class="imgOutBox" style="margin:10px 0px 25px 0px;"><img src="../img/edu/img_futures_fund_11.jpg" alt=""  /></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_15.gif" alt="사용시 주의사항" /></h3>		
+	
+	<div class="cDepthTxt">	
+		<p>가계산에는 여러가지 가정과 오차가 발생할 수 있으므로 그 부분은 감안하여 활용해야 합니다.</p>	
+		<div class="textTotable"><!-- Vertical Space --></div>
+		<ul class="cDepthBul">
+			<li>
+				<strong>오차발생위험</strong><br />
+				본 화면은 시뮬레이션을 하는 화면으로 익일증거금이나 KOSPI200을 선택시 이론가산출변수의 차이로 인한 오차가 발생될 수 있으므로 추정치로 활용해야 합니다.
+			</li>
+			<li>
+				<strong>대용가 변동위험</strong><br />
+				대용을 사용하고있는 경우 주식가격의 변동으로 인하여 익일 대용가격이 하락하여 총액이 감소하는 부분은 감안되지 않았으므로 대용가변동위험은 감안하여 활용해야 합니다.
+			</li>
+			<li>
+				<strong>추가증거금 발생여부 판단위험</strong><br />
+				추가증거금은 정산기준금이 유지증거금을 하회할 경우 발생하므로, 오차발생위험을 감안하여 유지증거금보다 정산기준금이 상회하더라도 그 차이가 근소할 경우 추가증거금발생위험이 있다고 판단, 활용해야 합니다.
+			</li>
+			<li>
+				<strong>최소증거금율 변동위험</strong><br />
+				과대미결제보유 모니터링에 월2회이상 체크되었을 경우 익익일 영업일부터 최소증거금율이 5%로 상향조정됨에 따라 이 조건에 따른 증거금 상향조정되는 부분은 감안되지 않았으므로 최소증거금율 변동위험은 감안하여 활용해야 합니다.
+			</li>
+		</ul>	
+	</div>	
+ 	
+	</body>
+</html>

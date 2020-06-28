@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>신한금융투자 온라인서비스 플랫폼</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/shicBottom.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+			
+			shicBottom = new shicBottom(); 
+		});
+	</script>
+	
+	<!--[if IE 6]>
+	<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('.tab'); // png 쓰이는 부분
+	</script>
+	<![endif]-->
+</head>
+<body style="background:none;margin:0;padding:0;position:relative;">
+<div class="moveLayer">
+	<!-- 한줄 Start -->
+	<div class="mHeader">
+		<!-- Menu Start -->
+		<ul class="mNb" id="OverTabType">
+			<li><a href="#"><img src="../img/movelayer/nb_01_off.gif" alt="최근조회종목" /></a></li><!-- 선택됐을 경우 class="on" 이미지명_on -->
+			<li><a href="#"><img src="../img/movelayer/nb_02_off.gif" alt="달인의 매매현황" /></a></li>
+			<li><a href="#"><img src="../img/movelayer/nb_03_off.gif" alt="오늘의 증시" /></a></li>
+			<li><a href="#"><img src="../img/movelayer/nb_04_off.gif" alt="라운지타임라인" /></a></li>
+		</ul>
+		<!--// Menu End -->
+			
+		<!-- 최근조회종목 Start -->
+		<div class="mContent" style="display:none;">
+			<div class="mTitle"><strong><img src="../img/movelayer/title_01.gif" alt="최근조회종목" /></strong><span>2012.06.10 / 17:47</span></div>
+			<div class="mCon mCon1">
+				<!-- list Start -->
+				<div class="mList">
+					<div class="l_Area">
+						<ul>
+							<li><a href="#">기아차</a><span>/</span></li>
+							<li><a href="#">삼성전기</a><span>/</span></li>
+							<li><a href="#">현대차</a><span>/</span></li>
+							<li class="on"><a href="#">최대글자수최대글자수</a><span>/</span></li><!-- 선택시 li 엘리먼트에 class="on" 추가 -->
+							<li><a href="#">기아차</a><span>/</span></li>
+							<li><a href="#">삼성전기</a><span>/</span></li>
+							<li><a href="#">현대차</a><span>/</span></li>
+							<li><a href="#">최대글자수최대글자수</a><span>/</span></li>				
+						</ul>
+					</div>
+					<div class="btn">
+						<a href="#" class="prev">이전</a>
+						<a href="#" class="next">다음</a>
+					</div>
+				</div>		
+				<!--// list End -->
+			</div>
+		</div>
+		<!--// 최근조회종목 End -->
+		
+		<!-- 달인의 매매현황 Start -->
+		<div class="mContent" style="display:none;">
+			<div class="mTitle"><strong><img src="../img/movelayer/title_02.gif" alt="달인의 매매현황" /></strong><span>2012.06.10 / 17:47</span></div>
+			<div class="mCon mCon2">
+				<strong><a href="#">박유천</a></strong> <span class="stxt">(누적수익률 <em class="up">34.6%</em>)</span>&nbsp;&nbsp;&nbsp;
+				<strong><a href="#">최대글자수최대글자수</a></strong> 109,890 / <em class="up">5,000주 매도</em>
+			</div>
+		</div>
+		<!--// 달인의 매매현황 End -->
+		
+		<!-- 오늘의 증시 Start -->
+		<div class="mContent" style="display:none;">
+			<div class="mTitle"><strong><img src="../img/movelayer/title_03.gif" alt="오늘의 증시" /></strong><span>2012.06.10 / 17:47</span></div>
+			<div class="mCon mCon3">
+				<dl>
+					<dt class="first"><img src="../img/movelayer/dt_01.gif" alt="코스피" /></dt>
+					<dd>1,000,000<span class="up"><em>▲100,096</em><em>99.99%</em></span></dd>
+					
+					<dt><img src="../img/movelayer/dt_02.gif" alt="코스닥" /></dt>
+					<dd>1,000,000<span class="down"><em>▼100,096</em><em>-99.99%</em></span></dd>
+					
+					<dt><img src="../img/movelayer/dt_03.gif" alt="코스피200" /></dt>
+					<dd>1,000,000<span class="up"><em>▲100,096</em><em>99.99%</em></span></dd>
+				</dl>
+			</div>
+		</div>
+		<!--// 오늘의 증시 End -->
+		
+		<!-- 라운지타임라인 Start -->
+		<div class="mContent" style="display:;">
+			<div class="mTitle"><strong><img src="../img/movelayer/title_04.gif" alt="라운지타임라인" /></strong><span>2012.06.10 / 17:47</span></div>
+			<div class="mCon mCon4 mTimeline">
+				<a href="#">자자</a>님이 <a href="#">안랩</a>를(을) 포트폴리오 <strong>매수</strong>하셨습니다. [ <strong>24,800</strong>원에 <strong>100</strong>주 매수체결 ]
+			</div>
+		</div>
+		<!--// 라운지타임라인 End -->
+		
+		<div class="btnDwon"><a href="#"><img src="../img/movelayer/btn_down.gif" alt="열기" /></a></div><!-- 닫을시 : <a href="#"><img src="../img/movelayer/btn_up.gif" alt="닫기" /></a> -->
+	</div>	
+	<!--// 한줄 End -->
+	<div class="ClearBlock"><!-- Clear Block --></div>
+	
+	<!-- 펼쳐질 컨텐츠 Start -->
+	<div class="mContainer" style="display:;">
+	
+		<!-- 최근조회종목 Start -->
+		<div style="display:none;">
+			<div class="mConTxt"><img src="../img/movelayer/txt_01.gif" alt="'내 투자'에 성공을 불러올 종목들, 더 많이 파헤치고 분석하자!" /></div>
+			<div class="mBox1">
+				<dl class="conType1">
+					<dt>최대글자수최대글자수 <span>(KOSPI  001740)</span></dt>
+					<dd>
+						<dl>
+							<dt><img src="../img/movelayer/dt_04.gif" alt="현재가" /></dt>
+							<dd>100,229,000</dd>							
+							<dt><img src="../img/movelayer/dt_05.gif" alt="등락률" /></dt>
+							<dd><span class="up">99.99%</span></dd>							
+							<dt><img src="../img/movelayer/dt_06.gif" alt="전일비" /></dt>
+							<dd><span class="up">▲6,000</span></dd>							
+							<dt><img src="../img/movelayer/dt_07.gif" alt="거래량" /></dt>
+							<dd><span class="up">1,025,032</span></dd>							
+						</dl>
+						<div class="ClearBlock"><!-- Clear Block --></div>
+					</dd>
+					<dd>
+						<a href="#"><img src="../img/movelayer/btn_analysis.gif" alt="종목분석" /></a>
+						<a href="#"><img src="../img/movelayer/btn_order.gif" alt="실주문" /></a>
+						<a href="#"><img src="../img/movelayer/btn_portfolio.gif" alt="포트폴리오" /></a>
+						<a href="#"><img src="../img/movelayer/btn_scrap.gif" alt="종목스크랩" /></a>
+					</dd>
+				</dl>
+			</div>
+			
+			<div class="mBox1">
+				<dl class="conType2">
+					<dt><a href="#">최고글자수최고글자수최고글자수최고글...</a></dt>
+					<dd>
+						[아시아경제 권해영 기자]"갤럭시S3를 잡을 무기는 원칩이다 "팬택의 '베가레이서2'를 써 본 소감은...
+					</dd>
+					<dt><a href="#">최고글자수최고글자수최고글자수최고글...</a></dt>
+					<dd>
+						[아시아경제 권해영 기자]"갤럭시S3를 잡을 무기는 원칩이다 "팬택의 '베가레이서2'를 써 본 소감은...
+					</dd>
+				</dl>
+			</div>
+			
+			<div class="mBox2 nomargin">
+				<div><img src="../img/movelayer/temp_chart_01.gif" alt="CHART AREA" /></div><!-- CHART AREA : 280 x 136 -->	
+			</div>
+		</div>
+		<!--// 최근조회종목 End -->
+		
+		<div class="ClearBlock"><!-- Clear Block --></div>
+		
+		<!-- 달인의 매매현황 Start -->
+		<div style="display:none;">
+			<div class="mConTxt"><img src="../img/movelayer/txt_02.gif" alt="집중!! 투자의 달인들은 지금 조용히 이 종목에 투자하고 있다!" /></div>
+			<dl class="master1">
+				<dt>
+					<span class="fLeft"><img src="../img/movelayer/stitle_01.gif" alt="투자의 달인 매도/매수 현황 (누적수익률 기준)" /></span>
+					<span  class="fRight"><a href="#"><img src="../img/movelayer/more.gif" alt="더보기" /></a></span>
+				</dt>
+				<dd>
+					<span class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></span><!-- SIZE : 34 x 34 -->
+					<span class="txt">
+						09:00  <strong><a href="#">최대글자수</a></strong><span class="up">(90.6%)</span>
+						<strong><a href="#">최대글자수최대글자수</a></strong> 109,800 / <span class="up">5,000주 매수</span>
+					</span>
+				</dd>
+				<dd>
+					<span class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></span><!-- SIZE : 34 x 34 -->
+					<span class="txt">
+						09:00  <strong><a href="#">수지</a></strong><span class="down">(90.6%)</span>
+						<strong><a href="#">포스코</a></strong> 109,800 / <span class="down">5,000주 매도</span>
+					</span>
+				</dd>
+				<dd>
+					<span class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></span><!-- SIZE : 34 x 34 -->
+					<span class="txt">
+						09:00  <strong><a href="#">최대글자수</a></strong><span class="up">(90.6%)</span>
+						<strong><a href="#">최대글자수최대글자수</a></strong> 109,800 / <span class="up">5,000주 매수</span>
+					</span>
+				</dd>
+			</dl>
+			
+			<div class="master2">				
+				<dl class="mList">
+					<dt><img src="../img/movelayer/txt_02_01.gif" alt="관심달인" /></dt>
+					<dd>
+						<!-- list Start -->
+						<div class="l_Area">
+							<ul>
+								<li class="on">
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>박유천</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>박준</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li><li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li><li>
+									<a href="#">
+										<img src="../img/movelayer/temp_pic_02.jpg" alt="" /><!-- SIZE : 36 x 36 -->
+										<span>최고글</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="btn">
+							<a href="#" class="prev">이전</a>
+							<a href="#" class="next">다음</a>
+						</div>
+						<!--// list End -->
+					</dd>
+				</dl>
+				<dl class="mInfo">
+					<dt class="pic"><img src="../img/movelayer/temp_pic_03.jpg" alt="" /></dt><!-- SIZE : 54 x 54 -->
+					<dd>
+						<dl>
+							<dt>
+								<span class="fLeft">
+									<strong>박유천</strong> <span class="txt">누적수익률</span> <span class="up">99.9%</span>
+								</span>
+								<span class="fRight"><a href="#"><img src="../img/movelayer/more.gif" alt="더보기" /></a></span>
+							</dt>
+							<dd><span class="time">09:00</span><strong><a href="#">최대글자수최대글자수</a></strong> 109,890 / <span class="up">5,000주 매수</span></dd>
+							<dd><span class="time">09:00</span><strong><a href="#">포스코</a></strong> 109,890 / <span class="down">5,000주 매도</span></dd>
+						</dl>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--// 달인의 매매현황 End -->
+		
+		<div class="ClearBlock"><!-- Clear Block --></div>
+		
+		<!-- 오늘의 증시 Start -->
+		<div style="display:none;">
+			<div class="mConTxt"><img src="../img/movelayer/txt_03.gif" alt="오늘의 증시 흐름과 주요 이슈가 알려주는 내 투자방향에 '올바른 길'" /></div>
+			<div class="mBox2">
+				<dl>
+					<dt><img src="../img/movelayer/dt_08.gif" alt="코스피" /></dt>
+					<dd>1,000,000<span class="up"><em><span>▲</span>100,096</em><em>99.99%</em></span></dd>
+				</dl>
+				<div><img src="../img/movelayer/temp_chart_02.gif" alt="CHART AREA" /></div><!-- CHART AREA : 280 x 110 -->	
+			</div>
+			
+			<div class="mBox2">
+				<dl>
+					<dt><img src="../img/movelayer/dt_09.gif" alt="코스닥" /></dt>
+					<dd>1,000,000<span class="up"><em><span>▲</span>100,096</em><em>99.99%</em></span></dd>
+				</dl>
+				<div><img src="../img/movelayer/temp_chart_02.gif" alt="CHART AREA" /></div><!-- CHART AREA : 280 x 110 -->	
+			</div>
+			
+			<div class="mBox2 nomargin">
+				<dl>
+					<dt class="type2"><img src="../img/movelayer/dt_10.gif" alt="코스피200" /></dt>
+					<dd>1,000,000<span class="down"><em><span>▼</span>100,096</em><em>-99.99%</em></span></dd>
+				</dl>
+				<div><img src="../img/movelayer/temp_chart_02.gif" alt="CHART AREA" /></div><!-- CHART AREA : 280 x 110 -->	
+			</div>
+		</div>
+		<!--// 오늘의 증시 End -->
+		
+		<div class="ClearBlock"><!-- Clear Block --></div>
+		
+		<!-- 라운지타임라인 Start -->
+		<div style="display:;">
+			<div class="mTimeline">
+				<div class="mConTxt"><img src="../img/movelayer/txt_04.gif" alt="투자자의 활동에 전문가의 의견으로 날개를 단다!" /></div>
+				
+				<dl>
+					<dt>
+						<span class="fLeft"><img src="../img/movelayer/stitle_02.gif" alt="오늘의 핫핏" /></span>
+						<span  class="fRight"><a href="#"><img src="../img/movelayer/more.gif" alt="더보기" /></a></span>
+					</dt>
+					<dd class="conArea1">
+						<dl>
+							<dt>
+								<span class="pic"><img src="../img/movelayer/temp_pic_04.jpg" alt="" /></span><!-- SIZE: 56 x 56 -->
+								<span class="title">
+									<a href="#">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수...</a>
+									<span>(2012.05.24 / 17:00)</span>
+								</span>								
+							</dt>
+							<dd>
+								오늘 리자와 영자가 추천하는 종목은 바로바로 삼성전기 입니다. 삼성전자의 스마트폰 판매 호조에 따른 법용부품인 MLCC와 카메라모듈 등의 출하량 증가 실적 성장을 이끌것으로 엄청 기대되고 있는 종목이지요..
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+				
+				<dl class="listType2">
+					<dt>
+						<span class="fLeft"><img src="../img/movelayer/stitle_03.gif" alt="라운지 매도/매수 타임라인" /></span>
+						<span  class="fRight"><a href="#"><img src="../img/movelayer/more.gif" alt="더보기" /></a></span>
+					</dt>
+					<dd class="conArea2">
+						<dl>
+							<dt class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></dt><!-- SIZE: 34 x 34 -->
+							<dd><a href="#">최대글자수최대글</a>님이 <a href="#">최대글자수최대글자수</a>를(을) 포트폴리오 <strong>매수</strong>...  </dd>
+							<dd><span>24,800원에 100주 매수체결</span></dd>
+							<dd class="mtime"><img src="../img/icon/time.gif" alt="시간" /> <strong>10</strong>초전</dd>
+						</dl>						
+					</dd>
+					
+					<dd class="conArea2">
+						<dl>
+							<dt class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></dt><!-- SIZE: 34 x 34 -->
+							<dd><a href="#">최대글자수최대글</a>님이 <a href="#">최대글자수최대글자수</a>를(을) 포트폴리오 <strong>매수</strong>...  </dd>
+							<dd><span>24,800원에 100주 매수체결</span></dd>
+							<dd class="mtime"><img src="../img/icon/time.gif" alt="시간" /> <strong>10</strong>초전</dd>
+						</dl>						
+					</dd>
+					
+					<dd class="conArea2">
+						<dl>
+							<dt class="pic"><img src="../img/movelayer/temp_pic_01.jpg" alt="" /></dt><!-- SIZE: 34 x 34 -->
+							<dd><a href="#">최대글자수</a>님이 <a href="#">최대글자수</a>를(을) 포트폴리오 <strong>매수</strong> 하였습니다.  </dd>
+							<dd><span>24,800원에 100주 매수체결</span></dd>
+							<dd class="mtime"><img src="../img/icon/time.gif" alt="시간" /> <strong>2012.05.05</strong></dd>
+						</dl>						
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--// 라운지타임라인 End -->
+	
+	</div>
+	<!--// 펼쳐질 컨텐츠 End -->
+</div>
+</body>
+</html>

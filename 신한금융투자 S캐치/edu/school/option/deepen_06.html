@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 심화과정</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="deepen_01.html">1장. 선물가격결정</a></li>
+			<li><a href="deepen_02.html">2장. 선물 베이시스와 괴리율</a></li>
+			<li><a href="deepen_03.html">3장. 선물 괴리도와 괴리율</a></li>
+			<li><a href="deepen_04.html">4장. 옵션 가격결정요인</a></li>
+			<li><a href="deepen_05.html">5장. 옵션 가격결정모형</a></li>
+			<li><a href="deepen_06.html" class="sel">6장. 옵션 풋콜패러티</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_deepen_07.gif" alt="옵션 풋콜패러티" /></h2>
+	
+	<div class="designEdu1">
+		A: 콜옵션이 풋옵션보다 이론적으로 비싸다고 하는데 그 이유가 뭘까?<br /><br /><br />
+	</div>
+	
+	<p>같은 기초자산에 대해 발행된 옵션으로서 만기와 행사가격이 같은 콜옵션과 풋옵션의 가격사이에는 일정한 관계식이 성립되는데 이를 풋콜 패러티(Put-Call Parity)라고 합니다. 이에 따르면 주식과 옵션을 적절히 결합하여 위험이 전혀없는 무위험 포트폴리오를 구성할 수 있는데 이 무위험 포트폴리오의 수익률은 시장이 균형상태에 있다면 무위험이자율과 같아야 합니다. 그렇지 않다면 차익거래가 발생하여 다시 균형상태를 유지하게 되고, 옵션가격은 정상적인 가격을 찾게 될 것입니다. 그렇다면, 풋콜 패러티가 어떻게 도출되는지 알아볼까요?</p>
+	
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_24.jpg" alt="" vspace="20" /></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_07.gif" alt="포트폴리오의 현재가치" /></h3>
+	<p class="cDepthTxt">현재시점에서 기초자산을 매수하고, 콜옵션매도, 풋옵션을 매수하여 구성한 포트폴리오의 현재가치는 S + P - C가 되겠죠.</p>
+
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_08.gif" alt="만기에서의 수익(Pay Off)" /></h3>
+	<div class="cDepthTxt">		
+		<ul class="cDepthBul">
+			<li>
+				<strong>만기시점에서 기초자산가격이 옵션행사가격보다 작을 경우 :</strong><br />
+				콜옵션의 내재가치가 0 이 되고, 풋옵션의 내재가치는 행사가격과 KOSPI 200지수의 차이인 (X-S)가 되겠죠. 결국 포트폴리오의 가치는 행사가격(X)가 됩니다.
+			</li>
+			<li>
+				<strong>만기시점에서 기초자산가격이 옵션행사가격보다 클 경우 :</strong><br />
+				풋옵션의 내재가치가 0이 되고, 콜옵션의 내재가치는 KOSPI 200지수와 행사가격의 차이인 (S-X)가 되어 권리 행사를 할 것이고, 매도자는 그에 대응하여 포트폴리오의 가치는 행사가격(X)가 됩니다.
+			</li>
+		</ul>	
+	</div>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_deepen_09.gif" alt="풋-콜 패러티 도출" /></h3>
+	<p class="cDepthTxt">현재시점에서 구성한 포트폴리오가 무위험포트폴리오가 되려면 만기시점에서의 가치인 (S+P-C) ert 가 만기 에서의 수익(Pay Off)인 X와 동일해야 합니다. 즉, (S+P-C) ert = X가 됩니다.<br />
+		결국 여기에서 풋-콜 패러티라는 항등식이 도출됩니다.
+	</p>
+	<div class="aCenter"><img src="../img/edu/img_futures_deepen_25.jpg" alt="" vspace="20" /></div>
+	<p class="cDepthTxt">
+		이 항등식에 따르면 콜옵션의 가치를 안다면 이 등가식에 의해 풋옵션의 가치를 추정할 수 있기 때문에 상당히 유용하게 사용될 수 있습니다.<br />
+		소위 콜옵션이 풋옵션보다 비싸야 된다는 의미도 위의 등가식에서 도출됩니다. 이는 ATM옵션의 경우 S=X이고, 위의 식은 C-P = S - e-rt S로 변형할 수 있고, 우변의 이자율 r이 0이 아닌 이상, 항상 0보다 크게 됩니다. 따라서 ATM옵션의 경우 콜옵션의 가치가 풋옵션의 가치보다 커야함을 알 수 있습니다.
+	</p>
+
+	</body>
+</html>

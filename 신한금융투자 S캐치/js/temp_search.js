@@ -1,0 +1,11 @@
+document.write('<div class="TotalSearch">');
+document.write('<input type="text" value="검색어를 입력하세요." /><a href="#"><img src="../img/button/search_11.gif" alt="종목검색" /></a>');
+document.write('<!-- 자동완성 Start -->');
+document.write('<ul class="AutoListTop">');
+document.write('	<li><span>A066570</span> SK 하이닉스</li>');
+document.write('	<li><span>A066570</span> SK 하이닉스</li>');
+document.write('	<li><span>A066570</span> SK 하이닉스</li>');
+document.write('	<li><span>A066570</span> SK 하이닉스</li>');
+document.write('</ul>');
+document.write('<!--// 자동완성 End -->');
+document.write('</div>');

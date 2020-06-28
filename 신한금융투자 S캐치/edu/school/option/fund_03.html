@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 자금관리</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="fund_01.html">1장. 증거금 의미</a></li>
+			<li><a href="fund_02.html">2장. 위탁증거금</a></li>
+			<li><a href="fund_03.html" class="sel">3장. 최소증거금율 증거금</a></li>
+			<li><a href="fund_04.html">4장. 주문가능금액과 출금가능금액</a></li>
+			<li><a href="fund_05.html">5장. 추가증거금 </a></li>
+			<li><a href="fund_06.html">6장. 증거금가계산 활용</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fund_03.gif" alt="최소증거금율 증거금" /></h2>
+	
+	<p>
+		앞에서 보유하고 있는 미결제에 대한 위험을 Cover하기 위해 부과하는 증거금이 순위험위탁증거금이라고 하였습니다.
+		그리고, 포지션의 손익도에 따라 서로 위험이 상쇄되는 포지션이 있을 경우 증거금은 감소하는 효과를 나타내는 것이 순위험위탁증거금의 산출방식입니다. 하지만, 이러한 방식은 보유하고있는 포지션을 전부 청산하거나, 전부 보유하고 있다는 가정하에서 위험을 Cover할 수 있고, 일부만 청산했을 경우에는 상쇄되던 위험이 갑자기 크게 노출되어 증거금수준보다 훨씬 큰 위험에 노출될 수 있습니다. 이러한 위험을 막기위해 부과하는 것이 최소증거금율 증거금입니다.<br /><br />
+		한방향만 청산시 노출되는 위험에 일정 증거금율을 곱하여 증거금으로 부과하겠다는 의도입니다. 당사에서는 이렇게 산정한 최소증거금율증거금과 순위험위탁증거금 중 큰 금액을 총 순위험위탁증거금으로 산출하여 옵션체결손익과 신규주문증거금을 합산하여 위탁증거금을 산출합니다. 또한 최소증거금율은 계좌별로 모니터링을 통해 차등적용을 하고 있습니다.<br /><br />
+		이러한 적용방법을 아래 표에서 간단하게 살펴보고 사례를 통해 실제로 산출을 해보도록 하죠.</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type2">
+	<colgroup>
+		<col width="15%" />
+		<col width="85%" />
+	</colgroup>
+	
+		<tbody>
+			<tr>
+				<th>의미</th>
+				<td class="end">보유포지션의 한방향만 청산시 노출되는 위험에 대하여 일정비율을 증거금으로 부과</td>
+			</tr>
+			<tr>
+				<th class="bg">최소증거금율</th>
+				<td class="bg end">0%, 3%, 5%를 모니터링을 통하여 계좌별로 차등적용</td>
+			</tr>
+			<tr>
+				<th rowspan="2">산출방법</th>
+				<td class="end sub">전일 KOSPI 200종가*최소증거금율*10만원*한방향만 청산시 위험노출 계약수</td>
+			</tr>
+			<tr>
+				<td class="end">한방향만 청산시 위험노출계약수 : Max(선물매수*5 + 풋옵션매도, 선물매도*5 + 콜옵션매도)</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_06.gif" alt="사례" />
+		<strong>20146102 (콜옵션 6월물 행사가격 102)</strong> : 매도 70계약보유<br />
+		<strong>20146110 (콜옵션 6월물 행사가격 110)</strong> : 매수 380계약보유<br />
+		<strong>전일 KOSPI 200종가</strong> : 105.02P<br />
+		<strong>순위험 위탁증거금</strong> : 20,103,250원<br />
+		<strong>최소증거금율 3%</strong> 적용계좌의 총 순위험 위탁증거금을 산출해보도록 하죠.
+	</div>
+	
+	<p>
+		한방향만 청산시 위험노출계약수 : Max(선물매수*5 + 풋옵션매도, 선물매도*5 + 콜옵션매도) 이므로 상기예에서 위험노출계약수는 콜옵션매도 70계약입니다. 따라서 최소증거금율 증거금은 위험노출계약수에 전일 KOSPI 200종가, 최소증거금율, 거래단위인 10만원을 곱해서 22,054,200원이 산출되고, 마지막으로 총 순위험 위탁증거금은 순위험 위탁증거금과 최소증거금율 증거금 중 큰 값을 부과하므로 최소증거금이 적용되어 22,054,200원이 됩니다.<br />
+		이러한 산출과정을 아래 도표에서 간략하게 다시한번 살펴보도록 하죠.
+	</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="10%" />
+		<col width="30%" />
+		<col width="30%" />
+		<col width="15%" />
+		<col width="15%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>총 순위험 위탁증거금</th>
+				<th>최소증거금율 증거금</th>
+				<th>상승방향</th>
+				<th>하락방향</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>대상</th>
+				<td>당일중 미결제에서 발생 할 수 있는 최대위험치</td>
+				<td>한방향만 청산시 발생위험치</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th class="bg">산출방법</th>
+				<td class="bg">순위험 위탁증거금과 최소증거금율 증거금 중 큰 금액</td>
+				<td class="bg">
+					상승방향과 하락방향중 큰수량<br />
+					* KOSPI 200전일종가<br />
+					* 최소증거금율 * 10만원</td>
+				<td class="bg">
+					선물매수*5<br />
+					+풋옵션매도</td>
+				<td class="bg">
+					선물매도*5<br />
+					+콜옵션매도
+				</td>
+			</tr>
+			<tr>
+				<th rowspan="2">산출값</th>
+				<td class="sub">22,054,200원</td>
+				<td class="sub">22,054,200원</td>
+				<td rowspan="2">0계약</td>
+				<td rowspan="2">70계약</td>
+			</tr>
+			<tr>
+				<td class="subFirst">Max(20,103,250, 22,054,200)</td>
+				<td>70계약*105.02P*3%*10만원</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_06.gif" alt="goodi 2004 에서 위탁증거금 및 잔고보기" /></h3>	
+	<p class="cDepthTxt">goodi 2004의 5451화면 (KOSPI 200 증거금산출)에서 위탁증거금을, 5450화면(선물/옵션 잔고)에서 증거금과 평가금액, 손익이 차이가 발생함을 조회할 수 있습니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<div class="fl" style="width:350px;">
+		<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_10.gif" alt="위탁증거금" /></h4>
+		<p class="cDepthTxt2">총 순위험 위탁증거금이 순위험 위탁증거금으로 표시되어 있습니다. 따라서, 위탁증거금은 총 순위험 위탁증거금과 당일옵션순매수대금의 합산치인 5,166,200원이 됩니다.</p>
+	</div>
+	<div class="fr" style="width:350px;">
+		<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_11.gif" alt="선물/옵션 잔고" /></h4>
+		<p class="cDepthTxt2">보유포지션조회를 통해서 한 방향 청산 시 위험노출계약수를 산출할 수 있고, 여기에 전일 KOSPI 200종가, 10만원, 최소증거금율(3%)를 곱하여 최소증거금율 증거금을 산출할 수 있습니다.</p>
+	</div>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<div class="fl" style="width:350px;"><img src="../img/edu/img_fund_01.jpg" alt="" align="top" /></div>
+	<div class="fr" style="width:340px;padding-left:10px;"><img src="../img/edu/img_fund_02.jpg" alt="" align="top" /></div>
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_07.gif" alt="goodi Fx 에서 위탁증거금 및 잔고보기" /></h3>	
+
+	<div class="fl" style="width:350px;">
+		<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_10.gif" alt="위탁증거금" /></h4>
+		<p class="cDepthTxt2">순위험 위탁증거금은 가격증거금과 가격변동증거금의 합산치인 20,103,250원이고, 최소증거금율 증거금은 22,054,200원입니다. 따라서 총 순위험 위탁증거금은 둘 중 큰 금액인 22,054,200원이 되고, 조회화면에서는 총 순위험 위탁증거금이 순위험 위탁증거금으로 표시되어 있습니다. 따라서 위탁증거금은 총 순위험 위탁증거금과 당일옵션순매수대금의 합산치인 5,166,200원이 됩니다.</p>
+	</div>
+	<div class="fr" style="width:350px;">
+		<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_11.gif" alt="선물/옵션 잔고" /></h4>
+		<p class="cDepthTxt2">goodi Fx의 메뉴에서 계좌를 선택한 후 미니잔고를 열면 보유하고 있는 포지션과 평가손익을 조회할 수 있습니다. 보유포지션조회를 통해 한방향 청산시 위험노출계약수를 산출할 수 있고, 여기에 전일 KOSPI 200종가, 10만원, 최소증거금율(3%)를 곱하여 최소증거금율 증거금을 산출할 수 있습니다.</p>
+	</div>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<div class="fl" style="width:350px;"><img src="../img/edu/img_fund_03.jpg" alt="" align="top" /></div>
+	<div class="fr" style="width:340px;padding-left:10px;"><img src="../img/edu/img_fund_04.jpg" alt="" align="top" /></div>
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_08.gif" alt="모니터링" /></h3>	
+	<p class="cDepthTxt">계좌별 최소증거금율은 당사 모니터링을 통하여 차등적용하고 있습니다. 그럼 어떤 기준에 의해 모니터링을 실시하고, 어떻게 차등적용을 하는지에 대해서 알아보도록 하죠.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_03.gif" alt="모니터링 방법" /></h4>
+	<div class="cDepthTxt2"><ul class="cDepthBul">
+		<li>계좌현재 평가금액에서 보유할 수 있는 미결제수량(기준수량)을 산출하여 과대하게 미결제를 보유하고 있는 계좌에 대하여 모니터링</li>
+		<li>과대미결제수량을 보유하고 있는 계좌로 월 2회 체크되었을 경우 2 영업일부터 최소증거금율 5%로 상향조정</li>
+		<li>현재 보유하고 미결제산출시 옵션매수는 제외하고 옵션매도와 선물만으로 한방향 청산시 최대위험노출수량을 계산</li>
+	</ul></div>
+	
+	<div class="Vspace5"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_04.gif" alt="goodi 2004 에서 과대미결제 모니터링 보기" /></h4>
+	<p class="cDepthTxt2">goodi 2004의 5911(굿아이 Desk)에서 6번째 탭에 있는 과대미결제를 조회하면 현재 평가금액에서 보유할 수 있는 미결제 수량인 기준수량과 현재 보유하고있는 미결제수량이 조회되고, 미결제산출수량이 기준수량보다 클 경우 과대여부에 “Yes”로 표시되며, “Yes”가 발생된 횟수가 과대횟수에 표시되어 월 2회이상 발생시 최소증거금율이 상향조정됨을 조회할 수 있습니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<div class="aCenter"><img src="../img/edu/img_futures_fund_04.jpg" alt="" /></div>	
+	
+	</body>
+</html>

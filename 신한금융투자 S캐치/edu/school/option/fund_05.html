@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 자금관리</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="fund_01.html">1장. 증거금 의미</a></li>
+			<li><a href="fund_02.html">2장. 위탁증거금</a></li>
+			<li><a href="fund_03.html">3장. 최소증거금율 증거금</a></li>
+			<li><a href="fund_04.html">4장. 주문가능금액과 출금가능금액</a></li>
+			<li><a href="fund_05.html" class="sel">5장. 추가증거금 </a></li>
+			<li><a href="fund_06.html">6장. 증거금가계산 활용</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fund_05.gif" alt="추가증거금" /></h2>
+	
+	<div class="designEdu1">
+		<strong>A:</strong> 추가증거금이 발생했다고 하는데 이거 어떻게 해야 되는거지?<br />
+		<strong>B:</strong> 네가 유지증거금을 충족시켜주지 못해서 발생한거야, 요구하는만큼 추가로 담보제공을 하거나 포지션을 축소해야해.<br /><br />
+	</div>
+	
+	<p>앞에서 주문하고 출금하는데는 위탁증거금을 사용하고, 결제이행을 위해서 최소한 계좌는 유지증거금수준을 유지해줘야 된다고 했습니다. 이 유지증거금을 담보로 제공하지 못할 경우 추가로 개시증거금수준까지 담보제공을 요구하는 것이 추가증거금입니다.</p>
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_09.gif" alt="유지증거금" /></h3>	
+	<div class="cDepthTxt">		
+		<div class="designEdu2" style="margin-top:0px;"><strong>유지증거금 =</strong> Max (최소증거금율증거금*2/3, 순위험유지증거금)</div>
+		<div class="designEdu2"><strong>순위험유지증거금 =</strong> Max (가격증거금+가격변동증거금+선물스프레드증거금, 최소증거금)</div>
+		<div class="tbCommentBottom">가격변동증거금 : KOSPI 200지수가 전일대비 상하 10%변동시 구간별 손익을 계산하여 최대위험치를 증거금으로 부과</div>
+		
+		<div class="Vspace10"><!-- Vertical Space --></div>
+		
+		<p>결제이행보증을 위해 매일매일 재산정하는 유지증거금은 보유하고 있는 미결제에 대해서 총순위험위탁증거금을 산출하는 방법과 유사한데 차이점은 가격변동증거금산출시 KOSPI 200종가가 10%상하로 변동시 최대위험을 산출하고, 이렇게 산출된 순위험유지증거금과 최소증거금율증거금(한 방향만 청산시 발생될 수 있는 위험)에 2/3를 곱한 값 중 큰 값을 유지증거금으로 산출합니다.</p>
+	</div>		
+	
+	<div class="Vspace20"><!-- Vertical Space --></div>
+		
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_10.gif" alt="추가증거금" /></h3>	
+	<p class="cDepthTxt">고객이 유지증거금을 담보로 제공하지 못할 경우 추가로 담보제공을 요청하는 증거금수준</p>
+	<div class="cDepthTxt">		
+		<div class="designEdu2"><strong>추가증거금 =</strong> 위탁증거금 - 정산기준금</div>
+		<div class="designEdu2"><strong>정산기준금 =</strong> 예탁액(15시15분까지 입금분 반영) + 대용매도증감 + 선물정산차금 + 옵션매도대금 - 위탁수수료 + 최종결제차금 + 권리행사배정대금</div>
+		
+		<div class="Vspace10"><!-- Vertical Space --></div>
+		
+		<p>결제대금 결제 후 예탁액이 유지증거금수준을 충족시키지 못할 경우 추가증거금이 발생하고, 발생하는 금액은 위탁증거금과 결제대금결제 후 예탁액(정산기준금)의 차이만큼입니다. 이렇게 발생된 추가증거금은 익일 12시까지 입금을 하거나, 포지션을 줄여 위탁증거금수준을 줄여 해소할 수 있습니다. 하지만, 이러한 담보제공이나 포지션축소가 없을 경우 익일 13시 강제청산인 반대매매처리를 하게 됩니다. 반대매매는 반대매매비율을 산출하여 해당비율만큼 보유하고 있는 전종목이 청산되므로, 원하지 않는 포지션이 구성될 수 있습니다. 따라서, 추가증거금은 발생여부를 꼭 확인하고, 강제청산이 발생하지 않도록 주의가 필요합니다.<br />
+		그림으로 살펴볼까요?
+		</p>
+	</div>		
+	
+	<div class="imgOutBox" style="margin:20px 0px;"><img src="../img/edu/img_futures_fund_07.jpg" alt="" /></div>
+	
+	<p class="cDepthTxt">	
+		따라서, 추가증거금이 발생되지 않도록 사전에 방지하는 것이 자금을 효과적으로 관리하는 방법중의 한가지라고 할 수 있습니다.<br />  
+		추가증거금발생을 방지하기 위한 방법은 사전에 정산기준금이 유지증거금보다 작은지 확인할 수 있어야 하고, 확인이 될 경우 그 차액을 입금하되 종가가 나오는 15시15분 이전에 입금해야 합니다. 종가가 나온 후 입금금액은 반영하지 않습니다. 그렇다면, 유지증거금과 정산기준금을 가계산할 수 있는 기능이 제공되어야 되겠죠?  당사의 HTS에서는 고객이 추가증거금발생을 사전에 막을 수 있도록 증거금가계산기능을 제공해드리고 있으므로 HTS에서 어떻게 증거금가계산을 활용할 수 있는지 알아보도록 하겠습니다.
+	</p>
+	
+	</body>
+</html>

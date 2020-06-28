@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/>
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" href="css/goodi.css" type="text/css" />
+	</head>
+
+	<body>
+	<!-- 우측목록버튼 -->
+	<script type="text/javascript">
+	//new Floating(적용할개체 , 스크롤시 Y축여백 , 최상단시 Y축여백 , 미끄러지는속도:작을수록빠름..기본20 , 빠르기:작을수록부드러움..기본10);
+	function Floating ( FloatingObj , MarginY , TopLimit , Percentage , setTime ) {
+		this.FloatingObj = FloatingObj;
+		this.MarginY = (MarginY) ? MarginY : 0;
+		this.TopLimit = (TopLimit) ? TopLimit : 0;
+		this.Percentage = (Percentage) ? Percentage : 20;
+		this.setTime = (setTime) ? setTime : 10;
+		this.FloatingObj.style.position = "absolute";
+		this.Body = null;
+		this.setTimeOut = null;
+		this.Run();
+	}
+	Floating.prototype.Run = function () {
+		this.Body = document.documentElement.scrollTop>document.body.scrollTop ? document.documentElement : document.body;
+		var This = this;
+		var FloatingObjTop = (this.FloatingObj.style.top) ? parseInt(this.FloatingObj.style.top,10) : this.FloatingObj.offsetTop;
+		var DocTop = this.Body.scrollTop + this.MarginY;
+		var MoveY = Math.abs(FloatingObjTop - DocTop);
+		if ( DocTop > this.TopLimit ) {
+			if ( FloatingObjTop < DocTop ) {
+				this.FloatingObj.style.top = FloatingObjTop + Math.ceil( MoveY/this.Percentage ) + "px" ;
+			} else {
+				this.FloatingObj.style.top = DocTop + "px" ;
+			}
+		} else {
+				this.FloatingObj.style.top = this.TopLimit + "px" ;
+		}
+		window.clearTimeout(this.setTimeOut);
+		this.setTimeOut = window.setTimeout( function () { This.Run(); } , this.setTime );
+	}
+	//-->
+	</script>
+	<div id="TopEvt" style="position:absolute;width:40px;height:96px;left:1021px;"><a href="etf_list.html"><img src="img/btn_list.jpg" alt="목차" /></a></div>
+	<script type="text/javascript">new Floating(document.getElementById('TopEvt'),425,10,10,10);</script>
+	<!-- //우측목록버튼 -->
+
+	<!-- //우측버튼모음 -->
+	<script type="text/javascript">
+		function myhome(snsKind){
+			var snsTitle = encodeURIComponent("신한금융투자");
+			var snsURL = encodeURIComponent("http://www.shinhaninvest.com/pop/etf/etf_index.html");
+			var snsTag = encodeURIComponent("요즘 뜨는 이야기! 지금은 ETF 시대");
+			if(snsKind == "twitter") {
+				window.open("http://twitter.com/home/?status=" + snsTitle + ":" + snsURL);
+			}
+			else if(snsKind == "me2day") {
+				window.open("http://me2day.net/posts/new?new_post[body]=" + snsTitle + ":" + snsURL + "&new_post[tags]=" + snsTag);
+			}
+			else if(snsKind == "facebook") {
+				window.open("http://www.facebook.com/sharer.php?u=" + snsURL + "&t=" + snsTitle);
+			}
+		}
+		function copy(URL){
+			window.clipboardData.setData("Text", URL);
+			alert("주소가 복사되었습니다.");
+			return;
+		}
+	</script>
+	<div style="position:absolute;top:45px;left:1021px;"><img src="img/etf_rmenu.jpg" usemap="#rmenu" alt="" /></div>
+	<map id="rmenu" name="rmenu">
+		<area shape="rect" coords="5,21,29,45" href="javascript:myhome('twitter');" alt="트위터" />
+		<area shape="rect" coords="5,49,29,73" href="javascript:myhome('facebook');" alt="페이스북" />
+		<area shape="rect" coords="5,77,29,101" href="javascript:myhome('me2day');" alt="미투데이" />
+		<area shape="rect" coords="5,105,29,136" href="javascript:void(copy('http://www.shinhaninvest.com/pop/etf/etf_index.html'));" alt="주소복사" />
+	</map>
+	<!-- //우측버튼모음 -->
+
+	<div style="width:1080px;">
+		<div><img src="img/etf_top.jpg" alt="" /></div>
+		<div style="float:left;background:url('img/bg_pattern.jpg') repeat-y left top;">
+			<div style="float:left;width:343px;"><a href="etf_index.html"><img src="img/etf_left.jpg" alt="요즘 뜨는 이야기 - 펀드도 주식도 알겠지만 ETF를 모르겠다는 당신을 위한 이야기" /></a></div>
+			<div style="float:left;width:737px;padding-top:20px;">
+				<map id="linkbtn" name="linkbtn">
+					<area shape="rect" coords="469,473,646,493" href="/pop/etf/pop_etf_dtl.html" onclick="window.open(this.href,'','width=757,height=500,scrollbars=1');return false" alt="국내 상장된 ETF 현황 자세히 보기" />
+					<area shape="rect" coords="394,500,646,520" href="http://www.krx.co.kr/m4/m4_1/m4_1_1/JHPKOR04001_01.jsp" target="_blank" alt="ETF 종목 및 시세 보기 → KRX 한국거래소 홈페이지 " />
+				</map>
+				<div><img src="img/etf_02_01.jpg" alt="" /><br /><img src="img/etf_02_02.jpg" alt="" /><br /><img src="img/etf_02_03.jpg" alt="" /></div>
+				<div><img src="img/etf_notice.jpg" alt="" /></div>
+			</div>
+		</div>
+		<div style="clear:both;"><img src="img/etf_bottom.jpg" alt="" /></div>
+	</div>
+	</body>
+</html>
+
+
+

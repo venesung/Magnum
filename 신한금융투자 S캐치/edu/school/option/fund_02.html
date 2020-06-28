@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+	<head>
+		<title>신한금융투자</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta name="Title" content="신한금융투자"/>
+		<meta name="Description" content="신한금융투자"/> 
+		<meta name="Keywords" content="신한금융투자"/>
+		<meta name="Author" content="신한금융투자"/>
+		<meta name="Robots" content="All"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/frontui.js"></script>
+	</head>
+	
+	<body class="contents">
+
+	<h1>선물옵션 자금관리</h1>
+	
+	<!-- Menu Start -->
+	<div class="eduMenuOpen" id="eduMenuOpen"><img src="../img/edu/btn_open.gif" alt="목록열기" onclick="showEduMenu()" /></div>
+	<div class="eduMenuList" id="eduMenuList">
+		<ul>
+			<li><a href="fund_01.html">1장. 증거금 의미</a></li>
+			<li><a href="fund_02.html" class="sel">2장. 위탁증거금</a></li>
+			<li><a href="fund_03.html">3장. 최소증거금율 증거금</a></li>
+			<li><a href="fund_04.html">4장. 주문가능금액과 출금가능금액</a></li>
+			<li><a href="fund_05.html">5장. 추가증거금 </a></li>
+			<li><a href="fund_06.html">6장. 증거금가계산 활용</a></li>
+		</ul>
+		<div class="eduMenuClose"><img src="../img/edu/btn_close.gif" alt="목록닫기" onclick="hideEduMenu()" /></div>
+	</div>
+	<!--// Menu End -->
+	
+	<h2 class="bankType1"><img src="../img/edu/stitle_fund_02.gif" alt="위탁증거금" /></h2>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_03.gif" alt="선물만 보유시 위탁증거금" /></h3>	
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_10.gif" alt="선물매수 주문시와 체결후 위탁증거금 산출" />
+		101C6 (6월물 선물)을 230P에 1계약 매수주문 제출시와 매수주문이 체결되었을 때 위탁증거금 산출이 어떻게 되는지 살펴보죠. 참고로 전일 KOSPI200 종가는 229P입니다.
+	</div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_01.gif" alt="주문시 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">6월물 선물 1계약을 230P에 매수주문을 제출할 경우 신규주문증거금이 부과됩니다. 지수선물은 주문시 총액으로 주문가의 15%, 현금으로 주문가의 5%가 필요합니다. 즉 약정금액의 15%가 증거금으로 부과되는되, 이 중 5%만 현금으로 납부하면 되고, 나머지 10%는 위탁계좌에 가지고 있는 주식을 대용으로 지정하여 납부해도 됩니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_02.gif" alt="체결 후 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">그 후 매수주문이 230P에 체결되었을 때 상기주문은 더 이상 미체결주문이 아니므로 신규주문증거금은 부과되지 않고, 미결제에 대한 증거금인 순위험 위탁증거금이 부과되어 위탁증거금을 재산정합니다. 그런데, 순위험 위탁증거금이 신규주문 증거금과 다른 점은 주문가나 체결가의 15%를 부과하는 것이 아니라 전일 KOSPI 200종가의 15%를 증거금으로 부과한다는 점입니다. 따라서, 주문시에는 주문가격인 230P의 15%를 증거금으로 납부해야하지만, 체결이 되어 미결제로 보유하고나서는 전일 KOSPI 200종가인 229P의 15%를 증거금으로 납부하면 됩니다. 이렇게 주문시와 체결후의 증거금이 변화됩니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_06.gif" alt="주문시와 체결시 위탁증거금 차이발생" /></h4>	
+	<p class="cDepthTxt2">이러한 증거금변화는 현재 선물가격과 전일 KOSPI 200가격의 괴리가 클수록 더 크게 나타납니다. 전일대비 주가가 상승한 경우는 대체로 선물가격이 전일대비 상승할 것이므로 체결후 증거금이 오히려 감소하여 주문가능금액이 더 늘어날 수 있습니다. 반대로 전일대비 주가가 하락한 경우는 대체로 선물가격이 전일대비 하락할 것이므로 체결 후 증거금이 오히려 증가하여 주문가능금액이 더 줄어들 수 있습니다.</p>
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+	
+	<table class="table_type1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>미체결주문에 대한 증거금</th>
+				<th>체결된 주문에 대한 증거금</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<th>대상</th>
+				<td>청산이 아닌 신규주문</td>
+				<td>현재 보유 미결제</td>
+			</tr>
+			<tr>
+				<th class="bg">항목명</th>
+				<td class="bg">신규주문증거금</td>
+				<td class="bg">총순위험 위탁증거금</td>
+			</tr>
+			<tr>
+				<th>산출방법</th>
+				<td>
+					주문가격 * 주문수량 * 50만원 * 15% (5%)<br />
+					230P * 1계약 * 50만원 * 15% (5%)
+				</td>
+				<td>17,250,000 (5,750,000)</td>
+			</tr>
+			<tr>
+				<th class="bg">위탁증거금</th>
+				<td class="bg">
+					전일 KOSPI200 종가 * 주문수량 * 50만원 * 15% (5%)<br />
+					230P * 1계약 * 50만원 * 15% (5%)
+				</td>
+				<td class="bg">17,175,000 (5,725,000)</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_08.gif" alt="goodi 2004에서 위탁증거금 보기" /></h4>	
+	<p class="cDepthTxt2">goodi 2004의 5451화면 (KOSPI 200 증거금산출)에서 위탁증거금의 체결 전후 변동내용을 조회할 수 있습니다.</p>
+	
+	<div class="aCenter"><img src="../img/edu/i_f04031_2.gif" alt="" vspace="20" /></div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_09.gif" alt="goodi Fx에서 위탁증거금 보기" /></h4>	
+	<p class="cDepthTxt2">goodi Fx의 메뉴에서 계좌를 선택한 후 증거금 및 가계산조회화면을 열어 두번째 탭에 있는 증거금상세에서 위탁증거금의 체결 전후 변동내용을 조회할 수 있습니다.</p>
+	
+	<div class="aCenter"><img src="../img/edu/i_f04031_1.gif" alt="" vspace="20" /></div>
+	
+	<div class="Vspace5"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_04.gif" alt="옵션매수만 보유시 위탁증거금" /></h3>	
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_07.gif" alt="옵션매수 주문시와 체결 후 위탁증거금 산출" />
+		201E7217(콜옵션 7월물 행사가격 217.5)종목을 3.25P에 100계약 매수주문제출시와 매수주문이 체결되었을 때 위탁증거금 산출이 어떻게 되는지 살펴보죠.
+	</div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_01.gif" alt="주문시 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">7월물 콜옵션 100계약을 3.25P에 매수주문을 제출할 경우 신규주문증거금이 부과됩니다. 옵션매수는 주문시 주문가의 100%가 현금으로 필요합니다. 즉, 약정금액의 100%가 익일옵션매수대금으로 결제되어야하기 때문에 전액 현금으로 납부해야 됩니다.</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_02.gif" alt="체결 후 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">그 후 매수주문이 3.25P에 체결되었을 때, 상기주문은 더 이상 미체결주문이 아니므로 신규주문증거금은 부과되지 않고, 미결제에 대한 증거금인 순위험위탁증거금과 옵션체결손익이 부과되어 위탁증거금을 재산정합니다. 그런데, 옵션매수만 있을 경우 미결제를 보유함으로 인해서 노출되는 위험을 산정하는 순위험 위탁증거금은 0입니다. 이는 옵션매수는 매수대금만 지급하면 더 이상 위험이 없고, 이익이 무한대로 증가하는 손익도를 가지고 있기 때문입니다. 그리고, 옵션체결금액을 익일 결제하기 위해 부과되는 옵션체결손익은 옵션순매수대금이므로 당일 옵션매수약정대금에서 당일옵션매도약정대금을 차감한 금액이 증거금으로 부과됩니다.</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_05.gif" alt="주문시와 체결시 위탁증거금 동일" /></h4>	
+	<p class="cDepthTxt2">따라서 옵션매수의 경우 신규주문시 부과하는 증거금과 주문체결 후 부과하는 증거금이 약정금액 100%로 동일합니다.</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="16%" />
+		<col width="42%" />
+		<col width="42%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>미체결주문에 대한 증거금</th>
+				<th>체결된 주문에 대한 증거금</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>대상</th>
+				<td class="Lcon">청산이 아닌 신규주문</td>
+				<td class="Lcon">익일 결제대금</td>
+			</tr>
+			<tr>
+				<th class="bg">항목명</th>
+				<td class="bg Lcon">신규주문증거금</td>
+				<td class="bg Lcon"></td>
+			</tr>
+			<tr>
+				<th>산출방법</th>
+				<td class="Lcon">
+					주문가 X 계약수 X 10만원<br />
+					3.25P X 100계약 X 10만원
+				</td>
+				<td class="Lcon">
+					당일옵션매수체결금액-당일옵션매도체결금액<br />
+					3.25P X 100계약 X 10만원
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>위탁증거금</th>
+				<td><strong>32,500,000</strong> 원</td>
+				<td><strong>32,500,000</strong> 원</td>
+			</tr>
+		</tfoot>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace25"><!-- Vertical Space --></div>
+	
+	<h3 class="branchType1"><img src="../img/edu/sstitle_fund_05.gif" alt="옵션매도만 보유시 위탁증거금" /></h3>	
+	
+	<div class="designEdu1">
+		<img src="../img/edu/text_edu_08.gif" alt="옵션매도 주문시와 체결 후 위탁증거금 산출" />
+		301E7220 (풋옵션 7월물 행사가격 220) 종목을 0.48P에 10계약 매도주문제출시와 매도주문이 체결되었을 때 위탁증거금 산출이 어떻게 되는지 살펴보죠.
+	</div>
+	
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_01.gif" alt="주문시 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">7월물 풋옵션 1계약을 0.48P에 매도주문을 제출할 경우 신규주문증거금이 부과됩니다. 그런데, 옵션매도를 하면 옵션매도대금이 익일 결제되어 계좌에 입금되므로 결제를 위한 현금은 필요하지 않고 다만, 가격변동에 따라 향후 옵션매도포지션을 청산할 때 노출될 수 있는 위험치만을 증거금으로 납부하면 됩니다. 따라서, 그 위험치만큼을 현금이 아닌 위탁계좌에 보유하고 있는 대용을 활용하여 납부할 수 있습니다. 즉, 옵션매도의 경우 노출되는 위험치로 산출한위탁증거금을 100%대용으로 납부할 수 있습니다. 현금없이 대용만 충분히 가지고 있는 상태에서 거래가 가능한 포지션이 옵션매도입니다. 옵션매도는 주문시 당일 중으로 발생할 수 있는 최대 위험치를 담보로 제공할 것을 요구하는데 대부분의 경우 최대증거금이론가격(당일 상한가)과 전일종가의 차이만큼이 증거금으로 필요합니다.</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_02.gif" alt="체결시 위탁증거금" /></h4>	
+	<p class="cDepthTxt2">
+		그 후 매도주문이 0.48P에 체결되었을 때 상기주문은 더이상 미체결주문이 아니므로 신규주문증거금은 부과되지 않고, 미결제에 대한 증거금인 총순위험 위탁증거금과 옵션체결손익을 합산하여 위탁증거금을 재산정합니다.  옵션매도만 있을 경우 미결제를 보유함으로 인해서 노출되는 위험을 산정하는 순위험 위탁증거금은 가격증거금과 가격변동증거금을 합산한 금액입니다. 현재 상태에서 투자자가 취할 수 있는 방법은 2가지입니다. 한가지는 포지션을	청산하는 것이고, 또 다른 한가지는 포지션을 계속 보유하고 있는 것입니다. 포지션을 청산하려고 할 경우 매수행위가 일어날 것이고, 이에 따른 옵션매수대금결제가 발생할 것입니다. 이 매수대금을 결제할 수 있는만큼은 증거금으로 확보(전일종가로 청산할 것을 가정하고 증거금을 산출합니다.)하고 있어야 되겠죠? 그것이 바로 가격증거금입니다. 포지션을 청산하지 않고, 계속 보유한다면 기초자산인 KOSPI 200지수의 변동에 따라 위험은 무한대로 증가하는 손익구조를 가지고 있기 때문에 당일 중으로 변동할 수 있는 KOSPI 200지수의 구간(15%)내에서 최대로 발생할 수 있는 손실금액을 산출하여 향후 포지션 청산시 발생할 수 있는 위험을 Cover할 수 있는 만큼을 증거금으로 부과합니다.<br />
+		이것이 바로 가격변동증거금입니다. 이는 풋옵션이나 콜옵션중 한가지에 대해서 매도만 보유하고 있을 경우에는 신규주문증거금과 동일합니다.
+	</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="16%" />
+		<col width="42%" />
+		<col width="42%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>가격증거금</th>
+				<th>가격변동증거금</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>대상</th>
+				<td>포지션을 청산할 때 청산비용</td>
+				<td>포지션을 보유할 때 노출되는 위험(주가변동위험)</td>
+			</tr>
+			<tr>
+				<th class="bg">산출방법</th>
+				<td class="bg">
+					전일종가 *계약수 * 10만원<br />
+					1.63P * 10계약 * 10만원
+				</td>
+				<td class="bg">
+					(상한가 - 전일종가) * 계약수 * 10만원<br />
+					(14.15P-1.63P) * 10계약 * 10만원
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th rowspan="2">순위험<br />위탁증거금</th>
+				<td colspan="2"><strong>14,150,000</strong> 원</td>
+			</tr>
+			<tr>
+				<td class="sub"><strong>1,630,000</strong> 원</td>
+				<td class="sub">신규주문증거금과 동일 <strong>12,520,000</strong> 원</td>
+			</tr>
+		</tfoot>
+	</table>
+	<!--// List End -->	
+	
+	<div class="Vspace15"><!-- Vertical Space --></div>
+	
+	<p class="cDepthTxt2">
+		그리고, 옵션체결금액을 익일 결제하기 위해 부과되는 옵션체결손익은 옵션순매수대금이므로 옵션매도의 경우 옵션매도약정대금만큼은 증거금에서 차감되므로 증거금감소효과가 있습니다.<br />
+		결국 옵션매도만 보유시 순위험 위탁증거금(가격증거금+가격변동증거금)에서 옵션매도체결금액을 차감한 금액만큼을 위탁증거금으로 부과합니다.
+	</p>	
+	
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<h4 class="cDepthType1"><img src="../img/edu/ssstitle_fund_06.gif" alt="주문시와 체결시 위탁증거금 차이발생" /></h4>	
+	<p class="cDepthTxt2">
+		옵션매도 주문 시에는 당일 중으로 발생될 수 있는 최대위험치인 최대증거금이론가와 전일종가의 차이만큼을 납부하면 되지만, 체결이 되어 미결제로 보유하고나서는 증거금의 변동이 발생할 수 있습니다. 주문시 납부한 신규주문증거금과 가격변동증거금이 동일하므로 가격증거금과 옵션매도체결금액이 동일할 경우 주문시와 체결후의 증거금은 동일합니다. <br />
+		하지만, 전일대비 옵션가격이 상승, 하락했을 경우 주문시와 체결후의 증거금은 달라지게 됩니다.<br /><br />
+		만약, 가격증거금이 옵션매도체결금액보다 클 경우(즉, 전일종가보다 옵션매도가격이 더 낮을 경우 이러한 경우는 매도종목가격이 하락했을 경우가 되겠죠) 체결후의 증거금은 증가합니다. 반대의 경우 즉, 가격증거금이 옵션매도체결금액보다 작을 경우(즉, 전일종가보다 옵션매도가격이 더 높을 경우 이러한 경우는 매도종목가격이 상승했을 경우가 되겠죠) 체결후의 증거금은 감소합니다.<br /><br />
+		상기 예에서 전일 1.63P로 종가가 형성되었던 풋옵션 100짜리가 당일 가격이 하락하여 0.48P에 체결이 되었고, 따라서 종가와 체결가격의 차이만큼이 주문시(12,520,000원)187.5짜리가 (13,670,000원) 증거금차이로 나타나고 있습니다.<br /><br />
+		또한 상한가로 사용한 가격은 옵션의 호가단위에 맞추어 소수점아래 부분을 조정한 값으로 실제로 KOSPI 200이 15% 하락했을 때 풋옵션의 최대상승이론가격은 14.150019로 증권사에서는 상한가가 아닌 최대상승이론가격을 사용하여 증거금을 산출하므로 HTS에서 조회되는 위탁증거금산출금액과 소액차이가 발생할 수 있습니다.</p>	
+		
+	<div class="Vspace10"><!-- Vertical Space --></div>
+
+	<!-- List Start -->
+	<table class="table_type1">
+	<colgroup>
+		<col width="16%" />
+		<col width="42%" />
+		<col width="25%" />
+		<col width="17%" />
+	</colgroup>
+	
+		<thead>
+			<tr>
+				<th></th>
+				<th>미체결주문에 대한 증거금</th>
+				<th colspan="2">체결된 주문에 대한 증거금</th>
+			</tr>
+		</thead>
+ 
+		<tbody>
+			<tr>
+				<th>대상</th>
+				<td>청산이 아닌 신규주문</td>
+				<td>현재 보유 미결제</td>
+				<td>익일 결제대금</td>
+			</tr>
+			<tr>
+				<th class="bg">항목명</th>
+				<td class="bg">신규주문증거금</td>
+				<td class="bg">총 순위험 위탁증거금</td>
+				<td class="bg">옵션체결손익</td>
+			</tr>
+			<tr>
+				<th>산출방법</th>
+				<td>(상한가-전일종가)*계약수*10만원</td>
+				<td>가격변동증거금 + 가격증거금</td>
+				<td>옵션순매수대금</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th rowspan="2">위탁증거금</th>
+				<td rowspan="2"><strong>12,520,000</strong> 원</td>
+				<td colspan="2"><strong>13,670,000</strong> 원</td>
+			</tr>
+			<tr>
+				<td class="sub" colspan="2">(12,520,000원 + 1,630,000원) - 480,000원</td>
+			</tr>
+		</tfoot>
+	</table>
+	<!--// List End -->	
+	
+	</body>
+</html>

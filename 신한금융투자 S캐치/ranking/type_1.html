@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<title>랭킹존 - 종목 랭킹 - 신규서비스명</title>
+	<meta name="Title" content="신한금융투자"/>
+	<meta name="Description" content="신한금융투자"/>
+	<meta name="Keywords" content="신한금융투자"/>
+	<meta name="Author" content="신한금융투자"/>
+	<meta name="Robots" content="All"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script><!-- LNB 관련 -->
+	<script type="text/javascript" src="../js/shicNavi.js"></script><!-- LNB 관련 -->
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.selectBox.css" /><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/jquery.selectBox.js"></script><!-- 셀렉트 -->
+	<script type="text/javascript" src="../js/shicRanking.js"></script>
+
+    <script type="text/javascript" src="../js/shicHistory.js"></script>
+	<script type="text/javascript">
+		$(document).ready( function() {
+			
+			if($.browser.version != "6.0"){
+				$("SELECT")
+					.selectBox();
+			}
+			
+			shicNavi = new shicNavi(0,0,0); 
+			
+			function setCookie(name, value, expiredays) {
+                            var today = new Date();
+                            today.setDate(today.getDate() + expiredays);
+                            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + today.toGMTString() + ";";
+                        }
+                         
+                        function getCookie(name) {
+                            var prefix = name + "=";
+                         
+                            var startIdx = document.cookie.indexOf(prefix);
+                            if (startIdx == -1)
+                                return null;
+                         
+                            var endIdx = document.cookie.indexOf(";", startIdx + prefix.length);   
+                            if (endIdx == -1)
+                                endIdx = document.cookie.length;
+                         
+                            return unescape(document.cookie.substring(startIdx + prefix.length, endIdx));
+                        }
+                         
+                        //종목 검색 히스토리를 쌓는 스크립트.
+                        function my_put(input_code,code_name) {//종목코드,종목이름 넘겨주기
+                            var i = 0;   
+                            var result = "";
+                         
+                            if (my_get(input_code)) {
+                                var len = myCode.length;
+                                for (i = 0, size = myCode.length; i < size; i++) {
+                                    if (size >= 20) {
+                                        if (i==0) {
+                                            continue;
+                                        }
+                                    }
+                                    result = result + myCode[i].stock_code + "," + myCode[i].stock_name + "|";
+                                }
+                            }
+                         
+                            //기존에 쿠키에 있는 종목이면 제외.
+                            result = result + input_code + "," + code_name + "|";
+                            setCookie("sp_code_history", result, 31);
+                            //setCookie("sp_code_history_java", input_code, 31);
+                        }
+                         
+                         
+                        function my_get(input_code) {
+                            var cookie_value = getCookie("sp_code_history");
+                            var flag = true;
+                            if (cookie_value == null) {
+                                return false;
+                            }
+                         
+                            var startIdx =0;
+                            var endIdx = 0;
+                            var i = 0;
+                            myCode = new Array();
+                            
+                            while(true) {
+                                endIdx = cookie_value.indexOf("|",startIdx);
+                         
+                                if (endIdx < 0) {
+                                    break;
+                                }
+                         
+                                token = cookie_value.substring(startIdx,endIdx);
+                                startIdx = endIdx + 1;
+                                var startTokenIdx = 0;
+                                var endTokenIdx = 0;
+                                var code = '';
+                         
+                                endTokenIdx = token.indexOf(",",0);
+                                code = token.substring(0,endTokenIdx);
+                                code_name = token.substring(endTokenIdx+1);
+                         
+                                if (input_code != code) {
+                                    myCode[i] = new CodeHistory(code,code_name);
+                                    i = i + 1;
+                                }
+                            }
+                            
+                            return true;
+                        }
+                         
+                        function CodeHistory(stock_code,stock_name){
+                            this.stock_code = stock_code;
+                            this.stock_name = stock_name;
+                        }
+                        
+                        my_put('055550','신한지주');
+                        my_put('009540','현대중공업');
+                        my_put('007540','삼성중공업');
+                        my_put('109140','현대자동차');
+                        my_put('069541','LG전자');
+                        my_put('019530','교보');
+                        my_put('309140','기아자동차');
+                        my_put('902540','롯데');
+                        my_put('079531','한화');
+                        my_put('102541','SKT');
+                        my_put('993356','KT');
+                        
+                        shicRK = new shicRanking();
+		});
+	</script>
+</head>
+<body>
+
+	<a href="#SkipToContents" id="accessibility">본문 바로가기</a>
+	
+	<div class="Wrapper">
+		<!-- Left Start -->
+		<script type="text/javascript" src="../js/temp_left.js"></script><!-- 테스트용임 -->
+		<!--// Left End -->
+		
+		<!-- MovingArea Start -->
+		<div class="RightArea">
+			<!-- SubMenu Start -->
+			<script type="text/javascript" src="../js/temp_left_sub.js"></script><!-- 테스트용임 -->
+			<!--// SubMenu End -->
+			
+			<div class="ContentsArea">
+				<!-- History Start -->
+				<div class="curPos">
+					<ul>
+						<li class="home"><a href="#"><span>메인페이지로</span></a></li>
+						<li><a href="#">랭킹존</a></li>
+						<li><a href="#">종목 랭킹</a></li>
+						<li class="end">실시간 인기종목</li>
+					</ul>
+					
+					<div class="fRight">
+						<a href="#"><img src="../img/button/add_02.gif" alt="스크랩" /></a>
+						<a href="#"><img src="../img/button/print_01.gif" alt="인쇄하기" /></a>
+					</div>
+				</div>
+				<!--// History End -->
+				
+				<!-- Page Title Start -->
+				<div class="pageTitle bgTypeRank1">
+					<h1><img src="../img/title/ranking_01.gif" alt="실시간 인기종목" /></h1>
+					<p><img src="../img/title/ranking_01_txt.gif" alt="전 계좌의 실시간 현재가 조회기준 인기종목 랭킹 현황입니다." /></p>
+				</div>
+				<!--// Page Title End -->
+				
+				<!-- Contents Start -->
+				<div id="SkipToContents">
+										
+					<!-- Sorting Start -->
+					<div class="SortingBox">
+						<div class="fLeft">
+							<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+						</div>
+						<div class="fRight dayData">
+							<strong>2012.05.24 14:30</strong> 기준
+							&nbsp;<a href="#"><img src="../img/button/reload_02.gif" alt="새로고침" /></a>
+						</div>
+						<div class="ClearBlock"><!-- Clear Block --></div>
+					</div>
+					<!--// Sorting End -->
+					
+					<!-- Table Start -->
+					<div class="tableType1">
+						<table summary="실시간 인기종목은 순위, 일변동, 종목명, 조회고객수, 현재가, 전일비, 등락률, 거래량으로 구성된 랭킹 리스트이며, 차트, 실주문, 포트폴리오 버튼을 제공합니다.">
+							<caption>실시간 인기종목</caption>
+							
+							<colgroup>
+								<col width="40" />
+								<col width="50" span="2" />
+								<col width="*" />
+								<col width="70" />
+								<col width="80" />
+								<col width="70" />
+								<col width="60" />
+								<col width="80" />
+								<col width="100" />
+							</colgroup>
+							
+							<thead>
+								<tr>
+									<th><label class="label_check solo" for="checkbox-00"><input id="checkbox-00" value="1" type="checkbox" title="전체선택" /></label></th>
+									<th><img src="../img/ranking/th_01_off.gif" alt="순위" /></th>
+									<th><img src="../img/ranking/th_10_off.gif" alt="일변동" /></th>
+									<th><img src="../img/ranking/th_03_off.gif" alt="종목명" /></th>
+									<th class="sel"><a href="#" title="조회 고객수 기준 정렬하기"><img src="../img/ranking/th_04_on.gif" alt="조회 고객수" /></a></th>
+									<th><a href="#" title="현재가 기준 정렬하기"><img src="../img/ranking/th_05_off.gif" alt="현재가" /></a></th>
+									<th><a href="#" title="전일비 기준 정렬하기"><img src="../img/ranking/th_53_off.gif" alt="전일비" /></a></th>
+									<th><a href="#" title="등락률 기준 정렬하기"><img src="../img/ranking/th_07_off.gif" alt="등락률" /></a></th>
+									<th><a href="#" title="거래량 기준 정렬하기"><img src="../img/ranking/th_08_off.gif" alt="거래량" /></a></th>
+									<th><img src="../img/ranking/th_09_off.gif" alt="바로가기" /></th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-01"><input id="checkbox-01" value="1" type="checkbox" title="" checked="checked" /></label></td>
+									<td class="grade"><strong>1</strong></td>
+									<td><span class="up"><img src="../img/icon/up_01.gif" alt="상승" /> 12</span></td>
+									<td class="l"><a href="../common/type_main.html" class="type" pcode="000000">LS네트웍스전환상환2우B</a></td>
+									<td class="r sel">100,000</td>
+									<td class="r"><strong>1,000,000</strong></td>
+									<td class="r"><span class="up"><img src="../img/icon/up_02.gif" alt="상승" /> 200,000</span></td>
+									<td class="r"><span class="up">-13.45%</span></td>
+									<td class="r">116,135,701</td>
+									<td>
+										<a href="#chartView" onclick="showChart();return false;"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<!-- 차트 보임 -->
+								<tr id="chartView" class="chartView" style="display:none;">
+									<td colspan="10">
+										<div class="OutBox">
+											<dl>
+												<dt>LG화학</dt>
+												<dd class="num">(068270)</dd>
+												<dd class="price">227,900원</dd>
+												<dd class="grade"><img src="../img/icon/up_05.gif" alt="상승" /> <strong class="up">16,600</strong></dd><!-- 이미지번호 05번 상승/하락 이미지번호 06번 급상승/급하락, 상승 class="up" / 하락 class="down" -->
+												<dd class="percent">14.91%</dd>
+												<dd class="btn"><a href="#"><img src="../img/button/view_01.gif" alt="차트 상세보기" /></a></dd>
+											</dl>
+											
+											<div class="ClearBlock"><!-- Clear Block --></div>
+											
+											<!-- 차트 -->
+											<img src="../img/ranking/temp_01.gif" alt="" />
+											<!--// 차트 -->
+										</div>
+									</td>
+								</tr>
+								<!--// 차트 보임 -->
+								<tr>
+									<td><label class="label_check solo" for="checkbox-02"><input id="checkbox-02" value="1" type="checkbox" title="" /></label></td>
+									<td class="grade"><strong>2</strong></td>
+									<td><span class="up"><img src="../img/icon/up_01.gif" alt="상승" /> 2</span></td>
+									<td class="l"><a href="../common/type_main.html" class="type" pcode="000001">KOSEF 미국달러선물</a></td>
+									<td class="r sel">1,540</td>
+									<td class="r"><strong>127,900</strong></td>
+									<td class="r"><span class="up"><img src="../img/icon/up_02.gif" alt="상승" /> 150</span></td>
+									<td class="r"><span class="up">3.45%</span></td>
+									<td class="r">127,900</td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-03"><input id="checkbox-03" value="1" type="checkbox" title="" /></label></td>
+									<td class="grade"><strong>3</strong></td>
+									<td><span class="down"><img src="../img/icon/down_01.gif" alt="하락" /> 4</span></td>
+									<td class="l"><a href="../common/type_main.html" class="type" pcode="000002">안랩</a></td>
+									<td class="r sel">1,540</td>
+									<td class="r"><strong>127,900</strong></td>
+									<td class="r"><span class="down"><img src="../img/icon/down_02.gif" alt="하락" /> 150</span></td>
+									<td class="r"><span class="down">- 3.45%</span></td>
+									<td class="r">127,900</td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-04"><input id="checkbox-04" value="1" type="checkbox" title="" /></label></td>
+									<td class="grade">99</td>
+									<td><span class="down"><img src="../img/icon/down_01.gif" alt="하락" /> 2</span></td>
+									<td class="l"><a href="../common/type_main.html" class="type" pcode="000003">LS네트웍스전환상환2우B</a></td>
+									<td class="r sel">1,540</td>
+									<td class="r"><strong>127,900</strong></td>
+									<td class="r"><span class="down"><img src="../img/icon/down_01.gif" alt="하락" /> 150</span></td>
+									<td class="r"><span class="down">- 3.45%</span></td>
+									<td class="r">127,900</td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td><label class="label_check solo" for="checkbox-05"><input id="checkbox-05" value="1" type="checkbox" title="" /></label></td>
+									<td class="grade">100</td>
+									<td><img src="../img/icon/same_01.gif" alt="변동없음" /> 0</td>
+									<td class="l"><a href="../common/type_main.html" class="type" pcode="000004">안랩</a></td>
+									<td class="r sel">1,540</td>
+									<td class="r"><strong>127,900</strong></td>
+									<td class="r"><span class="up"><img src="../img/icon/up_01.gif" alt="상승" /> 150</span></td>
+									<td class="r"><span class="up">3.45%</span></td>
+									<td class="r">127,900</td>
+									<td>
+										<a href="#"><img src="../img/button/chart_01.gif" alt="차트보기" /></a>
+										<a href="#"><img src="../img/button/order_02.gif" alt="실주문" /></a>
+										<a href="#"><img src="../img/button/invest_01.gif" alt="모의투자" /></a>
+									</td>
+								</tr>
+								
+								<!-- 검색결과 없음 -->
+								<tr>
+									<td colspan="10" class="noData">검색된 <span>종목</span>이 없습니다.</td>
+								</tr>
+								<!--// 검색결과 없음 -->
+							</tbody>
+						</table>
+					</div>
+					<!--// Table End -->
+					
+					<!-- Button Start -->
+					<div class="BtnType1">
+						<a href="#"><img src="../img/button/scrap_01.gif" alt="종목 스크랩" /></a>
+					</div>
+					
+					<div class="BtnType3">
+						<a href="#"><img src="../img/button/grade_01_on.gif" alt="1위~50위" /></a>
+						<img src="../img/bullet/cross_01.gif" alt="/" />
+						<a href="#"><img src="../img/button/grade_02_off.gif" alt="51위~100위" /></a>
+					</div>
+					<!--// Button End -->
+				</div>
+				<!--// Contents End -->
+				
+				<!-- Footer Start -->
+				<div class="FooterArea"><img src="../img/temp_footer.jpg" alt="" /></div>
+				<!--// Footer End -->
+			</div>
+			
+			<div class="ClearBlock"><!-- Clear Block --></div>
+		</div>
+		<!--// MovingArea End -->
+	</div>
+
+</body>
+</html>
