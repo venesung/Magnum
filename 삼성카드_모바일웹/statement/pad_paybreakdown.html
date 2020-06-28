@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>결제정보_이용내역 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 2;
+var externalMenu = 2;		// 다른 헤더를 불러올때 ( 경로 ( /shared/header(숫자).html )
+
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header2"></header>
+
+<section>
+
+	<div class="roundBox">
+		<h2 class="titDep">카드 별 청구요약</h2>
+		<div class="roundPad">
+			<!-- 2013.09.06 수정 -->
+			<table class="tableType">
+				<caption>카드 별 청구요약</caption>
+				<colgroup>
+					<col width="10%">
+					<col width="20%">
+					<col width="*">
+					<col width="20%" span="2">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">이용자</th>
+						<th scope="col">이용카드</th>
+						<th scope="col">카드명</th>
+						<th scope="col">원금</th>
+						<th scope="col">이자/수수료</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th colspan="3" scope="row">공통 선입금액</th>
+						<td>-3,456,455</td>
+						<td></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="left">본인</td>
+						<td class="center">****-****-****-*123</td>
+						<td class="left">신세계 삼성애니패스 포인트</td>
+						<td>12,345,789</td>
+						<td>12,345,789</td>
+					</tr>
+					<tr>
+						<td class="left">본인</td>
+						<td class="center">****-****-****-*123</td>
+						<td class="left">신세계 삼성애니패스 포인트</td>
+						<td>12,345,789</td>
+						<td>12,345,789</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // 2013.09.06 수정 -->
+		</div>
+	</div><!--//roundBox-->
+	
+	<div class="roundBox">
+		<h2 class="titDep">카드이용내역</h2>
+		<div class="roundPad">
+			<!-- 2013.09.06 수정 -->
+			<table class="tableType">
+				<caption>카드이용내역</caption>
+				<colgroup>
+					<col style="width:8%">
+					<col style="width:*">
+					<col style="width:11%">
+					<col style="width:11%">
+					<col style="width:10%">
+					<col style="width:6%">
+					<col style="width:11%">
+					<col style="width:9%">
+					<col style="width:10%">
+					<col style="width:11%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">이용일<br>이용카드</th>
+						<th rowspan="2" scope="col">가맹점</th>
+						<th rowspan="2" scope="col">이용금액</th>
+						<th rowspan="2" scope="col">할부가격</th>
+						<th rowspan="2" scope="col">이용혜택<br>혜택금액</th>
+						<th rowspan="2" scope="col">개월<br>/회차</th>
+						<th colspan="2" scope="col" class="lineB">이달에 입금하실 금액</th>
+						<th rowspan="2" scope="col">포인트명<br>적립금액</th>
+						<th rowspan="2" scope="col">입금 후 남은금액</th>
+					</tr>
+					<tr>
+						<th scope="col" class="lineL">원금</th>
+						<th scope="col">이자/수수료</th>
+					</tr>
+				</thead>
+				<tfoot class="tfoot">
+					<tr>
+						<th colspan="6">이용금액 합계</th>
+						<td>123,286,456</td>
+						<td></td>
+						<td class="center">P1,253</td>
+						<td>12,286,456</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">던킨고속터미널 3호점</td>
+						<td>100,000,000</td>
+						<td>100,000,000</td>
+						<td class="center"></td>
+						<td class="center"></td>
+						<td>100,000,000</td>
+						<td></td>
+						<td class="center">세이브P<br>850</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">이마트 동탄점</td>
+						<td>85,060</td>
+						<td></td>
+						<td class="center"></td>
+						<td class="center"></td>
+						<td>85,060</td>
+						<td></td>
+						<td class="center">보너스P<br>48</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">소중한나의원</td>
+						<td>7,000</td>
+						<td></td>
+						<td class="center">ⓦ청구할인<br>-700</td>
+						<td class="center"></td>
+						<td>7,000</td>
+						<td></td>
+						<td class="center">보너스P<br>48</td>
+						<td></td>
+					</tr>
+					<tr class="sum">
+						<td colspan="6">일시불합계</td>
+						<td>286,456</td>
+						<td></td>
+						<td class="center">P183</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="center">01.07<br>본인123</td>
+						<td class="left">던킨고속터미널 3호점</td>
+						<td>2,000,600</td>
+						<td></td>
+						<td class="center">ⓟ선포인트	원금<br>-8,700</td>
+						<td class="center">24/13</td>
+						<td></td>
+						<td></td>
+						<td class="center">P201</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="center"></td>
+						<td class="left"></td>
+						<td></td>
+						<td></td>
+						<td class="center">ⓟ선포인트	이자</td>
+						<td class="center"></td>
+						<td>85,060</td>
+						<td></td>
+						<td class="center">P202</td>
+						<td>2,005,060</td>
+					</tr>
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">소중한나의원</td>
+						<td>7,000</td>
+						<td></td>
+						<td class="center">ⓦ이자면제</td>
+						<td class="center">36/12</td>
+						<td>7,000</td>
+						<td></td>
+						<td class="center">P200</td>
+						<td>7,000</td>
+					</tr>
+					<tr class="sum">
+						<td colspan="6">할부합계</td>
+						<td>286,456</td>
+						<td>133,253</td>
+						<td class="center"></td>
+						<td>12,286,456</td>
+					</tr>
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">던킨고속터미널 3호점</td>
+						<td>2,000,600</td>
+						<td></td>
+						<td class="center"></td>
+						<td class="center"></td>
+						<td>85,060</td>
+						<td></td>
+						<td class="center">P200</td>
+						<td>2,005,060</td>
+					</tr>	
+					<tr class="sum">
+						<td colspan="6">카드론/약정론합계</td>
+						<td>286,456</td>
+						<td></td>
+						<td class="center"></td>
+						<td></td>
+					</tr>	
+					<tr>
+						<td class="center">03.24<br>본인123</td>
+						<td class="left">던킨고속터미널 3호점</td>
+						<td>2,000,600</td>
+						<td></td>
+						<td class="center"></td>
+						<td class="center"></td>
+						<td>85,060</td>
+						<td></td>
+						<td class="center"></td>
+						<td>2,005,060</td>
+					</tr>
+					<tr class="sum">
+						<td colspan="6">마이너스론합계</td>
+						<td>286,456</td>
+						<td></td>
+						<td class="center">1,253</td>
+						<td>12,286,456</td>
+					</tr>	
+				</tbody>
+			</table>
+			<!-- // 2013.09.06 수정 -->
+		</div>
+	</div><!--//roundBox-->
+    
+    <div class="roundBox">
+		<h2 class="titDep">이달에 사용하신 혜택</h2>
+		<div class="roundPad">
+			<table class="tableType">
+				<caption>이달에 사용하신 혜택</caption>
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:50%">
+					<col style="width:25%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">이용일</th>
+						<th scope="col">행사명</th>
+						<th scope="col">혜택금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="center">2013.08.01</td>
+						<td class="left">페이백 포인트 사용</td>
+						<td>1,410원</td>
+					</tr>
+					<tr>
+						<td class="center">2013.08.01</td>
+						<td class="left">페이백 포인트 사용</td>
+						<td>1,410원</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="marT10"><strong class="gray">이달의혜택 : ⓦ할인/면제/캐시백 (19,299원) 이벤트/특별혜택 (4,080원)</strong></p>
+		</div>
+	</div><!--//roundBox-->
+	
+	<div class="roundBox">
+		<h2 class="titDep">취소매출 접수내역(전월 청구서 발송 이후) </h2>
+		<div class="roundPad">
+			<table class="tableType">
+				<caption>취소매출 접수내역(전월 청구서 발송 이후)</caption>
+				<colgroup>
+					<col width="15%">
+					<col width="15%">
+					<col width="*">
+					<col width="15%">
+					<col width="15%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">이용일</th>
+						<th scope="col">이용자</th>
+						<th scope="col">이용 가맹점</th>
+						<th scope="col">상품명</th>
+						<th scope="col">취소금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="center">2013.08.01</td>
+						<td class="left">본인123</td>
+						<td class="left">㈜ 코스트코 코리아 양평점</td>
+						<td class="left">할부</td>
+						<td>-30,000원</td>
+					</tr>
+					<tr>
+						<td class="center">2013.08.01</td>
+						<td class="left">본인123</td>
+						<td class="left">㈜ 코스트코 코리아 양평점</td>
+						<td class="left">할부</td>
+						<td>-30,000원</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul class="listDisc marT15">
+				<li>취소매출 접수 건은 전월 결제일 결제대금으로 기 차감하거나 환불 처리될 수 있습니다.</li>
+			</ul>
+		</div>
+	</div><!--//roundBox-->
+	
+	<div class="roundBox">
+		<h2 class="titDep">해외이용 상세내역 안내</h2>
+		<div class="roundPad">
+			<!-- 2013.09.09 수정 -->
+			<table class="tableType">
+				<caption>해외이용 상세내역 안내</caption>
+				<colgroup>
+					<col style="width:8%">
+					<col style="width:*">
+					<col style="width:8%">
+					<col style="width:10%">
+					<col style="width:7%">
+					<col style="width:12%">
+					<col style="width:9%">
+					<col style="width:11%" span="3">
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">이용일<br>접수일</th>
+						<th rowspan="2" scope="col">가맹점<br>업종</th>
+						<th rowspan="2" scope="col">국가</th>
+						<th colspan="2" scope="col" class="lineB">카드이용금액</th>
+						<th rowspan="2" scope="col">접수금액<br>(US $)</th>
+						<th rowspan="2" scope="col">환율</th>
+						<th rowspan="2" scope="col">원화 환산</th>
+						<th rowspan="2" scope="col">해외사용<br>수수료<br>(0.2%)</th>
+						<th rowspan="2" scope="col">청구금액(￦)</th>
+					</tr>
+					<tr>
+						<th scope="col" class="lineL">현지<br>이용금액</th>
+						<th scope="col" class="lineL">화폐<br>단위</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th scope="row" colspan="5">해외매출합계</th>
+						<td>26,456,4500</td>
+						<td></td>
+						<td>6,455</td>
+						<td>56,455</td>
+						<td>26,456,455</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="center">08.01<br>08.01</td>
+						<td class="left">PRADA<br>쇼핑</td>
+						<td class="left">캐나다</td>
+						<td>126.24</td>
+						<td class="center">CAD</td>
+						<td>126.24</td>
+						<td>1,124.80</td>
+						<td>100,000,300</td>
+						<td>100,000,300</td>
+						<td>100,000,300</td>
+					</tr>
+					<tr>
+						<td class="center">08.01<br>08.01</td>
+						<td class="left">PRADA<br>쇼핑</td>
+						<td class="left">캐나다</td>
+						<td>126.24</td>
+						<td class="center">CAD</td>
+						<td>126.24</td>
+						<td>1,124.80</td>
+						<td>131,300</td>
+						<td>131,300</td>
+						<td>2,131,300</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // 2013.09.09 수정 -->
+			<ul class="listDisc marT15">
+			  <li>해외에서 일시불 5만원 이상 사용 시 결제일로부터 영업일수 기준 2일전까지 신청하시면 할부로 입금 하실 수 있습니다. (수수료는 국내와 동일)</li>
+			  <li>해외매출 상세내역은 당월 이용기간에 발생한 매출에 한해 안내됩니다.</li>
+		  </ul>
+		</div>
+	</div><!--//roundBox-->
+	
+	<div class="roundBox">
+		<h2 class="titDep marB0">카드 이용기간 안내 </h2>
+		<div class="roundPad">
+			<ul class="listDisc">
+				<li>일시불/할부 : YYYY 년 MM 월 DD 일 ~ YYYY 년 MM 월 DD 일</li>
+				<li>현금 서비스 : YYYY 년 MM 월 DD 일 ~ YYYY 년 MM 월 DD 일</li>
+				<li>명세서 작성기준일: MM 월 DD 일(명세서 적기 수령을 위해 이용기간 종료일 이전에 작성/발송될 수 있습니다.)</li>
+			</ul>
+		</div>
+	</div><!--//roundBox-->
+	
+
+</section>
+
+<footer id="footer2"></footer>
+</div><!--//warp-->
+
+</body>
+</html>

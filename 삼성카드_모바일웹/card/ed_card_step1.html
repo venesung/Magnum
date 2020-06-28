@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>카드신청 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 5;
+
+$(function()
+{
+	$(".popupBtn1 a").click ( function()
+	{
+		Popup.Open ( $(".cardPopup") , $(this) );
+	} );
+
+} );
+
+
+</script>
+</head>
+<body ondragstart="return false" onselectstart="return false">
+<div id="wrap">
+	<header id="header"></header>
+	<section>
+		<div class="location"></div>
+		<h2>카드 신청</h2>
+		<ul class="stepList">
+			<li class="on"><span><span>실명인증 및<br> 약관동의</span></span></li>
+			<li><span><span>개인정보<br> 입력</span></span></li>
+			<li><span><span>카드신청<br> 정보입력</span></span></li>
+			<li><span><span>신청완료</span></span></li>
+		</ul>
+		
+		<div class="roundBox">
+			
+			<!-- 전기료 R/P가 아니고 LED 단지인 경우 -->
+			<p class="roundPad">공동전기료의 LED 설치비용 포인트 납부가 가능한 아파트 입니다. (세대전기료 자동결제는 불가)</p>
+			
+			<!-- 전기료 R/P & LED 단지인 경우 -->
+			<p class="roundPad" style="display:none">세대전기료의 자동결제와 LED 설치비용 포인트 납부가 가능한 아파트 입니다.</p>
+			
+			<!-- 전기료 R/P 가능 & LED 단지가 아닌 경우 -->
+			<p class="roundPad" style="display:none">세대전기료 자동결제 가능한 아파트입니다.</p>
+			
+		</div>
+		
+		<!-- 전기료 자동이체 신청이 가능한 경우 노출 -->
+		<div class="roundBox roundpb">
+			<p class="roundPad">아파트 세대전기료 자동결제 서비스는 매월 아파트 개별 세대 전기료를 자동 결제하고, 세대전기료 결제금액의 일부(또는 전부)를 포인트로 납부할 수 있는 제휴 서비스 입니다. </p>	
+			<div class="termsBox">
+				<div class="inner marT0">
+					<p>세대전기료 자동결제서비스를 신청하시겠습니까?</p>
+					<div class="inputStyle">
+						<label for="yes01"><input type="radio" class="radio" title="예" id="yes01" name="yes_no01"> 예</label>
+						<label for="no01"><input type="radio" class="radio" title="아니오"id="no01" name="yes_no01"> 아니오</label>
+					</div>
+				</div>
+			</div>
+			<!--//termsBox-->
+			
+			<div class="termsBox">
+				<div class="inner">
+					<p>세대전기료 자동 결제 시 옵션으로 포인트 사용 여부를 선택하실 수 있습니다. 포인트를 사용하시겠습니까?</p>
+					<div class="inputStyle">
+						<label for="yes02"><input type="radio" class="radio" title="예" id="yes02" name="yes_no02"> 예</label>
+						<label for="no02"><input type="radio" class="radio" title="아니오"id="no02" name="yes_no02"> 아니오</label>
+					</div>
+				</div>
+			</div>
+			<!--//termsBox-->
+		</div>
+		<!--// 전기료 자동이체 신청이 가능한 경우 노출 -->
+		
+		
+		<!-- LED포인트납부 신청이 가능한 경우 노출 -->
+		<div class="roundBox roundpb">
+			<p class="roundPad">제휴사 이지스엔터프라이즈를 통해 주차장에 LED를 설치한 아파트의 경우 세대별 부과되는 공동전기료에 포함되어 청구되는 LED 설치비용이 포인트로 자동 납부됩니다. 이 경우, LED 설치비용이 세대전기료보다 우선적으로 포인트사용 처리됩니다.</p>
+			
+			<div class="termsBox">
+				<div class="inner marT0">
+					<p>공동전기료의 LED 설치비용을 포인트로 납부하시겠습니까?</p>
+					<div class="inputStyle">
+						<label for="yes03"><input type="radio" class="radio" title="예" id="yes03" name="yes_no02"> 예</label>
+				<label for="no03"><input type="radio" class="radio" title="아니오"id="no03" name="yes_no02"> 아니오</label>
+					</div>
+				</div>
+			</div>
+			<!--//termsBox-->
+		</div>
+		<!--// LED포인트납부 신청이 가능한 경우 노출 -->
+		
+		<div class="roundBox roundpb">
+			<div class="termsBox">
+				<div class="inner"> <a href="#" class="view"><span>서비스 이용 안내 및 동의서</span>본 서비스는 제휴사 이지스엔터프라이즈의 사정에 따라 변경될 수 있습니다. 안내사항을 확인, 동의합니다.</a>
+				  <div class="inputStyle">
+					<label>
+					  <input type="radio" class="radio" title="동의">
+					  동의</label>
+					<label>
+					  <input type="radio" class="radio" title="동의안함">
+					  동의안함</label>
+				  </div>
+				</div>
+				<div class="clauseSect" tabindex="0">
+					<h3>자동결제서비스 이용 안내</h3>
+					<ol>
+						<li>아파트 관리비 중 세대전기료를 분리하여 수납하는 서비스로 매월 개별 세대전기료를 자동으로 결제하고, 세대전기료 결제금액의 일부(또는 전부)를 포인트로 납부할 수 있는 제휴 서비스입니다.
+						  <ul class="style">
+							<li><span>-</span><span> 한국전력 전기요금 자동납부서비스와는 다른 서비스로 제휴사인 이지스엔터프라이즈와 서비스 제휴가 되어 있는 아파트에 한해 제공됩니다.</span></li>
+							<li><span>-</span><span> 공동전기료·TV 수신료를 제외한 세대전기료 자동결제에 한합니다.</span></li>
+							<li><span>-</span><span> 자동이체수수료(월220원, 부가세 포함)가 부과되는 유료 서비스이며, 보유 포인트로 자동 납부 되며포인트 부족시카드대금으로 청구됩니다.</span></li>
+						  </ul>
+						</li>
+						<li>적립된 포인트로 납부시, 회원님이 갖고 계신 삼성카드의 포인트(보너스포인트/빅포인트/서비스포인트/멤버십리워즈)가 합산되어 세대전기료 납부 시점에 사용됩니다.<br />
+						  - '세대전기료 자동이체수수료(월 220원, 부가세 포함) → 세대전기료' 순으로 포인트 사용 처리됩니다.
+						</li>
+						<li>포인트 부족 시 보유 포인트만큼을 결제대금에서 차감하고, 부족한 금액은 카드대금으로 청구됩니다.</li>
+						<li>아파트 세대전기료 자동결제서비스는 세대당 1장의 카드로 1명만 신청하실 수 있습니다.</li>
+						<li>서비스 신청후 최초 자동결제일 또는 해지 기준은  서비스 신청일로 부터 30일 경과후 최초 도래하는 납부일자 입니다.<br />
+						    예) 서비스 신청일: ‘14. 2/3 , 납부일자: 5일 à’14년 3/5최초 자동결제  <br />
+							서비스 해지일: ‘14. 2/28, 납부일자: 7일 à’14년 3/7자동결제유지, 4월7일부터 자동결제가 해지, 아파트 관리비고지서에 세대전기료가 합산 부과됩니다.<br />
+							※ 납부일자는 아파트관리비 납부마감일자와는 다르며,  아파트 관리비 부과 기준에 따라 차이가 있습니다. </li>
+						<li>자동결제서비스의 변경 및 해지는 삼성카드 홈페이지 또는 대표전화(1588-8700)를 통해 신청하실 수 있습니다.<br />
+						 - 한국전력 전기요금 자동납부서비스가 아니므로, 한국전력을 통해서는 신청 및 변경 불가</li>
+						<li>카드 연체, 분실신고, 한도 부족, 거래정지, 기타 처리가 불가한 사유로 인해 자동결제가 거절되는 경우 관리비가 연체되지 않도록 아파트 관리사무소에 직접 납부하셔야 합니다.<br />
+						 특히, 에너지다이어트 삼성체크카드 &POINT의 경우 잔액 부족 시 세대전기료 전체 결제금액이 출금되지 못하면 자동결제가 거절되므로, 관리비 납부 마감일 전에 직접 납부하셔야만 관리비 연체료가 발생하지 않습니다.(자동결제 불가 시 문자메시지(SMS)로 안내)</li>
+						<li>아파트 관리비 중 세대전기료만 미납되고 기타 관리비는 정상 납부하였어도, 관리비 전체 금액에 대해서 연체료가 부과되는 아파트가 있을 수 있습니다. 아파트 관리 규약에 따라 다르므로 유의하시기 바랍니다. </li>
+					</ol>
+					<h3>LED설치비 포인트납부 안내</h3>					
+					<ol>
+						<li>제휴사 이지스엔터프라이즈를 통해 지하주차장에 LED를 설치한 아파트의 경우, 세대별 부과되는 공동전기료에 포함되어 청구되는 LED 설치비용이 포인트로 납부됩니다.</li>
+						<li>LED 설치비용이 세대전기료보다 우선적으로 포인트 사용 처리됩니다.<br />
+							- 전기료 자동이체수수료 → 공동전기료의 LED 설치비용 → 세대전기료 순으로 포인트 사용</li>
+						<li>당월 사용된 포인트는 익월 아파트 관리비  부과 시 반영되며, 포인트 부족으로 공동전기료 LED 설치비용 전액이 사용 처리 안될 경우엔 남은 금액은 관리비 고지서로 청구됩니다.<br />
+							- LED 설치비용에 대한 관리비 고지서 표기 항목은 아파트 관리규약에 따라 차이가 있습니다.</li>
+						<li>서비스 신청 후 최초 포인트 사용일은 서비스 신청일로 부터 5영업일 경과 후 최초 도래하는 납부일자  이며, 해지는 납부일자  1영업일 전까지 신청하시면 당월 처리됩니다. <br />
+							 예) 서비스 신청: ‘14. 2/26 , 납부일자: 5일 à’14년 3/5최초 LED 설치비 포인트  사용<br />
+							 서비스 해지: ‘14. 2/27, 납부일자: 28일 à’14년 2/28 부터포인트 사용이 해지 됩니다.</li>
+					</ol>
+					<h3>서비스 공통 이용안내</h3>
+					<ol>
+						<li>에너지다이어트 삼성카드 &POINT, 에너지다이어트 삼성체크카드 &POINT에만 제공되는 제휴 서비스입니다. </li>
+						<li>제휴사 이지스엔터프라이즈와 서비스 제휴가 되어 있는 아파트에 한해 제공되며,  제휴 내용에 따라 서비스 제공 항목이 달라질 수 있습니다.</li>
+						<li>서비스 이용을 원하지 않으실 때에는 삼성카드 홈페이지 또는 대표전화(1588-8700)를 통해 변경하실 수 있습니다.</li>
+						<li>본 서비스는 제휴사 이지스엔터프라이즈의 사정에 따라 변경될 수 있습니다.</li>
+					</ol>
+				</div>
+			</div>
+			<!--//termsBox-->
+			<div class="btns popupBtn1"><a href="#" class="btnBlue">확인</a></div>
+		</div>
+		<!--//roundBox-->
+	</section>
+	<footer id="footer"></footer>
+	</div>
+<!--//warp-->
+
+<!-- 팝업1 -->
+<div class="cardPopup" style="display:none">
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">카드 신청</h3>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+			<div>
+				<p class="textLine">후불교통/브랜드 정보를 선택하셔야 카드신청이 가능합니다.</p>
+				<table class="formType">
+				<caption>후불교통/브랜드정보</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="label">
+					<th scope="row"><span>*</span>후불 교통</th>
+					<td><label><input type="radio" title="선택">선택</label></td>
+				</tr>
+				<tr class="label">
+					<th scope="row"><span>*</span>브랜드</th>
+					<td><label><input type="radio" title="국내전용">국내전용</label></td>
+				</tr>
+				</table>
+			</div>
+			<div class="btns innerLine4 marT0"><a href="#" class="btnBlue">신청</a></div>
+		</div>
+		
+	</div>
+</div>
+
+
+</body>
+</html>

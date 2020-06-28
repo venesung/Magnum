@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>개인정보변경 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 5;
+var over3 = 0;
+
+//
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+    
+    <ul class="stepList type2">
+        <li class="on"><span><span>본인확인</span></span></li>
+        <li><span><span>정보변경</span></span></li>
+        <li><span><span>변경완료</span></span></li>
+    </ul>
+    <ul class="tabs2">
+        <li id="tab_1" class="selected"><a href="javascript: SHBlock('tab', 'layer', 2, 1)">카드인증 본인확인</a></li>
+        <li id="tab_2"><a href="javascript: SHBlock('tab', 'layer', 2, 2)">공인인증서 본인확인</a></li>
+    </ul>
+    <div class="tabConts">
+		<!-- 카드인증 본인확인 시작 -->
+        <div id="layer_1" class="roundpb">
+            <table class="formType titDep3">
+                <caption>본인확인</caption>
+                <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">카드번호</th>
+                    <td>
+                        <select title="카드" class="ww">
+                            <option>삼성카드 2 후불카드 8686</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">카드비밀번호</th>
+                     <td>
+						<span class="cellFirst">
+							<span class="cellw12"><input type="text"  value="비밀번호 앞두자리" onFocus="this.value=''" title="비밀번호 앞두자리"></span>
+							<span class="cellnum">**</span>
+						</span>
+					</td>
+                </tr>
+                <tr>
+                    <th scope="row">주민등록번호</th>
+					<td><input type="text" title="주민등록번호" class="ww" value="주민번호 뒤 7자리"></td>
+				</tr>
+                </tbody>
+                </table>
+                <div class="bgGray2">
+                    <ul class="liStar">
+                        <li>회원님의 정보 보안을 위해 카드정보를 확인해 주십시오.</li>
+                    </ul>
+                </div><!--//bgGray-->
+                <div class="btns"><a href="#" class="btnBlue">확인</a></div>
+        </div>
+		<!-- 카드인증 본인확인 끝 -->
+		
+		<!-- 공인인증서 본인확인 시작 -->
+        <div id="layer_2" style="display:none">
+			<div class="roundPad">
+                <ul class="certificateText">
+                    <li>&quot;삼성카드 인증서관리&quot; App.을 통해 인증하셔야 이용하실 수 있습니다.<br><br><a href="#" class="textLink">공인인증서 인증하러가기</a></li>
+					<li>공인인증 완료 후에 확인버튼을 눌러주세요.<br><br><a href="#" class="btnBlue">확인</a></li>
+                </ul>
+
+            </div>
+            <!--div class="innerLine4">
+               <p>공인인증서를 통한 본인인증 시에는 삼성카드 공인인증앱을 다운로드 하신 후 앱을 통해 인증하셔야 합니다.</p>
+            <p class="marT10"><a href="#" class="textLink">삼성카드 공인인증앱 다운로드 받기</a></p> 
+			</div-->
+        </div><!--//layer2-->
+		<!-- 공인인증서 본인확인 끝 -->
+    </div>
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

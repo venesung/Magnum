@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>이번달 결제금액 즉시결제 신청 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="stepList type2">
+		<li class="on"><span><span>즉시결제신청</span></span></li>
+		<li><span><span>입금방법선택</span></span></li>
+		<li><span><span>신청완료</span></span></li>
+	</ul>
+    
+	<div class="roundBox roundPad">
+		<div class="bd_check_ip">
+			<strong>카드 선택</strong>
+			<span>
+				<select title="카드 선택">
+					<option>개인카드</option>
+					<option>법인카드</option>
+					<option>체크카드</option>
+				</select>
+				
+				<!-- 법인카드 선택시 -->
+				<select title="카드 선택" class="marT5">
+					<option>자체 법인 (개별) (1) 5700</option>
+				</select>
+				<!-- // 법인카드 선택시  end -->
+			</span>
+		</div>
+	</div>
+	
+    <div class="roundBox bgyello roundPad">
+    	<strong class="blue">자동이체계좌</strong>
+        <strong class="flr gray">우리 000*-***-***000</strong>
+    </div>
+    
+    <div class="immediaBox02">
+		<h3 class="titimme">미결제 금액</h3>
+        <div class="inner foldingTable">
+        	<span class="immedia_ch"><input type="checkbox" id="ch_type1" title="미결제금액 즉시결제"><label for="ch_type1">합계</label></span><!-- id="" 와 for="" 값 동일해야됨 -->
+            <dl>
+                <dt><a href="javascript:scardm.dummyFunc();"><strong>5,000</strong>원</a></dt>
+                <dd>
+                    <table class="tableType2">
+                        <caption>미결제 금액</caption>
+                        <colgroup>
+                        	<col width="50%">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">미결제금액</th>
+                                <td>1,234,567,890 원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연체료</th>
+                                <td>50,000,000 원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl><!--//dl-->
+        </div><!--//inner-->
+		
+		<!-- 금액이 없을경우 -->
+		<div class="inner foldingTable">
+        	<p class="roundPad center">미결제 금액이 없습니다.</p>
+        </div><!--//inner-->
+		<!-- // 금액이 없을경우 end -->
+	</div>
+	<div class="immediaBox02">
+		<h3 class="titimme">당월결제 금액</h3>
+		
+		<div class="inner foldingTable">
+        	<span class="immedia_ch"><input type="checkbox" id="ch_type2" title="당월전액 즉시결제"><label for="ch_type2">당월전액</label></span><!-- id="" 와 for="" 값 동일해야됨 -->
+            <dl>
+                <dt><a href="javascript:scardm.dummyFunc();"><strong>30,000</strong>원</a></dt>
+                <dd>
+                    <table class="tableType2">
+                        <caption>당월전액</caption>
+                        <colgroup>
+                        	<col width="50%">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제원금</th>
+                                <td>1,234,567,890 원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이자/수수료</th>
+                                <td>50,000,000 원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl><!--//dl-->
+        </div><!--//inner-->
+		
+		<div class="inner foldingTable">
+        	<span class="immedia_ch"><input type="checkbox" id="ch_type12" title="당월부분 즉시결제"><label for="ch_type12">당월부분</label></span><!-- id="" 와 for="" 값 동일해야됨 -->
+            <dl>
+                <dt><a href="javascript:scardm.dummyFunc();"><strong>30,000</strong>원</a></dt>
+                <dd>
+                    <table class="tableType2">
+                        <caption>당월부분</caption>
+                        <colgroup>
+                        	<col width="50%">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제원금</th>
+                                <td><input type="text" title="부분결제 입력" class="ww"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이자/수수료</th>
+                                <td>50,000 원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl><!--//dl-->
+        </div><!--//inner-->
+
+		
+		<!-- 금액이 없을경우 -->
+		<div class="inner foldingTable">
+        	<p class="roundPad center">당월결제 금액이 없습니다.</p>
+        </div><!--//inner-->
+		<!-- // 금액이 없을경우 end -->
+	</div>
+	<div class="immediaBox02">
+		<h3 class="titimme">총 결제 금액</h3>
+       
+	    <div class="inner foldingTable">
+        	<span class="immedia_ch"><input type="checkbox" id="ch_type5" title="총 결제금액 즉시결제"><label for="ch_type5">합계</label></span>
+            <dl>
+                <dt><a href="javascript:scardm.dummyFunc();"><strong>32,710,456</strong>원</a></dt>
+                <dd>
+                    <table class="tableType2">
+                        <caption>당월결제금액</caption>
+                       	<colgroup>
+                        	<col width="50%">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제금액</th>
+                                <td>4,000원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이자/수수료</th>
+                                <td>50,000,000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연체료</th>
+                                <td>50,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </dd>
+            </dl><!--//dl-->
+            <div class="immedia_btn">
+                <a href="javascript:scardm.dummyFunc();" class="btnBlue">다음</a>
+            </div>
+        </div><!--//inner-->
+		
+		
+		<!-- 금액이 없을경우 -->
+		<div class="inner foldingTable">
+        	<p class="roundPad center">총 결제 금액이 없습니다.</p>
+        </div><!--//inner-->
+		<!-- // 금액이 없을경우 end -->
+		
+    </div>
+	
+	<div class="roundBox arrowToggle">
+		<dl class="last">
+			<dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용 전 꼭 확인해주세요.</span></a></dt>
+			<dd>
+				<ul class="listDisc">
+					<li>프라임론 중도상환시 중도상환수수료는 중도상환원금에 경과월별로 차등화된 수수료율(0~2%)을 잔존일수에 따라 안분하여 계산됩니다.</li>
+					<li>&quot;회원 사망시 상속인이 회원의 사망일로부터 3개월 이내에 회원의 대출 등을 중도상환 하시는 경우 중도상환수수료를 공제받으실 수 있습니다.&quot;
+						<ul>
+							<li>상속인의 중도상환시 구비서류 : 회원 사망확인서, 가족관계증명서 등 증빙서류, 상속인 신분증 안내문구 관련 법무검토 기타_3526130501</li>
+							<li>상세문의 : TEL. 1666-3326, 02-2621-7870</li>
+						</ul>
+					</li>
+					<li>자유결제서비스 이용회원이 최소결제금액만 즉시결제 하실 경우, 약정결제금액의 잔액은 이월되며 이월된 금액에 대한 이자가 발생됩니다.</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+	
+</section>
+
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

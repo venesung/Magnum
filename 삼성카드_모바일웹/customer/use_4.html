@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>무통장입금안내 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 5;
+var over2 = 5;
+var over3 = 4;
+
+ 		
+
+$(document).ready(function ()
+{   
+    Account.loadXML("/xml/bank_account.xml", {container: $('#layer_1')});
+    Account.loadXML("/xml/inter_account.xml", {container: $('#layer_2')});
+    Account.loadXML("/xml/tel_account.xml", {container: $('#layer_3')});
+});
+</script>
+
+</head>
+<body>
+<div id="wrap">
+	<header id="header"></header>
+
+	<section>
+		
+		<ul class="tabs3">
+			<li id="tab_1" class="selected"><a href="javascript: SHBlock('tab', 'layer', 3, 1)">은행창구입금</a></li>
+			<li id="tab_2"><a href="javascript: SHBlock('tab', 'layer', 3, 2)">인터넷입금</a></li>
+			<li id="tab_3"><a href="javascript: SHBlock('tab', 'layer', 3, 3)">텔레뱅킹</a></li>
+		</ul>
+		<div class="tabConts">
+			<div id="layer_1">
+				<p class="topImgBox imgcard3">은행 창구에서 무통장입금을 이용하여 삼성카드 계좌로 직접 입금하실 수 있습니다.</p>
+				<div class="roundPad">
+					<h3 class="blue">은행명</h3>
+					<select title="은행명" class="ww marT15">
+						<option>경남</option>
+						<option>광주</option>
+						<option>국민</option>
+						<option>기업</option>
+						<option>농협</option>
+						<option>대구</option>
+						<option>부산</option>
+						<option>신한</option>
+						<option>외환</option>
+						<option>우리</option>
+						<option>우체국</option>
+						<option>전북</option>
+						<option>제주</option>
+						<option>하나</option>
+						<option>sc제일</option>
+					</select>
+				</div>
+				<!-- //roundPad-->
+				<div class="bgGray sec innerLine">
+					<table class="formType">
+						<caption>무통장입금안내표
+						</caption>
+						<colgroup>
+						<col style="width:30%">
+						<col style="width:*">
+						</colgroup>
+						<tbody>
+							<tr class="text">
+								<th class="first" scope="row">계좌번호</th>
+								<td class="right">514-07-0173036</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">카드번호 기재란</th>
+								<td class="right">타기관계좌번호란</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">수수료</th>
+								<td class="right">은행이 정한 수수료</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">입금확인</th>
+								<td class="right">입금즉시</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--//bgGray--> 
+			</div>
+			<div id="layer_2" style="display:none" class="arrowToggle">
+				<p class="topImgBox imgcard4">은행 인터넷뱅킹으로 무통장입금을 이용하여 삼성카드 계좌로 직접 입금하실 수 있습니다.</p>
+				<div class="roundPad">
+					<h3 class="blue">은행명</h3>
+					<select title="은행명" class="ww marT15">
+						<option>경남</option>
+						<option>광주</option>
+						<option>국민</option>
+						<option>기업</option>
+						<option>농협</option>
+						<option>대구</option>
+						<option>부산</option>
+						<option>신한</option>
+						<option>외환</option>
+						<option>우리</option>
+						<option>우체국</option>
+						<option>전북</option>
+						<option>제주</option>
+						<option>하나</option>
+						<option>sc제일</option>
+					</select>
+				</div>
+				<!-- //roundPad-->
+				<div class="bgGray sec innerLine">
+					<table class="formType">
+						<caption>무통장입금안내표</caption>
+						<colgroup>
+						<col style="width:30%">
+						<col style="width:*">
+						</colgroup>
+						<tbody>
+							<tr class="text">
+								<th scope="row" class="first">계좌번호</th>
+								<td class="right">514-07-0173036</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">이용방법</th>
+								<td class="right">예금이체 &gt; CMS건별즉시이체</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">카드번호 기재란</th>
+								<td class="right">CMS 번호란</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">수수료</th>
+								<td class="right">은행이 정한 수수료</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">입금확인</th>
+								<td class="right">입금즉시</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--//bgGray-->
+			</div>
+			<div id="layer_3" style="display:none" class="arrowToggle">
+				<p class="topImgBox imgcard5">은행 텔레뱅킹으로 무통장입금을 이용하여 삼성카드 계좌로 직접 입금하실 수 있습니다.</p>
+				<div class="roundPad">
+					<h3 class="blue">은행명</h3>
+					<select title="은행명" class="ww marT15">
+						<option>경남</option>
+						<option>광주</option>
+						<option>국민</option>
+						<option>기업</option>
+						<option>농협</option>
+						<option>대구</option>
+						<option>부산</option>
+						<option>신한</option>
+						<option>외환</option>
+						<option>우리</option>
+						<option>우체국</option>
+						<option>전북</option>
+						<option>제주</option>
+						<option>하나</option>
+						<option>sc제일</option>
+					</select>
+				</div>
+				<!-- //roundPad-->
+				<div class="bgGray sec innerLine">
+					<table class="formType">
+						<caption>무통장입금안내표
+						</caption>
+						<colgroup>
+						<col style="width:30%">
+						<col style="width:*">
+						</colgroup>
+						<tbody>
+							<tr class="text">
+								<th scope="row" class="first">당사계좌번호</th>
+								<td class="right">514-07-0173036</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">이용방법</th>
+								<td class="right">208.펌뱅킹계좌이체 → 입력기관코드에서 바로 다음으로(#버튼)</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">카드번호 기재란</th>
+								<td class="right">CMS 번호란</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">텔레뱅킹전화번호</th>
+								<td class="right">1588-8585</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">수수료</th>
+								<td class="right">은행이 정한 수수료</td>
+							</tr>
+							<tr class="text">
+								<th scope="row">입금확인</th>
+								<td class="right">입금즉시</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--//bgGray-->
+			</div>
+		</div>
+		<div class="roundBox">
+			<h2 class="titDep">유의사항</h2>
+			<div class="roundPad">
+				<ul class="listDisc">
+					<li>이미 결제일이 지나고 자동이체가 연결된 회원님께서는 금액이 이중으로 인출될 수 있으므로, 자동이체 통장의 잔고를 비워두시기 바랍니다.</li>
+					<li>무통장입금 시, 반드시 해당 은행에서 입금하셔야 하며 은행이 정한 소정의 수수료가 부과됩니다.</li>
+				</ul>
+			</div>
+		</div>
+		<!--//roundBox--> 
+		
+	</section>
+
+	<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>보유카드조회 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 2;
+var over3 = 0;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	
+	<div class="roundBox">
+		<table class="formType">
+            <caption>카드조회</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr class="text">
+                    <th scope="row">카드상태 선택</th>
+                    <td>
+                    	<label><input type="radio" title="사용가능카드">사용가능카드</label>
+                    	<label class="marT5"><input type="radio" title="전체카드">전체카드</label>
+                    </td>
+                </tr>
+                <tr class="line text">
+                    <th scope="row">카드선택</th>
+                    <td>
+                    	<label><input type="radio" title="개인카드">개인카드</label>
+                        <label><input type="radio" title="가족카드">가족카드</label>
+                        <label class="marT5"><input type="radio" title="법인카드">법인카드</label>
+                    </td>
+                </tr>
+            </tbody>
+		</table>
+        <div class="roundPad center"><a href="javascript:scardm.dummyFunc();" class="btnBlue">조회</a></div>
+        
+        
+        <!-- 개인카드 보유내역 start-->
+        <div class="totalCost">
+			<strong class="gray">개인카드 보유내역</strong>
+		</div>
+        
+        <div class="bgRoundGray">
+			<table class="tableType">
+				<caption>카드 보유내역</caption>
+				<colgroup><col style="width:30%"><col style="width:*"></colgroup>
+				<thead>
+                    <tr>
+                        <th colspan="2" class="left pd" scope="col"><a href="javascript:scardm.dummyFunc();" class="blArrow">SFC 빅앤빅아멕스카드</a></th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <th scope="row">카드번호</th>
+                        <td class="left">XXXX-XXXX-9999-9999</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">상태</th>
+                        <td class="left"><span class="fll marT5">사용가능</span>
+                        	<a href="javascript:scardm.dummyFunc();" class="btnBlue2 flr">앱카드 발급</a>
+                        </td>
+                    </tr>
+				</tbody>
+			</table>
+			<p style="display:none">조회된 결과가 없습니다.</p> <!-- 조회결과 없을시 -->
+            
+            <table class="tableType marT15">
+				<caption>카드 보유내역</caption>
+				<colgroup><col style="width:30%"><col style="width:*"></colgroup>
+				<thead>
+                    <tr>
+                        <th colspan="2" class="left pd" scope="col"><a href="javascript:scardm.dummyFunc();" class="blArrow">SFC 빅앤빅아멕스카드</a></th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <th scope="row">카드번호</th>
+                        <td class="left">XXXX-XXXX-9999-9999</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">상태</th>
+                        <td class="left"><span class="fll marT5">사용가능</span>
+                        	<a href="javascript:scardm.dummyFunc();" class="btnBlue2 flr">앱카드 발급</a>
+                        </td>
+                    </tr>
+				</tbody>
+			</table>
+            
+            <table class="tableType marT15">
+				<caption>카드 보유내역</caption>
+				<colgroup><col style="width:30%"><col style="width:*"></colgroup>
+				<thead>
+                    <tr>
+                        <th colspan="2" class="left pd" scope="col"><a href="javascript:scardm.dummyFunc();" class="blArrow">SFC 빅앤빅아멕스카드</a></th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <th scope="row">카드번호</th>
+                        <td class="left">XXXX-XXXX-9999-9999</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">상태</th>
+                        <td class="left"><span class="fll marT5">사용가능</span>
+                        	<a href="javascript:scardm.dummyFunc();" class="btnBlue2 flr">앱카드 발급</a>
+                        </td>
+                    </tr>
+				</tbody>
+			</table>
+		</div>
+        <!-- //개인카드 보유내역 end -->
+        
+        <!-- 가족카드 보유내역 start-->
+        <div class="totalCost">
+			<strong class="gray">가족카드 보유내역</strong>
+		</div>
+        
+        <div class="bgRoundGray">
+			<table class="tableType">
+				<caption>카드 보유내역</caption>
+				<colgroup><col style="width:30%"><col style="width:*"></colgroup>
+				<thead>
+                    <tr>
+                        <th colspan="2" class="left pd" scope="col"><a href="javascript:scardm.dummyFunc();" class="blArrow">SFC 빅앤빅아멕스카드</a></th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <th scope="row">카드번호</th>
+                        <td class="left">XXXX-XXXX-9999-9999</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">성명</th>
+                        <td class="left">김삼성</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">상태</th>
+                        <td class="left"><span class="fll marT5">사용가능</span>
+                        	<a href="javascript:scardm.dummyFunc();" class="btnBlue2 flr">앱카드 발급</a>
+                        </td>
+                    </tr>
+				</tbody>
+			</table>
+			<p style="display:none">조회된 결과가 없습니다.</p> <!-- 조회결과 없을시 -->
+            
+		</div>
+        <!-- // 가족카드 보유내역 end-->
+        
+        
+        <!-- 법인카드 보유내역 start-->
+        <div class="totalCost">
+			<strong class="gray">법인카드 보유내역</strong>
+		</div>
+        
+        <div class="bgRoundGray">
+			<table class="tableType">
+				<caption>카드 보유내역</caption>
+				<colgroup><col style="width:30%"><col style="width:*"></colgroup>
+				<thead>
+                    <tr>
+                        <th colspan="2" class="left pd" scope="col"><a href="javascript:scardm.dummyFunc();" class="blArrow">SFC 빅앤빅아멕스카드</a></th>
+                    </tr>
+				</thead>
+				<tbody>
+                    <tr>
+                        <th scope="row">카드번호</th>
+                        <td class="left">XXXX-XXXX-9999-9999</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">상태</th>
+                        <td class="left"><span class="fll marT5">사용가능</span>
+                        	<a href="javascript:scardm.dummyFunc();" class="btnBlue2 flr">앱카드 발급</a>
+                        </td>
+                    </tr>
+				</tbody>
+			</table>
+			<p style="display:none">조회된 결과가 없습니다.</p> <!-- 조회결과 없을시 -->
+            
+		</div>
+        <!-- // 법인카드 보유내역 end-->
+    </div>
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>카드신청 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 2;
+
+
+$(function()
+{
+	$(".popupBtn1 a").click ( function()
+	{
+		// 팝업 열기 
+		// ex) Popup.Open ( 팝업컨테이너 )
+		Popup.Open ( $(".cardPopup") , $(this) );
+	} );
+
+	$(".popupBtn2 a").click ( function()
+	{
+		// 팝업 열기 
+		Popup.Open ( $(".jobPopup") , $(this) );
+	} );
+
+	
+
+} );
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	<div class="roundBox">
+		<div class="roundPad pdBno">
+			<dl>
+				<dt class="gray">인증번호</dt>
+				<dd class="marT10">
+					<span class="cellFirst">
+						<span class="cellw8"><input type="number" title="인증번호"></span>
+						<span class="cellw9"><span class="cellpg"><a href="#" class="btnGray_s ww">인증번호받기</a></span></span>
+					</span>
+				</dd>
+			</dl>
+
+
+			<ul class="liStar marT10">
+				<li>다른 사람에 의한 부정발급 예방을 위해, 휴대폰 인증을 하셔야 예약이 완료됩니다.</li>
+				<li>인증번호 입력 후 예약 완료 버튼을 눌러 주세요.</li>
+			</ul>
+
+			<div class="btns innerLine2"><a href="#" class="btnBlue">예약완료</a></div>
+			<div class="btns innerLine2 popupBtn1"><a href="#" class="btnBlue">팝업 띄우기1</a></div>
+			<div class="btns innerLine2 popupBtn2"><a href="#" class="btnBlue">팝업 띄우기2</a></div>
+
+
+		</div>
+		<div class="bgGray">
+			<ul class="liStar">
+				<li><strong>제외 대상카드</strong> : 바로할인카드, 셀디카드, 삼성애니 스타일카드, 삼성체크카드, 삼성수퍼S카드, 디지털 멤버십 삼성유포인트카드, 삼성전자 멤버십 BLUEL 삼성카드, 삼성전자멤버십 BLUE Y 삼성카드, 기타  인터넷으로 신청 불가능한 카드 등</li>
+			</ul>
+		</div>
+	</div><!--//roundBox-->
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+<!-- 팝업1 -->
+<div class="cardPopup" style="display:none">
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep firstFocus">카드 신청</h3>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+			<div>
+				<p class="textLine">후불교통/브랜드 정보를 선택하셔야 카드신청이 가능합니다.</p>
+				<table class="formType">
+				<caption>후불교통/브랜드정보</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="label">
+					<th scope="row"><span>*</span>후불 교통</th>
+					<td><label><input type="radio" title="선택">선택</label><label><input type="radio" title="선택안함">선택안함</label></td>
+				</tr>
+				<tr class="label">
+					<th scope="row"><span>*</span>브랜드</th>
+					<td><label><input type="radio" title="MASTER">MASTER</label><label><input type="radio" title="국내전용">국내전용</label><label><input type="radio" title="AMEX">AMEX</label></td>
+				</tr>
+				</table>
+			</div>
+			<div class="btns innerLine4 marT0"><a href="#" class="btnBlue">신청</a></div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- 팝업2 -->
+<div class="jobPopup" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">보다 빠른 상담을 위해 직종을 선택해 주세요.</h3>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+			<div class="labelBox">
+				<label><input type="radio" name="job" title="근로소득자">근로소득자</label>
+				<label><input type="radio" name="job" title="공무원/교사/교직원">공무원/교사/교직원</label>
+				<label><input type="radio" name="job" title="전문직(의사, 변호사, 약사 등)">전문직(의사, 변호사, 약사 등)</label>
+				<label><input type="radio" name="job" title="자영업자">자영업자</label>
+			</div>
+			<div class="btns"><a href="#" class="btnBlue">전화상담</a></div>
+			<ul class="liStar bgGray">
+				<li>상담 가능 시간 : 평일 오전 9시~오후 6시</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

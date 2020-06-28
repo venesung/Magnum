@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>카드사용등록 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 4;
+var over3 = 0;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	
+
+	<div class="roundBox roundPad">
+    	<ul class="listDisc">
+            <li>안전한 카드 이용을 위해 반드시 고객님께서 직접 카드 사용등록 후 카드를 이용하시기 바랍니다.</li>
+            <li>교체 또는 갱신 발급의 경우, 새로 발급받으신 카드의 사용등록을 완료하시면 기존 카드는 자동 해지됩니다.</li>
+			<li>비밀번호를 등록하시지 않은 회원님께서는 삼성카드 대표전화(1588-8700)나 홈페이지를 통해 비밀번호를 등록해 주시기 바랍니다.</li>
+        </ul>
+		<div class="btns padB15"><a href="#" class="btnGray">대표전화</a></div>
+    </div><!--//roundBox-->
+    
+    <div class="roundBox roundpb">
+    	<table class="formType">
+            <caption>카드사용등록</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+            <tr class="first">
+                <th scope="row">주민등록번호</th>
+                <td>
+                    <span class="cellFirst">
+                        <span class="cellw3"><input type="number" title="주민등록 앞번호"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw3"><input type="number" title="주민등록 뒷번호"></span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">카드번호</th>
+                <td>
+				   <select class="ww" title="카드사선택">
+						<option>VISA</option>
+						<option>MASTER</option>
+						<option>국내전용</option>
+				   </select>
+                    <div class="cellFirst">
+                        <span class="cellw4"><input type="number" title="카드번호 첫번째"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw4"><input type="number" title="카드번호 두번째"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw4"><input type="number" title="카드번호 세번째"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw4"><input type="number" title="카드번호 네번째"></span>
+                    </div>
+                    <!-- 세자리 카드 일시  -->
+                    <div class="cellFirst">
+                        <span class="cellw9"><input type="number" title="카드번호 첫번째"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw13"><input type="number" title="카드번호 두번째"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="number" title="카드번호 세번째"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">카드 비밀번호</th>
+                <td>
+                	<span class="cellFirst">
+						<span class="cellw12"><input type="text"  value="비밀번호 앞두자리" onFocus="this.value=''" title="비밀번호 앞두자리"></span>
+						<span class="cellnum">**</span>
+					</span>
+                </td>
+            </tr>
+            <tr class="line">
+                <th scope="row">CVC번호</th>
+                <td><input type="tel" title="CVC번호" value="카드 뒷면 뒤 숫자 3자리" onFocus="this.value=''" class="ww"></td>
+            </tr>
+            </tbody>
+		</table>
+        <div class="btns"><a href="#" class="btnBlue">등록</a></div>
+    </div><!--//roundBox-->
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+</body>
+</html>

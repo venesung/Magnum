@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>개인정보변경 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 5;
+var over3 = 0;
+
+//
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+    
+    <ul class="stepList type2">
+        <li><span><span>본인확인</span></span></li>
+        <li class="on"><span><span>정보변경</span></span></li>
+        <li><span><span>변경완료</span></span></li>
+    </ul>
+    
+    <div class="roundBox roundpb">
+		<h2 class="titDep">기본정보변경</h2>
+		<table class="formType">
+            <caption>기본정보변경</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+            <tr class="text">
+                <th scope="row">이름</th>
+                <td>이삼성 (LEE SAM SUNG)</td>
+            </tr>
+            <tr class="text">
+                <th scope="row">주민등록번호</th>
+                <td>881213-*******</td>
+            </tr>
+            <tr>
+                <th scope="row">전화번호</th>
+                <td>
+                    <span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="전화번호 앞자리">
+                                <option>010</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="전화번호 가운데자리"></span></span>
+						<span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="전화번호 끝자리"></span>
+                    </span>
+                    <div><a href="#" class="btnGray_s ww">SMS인증으로변경</a></div>
+                    <div><a href="#" class="btnGray_s ww">공인인증으로변경</a></div>
+                    <p class="noti">휴대폰번호 변경은 본인 명의 휴대폰이나 공인인증을 통해서 가능합니다. </p>
+                </td>
+            </tr>
+            <tr class="last">
+                <th scope="row">이메일주소</th>
+                <td>
+                    <span class="cellFirst">
+                        <span class="cellw3"><input type="text" title="이메일주소"></span>
+                        <span class="cellDesh">@</span>
+                        <span class="cellw3"><input type="text" title="이메일공급자 주소"></span>
+                    </span>     
+					<!-- 2013.09.06 수정 -->           
+                   <span class="cellFirst marT5">
+						<span class="cellw13">
+							<select title="이메일공급자 선택" class="ww">
+								<option>직접입력</option>
+								<option>naver.com</option>
+								<option>hanmail.net</option>
+								<option>nate.com</option>
+								<option>gmail.com</option>
+								<option>hotmail.com</option>
+								<option>lycos.co.kr</option>
+								<option>dreamwiz.com</option>
+								<option>korea.com</option>
+							</select>
+						</span>
+						<span class="cellw4"><span class="cellpg"><a href="#" class="btnGray_s ww">중복조회</a></span></span>
+					</span>
+					<!-- // 2013.09.06 수정 -->
+                </td>
+            </tr>
+            </tbody>
+		</table>
+	</div><!-- //roundBox-->
+    
+    <div class="roundBox roundpb">
+		<h2 class="titDep">자택/직장정보변경</h2>
+		<table class="formType">
+            <caption>자택/직장정보변경</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+            <tr>
+                <th scope="row">자택주소</th>
+                <td>
+                    <div class="cellFirst">
+                        <span class="cellw1"><input type="number" title="우편번호 앞자리"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw1"><input type="number" title="우편번호 뒷자리"></span>
+                        <span class="cellBt"><span class="cellpg"><a href="#" class="btnGray_s ww">조회</a></span></span> 
+                    </div>
+                    <div><input type="text" title="주소" class="ww"></div>
+                    <div><input type="text" title="상세주소" class="ww"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">자택전화번호</th>
+                <td>
+                    <span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="자택전화번호 앞자리">
+                                <option>없음</option>
+                                <option>02</option>
+                                <option>031</option>
+                                <option>032</option>
+                                <option>033</option>
+                                <option>041</option>
+                                <option>042</option>
+                                <option>043</option>
+                                <option>044</option>
+                                <option>0303</option>
+                                <option>0502</option>
+                                <option>0503</option>
+                                <option>0504</option>
+                                <option>0505</option>
+                                <option>0506</option>
+                                <option>051</option>
+                                <option>052</option>
+                                <option>053</option>
+                                <option>054</option>
+                                <option>055</option>
+                                <option>061</option>
+                                <option>062</option>
+                                <option>063</option>
+                                <option>064</option>
+                                <option>070</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="자택전화번호 가운데자리"></span></span>
+						<span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="자택전화번호 끝자리"></span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">직장주소</th>
+                <td>
+                    <div class="cellFirst">
+                        <span class="cellw1"><input type="number" title="우편번호 앞자리"></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw1"><input type="number" title="우편번호 뒷자리"></span>
+                        <span class="cellBt"><span class="cellpg"><a href="#" class="btnGray_s ww">조회</a></span></span> 
+                    </div>
+                    <div><input type="text" title="주소" class="ww"></div>
+                    <div><input type="text" title="상세주소" class="ww"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">직장전화번호</th>
+                <td>
+                    <span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="직장전화번호 앞자리">
+                                <option>없음</option>
+                                <option>02</option>
+                                <option>031</option>
+                                <option>032</option>
+                                <option>033</option>
+                                <option>041</option>
+                                <option>042</option>
+                                <option>043</option>
+                                <option>044</option>
+                                <option>0303</option>
+                                <option>0502</option>
+                                <option>0503</option>
+                                <option>0504</option>
+                                <option>0505</option>
+                                <option>0506</option>
+                                <option>051</option>
+                                <option>052</option>
+                                <option>053</option>
+                                <option>054</option>
+                                <option>055</option>
+                                <option>061</option>
+                                <option>062</option>
+                                <option>063</option>
+                                <option>064</option>
+                                <option>070</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="직장전화번호 가운데자리"></span></span>
+						<span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="직장전화번호 끝자리"></span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">직장명</th>
+                <td><input type="text" title="직장명" class="ww"></td>
+            </tr>
+            <tr>
+                <th scope="row">부서명</th>
+                <td><input type="text" title="부서명" class="ww"></td>
+            </tr>
+            <tr class="line">
+                <th scope="row">직위</th>
+                <td>
+                	<select title="직위" class="ww">
+                        <option>회장</option>
+                        <option>부회장</option>
+                        <option>사장</option>
+                        <option>부사장</option>
+                        <option>전무</option>
+                        <option>상무</option>
+                        <option>이사</option>
+                        <option>국장</option>
+                        <option>부장</option>
+                        <option>지점장</option>
+                        <option>팀장</option>
+                        <option>차장</option>
+                        <option>과장</option>
+                        <option>소장</option>
+                        <option>대리</option>
+                        <option>계장</option>
+                        <option>주임</option>
+                        <option>사원</option>
+                        <option>고문/자문역</option>
+                        <option>감사</option>
+                        <option>직장</option>
+                        <option>반장</option>
+                        <option>전문상담</option>
+                        <option>계약직</option>
+                        <option>기사</option>
+                        <option>영업사원</option>
+                        <option>운전기사</option>
+                        <option>청원경찰</option>
+                        <option>기타</option>
+                    </select>
+                </td>
+            </tr>
+            </tbody>
+		</table>
+        <div class="btns"><a href="#" class="btnBlue">확인</a></div>
+	</div><!-- //roundBox-->
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

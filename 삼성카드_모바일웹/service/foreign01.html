@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>해외이용안전서비스 신청 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 3;
+var over2 = 6;
+var over3 = 0;
+ 
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="stepList type2">
+		<li class="on"><span><span>카드정보 입력<br>및 카드선택</span></span></li>
+		<li><span><span>카드설정변경</span></span></li>
+		<li><span><span>신청완료</span></span></li>
+	</ul>
+	<div class="roundBox">
+		<p class="roundPad">회원님께서 신청 하실 카드의 개인/법인 구분을 선택해 주세요.</p>
+        
+        <table class="formType innerLine_e6">
+            <caption>카드선택</caption>
+            <colgroup>
+            	<col style="width:110px">
+                <col style="width:*">
+            </colgroup>
+            <tbody>
+                 <tr>
+                    <th scope="row">카드선택</th>
+                    <td>
+                        <select class="ww" title="카드선택">
+                            <option>개인카드</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2 class="ptit marB0">카드정보 입력</h2>
+        <table class="formType">
+            <caption>카드정보 입력</caption>
+            <colgroup>
+            	<col style="width:110px">
+                <col style="width:*">
+            </colgroup>
+            <tbody>
+                 <tr>
+                    <th scope="row">카드번호</th>
+                    <td>
+                        <select class="ww" title="카드선택">
+                            <option>삼성카드1 (포인트) (아맥스)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">카드비밀번호</th>
+                    <td>
+                        <span class="cellFirst">
+                            <span class="cellw12"><input type="text"  value="비밀번호 앞두자리" onFocus="this.value=''" title="비밀번호 앞두자리"></span>
+                            <span class="cellnum">**</span>
+                        </span>
+                    </td>
+                </tr>
+
+                <tr class="line">
+                    <th scope="row">카드CVC번호</th>
+                    <td><input type="number" title="CVC번호" value="카드 뒷면 뒤 숫자 3자리" onFocus="this.value=''" class="ww"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="btns padB15">
+        	<a href="javascript:scardm.dummyFunc();" class="btnBlue">조회</a>
+        </div>
+        
+        <!-- 거래설정 카드선택 start-->
+        <div class="totalCost">
+			<strong class="gray">거래설정 카드선택</strong><span class="flr"> <label>전체선택&nbsp;&nbsp;<input type="checkbox" title="전체선택"></label></span>
+		</div>
+        <div class="roundPad">
+            <table class="tableType2">
+                <caption>거래설정 상세 안내표</caption>
+                <colgroup>
+                    <col width="20%">
+					<col width="20%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+					<tr> 
+						<th scope="row" colspan="2">카드선택</th>
+						<td class="left"><input type="checkbox" title="선택"></td>
+					</tr>
+					<tr> 
+						<th scope="row" colspan="2">카드명</th>
+						<td class="left">삼성카드1(포인트)(아멕스)</td>
+					</tr>
+					<tr> 
+						<th scope="row" colspan="2">카드번호</th>
+						<td class="left">XXXX-XXXX-0012-3XX1</td>
+					</tr>
+					<tr> 
+						<th scope="row" rowspan="2">해외이용</th>
+						<th scope="row">가맹점사용</th>
+						<td class="center">사용</td>
+					</tr>
+					<tr> 
+						<th scope="row">현금서비스</th>
+						<td class="center">사용</td>
+					</tr>
+					<tr>
+						<th scope="row" colspan="2">카드상태</th>
+						<td class="center">정상</td>
+					</tr>
+                </tbody>
+            </table>
+			
+			<table class="tableType2">
+                <caption>거래설정 상세 안내표</caption>
+                <colgroup>
+                    <col width="20%">
+					<col width="20%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+					<tr> 
+						<th scope="row" colspan="2">카드선택</th>
+						<td class="left"><input type="checkbox" title="선택"></td>
+					</tr>
+					<tr> 
+						<th scope="row" colspan="2">카드명</th>
+						<td class="left">삼성카드1(포인트)(아멕스)</td>
+					</tr>
+					<tr> 
+						<th scope="row" colspan="2">카드번호</th>
+						<td class="left">XXXX-XXXX-0012-3XX1</td>
+					</tr>
+					<tr> 
+						<th scope="row" rowspan="2">해외이용</th>
+						<th scope="row">가맹점사용</th>
+						<td class="center">사용</td>
+					</tr>
+					<tr> 
+						<th scope="row">현금서비스</th>
+						<td class="center">사용</td>
+					</tr>
+					<tr>
+						<th scope="row" colspan="2">카드상태</th>
+						<td class="center">정상</td>
+					</tr>
+                </tbody>
+            </table>
+			
+			<!-- 카드설정변경 화면에서 “예”를 선택한 경우 -->
+			<ul class="liStar marT10">
+				<li><p>앞으로 발급될 카드의 상태도 미리 설정하시겠습니까?</p>
+					<div class="marT10"><label><input type="radio" title="예"> 예</label>&nbsp;&nbsp; <label><input type="radio" title="아니오"> 아니오</label></div>
+				</li>
+			</ul>
+			<!-- //  카드설정변경 화면에서 “예”를 선택한 경우 end -->
+			
+			<div class="btns">
+				<a href="javascript:scardm.dummyFunc();" class="btnBlue">확인</a>
+			</div>
+			
+        </div>
+        <!-- // 거래설정 카드선택 -->
+        
+	</div><!--//roundBox-->
+	
+	<div class="roundBox arrowToggle">
+		<dl class="last">
+			<dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용 전 꼭 확인해주세요.</span></a></dt>
+			<dd>
+				<h3 class="titDep2">해외이용안전서비스 이용안내</h3>
+				<ul class="listDisc marT10">
+					<li>현금서비스는 신용카드로, 현금인출은 체크카드로 이용이 가능합니다.</li>
+					<li>향후 발급받으실 카드란 회원님께서 추가로 발급받으시는 삼성카드를 의미하며, 기존 가지고 계시던 카드의 분실/교체 발급 카드 등은 포함되지 않습니다.</li>
+					<li>분실/교체 발급 등의 경우에는 기존 사용하시던 카드의 설정이 그대로 승계됩니다.</li>
+				</ul>
+			</dd>
+		</dl>
+    </div>
+
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+</body>
+</html>

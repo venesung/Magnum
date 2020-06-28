@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>결제예정금액 개인카드(자유결제) - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 1;
+var over3 = 1;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<div class="roundBox roundPad">
+		<div class="bd_check_ip">
+			<strong>카드 선택</strong>
+			<span>
+				<select title="카드 선택">
+					<option>개인카드</option>
+					<option>법인카드</option>
+					<option>체크카드</option>
+				</select>
+			</span>
+		</div>
+		<!-- 20140221 추가 -->
+		<div class="ovflow_h">
+			<ul class="listDisc marT15 flr">
+				<li>조회기준일 : 10월 20일</li>
+				<li>결제예정일 : 10월 20일</li>
+			</ul>
+		</div>
+		<!-- 20140221 추가 end -->
+	</div>
+    
+    <ul class="tabs2">
+		<li id="tab_1" class="selected"><a href="javascript: SHBlock('tab', 'layer', 2, 1)" class="padB15">MM월 DD일<br>당일에 입금하는 경우</a></li>
+		<li id="tab_2"><a href="javascript: SHBlock('tab', 'layer', 2, 2)" class="padB15">MM월 DD일<br>결제일에 입금하는 경우</a></li>
+	</ul>
+    <div class="tabConts roundPad">
+		<div id="layer_1">
+        	<h2 class="fs16">결제예정금액 요약내역</h2>
+			<table class="tableType marT10">
+				<caption>결제예정금액 요약내역</caption>
+				<colgroup>
+					<col width="35%">
+					<col width="*">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">구분</th>
+						<th scope="col">금액</th>
+					</tr>
+				</thead>
+                <tfoot>
+					
+					<tr>
+						<td class="left lineNo gray" colspan="2">자유결제회원 최소결제금액<span class="flr">265,333</span></td>
+					</tr>
+                    <tr>
+						<td class="left bgyello lineNo" colspan="2"><strong class="gray">당월 결제예정금액 합계(A+B)<span class="flr">265,333</span></strong></td><!-- 20140221 (C) 삭제 -->
+					</tr>
+                </tfoot>
+				<tbody>
+					<tr>
+						<td class="left">미결제금액(A)</td>
+						<td>
+                        	<dl class="tableDlist">
+                                <dt>미결제</dt>
+                                <dd>126,200</dd>
+                                <dt>연체료</dt>
+                                <dd>0</dd>
+                            </dl>
+                        </td>
+					</tr>
+                    <tr class="sum">
+						<td class="left" colspan="2">미결제금액 총 합계<span class="flr">286,456</span></td>
+					</tr>
+                    <tr>
+						<td class="left">이번 달<br> 결제예정금액(B)</td>
+						<td>
+                        	<dl class="tableDlist">
+                                <dt>일시불</dt>
+                                <dd>126,200</dd>
+                                <dt>할부</dt>
+                                <dd>0</dd>
+                                <dt>현금서비스</dt>
+                                <dd>126,200</dd>
+                                <dt>대출</dt>
+                                <dd>126,200</dd>
+                                <dt>마이너스론</dt>
+                                <dd>126,200</dd>
+                                <dt>연회비</dt>
+                                <dd>126,200</dd>
+                                <dt>신용보호상품</dt>
+                                <dd>126,200</dd>
+                                <dt>선입금</dt>
+                                <dd>126,200</dd>
+								<!-- 20140221 추가 -->
+								<dt>자유결제 일시불</dt>
+                                <dd>126,200</dd>
+								<dt>자유결제 현금서비스</dt>
+                                <dd>126,200</dd>
+								<!-- // 20140221 추가 end -->
+                            </dl>
+                        </td>
+					</tr>
+                    
+				</tbody>
+			</table>
+            
+			 <div class="btns"><a href="#" class="btnBlue">상세내역조회</a></div>
+			
+            <h2 class="fs16 marT20">자유결제 청구 요약</h2>
+            <table class="tableType marT10">
+				<caption>자유결제 청구 요약</caption>
+				<colgroup>
+					<col width="33.4%">
+					<col width="33.3%">
+                    <col width="33.3%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">결제금액내역</th>
+						<th scope="col">일시불</th>
+                        <th scope="col">현금서비스</th>
+					</tr>
+				</thead>
+                
+				<tbody>
+					<tr>
+						<td class="left lineNoB">이월잔액</td>
+						<td class="lineNoB">0</td>
+                        <td class="lineNolb">0</td>
+					</tr>
+                    <tr>
+						<td class="left">당월이용잔액</td>
+						<td>1,156,140</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    
+                    <tr class="sum">
+						<td class="left">합계</td>
+                        <td class="lineNo">1,156,140</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    <tr>
+						<td class="left lineNoB">약정결제율</td>
+						<td colspan="2" class="lineNoB">100%</td>
+					</tr>
+                    <tr>
+						<td class="left lineNoB">결제원금</td>
+						<td colspan="2" class="lineNoB">0</td>
+					</tr>
+                    <tr>
+						<td class="left">이자/수수료</td>
+						<td colspan="2">0</td>
+					</tr>
+                    <tr class="sum">
+						<td class="left" colspan="2">약정결제금액 합계(C)</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    <tr>
+						<td class="left pad10" colspan="2">입금 후 남은 금액</td>
+                        <td class="lineNo">0</td>
+					</tr>
+				</tbody>
+			</table>
+            
+           
+            
+		</div>
+        
+        
+		<div id="layer_2" style="display:none">
+			<h2 class="fs16">결제예정금액 요약내역</h2>
+			<table class="tableType marT10">
+				<caption>결제예정금액 요약내역</caption>
+				<colgroup>
+					<col width="35%">
+					<col width="*">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">구분</th>
+						<th scope="col">금액</th>
+					</tr>
+				</thead>
+                <tfoot>
+                   <tr>
+						<td class="left lineNo gray" colspan="2">자유결제회원 최소결제금액<span class="flr">265,333</span></td>
+					</tr>
+                    <tr>
+						<td class="left bgyello lineNo" colspan="2"><strong class="gray">당월 결제예정금액 합계(A+B)<span class="flr">265,333</span></strong></td><!-- 20140221 (C) 삭제 -->
+					</tr>
+                </tfoot>
+				<tbody>
+					<tr>
+						<td class="left">미결제금액(A)</td>
+						<td>
+                        	<dl class="tableDlist">
+                                <dt>미결제</dt>
+                                <dd>126,200</dd>
+                                <dt>연체료</dt>
+                                <dd>0</dd>
+                            </dl>
+                        </td>
+					</tr>
+                    <tr class="sum">
+						<td class="left" colspan="2">미결제금액 총 합계<span class="flr">286,456</span></td>
+					</tr>
+                    <tr>
+						<td class="left">이번 달<br> 결제예정금액(B)</td>
+						<td>
+                        	<dl class="tableDlist">
+                                <dt>일시불</dt>
+                                <dd>126,200</dd>
+                                <dt>할부</dt>
+                                <dd>0</dd>
+                                <dt>현금서비스</dt>
+                                <dd>126,200</dd>
+                                <dt>대출</dt>
+                                <dd>126,200</dd>
+                                <dt>마이너스론</dt>
+                                <dd>126,200</dd>
+                                <dt>연회비</dt>
+                                <dd>126,200</dd>
+                                <dt>신용보호상품</dt>
+                                <dd>126,200</dd>
+                                <dt>선입금</dt>
+                                <dd>126,200</dd>
+                            </dl>
+                        </td>
+					</tr>
+				</tbody>
+			</table>
+            
+            <h2 class="fs16 marT20">자유결제 청구 요약</h2>
+            <table class="tableType marT10">
+				<caption>자유결제 일시불/현금서비스 요약내역</caption>
+				<colgroup>
+					<col width="33.4%">
+					<col width="33.3%">
+                    <col width="33.3%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">결제금액내역</th>
+						<th scope="col">일시불</th>
+                        <th scope="col">현금서비스</th>
+					</tr>
+				</thead>
+                
+				<tbody>
+					<tr>
+						<td class="left lineNoB">이월잔액</td>
+						<td class="lineNoB">0</td>
+                        <td class="lineNolb">0</td>
+					</tr>
+                    <tr>
+						<td class="left">당월이용잔액</td>
+						<td>1,156,140</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    
+                    <tr class="sum">
+						<td class="left">합계</td>
+                        <td class="lineNo">1,156,140</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    <tr>
+						<td class="left lineNoB">약정결제율</td>
+						<td colspan="2" class="lineNoB">100%</td>
+					</tr>
+                    <tr>
+						<td class="left lineNoB">결제원금</td>
+						<td colspan="2" class="lineNoB">0</td>
+					</tr>
+                    <tr>
+						<td class="left">이자/수수료</td>
+						<td colspan="2">0</td>
+					</tr>
+                    <tr class="sum">
+						<td class="left" colspan="2">약정결제금액 합계(C)</td>
+                        <td class="lineNo">0</td>
+					</tr>
+                    <tr>
+						<td class="left pad10" colspan="2">입금 후 남은 금액</td>
+                        <td class="lineNo">0</td>
+					</tr>
+				</tbody>
+			</table>
+            
+            <div class="btns"><a href="#" class="btnBlue">상세내역조회</a></div>
+		</div>
+	</div>
+    
+    
+    <div class="roundBox">
+        <div class="arrowToggle">
+            <dl class="last">
+                <dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용 전 꼭 확인해주세요.</span></a></dt>
+                <dd>
+					<!-- 20140221 순서 변경 -->
+                    <h3 class="titDep2">결제예정금액 안내사항</h3>
+                    <ul class="listDisc marT10">
+                    	<li>결제예정금액은 YYYY년MM월DD일까지 삼성카드로 접수된 이용금액 기준으로 작성되어 실제 결제대금과 다를 수 있습니다.</li>
+                        <li>결제예정금액의 이자금액은(할부, 대출, 자유결제 등) 조회일 당일까지 계산된 금액입니다.</li>
+                        <li>위클리보너스서비스를 이용하시는 회원의 경우는 주단위 출금액에 따라 실제결제금액(일시불)은 달라질 수 있으며, 위클리보너스서비스 상세내역은 삼성카드 홈페이지 [카드  &rarr; 디지털멤버십카드서비스 &rarr; 위클리보너스서비스] 메뉴에서 확인하실 수 있습니다.</li>
+                        <li>전월 청구서 발송 이후 취소매출이 접수된 경우 해당 금액은 전월 결제대금 반영 또는 환불 처리됩니다. 이 경우 취소거래 안내를 위해 부득이 익월 거래내역에 취소매출을 표기함으로 결제예정금액과 카드이용내역이 상이할 수 있습니다.</li>
+                        <li>결제일이 휴일인 경우 익영업일에 출금됩니다. 결제일 이전에 결제를 원하시는 경우, 즉시결제 신청 을 이용해주시기 바랍니다.</li>
+                        <li>자동이체 계좌에서 정상적으로 출금되신 경우 카드사와 은행간의 출금자료 송수신 관계로 1일정도 소요되어 결제예정금액 조회 시 미결제금액으로 조회될 수 있으니 양해 부탁 드립니다.</li>
+                        <li>결제일변경 신청 후 변경완료 전까지 결제일은 명세서를 참조해주시기 바랍니다.</li>
+                    </ul>
+					
+					<h3 class="titDep2 marT20">자유결제 서비스 이용회원 안내사항</h3>
+                    <ul class="listDisc marT10">
+                        <li>자유결제 약정결제금액과 최소결제금액은 결제일 -13일전부터 조회됩니다.</li>
+                        <li>자유결제서비스 이용회원은 일시불, 현금서비스에 한해 선택하신 약정결제율로 청구됩니다.</li>
+                        <li>당월 신규로 이용한 이용명세서는 전건 조회되나 이월잔액 이용명세서는 조회하실 수 없습니다.(전월명세서참조)</li>
+                        <li>자유결제 이용금액 선 입금 시 결제예정금액은 입금반영하여 실제 결제금액으로 조회되고 이용명세서는 전건 조회되므로 금액이 다를 수 있습니다.(요약내역 기준 참고)</li>
+                    </ul>
+                    <!-- // 20140221 순서 변경 end -->
+                </dd>
+            </dl>
+        </div>
+    </div>
+    
+    
+            
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

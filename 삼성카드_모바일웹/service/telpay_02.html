@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>전화요금납부 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 3;
+var over2 = 8;
+var over3 = 1;
+ 
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="stepList marT10">
+		<li><span><span>카드선택</span></span></li>
+		<li class="on"><span><span>전화번호<br> 입력</span></span></li>
+		<li><span><span>신청정보<br>확인</span></span></li>
+		<li><span><span>신청완료</span></span></li>
+	</ul>
+    
+	<div class="roundBox">
+		
+		<!-- 20140319 추가입력 Start -->
+		<table class="formType">
+            <caption>전화요금납부 전화번호 입력</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">통신사</th>
+                    <td>
+                        <select class="ww" title="통신사 선택">
+                            <option>SKT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">전화번호</th>
+                    <td>
+                    	<span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="전화번호 앞자리 선택">
+                                <option>010</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="전화번호 가운데 입력"></span></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="전화번호 뒷자리 입력"></span>
+                    </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">가입자명</th>
+                    <td><input type="text" title="가입자명" class="ww"></td>
+                </tr>
+			</tbody>
+		</table>
+		
+		
+        <table class="formType innerLine_e6">
+            <caption>전화요금납부 전화번호 입력</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr>
+                	<td colspan="2" class="tel_addSect"><strong>전화번호 추가입력</strong><a href="#" class="btnGray_s">추가 취소</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">통신사</th>
+                    <td>
+                        <select class="ww" title="통신사 선택">
+                            <option>SKT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">전화번호</th>
+                    <td>
+                    	<span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="전화번호 앞자리 선택">
+                                <option>010</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="전화번호 가운데 입력"></span></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="전화번호 뒷자리 입력"></span>
+                    </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">가입자명</th>
+                    <td><input type="text" title="가입자명" class="ww"></td>
+                </tr>
+			</tbody>
+		</table>
+		
+		<table class="formType innerLine_e6">
+            <caption>전화요금납부 전화번호 입력</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr>
+                	<td colspan="2" class="tel_addSect"><strong>전화번호 추가입력</strong><a href="#" class="btnGray_s">추가 취소</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">통신사</th>
+                    <td>
+                        <select class="ww" title="통신사 선택">
+                            <option>SKT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">전화번호</th>
+                    <td>
+                    	<span class="cellFirst">
+                        <span class="cellw1">
+                            <select title="전화번호 앞자리 선택">
+                                <option>010</option>
+                            </select>
+                        </span>
+                        <span class="cellw2"><span class="cellpg"><input type="tel" title="전화번호 가운데 입력"></span></span>
+                        <span class="cellDesh">-</span>
+                        <span class="cellw2"><input type="tel" title="전화번호 뒷자리 입력"></span>
+                    </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">가입자명</th>
+                    <td><input type="text" title="가입자명" class="ww"></td>
+                </tr>
+            </tbody>
+		</table>
+		<!-- 20140319 추가입력 end -->
+        
+        <a href="#" class="ptit add_btn">전화번호 추가 +</a>
+        
+        <div class="btns padB15"><a href="javascript:scardm.dummyFunc();" class="btnBlue">다음</a></div>
+	</div><!--//roundBox-->
+
+	<div class="roundBox">
+        <div class="arrowToggle">
+            <dl class="last">
+                <dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용 전 꼭 확인해주세요.</span></a></dt>
+                <dd>
+                    <h3 class="titDep2">전화요금 납부 안내사항</h3>
+                    <ul class="listDisc marT10">
+                        <li>한번에 5개까지 신청하실 수 있습니다.</li>
+                        <li>실제전화 가입자와 입력하신 가입자명이 상이할 경우 정상처리 되지 않습니다.</li>
+                        <li>KT(Olleh), LG U+의 요금제가 가족합산 요금제(가족사랑 할인)인 경우는 통신사로 신청 바랍니다.</li>
+                        <li>KT(Olleh), LG U+ 대리점에서 가입한 별정통신업체의 핸드폰은 통신사로 신청 바랍니다.</li>
+                        <li>통신요금 매출표 접수 시점에서 연결 카드가 사용 정지 중일때는 회원님께서 보유한 다른 정상카드로 변경 처리되며 해당 청구분부터 변경된 카드로 결제됩니다.</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+</body>
+</html>

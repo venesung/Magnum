@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>개인 이용한도 조정 - 조정신청 한도 입력 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 2;
+var over3 = 0;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+    <ul class="stepList type2">
+        <li class="on"><span><span>조정신청 <br>한도입력</span></span></li>
+        <li><span><span>입력내용 확인</span></span></li>
+        <li><span><span>신청완료</span></span></li>
+    </ul>  
+
+	<div class="roundBox">
+		<table class="formType">
+            <caption>카드선택 표</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr class="first">
+                    <th scope="row">카드구분</th>
+                    <td>
+                        <select class="ww" title="카드구분">
+                            <option>개인카드</option>
+                            <option>체크카드</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">사용자</th>
+                    <td>
+                        <select class="ww" title="사용자 선택">
+                            <option>김상성</option>
+                            <option>본인</option>
+                        </select>
+                    </td>
+                </tr>                
+                <tr class="line">
+                    <th scope="row">카드선택</th>
+                    <td>
+                        <select class="ww" title="카드 선택">
+                            <option>최대글자수최대글자수최대3001</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+		</table>
+        <div class="btns roundpb"><a href="javascript:scardm.dummyFunc();" class="btnBlue">조회</a></div>
+		
+        <div class="roundPad">
+        	<h3 class="gray">이용 한도조정 안내</h3>
+        	<ul class="listDisc marT10">
+            	<li>가족카드한도는 현재 본인 한도내에서 상하향 조정이 가능합니다.</li>
+                <li>할부한도와 현금서비스한도는 일시불한도를 초과할 수 없습니다. (카드사용한도와 일시불한도는 같습니다.)</li>
+                <li>일시불/할부/현금서비스 10만원단위로 입력하셔야 합니다.</li>
+           	</ul>
+        </div>
+        
+        
+		<div class="bgRoundGray innerLine">
+        	<h3 class="gray lowertit">카드이용한도</h3>
+			<table class="tableType2 marT10">
+                <caption>카드이용한도 정보</caption>
+                <colgroup>
+                    <col width="150px">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">본인 현재한도</th>
+                        <td>2,000만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">가족 현재한도</th>
+                        <td>1,600만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">조정 요청한도</th>
+                        <td><input type="number" title="조정 요청한도입력" style="text-align:right;width:70%;"> 만원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        	<h3 class="gray lowertit marT20">일시불</h3>
+			<table class="tableType2 marT10">
+                <caption>일시불 한도 정보</caption>
+                <colgroup>
+                    <col width="150px">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">본인 현재한도</th>
+                        <td>2,000만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">가족 현재한도</th>
+                        <td>1,600만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">조정 요청한도</th>
+                        <td><input type="number" title="조정 요청한도입력" style="text-align:right;width:70%;"> 만원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        	<h3 class="gray lowertit marT20">할부</h3>
+			<table class="tableType2 marT10">
+                <caption>할부 한도 정보</caption>
+                <colgroup>
+                    <col width="150px">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">본인 현재한도</th>
+                        <td>2,000만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">가족 현재한도</th>
+                        <td>1,600만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">조정 요청한도</th>
+                        <td><input type="number" title="조정 요청한도입력" style="text-align:right;width:70%;"> 만원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        	<h3 class="gray lowertit marT20">현금서비스</h3>
+			<table class="tableType2 marT10">
+                <caption>현금서비스 한도 정보</caption>
+                <colgroup>
+                    <col width="150px">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">본인 현재한도</th>
+                        <td>2,000만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">가족 현재한도</th>
+                        <td>1,600만원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">조정 요청한도</th>
+                        <td><input type="number" title="조정 요청한도입력" style="text-align:right;width:70%;"> 만원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+			<ul class="liStar marT20">
+				<li>한도조정 신청은 월~금 09:00 ~ 21:00까지 가능합니다. (토/일/공휴일은 불가)(단, 전산시스템의 사정에 따라 약간의 변동이 있을 수 있습니다.) </li>
+			</ul>   
+
+            <div class="btns"><a href="javascript:scardm.dummyFunc();" class="btnBlue">신청</a></div>
+        
+            
+        </div><!--//bgRoundGray -->
+    </div>
+    
+
+   
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

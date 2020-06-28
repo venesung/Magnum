@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>카드이용한도조회 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 2;
+var over3 = 0;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<div class="roundBox">
+		<table class="formType">
+            <caption>카드선택 표</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr class="first">
+                    <th scope="row">카드구분</th>
+                    <td>
+                        <select class="ww" title="카드구분">
+                            <option>개인카드</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="line">
+                    <th scope="row">사용자</th>
+                    <td>
+                        <select class="ww" title="사용자 선택">
+                            <option>본인</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+		</table>
+        <div class="btns roundpb"><a href="javascript:scardm.dummyFunc();" class="btnBlue">조회</a></div>
+		
+        <p class="totalCost"><strong class="gray">고객님의 현재 카드이용한도는 <span class="blue">8,000,000</span>원이며, 이용총액은 <span class="blue">3,310,489</span>원입니다.</strong></p>
+		
+		<div class="bgRoundGray">
+        
+        	<h3 class="gray">카드이용한도</h3>
+			<table class="tableType2 marT10">
+                <caption>카드이용한도 안내표</caption>
+                <colgroup>
+                    <col width="55%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">한도금액</th>
+                        <td>8,090,000,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용하신금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용가능금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="gray marT20">일시불</h3>
+			<table class="tableType2 marT10">
+                <caption>일시불 안내표</caption>
+                <colgroup>
+                    <col width="55%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">한도금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용하신금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용가능금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="gray marT20">할부</h3>
+			<table class="tableType2 marT10">
+                <caption>할부 안내표</caption>
+                <colgroup>
+                    <col width="55%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row">한도금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용하신금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">이용가능금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="gray marT20">현금서비스</h3>
+			<table class="tableType2 marT10">
+                <caption>현금서비스 안내표</caption>
+                <colgroup>
+                    <col width="35%">
+                    <col width="20%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row" colspan="2">한도금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row" rowspan="2">이용하신금액</th>
+                        <th scope="row">당월</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">총</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row" colspan="2">이용가능금액</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="gray marT20">해외</h3>
+			<table class="tableType2 marT10">
+                <caption>해외 안내표</caption>
+                <colgroup>
+                    <col width="25%">
+                    <col width="30%">
+                    <col width="*">
+                </colgroup>
+                
+                <tbody>
+                    <tr> 
+                        <th scope="row" rowspan="2">한도금액</th>
+                        <th scope="row">일시불</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">현금서비스</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row" rowspan="2">이용하신<br> 금액</th>
+                        <th scope="row">일시불</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">현금서비스</th>
+                        <td>8,090,000원</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row" rowspan="2">이용가능<br> 금액</th>
+                        <th scope="row">일시불</th>
+                        <td>8,090,000원<br>(USD 4,344)</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">현금서비스</th>
+                        <td>8,090,000원<br>(USD 4,344)</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div><!--//bgRoundGray -->
+    </div>
+    
+    <div class="roundBox arrowToggle">
+        <dl class="last">
+            <dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용 전 꼭 확인해주세요.</span></a></dt>
+            <dd>
+                <h3 class="titDep2">이용한도 안내</h3>
+                <ul class="listDisc marT10">
+                    <li>해외이용이 있는 경우 US$ vs 원화 환율변동에 따라 이용하신 금액이 매일 다르게 보여지므로 실제 결제하실 금액은 해외이용내역을 참조하시길 바랍니다.</li>
+                    <li>현금서비스로 카드대금을 입금하실 경우에는 31만원까지 이용이 가능합니다.</li>
+                    <li>본 이용가능 금액에는 당일 입금하신 금액은 반영이 되지 않으니 이용에 참조하시기 바랍니다.</li>
+                    <li>카드이용한도(해외이용포함)내에서 일시불,할부,현금서비스를 이용 할 수 있습니다.</li>
+                    <li>현금서비스 한도는 월한도로 이용가능하나 카드이용한도 내에서만 이용가능합니다.</li>
+                    <li>소액신용서비스 이용한도는 삼성카드 대표전화로 문의하여 확인하실 수 있습니다.</li>
+                </ul>
+                
+            </dd>
+        </dl>
+    </div>
+    
+    <!-- 2차개발 div class="roundBox roundpb">
+        <h2 class="titDep">이용 한도조정을 원하시면, 해당신청 버튼을 클릭해주세요.</h2>
+        <div class="btns">
+			<a href="javascript:scardm.dummyFunc();" class="btnBlue">한도상향신청</a>
+			<a href="javascript:scardm.dummyFunc();" class="btnBlue">이용한도 조정</a>
+		</div>
+        <div class="btns">
+			<a href="javascript:scardm.dummyFunc();" class="btnBlue">대출 가능금액조회</a>
+		</div>
+    </div-->
+   
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

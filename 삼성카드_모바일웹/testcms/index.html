@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko-KR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+<title></title>
+<style media="screen, print" type="text/css">
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display:block;}
+body {line-height:1;}
+ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content:''; content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+
+body {font-size:14px; font-family:sans-serif; -webkit-text-size-adjust:none;}
+
+#s-wrap {max-width:600px; margin:0 auto; padding:30px 20px;}
+#s-wrap img {vertical-align:top; max-width:100%; max-height:100%;}
+#s-wrap #header {display:table; table-layout:fixed; width:100%; margin-bottom:20px;}
+#s-wrap #header h1 {display:table-cell; width:166px;}
+#s-wrap #header .bnn {text-align:center; vertical-align:bottom; display:table-cell;}
+#s-wrap #content .notice {margin-bottom:4px; border:1px solid #ddd;}
+#s-wrap #content .point {margin-bottom:30px; border-color:#ddd; border-style:solid; border-width:1px 1px 0;}
+#s-wrap #content .point .slider {position:relative;}
+#s-wrap #content .point .slider .flex-control-paging {position:absolute; right:18px; bottom:10px;}
+#s-wrap #content .point .slider .flex-control-paging:after {content:''; display:block; clear:both;}
+#s-wrap #content .point .slider .flex-control-paging li {float:left;}
+#s-wrap #content .point .slider .flex-control-paging li a {color:#464646; font-size:12px; text-align:center; line-height:20px; display:block; width:20px; height:20px; margin-left:2px; background-size:auto 20px; background-repeat:no-repeat; background-position:100% 0; background-image:url('./images/slider-nav.png');}
+#s-wrap #content .point .slider .flex-control-paging li a.flex-active {color:#fff; background-position:0 0;}
+#s-wrap #content .point .list:after {content:''; display:block; clear:both;}
+#s-wrap #content .point .list li {float:left; width:50%; height:98px; border-color:#ddd; border-style:solid; border-width:1px 0 1px 2px; -moz-box-sizing:border-box; box-sizing:border-box;}
+#s-wrap #content .point .list li:nth-child(2n + 1) {border-left-width:0;}
+#s-wrap #content .point .list li img {max-height:100%;}
+#s-wrap #content .partnership {margin-bottom:30px;}
+#s-wrap #content .partnership h2 {height:16px; margin-bottom:10px;}
+#s-wrap #content .partnership h2 img {max-width:auto; max-height:100%;}
+#s-wrap #content .partnership .list:after {content:''; display:block; clear:both;}
+#s-wrap #content .partnership .list li {float:left; width:50%;}
+
+@media all and (max-width:480px) {
+	#s-wrap {padding:15px 10px;}
+	#s-wrap #header {margin-bottom:10px;}
+	#s-wrap #header h1 {width:83px;}
+	#s-wrap #content .notice {margin-bottom:2px;}
+	#s-wrap #content .point {margin-bottom:15px; border-width:1px 1px 0;}
+	#s-wrap #content .point .slider .flex-control-paging {right:9px; bottom:5px;}
+	#s-wrap #content .point .slider .flex-control-paging li a {font-size:6px; line-height:10px; width:10px; height:10px; margin-left:1px; background-size:auto 10px;}
+	#s-wrap #content .point .list li {height:49px;}
+	#s-wrap #content .partnership {margin-bottom:15px;}
+	#s-wrap #content .partnership h2 {height:8px; margin-bottom:5px;}
+	#s-wrap #content .partnership h2 img {max-height:100%;}
+}
+</style>
+<script src="./script/jquery-1.11.0.min.js"></script>
+<script src="./script/jquery.flexslider.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+	$('.slider').flexslider({
+		animation: 'slide',
+		directionNav: false
+	});
+});
+//]]>
+</script>
+</head>
+<body>
+<div id="s-wrap">
+	<div id="header">
+		<h1><a href="#"><img src="./images/head-logo.png" alt="samsungcard shopping" /></a></h1>
+		<div class="bnn"><img src="./images/head-bann.png" alt="쇼핑몰 포인트 적립 - 모바일로 편리하게, 보너스포인트로 알뜰하게~" /></div>
+	</div>
+	<div id="content">
+		<p class="notice"><img src="./images/body-notice.png" alt="포인트 적립을 위해 결제 시 삼성카드로만 결제가 가능한지 꼭 확인하세요!" /></p>
+		<div class="point">
+			<div class="slider">
+				<ul class="slides">
+					<li><a href="#"><img src="./images/point-slider-1.png" alt="삼성카드 쇼핑 이벤트 소식 신규 신청 시 1,000 서비스포인트 적립 (단, 기존 신청 회원님이 서비스 해지 후 재신청하시는 경우 적용되지 않습니다.) 기간 : 2014. 2 .11 ~ 2 .28 적립일 : 2014. 3 .11 이후" /></a></li>
+					<li><a href="#"><img src="./images/point-slider-1.png" alt="삼성카드 쇼핑 이벤트 소식 신규 신청 시 1,000 서비스포인트 적립 (단, 기존 신청 회원님이 서비스 해지 후 재신청하시는 경우 적용되지 않습니다.) 기간 : 2014. 2 .11 ~ 2 .28 적립일 : 2014. 3 .11 이후" /></a></li>
+					<li><a href="#"><img src="./images/point-slider-1.png" alt="삼성카드 쇼핑 이벤트 소식 신규 신청 시 1,000 서비스포인트 적립 (단, 기존 신청 회원님이 서비스 해지 후 재신청하시는 경우 적용되지 않습니다.) 기간 : 2014. 2 .11 ~ 2 .28 적립일 : 2014. 3 .11 이후" /></a></li>
+				</ul>
+			</div>
+			<ul class="list">
+				<li><a href="#"><img src="./images/point-bnn-1.png" alt="롯데닷컴 : 2 +  3 = 5% 보너스포인트 적립! 2014. 2.17 ~ 2.28" /></a></li>
+				<li><a href="#"><img src="./images/point-bnn-2.png" alt="Gmarket : 1 +  4 = 5% 보너스포인트 적립! 2014. 2.17 ~ 2.28" /></a></li>
+				<li><a href="#"><img src="./images/point-bnn-3.png" alt="ARTBOX : 5천원 할인쿠폰" /></a></li>
+				<li><a href="#"><img src="./images/point-bnn-4.png" alt="인터넷 신라면세 10% 할인쿠폰" /></a></li>
+			</ul>
+		</div>
+
+		<div class="partnership">
+			<h2><img src="./images/tit-partnership.png" alt="제휴 쇼핑몰" /></h2>
+			<ul class="list">
+				<li><a href="#"><img src="./images/partnership-1.png" alt="신세계몰 2.1%" /></a></li>
+				<li><a href="#"><img src="./images/partnership-2.png" alt="CJmall 2%" /></a></li>
+				<li><a href="#"><img src="./images/partnership-3.png" alt="GS Shop 2%" /></a></li>
+				<li><a href="#"><img src="./images/partnership-4.png" alt="Emart mall 2.1%" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer"><img src="./images/foot-notice.png" alt="* 삼성카드 쇼핑은 통신판매 중개자로 상품 및 서비스는 각 쇼핑몰의 책임하에 운영됩니다." /></div>
+</div>
+</body>
+</html>

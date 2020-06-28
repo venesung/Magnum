@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>신청서작성 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 5;
+
+//
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	<ul class="stepList">
+		<li><span><span>실명확인</span></span></li>
+		<li><span><span>약관동의</span></span></li>
+		<li class="on"><span><span>신청서작성</span></span></li>
+		<li><span><span>가입완료</span></span></li>
+	</ul>
+    
+    <div class="roundBox">
+		<h2 class="titDep">가입 신청 정보 입력</h2>
+		<table class="formType">
+		<caption>신청서작성</caption>
+		<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+		<tbody>
+		<tr class="text">
+			<th scope="row">성명</th>
+			<td>이삼성</td>
+		</tr>
+        <tr class="text">
+			<th scope="row">주민등록번호</th>
+			<td>123456-*******</td>
+		</tr>
+		<tr>
+			<th scope="row">아이디</th>
+            <td>
+                <span class="cellFirst">
+                    <span class="cellw8"><input type="text" title="아이디"></span>
+                    <span class="cellw9"><span class="cellpg"><a href="#" class="btnGray_s ww">중복확인</a></span></span>
+                </span>
+                <p class="noti">영문/숫자 혼용 6~12자리, 대소문자 구별</p>
+            </td>
+		</tr>
+		<tr>
+			<th scope="row">비밀번호</th>
+            <td>
+                <input type="password" title="비밀번호" onFocus="this.value=''" class="ww">
+                <p class="noti">영문/숫자 혼용 8~12자리,대소문자 구별특수문자 선택입력 범위(필수옵션아님)[!@#$%^&amp;*] 
+</p>
+            </td>
+		</tr>
+        <tr>
+			<th scope="row">비밀번호확인</th>
+            <td>
+                <input type="password" title="비밀번호" onFocus="this.value=''" class="ww">
+            </td>
+		</tr>
+		<tr class="last">
+			<th scope="row"><span>*</span>이메일</th>
+			<td>
+				<span class="cellFirst">
+					<span class="cellw13"><input type="text" title="이메일아이디"></span>
+					<span class="cellDesh">@</span>
+					<span class="cellw13"><input type="text" title="이메일공급자"></span>
+					<span class="cellDesh"></span>
+					<span class="cellw11">
+						<a href="#" class="btnGray_s ww">중복확인</a>
+					</span>
+				</span>
+				<div>
+					<select class="ww" title="이메일공급자">
+                        <option>선택</option>
+                        <option>드림위즈</option>
+                        <option>엠팔</option>
+                        <option>한메일(다음)</option>
+                        <option>Hotmail</option>
+                        <option>코리아</option>
+                        <option>라이코스</option>
+                        <option>네이트</option>
+                        <option>네이버</option>
+                        <option>네띠앙</option>
+                        <option>오르지오</option>
+                        <option>파란</option>
+                        <option>직접입력</option>
+					</select>
+				</div>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div><!--//roundBox-->
+    <div class="roundBox roundpb">
+    	<h2 class="titDep">카드정보 입력</h2>
+    	<table class="formType">
+            <caption>카드정보 입력</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+            <tr class="first">
+                <th scope="row">카드번호</th>
+                <td>
+                	<span class="cellFirst">
+                       <select title="카드선택">
+                            <option>VISA</option>
+                            <option>MASTER</option>
+                            <option>국내전용</option>
+                       </select>
+					</span>
+					
+					<!-- 일반카드 -->
+                    <div class="cellFirst">
+						<span class="cellnum">****</span>
+						<span class="cellDesh">-</span>
+						<span class="cellnum">****</span>
+						<span class="cellDesh">-</span>
+						<span class="cellw11"><input title="카드번호 세번째 4자리 입력" type="text"></span>
+						<span class="cellDesh">-</span>
+						<span class="cellw11"><input title="카드번호 네번째 4자리 입력" type="text"></span>
+					</div>
+					<!-- // 일반카드 end -->
+					
+					<!-- 아멕스 카드일 경우 20140404 추가 -->
+					<div class="cellFirst">
+						<span class="cellnum">****</span>
+						<span class="cellDesh">-</span>
+						<span class="cellnum">***</span>
+						<span class="cellw2"><input type="text" title="카드번호 가운데자리" value="뒤 3자리" onfocus="this.value=''"></span>
+						<span class="cellDesh">-</span>
+						<span class="cellw11"><input type="text" title="카드번호 뒷자리" value="5자리" onfocus="this.value=''"></span>
+					</div>
+					<!-- // 아멕스 카드일 경우 end 20140404 추가 -->
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">카드 비밀번호</th>
+                 <td>
+                	<span class="cellFirst">
+						<span class="cellw12"><input type="text"  value="비밀번호 앞두자리" onFocus="this.value=''" title="비밀번호 앞두자리"></span>
+						<span class="cellnum">**</span>
+					</span>
+                </td>
+            </tr>
+            <tr class="line">
+                <th scope="row">CVC번호</th>
+                <td><input type="tel" title="CVC번호" value="카드 뒷면 뒤 숫자 3자리" onFocus="this.value=''" class="ww"></td>
+            </tr>
+            </tbody>
+		</table>
+
+		<ul class="liStar roundPad">
+			<li>삼성카드 웹회원가입을 위해서는 보유하신 삼성카드 정보를 입력하셔야 합니다.</li>
+		</ul>
+        <div class="btns marT0"><a href="#" class="btnBlue">작성 완료</a></div>
+    </div><!--//roundBox-->
+   
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>결제일 변경 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 6;
+var over2 = 2;
+var over3 = 0;
+
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="stepList type2">
+		<li class="on"><span><span>결제일 선택</span></span></li>
+		<li><span><span>결제스케쥴 확인</span></span></li>
+		<li><span><span>결제일 변경완료</span></span></li>
+	</ul>
+    
+	<div class="roundBox">
+		<!-- 20140228 추가 -->
+		<ul class="listDisc roundPad">
+			<li>결제일을 14일로 설정하시면 전월 1일~말일까지의 이용금액을 납부할 수 있어 계획적인 재정관리에 도움이 됩니다.</li>
+		</ul>
+		<!-- 20140228 추가 end -->
+		<table class="formType innerLine_e6"><!-- 20140228 class="innerLine_e6"추가 -->
+            <caption>변경 결제일 선택표</caption>
+            <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+            <tbody>
+                <tr class="text">
+                    <th scope="row">구분</th>
+                    <td>개인카드</td>
+                </tr>
+                <tr class="text">
+                    <th scope="row">카드/대출번호</th>
+                    <td>보유카드 전체</td>
+                </tr>
+                <tr class="text">
+                    <th scope="row">상태</th>
+                    <td>정상</td>
+                </tr>
+                <tr class="text">
+                    <th scope="row">현재결제일</th>
+                    <td>01일</td>
+                </tr>
+                <tr class="line">
+                    <th scope="row">변경결제일</th>
+                    <td>
+                    	<select class="ww" title="변경 결제일 선택">
+                            <option>선택</option>
+                            <option>1일</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+		</table>
+        <div class="btns roundpb"><a href="javascript:scardm.dummyFunc();" class="btnBlue">다음</a></div>
+	</div>
+    
+    <div class="roundBox arrowToggle">
+        <dl class="last">
+            <dt><a href="javascript:scardm.dummyFunc();"><span class="import_tit">이용전 꼭 확인해 주세요.</span></a></dt>
+            <dd>
+				
+                <ul class="listDisc">
+                    <li>신용카드 결제일은 인당으로 변경 가능합니다.</li>
+                    <li>신용카드는 변경 당일에 한해 취소 후 재 변경 가능합니다.</li>
+                    <li>결제일이 늦춰지거나 앞당겨짐에 따라 이자가 증감될 수 있습니다. 이자는 일할 계산됩니다.</li>
+                    <li>결제일 변경 확정일 기준으로 연체 상태가 되면 결제일 변경이 취소되오니 유의하시기 바랍니다.</li>
+                    <li>결제일 변경 가능시간 : 월~금 09:00~21:00 토/일/공휴일 제외 됩니다.</li>
+                    <li>개인신용카드와 할부금융(캐피탈)을 같이 사용하신 회원님의 경우, 변경된 결제일로 적용되는 월은 달라 질 수 있습니다.</li>
+                    <li>항공사 제휴카드(입금기준 적립)소지회원이 자유결제를 이용할 경우 결제일 변경 시 청구 월 변동으로 해당 마일리지 적립월이 변경될 수 있습니다.</li>
+                    <li>법인개별카드의 결제일 변경을 원하시는 회원님께서는 삼성카드 대표전화(1588-8700)로 결제일 변경을 요청해 주시기 바랍니다.</li>
+                </ul>
+				
+				<h3 class="titDep2 marT20">결제일 변경이 되지 않는 경우</h3>
+				<!-- 20140319 수정 -->
+				<ul class="listDisc marT10">
+                    <li>현재 상태가 연체, 청구중지, 재변경불가인 경우</li>
+					<li>상태가 현금S잔액인 경우 결제대금 완납 또는 잔액한도제 변경 후 결제일변경이 가능합니다.</li>
+                </ul>
+				<!-- 20140319 수정 end -->
+            </dd>
+        </dl>
+    </div>
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

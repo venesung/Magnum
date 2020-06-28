@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>즉시결제 출금내역 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="tabs2">
+		<li id="tab_1" class="selected"><a href="javascript: SHBlock('tab', 'layer', 2, 1)">자동이체계좌 출금내역</a></li>
+		<li id="tab_2" class=""><a href="javascript: SHBlock('tab', 'layer', 2, 2)">가상계좌 입금내역</a></li>
+	</ul>
+    
+		<div id="layer_1" style="display: ;">
+			<div class="roundBoxT pdT15">
+                
+                <table class="formType marT10 innerLine_e6">
+                    <caption>날짜지정 검색</caption>
+                    <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+                    <tbody>
+                    	<tr class="line">
+                            <th scope="row">날짜지정</th>
+                            <td>
+                                <span class="cellFirst">
+                                    <span class="cellw3"><input type="date" title="시작일"></span>
+                                    <span class="cellDesh">~</span>
+                                    <span class="cellw3"><input type="date" title="종료일"></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="btns">
+                    <a class="btnBlue" href="javascript:scardm.dummyFunc();">조회</a>
+                </div>
+				
+				
+				<div class="roundPad">
+					<ul class="listDisc roundpb">
+						<li>최근 3개월간의 내역을 확인하실 수 있습니다.</li>
+					</ul>
+					<table class="tableType breakSect tableArrowToggle">
+						<caption>자동이체 계좌 출금내역</caption>
+						<colgroup><col style="width:60%"><col style="width:*"></colgroup>
+						<thead>
+							<tr>
+								<th scope="col">출금내역</th>
+								<th scope="col">출금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="left">
+									<span>우리은행 : 100XXXXXX407</span>
+									<span>출금일시 : 14.02.02 14:10:10</span>
+									<span>처리결과 : 출금완료</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>카드번호/대출번호</span></dt>
+										<dd><span>XXXX-XXXX-1234-1XX4</span></dd>
+										<dt><span>요청일시</span></dt>
+										<dd><span>14.12.12 12:12:12</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>할부</span></dd>
+										<dt><span>요청액</span></dt>
+										<dd><span>292,514</span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>우리은행 : 100XXXXXX407</span>
+									<span>출금일시 : 14.02.02 14:10:10</span>
+									<span>처리결과 : 출금완료</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>카드번호/대출번호</span></dt>
+										<dd><span>XXXX-XXXX-1234-1XX4</span></dd>
+										<dt><span>요청일시</span></dt>
+										<dd><span>14.12.12 12:12:12</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>할부</span></dd>
+										<dt><span>요청액</span></dt>
+										<dd><span>292,514</span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>우리은행 : 100XXXXXX407</span>
+									<span>출금일시 : 14.02.02 14:10:10</span>
+									<span>처리결과 : 출금완료</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>카드번호/대출번호</span></dt>
+										<dd><span>XXXX-XXXX-1234-1XX4</span></dd>
+										<dt><span>요청일시</span></dt>
+										<dd><span>14.12.12 12:12:12</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>할부</span></dd>
+										<dt><span>요청액</span></dt>
+										<dd><span>292,514</span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>우리은행 : 100XXXXXX407</span>
+									<span>출금일시 : 14.02.02 14:10:10</span>
+									<span>처리결과 : 출금완료</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>카드번호/대출번호</span></dt>
+										<dd><span>XXXX-XXXX-1234-1XX4</span></dd>
+										<dt><span>요청일시</span></dt>
+										<dd><span>14.12.12 12:12:12</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>할부</span></dd>
+										<dt><span>요청액</span></dt>
+										<dd><span>292,514</span></dd>
+									</dl>
+								</td>
+							</tr>
+							<!-- 내역이 없을경우 -->
+							<tr>
+								<td colspan="2" class="center">즉시결제 처리내역이 존재하지 않습니다.</td>
+							</tr>
+							<!-- 내역이 없을경우 end -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+        </div><!-- //layer_1 end -->
+            
+        
+		<div id="layer_2" style="display: none;">
+        	<div class="roundBoxT pdT15">
+                
+                <table class="formType marT10 innerLine_e6">
+                    <caption>날짜지정 검색</caption>
+                    <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+                    <tbody>
+                    	<tr class="line">
+                            <th scope="row">날짜지정</th>
+                            <td>
+                                <span class="cellFirst">
+                                    <span class="cellw3"><input type="date" title="시작일"></span>
+                                    <span class="cellDesh">~</span>
+                                    <span class="cellw3"><input type="date" title="종료일"></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="btns">
+                    <a class="btnBlue" href="javascript:scardm.dummyFunc();">조회</a>
+                </div>
+				
+				
+				<div class="roundPad">
+					<ul class="listDisc roundpb">
+						<li>최근 3개월간의 내역을 확인하실 수 있습니다.</li>
+						<li>가상계좌 신청 취소는 당일만 가능하며, 당일 23시까지 미입금 시 신청일 다음날(영업일 기준) 자동으로 신청이 취소됩니다.</li>
+					</ul>
+					<table class="tableType breakSect tableArrowToggle">
+						<caption>자동이체 계좌 출금내역</caption>
+						<colgroup><col style="width:60%"><col style="width:*"></colgroup>
+						<thead>
+							<tr>
+								<th scope="col">입금내역</th>
+								<th scope="col">요청액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="left">
+									<span>요청일 : 14.12.12</span>
+									<span>신청경로 : 가상계좌입금신청등록</span>
+									<span>비고 : 접수</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>일시불</span></dd>
+										<dt><span>신청구분</span></dt>
+										<dd><span>부분납</span></dd>
+										<dt><span>신청일</span></dt>
+										<dd><span>12.12.12</span></dd>
+										<dt><span>카드번호</span></dt>
+										<dd><span>XXXX-XXXX-0202-8XX1</span></dd>
+										<dt><span>이용 가맹점</span></dt>
+										<dd><span>-</span></dd>
+										<dt class="cancleBtn"><span>취소</span></dt>
+										<dd class="cancleBtn"><span><a href="#">취소</a></span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>요청일 : 14.12.12</span>
+									<span>신청경로 : 가상계좌입금신청등록</span>
+									<span>비고 : 접수</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>일시불</span></dd>
+										<dt><span>신청구분</span></dt>
+										<dd><span>부분납</span></dd>
+										<dt><span>신청일</span></dt>
+										<dd><span>12.12.12</span></dd>
+										<dt><span>카드번호</span></dt>
+										<dd><span>XXXX-XXXX-0202-8XX1</span></dd>
+										<dt><span>이용 가맹점</span></dt>
+										<dd><span>-</span></dd>
+										<dt class="cancleBtn"><span>취소</span></dt>
+										<dd class="cancleBtn"><span><a href="#">취소</a></span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>요청일 : 14.12.12</span>
+									<span>신청경로 : 가상계좌입금신청등록</span>
+									<span>비고 : 접수</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>일시불</span></dd>
+										<dt><span>신청구분</span></dt>
+										<dd><span>부분납</span></dd>
+										<dt><span>신청일</span></dt>
+										<dd><span>12.12.12</span></dd>
+										<dt><span>카드번호</span></dt>
+										<dd><span>XXXX-XXXX-0202-8XX1</span></dd>
+										<dt><span>이용 가맹점</span></dt>
+										<dd><span>-</span></dd>
+										<dt class="cancleBtn"><span>취소</span></dt>
+										<dd class="cancleBtn"><span><a href="#">취소</a></span></dd>
+									</dl>
+								</td>
+							</tr>
+							<tr>
+								<td class="left">
+									<span>요청일 : 14.12.12</span>
+									<span>신청경로 : 가상계좌입금신청등록</span>
+									<span>비고 : 접수</span>
+								</td>
+								<td><a href="javascript:scardm.dummyFunc();">10,000,000원</a></td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="2" class="nop benenop">
+									<dl>
+										<dt><span>구분</span></dt>
+										<dd><span>개인카드</span></dd>
+										<dt><span>상품</span></dt>
+										<dd><span>일시불</span></dd>
+										<dt><span>신청구분</span></dt>
+										<dd><span>부분납</span></dd>
+										<dt><span>신청일</span></dt>
+										<dd><span>12.12.12</span></dd>
+										<dt><span>카드번호</span></dt>
+										<dd><span>XXXX-XXXX-0202-8XX1</span></dd>
+										<dt><span>이용 가맹점</span></dt>
+										<dd><span>-</span></dd>
+										<dt class="cancleBtn"><span>취소</span></dt>
+										<dd class="cancleBtn"><span><a href="#">취소</a></span></dd>
+									</dl>
+								</td>
+							</tr>
+							<!-- 내역이 없을경우 -->
+							<tr>
+								<td colspan="2" class="center">즉시결제 처리내역이 존재하지 않습니다.</td>
+							</tr>
+							<!-- 내역이 없을경우 end -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div><!-- //layer_2 end -->
+      
+	</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

@@ -1,0 +1,590 @@
+﻿{
+  "data": {
+    "item": [
+      {
+        "name": "마이홈",
+        "link": "/main.scv?cmd=mainMyhomeView",
+        "pop":"",
+        "item": [
+          {
+            "name": "이용대금 명세서",
+            "link": "/statement.scv?cmd=statement2Vie",
+            "pop":""
+          },
+          {
+            "name": "이용내역 조회",
+            "link": "/myhome.scv?cmd=personalCardView",
+            "pop":""
+          },
+          {
+            "name": "결제 예정 금액",
+            "link": "/myhomess.scv?cmd=getYejungByInfoView",
+            "pop":""
+          },
+          {
+            "name": "입금내역 조회",
+            "link": "/myhome.scv?cmd=depositListView",
+            "pop":""
+          },
+          {
+            "name": "카드할부금액 가상조회",
+            "link": "/myhome.scv?cmd=halbuSimulationView",
+            "pop":""
+          },
+          {
+            "name": "즉시결제 서비스",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "즉시결제 서비스 안내",
+                "link": "/myhomeEms.scv?cmd=rePaymentView",
+                "pop":""
+              },
+              {
+                "name": "이번 달 결제금액 즉시결제",
+                "link": "/myhomeEms.scv?cmd=totalStep1View",
+                "pop":""
+              },
+              {
+                "name": "즉시결제 처리결과 조회",
+                "link": "/myhomeEms.scv?cmd=selectMiddleListView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "포인트 조회",
+            "link": "/myhome.scv?cmd=pointView",
+            "pop":""
+          },
+          {
+            "name": "개인정보 변경",
+            "link": "/myhome.scv?cmd=getInfoOfMemberView",
+            "pop":""
+          },
+          {
+            "name": "보유 카드 조회",
+            "link": "/myhome.scv?cmd=mwGetMyCardListView",
+            "pop":""
+          },
+          {
+            "name": "결제일&amp;결제계좌변경",
+            "link": "/myhome.scv?cmd=settleDayAndAccountMenu",
+            "pop":"",
+            "item": [
+              {
+                "name": "결제일 변경",
+                "link": "/myhome.scv?cmd=mwGetMySettleDayInfoMainView",
+                "pop":""
+              },
+              {
+                "name": "결제계좌 변경",
+                "link": "/myhome.scv?cmd=mwGetMyAccountInfoMainView",
+                "pop":""
+              },
+              {
+                "name": "처리결과조회",
+                "link": "/myhome.scv?cmd=mwGetInfoResult",
+                "pop":""
+              },
+              {
+                "name": "가상계좌 조회 및 신청",
+                "link": "/myhome.scv?cmd=mwGetListOfVirtualAccountView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "카드 이용한도 조회",
+            "link": "/myhome.scv?cmd=mwCardLimitView",
+            "pop":""
+          },
+          {
+            "name": "LINK",
+            "link": "/event.scv?cmd=getListOfClopView",
+            "pop":""
+          },
+          {
+            "name": "혜택리포트",
+            "link": "myHomeMys.scv?cmd=getInfoOfBunusMainView",
+            "pop":""
+          },
+          {
+            "name": "홈페이지 비밀번호 변경",
+            "link": "/myhome.scv?cmd=updatePasswordByLoginView",
+            "pop":""
+          },
+          {
+            "name": "명세서 수령방법 변경",
+            "link": "/myhome.scv?cmd=receiptMethodCreditView",
+            "pop":""
+          },
+          {
+            "name": "프리미엄 S 라운지",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "프리미엄 S 라운지 안내",
+                "link": "/myhomePr.scv?cmd=pmsMainMenuView",
+                "pop":""
+              },
+               {
+                "name": "프리미엄 S 라운지란?",
+                "link": "/myhomePr.scv?cmd=pmsInfoView",
+                "pop":""
+              },
+              {
+                "name": "프리미엄 서비스",
+                "link": "/myhomePr.scv?cmd=pmsMenuCheckView",
+                "pop":""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "카드",
+        "link": "/main.scv?cmd=mainCardView",
+        "pop":"",
+        "item": [
+          {
+            "name": "카드신청",
+            "link": "/card.scv?cmd=cardListView",
+            "pop":""
+          },
+          {
+            "name": "카드 발급상황 조회",
+            "link": "/card.scv?cmd=cardIssueInfoView",
+            "pop":""
+          },
+          {
+            "name": "카드 사용등록",
+            "link": "/card.scv?cmd=registCardView",
+            "pop":""
+          },
+          {
+            "name": "모바일카드",
+            "link": "/card.scv?cmd=mwMobileCardView",
+            "pop":""
+          },
+          {
+            "name": "앱카드",
+            "link": "/card.scv?cmd=mwAppCardView",
+            "pop":""
+          },
+          {
+            "name": "발급기준안내",
+            "link": "/card.scv?cmd=mwIssueCardRequirementView",
+            "pop":""
+          },
+          {
+            "name": "삼성Gift카드 잔액 조회",
+            "link": "/card.scv?cmd=giftCardBalanceAmountView",
+            "pop":""
+          }
+        ]
+      },
+      {
+        "name": "금융",
+        "link": "/main.scv?cmd=mainFinanceView",
+        "pop":"",
+        "item": [
+          {
+            "name": "현금서비스",
+            "link": "",
+            "item": [
+              {
+                "name": "상품안내",
+                "link": "/fscs.scv?cmd=cshInfoView",
+                "pop":""
+              },
+              {
+                "name": "서비스신청",
+                "link": "/fscs.scv?cmd=certLoanSendView",
+                "pop":""
+              },
+              {
+                "name": "이용내역조회",
+                "link": "/fscs.scv?cmd=myCashServiceListView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "삼성카드론",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "상품안내",
+                "link": "/fscdl.scv?cmd=cdlInfoView",
+                "pop":""
+              },
+              {
+                "name": "서비스신청",
+                "link": "/fscdl.scv?cmd=certLoanSendView",
+                "pop":""
+              },
+              {
+                "name": "이용내역조회",
+                "link": "/fscdl.scv?cmd=getCardLoanUseInfoView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "삼성프라임론",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "상품안내",
+                "link": "/fspri.scv?cmd=priInfoView",
+                "pop":""
+              },
+              {
+                "name": "한도조회 및 신청",
+                "link": "/fspri.scv?cmd=getPriRealNameView",
+                "pop":""
+              },
+              {
+                "name": "전화상담신청",
+                "link": "/fspri.scv?cmd=getPriLoanTelView",
+                "pop":""
+              },
+              {
+                "name": "이용내역조회",
+                "link": "/fspri.scv?cmd=getPriRealNameUseInfoView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "삼성카드 전세론",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "상품안내",
+                "link": "/fshrl.scv?cmd=hrlInfoView",
+                "pop":""
+              },
+              {
+                "name": "한도조회 및 신청",
+                "link": "/fshrl.scv?cmd=getHrlRealNameView",
+                "pop":""
+              },
+              {
+                "name": "전화상담신청",
+                "link": "/fshrl.scv?cmd=getHrlTel",
+                "pop":""
+              },
+              {
+                "name": "이용내역조회",
+                "link": "/fshrl.scv?cmd=getHrlListStep1",
+                "pop":""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "서비스",
+        "link": "/main.scv?cmd=mainServiceView",
+        "pop":"",
+        "item": [
+          {
+            "name": "프리미엄 S 서비스",
+            "link": "/service.scv?cmd=primiumSView",
+            "pop":""
+          },
+          {
+            "name": "포인트 서비스",
+            "link": "",
+            "item": [
+              {
+                "name": "포인트 안내",
+                "link": "/service.scv?cmd=pointGuideView",
+                "pop":""
+              },
+              {
+                "name": "세이브 서비스",
+                "link": "/service.scv?cmd=saveView",
+                "pop":""
+              },
+              {
+                "name": "멤버십 리워즈 서비스",
+                "link": "/service.scv?cmd=membershipReWardsView",
+                "pop":""
+              },
+              {
+                "name": "선포인트 서비스",
+                "link": "/service.scv?cmd=firstPointView",
+                "pop":""
+              },
+              {
+                "name": "S선포인트 서비스",
+                "link": "/service.scv?cmd=sFirstPointView",
+                "pop":""
+              },
+              {
+                "name": "U쿠폰 서비스",
+                "link": "/service.scv?cmd=uCouponView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "우대 서비스",
+            "link": "/service.scv?cmd=preferentialView",
+            "pop":""
+          },
+          {
+            "name": "카드납부 서비스",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "카드납부 서비스안내",
+                "link": "/service.scv?cmd=cardPayView",
+                "pop":""
+              },
+              {
+                "name": "전기요금 납부",
+                "link": "/service.scv?cmd=powerPayView",
+                "pop":""
+              },
+              {
+                "name": "전화요금 납부",
+                "link": "/service.scv?cmd=telPayView",
+                "pop":""
+              },
+              {
+                "name": "정수기 렌탈요금 납부",
+                "link": "/service.scv?cmd=waterPRPayView",
+                "pop":""
+              },
+              {
+                "name": "인터넷요금 납부",
+                "link": "/service.scv?cmd=internetPayView",
+                "pop":""
+              },
+              {
+                "name": "도시가스요금 납부",
+                "link": "/service.scv?cmd=gasPayView",
+                "pop":""
+              },
+              {
+                "name": "보안서비스 이용요금 납부",
+                "link": "/service.scv?cmd=securityPayView",
+                "pop":""
+              },
+              {
+                "name": "지방세 납부",
+                "link": "/service.scv?cmd=localTaxPayView",
+                "pop":""
+              },
+              {
+                "name": "고용·산재보험 납부",
+                "link": "/service.scv?cmd=workWelfarePayView",
+                "pop":""
+              },
+              {
+                "name": "대학등록금 납부",
+                "link": "/service.scv?cmd=tuitionPayView",
+                "pop":""
+              },
+              {
+                "name": "국민연금 납부",
+                "link": "/service.scv?cmd=nationalPensionPayView",
+                "pop":""
+              },
+              {
+                "name": "아파트 관리비 납부",
+                "link": "/service.scv?cmd=aptPayView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "LifeStyle",
+            "link": "",
+            "pop":"",
+            "item": [
+               {
+                "name": "LifeStyle안내",
+                "link": "/service.scv?cmd=lifeStyleView",
+                "pop":""
+              },
+              {
+                "name": "쇼핑",
+                "link": "/service.scv?cmd=shoppingView",
+                "pop":""
+              },
+              {
+                "name": "여행",
+                "link": "/service.scv?cmd=travelView",
+                "pop":""
+              },
+              {
+                "name": "웨딩",
+                "link": "/service.scv?cmd=weddingView",
+                "pop":""
+              },
+              {
+                "name": "보험",
+                "link": "/service.scv?cmd=insuranceView",
+                "pop":""
+              }
+            ]
+          },
+          {
+            "name": "해외이용 안전서비스",
+            "link": "/service.scv?cmd=foreignUseSafetyView",
+            "pop":""
+          },
+          {
+            "name": "삼성카드 공통서비스 S",
+            "link": "/service.scv?cmd=commonSView",
+            "pop":""
+          },
+          {
+            "name": "플레이스 S",
+            "link": "/service.scv?cmd=placeSView",
+            "pop":""
+          },
+          {
+            "name": "현금융통(카드깡) 자진신고",
+            "link": "/service.scv?cmd=loanCashView",
+            "pop":""
+          },
+          {
+            "name": "고객보호센터",
+            "link": "/service.scv?cmd=customerGuardView",
+            "pop":""
+          }
+        ]
+      },
+      {
+        "name": "이벤트",
+        "link": "/main.scv?cmd=mainEventView",
+        "pop":"",
+        "item": [
+          {
+            "name": "진행 중인 이벤트",
+            "link": "/event.scv?cmd=eventList",
+            "pop":""
+          },
+          {
+            "name": "종료된 이벤트",
+            "link": "/event.scv?cmd=endEventList",
+            "pop":""
+          },
+          {
+            "name": "당첨자 발표",
+            "link": "/event.scv?cmd=getEventWinMyList",
+            "pop":""
+          }
+        ]
+      },
+      {
+        "name": "고객센터",
+        "link": "/main.scv?cmd=mainCustomerView",
+        "pop":"",
+        "item": [
+          {
+            "name": "고객 문의",
+            "link": "/customer.scv?cmd=mwPlazeQnaView",
+            "pop":""
+          },
+          {
+            "name": "모바일 서비스",
+            "link": "/customer.scv?cmd=mwPlazeMserviceView",
+            "pop":""
+          },
+           {
+            "name": "열린나눔",
+            "link": "/openshare.scv?cmd=mainView",
+            "pop":"blank"
+          },
+          {
+            "name": "삼성카드 지점 안내",
+            "link": "/customer.scv?cmd=getBranch",
+            "pop":""
+          },
+           {
+            "name": "SNS",
+            "link": "",
+            "pop":"",
+            "item": [
+	          {
+	            "name": "페이스북",
+	            "link": "http://www.facebook.com/withsamsungcard",
+                "pop":"blank"
+	          },
+	          {
+	            "name": "트위터",
+	            "link": "http://twitter.com/withsamsungcard",
+                "pop":"blank"
+	          },
+	          {
+	            "name": "블로그",
+	            "link": "http://m.blog.samsungcard.com/",
+                "pop":"blank"
+	          }
+	        ]
+          },
+          {
+            "name": "뉴스/공지",
+            "link": "/customer.scv?cmd=getNewsList",
+            "pop":""
+          },
+          {
+            "name": "카드이용종합안내",
+            "link": "",
+            "pop":"",
+            "item": [
+              {
+                "name": "스마트폰 금융거래 10계명",
+                "link": "/customer.scv?cmd=mwPlazeUseAView",
+                "pop":""
+              },
+              {
+                "name": "결제일별 청구대상기간",
+                "link": "/customer.scv?cmd=getPayDayForm",
+                "pop":""
+              },
+              {
+                "name": "자동이체 안내",
+                "link": "/customer.scv?cmd=mwPlazeUseBView",
+                "pop":""
+              },
+              {
+                "name": "무통장입금 안내",
+                "link": "/customer.scv?cmd=mwPlazeUseCView",
+                "pop":""
+              },
+              {
+                "name": "카드대금 결제서비스",
+                "link": "/customer.scv?cmd=mwPlazeUseDView",
+                "pop":""
+              },
+              {
+                "name": "해외 이용내역 문의",
+                "link": "/customer.scv?cmd=mwPlazeUseEView",
+                "pop":""
+              },
+              {
+                "name": "이용안내",
+                "link": "/customer.scv?cmd=mwPlazeUseFView",
+                "pop":""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>주소 검색 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 5;
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	<div class="roundBox roundpb">
+		<p class="topImg imgPost2">상세주소 입력 후, 주소 검증을 통해 더 정확한 주소를 확인해 주세요.</p>
+		<h3 class="ptit">입력된 주소</h3>
+		<table class="formType">
+		<caption>입력된 주소</caption>
+		<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+		<tbody>
+		<tr class="text">
+			<th scope="row">기본주소</th>
+			<td>(151-015) 서울 중구 통일로 79</td>
+		</tr>
+		<tr class="line">
+			<th scope="row">상세주소</th>
+			<td><input type="text" title="상세주소" class="ww"></td>
+		</tr>
+		</tbody>
+		</table>
+		<div class="btns">
+			<a href="#" class="btnBlue">주소 검증</a>
+			<a href="#" class="btnGray">다시 검색</a>
+		</div>
+	</div><!--//roundBox-->
+
+	<div class="roundBox roundpb">
+		<p class="topImg imgPost">변환된 주소를 확인하시고, 이용하실 새주소 또는 구주소를 선택해 주세요.</p>
+		<h3 class="titDep4"><label><input type="radio" title="변환된 새주소"> 변환된 새주소</label></h3>
+		<table class="formType">
+		<caption>변환된 새주소</caption>
+		<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+		<tbody>
+		<tr class="text">
+			<th scope="row">기본주소</th>
+			<td>(151-015) 서울 중구 </td>
+		</tr>
+		<tr class="line text">
+			<th scope="row">상세주소</th>
+			<td>통일로 79</td>
+		</tr>
+		</tbody>
+		</table>
+
+		<h3 class="titDep"><label><input type="radio" title="변환된 구주소"> 변환된 구주소</label></h3>
+		<table class="formType">
+		<caption>변환된 구주소</caption>
+		<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+		<tbody>
+		<tr class="text">
+			<th scope="row">기본주소</th>
+			<td>(151-015) 서울 중구 순화동</td>
+		</tr>
+		<tr class="line text">
+			<th scope="row">상세주소</th>
+			<td>12789-9</td>
+		</tr>
+		</tbody>
+		</table>
+
+		<div class="btns">
+			<a href="#" class="btnBlue">선택</a>
+			<a href="#" class="btnGray">취소</a>
+		</div>
+	</div><!--//roundBox-->
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+</body>
+</html>

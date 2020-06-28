@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>준회원가입 신청서작성 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 5;
+
+//
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	<ul class="stepList">
+		<li><span><span>실명확인</span></span></li>
+		<li><span><span>약관동의</span></span></li>
+		<li class="on"><span><span>신청서작성</span></span></li>
+		<li><span><span>가입완료</span></span></li>
+	</ul>
+    
+    <div class="roundBox">
+		<h2 class="titDep">가입 신청 정보 입력</h2>
+		<table class="formType">
+		<caption>신청서작성</caption>
+		<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+			<tbody>
+				<tr class="text">
+					<th scope="row"><span>*</span>성명</th>
+					<td>이삼성</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>아이디</th>
+					<td>
+						<span class="cellFirst">
+							<span class="cellw8"><input type="text" title="아이디"></span>
+							<span class="cellw9"><span class="cellpg"><a href="#" class="btnGray_s ww">중복확인</a></span></span>
+						</span>
+						<p class="noti">영문/숫자 혼용 6~12자리, 대소문자 구별</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>비밀번호</th>
+					<td>
+						<input type="password" title="비밀번호" onFocus="this.value=''" class="ww">
+						<p class="noti">영문/숫자 혼용 8~12자리,대소문자 구별특수문자 선택입력 범위(필수옵션아님)<br>[!@#$%^&amp;*] </p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>비밀번호확인</th>
+					<td>
+						<input type="password" title="비밀번호확인" onFocus="this.value=''" class="ww">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>휴대폰</th>
+					<td>
+						<span class="cellFirst">
+							<span class="cellw1">
+								<select title="휴대폰 앞자리">
+									<option>010</option>
+								</select>
+							</span>
+							<span class="cellw2">
+								<span class="cellpg">
+									<input type="tel" title="휴대폰 가운데자리">
+								</span>
+							</span>
+							<span class="cellDesh">-</span>
+							<span class="cellw2">
+								<input type="tel" title="휴대폰 끝자리">
+							</span>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">집/직장전화</th>
+					<td>
+						<span class="cellFirst">
+							<span class="cellw1">
+								<select title="전화번호 앞자리">
+									<option>선택</option>
+								</select>
+							</span>
+							<span class="cellw2">
+								<span class="cellpg">
+									<input type="tel" title="전화번호 가운데자리">
+								</span>
+							</span>
+							<span class="cellDesh">-</span>
+							<span class="cellw2">
+								<input type="tel" title="전화번호 끝자리">
+							</span>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>이메일</th>
+					<td>
+						<span class="cellFirst">
+							<span class="cellw13"><input type="text" title="이메일아이디"></span>
+							<span class="cellDesh">@</span>
+							<span class="cellw13"><input type="text" title="이메일공급자"></span>
+							<span class="cellDesh"></span>
+							<span class="cellw11">
+								<a href="#" class="btnGray_s ww">중복확인</a>
+							</span>
+						</span>
+						<p class="noti">핫메일(Hotmail)을 제외한 다른 이메일 등록</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>이메일 정보<br>수신여부</th>
+					<td>
+						<div class="marT10">
+							<label><input type="radio" title="예"> 예</label>
+							<label><input type="radio" title="아니오"> 아니오</label>
+						</div>
+						<p class="noti">이메일 정보수신 여부에 ‘예’로 체크하시면, 등록하신  이메일로 삼성카드 관련 정보를 받아보실 수 있습니다.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>실제생일</th>
+					<td>
+						<!-- 20140409 수정 -->
+						<span class="cellFirst">
+							<span class="cellw1">
+								<input type="tel" title="년 입력" class="ww" value="년" onfocus="this.value=''">
+							</span>
+							<span class="cellw2">
+								<span class="cellpg2">
+									<select title="월 선택">
+										<option>월</option>
+									</select>
+								</span>
+							</span>
+							<span class="cellw2">
+								<span class="cellpg">
+									<select title="일 선택">
+										<option>일</option>
+									</select>
+								</span>
+							</span>
+						</span>
+						<!-- 20140409 수정 end -->
+						
+						<div class="marT10">
+							<label><input type="radio" title="양력"> 양력</label>
+							<label><input type="radio" title="음력"> 음력</label>
+						</div>
+					</td>
+				</tr>
+				<tr class="label line">
+					<th scope="row"><span>*</span>성별</th>
+					<td>
+						<label><input type="radio" title="남자"> 남자</label>
+						<label><input type="radio" title="여자"> 여자</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+			
+		<div class="btns roundpb"><a href="#" class="btnBlue">작성완료</a></div>
+	</div><!--//roundBox-->
+   
+   
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+</body>
+</html>

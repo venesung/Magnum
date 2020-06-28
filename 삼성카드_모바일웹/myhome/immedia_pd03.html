@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>이용상품별 즉시결제 신청 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<link rel="stylesheet" type="text/css" href="../css/mw/statement-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+	<ul class="stepList type2">
+		<li class="on"><span><span>즉시결제신청</span></span></li>
+		<li><span><span>입금방법선택</span></span></li>
+		<li><span><span>신청완료</span></span></li>
+	</ul>
+	
+	<div class="roundBox">
+    	<h2 class="titDep">할부 이용내역</h2>
+	    <dl class="stateSum">
+            <dt>총 이용금액</dt>
+            <dd class="first">2,710,456</dd>
+            <dt>총 신청금액</dt>
+            <dd>5,000</dd>
+        </dl>
+    </div>
+	
+	<div class="roundBox">
+    	<h2 class="titDep">이용건 및 금액 선택</h2>
+	    
+		<div class="roundPad">
+			<table class="tableType breakSect tableArrowToggle">
+				<caption>이용건 및 금액 안내표</caption>
+				<colgroup>
+					<col style="width:13%">
+					<col style="width:40%">
+					<col style="width:*">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col"><input type="checkbox" title="전체선택"></th>
+						<th scope="col">이용일/이용자<br>이용가맹점</th>
+						<th scope="col">전액결제금액(A+B)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="center"><label>가능<br><input type="checkbox" title="선택"></label></td>
+						<td class="left">14.02.25/본인<br>아이원</td>
+						<td>
+							<a href="javascript:scardm.dummyFunc();" class="fBold immedia_btn">10,000,000</a>
+							<em class="impdApply">신청금액</em><input type="tel" title="신청금액" class="immemoney">
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<td colspan="3" class="nop benenop">
+							<dl>
+								<dt><span>이용금액</span></dt>
+								<dd><span>2,000,000</span></dd>
+								<dt><span>잔여원금(A)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span>당일기준이자(B)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span><label><input type="checkbox" title="당월결제선택"> 당월결제</label></span></dt>
+								<dd><span>50,000</span></dd>
+								<dt><span><label><input type="checkbox" title="부분결제선택"> 부분결제</label></span></dt>
+								<dd><span><input type="tel" title="부분결제금액입력" class="inputimme"></span></dd>
+							</dl>
+						</td>
+					</tr>
+					<!-- 불가 -->
+					<tr class="admitted"><!-- 불가 class="admitted" 추가 -->
+						<td class="center"><label>불가<br><input type="checkbox" title="선택" disabled></label></td>
+						<td class="left">14.02.25/본인<br>아이원</td>
+						<td>
+							<a href="javascript:scardm.dummyFunc();" class="fBold immedia_btn">10,000,000</a>
+							<em class="impdApply">신청금액</em><input type="tel" title="신청금액" class="immemoney" disabled>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td colspan="3" class="nop benenop">
+							<dl>
+								<dt><span>이용금액</span></dt>
+								<dd><span>2,000,000</span></dd>
+								<dt><span>잔여원금(A)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span>당일기준이자(B)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span><label><input type="checkbox" title="당월결제선택" disabled> 당월결제</label></span></dt>
+								<dd><span>50,000</span></dd>
+								<dt><span><label><input type="checkbox" title="부분결제선택" disabled> 부분결제</label></span></dt>
+								<dd><span><input type="tel" title="부분결제금액입력" class="inputimme" disabled></span></dd>
+							</dl>
+						</td>
+					</tr>
+					<!-- // 불가 end -->
+					<tr>
+						<td class="center"><label>가능<br><input type="checkbox" title="선택"></label></td>
+						<td class="left">14.02.25/본인<br>아이원</td>
+						<td>
+							<a href="javascript:scardm.dummyFunc();" class="fBold immedia_btn">10,000,000</a>
+							<em class="impdApply">신청금액</em><input type="tel" title="신청금액" class="immemoney">
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<td colspan="3" class="nop benenop">
+							<dl>
+								<dt><span>이용금액</span></dt>
+								<dd><span>2,000,000</span></dd>
+								<dt><span>잔여원금(A)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span>당일기준이자(B)</span></dt>
+								<dd><span>10,000</span></dd>
+								<dt><span><label><input type="checkbox" title="당월결제선택"> 당월결제</label></span></dt>
+								<dd><span>50,000</span></dd>
+								<dt><span><label><input type="checkbox" title="부분결제선택"> 부분결제</label></span></dt>
+								<dd><span><input type="tel" title="부분결제금액입력" class="inputimme"></span></dd>
+							</dl>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<div class="btns"><a href="javascript:scardm.dummyFunc();" class="btnBlue">선택완료</a></div>
+		</div>
+    </div>
+    
+	
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+<div id="rightMenu"></div>
+</body>
+</html>

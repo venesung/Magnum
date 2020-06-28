@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>주소검색 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 2;
+
+
+$(function()
+{
+	
+	$(".popupBtn3 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop") );
+	} );
+	$(".popupBtn4 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop2") );
+	} );
+	$(".popupBtn5 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop3") );
+	} );
+	$(".popupBtn6 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop4") );
+	} );
+	$(".popupBtn7 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop5") );
+	} );
+	$(".popupBtn8 a").click ( function()
+	{
+		Popup.Open ( $(".adressPop6") );
+	} );
+	
+
+	
+
+} );
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	<div class="roundBox">
+		<div class="roundPad pdBno">
+			
+
+			
+			<div class="btns innerLine2 popupBtn3"><a class="btnBlue">주소검색형태선택</a></div>
+			<div class="btns innerLine2 popupBtn4"><a class="btnBlue">신주소검색</a></div>
+			<div class="btns innerLine2 popupBtn5"><a class="btnBlue">신주소검색결과</a></div>
+			<div class="btns innerLine2 popupBtn6"><a class="btnBlue">신주소검증</a></div>
+			<div class="btns innerLine2 popupBtn7"><a class="btnBlue">구주소검색</a></div>
+			<div class="btns innerLine2 popupBtn8"><a class="btnBlue">구주소검증</a></div>
+
+
+		</div>
+		<div class="bgGray">
+			
+		</div>
+	</div><!--//roundBox-->
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+<!-- 팝업1 -->
+<div class="cardPopup" style="display:none">
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">카드 신청</h3>
+			
+			<div>
+				<p class="textLine">후불교통/브랜드 정보를 선택하셔야 카드신청이 가능합니다.</p>
+				<table class="formType">
+				<caption>후불교통/브랜드정보</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="label">
+					<th scope="row"><span>*</span>후불 교통</th>
+					<td><label><input type="radio" title="선택">선택</label><label><input type="radio" title="선택안함">선택안함</label></td>
+				</tr>
+				<tr class="label">
+					<th scope="row"><span>*</span>브랜드</th>
+					<td><label><input type="radio" title="MASTER">MASTER</label><label><input type="radio" title="국내전용">국내전용</label><label><input type="radio" title="AMEX">AMEX</label></td>
+				</tr>
+				</table>
+			</div>
+			<div class="btns innerLine4 marT0"><a href="#" class="btnBlue">신청</a></div>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+		
+	</div>
+</div>
+
+<!-- 팝업2 -->
+<div class="jobPopup" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">보다 빠른 상담을 위해 직종을 선택해 주세요.</h3>
+			
+			<div class="labelBox">
+				<label><input type="radio" name="job" title="근로소득자">근로소득자</label>
+				<label><input type="radio" name="job" title="공무원/교사/교직원">공무원/교사/교직원</label>
+				<label><input type="radio" name="job" title="전문직(의사, 변호사, 약사 등)">전문직(의사, 변호사, 약사 등)</label>
+				<label><input type="radio" name="job" title="자영업자">자영업자</label>
+			</div>
+			<div class="btns"><a href="#" class="btnBlue">전화상담</a></div>
+			<ul class="liStar bgGray">
+				<li>상담 가능 시간 : 평일 오전 9시~오후 6시</li>
+			</ul>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 우편검색1 -->
+<div class="adressPop" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">주소 검색</h3>
+			<p class="txtTitle">원하시는 주소의 형태를 선택해 주세요. </p>
+			<div class="btns2">
+				<span><a href="#" class="btnBlue">새 주소<br>(도로명주소)</a></span>
+				<span><a href="#" class="btnGray">구 주소<br>(지번주소)</a></span>
+			</div>
+			<ul class="liStar roundPad">
+            	<li>안전행정부에서 시행하는 도로명주소법에 따라 2014년부터 도로명주소가 법적주소로 전면 이용됩니다. 이에 따라 삼성카드는, 지번주소로 관리해 오던 회원님들의 주소를 도로명주소로 자동 전환합니다. 회원님의 양해를 부탁드리며, 참고하셔서 이용에 불편 없으시기 바랍니다. 감사합니다.</li>
+            </ul>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 우편검색2 -->
+<div class="adressPop2" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox roundpb">
+			<h3 class="titDep">주소 검색</h3>
+			<h4 class="innerTit2">필수입력사항 (입력항목을 선택해 주세요.)</h4>
+			<table class="formType">
+				<caption>주소 검색 시 필수 입력사항</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr>
+					<th scope="row">시/도</th>
+					<td>
+						<span class="cellFirst">
+							<select title="시/도 선택">
+								<option>선택</option>
+							</select>
+						</span>
+					</td>
+				</tr>
+				<tr class="last">
+					<th scope="row">시/군/구</th>
+					<td>
+						<span class="cellFirst">
+							<select title="시/군/구 선택">
+								<option>선택</option>
+							</select>
+						</span>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<h4 class="innerTit">선택 입력사항(한 가지 이상 선택해 주세요.)</h4>
+			<table class="formType">
+				<caption>주소 검색 시 선택 입력사항</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr>
+					<th scope="row">읍/면</th>
+					<td><span class="cellFirst"><input type="text" title="읍/면"></span></td>
+				</tr>
+				<tr>
+					<th scope="row">도로명</th>
+					<td><span class="cellFirst"><input type="text" title="도로명"></span></td>
+				</tr>
+				<tr>
+					<th scope="row">건물번호</th>
+					<td>
+						<span class="cellFirst">
+							<span class="cellw3"><input type="number" title="건물번호 앞번호"></span>
+							<span class="cellDesh">-</span>
+							<span class="cellw3"><input type="number" title="건물번호 뒷번호"></span>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">동명</th>
+					<td><span class="cellFirst"><input type="text" title="동명"></span></td>
+				</tr>
+				<tr class="line">
+					<th scope="row">건물명</th>
+					<td><span class="cellFirst"><input type="text" title="건물명"></span></td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<div class="btns"><a href="#" class="btnBlue">검색</a></div>
+			
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+
+<!-- 우편검색3 -->
+<div class="adressPop3" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">주소 검색</h3>
+			<div class="roundPad">
+				<p class="gray">다음의 주소 중 해당 주소의 우편번호를 선택해 주세요.</p>
+				<table class="tableType marT10">
+					<caption>해당주소의 우편번호 선택</caption>
+					<colgroup>
+						<col width="15%">
+						<col width="18%">
+						<col width="12%" span="2">
+						<col width="18%">
+						<col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">읍/면</th>
+							<th scope="col">도로명</th>
+							<th scope="col">지하여부</th>
+							<th scope="col">건물번호</th>
+							<th scope="col">동명</th>
+							<th scope="col">건물명</th>
+						</tr>
+					</thead>
+					<tbody class="txtLeft">
+						<tr>
+							<td><a href="#">00읍</a></td>
+							<td><a href="#">난곡로</a></td>
+							<td><a href="#">-0-</a></td>
+							<td class="center"><a href="#">00</a></td>
+							<td><a href="#">난항동</a></td>
+							<td><a href="#">휴먼시아 1단지 아파트</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">00읍</a></td>
+							<td><a href="#">난곡로</a></td>
+							<td><a href="#">-0-</a></td>
+							<td class="center"><a href="#">00</a></td>
+							<td><a href="#">난항동</a></td>
+							<td><a href="#">휴먼시아 1단지 아파트</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">00읍</a></td>
+							<td><a href="#">난곡로</a></td>
+							<td><a href="#">-0-</a></td>
+							<td class="center"><a href="#">00</a></td>
+							<td><a href="#">난항동</a></td>
+							<td><a href="#">휴먼시아 1단지 아파트</a></td>
+						</tr>
+						<tr>
+							<td colspan="6" class="center">검색된 우편번호가 없습니다. 다시 시도해 주시기 바랍니다.</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="paging">
+					<a href="#" class="prev"><img src="../images/mw/v1.0/ico_prev.gif" alt="이전" width="7"></a>
+					<a href="#">1</a>
+					<a href="#" class="on">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="next"><img src="../images/mw/v1.0/ico_next.gif" alt="다음" width="7"></a>
+				</div>
+				<div class="btns innerLine2"><a href="#" class="btnBlue">다시 검색</a></div>
+			</div>
+			
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 우편검색4 -->
+<div class="adressPop4" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox roundpb">
+			<h3 class="titDep">주소 검색</h3>
+			
+			<p class="roundPad gray">나머지 주소를 입력하신 후 주소입력 버튼을 눌러주세요.</p>
+			<h4 class="innerTit">상세 주소</h4>
+			<table class="formType">
+				<caption>상세 주소</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="text">
+					<th scope="row">기본주소</th>
+					<td>(151-015) 서울 중구 통일로 79</td>
+				</tr>
+				<tr class="line">
+					<th scope="row">상세주소</th>
+					<td><span class="cellFirst"><input type="text" title="상세주소"></span></td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<div class="btns">
+				<a href="#" class="btnBlue">주소 입력</a>
+				<a href="#" class="btnGray">다시 검색</a>
+			</div>
+			
+			<p class="innerLine4 marT15 gray">입력된 주소를 확인해 주신 후 선택완료 버튼을 눌러주세요.</p>
+			
+			<h4 class="innerTit">신주소 확인</h4>
+			<table class="formType">
+				<caption>신주소 확인</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="text">
+					<th scope="row">기본주소</th>
+					<td>(151-015) 서울 중구 통일로 79</td>
+				</tr>
+				<tr class="line">
+					<th scope="row">상세주소</th>
+					<td>통일로 79(순화동) 상세주소</td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<div class="btns">
+				<a href="#" class="btnBlue">선택완료</a>
+			</div>
+			
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 우편검색5 -->
+<div class="adressPop5" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">주소 검색</h3>
+			<div class="roundPad">
+				
+				<p class="gray">찾으시는 우편번호의 읍, 면, 동을 입력해 주세요.</p>
+				<div class="cellFirst marT10">
+					<span class="cellw5"><input type="text" title="동명 검색"></span>
+					<span class="cellw8"><span class="cellpg"><a href="#" class="btnGray_s ww">검색</a></span></span>
+				</div>
+				<table class="tableType marT10">
+					<caption>주소검색결과</caption>
+					<colgroup>
+						<col style="width:70%">
+						<col style="width:30%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">주소</th>
+							<th scope="col">우편번호</th>
+						</tr>
+					</thead>
+					<tbody class="txtLeft">
+						<tr>
+							<td>서울 중구 순화동</td>
+							<td class="center">151-880</td>
+						</tr>
+						<tr>
+							<td>서울 중구 순화동 151 더샵 아파트</td>
+							<td class="center">151-880</td>
+						</tr>
+						<tr>
+							<td>서울 중구 순화동 5-2 순화빌딩</td>
+							<td class="center">151-880</td>
+						</tr>
+						<tr>
+							<td>서울 중구 순화동</td>
+							<td class="center">151-880</td>
+						</tr>
+						<tr>
+							<td>서울 중구 순화동 151 더샵 아파트</td>
+							<td class="center">151-880</td>
+						</tr>
+						<tr>
+							<td>서울 중구 순화동 5-2 순화빌딩</td>
+							<td class="center">151-880</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+<!-- 우편검색6 -->
+<div class="adressPop6" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox roundpb">
+			<h3 class="titDep">주소 검색</h3>
+			
+			<p class="roundPad gray">나머지 주소를 입력하신 후 주소입력 버튼을 눌러주세요.</p>
+			<h4 class="innerTit">상세 주소</h4>
+			<table class="formType">
+				<caption>상세 주소</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+					<tr class="text">
+						<th scope="row">기본주소</th>
+						<td>(151-015) 서울 중구 통일로 79</td>
+					</tr>
+					<tr class="line">
+						<th scope="row">상세주소</th>
+						<td><span class="cellFirst"><input type="text" title="상세주소"></span></td>
+					</tr>
+				</tbody>
+			</table>
+	
+			<div class="btns">
+				<a href="#" class="btnBlue">주소 입력</a>
+				<a href="#" class="btnGray">다시 검색</a>
+			</div>
+			
+			<p class="innerLine4 marT15 gray">변환된 주소를 확인하시고 사용하실 신주소 또는 구주소를 선택해 주세요.</p>
+			<h4 class="innerTit"><label><input type="radio" title="신주소"> 신주소</label></h4>
+            <table class="formType">
+				<caption>신주소</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="text">
+					<th scope="row">기본주소</th>
+					<td>(151-015) 서울 중구 </td>
+				</tr>
+				<tr class="text">
+					<th scope="row">상세주소</th>
+					<td>통일로 79</td>
+				</tr>
+				</tbody>
+			</table>
+            <h4 class="innerTit"><label><input type="radio" title="구주소"> 구주소</label></h4>
+            <table class="formType">
+				<caption>구주소</caption>
+				<colgroup><col style="width:110px"><col style="width:*"></colgroup>
+				<tbody>
+				<tr class="text">
+					<th scope="row">기본주소</th>
+					<td>(151-015) 서울 중구 </td>
+				</tr>
+				<tr class="text line">
+					<th scope="row">상세주소</th>
+					<td>통일로 79</td>
+				</tr>
+				</tbody>
+			</table>
+            
+			<div class="btns">
+				<a href="#" class="btnBlue">선택 완료</a>
+			</div>
+			
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+		</div>
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

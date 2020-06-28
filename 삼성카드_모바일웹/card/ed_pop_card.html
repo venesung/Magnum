@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>주소검색 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 2;
+
+
+$(function()
+{
+	
+	$(".popupBtn_ed1 a").click ( function()
+	{
+		Popup.Open ( $(".edPop1") );
+	} );
+	
+
+} );
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+	<header id="header"></header>
+	
+	<section>
+	
+		<div class="roundBox roundPad">
+		
+				
+				<div class="btns popupBtn_ed1"><a class="btnBlue">안내1</a></div>
+	
+		
+		</div><!--//roundBox-->
+	</section>
+	
+	<footer id="footer"></footer>
+</div><!--//warp-->
+
+<!-- 팝업1 -->
+<div class="edPop1" style="display:none">
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">안내</h3>
+			<a class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+			<div class="roundPad">
+				<strong>세대전기료의 자동결제와 LED 설치 비용 포인트 납부가 가능한 아파트입니다.</strong> <!-- 안내 1 -->
+				<strong style="display:none">세대전기료 자동결제 가능한 아파트입니다.</strong> <!-- 안내 2 -->
+				<strong style="display:no ne">공동전기료의 LED 설치비용 포인트 납부가 가능한 아파트입니다.<br>(세대전기료 자동결제는 불가)</strong> <!-- 안내 3 -->
+				
+				
+				<p class="marT10">카드 발급 후 삼성카드 홈페이지 또는 고객센터(1588-8700)로 서비스 신청 바랍니다.<br>카드 발급 신청을 진행하시겠습니까?</p>
+				
+				<div class="btns"><a href="#" class="btnBlue btnClose">확인</a></div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<!--// 팝업1 -->
+<!-- 팝업1 -->
+
+</body>
+</html>

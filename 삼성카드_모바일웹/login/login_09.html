@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>로그인 - 삼성카드</title>
+<link rel="icon" type="image/x-icon"  href="../images/mw/v1.0/QRicon_64x64.ico">
+<link rel="apple-touch-icon-precomposed" href="../images/mw/v1.0/QRicon_114x114.png">
+<link rel="stylesheet" type="text/css" href="../css/mw/mobile-1.0.dev.css">
+<script type="text/javascript" src="../js/mw/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/mw/common.js"></script>
+<script type="text/javascript" src="../js/mw/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/mw/script.js"></script>
+<script type="text/javascript" src="../js/mw/util.js"></script>
+<script type="text/javascript" src="../js/mw/menu.js"></script>
+
+<script type="text/javascript">
+var over1 = 1;
+var over2 = 1;
+var over3 = 5;
+
+//
+$(function()
+{
+	
+	$(".loginpop a").click ( function()
+	{
+		Popup.Open ( $(".login_pop") );
+	} );
+
+} );
+
+
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<header id="header"></header>
+
+<section>
+
+	
+	<ul class="tabs2">
+        <li id="tab_1" class="selected"><a href="javascript: SHBlock('tab', 'layer', 2, 1)">아이디/비밀번호 로그인</a></li>
+        <li id="tab_2"><a href="javascript: SHBlock('tab', 'layer', 2, 2)">공인인증서 로그인</a></li>
+    </ul>
+    <div class="tabConts">
+        <div id="layer_1">
+            <div class="roundPad">
+				<!-- 2013.09.05 수정 -->
+				<div class="loginIdBox">
+					<input type="text" class="ww" title="아이디를 입력하세요." value="아이디를 입력하세요." onFocus="this.value=''" style="height:35px !important"> 
+					<a href="javascript:scardm.dummyFunc();" class="closebtn">텍스트삭제</a>
+				</div>
+				<input type="text" title="비밀번호를 입력하세요." value="비밀번호를 입력하세요." onFocus="this.value=''" class="marT10 ww" style="height:35px !important">
+				<div class="btns2 loginpop">
+					<span class=""><a href="javascript:scardm.dummyFunc();" class="btnBlue">로그인</a></span>
+				</div>
+				<!-- // 2013.09.05 수정 -->
+				
+                <div class="txtbox1">
+                    <a href="javascript:scardm.dummyFunc();" class="textLink">ID찾기/PW변경</a> | <a href="javascript:scardm.dummyFunc();" class="textLink">웹회원가입</a> 
+                </div>
+            </div>
+            <div class="innerLine4">
+                <ul class="listDisc">
+                    <li>삼성카드 웹회원 아이디와 비밀번호를 입력해 주세요. 아직 삼성카드 웹회원이 아니라면, 웹회원가입을 통해 삼성카드 웹회원으로 가입 후 이용해 주시기 바랍니다.</li>
+                    <li>비밀번호를 3회 이상 잘못 입력 시, 본인확인을 거친 후 새로운 비밀번호로 변경하시면 정상적으로 이용하실 수 있습니다.</li>
+                </ul>
+            </div>    
+        </div><!-- //layer_1-->
+        <div id="layer_2" style="display:none">
+			<div class="roundPad" style="display:none">
+                <ul class="certificateText">
+					<li>&quot;삼성카드 인증서관리&quot; App.을 통해 인증하셔야 이용하실 수 있습니다.<br><br><a href="javascript:scardm.dummyFunc();" class="textLink">공인인증서 인증하러가기</a></li>
+					<li>공인인증 완료 후에 확인버튼을 눌러주세요.<br><br><a href="javascript:scardm.dummyFunc();" class="btnBlue">확인</a></li>
+                </ul>                
+            </div>
+          
+            <!-- 20140221 추가 공인인증서 본인확인 주민등록번호 입력 -->
+            <div class="securitynum">
+                <table class="formType">
+                    <caption>공인인증서 주민등록번호 입력</caption>
+                    <colgroup><col style="width:110px"><col style="width:*"></colgroup>
+                    <tbody>
+                        <tr class="last line">
+                            <th scope="row">주민등록번호</th>
+                            <td>
+								<a href="#">
+                                	<span></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+                <div class="btns"><a href="javascript:scardm.dummyFunc();" class="btnBlue">확인</a></div>
+            </div>
+            <!-- // 20140221 추가 공인인증서 본인확인 -->          
+      
+          
+        </div><!--//layer2-->
+    </div>
+
+</section>
+
+<footer id="footer"></footer>
+</div><!--//warp-->
+
+<!-- 비밀번호 변경안내 팝업 -->
+<div class="login_pop" style="display:none"> 
+	<div class="inner">
+		<div class="roundBox">
+			<h3 class="titDep">비밀번호변경알림</h3>
+			
+			<a href="javascript:scardm.dummyFunc();" class="btnClose"><img src="../images/mw/v1.0/btn_close.png" alt="레이어닫기" style="width:24px"></a>
+			<div class="roundPad">
+				<h4 class="titDep2">삼성카드 웹회원 비밀번호 변경 안내 지금, 회원님의 비밀번호를 변경해 주세요!</h4> 
+				
+				<!-- 6개월 이후 경과시 -->
+				<p class="gray marT10"><strong>회원님의 아이디는 6개월 동안 비밀번호가 변경되지 않았습니다.</strong></p>
+				<!-- 6개월 이후 경과시 end -->
+				
+				<p class="gray marT10"><strong>회원님의 소중한 정보를 보호하기 위해 비밀번호 변경은 필수입니다.</strong></p>
+				
+				<p class="marT10">삼성카드는 회원님의 개인정보를 안전하게 보호하고, 
+				개인정보 도용 피해를 예방하기 위해 6개월마다 주기적으로 
+				비밀번호 변경을 안내해 드리고 있습니다.<br><br>
+				
+				비밀번호는 숫자와 영문, 특수문자를 혼합하여 설정하시면 보다 안전하며, 
+				반드시 주기적으로 변경하시기 바랍니다.
+				지금 바로 변경해 주세요!
+				</p>
+				
+			</div>
+			<div class="btns innerLine5">
+				<a href="javascript:scardm.dummyFunc();" class="btnBlue">지금 변경하기</a>
+				<a href="javascript:scardm.dummyFunc();" class="btnGray">다음에 변경하기</a>
+			</div>	
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
