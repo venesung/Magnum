@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>휴비츠</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style type="text/css">
+	body {padding:20px;margin:0px;font-size:0.75em;font-family:gulim;}
+	h1 {background-color:#484848;color:#fff;text-align:center;padding:0px;margin:0px;font-family:Verdana;}
+	h3 {text-decoration:underline;}
+	ol li {padding-bottom:5px;font-weight:bold;}
+	ol li a, ol li span {font-weight:normal;}
+	ol li span.red {color:red;font-size:12px;}
+	ol li ol {margin-top:10px;}
+	ol li ol li {font-weight:normal;}
+	li.cancel {text-decoration:line-through;}
+	span {font-size:10px;color:#7d4900;font-family:Verdana;padding-left:18px;background:url(img/bu_arrow_01.gif) 10px 3px no-repeat;}
+	span.cancel {font-weight:bold;color:red;}
+	a {color:#f68e56;text-decoration:none;}
+	a:hover {color:#f55e21}
+	li.del span, li.del a, li.del strong {text-decoration:line-through;color:#CCCCCC;}
+	strong {font-weight:normal;}
+	div.guide {float:left;width:400px;line-height:16px;}
+	div.guide ol li {font-weight:normal;}
+	div.guide ol li strong {font-weight:bold;}
+	div.filelist {float:left;width:450px;}
+	table {width:80%;border-collapse:collapse;margin-bottom:15px;}
+	caption {font-weight:bold;text-align:left;}
+	table tr th, table tr td {border:1px solid #000;padding:3px 3px 0 3px;}
+	table thead tr th {background:#000;color:#fff;}
+</style>
+</head>
+
+<body>
+
+<h1>휴비츠</h1>
+<div style="width:1600px;">
+	<div class="guide">
+		<h2>코딩가이드</h2>
+
+		<h3>파일명 규칙 및 경로</h3>
+
+		<table>
+			<caption>국문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>kor/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>kor/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table>
+			<caption>영문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>eng/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>eng/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>이미지명 규칙 및 경로</h3>
+		<ol>
+			<li>이미지는 img폴더 안에 각 메뉴별 뎁스 아래 저장한다.</li>
+			<li>공통적인 성격을 갖거나 특수한 이미지인 경우 한 폴더 안에 저장한다.<br />
+				예시1) 각 페이지 타이틀 이미지 : img/title/title_파일명.gif<br />
+				예시2) 버튼 이미지 : img/button/btn_파일명.gif
+			</li>
+			<li>그 외 이미지명 규칙
+				<ol>
+					<li><strong>on/off 이미지 :</strong> img/이미지명_on/off.gif</li>
+					<li><strong>배경 이미지 :</strong> img/bg_이미지명.gif</li>
+					<li><strong>불릿 이미지 :</strong> img/bu_이미지명.gif</li>
+					<li><strong>비쥬얼/그래프등 기타 이미지 :</strong> img/img_이미지명.jpg</li>
+					<li><strong>사진 이미지 :</strong> img/pic_이미지명.jpg</li>
+					<li><strong>아이콘 이미지 :</strong> img/icon_이미지명.gif</li>
+					<li><strong>텍스트 이미지 :</strong> img/text_이미지명.gif</li>
+					<li><strong>2Depth 타이틀 이미지 :</strong> img/stitle_이미지명.gif</li>
+					<li><strong>3DEpth 타이틀 이미지 :</strong> img/sstitle_이미지명.gif</li>
+					<li><strong>탭 이미지 :</strong> img/tab_이미지명.gif</li>
+				</ol>
+			</li>
+		</ol>
+
+		<h3>LNB 규칙</h3>
+
+		<h3>Html Guide File</h3>
+		<ol>
+			<li><a href="kor/layout.html">LayOut</a><span>2012.05.08</span></li>
+			<li>total : page<span style="text-decoration:line-through;">(page)</span></li>
+		</ol>
+	</div>
+	<div class="filelist">
+		<h2>관리자</h2>
+		<ol>
+			
+		</ol>
+	</div>
+	<div class="filelist">
+	<ol>
+		<li>Gate</li>
+	</ol>
+		<h2>국문</h2>
+		<ol>
+			<li><a href="main/main.html">Main</a></li>
+
+			<li>REFRACTIVE
+			  <ol>
+					<li><a href="product/hrk-8000a.html">Auto Ref-keratometer</a>
+                    	<ol>
+                        	<li><a href="product/hrk-8000a.html">HRK-8000A</a></li>
+                            <li><a href="product/hrk-7000a.html">HRK-7000(A)</a></li>
+                        </ol>
+                    </li>
+					<li><a href="product/hlm-7000.html">Auto Lensmeter</a>
+                    	<ol>
+                        	<li><a href="product/hlm-7000.html">HLM-7000</a></li>
+                            <li><a href="product/clm-3100p.html">CLM-3100P</a></li>
+                        </ol>
+                    </li>
+					<li><a href="product/hdr-7000.html">Digital Refractor</a></li>
+                    <li><a href="product/hdc-9000n.html">Chart Projector</a>
+                    	<ol>
+                        	<li><a href="product/hdc-9000n.html">HDC-9000N/PF</a></li>
+                            <li><a href="product/hdc-7000.html">HDC-7000</a></li>
+                            <li><a href="product/hcp-7000.html">HCP-7000</a></li>
+                            <li><a href="product/ccp-3100.html">CCP-3100</a></li>
+                            <li><a href="product/cdc-4000.html">CDC-4000</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="product/hrt-7000.html">Unit Table</a>
+                    	<ol>
+                        	<li><a href="product/hrt-7000.html">HRT-7000</a></li>
+                            <li><a href="product/hjt-7000.html">HJT-7000</a></li>
+                            <li><a href="product/cit-4000.html">CIT-4000</a></li>
+                        </ol>
+                    </li>
+				</ol>
+			</li>
+
+			<li><a href="product/hs-7000.html">DIAGNOSTIC</a>
+				<ol>
+					<li><a href="product/hs-7000.html">Slitlamp</a>
+                    	<ol>
+                        	<li><a href="product/hs-7000.html">HS-7000</a></li>
+                            <li><a href="product/hs-7500.html">HS-7500</a></li>
+                            <li><a href="product/hs-5000.html">HS-5000</a></li>
+                            <li><a href="product/hs-5000_3x.html">HS-5000 3x</a></li>
+                            <li><a href="product/hs-5000_2x.html">HS-5000 2x</a></li>
+                            <li><a href="product/hs-5500.html">HS-5500</a></li>
+                            <li><a href="product/his-5000.html">HIS-5000</a></li>
+                        </ol>
+                    </li>
+					<li><a href="product/hnt-7000.html">Non-contact tonometer</a></li>
+					<li><a href="product/ht-5000.html">Applanation tonometer</a></li>
+				</ol>
+			</li>
+
+			<li><a href="product/hpe-8000.html">EDGING SOLUTION</a>
+				<ol>
+					<li><a href="product/hpe-8000.html">Series</a>
+                    	<ol>
+                        	<li><a href="product/hpe-8000.html">Kaizer series</a>
+                            	<ol>
+                                	<li><a href="product/hpe-8000.html">HPE-8000</a></li>
+                                    <li><a href="product/hab-8000.html">HAB-8000</a></li>
+                                    <li><a href="product/hbk-7000.html">HBK-7000</a></li>
+                                    <li><a href="product/hfr-8000.html">HFR-8000</a></li>
+                                    <li><a href="product/hmb-8000.html">HMB-8000</a></li>
+                                    <li><a href="product/hdm-8000.html">HDM-8000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/excelonxdxq.html">Excelon xd/xq</a>
+                            	<ol>
+                                	<li><a href="product/hpe-7000.html">HPE-7000</a></li>
+                                    <li><a href="product/cab-4000.html">CAB-4000</a></li>
+                                    <li><a href="product/cfr-4000.html">CFR-4000</a></li>
+                                    <li><a href="product/cbk-4000.html">CBK-4000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/cpe-4000.html">Excelon</a>
+                            	<ol>
+                                	<li><a href="product/cpe-4000.html">CPE-4000</a></li>
+                                    <li><a href="product/cfr-4000.html">CFR-4000</a></li>
+                                    <li><a href="product/cbk-4000.html">CBK-4000</a></li>
+                                    <li><a href="product/cab-4000.html">CAB-4000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/excelonez.html">Excelon ez</a></li>
+                            <li><a href="product/.html">Remote Edging Solution</a></li>
+                        </ol>
+                    </li>
+					<li><a href="product/hpe-8000.html">Product usage</a>
+                    	<ol>
+                        	<li><a href="product/hpe-8000.html">Edger</a>
+                            	<ol>
+                                	<li><a href="product/hpe-8000.html">HPE-8000</a></li>
+                                    <li><a href="product/hpe-7000.html">HPE-7000</a></li>
+                                    <li><a href="product/cpe-4000.html">CPE-4000</a></li>
+                                    <li><a href="product/cpe-3000.html">CPE-3000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/hfr-8000.html">Frame Tracer</a>
+                            	<ol>
+                                	<li><a href="product/hfr-8000.html">HFR-8000</a></li>
+                                    <li><a href="product/cfr-4000.html">CFR-4000</a></li>
+                                    <li><a href="product/cfr-3000.html">CFR-3000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/hab-8000.html">Auto Blocker with Frame Tracker</a>
+                            	<ol>
+                                	<li><a href="product/hab-8000.html">HAB-8000</a></li>
+                                    <li><a href="product/cab-4000.html">CAB-4000</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="product/hmb-8000.html">Blocker</a>
+                            	<ol>
+                                	<li><a href="product/hmb-8000.html">HMB-8000</a></li>
+                                    <li><a href="product/hbk-7000.html">HBK-7000</a></li>
+                                    <li><a href="product/cbk-4000.html">CBK-4000</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+				</ol>
+			</li>
+			<li><a href="#">SUPPORT</a>
+				<ol>
+					<li><a href="#">Download</a></li>
+					<li><a href="#">원격지원서비스</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">1:1온라인상담</a></li>
+				</ol>
+			</li>
+            <li>ETC
+				<ol>
+					<li>site map</li>
+					<li>contact us</li>
+				</ol>
+			</li>
+		</ol>
+
+		<h2>영문</h2>
+		<ol>
+			<li><a href="eng/main/main.html">Main</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]*GNB, footer 주석 참조 [박성우 2012-06-08]</span></li>
+
+			<li>PRODUCTS
+				<ol>
+					<li><a href="eng/product/stereo1.html">HSZ-700 Series</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/product/stereo2.html">HSZ-600 Series</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/product/uprightMicroscope.html">UPRIGHT</a> <span>2012.05.17</span><span class="red">[수정 2012-08-23]</span></li>
+					<li><a href="eng/product/imagingSolution.html">IMAGING SOLUTION</a> <span>2012.05.14</span><span class="red">[수정 2012-08-24]</span></li>
+				</ol>
+			</li>
+
+			<li>COMPANY
+				<ol>
+					<li><a href="eng/company/ceo.html">CEO인사말</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/company/business.html">사업개요</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/company/history.html">회사연혁</a> <span>2012.05.14</span></li>
+					<li><a href="eng/company/location.html">위치 및 약도</a> <span>2012.05.14</span><span class="red">[수정 2012-05-17]</span></li>
+				</ol>
+			</li>
+
+			<li>SUPPORT
+				<ol>
+					<li><a href="eng/support/download.html">DOWNLOAD</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/service.html">원격지원서비스</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/pop_service.html">[팝업]원격제어</a> <span>2012.05.15</span></li>
+					<li><a href="eng/support/faq.html">FAQ</a> <span>2012.05.14</span></li>
+					<li><a href="eng/support/counsel_list.html">1:1온라인 상담</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/counsel_end.html">1:1온라인 상담_완료</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/pop_counsel.html">제품문의하기</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+				</ol>
+			</li>
+			<li>etc
+				<ol>
+					<li><a href="eng/etc/lookaround.html">휴비츠 둘러보기</a> <span>2012.05.14</span><span class="red">[수정 2012-05-14]</span></li>
+					<li><a href="eng/etc/sitemap.html">사이트맵</a> <span>2012.05.15</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/etc/mail1.html">메일_온라인상담답변</a> <span>2012.05.17</span></li>
+					<li><a href="eng/etc/mail2.html">메일_문의접수완료</a> <span>2012.05.17</span><span class="red">[수정 2012-06-08]</span></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+</div>
+
+</body>
+</html>

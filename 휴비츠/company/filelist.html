@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>휴비츠</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style type="text/css">
+	body {padding:20px;margin:0px;font-size:0.75em;font-family:gulim;}
+	h1 {background-color:#484848;color:#fff;text-align:center;padding:0px;margin:0px;font-family:Verdana;}
+	h3 {text-decoration:underline;}
+	ol li {padding-bottom:5px;font-weight:bold;}
+	ol li a, ol li span {font-weight:normal;}
+	ol li span.red {color:red;font-size:12px;}
+	ol li ol {margin-top:10px;}
+	ol li ol li {font-weight:normal;}
+	li.cancel {text-decoration:line-through;}
+	span {font-size:10px;color:#7d4900;font-family:Verdana;padding-left:18px;background:url(img/bu_arrow_01.gif) 10px 3px no-repeat;}
+	span.cancel {font-weight:bold;color:red;}
+	a {color:#f68e56;text-decoration:none;}
+	a:hover {color:#f55e21}
+	li.del span, li.del a, li.del strong {text-decoration:line-through;color:#CCCCCC;}
+	strong {font-weight:normal;}
+	div.guide {float:left;width:400px;line-height:16px;}
+	div.guide ol li {font-weight:normal;}
+	div.guide ol li strong {font-weight:bold;}
+	div.filelist {float:left;width:450px;}
+	table {width:80%;border-collapse:collapse;margin-bottom:15px;}
+	caption {font-weight:bold;text-align:left;}
+	table tr th, table tr td {border:1px solid #000;padding:3px 3px 0 3px;}
+	table thead tr th {background:#000;color:#fff;}
+</style>
+</head>
+
+<body>
+
+<h1>휴비츠</h1>
+<div style="width:1600px;">
+	<div class="guide">
+		<h2>코딩가이드</h2>
+
+		<h3>파일명 규칙 및 경로</h3>
+
+		<table>
+			<caption>국문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>kor/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>kor/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table>
+			<caption>영문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>eng/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>eng/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>이미지명 규칙 및 경로</h3>
+		<ol>
+			<li>이미지는 img폴더 안에 각 메뉴별 뎁스 아래 저장한다.</li>
+			<li>공통적인 성격을 갖거나 특수한 이미지인 경우 한 폴더 안에 저장한다.<br />
+				예시1) 각 페이지 타이틀 이미지 : img/title/title_파일명.gif<br />
+				예시2) 버튼 이미지 : img/button/btn_파일명.gif
+			</li>
+			<li>그 외 이미지명 규칙
+				<ol>
+					<li><strong>on/off 이미지 :</strong> img/이미지명_on/off.gif</li>
+					<li><strong>배경 이미지 :</strong> img/bg_이미지명.gif</li>
+					<li><strong>불릿 이미지 :</strong> img/bu_이미지명.gif</li>
+					<li><strong>비쥬얼/그래프등 기타 이미지 :</strong> img/img_이미지명.jpg</li>
+					<li><strong>사진 이미지 :</strong> img/pic_이미지명.jpg</li>
+					<li><strong>아이콘 이미지 :</strong> img/icon_이미지명.gif</li>
+					<li><strong>텍스트 이미지 :</strong> img/text_이미지명.gif</li>
+					<li><strong>2Depth 타이틀 이미지 :</strong> img/stitle_이미지명.gif</li>
+					<li><strong>3DEpth 타이틀 이미지 :</strong> img/sstitle_이미지명.gif</li>
+					<li><strong>탭 이미지 :</strong> img/tab_이미지명.gif</li>
+				</ol>
+			</li>
+		</ol>
+
+		<h3>LNB 규칙</h3>
+
+		<h3>Html Guide File</h3>
+		<ol>
+			<li><a href="kor/layout.html">LayOut</a><span>2012.05.08</span></li>
+			<li>total : page<span style="text-decoration:line-through;">(page)</span></li>
+		</ol>
+	</div>
+	<div class="filelist">
+		<h2>관리자</h2>
+		<ol>
+			
+		</ol>
+	</div>
+	<div class="filelist">
+	<ol>
+		<li>Gate</li>
+	</ol>
+		<h2>국문</h2>
+		<ol>
+			<li><a href="main/main.html">Main</a></li>
+
+            <li>Huvits
+                <ol>
+                    <li><a href="huvitz/ceo.html">CEO 인사말</a></li>
+                    <li><a href="huvitz/manage_phil.html">경영이념</a></li>
+                    <li><a href="huvitz/history.html">연혁</a></li>
+                    <li><a href="huvitz/award.html">수상실적</a></li>
+                    <li><a href="huvitz/ci.html">CI</a></li>
+                    <li><a href="huvitz/subsidiary.html">계열사</a></li>
+                    <li><a href="huvitz/location.html">위치안내</a></li>
+                </ol>
+            </li>
+            <li>Business
+                <ol>
+                    <li><a href="business/business.html">사업소개</a></li>
+                    <li><a href="business/organization.html">조직도</a></li>
+                    <li><a href="business/business_area.html">사업영역</a></li>
+                    <li><a href="business/ability.html">핵심역량</a></li>
+                    <li><a href="business/.html">생산시스템</a></li>
+                    <li><a href="business/certify.html">인증현황</a></li>
+                </ol>
+            </li>
+            <li>PR
+                <ol>
+                    <li>
+                    	<a href="pr/news_list.html">휴비츠소식</a>
+                        <ol>
+                        	<li><a href="pr/news_view.html">휴비츠소식 보기</a></li>
+                        </ol>
+					</li>
+                    <li><a href="pr/csr_list.html">사회공헌</a></li>
+                    <li><a href="pr/event_list.html">주요행사</a></li>
+                    <li>
+                    	<a href="pr/exhibition_list.html">제품전시정보</a>
+                    	<ol>
+                        	<li><a href="pr/exhibition_view.html">제품전시정보 보기</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="pr/lookaround.html">사옥둘러보기</a></li>
+                </ol>
+            </li>
+            <li>IR
+                <ol>
+                    <li><a href="ir/industry.html">산업동향</a></li>
+                    <li><a href="ir/market.html">시장동향</a></li>
+                    <li><a href="ir/stockholder.html">주주구성</a></li>
+                    <li><a href="ir/income.html">손익계산서</a></li>
+                    <li><a href="ir/balancesheet.html">대차대조표</a></li>
+                    <li><a href="ir/financialratio.html">주요재무비율</a></li>
+                </ol>
+            </li>
+            <li>Recruit
+                <ol>
+                    <li><a href="recruit/talent.html">Huvitz Talent</a></li>
+                    <li><a href="recruit/hr.html">HR Program</a></li>
+                    <li><a href="recruit/job.html">직무소개</a></li>
+                    <li><a href="recruit/recruit_list.html">채용정보</a></li>
+                    <li><a href="recruit/jobapply.html">입사지원</a></li>
+                    <li><a href="#">Huvitz People</a></li>
+                    <li><a href="#">Enjoy Huvitz</a></li>
+                    <li><a href="#">Recruit FAQ</a></li>
+                </ol>
+            </li>
+
+			<li>SUPPORT
+				<ol>
+					<li><a href="support/consumer.html">소비자전용</a></li>
+					<li><a href="#">대리점전용</a></li>
+					<li><a href="support/agent.html">국내대리점</a></li>
+				</ol>
+			</li>
+            <li>ETC
+				<ol>
+					<li>site map</li>
+					<li>contact us</li>
+				</ol>
+			</li>
+		</ol>
+
+		
+	</div>
+</div>
+
+</body>
+</html>

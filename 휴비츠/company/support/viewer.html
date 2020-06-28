@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="" />
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>Huvitz</title>
+  <script type ="text/javascript" src="../common/js/jquery-1.7.2.min.js"></script>
+  <script type ="text/javascript">
+	$(document).ready(function(){
+		
+		
+		var urlValue = location.search.substring(1);
+		var wmvUrl = "../productExplain/" + urlValue + ".wmv";
+		var wmvUrl = "<embed type ='video/x-ms-wmv' src = "+wmvUrl+" width = '640px' height ='500px'>";
+		
+		var $movieViewer = $('#movieViewer');
+		
+		$movieViewer.html(wmvUrl);
+		
+	});
+
+</script>
+ </head>
+
+<body>
+	<div id="movieViewer">
+	</div>
+</body>
+</html>

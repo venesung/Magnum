@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="" />
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>휴비츠</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		
+		var $cws = $(window).width();
+		var $ch = $(window).height();
+		var $mnum = 0.3333333333333333333333333333333333;
+		var cwidth = Math.round($cws*$mnum);
+
+		var $cont = $('.GateBox');
+		var $gl = $('.gateLeft');
+		var $gc = $('.gateCenter');
+		var $gr = $('.gateRight');
+		var $glw;
+
+		calcSize();
+		
+	
+		$(window).resize(function(e){
+
+			$cws = $(window).width();
+			$ch = $(window).height();
+			cwidth = Math.round($cws*$mnum);
+			$glw = $gl.width();
+
+			if ($cws > 1000) calcSize();
+
+
+		});
+
+		function calcSize() {
+
+			$cont.css({width:$cws,height:$ch});
+			$gl.css({width:cwidth,height:$ch});
+			$gc.css({width:cwidth,height:$ch});
+			$gr.css({width:cwidth,height:$ch});
+
+			$glw = $gl.width();
+
+			$gc.css({left:$glw});
+			$gr.css({left:$glw+$gc.position().left});
+		
+		}
+	
+	});
+  </script>
+  <style>
+		body {margin:0;padding:0;}
+
+  </style>
+ </head>
+
+<body>
+	<div class="GateBox" style="position:relative;">
+		<!-- gateLeft Start -->
+		<div class="gateLeft" style="position:absolute;background-color:#f3f3f3;">
+			<img src="img/opht.jpg">
+		</div>
+		<!-- //gateLeft End -->
+        
+        <!-- gateCenter Start -->
+		<div class="gateCenter" style="position:absolute;background-color:#e1e1e1;">
+			<img src="img/com.jpg">
+		</div>
+		<!-- //gateCenter End -->
+		
+		<!-- gateRight Start -->
+		<div class="gateRight" style="position:absolute;background-color:#76b6c8;">
+			<img src="img/mic.jpg">
+		</div>
+		<!-- //gateRight End -->
+	</div>
+</body> 
+</html>

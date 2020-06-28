@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>휴비츠</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style type="text/css">
+	body {padding:20px;margin:0px;font-size:0.75em;font-family:gulim;}
+	h1 {background-color:#484848;color:#fff;text-align:center;padding:0px;margin:0px;font-family:Verdana;}
+	h3 {text-decoration:underline;}
+	ol li {padding-bottom:5px;font-weight:bold;}
+	ol li a, ol li span {font-weight:normal;}
+	ol li span.red {color:red;font-size:12px;}
+	ol li ol {margin-top:10px;}
+	ol li ol li {font-weight:normal;}
+	li.cancel {text-decoration:line-through;}
+	span {font-size:10px;color:#7d4900;font-family:Verdana;padding-left:18px;background:url(img/bu_arrow_01.gif) 10px 3px no-repeat;}
+	span.cancel {font-weight:bold;color:red;}
+	a {color:#f68e56;text-decoration:none;}
+	a:hover {color:#f55e21}
+	li.del span, li.del a, li.del strong {text-decoration:line-through;color:#CCCCCC;}
+	strong {font-weight:normal;}
+	div.guide {float:left;width:400px;line-height:16px;}
+	div.guide ol li {font-weight:normal;}
+	div.guide ol li strong {font-weight:bold;}
+	div.filelist {float:left;width:450px;}
+	table {width:80%;border-collapse:collapse;margin-bottom:15px;}
+	caption {font-weight:bold;text-align:left;}
+	table tr th, table tr td {border:1px solid #000;padding:3px 3px 0 3px;}
+	table thead tr th {background:#000;color:#fff;}
+</style>
+</head>
+
+<body>
+
+<h1>휴비츠</h1>
+<div style="width:1600px;">
+	<div class="guide">
+		<h2>코딩가이드</h2>
+
+		<h3>파일명 규칙 및 경로</h3>
+
+		<table>
+			<caption>국문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>kor/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>kor/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table>
+			<caption>영문 홈페이지</caption>
+			<thead>
+				<tr>
+					<th>메뉴명</th>
+					<th>디렉토리명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>제품소개</th>
+					<td>eng/product/</td>
+				</tr>
+				<tr>
+					<th>고객지원</th>
+					<td>eng/support/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>이미지명 규칙 및 경로</h3>
+		<ol>
+			<li>이미지는 img폴더 안에 각 메뉴별 뎁스 아래 저장한다.</li>
+			<li>공통적인 성격을 갖거나 특수한 이미지인 경우 한 폴더 안에 저장한다.<br />
+				예시1) 각 페이지 타이틀 이미지 : img/title/title_파일명.gif<br />
+				예시2) 버튼 이미지 : img/button/btn_파일명.gif
+			</li>
+			<li>그 외 이미지명 규칙
+				<ol>
+					<li><strong>on/off 이미지 :</strong> img/이미지명_on/off.gif</li>
+					<li><strong>배경 이미지 :</strong> img/bg_이미지명.gif</li>
+					<li><strong>불릿 이미지 :</strong> img/bu_이미지명.gif</li>
+					<li><strong>비쥬얼/그래프등 기타 이미지 :</strong> img/img_이미지명.jpg</li>
+					<li><strong>사진 이미지 :</strong> img/pic_이미지명.jpg</li>
+					<li><strong>아이콘 이미지 :</strong> img/icon_이미지명.gif</li>
+					<li><strong>텍스트 이미지 :</strong> img/text_이미지명.gif</li>
+					<li><strong>2Depth 타이틀 이미지 :</strong> img/stitle_이미지명.gif</li>
+					<li><strong>3DEpth 타이틀 이미지 :</strong> img/sstitle_이미지명.gif</li>
+					<li><strong>탭 이미지 :</strong> img/tab_이미지명.gif</li>
+				</ol>
+			</li>
+		</ol>
+
+		<h3>LNB 규칙</h3>
+
+		<h3>Html Guide File</h3>
+		<ol>
+			<li><a href="kor/layout.html">LayOut</a><span>2012.05.08</span></li>
+			<li>total : page<span style="text-decoration:line-through;">(page)</span></li>
+		</ol>
+	</div>
+	<div class="filelist">
+		<h2>관리자</h2>
+		<ol>
+			<li><a href="admin/login.html">로그인</a> <span>2012.05.04</span></li>
+			<li>국문 관리자
+				<ol>
+					<li><a href="admin/kor/down_list.html">다운로드 관리 > 목록</a> <span>2012.05.04</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/kor/down_write.html">다운로드 관리 > 등록</a> <span>2012.05.04</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/kor/faq_list.html">FAQ 관리 > 목록</a><span>2012.05.07</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/kor/faq_write.html">FAQ 관리 > 등록</a><span>2012.05.07</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/kor/counsel_list.html">1:1 온라인 상담 관리 > 목록</a><span>2012.05.07</span></li>
+					<li><a href="admin/kor/counsel_write.html">1:1 온라인 상담 관리 > 등록</a><span>2012.05.07</span></li>
+				</ol>
+			</li>
+			<li>영문 관리자
+				<ol>
+					<li><a href="admin/eng/down_list.html">다운로드 관리 > 목록</a><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/eng/down_write.html">다운로드 관리 > 등록</a><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/eng/faq_list.html">FAQ 관리 > 목록</a><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/eng/faq_write.html">FAQ 관리 > 등록</a><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="admin/eng/counsel_list.html">1:1 온라인 상담 관리 > 목록</a></li>
+					<li><a href="admin/eng/counsel_write.html">1:1 온라인 상담 관리 > 등록</a></li>
+				</ol>
+			</li>
+			<li>공통 관리자
+				<ol>
+					<li><a href="admin/admin/look_list.html">휴비츠 둘러보기 관리 > 목록</a><span>2012.05.07</span></li>
+					<li><a href="admin/admin/look_write.html">휴비츠 둘러보기 관리 > 등록</a><span>2012.05.07</span></li>
+					<li><a href="admin/admin/look_pop.html">휴비츠 둘러보기 관리 > 미리보기 팝업</a><span>2012.05.07</span></li>
+					<li><a href="admin/admin/admin_list.html">권한 관리 > 목록</a><span>2012.05.07</span></li>
+					<li><a href="admin/admin/admin_write.html">권한 관리 > 등록</a><span>2012.05.07</span></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="filelist">
+	<ol>
+		<li><a href="gate/gate.html">Gate</a></li>
+	</ol>
+		<h2>국문</h2>
+		<ol>
+			<li><a href="kor/main/main.html">Main</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08] *GNB, footer 주석 참조 [박성우 2012-06-08]</span></li>
+
+			<li>PRODUCTS
+				<ol>
+					<li><a href="kor/product/stereo1.html">HSZ-700 Series</a> <span>2012.05.09</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/product/stereo2.html">HSZ-600 Series</a> <span>2012.05.10</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/product/uprightMicroscope.html">UPRIGHT</a> <span>2012.05.17</span><span class="red">[수정 2012-08-23]</span></li>
+					<li><a href="kor/product/imagingSolution.html">IMAGING SOLUTION</a> <span>2012.05.10</span><span class="red">[수정 2012-08-24]</span></li>
+				</ol>
+			</li>
+
+			<li>COMPANY
+				<ol>
+					<li><a href="kor/company/ceo.html">CEO인사말</a> <span>2012.05.10</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/company/business.html">사업개요</a> <span>2012.05.10</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/company/history.html">회사연혁</a> <span>2012.05.10</span></li>
+					<li><a href="kor/company/location.html">위치 및 약도</a> <span>2012.05.10</span><span class="red">[수정 2012-05-11] class명 변경</span></li>
+				</ol>
+			</li>
+
+			<li>SUPPORT
+				<ol>
+					<li><a href="kor/support/download.html">DOWNLOAD</a> <span>2012.05.10</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/support/service.html">원격지원서비스</a> <span>2012.05.10</span></li>
+					<li><a href="kor/support/pop_service.html">[팝업]원격제어</a> <span>2012.05.14</span></li>
+					<li><a href="kor/support/faq.html">FAQ</a> <span>2012.05.10</span><span class="red">[추가 2012-05-11] 탭추가</span></li>
+					<li><a href="kor/support/counsel_list.html">1:1온라인 상담</a> <span>2012.05.09</span><span class="red">[수정 2012-05-11 별표추가 ]</span></li>
+					<li><a href="kor/support/counsel_end.html">1:1온라인 상담_완료</a> <span>2012.05.09</span></li>
+					<li><a href="kor/support/pop_counsel.html">제품문의하기</a> <span>2012.05.10</span><span class="red">[수정 2012-05-11 별표추가 ]</span></li>
+					<li><a href="kor/support/privacy.html">개인정보취급방침</a> <span>2012.05.15</span></li>
+					<li><a href="kor/support/terms.html">이용약관</a> <span>2012.05.18</span></li>
+				</ol>
+			</li>
+			<li>etc
+				<ol>
+					<li><a href="kor/etc/lookaround.html">휴비츠 둘러보기</a> <span>2012.05.10</span><span class="red">[수정 2012-05-16]</span></li>
+					<li><a href="kor/etc/sitemap.html">사이트맵</a> <span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="kor/etc/mail1.html">메일_온라인상담답변</a> <span>2012.05.17</span></li>
+					<li><a href="kor/etc/mail2.html">메일_문의접수완료</a> <span>2012.05.17</span></li>
+				</ol>
+			</li>
+		</ol>
+
+		<h2>영문</h2>
+		<ol>
+			<li><a href="eng/main/main.html">Main</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]*GNB, footer 주석 참조 [박성우 2012-06-08]</span></li>
+
+			<li>PRODUCTS
+				<ol>
+					<li><a href="eng/product/stereo1.html">HSZ-700 Series</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/product/stereo2.html">HSZ-600 Series</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/product/uprightMicroscope.html">UPRIGHT</a> <span>2012.05.17</span><span class="red">[수정 2012-08-23]</span></li>
+					<li><a href="eng/product/imagingSolution.html">IMAGING SOLUTION</a> <span>2012.05.14</span><span class="red">[수정 2012-08-24]</span></li>
+				</ol>
+			</li>
+
+			<li>COMPANY
+				<ol>
+					<li><a href="eng/company/ceo.html">CEO인사말</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/company/business.html">사업개요</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/company/history.html">회사연혁</a> <span>2012.05.14</span></li>
+					<li><a href="eng/company/location.html">위치 및 약도</a> <span>2012.05.14</span><span class="red">[수정 2012-05-17]</span></li>
+				</ol>
+			</li>
+
+			<li>SUPPORT
+				<ol>
+					<li><a href="eng/support/download.html">DOWNLOAD</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/service.html">원격지원서비스</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/pop_service.html">[팝업]원격제어</a> <span>2012.05.15</span></li>
+					<li><a href="eng/support/faq.html">FAQ</a> <span>2012.05.14</span></li>
+					<li><a href="eng/support/counsel_list.html">1:1온라인 상담</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/counsel_end.html">1:1온라인 상담_완료</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/support/pop_counsel.html">제품문의하기</a> <span>2012.05.14</span><span class="red">[수정 2012-06-08]</span></li>
+				</ol>
+			</li>
+			<li>etc
+				<ol>
+					<li><a href="eng/etc/lookaround.html">휴비츠 둘러보기</a> <span>2012.05.14</span><span class="red">[수정 2012-05-14]</span></li>
+					<li><a href="eng/etc/sitemap.html">사이트맵</a> <span>2012.05.15</span><span class="red">[수정 2012-06-08]</span></li>
+					<li><a href="eng/etc/mail1.html">메일_온라인상담답변</a> <span>2012.05.17</span></li>
+					<li><a href="eng/etc/mail2.html">메일_문의접수완료</a> <span>2012.05.17</span><span class="red">[수정 2012-06-08]</span></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="" />
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>Huvitz</title>
+  <link rel="stylesheet" href="../common/css/common.css" type="text/css" />
+  <style>
+  .selected { border:3px solid #000; }
+  </style>
+  <script type="text/javascript" src="../common/js/common.js"></script>
+  <script type="text/javascript" src="../common/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="../common/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../common/js/lookaround.js" /></script>
+  <script type="text/javascript">
+	$(document).ready( function() {
+		laround = new lAround();
+	});
+  </script>
+ </head>
+<body>
+	<!-- Size : 800x 680 -->
+	<!-- popup -->
+	<div class="popup lookaround">
+		<div class="title">
+			<strong>휴비츠 둘러보기</strong>
+			<a href="javascript:divPopupClose(500)" class="close"><img src="../img/button/btn_close_01.gif" alt="닫기" /></a>
+		</div>
+		
+		<div class="popup_con">
+			<div></div><!-- Images Size : 752 x 480 -->
+		<!-- [수정 2012-05-16] -->
+			<div class="stitle"><p class="description"></p><span><em class="cnum"></em>/<em class="tnum"></em></span></div>
+		<!-- [수정 2012-05-16] -->
+			<!-- list -->
+			<div class="list_area">
+				<div class="list"><ul></ul></div>
+				<a href="#" class="prev"><img src="../img/etc/la_prea.gif" alt="이전" /></a>
+				<a href="#" class="next"><img src="../img/etc/la_nexta.gif" alt="이후" /></a>
+			</div>
+			<!--/ list -->
+		</div>
+
+
+	</div>
+	<!--/ popup -->
+</body>
+</html>
