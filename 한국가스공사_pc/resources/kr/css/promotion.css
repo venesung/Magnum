@@ -1,0 +1,168 @@
+@charset 'euc-kr';
+
+.mt20{margin-top:20px!important}
+.mt40{margin-top:40px!important}
+.pb320{padding-bottom:320px}
+.colorRed{color:#f00!important}
+.colorOrg{color:#fb8a04!important}
+
+.sp_tit{color:#222;font-family:'NGB';font-size:14px;font-weight:bold}
+.topDotline{margin-top:30px;padding-top:20px;background:url(../images/promotion/bg_dotline.gif) repeat-x 0 0}
+
+.multiStage{*zoom:1}
+.multiStage:after{content:"";display:block;clear:both}
+
+/*홍보영상*/
+.movie .movieArea{width:340px;height:280px;margin-left:10px;background:url(../images/promotion/bg_movie.gif) no-repeat 0 0;}
+.movie .movieArea .view{width:297px;height:195px;margin:20px;background-color:#fff}
+.movie .movieArea .controlBtn{text-align:center}
+.movie .subtitles{overflow-y:scroll;overflow-x:hidden;width:288px;height:248px;padding:15px;border:1px solid #e6e6e6}
+
+/*TV광고영상 리스트*/
+.movieList{margin-left:10px}
+.movieList .list{min-height:190px;padding-left:21px;background:url(../images/promotion/bg_movielist.gif) repeat-y 0 -30px;*zoom:1}
+.movieList .list:after{content:"";display:block;clear:both}
+.movieList .list li{float:left;width:141px;height:179px;padding:11px 0 0 21px;;background:url(../images/promotion/bg_movielistitem.png) no-repeat 0 0}
+.movieList .list li+li+li+li+li{margin-top:30px}
+.movieList .list li a .itemTit{display:block;width:120px;padding-top:5px;font-size:11px;line-height:17px;}
+.movieList .list li a:hover .itemTit,.movieList .list li.on a .itemTit{color:#009aea;text-decoration:underline;font-family:'NGB'}
+
+/*인쇄광고*/
+.magazine{padding:21px;text-align:center;background:url(../images/promotion/bg_magazine.gif) no-repeat center 0}
+.monthSelect{float:right;margin-top:30px}
+.monthSelect .select .overcon .selectL {width:16px;height:16px;background:none;}
+.monthSelect .select .overcon .selectR {width:16px;height:16px;background:none;}
+.magazineList{margin-left:10px}
+.magazineList .list{min-height:169px;padding-left:16px;background:url(../images/promotion/bg_movielist.gif) repeat-y 0 -50px;*zoom:1}
+.magazineList .list:after{content:"";display:block;clear:both}
+.magazineList .list li{float:left;width:104px;height:170px;padding:0 30px;background:url(../images/promotion/bg_shadow.png) no-repeat 50% 139px}
+.magazineList .list li+li+li+li+li{margin-top:50px}
+.magazineList .list li a{display:block;border:1px solid #e5e5e5;}
+.magazineList .list li a img{width:102px;height:145px}
+.magazineList .list li a .cover{display:none}
+.magazineList .list li a:hover,.magazineList .list li.on a{border:1px solid #009aea}
+
+/*사보*/
+.newsletter{width:270px;height:297px;margin-left:40px;padding-top:21px;text-align:center;background:url(../images/promotion/bg_newsletter.gif) no-repeat 0 0}
+.newsletterInfo{padding-left:50px;}
+.dashList li{padding:0 0 5px 8px;line-height:18px;background:url(../images/common/bl_sub_con.gif) no-repeat 0 8px;}
+
+/*실명인증*/
+.cert dl{width:340px;margin-top:3px}
+.cert dl .sp_tit{padding:0 0 10px 10px;background:url(../images/common/bl_subtit.gif) no-repeat 0 5px;}
+.cert dl dd{height:268px;margin-top:8px;padding:30px 0 0 30px;background:url(../images/promotion/bg_ipincheck.gif) no-repeat 0 0}
+.cert dl.ipin dd p.con{background:url(../images/promotion/bg_ipin.gif) no-repeat 0 0}
+.cert dl.check dd p.con{background:url(../images/promotion/bg_check.gif) no-repeat 0 0}
+.cert dl dd p.con{width:205px;padding-left:85px;line-height:21px}
+.cert dl dd p.btn{padding-left:80px;}
+.cert dl dd p.cau{width:265px;margin-top:37px;padding:0 0 0 18px;line-height:20px;background:url(../images/promotion/bg_caution.gif) no-repeat 0 4px}
+.cert dl dd p .btn02{margin-top:20px}
+
+/*캘린더위치*/
+.incLayer{position:relative}
+.incLayer .calendar{position:absolute;top:0px;left:210px}
+
+/*가스과학관*/
+.imgTxt{padding-right:380px;line-height:24px;background:url(../images/promotion/bg_gasinfo.jpg) no-repeat 100% 0}
+.imgTxt h4{line-height:20px}
+.imgTxt span{display:block;padding-bottom:12px;font-size:24px;font-family:'NGB';color:#444;}
+.bl_sublist li span{color:#444}
+
+/*태권도 선수단*/
+.TKDinfo{padding-right:260px;background:url(../images/promotion/bg_tkdinfo.jpg) no-repeat 100% 3px}
+.selectYear{padding-bottom:20px;text-align:center}
+.selectYear a{display:inline-block;padding:5px}
+.selectYear strong{display:inline-block;padding:0 10px;font-size:34px;font-family:'NGB';color:#009aea;letter-spacing:-2px}
+.schedule{clear:both;border-top:2px solid #00a8e8;}
+.schedule table{width:100%}
+.schedule tbody .headline{background:#fbfbfb url(../images/common/bg_tableline.gif) repeat-x left bottom;}
+.schedule tbody tr th{padding:15px 5px;border-left:1px solid #e3e8e9;color:#444;text-align:center;font-family:'NGB';}
+.schedule tbody tr th:first-child,.schedule tbody tr td:first-child{border-left:0 none}
+.schedule tbody tr td{padding:15px 5px;border-left:1px solid #e3e8e9;border-bottom:1px solid #e3e8e9;}
+
+/*선수단프로필*/
+.profile{padding-top:5px}
+.profile .clear{padding-top:40px}
+.profile ul[class^=profile]{padding-left:160px;background:no-repeat 20px 5px}
+div.profile .profile101{background-image:url(../images/promotion/bg_profile101.jpg)}
+div.profile .profile102{background-image:url(../images/promotion/bg_profile102.jpg)}
+div.profile .profile103{background-image:url(../images/promotion/bg_profile103.jpg)}
+.profile ul[class^=profile] > li{padding:0 0 5px 7px;color:#222;line-height:22px;background:url(../images/common/bl_sublist.gif) no-repeat 0 9px;}
+.profile ul[class^=profile] > li strong{display:block;font-weight:normal}
+.profile ul[class^=profile] > li span{color:#009aea;}
+.profile ul[class^=profile] .multiStage ul{float:left;width:230px;margin-top:4px;}
+.profile ul[class^=profile] .multiStage ul+ul{margin-left:30px}
+.profile ul[class^=profile] .dashList li{color:#777}
+.profile ul[class^=profile2]{float:left;width:190px;min-height:125px}
+.profile ul.long{width:540px}
+.profile ul.long li ul{width:auto!important}
+div.profile .profile201{background-image:url(../images/promotion/bg_profile201.jpg)}
+div.profile .profile202{background-image:url(../images/promotion/bg_profile202.jpg)}
+div.profile .profile203{background-image:url(../images/promotion/bg_profile203.jpg)}
+div.profile .profile204{background-image:url(../images/promotion/bg_profile204.jpg)}
+div.profile .profile205{background-image:url(../images/promotion/bg_profile205.jpg)}
+div.profile .profile206{background-image:url(../images/promotion/bg_profile206.jpg)}
+div.profile .profile207{background-image:url(../images/promotion/bg_profile207.jpg)}
+div.profile .profile208{background-image:url(../images/promotion/bg_profile208.jpg)}
+div.profile .profile209{background-image:url(../images/promotion/bg_profile209.jpg)}
+div.profile .profile210{background-image:url(../images/promotion/bg_profile210.jpg)}
+div.profile .profile211{background-image:url(../images/promotion/bg_profile211.jpg)}
+
+/*연수교육*/
+.edu{padding-right:185px;background-image:url(../images/promotion/bg_eduinfo.gif)}
+.edu span{font-size:16px;color:#fb8a04}
+.edu .cauinfo{margin-top:10px;padding-left:17px;color:#fb8a04;background:url(../images/promotion/icon_cau.gif) no-repeat 0 5px;}
+.tbtype02 tbody td.last thead th.last{background-image:none}
+
+/*사회공헌*/
+.society02{padding:0 0 0 310px;background:url(../images/promotion/bg_society.jpg) no-repeat 23px 0}
+.conTxt{min-height:155px;padding:0 0 0 370px;line-height:22px;}
+.slogan{background:url(../images/promotion/bg_slogan.jpg) no-repeat 0 0;}
+.emblem{background:url(../images/promotion/bg_emblem.jpg) no-repeat 0 0;}
+
+.partInfo{height:107px;margin-top:50px;padding:0 0 0 216px;font-size:24px;color:#222;line-height:34px;font-family:'NGB';letter-spacing:-1px;background:no-repeat 30px 0}
+.partInfo p{padding-top:22px}
+.part1{background-image:url(../images/promotion/bg_part1.gif)}
+.part2{background-image:url(../images/promotion/bg_part2.gif)}
+.part3{background-image:url(../images/promotion/bg_part3.gif)}
+.part4{background-image:url(../images/promotion/bg_part4.gif)}
+.part5{background-image:url(../images/promotion/bg_part5.gif)}
+.activity1{background:url(../images/promotion/bg_activity1.jpg) no-repeat 100% 0}
+.activity2{background:url(../images/promotion/bg_activity2.jpg) no-repeat 100% 0}
+.activity3{background:url(../images/promotion/bg_activity3.jpg) no-repeat 100% 0}
+.activity4{background:url(../images/promotion/bg_activity4.jpg) no-repeat 100% 63px}
+.activity5{background:url(../images/promotion/bg_activity5.jpg) no-repeat 0 0}
+.activity5 .textCon{padding-top:20px}
+.textCon{width:335px;}
+.textCon h4{font-size:14px;color:#222;line-height:26px;}
+.textCon h4 em{font-size:16px;color:#009aea}
+.textCon p{padding-top:10px;line-height:24px;}
+.w100per{width:100%}
+
+.onnuri{background:url(../images/promotion/bg_onnuri.jpg) no-repeat 100% 6px}
+.onnuri span{display:block;padding-bottom:5px;font-size:24px;font-family:'NGB';color:#444;line-height:40px;letter-spacing:-1px}
+.onnuriTxt{display:block;padding-top:38px;font-size:16px;color:#444;letter-spacing:-1px;line-height:24px;font-family:'NGB';font-weight:normal}
+.organization{min-height:140px;padding-left:263px;background:url(../images/promotion/bg_orgaization.gif) no-repeat 57px 0}
+.organization h4{padding:0 0 13px 9px;font-size:24px;font-family:'NGB';color:#009aea;letter-spacing:-1px;}
+.organization .bl_sublist li{padding-bottom:5px}
+.organization .multiStage .fl{margin-right:30px}
+.conditionT{font-size:16px;color:#444;background-position:7px 7px}
+.conditionList{padding:10px 0 30px 17px;border-bottom:1px solid #e5e5e5}
+.conditionList li{float:left;margin-left:60px}
+.conditionList li:first-child{margin-left:0}
+.conditionList li .tit{display:block;padding-bottom:10px;color:#444}
+
+/*보도사진*/
+.downlist{width:650px!important}
+.downlist span.t{letter-spacing:-1px}
+
+/*Kogas포토*/
+.photoArea{margin:0 auto;padding-bottom:30px;background:url(../images/promotion/bg_dotline.gif) repeat-x 0 100%}
+.photoArea .photoview{width:483px;height:315px;margin:0 auto;padding-top:20px;text-align:center;background:url(../images/promotion/bg_photo.gif) no-repeat 0 0}
+.photoArea .downBtn{width:483px;margin:0 auto;padding-top:30px;}
+.photoArea .downBtn li{float:left;position:relative;width:204px}
+.photoArea .downBtn li+li{margin-left:75px}
+.photoArea .downBtn li+li+li{margin:15px 0 0 0}
+.photoArea .downBtn li+li+li+li{margin-left:75px}
+.photoArea .downBtn .bu_tit{padding:0 0 10px 10px;color:#444;font-family:'NG';font-size:14px;background:url(../images/common/bl_subtit.gif) no-repeat 0 5px;}
+.photoArea .downBtn li a{position:absolute;top:-3px;right:0}

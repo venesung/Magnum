@@ -1,0 +1,78 @@
+@charset 'euc-kr';
+
+/* author : HYJ */
+
+.gasintro {margin-top:50px; background:url(../images/gasinfo/img_gasintro.gif) center 0 no-repeat; padding-top:150px; overflow:hidden;}
+.gasintro li {width:350px; float:left; text-align:center; line-height:24px; color:#222;}
+.gasintro li strong {font-size:16px;}
+
+.gasusage1 {background:url(../images/gasinfo/img_gasusage01.jpg) right 0 no-repeat; padding-right:250px;}
+.gasusage2 {background:url(../images/gasinfo/img_gasusage02.jpg) right 0 no-repeat; padding-right:250px;}
+.gasusage3 {background:url(../images/gasinfo/img_gasusage03.jpg) right 0 no-repeat; padding-right:250px;}
+.gasusage4 {background:url(../images/gasinfo/img_gasusage04.jpg) right 0 no-repeat; padding-right:250px;}
+.gastour1 {background:url(../images/gasinfo/img_gastour01.jpg) 0 0 no-repeat; padding-left:350px;}
+.gastour2 {background:url(../images/gasinfo/img_gastour02.jpg) 0 0 no-repeat; padding-left:350px;}
+.gastour3 {background:url(../images/gasinfo/img_gastour03.jpg) 0 0 no-repeat; padding-left:350px; min-height:314px;}
+.gastour3r {background:url(../images/gasinfo/img_gastour03.jpg) right 0 no-repeat; padding-right:350px;}
+.gastour4 {background:url(../images/gasinfo/img_gastour04.jpg) 0 0 no-repeat; padding-left:350px;}
+.gastour5 {background:url(../images/gasinfo/img_gastour05.jpg) 0 0 no-repeat; padding-left:350px;}
+.gastour6 {background:url(../images/gasinfo/img_gastour06.jpg) right 0 no-repeat; padding-right:350px;}
+.gastour7 {background:url(../images/gasinfo/img_gastour07.jpg) 0 0 no-repeat; padding-left:350px;}
+.gastour8 {background:url(../images/gasinfo/img_gastour08.jpg) right 0 no-repeat; padding-right:350px;}
+.gastour9 {background:url(../images/gasinfo/img_gastour09.jpg) 0 0 no-repeat; padding-left:350px; min-height:274px;}
+.gastour10 {background:url(../images/gasinfo/img_gastour10.gif) 0 0 no-repeat; padding-left:234px;}
+.gastour11 {background:url(../images/gasinfo/img_gastour11.gif) 0 0 no-repeat; padding-left:234px;}
+.gastour12 {background:url(../images/gasinfo/img_gastour12.gif) 0 0 no-repeat; padding-left:234px;}
+.gastour13 {background:url(../images/gasinfo/img_gastour13.gif) 0 0 no-repeat; padding-left:234px;}
+
+.billdetail {background:#f2f2f2; border:1px solid #e5e5e5; padding:20px; margin-top:10px;}
+.billdetail {margin-top:5px;}
+.billdetail .billcon {margin-left:15px; line-height:22px;}
+.billdetail .billcon > li > ul > li {margin-top:5px;}
+.billdetail .billcon .sub_con {margin-left:10px; margin-top:5px;}
+
+/* 용어사전 */
+.terms_mobile {min-height:290px; background:url(../images/gasinfo/img_terms_mobile.jpg) 65px 0 no-repeat; padding-left:276px; overflow:hidden;}
+.terms_mobile h4.intro {font-size:20px; color:#444;}
+.terms_mobile p.txt {line-height:24px; margin-top:10px;}
+.terms_mobile .qrcode {width:190px; margin-top:30px; float:left;}
+.terms_mobile .qrcode.apple {margin-left:44px;}
+.terms_mobile .qrcode h5 {overflow:hidden; color:#444; font-family:'NGB'; padding:5px 0 10px 3px; letter-spacing:-1px;}
+.terms_mobile .qrcode img {float:left; margin-right:12px;}
+
+.terms_word {border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; color:#444; font-family:'NGB';}
+.terms_word dt,
+.terms_word dd {border-top:1px dashed #e5e5e5; padding:10px; overflow:hidden; position:relative; top:-1px; line-height:27px;}
+.terms_word dt {width:84px; float:left;}
+.terms_word dd .word {margin-top:-5px;}
+.terms_word dd .word li {width:27px; height:27px; overflow:hidden; float:left; margin:5px 0 0 5px;}
+.terms_word dd .word li a {display:block; background:url(../images/gasinfo/bg_terms_box.gif) 0 0 no-repeat; text-align:center;}
+.terms_word dd .word li a:hover {background-position:0 -27px; color:#fff; text-decoration:none;}
+
+.terms_lang {clear:both;width:100%;padding:12px 0;border-top:1px solid #e1e1e1; position:relative;}
+.terms_lang .lang_en {line-height:24px; padding-left:30px;}
+.terms_lang .lang_ch {position:absolute; top:-32px; right:20px;}
+.terms_lang em {margin-right:10px;padding-right:10px;background:url(../images/common/bg_bbsdetailline.gif) no-repeat right 2px;font-size:12px;}
+
+
+/* author : KYR */
+/*천연가스주배관압력정보*/
+.pressure{position:relative;height:635px;background:url(../images/gasinfo/bg_pressure.png) no-repeat 50% 90px}
+.pressure div[class^=point]{position:absolute;}
+.pressure div.point1{top:117px;left:360px}
+.pressure div.point2{top:185px;left:255px}
+.pressure div.point3{top:395px;left:270px}
+.pressure div.point4{top:503px;left:230px}
+.pressure div.point5{top:502px;left:307px}
+.pressure div.point6{top:470px;left:435px}
+.pressure div.point7{top:425px;left:465px}
+.pressure div[class^=point] > a{overflow:hidden;display:inline-block;width:50px;height:50px;}
+.pressure div[class^=point] > a span{position:absolute;text-indent:-9999px;top:-999px;left:-999px;font-size:1px;line-height:1px}
+.pressure div[class^=point] .pressure_info{position:absolute;top:-110px;left:-78px;width:209px;height:112px;background:url(../images/gasinfo/bg_pressureinfo.png) no-repeat 0 0}
+.pressure div[class^=point] .pressure_info ul{margin:17px 0 0 17px}
+.pressure div[class^=point] .pressure_info ul li{overflow:hidden;width:170px;padding-left:7px;color:#444;font-size:13px;background:url(../images/common/bl_sublist.gif) no-repeat 0 10px;line-height:22px;}
+.pressure div[class^=point] .pressure_info ul li:first-child{width:155px}
+.pressure div[class^=point] .pressure_info ul li:first-child{margin-top:0}
+.pressure div[class^=point] .pressure_info a{position:absolute;top:10px;right:10px;display:inline-block;padding:5px;}
+
+

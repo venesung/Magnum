@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+<link rel="stylesheet" href="../../../resources/kr/css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../../resources/kr/css/search.css" type="text/css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/selectbox.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/gas.js"></script>
+<script type="text/javascript">
+	$.SelectBoxSet('.selectbox');
+</script>
+
+<title>한국가스공사 - 통합검색</title>
+</head>
+
+<body>
+	<div id="accessibility">
+		<a href="#conarea">본문 바로가기</a>
+	</div>
+
+	<!-- wraparea -->
+	<div id="wraparea">
+		<!-- header -->
+		<div id="header">
+			<div class="h_heading">
+				<img src="../../../resources/kr/images/template/header.gif" alt="" />
+			</div><!-- // h_heading -->
+			<div class="h_visual">
+				<img src="../../../resources/kr/images/template/img_topvisual01.gif" alt="한국가스공사의 다양한 정보를 손쉽게 검색할 수 있습니다." />
+			</div><!-- // h_visual -->
+		</div>
+		<!-- // header -->
+		<div class="clear"><!-- clearBlock --></div>
+		<hr/>
+
+		<!-- conarea -->
+		<div id="conarea">
+			<div class="lnbarea">
+				<img src="../../../resources/kr/images/template/lnb.gif" alt="" />
+			</div>
+			<div class="contents">
+				<ul class="location">
+					<li class="first"><a href="#"><img src="../../../resources/kr/images/common/img_home.gif" alt="홈" /></a></li>
+					<li class="here">통합검색</li>
+				</ul><!-- // location -->
+				<div class="clear"><!-- clearBlock --></div>
+				
+				<!-- 내용시작 -->
+				<div class="constart">
+					<h3 class="titdep01">통합검색</h3>
+					
+					<div class="searchBox">
+						<div class="searchBoxT">
+							<fieldset>
+								<legend>게시판 검색</legend>
+								<div class="searchcon mr5">
+									<select class="selectbox">
+										<option value="">전체</option>
+										<option value="">한국가스공사 국문</option>
+										<option value="">한국가스공사 영문</option>
+										<option value="">용어사전</option>
+									</select>
+									<div class="keyword"><input class="input_txt01" type="text" title="검색어입력" /></div>
+								</div><!-- //searchcon -->
+								<a href="#" class="btn02 fl"><span><em>검색</em></span></a>
+								<span class="recheck"><input type="checkbox" id="research" /> <label for="research">결과내 재검색</label></span>
+								<a href="#" class="btn02small"><span><em>도움말</em></span></a>
+							</fieldset>
+							
+							<div class="relation_list">
+								<strong>연관검색어</strong>
+								<a href="#">가스</a>
+								<a href="#">가스홍보</a>
+								<a href="#">가스 과학관</a>
+								<a href="#" class="last">가스배관</a>
+							</div>
+							
+						</div>
+						<div class="searchBoxB">
+							<ul class="bl_sublist">
+								<li><strong>검색범위</strong>
+									<input type="radio" class="typeradio" name="searb" id="type" /><label for="type">전체</label>
+									<input type="radio" class="typeradio ml20" name="searb" id="type02" /><label for="type02">제목</label>
+									<input type="radio" class="typeradio ml20" name="searb" id="type03" /><label for="type03">내용</label>
+								</li>
+								<li><strong>검색기간</strong>
+									<input type="radio" class="typeradio" id="type04" name="seark" /><label for="type04">전체</label>
+									<input type="radio" class="typeradio ml20" id="type05" name="seark" /><label for="type05">최근1주일</label>
+									<input type="radio" class="typeradio ml20" id="type06" name="seark" /><label for="type06">최근1개월</label>
+									<input type="radio" class="typeradio ml20" id="type07" name="seark" /><label for="type07">최근3개월</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<p class="sh_result">검색어 <span>가나다라</span> 에 대한 검색 결과는 총 <span>[0,000건]</span> 입니다.</p>
+					
+					<ul class="tab">
+						<li class="on"><a href="#"><span>전체</span></a></li><!-- class값 on추가시 활성화 -->
+						<li><a href="#"><span>한국가스공사국문</span></a></li>
+						<li><a href="#"><span>한국가스공사영문</span></a></li>
+						<li><a href="#"><span>용어사전</span></a></li>
+					</ul>
+					
+					<p class="sh_result nosult">
+						<span>$’0000’$</span> 에 대한 검색 결과가 존재 하지 않습니다.
+					</p>
+				</div><!-- // constart -->
+				<!-- // 내용시작 -->
+			</div><!-- // contents -->
+		</div>
+		<!-- end conarea -->
+		<div class="clear"><!-- clearBlock --></div>
+		<hr/>
+	</div>
+	<!--// wraparea -->
+	<!-- footer -->
+	<div id="footer">
+		<div class="f_top">
+			<div class="topcon">
+				<img src="../../../resources/kr/images/template/footer01.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_top -->
+		<div class="f_con">
+			<div class="cont">
+				<img src="../../../resources/kr/images/template/footer02.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_con -->
+		<div class="f_bottom">
+			<div class="bottomcon">
+				<img src="../../../resources/kr/images/template/footer03.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_bottom -->
+	</div>
+	<!-- // footer -->
+ </body>
+</html>

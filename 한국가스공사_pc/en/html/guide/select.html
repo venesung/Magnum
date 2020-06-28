@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=""/>
+<meta name="description" content="" />
+<title>selectbox</title>
+
+<style type="text/css">
+* {margin:0;padding:0}
+html {height:100%;font-size:13px;}
+body {margin:0;padding:0;background:url(../images/common/bg_body.gif) repeat-x left top;color:#767676;font-size:13px;font-family:'�������', 'NG','NGB', 'Dotum','Gulim','Tahoma','Verdana';}
+body.popup {background:none;}
+h1, h2, h3, h4, h5, h6 {font-size:13px;font-weight:normal;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {margin:0;padding:0;}
+a{color:#767676;text-decoration:none;}
+a:hover {color:#767676;text-decoration:none;}
+ul, ol {list-style:none;}
+em, var {font-style:normal;}
+img, fieldset {border:0 none;*vertical-align:top;}
+div, p, span, li, table td {word-break:break-all;}
+
+.select {float:left;position:relative;}
+.select .tit {display:inline-block;height:33px;background:url(../../../resources/en/images/common/bg_selectL.png) no-repeat left top;}
+.select .tit span {display:inline-block;margin-left:15px;padding:10px 40px 10px 0;height:13px;background:url(../../../resources/en/images/common/bg_selectR.png) no-repeat right top;white-space: nowrap}
+.select .tit.on {background:url(../../../resources/en/images/common/bg_selectLon.png) no-repeat left top;}
+.select .tit.on span {background:url(../../../resources/en/images/common/bg_selectRon.png) no-repeat right top;}
+.select .overcon .con {padding:5px 0 15px;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc;background:#fff;}
+.select .overcon .con a {display:block;padding:5px 15px 5px 15px; white-space: nowrap}
+.select .overcon .con a.on {background:#f1f1f1;}
+.select .overcon .selectL {width:16px;height:16px;background:url(../../../resources/en/images/common/bg_selectconL.gif) no-repeat;}
+.select .overcon .selectR {width:16px;height:16px;background:url(../../../resources/en/images/common/bg_selectconR.gif) no-repeat;}
+
+.select2 {float:left;position:relative;}
+.select2 .tit {display:inline-block;height:33px;background:url(../../../resources/en/images/common/bg_selectL.png) no-repeat left top;}
+.select2 .tit span {display:inline-block;margin-left:15px;padding:10px 40px 10px 0;height:13px;background:url(../../../resources/en/images/common/bg_selectR.png) no-repeat right top;white-space: nowrap}
+.select2 .tit.on {background:url(../../../resources/en/images/common/bg_selectLon.png) no-repeat left top;}
+.select2 .tit.on span {background:url(../../../resources/en/images/common/bg_selectRon.png) no-repeat right top;}
+.select2 .overcon .con {padding:5px 0 15px;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc;background:#fff;}
+.select2 .overcon .con a {display:block;padding:5px 15px 5px 15px; white-space: nowrap}
+.select2 .overcon .con a.on {background:#f1f1f1;}
+.select2 .overcon .selectL {width:16px;height:16px;background:url(../../../resources/en/images/common/bg_selectconL.gif) no-repeat;}
+.select2 .overcon .selectR {width:16px;height:16px;background:url(../../../resources/en/images/common/bg_selectconR.gif) no-repeat;}
+
+.selectBox {float:left; margin: 200px 0 0 50px;}
+.btns {padding:10px;}
+.btns button {padding:10px;margin:10px}
+.info p{padding:3px;}
+</style>
+
+<style type="text/css">
+    .jspContainer
+    {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .jspPane
+    {
+        position: absolute;
+    }
+    
+    .jspVerticalBar
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 100%;
+        background: red;
+    }
+    
+    .jspTrack
+    {
+        background: #ccc;
+        position: relative;
+    }
+    
+    .jspDrag
+    {
+        background: #999;
+        position: relative;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../../../resources/en/js/lib/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../../resources/en/js/lib/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../../../resources/en/js/lib/selectbox.js"></script>
+
+<script type="text/javascript">
+    $.SelectBoxSet('.selectBox > select', {height:200});
+    $.SelectBoxSet('.selectBox > .select2:eq(0)', {divClass:'select2', direction:'up', autoClose:true});
+
+    var s = new SelectBox('.selectBox > .select2:eq(1)');
+   
+    $(document).ready(function () {
+        s.initSB();
+        
+        //정보 전달 방법 1
+        $('.selectBox > .select2:eq(1)').on('change.selectbox', function (e, param) {
+            $('#remsg').val('param.text : ' + param.text + '\n' + 'param.value : ' + param.value + '\n' + 'param.index : ' + param.index);
+        });
+
+        /*
+        //정보 전달 방법 2
+        s.getTarget().on('change.selectbox', function (e, param) {
+           $('#remsg').val('param.text : ' + param.text + '\n' + 'param.value : ' + param.value + '\n' + 'param.index : ' + param.index);
+        });
+        */
+                  
+        $('.btns > button:eq(0)').on('click', function () {
+            $('.select:eq(0)').removeSB();
+            $('#msg').val("$('.select:eq(0)').removeSB();");
+        });
+        
+        $('.btns > button:eq(1)').on('click', function () {
+            var selctbox = new SelectBox($('select:eq(0)'), {height:200});
+            selctbox.initSB();
+            
+            $('#msg').val("var selctbox = new SelectBox($('select'), {height:200});\nselctbox.initSB();");
+        });
+        
+        $('.btns > button:eq(2)').on('click', function () {
+            $('.select:eq(0)').disabledSB(true);
+            $('#msg').val("$('.select:eq(0)').disabledSB(true);");
+        });
+        
+        $('.btns > button:eq(3)').on('click', function () {
+            $('.select:eq(0)').disabledSB(false);
+            $('#msg').val("$('.select:eq(0)').disabledSB(false);");
+        });
+        
+        $('.btns > button:eq(4)').on('click', function () {
+            $('select:eq(0) > option:eq(1)').before('<option value="add">추가!!</option>');
+            $('.select:eq(0)').resetSB();
+            
+            $('#msg').val("<option></option> 변경 후\n$('.select:eq(0)').resetSB();");
+        });
+
+        $('select:eq(0)').on('change', function (e) {
+            var sel = $(this).find(':selected');
+            
+            $('#remsg').val('param.text : ' + sel.text() + '\n' + 'param.value : ' + sel.val() + '\n' + 'param.index : ' + sel.index());
+        });
+    });
+</script>
+
+</head>
+
+<body>
+
+<div class="select_area">
+    <div class="info">
+        <p><strong>- jQuery 확장을 이용한 적용방법, select 태그에 적용, option 으로 height 적용</strong></p>
+        <p>$.SelectBoxSet('.selectBox > select', {height:200});</p>
+        <p></p><p></p>
+        <p><strong>- 인스턴트를 이용한 적용방법, 레이아웃된 div 태그에 적용</strong></p>
+        <p>var s = new SelectBox('.selectBox > .select2:eq(1)');</p>
+        <p>$(document).ready(function (){</p>
+        <p style="margin-left: 20px">s.initSB();</p>
+        <p>});</p>
+    </div>
+    
+    <div class="btns">
+        <button>1번 selectbox 파괴</button>
+        <button>1번 selectbox 생성</button>
+        <button>1번 selectbox 비활성화</button>
+        <button>1번 selectbox 활성화</button>
+        <button>1번 selectbox option 변화</button>
+        <p>명령어 : <textarea style="width:600px;vertical-align: top;height: 50px;" id="msg">&nbsp;</textarea> 반환 : <textarea style="width:400px;vertical-align: top;height: 50px;" id="remsg">&nbsp;</textarea></p>
+    </div>
+    
+    <div class="selectBox">
+        <select>
+            <option value="aa">선택해주세요</option>
+            <option value="bb">최대글자수 최대글자수 최대글자수</option>
+            <option value="cc">리스트1</option>
+            <option value="dd">리스트2</option>
+            <option value="ee">리스트3</option>
+            <option value="ff">리스트4</option>
+            <option value="gg">리스트5</option>
+            <option value="hh">리스트6</option>
+            <option value="yy">리스트7</option>
+            <option value="jj">리스트8</option>
+            <option value="kk">리스트9</option>
+            <option value="ll">리스트10</option>
+            <option value="mm">리스트11</option>
+            <option value="nn">리스트12</option>
+            <option value="oo">리스트13</option>
+        </select>
+    </div>
+    
+    
+    <div class="selectBox">
+        <div class="select2">
+            <a href="#" class="tit"><span>family</span></a>
+            <div class="overcon">
+                <ul class="con">
+                    <li><a href="#">선택하세요</a></li>
+                    <li><a href="#">사이트1</a></li>
+                    <li><a href="#">사이트2</a></li>
+                    <li><a href="#">사이트3</a></li>
+                </ul>
+                <div class="selectL"></div>
+                <div class="selectR"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="selectBox">
+        <div class="select2">
+            <a href="#" class="tit"><span>선택해주세요</span></a>
+            <div class="overcon">
+                <ul class="con">
+                    <li><a href="#" data-value="list1_0">선택하세요</a></li>
+                    <li><a href="#" data-value="list1_1">리스트1</a></li>
+                    <li><a href="#" data-value="list1_2">리스트2</a></li>
+                    <li><a href="#" data-value="list1_3">리스트3</a></li>
+                </ul>
+                <div class="selectL"></div>
+                <div class="selectR"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

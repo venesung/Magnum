@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+<link rel="stylesheet" href="../../../resources/kr/css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../../resources/kr/css/gasinfo.css" type="text/css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/lib/selectbox.js"></script>
+<script type="text/javascript" src="../../../resources/kr/js/gas.js"></script>
+<script type="text/javascript">
+	$.SelectBoxSet('.selectbox');
+</script>
+
+<title>한국가스공사 - 공급열량조회</title>
+</head>
+
+<body>
+	<div id="accessibility">
+		<a href="#conarea">본문 바로가기</a>
+	</div>
+
+	<!-- wraparea -->
+	<div id="wraparea">
+		<!-- header -->
+		<div id="header">
+			<div class="h_heading">
+				<img src="../../../resources/kr/images/template/header.gif" alt="" />
+			</div><!-- // h_heading -->
+			<div class="h_visual">
+				<img src="../../../resources/kr/images/gasinfo/img_topgasinfo.gif" alt="우리생활 속 에너지 천연가스를 더 편리하고 안전하게 사용할 수 있도록 다양한 정보를 제공합니다." />
+			</div><!-- // h_visual -->
+		</div>
+		<!-- // header -->
+		<div class="clear"><!-- clearBlock --></div>
+		<hr/>
+
+		<!-- conarea -->
+		<div id="conarea">
+			<div class="lnbarea">
+				<img src="../../../resources/kr/images/template/lnb.gif" alt="" />
+			</div>
+			<div class="contents">
+				<ul class="location">
+					<li class="first"><a href="#"><img src="../../../resources/kr/images/common/img_home.gif" alt="홈" /></a></li>
+					<li><a href="#">가스정보</a></li>
+					<li><a href="#">도시가스 열량제도</a></li>
+					<li class="here">공급열량조회</li>
+				</ul><!-- // location -->
+				<div class="clear"><!-- clearBlock --></div>
+				
+				<!-- 내용시작 -->
+				<div class="constart">
+					<h3 class="titdep01">공급열량조회</h3>
+					
+					<h4 class="bl_tit mt50">도시가스 공급열량조회</h4>
+					
+					<h5 class="bl_subtit mt30">열량실적</h5>
+					
+					<fieldset>
+						<legend>공급열량조회 년도별 검색</legend>
+						<div class="searchcon">
+							<select class="selectbox" title="년도 및 월 선택">
+								<option value="">2013년 11월</option>
+								<option value="">2013년 10월</option>
+								<option value="">2013년 9월</option>
+								<option value="">2013년 8월</option>
+								<option value="">2013년 7월</option>
+								<option value="">2013년 6월</option>
+								<option value="">2013년 5월</option>
+								<option value="">2013년 4월</option>
+								<option value="" selected="selected">2013년 3월</option>
+								<option value="">2013년 2월</option>
+								<option value="">2013년 1월</option>
+								<option value="">2012년 12월</option>
+								<option value="">2012년 11월</option>
+								<option value="">2012년 10월</option>
+								<option value="">2012년 9월</option>
+								<option value="">2012년 8월</option>
+								<option value="">2012년 7월</option>
+								<option value="">2012년 6월</option>
+								<option value="">2012년 5월</option>
+								<option value="">2012년 4월</option>
+								<option value="">2012년 3월</option>
+								<option value="">2012년 2월</option>
+								<option value="">2012년 1월</option>
+							</select>
+						</div><!-- //searchcon -->
+						<a href="#" class="btn02"><span><em>확인</em></span></a>
+					</fieldset>
+
+					<h5 class="bl_subtit mt30">'13년 5월 예상열량 : 43.256 MJ/N㎥ (10,332 kcal/N㎥) ± 2%</h5>
+					<ul class="bl_sublist">
+						<li>최저순시열량 : 42.28 MJ/N㎥ (10,100 kcal/N㎥)</li>
+						<li>최고순시열량 : 44.4 MJ/N㎥ (10,600 kcal/N㎥)</li>
+					</ul>
+					<p class="caution mt15">3월 열량값은 3.1~3.31일까지 한국가스공사에서 해당 도시가스회사로 공급된 총열량(MJ)을 총부피량(N㎥)으로 나눈값이며, 해당 도시가스회사에서 소비자에게 고지되는 요금청구서의 열량값과 다를 수 있습니다.</p>
+					
+					<div class="tbtype03 mt30">
+						<table summary="열량실적 테이블에서는 도시가스회사, 고위발열량(MJ/N㎥, kcal/N㎥) 저위발열량(고위발열량값으로부터 계산)(MJ/N㎥, kcal/N㎥)에 대한 정보를 확인할 수 있습니다.">
+							<caption>도시가스 공급열량조회 (2013년 3월)</caption>
+							<colgroup>
+								<col width="*" />
+								<col width="17%" span="4" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">도시가스회사</th>
+									<th scope="col" class="brline" colspan="2">고위발열량</th>
+									<th scope="col" class="brline last" colspan="2">저위발열량<br />(고위발열량값으로부터 계산)</th>
+								</tr>
+								<tr>
+									<th scope="col">MJ/N㎥</th>
+									<th scope="col">kcal/N㎥</th>
+									<th scope="col">MJ/N㎥</th>
+									<th scope="col" class="last">kcal/N㎥</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="line">
+									<td>㈜경동도시가스</td>
+									<td>42.941</td>
+									<td>10256.282</td>
+									<td>38.763</td>
+									<td class="last">9258.293</td>
+								</tr>
+								<tr>
+									<td>㈜대륜이엔에스</td>
+									<td>42.678</td>
+									<td>10193.465</td>
+									<td>38.517</td>
+									<td class="last">9199.67</td>
+								</tr>
+								<tr>
+									<td>㈜부산도시가스</td>
+									<td>42.873</td>
+									<td>10240.04</td>
+									<td>38.699</td>
+									<td class="last">9243.135</td>
+								</tr>
+								<tr>
+									<td>㈜삼천리</td>
+									<td>42.701</td>
+									<td>10198.959</td>
+									<td>38.539</td>
+									<td class="last">9204.797</td>
+								</tr>
+								<tr>
+									<td>㈜예스코</td>
+									<td>42.678</td>
+									<td>10193.465</td>
+									<td>38.517</td>
+									<td class="last">9199.67</td>
+								</tr>
+								<tr>
+									<td>㈜지에스이</td>
+									<td>42.902</td>
+									<td>10246.967</td>
+									<td>38.726</td>
+									<td class="last">9249.6</td>
+								</tr>
+								<tr>
+									<td>㈜충남도시가스</td>
+									<td>42.786</td>
+									<td>10219.261</td>
+									<td>38.618</td>
+									<td class="last">9223.744</td>
+								</tr>
+								<tr>
+									<td>㈜해양도시가스</td>
+									<td>42.886</td>
+									<td>10243.145</td>
+									<td>38.711</td>
+									<td class="last">9246.033</td>
+								</tr>
+								<tr>
+									<td>강남도시가스㈜</td>
+									<td>42.693</td>
+									<td>10197.048</td>
+									<td>38.531</td>
+									<td class="last">9203.013</td>
+								</tr>
+								<tr>
+									<td>강원도시가스㈜</td>
+									<td>42.789</td>
+									<td>10219.977</td>
+									<td>38.621</td>
+									<td class="last">9224.412</td>
+								</tr>
+								<tr>
+									<td>경남에너지㈜ (LNG + NG)</td>
+									<td>42.88</td>
+									<td>10241.712</td>
+									<td>38.706</td>
+									<td class="last">9244.696</td>
+								</tr>
+								<tr>
+									<td>대성청정에너지㈜</td>
+									<td>42.846</td>
+									<td>10233.591</td>
+									<td>38.674</td>
+									<td class="last">9237.117</td>
+								</tr>
+								<tr>
+									<td>군산도시가스㈜ (LNG + NG)</td>
+									<td>42.745</td>
+									<td>10209.468</td>
+									<td>38.58</td>
+									<td class="last">9214.604</td>
+								</tr>
+								<tr>
+									<td>대성에너지㈜</td>
+									<td>42.798</td>
+									<td>10222.127</td>
+									<td>38.629</td>
+									<td class="last">9226.418</td>
+								</tr>
+								<tr>
+									<td>대화도시가스㈜</td>
+									<td>42.854</td>
+									<td>10235.502</td>
+									<td>38.681</td>
+									<td class="last">9238.9</td>
+								</tr>
+								<tr>
+									<td>목포도시가스㈜</td>
+									<td>42.951</td>
+									<td>10258.67</td>
+									<td>38.772</td>
+									<td class="last">9260.522</td>
+								</tr>
+								<tr>
+									<td>서라벌도시가스㈜</td>
+									<td>42.874</td>
+									<td>10240.279</td>
+									<td>38.7</td>
+									<td class="last">9243.358</td>
+								</tr>
+								<tr>
+									<td>서울도시가스㈜</td>
+									<td>42.689</td>
+									<td>10196.092</td>
+									<td>38.527</td>
+									<td class="last">9202.121</td>
+								</tr>
+								<tr>
+									<td>서해도시가스㈜ (LNG + NG)</td>
+									<td>42.734</td>
+									<td>10206.841</td>
+									<td>38.569</td>
+									<td class="last">9212.153</td>
+								</tr>
+								<tr>
+									<td>영남에너지서비스㈜ 구미</td>
+									<td>42.78</td>
+									<td>10217.827</td>
+									<td>38.612</td>
+									<td class="last">9222.405</td>
+								</tr>
+								<tr>
+									<td>영남에너지서비스㈜ 포항</td>
+									<td>42.858</td>
+									<td>10236.457</td>
+									<td>38.685</td>
+									<td class="last">9239.792</td>
+								</tr>
+								<tr>
+									<td>인천도시가스㈜</td>
+									<td>42.663</td>
+									<td>10189.882</td>
+									<td>38.503</td>
+									<td class="last">9196.326</td>
+								</tr>
+								<tr>
+									<td>전남도시가스㈜</td>
+									<td>42.856</td>
+									<td>10235.98</td>
+									<td>38.683</td>
+									<td class="last">9239.346</td>
+								</tr>
+								<tr>
+									<td>전북도시가스㈜</td>
+									<td>42.878</td>
+									<td>10241.234</td>
+									<td>38.704</td>
+									<td class="last">9244.25</td>
+								</tr>
+								<tr>
+									<td>전북에너지서비스㈜</td>
+									<td>42.87</td>
+									<td>10239.324</td>
+									<td>38.696</td>
+									<td class="last">9242.467</td>
+								</tr>
+								<tr>
+									<td>중부도시가스㈜</td>
+									<td>42.789</td>
+									<td>10219.977</td>
+									<td>38.621</td>
+									<td class="last">9224.412</td>
+								</tr>
+								<tr>
+									<td>참빛영동도시가스㈜ (LNG)</td>
+									<td>42.949</td>
+									<td>10258.192</td>
+									<td>38.77</td>
+									<td class="last">9260.076</td>
+								</tr>
+								<tr>
+									<td>참빛원주도시가스㈜</td>
+									<td>42.714</td>
+									<td>10202.064</td>
+									<td>38.551</td>
+									<td class="last">9207.695</td>
+								</tr>
+								<tr>
+									<td>참빛충북도시가스㈜</td>
+									<td>42.712</td>
+									<td>10201.586</td>
+									<td>38.549</td>
+									<td class="last">9207.249</td>
+								</tr>
+								<tr>
+									<td>충청에너지서비스㈜</td>
+									<td>42.751</td>
+									<td>10210.901</td>
+									<td>38.585</td>
+									<td class="last">9215.942</td>
+								</tr>
+								<tr>
+									<td>코원에너지서비스㈜</td>
+									<td>42.689</td>
+									<td>10196.092</td>
+									<td>38.527</td>
+									<td class="last">9202.121</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+				</div><!-- // constart -->
+				<!-- // 내용시작 -->
+			</div><!-- // contents -->
+		</div>
+		<!-- end conarea -->
+		<div class="clear"><!-- clearBlock --></div>
+		<hr/>
+	</div>
+	<!--// wraparea -->
+	<!-- footer -->
+	<div id="footer">
+		<div class="f_top">
+			<div class="topcon">
+				<img src="../../../resources/kr/images/template/footer01.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_top -->
+		<div class="f_con">
+			<div class="cont">
+				<img src="../../../resources/kr/images/template/footer02.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_con -->
+		<div class="f_bottom">
+			<div class="bottomcon">
+				<img src="../../../resources/kr/images/template/footer03.gif" alt="" />
+			</div><!-- /foot_link -->
+		</div><!-- // f_bottom -->
+	</div>
+	<!-- // footer -->
+ </body>
+</html>

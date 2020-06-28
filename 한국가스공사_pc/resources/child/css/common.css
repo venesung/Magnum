@@ -1,0 +1,201 @@
+@charset "euc-kr";
+/* CSS Document */
+
+/**** font_face ****/
+@font-face {
+	font-family: 'NGB';
+	font-style: normal;
+	font-weight: bold;
+	src: url('font/NanumGothicBold.eot?#iefix');
+	src: local('?'),
+	     url('font/NanumGothicBold.woff') format('woff');
+}
+@font-face {
+	 font-family: 'NG';
+	 src: url('font/NanumGothic.eot?#iefix');
+	 src: local('?'),
+		 url('font/NanumGothic.woff') format('woff');
+		 font-weight: normal;
+		 font-style: normal;
+}
+
+/* Skip Navigation */
+.accessibility {position:absolute; left:0; top:0; text-align:center; width:100%; z-index:1000; font-size:20px;  font-weight:bold; background:#e2e2e2;}
+.accessibility a {display:block; height:1px; width:1px; margin-bottom:-1px; overflow:hidden; text-align:center;color:#222; white-space:nowrap;font-family:'NG'}
+.accessibility a:focus, .accessibility a:active {height:auto; width:auto; padding:20px 0; color:#222; }
+
+body {margin:0; padding:0; font-size:13px; font-family:'³ª´®°íµñ', 'NG','NGB', 'Dotum','Gulim','Tahoma','Verdana'; color:#444; letter-spacing:-1px;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, table, thead, tbody, tfoot, tr, td, caption {margin:0;padding:0;}
+caption, .hidden {font-size:0;line-height:0;width:0;height:0;padding:0;margin:0;visibility:hidden;overflow:hidden;}
+ul,ol {list-style:none;}
+em, address {font-style:normal}
+img {font-size:0;border:0}
+a {border:0;color:#444;text-decoration:none;}
+.wrap {width:100%; position:relative; background:#e2e2e2;}
+
+/* GNB */
+.header {height:98px; text-align:center; background:url(../images/common/bg_bodyline.png) 0 0 repeat-x;}
+.headerIn {width:960px; margin:0 auto; position:relative; *zoom:1;}
+.headerIn:after {content:""; clear:both; display:block;}
+.headerIn span.logo {float:left; margin:44px 52px 0 0}
+
+.gnbList {padding-top:50px; float:right;}
+.gnbList li {float:left;position:relative;margin-left:74px;font-size:16px}
+.gnbList li .dep1 {font-family:'NGB';display:block;}
+.gnbList li .dep2 {display:none; position:absolute; top:30px; background:url(../images/common/bg_gnbin_r.png) 0 0 no-repeat; padding-left:30px; height:30px;}
+.gnbList li .dep2 ul {background:url(../images/common/bg_gnbin_l.png) no-repeat right 0; margin-right:-30px; overflow:hidden; height:30px;}
+.gnbList li .dep2 ul li {float:left; margin:6px 35px 0 0;}
+.gnbList li .dep2 ul li.last {margin-right:0;}
+.gnbList li .dep2 ul li a {color:#b2d6f5; font-size:14px; display:block;}
+.gnbList li .dep2 ul li a:hover {color:#fff;font-family:'NGB';}
+.gnbList li .dep2 ul li.on a {color:#fff;font-family:'NGB';}
+.gnbList li.inList1 .dep2 {width:560px;left:0;}
+.gnbList li.inList2 .dep2 {width:605px;left:-210px}
+.gnbList li.inList3 .dep2 {width:400px;left:-170px}
+.gnbList li.inList4 .dep2 {width:340px;right:30px;}
+.gnbList li.on .dep1 {color:#318cdb; background:url(../images/common/bg_gnbin_t.gif) center 24px no-repeat; padding-bottom:16px;}
+.gnbList li.on .dep2 {display:block;}
+
+.gnbTop {position:absolute;top:15px;right:0; }
+.gnbTop a {color:#777; font-size:11px; font-family:'NGB'}
+.gnbTop a.line {padding-left:8px; margin-left:6px; background:url(../images/common/bg_menu_top.gif) no-repeat left top}
+
+/* main */
+.mainWrap {position:relative; background:#ebebeb url(../images/main/bg_main_body.jpg) center 96px no-repeat;}
+.main_container {width:960px; margin:0 auto; padding:60px 0 90px 0; *zoom:1;}
+.main_container:after {content:""; clear:both; display:block;}
+.main_container h2 {font-size:18px; font-family:'NGB';}
+.main_container p.sum {font-size:14px; margin-top:10px;}
+.mainContent {width:640px; overflow:hidden; float:left;}
+.mainContent .con {width:650px; margin-top:25px; position:relative; margin-right:-10px;}
+.mainContent .con [class*=link] {float:left; margin:0 10px 10px 0;}
+.mainContent .con .link4 {margin-top:-165px;}
+.mainContent .con .link5 {margin-top:-165px; margin-left:170px; *margin-left:0;}
+.mainAside {width:224px; float:left; margin-left:80px;}
+.mainAside .bannerList {width:190px; margin:38px auto 0 auto; position:relative;}
+.mainAside .bannerList .banner {width:190px; height:190px; overflow:hidden;}
+.mainAside .bannerList .banner li {width:190px; float:left;}
+.mainAside .bannerList .control ul {margin-top:7px; text-align:center;}
+.mainAside .bannerList .control ul li {display:inline-block; *display:inline; *zoom:1; padding:0 1px; *padding:0 2px;}
+.mainAside .bannerList .control ul li a {display:block; width:10px; height:11px; text-indent:-999px; overflow:hidden; background:url(../images/main/icon_banner_circle.png) 0 0 no-repeat;}
+.mainAside .bannerList .control ul li.on a {background-position:0 -15px;}
+.mainAside .bannerList .control a.arrow {position:absolute;top:80px; display:block; width:17px; height:30px; background:url(../images/main/icon_banner_arrow.png) 0 0 no-repeat;}
+.mainAside .bannerList .control a.arrow.prev {left:-35px;}
+.mainAside .bannerList .control a.arrow.next {right:-35px; background-position:-30px 0;}
+.mainAside .bannerList .control a.arrow.prev:hover {background-position:0 -40px;}
+.mainAside .bannerList .control a.arrow.next:hover {background-position:-30px -40px;}
+.mainAside .con {position:relative; margin-top:40px;}
+.mainAside .con li {background:url(../images/main/bg_box_side.gif) 0 0 no-repeat; width:95px; height:95px; margin:0 10px 10px 0;}
+.mainAside .con li a {color:#fff; display:block; width:75px; height:75px; padding:10px;}
+.mainAside .con li+li {float:left;}
+
+/* content */
+.container {width:860px; margin:28px auto 30px auto; padding:50px; background:#fff; overflow:hidden; height:100%;}
+
+.lnbSect {float:left; width:170px; margin-right:50px}
+.lnbSect strong { font-size:20px; color:#222; font-family:'NGB'; letter-spacing:-2px;}
+.lnbSect ul {border-top:2px solid #222; margin:22px 0 0 0;}
+.lnbSect ul li {border-bottom:1px solid #dedede; font-size:14px;}
+.lnbSect ul li a {padding:20px 0 20px 27px; display:block; font-family:'NGB'; background:url(../images/common/bg_lnb1_off.gif) 10px 20px no-repeat;}
+.lnbSect ul li a.on,.lnbSect ul li a:hover {color:#009aea;background-image:url(../images/common/bg_lnb1_on.gif)}
+
+.content {float:left; width:640px; min-height:500px; padding-bottom:30px; position:relative}
+.content h1 {font-family:'NGB'; font-size:34px; color:#333;}
+.content h2.depth2 {background:url(../images/common/bl_depth2.gif) 0 4px no-repeat; padding-left:15px; font-size:16px; color:#222; font-weight:normal; margin-bottom:15px;}
+.content h3.depth3 {background:url(../images/common/bl_depth3.gif) 6px 7px no-repeat; padding-left:15px; font-size:16px; color:#222; font-weight:normal; margin-top:26px;}
+.content p[class*=txt] {line-height:24px; margin:10px 0; color:#777;}
+.content p[class*=txt] strong {color:#009aea; font-weight:normal;}
+.content p.txtDepth {padding-left:15px;}
+.content span.comment {background:url(../images/common/bl_circle.gif) 0 6px no-repeat; padding-left:6px; color:#777;}
+
+.location {position:absolute; top:-20px; right:0}
+.location li {float:left; font-size:12px;padding-left:13px; margin-left:13px; background:url(../images/common/bg_location1.gif) 0 4px no-repeat;}
+.location li.home {background:none}
+.location li.current {color:#009aea; background-image:url(../images/common/bg_location2.gif); font-family:'NGB';}
+.topCont {background:url(../images/common/bg_contsline.gif) 0 bottom no-repeat; padding-bottom:35px; margin-bottom:30px; position:relative;}
+.topCont h1 {height:104px; padding:31px 0 0 170px; min-height:104px;}
+.topCont h1.kogas {background:url(../images/visual/img_kogas.gif) 0 0 no-repeat;} /* Å¸ÀÌÆ² ÀÌ¹ÌÁö */
+.topCont h1.study {background:url(../images/visual/img_study.gif) 0 0 no-repeat;}
+.topCont h1.play {background:url(../images/visual/img_play.gif) 0 0 no-repeat;}
+.topCont h1.taekwondo {background:url(../images/visual/img_taekwondo.gif) 0 0 no-repeat;}
+.topCont h1.sitemap {background:url(../images/visual/img_sitemap.gif) 0 0 no-repeat;}
+.topCont p {line-height:24px; font-family:'NGB'; font-size:15px; position:absolute; top:78px; left:170px;}
+
+/* flash */
+.flashArea {text-align:center;}
+.flashArea .control {text-align:right; margin-top:20px;}
+
+.contBox {display:inline-block; *display:inline; *zoom:1; min-width:550px; min-height:366px; background:#fafafa; border:1px solid #e6e6e6; position:relative; padding:15px; text-align:center;}
+.contBox .photo {display:inline-block; *display:inline; *zoom:1; border:1px solid #e6e6e6;}
+.contBox [class*=radius] {position:absolute; width:10px; height:10px; background-position:0 0; background-repeat:no-repeat;}
+.contBox .radius1 {background-image:url(../images/common/bg_box_radius1.gif); top:-1px; left:-1px;}
+.contBox .radius2 {background-image:url(../images/common/bg_box_radius2.gif); top:-1px; right:-1px;}
+.contBox .radius3 {background-image:url(../images/common/bg_box_radius3.gif); bottom:-1px; left:-1px;}
+.contBox .radius4 {background-image:url(../images/common/bg_box_radius4.gif); bottom:-1px; right:-1px;}
+
+/* kogas */
+.kogasIntro {background:url(../images/visual/pic_kogas_intro.jpg) 0 0 no-repeat; padding-top:380px;}
+.kogasMap .map {margin-top:15px;}
+
+/* study */
+[class*=kogasStory] {padding-left:290px;}
+[class*=kogasStory] .btn {margin-top:20px;}
+.kogasStory1 {background:url(../images/visual/img_story1.jpg) 0 0 no-repeat; padding-left:290px;}
+.kogasStory2 {background:url(../images/visual/img_story2.jpg) 0 0 no-repeat; padding-left:290px; margin-top:67px;}
+
+/* taekwondo */
+.tkdIntro {background:url(../images/visual/pic_taekwondo.jpg) 0 0 no-repeat; padding-top:340px;}
+.tkdMascot {margin-top:40px;}
+.tkdMascot .mascot {border:1px solid #dbdbdb; padding:10px 50px; margin-left:15px; overflow:hidden; vertical-align:middle;}
+.tkdMascot .mascot img {float:left; margin-right:18px;}
+.tkdMascot .mascot p.txt {overflow:hidden; padding-top:14px;}
+.tkdTab {width:640px; margin-bottom:30px; position:relative; left:1px; background:url(../images/common/tab_taekwondo.gif) -1px 0 no-repeat; *zoom:1;}
+.tkdTab:after {content:""; clear:both; display:block;}
+.tkdTab li {float:left;}
+.tkdTab li a {display:block; width:92px; height:40px; margin-left:-1px; overflow:hidden; text-indent:-999px; background:url(../images/common/tab_taekwondo.gif) 0 0 no-repeat;}
+.tkdTab li a.tab2 {background-position:-91px 0;}
+.tkdTab li a.tab3 {background-position:-182px 0;}
+.tkdTab li a.tab4 {background-position:-273px 0;}
+.tkdTab li a.tab5 {background-position:-364px 0;}
+.tkdTab li a.tab6 {background-position:-455px 0;}
+.tkdTab li a.tab7 {background-position:-546px 0;}
+.tkdTab li a.tab8 {background-position:0 -40px;}
+.tkdTab li a.tab9 {background-position:-91px -40px;}
+.tkdTab li a.tab10 {background-position:-182px -40px;}
+.tkdTab li a.tab11 {background-position:-273px -40px;}
+.tkdTab li a.tab12 {background-position:-364px -40px;}
+.tkdTab li a.tab13 {background-position:-455px -40px;}
+.tkdTab li.on a {background-image:url(../images/common/tab_taekwondo_on.gif);}
+
+.photoBox {background:url(../images/common/bg_box_photo.gif) 0 0 no-repeat; padding:15px 15px 28px 15px; text-align:right;}
+.photoBox .photo {border:1px solid #e6e6e6; display:inline-block; *display:inline; *zoom:1; margin-bottom:22px;}
+.thumbList {margin-top:30px;}
+.thumbList .thumb {overflow:hidden; margin-left:-12px;}
+.thumbList .thumb li {float:left; margin-left:12px; position:relative;}
+.thumbList .thumb li a {display:block; border:1px solid #e6e6e6;}
+.thumbList .thumb li .mask {display:none;}
+.thumbList .thumb li.on .mask {display:block; position:absolute; border:3px solid #2790ec; width:112px; height:84px; z-index:9;}
+.pagenate {padding-top:30px; text-align:center;}
+.pagenate .number {display:inline-block; padding:0 10px; position:relative; top:-6px;}
+.pagenate .number a {padding:0 7px;}
+.pagenate .number a.nowpage {color:#00a8e8;}
+.pagenate .img {padding:0;}
+
+/* sitemap */
+.sitemapArea {overflow:hidden;}
+.sitemapArea > li {width:295px; float:left;}
+.sitemapArea > li.m1 {background:url(../images/visual/img_s_kogas.gif) right 0 no-repeat; margin-right:50px; padding-bottom:40px;}
+.sitemapArea > li.m2 {background:url(../images/visual/img_s_study.gif) right 0 no-repeat; padding-bottom:40px;}
+.sitemapArea > li.m3 {background:url(../images/visual/img_s_play.gif) right 0 no-repeat; margin-right:50px;}
+.sitemapArea > li.m4 {background:url(../images/visual/img_s_taekwondo.gif) right 0 no-repeat;}
+.sitemapArea > li h2 {font-size:24px; font-family:'NGB'; border-bottom:2px solid #444; padding:8px 0 18px 0;}
+.sitemapArea > li ul {margin-top:10px;}
+.sitemapArea > li ul li {line-height:34px; background:url(../images/common/bl_square.gif) 0 center no-repeat; padding-left:13px;}
+
+/* footer */
+.footer {background:#fff; font-size:11px; text-align:center;}
+.footerIn {display:inline-block; *display:inline; *zoom:1; padding:36px 0 45px 0;}
+.footerIn .logo {float:left; display:inline-block; padding:2px 20px 2px 0; border-right:1px solid #e8e8e8; margin-right:24px;}
+.footerIn .footRig {overflow:hidden; display:inline-block; text-align:left; color:#767676; line-height:22px;}
+.footerIn .footRig p {margin-top:-6px;}
+.footerIn .footRig p strong {font-family:'NGB'; color:#444;}

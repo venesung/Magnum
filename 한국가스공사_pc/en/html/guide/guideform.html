@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+	<title>한국가스공사_Form</title>
+	<link rel="stylesheet" href="../../../resources/en/css/common.css" type="text/css" />
+	<link rel="stylesheet" href="../../../resources/en/css/guide.css" type="text/css" />
+	<style type="text/css">
+		.jspContainer
+		{
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.jspPane
+		{
+			position: absolute;
+		}
+		
+		.jspVerticalBar
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 8px;
+			height: 100%;
+			background: red;
+		}
+		
+		.jspTrack
+		{
+			background: #ccc;
+			position: relative;
+		}
+		
+		.jspDrag
+		{
+			background: #999;
+			position: relative;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../../../resources/en/js/lib/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="../../../resources/en/js/lib/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="../../../resources/en/js/lib/selectbox.js"></script>
+	<script type="text/javascript" src="../../../resources/en/js/gas.js"></script>
+	<script type="text/javascript" src="../../../resources/en/js/guidegnb.js"></script><!-- guidegnb -->
+	<script type="text/javascript">
+		$.SelectBoxSet('.selectbox');
+	</script>
+</head>
+
+<body class="guidebody" onload="guidegnb();">
+	<div id="guidewrap">
+		<div id="guidegnb">
+			<h1>한국가스공사_Guide</h1>
+			<div class="guidemmb">
+				<h2>Web style guide</h2>
+				<ul>
+					<li><a href="guidebbs.html">BBS</a></li>
+					<li><a href="guidelist.html">List</a></li>
+					<li><a href="guidetable.html">Table</a></li>
+					<li><a href="guidebox.html">Box</a></li>
+					<li><a href="guidetab.html">Tab</a></li>
+					<li><a href="guidebutton.html">Button</a></li>
+					<li><a href="guideform.html" class="on">Form</a></li>
+					<li><a href="guidepopup.html">Popup</a></li>
+					<li><a href="guidecalendar.html">calendar</a></li>
+					<li><a href="select.html" target="_blank">select guide</a></li>
+					<li class="list"><a href="../list.html">cording_list</a></li>
+				</ul>
+			</div>
+		</div><!-- // guidegnb -->
+		<hr />
+
+		<div class="guidecon">
+			<h2>select box</h2>
+
+			<select class="selectbox">
+				<option value="">제목</option>
+				<option value="">내용</option>
+				<option value="">전체</option>
+			</select>
+
+			<!--
+			<div class="select">
+				<a href="#" class="tit on"><span>최대</span></a>
+				<div class="overcon" style="display:no ne;">
+					<ul class="con">
+						<li><a href="#">최대글자수</a></li>
+						<li><a href="#" >최대글자수 최대글자수 최대글자수</a></li>
+						<li><a href="#" >최대글자수</a></li>
+						<li><a href="#" class="on">최대글자수</a></li>
+					</ul>
+					<div class="selectL"></div>
+					<div class="selectR"></div>
+				</div>
+			</div>
+			-->
+			
+
+			<dl class="guideex" style="margin-top:250px;">
+				<dt>inputbox / 테이블내 select 폼</dt>
+				<dd>윈도우 기본폼은 테이블 내에서 사용하거나 개발과 연동하여 데이터를 가지고 올때 사용</dd>
+			</dl>
+
+			<!-- 테이블 세로2단 테이블 -->
+			<div class="tbtype04">
+				<table summary="테이블의 가이드를 설명하고 있습니다.">
+					<caption>가이드페이지</caption>
+					<colgroup>
+						<col width="20%" />
+						<col width="35%" />
+						<col width="15%" />
+						<col width="30%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><em class="required">필수입력사항</em>상호명</th>
+							<td><input type="text" class="inptxt" style="width:150px" title="상호명 입력"/></td>
+							<th scope="row">사업자등록번호</th>
+							<td><input type="text" class="inptxt readOnly" readonly="readonly" style="width:150px" title="사업자등록번호 입력"/></td>
+						</tr>
+						<tr>
+							<th scope="row">선택</th>
+							<td>
+								<select style="width:100px;" title="ooo선택">
+									<option value="">전체</option>
+									<option value="">제목</option>
+									<option value="">내용</option>
+								</select>
+							</td>
+							<th scope="row">업체</th>
+							<td><input type="text" class="inptxt readOnly" readonly="readonly" style="width:150px" title="업체명입력"/></td>
+						</tr>
+						<tr>
+							<th scope="row"><em class="required">필수입력사항</em>전화번호</th>
+							<td>
+								<select title="휴대폰 앞번호 선택" style="width:50px;">
+									<option value="">010</option>
+									<option value="">010</option>
+									<option value="">010</option>
+								</select> -
+								<input type="text" class="inptxt" title="휴대폰 가운데번호 입력" style="width:70px" /> - 
+								<input type="text" class="inptxt" title="휴대폰 마지막번호 입력" style="width:70px" />
+							</td>
+							<th scope="row">기본좌측정렬</th>
+							<td><input type="text" class="inptxt" style="width:150px"  title="000입력"/></td>
+						</tr>
+						<tr>
+							<th scope="row">주소</th>
+							<td colspan="3">
+								<div><input type="text" class="inptxt readOnly" readonly="readonly" title="주소 우편번호 앞자리" style="width:50px" /> - <input type="text" class="inptxt readOnly mr10" readonly="readonly" title="주소 우편번호 뒷자리" style="width:50px" /><a href="#" class="btn02small"><span><em>우펀번호 찾기</em></span></a></div>
+								<div class="mt5">
+									<input type="text" class="inptxt readOnly" readonly="readonly" title="신청자 주소 입력 " style="width:400px" /><br />
+									<input type="text" class="inptxt readOnly mt5" readonly="readonly" title="신청자 상세 주소 입력" style="width:400px" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">라디오 버튼</th>
+							<td colspan="3">
+								<input type="radio" class="typeradio" id="type"/><label for="type">개인</label><!-- input의 id값과 label의 for값은 반드시 동일하게 작업 -->
+								<input type="radio" class="typeradio ml20" id="type02"/><label for="type02">개인</label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- // 테이블 세로2단 테이블 -->
+
+		</div><!-- // guidecon -->
+	</div><!-- // guidewrap -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+@charset "euc-kr";
+/* CSS Document */
+
+/**** font_face ****/
+@font-face {
+	font-family: 'NGB';
+	font-style: normal;
+	font-weight: bold;
+	src: url('font/NanumGothicBold.eot?#iefix');
+	src: local('?'),
+	     url('font/NanumGothicBold.woff') format('woff');
+}
+@font-face {
+	 font-family: 'NG';
+	 src: url('font/NanumGothic.eot?#iefix');
+	 src: local('?'),
+		 url('font/NanumGothic.woff') format('woff');
+		 font-weight: normal;
+		 font-style: normal;
+}
+
+/* Skip Navigation */
+.accessibility {position:absolute; left:0; top:0; text-align:center; width:100%; z-index:1000; font-size:20px;  font-weight:bold; background:#e2e2e2;}
+.accessibility a {display:block; height:1px; width:1px; margin-bottom:-1px; overflow:hidden; text-align:center;color:#222; white-space:nowrap;font-family:'NG'}
+.accessibility a:focus, .accessibility a:active {height:auto; width:auto; padding:20px 0; color:#222; }
+
+body {margin:0;padding:0;font-size:14px;font-family:'³ª´®°íµñ', 'NG','NGB', 'Dotum','Gulim','Tahoma','Verdana';width:100%;color:#444; background:url(../img/common/bg_bodyline.gif) repeat-x left top;background-color:#e2e2e2; letter-spacing:-1px;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, table, thead, tbody, tfoot, tr, td, caption {margin:0;padding:0;}
+caption {height:0;font-size:0;line-height:0;text-indent:-5000px;visibility:hidden;overflow:hidden;}
+ul,ol {list-style:none;}
+em, address {font-style:normal}
+img {font-size:0;border:0}
+a {border:0;color:#444;text-decoration:none;}
+.wrap {margin:0 auto;width:960px;}
+
+/* GNB */
+.headSect {height:100px; position:relative;}
+.headSect span.logo {float:left; margin:44px 52px 0 0}
+
+.gnbList {padding-top:50px}
+.gnbList li {float:left;position:relative;margin-left:68px;font-size:16px}
+.gnbList li .dep1 {font-family:'NGB';height:30px;display:inline-block;}
+.gnbList li .dep2 {display:none;position:absolute; left:0; top:30px;width:530px; background:#2790ec url(../img/common/bg_gnbin_l.gif) right top no-repeat; z-index:1000; overflow:hidden; height:30px}
+.gnbList li .dep2 ul {background:url(../img/common/bg_gnbin_r.gif) no-repeat left 0; padding:0 0 0 30px; overflow:hidden;height:30px}
+.gnbList li .dep2 ul li {float:left;margin:6px 35px 0 0;*margin:4px 28px 0 0}
+.gnbList li .dep2 ul li.last {margin-right:0;}
+.gnbList li .dep2 ul li a {color:#b2d6f5; font-size:14px}
+.gnbList li .dep2 ul li a:hover {color:#fff;font-family:'NGB';}
+.gnbList li.inList2 .dep2 {width:692px;left:-225px}
+.gnbList li.inList3 .dep2 {width:487px;left:-185px}
+.gnbList li.inList4 .dep2 {width:425px;left:-285px}
+.gnbList li:hover .dep1 {color:#318cdb; background:url(../img/common/bg_gnbin_t.gif) center 24px no-repeat;}
+.gnbList li:hover .dep2 {display:block}
+
+.gnbTop {position:absolute;top:15px;right:0; }
+.gnbTop a {color:#777; font-size:11px; font-family:'NGB'}
+.gnbTop a.line {padding-left:8px; margin-left:6px; background:url(../img/common/bg_menu_top.gif) no-repeat left top}
+
+/* content */
+.container {margin:50px 0; padding:50px; overflow:hidden;height:100%}
+
+.lnbSect {float:left;width:170px; margin-right:50px}
+.lnbSect strong { font-size:20px; color:#222; font-family:'NGB'; letter-spacing:-2px;}
+.lnbSect ul {border-top:2px solid #222; margin:22px 0 0 0;}
+.lnbSect ul li {border-bottom:1px solid #dedede;}
+.lnbSect ul li a {padding:20px 0 20px 27px; display:block; font-family:'NGB'; background:url(../img/common/bg_lnb1_off.gif) 10px 20px no-repeat;}
+.lnbSect ul li a.on,.lnbSect ul li a:hover {color:#009aea;background-image:url(../img/common/bg_lnb1_on.gif)}
+
+.content {float:left;width:640px; position:relative}
+.content h1 {font-family:'NGB'; font-size:34px; color:#333;}
+.content p.txt {line-height:24px; margin:10px 0; color:#777;}
+.content p.txt strong {color:#009aea; font-weight:normal;}
+
+.location {position:absolute; top:-20px; right:0}
+.location li {float:left; font-size:12px;padding-left:13px; margin-left:13px; background:url(../img/common/bg_location1.gif) 0 4px no-repeat;}
+.location li.home {background:none}
+.location li.current {color:#009aea; background-image:url(../img/common/bg_location2.gif); font-family:'NGB';}
+.topCont {background:url(../img/common/bg_contsline.gif) 0 bottom no-repeat; padding-bottom:35px; margin-bottom:30px; position:relative;}
+.topCont h1 {height:104px; padding:31px 0 0 170px; min-height:104px;}
+.topCont h1.kogas {background:url(../img/visual/img_kogas.gif) 0 0 no-repeat;} /* Å¸ÀÌÆ² ÀÌ¹ÌÁö */
+.topCont h1.study {background:url(../img/visual/img_study.gif) 0 0 no-repeat;}
+.topCont h1.play {background:url(../img/visual/img_play.gif) 0 0 no-repeat;}
+.topCont h1.taekwondo {background:url(../img/visual/img_taekwondo.gif) 0 0 no-repeat;}
+.topCont h1.sitemap {background:url(../img/visual/img_sitemap.gif) 0 0 no-repeat;}
+.topCont p {line-height:24px; font-family:'NGB'; font-size:15px; position:absolute; top:78px; left:170px;}
+
+/* kogas */
+.kogasIntro {background:url(../img/visual/pic_kogas_intro.jpg) 0 0 no-repeat; padding:380px 0 30px 0;}
+
+/* sitemap */
+.sitemapArea {overflow:hidden;}
+.sitemapArea > li {width:295px; float:left; padding-bottom:40px;}
+.sitemapArea > li.m1 {background:url(../img/visual/img_s_kogas.gif) right 0 no-repeat; margin-right:50px;}
+.sitemapArea > li.m2 {background:url(../img/visual/img_s_study.gif) right 0 no-repeat;}
+.sitemapArea > li.m3 {background:url(../img/visual/img_s_play.gif) right 0 no-repeat; margin-right:50px;}
+.sitemapArea > li.m4 {background:url(../img/visual/img_s_taekwondo.gif) right 0 no-repeat;}
+.sitemapArea > li h2 {font-size:24px; font-family:'NGB'; border-bottom:2px solid #444; padding:8px 0 18px 0;}
+.sitemapArea > li ul {margin-top:10px;}
+.sitemapArea > li ul li {line-height:34px; background:url(../img/common/bl_square.gif) 0 center no-repeat; padding-left:13px;}
+
+/* footer */
+.footer {background:#fff; font-size:11px; text-align:center;}
+.footerIn {display:inline-block; padding:36px 0 45px 0;}
+.footerIn .logo {float:left; display:inline-block; padding:2px 20px 2px 0; border-right:1px solid #e8e8e8; margin-right:24px;}
+.footerIn .footRig {overflow:hidden; text-align:left; color:#767676; line-height:22px;}
+.footerIn .footRig p {margin-top:-7px;}
+.footerIn .footRig p strong {font-family:'NGB'; color:#444;}
