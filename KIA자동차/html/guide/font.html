@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>폰트 - 기아자동차</title>
+<link rel="stylesheet" type="text/css" href="guide.css">
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+</head>
+
+<body>
+<div class="accessbility"><a href="#guide_content">본문 바로가기</a></div>
+<div id="guide_wrap">
+	<div id="guide_header">
+		<h1 class="guide_h1">Kia 코딩가이드</h1>
+		<ul class="guide_menu">
+			<li><a href="bbs.html">BBS</a></li>
+			<li><a href="list.html">List</a></li>
+			<li><a href="table.html">Table</a></li>
+			<li><a href="tab.html">Tab</a></li>
+			<li><a href="button.html">Button</a></li>
+			<li><a href="form.html">Form</a></li>
+			<li><a href="icon.html">Icon</a></li>
+			<li><a href="font.html" class="on">Font</a></li>
+		</ul>
+	</div>
+	
+	<!-- 컨텐츠 -->
+	<div id="guide_content">
+		<h2 class="guide_h2">Font</h2>
+		
+		<div class="guide_type">
+			<h3 class="guide_h3">폰트타입</h3>
+			<p class="guide_summary">해당 프로젝트에서는 기아 전용폰트를 웹폰트로 변환하여 사용하며, strong과 같이 글씨를 굵게하는 태그는 기본 Kia Bold체로 대체한다.</p>
+			
+			<h4 class="guide_tit">CSS 기본설정</h4>
+			<p class="guide_code">
+				body {font-family:kiaM,Hevetica;font-size:14px;color:#333}<br>
+				strong, th, h1, h2, h3, h4, h5 {font-weight:normal;font-family:kiaB;}
+			</p>
+			
+			<h4 class="guide_tit">Kia Light</h4>
+			<div class="guide_ex" style="font-size:20px;font-family:kiaL;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890</div>
+			<p class="guide_code">.guide_ex {<span class="guide_point">font-family:kiaL</span>;}</p>
+			
+			<h4 class="guide_tit">Kia Mideum</h4>
+			<div class="guide_ex" style="font-size:20px;font-family:kiaM;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890</div>
+			<p class="guide_code">.guide_ex {<span class="guide_point">font-family:kiaM</span>;}</p>
+			
+			<h4 class="guide_tit">Kia Blod</h4>
+			<div class="guide_ex" style="font-size:20px;font-family:kiaB;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890</div>
+			<p class="guide_code">.guide_ex {<span class="guide_point">font-family:kiaB</span>;}</p>
+		</div>
+	</div>
+	<!-- //컨텐츠 -->
+</div>
+</body>
+</html>

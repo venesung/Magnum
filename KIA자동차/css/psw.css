@@ -1,0 +1,48 @@
+@charset “utf-8″;
+
+/* psw */
+/* pc */
+.step4inCont {background-color:#fff; border:1px solid #e3e3e3; border-top:none; padding:20px 15px}
+.step4inCont .inTableCont {margin:15px 0 20px; border:1px solid #e8e8e8; background-color:#f8f8f8}
+.step4inCont .inTableCont li {display:table; width:100%; border-top:1px solid #e8e8e8}
+.step4inCont .inTableCont li:first-child {border-top:none}
+.step4inCont .inTableCont li .tableTit {display:table-cell;width:125px; text-indent:30px}
+.step4inCont .inTableCont li .tableCont01{display:table-cell;width:285px;padding:15px 0}
+.step4inCont .inTableCont li .tableCont02{display:table-cell;width:311px;padding:15px 0}
+.step4inCont .inTableCont li .tableCont03{display:table-cell;width:auto;padding:15px 30px 15px 0; font-size:13px; line-height:25px}
+.step4inCont .inTableCont li .tableCont03 textarea {width:100%; margin-top:15px; border:1px solid #d6d6d6; padding-top:15px; text-indent:15px; color:#999; font-size:12px}
+.step4inCont .inTableCont li .tableCont03 p {text-align:right; font-size:12px; color:#999}
+.step4inCont .inListCont {border:1px solid #e8e8e8; background-color:#f8f8f8; padding:30px; margin:15px 0 10px}
+.step4inCont .inListCont > li {margin-top:16px}
+.step4inCont .inListCont > li:first-child{margin-top:0}
+.step4inCont .inListCont li ul {margin-top:5px}
+.step4inCont .inListCont li ul li,.step4inCont .inListCont li em {font-size:12px; color:#666}
+.step4inCont .inListCh {font-size:12px; color:#999; border-bottom:1px solid #ededed; padding-bottom:15px}
+.msg_box .tit {background:url(../images/sales/bg_endmsgtile.png) left top repeat; display:block; color:#fff; text-align:center; font-size:21px;margin-bottom:10px}
+.msg_box .tit em {background:url(../images/sales/bg_endmsg01_pc.png) left center no-repeat; display:inline-block; padding:45px 0;text-indent:45px;}
+.msg_box .msg {background-color:#fff; border:1px solid #e3e3e3; text-align:center; padding:30px; color:#666}
+.msg_box .msg strong {display:block; font-size:21px; margin-bottom:20px; color:#333}
+/* tablet Device 코드 작성 */
+@media all and (max-width:1024px) {
+
+}
+/* Mobile Device 코드 작성 */
+@media all and (max-width:767px) {
+.step4inCont {margin-top:15px;border:1px solid #e3e3e3}
+.step4inCont .inTableCont li {display:block}
+.step4inCont .inTableCont li .tableTit {display:block;width:auto; text-indent:0; margin:10px}
+.step4inCont .inTableCont li .tableCont01{display:block;width:auto;padding:0; margin:10px}
+.step4inCont .inTableCont li .tableCont01.form_wrp .input_box {padding:5px 0}
+.step4inCont .inTableCont li .tableCont01.form_wrp .sel_box {width:auto}
+.step4inCont .inTableCont li .tableCont02{display:block;width:auto;padding:0;margin:10px}
+.step4inCont .inTableCont li .tableCont03{display:block;line-height:18px; margin:0 10px; padding:0}
+.step4inCont .inTableCont li .tableCont03 label {margin-bottom:6px; display:inline-block}
+.step4inCont .inTableCont li .tableCont03 textarea {margin-top:10px}
+.step4inCont .inListCont {padding:10px}
+.msg_box .tit {background:none;color:#333;font-size:16px; margin-bottom:0}
+.msg_box .tit em {background:url(../images/sales/bg_endmsg01_m.png) center 10px no-repeat;background-size:36px;display:inline-block;padding:60px 0 30px;text-indent:0;}
+.msg_box .tit em span {display:block}
+.msg_box .msg {padding:15px 30px; font-size:12px}
+.msg_box .msg strong {font-size:14px; margin-bottom:10px}
+
+}

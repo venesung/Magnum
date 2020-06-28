@@ -1,0 +1,563 @@
+@charset “utf-8″;
+@import url('ihk.css');
+@import url('psw.css');
+
+/* Desktop Device 코드 작성 */
+
+/* 차량리스트 */
+.carSect {border:1px solid #e3e3e3;padding:15px;margin-top:10px; background-color:#fff}
+.carSect strong {font-size:12px;display:inline-block;margin-right:68px}
+.carSect label {margin-right:20px; display:inline-block; font-size:12px}
+.carList {padding:15px 2px 15px 15px;border:1px solid #e3e3e3; position:relative;margin-top:10px; background-color:#fff}
+.carList > ul {overflow:hidden;margin-top:12px}
+.carList > ul > li {float:left;width:25%}
+.carList > ul > li > a {display:inline-block;margin:0 13px 10px 0;width:217px;}
+.carList > ul > li > a span {display:block;border:1px solid #e8e8e8; background-color:#f8f8f8;height:180px;}
+.carList > ul > li.on a span {background-color:#bb162b;border:1px solid #bb162b;}
+.carList > ul > li.on a span strong{color:#fff}
+.carList > ul > li > a strong {font-size:18px;color:#000;display:inline-block;margin:15px 0 0 15px}
+.carList > ul > li > a span em {display:block;margin-top:20px;text-align:center}
+.carList > ul > li > a span em img {width:214px}
+
+/* 온라인 견적 */
+.build_process .onBox {display:none;}
+.build_process {overflow:hidden; border:1px solid #cacaca;position:relative; margin-bottom:15px; z-index:15}
+.build_process ul{background-color:#fff}
+.build_process ul li {float:left;width:198px; height:39px; background-color:#fafafa; background-image:url(../images/sales/bg_process.png); background-repeat:no-repeat; background-position:right top}
+.build_process ul li+li {width:185px}
+.build_process ul li a {color:#666;font-size:15px; display:block; padding:10px 0; font-weight:bold; padding-left:15px}
+.build_process ul li a:hover {text-decoration:none}
+.build_process ul li.on {background-color:#bb162b;background-image:url(../images/sales/bg_process_on.png);}
+.build_process ul li.on a,.build_process ul li.onprev a,.build_process ul li.end a {color:#fff}
+.build_process ul li.end {background-color:#a2a2a2;background-image:url(../images/sales/bg_process_complete_on.png);}
+.build_process ul li.end a span {background:url(../images/sales/bg_process_check.png) no-repeat right 0; padding-right:26px}
+.build_process ul li.last {background-image:none;}
+.build_process ul li.onprev {background:#a2a2a2 url(../images/sales/bg_process_complete.png) no-repeat right center;}
+.build_process .money {display:none}
+.carList ul li .carView01 {display:none;position:absolute;top:100%;left:0;margin-top:20px}
+.carList ul li.on .carView01 {display:block;}
+.carView01 .carviewLef {float:left; width:300px; position:relative; background-color:#fff}
+.carView01 .carviewLef:after {content:''; position:absolute; right:-10px; top:80px;background:url(../images/sales/bg_rightBox01.png) left 0 no-repeat; width:11px; height:20px;}
+.carView01 .carviewLef .lefTop {background-color:#878787;position:relative;}
+.carView01 .carviewLef .lefBtm {border:1px solid #d0d0d0; border-top:none; padding:9px}
+.carView01 .carviewLef p {color:#fff; padding:10px 0 10px 10px;}
+.carView01 .carviewLef p a {position:absolute; right:15px; top:10px; font-size:12px; color:#fff;}
+.carView01 .carviewLef span {display:block; margin-bottom:10px}
+.carView01 .carviewLef .carimg01 {border:1px solid #e3e3e3;}
+.carView01 .carviewLef ul {border:1px solid #e3e3e3}
+.carView01 .carviewLef ul li {border-top:1px solid #e8e8e8; padding:10px; margin:0 10px}
+.carView01 .carviewLef ul li:first-child {border-top:none}
+.carView01 .carviewRig {float:right; width:620px;} 
+.carView01 .carviewRig ul {background-color:#fff; border:1px solid #e3e3e3; overflow:hidden}
+.carView01 .carviewRig li {overflow:hidden; width:100%;}
+.carView01 .carviewRig li div {margin:0 20px 0 30px; padding:13px 0; border-top:1px solid #e8e8e8}
+.carView01 .carviewRig li:first-child div {border-top:none}
+.carView01 .carviewRig li span {float:right}
+.carView01 .carviewFot {float:right; width:620px}
+.carView01 .carviewFot .btn_areaR {margin:10px 0}
+.carView02 {overflow:hidden}
+.carView02 .carviewLef {float:left; width:300px; position:relative; background-color:#fff}
+.carView02 .carviewLef:after {content:''; position:absolute; right:-10px; top:80px;background:url(../images/sales/bg_rightBox01.png) left 0 no-repeat; width:11px; height:20px;}
+.carView02 .carviewLef .lefTop {background-color:#878787;position:relative;}
+.carView02 .carviewLef .lefBtm {border:1px solid #d0d0d0; border-top:none; padding:9px}
+.carView02 .carviewLef .lefTop p {color:#fff; padding:10px 0 10px 10px;}
+.carView02 .carviewLef .lefTop p a {position:absolute; right:15px; top:10px; font-size:12px; color:#fff;}
+.carView02 .carviewLef .lefBtm .allmoney {border:1px solid #d6d6d6; background-color:#f1f1f1; margin-bottom:10px; padding:10px}
+.carView02 .carviewLef .lefBtm .allmoney strong {font-size:12px}
+.carView02 .carviewLef .lefBtm .allmoney span {text-align:right; display:block; font-size:26px; color:#bb162b}
+.carView02 .carviewLef .lefBtm .allmoney span em {font-size:16px}
+.carView02 .carviewLef .lefBtm .allmoney span img {vertical-align:middle}
+.carView02 .carviewLef ul {border:1px solid #e3e3e3}
+.carView02 .carviewLef ul li {border-top:1px solid #e8e8e8;margin:0 10px; padding:10px 0}
+.carView02 .carviewLef ul li:first-child {border-top:none}
+.carView02 .carviewLef ul li strong{font-size:12px; color:#666}
+.carView02 .carviewLef ul li div {margin-top:8px; overflow:hidden;font-size:12px;}
+.carView02 .carviewLef ul li div em {float:right}
+.carView02 .carviewRig {float:right; width:620px;} 
+.carView02 .carviewRig > div {background-color:#fff; padding:15px; border:1px solid #e3e3e3;margin-bottom:10px;}
+.carView02 .carviewRig > div h4 {margin-bottom:15px}
+.rigcont01 > div {position:relative;}
+div.overHidd {overflow:hidden !important}
+.rigcont01 div > p {float:left}
+.rigcont01 div > em {position:absolute; right:0; top:0; color:#666}
+.rigcont01 div > span {float:left;margin-right:10px}
+.rigcont01 .inlabelBox {background-color:#f8f8f8; border:1px solid #e8e8e8;padding:10px; overflow:hidden;}
+.rigcont01 .inlabelBox.tyFirst {margin-bottom:10px}
+.rigcont01 .inlabelBox em {float:right; position:static}
+.shopSel {background-color:#eee; border:1px solid #e8e8e8; border-top:none; padding:13px 9px; position:relative}
+.shopSel .btn_areaL {position:absolute; right:10px; top:8px}
+.shopSel02 {background-color:#eee; border:1px solid #e8e8e8; border-top:none; margin:-10px 0 10px}
+.shopSel02 > ul > li {padding:12px 10px 12px 15px; position:relative;border-top:1px solid #e2e2e2;}
+.shopSel02 > ul li:first-child {border-top:none}
+.shopSel02 > ul li .won {position:absolute; right:10px; top:0; display:inline-block; padding:12px 0; width:185px; border-left:1px solid #e2e2e2; text-align:right}
+.shopSel02 > ul li .form_area {position:absolute; top:5px; left:68px}
+.shopSel03 {background-color:#eee;border:1px solid #e8e8e8; border-top:none;}
+.shopSel03 .sel03in {padding:12px 10px 12px; position:relative}
+.shopSel03 .sel03in .form_area {display:inline-block; width:125px}
+.shopSel03 .sel03in em {font-size:12px; position:absolute; left:130px; top:16px}
+.shopSel03  table th,.shopSel03 table td {border:1px solid #e2e2e2; border-right:none; border-top:none}
+.shopSel03  table th {padding:12px 0;border-top:1px solid #e2e2e2;}
+.shopSel03  table td {text-align:center; padding:12px 0; color:#666}
+.shopSel03  table tr th:first-child,.shopSel03 table  tr td:first-child {border-left:none}
+.sel03inList {padding:13px}
+.sel03inList li { float:left; width:45%}
+.rigcont02 div a {float:left;position:relative;}
+.rigcont02 div a.on:after {content:'';border:4px solid #df031f;width:76px;height:37px;position:absolute;left:0;top:0}
+.rigcont03 ul {overflow:hidden}
+.rigcont03 li {float:left;}
+.rigcont03 li div {width:169px;background-color:#f8f8f8; border:1px solid #e8e8e8; margin-left:10px; padding:10px 9px}
+.rigcont03 li:first-child div {margin-left:0}
+.rigcont03 li div span {margin:10px 0; display:inline-block}
+.rigcont03 li div em {display:block; text-align:right; font-size:12px}
+.rigcont03 li div img {width:169px; height:119px}
+.rigcont03 li div .form_chk {margin:0; text-align:left}
+.colorImg01 img,.rigcont02 div a img {width:84px; height:45px}
+.carView02 .carviewFot {float:right; width:620px}
+.carView02 .carviewFot .btn_areaR {margin:0 0 10px}
+.carCheck01 {height:420px;margin:-45px 0 20px; padding-top:0}
+.carCheck01:before {content:"";width:100%;height:360px;position:absolute;left:0;background:#fff url(../images/sales/bg_summary_visual.png) center bottom no-repeat;border-top:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4; padding-top:60px}
+.checkin {overflow:hidden;position:relative;padding-top:60px}
+.checkin .carbigBox {display:block;text-align:center;padding-top:30px}
+.checkin .tab_type1 {position:absolute;right:0;top:60px}
+.checkin .carname {position:absolute;left:0;top:60px}
+.checkin .carname > strong {font-size:20px;  display:block}
+.checkin .carname > strong img {width:140px; margin-bottom:10px}
+.checkin .carname .nameLink {display:inline-block; margin-bottom:25px}
+.checkin .carname .facebookSect em {background:url(../images/sales/txt_facelike02.png) left top no-repeat; font-size:11px; display:inline-block; text-align:right; width:50px; height:20px; padding-right:5px}
+.rigcont01 .bl_type1 {overflow:hidden}
+.rigcont01 .bl_type1 .bl_type_a {float:right}
+.endLeftSect strong {display:block; width:230px; border-bottom:1px solid #e8e8e8; margin-bottom:20px; padding-bottom:10px; font-size:28px; color:#bb162b}
+.endLeftSect ul li a {display:inline-block;font-size:12px;padding:6px 0}
+.endLeftSect ul li a span img {width:24px; margin-right:6px}
+.endEstimate {margin-top:20px}
+.endEstimate h4 {font-size:21px; margin-bottom:12px} 
+.endEstimate h4 a {display:inline-block; margin-left:10px}
+.endEstimate .endEstiInner {border:1px solid #e3e3e3; background-color:#fff; padding:17px 20px; margin-bottom:10px; position:relative}
+.endEstimate .endEstiInner .allwon {position:absolute; right:20px; top:16px; font-size:22px; color:#bb162b}
+.endEstimate .endEstiInner > div {background-color:#fcfcfc; border:1px solid #e8e8e8; width:100%; display:table}
+.endEstimate .endEstiInner > div+div {border-top:none}
+.endEstimate .innerCont1 > strong {display:table-cell;padding:12px 0 12px 20px; border-right:1px solid #e8e8e8; vertical-align:top}
+.endEstimate .innerCont1 > strong.widTy01 {width:45px;}
+.endEstimate .innerCont1 > strong.widTy02 {width:75px;}
+.endEstimate .innerCont1 > strong.widTy03 {width:110px;}
+.endEstimate .innerCont1 > div {display:table-cell;padding:12px 0 12px 12px; width:auto}
+.endEstimate .innerCont1 div.bgRedimg {background:url(../images/sales/bg_colorred_pc.png) no-repeat 135px center}
+.endEstimate .innerCont1 div.bgBlackimg {background:url(../images/sales/bg_colorblack_pc.png) no-repeat 135px center}
+.endEstimate .innerCont1 div.optionList {padding:0}
+.endEstimate .innerCont1 div.optionList li {border-top:1px solid #e8e8e8;padding:16px 160px 16px 360px;position:relative; height:164px; }
+.endEstimate .innerCont1 div.optionList li strong {display:inline-block; margin-bottom:10px}
+.endEstimate .innerCont1 div.optionList li span {position:absolute;left:25px;top:16px}
+.endEstimate .innerCont1 div.optionList li span img {width:320px;}
+.endEstimate .innerCont1 div.optionList li p {font-size:12px}
+.endEstimate .innerCont1 div.optionList li em {width:120px; position:absolute; right:0; top:0; text-align:right; padding:10px; height:100%;border-left:1px solid #e8e8e8;}
+.endEstimate .innerCont1 div.optionList li:first-child {border-top:none}
+.endEstimate .innerCont1 > em {display:table-cell;width:120px;border-left:1px solid #e8e8e8;text-align:right; padding:12px 10px 12px; vertical-align:top}
+.endEstimate .innerCont1 .moTyBox {display:inline}
+.endEstimate .innerCont2 ul li {float:left; width:33.3%;  text-align:center}
+.endEstimate .innerCont2 ul li:first-child {width:33.4%;}
+.endEstimate .innerCont2 ul li span {display:block;border-bottom:1px solid #e8e8e8;border-left:1px solid #e8e8e8; padding:12px 0}
+.endEstimate .innerCont2 ul li em {display:block; padding:12px 0;border-left:1px solid #e8e8e8;}
+.endEstimate .innerCont2 ul li:first-child span,.endEstimate .innerCont2 ul li:first-child em {border-left:none;}
+.totalMoney {background-color:#fff; border-top:3px solid #bb162b; padding:20px; overflow:hidden}
+.totalMoney strong {font-size:21px}
+.totalMoney span {font-size:26px; color:#bb162b; float:right}
+.carEndFot .btn_areaR { margin:30px 0 15px}
+.editBtn img {width:39px;height:18px}
+
+/* 영업점 안내 */
+.find_wrap:before {content:"";width:100%;height:138px;position:absolute;left:0;background:#e9e9e9;border-top:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0}
+.find_box {background:#e9e9e9;border:1px solid #d0d0d0;padding:22px 19px;position:relative}
+.find_box .form_label {display:block;margin-bottom:8px}
+.find_box .form_wrp {width:216px}
+.find_box .open_edit, .find_box .close_edit {display:none}
+.find_box .find_edit {margin-top:10px;}
+.find_box .find_edit .find_edit_a {margin-left:20px;}
+.find_result .result_txt {background:#fdfdfd;border:1px solid #ddd;margin-bottom:20px;padding:10px 19px;color:#666;overflow:hidden;font-size:16px;}
+.find_result .result_txt .cmm_spr {margin:3px 5px 0 0}
+.find_result .result_txt .pointcolor1 {font-family:kiaB;text-decoration:underline}
+.find_result .find_note {position:absolute;top:40px;right:36px;font-size:12px;color:#666}
+.find_result .tcol1 {width:20%;}
+.find_result .tcol2 {width:auto;}
+.find_result .tcol3 {width:20%;}
+.find_result .tcol4 {width:20%;}
+.find_map {height:665px;}
+.find_map .map_area {position:absolute;left:0;width:100%;}
+.find_map .map_area .map_wrap {height:665px;overflow:hidden;text-align:center}
+.find_map .map_area .map_layer {position:absolute;top:50px;right:50px;width:312px;background:url(../images/common/bg_layer_shadow.png) right bottom no-repeat;}
+.find_map .map_area .map_layer .dealer_info {background:url(../images/common/bg_layer_box.png) 0 bottom no-repeat;padding:15px 15px 76px 15px;margin-right:11px;position:relative}
+.find_map .map_area .map_layer .dealer_info:before {content:"";display:block;width:301px;height:15px;position:absolute;top:0;left:0;background:url(../images/common/bg_layer_box.png) 0 0 no-repeat}
+.find_map .map_area .map_layer .dealer_info .info dt {font-size:22px;line-height:22px;color:#000;font-family:kiaB;border-bottom:1px solid #707070;padding:6px;margin-bottom:10px}
+.find_map .map_area .map_layer .dealer_info .info dt .distance {font-size:14px;color:#666;display:inline-block;margin-left:10px;text-transform:uppercase}
+.find_map .map_area .map_layer .dealer_info .info dd {font-size:12px;color:#666;padding:0 6px}
+.find_map .map_area .map_layer .dealer_info .info dd.address {color:#333;margin-bottom:10px}
+.find_map .map_area .map_layer .closeBtn {position:absolute;top:12px;right:10px}
+.find_map .map_result {position:relative;top:0;width:298px;border:1px solid #bcbcbc;background:#fff;box-shadow:3px 3px 2px rgba(0,0,0,0.1)}
+.find_map .map_result .dealer_num {background:#535353;color:#fff;padding:12px 20px;margin:-1px;position:relative}
+.find_map .map_result .dealer_num .country {color:#ffca64}
+.find_map .map_result .dealer_num .dealer_view {position:absolute;top:8px;right:10px;background-position:-34px 0;width:24px;height:24px;}
+.find_map .map_result .dealer_num .dealer_view.dealer_open {background-position:-34px -25px}
+.find_map .map_result .dealer_lst {display:none;}
+.find_map .map_result .dealer_lst .dealer_a {display:block;border-bottom:1px solid #e0e0e0;padding:15px;}
+.find_map .map_result .dealer_lst .dealer_a .where {float:left;margin-right:20px;text-align:center;}
+.find_map .map_result .dealer_lst .dealer_a .distance {display:block;color:#bb162b;font-family:kiaB;text-transform:uppercase;margin-top:5px;font-size:12px}
+.find_map .map_result .dealer_lst .dealer_a .info {overflow:hidden;}
+.find_map .map_result .dealer_lst .dealer_a .info dt {font-family:kiaB;font-size:16px;margin-bottom:5px}
+.find_map .map_result .dealer_lst .dealer_a .info dd {color:#666;font-size:12px}
+.find_map .map_result .dealer_lst .dealer_on {background:#7e8083;color:#fff}
+.find_map .map_result .dealer_lst .dealer_on .map_pin {background-position:0 -34px;color:#bb162b;}
+.find_map .map_result .dealer_lst .dealer_on .distance {color:#ffca64}
+.find_map .map_result .dealer_lst .dealer_on .info dd {color:#fff}
+.find_map .map_result .dealer_lst.dealer_open {display:block;}
+.find_map .map_result .pg_num_area {margin:20px 0}
+.find_dealer .find_map {margin-bottom:-55px}
+.dealer_tit {background:#878787;border:1px solid #7c7c7c;padding:16px 20px;color:#fff;overflow:hidden}
+.dealer_tit .name {float:left;font-size:16px;}
+.dealer_tit .info {float:right;}
+.dealer_tit .info li {display:inline-block;}
+.dealer_tit .info li+li:before {content:"|";display:inline-block;margin:0 5px;color:#ccc}
+.dealer_map {clear:both;height:280px;border:1px solid #d0d0d0;border-top:0;overflow:hidden;position:relative}
+.dealer_intro .bl_type2 {margin:15px 0 8px 0;}
+.dealer_intro .bl_type2:first-child {margin-top:0}
+.dealer_intro .in_box {background:#fcfcfc;border:1px solid #e8e8e8;padding:15px;margin-top:10px}
+.dealer_intro .in_box:first-child {margin-top:0}
+.dealer_intro .intro_txt {color:#666;font-size:13px;}
+.dealer_intro .intro_pic {overflow:hidden;margin:0 -5px}
+.dealer_intro .intro_pic li {display:block;width:25%;float:left}
+.dealer_intro .intro_pic li .pic {display:block;padding:0 5px;}
+.dealer_intro .intro_pic li .pic img {width:100%}
+.dealer_intro .intro_staff {overflow:hidden;}
+.dealer_intro .intro_staff .staff_lst {width:9999px;}
+.dealer_intro .intro_staff .staff_lst > li {float:left;margin:-10px 20px 0 0}
+.dealer_intro .intro_staff .staff_lst .staff {overflow:hidden;margin-top:10px}
+.dealer_intro .intro_staff .staff_lst .staff_photo {float:left;margin-right:20px}
+.dealer_intro .intro_staff .staff_lst .staff_photo img {width:100%}
+.dealer_intro .intro_staff .staff_lst .staff_info {overflow:hidden;margin-top:5px}
+.dealer_intro .intro_staff .staff_lst .staff_info li {font-size:13px;color:#666;margin:3px 0;padding-left:15px}
+.dealer_intro .intro_staff .staff_lst .staff_info li:before {content:"";display:inline-block;width:2px;height:2px;background:#787878;margin:0 6px 0 -9px;vertical-align:middle}
+.dealer_intro .intro_car {overflow:hidden;border-top:1px solid #e8e8e8;border-left:1px solid #e8e8e8;}
+.dealer_intro .intro_car li {width:50%;float:left}
+.dealer_intro .intro_car li .car {height:115px;border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8;background:#fff;padding:18px 20px;position:relative;}
+.dealer_intro .intro_car li .car .car_sort {display:inline-block;border-radius:9px;color:#fff;padding:0 8px;font-family:dotum;font-size:12px;position:absolute;top:18px;right:20px}
+.dealer_intro .intro_car li .car .car_sort.sort1 {background:#39b54a}
+.dealer_intro .intro_car li .car .car_sort.sort2 {background:#f8ab14}
+.dealer_intro .intro_car li .car .car_info {text-transform:uppercase}
+.dealer_intro .intro_car li .car .car_info dt {font-size:18px;color:#000;margin-bottom:10px}
+.dealer_intro .intro_car li .car .car_info dd {color:#666}
+.dealer_intro .intro_car li .car .car_info dd.car_color {margin-top:10px;font-size:12px}
+.dealer_intro .intro_car li .car .car_info dd.car_color .txt {margin-right:4px}
+.dealer_intro .intro_car li .car .car_info dd.car_color .c_color {display:inline-block;width:20px;height:20px;overflow:hidden;color:transparent; vertical-align:middle}
+.dealer_intro .intro_car li .car .car_photo {position:absolute;bottom:10px;right:10px;width:200px;}
+.dealer_intro .intro_car li .car .car_photo img {width:100%}
+
+/* 렌터카 서비스 */
+.rent_list{border:1px solid #e8e8e8;border-top:0;font-size:12px}
+.rent_list li{display:table;width:100%;border-top:1px solid #e8e8e8}
+.rent_list li strong{display:table-cell;width:95px;padding-left:30px;border-right:1px solid #e8e8e8;background:#f8f8f8;vertical-align:middle;font-family:kiaM}
+.rent_list li span{display:table-cell;padding:5px 30px 8px 20px}
+.rent_info{margin:18px 0 30px;padding:20px;border:1px solid #e8e8e8;background-color:#fcfcfc}
+.rent_info:after{content:"";display:block;clear:both}
+.rent_info div{float:left}
+.rent_info .right{padding:10px 0 0 20px;font-size:13px}
+.rent_info .right strong{font-size:14px}
+.rent_info .right li{padding-top:3px}
+.rent_note{margin-top:50px;padding:30px 19px;border:1px solid #e8e8e8;background-color:#f8f8f8}
+.rent_note strong{font-size:18px}
+.rent_note li, .rent_note p{margin-top:18px;padding-left:25px;color:#666}
+.rent_note li em{color:#333}
+
+/* 이달의 구매혜택 */
+.sp_wrap{border-top:1px solid #e3e3e3}
+.sp_wrap .w_view{margin:20px 0 10px}
+.sp_wrap p{margin-bottom:20px}
+.sp_wrap .spTit{margin:0 !important;padding:12px 0 11px 20px;color:#fff;font-size:15px;background:url(../images/sales/bg_special_tit.png) repeat}
+.sp_wrap .spTit:before{background:none}
+.sp_wrap .bl_type1{margin:27px 0 11px}
+.sp_wrap .spTxt{margin-bottom:8px}
+.sp_wrap .bl_type_note{margin-top:10px}
+.sp_info{margin:0 0 10px;padding:20px 40px;border:1px solid #e8e8e8;background-color:#fcfcfc}
+.sp_info:after{content:"";display:block;clear:both}
+.sp_info .left, .offers_info .right{float:left}
+.sp_info .left{width:202px;margin-right:40px}
+.sp_info .right{padding-top:10px;font-size:13px}
+.sp_info .right strong{font-size:14px}
+.sp_info .right li{padding-top:3px}
+
+
+/* Tablet Device 및 작은 해상도의 랩탑이나 데스크톱에 대응하는 코드 작성 */
+@media all and (max-width:1024px) {
+/* 차량리스트 */
+.carList {padding:10px}
+.carList > ul {margin:15px 5px 0 0}
+.carList > ul > li {width:33.3%}
+.carList > ul > li:nth-child(3n) {width:33.4%}
+.carList > ul > li > a {width:100%;margin:0}
+.carList > ul > li a span {margin:0 5px 10px}
+.carList > ul > li:nth-child(3n) a span {margin-right:0;}
+.carList ul li .carView01 {width:100%}
+.carView01 .carviewLef {float:none;width:auto;margin-top:20px}
+.carView01 .carviewLef:after,.carView02 .carviewLef:after {background:none}
+.carView01 .carviewLef .lefBtm {overflow:hidden}
+.carView01 .carviewLef .lefBtm span,.carView01 .carviewLef .lefBtm ul {float:left}
+.carView01 .carviewLef .lefBtm span {width:31%; margin-right:2%}
+.carView01 .carviewLef .lefBtm span img {width:100%; height:157px}
+.carView01 .carviewLef .lefBtm ul {width:33%}
+.carView01 .carviewRig,.carView01 .carviewFot,.carView02 .carviewRig,.carView02 .carviewLef {float:none;width:auto}
+.carView02 .carviewFot {float:none;width:auto;margin-top:15px}
+	
+/* 온라인 견적 */
+.build_process ul li {width:54px}
+.build_process ul li+li {width:54px}
+.build_process ul li.on {width:170px}
+.build_process ul li+li .process_name{display:none}
+.build_process ul li.on .process_name{display:inline-block}
+.build_process ul li:first-child.end {width:170px}
+.build_process ul li+li.end {width:54px;}
+.build_process ul li+li.end a {background:url(../images/sales/bg_process_check.png) no-repeat 24px center}
+.build_process ul li+li.end a .process_name  {display:none}
+.build_process ul li+li.on {width:54px}
+.build_process ul li:first-child.on.end {width:175px}
+.build_process ul li+li.on .process_name,.build_process ul li+li.end .process_name {display:none}
+.build_process ul li.last {border-right:1px solid #cacaca}
+.build_process ul li a {padding-left:10px}
+.build_process {position:relative}
+.build_process .money {display:block; position:absolute; right:13px; top:11px; color:#bb162b; font-size:15px; background-color:#fff}
+.carView01 .carviewLef {float:none;width:auto;margin-top:20px}
+.carView01 .carviewLef:after,.carView02 .carviewLef:after {background:none}
+.carView01 .carviewLef .lefBtm {overflow:hidden}
+.carView01 .carviewLef .lefBtm span,.carView01 .carviewLef .lefBtm ul {float:left}
+.carView01 .carviewLef .lefBtm span {width:31%; margin-right:2%}
+.carView01 .carviewLef .lefBtm span img {width:100%; height:157px}
+.carView01 .carviewLef .lefBtm ul {width:33%}
+.carView01 .carviewRig,.carView01 .carviewFot,.carView02 .carviewRig,.carView02 .carviewLef {float:none;width:auto}
+.carView02 .carviewFot {float:none;width:auto;margin-top:15px}
+.rigcont01 div em {position:static;display:block}
+.rigcont03 li {width:33.3%}
+.rigcont03 li:first-child {margin-left:0}
+.rigcont03 li div {width:auto}
+.rigcont03 li div span {display:block;text-align:center}
+.rigcont03 li div img {width:100%;height:120px}
+.endEstimate .innerCont1 div.optionList li {height:264px}
+.endEstimate .innerCont1 div.optionList li em {width:30%}
+.endEstimate .innerCont1 div.optionList li strong {position:absolute; top:190px; left:25px}
+.endEstimate .innerCont1 div.optionList li p {position:absolute; top:220px; left:25px; width:320px}
+	
+/* 영업점 안내 */
+.find_wrap:before {background:none;border:0}
+.find_map {position:relative;height:627px;}
+.find_map .map_area {position:relative;width:auto;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4}
+.find_map .map_area .map_wrap {height:627px;}
+.find_map .map_result {position:absolute;top:0;left:0}
+.find_dealer .find_map {margin-bottom:-60px;}
+.dealer_intro .intro_car li {width:33.3%;float:left}
+.dealer_intro .intro_car li .car {height:230px}
+
+}
+
+/* Mobile Device 코드 작성 */
+@media all and (max-width:767px) {
+/* 차량리스트 */
+.carSect {margin:15px 0}
+.carSect strong {display:block; font-size:14px;}
+.carSect label {margin-top:10px}
+.carList > ul {margin:15px 0 0 0 }
+.carList > ul > li {width:50%;}
+.carList > ul > li > a {width:100%;margin:0;}
+.carList > ul > li > a span {margin:0 10px 10px 0;height:125px;}
+.carList > ul > li:nth-child(2n) a span{margin-right:0}
+.carList > ul > li:nth-child(3n) {width:50%}
+.carList > ul > li:nth-child(2n+1) a span {margin-right:10px}
+.carList > ul > li > a strong {font-size:15px}
+.carList > ul > li > a span em {margin-top:10px}
+.carList > ul > li > a span em img {width:123px}
+.carList ul li .carView01 {position:static;width:200%;margin-top:0;}
+.carList ul li .carView01.rigView {margin-left:-100%}
+
+/* 온라인 견적 */
+.build_process {position:relative;border-top:3px solid #bb162b;border-bottom:1px solid #e4e4e4; overflow:inherit; height:37px; border-left:none; border-right:none; margin-bottom:0}
+.build_process .onBox {display:block;width:45%;text-indent:15px;}
+.build_process .onBox a {display:block;padding:11px 0 10px;color:#fff;font-size:14px;background:#bb162b url(../images/sales/bg_process_btn.png) 95% center no-repeat; background-size:13px;height:18px;}
+.build_process ul {width:45%;background-color:#bb162b;border:none;position:absolute;left:0;top:39px;display:none;}
+.build_process ul > li {float:none;background-color:#bb162b;width:100%}
+.build_process ul > li+li {background-image:none;width:100%}
+.build_process ul li+li .process_name {display:inline-block}
+.build_process ul > li.on {background:none; width:100%}
+.build_process ul li.end,.build_process ul li.end a span,.build_process ul li+li.end a  {background:none}
+.build_process ul li+li.on .process_name,.build_process ul li+li.end .process_name {display:inline-block}
+.build_process ul li+li.end,.build_process ul li+li.on {width:100%}
+.build_process ul li+li.end a .process_name {display:inline-block}
+.build_process ul > li a {font-size:14px;color:#fff;font-weight:normal}
+.build_process .money {display:block;position:absolute;right:0;top:0;font-size:16px;font-weight:bold;width:55%; background-color:#fff; text-align:right;height:27px; padding:11px 0 0 0}
+.build_process .money em {display:inline-block; margin-right:13px}
+.carView01 .carviewLef {display:none}
+.carView01 .carviewRig {float:none;}
+.carView01 .carviewRig ul {border:none;}
+.carView01 .carviewRig li div {margin:0}
+.carView01 .carviewRig li span {float:none;display:block;text-align:right}
+.carView01 .carviewFot {position:absolute;left:0; bottom:-165px; width:100%}
+.carView02 .carviewRig {margin-top:20px}
+.carView02 .carviewRig > div {padding:15px 10px}
+.carView02 .carviewFot .btn_areaR {overflow:hidden; width:100%}
+.carView02 .carviewFot .btnMedium.btnType3 {float:left}
+.carCheck01 {margin-top:0;padding-top:0; height:auto}
+.checkin .carbigBox img {width:300px; height:170px}
+.checkin .tab_type1 {position:static;width:100%; border:none; margin:0; display:table}
+.checkin .tab_type1 .tab_link {width:50%;display:inline-block;color:#fff;font-family:kiaB;line-height:30px;vertical-align:top;margin:0; text-align:center; background-color:#878787; display:table-cell; padding:6px 0; border-top:1px solid #cecece}
+.checkin .tab_type1 .tab_link em {display:none}
+.checkin .tab_type1:before {background:none;width:0;height:0}
+.checkin .tab_type1:after {background:none;width:0;height:0}
+.checkin .tab_type1 .tt1_on {background-color:#8f6f4d; position:relative}
+.checkin .tab_type1 .tt1_on:before {margin-left:0;width:0; background:none}
+.checkin .tab_type1 .tt1_on:after {width:100%; height:8px; background:url(../images/sales/bg_mobiletab01_on.png) center center no-repeat; position:absolute; left:0; top:-8px; background-size:16px}
+.rigcont01 > div {overflow:hidden}
+.rigcont01 div p {float:right; text-align:right}
+.rigcont01 div span.form_wrp {float:none;display:block; margin-right:0}
+.rigcont01 div span.form_wrp:first-child {margin-bottom:10px}
+.rigcont02 > div {overflow:hidden}
+.rigcont03 li {width:100%; margin-bottom:10px}
+.rigcont03 li div {margin-left:0}
+.rigcont03 li div span img {height:auto}
+.carCheck01 {margin-bottom:0}
+.carCheck01:before {padding-top:0}
+.checkin {padding-top:68px}
+.checkin .carname {position:static; text-align:center}
+.checkin .carname .nameLink {position:absolute;left:0;top:0; display:block; width:100%; font-size:15px; padding:15px 0; border-bottom:1px solid #e8e8e8;background:url(../images/sales/bg_carmobile01.png) 95% center no-repeat; background-size:15px; text-indent:15px; text-align:left}
+.checkin .carbigBox {padding:20px 0 30px}
+.rigcont01 .shopSel {overflow:inherit}
+.shopSel .btn_areaL {display:none}
+.rigcont01 .shopSel02 {background-color:#eee; border:1px solid #e8e8e8; border-top:none; margin:-10px 0 10px; overflow:inherit}
+.shopSel02 > ul > li {padding:12px 10px 12px 15px; position:relative;border-top:1px solid #e2e2e2;}
+.shopSel02 > ul li:first-child {border-top:none}
+.shopSel02 > ul li em {background:none; padding-left:0}
+.shopSel02 > ul li em:before {background:none}
+.shopSel02 > ul li .won {position:absolute;right:10px; top:0; display:inline-block; padding:12px 0; width:50%; border-left:1px solid #e2e2e2; text-align:right; height:100%}
+.shopSel02 > ul li .form_area {position:static; width:95px; margin-top:5px}
+.shopSel02 > ul li .form_area .form_wrp {margin-bottom:0}
+.shopSel03 .sel03in .form_area {width:100%}
+.shopSel03 .sel03in .form_area .form_wrp {margin-bottom:0}
+.shopSel03 table th,.shopSel03 table td { font-size:12px}
+.sel03inList li {float:none;width:100%}
+.shopSel03 .sel03in em {position:static}
+.endLeftSect strong {display:none}
+.endLeftSect ul li {float:left;width:20%; line-height:15px;}
+.endLeftSect ul li a {border-left:1px solid #e8e8e8; width:100%; display:inline-block; padding:0; font-size:11px}
+.endLeftSect ul li a span {display:block; margin-bottom:7px}
+.endLeftSect ul li a span img {width:34px; margin-right:0}
+.endLeftSect ul li a em {display:block}
+.endLeftSect ul li a em span {display:none}
+.carCheck01.endType:before {height:400px}
+.endEstimate .endEstiInner {padding:15px 10px}
+.endEstimate .endEstiInner .allwon {position:static; font-size:16px}
+.endEstimate h4 {font-size:16px}
+.endEstimate h4 a {float:right}
+.endEstimate .endEstiInner > div {position:relative;display:block}
+.endEstimate .innerCont1 {margin-top:35px}
+.endEstimate .innerCont1 > strong {display:inline-block; position:absolute;left:-10px; top:-40px; border-right:none}
+.endEstimate .innerCont1 > div {display:block; font-size:13px; padding-bottom:6px}
+.endEstimate .innerCont1 > em {display:block; border-left:none; text-align:left; padding-top:0;font-size:13px}
+.endEstimate .innerCont1.m_bgRedimg {background:url(../images/sales/bg_colorred_m.png) no-repeat 95% center; background-size:62px}
+.endEstimate .innerCont1.m_bgBlackimg {background:url(../images/sales/bg_colorblack_m.png) no-repeat 95% center;background-size:62px}
+.endEstimate .innerCont1 div.bgRedimg {background:none}
+.endEstimate .innerCont1 div.bgBlackimg {border-top:1px solid #e8e8e8;background:none}
+.endEstimate .innerCont1 div.optionList li { padding:10px 15px; height:auto;}
+.endEstimate .innerCont1 div.optionList li strong {position:static; margin-bottom:0}
+.endEstimate .innerCont1 div.optionList li em {position:static; display:block; border-left:0; width:auto; height:auto; text-align:left; padding:0}
+.endEstimate .innerCont1 div.optionList li span {position:static; margin:10px 0 5px; display:block}
+.endEstimate .innerCont1 div.optionList li span img {width:100%}
+.endEstimate .innerCont1 div.optionList li p {position:static; width:auto}
+.endEstimate .innerCont2 ul li {float:none; display:table; width:100%}
+.endEstimate .innerCont2 ul li:first-child {width:100%}
+.endEstimate .innerCont2 ul li span {display:table-cell; width:30%; border-left:none; border-bottom:none; border-right:1px solid #e8e8e8;border-top:1px solid #e8e8e8}
+.endEstimate .innerCont2 ul li em {display:table-cell; width:70%; border-left:none;border-top:1px solid #e8e8e8}
+.endEstimate .innerCont2 ul li:first-child span,.endEstimate .innerCont2 ul li:first-child em { border-top:none}
+.totalMoney {padding:13px}
+.totalMoney strong {font-size:18px}
+.totalMoney span {font-size:22px; float:none; display:block; text-align:right; margin-top:10px}
+.carEndFot .btn_areaR {margin:15px 0 30px}
+
+	
+/* 영업점 안내 */
+.find_wrap:before {background:none;border:0}
+.find_box {border:0;border-bottom:1px solid #d0d0d0;padding:15px}
+.find_box .form_wrp {display:block;width:auto}
+.find_box .space {display:block;height:10px}
+.find_box .open_edit {display:block;text-align:center;margin-top:10px}
+.find_box .close_edit {display:block;text-align:center;margin-top:10px}
+.find_box .find_edit {display:none;}
+.find_box .find_edit.e_open {display:block;width:100%;}
+.find_box .find_edit .chk_edit {display:block;overflow:hidden;border:1px solid #d0d0d0;background:#fff}
+.find_box .find_edit .form_chk {display:block;float:left;width:33%;font-size:12px;margin:0;color:#666;}
+.find_box .find_edit .form_chk .check_box {display:block;padding:10px 14px;border-left:1px solid #d0d0d0;}
+.find_box .find_edit .form_chk:first-child {width:34%;}
+.find_box .find_edit .form_chk:first-child .check_box {border-left:0;}
+.find_box .find_edit .find_edit_a {display:block;margin:-1px 0 0 0;padding:10px 14px;text-align:center;background:#fff;border:1px solid #d0d0d0;color:#666;text-decoration:none}
+.find_box .find_edit .find_edit_a:before {background:none}
+.find_result {margin-bottom:40px;}
+.find_result .result_txt {background:none;border:0;padding:0;margin-bottom:10px}
+.find_result .find_note {position:absolute;top:auto;right:auto;left:0;bottom:-40px}
+.find_result .find_note .desc {display:block;margin-left:54px;}
+.find_result .tcol1 {width:28%;}
+.find_result .tcol2 {width:auto;}
+.find_result .tcol3 {width:28%;}
+.find_result .tcol4 {display:none}
+.find_result .table_type1 a {color:#bb162b;}
+.find_map {height:auto;}
+.find_map .map_area {position:static;border:0;border-bottom:1px solid #e4e4e4}
+.find_map .map_area .map_wrap {height:200px;}
+.find_map .map_area .map_layer {position:static;width:auto;background:none}
+.find_map .map_area .map_layer .dealer_info {background:#fff;border-top:1px solid #e4e4e4;margin:0;padding-bottom:20px;position:relative}
+.find_map .map_area .map_layer .dealer_info:before {background:url(../images/common/spr_map.png) -42px -50px no-repeat;width:17px;height:9px;position:absolute;top:-9px;left:50%;margin-left:-8px;}
+.find_map .map_result {position:static;width:auto;box-shadow:none}
+.find_map .map_result .pg_num_area {margin:0;padding:20px 0;background:#f6f6f6}
+.find_map .map_result .dealer_num .dealer_view {display:none;}
+.find_dealer .find_map {margin-bottom:-40px;}
+.dealer_tit .name {float:none;font-size:18px}
+.dealer_tit .info {float:none;margin-top:10px;font-size:13px}
+.dealer_tit .info li {display:inline-block;}
+.dealer_tit .info li:first-child {display:block}
+.dealer_tit .info li+li:before {content:"";margin:0}
+.dealer_tit .info li+li+li:before {content:"|";margin:0 5px}
+.dealer_map {height:150px;}
+.dealer_intro {margin-top:0;border-top:0}
+.dealer_intro .intro_pic {margin-top:-10px}
+.dealer_intro .intro_pic li {width:50%;margin-top:10px}
+.dealer_intro .intro_staff .staff_lst {overflow:hidden;}
+.dealer_intro .intro_staff .staff_lst .staff {overflow:hidden;width:100%}
+.dealer_intro .intro_staff .staff_lst .staff_photo {float:none;fmargin-right:0;width:100%}
+.dealer_intro .intro_staff .staff_lst .staff_info {overflow:hidden;margin-top:5px}
+.dealer_intro .intro_staff .staff_lst .staff_info li {font-size:13px;color:#666;margin:3px 0}
+.dealer_intro .intro_car li {width:100%;float:none}
+.dealer_intro .intro_car li .car {height:115px;}
+.dealer_intro .intro_car li .car .car_photo {width:30%;min-width:140px}
+
+/* 렌터카 서비스 */
+.rent_list{border:1px solid #e8e8e8;border-top:0;font-size:11px}
+.rent_list li{display:block;width:100%;border-top:1px solid #e8e8e8}
+.rent_list li strong{display:block;width:auto;padding:10px;border-right:0;border-bottom:1px solid #e8e8e8}
+.rent_list li span{display:block;padding:10px}
+.rent_note{margin-top:0;padding:15px}
+.rent_note li, .rent_note p, .rent_note strong{padding-left:0;font-size:11px;font-family:kiaM}
+.rent_note li, .rent_note p{margin-top:10px}
+.rent_note strong:before{background-image:none}
+
+/* 이달의 구매혜택 */
+.sp_wrap{padding:0;border:none;background:none}
+.sp_wrap  .line_box1 .bl_type1{margin:15px 0 !important}
+.sp_wrap  .line_box2 .bl_type1{margin-top:0}
+.sp_wrap .spTit{padding:0 0 0 15px;color:#333;;font-size:15px;background:none}
+.sp_wrap .spTit:before{background:url(../images/common/spr_common.png) right 0}
+.sp_wrap .sp_note{margin-top:20px;padding-top:10px;border-top:1px solid #d7d7d7}
+.sp_wrap .sp_note:before{margin-top:10px}
+.sp_wrap .sp_note dt{font-size:14px}
+.sp_info{position:relative;margin-top:40px}
+.sp_info .left{display:inline-block;width:100%;text-align:center;clear:both}
+.sp_info .right{position:absolute;top:-45px;left:0;padding:0}
+.sp_info .right strong{font-size:14px}
+.sp_info .right li{padding-top:3px}
+.sp_list{margin-top:-11px;padding:15px 15px 0;border:1px solid #e3e3e3;font-size:12px;line-height:19px}
+.sp_list dt{padding-bottom:2px;color:#666}
+.sp_list .tit{padding:10px 0 2px;border-top:1px solid #e3e3e3}
+.sp_list dd:after{content:"";display:block;clear:both}
+.sp_list .last{padding-bottom:10px}
+.sp_list dd em{display:block;float:left;width:40%}
+.sp_list dd span{display:block;float:right;text-align:right}
+}
