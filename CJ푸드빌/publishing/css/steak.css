@@ -1,0 +1,401 @@
+@charset "euc-kr";
+
+body,form,div,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,fieldset,input,textarea,blockquote,th,td,a {color:#323231;}
+
+header {height:60px;position:relative;overflow:hidden; background-color:#c3b7a7}
+header h1 {text-align:center;}
+header h1 a {display:inline-block; padding:14px}
+header h1 img {width:159px}
+header > a {position:absolute;top:0;display:block;text-align:center;width:60px;height:41px;padding-top:19px}
+header a.util_r {right:0;z-index:4;background:url(../images/steak/bg_totalmenu.png) no-repeat left top;background-size:60px}
+header a.util_l {left:0}
+header a.util_l img {width:12px}
+header a.util_r img {width:18px}
+header a.util_l02 {left:0;text-align:right}
+section {background:url(../images/steak/bg_tile.png) repeat left top; background-size:100px; padding-bottom:22px}
+section.loginSect {background:#f4f4f4; border-top:1px solid #2d2c2c}
+.bgWhite {border-top:1px solid #2d2c2c}
+
+.bgTileTop {background:url(../images/steak/bg_tiletop.png) repeat-x left top; background-size:15px 22px; margin:0 -13px; height:22px;}
+.bgTileBtm {background:url(../images/steak/bg_tilebtm.png) repeat-x left top; background-size:15px 18px; margin:0 -13px; height:18px;}
+/* main */
+
+/* location */
+.location {position:relative}
+.location .topLoct {display:block;border-top:1px solid #251b12; background-color:#323231}
+.location .topLoct ul {overflow:hidden; height:40px; border-top:1px solid #a7a6a6}
+.location .topLoct ul li {float:left;color:#fff; padding:13px 12px 0 9px; height:27px; font-size:12px;background:url(../images/steak/bg_location01.png) no-repeat right center; background-size:5px}
+.location .topLoct ul li:first-child {width:45px;text-align:center; padding:12px 0 0 0; border-right:1px solid #202020; background:none}
+.location .topLoct ul li:first-child img {vertical-align:top; width:14px}
+.location .topLoct ul li:nth-child(2) {border-left:1px solid #4a4a4a}
+.location .topLoct ul li:last-child {background:none; color:#e62241}
+.location .topLoct ul li.underOpen {background:url(../images/steak/bg_locatopen.png) no-repeat right center; background-size:18px; padding-right:28px}
+.location.on .topLoct ul li.underOpen {background:url(../images/steak/bg_locatclose.png) no-repeat right center; background-size:18px;}
+
+.location .underLoct {background-color:#3e3c39; border-top:1px solid #251b12; position:absolute;left:0; top:40px; width:100%; z-index:3}
+.location .underLoct ul {overflow:hidden;}
+.location .underLoct ul li {float:left;width:33.3%;background:url(../images/steak/bg_line_black.gif) repeat-y right top}
+.location .underLoct ul li.on a {color:#ffc22e;}
+.location .underLoct ul li a {width:100%;color:#b2b1b1;height:33px;display:inline-block;padding:19px 0 0 0;background:url(../images/steak/bg_line_black.gif) repeat-x left bottom,url(../images/steak/bg_location_3depth_bar.png) no-repeat 15px 9px; background-size:1px, 20px 2px; text-indent:15px; font-size:11px}
+.location .underLoct ul li:nth-child(3n+2)  {width:33.4%;}
+.location .underLoct ul li:nth-child(3n) {background:url(../images/steak/bg_line_black.gif) repeat-x left bottom}
+.location .underLoct ul li:nth-child(3n) a {padding-left:2px;text-indent:13px}
+
+/* news/event */ 
+.news_list{border-top:4px solid #323231;}
+.news_list li{position:relative;border-top:1px dashed #94887a;}
+.news_list li:first-child{border:none;}
+.news_list li .date {position:absolute;top:50%;left:0;width:62px;height:52px;margin-top:-31px;padding-top:10px;background:url(../images/steak/bg_news_date.png) no-repeat 0 0; background-size:62px;}
+.news_list li .date span{display:block;text-align:center;font-size:11px;font-family:'Tahoma';font-weight:bold}
+.news_list li .date span+span{font-size:14px;}
+.news_list li a{display:block;margin-left:75px;padding:40px 0;}
+.news_list li a strong{display:block;margin-bottom:7px;line-height:18px;font-size:15px;}
+.news_list li a span{line-height:18px;font-size:13px;}
+
+.event_list li{margin-top:22px;}
+.event_list li:first-child{margin-top:0;}
+.event_list .thum img{width:100%}
+.event_list .tit_area{position:relative;overflow:hidden;display:block;margin-top:2px;padding:16px 9px;color:#fff;background:#4d493f}
+.event_list .tit_area.no_date .tit{padding-right:16px;}
+.event_list .tit_area .tit{display:block;padding-left:8px;color:#fff;font-size:13px;background:url(../images/common/bg_event_tit.gif) 0 6px no-repeat;background-size:2px;}
+.event_list .tit_area .date{color:#fff;letter-spacing:-0.02em;font-weight:normal; margin-left:8px}
+.list_view{border-top:4px solid #472d17;}
+.list_view dt{border-bottom:1px solid #472d17;padding:22px 0;}
+.list_view dt strong{display:block;margin-bottom:12px;font-size:20px;line-height:27px;}
+.list_view dt span{padding-right:5px;color:#767676;font-size:13px}
+.list_view dt span+span{padding-right:0;padding-left:5px;border-left:1px solid #a9a9a9;}
+.list_view dd{padding:22px 0;}
+.list_view dd img {width:100%}
+
+.store_list {margin:20px -13px;border-top:3px solid #472d18}
+.store_list li{position:relative;background:url(../images/jms/bg_store_list.png) 0 bottom repeat-x;background-size:2px; padding:0 13px 20px 13px}
+.store_list li.noSech {padding:15px; text-align:center}
+.store_list li .store_name{display:block;padding-top:10px; margin-right:60px}
+.store_list li .store_name strong{display:block;padding:1px 0;font-size:18px; color:#222; margin-bottom:12px}
+.store_list li .store_name em {position:absolute; right:18px; top:0}
+.store_list li .store_name em img {width:30px}
+.store_list li .store_name.newst strong {background:none; color:#222}
+.store_list li .store_name > span{display:block;line-height:19px; color:#434343}
+.store_list li .txtTel {display:block;width:100px}
+.store_list li .store_tel{display:block;position:absolute;bottom:10px;right:13px;}
+.store_list li .store_tel img {width:43px}
+
+/* button */
+.btnBox01 {text-align:center; margin-top:12px}
+.btnBox01 a {display:block;color:#fff;border-radius:4px;padding:12px 0; font-weight:bold; font-size:14px}
+
+.btnBox01.btnFr01 {margin:0 0 10px; overflow:hidden}
+.btnBox01.btnFr01 a {font-size:12px; width:50px; float:right; padding:10px 5px}
+.btnBox01.btnFr01 a.mt_15 { margin-top:-15px}
+
+.btnRed {border:1px solid #bf0024; background-color:#bf0024;}
+.btnBlack {border:1px solid #222; background-color:#222;}
+.btnBlack02 {border:1px solid #323231; background-color:#323231;}
+.btnGray {border:1px solid #6d6d6d; background-color:#6d6d6d;}
+.btnBrown {border:1px solid #39312b; background-color:#39312b;}
+.btnRed02 {border:1px solid #da1602; background-color:#da1602;}
+
+.titDep01 {margin-bottom:22px}
+.titDep01 img {height:17px}
+
+
+/* 전체메뉴 */
+.totalwrap {position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden; display:none}
+.total {position:relative;overflow:hidden;margin-left:44px;background:#fff;z-index:99}
+.total .totalTop {height:60px;background-color:#323231;}
+.total .totalTop p {color:#fff;padding:0 75px 0 11px; display:table-cell; vertical-align:middle; height:60px}
+.total .totalTop p.loginIntro {background:url(../images/common/totalmenu/bg_logintumy.png) no-repeat 11px center;background-size:14px;padding-left:30px}
+.total .totalTop a {display:block; position:absolute; right:0; top:0; height:15px; width:65px; background-color:#4d493f; text-align:center;padding:22px 0 23px;color:#b5ae9c; font-size:11px}
+.total .totalTop02 {height:129px; overflow:hidden; background:url(../images/steak/bg_tile.png) repeat left top; background-size:100px; }
+.total .totalTop02 .top_inner01 {text-align:center; padding:47px 0}
+.total .totalTop02 .top_inner02 strong {font-size:30px;font-family:'Arial';}
+.total .totalTop02 .top_inner02 .totalPoint {text-align:right; height:62px; position:relative; padding:12px 15px 0 0; display:block}
+.total .totalTop02 .top_inner02 .totalPoint em {position:absolute;left:17px;top:29px;}
+.total .totalTop02 .top_inner02 .totalPoint span {display:block}
+.total .totalTop02 .top_inner02 .totalPoint strong { display:block; margin-top:2px}
+.total .totalTop02 .top_inner02 .totalCoupon {border-top:1px solid #b5ada1; overflow:hidden}
+.total .totalTop02 .top_inner02 .totalCoupon a {float:left;width:50%;height:54px; text-align:right; position:relative}
+.total .totalTop02 .top_inner02 .totalCoupon a:first-child:after {content:'';display:block;border-right:1px solid #b5ada1;position:absolute;right:0;top:0;width:1px;height:100%}
+.total .totalTop02 .top_inner02 .totalCoupon a > span {position:absolute; left:9px; top:16px}
+.total .totalTop02 .top_inner02 .totalCoupon a strong {display:inline-block; margin:10px 15px 0 0; font-size:25px}
+.total .totalTop02 .top_inner02 .totalCoupon a em {font-size:12px; font-weight:normal}
+.total .totalGift {background:#fff url(../images/common/totalmenu/bg_linedot01_hub.png) repeat-x left bottom;background-size:1px; height:83px; border-top:1px solid #bbbcbc}
+.total .totalGift a {background:#807969 url(../images/common/totalmenu/bg_linedot02_hub.png) repeat-y right top;background-size:1px; width:33%; display:block; float:left; color:#fff; text-align:center;height:23px; position:relative; padding-top:57px; font-size:11px;}
+.total .totalGift a:last-child {width:34%;background:#807969}
+.total .totalGift a:after {content:'';display:block;width:100%;position:absolute;left:0; z-index:10;height:20px;top:25px}
+.total .totalGift a.inbgReserv:after {background:url(../images/common/totalmenu/bg_gift01.png) no-repeat center 0;background-size:28px}
+.total .totalGift a.inbgGift:after {background:url(../images/common/totalmenu/bg_gift02.png) no-repeat center 0;background-size:29px}
+.total .totalGift a.inbgDown:after {height:24px;background:url(../images/common/totalmenu/bg_gift03.png) no-repeat center 0;background-size:24px;top:22px;}
+.total .totalGift a em {position:absolute; left:0;top:10px; width:100%;height:24px; display:block; color:#af011c; padding:5px 0 0 0; text-align:center;z-index:100; margin-left:18px;background:url(../images/common/totalmenu/bg_whiteone.png) no-repeat center 0;background-size:24px; font-weight:bold}
+.total .totalGift.gifttype2 a {width:50%}
+
+.totalList li a {display:block;font-size:16px;}
+.totalList > li > a {border-bottom:1px solid #bababb; color:#33261b; padding:18px 16px;background-image:url(../images/common/totalmenu/bg_total_off.png); background-repeat:no-repeat; background-position:95% center;background-size:11px;}
+.totalList > li.on > a {color:#af011c;font-weight:bold;background-image:url(../images/common/totalmenu/bg_total_on.png);}
+.totalList li ul {display:none;background:#fff url(../images/common/totalmenu/bg_2depthline.gif) repeat-x left top;overflow:hidden;border-bottom:1px solid #bababa}
+.totalList li.on ul {display:block;background:#f0f0f0 url(../images/common/totalmenu/bg_2depthline_twosome.gif) repeat-x left top;}
+.totalList ul li {margin-left:27px;background:url(../images/common/totalmenu/bg_linedot03.png) repeat-x left bottom;background-size:6px; }
+.totalList ul li:last-child {background:none}
+.totalList ul li > a {background-image:url(../images/common/totalmenu/bul_total01.gif),url(../images/common/totalmenu/bg_2depth_off.png);background-repeat:no-repeat;background-position:left center, 90% center;background-size:2px,10px;padding:18px 0 18px 6px;}
+.totalList ul li.on > a {color:#af011c; font-weight:bold;background-image:url(../images/common/totalmenu/bul_total01.gif),url(../images/common/totalmenu/bg_2depth_on.png);background-size:2px,10px 2px;}
+.totalList ul li.depno a {background:url(../images/common/totalmenu/bul_total01.gif) no-repeat left center;background-size:2px;}
+.totalList ul li div {display:none}
+.totalList ul li.on div {display:block; padding-bottom:9px}
+.totalList ul li div a {display:block;font-size:13px; padding:9px 0 9px 8px;background:url(../images/common/totalmenu/bg_3depth01.gif) no-repeat left center; background-size:4px;}
+.totalList ul li div a.on {color:#af011c}
+.brandBi {display:block;text-align:center;padding:50px 0}
+
+
+/* 메뉴소개 */
+.menu_list{margin:0 -13px}
+.menu_list li{padding:25px 13px;background:url(../images/steak/bg_menulist.png) 0 0 repeat-x;background-size:1px}
+.menu_list li:first-child{background:none}
+.menu_list li .menu{position:relative}
+.menu_list li .menu p{margin-top:15px;font-size:12px;color:#4d493f}
+.menu_list li .menu [class*=price]{display:block;padding-left:26px;font-size:22px;font-weight:bold;color:#b72026;background:url(../images/steak/bg_won01.png) 0 5px no-repeat;background-size:22px}
+.menu_list li .menu .price{position:absolute;right:0;top:-2px}
+.menu_list li .menu .price02{position:absolute;right:0;top:40px}
+.menu_list li .menu [class*=price] .weight{display:block;text-align:right;font-size:12px;font-weight:bold;color:#4d493f}
+.menu_list li .menu .tit{display:block;font-size:18px;padding-right:100px}
+.menu_list li .menu .tit .eng{display:block;margin-top:5px;font-weight:normal;font-size:13px;}
+.menu_list li .info{overflow:hidden;width:100%;margin-top:20px;background:url(../images/steak/bg_menulist03.png) 0 8px repeat-x;background-size:5px}
+.menu_list li .info+.info{margin-top:9px}
+.menu_list li .info.line02{margin-top:68px}
+.menu_list li .info span{display:inline-block;color:#4d493f}
+.menu_list li .info [class*=kind], [class*=course_box] .inner .info [class*=kind]{float:left;padding:0 5px 0 30px;background:url(../images/steak/bg_menulist02.png) 0 0 no-repeat, url(../images/steak/bg_brandintile02.jpg) left top repeat;background-size:23px, 146px}/* 쇠고기 */
+.menu_list li .info .kind02{background:url(../images/steak/bg_menulist04.png) 0 0 no-repeat, url(../images/steak/bg_brandintile02.jpg) left top no-repeat;background-size:23px, 146px}/* 돼지고기 */
+.menu_list li .info .kind03{background:url(../images/steak/bg_menulist05.png) 0 0 no-repeat, url(../images/steak/bg_brandintile02.jpg) left top no-repeat;background-size:20px, 146px}/* 그릴드포크 */
+.menu_list li .info .kind04, [class*=course_box] .inner .info .kind04{background:url(../images/steak/bg_menulist06.png) 0 0 no-repea, url(../images/steak/bg_brandintile02.jpg) left top no-repeat;background-size:21px, 146px}/* 양고기 */
+.menu_list li .info .kind05{padding:4px 0 4px 30px;background:url(../images/steak/bg_menulist08.png) 0 0 no-repeat, url(../images/steak/bg_brandintile02.jpg) left top no-repeat;background-size:21px, 146px}/* 닭고기 */
+.menu_list li .info .kind06{padding:6px 0 6px 30px;background:url(../images/steak/bg_menulist09.png) 0 0 no-repeat, url(../images/steak/bg_brandintile02.jpg) left top no-repeat;background-size:21px, 146px}/* 쌀 */
+.menu_list li .info .origin, [class*=course_box] .inner .info .origin{float:right;padding-left:5px;text-align:right;background:url(../images/steak/bg_brandintile02.jpg) left top repeat;background-size:146px}
+[class*=noti_txt]{margin:13px 0;color:#4d493f;}
+.btnArea{position:relative}
+.btnArea .btnBox01{margin-top:0;position:absolute;right:0;top:-12px}
+.btnArea .btnBox01 .btnBrown02{width:100px;text-align:center;border-bottom:1px solid #5e5745;background:#857c67}
+.btnArea .btnBox01 .btnBrown02 a {display:block;color:#fff;border-radius:4px;padding:12px 0; font-weight:bold; font-size:12px}
+.innerlybox {position:absolute;right:0;top:0;z-index:100;}
+.innerlypop {border:2px solid #231f20;box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4); }
+.innerlypop h3 {background-color:#231f20; font-size:15px; color:#fff; padding:12px 0 12px 15px}
+.innerlypop p {color:#434343; padding:12px; background:url(../images/steak/bg_tile.png) repeat left top; background-size:145px;}
+.btnClose {z-index:100; position:absolute; right:13px; top:13px}
+.btnClose img {width:17px}
+.menu_list li .shop{display:inline-block;width:61px;height:15px;margin-top:15px;padding:5px 0 0;text-align:center;font-size:11px;color:#fff;background:url(../images/steak/bg_menulist07.png) 0 0 no-repeat;background-size:60px 20px}
+
+.course_time{margin:20px 0;text-align:center}
+.course_time img{padding-bottom:4px}
+[class*=course_box]{position:relative;padding:0 21px;background:url(../images/steak/bg_menuarea01_c.png) left 0 repeat-x;background-size:88px}
+[class*=course_box]:before{content:'';display:block;height:100%;width:88px;position:absolute;left:0;top:0;background:url(../images/steak/bg_menuarea01_l.png) left 0 no-repeat;background-size:88px}
+[class*=course_box]:after{content:'';display:block;height:100%;width:88px;position:absolute;right:0;top:0;background:url(../images/steak/bg_menuarea01_r.png) left 0 no-repeat;background-size:88px}
+[class*=course_box] .inner{position:relative;width:100%;padding:37px 0;height:1327px;text-align:center;z-index:100;}
+[class*=course_box] .inner:before{content:'';display:block;height:11px;width:88px;position:absolute;left:50%;top:0;margin-left:-44px;background:url(../images/steak/bg_menuarea01_t.png) left 0 no-repeat;background-size:88px}
+[class*=course_box] .inner:after{content:'';display:block;height:11px;width:88px;position:absolute;left:50%;bottom:0;margin-left:-44px;background:url(../images/steak/bg_menuarea01_b.png) left 0 no-repeat;background-size:88px}
+[class*=course_box] .inner .tit{margin-bottom:22px}
+[class*=course_box] .inner .tit img{height:21px}
+[class*=course_box] .inner .tit02 img{width:250px}
+[class*=course_box] .inner [class*=txt0]{margin:13px 0;font-size:14px;}
+[class*=course_box] .inner [class*=txt0] .eng{display:block;margin-top:7px;color:#807969;conr-size:12px}
+[class*=course_box] .inner .txt02{font-weight:bold;}
+[class*=course_box] .inner .txt02 span{display:block;font-weight:normal;color:#323231}
+[class*=course_box] .inner .main_list li{margin:21px 0 28px}
+[class*=course_box] .inner .main_list li:last-child{margin-bottom:21px}
+[class*=course_box] .inner .main_list li .num img{width:31px}
+[class*=course_box] .inner .main_list li .price{display:inline-block;padding-left:20px;font-size:16px;font-weight:bold;color:#b72026;background:url(../images/steak/bg_won01.png) 0 4px no-repeat;background-size:17px}
+[class*=course_box] .inner .main_list li [class*=txt0]{margin:13px 0}
+[class*=course_box] .inner .main_list li [class*=txt0] .eng{margin-top:4px}
+[class*=course_box] .inner .info{overflow:hidden;width:250px;margin:10px auto;font-size:11px;background:url(../images/steak/bg_menulist03.png) 0 6px repeat-x;background-size:5px}
+[class*=course_box] .inner .info [class*=kind]{background:url(../images/steak/bg_menulist02.png) 0 0 no-repeat, url(../images/steak/bg_brandintile03.jpg) left top no-repeat;background-size:23px, 146px}/* 쇠고기 */
+[class*=course_box] .inner .info .kind04{background:url(../images/steak/bg_menulist06.png) 0 0 no-repeat, url(../images/steak/bg_brandintile03.jpg) left top no-repeat;background-size:21px, 146px}/* 양고기 */
+[class*=course_box] .inner .info .origin{background:url(../images/steak/bg_brandintile03.jpg) left top no-repeat;background-size:146px}
+.course_box02{position:relative;padding:0 21px;background:url(../images/steak/bg_menuarea02_c.png) left 0 repeat-x;background-size:88px}
+.course_box02:before{content:'';display:block;height:100%;width:88px;position:absolute;left:0;top:0;background:url(../images/steak/bg_menuarea02_l.png) left 0 no-repeat;background-size:88px}
+.course_box02:after{content:'';display:block;height:100%;width:88px;position:absolute;right:0;top:0;background:url(../images/steak/bg_menuarea02_r.png) left 0 no-repeat;background-size:88px}
+.course_box02 .inner{position:relative;width:100%;padding:37px 0;height:685px;text-align:center;z-index:100;}
+.course_box02 .inner [class*=txt0]{margin:19px 0;font-size:14px;}
+.course_box02 .inner .price{display:inline-block;padding-left:30px;font-size:24px;font-weight:bold;color:#b72026;background:url(../images/steak/bg_won01.png) 0 4px no-repeat;background-size:25px}
+.course_box03{position:relative;padding:0 21px;background:url(../images/steak/bg_menuarea03_c.png) left 0 repeat-x;background-size:88px}
+.course_box03 .inner{position:relative;width:100%;padding:37px 0;height:2534px;text-align:center;z-index:100;}
+.course_box03:before{content:'';display:block;height:100%;width:88px;position:absolute;left:0;top:0;background:url(../images/steak/bg_menuarea03_l.png) left 0 no-repeat;background-size:88px}
+.course_box03:after{content:'';display:block;height:100%;width:88px;position:absolute;right:0;top:0;background:url(../images/steak/bg_menuarea03_r.png) left 0 no-repeat;background-size:88px}
+
+
+/* 종료된쿠폰 */
+.endIssue,.endAmount,.endUse,.endDay {position:relative;display:block}
+.endIssue:before,.endAmount:before,.endUse:before,.endDay:before {content:'';display:block;height:100%;width:100%;position:absolute;left:0;top:0;opacity:0.6; background-color:#000}
+.endIssue:after,.endAmount:after,.endUse:after,.endDay:after {content:'';display:block;height:100%;width:100%;position:absolute;left:0;top:0;}
+.endUse:after {background:url(../images/steak/img_couponend01.png) no-repeat center center; background-size:26%}
+.endDay:after {background:url(../images/steak/img_couponend02.png) no-repeat center center; background-size:26%}
+.endIssue:after {background:url(../images/steak/img_couponend03.png) no-repeat center center; background-size:26%}
+.endAmount:after {background:url(../images/steak/img_couponend04.png) no-repeat center center; background-size:26%}
+
+/* paging */
+.paging {position:relative;overflow:hidden;padding:9px;border-radius:4px;border:1px solid #472d17;background:#38302a; height:37px}
+.paging .prev, .paging .next{display:block;width:35px;padding:9px 0;text-align:center;color:#fff;border-radius:4px; height:19px}
+.paging .prev{float:left;}
+.paging .next{float:right;}
+.paging .list{position:absolute;left:50%;top:8px;margin-left:-39px;background-color:#694326;border-radius:4px;}
+.paging .list a{display:block;color:#fff;font-size:14px;font-family:'Tahoma';padding:11px 10px 11px 32px;background:#62594f url(../images/common/ico_paging_list.gif) 10px 15px no-repeat;background-size:13px;border-radius:4px;}
+.paging .list a .on{color:#fedd00;}
+.paging .prev, .paging .next{background:#62594f}
+.paging .prev img, .paging .next img {width:6px}
+/* etc */
+.imgBox01 img {width:100%}
+.txtBox01 {margin:22px 0; line-height:20px}
+
+.bandSteakLi li > a {background-color:#fff;display:block; padding:13px 40px 13px 13px;background-image:url(../images/steak/bg_coupon_off.png); background-repeat:no-repeat; background-position:95% center; background-size:27px; color:#271c14; font-size:19px; font-weight:bold;border:1px solid #a0968b; border-top:none;}
+.bandSteakLi li:first-child > a {border-top:1px solid #a0968b;}
+.bandSteakLi li > a em { display:block; font-size:11px; margin-top:5px}
+.bandSteakLi li.on > a {background-image:url(../images/steak/bg_coupon_on.png);}
+.bandSteakLi li div {display:none; border:1px solid #a0968b; border-top:none}
+.bandSteakLi li div img {width:100%}
+.bandSteakLi li.on div {display:block}
+.bandSteakLi li p {padding:13px;background:url(../images/steak/bg_brandintile.png) left top repeat;background-size:146px;}
+
+/* mypage */
+.couponList {margin-top:5px;border-top:1px solid #342018;}
+.couponList li > a {background-color:#fff;display:block; padding:22px 0;background-image:url(../images/steak/bg_coupon_off.png); background-repeat:no-repeat; background-position:95% center; background-size:27px; text-indent:13px; color:#271c14; font-size:19px; font-weight:bold;border-left:1px solid #342018;border-right:1px solid #342018;border-bottom:1px solid #342018;}
+.couponList li > a em{ color:#b72026}
+.couponList li:first-child.on {padding-bottom:10px;border-bottom:1px solid #342018;}
+.couponList li:first-child.on.noneCp {padding-bottom:0}
+.couponList li.on > a {background-image:url(../images/steak/bg_coupon_on.png);}
+.couponList li div {display:none;}
+.couponList li div img {width:100%}
+.couponList li.on div {display:block}
+.couponList li p {padding:22px 0 22px 13px;text-align:center}
+.couponcode img {width:100%}
+.couponcode div {padding:0 26px}
+.pointTit { position:relative; font-size:14px}
+.pointTit strong {position:absolute; right:0;top:0; font-size:22px; font-family:'Tahoma';background:url(../images/steak/bg_point01.png) no-repeat right center; background-size:20px; display:inline-block; padding-right:28px; z-index:2}
+
+.mydflist li {background:url(../images/hub/bg_store_list.png) left bottom repeat-x;background-size:2px; padding-bottom:20px; margin-bottom:20px;}
+.mydflist li:last-child {background:none}
+.mydflist li > strong {font-size:18px; display:block; margin-bottom:10px}
+.mydflist li .btnBox01 {width:178px}
+
+.mypageBox01 {background:url(../images/steak/bg_mypagetop_c.jpg) repeat-x left top; background-size:39px 82px; height:82px; position:relative}
+.mypageBox01:before {content:''; position:absolute; left:0;top:0; height:82px;background:url(../images/steak/bg_mypagetop_l.jpg) no-repeat left top; background-size:31px 82px; width:31px; z-index:}
+.mypageBox01:after {content:''; position:absolute; right:0;top:0; height:82px;background:url(../images/steak/bg_mypagetop_r.jpg) no-repeat left top; background-size:31px 82px; width:31px; z-index:1}
+.mypageBox01 .boxInner {padding:24px 16px;background:url(../images/steak/bg_mypagetop_in_c.jpg) no-repeat center top; background-size:90px 82px;}
+.mypageTabBox { margin:0 -13px;}
+.mypointTable {border-bottom:1px solid #9e9588;}
+.mypointTable th {text-align:left; padding:13px 0 13px 26px;font-size:15px; }
+.mypointTable tr:first-child td { color:#b72026}
+.mypointTable tr+tr th {font-weight:normal; }
+.mypointTable td {text-align:right;font-size:15px;font-family:'Tahoma';color:#4d4d4d; padding-right:26px}
+.mypointTable td,.mypointTable th {background:url(../images/steak/bg_store_list.png) repeat-x left bottom; background-size:2px}
+.mypointTable tr:last-child td,.mypointTable tr:last-child th {background:none}
+
+.mygumeList {display:table;width:100%; border-bottom:2px solid #a0968b;padding:22px 0; position:relative}
+.mygumeList .imgPro {display:table-cell;width:35%;text-align:center; vertical-align:top}
+.mygumeList .imgPro span {display:inline-block;width:79px;}
+.mygumeList .imgPro img {width:100%;border:1px solid #cfcfcf;}
+.mygumeList .wonPro {display:table-cell;width:65%;text-align:left;text-indent:0;vertical-align:top}
+.mygumeList .wonPro > em {display:block; margin-bottom:8px;font-size:15px;}
+.mygumeList .wonPro .date{font-size:12px;letter-spacing:0}
+.mygumeList .wonPro strong  {display:block; font-size:15px; margin-top:8px; font-weight:normal}
+.mygumeList .wonPro strong em {color:#de3142;}
+
+.payInfo{border-bottom:2px solid #a0968b; margin-bottom:20px}
+.payInfo h3{padding:14px 0;font-size:14px; background:url(../images/steak/bg_store_list.png) left bottom repeat-x; background-size:2px}
+.payInfo .infoList tr{background:url(../images/jms/bg_dott_garo02.png) left bottom repeat-x} 
+.payInfo .infoList tr:last-child{background-image:none;}
+.payInfo .infoList tr th, .payInfo .infoList tr td{padding:14px 0;text-align:left;font-size:15px;}
+.payInfo .infoList tr th{font-weight:normal;font-size:12px;color:#434343}
+.payInfo .infoList.mypage td{text-align:right}
+
+
+.mypageBox02 {background:url(../images/steak/bg_mypagetop03_c.jpg) repeat-x left top; background-size:39px 107px; height:107px; position:relative}
+.mypageBox02:before {content:''; position:absolute; left:0;top:0; height:107px;background:url(../images/steak/bg_mypagetop03_l.jpg) no-repeat left top; background-size:31px 107px; width:31px; z-index:}
+.mypageBox02:after {content:''; position:absolute; right:0;top:0; height:107px;background:url(../images/steak/bg_mypagetop03_r.jpg) no-repeat left top; background-size:31px 107px; width:31px; z-index:1}
+.mypageBox02 .boxInner {background:url(../images/steak/bg_mypagetop03_in_c.jpg) no-repeat center top; background-size:90px 107px;}
+.mypointdetail {text-align:center; position:relative; z-index:2; padding:0 18px; }
+.mypointdetail li{text-align:left; padding:12px 0; font-size:15px; position:relative}
+.mypointdetail li em {float:right;  font-size:15px;font-weight:bold}
+.mypointdetail li:first-child {background:url(../images/steak/bg_store_list.png) 0 bottom repeat-x;background-size:2px; padding-top:25px}
+
+
+.innerlybox {position:absolute;left:0;top:330px; margin:0 10px; }
+.innerlypop {border:2px solid #323231;box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4)}
+.innerlypop h3 {background-color:#323231; font-size:15px; color:#fff; padding:12px 0 12px 15px}
+.innerlypop p {background:url(../images/steak/bg_brandintile.png) repeat left top; background-size:146px; padding:12px}
+
+.listType01 {margin:30px -13px 0; background-color:#676764; padding:20px 13px}
+.listType01 dt {background:url(../images/steak/bg_listtit01.png) no-repeat left top; background-size:18px; padding:0 0 2px 22px; font-weight:bold; font-size:14px; margin-bottom:10px; color:#ccc1a7}
+.listType01 dd {color:#ccc1a7;padding-left:6px; position:relative; margin-bottom:5px}
+.listType01 dd:before {content:'';width:2px; height:2px; background-color:#ccc1a7; position:absolute; left:0; top:6px}
+.listType01 dd p {color:#ccc1a7}
+
+.mypointBox02 {display:block; padding:25px 20px; position:relative;background:url(../images/steak/ico_tel.png) no-repeat 90% center,url(../images/steak/bg_mypagetop_in_c.jpg) no-repeat center top; background-size:43px,90px 82px; z-index:2}
+
+.cjpointBtn {color:#807969; text-decoration:underline; display:block; margin-bottom:80px; padding-left:26px}
+
+.pointInq{margin-top:22px;text-align:center}
+.pointInq img{width:100%}
+.pointInq .btn_wrap{overflow:hidden;margin-bottom:22px;}
+.pointInq .btn_wrap li{float:left;width:16.5%;}
+.pointInq .btn_wrap li:first-child {width:17.5%}
+.pointInq .btn_wrap li a{display:block;color:#fff;margin-right:1px;border-radius:4px;padding:12px 0;font-weight:bold;font-size:14px;text-align:center;background:#62594f;}
+.pointInq .btn_wrap li.on a {background:#b72026}
+
+.producList{margin:0 -13px;border-top:2px solid #9e9588}
+.producList li {background:url(../images/steak/bg_store_list.png) left bottom repeat-x; background-size:2px 1px}
+.producList li > span {padding:15px; display:block; text-align:center}
+.producList li a {display:table; padding:10px 0;width:100%}
+.producList li a div {display:table-cell; text-align:center}
+.producList li a .imgPro {width:30%}
+.producList li a .wonPro {width:70%; text-align:left; vertical-align:top; padding:5px 13px 0 0; font-size:15px}
+.producList li a .imgPro span {border:1px solid #cfcfcf;display:inline-block;width:81px;}
+.producList li a .imgPro img, .producList.type02 .imgPro img {width:100%}
+.producList li a .wonPro .date , .producList.type02 .wonPro .date{display:block;margin:2px 0;font-size:12px;letter-spacing:0;color:#434343;}
+.producList li a .wonPro .price, .producList.type02 .wonPro .price{display:block;margin-bottom:0;padding-right:13px;font-size:15px;color:#3e2d20; font-weight:normal}
+.producList li a .wonPro .price em, .producList.type02 .wonPro .price em { color:#de3142}
+.producList li a .wonPro .price span , .producList.type02 .wonPro .price span {font-family:'Tahoma'}
+
+
+/* footer */
+footer {background-color:#2b2b2b;text-align:center;border-top:1px solid #000; position:relative}
+footer .footListTop {width:100%;overflow:hidden;background-color:#262626;}
+footer .footListTop li {float:left;width:25%;border-bottom:1px solid #000;background:#252525;}
+footer .footListTop li:last-child {border-right:0;}
+footer .footListTop li a {color:#c3b5aa;display:block;height:77px;font-size:12px;text-indent:-9999px;background-repeat:no-repeat;background-position:center center;background-size:auto 43px;border-right:1px solid #000}
+footer .footListTop li:first-child a {background-image:url(../images/steak/ico_footer_quick_01.png)}
+footer .footListTop li:nth-child(2) a {background-image:url(../images/steak/ico_footer_quick_02.png)}
+footer .footListTop li:nth-child(3) a {background-image:url(../images/steak/ico_footer_quick_03.png)}
+footer .footListTop li:nth-child(4) a {background-image:url(../images/steak/ico_footer_quick_04.png)}
+footer .footListTop li:last-child a {border-right:none}
+footer .footListCnt {padding:15px 0 13px;clear:both;  margin:0 auto; text-align:center; overflow:hidden; display:inline-block}
+footer .footListCnt a {color:#c8c8c8;font-size:10px;display:inline-block;text-align:center; float:left;background:url(../images/vips/bg_footcnt01.png) no-repeat right center; padding-right:8px; margin-right:6px}
+footer .footListCnt a:nth-child(3) {color:#fff}
+footer .footListCnt a:last-child {background:none; padding-right:0; margin-right:0}
+footer address {padding:8px 0 20px 0; color:#828282; font-size:9px; text-align:left; line-height:16px;letter-spacing:0;border-top:1px solid #393939; margin:0 13px}
+footer address p,footer address a {color:#828282;font-size:9px;letter-spacing:0}
+footer address p a {text-decoration:underline;}
+footer address p:last-child {margin-top:17px;color:#6c6053}
+
+footer .total_brand {width:100%;position:absolute;background-color:#fff;height:auto; bottom:100%;border-bottom:1px solid #c9c9c9; display:none}
+footer .total_brand ul {overflow:hidden;}
+footer .total_brand ul li {width:25%;height:80px;float:left;display:table;border-top:1px solid #c9c9c9;}
+footer .total_brand ul li a {display:table-cell;vertical-align:middle;border-right:1px solid #c9c9c9;}
+footer .total_brand ul li:nth-child(4n) a{border-right:0;}
+footer .total_brand ul li:nth-child(1) a img {width:65px}
+footer .total_brand ul li:nth-child(2) a img {width:45px}
+footer .total_brand ul li:nth-child(3) a img {width:48px}
+footer .total_brand ul li:nth-child(4) a img {width:70px}
+footer .total_brand ul li:nth-child(5) a img {width:65px}
+footer .total_brand ul li:nth-child(6) a img {width:57px}
+footer .total_brand ul li:nth-child(7) a img {width:35px}
+footer .total_brand ul li:nth-child(8) a img {width:58px}
+footer .total_brand ul li:nth-child(9) a img {width:71px}
+footer .total_brand ul li:nth-child(10) a img {width:53px}
+footer .total_brand ul li:nth-child(11) a img {width:68px}
+footer .total_brand ul li:nth-child(12) a img {width:48px}
+footer .total_brand ul li:nth-child(13) a img {width:53px}
+footer .total_brand ul li:nth-child(14) a img {width:60px}
+footer .total_brand ul li:nth-child(15) a img {width:63px}
+footer .total_brand ul li:nth-child(16) a img {width:52px}
+footer .total_brand ul li:nth-child(17) a img {width:61px}
+footer .total_brand ul li:nth-child(18) a img {width:53px}
+footer .total_brand ul li:nth-child(19) a img {width:60px} 
+footer .total_brand ul li:last-child {background-image:url(../images/common/totalbrand/bg_totalbrand_line.png);background-repeat:no-repeat;background-size:90px auto;background-position:0 0}
+
+

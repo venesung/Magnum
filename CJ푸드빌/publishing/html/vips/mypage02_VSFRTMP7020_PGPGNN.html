@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>나의 쿠폰함 - VIPS</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/vips.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	function couponListOnOff() {
+		var con = $(".couponList"),
+			menus = con.find("li"),
+			existcoupon = menus.eq(0).find("div > a"),
+			existcoupon_len = existcoupon.length;
+			btns = con.find("> li > a");
+		//menus.eq(0).addClass("on");
+		menus.eq(1).removeClass("on");
+		menus.on("click", function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+		});
+
+		if (existcoupon_len > 0) {
+				existcoupon.find("img").on("click", function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				var idx = $(e.currentTarget).parent().index();
+				openCouponYouHave(idx);
+			});
+		} else {
+			menus.eq(0).addClass("noneCp");
+			menus.eq(0).find("p").css("display", "block");
+		}
+
+		btns.on("click", function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			var target = $(e.currentTarget);
+			if (target.parent().hasClass("on")) {
+				target.parent().removeClass("on");
+				if (existcoupon_len === 0) {
+					target.parent().removeClass("noneCp");
+					menus.eq(0).find("p").css("display", "none");
+				}
+			} else  {
+				target.parent().addClass("on");
+			}
+		});
+	}
+	
+	couponListOnOff();
+
+	function openCouponYouHave(idx) {
+		popUp.Open($(".layer_Popup")); //test
+		$.ajax({
+			type	: "POST",
+			url		: "/.asp",
+			data	: "idx="+idx,
+			dataType: "html",
+			success:function(data){
+				$(".pop_inner").html(data);
+				popUp.Open($(".layer_Popup")); 
+			},
+			error:function(e){
+				//alert(e);
+			}
+		});
+	}	
+}); // document ready
+
+</script>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/vips/img_logo_vips.png" alt="VIPS" style="width:90px"></a></h1>
+			
+			<a href="#" class="util_l"  style="display:no ne">
+				<img src="../../images/vips/img_head_left01.png" alt="매장찾기" style="width:12px">
+			</a>
+			<a href="#" class="util_l02" style="display:none">
+				<img src="../../images/vips/txt_reservat01.png" alt="예약하기" style="width:49px">
+			</a>
+			
+			<a href="#" class="util_r"><img src="../../images/vips/img_head_right01.png" alt="전체메뉴 펼치기" style="width:60px"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/vips/img_location_home.png" alt="home" style="width:14px"></li>
+						<li>마이페이지</li>
+						<li>나의 쿠폰함</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 하위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">나의 포인트현황</a></li>
+						<li><a href="#">나의 쿠폰함</a></li>
+						<li><a href="#">나의 구매내역</a></li>
+						<li><a href="#" title="새창" target="_blank">개인정보변경</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 하위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox bgvipslogo">
+				
+				<h2 class="titDep01"><img src="../../images/vips/tit_mypage02.png" alt="나의 쿠폰함" style="width:110px"></h2>
+
+				<a href="#" target="_blank" title="새창">
+					<img src="../../images/vips/img_txtcoupon.png" alt="COUPON 쿠폰받으러가기 - [빕스]의 새 쿠폰을 받아보세요." style="width:100%">
+				</a>
+				
+				<ul class="couponList">
+					<li class=""> <!--  선택시 class="on"--><!-- coupon없이 p태그 활성화시 class="noneCp" 추가 -->
+						<a href="#" title="닫기">사용가능 쿠폰 <em>(3)</em></a> <!-- title="펼치기" -> "닫기" -->
+						<div style="display:n one">
+							<a href="#"><img src="../../images/vips/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능"></a>
+							<a href="#"><img src="../../images/vips/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능"></a>
+						</div>
+						<p style="display:none">사용 가능한 쿠폰이 없습니다.</p><!-- 쿠폰이없을시 출력-->
+					</li>
+					<li class="on">
+						<a href="#" title="펼치기">사용완료/기간만료 쿠폰 <em>(3)</em></a><!-- title="펼치기" -> "닫기" -->
+						
+						<div>
+							<em class="endUse" title="사용완료"><!-- 사용완료 class="endUse" -->
+								<img src="../../images/vips/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">	
+							</em>
+							<em class="endDay" title="기간만료"><!-- 기간만료 class="endDay"-->
+								<img src="../../images/vips/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+								
+							</em>
+							<em class="endIssue" title="발급완료"><!-- 발급만료 class="endIssue"-->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+							</em>
+							<em class="endAmount" title="수량소진"><!-- 기간만료 class="endAmount"-->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+							</em>
+							
+							
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<ul class="footListTop">
+				<li><a href="#" target="_blank" title="새창">페이스북</a></li>
+				<li><a href="#" target="_blank" title="새창">PC 버전</a></li>
+				<li><a href="#" target="_blank" title="새창">CJ푸드빌</a></li>
+				<li><a href="#">전체브랜드</a></li>
+			</ul>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+			
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

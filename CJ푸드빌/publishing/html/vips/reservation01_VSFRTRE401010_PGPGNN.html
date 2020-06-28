@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>예약서비스 - VIPS</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/vips.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/vips/img_logo_vips.png" alt="VIPS" style="width:90px"></a></h1>
+			
+			<a href="#" class="util_l"  style="display:no ne">
+				<img src="../../images/vips/img_head_left01.png" alt="매장찾기" style="width:12px">
+			</a>
+			<a href="#" class="util_l02" style="display:none">
+				<img src="../../images/vips/txt_reservat01.png" alt="예약하기" style="width:49px">
+			</a>
+			
+			<a href="#" class="util_r"><img src="../../images/vips/img_head_right01.png" alt="전체메뉴 펼치기" style="width:60px"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/vips/img_location_home.png" alt="home" style="width:14px"></li>
+						<li>예약서비스</li>
+						<li>예약정보입력</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 하위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">예약정보입력</a></li>
+						<li><a href="#">예약완료</a></li>
+						<li><a href="#">예약확인 및 취소</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 하위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox">
+				<h2 class="titDep01"><img src="../../images/vips/tit_vips01.png" alt="예약정보입력" style="width:118px"></h2>
+				
+				<h3 class="stitDep01"><img src="../../images/vips/stitle_reserv01.png" alt="1.예약자 정보 입력" style="width:129px"></h3>
+				<p class="txt01">예약확인 등 원활한 예약관리를 위해 방문자의 정보를 정확하게 입력해 주시기 바랍니다.</p>
+				
+				<ul class="listType01">
+					<li><strong>예약자 정보</strong>
+						<div class="tableBox01">
+							<table>
+								<caption>예약자 정보표</caption>
+								<colgroup>
+									<col style="width:47px">
+							<col style="width:*">
+								</colgroup>
+								
+								<tbody>
+									<tr>
+										<th scope="row">이름</th>
+										<td><strong>장지은</strong> 고객님</td>
+									</tr>
+									<tr>
+										<th scope="row">연락처</th>
+										<td>
+											<span class="formSect">
+												<span class="cellwi2">
+													<select title="휴대폰 앞자리선택">
+														<option>010</option>
+													</select>
+												</span>
+												<span class="cellspace">-</span>
+												<span class="cellwi2"><input type="tel" title="휴대폰 가운데자리 입력"></span>
+												<span class="cellspace">-</span>
+												<span class="cellwi2"><input type="tel" title="휴대폰 뒷자리 입력"></span>
+											</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li><strong>방문자 정보</strong><span class="chSect"><input type="checkbox" id="chtype01" checked> <label for="chtype01" class="fs12">예약자와 동일</label></span>
+						<div class="tableBox01">
+							<table>
+								<caption>방문자 정보표</caption>
+								<colgroup>
+									<col style="width:47px">
+							<col style="width:*">
+								</colgroup>
+								
+								<tbody>
+									<tr>
+										<th scope="row">이름</th>
+										<td>
+											<span class="formSect">
+												<input type="text" title="이름 입력">
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">연락처</th>
+										<td>
+											<span class="formSect">
+												<span class="cellwi2">
+													<select title="휴대폰 앞자리선택">
+														<option>010</option>
+													</select>
+												</span>
+												<span class="cellspace">-</span>
+												<span class="cellwi2"><input type="tel" title="휴대폰 가운데자리 입력"></span>
+												<span class="cellspace">-</span>
+												<span class="cellwi2"><input type="tel" title="휴대폰 뒷자리 입력"></span>
+											</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+				
+				<h3 class="stitDep01"><img src="../../images/vips/stitle_reserv02.png" alt="2.날짜 및 시간 선택" style="width:137px"></h3>
+				<p class="txt01">오늘 날짜를 기준으로 다음날부터 2주 후까지 예약 가능합니다.</p>
+				
+				<div class="tableBox01">
+					<table>
+						<caption>날짜, 시간선택표</caption>
+						<colgroup>
+							<col style="width:47px">
+							<col style="width:*">
+						</colgroup>
+						
+						<tbody>
+							<tr>
+								<th scope="row">날짜</th>
+								<td>
+									<span class="formSect">
+										<select title="날짜 선택">
+											<option>2014년 7월 30일 (수)</option>
+										</select>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">시간</th>
+								<td>
+									<span class="formSect">
+										<select title="시간 선택">
+											<option>11시 30분</option>
+										</select>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<h3 class="stitDep01"><img src="../../images/vips/stitle_reserv03.png" alt="3.인원 선택" style="width:81px"></h3>
+				<p class="txt01">
+					<em class="txtred">최대 4명</em>까지 예약 가능합니다.<span class="smallTxt01">(<em class="txtred">36개월 미만</em> 고객포함)</span><br>
+				</p>
+				<ul class="starList">
+					<li>좌석 마련을 위함이오니, 주문하지 않는 어린이의 인원도 정확하게 입력해주시기 바랍니다.</li>
+					<li>5명 이상 예약시 해당 매장으로 문의해주세요.</li>
+				</ul>
+				
+				<!-- 20140808 추가 -->
+				<div class="btnBox01 frBtnBox">
+					<a href="#" class="btnGray frsmallBtn">다시선택</a>
+				</div>
+				<!-- //20140808 추가 end -->
+				
+				<div class="tableBox01">
+					<table>
+						<caption>인원 선택표</caption>
+						<colgroup>
+							<col style="width:47px">
+							<col style="width:*">
+						</colgroup>
+						
+						<tbody>
+							<tr>
+								<th scope="row">어른</th>
+								<td>
+									<div class="radioSect">
+										<label class="disable"><input type="radio" disabled> 1명</label> <!-- disable시 class="disable추가 -->
+										<label><input type="radio"> 2명</label>
+										<label><input type="radio"> 3명</label>
+										<label><input type="radio"> 4명</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">어린이</th>
+								<td>
+									<div class="radioSect">
+										<label><input type="radio"> 1명</label>
+										<label><input type="radio"> 2명</label>
+										<label><input type="radio"> 3명</label>
+										<label><input type="radio"> 4명</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<h3 class="stitDep01"><img src="../../images/vips/stitle_reserv04.png" alt="4.매장 선택" style="width:81px"></h3>
+				
+				<div class="reservaBtm01">
+					<div>
+						<label><input type="radio"> 전체 매장 목록에서 선택</label>
+						
+						<div class="marT5 t_right"><input type="checkbox" id="chtype02"> <label for="chtype02" class="fs12">마감된 매장 제외</label></div><!-- 20140808 수정 -->
+						
+						<!-- 20140806 수정 -->
+						<span class="formSect marT5">
+							<span class="cellwi4">
+								<select title="지역 선택">
+									<option>지역선택</option>
+								</select>
+							</span>
+							<span class="cellspace"></span>
+							<span class="cellwi4">
+								<select title="매장 선택">
+									<option>매장선택</option>
+								</select>
+							</span>
+						</span>
+						<!-- // 20140806 수정 end -->
+						
+						
+					</div>	
+					
+					<div class="btminnerB">
+						<label class=""><input type="radio"> 가까운 매장에서 선택</label>
+						<!-- 버튼 start -->
+						<div class="btnBox01">
+							<a href="#" class="btnBlack">매장 검색</a>
+						</div>
+						<!-- // 버튼 end -->
+						
+						<div class="shopBox01" tabindex="0">
+							<ul>
+								<li class="shopinCont">
+									<strong>강남역점 <em><img src="../../images/vips/txt_reserv_on.gif" alt="예약"></em></strong>
+									<p><span>서울 강남구 역삼동역삼동역삼동역삼동 820-8<br>02-123-2323</span><em>850m</em></p>
+									
+									<div class="btnBox01">
+										<a href="#" class="btnBlack">선택</a>
+									</div>
+								</li>
+								<li class="shopinCont">
+									<strong>강남역점 <em><img src="../../images/vips/txt_reserv_off.gif" alt="마감"></em></strong>
+									<p><span>서울 강남구 역삼동역삼동역삼동역삼동 820-8<br>02-123-2323</span><em>850m</em></p>
+									<div class="btnBox01">
+										<a href="#" class="btnBlack">선택</a>
+									</div>
+								</li>
+								<li class="shopinCont">
+									<strong>강남역점 <em><img src="../../images/vips/txt_reserv_off.gif" alt="마감"></em></strong>
+									<p><span>서울 강남구 역삼동역삼동역삼동역삼동 820-8<br>02-123-2323</span><em>850m</em></p>
+									<div class="btnBox01">
+										<a href="#" class="btnBlack">선택</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<span class="formSect">
+							<span class="celltxt1">선택매장</span>
+							<span class="cellwi8"><input type="text" title="선택매장"></span>
+						</span>
+						
+					</div>					
+				</div>
+				
+				<!-- 버튼 start -->
+				<div class="btnBox01">
+					<a href="#" class="btnRed">입력완료</a>
+				</div>
+				<!-- // 버튼 end -->
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<ul class="footListTop">
+				<li><a href="#" target="_blank" title="새창">페이스북</a></li>
+				<li><a href="#" target="_blank" title="새창">PC 버전</a></li>
+				<li><a href="#" target="_blank" title="새창">CJ푸드빌</a></li>
+				<li><a href="#">전체브랜드</a></li>
+			</ul>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+			
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

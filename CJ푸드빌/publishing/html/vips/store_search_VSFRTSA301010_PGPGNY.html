@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>매장안내 - 매장찾기</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/vips.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/vips/img_logo_vips.png" alt="VIPS" style="width:90px"></a></h1>
+			
+			<a href="#" class="util_l"  style="display:no ne">
+				<img src="../../images/vips/img_head_left01.png" alt="매장찾기" style="width:12px">
+			</a>
+			<a href="#" class="util_l02" style="display:none">
+				<img src="../../images/vips/txt_reservat01.png" alt="예약하기" style="width:49px">
+			</a>
+			
+			<a href="#" class="util_r"><img src="../../images/vips/img_head_right01.png" alt="전체메뉴 펼치기" style="width:60px"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/vips/img_location_home.png" alt="home" style="width:14px"></li>
+						<li>매장안내</li>
+						<li>매장찾기</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 하위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">매장찾기</a></li>
+						<li><a href="#">돌잔치</a></li>
+						<li><a href="#">키즈생일파티</a></li>
+						<li><a href="#">키즈쿠킹클래스</a></li>
+						<li><a href="#">행사 및 모임</a></li>
+						<li><a href="#">어린이 체험교실</a></li>
+						<li><a href="#">매장안내</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 하위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox">
+				
+				<h2 class="titDep01"><img src="../../images/vips/tit_store01.png" alt="매장찾기" style="width:80px"></h2>
+				<!-- 시작 -->
+				
+				<!-- tablist start -->
+				<ul class="tabList02 tabTy02"><!-- 두개일경우 class="tabTy02"추가 -->
+					<li class="on"><a href="#" title="현위치">매장 검색</a></li> <!-- class="on"시 title="현위치"추가 -->
+					<li><a href="#">가까운 매장</a></li>
+				</ul>
+				<!-- // tablist end -->
+				
+				
+				<div class="tabContent">
+					<!-- tabCont1 start -->
+					<div class="tabCont1">
+						<h3 class="store_tit">매장형태</h3>
+						
+						<!-- btn_wrap -->
+						<ul class="btn_wrap">
+							<li><a href="#" title="선택">VIPS</a></li><!-- class="on" 시 title="선택" 추가 -->
+							<li class="on"><a href="#">D&rsquo;LIGHT</a></li>
+							<li><a href="#">Brunch</a></li>
+							<li class="on"><a href="#">Diner</a></li>
+						</ul>
+						<!-- // btn_wrap -->
+						
+						<div class="tit_area02">
+							<h3 class="store_tit">매장서비스</h3>
+							<p>(서비스 복수 선택가능)</p>
+						</div>
+						
+						
+						<ul class="btn_wrapNew"><!-- 20140820 class값 btn_wrapNew 변경 -->
+							<li class="on"><a href="#" title="선택"><span class="srv01">돌잔치</span></a></li><!-- class="on" 시 title="선택" 추가 -->
+							<li><a href="#"><span class="srv02">키즈생일</span></a></li>
+							<li class="on" ><a href="#"><span class="srv03">세미나룸</span></a></li>
+							<li><a href="#"><span class="srv04">파티패키지</span></a></li>
+							<li class="on"><a href="#" title="선택"><span class="srv05">놀이방</span></a></li>
+							<li><a href="#"><span class="srv06">이벤트룸</span></a></li>
+							<li><a href="#"><span class="srv07">WIFI가능</span></a></li>
+							<li class="on"><a href="#" title="선택"><span class="srv08">수유실</span></a></li>
+							<li class="btn_02"><a href="#"><span class="srv09">어린이<br>체험교실</span></a><!-- 어린이체험교실, 키즈쿠킹클래스는 li class="btn_02" 추가 -->
+							<li class="btn_02 on"><a href="#" title="선택"><span class="srv10">키즈쿠킹<br>클래스</span></a></li><!-- 어린이체험교실, 키즈쿠킹클래스는 li class="btn_02" 추가 -->
+						</ul>
+						
+						<div class="radioSect">
+							<label><input type="radio"  checked title="지역 및 매장"> 지역 및 매장</label>
+							<label><input type="radio" title="지하철역"> 지하철역</label>
+						</div>
+						<div class="search_area">
+							<p><input type="text" title="지역 및 매장 명, 지하철역 명 입력"></p>
+							<a href="#" class="btnBlack">검색</a>
+						</div>
+						<p class="marT10">지역/매장 정보 또는 지하철역을 선택하여 입력해주세요.<br><span class="txtbam">Ex) 선릉, 역삼동, 강남역</span></p>
+						
+						<ul class="store_list">
+							<li>
+								<a href="#" class="store_name newst"><!-- new이미지 들어갈경우 class=new 추가 20140813-->
+									<em><img src="../../images/vips/img_storenew.png" alt="New" style="width:30px;"></em><!-- 20140813 추가 -->
+									<strong>영등포 타임스퀘어점</strong>
+									<span>서울특별시 영등포구 영중로 15 5층(영등포동4가, 타임스퀘어)</span>
+									<!-- span tag 전화번호삭제 20140905-->
+								</a>
+								<a href="tel:02-2637-1197" class="txtTel">02-2637-1197</a><!--  20140905 추가-->
+								<a href="tel:02-2637-1197" class="txtTel">02-2637-1197</a><!--  20140905 추가-->
+								<a href="tel:02-2637-1197" class="store_tel"><img src="../../images/vips/ico_tel.gif" alt="전화걸기" style="width:43px;"></a><!-- tel: 에 해당 매장 전화번호 -->
+							</li>
+							<li>
+								<a href="#" class="store_name">
+									<strong>영등포 타임스퀘어점</strong>
+									<span>서울특별시 영등포구 영중로 15 5층(영등포동4가, 타임스퀘어)</span>
+								</a>
+								<a href="tel:02-2637-1197" class="txtTel">02-2637-1197</a><!-- 20140905 추가-->
+								<a href="tel:02-2637-1197" class="store_tel"><img src="../../images/vips/ico_tel.gif" alt="전화걸기" style="width:43px;"></a><!-- tel: 에 해당 매장 전화번호 -->
+							</li>
+							<li>
+								<a href="#" class="store_name">
+									<strong>영등포 타임스퀘어점</strong>
+									<span>서울특별시 영등포구 영중로 15 5층(영등포동4가, 타임스퀘어)</span>
+								</a>
+								<a href="tel:02-2637-1197" class="txtTel">02-2637-1197</a><!-- 20140905 추가-->
+								<a href="tel:02-2637-1197" class="store_tel"><img src="../../images/vips/ico_tel.gif" alt="전화걸기" style="width:43px;"></a><!-- tel: 에 해당 매장 전화번호 -->
+							</li>
+						</ul>
+						
+						<div class="btnBox03">
+							<a href="#" class="btnBrown">더보기</a>
+						</div>
+						
+					</div>
+					<!-- // tabcont1 end -->
+					
+					<!-- tabCont2 start -->
+					<div class="tabCont2" style="display:none">
+						<!-- 현재 위치와의 거리 -->
+						<div class="now_position">
+							<div class="position_wrap">
+								<p><span class="conts_hidden">현재 위치</span>서울특별시 강남구 역삼 1동</p>
+								<a href="#"><img src="../../images/vips/ico_map.png" alt="위치정보 재설정" style="width:26px;"></a>
+							</div>
+							<!-- [D] 현재 위치를 기반으로 해당하는 거리일경우
+							li에 class="on"을 넣어주면 불이 들어 옵니다. -->
+							<ul class="distance_info">
+								<li class="on"><a href="#"><span>현재 위치와 매장과의 거리 3킬로미터</span></a></li>
+								<li><a href="#"><span>현재 위치와 매장과의 거리 5킬로미터</span></a></li>
+								<li><a href="#"><span>현재 위치와 매장과의 거리 7킬로미터</span></a></li>
+								<li><a href="#"><span>현재 위치와 매장과의 거리 10킬로미터</span></a></li>
+							</ul>
+						</div>
+						<!-- //현재 위치와의 거리 -->
+						<!-- naver Maps -->
+						<div class="map_area">
+							<img src="../../images/vips/img_map01.jpg" alt="" style="width:100%;">
+						</div>
+						<!-- // naver Maps -->
+					</div>
+					<!-- // tabcont2 end -->
+					
+				</div>
+				<!-- // tabContent end -->
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<ul class="footListTop">
+				<li><a href="#" target="_blank" title="새창">페이스북</a></li>
+				<li><a href="#" target="_blank" title="새창">PC 버전</a></li>
+				<li><a href="#" target="_blank" title="새창">CJ푸드빌</a></li>
+				<li><a href="#">전체브랜드</a></li>
+			</ul>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+			
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

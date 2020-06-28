@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>나의 쿠폰함 - CJ푸드빌 허브</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/hub.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/cjfv_hub.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		accordCouponList(".couponList02");
+	});
+</script>
+
+
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/hub/img_logo_hub.png" alt="CJ 푸드빌"></a></h1>
+			<a href="#" class="util_l"><img src="../../images/hub/ico_header_location.png" alt="매장찾기"></a>
+			<a href="#" class="util_r"><img src="../../images/hub/ico_totalmenu.png" alt="전체메뉴 펼치기"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/hub/img_location_home.png" alt="home"></li>
+						<li>마이페이지</li>
+						<li>나의 쿠폰함</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 동위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 동위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox">
+				
+				<h2 class="titDep01"><img src="../../images/hub/tit_mypage02.png" alt="나의 쿠폰함"></h2>
+				
+				<ul class="couponList02">
+					<li class="on"> <!--  선택시 class="on"--><!-- coupon없이 p태그 활성화시 class="noneCp" 추가 -->
+						<a href="#" title="닫기"><span>사용가능 쿠폰(2)</span></a> <!-- title="펼치기" -> "닫기" -->
+						<div style="display:n one">
+							<!-- 20141007 수정 -->
+							<div>
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+								<div class="btnBox01 mycouponTy">
+									<a href="#" class="btnBlack">쿠폰 사용하기</a>
+								</div>
+							</div>
+							<!-- 20141007 수정 end -->
+
+							<!-- 20141007 수정 -->
+							<div>
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+								<div class="btnBox01 mycouponTy">
+									<a href="#" class="btnBlack">쿠폰 사용하기</a>
+								</div>
+							</div>
+							<!-- 20141007 수정 end -->
+							
+							
+						</div>
+						<p style="display:none">사용 가능한 쿠폰이 없습니다.</p><!-- 쿠폰이없을시 출력-->
+					</li>
+					<li class="on">
+						<a href="#" title="펼치기"><span>사용완료/기간만료 쿠폰(2)</span></a><!-- title="펼치기" -> "닫기" -->
+						
+						<div>
+							<em class="endUse" title="사용완료"><!-- 사용완료 class="endUse" -->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">		
+							</em>
+							<em class="endDay" title="기간만료"><!-- 기간만료 class="endDay"-->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+							</em>
+							<em class="endIssue" title="발급완료"><!-- 발급만료 class="endIssue"-->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+							</em>
+							<em class="endAmount" title="수량소진"><!-- 기간만료 class="endAmount"-->
+								<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+							</em>
+						</div>
+						
+					</li>
+				</ul>
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

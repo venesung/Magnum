@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>나의 포인트현황 - VIPS</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/vips.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/vips/img_logo_vips.png" alt="VIPS" style="width:90px"></a></h1>
+			
+			<a href="#" class="util_l"  style="display:no ne">
+				<img src="../../images/vips/img_head_left01.png" alt="매장찾기" style="width:12px">
+			</a>
+			<a href="#" class="util_l02" style="display:none">
+				<img src="../../images/vips/txt_reservat01.png" alt="예약하기" style="width:49px">
+			</a>
+			
+			<a href="#" class="util_r"><img src="../../images/vips/img_head_right01.png" alt="전체메뉴 펼치기" style="width:60px"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/vips/img_location_home.png" alt="home" style="width:14px"></li>
+						<li>마이페이지</li>
+						<li>나의 포인트현황</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 하위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">나의 포인트현황</a></li>
+						<li><a href="#">나의 쿠폰함</a></li>
+						<li><a href="#">나의 구매내역</a></li>
+						<li><a href="#" title="새창" target="_blank">개인정보변경</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 하위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox bgvipslogo">
+				
+				<h2 class="titDep01"><img src="../../images/vips/tit_mypage01.png" alt="나의 포인트현황" style="width:148px"></h2>
+				
+				<div class="mypointBox01">
+					<h3 class="marB15"><img src="../../images/vips/stit_mypoint01.png" alt="" style="width:125px"></h3>
+					<strong class="cjpoint">1,600,666<img src="../../images/vips/img_point01.png" alt="포인트"></strong>
+					
+					<table class="mypointTable">
+						<caption>나의 포인트 안내표</caption>
+						<colgroup>
+							<col style="width:60%">
+							<col style="width:40%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><strong>가용 포인트</strong></th>
+								<td class="txtred"><strong>125,251P</strong></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									가용예정포인트
+									<a href="#"><img src="../../images/vips/img_q01.png" alt="포인트" style="width:16px; margin-top:-2px"></a>
+									<!-- layerpop -->
+									<div class="innerlybox" style="display:none">
+										<div class="innerlypop">
+											<a href="#" class="btnClose"><img src="../../images/vips/pop/btn_layerclose_w.png" alt="팝업닫기" style="width:17px"></a>
+											<h3>가용예정포인트</h3>
+											<p>적립은 이루어졌으나, 아직 사용 가능한 상태로 전환되지 않은 포인트를 말합니다.<br> 일반적으로 적립 다음 날 가용포인트로 전환됩니다.</p>
+										</div>
+									</div>
+									<!-- layerpop end -->
+								</th>
+								<td>125,251P</td>
+							</tr>
+							<!--
+							<tr>
+								<th scope="row">당월 소멸예정포인트</th>
+								<td>125,251P</td>
+							</tr>
+							<tr>
+								<th scope="row">선물가능포인트</th>
+								<td>125,251P</td>
+							</tr>-->
+						</tbody>
+					</table>
+					
+					<p class="marT10"><a href="http://www.cjone.com/mobile/point.jsp" class="cjpointBtn">CJ ONE 전체 포인트 적립/사용내역 보러가기</a></p><!-- 20140901 추가 -->
+				</div>
+				
+				<!-- 20140901 삭제
+				<ul class="btn_wrap marT10">
+					<li class="on"><a href="#" title="선택">1주일</a></li> class="on" 시 title="선택" 추가 
+					<li><a href="#">1개월</a></li>
+					<li><a href="#">3개월</a></li>
+					<li><a href="#">6개월</a></li>
+				</ul>
+				
+				<ul class="tabList pointTab"> 두개일경우 class="tabTy02"추가
+					<li class="on"><a href="#" title="현위치">전체</a></li>class="on"시 title="현위치"추가
+					<li><a href="#">적립</a></li>
+					<li><a href="#">사용</a></li>
+				</ul>
+				
+				<div class="tabContent">
+					전체조회 start
+					<div>
+						
+						<table class="mypointTable searTy01">
+							<caption>포인트 내역조회표</caption>
+							<colgroup>
+								<col style="width:60%">
+								<col style="width:40%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><strong>현재 가용 포인트</strong></th>
+									<td class="txtred"><strong>125,251P</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">빕스교보타워사거리<span class="dayfoot">2014.07.16</span></th>
+									<td>+265P</td>
+								</tr>
+								<tr>
+									<th scope="row">당월 소멸예정포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+								<tr>
+									<th scope="row">선물가능포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="btnBox03">
+							<a href="#" class="btnBrown">더보기</a>
+						</div>
+					</div>
+					
+					<div>
+						<table class="mypointTable searTy01">
+							<caption>포인트 내역조회표</caption>
+							<colgroup>
+								<col style="width:60%">
+								<col style="width:40%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><strong>현재 가용 포인트</strong></th>
+									<td class="txtred"><strong>251P</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">빕스교보타워사거리<span class="dayfoot">2014.07.16</span></th>
+									<td>+265P</td>
+								</tr>
+								<tr>
+									<th scope="row">당월 소멸예정포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+								<tr>
+									<th scope="row">선물가능포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="btnBox03">
+							<a href="#" class="btnBrown">더보기</a>
+						</div>
+					</div>
+					
+					<div>
+						<table class="mypointTable searTy01">
+							<caption>포인트 내역조회표</caption>
+							<colgroup>
+								<col style="width:60%">
+								<col style="width:40%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><strong>현재 가용 포인트</strong></th>
+									<td class="txtred"><strong>151P</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">빕스교보타워사거리<span class="dayfoot">2014.07.16</span></th>
+									<td>+265P</td>
+								</tr>
+								<tr>
+									<th scope="row">당월 소멸예정포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+								<tr>
+									<th scope="row">선물가능포인트<span class="dayfoot">2014.07.16</span></th>
+									<td>125,251P</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="btnBox03">
+							<a href="#" class="btnBrown">더보기</a>
+						</div>
+					</div>
+				</div>-->
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<ul class="footListTop">
+				<li><a href="#" target="_blank" title="새창">페이스북</a></li>
+				<li><a href="#" target="_blank" title="새창">PC 버전</a></li>
+				<li><a href="#" target="_blank" title="새창">CJ푸드빌</a></li>
+				<li><a href="#">전체브랜드</a></li>
+			</ul>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+			
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

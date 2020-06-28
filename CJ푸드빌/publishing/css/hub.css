@@ -1,0 +1,648 @@
+@charset "euc-kr";
+
+body,form,div,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,fieldset,input,textarea,blockquote,th,td,a {color:#222;}
+
+header {height:60px;position:relative;overflow:hidden; background-color:#fff}
+header h1 {text-align:center;}
+header h1 a {display:inline-block; padding:20px 0}
+header h1 img {width:149px}
+header > a {position:absolute;top:0;display:block;text-align:center;width:60px;height:41px;padding-top:19px}
+header a.util_r {right:0;z-index:4;background:url(../images/hub/bg_totalmenu.png) no-repeat left top;background-size:60px}
+header a.util_l {left:0}
+header a.util_l img {width:12px}
+header a.util_r img {width:18px}
+header a.util_l02 {left:0;text-align:right}
+section {background:url(../images/hub/bg_hubtile.png) repeat left top; background-size:100px; padding-bottom:22px}
+section.mainSection { padding-bottom:0}
+section.loginSect {background:#f4f4f4; border-top:1px solid #2d2c2c}
+.bgWhite {border-top:1px solid #2d2c2c}
+
+/* main */
+.mainTopRol {position:relative; overflow:hidden}
+.mainTopRol ul {position:relative;}
+.mainTopRol ul li {position:absolute;left:0;top:0;width:100%;}
+.mainTopRol ul li a {display:block; position:relative;}
+.mainTopRol ul li img {width:100%; padding-bottom:2px; border-bottom:2px solid #222}
+.mainTopRol .rolBtn {position:absolute; bottom:15px;left:0; width:100%; text-align:center;}
+.mainTopRol .rolBtn a.on {background:url(../images/hub/btn_maintab_on.png) no-repeat left top; background-size:10px;}
+.mainTabcont {margin-top:44px}
+.mainTabcont .tabList {margin:0}
+.mainTabcont .tabList li  {background-image:none; background-color:#f9f9f9;box-shadow: 0px 1px 1px rgba(0,0,0,0.4); background-size:auto}
+.mainTabcont .tabList li a { background-image:none; background-color:#f9f9f9; margin:2px; border:1px solid #adacaa; color:#a2a1a1; font-weight:bold; font-size:17px}
+.mainTabcont .tabList li.on a { background-color:#2e2d2c;background-image:none;  color:#fff}
+.mainTabcont .tabList li a:after,.mainTabcont .tabList li.on a:after {background-image:none;}
+.mainTabcont .tabContent { background-color:#fff}
+.mainTabcont .tabContent >div {margin-top:-10px; border-bottom:3px solid #737373; box-shadow: 0px 1px 1px rgba(0,0,0,0.4);padding:35px 15px 40px 15px;}
+.inTab01 {position:relative;}
+.maininRol {position:relative;overflow:hidden;}
+.maininRol ul li {position:absolute; left:0; top:0}
+.maininRol ul li a {display:block; text-align:center}
+.maininRol ul li a img {width:100%}
+.maininRol ul li a em {display:block; font-size:15px; font-weight:bold; margin-bottom:6px}
+.maininRol ul li a strong {color:#c70026; font-size:20px;background:url(../images/hub/bg_money01.png) no-repeat left 3px; background-size:18px; display:inline-block; padding-left:20px}
+.maininRol .btnSect a {position:absolute;top:30%}
+.maininRol .btnSect a:first-child {left:0; padding:20px 15px}
+.maininRol .btnSect a:last-child {right:0; padding:20px 15px}
+.maininRol .btnSect a img {width:18px}
+.inTab02 span img {width:100%}
+.maininRol02 {position:relative;overflow:hidden}
+.maininRol02 ul li {position:absolute; left:0; top:0}
+.maininRol02 ul li a {display:block}
+.maininRol02 ul li img{width:100%}
+.maininRol02 .rolBtn {text-align:center}
+.mainTabcont .btnBox01 a {width:120px; margin:0 auto}
+.mainTit {margin:40px 0 10px}
+.mainTit img {width:100%}
+.cjSect {position:relative; overflow:hidden}
+.cjSect ul li {position:absolute;left:0;top:0}
+.cjSect ul li img {width:100%}
+.cjSect .rolBtn {position:absolute; bottom:15px;right:15px; width:100%; text-align:right;}
+.mainBrand {overflow:hidden}
+.mainBrand li {float:left;width:33.3%; height:108px;position:relative;background:url(../images/hub/bg_newbrand.png) repeat left top; background-size:52px;}
+.mainBrand li > a,.mainBrand li span.binSect {display:block;height:107px; text-align:center; border:1px solid #a3a3a3; border-right:none}
+.mainBrand li .evTit { position:absolute; left:0;top:14px;}
+.mainBrand li .evTit img {height:18px}
+.mainBrand li > a > img {width:101px; margin-top:11px}
+.mainBrand li div {display:none; position:absolute; left:0;top:0; overflow:hidden;width:100%; height:100%;}
+.mainBrand li.on > a {background:url(../images/hub/bg_newbrand_on.png) repeat left top;background-size:11px 107px;}
+.mainBrand li.on > a img,.mainBrand li.on .evTit img {opacity:0.1}
+.mainBrand li.on div {display:block}
+.mainBrand li div a {float:left;width:50%;text-align:center;height:54px;text-indent:-9999px;font-size:0;line-height:0;background-image:url(../images/hub/bg_mainsns_home.png); background-position:center center; background-repeat:no-repeat; background-size:22px; position:relative;border-bottom:1px solid #a5a5a5}
+.mainBrand li div a:nth-child(2n+1):after {content:'';border-right:1px solid #a5a5a5;position:absolute;left:0; top:0; width:100%; height:100%; display:block}
+.mainBrand li div a+a {background-image:url(../images/hub/bg_mainsns_face.png);background-size:11px}
+.mainBrand li div a+a+a {background-image:url(../images/hub/bg_mainsns_twit.png);background-size:22px; border-bottom:none}
+.mainBrand li div a+a+a+a {background-image:url(../images/hub/bg_mainsns_blog.png);background-size:15px}
+.mainBrand li div.snsNum01 a {float:none; display:block; height:100%;width:100%}
+.mainBrand li div.snsNum02 a {height:100%}
+.mainBrand li div.snsNum02 a:after {content:'';border-right:1px solid #a5a5a5;position:absolute;left:0; top:0; width:100%; height:100%; display:block}
+@media all and (max-width:320px) {	/* 320이하일 경우*/
+.mainBrand li > a > img {width:80px; margin-top:20px}
+}
+/* location */
+.location {position:relative}
+.location .topLoct {display:block;border-top:1px solid #251b12;background-color:#3e3c39}
+.location .topLoct ul {overflow:hidden; height:40px; border-top:1px solid #a7a6a6}
+.location .topLoct ul li {float:left;color:#fff; padding:13px 12px 0 9px; height:27px; font-size:12px;background:url(../images/hub/bg_location01.png) no-repeat right center; background-size:5px}
+.location .topLoct ul li:first-child {width:45px;text-align:center; padding:12px 0 0 0; border-right:1px solid #1f1c1b; background:none}
+.location .topLoct ul li:first-child img {vertical-align:top; width:14px}
+.location .topLoct ul li:nth-child(2) {border-left:1px solid #686561}
+.location .topLoct ul li:last-child {color:#ffc22e; background:none}
+.location .topLoct ul li.underOpen {background:url(../images/hub/bg_locatopen.png) no-repeat right center; background-size:18px; padding-right:28px}
+.location.on .topLoct ul li.underOpen {background:url(../images/hub/bg_locatclose.png) no-repeat right center; background-size:18px;}
+.location .underLoct {background-color:#3e3c39; border-top:1px solid #251b12; position:absolute;left:0; top:40px; width:100%; z-index:3}
+.location .underLoct ul {overflow:hidden;}
+.location .underLoct ul li {float:left;width:33.3%;background:url(../images/hub/bg_line_black.gif) repeat-y right top}
+.location .underLoct ul li.on a {color:#ffc22e;}
+.location .underLoct ul li a {width:100%;color:#b2b1b1;height:33px;display:inline-block;padding:19px 0 0 0;background:url(../images/hub/bg_line_black.gif) repeat-x left bottom,url(../images/hub/bg_location_3depth_bar.png) no-repeat 15px 9px; background-size:1px, 20px 2px; text-indent:15px; font-size:11px}
+.location .underLoct ul li:nth-child(3n+2)  {width:33.4%;}
+.location .underLoct ul li:nth-child(3n) {background:url(../images/hub/bg_line_black.gif) repeat-x left bottom}
+.location .underLoct ul li:nth-child(3n) a {padding-left:2px;text-indent:13px}
+
+
+/* form */
+input[type=text],input[type=tel],input[type=password ],input[type=search], input[type=date], input[type=number]{border:1px solid #bebebe; text-align:left;-webkit-border-radius:3px;-webkit-appearance:none;height:38px; border-radius:3px; text-indent:4px;color:#222; background-color:#fff;font-size:14px}
+select {color:#222;border:1px solid #bebebe;background:#fff url(../images/hub/bg_form02_s.png) no-repeat right 0;-webkit-border-radius:3px;-webkit-appearance:none; height:38px; border-radius:3px; background-size:22px;font-size:14px; text-indent:4px}
+select.big{background:#fff url(../images/hub/bg_form02_b.png) no-repeat right 0;background-size:37px;}
+select.brand {color:#fff;border:1px solid #171717;background:#3f3f3f url(../images/hub/bg_form01.png) no-repeat right 0;-webkit-appearance:none; height:38px; background-size:46px;font-size:14px; text-indent:4px; border-radius:0}
+input[type='checkbox']{vertical-align:middle;height:17px;width:17px;-webkit-appearance:none;border:1px solid #9c9083; border-radius:3px; background-color:#fff}
+input[type='checkbox']:checked:after{content:'';display:block;width:13px;height:13px;background:url(../images/hub/bg_check_on.gif) no-repeat 1px 1px; background-size:13px;}
+input[type='radio']{vertical-align:middle;background:#fff;height:17px;width:17px;-webkit-appearance:none;border:1px solid #bababa;border-radius:60px; border:1px solid #9c9083;position:relative}
+input[type='radio']:checked:after{content:'';display:block;width:9px;height:9px;background-color:#694326;position:absolute;top:3px;left:3px;border-radius:60px}
+label.disable {color:#b7b7b7}
+label.disable input {border:1px solid #b7b7b7}
+textarea {width:100%;border:1px solid #bebebe; border-radius:3px}
+input.bordblack,select.bordblack {border:1px solid #222;}
+
+.formSect {display:table; width:100%}
+.formSect span {display:table-cell}
+.formSect input, .formSect select{width:100%}
+.formSect .cellwi1 {width:20%}
+.formSect .cellwi2 {width:30%}
+.formSect .cellwi3 {width:40%}
+.formSect .cellwi4 {width:50%}
+.formSect .cellwi5 {width:60%}
+.formSect .cellwi6 {width:70%}
+.formSect .cellwi8 {width:auto}
+.formSect .btnBox01 {width:60px}
+.formSect .btnBox01 a {padding:10px 0;width:60px}
+.formSect .cellspace {width:12px;text-align:center; color:#4f452e; padding:0 5px}
+.formSect .cellspace02 {width:1px;text-align:center; color:#4f452e; padding:0 5px}
+.formSect .celltxt1 {font-size:15px;text-align:left;width:70px}
+label {display:inline-block;vertical-align:bottom}
+label input {margin-bottom:-1px}
+.radioSect label{display:inline-block; margin-right:21px;  margin-bottom:4px}
+.radioSect label:last-child {margin-right:0}
+
+
+/* button */
+.btnBox01 {text-align:center; margin-top:12px}
+.btnBox01 a {display:block;color:#fff;border-radius:4px;padding:12px 0; font-weight:bold; font-size:14px}
+.btnBox01.mycouponTy { margin:5px 0 15px}
+.btnBox01.mycouponTy a {width:180px; margin:0 auto}
+.frBtnBox {overflow:hidden}
+.frsmallBtn {width:80px; float:right}
+.btnBox02 {display:table;width:100%;overflow:hidden; margin-top:22px}
+.btnBox02 span {display:table-cell; padding-right:5px; width:50%}
+.btnBox02 span a {font-size:14px;color:#fff;border-radius:4px;padding:12px 0;text-align:center; display:block; font-weight:bold;}
+.btnBox02 span:last-child {padding:0 0 0 5px}
+
+.btnBox01.btnFr01 {margin:0 0 10px; overflow:hidden}
+.btnBox01.btnFr01 a {font-size:12px; width:50px; float:right; padding:10px 5px}
+.btnBox01.btnFr01 a.mt_15 { margin-top:-15px}
+
+.btnRed {border:1px solid #bf0024; background-color:#bf0024;}
+.btnBlack {border:1px solid #222; background-color:#222;}
+.btnGray {border:1px solid #6d6d6d; background-color:#6d6d6d;}
+.btnBrown {border:1px solid #472d17; background-color:#472d17;}
+.btnRed02 {border:1px solid #da1602; background-color:#da1602;}
+
+.titDep01 {margin-bottom:22px}
+.titDep01 img {height:27px}
+.titDepView {position:relative; padding-right:70px; font-size:15px; margin-bottom:15px; min-height:34px}
+.titDepView a {position:absolute; right:0; top:0}
+.titDepView a img {width:33px}
+.stitDep01 {margin:22px 0 9px}
+.txt01 {line-height:20px;font-size:15px}
+.radioTxt {font-size:12px}
+
+/* pop */
+.layer_Popup {z-index:90;display:block;position:absolute;left:0px;top:125px;width:100%; min-width:300px}
+.pop_inner {padding:13px;margin:0 13px;background:url(../images/hub/bg_hubtile.png) repeat left top; background-size:86px; border:2px solid #434343; position:relative}
+.popTit {background-color:#666666; margin:-13px -13px 0 -13px; padding:13px}
+.popTit img {height:14px}
+.btnClose {z-index:100; position:absolute; right:13px; top:13px}
+.btnClose img {width:17px}
+
+.listType02 {margin-top:13px}
+.listType02 li{/*background:url(../images/hub/bul_list.png) no-repeat left 5px; background-size:4px;*/ padding:0 0 8px 0;}
+.txtRedlist {color:#de3142}
+.listStr {display:block; margin-bottom:6px}
+
+
+/* 전체메뉴 */
+.totalwrap {position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden; display:none}
+.total {position:relative;overflow:hidden;margin-left:44px;background:#fff;z-index:99}
+.total .totalTop {height:60px;background-color:#221e1f;}
+.total .totalTop p {background-color:#221e1f;color:#fff;padding:0 75px 0 11px; display:table-cell; vertical-align:middle; height:60px}
+.total .totalTop p.loginIntro {background:#221e1f url(../images/common/totalmenu/bg_vipslogin.gif) no-repeat 11px center;background-size:14px;padding-left:30px}
+.total .totalTop a {display:block; position:absolute; right:0; top:0; height:15px; width:65px; background-color:#534c4e; text-align:center;padding:22px 0 23px;color:#c0bbbc; font-size:11px}
+.total .totalTop02 {height:129px; overflow:hidden; background-color:#e7e7e6}
+.total .totalTop02 .top_inner01 {text-align:center; padding:55px 0}
+.total .totalTop02 .top_inner02 strong {font-size:30px;font-family:'Arial';}
+.total .totalTop02 .top_inner02 .totalPoint {text-align:right; height:62px; position:relative; padding:12px 15px 0 0; display:block}
+.total .totalTop02 .top_inner02 .totalPoint em {position:absolute;left:17px;top:29px;}
+.total .totalTop02 .top_inner02 .totalPoint span {display:block}
+.total .totalTop02 .top_inner02 .totalPoint strong { display:block; margin-top:2px}
+.total .totalTop02 .top_inner02 .totalCoupon {border-top:1px solid #d1d1d1; overflow:hidden}
+.total .totalTop02 .top_inner02 .totalCoupon a {float:left;width:50%;height:54px; text-align:right; position:relative}
+.total .totalTop02 .top_inner02 .totalCoupon a:first-child:after {content:'';display:block;border-right:1px solid #d1d1d1;position:absolute;right:0;top:0;width:1px;height:100%}
+.total .totalTop02 .top_inner02 .totalCoupon a > span {position:absolute; left:9px; top:16px}
+.total .totalTop02 .top_inner02 .totalCoupon a strong {display:inline-block; margin:10px 15px 0 0;font-size:25px}
+.total .totalTop02 .top_inner02 .totalCoupon a em {font-size:12px; font-weight:normal}
+.total .totalGift {background:#fff url(../images/common/totalmenu/bg_linedot01_hub.png) repeat-x left bottom;background-size:1px; height:83px; border-top:1px solid #bbbcbc}
+.total .totalGift a {background:url(../images/common/totalmenu/bg_linedot02_hub.png) repeat-y right top;background-size:1px; width:33%; display:block; float:left; color:#777677; text-align:center;height:23px; position:relative; padding-top:57px; font-size:11px;}
+.total .totalGift a:last-child {background:none; width:34%}
+.total .totalGift a:after {content:'';display:block;width:100%;position:absolute;left:0; z-index:10;height:20px;top:25px}
+.total .totalGift a.inbgReserv:after {background:url(../images/common/totalmenu/bg_gift01.png) no-repeat center 0;background-size:28px}
+.total .totalGift a.inbgGift:after {background:url(../images/common/totalmenu/bg_gift02.png) no-repeat center 0;background-size:29px}
+.total .totalGift a.inbgDown:after {height:24px;background:url(../images/common/totalmenu/bg_gift03.png) no-repeat center 0;background-size:24px;top:22px;}
+.total .totalGift a em {position:absolute; left:0;top:10px; width:100%;height:24px; display:block; color:#fff; padding:5px 0 0 0; text-align:center;z-index:100; margin-left:18px;background:url(../images/common/totalmenu/bg_redone.png) no-repeat center 0;background-size:24px; font-weight:bold}
+.total .totalGift.gifttype2 a {width:50%}
+
+.totalList li a {display:block;font-size:16px;}
+.totalList > li > a {border-bottom:1px solid #bababb; color:#33261b; padding:18px 16px;background-image:url(../images/common/totalmenu/bg_total_off.png); background-repeat:no-repeat; background-position:95% center;background-size:11px;}
+.totalList > li.on > a {color:#af011c;font-weight:bold;background-image:url(../images/common/totalmenu/bg_total_on.png);}
+.totalList > li.oldep1 > a,.totalList > li.on.oldep1 > a { background-image:none}
+.totalList li ul {display:none;background:#fff url(../images/common/totalmenu/bg_2depthline.gif) repeat-x left top;overflow:hidden;border-bottom:1px solid #bababa}
+.totalList li.on ul {display:block;background:#f0f0f0 url(../images/common/totalmenu/bg_2depthline_twosome.gif) repeat-x left top;}
+.totalList ul li {margin-left:27px;background:url(../images/common/totalmenu/bg_linedot03.png) repeat-x left bottom;background-size:6px; }
+.totalList ul li:last-child {background:none}
+.totalList ul li > a {background-image:url(../images/common/totalmenu/bul_total01.gif),url(../images/common/totalmenu/bg_2depth_off.png);background-repeat:no-repeat;background-position:left center, 90% center;background-size:2px,10px;padding:18px 0 18px 6px;}
+.totalList ul li.on > a {color:#af011c; font-weight:bold;background-image:url(../images/common/totalmenu/bul_total01.gif),url(../images/common/totalmenu/bg_2depth_on.png);background-size:2px,10px 2px;}
+.totalList ul li.depno a {background:url(../images/common/totalmenu/bul_total01.gif) no-repeat left center;background-size:2px;}
+.totalList ul li div {display:none}
+.totalList ul li.on div {display:block; padding-bottom:9px}
+.totalList ul li div a {display:block;font-size:13px; padding:9px 0 9px 8px;background:url(../images/common/totalmenu/bg_3depth01.gif) no-repeat left center; background-size:4px;}
+.totalList ul li div a.on {color:#af011c}
+.brandBi {display:block;text-align:center;padding:50px 0}
+/* 전체메뉴 End */ 
+
+/* tab */
+.tabList,.tabList02 {overflow:hidden; margin:0 -13px 12px -13px; padding-bottom:10px}
+.tabList li,.tabList02 li {float:left; width:50%; text-align:center; background-image:url(../images/hub/tab_bg01_off.png); background-repeat:repeat-x; background-position:left top; background-size:160px; position:relative}
+.tabList li a,.tabList02 li a {display:block;font-size:14px; padding:11px 0;background-image:url(../images/hub/bg_taboff_c.png); background-repeat:repeat-x; background-position:left top; background-size:12px; margin:0 12px}
+.tabList li a img,.tabList02 li a img { height:17px; margin-top:-2px}
+.tabList li a:after,.tabList02 li a:after {content:''; display:block; width:100%; position:absolute; left:0; top:0;background:url(../images/hub/bg_taboff_l.png) no-repeat left 0,url(../images/hub/bg_taboff_r.png) no-repeat right 0; background-size:12px; height:100%;}
+.tabList li.on,.tabList02 li.on {background-image:url(../images/hub/tab_bg01_on.png)}
+.tabList li.on:after,.tabList02 li.on:after {content:''; display:inline-block; width:18px; height:10px; position:absolute; left:47%; top:100%;background:url(../images/hub/bul_tab_bgon.png) no-repeat left 0; background-size:18px; z-index:10}
+.tabList li.on a,.tabList02 li.on a {background-image:url(../images/hub/bg_tabon_c.png)}
+.tabList li.on a:after,.tabList02 li.on a:after {background:url(../images/hub/bg_tabon_l.png) no-repeat left 0,url(../images/hub/bg_tabon_r.png) no-repeat right 0; background-size:12px}
+.tabList.tabTy03 li,.tabList02.tabTy03 li {width:33.3%}
+.tabList.tabTy03 li:last-child,.tabList02.tabTy03 li:last-child {width:33.4%}
+.tabList.tabTy04 li.tabList02.tabTy04 li {width:25%}
+
+.tabList.mypageTab{margin:0 0 13px;padding-bottom:0}
+.tabList.mypageTab li {width:33%;border-bottom:none;border-top:2px solid #472d18;background-image:none}
+.tabList.mypageTab li a {margin:0;color:#434343; font-size:15px;font-weight:normal;border-left:1px solid #472d18;border-bottom:1px solid #472d18;border-radius:0;background-image:none;background-color:#e0e0e0;}
+.tabList.mypageTab li.on a {color:#3e2d20;font-weight:bold;line-height:16px;border-bottom:none;background-color:#fff;}
+.tabList.mypageTab li:last-child a {border-right:1px solid #472d18}
+.tabList.mypageTab li.on:after,.tabList.mypageTab li a:after{background:none}
+
+/* etc */
+.search_area {position:relative;padding-right:63px;margin-top:10px;}
+.search_area div input{width:100%}
+.search_area .btnBlack{position:absolute;right:0;top:0;width:53px;padding:12px 0;color:#fff;text-align:center;font-weight:bold;border-radius:4px;}
+.search_area p {margin-top:10px}
+.store_list {margin:20px -13px;border-top:3px solid #472d18}
+.store_list li{position:relative;background:url(../images/hub/bg_store_list.png) 0 bottom repeat-x;background-size:2px; padding:0 13px 20px 13px}
+.store_list li.noSech {padding:15px; text-align:center}
+.store_list li .store_name{display:block;padding-top:10px; margin-right:60px}
+.store_list li .store_name strong{display:block;padding:1px 0;font-size:18px; color:#222}
+.store_list li .store_name strong span {display:inline-block;margin-right:13px}
+.store_list li .store_name strong span img {height:40px}
+.store_list li .store_name em {position:absolute; right:18px; top:0}
+.store_list li .store_name em img {width:30px}
+.store_list li .store_name.newst strong {background:none; color:#222}
+.store_list li .store_name > span{display:block;line-height:19px; color:#434343}
+.store_list li .txtTel {display:block;width:100px}
+.store_list li .store_tel{display:block;position:absolute;bottom:10px;right:13px;}
+.store_list li .store_tel img {width:43px}
+
+.now_position{margin:22px auto 13px; width:300px}
+.now_position .position_wrap{position:relative;}
+.now_position .position_wrap p{padding:6px 0 6px 30px;font-size:15px;color:#333;font-weight:bold;}
+.now_position .position_wrap a{position:absolute;left:0;top:0;}
+.now_position .position_wrap a img {width:26px; margin-top:2px}
+.now_position .distance_info {overflow:hidden;height:52px;margin-top:17px;background-image:url(../images/hub/bg_search_km.png); background-repeat:no-repeat;background-position:0 0;background-size:293px;}
+.now_position .distance_info li {float:left;margin-right:10px;}
+.now_position .distance_info li:last-child{margin-right:-1px;}
+.now_position .distance_info li a{display:block;width:51px;height:52px; background-image:url(../images/hub/bg_search_km.png); background-repeat:no-repeat;background-size:293px;}
+.now_position .distance_info li+li a{background-position:-60px -53px;}
+.now_position .distance_info li+li+li a{background-position:-121px -53px}
+.now_position .distance_info li+li+li+li a{background-position:-182px -53px}
+.now_position .distance_info li+li+li+li+li a{background-position:-243px -53px}
+
+.now_position .distance_info li+li.on a{background-position:-60px -106px;}
+.now_position .distance_info li+li+li.on a{background-position:-121px -106px}
+.now_position .distance_info li+li+li+li.on a{background-position:-182px -106px}
+.now_position .distance_info li+li+li+li+li.on a{background-position:-243px -106px}
+.now_position .distance_info li span{font-size:0;line-height:0; width:0; height:0; visibility:hidden}
+
+.map_area{border:1px solid #434343; position:relative}
+.map_area .mapTxt01 {background-color:#434343; padding:10px; color:#fff}
+.map_area .townMaker01 .btnspace {position:absolute; font-size:0; line-height:0; width:10%; height:15%; text-indent:-9999px;}
+.map_area .townMaker01 .btnspace.town01_01 {left:34%;top:48%;}
+.map_area .townMaker01 .btnspace.town01_02 {left:58%;top:25%;}
+.map_area .townMaker01 .btnspace.town01_03 {left:51%;top:13%;}
+.map_area .townMaker01 .btnspace.town02_01 {left:36%;top:65%;}
+.map_area .townMaker01 .btnspace.town02_02 {left:51%;top:56%;}
+.map_area .townMaker01 .btnspace.town02_03 {left:57%;top:41%;}
+.map_area .townMaker01 .btnspace.town02_04 {left:32%;top:48%;}
+.map_area .townMaker01 .btnspace.town03_01 {left:52%;top:36%;}
+.map_area .townMaker01 .btnspace.town03_02 {left:67%;top:29%;}
+.map_area .townMaker01 .btnspace.town03_03 {left:53%;top:59%;}
+.map_area .townMaker01 .btnspace.town03_04 {left:35%;top:5%;}
+.map_area .townMaker01 .btnspace.town03_05 {left:27%;top:69%;}
+.map_area .townMaker01 .btnspace.town05_01 {left:54%;top:57%;}
+.map_area .townMaker01 .btnspace.town05_02 {left:15%;top:48%;}
+.map_area .townMaker01 .btnspace.town05_03 {left:34%;top:1%;}
+.map_area .townMaker01 .btnspace.town05_04 {left:68%;top:43%;}
+.map_area .townMaker01 .btnspace.town05_05 {left:64%;top:15%;}
+.map_area .townMaker01 .btnspace.town09_01 {left:48%;top:17%; height:17%}
+.map_area .townMaker01 .btnspace.town09_02 {left:48%;top:59%; height:17%}
+.map_area .townMaker01 .btnspace.town09_03 {left:43%;top:43%; height:17%}
+.map_area .townMaker01 .btnspace.town09_04 {left:63%;top:53%; height:17%}
+.map_area .townLyBox {position:absolute;left:0; top:15%; width:100%;display:none; }
+.map_area .townLypop {border:2px solid #222;width:270px;background-color:#f2f2f2; z-index:2; margin:0 auto; position:relative}
+.map_area .townLypop .btnClose {top:9px}
+.map_area .townLypop strong {display:block; background-color:#222; color:#fff; padding:10px}
+.map_area .townLypop strong img {height:19px; margin-right:6px}
+.map_area .townLypop ul {padding:12px 10px 10px}
+.map_area .townLypop ul li {padding:0 55px 0 8px;background:url(../images/hub/bul_list02.png) left 7px no-repeat; line-height:18px}
+.map_area .townLypop ul li:last-child {background:none; font-weight:bold; margin-top:12px}
+.map_area .townLypop .colTel {position:absolute; right:10px; bottom:10px}
+.map_area .townLypop .colTel img {width:42px}
+.map_area .branch_info_tooltip {position:absolute;border:1px solid #8e8e8e;background-color:#fff;width:190px;background-image:url(../images/common/map/bul_maps_arrow.png);background-repeat:no-repeat;background-size:7px auto;background-position:91% 19px;}
+.map_area .branch_info_tooltip::after {content:"";display:block;width:14px;height:9px;position:absolute;left:50%;bottom:-9px;background-image:url(../images/common/map/ico_maps_arrow_02.png);background-repeat:no-repeat;background-size:14px 9px;background-position:0 0}
+.map_area .branch_info_tooltip > a {display:block;padding:15px 30px 15px 15px;font-size:16px;font-weight:bold;color:#c60b0f;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.map_area .branch_info_tooltip > p {padding:15px;border-top:1px solid #dfdfdf;}
+.map_area .branch_info_tooltip > p a {background-image:url(../images/common/map/ico_maps_phone.png);background-size:11px auto;background-position:0 0;background-repeat:no-repeat;display:block;padding-left:15px;}
+
+.store_position{display:block;padding:10px 13px;font-size:18px; background-color:#3f3a38; color:#fff; margin:0 -13px; position:relative; border:1px solid #272423; margin-bottom:15px}
+.store_position span {display:inline-block; margin-right:13px}
+.store_position span img {height:40px}
+h3.store_stit{padding-bottom:13px;background:url(../images/hub/bg_store_info.gif) 0 bottom repeat-x;background-size:1px; margin-top:30px}
+.store_stit.leNo {background:none; padding-bottom:0}
+h3.store_stit img {height:17px}
+.store_info{text-align:left;}
+.store_info tr th {vertical-align:top; padding-top:5px}
+.store_info tr th img {height:12px}
+.store_info tr:first-child th img{top:23px;}
+.store_info tr td{padding:5px 0;font-size:13px;line-height:19px;word-break:break-all; vertical-align:top}
+.store_info tr td a{display:inline-block;margin-top:4px;}
+.store_event_list li{border-bottom:1px solid #3e2d20;}
+.store_event_list li a{display:block;padding:13px 0;}
+.store_event_list li a strong{display:block;margin-bottom:3px;color:#bf0024;font-size:15px;}
+.store_event_list li a span{display:block;margin-bottom:3px;}
+
+.store_info.type2{margin-top:0;}
+.store_info.type2 th, .store_info.type2 td{background:url(../images/hub/bg_store_list.png) 0 bottom repeat-x;background-size:2px; padding:20px 0}
+.store_info.type2 tr:first-child th,.store_info.type2 tr:first-child td {padding:13px 0 20px}
+.store_info.type2 tr:first-child th img{top:8px}
+.store_info.type2 .last th, .store_info.type2 .last td{background:none}
+.store_info.type2 .trans_type1 li{padding-left:18px;background:url(../images/hub/bg_store_info02.png) 0 3px no-repeat;background-size:13px;}
+.store_info.type2 .trans_type1 li:first-child{background:none;padding-left:0;}
+.store_info.type2 .trans_type2 dt{padding-left:19px;margin-top:10px}
+.store_info.type2 .trans_type2 dt:first-child{margin-top:0}
+.store_info.type2 .trans_type2 dt.blue{background:url(../images/hub/bg_store_info03.png) 0 3px no-repeat;background-size:13px}
+.store_info.type2 .trans_type2 dt.green{background:url(../images/hub/bg_store_info04.png) 0 3px no-repeat;background-size:13px}
+.store_info.type2 .trans_type2 dt.yellow{background:url(../images/hub/bg_store_info05.png) 0 3px no-repeat;background-size:13px}
+.store_info.type2 .trans_type2 dd{}
+.store_info.type2 .trans_type2 .blue{color:#356fcf;}
+.store_info.type2 .trans_type2 .green{color:#39a125}
+.store_info.type2 .trans_type2 .yellow{color:#ffb400}
+
+.storeRol {margin:10px -13px 0 -13px; overflow:hidden}
+.storeRol span img {width:100%}
+.storeRol ul {overflow:hidden; margin-top:7px}
+.storeRol ul li {float:left; text-align:center}
+.storeRol ul li a {display:inline-block; width:83px; height:61px; margin:0 5px}
+.storeRol ul li a img {width:100%}
+
+.shopBrandRol {background-color:#fff; margin:0 -13px; border-top:1px solid #b9b9b9; border-bottom:2px solid #000; position:relative;height:103px;overflow:hidden}
+.shopBrandRol ul {position:relative}
+.shopBrandRol ul li {position:absolute; width:33.3%; text-align:center; padding-top:7px;left:0;top:0;height:103px;}
+.shopBrandRol ul li.on {width:33.4%;padding-top:0;background:url(../images/hub/bg_linedot.png) left top repeat-y,url(../images/hub/bg_linedot.png) right top repeat-y;}
+.shopBrandRol ul li a {display:block; padding-bottom:22px}
+.shopBrandRol ul li.on a {border-top:7px solid #de3142; margin:0 1px}
+.shopBrandRol ul li+li {left:33.3%}
+.shopBrandRol ul li+li+li {left:66.6%}
+.shopBrandRol ul li+li+li+li{left:100%}
+.shopBrandRol ul li a img {height:72px; opacity:0.3; margin-top:8px}
+.shopBrandRol ul li.on a img {opacity:1}
+.shopBrandRol div a {position:absolute; top:39px}
+.shopBrandRol div a.branBtnL {left:0; padding-left:5px}
+.shopBrandRol div a.branBtnR {right:0; padding-right:5px}
+.shopBrandRol div a img {width:12px}
+
+.shopProduct {margin:10px -13px}
+.tabProduct {overflow:hidden}
+.tabProduct li {float:left;width:33.3%; background-color:#666}
+.tabProduct li a {display:block; padding:17px 0 17px 8px; color:#d4d4d4; font-size:17px; font-weight:bold;background:url(../images/hub/btn_product_off.png) 92% center no-repeat; background-size:18px;border:1px solid #545454}
+.tabProduct li.on a {color:#fff;background:#de3142 url(../images/hub/btn_product_on.png) 92% center no-repeat; background-size:18px; border:1px solid #b41928}
+.tabProduct li:nth:child {width:33.4%}
+.producList li {background:#fff url(../images/hub/bg_linedot02.png) left bottom repeat-x}
+.producList li:nth-child(2n) {background-color:#faf9f9}
+.producList li a {display:table; padding:10px 0;width:100%;}
+.producList li a div {display:table-cell; text-align:center}
+.producList li a .imgPro {width:35%}
+.producList li a .wonPro {width:65%; text-align:left; vertical-align:top; padding-top:5px; font-size:15px; position:relative}
+.producList li a .imgPro span {display:inline-block;width:92px;}
+.producList li a .imgPro img {width:100%;border:1px solid #cfcfcf;}
+.producList li a .wonPro > em {display:block; margin-bottom:8px; padding-right:10px}
+.producList li a .wonPro strong span {display:inline-block; margin-left:5px; color:#de3142; font-size:18px; font-family:'Tahoma'}
+.producList li a .icobtn {position:absolute;bottom:0;left:0;}
+.producList li a .icobtn span {color:#fff;font-size:11px; display:inline-block;padding:3px; border-radius:3px; text-align:center; width:30px}
+.producList li a .icobtn span.icoCr01 {background-color:#ed2b2b;width:26px} /* new */
+.producList li a .icobtn span.icoCr02 {background-color:#3a84f2} /* 인기 */
+.producList li a .icobtn span.icoCr03 {background-color:#d640ec} /* 추천 */
+.producList li a .icobtn span.icoCr04 {background-color:#e49c00} /* 할인 */
+.producList li > span {text-align:center; padding:10px; display:block}
+.btn_wrapNew {overflow:hidden; margin-bottom:22px}
+.btn_wrapNew.typeview {margin-top:15px}
+.btn_wrapNew li {float:left; width:25%; text-align:center; margin-bottom:7px}
+.btn_wrapNew li span {display:inline-block; padding-top:46px; background-repeat:no-repeat;background-position:0 0, center 4px;background-size:70px,42px;width:70px; height:24px; font-size:11px; color:#737373;font-weight:bold}
+.btn_wrapNew li.on span,.btn_wrapNew.typeview span {color:#434343}
+.btn_wrapNew li.btn_02 span {padding-top:38px; height:32px; line-height:12px}
+.btn_wrapNew li .srv01 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv01_off.png)}
+.btn_wrapNew li .srv02 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv02_off.png)}
+.btn_wrapNew li .srv03 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv03_off.png)}
+.btn_wrapNew li .srv04 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv04_off.png)}
+.btn_wrapNew li .srv05 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv05_off.png)}
+.btn_wrapNew li .srv06 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv06_off.png)}
+.btn_wrapNew li .srv07 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv07_off.png)}
+.btn_wrapNew li .srv08 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv08_off.png)}
+.btn_wrapNew li .srv09 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv09_off.png)}
+.btn_wrapNew li .srv10 {background-image:url(../images/hub/bg_storeservice_off.png),url(../images/hub/bg_store_srv10_off.png)}
+.btn_wrapNew li.on .srv01,.btn_wrapNew.typeview .srv01 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv01_on.png)}
+.btn_wrapNew li.on .srv02,.btn_wrapNew.typeview .srv02 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv02_on.png)}
+.btn_wrapNew li.on .srv03,.btn_wrapNew.typeview .srv03 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv03_on.png)}
+.btn_wrapNew li.on .srv04,.btn_wrapNew.typeview .srv04 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv04_on.png)}
+.btn_wrapNew li.on .srv05,.btn_wrapNew.typeview .srv05 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv05_on.png)}
+.btn_wrapNew li.on .srv06,.btn_wrapNew.typeview .srv06 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv06_on.png)}
+.btn_wrapNew li.on .srv07,.btn_wrapNew.typeview .srv07 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv07_on.png)}
+.btn_wrapNew li.on .srv08,.btn_wrapNew.typeview .srv08 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv08_on.png)}
+.btn_wrapNew li.on .srv09,.btn_wrapNew.typeview .srv09 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv09_on.png)}
+.btn_wrapNew li.on .srv10,.btn_wrapNew.typeview .srv10 {background-image:url(../images/hub/bg_storeservice_on.png),url(../images/hub/bg_store_srv10_on.png)}
+
+.storeEvent {margin-top:10px;position:relative;overflow:hidden;padding-bottom:10px; height:150px}
+.storeEvent ul {width:100%;position:absolute;left:0;top:0;}
+.storeEvent ul li {width:100%;position:absolute;left:0;top:0;}
+.storeEvent ul li+li {left:100%;}
+.storeEvent ul li+li+li {left:200%;}
+.storeEvent ul li a img {width:100%}
+.storeEvent .rolBtn {position:absolute; bottom:0; left:0; width:100%; text-align:center}
+.rolBtn a {display:inline-block; margin:0 3px;background:url(../images/hub/btn_tab_off.png) no-repeat left top; background-size:10px;font-size:0;line-height:0; width:10px; height:10px;text-indent:-9999px}
+.rolBtn a.on {background:url(../images/hub/btn_tab_on.png) no-repeat left top; background-size:10px;}
+
+.payTableBox {margin-bottom:22px;}
+.payTableBox h3 {font-size:14px; color:#fff; background-color:#666; padding:10px; position:relative}
+.payTableBox .chSect {position:absolute;right:13px;top:9px;}
+.payTableBox .chSect input {margin-bottom:-1px}
+.payTableBox table {border:1px solid #939393; border-top:none; background-color:#fff}
+.payTableBox table th {color:#434343; font-weight:normal; text-align:left; text-indent:10px; padding:20px 0; font-size:12px}
+.payTableBox table th,.payTableBox table td {background:url(../images/hub/bg_linedot02.png) left bottom repeat-x}
+.payTableBox table tr:last-child th,.payTableBox table tr:last-child td {background:none}
+.payTableBox table td {text-align:right; padding:5px 10px; line-height:18px; letter-spacing:0}
+.payTableBox table td.paywon {font-size:18px}
+.payTableBox table td.paywon02 {font-size:22px}
+.payTableBox table td.paywon02 strong {color:#c90017;font-size:24px}
+.payTableBox table td .formSect {margin-bottom:8px}
+.payTableBox table td .formSect:last-child {margin-bottom:0}
+
+.shopviewCont {margin:0 -13px; background-color:#fff}
+.shopviewCont span {display:block; border-bottom:2px solid #3e3c39;background:url(../images/hub/bg_linedot02.png) left top repeat-x; padding-top:1px}
+.shopviewCont span img {width:100%}
+.shopviewCont dl {overflow:hidden;padding:17px 13px 17px}
+.shopviewCont dl dt {float:left;font-size:15px;margin-top:7px}
+.shopviewCont dl dd {float:right;font-size:23px}
+.shopviewCont dl dd strong {font-size:26px;color:#c90017; font-family:'Tahoma'; display:inline-block; margin-right:4px}
+.btnBlBox {background-color:#000; padding:11px 60px;}
+.btnBlBox .btnBox01{margin-top:0}
+.titView {font-size:15px; margin:22px 0 10px; font-weight:normal;}
+.viewtel {position:relative; margin-bottom:35px}
+.viewtel a {position:absolute; right:0; top:-25px}
+.viewtel a img {width:43px}
+
+.cpAllList {overflow:hidden; margin:0 -13px 22px;}
+.cpAllList .couponBtn {display:block;background-image:url(../images/hub/tab_bg02_on.png); background-repeat:repeat-x; background-position:left top; background-size:160px; position:relative; padding-bottom:2px}
+.cpAllList .couponBtn:after {content:''; display:block; width:16px; height:10px; position:absolute; right:20px; top:24px;background:url(../images/hub/bg_cpbtn_off.png) no-repeat left top; background-size:16px}
+.cpAllList .couponBtn.on:after {background:url(../images/hub/bg_cpbtn_on.png) no-repeat left top;background-size:16px}
+.cpAllList .couponBtn span {display:block;font-size:18px;padding:21px 0;background-image:url(../images/hub/bg_tabon02_c.png); background-repeat:repeat-x; background-position:left top; background-size:14px; margin:0 12px; color:#fff; font-weight:bold}
+.cpAllList .couponBtn span:after {content:''; display:block; width:100%; position:absolute; left:0; top:0;background:url(../images/hub/bg_tabon02_l.png) no-repeat left 0,url(../images/hub/bg_tabon02_r.png) no-repeat right 0; background-size:14px; height:100%;}
+
+.couponList01 {margin:13px 13px 0 13px}
+.couponList01 ul {overflow:hidden}
+.couponList01 ul li {float:left;width:33.3%; text-align:center; height:97px;background:url(../images/hub/bg_brandcp_l.png) no-repeat left top,url(../images/hub/bg_brandcp_r.png) no-repeat right top;background-size:10px 97px,10px 97px;}
+.couponList01 ul li:nth-child(3n+2) {width:33.4%}
+.couponList01 ul li a {display:block; height:97px;;background:url(../images/hub/bg_brandcp_c.png) repeat-x left top;background-size:10px 97px; margin:0 10px}
+.couponList01 ul li span {display:block; padding-top:6px}
+.couponList01 ul li span img {height:64px}
+.couponList01 ul li strong { color:#222}
+
+.cpimglist {margin:0 13px;}
+.cpimglist > span {display:block; text-align:center; padding:15px}
+.cpimglist img {width:100%}
+
+/* ysh 140827 */
+.titArea{position:relative;overflow:hidden;padding-bottom:22px}
+.titArea img{height:27px}
+.titArea .btnBox01{position:absolute;right:0;top:0;width:50px;margin-top:0}
+.titArea .btnBox01 .btnBlack{padding:6px 8px;}
+.couponviewCont{margin:0 -13px;padding-top:22px;border-top:2px solid #222;}
+.couponviewCont .btnBlBox{margin-top:20px}
+
+/* 마이페이지 */
+.productInq{display:block;margin:0 -13px;padding:14px 0;text-align:center;color:#fff;font-weight:bold;font-size:16px;background:#666}
+.producList.type02{border-top:2px solid #434343}
+.producList.type02 li a .wonPro .date {display:block;margin-bottom:8px;font-size:12px;letter-spacing:0}
+.producList.type02 li a .wonPro strong{display:block;padding-right:13px;text-align:right;color:#222; font-weight:normal}
+.producList.type02 li a .wonPro > em {display:block; margin-bottom:8px; padding-right:10px}
+.producList.type02 li a .wonPro strong em { color:#de3142;}
+.pointInq{margin-top:22px;text-align:center}
+.pointInq img{height:17px}
+.pointInq .btn_wrap{overflow:hidden;margin-bottom:22px;}
+.pointInq .btn_wrap li{float:left;width:16.5%;}
+.pointInq .btn_wrap li:first-child {width:17.5%}
+.pointInq .btn_wrap li a{display:block;color:#fff;margin-right:1px;border-radius:4px;padding:12px 0;font-weight:bold;font-size:14px;text-align:center;background:#434343;}
+.pointInq .btn_wrap li.on a {background:#be0000}
+.pointInq.line4 .btn_wrap li{width:25%}
+.mypointBox01 {background:url(../images/hub/bg_mypage01_l.png) no-repeat left top, url(../images/hub/bg_mypage01_r.png) no-repeat right top; background-size:18px; padding:0 18px; position:relative}
+.mypointBox01 .inner{padding:22px 0;background:url(../images/hub/bg_mypage01_c.png) 0 0 repeat-x;background-size:18px}
+.mypointBox01 .cjpoint {font-size:31px; font-family:'Tahoma'; display:block; color:#c70026;text-align:right; padding-right:44px; position:relative; height:37px}
+.mypointBox01 .cjpoint img {position:absolute; right:0; top:0;width:34px}
+.mypointTable {margin-top:12px; border-top:2px solid #3e2d20;border-bottom:1px solid #6d6d6d;}
+.mypointTable th {text-align:left; padding:13px 0 13px 6px;font-size:15px; }
+.mypointTable tr+tr th {font-weight:normal; }
+.mypointTable td {text-align:right;font-size:15px;font-family:'Tahoma';color:#4d4d4d}
+.mypointTable td,.mypointTable th {background:url(../images/hub/bg_dott_garo02.png) repeat-x left bottom;}
+.mypointTable tr:last-child td,.mypointTable tr:last-child th { background:none}
+.mypointTable.searTy01 {border:0; margin-top:0}
+.mypointTable.searTy01 th {color:#222}
+.mypointTable.searTy01 tr:first-child th,.mypointTable.searTy01 tr:first-child td{font-size:19px}
+.dayfoot {font-size:11px; color:#6d6d6d; display:block; margin-top:6px}
+.innerlybox {position:absolute;left:0;top:189px; margin:0 10px; }
+.innerlypop {border:2px solid #6d6d6d;box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4)}
+.innerlypop h3 {background-color:#6d6d6d; font-size:15px; color:#fff; padding:12px 0 12px 15px}
+.innerlypop p {background:url(../images/hub/bg_mypagepop01.png) repeat left top; background-size:149px; color:#434343; padding:12px}
+.couponcode{text-align:center;margin:0 -13px 30px;padding:22px 13px 30px;background:url(../images/hub/bg_mypage02_01.png) 0 bottom repeat-x;background-size:4px;border-top:2px solid #222}
+.couponcode img{width:100%}
+.couponcode img+img{margin-top:13px}
+.couponList02 li > a {display:block;margin:0 -13px;background:url(../images/hub/bg_couponlist_l.png) no-repeat left 0, url(../images/hub/bg_couponlist_r.png) no-repeat right 0, url(../images/hub/ico_couponlist.png) 95% center no-repeat, url(../images/hub/bg_couponlist_c01.png) 0 0 repeat;background-size:17px, 17px, 15px, 320px;text-indent:13px; color:#fff;font-size:19px;font-weight:bold;border-left:1px solid #342018;border-right:1px solid #342018;border-bottom:1px solid #342018;box-shadow:0px 4px 5px -2px rgba(0,0,0,0.4);}
+.couponList02 li.on > a {background:url(../images/hub/bg_couponlist_l.png) no-repeat left 0, url(../images/hub/bg_couponlist_r.png) no-repeat right 0, url(../images/hub/ico_couponlist_on.png) 95% center no-repeat, url(../images/hub/bg_couponlist_c01.png) 0 0 repeat;background-size:17px, 17px, 15px, 320px;}
+.couponList02 li > a span{display:block;padding:22px 0 23px;margin:0 15px;background:url(../images/hub/bg_couponlist_c.png) repeat-x left 0;background-size:17px}
+.couponList02 li:first-child.on {padding-bottom:20px;}
+.couponList02 li div {display:none;}
+.couponList02 li div img {width:100%}
+
+/* 종료 쿠폰 */
+.endIssue,.endAmount,.endUse,.endDay {position:relative;display:block}
+.endIssue:before,.endAmount:before,.endUse:before,.endDay:before {content:'';display:block;height:100%;width:100%;position:absolute;left:0;top:0;opacity:0.6; background-color:#000}
+.endIssue:after,.endAmount:after,.endUse:after,.endDay:after {content:'';display:block;height:100%;width:100%;position:absolute;left:0;top:0;}
+.endUse:after {background:url(../images/hub/img_couponend01.png) no-repeat center center; background-size:26%}
+.endDay:after {background:url(../images/hub/img_couponend02.png) no-repeat center center; background-size:26%}
+.endIssue:after {background:url(../images/hub/img_couponend03.png) no-repeat center center; background-size:26%}
+.endAmount:after {background:url(../images/hub/img_couponend04.png) no-repeat center center; background-size:26%}
+
+.couponList02 li.on div {display:block}
+.couponList02 li p {margin:0 -13px;padding:22px 0 0 29px;text-align:center}
+
+.payProd{margin:0 -13px 8px;border-top:2px solid #434343}
+.payProd li {display:table;width:100%;padding:10px 0; text-indent:13px}
+.payProd li.prod{padding:10px 0;text-align:center;background:#fff url(../images/hub/bg_linedot02.png) left bottom repeat-x;}
+.payProd li .imgPro {display:table-cell;width:30%;margin-left:0;text-indent:0}
+.payProd li .imgPro span {display:inline-block;width:79px;}
+.payProd li .imgPro img {width:100%;border:1px solid #cfcfcf;}
+.payProd li .wonPro {display:table-cell;width:70%;text-align:left;vertical-align:top; padding-top:5px;text-indent:0}
+.payProd li .wonPro > em {display:block; margin-bottom:8px;font-size:15px;}
+.payProd li .wonPro .date{font-size:12px;letter-spacing:0}
+.payProd li .wonPro strong  {display:block; font-size:15px; margin-top:8px; font-weight:normal}
+.payProd li .wonPro strong em {color:#de3142;}
+.payProd li p{font-size:15px;}
+.payInfo{margin:0 -13px;}
+.payInfo h3{padding:11px 13px;color:#fff;font-size:14px;background:#666;}
+.payInfo .infoList tr{background:#fff url(../images/hub/bg_linedot02.png) left bottom repeat-x}
+.payInfo .infoList tr:last-child{background-image:none;}
+.payInfo .infoList tr th, .payInfo .infoList tr td{padding:20px 13px;text-align:left;font-size:15px;}
+.payInfo .infoList tr th{font-weight:normal;font-size:12px;color:#434343}
+.payInfo .infoList.mypage td{text-align:right}
+
+/* 브랜드 */
+.brand_list{overflow:hidden}
+.brand_list li{float:left;width:50%;height:135px;background:url(../images/hub/bg_brand_l.png) left top no-repeat, url(../images/hub/bg_brand_r.png) right top no-repeat;background-size:11px;}
+.brand_list li .inner{margin:0 11px;padding:15px 0 18px;background:url(../images/hub/bg_brand_c.png) left top repeat-x;background-size:11px}
+.brand_list li .inner .cont{text-align:center}
+.brand_list li .inner .cont span img{height:37px;}
+.brand_list li .inner .cont p{margin-top:5px;font-size:10px;color:#666;}
+.brand_list li .inner .cont p strong{display:inline-block;margin-top:4px;font-size:13px;color:#222;}
+.brand_list li .inner .cont p strong.txt_line2{font-size:12px;letter-spacing:-2.1px;}
+.brand_list li .inner .cont .sns{margin-top:15px}
+.brand_list li .inner .cont .sns [class*="go_"]{display:inline-block;margin-left:18px;}
+.brand_list li .inner .cont .sns .go_h{margin-left:0}
+.brand_list li .inner .cont .sns .go_h img{width:13px}
+.brand_list li .inner .cont .sns .go_f img{width:7px}
+.brand_list li .inner .cont .sns .go_t img{width:13px}
+.brand_list li .inner .cont .sns .go_b img{width:9px}
+/* cj타운 */
+.cjtown_imgarea{margin:0 -13px}
+.floor_guide{margin-top:13px;border-spacing:2px;border-collapse:separate}
+.floor_guide th{padding:8px 0;font-size:15px;font-weight:normal;color:#fff;font-family:'Tahoma';letter-spacing:0;border:1px solid #4d4642;background:#685f59}
+.floor_guide td{padding:8px 7px;font-weight:bold;font-size:15px;border:1px solid #b6b6b6;background-color:rgba(177,177,177,0.5)}
+.town_list li {padding:22px 0 20px 117px;background:url(../images/hub/bg_linedot02.png) left bottom repeat-x; position:relative}
+.town_list li .logo {position:absolute; left:0;top:22px}
+.town_list li .logo img{width:117px}
+.town_list li .timeNum {display:block;background:url(../images/hub/bul_townlist.png) left 5px no-repeat; padding-left:7px; margin-bottom:10px}
+.town_list li .timeNum a {display:block; width:115px}
+.town_list li .timeNum strong {display:block}
+.town_list li > a {position:absolute; right:0;bottom:20px}
+.town_list li > a img {width:42px}
+.streetLi {margin-top:10px}
+.streetLi li {padding-left:8px;background:url(../images/hub/bul_list02.png) left 8px no-repeat; line-height:20px}
+.mapIco {position:absolute; left:40%; top:30%}
+.mapIco img {width:10px}
+/* paging */
+.paging {position:relative;overflow:hidden;padding:9px;border:1px solid #555;background:#555; height:37px; margin:0 -13px}
+.paging .prev, .paging .next{display:block;width:35px;padding:9px 0;text-align:center;color:#fff;height:19px}
+.paging .prev{float:left;}
+.paging .next{float:right;}
+.paging .list{position:absolute;left:50%;top:8px;margin-left:-39px;background-color:#694326;}
+.paging .list a{display:block;color:#fff;font-size:14px;font-family:'Tahoma';padding:11px 10px 11px 32px;background:#444 url(../images/common/ico_paging_list.gif) 10px 15px no-repeat;background-size:13px;border:1px solid #272727}
+.paging .list a .on{color:#f1340e;}
+.paging .prev, .paging .next{background:#444;border:1px solid #272727}
+.paging .prev img, .paging .next img {width:6px}
+
+.mydflist li {background:url(../images/hub/bg_dott_garo02.png) left bottom repeat-x;background-size:4px; padding-bottom:20px; margin-bottom:20px;}
+.mydflist li:last-child {background:none}
+.mydflist li > strong {font-size:18px; display:block; margin-bottom:10px}
+.mydflist li .btnBox01 {width:178px}
+.payTopBox { border:4px solid #3e3c39; margin-bottom:20px; padding:20px; text-align:center; font-size:20px; font-weight:bold}
+.cjpointBtn {color:#c70026; text-decoration:underline}
+.btnTxt {text-decoration:underline; padding:5px}
+/* footer */
+footer {background-color:#2b2b2b;text-align:center;border-top:1px solid #000}
+footer .footListTop {width:100%;overflow:hidden;background-color:#262626;}
+footer .footListTop li {float:left;width:33.3%;border-bottom:1px solid #000;background:#252525;}
+footer .footListTop li:last-child {border-right:0;width:33.4%}
+footer .footListTop li a {color:#c3b5aa;display:block;height:77px;font-size:12px;text-indent:-9999px;background-repeat:no-repeat;background-position:center center;background-size:auto 45px;border-right:1px solid #000}
+footer .footListTop li:first-child a {background-image:url(../images/hub/ico_footer_quick_02.png);background-size:auto 45px;}
+footer .footListTop li:nth-child(2) a {background-image:url(../images/hub/ico_footer_quick_03.png);background-size:auto 45px;}
+footer .footListTop li:nth-child(3) a {background-image:url(../images/hub/ico_footer_quick_04.png);background-size:auto 45px;}
+footer .footListTop li:last-child a {border-right:none}
+footer .footListCnt {padding:15px 0 13px;clear:both;margin:0 auto; text-align:center; overflow:hidden; display:inline-block}
+footer .footListCnt a {color:#c8c8c8;font-size:10px;display:inline-block;text-align:center; float:left;background:url(../images/hub/bg_footcnt01.png) no-repeat right center; padding-right:8px; margin-right:6px}
+footer .footListCnt a:nth-child(3) {color:#fff}
+footer .footListCnt a:last-child {background:none; padding-right:0; margin-right:0}
+footer address {padding:8px 0 20px 0; color:#828282; font-size:9px; text-align:left; line-height:16px;letter-spacing:0;border-top:1px solid #393939; margin:0 13px}
+footer address p,footer address a {color:#828282;font-size:9px;letter-spacing:0}
+footer address p a {text-decoration:underline;}
+footer address p:last-child {margin-top:17px; color:#6c6053}

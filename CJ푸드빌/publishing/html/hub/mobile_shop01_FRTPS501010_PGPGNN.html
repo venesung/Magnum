@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>모바일상품샵 - CJ푸드빌 허브</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/hub.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/cjfv_hub.js"></script>
+<script type="text/javascript">
+	var valueList_arr = ["CA47", "CA46", "CA40","CA44", "CA48", "CA42", "CA45", "CA43", "CA55"];
+	$(document).ready(function() {
+		if($(".shopBrandRol").length) {
+			infiniteBanner(".shopBrandRol",
+			[".branBtnL", ".branBtnR"], 
+			"#hubMobileProductShop",
+			valueList_arr,
+			hubSchProduct);
+		}
+	});
+
+	function hubSchProduct() {
+		/*
+		$.ajax({
+			type	: "POST",
+			url		: "/.asp",
+			//data	: $("#hubMobileProductShop").serialize(),
+			dataType: "html",
+			complete:function(data, status){
+				if(status == "success"){
+					$(".producList").html(data.responseText);
+				}else{
+					console.log("error : " + status);
+				}
+			}
+		});
+		*/
+	}
+</script>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/hub/img_logo_hub.png" alt="CJ 푸드빌"></a></h1>
+			<a href="#" class="util_l"><img src="../../images/hub/ico_header_location.png" alt="매장찾기"></a>
+			<a href="#" class="util_r"><img src="../../images/hub/ico_totalmenu.png" alt="전체메뉴 펼치기"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/hub/img_location_home.png" alt="home"></li>
+						<li>모바일상품샵</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 동위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 동위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox">
+				
+				<h2 class="titDep01 marB0"><img src="../../images/hub/tit_shop01.png" alt="모바일상품샵"></h2>
+				
+				<div class="t_right marB10">
+					<a href="#" class="btnTxt">유의사항</a>
+				</div>
+				
+				<div class="shopBrandRol">
+					<ul id="shopBrandRolID">
+						<!-- 20140918 브랜드 추가 -->
+						<li><a href="#"><img src="../../images/hub/img_rolbrand01.png" alt="뚜레쥬르"></a></li><!-- img height size 162px -->
+						<li><a href="#"><img src="../../images/hub/img_rolbrand02.png" alt="빕스"></a></li><!-- 선택시 class="on" -->
+						<li><a href="#"><img src="../../images/hub/img_rolbrand03.png" alt="비비고"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand04.png" alt="투썸플레이스"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand05.png" alt="투썸커피"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand06.png" alt="콜드스톤크리머리"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand07.png" alt="차이나팩토리"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand08.png" alt="제일제면소"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand09.png" alt="더스테이크 하우스 by 빕스"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand10.png" alt="빕스 버거"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand11.png" alt="CJ푸드월드"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand12.png" alt="차이나팩토리 딜라이트"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand13.png" alt="더 플레이스"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand14.png" alt="계절밥상"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand15.png" alt="비비고 다담"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand16.png" alt="우오"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand17.png" alt="몽중헌"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand18.png" alt="엔그릴"></a></li>
+						<li><a href="#"><img src="../../images/hub/img_rolbrand19.png" alt="N서울타워"></a></li>
+						<!-- // 20140918 브랜드 추가 end-->
+					</ul>
+					<div>
+						<a href="#" class="branBtnL"><img src="../../images/hub/btn_shop_left.png" alt="이전 브랜드 보기"></a>
+						<a href="#" class="branBtnR"><img src="../../images/hub/btn_shop_right.png" alt="다음 브랜드 보기"></a>
+					</div>
+				</div>
+				
+				<div class="shopProduct">
+					<!-- tabbtn -->
+					<ul class="tabProduct">
+						<li class="on"><a href="#" title="현위치">인기순</a></li><!-- 선택시 title="현위치" 추가 -->
+						<li><a href="#">최신순</a></li>
+						<li><a href="#">가격순</a></li>
+					</ul>
+					<!-- // tabbtn end -->
+					
+					<!-- 상품list -->
+					<ul class="producList">
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product01.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+									<!-- 20140911 추가 -->
+									<div class="icobtn">
+										<span class="icoCr01">New</span> <!-- new class="icoCr01" -->
+										<span class="icoCr02">인기</span> <!-- 인기 class="icoCr02" -->
+										<span class="icoCr03">추천</span> <!-- 추천 class="icoCr03" -->
+										<span class="icoCr04">할인</span> <!-- 할인 class="icoCr04" -->
+									</div>
+									<!-- // 20140911 추가 end -->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product02.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product03.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product04.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product05.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="imgPro"><span><img src="../../images/hub/img_product06.png" alt="상품이미지"></span></div>
+								<div class="wonPro">
+									<em>[뚜레쥬르] 프리미엄 우유식빵</em>
+									<strong>가격<span>2,200</span></strong>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<!-- // 상품list end -->
+					
+				</div>				
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>

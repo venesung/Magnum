@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<title>쿠폰 - CJ푸드빌 허브</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/hub.css">
+<script type="text/javascript" src="../../js/lib.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/cjfv_hub.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var ajaxTabList = new AjaxTabList([".couponList01 ul", ".shopProduct .tabProduct"], "hubBrandCoupon", hubSchCoupon);
+		var	$couponList01 = $(".couponList01");
+		$(".couponBtn").on("click", function(e) {
+			var target = $(e.currentTarget);
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (target.hasClass("on")) {
+				target.removeClass("on");
+				$couponList01.css("display", "none");
+			} else {
+				target.addClass("on");
+				$couponList01.css("display", "block");
+			}
+			
+		});
+	});
+	
+	function hubSchCoupon(idx) { // 버튼 클릭시마다 실행
+		$.ajax({
+			type: "POST",
+			url: "/.asp",
+			data: $("#hubBrandCoupon").serialize(),
+			dataType: "html",
+			complete: function(data, status){
+				if (status == "success"){
+					$(".cpimglist").html(data.responseText);
+				} else {
+					console.log("error : " + status);
+				}
+			}
+		});
+	}
+
+</script>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- header Start -->
+		<header>
+			<h1><a href="#"><img src="../../images/hub/img_logo_hub.png" alt="CJ 푸드빌"></a></h1>
+			<a href="#" class="util_l"><img src="../../images/hub/ico_header_location.png" alt="매장찾기"></a>
+			<a href="#" class="util_r"><img src="../../images/hub/ico_totalmenu.png" alt="전체메뉴 펼치기"></a>
+		</header>	
+		<!-- // header End -->
+		
+		<!-- section start -->
+		<section>
+			<!-- loacation start -->
+			<div class="location">
+				<a href="#" class="topLoct">
+					<ul>
+						<li><img src="../../images/hub/img_location_home.png" alt="home"></li>
+						<li>쿠폰</li>
+					</ul>
+				</a>	
+				
+				<!-- location 클릭시 동위메뉴 start -->
+				<div class="underLoct" style="display:none">
+					<ul>
+						<li><a href="#">1 depth</a></li>
+						<li><a href="#">2 depth</a></li>
+						<li><a href="#">3 depth</a></li>
+					</ul>
+				</div>
+				<!-- // location 클릭시 동위메뉴 end -->
+			</div>
+			<!-- // loacation end -->
+			
+			<!-- content start -->
+			<div class="contentBox">
+				
+				<h2 class="titDep01"><img src="../../images/hub/tit_coupon.png" alt="쿠폰"></h2>
+				
+				
+				<div class="cpAllList">
+					<a href="#" class="couponBtn"><span>ALL 전체(5)</span></a><!-- class="on" open -->
+					
+					<!-- brand List -->
+					<div class="couponList01" style="display:none">
+						<ul>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand01.png" alt="전체"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand02.png" alt="뚜레쥬르"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand03.png" alt="빕스"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand04.png" alt="비비고"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand05.png" alt="투썸플레이스"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand06.png" alt="투썸커피"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand07.png" alt="차이나팩토리"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand08.png" alt="차이나팩토리딜라이트"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand09.png" alt="콜드스톤"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand10.png" alt="제일제면소"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand11.png" alt="더 플레이스"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand12.png" alt="더 스테이크 하우스"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand13.png" alt="버거 빕스"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span><img src="../../images/hub/img_cpbrand14.png" alt="계절밥상"></span>
+									<strong>(5)</strong>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- brand List end // -->
+					
+				</div>
+				
+				
+				
+				
+				<div class="shopProduct">
+					<ul class="tabProduct">
+						<li class="on"><a href="#" title="현위치">마감임박순</a></li><!-- 선택시 title="현위치" 추가 -->
+						<li><a href="#">최신순</a></li>
+						<li><a href="#">인기순</a></li>
+					</ul>
+					<div class="cpimglist">
+						<a href="#"><img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능"></a>
+						<a href="#"><img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능"></a>
+						<!-- 종료된쿠폰 20140911 수정-->
+						<em class="endUse" title="사용완료"><!-- 사용완료 class="endUse" -->
+							<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">		
+						</em>
+						<em class="endDay" title="기간만료"><!-- 기간만료 class="endDay"-->
+							<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+						</em>
+						<em class="endIssue" title="발급완료"><!-- 발급만료 class="endIssue"-->
+							<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+						</em>
+						<em class="endAmount" title="수량소진"><!-- 기간만료 class="endAmount"-->
+							<img src="../../images/hub/img_coupon_on.png" alt="와인 에이드 1잔 무료(성인 2인 이상 주문 시), 사용기한 :2014.07.31, [쿠폰받기] 후 사용 가능">
+						</em>
+						<!-- 종료된쿠폰 수정 end -->
+					</div>
+				</div>
+				
+			</div>
+			<!-- content start -->
+			
+		</section>
+		<!-- // section End -->
+		
+		<!-- footer start -->
+		<footer>
+			<div class="footListCnt">	
+				<a href="#">회사소개</a>
+				<a href="#">이용약관</a>
+				<a href="#"><strong>개인정보취급방침</strong></a>
+				<a href="#">이메일 무단수집거부</a>
+				<a href="#">법적고지</a>
+			</div>
+			<address>
+				100-400) 서울특별시 중구 동호로 330 CJ제일제당센터 7~8층 CJ 푸드빌㈜<br>
+				대표이사 : 정문목 &nbsp;&nbsp; 고객센터 : <a href="tel:1577-0700">1577-0700</a> &nbsp;&nbsp; 팩스 : (02)6740-4349<br>
+				사업자등록번호 : 312-81-42519 &nbsp;&nbsp; 개인정보관리책임자 : 배은
+				<p>대표이메일 : <a href="mailto:help_master@cj.net">help_master@cj.net</a></p>
+				<p>Copyright ⓒ 2014 CJ Foodville ALL RIGHTS RESERVED.</p>
+			</address>
+			<a href="#" class="fotTopBtn"><img src="../../images/common/btn_pagetop.png " alt="페이지위로"></a>
+		</footer>
+		<!-- // footer End -->
+	</div>
+	<!-- // wrap end -->
+</body>
+</html>
