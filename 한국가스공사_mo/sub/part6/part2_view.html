@@ -1,0 +1,400 @@
+<!--<%@ page contentType="text/html; charset=euc-kr"%>
+<%@page import="java.sql.*,  javax.sql.*,java.io.*, java.util.*,java.util.Date, javax.naming.*, java.text.*" %>
+<%@ include file="../etc/Usr_function.jsp" %>
+<%@ include file="/sql/part6/part2_view.jsp" %>
+
+<%
+response.setHeader("Pragma", "No-cache");
+response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-cache");
+
+String idx = request.getParameter("idx");
+
+if(idx == null || idx.equals("") || idx.equals("0"))
+{
+	idx = "1";
+}
+
+else
+{
+	if(digitCheck(replaceStringAll(idx)) == false)
+	{
+%>
+	<script type="text/javascript">
+		location.href = "part2_list.jsp";
+	</script>
+<%
+		return;
+	}
+}
+
+String title		= "";
+String contents		= "";
+String contents_ext	= "";
+String use_html		= "";
+String regdate		= "";
+String upImage      = "";
+String gubun	    = "DA";
+
+int view_count		= 0;
+int ListPage = 0;
+
+if (request.getParameter("ListPage") != null)
+{
+	ListPage = Integer.parseInt(request.getParameter("ListPage"));
+}
+else
+{
+	ListPage = 1;
+}
+
+Connection			conn		= null;
+PreparedStatement	stmtView	= null;
+PreparedStatement	stmtFile	= null;
+Statement			stmtUpd		= null;
+ResultSet			rsView		= null;
+ResultSet			rsFile		= null;
+
+HashMap<String, String> hmFile = new HashMap<String, String>();
+String logicalFile="", physicalFile="";
+
+try{
+	conn = openDBcon();
+	conn.setAutoCommit(false);
+    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd");
+    
+ 	// 컨텐츠 조회
+	stmtView = conn.prepareStatement(getQuery(31, ""), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+    stmtView.setString(1, gubun);
+	stmtView.setInt(2, Integer.parseInt(idx)) ;
+
+	rsView = stmtView.executeQuery();
+
+	if (rsView.next())
+	{
+		use_html		= rsView.getString("use_html").trim();
+
+		//XSS 역변환
+		title			= viewXssCheck(rsView.getString("news_title"));
+		contents		= brDecoding(rsView.getString("news_contents"),use_html);
+		contents_ext	= brDecoding(rsView.getString("news_contents_ext"),use_html);
+		contents 		= viewXssCheck(contents + contents_ext);
+		//"/editorImage/"가 들어가있으면 "http://www.kogas.or.kr/editorImage/"로 수정
+		contents = contents.replaceAll("/editorImage/", "http://www.kogas.or.kr/editorImage/");
+		
+        upImage         = rsView.getString("news_upimage");
+        if(use_html.equals("0"))
+        {
+    		contents = replace(replaceString(">", "&gt", replaceString("<", "&lt;", contents)), "&lt;BR&gt", "<br>");
+        }
+		view_count = rsView.getInt("news_cnt");
+		regdate = formatter.format(rsView.getTimestamp("regdate"));
+
+	}
+	rsView.close();
+	stmtView.close();
+	
+	// 첨부파일 조회 기존 방식으로 변경 2011. 09. 28
+	stmtFile = conn.prepareStatement(getQuery(42, ""), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	stmtFile.setString(1, gubun);
+	stmtFile.setInt(2, Integer.parseInt(idx));
+	rsFile = stmtFile.executeQuery();
+
+	while(rsFile.next())
+	{
+		hmFile.put(rsFile.getString("NEWS_UPFILE"), rsFile.getString("NEWS_UPFILE_REAL"));
+	}
+	/*
+	//첨부파일 조회
+	stmtFile = conn.prepareStatement(getQuery(41, ""), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	stmtFile.setString(1, gubun);
+	stmtFile.setInt(2, Integer.parseInt(idx));
+	rsFile = stmtFile.executeQuery();
+
+	while(rsFile.next())
+	{
+		logicalFile = rsFile.getString("L_FILE_NM");
+		physicalFile = rsFile.getString("P_FILE_NM");
+		
+		hmFile.put(logicalFile, physicalFile);
+	}
+	*/
+
+	// 조회수 업데이트
+	stmtUpd = conn.createStatement();
+
+	stmtUpd.executeUpdate(getQuery(32, idx));
+	conn.commit();
+
+	stmtUpd.close();
+
+	conn.close();
+}
+catch(Exception e)
+{
+	conn.rollback();
+	throw e;
+}
+finally
+{
+	try {
+	    if (rsView != null) {
+		    rsView.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (rsFile!= null) {
+	    	rsFile.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (stmtFile != null) {
+	    	stmtFile.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (stmtView != null) {
+		    stmtView.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (stmtUpd != null) {
+		    stmtUpd.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (conn != null) {
+		    conn.close();
+		}
+	}catch(Exception ee) {}
+}
+%>-->
+
+<!--<%@ include file="../../inc/hd.jsp"%>-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>한국가스공사</title>
+<script type="text/javascript" src="../../js/common.js"></script>   
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../css/etc.css" />
+</head>
+<body id="m_wrap"  onload="window.scrollTo(1, 0)">
+<div class="wrap">
+
+	<div class="header">
+		<div class="headSect">
+			<h1><a href="#"><img src="../../images/mv_img_logo.gif" alt="KOGAS" style="width:110px"></a></h1>
+			<a href="#" onclick="allmW('on');" class="menu"><img src="../../images/img_allmenu.gif" alt="전체메뉴" style="width:28px"></a>
+			
+			<!-- 전체메뉴 Start -->
+			<div id="allmenuH" class="allmenu" style="display: none;">
+				<div class="allmenuIn">
+					<strong>전체메뉴<a href="#" onclick="allmW('off');"><img src="../../images/btn_allmenu_close.gif" alt="전체메뉴닫기" style="width:20px"></a></strong>
+					
+					<ul>
+						<li>
+							<a href="#" class="bgm">KOGAS 소개</a>
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">비전</a></li>
+								<li><a href="#">사업분야</a></li>
+								<li><a href="#">핵심가치</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu2">가스정보</a>
+							<ul>
+								<li><a href="#">천연가스 소재</a></li>
+								<li><a href="#">이용산업</a></li>
+								<li><a href="#">열량정보</a></li>
+								<li><a href="#">천연가스 용어사전</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu3">고객지원</a>
+							<ul>
+								<li><a href="#">고객의 소리</a></li>
+								<li><a href="#">고객현장</a></li>
+								<li><a href="#">비리신고</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu4">홍보활동</a>
+							<ul>
+								<li><a href="#">사회공헌 소개</a></li>
+								<li><a href="#">활동분야</a></li>
+								<li><a href="#">KOGAS 봉사단</a></li>
+								<li><a href="#">태권도단</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu5">정보마당</a>
+							<ul>
+								<li><a href="#">요금정보</a></li>
+								<li><a href="#">주식정보</a></li>
+								<li><a href="#">통계정보</a></li>
+								<li><a href="#">열량조회</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu6">열림마당</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">입찰정보</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu7">채용정보</a>
+							<ul>
+								<li><a href="#">Why KOGAS</a></li>
+								<li><a href="#">인사제도</a></li>
+								<li><a href="#">입사지원</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu8">열린경영</a>
+							<ul>
+								<li><a href="#">지속가능 경영</a></li>
+								<li><a href="#">저탄소경영</a></li>
+								<li><a href="#">윤리경영</a></li>
+								<li><a href="#">안전,환경경영(EHSQ)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu9">경영공시</a>
+							<ul>
+								<li><a href="#">IR정보</a></li>
+								<li><a href="#">재무정보</a></li>
+								<li><a href="#">공고</a></li>
+								<li><a href="#">경영공시</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //전체메뉴 end-->
+		</div>
+
+ 
+
+		<div class="hd_md">
+			<ul class="smenu">
+				<li><a href="part1_list.html"><img src="../../images/stit6_1_off.png"></a></li>				
+				<li><a href="part2_list.html"><img src="../../images/stit6_2_on.png"></a></li>				
+				<li><a href="part3_list.html"><img src="../../images/stit6_3_off.png"></a></li>
+				<li class="none"><a href="part4_1.html"><img src="../../images/stit6_4_off.png"></a></li>				
+			</ul>
+		</div>
+		<div class="hd_bt">
+			<h3>보도자료</h3>
+			<!--<%@ include file="../../inc/func.jsp"%>-->
+			<div class="btn_pre">
+				<div id="cvsmall" style="display:block;"><a href="#" onclick="changeFsize('flarge');">크게보기</a></div>
+				<div id="cvbig" style="display:none;"><a href="#" onclick="changeFsize('fsmall');">작게보기</a></div>
+			</div>
+		</div>		
+	</div>
+	
+	<!--<div id="content" class="cont_pn"> 
+		<div class="title">
+			<h4><%= title %></h4>
+		</div>
+
+		<div class="board">
+			<div class="qna_list">
+				<ul class="liT04">
+					<li class="left">등록일 : <%= regdate %></li>
+					<li class="left">조회 : <%=view_count %></li>
+					<li class="clear">첨부 : 
+					<%
+					String upfile="", upfilereal="";
+					Set<String> set = hmFile.keySet();
+				    Object [] hmKey = set.toArray();
+				    
+				    if(hmKey.length == 0)
+				    {
+				    	out.println("&nbsp;");
+				    } else {
+				    	for(int i = 0; i < hmKey.length; i++)
+					    {
+					    	if(i>0) out.print("<br/>");
+					    	upfile = (String)hmKey[i];
+					    	upfilereal = (String)hmFile.get(upfile);
+				        %>
+							<a href="http://www.kogas.or.kr/common/fildndown.jsp?fn=<%=upfilereal%>&dnname=<%=upfile%>&pathtype=part6">
+							<!--a href="http://www.kogas.or.kr/includes/downloads.jsp?savePathRef=1.<%= idx %>&gubun=NEWS<%=gubun%>"
+							<img src="../../images/ico_file.gif"><%=upfile!=null?upfile:""%>
+							</a>
+							&nbsp;
+				        <%
+					    }
+				    }
+					%>
+					</li>
+				</ul>
+			</div>
+			<div class="bd_cont">   
+				<%= contents %>
+			</div>
+		
+		</div>
+		
+		<div class="btn mat15">
+			<a href="part2_list.jsp?ListPage=<%=ListPage %>"><img src="../../images/btn_list.gif"></a>
+		</div>
+
+	</div>-->
+	<div id="content" class="cont_pn"> 
+		<div class="title">
+			<h4>에너지 빈곤층 없도록 에너지공기업의 사회적 책임 이행</h4>
+		</div>
+
+		<div class="board">
+			<div class="qna_list">
+				<ul class="liT04">
+					<li class="left">등록일 : 2013-11-04</li>
+					<li class="left">조회 : 85</li>
+					<li class="clear">첨부 : 
+					
+							<a href="http://www.kogas.or.kr/common/fildndown.jsp?fn=20131104034822.861&amp;dnname=빈곤층 없도록 공기업의 사회적책임 이행.hwp&amp;pathtype=part6">
+							<!--a href="http://www.kogas.or.kr/includes/downloads.jsp?savePathRef=1.588&gubun=NEWSDA"-->
+							<img src="../../images/ico_file.gif">빈곤층 없도록 공기업의 사회적책임 이행.hwp
+							</a>
+							&nbsp;
+				        
+					</li>
+				</ul>
+			</div>
+			<div class="bd_cont">   
+				상세 내용은 첨부파일을 참고하시기 바랍니다. 
+			</div>
+		
+		</div>
+		
+		<div class="btn mat15">
+			<a href="part2_list.jsp?ListPage=1"><img src="../../images/btn_list.gif"></a>
+		</div>
+
+	</div>
+
+	<!--<%@ include file="../../inc/footer.jsp"%>-->
+<div class="foot">
+		<a href="http://www.kogas.or.kr/kogas_kr/html/about/about_submain.jsp" target="_blank">PC버전</a>
+		<a href="#">오시는 길</a>
+		<a href="http://twitter.com/kogastweets" target="_blank" title="새창"><span>트위터</span></a>
+		<a href="#" target="_blank" title="새창"><span>페이스북</span></a>
+		<span><a href="#m_wrap" class="topbtn"><img src="../../images/btn_top.png" alt="맨위로" style="width:50px;"></a></span>
+		
+		<p> ⓒ KOREA GAS CORPORATION. ALL RIGHTS RESERVED.</p>
+	</div>
+
+</div>
+</body>
+</html>

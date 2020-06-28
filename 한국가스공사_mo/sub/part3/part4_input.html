@@ -1,0 +1,323 @@
+<!--<%@ page contentType="text/html; charset=euc-kr"%>-->
+<!--<%@ include file="../etc/Usr_function.jsp" %>
+<%@ include file="/sql/part3/part3_write.jsp" %>
+
+<%
+response.setHeader("Pragma", "No-cache");
+response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-cache");
+
+String post1 = request.getParameter("post1")==null?"":request.getParameter("post1");
+String post2 = request.getParameter("post2")==null?"":request.getParameter("post2");
+String addr1 = request.getParameter("addr1")==null?"":request.getParameter("addr1");
+String addr2 = request.getParameter("addr2")==null?"":request.getParameter("addr2");
+
+String phone = request.getParameter("phone")==null?"":request.getParameter("phone");
+String email_1 = request.getParameter("email_1")==null?"":request.getParameter("email_1");
+String email_2 = request.getParameter("email_2")==null?"":request.getParameter("email_2");
+String mailyn = request.getParameter("mailyn")==null?"":request.getParameter("mailyn");
+String title = request.getParameter("title")==null?"":request.getParameter("title");
+String content = request.getParameter("content")==null?"":request.getParameter("content");
+%>
+
+<script type="text/javascript" src="../etc/js/inc_flash.js"></script>
+<script type="text/javascript" src="../etc/js/default.js"></script>
+<script type="text/javascript" src="../etc/js/util.js"></script>
+<script type="text/javascript" src="../etc/js/common.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+function CheckEmail(){
+	var f = document.frm;
+	var selectemail = f.email_3[f.email_3.selectedIndex].value;
+	
+	if(selectemail==""){
+		f.email_2.value="";
+		f.email_2.readOnly=false;
+	}else{
+		f.email_2.value=selectemail;
+		f.email_2.readOnly=true;
+   }
+}
+
+function CheckAndSubmit(f)  {
+
+	if(IsNull(f.email_1.value)) {
+
+		alert('email을 입력해 주세요!');
+		f.email_1.focus();
+		return false;
+	}
+
+	if(!CheckString(f.email_1)) {
+		alert('email ID에 특수문자가 들어갔습니다. email ID를 확인해주세요!');
+		return false;
+	}
+
+	if(IsNull(f.email_2.value)) {
+
+		alert('email을 입력해 주세요!');
+		f.email_2.focus();
+		return false;
+	}
+	
+	if(IsNull(f.passwd.value)) {
+
+		alert('비밀번호를 입력해 주세요!');
+		f.passwd.focus();
+		return false;
+   }
+
+	if(IsNull(frm.title.value)) { 
+
+		alert('제목을 입력해 주세요!');
+		f.title.focus();
+		return false;
+	}
+
+	if(GetTextByte(f.title.value) > 200) {
+
+       alert('제목은 한글 100자/영문 200문이내 입니다.');
+       f.title.focus();
+       return false;
+   }
+
+   if (IsNull(f.content.value)) {
+
+       alert('제안 내용을 입력해 주세요!');
+       f.content.focus();
+       return false;
+   }
+
+   if(GetTextByte(f.content.value) > 7000) {
+
+       alert('제안 내용은 한글 3500자/영문 7000문이내 입니다..');
+       f.content.focus();
+       return false;
+   }
+	
+	mail = f.email_1.value+'@'+ f.email_2.value;
+	f.email.value=mail;
+}
+
+function toPost()
+{
+	var f = document.frm;
+	f.action = "part3_zip.jsp";
+	f.submit();
+}
+</script>-->
+
+<!--<%@ include file="../../inc/hd.jsp"%>-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>한국가스공사</title>
+<script type="text/javascript" src="../../js/common.js"></script>   
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../css/etc.css" />
+</head>
+<body id="m_wrap"  onload="window.scrollTo(1, 0)">
+<div class="wrap">
+
+	<div class="header">
+		<div class="headSect">
+			<h1><a href="#"><img src="../../images/mv_img_logo.gif" alt="KOGAS" style="width:110px"></a></h1>
+			<a href="#" onclick="allmW('on');" class="menu"><img src="../../images/img_allmenu.gif" alt="전체메뉴" style="width:28px"></a>
+			
+			<!-- 전체메뉴 Start -->
+			<div id="allmenuH" class="allmenu" style="display: none;">
+				<div class="allmenuIn">
+					<strong>전체메뉴<a href="#" onclick="allmW('off');"><img src="../../images/btn_allmenu_close.gif" alt="전체메뉴닫기" style="width:20px"></a></strong>
+					
+					<ul>
+						<li>
+							<a href="#" class="bgm">KOGAS 소개</a>
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">비전</a></li>
+								<li><a href="#">사업분야</a></li>
+								<li><a href="#">핵심가치</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu2">가스정보</a>
+							<ul>
+								<li><a href="#">천연가스 소재</a></li>
+								<li><a href="#">이용산업</a></li>
+								<li><a href="#">열량정보</a></li>
+								<li><a href="#">천연가스 용어사전</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu3">고객지원</a>
+							<ul>
+								<li><a href="#">고객의 소리</a></li>
+								<li><a href="#">고객현장</a></li>
+								<li><a href="#">비리신고</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu4">홍보활동</a>
+							<ul>
+								<li><a href="#">사회공헌 소개</a></li>
+								<li><a href="#">활동분야</a></li>
+								<li><a href="#">KOGAS 봉사단</a></li>
+								<li><a href="#">태권도단</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu5">정보마당</a>
+							<ul>
+								<li><a href="#">요금정보</a></li>
+								<li><a href="#">주식정보</a></li>
+								<li><a href="#">통계정보</a></li>
+								<li><a href="#">열량조회</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu6">열림마당</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">입찰정보</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu7">채용정보</a>
+							<ul>
+								<li><a href="#">Why KOGAS</a></li>
+								<li><a href="#">인사제도</a></li>
+								<li><a href="#">입사지원</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu8">열린경영</a>
+							<ul>
+								<li><a href="#">지속가능 경영</a></li>
+								<li><a href="#">저탄소경영</a></li>
+								<li><a href="#">윤리경영</a></li>
+								<li><a href="#">안전,환경경영(EHSQ)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu9">경영공시</a>
+							<ul>
+								<li><a href="#">IR정보</a></li>
+								<li><a href="#">재무정보</a></li>
+								<li><a href="#">공고</a></li>
+								<li><a href="#">경영공시</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //전체메뉴 end-->
+		</div>
+  
+
+		<div class="hd_md">
+			<ul class="smenu">
+				<li><a href="part1_list.html"><img src="../../images/stit3_1_off.png"></a></li>				
+				<li><a href="part2.html"><img src="../../images/stit3_2_off.png"></a></li>				
+				<li class="none"><a href="part2_1.html"><img src="../../images/stit3_4_on.png"></a></li>				
+			</ul>
+		</div>
+		<div class="hd_bt">
+			<h3>비리신고</h3>
+		</div>		
+	</div>
+	
+	<div class="cont_pn"> 
+	<form name="frm" method="post" action="part4_save.jsp" onSubmit="return CheckAndSubmit(this)">
+		<input type="hidden" name="wmode" value="A"/>
+		<input type="hidden" name="mailyn" value="Y"/>
+		<input type="hidden" name="email"/>
+		
+		<table cellspacing="0" summary="" class="tbT03 tbnone">
+			<caption></caption>
+			<col width="25%"/>
+			<col/>   
+			<tbody>
+			<tr>
+				<th>작성자</th>
+				<td><input type="text" name="writer" class="input" /></td>	
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" name="email_1" class="input mab5" value="<%=email_1%>"> @ <input type="text" name="email_2" class="input mab5" value="<%=email_2%>"><br>
+					<select name="email_3" onChange="CheckEmail();" class="select">
+						<option value="" selected="selected">직접입력</option>
+						<option value="chol.com">chol.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="dreamwiz.com">dreamwiz.com</option>
+						<option value="empal.com">empal.com</option>
+						<option value="empas.com">empas.com</option>
+						<option value="freechal.com">freechal.com</option>
+						<option value="hanafos.com">hanafos.com</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="hanmir.com">hanmir.com</option>
+						<option value="hitel.net">hitel.net</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="korea.com">korea.com</option>
+						<option value="lycos.co.kr">lycos.co.kr</option>
+						<option value="megapass.net">megapass.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="naver.com">naver.com</option>
+						<option value="paran.com">paran.com</option>
+						<option value="sayclub.net">sayclub.net</option>
+						<option value="shinbiro.com">shinbiro.com</option>
+						<option value="yahoo.co.kr">yahoo.co.kr</option>
+					</select>
+									</td>	
+			</tr>				
+			</tbody>
+		</table>
+
+<table cellspacing="0" summary="" class="tbT03 mat10">
+			<caption></caption>
+			<col width="25%"/>
+			<col/>   
+			<tbody>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="title" class="input97" value="<%=title%>"></td>	
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" name="passwd" class="input50"></td>	
+			</tr>
+			<tr class="none">
+				<th>질문내용</th>
+				<td><textarea name="content" rows="2" cols="2" class="textarea" value="<%=content%>"></textarea></td>	
+			</tr>
+			</tbody>
+		</table>
+
+		
+		
+		<div class="btn mat15">
+			<input type="image" src="../../images/btn_save.gif">
+			<!-- <img src="../../images/btn_list.gif" onclick="history.back(1);" class="npointer">  --><!-- 목록 페이지 없음 -->
+		</div>
+	</form>
+	</div>
+
+	<!--<%@ include file="../../inc/footer.jsp"%>-->
+<div class="foot">
+		<a href="http://www.kogas.or.kr/kogas_kr/html/about/about_submain.jsp" target="_blank">PC버전</a>
+		<a href="#">오시는 길</a>
+		<a href="http://twitter.com/kogastweets" target="_blank" title="새창"><span>트위터</span></a>
+		<a href="#" target="_blank" title="새창"><span>페이스북</span></a>
+		<span><a href="#m_wrap" class="topbtn"><img src="../../images/btn_top.png" alt="맨위로" style="width:50px;"></a></span>
+		
+		<p> ⓒ KOREA GAS CORPORATION. ALL RIGHTS RESERVED.</p>
+	</div>
+</div>
+</body>
+</html>

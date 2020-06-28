@@ -1,0 +1,196 @@
+<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ include file="../../inc/hd.jsp"%>
+
+	<h2 class="hdh2"><a href="main.jsp"><img src="../../images/tit_kogas.png" alt="KOGAS"></a></h2>  
+
+		<div class="hd_md">
+			<ul class="smenu">
+				<li><a href="part1_1.jsp"><img src="../../images/stit1_1_off.png" alt="소개"></a></li>
+				<li><a href="part2.jsp"><img src="../../images/stit1_2_off.png" alt="인사말"></a></li>				
+				<li><a href="part3.jsp"><img src="../../images/stit1_3_off.png" alt="비전"></a></li>
+				<li><a href="part4_1.jsp"><img src="../../images/stit1_4_on.png" alt="사업분야"></a></li>				
+			</ul>
+		</div>
+		<div class="hd_bt">
+			<h3>천연가스 공급</h3>			
+		</div>		
+	</div>
+	
+	<div class="cont"> 
+		<ul class="u_liT01 u_liT01_w33">
+			<li class="on"><a href="part4_1.jsp">천연가스 공급</a></li>
+			<li><a href="part4_2.jsp">해외사업</a></li>
+			<li><a href="part4_3.jsp">연구개발</a></li>			
+			<div class="clear"></div>
+		</ul>
+		<div class="u05_sec">
+			<h4>천연가스 공급 사업체계</h4>			
+		</div>
+		<ul class="title u05_ul_1">
+			<li class="u05_li_1 mab20">
+				<h4>단계1_해외 원산지 공정</h4>
+				<p>
+					천연가스는 해외 원산지에서 액화천연가스(LNG)상태로 KOGAS에 의해 도입됩니다. KOGAS는 이 LNG를 다시 기화하여 발전소 등지에 직접 공급하거나 일반도시가스회사에 공급하게 됩니다.
+				</p>
+				<div class="u05_center mat10">
+					<img src="../../images/u05_sup_step1_01.gif" alt="LNG생산국 Producing Center 1">
+				</div>
+				<div class="u05_center mat10 mab5">
+					<img src="../../images/u05_sup_step1_02.gif" alt="2~4">
+				</div>			
+				<ul class="u05_liT04 ">
+					<li class="left u05_li"><span class="u05_white">&nbsp;1&nbsp;&nbsp;</span>채취 및 정체</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;2&nbsp;&nbsp;</span>생산국 액화설비</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;3&nbsp;&nbsp;</span>생산국 저장탱크</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;4&nbsp;&nbsp;</span>선적설비</li>
+					<li class="clear"></li>
+				</ul>
+			</li>
+			<li class="u05_li_1 mab20 ">
+				<h4>단계2_KOGAS 고정(도매업)</h4>
+				<p>
+					천연가스는 해외 원산지에서 액화천연가스(LNG)상태로 KOGAS에 의해 도입됩니다. KOGAS는 이 LNG를 다시 기화하여 발전소 등지에 직접 공급하거나 일반도시가스회사에 공급하게 됩니다.
+				</p>
+				<div class="u05_center mat10 mab5">
+					<img src="../../images/u05_sup_step2_01.gif" alt="5~10">
+				</div>
+				<ul class="u05_liT04 ">
+					<li class="left u05_li"><span class="u05_white">&nbsp;5&nbsp;&nbsp;</span>하역설비</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;6&nbsp;&nbsp;</span>저장탱크</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;7&nbsp;&nbsp;</span>증발가스 압축기</li>
+					<li class="left u05_li"><span class="u05_white">&nbsp;8&nbsp;&nbsp;</span>액화설비</li>
+					<li class="left u05_li "><span class="u05_white">&nbsp;9&nbsp;&nbsp;</span>2차펌프</li>
+					<li class="left u05_li"><span class="u05_white">10&nbsp;&nbsp;</span>기화기</li>
+					<li class="clear"></li>
+				</ul>					
+			</li>
+			<li class="u05_li_1">
+				<h4>단계3_도시가스사(소매업)</h4>
+				<p>
+					천연가스는 해외 원산지에서 액화천연가스(LNG)상태로 KOGAS에 의해 도입됩니다. KOGAS는 이 LNG를 다시 기화하여 발전소 등지에 직접 공급하거나 일반도시가스회사에 공급하게 됩니다.
+				</p>
+				<div class="u05_center mat10 mab5">
+					<img src="../../images/u05_sup_step3_01.gif" alt="11~17">
+				</div>
+				<ul class="u05_liT04">
+					<li class="left u05_li"><span class="u05_white">11&nbsp;&nbsp;</span>KOGAS배관망</li>
+					<li class="left u05_li"><span class="u05_white">12&nbsp;&nbsp;</span>공급관리소</li>
+					<li class="left u05_li"><span class="u05_white">13&nbsp;&nbsp;</span>발전소</li>
+					<li class="left u05_li"><span class="u05_white">14&nbsp;&nbsp;</span>도시가스사</li>
+					<li class="left u05_li"><span class="u05_white">15&nbsp;&nbsp;</span>2차펌프</li>
+					<li class="left u05_li"><span class="u05_white">16&nbsp;&nbsp;</span>일반사무실</li>
+					<li class="left u05_li"><span class="u05_white">17&nbsp;&nbsp;</span>일반공장</li>
+					<li class="clear"></li>
+				</ul>	
+				<div class="clear"></div>
+				<div class="u05_bar">
+					<a href="#"><img src="../../images/u05_btn_top.gif" alt="top"></a>
+				</div>
+			</li>
+		</ul>
+		<div class="u05_sec mat15">
+			<h4>천연가스 도입수송 현황</h4>
+		</div>
+		<ul class="title u05_ul_1">
+			<li class="u05_li_1 mab20">
+				<h4>도입현황</h4>
+				<p>
+					1986년 10월 국내 최초로 인도네시아로부터 LNG를 도입한 이래 도입량은 해마다 급증하여 2012년 34,970천톤을 도입하였습니다. 전국 환상공급망 구축에 따른 수요 증가에 대비하여 물량의 적기 확보로 공급의 안정성을 도모하고자 인도네시아, 말레이시아 외에 브루나이, 카타르, 오만 등으로 도입선을 다변화하였습니다. 
+또한 20년 이상의 장기계약에 의해 도입되는 LNG의 특성상, 과학적인 통계분석모형을 이용하여 정확한 수요예측을 하고 있습니다. 세계 최대 물량을 도입하는 KOGAS의 국제적인 위상을 바탕으로 경직된 도입조건을 개선하기 위한 활동도 지속적으로 펴고 있습니다. 
+</p>
+				<div class="u05_center mat10 mab20">
+					<img src="../../images/u05_sup_sec2.gif" alt="11~17">
+				</div>
+				<div class="text_right mab0">
+					(단위:천톤)
+				</div>
+				<table cellspacing="0" summary="" class="u05_tbl_02 mab5">
+					<caption></caption>
+					<colgroup>
+						<col width="50%"/>
+						<col/>		
+					</colgroup>
+					<thead>
+						<th>도입국가</th>
+						<th class="lline">물량</th>
+					</thead>
+					<tbody>
+					<tr>
+						<th>카타르</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">10,587</span></p></td>	
+					</tr>
+					<tr>
+						<th>말레이시아</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">4,036</span></p></td>	
+					</tr>
+					<tr>
+						<th>오만</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">4,164</span></p></td>	
+					</tr>
+					<tr>
+						<th>인도네시아</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">6,206</span></p></td>	
+					</tr>
+					<tr>
+						<th>러시아</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">2,050</span></p></td>	
+					</tr>
+					<tr>
+						<th>예멘</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">2,604</span></p></td>	
+					</tr>
+					<tr>
+						<th>호주</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">777</span></p></td>	
+					</tr>
+					<tr>
+						<th>브루나이</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">837</span></p></td>	
+					</tr>
+					<tr>
+						<th>기타</th>
+						<td><p><span lang="EN-US" xml:lang="EN-US">3,709</span></p></td>	
+					</tr>
+					<tr class="none">
+						<th><strong>총합계</strong></th>
+						<td><strong>34,970
+
+</strong></td>	
+					</tr>
+					</tbody>
+				</table>
+				<p>
+					주1)  기타 도입국: 트리니다드 토바고, 나이지리아, 적도기니, 벨기에, 이집트, 스페인
+				</p>
+			</li>
+			<!--  <li class="u05_li_1 mab20">
+				<h4>기술협력</h4>
+				<p>
+					선진국과의 가스기술 및 정보 교류를 증진시키기위하여
+					 프랑스 국영가스공사(GDF), 일본 오사카가스사(OGC) 및 도쿄가스사(TGC), 미국가스기술협회(IGT), 대만석유
+					공사(CPC) 및 독일 루어가스사(RUHRGAS)와 협력협정
+					을 체결하여 매년 1~2회 협력회의를 개최함으로써 경영, 기술, 연구개발 등 여러분야에 걸쳐 정보교환 및 긴밀한 협력관계를 구축하고 있습니다. 
+					프랑스의 국제 LNG 수입자 그룹총회(GIIGNL) 등국제
+					적인 가스단체에 가입하여 세계 각국과 활발하게 가스
+					시장 정보를 교환하고 있으며, 매년 국제가스 세미나를 개최하고 각종 국제회의를 지원하여 국내 가스 산업 관련자들에게 신기술정보를 전파하고 있습니다. 
+					1998년에는 GASEX 및 SIGTTO 국제회의를 주관 개최함
+					으로써 세계 가스업계와의 정보교환 활성화를 통해 세계
+					화 및 국제화에 앞장서고 있습니다. 
+				</p>
+			</li>-->
+			<li class="u05_li_1">
+				<h4>수송현황</h4>
+				<p>
+					LNG를 운반하는 수송선은 영하 162도로 압축되어 있는 LNG를 다량 운반해야 하므로 그 제작과정이 매우 까다롭고, 고도의 해운기술을 요합니다. 
+					KOGAS는 국내 조선산업 및 해운산업 육성을 위하여 LNG 국적선 사업정책을 추진, 1994년부터 LNG 수송에 국적선을 투입하고 있습니다. 이러한 국적선 사업을 통해 추가 운항이 자유롭게 되었을 뿐만 아니 라 국내 조선업을 부흥시키는 계기를 마련하였고 최근 국내 해운업계는 LNG 국적선 건조기술 및 국적선 운항 경험을 바탕으로 세계 LNG수송선 시장에 진출, 유럽 등지의 프로젝트에 입찰, 수주하는 등 세계 LNG 수송선업계에 다크호스로 떠오르고 있습니다. 
+					현재까지 KOGAS는 국적선 21척을 발주하였으며, 5개 해운사에 건조한 LNG국적선이 인도네시아,말레이시아, 카타르, 오만, 예멘, 러시아(사할린) 6개국에서 국내로 LNG를 수송해오고 있습니다.
+				</p>
+			</li>			
+		</ul>		
+	
+	</div>
+
+	<%@ include file="../../inc/footer.jsp"%>
+</div>
+</body>
+</html>

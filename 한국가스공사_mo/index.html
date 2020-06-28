@@ -1,0 +1,153 @@
+<!--<%@ page contentType="text/html; charset=euc-kr"%>
+<%@page import="java.sql.*,  javax.sql.*,java.io.*, java.util.*,java.util.Date, javax.naming.*, java.text.*" %>
+<%@ include file="sub/etc/Usr_function.jsp" %>
+<%@ include file="/sql/part6/part1_list.jsp" %>-->
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>한국가스공사</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script language="javascript" src="js/js_rolling.js" type="text/javascript"></script>
+</head>
+
+<!--<%
+response.setHeader("Pragma", "No-cache");
+response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-cache");
+
+//네비게이션 관련 변수 초기화 시작
+int ListPerPage = 5;				//출력할 리스트 수
+int idx = 0;
+
+int no = 0;
+String titleTop = null;
+String dateTop  = null;
+String contentsTop = null;
+String upImageTop = null;
+String idxTop   = null;
+String title	= null;
+String writer	= null;
+String regdate	= null;
+String cnt		= null;
+String gubun	= "NO";
+
+Connection			conn		= null;
+PreparedStatement	pstmtLst	= null;
+ResultSet			rsLst		= null;
+
+try
+{	conn = openDBcon();
+
+	pstmtLst = conn.prepareStatement(getQuery(32, ""), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	pstmtLst.setString(1, gubun);
+
+	pstmtLst.setMaxRows(ListPerPage);
+	rsLst = pstmtLst.executeQuery() ;
+%>-->
+<body id="m_wrap"  onload="window.scrollTo(1, 0)">
+<div class="indexWrap">
+
+	<div class="inwrap">
+		<div>
+			<h1><img src="images/main/mlogo.png" alt=""></h1>
+
+			<div class="mplayer" style="height:106px">
+			  <!--  <a href="/mov/intro.mp4"> --><img src="images/main/mplayer.png" alt="동영상 보기"><!-- </a> -->
+			</div>
+
+			<div class="indexlink">
+				<a href="sub/part1/main.html"><img src="images/main/in_ico1.png" alt="KOGAS"></a>
+				<a href="sub/part3/main.html"><img src="images/main/in_ico2.png" alt="고객지원"></a>
+				<a href="sub/part5/part1.html"><img src="images/main/in_ico3.png" alt="요금정보"></a>
+				<a href="sub/part7/main.html"><img src="images/main/in_ico4.png" alt="채용정보"></a>
+				<a href="sub/part2/main.html"><img src="images/main/in_ico5.png" alt="가스정보"></a>
+				<a href="sub/part4/main.html"><img src="images/main/in_ico6.png" alt="홍보활동"></a>
+				<a href="sub/part5/main.html"><img src="images/main/in_ico7.png" alt="정보마당"></a>
+				<a href="sub/part6/main.html"><img src="images/main/in_ico8.png" alt="알림마당"></a>
+				<a href="sub/part8/main.html"><img src="images/main/in_ico9.png" alt="열린경영"></a>
+				<a href="sub/part9/main.html"><img src="images/main/in_ico10.png" alt="투자정보"></a>
+				<a href="sub/part1/part1_3.html"><img src="images/main/in_ico11.png" alt="오시는길"></a>
+				<a href="http://twitter.com/kogastweets" target="_blank"><img src="images/main/in_ico12.png" alt="트위터"></a>
+			</div>
+		</div>
+
+		<!--div class="dxnotice">
+			<ul id="rolling_new" class="nolibx">
+			<%
+			for (int i = 0; i < ListPerPage; i ++ ) {
+				
+				if (rsLst.next()) {
+		
+					no = rsLst.getInt("news_idx");
+					//XSS 역변환
+					title = viewXssCheck(rsLst.getString("news_title"));
+					if(title.length() > 20)
+						title = title.substring(0, 20)+"...";
+					
+					regdate = rsLst.getString("regdate");
+					cnt  = rsLst.getString("news_cnt");
+		
+					if (title.length() > 35) {
+						title = title.substring(0, 32) + "....";
+					}
+			%>
+			    <li><a href="/sub/part6/part1_view.jsp?idx=<%=no%>&ListPage=1&keyword=&domain="><%= title %></a></li>
+			<%
+				}
+				idx = idx - 1;
+			}
+			%>
+			</ul>
+			<div class="noticeNav">
+				<a href="#" onClick="b.move_up(); return false;"><img src="images/main/notice_up.gif" alt=""></a>
+				<a href="#" onClick="b.move_down(); return false;"><img src="images/main/notice_dw.gif" alt=""></a>
+			</div>
+		</div-->
+		<div class="dxnotice">
+			<ul id="rolling_new" class="nolibx" style="position: relative; overflow: hidden; white-space: normal;"><li style="position: relative; display: block; top: 0px;"><a href="/sub/part6/part1_view.jsp?idx=228&amp;ListPage=1&amp;keyword=&amp;domain=">도시가스 미공급지역 확대보급사업 준공...</a></li><li style="position: relative; display: block; top: 0px;"><a href="/sub/part6/part1_view.jsp?idx=227&amp;ListPage=1&amp;keyword=&amp;domain=">정부3.0 UCC 공모전 계획</a></li><li style="position: relative; display: block; top: 0px;"><a href="/sub/part6/part1_view.jsp?idx=226&amp;ListPage=1&amp;keyword=&amp;domain=">항상 우리를 위해 웃는 감정노동자들을...</a></li><li style="position: relative; display: block; top: 0px;"><a href="/sub/part6/part1_view.jsp?idx=230&amp;ListPage=1&amp;keyword=&amp;domain=">도시가스 안전점검 SMS 사전안내 서...</a></li><li style="position: relative; display: block; top: 0px;"><a href="/sub/part6/part1_view.jsp?idx=229&amp;ListPage=1&amp;keyword=&amp;domain=">제69회 열린교양강좌 [KOGAS A...</a></li></ul>
+			<div class="noticeNav">
+				<a href="#" onclick="b.move_up(); return false;"><img src="images/main/notice_up.gif" alt=""></a>
+				<a href="#" onclick="b.move_down(); return false;"><img src="images/main/notice_dw.gif" alt=""></a>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script type="text/javascript"> 
+  var b = new js_rolling('rolling_new');
+  b.set_direction(1);
+</script>
+</body>
+</html>
+<!--<%
+	rsLst.close();
+	pstmtLst.close();
+	conn.close();
+}
+catch(Exception e)
+{
+	throw e;
+}
+finally
+{
+	try {
+	    if (rsLst != null) {
+		    rsLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (pstmtLst != null) {
+		    pstmtLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (conn != null) {
+		    conn.close();
+		}
+	}catch(Exception ee) {}
+}
+%>-->

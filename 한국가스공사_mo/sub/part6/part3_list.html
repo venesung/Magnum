@@ -1,0 +1,397 @@
+<!--<%@ page contentType="text/html; charset=euc-kr"%>
+<%@page import="java.sql.*,  javax.sql.*,java.io.*, java.util.*,java.util.Date, javax.naming.*, java.text.*" %>
+<%@ include file="../etc/Usr_function.jsp" %>
+<%@ include file="/sql/part6/part3_list.jsp" %>
+
+<%
+response.setHeader("Pragma", "No-cache");
+response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-cache");
+
+//네비게이션 관련 변수 초기화 시작
+int ListPage = 0;					//게시물 페이지 번호
+int TotalList = 0;					//전체 리스트 수
+int ListPerPage = 10;				//페이지 당 출력할 리스트 수
+int TotalPage = 1;					//전체 페이지 수
+int idx = 0;
+
+if (request.getParameter("ListPage") != null)
+{
+	ListPage = Integer.parseInt(request.getParameter("ListPage"));
+}
+else
+{
+	ListPage = 1;
+}
+
+int seq = 0;
+String title	= null;
+String writer	= null;
+String regdate	= null;
+int cnt = 0;
+
+Connection			conn		= null;
+PreparedStatement	pstmtCnt	= null;
+PreparedStatement	pstmtLst	= null;
+ResultSet			rsCnt		= null;
+ResultSet			rsLst		= null;
+
+try
+{	
+	conn = openDBcon();
+	SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd");
+
+	pstmtCnt = conn.prepareStatement(getQuery(13), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	pstmtLst = conn.prepareStatement(getQuery(14), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+
+	rsCnt = pstmtCnt.executeQuery();
+
+	//보여줄 리스트 위치 찾기
+	if (rsCnt.next())
+	{
+		TotalList = Integer.parseInt(rsCnt.getString(1));	//전체 메시지 수
+
+		if (TotalList % ListPerPage > 0)
+		{
+			TotalPage = TotalList / ListPerPage + 1;		//전체 페이지 계산
+		}
+		else
+		{
+			TotalPage = TotalList / ListPerPage;
+		}
+
+		pstmtLst.setMaxRows(ListPage*ListPerPage);
+		rsLst = pstmtLst.executeQuery() ;
+
+		if (ListPage > 1)
+		{
+			rsLst.absolute((ListPage-1)*ListPerPage);		//시작 인덱스 레코드로 이동
+		}
+		else
+		{
+		    rsLst.beforeFirst();
+		}
+
+		idx = TotalList - (ListPage - 1) * ListPerPage;
+	}
+%>-->
+
+<!--<%@ include file="../../inc/hd.jsp"%>-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>한국가스공사</title>
+<script type="text/javascript" src="../../js/common.js"></script>   
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../css/etc.css" />
+</head>
+<body id="m_wrap"  onload="window.scrollTo(1, 0)">
+<div class="wrap">
+
+	<div class="header">
+		<div class="headSect">
+			<h1><a href="#"><img src="../../images/mv_img_logo.gif" alt="KOGAS" style="width:110px"></a></h1>
+			<a href="#" onclick="allmW('on');" class="menu"><img src="../../images/img_allmenu.gif" alt="전체메뉴" style="width:28px"></a>
+			
+			<!-- 전체메뉴 Start -->
+			<div id="allmenuH" class="allmenu" style="display: none;">
+				<div class="allmenuIn">
+					<strong>전체메뉴<a href="#" onclick="allmW('off');"><img src="../../images/btn_allmenu_close.gif" alt="전체메뉴닫기" style="width:20px"></a></strong>
+					
+					<ul>
+						<li>
+							<a href="#" class="bgm">KOGAS 소개</a>
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">비전</a></li>
+								<li><a href="#">사업분야</a></li>
+								<li><a href="#">핵심가치</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu2">가스정보</a>
+							<ul>
+								<li><a href="#">천연가스 소재</a></li>
+								<li><a href="#">이용산업</a></li>
+								<li><a href="#">열량정보</a></li>
+								<li><a href="#">천연가스 용어사전</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu3">고객지원</a>
+							<ul>
+								<li><a href="#">고객의 소리</a></li>
+								<li><a href="#">고객현장</a></li>
+								<li><a href="#">비리신고</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu4">홍보활동</a>
+							<ul>
+								<li><a href="#">사회공헌 소개</a></li>
+								<li><a href="#">활동분야</a></li>
+								<li><a href="#">KOGAS 봉사단</a></li>
+								<li><a href="#">태권도단</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu5">정보마당</a>
+							<ul>
+								<li><a href="#">요금정보</a></li>
+								<li><a href="#">주식정보</a></li>
+								<li><a href="#">통계정보</a></li>
+								<li><a href="#">열량조회</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu6">열림마당</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">입찰정보</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu7">채용정보</a>
+							<ul>
+								<li><a href="#">Why KOGAS</a></li>
+								<li><a href="#">인사제도</a></li>
+								<li><a href="#">입사지원</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu8">열린경영</a>
+							<ul>
+								<li><a href="#">지속가능 경영</a></li>
+								<li><a href="#">저탄소경영</a></li>
+								<li><a href="#">윤리경영</a></li>
+								<li><a href="#">안전,환경경영(EHSQ)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu9">경영공시</a>
+							<ul>
+								<li><a href="#">IR정보</a></li>
+								<li><a href="#">재무정보</a></li>
+								<li><a href="#">공고</a></li>
+								<li><a href="#">경영공시</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //전체메뉴 end-->
+		</div>
+
+ 
+
+		<div class="hd_md">
+			<ul class="smenu">
+				<li><a href="part1_list.html"><img src="../../images/stit6_1_off.png"></a></li>				
+				<li><a href="part2_list.html"><img src="../../images/stit6_2_off.png"></a></li>				
+				<li><a href="part3_list.html"><img src="../../images/stit6_3_on.png"></a></li>
+				<li class="none"><a href="part4_1.html"><img src="../../images/stit6_4_off.png"></a></li>				
+			</ul>
+		</div>
+		<div class="hd_bt">
+			<h3>입찰정보</h3>
+		</div>		
+	</div>
+	
+	<div class="cont_pn"> 
+		<ul class="liT02">
+		 
+		    <li>  
+				<a href="part3_view.jsp?idx=2013112204&amp;ListPage=1">물품_휴대용 가스검지기(XP-3110-Methane) 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013112203&amp;ListPage=1">물품_알루미늄 Grating 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013112205&amp;ListPage=1">용역_HCNG충전설비 실시설계용역 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013111815&amp;ListPage=1">물품_초저온용 Globe Valve(LCV-03110A) 보수용 자재 구.... </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013111816&amp;ListPage=1">물품_공압밸브 보조기기 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013111817&amp;ListPage=1">물품_가성소다 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013111814&amp;ListPage=1">물품_용존산소 측정기 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013112202&amp;ListPage=1">물품_UPS 축전지 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-22</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013112102&amp;ListPage=1">물품_공기호흡기 구매 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-21</li>
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part3_view.jsp?idx=2013111805&amp;ListPage=1">물품_소형발전기 외 1건 </a>
+				<ul class="liT03"> 			
+				    <li>2013-11-21</li>
+				</ul>
+		    </li>
+		
+		</ul>
+		<!--ul class="liT02">
+		 <% if(TotalList < 1) { %>
+			<li class="nolist">  
+			등록된 글이 없습니다.	 	    
+		    </li>
+		<%
+		} else { 
+			for (int i = 0; i < ListPerPage; i ++ ) {
+				if (rsLst.next()) {
+					seq = rsLst.getInt("NOTICE_CODE");
+					regdate = formatter.format(rsLst.getTimestamp("NOTICE_DT"));
+					//cnt = rsLst.getInt("S_VIEW_CNT");
+					
+					//XSS 역변환
+					title = viewXssCheck(rsLst.getString("TITLE"));
+					
+					if (title.length() > 40)
+					{
+						title = title.substring(0, 40) + "....";
+					}
+		%>
+		    <li>  
+				<a href="part3_view.jsp?idx=<%=seq%>&ListPage=<%=ListPage%>"><%=title %> </a>
+				<ul class="liT03"> 			
+				    <li><%=regdate %></li>
+				</ul>
+		    </li>
+		<%
+				}
+				idx = idx - 1;
+			}
+		}
+		%>
+		</ul-->	 
+		<!--<div class="btn">
+			<%
+				if (ListPage > 1) {
+			%>
+			<a href="?ListPage=1"><img src="../../images/btn_pre1.gif" alt="처음으로 페이지 이동"/></a>
+			<a href="?ListPage=<%=ListPage-1%>"><img src="../../images/btn_pre.gif" alt="이전 페이지 이동"/></a>
+			<%  } %>
+			
+			<span><em><%=ListPage%></em> / <%=TotalPage%></span>
+			
+			<%
+				if (ListPage < TotalPage) {
+			%>
+			<a href="?ListPage=<%=ListPage+1%>"><img src="../../images/btn_nx.gif" alt="다음 페이지 이동"/></a>
+			<a href="?ListPage=<%=TotalPage%>"><img src="../../images/btn_nx1.gif" alt="마지막 페이지 이동"></a>
+			<%	} %>
+		</div-->
+		<div class="btn">
+			
+			
+			<span><em>1</em> / 38</span>
+			
+			
+			<a href="?ListPage=2"><img src="../../images/btn_nx.gif" alt="다음 페이지 이동"></a>
+			<a href="?ListPage=38"><img src="../../images/btn_nx1.gif" alt="마지막 페이지 이동"></a>
+			
+		</div>
+
+	</div>
+
+	<!--<%@ include file="../../inc/footer.jsp"%>-->
+<div class="foot">
+		<a href="http://www.kogas.or.kr/kogas_kr/html/about/about_submain.jsp" target="_blank">PC버전</a>
+		<a href="#">오시는 길</a>
+		<a href="http://twitter.com/kogastweets" target="_blank" title="새창"><span>트위터</span></a>
+		<a href="#" target="_blank" title="새창"><span>페이스북</span></a>
+		<span><a href="#m_wrap" class="topbtn"><img src="../../images/btn_top.png" alt="맨위로" style="width:50px;"></a></span>
+		
+		<p> ⓒ KOREA GAS CORPORATION. ALL RIGHTS RESERVED.</p>
+	</div></div>
+</body>
+</html>
+<!--<%
+	rsCnt.close();
+	rsLst.close();
+
+	pstmtCnt.close();
+	pstmtLst.close();
+
+	conn.close();
+}
+catch(Exception e)
+{
+	throw e;
+}
+finally
+{
+	try {
+	    if (rsCnt != null) {
+		    rsCnt.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (rsLst != null) {
+		    rsLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (pstmtCnt != null) {
+		    pstmtCnt.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (pstmtLst != null) {
+		    pstmtLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (conn != null) {
+		    conn.close();
+		}
+	}catch(Exception ee) {}
+}
+%>-->

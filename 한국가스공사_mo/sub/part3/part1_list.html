@@ -1,0 +1,516 @@
+<!--<%@ page contentType="text/html; charset=euc-kr"%>-->
+<!--<%@page import="java.sql.*,  javax.sql.*,java.io.*, java.util.*,java.util.Date, javax.naming.*, java.text.*" %>
+<%@ include file="../etc/Usr_function.jsp" %>
+<%@ include file="/sql/part3/part1_list.jsp" %>
+
+<%
+response.setHeader("Pragma", "No-cache");
+response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-cache");
+
+//실명인증 풀기
+session.removeAttribute("uID");
+
+int no = 0;
+String title	= null;
+String writer	= null;
+String regdate	= null;
+String cnt		= null;
+String gubun	= null;
+int process  = 0;
+String open_type = null;
+String detail_gubun = null;
+
+int ListPage = 0;					//게시물 페이지 번호
+int TotalList = 0;					//전체 리스트 수
+int ListPerPage = 10;				//페이지 당 출력할 리스트 수
+int TotalPage = 1;					//전체 페이지 수
+int PageLinkNum = 10; 				//페이지 링크 표시 수
+int idx = 0;
+
+if (request.getParameter("ListPage") != null)
+{
+	ListPage = Integer.parseInt(requestXssCheck(request.getParameter("ListPage")));
+}
+else
+{
+	ListPage = 1;
+}
+
+Connection			conn		= null;
+PreparedStatement	pstmtCnt	= null;
+PreparedStatement	pstmtLst	= null;
+ResultSet			rsCnt		= null;
+ResultSet			rsLst		= null;
+
+//3년 이내의 게시물만 보여줍니다. ex) 2004 ~ 2006
+Calendar cal = Calendar.getInstance();
+java.sql.Date appDate = new java.sql.Date(cal.get(cal.YEAR) - 2 - 1900, 0, 1);
+
+try
+{	
+	conn = openDBcon();
+	
+	pstmtCnt = conn.prepareStatement(getQuery(11), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	pstmtCnt.setDate(1, appDate);
+	
+	pstmtLst = conn.prepareStatement(getQuery(12), ResultSet.TYPE_SCROLL_INSENSITIVE , ResultSet.CONCUR_READ_ONLY);
+	pstmtLst.setDate(1, appDate);
+	
+	rsCnt = pstmtCnt.executeQuery();
+	
+	//보여줄 리스트 위치 찾기
+	if (rsCnt.next())
+	{
+		TotalList = Integer.parseInt(rsCnt.getString(1));	//전체 메시지 수
+
+		if (TotalList % ListPerPage > 0)
+		{
+			TotalPage = TotalList / ListPerPage + 1;		//전체 페이지 계산
+		}
+		else
+		{
+			TotalPage = TotalList / ListPerPage;
+		}
+
+		pstmtLst.setMaxRows(ListPage*ListPerPage);
+		rsLst = pstmtLst.executeQuery() ;
+
+		if (ListPage > 1)
+		{
+			rsLst.absolute((ListPage-1)*ListPerPage);		//시작 인덱스 레코드로 이동
+		}
+		else
+		{
+		    rsLst.beforeFirst();
+		}
+
+		idx = TotalList - (ListPage - 1) * ListPerPage;
+	}
+%>-->
+
+<!--<%@ include file="../../inc/hd.jsp"%>-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>한국가스공사</title>
+<script type="text/javascript" src="../../js/common.js"></script>   
+<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../css/etc.css" />
+</head>
+<body id="m_wrap"  onload="window.scrollTo(1, 0)">
+<div class="wrap">
+
+	<div class="header">
+		<div class="headSect">
+			<h1><a href="#"><img src="../../images/mv_img_logo.gif" alt="KOGAS" style="width:110px"></a></h1>
+			<a href="#" onclick="allmW('on');" class="menu"><img src="../../images/img_allmenu.gif" alt="전체메뉴" style="width:28px"></a>
+			
+			<!-- 전체메뉴 Start -->
+			<div id="allmenuH" class="allmenu" style="display: none;">
+				<div class="allmenuIn">
+					<strong>전체메뉴<a href="#" onclick="allmW('off');"><img src="../../images/btn_allmenu_close.gif" alt="전체메뉴닫기" style="width:20px"></a></strong>
+					
+					<ul>
+						<li>
+							<a href="#" class="bgm">KOGAS 소개</a>
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">비전</a></li>
+								<li><a href="#">사업분야</a></li>
+								<li><a href="#">핵심가치</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu2">가스정보</a>
+							<ul>
+								<li><a href="#">천연가스 소재</a></li>
+								<li><a href="#">이용산업</a></li>
+								<li><a href="#">열량정보</a></li>
+								<li><a href="#">천연가스 용어사전</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu3">고객지원</a>
+							<ul>
+								<li><a href="#">고객의 소리</a></li>
+								<li><a href="#">고객현장</a></li>
+								<li><a href="#">비리신고</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu4">홍보활동</a>
+							<ul>
+								<li><a href="#">사회공헌 소개</a></li>
+								<li><a href="#">활동분야</a></li>
+								<li><a href="#">KOGAS 봉사단</a></li>
+								<li><a href="#">태권도단</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu5">정보마당</a>
+							<ul>
+								<li><a href="#">요금정보</a></li>
+								<li><a href="#">주식정보</a></li>
+								<li><a href="#">통계정보</a></li>
+								<li><a href="#">열량조회</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu6">열림마당</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">입찰정보</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu7">채용정보</a>
+							<ul>
+								<li><a href="#">Why KOGAS</a></li>
+								<li><a href="#">인사제도</a></li>
+								<li><a href="#">입사지원</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu8">열린경영</a>
+							<ul>
+								<li><a href="#">지속가능 경영</a></li>
+								<li><a href="#">저탄소경영</a></li>
+								<li><a href="#">윤리경영</a></li>
+								<li><a href="#">안전,환경경영(EHSQ)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="bgm menu9">경영공시</a>
+							<ul>
+								<li><a href="#">IR정보</a></li>
+								<li><a href="#">재무정보</a></li>
+								<li><a href="#">공고</a></li>
+								<li><a href="#">경영공시</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //전체메뉴 end-->
+		</div>
+
+
+		<div class="hd_md">
+			<ul class="smenu">
+				<li><a href="part1_list.html"><img src="../../images/stit3_1_on.png"></a></li>				
+				<li><a href="part2.html"><img src="../../images/stit3_2_off.png"></a></li>				
+				<li class="none"><a href="part2_1.html"><img src="../../images/stit3_4_off.png"></a></li>				
+			</ul>
+		</div>
+		<div class="hd_bt">
+			<h3>고객의 소리</h3>
+		</div>		
+	</div>
+	
+	<div class="cont_pn"> 
+		<div class="write">
+			<!-- <a href="part1_write.html"> --><a href="http://m.epeople.go.kr/"><img src="../../images/write.png" alt="글쓰기"></a>
+		</div>
+		<!-- 목록 표시 -->
+		<!--ul class="liT02">
+		<% if(TotalList < 1) { %>
+			<li class="nolist">  
+			리스트 없음	 	    
+		    </li>
+		<% 
+			} else { 
+			for (int i = 0; i < ListPerPage; i ++ ) {
+
+				if (rsLst.next()) {
+
+					no = rsLst.getInt("info_seq");
+					writer = rsLst.getString("info_writer");
+					title = viewXssCheck(rsLst.getString("info_title"));//XSS 역변환
+					regdate = rsLst.getString("regdate");
+					cnt  = rsLst.getString("info_cnt");
+					process = rsLst.getInt("report_process") + 1 ;
+					open_type = rsLst.getString("open_type");						
+
+					if (title.length() > 35) {
+						title = title.substring(0, 32) + "....";
+					}
+		%>
+		    <li>  
+				<a href="part1_view.jsp?idx=<%=no%>&ListPage=<%=ListPage%>&open_type=<%=open_type%>"><%=title%></a>
+				<ul class="liT03">
+				    <li><%=regdate%></li>
+				    <li>조회 <%=cnt%></li>
+				    <li><%=writer%></li>
+			    <% if(open_type!=null && open_type.equals("0")) { %>
+					<li class="pcolor_green">공개</li>
+				<% } else { %>
+					<li>비공개</li>
+				<% } %>
+				
+				<% if(process == 3) { %>
+					<li class="pcolor_blue">처리완료</li>
+				<% } else if(process == 2) { %>
+					<li class="pcolor_orange">처리중</li>
+				<% } else { %>
+					<li class="pcolor_orange">접수중</li>
+				<% } %>
+				</ul>
+		    </li>
+		<%
+				}
+				idx = idx - 1;
+			}
+		}
+		%>
+		</ul-->
+		<ul class="liT02">
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10791&amp;ListPage=1&amp;open_type=null">입사 시 근무지 배치</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 6815</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10790&amp;ListPage=1&amp;open_type=null">최종합격자 결정 시 신원조회란?</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 1929</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10789&amp;ListPage=1&amp;open_type=null">최종합격자 결정 시 신체검사 기준</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 1745</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10788&amp;ListPage=1&amp;open_type=null">연구원 채용시 필기/면접전형 관련</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 1173</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10787&amp;ListPage=1&amp;open_type=null">면접전형 방법</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 2705</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10786&amp;ListPage=1&amp;open_type=null">전공 필기시험 관련</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 7084</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10785&amp;ListPage=1&amp;open_type=null">인성 검사란?</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 2826</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10784&amp;ListPage=1&amp;open_type=null">적성 검사란?</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 4728</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10783&amp;ListPage=1&amp;open_type=null">신규 입사자의 석ㆍ박사학위 인정여부</a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 963</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		    <li>  
+				<a href="part1_view.jsp?idx=10782&amp;ListPage=1&amp;open_type=null">신규 입사자의 전직 경력 인정여부 </a>
+				<ul class="liT03">
+				    <li>2013-09-25</li>
+				    <li>조회 1308</li>
+				    <li>000000</li>
+			    
+					<li>비공개</li>
+				
+				
+				
+					<li class="pcolor_orange">접수중</li>
+				
+				</ul>
+		    </li>
+		
+		</ul>	 
+		<!--div class="btn">
+			<%
+				if (ListPage > 1) {
+			%>
+			<a href="?ListPage=1"><img src="../../images/btn_pre1.gif" alt="처음으로 페이지 이동"/></a>
+			<a href="?ListPage=<%=ListPage-1%>"><img src="../../images/btn_pre.gif" alt="이전 페이지 이동"/></a>
+			<%  } %>
+			
+			<span><em><%=ListPage%></em> / <%=TotalPage%></span>
+			
+			<%
+				if (ListPage < TotalPage) {
+			%>
+			<a href="?ListPage=<%=ListPage+1%>"><img src="../../images/btn_nx.gif" alt="다음 페이지 이동"/></a>
+			<a href="?ListPage=<%=TotalPage%>"><img src="../../images/btn_nx1.gif" alt="마지막 페이지 이동"></a>
+			<%	} %>		
+		</div-->
+		<div class="btn">
+			
+			<span><em>1</em> / 198</span>
+			
+			<a href="?ListPage=2"><img src="../../images/btn_nx.gif" alt="다음 페이지 이동"></a>
+			<a href="?ListPage=198"><img src="../../images/btn_nx1.gif" alt="마지막 페이지 이동"></a>
+					
+		</div>
+	</div>
+
+	<!--<%@ include file="../../inc/footer.jsp"%>-->
+<div class="foot">
+		<a href="http://www.kogas.or.kr/kogas_kr/html/about/about_submain.jsp" target="_blank">PC버전</a>
+		<a href="#">오시는 길</a>
+		<a href="http://twitter.com/kogastweets" target="_blank" title="새창"><span>트위터</span></a>
+		<a href="#" target="_blank" title="새창"><span>페이스북</span></a>
+		<span><a href="#m_wrap" class="topbtn"><img src="../../images/btn_top.png" alt="맨위로" style="width:50px;"></a></span>
+		
+		<p> ⓒ KOREA GAS CORPORATION. ALL RIGHTS RESERVED.</p>
+	</div></div>
+</body>
+</html>
+<!--<%
+	rsCnt.close();
+	rsLst.close();
+
+	pstmtCnt.close();
+	pstmtLst.close();
+
+	conn.close();
+}
+catch(Exception e)
+{
+	throw e;
+}
+finally
+{
+	try {
+	    if (rsCnt != null) {
+		    rsCnt.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (rsLst != null) {
+		    rsLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (pstmtCnt != null) {
+		    pstmtCnt.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (pstmtLst != null) {
+		    pstmtLst.close();
+		}
+	}catch(Exception ee) {}
+	try {
+	    if (conn != null) {
+		    conn.close();
+		}
+	}catch(Exception ee) {}
+}
+%>-->
