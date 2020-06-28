@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+<title>건별 매출 - 삼성카드</title>
+</head>
+<body>
+<table summary="카드번호, 접수일, 매출일, 승인번호, 구분, 이용금액, 봉사료, 구분, 수수료, 입금액, 입금 예정일 등 건별매출 리스트입니다.">
+<caption class="conts_hidden">건별매출 리스트</caption>
+					<tr>
+						<th id="card_no" scope="col" class="cell_l10">카드번호</th>
+						<th id="reg_date" scope="col">접수일</th>
+						<th id="sale_date" scope="col">매출일</th>
+						<th id="approve_no" scope="col">승인번호</th>
+						<th id="gubun" scope="col">구분</th>
+						<th id="amount" scope="col" class="cell_r10">이용금액</th>
+						<th id="vat" scope="col" class="cell_r10">봉사료</th>
+						<th id="gubun2" scope="col">구분</th>
+						<th id="charge" scope="col" class="cell_r10">수수료</th>
+						<th id="deposit" scope="col" class="cell_r10">입금액</th>
+						<th id="deposit_date" scope="col">입금<br />예정일</th>
+					</tr>
+<%
+	int size = resultList.size();
+	if(size == 0)
+	{
+	%>
+		<tr>
+			<td colspan="11" align="center" class="cell_l10 t_no" header="card_no reg_date sale_date approve_no gubun amount vat gubun2 charge deposit deposit_date">건별 매출내역이 없습니다.</td>
+		</tr>		
+
+	<%
+	}else{
+		for(int i=0; i<size; i++){
+		cvo = (ITCHSALEDETAILTTVO)resultList.get(i);	
+%>
+					<tr>
+						<td class="cell_l10 t_no"><%= cvo.getCardNo16() %></td>
+						<td class="t_no"><%= cvo.getReceiveDate() %></td>
+						<td class="t_no"><%= cvo.getSaleDate() %></td>
+						<td class="t_no"><%= cvo.getApproveNo() %></td>
+						<% if("A".equals(cvo.getGoodsGubun())){
+						%>
+						<td>일시불</td>
+						<% }else{ %>
+						<td> 할부 </td>
+						<%}%>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getUsedAmount())) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getServiceAmount())) %></td>
+						
+						<% if("1".equals(cvo.getCardGubun())){ %>
+						<td>신용</td>
+						<% }else if("2".equals(cvo.getCardGubun())){ %>
+						<td>체크</td>
+						<% }else if("3".equals(cvo.getCardGubun())){ %>
+						<td>해외</td>
+						<%}else{%>
+						<td> - </td>
+						<%}%>
+						
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getFeeAmount())) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getPaymentAmount())) %></td>
+						<td class="t_no"><%if(cvo.getPaymentDate() == null){ out.write("-");}else{ out.write(cvo.getPaymentDate());} %></td>
+					</tr>
+<% 
+		}
+	}
+%>
+</table>
+	
+</body>
+</html>

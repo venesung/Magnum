@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab01 w810 ">
+		<ul>
+			<li class="on"><span class="none">현재탭</span><a href="#">대학등록금 납부</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSTUI005','false');">납부이력조회/취소</a></li>
+		</ul>
+	</div>
+</div>
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p>해당학번이 존재하지 않거나 초과등록 대상자이오니 확인 바랍니다.</p>
+							</div>
+							<div class="btnl">
+								<a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p class="mt10 t_desc03">
+								본 서비스는
+								<br /><b><%=drFrDt %> ~ <%=drToDt %> <%=payStime %> ~ <%=payEtime %></b> 까지
+								<br />대학 등록금 납부가 가능합니다.
+								</p>
+								<p class="mt10 t_desc03">
+								본 서비스는
+								<br /><b>평일(토요일제외) <%=drFrDt %> ~ <%=drToDt %> <%=payStime %> ~ <%=payEtime %></b> 까지
+								<br />대학 등록금 납부가 가능합니다.</p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p><%=certResult %></p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p>납부 대상 금액이 0 원 입니다.</p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+<!-- SR내역 13.02.08 -->
+	
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<p style="font-weight:bold;color:#000;font-size:14px;">회원 정보 불일치</p>
+							<div class="p_txt">
+								<p>결제하신 회원의 고객정보와 취소하신 회원의 고객 정보가 상이합니다.</p>
+								<p>등록금 납부 취소는 납부한 본인만 가능합니다.</p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--// SR내역 13.02.08 -->
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_cancel.jpg" /></p>
+						<div class="p_desc">
+							<h2 class="mb10"><img src="/images/ss/txt_cancel_stopped.png" alt="고객님의 등록금 납부가 정상적으로 승인취소 되었습니다." /></h2>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								카드한도 부족으로 등록금 결제가 불가하오니 <br />홈페이지 이용에 양해바라며<br />자세한 문의는 1688-9702로 문의바랍니다.
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+<!-- SR내역 13.02.08 -->
+
+				<!-- content_block -->
+				 <div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p>납부 대상 금액이 0 원 입니다.</p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>			
+<!--// SR내역 13.02.08 -->
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+							<div class="p_txt">
+								<p>지금은 납부신청가능 일자가 아닙니다.</p>
+								<p class="mt10 t_desc03">※ 납부신청기간 : <%=drFrDt1 %> ~ <%=drToDt1 %></p>
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMSSTUI002','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

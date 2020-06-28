@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>PG 정보 변경 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">PG Mall 관리시스템&nbsp;&gt;&nbsp;PG 정보 변경</div>
+				<h1><img src="/images/al/h1_info_pg.png" alt="PG 정보변경" /></h1>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+
+			<div class="content_block">
+				<div class="content_block_inner fill_joinin">
+					<div class="tb_exp">
+						<span class="t_black"><strong>PG 변경사항을 입력하세요</strong></span>
+					</div>
+					<table class="dtable02 dtable_inputfield " summary="아이디, 비밀번호, 비밀번호 확인, 비밀번호 확인 질문, 비밀번호 확인 답변, 회사명, 사업자번호, 대표자명, 대표자 주민번호, 주소, 전화번호, 도메인 등 PG 변경사항을 입력 할 수 있습니다.">
+					<caption>PG 변경사항</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_txt"><p>아이디</p></th>
+							<td class="cell_l"><p><%= adminInfoCVO.getAdminId() %></p></td>
+						</tr>
+
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_pw1">비밀번호</label></th>
+							<td class="cell_l"><p class="pg_pass"><input type="password" class="txt" name="adminPassword" value="" title="비밀번호" id="label_pw1" maxlength="12" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_pw2">비밀번호 확인</label></th>
+							<td class="cell_l"><p class="pg_pass"><input type="password" class="txt" name="adminPasswordCheck" value="" title="비밀번호 확인" id="label_pw2" maxlength="12" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_pw3">비밀번호 확인 질문</label></th>
+							<td class="cell_l"><p class="pg_pass2"><input type="text" class="txt" name="passwordQuestion" value="<%=adminInfoCVO.getPasswordQuestion() %>" title="비밀번호 확인 질문" id="label_pw3" maxlength="40" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_pw4">비밀번호 확인 답변</label></th>
+							<td class="cell_l"><p class="pg_pass2"><input type="text" class="txt" name="passwordAnswer" value="<%=adminInfoCVO.getPasswordAnswer() %>" title="비밀번호 확인 답변" id="label_pw4" maxlength="40" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>회사명</p></th>
+							<td class="cell_l"><p><%= adminInfoCVO.getMallName() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>사업자번호</p></th>
+							<td class="cell_l"><p class="t_no"><%if(adminInfoCVO.getBusinessNo() != null) out.write(HpCommonUtil.convPatternString(1, adminInfoCVO.getBusinessNo(), "-"));%></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>대표자명</p></th>
+							<td class="cell_l"><p><%=adminInfoCVO.getSpotName() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>대표자 주민번호</p></th>
+							<td class="cell_l"><p class="t_no"><%if(adminInfoCVO.getIdenNo() != null){ %>
+								<%=adminInfoCVO.getIdenNo().substring(0,6) %>-<%=adminInfoCVO.getIdenNo().substring(6,7) %>******<%} %> </p></td>
+								
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>주소</p></th>
+							<td class="cell_l"><p><%if(adminInfoCVO.getZipCode() != null) out.write(HpCommonUtil.convPatternString(2, adminInfoCVO.getZipCode(), "-")); %> <span class="ml20"><%=adminInfoCVO.getAddress()%> <%=adminInfoCVO.getAddressDistrict() %></span></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>전화번호</p></th>
+							<td class="cell_l"><p class="t_no"><%=adminInfoCVO.getPhoneNo1() %>-<%=adminInfoCVO.getPhoneNo2() %>-<%=adminInfoCVO.getPhoneNo3() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_txt"><p>도메인</p></th>
+							<td class="cell_l"><p>http://<%=adminInfoCVO.getDomain() %></p></td>
+						</tr>
+
+					</tbody>
+					</table>
+
+					<div class="btnset">
+						<div class="btnr">
+                            <a href="javascript:update();" class="btn btn_blue"><span>변경</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

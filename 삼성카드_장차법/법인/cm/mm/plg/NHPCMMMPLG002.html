@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>공인인증서 안내 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap"><!--class="clfix"-->
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_qualified_certificates.png" alt="공인인증서 안내" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_available_certificates.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block_login content_block_tab clfix">
+				<div class="tab01 w810" id="block_1_tab" style="display:block;">
+						<ul>
+							<li class="on"><a href="javascript:showhide('block_1','block_2','block_3', '공인인증서 안내');">공인인증서 안내</a></li>
+							<li><a href="javascript:showhide('block_2','block_1','block_3','사용가능 인증서 안내');">사용가능 인증서 안내</a></li>
+							<li><a href="javascript:showhide('block_3','block_1','block_2','로그인 주의사항');">로그인 주의사항</a></li>
+						</ul>
+					</div>
+				<div class="tab01 w810"  id="block_2_tab" style="display:none;">
+						<ul>
+							<li><a href="javascript:showhide('block_1','block_2','block_3', '공인인증서 안내');">공인인증서 안내</a></li>
+							<li class="on"><a href="javascript:showhide('block_2','block_1','block_3','사용가능 인증서 안내');">사용가능 인증서 안내</a></li>
+							<li><a href="javascript:showhide('block_3','block_1','block_2','로그인 주의사항');">로그인 주의사항</a></li>
+						</ul>
+				</div>
+				<div class="tab01 w810" id="block_3_tab" style="display:none;">
+						<ul>
+							<li><a href="javascript:showhide('block_1','block_2','block_3', '공인인증서 안내');">공인인증서 안내</a></li>
+							<li><a href="javascript:showhide('block_2','block_1','block_3','사용가능 인증서 안내');">사용가능 인증서 안내</a></li>
+							<li class="on"><a href="javascript:showhide('block_3','block_1','block_2','로그인 주의사항');">로그인 주의사항</a></li>
+						</ul>
+				</div>
+
+				<div id="block_1" style="display:block;">
+					<cms:include page="/cms_content/hp/cm/mm/plg/NHPCMMMPLGVIEW002C1.html" />
+				</div>
+				<div id="block_2" style="display:none;">
+					<cms:include page="/cms_content/hp/cm/mm/plg/NHPCMMMPLGVIEW002C2.html" />
+		   		</div>
+		   		<div id="block_3" style="display:none;">
+					<cms:include page="/cms_content/hp/cm/mm/plg/NHPCMMMPLGVIEW002C3.html" />
+		   		</div>
+			</div>
+		</div>
+      </div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

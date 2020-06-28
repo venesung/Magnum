@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <h2><img src="/images/mh/h2_inqury_fam_eng02.png" alt="Overseas Usage Inquery" /></h2>
+    <div class="content_block_inner">
+        <table class="dtable02 dtable_inputfield mt30" summary="board to check your transaction date, transaction time, business code, country, authorized amount, respond code.">
+        <caption>Family Card Overseas Usage List Board</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <th scope="row"><p>Used Card</p></th>
+                <td colspan="2"><p>
+                    <select style="width:360px" name="srchCardNo" id="srchCardNo" title="Used Card" >
+                        <!--<option value="">전체</option>-->
+                        <option></option>
+                    </select>
+                </p>
+
+                </td>
+            </tr>
+            <tr style="display: none;">
+                <th scope="row"><p>used date</p></th>
+                <td width="230px"><p>
+                    <a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+                    <a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+                    <a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+                    <a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+                </p>
+                </td>
+                <td class="reset_date">
+                    <a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>
+                    <fileTag:dblCalendarAdd calendarId="hp_double_cal" inputClass="txt" startTitle="시작하는날짜" startInputName="srchStartDate" startInputValue='' endTitle ="끝나는날짜" endInputName ="srchEndDate" endInputValue =''/>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <!-- btn -->
+        <div class="btnr">
+            <a href="javascript:before_goSubmit('3');" class="btn btn_blue"><span>GO</span></a>
+        </div>
+
+       	<div class="btnset mt20">
+            <p class="btnr">
+                <a href="javascript:goSubmit('2');" class="btn btn_s_white"><span>Korean</span></a><a href="javascript:goSubmit('3');return false;" class="btn btn_s_gray"><span>English</span></a>
+            </p>
+        </div>
+
+        <table class="dtable01 dtable01_bill mt10" summary="Family Card History">
+        <caption>Family Card History</caption>
+        <colgroup><col width="76" /><col width="72" /><col width="72" /><col width="*" /><col width="*" /><col width="54" /><col width="54" /></colgroup>
+        <thead>
+            <tr>
+           		<th scope="col" class="cell_l10">Overseas<br />Usage<br />Date</th>
+				<th scope="col" class="cell_l10">Country</th>
+				<th scope="col" class="cell_l10">Merchant</th>
+				<th scope="col" class="cell_r10">Transaction<br />Amount</th>
+				<th scope="col" class="cell_r10">Billing<br />Amount(￦)</th>								
+				<th scope="col" class="cell_l10">Ref</th>
+				<th scope="col">Expected<br />Statement<br />Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <td class="cell_l10 t_no">0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="t_no cell_r10">0<br />0(USD)</td>
+                <td class="t_no cell_r10">0</td>
+                <td class="cell_l10"></td>
+                <td class="cell_l10 t_no">0</td>
+            </tr>
+			<tr class="nodata"><td colspan="7">Your credit cards don't have used record of oversea transaction.</td></tr>
+            <!-- //loop -->
+        </tbody>
+        </table>
+         <!-- paginate -->
+         <div class="paginate">	${_page}  </div>
+         <div class="mt10 ml10">
+			You can search the oversea transaction. You may inquiry the transaction only if the transaction was received.<br /><span class="t_desc04">means cancelled transaction and you could search the international within recent 1 year.<br />If you have more questions, please feel free to contact International Service Part.</span><br /><span class="t_point_org">International Service Part : 02-2000-8531~3</span>
+		 </div>
+    </div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

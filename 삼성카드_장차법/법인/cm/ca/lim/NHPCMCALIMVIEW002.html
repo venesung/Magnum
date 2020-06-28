@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>월한도 관리 - 삼성카드</title>
+</head>
+
+<body>
+<div id="xecure_obj" ></div>
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_limit_manage_month.png" alt="월한도 관리" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<table class="dtable02 mt40" summary="카드번호, 성명, 주민번호, 카드종류, 유효기간, 카드상태, 카드한도 등 카드정보를 확인하실 수 있습니다.">
+					<caption>카드정보</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p class="t_no">}</p></td>
+							<th scope="row"><p>성명</p></th>
+							<td><p></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>주민번호</p></th>
+							<td><p class="t_no"></p></td>
+							<th scope="row"><p>카드종류</p></th>
+							<td><p></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>유효기간</p></th>
+							<td><p class="t_no"></p></td>
+							<th scope="row"><p>카드상태</p></th>
+							<td><p>정상</p></td>
+						</tr>
+					</tbody>
+					</table>
+					<table class="dtable01 dtable01_bill mt20" summary="법인카드 기간한도관리"> 
+					<caption>법인카드 기간한도관리 </caption>
+					<colgroup><col width="20%" /><col width="26%" /><col width="26%" /><col width="26%" /></colgroup> 
+					<thead> 
+						<tr> 
+							<th scope="col" colspan="2" class="cell_l10 riline cell_bg"><p>구분</p></th> 
+							<th scope="col" class="cell_r10">한도금액</th> 
+							<th scope="col" class="cell_r10">이용하신금액</th> 
+							<th scope="col" class="cell_r10">이용가능금액</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th scope="row" colspan="2" class="cell_l10 cell_bg"><p>카드당(금액)</p></th> 
+							<td class="cell_r10 t_no">${CLMT_AMT} 원 </td>
+							<td class="cell_r10 t_no">${CUSE_AMT} 원 </td>
+							<td class="cell_r10 t_no">${CAVI_AMT} 원  </td>
+						</tr> 
+						<tr> 
+							<th scope="row" colspan="2" class="cell_l10 cell_bg"><p>월(금액)</p></th> 
+							<td class="cell_r10 t_no">${MLMT_AMT} 원  </td>
+							<td class="cell_r10 t_no">${MUSE_AMT} 원  </td>
+							<td class="cell_r10 t_no">${MAVI_AMT} 원  </td>
+						</tr> 
+						<tr> 
+							<th scope="row" colspan="2" class="cell_l10 cell_bg"><p>월(횟수)</p></th> 
+							<td class="cell_r10 t_no">${MLMT_CNT} 회  </td>
+							<td class="cell_r10 t_no">${MUSE_CNT} 회  </td>
+							<td class="cell_r10 t_no">${MAVI_CNT} 회  </td>
+						</tr> 
+						<tr> 
+							<th scope="row" colspan="2" class="cell_l10 cell_bg"><p>일(금액)</p></th> 
+							<td class="cell_r10 t_no">${DLMT_AMT} 원  </td>
+							<td class="cell_r10 t_no">${DUSE_AMT} 원  </td>
+							<td class="cell_r10 t_no">${DAVI_AMT} 원  </td>
+						</tr> 
+						<tr> 
+							<th scope="row" colspan="2" class="cell_l10 cell_bg"><p>일(횟수)</p></th> 
+							<td class="cell_r10 t_no">${DLMT_CNT} 회  </td>
+							<td class="cell_r10 t_no">${DUSE_CNT} 회  </td>
+							<td class="cell_r10 t_no">${DAVI_CNT} 회  </td>
+						</tr> 
+					</tbody> 
+					</table> 
+					<div class="btnset">
+						<p class="btnr">
+							<a href="javascript:goMenu('/lim.do?method=selectMonthLimitList');" class="btn btn_white"><span>목록</span></a>
+						</p>
+					</div>
+
+
+					<h2 class="mt15"><img src="/images/cm/h2_limit_management_details01.png" alt="카드 월사용 금액 및 회수 설정" /></h2>
+
+					<ol class="list_no01">
+						<li><p>해당 카드의 1개월 또는 1일 동안 <strong class="t_black">사용 가능한 금액을 설정</strong>하실 수 있습니다. (만원단위)<br />
+							단, 월사용가능금액 및 일사용가능금액이 카드한도를 초과할 수는 없습니다.</p></li>
+						<li><p>사용가능금액(만원단위) 및 사용가능횟수를 입력한 후 <strong class="t_black">&lt;확인&gt;버튼을 클릭하여 설정을 완료</strong>합니다.</p></li>
+					</ol>
+
+
+					<table class="dtable02 mt30" summary="월 사용금액, 월 사용금액 회수, 일 사용금액, 일 사용금액 회수, 건당 사용가능 금액 이용내역을 확인할 수 있는 게시판입니다">
+					<caption>이용내역</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><label for="label_monthly_amount">월 사용금액</label></th>
+							<td><p class="input_point"><input type="text" class="txt money" title="월 사용금액" id="label_monthly_amount" name="month_able_amt_comma"  maxlength="15" />만원</p></td>
+							<th scope="row"><label for="label_monthly_amount2">월사용 가능횟수</label></th>
+							<td><p class="input_point"><input type="text" class="txt money" title="월사용 가능횟수" id="label_monthly_amount2" name="month_able_cnt_comma" maxlength="3"/>건</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="label_spending_day">일 사용금액</label></th>
+							<td><p class="input_point"><input type="text" class="txt money" title="일 사용금액" id="label_spending_day" name="day_able_amt_comma" maxlength="15" />만원</p></td>
+							<th scope="row"><label for="label_spending_day2">일사용 가능횟수</label></th>
+							<td><p class="input_point"><input type="text" class="txt money" title="일사용 가능횟수" id="label_spending_day2" name="day_able_cnt_comma" maxlength="3"/>건</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="label_available_per">건당 사용가능 금액</label></th>
+							<td colspan="3"><p class="input_point"><input type="text" class="txt money" title="건당 사용가능 금액" id="label_available_per" name="rec_able_amt_comma" maxlength="15" />만원</p></td>
+						</tr>
+					</tbody>
+					</table>
+					<div class="btnset">
+						<div class="btnl">
+							<a href="/lim.do?method=selectLimitList" class="btn btn_white"><span>한도 관리</span></a>
+							<a href="/lim.do?method=selectTermLimitList" class="btn btn_white"><span>기간한도 관리</span></a>
+						</div>
+						<p class="btnr">
+							<a href="javascript:monthLimit();" id="btn_apply" class="btn btn_blue"><span>확인</span></a> <a href="javascript:clear();" class="btn btn_white"><span>취소</span></a>
+						</p>
+					</div>
+
+					<div class="line_lgray"></div>
+
+					<ol class="list_desc">
+						<li><p>月사용가능금액 : 해당 카드로 1개월 동안 최대로 사용할 수 있는 가능 금액을 말합니다. </p></li>
+						<li><p>日사용가능금액 : 해당 카드로 1일 동안 최대로 사용할 수 있는 가능 금액을 말합니다.</p></li>
+						<li><p>1건당 사용가능금액 : 해당 카드로 결제 시 결제 1건당 최대로 사용할 수 있는 가능 금액을 말합니다.</p></li>
+						<li><p>月사용가능횟수 : 해당 카드로 1개월동안 최대로 사용할 수 있는 횟수를 말합니다.</p></li>
+						<li><p>日사용가능횟수 : 해당 카드로 1일동안 최대로 사용할 수 있는 횟수를 말합니다.</p></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

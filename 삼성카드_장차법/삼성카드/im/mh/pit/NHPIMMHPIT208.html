@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                  </div>
+                
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<!--div class="flag_additional"><img src="/images/mh/img_point_modutour.jpg" class="flag_milleage_asiana" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 -->
+					<h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+					<div class="content_block_inner">
+						<h3 class="h3_point"><img src="/images/mh/h3_modutour.png" alt="모두투어 마일리지" /></h3>
+
+						<table class="dtable01" summary="구분, 마일리지,기준일으로 구성된 모두투어 마일리지 내역을 확인할 수 있는 게시판입니다.">
+						<caption>모두투어 마일리지 내역</caption>
+						<colgroup><col width="33%" /><col width="34%" /><col width="33%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">구분</th>
+								<th scope="col" class="cell_r10">마일리지</th>
+								<th scope="col" class="cell_r10">기준일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">모두투어 마일리지(삼성카드)</td>
+								<td class="cell_r10"><span class="t_no">0</span> M</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10">모두투어 총사용가능마일리지</td>
+								<td class="cell_r10"><span class="t_no">0</span> M</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+						</tbody>
+						</table>
+						<p class="ico_rice t_desc04 mt15 ml10">모두투어 총사용가능마일리지는 삼성카드, 타사, 모두투어에서 적립된 합산 마일리지입니다. </p>
+						
+						<form method="post" name="form1" >
+                        <input type="hidden" name="p_type" value="<%=pType%>" />
+                        <input type="hidden" name="s_year" value="" />
+						<div class="tb_exp clfix mt30">
+							<h3>적립 연도별 조회</h3>
+							<span class="ab_tr">
+								<select name="slt_year" title="적립 연도 선택" style="width:80px">
+                                <option></option>
+								</select>
+								<a href="#" onclick="javascript:goSearch();" class="btn btn_s_blue"><span>조회</span></a>
+							</span>
+						</div>
+						</form>
+
+						<table class="dtable01" summary="기준연월, 모두투어 마일리지(삼성카드), 상세보기로 구성된 조회결과입니다.">
+						<caption>모두투어 마일리지 조회결과</caption>
+						<colgroup><col width="30%" /><col width="30%" /><col width="40%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">기준연월</th>
+								<th scope="col" class="cell_r10">모두투어 마일리지(삼성카드)</th>
+								<th scope="col" class="cell_r10">상세보기</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="cell_r10 t_no">0M</td>
+								<td class="cell_r10"><a class="btn btn_s_white" href="#" title="00 마일리지 상세보기"><span>GO</span></a></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<ol class="list_desc mt10">
+							<li><p>삼성카드 누적 마일리지 기준입니다. 총 모두투어마일리지 상세내용은 <a href="http://www.modetour.com/" target="_blank" class="btn_link t_no" title="새창">모두투어 홈페이지</a>에서 확인하실 수 있습니다.</p></li>
+							<li><p>GO를 누르면 모두투어 마일리지(삼성카드) 적립 상세내역을 확인하실 수 있습니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+
+                <cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW057C1.html" flush="false" />
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

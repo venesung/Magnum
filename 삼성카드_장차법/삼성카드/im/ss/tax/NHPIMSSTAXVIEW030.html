@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: 대구 세정담당자 대사처리 리스트 조회
+ * Author: "SDS 여상석 사원"
+ * Created on 2010. 02. 08.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <%if(request.getAttribute("check") != "end"){%>
+ 	<script type="text/javascript"><!--
+		alert('${msg}');
+--></script>
+ <%}else{%>
+ 	<script type="text/javascript"><!--
+ 		alert('${msg}');
+ 		parent.goSearch('${page}');
+--></script>
+ <%}%>
+</body>
+</html>

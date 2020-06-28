@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<div id=tabbrowse_position>
+		<div id=tabbrowse_wrap>
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class=clfix id="id_tablist">
+						<li>
+							국문최대일곱자...<input class="btn_tab" onmouseover="t_over(this,'btn_tab');" title="닫기" onmouseout="t_out(this,'btn_tab');" type="button" value="닫기" />
+						</li>
+						<li class="on" onmouseover="t_layer_show(this);" onmouseout="t_layer_hide(this);">
+                            <a href="http://samsungcard-hp.vi-nyl.com/ss/SS4.4.5.3%20_안심귀가서비스_이용내역조회및영수증출력.html#">카드이용내역</a>
+							<input class="btn_tab" onmouseover="t_over(this,'btn_tab');" title="닫기" onmouseout="t_out(this,'btn_tab');" type="button" value="닫기" />
+							<div class="tabbrowse_sub">
+								<div>
+									<a href="#">국내이용내역</a>
+									<a href="#">청구내역  및 할부전환</a>
+									<a href="#">승인취소내역조회</a>
+									<a href="#">지역특화카드이용내역</a>
+								</div>
+								<div class="tabbrowse_sub_btm"></div>
+							</div>
+						</LI>
+					</UL>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id=id_ctr_btn>
+				<input class="btn_previous" id="id_ctr_prev" onmouseover="t_over(this,'btn_previous');" title="이전" onmouseout="t_out(this,'btn_previous');" type="button" />
+				<input class="btn_next" id="id_ctr_next" onmouseover="t_over(this,'btn_next');" title="다음" onmouseout="t_out(this,'btn_next');" type="button" />
+				<input class="btn_close" onmouseover="t_over(this,'btn_close');" title="탭 브라우저 레이어 닫기" onclick="hide_con('tabbrowse_position');" onmouseout="t_out(this,'btn_close');" type="button" />
+			</div>
+			<div class="tabbrowse_content">
+				<form name="form" method="post" action="" autocomplete="off">
+				<input type="hidden" name="init" value="" />
+				<input type="hidden" name="cardNo" value="" />
+				<input type="hidden" name="pageNum" value="" />
+				<input type="hidden" name="cardKind" value="<%=cardKind%>" />
+				<input type="hidden" name="getDate1" value="<%=startDate%>" />
+				<input type="hidden" name="getDate2" value="<%=endDate%>" />
+				<input type="hidden" name="no" value="" /> <!-- ? -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">대리운전도 카드로 안심귀가서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_samsungcard_safeturn.jpg" alt="대리운전도 카드로 안심귀가서비스 - 믿을 수 있는 대리업체로 안전하게 귀가하세요" /></div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+				<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+                            <li><a href="/hp/im/ss/ghs/ghs001.do?method=selectGoHomeSafetyPrevCert">서비스 소개</a></li>
+                            <li><a href="/hp/im/ss/ghs/ghs001.do?method=selectGoHomeSafetyRequest">신청하기</a></li>
+                            <li class="on"><span class="none">현재탭</span><a href="#">이용내역조회 및 영수증 출력</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img alt="회원님의 정보를 확인해 주세요" src="/images/ss/h2_checkcard02.gif" /></h2>
+					<div class=content_block_inner>
+						<table class="dtable02 dtable_inputfield" summary="회원 정보 확인을 위해 카드선택, 카드번호, 사용일자 정보를 입력하는 게시판입니다">
+							<caption>회원정보 확인</caption>
+							<colgroup>
+								<col width="115" />
+								<col width="*" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><p>카드선택</p></th>
+									<td>
+<%
+if("BS".equals(cardKind)) {
+%>
+										<p><label class="mr10" for="label_card1"><input class="rdo" id="label_card1" type="radio" onclick="rdoClick('1');" title="개인" /> 개인</label>
+										<label for="label_card2"><input class="rdo" id="label_card2" type="radio" checked="checked" onclick="rdoClick('2');" title="법인" /> 법인</label> </p>
+<%
+} else {
+%>
+										<p><label class="mr10" for="label_card1"><input class="rdo" id="label_card1" type="radio" checked="checked" onclick="rdoClick('1');" title="개인" /> 개인</label>
+										<label for="label_card2"><input class="rdo" id="label_card2" type="radio" onclick="rdoClick('2');" title="법인"  /> 법인</label> </p>
+<%
+}
+%>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><p>카드번호</p></th>
+									<td>
+										<p>
+<%
+if(!"BS".equals(cardKind)) {
+%>
+											<span id="cardListIndiv" style="display:block">
+<%
+} else {
+%>
+											<span id="cardListIndiv" style="display:none">
+<%
+}
+%>
+												<select id="selectIndiv" title="카드번호 선택" style="WIDTH: 360px">
+<%
+if(cardListIndiv == null || cardListIndiv.size() == 0) {
+%>
+													<option value="00">전 체</option>
+<%
+} else {
+	for (int i = -1; i < cardListIndiv.size(); i++) {
+		if(i == -1) {
+%>
+													<option value="00">전 체</option>
+<%
+		} else {
+			inVo_cl = cardListIndiv.get(i);
+			cardName_cl = inVo_cl.getCardName();
+			cardNo_cl = inVo_cl.getCardNo();
+%>
+													<option value="<%=cardNo_cl%>"><%=cardName_cl%>&nbsp;<%=cardNo_cl%></option>
+<%
+		}
+	}
+}
+%>
+												</select>
+											</span>
+<%
+if("BS".equals(cardKind)) {
+%>
+											<span id="cardListJurid" style="display:block">
+<%
+} else {
+%>
+											<span id="cardListJurid" style="display:none">
+<%
+}
+%>
+												<select id="selectJurid" title="카드번호 선택" style="WIDTH: 360px">
+<%
+if(cardListJurid == null || cardListJurid.size() == 0) {
+%>
+													<option value="00">전 체</option>
+<%
+} else {
+	for (int j = -1; j < cardListJurid.size(); j++) {
+		if(j == -1) {
+%>
+													<option value="00">전 체</option>
+<%
+		} else {
+			inVo_cl = cardListJurid.get(j);
+			cardName_cl = inVo_cl.getCardName();
+			cardNo_cl = inVo_cl.getCardNo();
+%>
+													<option value="<%=cardNo_cl%>"><%=cardName_cl%>&nbsp;<%=cardNo_cl%></option>
+<%
+		}
+	}
+}
+%>
+												</select>
+											</span>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><p>사용일자</p></th>
+									<td>
+										<p class=reset_date>날짜지정 <input id="startDate" class="txt" title="시작하는날짜" value="<%=startDate%>" size="8" maxlength="8" />
+                                        <a href="http://samsungcard-hp.vi-nyl.com/ss/SS4.4.5.3%20_안심귀가서비스_이용내역조회및영수증출력.html#">
+										<img alt="달력" src="/images/common/ico_calendar.png"></a>
+										&nbsp;~&nbsp;<input id="endDate" class="txt" title="끝나는날짜" value="<%=endDate%>" size="8" maxlength="8" />
+                                        <a href="http://samsungcard-hp.vi-nyl.com/ss/SS4.4.5.3%20_안심귀가서비스_이용내역조회및영수증출력.html#">
+										<img alt="달력" src="/images/common/ico_calendar.png"></a></p>
+									</td>
+								</tr>
+							</tbody>
+						</TABLE>
+						<!-- btn -->
+						<div class=btnset>
+                            <p class="btnr"><a class="btn btn_white" href="javascript:search();"><span>조회</span></a></p>
+						</div>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img alt="승인내역을 확인하세요." src="/images/ss/h2_proxydriving02.png" /></h2>
+					<div class=content_block_inner>
+						<div class="tb_exp clfix"><span>승인내역 조회는 <strong class="t_point">최대 2개월 단위</strong>로 조회됩니다.</span></div>
+						<table class="dtable01 dtable01_bill" summary="거래일자, 가맹점 번호, 가맹점 명, 카드번호, 승인번호, 거래금액, 최소구분, 비고로 구성된 승인내역을 보여주는 게시판입니다.">
+							<caption>승인내역 조회</caption>
+							<colgroup>
+								<col width="76" />
+								<col width="70" />
+								<col width="*" />
+								<col width="120" />
+								<col width="50" />
+								<col width="70" />
+								<col width="60" />
+								<col width="60" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="cell_l10" scope="col">거래일자</th>
+									<th scope="col">가맹점 번호</th>
+									<th scope="col">가맹점 명 </th>
+									<th scope="col">카드번호</th>
+									<th scope="col">승인번호</th>
+									<th class="cell_r10" scope="col">거래금액</th>
+									<th scope="col">최소구분</th>
+									<th scope="col">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+<%
+if(useList == null || useList.size() == 0) {
+%>
+								<!-- 데이터 없음-->
+								<tr class="nodata"><td colspan="8">조회된 자료가 없습니다.</td></tr>
+<%
+} else {
+	for (int k = 0; k < useList.size(); k++) {
+		inVo_ul = useList.get(k);
+		approveDate_ul = inVo_ul.getApproveDate();
+		approveTime_ul = inVo_ul.getApproveTime();
+		chainNo_ul = inVo_ul.getChainNo();
+		chainName_ul = inVo_ul.getChainName();
+		cardNo_ul = inVo_ul.getCardNo();
+		approveNo_ul = inVo_ul.getApproveNo();
+		approveAmount_ul = inVo_ul.getApproveAmount();
+		keyValue_ul = inVo_ul.getKeyValue();
+		cancelGubun_ul = inVo_ul.getCancelGubun();
+		rowSeq_ul = inVo_ul.getRowSeq();
+%>
+								<tr>
+									<td class="cell_l10 t_no">
+<%
+		if(approveDate_ul != null && !"".equals(approveDate_ul)) {
+%>
+									<%=approveDate_ul.substring(0, 4)%>-<%=approveDate_ul.substring(4, 6)%>-<%=approveDate_ul.substring(6, 8)%>
+<%
+		}
+		if(approveTime_ul != null && !"".equals(approveTime_ul)) {
+%>
+									<%=approveTime_ul.substring(0, 2)%>:<%=approveTime_ul.substring(2, 4)%>:<%=approveTime_ul.substring(4, 6)%>
+<%
+		}
+%>
+									</td>
+									<td class="t_no"><%=chainNo_ul%></td>
+									<td><%=chainName_ul%></td>
+									<td class="t_no"><%=cardNo_ul%></td>
+									<td class="t_no"><%=approveNo_ul%></td>
+									<td class="cell_r10 t_no"><%=approveAmount_ul%></td>
+									<td><%=cancelGubun_ul%></td>
+									<td>
+										<input type="hidden" name="enc_card_no" value="<%=cardNo_ul%>" />
+										<input type="hidden" name="approve_date" value="<%=approveDate_ul%>" />
+										<input type="hidden" name="approve_no" value="<%=approveNo_ul%>" />
+										<input type="hidden" name="approve_time" value="<%=approveTime_ul%>" />
+										<input type="hidden" name="key_value" value="<%=keyValue_ul%>" />
+										<input type="hidden" name="chain_no" value="<%=chainNo_ul%>" />
+						    		</td>
+								</tr>
+<%
+	}
+}
+%>
+							</tbody>
+						</TABLE>
+					</div>
+				</div>
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer"><img alt="COPYRIGHT@ 2013 SANSUNGCARD. ALL RIGHTS RESERVED." src="/guide/guide_footer.png" /></div>
+				</form>
+			</div>
+		</div>
+		<div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+</div>

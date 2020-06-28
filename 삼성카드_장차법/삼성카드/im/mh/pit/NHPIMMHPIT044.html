@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+                
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <!--div class="flag_additional"><img src="/images/mh/img_saveservice_wine.jpg" class="flag_saveservice" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 -->
+                    <h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3 class="h3_point"><img src="/images/mh/h3_point_wine.png" alt="와인 포인트 (Roi de Vin클럽) " /></h3>                
+                        <p class="ml10">Roi de Vin 카드를 이용하는 회원님께 적립 되는 와인 전용 포인트입니다.<br />적립하신 와인포인트는 <a href="javascript:goTabPage('NHPIMCDWRM001');" class="a_point">Roi de Vin 클럽존</a> 또는 삼성카드 상담센터(지역번호없이)<strong class="t_no t_black">1588-8700</strong>를  통해<br />와인바우처 및 와인액세서리 구매에 이용하실 수 있습니다.</p>
+
+                        <jsp:include page="NHPIMMHPIT003.jsp" flush="false">
+                            <jsp:param value="Y" name="detail" />
+                        </jsp:include>
+                        
+                        <div class="btnset">
+                            <p class="btnl t_desc04">기준년월을 누르시면 해당 월의 적립/사용 상세 내역을 조회하실 수 있습니다.<br />적립/사용 상세 내역은 조회월을 기준으로 직전 1년까지 조회하실 수 있습니다. </p>
+                        </div>
+
+                        <form method="post" name="form2" autocomplete="off">
+                        <div class="tb_exp mt30 clfix">
+                            <h3>유효경과 예정 포인트</h3> 
+                            <span class="ab_tr">
+                                <select name="yyyymm" title="년월 선택" style="width:100px">
+                                <option></option>
+                                </select>
+                                <a href="javascript:exSearch();" class="btn btn_s_blue"><span>조회</span></a>
+                            </span>
+                        </div>
+                        </form>
+                        
+                        <table class="dtable01" summary="포인트별 소멸예정월,소멸예정포인트를 확인할 수 있는 게시판입니다.">
+                        <caption>소멸예정포인트 안내</caption>
+                        <colgroup><col width="30%" /><col width="40%" /><col width="*" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="cell_l10" scope="row">포인트 구분</th>
+                                <th scope="row">소멸예정월</th>
+                                <th class="cell_r10" scope="row">소멸예정포인트</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <td class="cell_l10">0</td>
+                                <td class="t_no">0년 0월</td>
+                                <td class="cell_r10"><span class="t_no">0 P</span></td>
+                            </tr>
+                            
+                        </tbody>
+                        </table>
+                        <div class="btnset">
+                            <p class="btnl t_desc04">
+                            	조회 당월 및 2개월 후 소멸예정포인트까지 조회가 가능합니다. <br/>
+                            	포인트는 매월 마지막 영업일 혹은 마지막 영업일 -1일에 소멸됩니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW044C1.html" flush="false" />
+                
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

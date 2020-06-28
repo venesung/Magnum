@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">실시간 휴대폰 문자서비스 S.InfoCare</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSIC001M002', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+
+<form name="form1" method="post" >
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M002', true);">신청/변경/해지</a></li>
+			<!-- li><a href="javascript:goTabPage('NHPIMSSSIC001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M004', true);">해지하기</a></li -->
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M005', true);">가입정보보기</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSIC001M006', true);">신용정보내역E-Mail신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMSSSIC001M007', true);">신용정보조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix"><!-- 상단변경 -->
+<% if (kcbGb.equals("K")) { %>
+	<iframe id="cp_page" name="cp_page" src="http://www.allcredit.co.kr/acs/cp/cp030/mbr/CP030_UserInfoGW.jsp?pReqTpCd=1&pInquKey=${dIdenNo}" frameborder="0"  width="100%" height="500" title="신용정보내역E-Mail신청 상세화면"></iframe>
+<% } else { %>
+	<iframe id="cp_page" name="cp_page" src="http://link.creditbank.co.kr/samsungcardSIC/FC.fc?CMD=CMD_SEQ_102511560431350443504072&Enc=${dIdenNo}" frameborder="no" width="100%" height="500" title="신용정보내역E-Mail신청 상세화면"></iframe>
+<% } %>
+</div>
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

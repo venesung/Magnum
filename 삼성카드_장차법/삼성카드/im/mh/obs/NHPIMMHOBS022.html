@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+
+				<div class="content_block content_block_tab2 clfix">
+					<div class="tab02 w810 h60">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">나의맞춤혜택</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<li class="on">
+								<a href="#">최대혜택조회</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHOBS022','true');">보유카드</a></li>
+									<li><a href="javascript:go_tabSubmit('025')">추천카드1</a></li>
+									<li><a href="javascript:go_tabSubmit('026')">추천카드2</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일알리미서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');"">왕대박 3 승인번호 등록</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</div>
+			
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_onlyforyou_consult14.png" alt="회원님의 혜택금액 산출 대상카드를 알려드립니다" /></h2>
+					<div class="content_block_inner">
+						<blockquote class="mb20"><img src="/images/mh/txt_onlyforyou_consult.png" alt="회원님께서 보유하신 카드 중 혜택금액 산출 대상카드를 알려드립니다." /></blockquote>
+
+<!-- 수정 100916 -->
+						<div class="clear">&nbsp;</div>
+						<!-- tab_area -->
+						<div class="tab03 w640">
+							<ul>
+								<li class="on"><a href="javascript:goTabPage('NHPIMMHOBS022');">카드조회</a></li>
+                                <li><a href="javascript:go_tabSubmit('023')">최대혜택조회</a></li>
+							</ul>
+						</div>
+<!-- 수정 101022 -->
+						<div class="tb_exp mt20">
+							<span>회원님께서 보유하신 카드 중 <strong class="t_point">혜택금액 산출 대상카드</strong>를 알려드립니다.</span>
+						</div>
+						<table class="dtable01" summary="카드명, 카드번호, 카드종류로 구성된 혜택금액 산출 대상카드를 안내하는 게시판입니다.">
+<!--// 수정 101022 -->
+<!-- // 수정 100916 -->
+						<caption>혜택금액 산출 대상카드 안내</caption>
+						<colgroup><col width="*" /><col width="220" /><col width="130" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드명</th>
+								<th scope="col">카드번호</th>
+								<th scope="col" class="cell_l10">카드종류</th>
+							</tr>
+						</thead>
+						<tbody>
+						<!-- loop -->
+						<%
+						if(RESULT_LIST!=null && RESULT_LIST.length > 0){
+							//for(HOMEHMV5HPP00022INRecVO1 cardInfo : RESULT_LIST){
+							for(int i=0 ; i<RESULT_LIST.length ; i++ ){ 
+								
+								
+								if( !"".equals(RESULT_LIST[i].getString1().trim()) ){
+						%>
+						<tr>
+							<td class="cell_l10"><%=RESULT_LIST[i].getString1()%></td>
+							<%
+									intcardcnt = intcardcnt + 1;
+									String tempString2 = RESULT_LIST[i].getString2().trim();
+									
+									if( tempString2.length() == 15 ){
+							%>
+									<td>XXXX-XXX<%=RESULT_LIST[i].getString2().substring(7, 10)%>-<%=RESULT_LIST[i].getString2().substring(10, 12)%>XX<%=RESULT_LIST[i].getString2().substring(14)%></td>
+							<%
+									}else if( tempString2.length() == 16 ){
+							%>
+									<td>XXXX-XXXX-<%=RESULT_LIST[i].getString2().substring(8, 12)%>-<%=RESULT_LIST[i].getString2().substring(12, 13)%>XX<%=RESULT_LIST[i].getString2().substring(15, 16)%></td>
+							<%
+									}else if( tempString2.length() == 12 ){
+							%>
+									<td>XXXX-XXX<%=RESULT_LIST[i].getString2().substring(7, 10)%>-<%=RESULT_LIST[i].getString2().substring(10, 12)%>XXX</td>
+							<% 
+									}else if( tempString2.length() == 13 ){
+							 %>
+							 		<td>XXXX-XXXX-<%=RESULT_LIST[i].getString2().substring(8, 12)%>-<%=RESULT_LIST[i].getString2().substring(12, 13)%>XXX</td>
+							 <%
+									}
+							 %>
+
+							<td class="cell_l10"><%=RESULT_LIST[i].getString3()%></td>
+						</tr>
+
+
+						 <!-- //loop  -->
+						 <%
+								} else { %>
+
+							<% }
+							}
+						}else{
+						 %>
+						 <tr class="nodata">
+							<td colspan="5">조회된 데이타가 없습니다.</td>
+						</tr>
+						 <%
+						}
+						 %>
+						</tbody>
+						</table>
+<!-- 수정 101116 -->
+						<% if( !"".equals(RESULT_LIST[4].getString1().trim()) ){ %>
+						<div class="btnset">
+                            <p class="btnl t_desc04"><strong class="t_default">혜택금액 산출대상</strong> 카드는 직전 1년간 매출건수가 <strong class="t_default">가장 많은 카드</strong> 5개까지만 보여지며 전체 보유카드는  <a href="javascript:goTabPage('NHPIMMHMYC001');" class="btn_link">보유카드현황</a>을 통해<br />
+							확인하실 수 있습니다.</p>
+						</div>
+						<% } %>
+						
+<!--// 수정 101116 -->
+<!-- 추가 101022 -->
+						<div class="line_lgray">&nbsp;</div>
+						<div class="tb_exp clfix">
+							<h3 class="t_point">보유하신 카드로 받으실 수 있는 주요 혜택</h3>
+						</div>
+						<table class="dtable01" summary="나의 선호업종과 보유하신 카드의 혜택/서비스를 확인할 수 있는 게시판입니다.">
+						<caption>보유카드 주요 혜택</caption>
+						<colgroup><col width="30%" /><col width="70%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">나의 선호업종</th>
+								<th scope="col" class="cell_l10">혜택/서비스</th>
+							</tr>
+						</thead>
+						<tbody>
+						<%
+						if(RESULT_LIST2!=null && RESULT_LIST2.length > 0){
+							//for(HOMEHMV5HPP00022INRecVO1 cardInfo : RESULT_LIST){
+							for(int i=0 ; i<RESULT_LIST2.length ; i++ ){ 
+							String tempString3 = RESULT_LIST2[i].getString3().trim();	
+							
+								if ( !"0".equals(tempString3) ){	
+						%>
+							<tr>
+								<td class="cell_l10"><%=RESULT_LIST2[i].getString3()%></td>
+								<td class="cell_l10"><%=RESULT_LIST2[i].getString4()%> </td>
+							</tr>
+							<!-- // loop -->
+							<%
+								}
+							}
+						}else{
+						%>
+						<tr class="nodata">
+						<td colspan="5">조회된 데이타가 없습니다.</td>
+						</tr>
+					<%
+					}
+					%>							
+
+						</tbody>
+						</table>
+						<!-- BTN -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:go_tabSubmit('023')" class="btn btn_white"><span>&nbsp;더 많은 혜택 보기&nbsp; &gt;</span></a>
+							</p>
+						</div>						
+
+						
+<%if (intcardcnt == 0) { %>
+								<script type="text/javascript">
+								go_layerpop();
+								</script>
+<%} %>
+<!--// 추가 101022 -->
+					</div>
+				</div>
+
+</form>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+

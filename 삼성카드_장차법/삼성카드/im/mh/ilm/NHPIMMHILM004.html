@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual"><!-- 100126 -->
+					<h1><img src="/images/mh/h1_inqury_notpay.png" alt="미결제금액을 조회하실 수 있습니다" /></h1>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_deposit_views01.png" alt="조회하실 카드를 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="javascript:goIndividual()">개인카드</a></li>
+                                    <li><a href="javascript:goCorporate()">법인카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt ">개인카드, 법인카드 중 조회하실 카드를 선택하세요.</span>
+<!--						<div class="line_lgray_p0 mt20">&nbsp;</div>-->
+						<!-- btnset -->
+<!--						<div class="btnset">-->
+<!--                            <p class="btnr"><a class="btn btn_blue" href="javascript:goIndividual()"><span>조회</span></a></p>-->
+<!--						</div>-->
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img src="/images/common/img_pay_chan.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/mh/txt_notpay02.png" alt="자동이체 출금액이 현재 입금처리 중입니다." /></h2>
+							<div class="p_txt">자동이체 계좌에서 정상적으로 출금되신 경우, 입금처리는 출금일로부터<br />1~2일정도 소요되어 익일부터 금액조회가 가능합니다.</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img src="/images/common/img_pay_deny.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2 class="pt30"><img src="/images/mh/txt_notpay01.png" alt="현재 미결제된 금액이 없습니다. 감사합니다." /></h2>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img src="/images/common/img_pay_warning.jpg" alt="" /></p>
+						<div class="p_desc">
+							<div class="p_txt">
+								자동이체 계좌에서 정상적으로 출금되신 경우 카드사와<br />은행간의 출금자료 송수신관계로 1일정도 소요되어 결제예정금액 조회시<br />미결제금액으로 조회될 수 있사오니 이점 양지바랍니다.
+							</div>
+                            <div class="p_txt">결제대금을 입금하지 않으신 경우, <a href="javascript:tabSubmit('/hp/im/mh/csm002.do?method=yejungByToday');" class="a_point">여기</a>를 클릭하시기 바랍니다.</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_deposit_views03.png" alt="미결제금액을 안내드립니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="fl_left t_desc04">자동이체 계좌에서 정상적으로 출금되신 경우 카드사와 은행간의 출금자료 송수신 관계로 1일정도 소요되어 결제예정금액 조회시 미결제금액으로 조회될 수 있사오니 이점 양지바랍니다.</span>
+						</div>
+						<table class="dtable01" summary="원금,이자,수수료,연체료등의 합계로 구성된 미결제금액 안내 게시판입니다.">
+						<caption>미결제금액 안내</caption>
+						<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">원금</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10">수수료</th>
+								<th scope="col" class="cell_r10">연체료</th>
+								<th scope="col" class="cell_r10">합계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						<ol class="list_no01 mt20">
+							<li><p>은행별로 자동이체 출금액에대한 당사 입금반영 시간이 상이함에따라 전일또는 전전일에<br />입금하신 금액이 반영되어 있지 않을 수도 있습니다.</p></li>
+							<li><p><strong class="t_black">이자 </strong>: 할부 + 현금서비스 + 카드론이자<strong class="ml20 t_black">수수료 </strong>: CD기 이용 수수료 + 취급수수료 + 연회비</p></li>
+							<li><p><strong class="t_black">연체료 </strong>: 미결제로 인한 연체이자금액</p></li>
+						</ol>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goInputList()" class="btn btn_white"><span>입금내역조회 &gt;</span></a>
+                                <a href="javascript:goEmsApply()" class="btn btn_white"><span>즉시결제신청 &gt;</span></a>
+                                <a href="javascript:goCardUseList()" class="btn btn_white"><span>카드이용내역 &gt;</span></a>
+								<a href="/hp/im/mh/ilm/inputMethod1.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn btn_white" title="새창"><span>결제대금입금방법 &gt;</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_deposit_views03.png" alt="미결제금액을 안내드립니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="fl_left t_desc04">자동이체 계좌에서 정상적으로 출금되신 경우 카드사와 은행간의 출금자료 송수신 관계로 1일정도 소요되어 결제예정금액 조회시 미결제금액으로 조회될 수 있사오니 이점 양지바랍니다.</span>
+						</div>
+						<table class="dtable01" summary="원금,이자,수수료,연체료등의 합계로 구성된 미결제금액 안내 게시판입니다.">
+						<caption>미결제금액 안내</caption>
+						<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">원금</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10">수수료</th>
+								<th scope="col" class="cell_r10">연체료</th>
+								<th scope="col" class="cell_r10">합계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						<ol class="list_no01 mt20">
+							<li><p>은행별로 자동이체 출금액에대한 당사 입금반영 시간이 상이함에따라 전일또는 전전일에<br />입금하신 금액이 반영되어 있지 않을 수도 있습니다.</p></li>
+							<li><p><strong class="t_black">이자 </strong>: 할부 + 현금서비스 + 카드론이자<strong class="ml20 t_black">수수료 </strong>: CD기 이용 수수료 + 취급수수료 + 연회비</p></li>
+							<li><p><strong class="t_black">연체료 </strong>: 미결제로 인한 연체이자금액</p></li>
+						</ol>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goInputList()" class="btn btn_white"><span>입금내역조회 &gt;</span></a>
+                                <a href="javascript:goEmsApply()" class="btn btn_white"><span>즉시결제신청 &gt;</span></a>
+                                <a href="javascript:goCardUseList()" class="btn btn_white"><span>카드이용내역 &gt;</span></a>
+								<a href="/hp/im/mh/ilm/inputMethod1.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn btn_white" title="새창"><span>결제대금입금방법 &gt;</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img src="/images/common/img_pay_deny.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2 class="pt30"><img src="/images/mh/txt_notpay01.png" alt="현재 미결제된 금액이 없습니다. 감사합니다." /></h2>
+						</div>
+					</div>
+				</div>
+ 				<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

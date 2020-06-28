@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8"pageEncoding="utf-8"%>
+<%--
+
+/**
+
+ * Filename    : NHPENNOMXFAQ007.jsp
+
+ * Comment     : 삼성카드 FAQ 만족도 완료 페이지
+
+ * History     : 03/29/2010 
+
+ * Version     : 1.0
+
+ */
+
+--%>
+<%@ include file="./include/CommonHeader.jsp" %>
+<jsp:useBean id="seWebManager" class="kr.co.spectra.enomix.web.control.SeWebManager" scope="session" />
+<%
+	Params req = new Params(request, false);
+	String strLogId = blockSQLHack(req.getParam("feedLog_id"));
+
+	String strFeedBack = blockSQLHack(req.getParam("feedB"));
+	String strContents = blockSQLHack(req.getParam("contents"));
+	int iCheckFaq = Util.str2i(blockSQLHack(req.getParam("checkFaq", "0")), 0); // 0 : FAQ, 1 : TOP 10,  2: RAR
+	int nfeedback =  Util.str2i(strFeedBack);
+	int iReturn = -1;
+	
+	if(iCheckFaq <= 1)
+	{
+		// true --> One Log Id, Only One Updated
+		iReturn = seWebManager.updateFaqLog(strLogId, strFeedBack, strContents, true);
+	}
+	if(nfeedback <= 50){ 
+	%>
+	  <script type="text/javascript">
+      parent.document.getElementById("score_low").style.display="block";
+	  </script>
+<%
+	}else {
+%>
+	<script type="text/javascript">
+      parent.document.getElementById("score_high").style.display="block";
+  </script>
+<%
+	}
+%>

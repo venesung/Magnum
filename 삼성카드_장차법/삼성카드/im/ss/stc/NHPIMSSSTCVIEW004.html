@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">S.TravelCare 서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/fbsvc/4522_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSTC001M003', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M002', true);">지원 및 사례</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSTC001M003', true);"><span class="none">현재탭</span>서비스 신청하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M004', true);">가입현황 조회</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M005', true);">여행자보험</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M006', true);">FAQ</a></li>
+			<!-- 
+			<li><a href="javascript:tabSubmit('/hp/im/ss/stc/nhpimssstc001.do', null);">서비스소개</a></li>
+			<li><a href="javascript:tabSubmit('/hp/im/ss/stc/nhpimssstc002.do', null);">지원 및 사례</a></li>
+			<li class="on"><a href="javascript:tabSubmit('/hp/im/ss/stc.do?method=selectFlightPayList', null);"><span class="none">현재탭</span>서비스 신청하기</a></li>
+			<li><a href="javascript:tabSubmit('/hp/im/ss/stc.do?method=inquiryServiceApply', null);">가입현황 조회</a></li>
+			<li><a href="javascript:tabSubmit('/hp/im/ss/stc.do?method=selectInsuApplicableList', null);">여행자보험</a></li>
+			<li><a href="javascript:tabSubmit('/hp/im/ss/stc/nhpimssstc007.do', null);">FAQ</a></li>
+			-->
+		</ul>
+	</div>
+</div>
+
+
+	<!-- content_block -->
+	<div class="content_block first_none clfix">
+		<h2><img src="/images/ss/h2_stravelcard_join02.png" alt="항공, 여행 관련 결제 내역입니다" /></h2>
+		<div class="content_block_inner pos_rel">
+			<table class="dtable01" summary="선택, 업종, 가맹점 명, 가맹점번호, 승인일자, 승인번호, 승인금액, 카드번호, 카드구분으로 구성된 항공, 여행 관련 결제 내역을 확인할 수 있는 게시판입니다.">
+				<caption>항공, 여행 관련 결제 내역</caption>
+				<colgroup>
+					<col width="5%" />
+					<col width="19%" />
+					<col width="11%" />
+					<col width="11%" />
+					<col width="8%" />
+					<col width="12%" />
+					<col width="23%" />
+					<col width="8%" />
+				</colgroup><!-- 091203 -->
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">선택</th>
+						<th scope="col">업종, 가맹점 명</th>
+						<th scope="col">가맹점번호</th>
+						<th scope="col">승인일자</th>
+						<th scope="col">승인번호</th>
+						<th scope="col" class="cell_r10">승인금액</th>
+						<th scope="col">카드번호</th>
+						<th scope="col">카드구분</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10"><input type="radio" name="stc" id="label_airport<%= i %>" value="<%= i %>" disabled="disabled" title="선택" /></td>
+						<td><label for="label_airport<%= i %>">00</label></td>
+						<td class="t_no">00</td>
+						<td class="t_no">00</td>
+						<td class="t_no">00</td>
+						<td class="cell_r10"><span class="t_no">000</span> 원</td>
+						<td class="t_no">00</td>
+						<td>개인</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- 이용자 입력 시작 -->	
+	<div id="id_stravlecare_user" class="content_block clfix">
+		<h2><img src="/images/ss/h2_stravelcard_join03.png" alt="이용자 정보를 입력해 주세요" /></h2>
+		<div class="content_block_inner pos_rel">
+			<div id="id_open_companion" class="tb_exp" >
+				<span>동반자 추가를 원하시면 <strong class="t_black">동반자추가</strong> 버튼을 눌러주세요</span>
+				<span class="ab_tr">
+	                <a href="javascript:open_input_companion();" class="btn btn_white"><span>동반자추가</span></a>
+				</span>
+			</div>
+			<div id="id_close_companion"  class="tb_exp" style="display:none">
+				<span>동반자 삭제를 원하시면 <strong class="t_black">동반자삭제</strong> 버튼을 눌러주세요</span>
+				<span class="ab_tr">
+	                <a href="javascript:close_input_companion();" class="btn btn_white"><span>동반자삭제</span></a>
+				</span>
+			</div>
+			
+			<table class="dtable02 dtable_inputfield" summary="이용자신상정보(성명,영문명,관계,주민등록번호,전화번호,주소,여행목적,직업,우편물 수령) 와 여행정보(출/입국일, 목적지)를 입력 하는 게시판입니다">
+				<caption>이용자 정보 및 여행정보 입력</caption>
+				<colgroup>
+					<col width="16%" />
+					<col width="13%" />
+					<col width="28%" />
+					<col width="13%" />
+					<col width="30%" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td scope="row" rowspan="8" class="riline"><p>이용자신상정보</p></td>
+						<th scope="row" class="cell_bg riline"><p>성명</p></th>
+						<td class="riline"><p class="input_name">					
+							<input type="text" name="tempUseName" class="txt" title="성명" maxlength="10" value="" disabled="disabled" />
+						</p></td>
+						<th class="cell_bg riline"><p>영문명</p></th>
+						<td><p class="input_name">
+							<input type="text" name="tempUseEngName" class="txt" title="영문명" maxlength="30" value="" disabled="disabled" />
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>관계</p></th>
+						<td colspan="3"><p>
+						<select name="relation" title="관계" style="width:113px" disabled="disabled">
+							<option value="본인">본인</option>
+						</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>주민등록번호</p></th>
+						<td colspan="3">
+							<p class="input_idno">
+								<input type="text" name="useIdenNo1" class="txt" title="주민등록번호 앞자리" value="" maxlength="6" disabled="disabled" />
+								&nbsp;-&nbsp;
+								<input type="password" name="useIdenNo2" class="txt pw" title="주민등록번호 뒷자리" value="*******" maxlength="7" disabled="disabled" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>전화번호</p></th>
+						<td colspan="3">
+							<p class="input_phone">
+								<input type="text" name="phone1" class="txt" title="전화번호 앞자리" value="" maxlength="4" onchange="changePhoneNo();" onkeypress="checkLenN(this, 4, phone2);" onblur="checkTypesOnBlur(this, 'NUMB');"  onclick="form.phone1.value = '';" />
+								&nbsp;-&nbsp;
+								<input type="text" name="phone2" class="txt" title="전화번호 가운데자리" value="" maxlength="4" onchange="changePhoneNo();" onkeypress="checkLenN(this, 4, phone3);" onkeydown="checkLenB(this, phone1);" onblur="checkTypesOnBlur(this, 'NUMB');" onclick="form.phone2.value = '';"  />
+								&nbsp;-&nbsp;
+								<input type="text" name="phone3" class="txt" title="전화번호 뒷자리" value="" maxlength="4" onchange="changePhoneNo();" onkeydown="checkLenB(this, phone2);" onblur="checkTypesOnBlur(this, 'NUMB');" onclick="form.phone3.value = '';"  />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>주소</p></th>
+						<td colspan="3"><p>
+							<span class="input_idno">
+								<input type="text" name="homeZipCode1" class="txt" title="우편번호 앞자리" value="" onchange="changeAddress();" readonly="readonly" />
+								&nbsp;-&nbsp;
+								<input type="text" name="homeZipCode2" class="txt" title="우편번호 뒷자리" value=""  onchange="changeAddress();" readonly="readonly" />
+								<a href="javascript:searchHomeZip()" class="btn btn_s_white"><span>우편번호조회</span></a>
+							</span>
+							<span class="input_address">
+								<input type="text" name="homeAddrArea" class="txt" value="" title="주소" readonly="readonly" onchange="changeAddress();" />
+								<input type="text" name="homeAddrDist" class="txt" value="" title="상세주소" onchange="changeAddress();"  maxlength="40" />
+							</span>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>여행목적</p></th>
+						<td colspan="3"><p>
+							<label for="travel_play"><input type="radio" class="rdo" value="1" id="travel_play" name="TR_OBJ" checked="checked" title="관광" /> 관광&nbsp;&nbsp;&nbsp;</label>
+							<label for="travel_work"><input type="radio" class="rdo" value="2" id="travel_work" name="TR_OBJ" title="출장" /> 출장</label>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>직업</p></th>
+						<td colspan="3"><p>
+							<select title="직업 구분1" id="job_1" style="width:82px" onchange="joblist(this,'2','job_2');">
+								<option value="">구분1</option>
+							</select>
+							<select title="직업 구분2" id="job_2" style="width:82px"  onchange="joblist(this,3,'job_3');">
+								<option>구분2</option>
+							</select>
+							<select title="직업 구분3" id="job_3" style="width:82px" onchange="joblist(this,4,'job_4');">
+								<option>구분3</option>
+							</select>
+							<select title="직업 구분4" id="job_4" name="job_4" style="width:82px" onchange="jobGradeChange(this,'1');">
+								<option value="">구분4</option>
+							</select>
+							<input type="text" value="" name ="job_GRADE1" class="txt mr5" style="width:27px"  readonly="readonly" title="직업" />
+							<label for="not_job"><input type="checkbox" class="rdo" value="N" id="not_job" name="jobYN" onclick="jobCkeckYN()" title="무직" /> 무직</label>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline boline_c"><p>우편물 수령</p></th>
+						<td colspan="3" class="boline_c"><p>
+							<label for="post_y"><input type="radio" name="mailRecvYn" class="rdo" value="Y" id="post_y" name="post" title="예" /> 예&nbsp;&nbsp;&nbsp;</label>
+							<label for="post_n"><input type="radio" name="mailRecvYn" class="rdo" value="N" id="post_n" name="post" title="아니오" /> 아니오</label>
+						</p></td>
+					</tr>
+					<tr>
+						<td scope="row" rowspan="2" class="riline"><p>여행정보</p></td>
+						<th scope="row" class="cell_bg riline"><p>출/입국일</p></th>
+						<td colspan="3">
+							&nbsp;<fileTag:dblCalendarAddstc calendarId="hp_double_cal1" inputClass="txt" startTitle="시작일" startInputName="departDate" startInputValue='' endTitle="종료일" endInputName="entryDate" endInputValue='' crdate="${crdate}" />
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg riline"><p>목적지</p></th>
+						<td colspan="3"><p><fileTag:countrySelect selectName1="target1" selectName2="target2" /></p></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p class=" t_desc mt5">※ 반드시 출국일 이전 서비스 신청한 건에 한해 서비스 제공 가능합니다.</p>
+			<!-- 이용자 입력 끝 -->		
+	
+			<!-- 동반자 입력 시작 -->
+			<div id="id_stc_companion" style="display:none">
+				<br/>
+				<table class="dtable02 dtable_inputfield" summary="동반하는 이용자신상정보(성명,영문명,관계,주민등록번호,전화번호,주소,여행목적,직업,우편물 수령) 와 여행정보(출/입국일, 목적지)를 입력 하는 게시판입니다">
+			    	<caption>동반자 정보 및 여행정보 입력</caption>
+					<colgroup>
+						<col width="16%" />
+						<col width="13%" />
+						<col width="28%" />
+						<col width="13%" />
+						<col width="30%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<td scope="row" rowspan="8" class="riline"><p>이용자신상정보</p></td>
+							<th scope="row" class="cell_bg riline"><p>성명</p></th>
+							<td class="riline"><p class="input_name"><input type="text" name="companionUseName" class="txt" title="성명" maxlength="10" value="" onkeypress="checkTypes(this, 'HCHR');" /></p></td>
+							<th class="cell_bg riline"><p>영문명</p></th>
+							<td><p class="input_name"><input type="text" name="companionUseEngName" class="txt" title="영문명" value="" maxlength="30" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>관계</p></th>
+							<td colspan="3"><p>
+								<select name="companionRelation" title="관계" style="width:113px">
+									<option></option>
+								</select>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>주민등록번호</p></th>
+							<td colspan="3">
+								<p class="input_idno">
+									<input type="text" name="companionUseIdenNo1" class="txt" title="주민등록번호 앞자리" value="" maxlength="6" enc="on" /><!-- onkeypress="checkLenN(this, 6, companionUseIdenNo2);" onblur="checkTypesOnBlur(this, 'NUMB');" onclick="form.companionUseIdenNo1.value = '';" -->
+									&nbsp;-&nbsp;
+									<input type="password" name="companionUseIdenNo2" class="txt pw" title="주민등록번호 뒷자리" value="" maxlength="7" enc="on" /><!-- onkeydown="checkLenB(this, companionUseIdenNo1);" onblur="checkTypesOnBlur(this, 'NUMB');" onclick="form.companionUseIdenNo2.value = '';" -->
+									<a href="javascript:safeonStartOther('form','companionUseIdenNo1|companionUseIdenNo2');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_companionUseIdenNo1|companionUseIdenNo2" style="display:none;"></span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>전화번호</p></th>
+							<td colspan="3">
+								<p class="input_phone">
+									<input type="text" name="companionPhone1" class="txt" title="전화번호 앞자리" value="" maxlength="4" disabled="disabled" />
+									&nbsp;-&nbsp;
+									<input type="text" name="companionPhone2" class="txt" title="전화번호 가운데자리" value="" maxlength="4" disabled="disabled" />
+									&nbsp;-&nbsp;
+									<input type="text" name="companionPhone3" class="txt" title="전화번호 뒷자리" value="" maxlength="4" disabled="disabled" />
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>주소</p></th>
+							<td colspan="3"><p>
+								<span class="input_idno"><input type="text" name="companionHomeZipCode1" class="txt" title="우편번호 앞자리" disabled="disabled" />&nbsp;-&nbsp;<input type="text" name="companionHomeZipCode2" class="txt" title="우편번호 뒷자리" disabled="disabled" /></span><!-- <a href="javascript:searchHomeZip()" class="btn btn_s_white"><span>우편번호조회</span></a></span>  -->
+								<span class="input_address"><input type="text" name="companionHomeAddrArea" class="txt" value="" title="주소" disabled="disabled" /> <input type="text" name="companionHomeAddrDist" class="txt" value="" title="상세주소" disabled="disabled" /></span>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>여행목적</p></th>
+							<td colspan="3"><p>
+								<label for="travel_play2"><input type="radio" class="rdo" value="1" id="travel_play2" name="user_TR_OBJ" checked="checked" title="관광" /> 관광&nbsp;&nbsp;&nbsp;</label>
+								<label for="travel_work2"><input type="radio" class="rdo" value="2" id="travel_work2" name="user_TR_OBJ" title="출장" /> 출장</label>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>직업</p></th>
+							<td colspan="3"><p>
+								<select title="직업 구분1" id="jobuser_1" style="width:82px" onchange="joblistuser(this,2,'jobuser_2');">
+									<option value="">구분1</option>
+								</select>
+								<select title="직업 구분2" id="jobuser_2" style="width:82px" onchange="joblistuser(this,3,'jobuser_3');">
+									<option>구분2</option>
+								</select>
+								<select title="직업 구분3" id="jobuser_3" style="width:82px" onchange="joblistuser(this,4,'jobuser_4');">
+									<option>구분3</option>
+								</select>
+								<select title="직업 구분4" id="jobuser_4" name="jobuser_4" style="width:82px" onchange="jobGradeChange(this,'2');"> 
+									<option>구분4</option>
+								</select>
+								<input type="text" name="job_GRADE2" value="" class="txt mr5" style="width:27px" readonly="readonly" title="직업" />
+								<label for="not_job2"><input type="checkbox" class="rdo" value="N" id="not_job2" name="jobUserYN" onclick="jobUserCkeckYN()" title="무직" /> 무직</label>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline boline_c"><p>우편물 수령</p></th>
+							<td colspan="3" class="boline_c"><p>
+								<label for="post_y2"><input type="radio" name="tempCompanionMailRecvYn" class="rdo" value="Y" id="post_y2" name="post" disabled="disabled" title="예" /> 예&nbsp;&nbsp;&nbsp;</label>
+								<label for="post_n2"><input type="radio" name="tempCompanionMailRecvYn" class="rdo" value="N" id="post_n2" name="post" disabled="disabled" title="아니오" /> 아니오</label>
+							</p></td>
+						</tr>
+						<tr>
+							<td scope="row" rowspan="2" class="riline"><p>여행정보</p></td>
+							<th scope="row" class="cell_bg riline"><p>출/입국일</p></th>
+							<td colspan="3">
+								&nbsp;<fileTag:dblCalendarAddstc calendarId="hp_double_cal2" inputClass="txt" startTitle="시작일" startInputName="companionDepartDate" startInputValue='' endTitle="종료일" endInputName="companionEntryDate" endInputValue='' crdate="${crdate}" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_bg riline"><p>목적지</p></th>
+							<td colspan="3"><p>
+								<fileTag:companionCountrySelect selectName1="companionTarget1" selectName2="companionTarget2" />
+							</p></td>
+						</tr>
+					</tbody>
+				</table>		
+			</div>
+			<!-- 동반자 입력 끝 -->
+
+			<!-- btn -->
+			<div id="id_service_apply" class="btnr">
+	            <a href="javascript:go_url();" class="btn btn_blue"><span>가입</span></a>
+			</div>
+		</div>
+	</div>
+</form>
+<iframe id="dummyFrame" name="dummyFrame" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" title="빈프레임"></iframe>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+				<div class="content_block content_block_tab2 clfix">
+				<form name="frm1" method="post">
+					<div class="tab02 w810">
+						<ul>
+<!-- 2013.01.18 VOC 삭제 추가 start -->
+<!-- 
+							<li class="on">
+								<a href="javascript:goTab('/hp/im/mh/mys001.do?method=getApplyCampaignList');">나의 맞춤혜택</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTab('/hp/im/mh/mys001.do?method=getApplyCampaignList');">진행중인 행사</a></li>
+									<li><a href="javascript:goTab('/hp/im/mh/mys001.do?method=getEndCampaignList');">종료된 행사</a></li>
+								</ul>
+							</li>
+ -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">진행중인 행사</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS003','true');">종료된 행사</a></li>
+<!-- 2013.01.18 VOC 삭제 추가 end -->
+							<li><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">최대혜택조회</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의 상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일 알리미 서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');">왕대박 3 승인번호 등록</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</form>
+				</div>
+
+				<!-- content_block -->
+					<div class="content_block content_block_card">
+						<!-- 검색 시작 -->
+						<div class="mv_etcList">
+							<div class="fl_left">
+								<a href="javascript:goSubView1('L');"><img src="/images/common/ico_view_list_on.png" id="ico_view_list" alt="리스트형 보기" /></a>
+								<a href="javascript:goSubView1('I');"><img src="/images/common/ico_view_image.png" id="ico_view_image" alt="이미지형 보기" /></a>
+							</div>
+							<div class="fl_right">
+							    <a href="javascript:goSubView2('S');" class="bul_desc" id="sub_index_01">최신일 순</a>
+				                <a href="javascript:goSubView2('E');" class="bul_asc" id="sub_index_02">마감일 순</a>
+								
+								<select id="sl_page_size" title="리스트 갯수 선택" onchange="goSubViewPageSize();">
+									<option>00</option>
+								</select>
+								<input id="srch_Word" type="text" class="txt" title="검색어 입력" style="width:200px;" value="<%=srchGubun3%>" />
+								<a href="javascript:goSubView3();" class="btn btn_s_blue"><span>검색</span></a>
+							</div>
+						</div>
+						<!--// 검색 끝 -->
+						
+		<p class="mv_searchResult"><strong><%=srchGubun3 %></strong> 검색결과 총 <strong><%=vos.gettCnt() %></strong> 개의 이벤트가 있습니다.</p>
+		
+			<div class="board_list">
+		   			<table class="dtable01" summary="목록, 제목, 기간, 조회로 구성된 이벤트 목록">
+					<caption>이벤트 목록</caption>
+					<colgroup><col width="70" /><col width="*" /><col width="150" /><col width="70" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col">제목</th>
+							<th scope="col">기간</th>
+							<th scope="col">조회</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="t_no">0</td>
+ 						<td class="cell_l"><a href="#" >0</a></td>
+						<td class="t_no">0</td>
+						<td class="t_no">0</td>
+					</tr>
+					<tr class="nodata"><td colspan="4">조회된 결과가 없습니다.</td></tr>
+		   			</tbody>
+					</table>
+			</div>
+			
+			<div class="mv_EventList">
+				<ul>
+					<!-- loop -->
+					<li>
+					<dl>
+						<dt><a href="#">0000000000</a></dt>
+						<dd class="pic">
+<!-- 
+						<a href="javascript:goDetail('<%=vo.getCmsId() %>','<%=vo.getNewSeq() %>','<%=vos.getcPage() %>');">
+ -->
+						<a href="#">
+						<img src="/cms_content/hp/im/mh/mys/<%=vo.getThumbnailImg() %>" width="228" height="110" alt="00 썸네일이미지" />
+						</a>
+						</dd>
+						<dd>
+							<span>0000000</span>
+							<strong>00 ~ 00</strong>
+						</dd>
+					</dl>
+					</li>
+				</ul>	
+					 <ul>
+					 <li>
+					 	<p>조회된 결과가 없습니다.</p>
+					 </li>	
+					 </ul>
+					
+			</div>
+			
+			<div class="clear"><!-- Clear Block --></div>
+			<!-- paginate -->
+			<!-- 페이징 -->
+			<div class="paginate">
+				${_page}
+			</div>
+			<!-- //페이징 -->
+			<%}else{%>
+					<div class="calendar_txt">
+						<p class="txt"><img src="/images/et/txt_event_sorry.png" alt=" 죄송합니다. 현재 진행중인 나의 맞춤 혜택이 없습니다." /></p>
+					</div>
+			<%}%>
+		</div>
+<!-- 2013.01.18 VOC 추가 end -->
+				<!-- content_block_100224 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_listen_to_voc.png" alt="고객의 소리를 듣겠습니다" /></h2>
+					<div class="content_block_inner">
+						<div class="flag_additional"><img src="/images/mh/img_listen_to_voc.jpg" class="ab_tr" alt="" /></div>
+						<blockquote><img src="/images/mh/txt_listen_to_voc.png" alt="삼성카드 서비스에 대한 의견이 있으신가요? 삼성카드는 보다 더 나은 서비스 제공을 위하여 고객님의 의견을 듣고 있습니다. 항상 고객님의 의견에 귀 기울이겠습니다." /></blockquote>
+						<div class="btnset">
+                            <p class="btnl"><a href="javascript:goView();" class="btn btn_white" title="의견작성하기새창"><span>의견작성하기</span></a></p>
+						</div>
+					</div>
+				</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

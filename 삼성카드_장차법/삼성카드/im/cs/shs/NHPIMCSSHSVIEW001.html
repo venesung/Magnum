@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_revocation_request.png" alt="삼성카드 해지를 신청합니다." /></h1>
+				</div>
+				<div class="content_block content_block_card clfix">	<!-- 100402 -->
+					<p class="mt30"><img src="/images/cs/step_cancel_card01.png" alt="삼성카드회원 해지 카드 번호 입력" /></p>
+					<!--ol class="none">
+						<li><abbr>현재단계</abbr><strong>삼성카드회원 해지 카드번호 입력</strong></li>
+						<li>삼성카드회원 해지 신청내용 확인</li>
+					</ol-->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<h2><img src="/images/cs/h2_terminate_cardnum_type.png" alt="삼성카드회원 해지하실 카드 정보를입력해주세요." /></h2>
+					<div class="content_block_inner pos_rel">
+						<table class="dtable02 dtable_inputfield mt20" summary="해지하실 카드 성명, 주민등록번호, 카드선택, 카드 CVC번호, 카드 비밀번호등을 입력하는 게시판입니다.">
+						<caption>해지하실 카드 정보 입력</caption>
+						<colgroup><col width="17%" /><col width="30%" /><col width="17%" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>성명</p></th>
+								<td><p><%=userName%></p></td>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p class="t_no"><%=deJumin.substring(0,6) %>-xxxxxxx</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td colspan="3">
+<!-- SR내역 12.12.20 -->
+									<p class="mt5">
+										<label for="label_cardno01"><input type="radio" id="label_cardno01" name="cType" value="1" onclick="selCardType(this.value)" title="비자/마스터/UnionPay(은련)/자체카드" />비자/마스터/UnionPay(은련)/자체카드</label>
+									</p>
+<!--// SR내역 12.12.20 -->
+									<p class="mt5">
+										<span class="input_cardno">
+										XXXX-XXXX-
+										<input name="cardNo1" type="text" class="txt" value="" title="카드번호 세번째 네자리"
+
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled"
+										maxlength="4" readonly="readonly" enc="on" />&nbsp;-&nbsp;
+										<input name="cardNo2" type="text" class="txt" value="" title="카드번호 네번째 네자리"
+
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled"
+										maxlength="4" readonly="readonly" enc="on" />
+										<span class="t_desc04 ml10">(카드 번호 뒤 8자리)</span>
+										<!--label for="label_cardno01">
+										<input id="label_cardno01" type="radio" name="cType" value="1" onclick="selCardType(this.value)">
+										비자/마스터/UnionPay(은련)/자체카드</label--><!-- SR내역 12.12.20 -->
+										</span>
+										<span id="usafeon_cardNo1|cardNo2" style="display:none"></span>
+									</p> 
+<!-- SR내역 12.12.20 -->
+									<p class="mt5">
+										<label for="label_cardno02"><input id="label_cardno02" type="radio" name="cType" value="2" onclick="selCardType(this.value)" title="아멕스카드" />아멕스카드</label>
+									</p>
+<!--// SR내역 12.12.20 -->
+									<p class="mt5">
+										<span class="input_cardno">
+										XXXX-XXX-
+										<input name="amexNo1" type="text" class="txt" value="" title="카드번호 세번째 네자리"
+
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled"
+										maxlength="3" readonly="readonly" enc="on" />&nbsp;-&nbsp;
+										<input name="amexNo2" type="text" class="txt" value="" title="카드번호 네번째 네자리"
+
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled"
+										maxlength="5" readonly="readonly" enc="on" />
+										<span class="t_desc04 ml10">&nbsp;&nbsp; (카드 번호 뒤 8자리)</span>
+										<!--label for="label_cardno02">
+										<input id="label_cardno02" type="radio" name="cType" value="2" onclick="selCardType(this.value)">
+										아멕스카드</label-->
+										</span>
+										<span id="usafeon_amexNo1|amexNo2" style="display:none"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td colspan="3"><p class="input_2char">
+								<input name="cardPwd" type="password"
+
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								class="txt" maxlength="2" title="카드 비밀번호 입력" enc="on" />
+								<em>**</em>카드 비밀번호 앞 2자리 <span id="usafeon_cardPwd"></span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td colspan="3"><p class="input_2char">
+								<input name="cardCvc" type="password"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								class="txt" maxlength="3" title="카드 CVC번호 3자리 입력" enc="on" />(카드CVC번호 3자리) <span id="usafeon_cardCvc"></span></p></td>
+							</tr>
+							<tr>
+								<td><p>공인인증서</p></td>
+								<td colspan="3"><p>공인인증서는 필수사용입니다.
+                                <a href="javascript:vidInfo(2);" class="btn btn_s_white" title="새창"><span>공인인증서사용방법</span></a>
+                                <a href="javascript:vidInfo(1);" class="btn btn_s_white" title="새창"><span>사용가능한공인인증서</span></a></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+                            <a href="javascript:chkForm();" class="btn btn_blue"><span>조회</span></a>
+						</div>
+
+						<dl class="cvc_view cvc_view_noborder">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" src="/images/ss/img_cvc.jpg" /></dd>
+						</dl>
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+
+<title>웹멤버가입 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+<link rel="stylesheet" type="text/css" href="/css/al.css" />
+<script type="text/javascript" src="/js/al/common-hp-al.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common-hp-util.js"></script>
+
+<script type="text/javascript" language="javascript">
+	function joinChainMember(){
+		var frame = document.form1;
+		if(validation()){
+			frame.businessNo.value = frame.businessNo1.value+frame.businessNo2.value+frame.businessNo3.value; 
+			if(document.form1.businessGubun[0].checked) {
+				frame.businessGubunValue.value = "1"; //개인사업자			
+			} else {
+				frame.businessGubunValue.value = "2"; //법인 사업자
+			}				
+			
+			frame.action="/chainmember.do?method=insertChainMember";
+            frame.onSubmit='this.submit();';
+			//frame.submit();
+            form1.submit();
+		}
+	}
+
+	function validation() {
+		var frame = document.form1;
+    	var IDchk = false;
+
+    	if(!checkMaxLength(frame.userName.value, 30)){
+			//alert('가맹점명은 30바이트 이하만 등록이 가능합니다. 글자수를 조정해 주세요.');
+			alert('가맹점명은 13글자 이하만 등록이 가능합니다. 글자수를 조정해 주세요.');
+			return false;
+    	}
+    	
+		var flag = (
+			checkString(frame.userName, "가맹점명") &&		
+			checkisinteger(form1.chainNo,"가맹점번호") &&	
+			checkisinteger(form1.businessNo1,"사업자등록번호") &&
+			checkLengthInteger(form1.businessNo1,"사업자등록번호",3) &&
+			checkisinteger(form1.businessNo2,"사업자등록번호") &&
+			checkLengthInteger(form1.businessNo2,"사업자등록번호",2) &&
+			checkisinteger(form1.businessNo3,"사업자등록번호") &&
+			checkLengthInteger(form1.businessNo3,"사업자등록번호",5) &&
+			checkisinteger(form1.idenNo,"사업자 주민번호") &&
+			checkLengthInteger(form1.idenNo,"사업자 주민번호",13) &&
+			checkString(form1.userId, "멤버십 ID") &&
+			checkLength(form1.userId, "멤버십 ID",6) &&
+			checkString(form1.userPassword, "멤버십 비밀번호") &&
+			checkLength(form1.userPassword, "멤버십 비밀번호",8) &&
+			checkIDHan(form1.userPassword, "멤버십 비밀번호") &&
+			checkString(form1.userPasswordRe, "멤버십 비밀번호 확인") &&		
+			checkLength(form1.userPasswordRe, "멤버십 비밀번호 확인",8) &&		
+			checkIDHan(form1.userPasswordRe, "멤버십 비밀번호 확인") &&
+			AllowNum() &&
+	        check_valid_login_Passwd(form1.userPassword,form1.userPasswordRe) &&
+		    passChk(form1.userId.value, form1.userPassword.value) &&
+			passChk(form1.userId.value, form1.userPasswordRe.value));
+		if(!flag) return false;	
+
+		if(flag) {
+			if (form1.idCheck.value !="Y"){
+				alert("ID 중복확인 버튼을 클릭하여 주십시요.");
+				return false;				
+			} else {
+				IDchk=true;
+			}
+		}
+    	frame.businessNo.value = frame.businessNo1.value+frame.businessNo2.value+frame.businessNo3.value; 
+    	if(!isBizNo(frame.businessNo)){
+			alert("사업자등록번호가 유효하지 않습니다.");
+			return false;
+    	}
+
+		if(!checkPassword()){
+			return false;
+		}
+    	
+    	frame.email.value = frame.email1.value + '@' +frame.email2.value;
+		if(!vfCheckEmail(frame.email.value)){
+			alert("이메일이 올바르지 않습니다. 다시 입력하십시요.");
+			return false;
+		}
+		
+
+    	return true;
+		
+	}
+	function checkEmail1 (theField, emptyOK) {   
+		if (checkEmail1.arguments.length == 1) emptyOK = defaultEmptyOK;
+	    if ((emptyOK == true) && (isEmpty(theField.value))) return true;
+	    else if (!isEmail(theField.value, false)) 
+	       return false;
+	    else return true;
+	}
+	    
+	function AllowNum(){
+		var len = 0;
+		var str = document.form1.userId.value; 
+		var code = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		
+		for (var i=0; i<str.length; i++) {
+			var ch = str.charAt(i);
+			if (code.indexOf(ch)<0) {
+				alert("영문이나 숫자를 입력해 주십시요");
+				document.form1.userId.value = ""; 
+				document.form1.userId.focus();
+				return false;
+			}
+		}
+		return true;
+	}
+      
+	function checkLength ( theField, s, Length)  {
+		if (theField.value.length < Length  ) {
+			theField.focus();
+	        theField.select();
+	        alert( Length+"글자 이상이어야 합니다.");
+			return(false);
+		}
+	    return(true);
+	}
+
+	function checkPassword() {
+		var len = document.form1.userPassword.value ;
+	   	var p_id   = document.form1.userPassword.value;
+		if(/[0-9]+/.test(p_id) == false ) {
+			alert("비밀번호에 영문과 숫자를 혼용하여 주십시오.");
+			document.form1.userPassword.focus();
+			return false;
+		}
+		if(/[a-zA-Z]+/.test(p_id) == false ) {
+			alert("비밀번호에 영문과 숫자를 혼용하여 주십시오.");
+			document.form1.userPassword.focus();
+			return false;
+		}
+		if(/[\s]+/.test(p_id) == true) {
+			alert("비밀번호에 빈칸이 있습니다.");
+			document.form1.userPassword.focus();
+			return false;
+		}
+		return true;
+	}
+
+	function checkEnter() {
+		if (event.keyCode==13) {
+			validation(self.document.form1);
+		} 
+	}
+
+	function  passChk(p_id,p_pass) {
+		obj = document.form1.userPassword;	
+		var cnt=0,cnt2=1,cnt3=1;
+		var temp="";
+		for(i=0;i < p_id.length;i++) {
+			temp_id =p_id.charAt(i);
+	    	for(j=0;j < p_pass.length;j++) {
+	    		if (cnt >0)
+	    			j=tmp_pass_no+1;
+	    		if (temp == "r") {
+	    			j=0;
+	    			temp="";
+	    		}
+	    					
+	    		temp_pass = p_pass.charAt(j);
+	    		if (temp_id == temp_pass) {
+	    			cnt = cnt + 1;    			  	    
+	    			tmp_pass_no = j;
+	    			break;
+				} else if(cnt > 0 && j > 0) {
+	    			temp="r";
+	    			cnt = 0;
+	    		} else
+	    			cnt = 0;
+	    	}
+	    	if (cnt > 3) break;
+	    }
+	    	
+		if (cnt > 3) {
+			alert("비밀번호가 ID와 4자 이상 중복되거나, \n연속된 글이나 순차적인 숫자를 4개이상 사용해서는 안됩니다.");
+			obj.focus();
+			return  false;
+	   	}
+	   	for(i=0;i < p_pass.length;i++) {
+	   		temp_pass1 = p_pass.charAt(i);
+	   		next_pass = (parseInt(temp_pass1.charCodeAt(0)))+1;
+	   		temp_p = p_pass.charAt(i+1);
+	   		temp_pass2 = (parseInt(temp_p.charCodeAt(0)));
+	   		if (temp_pass2 == next_pass)
+	   			cnt2 = cnt2 + 1;
+	   		else
+	   			cnt2 = 1;
+	   		if (temp_pass1 == temp_p)
+	   			cnt3 = cnt3 + 1;
+	   		else
+	   			cnt3 = 1;
+	   		if (cnt2 > 3) break;
+	   		if (cnt3 > 3) break;
+	   	}
+	   	if (cnt2 > 3) {
+			alert("비밀번호에 연속된 글이나 순차적인 숫자를 4개이상 사용해서는 안됩니다.");
+			obj.focus();
+			return  false;
+	   	}
+	   	if (cnt3 > 3) {
+			alert("비밀번호에 반복된 문자/숫자를 4개이상 사용해서는 안됩니다.");
+			obj.focus();
+			return  false;
+	   	}
+		return true;
+	}
+
+	function checkEmail1 (theField, emptyOK) {   
+		if (checkEmail1.arguments.length == 1) emptyOK = defaultEmptyOK;
+	    if ((emptyOK == true) && (isEmpty(theField.value))) return true;
+	    else if (!isEmail(theField.value, false)) 
+	       return false;
+	    else return true;
+	}
+	    
+	function sel(field)  //이메일 선택
+	{	
+		var index = field.selectedIndex;
+		var str = field[index].value;
+		
+		var frame = document.form1;
+		
+		if (str == "99") {
+			frame.email2.disabled = false;
+			frame.email2.value = "";
+			frame.email2.focus();
+		} else if (str == "") {
+			frame.email2.disabled = true;
+			frame.email2.value = "";
+		} else {
+			frame.email2.disabled = true;
+			frame.email2.value = str;
+		}
+	}
+
+	function checkId()
+	{
+		if(!AllowNum()){
+			return;
+		}
+		
+		var len = document.form1.userId.value.length ;
+	 	var id  = document.form1.userId.value;
+		if(/[0-9]+/.test(id) == false ){
+			alert("영문과 숫자를 혼용하여 주십시오.");
+			document.form1.userId.focus();
+			return;
+		}
+		if(/[a-zA-Z]+/.test(id) == false ){
+			alert("영문과 숫자를 혼용하여 주십시오.");
+			document.form1.userId.focus();
+			return;
+		}
+		if(/[\s]+/.test(id) == true){		
+			alert("빈칸이 있습니다.");
+			document.form1.userId.focus();
+			return;
+		}
+		if ( len > 5 ) {
+            var url='<c:url value="/pmj.do?method=checkId" />&userId='+document.form1.userId.value;
+			var state = "scrollbars=yes,resizable=no,width=600,height=600";
+			window.open(url, '', state);
+		} else {
+			alert(" 아이디는 6자 이상 가능합니다. 아이디를 입력해 주십시요. ");
+			return ;
+		}
+	}
+
+	function idChange(){
+		document.form1.idCheck.value= "N";
+	}
+
+	function bgubunChange() {
+		if(document.form1.businessGubun[0].checked) {
+			document.getElementById("businessNoDiv").style.display="block"; 
+			document.getElementById("businessNoDiv2").style.display="none";			
+		} else {
+			document.getElementById("businessNoDiv2").style.display="block"; 
+			document.getElementById("businessNoDiv").style.display="none";
+		}	
+	}
+</script>
+
+</head>
+<body>
+<form name='xecure'><input type="hidden" name="p" /></form>
+<form name="form1" method="post" autocomplete="off">
+<input type="hidden" name="idCheck" />
+<input type="hidden" name="businessGubunValue" value="" />
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	<!-- header -->
+	<fileTag:alTopMenuView topMenuGubun="0" />
+
+	<div id="con_wrap" class="clfix">
+		<!-- left -->
+		<fileTag:alLeftMenuView leftMenuGubun="6" leftOrderGubun="3" />
+		<div id="content">
+			<!-- top_visual 100423디비젼전체 -->
+			<div class="top_visual">
+				<div id="location">웹멤버&nbsp;&gt;&nbsp;웹멤버가입</div>
+				<h1><img src="/images/al/h1_joinin_affl.png" alt="가맹점 회원가입" /></h1>
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p>
+			</div>
+
+			<div class="top_step_join top_step_join02">
+				<ol class="none">
+					<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+					<li><abbr>현재단계</abbr> <strong>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</strong></li>
+					<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+				</ol>
+			</div>					
+
+			<!-- content_block -->
+			<div class="content_block content_block_bo0 clfix">
+				<div class="content_block_inner fill_joinin">
+					<div class="tb_exp clfix">
+						<p><img src="/images/al/txt_join01.png" alt="Samsungcard.com은 개인정보보호 우수사이트마크(ePRIVACY)를 획득한 사이트입니다. 회원님께서 제공해 주신 개인정보 보호를 안전하게 관리하기 위해 최선을 다하겠습니다." /></p>
+					</div>
+					<div class="line_lgray"></div>
+					<div class="tb_exp clfix">
+						<span class="t_black"><strong>가맹점 확인정보</strong></span>
+					</div>
+					<table class="dtable02 dtable_inputfield " summary="가맹점 명,가맹점 번호,사업자등록 번호,사업자 구분,대표자 주민번호 또는 법인등록번호 등 가맹점 확인정보를 입력 할 수 있는 게시판입니다.">
+					<caption>가맹점 확인정보</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_merchant_name">가맹점 명</label></th>
+							<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="가맹점 명" id="label_merchant_name" maxlength="25" name="userName" /><span class="t_desc ml10">예 : 행복의 집</span></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_merchant_num">가맹점 번호</label></th>
+							<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="가맹점 번호" id="label_merchant_num" maxlength="12" name="chainNo" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /><span class="t_desc ml10">하이픈”-” 없이 입력해 주세요</span></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_com_num">사업자등록 번호</label></th>
+							<td class="cell_l"><p class="input_com_num">
+                            <input type="text" class="txt" value="" title="사업자 번호 앞자리" id="label_com_num" maxlength="3" name="businessNo1" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />&nbsp;-&nbsp;
+                            <input type="text" class="txt" value="" title="사업자 번호 가운데자리" id="label_com_num2" maxlength="2" name="businessNo2" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" onKeyDown="checkLenB(this, form1.businessNo1);" style="ime-mode:disabled" />&nbsp;-&nbsp;
+                            <input type="text" class="txt" value="" title="사업자 번호 뒷자리" id="label_com_num3" maxlength="5" name="businessNo3" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />
+							<input type="hidden" name="businessNo" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><p>사업자 구분</p></th>
+							<td class="cell_l">
+								<label for="label_company_directdebit01"><input type="radio" class="chk" id="label_company_directdebit01" name="businessGubun" checked="checked" onClick="bgubunChange();" />개인 사업자</label>
+								<label for="label_company_directdebit02"><input type="radio" class="chk" id="label_company_directdebit02" name="businessGubun" onClick="bgubunChange();" />법인 사업자</label>
+								
+							</td>							
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_com_jumin" style="display:block;">
+							<div id="businessNoDiv" name="businessNoDiv">대표자 주민번호</div>
+							<div id="businessNoDiv2" name="businessNoDiv2" style="display:none">법인등록번호</div>
+							</label></th>
+							<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="사업자 주민번호" id="label_com_jumin" name="idenNo" maxlength="13" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this,'NUMB');" style="ime-mode:disabled" /><span class="t_desc ml10">하이픈”-” 없이 입력해 주세요</span></p></td>
+						</tr>
+					</tbody>
+					</table>
+					<div class="btnset">
+						<div class="btnl t_desc04">사업자주민번호 입력 시 일반가맹점인 경우 대표자 주민번호 입력, 법인가맹점인 경우 법인등록번호 입력을 해주십시오.
+						</br><b>미등기법인인 경우에는 대표자 주민번호를 법인등록번호에 입력하십시요.</b>
+						</div>
+					</div>
+					
+					<div class="tb_exp clfix mt20">
+						<span class="t_black"><strong>웹 멤버십 정보</strong></span>
+					</div>
+					<table class="dtable02 dtable_inputfield " summary="멤버십 ID,비밀번호,비밀번호 확인,이메일 주소 등 웹 멤버십 정보를 입력 할 수 있는 게시판입니다.">
+					<caption>웹 멤버십 정보</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_membership_id">멤버십 ID</label></th>
+							<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="멤버십 ID" id="label_membership_id" name="userId" maxlength="12" style="ime-mode:disabled"  onchange="idChange();" /><a href="javascript:checkId();" class="btn btn_white" id="label_idcheck"><span>아이디 중복확인</span></a></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_userPassword">비밀번호</label></th>
+							<td class="cell_l"><p class="input_name"><input type="password" class="txt" value="" title="비밀번호" id="label_userPassword" name="userPassword" maxlength="12" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_userPassword2">비밀번호 확인</label></th>
+							<td class="cell_l"><p class="input_name"><input type="password" class="txt" value="" title="비밀번호 확인" id="label_userPassword2" name="userPasswordRe" maxlength="12" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_email01">이메일 주소</label></th>
+							<td class="cell_l">
+								<span class="input_email">
+								<input type="hidden" name="email" onKeyDown="checkEnter()" value="" />
+									<input type="text" class="txt" value="" title="이메일명"  id="label_email01" name="email1" maxlength="20" style="ime-mode:disabled" />&nbsp;@&nbsp;
+									<input type="text" class="txt" value="" title="이메일공급자 직접입력"  id="label_email02" name="email2" maxlength="20" style="ime-mode:disabled" disabled="disabled" />
+									<select title="이메일공급자선택" id="label_email03" onChange="sel(this)" name="email3">
+									  <option value="" selected="selected">선택</option>
+									  <option value="dreamwiz.com">드림위즈</option>
+									  <option value="empal.com">엠팔</option>
+									  <option value="hanmail.net">한메일(다음)</option>
+									  <option value="hotmail.com">hotmail</option>
+									  <option value="korea.com">코리아</option>
+									  <option value="lycos.co.kr">라이코스</option>
+									  <option value="nate.com">네이트</option>
+									  <option value="naver.com">네이버</option>
+									  <option value="netian.com">네띠앙</option>
+									  <option value="orgio.net">오르지오</option>
+									  <option value="paran.com">파란</option>
+									  <!--option value="yahoo.co.kr">야후</option-->
+									  <option value="99">직접입력</option>
+									</select>
+								</span>
+								<p class="t_desc03 mt10">핫메일(Hotmail을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+                    <p class="btnc"><a href="javascript:joinChainMember();"><img src="/images/common/btn_joinin_finish.jpg" alt="가입완료" /></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<jsp:include page="/WEB-INF/jsp/hp/al/NHPALFOOTER.jsp" flush="false"></jsp:include>
+
+</div>
+</form>
+</body>
+</html>

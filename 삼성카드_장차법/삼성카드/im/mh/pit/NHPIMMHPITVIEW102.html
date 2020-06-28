@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+    <div class="content_block_inner">
+        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block first_none clfix">
+    <div class="tab02 w810">
+        <ul>
+            <li><a href="javascript:goTabPage('NHPIMMHPIT001', true);">포인트 사용 Tip</a></li>
+            <li class="on"><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);">포인트 적립기준/세부 내용</a>
+                <!-- ul class="sub_tab sub_tab2">
+                    <li class="${pid=='C1'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);">보너스포인트</a></li>
+                    <li class="${pid=='C2'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C2', true);">빅포인트</a></li>
+                    <li class="${pid=='C11'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C11', true);">아멕스멤버쉽리워드</a></li>
+                    <li class="${pid=='C3'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C3', true);">서비스포인트</a></li>
+                    <li class="${pid=='C4'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C4', true);">디지털세이브</a></li>
+                    <li class="${pid=='C5'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C5', true);">S마일</a></li>
+                    <li class="${pid=='C6'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C6', true);">골프포인트</a></li>
+                    <li class="${pid=='C7'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C7', true);">e머니포인트</a></li>
+                    <li class="${pid=='C8'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C8', true);">지엠대우포인트</a></li>
+                    <li class="${pid=='C9'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C9', true);">자동차포인트</a></li>
+                    <li class="${pid=='C10'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C10', true);">제주항공포인트</a></li>
+                    <li class="${pid=='C12'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C12', true);">카앤모아주유포인트</a></li>
+                    <li class="${pid=='C13'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C13', true);">S골프포인트</a></li>
+                    <li class="${pid=='C14'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C14', true);">코스트코 포인트</a></li>
+                    <li class="${pid=='C15'?'on':''}"><a href="javascript:goTabPage('NHPIMMHPITV102C15', true);">S포인트</a></li>
+                </ul-->
+            </li>
+        </ul>
+    </div>
+    
+    <!-- 여기서부터 시작 -->
+					<p class="conts_hidden">세이브의 종류</p>
+					
+					<ul class="mv_subTabType1 mv_PointInq mt20">
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);"  class="${pid=='C1'?'tab1 on':'tab1'}"><span>보너스포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C2', true);"  class="${pid=='C2'?'tab2 on':'tab2'}" ><span>빅포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C11', true);" class="${pid=='C11'?'tab3 on':'tab3'}" ><span>아멕스멤버쉽리워드</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C3', true);" class="${pid=='C3'?'tab4 on':'tab4'}"><span>서비스포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C4', true);" class="${pid=='C4'?'tab5 on':'tab5'}"><span>디지털세이브</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C5', true);" class="${pid=='C5'?'tab6 on':'tab6'}"><span>S마일</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C6', true);" class="${pid=='C6'?'tab7 on':'tab7'}"><span>골프포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C7', true);" class="${pid=='C7'?'tab8 on':'tab8'}" ><span>e머니포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C8', true);" class="${pid=='C8'?'tab9 on':'tab9'}" ><span>지엠대우포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C9', true);" class="${pid=='C9'?'tab10 on':'tab10'}"><span>자동차포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C10', true);" class="${pid=='C10'?'tab11 on':'tab11'}"><span>제주항공포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C12', true);" class="${pid=='C12'?'tab12 on':'tab12'}"><span>카엔모아주유포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C13', true);" class="${pid=='C13'?'tab13 on':'tab13'}"><span>S골프포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C14', true);" class="${pid=='C14'?'tab14 on':'tab14'}"><span>코스트코포인트</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMMHPITV102C15', true);" class="${pid=='C15'?'tab15 on':'tab15'}" ><span>S포인트</span></a></li>
+					</ul>
+<!-- 여기까지 끝 -->
+    
+</div>
+
+<cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW102${pid}.html" flush="false" />
+                <!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

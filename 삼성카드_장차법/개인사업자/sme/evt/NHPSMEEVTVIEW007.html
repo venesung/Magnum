@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<%@ taglib uri="/WEB-INF/cms.tld" prefix="cms" %>
+<%@ page import="com.scard.hp.im.et.evt.vo.ITCMEVENTTTVO" %>
+<%@ page import="com.scard.hp.im.et.evt.vos.NHPIMETEVT001VOS" %>
+<%@ page import="com.scard.common.util.paging.*" %>
+<%@ page import="com.scard.hp.common.util.HpCommonUtil"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.scard.common.util.TimeUtil"%>
+
+
+<%		
+		
+		String srchGubun1 = "".equals(request.getParameter("srchGubun1")) ||request.getParameter("srchGubun1")==null?"":request.getParameter("srchGubun1") ;
+		String srchGubun2 = "".equals(request.getParameter("srchGubun2")) ||request.getParameter("srchGubun2")==null?"":request.getParameter("srchGubun2") ;
+		String srchGubun3 = "".equals(request.getParameter("srchGubun3")) ||request.getParameter("srchGubun3")==null?"":request.getParameter("srchGubun3") ;
+		String srchGubun4 = "".equals(request.getParameter("srchGubun4")) ||request.getParameter("srchGubun4")==null?"":request.getParameter("srchGubun4") ;
+		String srchGubun5 = "".equals(request.getParameter("srchGubun5")) ||request.getParameter("srchGubun5")==null?"":request.getParameter("srchGubun5") ;
+		String srchGubun7 = "".equals(request.getParameter("srchGubun7")) ||request.getParameter("srchGubun7")==null?"":request.getParameter("srchGubun7") ;
+		String srchGubun6 = "".equals(request.getParameter("srchGubun6")) ||request.getParameter("srchGubun6")==null?"":request.getParameter("srchGubun6") ;
+		String tab_index = "".equals(request.getParameter("tab_index")) ||request.getParameter("tab_index")==null?"000":request.getParameter("tab_index") ;
+		String cPage = "".equals(request.getParameter("cPage")) ||request.getParameter("cPage")==null?"1":request.getParameter("cPage") ;
+		String detailNo = "".equals(request.getParameter("detailNo")) ||request.getParameter("detailNo")==null?"1":request.getParameter("detailNo") ;
+		//srchGubun1 = "999";
+		
+		//상위탭(srchGubun1->000(진행중), ->604(종료), ->999(당첨))
+		String temp_lavel2 = "";
+		if(srchGubun1.equals("999")){
+			temp_lavel2 = "02";
+		}else if(srchGubun1.equals("604")){
+			temp_lavel2 = "01";
+		}else{
+			temp_lavel2 = "00";
+		}
+		
+	   	String today = TimeUtil.CurrentTime("yyyyMMdd");
+		if (!"".equals(srchGubun7)) {
+			today= srchGubun7;
+		}
+
+//	ArrayList<ITCMEVENTTTVO> al = (ArrayList<ITCMEVENTTTVO>)request.getAttribute("al");
+%>		
+
+<div id="tab_script">
+<script type="text/javascript" src="/js/common-hp-calendar.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var rollBanner = "Y";
+function $tabOnLoad() {
+	//이전 20000927
+	//이후 20500927
+	generate_calIf2("<%= today %>", "search_layer", "start", "srchGubun7", "d_calender", null, null); 
+}
+
+function searchDay(date){
+
+	var frm = document.frm;
+	frm.srchGubun7.value=date;
+
+	this.goView();
+}
+
+function goView(){
+	try{
+
+	var iframe = document.iframe;
+	var frm = document.frm;
+	var url = "/smeevent.do?method=getEventList";
+ 
+
+	//상위탭(srchGubun1->000(진행중), ->604(종료), ->999(당첨))
+	if(frm.lavel2.value=="00" || frm.srchGubun1.value == "000"){
+		//document.getElementById("sub_index1").className="on";
+		//document.getElementById("sub_index2").className="";
+		//document.getElementById("sub_index3").className="";
+		url+="&srchGubun1=000";
+	}else if(frm.lavel2.value=="01" || frm.srchGubun1.value == "604"){
+		document.getElementById("sub_index1").className="";
+		document.getElementById("sub_index2").className="on";
+		document.getElementById("sub_index3").className="";
+		url+="&srchGubun1=604&srchGubun5="+frm.srchGubun5.value;
+		document.getElementById("srchGubun1").value="604";
+	}else if(frm.lavel2.value=="02" || frm.srchGubun1.value == "999"){
+		document.getElementById("sub_index1").className="";
+		document.getElementById("sub_index2").className="";
+		document.getElementById("sub_index3").className="on";
+		url="/hp/im/et/evt.do?method=getPartnerEventList&amp;srchGubun1=999&amp;srchGubun4="+document.getElementById("srchGubun4").value;
+	} 
+
+
+	 url+="&amp;srchGubun7="+document.getElementById("srchGubun7").value;
+	
+	//하위탭(전체/지역/제휴사)
+	if(frm.lavel1.value=="001"){
+		 url+="&srchGubun3=IE";
+		 url+="&srchGubun6="+frm.srchGubun6.value;
+		 document.getElementById("srchGubun3").value="IE";
+	} if(frm.lavel1.value=="004"){
+		 url="/hp/im/et/evt.do?method=getEndEventList";
+	} if(frm.lavel1.value=="005") {
+		url="/hp/im/et/evt.do?method=getEventWinList";
+	}
+	alert(url);
+	iframe.location.href=url;
+	
+	}catch(e){alert(e);}
+	
+}
+function goSubView1(str1){
+
+	var frm = document.frm;
+	frm.lavel2.value=str1;
+	frm.srchGubun1.value = "";
+	this.goView();
+}
+
+function goSubView2(str2){
+	var frm = document.frm;
+	
+	frm.lavel3.value=str2;
+	frm.srchGubun1.value = "";
+	this.goView();
+}
+
+//Main Body Resizing
+function autoResize(i)
+{
+    var iframeHeight=
+    (i).contentWindow.document.body.scrollHeight;
+    (i).height=iframeHeight+50;
+}	
+
+function goList(){
+	tabSubmit('/hp/im/et/evt/viewNHPIMETEVT010.do', "");
+}
+
+function inputData(str){
+	document.getElementById("srchGubun4").value = str;
+}
+
+
+function goEventList1(str){
+	tabSubmit('/hp/im/et/evt/viewNHPIMETEVT001.do?tab_index=001', "");
+}
+
+function goEventList2(){
+	tabSubmit('/hp/im/et/evt/viewNHPIMETEVT001.do?tab_index=004', "");
+}
+
+function goDetail(str){
+	rollBanner = "N";
+	tabSubmit('/hp/im/et/evt.do?method=getEventDetail&cmsSeq='+str, "");
+}
+//]]>
+</script>
+</div>
+ 
+
+<form name= "frm">
+	<input type="hidden" name="lavel1" value="<%=tab_index %>" />
+	<input type="hidden" name="lavel2" value="<%=temp_lavel2%>" />
+	<input type="hidden" name="lavel3" value="" />
+	<input type="hidden" name="srchGubun1" value="<%=srchGubun1%>" />
+	<input type="hidden" name="srchGubun2" value="" />
+	<input type="hidden" name="srchGubun3" value="" />
+	<input type="hidden" name="srchGubun4" value="" />
+	<input type="hidden" name="srchGubun5" value="<%=srchGubun5%>" />
+	<input type="hidden" name="srchGubun7" value="" />
+	<input type="hidden" name="srchGubun6" />
+	<input type="hidden" name="detailNo" />
+</form> 
+
+
+				<!-- content_block --> 
+
+<% if(srchGubun1.equals("999")){ %>		
+						<iframe height="100%" width="100%" name="iframe" onLoad="javascript:autoResize(this);" src="/smeevent.do?method=getPartnerEventList&srchGubun1=<%=srchGubun1%>&srchGubun2=<%=srchGubun2%>&srchGubun3=<%=srchGubun3%>&srchGubun4=<%=srchGubun4%>&srchGubun5=<%=srchGubun5%>&tab_index=<%=tab_index%>" frameborder="0" marginwidth="0" scrolling="no" title="이벤트 리스트 컨텐츠"></iframe>
+<% }else{ %>				
+						<iframe height="100%" width="100%" name="iframe" onLoad="javascript:autoResize(this);" src="/smeevent.do?method=getEventList&srchGubun1=<%=srchGubun1%>&srchGubun2=<%=srchGubun2%>&srchGubun3=<%=srchGubun3%>&srchGubun4=<%=srchGubun4%>&srchGubun5=<%=srchGubun5%>&srchGubun7=<%=srchGubun7%>&srchGubun6=<%=srchGubun6%>&tab_index=<%=tab_index%>&cPage=<%=cPage %>&detailNo=<%=detailNo%>" frameborder="0" marginwidth="0" scrolling="no"  title="이벤트 컨텐츠"></iframe>
+<% }%>	
+					

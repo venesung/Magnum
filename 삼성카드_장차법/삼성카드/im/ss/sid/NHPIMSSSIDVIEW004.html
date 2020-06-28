@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">명의도용차단을위한 S.IDCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1700/4179_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSID001M002', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_reg.png" alt="서비스 등록하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M001', true);">서비스소개</a></li>
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSSID001M008', true);">이용안내</a></li>-->
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M002', true);">등록하기</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSID001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M005', true);">명의도용차단설정</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M006', true);">명의도용차단내역</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M007', true);">실명확인내역</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<form name="form" id="form" method="post">
+<input type="hidden" name="pointYN" />
+<input type="hidden" name="cardChange"  value="Y" /> 
+<input type="hidden" name="pointChange" value="Y" />
+<!-- content_block -->
+<div class="content_block first_none clfix">
+	<h2><img src="/images/ss/h2_sidcare03.gif" alt="결제 카드를 변경하실 수 있습니다" /></h2>
+	<div class="content_block_inner pos_rel">
+		<table class="dtable02 dtable_inputfield" summary="카드선택, 카드 비밀번호, 카드 CVC번호 정보를 확인할 수 있는 게시판입니다.">
+		<caption>카드정보 작성</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드선택</p></th>
+					<td><p>
+						<select name="cardIndex" title="카드선택" style="width:360px">
+							<option></option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 비밀번호</p></th>
+					<td><p class="input_2char"><input type="password" name="cardPassword" class="txt" value="" title="비밀번호 앞 두자리" maxlength="2" onkeypress="checkTypes(this, 'NUMB');" /><em>**</em>(비밀번호 앞의 2자리)</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 CVC번호</p></th>
+					<td><p class="input_3char"><input type="password" name="cardCvc" class="txt" value="" title="CVC번호" maxlength="3" onkeypress="checkTypes(this, 'NUMB');" />(뒤의 3자리)</p></td><!-- 100513 -->
+				</tr>
+				<tr>
+					<th scope="row"><p>포인트결제여부</p></th>
+					<td><p><input type="radio" class="rdo" name="radpointYN" title="포인트로 결제" />Yes <input type="radio" class="rdo" name="radpointYN" title="포인트로 결제하지 않음" />No</p>
+					&nbsp;※ 포인트 결제를 선택하시면 포인트 보유시  매월 포인트로 우선 결제 되며, 포인트가 부족할 시 <br />&nbsp;부족분은 일반 카드 결제로 진행됩니다.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- btn -->
+		<div id="id_service_apply" class="btnset" style="display: block;">
+			<p class="btnl t_desc04">서비스 등록된 내용 중 결제카드, 휴대폰번호, E-mail 내용을 변경하실 수 있습니다.<br />단, 변경하신 휴대폰번호와  E-mail은 명의도용차단서비스에만 해당됩니다.</p>
+			<p class="btnr">
+                <a id="NHPIMSSSIDVIEW004_L01" href="javascript:go_url('NHPIMSSSIDVIEW004_L01');" class="btn btn_white" title="새창"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSSID001M001','false');" class="btn btn_white"><span>취소</span></a>
+			</p>
+		</div>
+		<dl class="cvc_view">
+			<dt class="t_black"><strong>CVC보는방법</strong></dt>
+			<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+			<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+		</dl>
+	</div>
+</div>
+
+<!-- Credit Bank -->
+<div id="id_cp_page" class="content_block clfix"><!-- 상단변경 -->
+	<br />
+	<iframe id="id_creditbank_link" src="<%= url %>"  frameborder="0" width="100%" height="320" marginwidth="0" marginheight="0" scrolling="no"  onload="resizeHeight('id_creditbank_link');" title="변경하기 상세화면"></iframe>
+</div><!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

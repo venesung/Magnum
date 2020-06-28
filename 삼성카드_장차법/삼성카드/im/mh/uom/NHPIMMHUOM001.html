@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_info_viewchange.png" alt="회원님의 신상정보를 조회, 변경하실 수 있습니다" /></h1>
+</div>
+<!-- content_block -->
+				<!-- tab_area -->
+				<div class="content_block content_block_tab first_none clfix">
+				<form  method="post" name="scard_form" autocomplete="off"  autocomplete="off" >
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHUFM001M001', true);">회원정보조회ㆍ변경</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHUOM001', true);">부가정보조회ㆍ변경</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHUFM006', true);">웹회원비밀번호변경</a></li>
+                            <!-- li><a href="#">웹멤버탈퇴</a></li --><!-- 2013-01-05 임시 제거 -->
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_addinfo_viewchange01.png" alt="부가정보 조회, 변경하실 수 있습니다" /></h2>
+					<div class="content_block_inner">
+
+						<p class="ml10">정보변경을 원하시는 경우 아래의 <strong class="t_black">부가정보변경 버튼</strong>을 클릭하여 주시기 바랍니다.</p>
+
+						<div class="line_lgray"></div>
+
+						<div class="tb_exp clfix">
+							<h3>기본항목</h3>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="연소득, 주거소유, 주거형태, 주거년수, 자동차유무, 자동차메이커, 자동차배기량, 자동차연식월일, 맞벌이부부, 자녀수, 취미, 정보수신방법선택등의 부가정보 기본항목을 확인하고 변경 할 수 있는 게시판 입니다.">
+						<caption>부가정보 기본항목 변경</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>연소득</p></th>
+								<td>
+								<p class="input_point">
+								<input name="ext_year_income" maxlength="13" type="text" class="txt" title="연소득" id="label_annual_income"
+								style="ime-mode:disabled"
+								/>만원</p></td>
+								<th scope="row"><p>주거소유</p></th>
+								<td><p>
+									<select title="주거소유" id="inhabits" name="ext_house">
+										<option value="-1">선택하세요</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주거형태</p></th>
+								<td><p>
+									<select title="주거형태" id="inhabitForms" name="ext_live">
+										<option value="-1">선택하세요</option>
+									</select>
+								</p></td>
+								<th scope="row"><p>주거년수</p></th>
+								<td><p>
+									<select title="주거년수" id="inhabitYears" name="ext_live_year">
+										<option value="-1">선택하세요</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>자동차유무</p></th>
+								<td><p>
+									<select name="ext_car_yn" title="자동차유무" id="label_car">
+										<option  value="-1">선택하세요.</option>
+									</select>
+								</p></td>
+								<th scope="row"><p>자동차메이커</p></th>
+								<td><p>
+									<!--<select title="자동차메이커" id="carmakers" name="maker" onchange="getCarListByJQuery();">
+									--><select title="자동차메이커" id="carmakers" name="maker">
+										<option value="-1">선택하세요</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr><!--
+								<th scope="row"><p>차종</p></th>
+								<td><p>
+									<select title="자동차메이커" name="car_type" id="cars" style="width:180px">
+										<option value="-1">선택하세요</option>
+									</select>
+								</p></td>
+								-->
+
+															
+								<th scope="row"><p>자동차배기량</p></th>
+								<td><p>
+									<select title="자동차배기량" id="displaces" name="ext_displace">
+										<option>선택하세요</option>
+									</select>
+								</p></td>
+								<th scope="row"><p>자동차연식월일</p></th>
+								<td>
+									<p class="input_point">
+										<input name="ext_car_year" type="text" id="ext_car_year" class="txt" style="width:50px;text-align:right;ime-mode:disabled;"
+										title="자동차연식 년"
+										/>년&nbsp;
+										<input name="ext_car_month" type="text" id="ext_car_month" class="txt" style="width:50px;text-align:right;ime-mode:disabled;"
+										title="자동차연식 월"
+										/>월
+									</p>
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row"><p>맞벌이부부</p></th>
+								<td><p>
+									<select name="ext_income" title="맞벌이부부" id="label_working_together">
+										<option  value="-1">선택하세요.</option>
+									</select>
+								</p></td>
+								<th scope="row"><p>자녀수</p></th>
+								<td>
+									<p>남
+										<select name="ext_boy" title="자녀수 남" class="mr10">
+											<option  value="-1">선택</option>
+										</select>여
+										<select name="ext_girl" title="자녀수 여" >
+										<option  value="-1">선택</option>
+										</select>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>취미</p></th>
+								<td colspan="3">
+									<p>
+										<select title="취미1" id="hobbys1" name="ext_hobby1" style="width:120px">
+											<option>선택하세요</option>
+										</select>
+										<select title="취미2" id="hobbys2" name="ext_hobby2" style="width:120px">
+											<option>선택하세요</option>
+										</select>
+										<select title="취미3" id="hobbys3" name="ext_hobby3" style="width:120px">
+											<option>선택하세요</option>
+										</select>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>정보수신방법선택</p></th>
+								<td colspan="3">
+									<p>1위
+										<select name="ext_fav1" title="정보수신방법선택 1위" id="label_receive_info" class="mr10">
+											<option  value="-1">선택하세요.</option>
+										</select>2위
+										<select name="ext_fav2" title="정보수신방법선택 2위" class="mr10">
+											<option  value="-1">선택하세요.</option>
+										</select>3위
+										<select name="ext_fav3" title="정보수신방법선택 3위" class="mr10">
+											<option  value="-1">선택하세요.</option>
+										</select>4위
+										<select name="ext_fav4" title="정보수신방법선택 4위">
+											<option  value="-1">선택하세요.</option>
+										</select>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="tb_exp mt30 clfix">
+							<h3>선택항목</h3>
+						</div>
+						<table class="dtable02"  summary="자녀연령, 주이용업종, 주이용상권, 해외여행횟수, 국내여행횟수등의 부가정보 선택항목을 확인하고 변경 할 수 있는 게시판 입니다.">
+						<caption>부가정보 선택항목 변경</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>자녀연령</p></th>
+								<td colspan="3"><p>
+									첫째 <span class="input_2char mr10"><input type="text" name="ext_child_age1" maxlength="3" class="txt" title="첫째 자녀연령" id="label_child_age"
+									style="ime-mode:disabled"
+									/></span>
+									둘째 <span class="input_2char mr10"><input type="text" name="ext_child_age2" maxlength="3" class="txt" title="둘째 자녀연령"
+									style="ime-mode:disabled"
+									/></span>
+									셋째 <span class="input_2char mr10"><input type="text" name="ext_child_age3" maxlength="3" class="txt" title="셋째 자녀연령"
+									style="ime-mode:disabled"
+									/></span>
+									넷째 <span class="input_2char"><input type="text" name="ext_child_age4" maxlength="3" class="txt" title="넷째 자녀연령" 
+									style="ime-mode:disabled"
+									/></span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주이용업종</p></th>
+								<td colspan="3"><p>
+									<select name="industrys" title="주이용업종1" id="industrys" style="width:150px">
+										<option value="">선택하세요</option>
+									</select>
+									<select name="sind_type" title="주이용업종2" id="industrydetails" style="width:150px">
+										<option value="">선택하세요</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주이용상권</p></th>
+								<td colspan="3"><p>
+									<select title="시/도 선택" id="sido" name="sido" style="width:90px">
+										<option value="">선택하세요.</option>
+									</select>
+
+									<select title="군/구 선택" id="guguns" name="guguns" style="width:120px">
+										<option value="" >선택하세요</option>
+									</select>
+									<select title="동 선택" id="dongs" name="dongs" style="width:150px">
+										<option value="">선택하세요</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>해외여행횟수</p></th>
+								<td><p class="input_3char">
+								<input type="text" name="ext_tr_over" maxlength="3" class="txt" title="해외여행횟수" id="label_overseas_num" value=""
+								style="ime-mode:disabled"
+								/></p></td>
+								<th scope="row"><p>국내여행횟수</p></th>
+								<td><p class="input_3char">
+								<input type="text" name="ext_tr_local" maxlength="3" class="txt" title="국내여행횟수" id="label_korea_num" value=""
+								style="ime-mode:disabled"
+								/></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnc">
+                                <a href="javascript:goUpdate();"><img src="/images/common/btn_change_01.gif" alt="부가정보 변경" /></a>
+							</p>
+						</div>
+
+					</div>
+					</form>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none">구매보다 현명한 선택 설비리스·닥터리스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/fs/h1_equipment_lease.jpg" alt="신속·간편한 이용절차의 시설·의료기기대여 구매보다 현명한 선택 설비리스·닥터리스 - 선정하신 기계설비 및 의료기기를 리스회사가 장기간 대여하는 서비스입니다" /></div>
+</div>
+
+<form name="form_main" id="form_main" >
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/les/nhpimfsles001.do');">개념</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/les/nhpimfsles002.do');">이용절차</a></li>
+            <li class="on"><a href="#">닥터리스</a>
+				<ul class="sub_tab">
+                    <li><a href="javascript:tabSubmit('/hp/im/fs/les/nhpimfsles003.do');">이용안내</a></li>
+                    <li class="on"><a href="#">제휴신청</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/fs/h2_samsungcard_doc_app.png" alt="제휴신청서를 작성하세요" /></h2>
+			<div class="content_block_inner fill_joinin mb20">
+				<div class="tb_exp clfix">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>는 필수 입력항목 입니다</p>
+				</div>
+				<table class="dtable02 "summary="회사명, 대표자명, 사업자 번호, 신청자 이름, 휴대전화 번호, 부서명, 직위, 회사전화번호, 회사주소, 이메일 주소의 제휴신청서 정보를 입력하는 게시판입니다.">
+				<caption>제휴신청서 작성</caption>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">회사명</p></th>
+						<td class="cell_l"><p><input name="leaCompNm" type="text" maxlength="50" class="txt" value="" required="required" title="회사명 입력" id="label_companyname" /></p></td>
+					</tr>
+					<!-- //loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">대표자명</p></th>
+						<td class="cell_l"><p><input name="leaRepNm" type="text" maxlength="12" class="txt" value="" required="required" title="대표자명 입력" id="label_ceo" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">사업자 번호</p></th>
+						<td class="cell_l"><p><span class="input_businessno">
+						<input name="leaCompNo" type="hidden" class="txt" value="" id="label_businessnum" />
+                        <input name="leaCompNo1" type="text" class="txt" value="" title="사업자 번호 첫번째 입력" id="label_businessnum01" required="required" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="3" /> - 
+                        <input name="leaCompNo2" type="text" class="txt" value="" title="사업자 번호 두번째 입력" required="required" onkeydown="checkLenB(this, form_main.label_businessnum01)" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="2" /> - 
+						<input name="leaCompNo3" type="text" class="txt" value="" title="사업자 번호 세번째 입력" required="required" onkeydown="checkLenB(this, form_main.label_businessnum02)" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="5" />
+						</span></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">신청자 이름</p></th>
+						<td class="cell_l"><p><input name="leaReqNm" type="text" maxlength="12" class="txt" value="" required="required" title="신청자 이름 입력" id="label_writename" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">휴대전화 번호</p></th>
+						<td class="cell_l"><p>
+							<span class="input_phone">
+								<select name="leaHtel1"title="휴대전화 앞자리" id="label_handphone01">
+									<option value="010" selected="selected">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+								</select>&nbsp;-&nbsp;
+                                <input name="leaHtel2" type="text" class="txt" value="" title="휴대전화 가운데자리" required="required"  onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="4" />&nbsp;-&nbsp;
+                                <input name="leaHtel3" type="text" class="txt" value="" title="휴대전화 뒷자리" required="required"  onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="4"  />
+							</span>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">부서명</p></th>
+						<td class="cell_l"><p>
+						<input name="leaDept" type="text" class="txt" value="" maxlength="30" title="부서명 입력" id="label_department" required="required" />
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">직위</p></th>
+						<td class="cell_l"><p>
+						<input name="leaPos" type="text" class="txt" value="" maxlength="20" title="직위 입력" id="label_position" required="required" />
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">회사전화 번호</p></th>
+						<td class="cell_l"><p>
+							<span class="input_phone">
+								<select name="leaTel1" title="회사전화 앞자리" id="label_companytel01">
+								  <option value="02" selected="selected">02</option>
+		                          <option value="031">031</option>
+		                          <option value="032">032</option>
+		                          <option value="033">033</option>
+		                          <option value="041">041</option>
+		                          <option value="042">042</option>
+		                          <option value="043">043</option>
+		                          <option value="051">051</option>
+		                          <option value="052">052</option>
+		                          <option value="053">053</option>
+		                          <option value="054">054</option>
+		                          <option value="055">055</option>
+		                          <option value="061">061</option>
+		                          <option value="062">062</option>
+		                          <option value="063">063</option>
+		                          <option value="064">064</option>
+								</select>&nbsp;-&nbsp;
+                                <input name="leaTel2" type="text" class="txt" value="" title="회사전화 가운데자리" required="required"  onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="4"  />&nbsp;-&nbsp;
+                                <input name="leaTel3" type="text" class="txt" value="" title="회사전화 뒷자리" required="required"  onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" maxlength="4"  />
+							</span>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">회사주소</p></th>
+						<td class="cell_l">
+							<p class="input_address">
+								<input name="leaZip1" type="text" class="txt" value="" title="회사주소 우편번호 앞자리" required="required" readonly="readonly" onclick="searchZipMain(form_main.leaZip1, form_main.leaZip2, form_main.leaZipSeq, form_main.leaAddrArea, form_main.leaAddrDist, '<%=newjusoYn %>');" />&nbsp;-&nbsp;
+								<input name="leaZip2" type="text" class="txt" value="" title="회사주소 우편번호 뒷자리" required="required" readonly="readonly" onclick="searchZipMain(form_main.leaZip1, form_main.leaZip2, form_main.leaZipSeq, form_main.leaAddrArea, form_main.leaAddrDist, '<%=newjusoYn %>');" />
+								<!-- 우편번호 검색 팝업 호출 -->
+								<a href="javascript:searchZipMain(form_main.leaZip1, form_main.leaZip2, form_main.leaZipSeq, form_main.leaAddrArea, form_main.leaAddrDist, '<%=newjusoYn %>');" class="btn btn_white" title="새창" id="label_address">
+								<span>우편번호 검색</span></a><br />
+								<span class="detail">
+								<input name="leaAddrArea" type="text" class="txt" value="" title="회사주소" required="required" readonly="readonly"  onclick="searchZipMain(form_main.leaZip1, form_main.leaZip2, form_main.leaZipSeq, form_main.leaAddrArea, form_main.leaAddrDist, '<%=newjusoYn %>');" />
+								<input name="leaAddrDist" type="text" class="txt" value="" maxlength="120" title="회사주소 상세" required="required" /></span>
+								<input name="leaZipSeq" type="hidden" />
+								<input name="leaZip" type="hidden" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">이메일주소</p></th>
+						<td class="cell_l"><p>
+							<span class="input_email">
+							<input name="email1" type="text" class="txt" value="" title="이메일 아이디" maxlength="79"  id="label_email01" required="required" onkeypress="checkTypes(this, 'URL');" onblur="checkTypesOnBlur(this, 'URL');" style="ime-mode:disabled" />&nbsp;@&nbsp;
+							<input name="email2" type="text" class="txt" value="" title="이메일 공급자 직접입력" maxlength="21" onkeypress="checkTypes(this, 'URL');" onblur="checkTypesOnBlur(this, 'URL');" style="ime-mode:disabled" required="required" />
+							<select name="emainDomain" title="이메일 공급자 선택" onchange="onChangeEmailDomain();" >
+								<option value="">직접입력</option>
+                                <option value="hanmail.net">한메일(다음)</option>
+                                <!--option value="yahoo.co.kr">야후</option-->
+                                <option value="lycos.co.kr">라이코스</option>
+                                <option value="hotmail.com">hotmail</option>
+                                <option value="paran.com">파란</option>
+                                <option value="naver.com">네이버</option>
+                                <option value="korea.com">코리아</option>
+                                <option value="netian.com">네띠앙</option>
+                                <option value="dreamwiz.com">드림위즈</option>
+                                <option value="chollian.net">천리안</option>
+                                <option value="freechal.com">프리챌</option>
+                                <option value="empal.com">엠팔</option>
+                                <option value="kebi.com">깨비</option>
+                                <option value="unitel.co.kr">유니텔</option>
+                                <option value="weppy.com">웨피</option>
+							</select></span>
+							<input type="hidden" name="leaEmail" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<h2><img src="/images/fs/h2_samsungcard_doc_app02.png" alt="취급장비 및 거래정보를 입력하세요" /></h2>
+			<div class="content_block_inner fill_joinin mb20">
+				<table class="dtable02 "summary="회사구분을 선택하고 취급장비, 타사 리스사 거래사항, 특이사항 정보를 입력는 게시판입니다.">
+				<caption>취급장비 및 거래정보 입력</caption>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">회사구분</p></th>
+						<td class="cell_l"><p>
+						<label for="label_company_choice01"><input type="radio" class="rdo" value="MO" id="label_company_choice01" name="leaComDiv" checked="checked" title="본사" /> 본사</label>
+						<label for="label_company_choice02"><input type="radio" class="rdo" value="BO" id="label_company_choice02" name="leaComDiv" title="대리점" /> 대리점</label>
+						<label for="label_company_choice03"><input type="radio" class="rdo" value="AG" id="label_company_choice03" name="leaComDiv" title="Agent" /> Agent</label></p></td>
+					</tr>
+					<!-- //loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">취급장비</p></th>
+						<td class="cell_l"><p>
+						<input name="leaMachi" type="text" class="txt" value="" maxlength="100" title="취급장비 입력" id="label_equ"  required="required" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l"><p class="not_neccessary">타사 리스사 거래사항</p></th>
+						<td class="cell_l"><p>
+						<input name="leaCond" type="text" class="txt" value="" maxlength="100" title="타사 리스사 거래현황 입력" id="label_lees" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l"><p class="not_neccessary">특이사항</p></th>
+						<td class="cell_l"><p>
+						<input name="leaSpeci" type="text" class="txt" value="" maxlength="100" title="특이사항 입력" id="label_ex" /></p></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<h2><img src="/images/fs/h2_samsungcard_doc_app03.png" alt="상담요청 정보를 입력하세요" /> </h2>
+			<div class="content_block_inner fill_joinin">
+				<table class="dtable02 "summary="상담방법, 상담일자, 지점선택, 메모를 입력하는 게시판입니다.">
+				<caption>상담요청 정보 입력</caption>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">상담방법</p></th>
+						<td class="cell_l"><p>
+						<label for="label_consult_type01"><input type="radio" class="rdo" value="LT" id="label_consult_type01" name="leaNegoMethod" checked="checked" title="전화상담" /> 전화상담</label>
+						<label for="label_consult_type02"><input type="radio" class="rdo" value="LE" id="label_consult_type02" name="leaNegoMethod" title="E-mail 상담" /> E-mail 상담</label>
+						<label for="label_consult_type03"><input type="radio" class="rdo" value="LC" id="label_consult_type03" name="leaNegoMethod" title="방문상담" /> 방문상담</label></p></td>
+					</tr>
+					<!-- //loop -->
+					<tr>
+						<th scope="row"><p class="neccessary">상담일자</p></th>
+						<td class="cell_l"><p>
+							<span class="mr10">
+								<input name="leaNegoDay" type="hidden" /> 
+								<select name="leaNegoDay1" title="상담일자 중 년 선택" id="label_choiceday01" onchange="setDate();" required="required">
+								</select> 년
+								<select name="leaNegoDay2" title="상담일자 중 월 선택" onchange="setDate();" class="ml10" required="required">
+									<option value="">-월-</option>
+			                        <option value="01">1</option>
+			                        <option value="02">2</option>
+			                        <option value="03">3</option>
+			                        <option value="04">4</option>
+			                        <option value="05">5</option>
+			                        <option value="06">6</option>
+			                        <option value="07">7</option>
+			                        <option value="08">8</option>
+			                        <option value="09">9</option>
+			                        <option value="10">10</option>
+			                        <option value="11">11</option>
+			                        <option value="12">12</option>
+								</select> 월 
+								<select name="leaNegoDay3" title="상담일자 중 일 선택" class="ml10" required="required">
+									<option value="">-일-</option>
+								</select> 일
+							</span>
+								<label for="label_date_am"><input type="radio" class="rdo" value="AM" id="label_date_am" name="leaTime" checked="checked" title="오전" /> 오전</label>
+								<label for="label_date_pm"><input type="radio" class="rdo" value="PM" id="label_date_pm" name="leaTime" title="오후" /> 오후</label>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="neccessary">지점선택</p></th>
+						<td class="cell_l"><p>
+							<select name="leaSpot" title="지점 선택" id="label_choice_area"  required="required">
+								<option value=""> -- 선택 --</option>
+	                      		<option value="5230">강남지점</option>
+	                      		<option value="5217">서초영업소</option>
+	                      		<option value="5271">분당지점</option>
+	                      		<option value="5280">수원지점</option>
+	                      		<option value="6212">안양영업소</option>
+	                      		<option value="5250">강서지점</option>
+	                      		<option value="5261">강북지점</option>
+	                      		<option value="5213">동서울영업소</option>
+	                      		<option value="5276">원주영업소</option>
+	                      		<option value="5211">강릉영업소</option>
+	                      		<option value="5240">중앙지점</option>
+	                      		<option value="5241">일산영업소</option>
+	                      		<option value="5290">인천지점</option>
+	                      		<option value="5214">부천영업소</option>
+	                      		<option value="6280">대전지점</option>
+	                      		<option value="6013">천안영업소</option>
+	                      		<option value="6281">청주영업소</option>
+	                      		<option value="6320">충주영업소</option>
+	                      		<option value="6217">서산영업소</option>
+	                      		<option value="6220">광주지점</option>
+	                      		<option value="6290">전주영업소</option>
+	                      		<option value="6310">순천영업소</option>
+	                      		<option value="6223">목포영업소</option>
+	                      		<option value="6221">익산영업소</option>
+	                      		<option value="6210">부산지점</option>
+	                      		<option value="6250">창원영업소</option>
+	                      		<option value="6251">진주영업소</option>
+	                      		<option value="6224">해운대지점</option>
+	                      		<option value="6240">울산영업소</option>
+	                      		<option value="6330">제주영업소</option>
+	                      		<option value="6920">대구지점</option>
+	                      		<option value="6225">서대구지점</option>
+	                      		<option value="6270">포항영업소</option>
+	                      		<option value="6260">구미영업소</option>
+							</select></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p class="not_neccessary">메모</p></th>
+						<td class="cell_l"><p><span class="input_body"><textarea name="leaMemo" maxlength="500" class="txt" id="label_memo" rows="10" cols="5" title="메모 입력" ></textarea></span></p></td>
+					</tr>
+				</tbody>
+				</table>
+
+			</div>					
+		</div>
+
+		<!-- content_block -->
+		<div class="content_block fill_joinin clfix">
+            <p class="btnc"><a href="javascript:onSubmit();"><img src="/images/common/btn_l_application.png" alt="신청하기" /></a></p>
+		</div>
+	
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+		
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_alluselist1.png" alt="포인트로 이번달 결제대금을 납부하세요" /></h1>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/mh/h2_point_payment04.png" alt="보너스 포인트로 결제대금을 납부하세요" /></h2>
+		<div class="content_block_inner pos_rel">
+	
+			<ol class="list_no01 mb15">
+				<li><p>보유 보너스포인트 30,000 P 이상부터 이용하실 수 있습니다.</p></li>
+				<li><p>이용가능 시간은 월~금(토/일/공휴일은 이용불가) 09:00~18:00 이며, 당일 신청건에 한해 취소가 가능합니다.</p></li><!-- 120828 수정 -->
+				<li><p>결제일 당일과 전일에는 이용이 불가능합니다.<br />(결제일은 주말 및 공휴일에 의해 다음 영업일로 변경될 수 있습니다)</p></li>
+				<li><p>법인, 체크, 가족카드는 이용이 불가능합니다.</p></li>
+				<li><p>결제대금 확정 후에 신청하시는 경우, 신청하신 금액만큼 차감된 금액이 결제일에 청구되며,<br />확정 전에 신청하시는 경우 청구서를 통해 '미리입금하신금액'으로 차감내역 확인이 가능합니다.</p></li>
+				<li><p>자유결제 이용 회원의 경우 청구확정일 이후에 신청하시면 최소결제금액 내에서만 차감되며,<br />확정 전에 신청하시는 경우 전체 결제대금(최소결제금액+약정결제금액)에서 차감됩니다.</p></li><!-- 정기일반영 13.03.05 -->
+				<li><p>포인트로 결제대금 납부는 1일 1회에 한해 신청이 가능합니다.</p></li>
+				<li><p>결제대금을 납부하시면 보너스포인트는 즉시 차감되며, 납부 확인은 약 2 영업일 경과 후<br />상담센터를 통해 확인하실 수 있습니다.</p></li>
+			</ol>
+
+			<table class="dtable02 dtable_expand" summary="보유 보너스 포인트를 확인하고 납부하실 포인트를 입력하는 게시판입니다">
+				<caption>보유 보너스 포인트 확인 및 납부포인트 입력</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>보유 포인트</p></th>
+						<td><p><span class="input_point t_11"><input type="text" class="txt al_right" value="" readonly="readonly" style="background-color:#f5f5f5;" title="보유 보너스 포인트" /></span> P</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>납부하실 포인트</p></th>
+						<td><p><span class="input_point t_11"><input type="text" name="IN_SETTLEPOINT" class="txt al_right"  title="납부하실 포인트" /></span> P</p></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- btn -->
+			<div class="btnr">
+                <p class="point_btn"><a href="javascript:preApply();" class="btn btn_blue"><span>납부하기</span></a></p>
+			</div>
+		</div>
+	</div>
+			
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_annual_01.png" alt="결제대금 납부 내역을 확인하세요" /></h2>
+		<div class="content_block_inner">
+
+		<div class="pos_rel_cal">캘린더 위치</div>
+		<table class="dtable02 dtable_inputfield" summary="결제대금 납부 내역을 확인하기 위해 조회기간을 선택하는 게시판입니다">
+        	<caption>조회기간 선택</caption>
+			<colgroup><col width="100" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th class="cell_bg" scope="row"><p>조회기간</p></th>
+					<td id="id_cal_wrap2" class="reset_date fl_left"><!-- 날짜지정 -->
+					<fileTag:dblCalendarAdd calendarId="hp_double_cal" inputClass="txt" startTitle="시작하는날짜" startInputName="start_date" startInputValue='<%=start_date %>'
+                                                                                        endTitle ="끝나는날짜" endInputName ="end_date" endInputValue ='<%=end_date %>'/>
+   					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="btnset">
+            <p class="btnr"><a class="btn btn_blue" href="javascript:search();"><span>조회</span></a></p>
+		</div>
+		<br />
+
+	
+			<table class="dtable01" summary="신청일시와 결제포인트, 취소여부로 구성된 결제대금 납부 내역 조회결과 게시판입니다">
+				<caption>결제대금 납부 내역 조회결과</caption>
+				<colgroup><col width="180" /><col width="*" /><col width="180" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10 riline">신청일시</th>
+						<th scope="col" class="cell_r10 riline">결제 포인트</th>
+						<th scope="col">취소</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10 t_no riline"></td>
+						<td class="cell_r10 t_no riline">0 P</td>
+						<td>						
+						<a href="#" class="btn btn_s_white" title="00일자 결제포인트 취소"><span>취소</span></a></td> 
+					</tr>
+					<tr class="nodata"><td colspan="3">포인트로 결제하신 내역이 없습니다.</td></tr>
+				</tbody>
+			</table>
+		
+			<!-- paginate -->
+			<div class="paginate">
+				<div class="paging">
+                    <a href="javascript:goPage0138('prePage0138');" class="btn btn_s_white"><span>이전</span></a>
+                    <a href="javascript:goPage0138('nextPage0138');" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div> 
+			<div class="line_lgray"></div>
+			<p>※ 납부 취소는 당일 <strong class="t_no t_black">18:00</strong> 에 한하여 이용이 가능합니다.</p>
+		</div>
+	</div>
+</form>	
+
+<form>
+	<input type="hidden" id="fromPoint" name="fromPoint" />
+</form>
+
+<!-- layer_popup 메세지 -->
+<div id="id_layer01" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:50px;top:-480; height:0; font-size:0; line-height:0; z-index:900;<%=layer01Txt %>">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer01'); show_select();" value="레이어닫기" title="보유포인트로 결제대금 납부 확인 레이어 닫기" />
+    	<p class="pop_tit2"><img src="/images/mh/layer_tit_point_payment01.png" alt="회원님의 보유포인트로 결제대금을 납부하시겠습니까?" /></p>
+    	<div class="pop_l_content">
+	  		<div class="pop_l_alert">
+				<p></p>
+ 			</div>
+			<p class="btnc">
+                    <a href="javascript:applyOk();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+                  <a href="javascript:hide_con('id_layer01');show_select();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="id_layer02" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:50px;top:-480; height:0; font-size:0; line-height:0; z-index:900;<%=layer02Txt %>">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer02'); show_select();" value="레이어닫기" title="보유포인트로 결제대금 납부 완료 레이어 닫기" />
+    	<p class="pop_tit2"><img src="/images/mh/layer_tit_point_payment02.png" alt="회원님의 보유포인트로 결제대금 납부가 성공적으로 완료되었습니다." /></p>
+    	<div class="pop_l_content">
+	  		<div class="pop_l_alert">
+				<p></p>
+ 			</div>
+			<p class="btnc">
+                    <a href="javascript:search();" onclick="hide_con('id_layer02'); show_select();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:50px;top:-480; height:0; font-size:0; line-height:0; z-index:900;<%=layer03Txt %>">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer03'); show_select();" value="레이어닫기" title="포인트결제대금 납부 취소 레이어 닫기" />
+    	<p class="pop_tit2"><img src="/images/mh/layer_tit_point_payment07.png" alt="신청하신 포인트결제대금 납부를 취소하시겠습니까?" /></p>
+    	<div class="pop_l_content">
+	  		<div class="pop_l_alert">
+				<p></p>
+ 			</div>
+			<p class="btnc">
+                    <a href="javascript:cancelOk();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+		  		<a href="javascript:hide_con('id_layer03'); show_select();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="id_layer04" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:50px;top:-480; height:0; font-size:0; line-height:0; z-index:900;<%=layer04Txt %>">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer04'); show_select();" value="레이어닫기" title="포인트결제대금 납부 취소 완료 레이어 닫기" />
+    	<p class="pop_tit2"><img src="/images/mh/layer_tit_point_payment08.png" alt="정상적으로 취소되었습니다." /></p>
+    	<div class="pop_l_content">
+	  		<div class="pop_l_alert">
+				<p></p>
+ 			</div>
+			<p class="btnc">
+                    <a href="javascript:search();" onclick="hide_con('id_layer04'); show_select();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+	<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+
+

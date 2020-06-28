@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title"></div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<%
+
+	String sReplyCd2 = (String)request.getAttribute("sReplyCd2") != null ? (String)request.getAttribute("sReplyCd2") : "";
+	String sReplyMsg2 = (String)request.getAttribute("sReplyMsg2") != null ? (String)request.getAttribute("sReplyMsg2") : "";
+	
+	String organ = (String)request.getAttribute("organ") != null ? (String)request.getAttribute("organ") : "";
+	String userGbn = (String)request.getAttribute("userGbn") != null ? (String)request.getAttribute("userGbn") : "";
+	String payerNo = (String)request.getAttribute("payerNo") != null ? (String)request.getAttribute("payerNo") : "";
+	String payerNm = (String)request.getAttribute("payerNm") != null ? (String)request.getAttribute("payerNm") : "";
+
+	
+%>
+<!-- tab_script -->
+<div id="tab_script">
+<script language="javascript" type="text/javascript">
+function goBack(sReplyCd2){
+
+    alert(sReplyCd2);
+    tabSubmit("/hp/im/ss/tax/tax001.do?method=goInsertPage",document.form1);
+    
+}
+function $tabOnLoad() {
+	// Tab OnLoad Event (Body 테그의 OnLoad Event 함수 역할)
+	toggleLoading();
+	goBack('<%=sReplyMsg2 %>');
+}
+
+</script>
+</div>
+<!-- top_visual -->
+<div class="top_visual">
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<form name="form1">
+<input type="hidden" name="cityCode" value="<%=organ%>" />
+<input type="hidden" name="userGbn" value="<%=userGbn%>" />
+<input type="hidden" name="payerNo" value="<%=payerNo%>" />
+<input type="hidden" name="payerNm" value="<%=payerNm%>" />
+</form>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix"></div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_signature.png" alt="삼성카드1/시그니처 기프트 바우처 신청" /></h1>
+	</div>
+	<!-- content_block -->
+	<div class="content_block content_block_card">
+		<div class="tab01 w810 clfix">
+			<ul>
+				<li><a href="javascript:goTabPage('NHPIMCDCUV701', true);">안내 및 신청</a></li> 
+				<li class="on"><a href="javascript:goTabPage('NHPIMCDCUV704', true);">신청내역조회</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content_block content_block_card  clfix">
+		<h2><img src="/images/mh/h2_sig_service04.png" alt="서비스 신청내역조회 입니다." /></h2>
+		<div class="content_block_inner">
+			<div class="tb_exp clfix">
+				<span class="fl_left">기프트옵션 신청 내역조회를 하실 수 있습니다.</span>
+			</div>
+			<table class="dtable02 dtable_inputfield" summary="서비스 신청내역조회를 위해 사용자와 카드를 선택하는 화면입니다.">
+			<caption>신청내역조회 조건 선택</caption>
+				<colgroup><col width="20%" /><col width="80%" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>사용자선택</p></th>
+						<td><p>
+							<select name="pssRrno" id="pssRrno" title="사용자선택" >
+								<option value="">전체</option>
+							</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드선택</p></th>
+						<td><p>
+							<select name="cdno" id="cdno" title="카드선택" >
+								<option value="">전체</option>
+							</select>
+						</p></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnr"><a href="javascript:goSearch('S');" class="btn btn_blue"><span>조회</span></a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="content_block clfix">  
+		<h2></h2>
+		<div class="content_block_inner">
+				<div class="w640 pos_rel" style="overflow: hidden;">
+					<p style=" padding: 5px 0 8px;" class="t_point">기프트옵션 신청내역 입니다.</p>
+					<span class="ab_tr t_11" style="top: 0px;">
+						<span>
+							<select name="inqY" id="inqY" title="조회년도 선택">
+								<option>1234년</option>
+							</select>
+						</span>
+					</span>
+				</div>
+			<table class="dtable01" summary="신청일시, 카드명, 이용자, 신청아이템, 상태로 구성된 상세 이용내역">
+				<caption>상세이용내역</caption>
+				<colgroup><col width="15%" /><col width="20%" /><col width="20%" /><col width="25%" /><col width="20%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">신청일시</th>
+						<th scope="col">카드명</th>
+						<th scope="col">이용자</th>
+						<th scope="col" class="cell_l10">신청아이템</th>
+						<th scope="col">상태</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10 t_no">0</td>
+						<td>0</td>
+						<td>0</td>
+						<td class="cell_l10">0</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- paginate -->
+			<div class="paginate">
+				<div class="paging">
+                    <a href="javascript:goSearch('P');" class="btn btn_s_white"><span>이전</span></a>
+                    <a href="javascript:goSearch('N');" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //content_block -->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

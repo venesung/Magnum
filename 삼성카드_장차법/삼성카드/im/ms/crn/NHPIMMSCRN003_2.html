@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1 class="none">삼성카드 웹멤버 가입</h1>
+		<div class="h1_desc"><img src="/images/ms/bg_joinin.jpg" alt="삼성카드 웹멤버 회원가입을 하시면 삼성카드의 편리하고 폭넓은 서비스를 활용하실 수 있습니다." /></div>
+	</div>
+
+	<div class="content_block content_block_card clfix">
+		<div class="top_step top_step_appcard top_step_appcard03">
+			<ol class="none">
+				<li>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</li>
+				<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+				<li><abbr>현재단계</abbr> <strong>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</strong></li>
+				<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+			</ol>
+		</div>
+	</div>
+
+	<form name="frm1" method="post">
+
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ms/h2_fill_joinin01.png" alt="가입 신청 정보를 입력하세요" /></h2>
+
+			<div class="content_block_inner fill_joinin">
+				<div class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 사항입니다.</div>
+
+				<table class="dtable02" summary="회원님의 아이디, 비밀번호, 핸드폰번호, 이메일주소, 자택주소, 생일 등 기본정보를 입력하는 게시판입니다">
+					<caption>개인 기본정보 입력</caption>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">성명(한글)</p></th>
+							<td class="cell_l02"><strong class="t_black"><%=userName %></strong></td>
+							<th scope="row" class="cell_l"><p class="not_neccessary">주민등록번호</p></th>
+							<td  class="cell_l02"><strong class="t_black"><%=juminNo1 %>-*******</strong></td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>아이디</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_id">
+									<input name="webId" type="text" class="txt" maxlength="12" title="아이디" id="label_id" value="" style="ime-mode:disabled" onchange="IDchange('N');" onkeypress="checkTypes(this, 'ECNO');" onBlur="checkTypesOnBlur(this,'ECNO');"/>
+									<a href="javascript:check();" class="btn btn_white" title="새창"><span>아이디 중복확인</span></a>
+									<span id="ID_change" style="display:none" class="ico_fill ico_fill01"></span>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_pass">
+									<input name="webpass" type="password" class="txt" value="" maxlength="12" title="비밀번호" id="label_pass" style="ime-mode:disabled" enc="on" /><!-- onkeypress="checkTypes(this,'PSWD');" onblur="checkTypesOnBlur(this,'PSWD');"  -->
+									&nbsp;<span id="usafeon_webpass"></span>
+									<br />
+									영문/숫자 혼용 8~12자리, 대소문자 구별<br />특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호 확인</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_pass">
+									<input name="webpass1" type="password" class="txt" value="" maxlength="12" title="비밀번호확인" id="label_pass_ok" style="ime-mode:disabled" onchange="checkPassword();" enc="on" /><!-- onkeypress="checkTypes(this,'PSWD');" onblur="checkTypesOnBlur(this,'PSWD');"  -->
+								</span>
+								&nbsp;<span id="usafeon_webpass1"></span>
+								<span id="chkPw" style="display:none; margin-top:5px;" class="ico_fill ico_fill02"></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>자택전화 번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_phone">
+									<select name="homePhone1" title="전화번호 국번" id="label_tel">
+										<option value="" selected="selected">선택</option>
+										<option value="02">02 </option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="0502">0502</option>
+										<option value="0505">0505</option>
+										<option value="0506">0506</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>
+										<option value="070">070</option>
+									</select>
+									<input name="homePhone2" type="text" class="txt" value="" title="자택전화번호 앞자리" id="label_tel02" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');checkLenN(this, 4, frm1.homePhone3);" onblur="checkTypesOnBlur(this,'TELNO');" />&nbsp;-&nbsp;
+									<input name="homePhone3" type="text" class="txt" value="" title="자택전화번호 뒷자리" id="label_tel03" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');" onkeydown="checkLenB(this, frm1.homePhone2)" onblur="checkTypesOnBlur(this,'TELNO');" />
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>핸드폰 번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_phone">
+									<select name="handPhone1" title="핸드폰 앞자리" id="label_phone">
+										<option value="" selected="selected">선택</option>
+										<option value="010">010</option>
+										<option value="011">011</option>
+										<option value="016">016</option>
+										<option value="017">017</option>
+										<option value="018">018</option>
+										<option value="019">019</option>
+										<option value="0130">0130</option>
+									</select>
+									<input name="handPhone2" value="" maxlength="4" type="text" class="txt" title="핸드폰번호 가운데자리" id="label_phone02" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');checkLenN(this, 4,frm1.handPhone3);" onblur="checkTypesOnBlur(this,'TELNO');" />&nbsp;-&nbsp;
+									<input name="handPhone3" value="" maxlength="4" type="text" class="txt" title="핸드폰번호 뒷자리" id="label_phone03" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');" onkeydown="checkLenB(this, frm1.handPhone2)" onblur="checkTypesOnBlur(this,'TELNO');" />
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>이메일주소</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_email">
+									<input type="hidden" name="email"  maxlength="50" value="" onchange="mailcheck='N'" />
+									<input type="text" name="emailId" class="txt" value="" title="이메일 아이디"  id="label_email" maxlength="30" style="ime-mode:disabled" onkeypress="checkTypes2(this,'EMAIL');" onblur="checkTypesOnBlur2(this,'EMAIL');" onchange="mailcheck='N'" />&nbsp;@&nbsp;
+									<input type="text" name="emailAddr" class="txt" value="" title="이메일공급자 직접입력"  id="label_email02" maxlength="30" style="ime-mode:disabled" onkeypress="checkTypes2(this,'EMAIL');" onblur="checkTypesOnBlur2(this,'EMAIL');" onchange="mailcheck='N'"/>
+									<select name="selemail" title="이메일공급자선택" id="label_email03" onchange="sel(this)">
+										<option value="" selected="selected">직접입력</option>
+                             				<option value="naver.com">naver.com</option>
+                             				<option value="hanmail.net">hanmail.net</option>
+                             				<option value="hotmail.com">hotmail.com</option>
+                             				<option value="nate.com">nate.com</option>
+                             				<option value="empas.com">empas.com</option>
+                             				<option value="dreamwiz.com">dreamwiz.com</option>
+                             				<option value="freechal.com">freechal.com</option>
+                             				<option value="lycos.co.kr">lycos.co.kr</option>
+                            				<option value="korea.com">korea.com</option>
+                            				<option value="gmail.com">gmail.com</option>
+                             				<option value="hanmir.com">hanmir.com</option>
+                             				<option value="paran.com">paran.com</option>
+									</select>
+									<a href="javascript:searchEmail();" class="btn btn_white" title="새창"><span>이메일 중복확인</span></a>
+								</span>
+								<p class="t_desc03 mt10">핫메일(Hotmail)을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>이메일<br />정보수신 여부</p></th>
+							<td colspan="3" class="cell_l">
+								<label for="label_email_chk01">
+									<input name="emailDeny" type="radio" class="chk" id="label_email_chk01" value="1" title="이메일정보수신여부" /> 예
+								</label>
+								<label for="label_email_chk02">
+									<input name="emailDeny" type="radio" class="chk" id="label_email_chk02" value="0" title="이메일정보수신여부" /> 아니오
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>자택주소</p></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_address">
+									<input name="homeZip1" type="text" class="txt" value="" title="우편번호 앞자리" readonly="readonly" id="label_address" />&nbsp;-&nbsp;
+									<input name="homeZip2" type="text" class="txt" value="" title="우편번호 뒷자리" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+									<span class="detail">
+										<input name="homeAddr1" type="text" class="txt" value="" title="자택주소" id="label_address02" readonly="readonly" />
+										<input name="homeAddr2" type="text" class="txt" value="" title="자택 상세 주소" id="label_address03" readonly="readonly" />
+									</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>본인확인 질문</p></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_question2">
+									<select name="blueQuest" title="본인확인질문 선택" id="label_question">
+         									<option selected="selected" value="">선택하세요</option>
+         									<option value="1">내가 태어난 고향</option>
+         									<option value="2">내가 가장 가고 싶은 곳</option>
+         									<option value="3">내 여자친구의 이름</option>
+         									<option value="4">내 아버지의 이름</option>
+         									<option value="5">내 어머니의 이름</option>
+         									<option value="6">내가 가장 존경하는 인물</option>
+         									<option value="7">우리집 강아지의 이름</option>
+         									<option value="8">내가 가장 좋아하는 색깔</option>
+         									<option value="9">내 여자친구의 생일</option>
+									</select>은 무엇입니까?
+									<span class="detail"><input name="blueAnswer" type="text" class="txt" value="" title="본인확인질문 답" maxlength="50" />입니다.</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>실제생일</p></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="birthdayYear" type="text" class="txt"  title="실제생일 년도" id="label_realbirth" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');checkLenN(this, 4, frm1.birthdayMonth);" />&nbsp;년&nbsp;
+									<select name="birthdayMonth" title="실제생일 달 선택" id="label_realbirth02">
+										<option value="" >선택</option>
+									</select>&nbsp;월&nbsp;
+									<select name="birthdayDay" title="실제생일 일 선택" id="label_realbirth03">
+										<option value="">선택</option>    
+									</select>&nbsp;일
+									<span class="detail">
+										<label for="id_birth_sun">
+											<input type="radio" class="chk" value="1" title="양력" id="id_birth_sun" name="lunarSolar" checked="checked" />&nbsp;양력
+										</label>
+										<label for="id_birth_moon">
+											<input type="radio" class="chk" value="2" title="음력" id="id_birth_moon" name="lunarSolar" />&nbsp;음력
+										</label>
+									</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_marry01" class="not_neccessary">결혼여부</label></th>
+							<td colspan="3" class="cell_l">
+								<label for="label_marry01">
+									<input type="radio" class="chk" id="label_marry01" name="marriedYn" title="미혼" value="N" onclick="clickMar('1')" checked="checked" />&nbsp;미혼
+								</label>
+								<label for="label_marry02">
+									<input type="radio" class="chk" id="label_marry02" name="marriedYn" title="기혼" value="Y" onclick="clickMar('1')" />&nbsp;기혼
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_marry_ceremoney" class="not_neccessary">결혼 기념일</label></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="weddingAnniversaryYear" type="text" class="txt" value="" title="결혼 기념일 년도" id="label_marry_ceremoney" maxlength="4" style="ime-mode:disabled" onchange="clickMar()" onkeypress="checkTypes(this,'NUMB');checkLenN(this, 4, frm1.weddingAnniversaryMonth);" onBlur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+									<select name="weddingAnniversaryMonth" title="결혼 기념일 달 선택" id="label_marry_ceremoney02" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>&nbsp;월&nbsp;
+									<select name="weddingAnniversaryDay" title="결혼 기념일 일 선택" id="label_marry_ceremoney03" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+									</select>&nbsp;일
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_hisbirth" class="not_neccessary">배우자 생일</label></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="mateBirthdayYear" type="text" class="txt" value="" title="배우자 생일 년도" id="label_hisbirth" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');checkLenN(this, 4, frm1.mateBirthdayMonth);" onblur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+									<select name="mateBirthdayMonth" title="배우자 생일 달 선택" id="label_hisbirth02" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>&nbsp;월&nbsp;
+									<select name="mateBirthdayDay" title="배우자 생일 일 선택" id="label_hisbirth03" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+									</select>&nbsp;일
+									<span class="detail"><label for="id_hisbirth_sun">
+									<input type="radio" class="chk" value="1" title="양력" id="id_hisbirth_sun"  name="mateLunarSolar" onchange="clickMar()" />&nbsp;양력</label><label for="id_hisbirth_moon">
+									<input type="radio" class="chk" value="2" title="음력" id="id_hisbirth_moon" name="mateLunarSolar" onchange="clickMar()" />&nbsp;음력</label></span>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ms/h2_fill_joinin02.png" alt="부가정보를 입력하세요" /></h2>
+			<div class="content_block_inner fill_joinin">
+				<table class="dtable02" summary="회원님의 직장주소, 직장전화번호, 직업, 차량, 연소득액, 주거형태 등의 부가정보를 입력하는 게시판입니다">
+					<caption>개인 부가정보 입력</caption>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_address_office" class="not_neccessary">직장주소</label></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_address">
+									<input name="officeZip1" type="text" class="txt" value="" title="직장주소 우편번호 앞자리" readonly="readonly" id="label_address_office" />&nbsp;-&nbsp;
+									<input name="officeZip2" type="text" class="txt" value="" title="직장주소 우편번호 뒷자리" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+									<span class="detail">
+										<input name="officeAddr1" type="text" class="txt" value="" title="직장주소" id="label_address_office02" readonly="readonly" />
+										<input name="officeAddr2" type="text" class="txt" value="" title="직장 상세주소" id="label_address_office03" maxlength="40" readonly="readonly" />
+									</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="lebel_phone_office" class="not_neccessary">직장 전화번호</label></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_phone">
+									<select name="officePhone1" title="직장 전화번호 국번" id="lebel_phone_office">
+										<option value="" selected="selected">선택</option>
+										<option value="02">02 </option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="0502">0502</option>
+										<option value="0505">0505</option>
+										<option value="0506">0506</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>
+										<option value="070">070</option>
+									</select>
+									<input name="officePhone2" type="text" class="txt" value="" title="직장 전화번호 가운데자리" id="lebel_phone_office02" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');checkLenN(this, 4 , frm1.officePhone3);" onblur="checkTypesOnBlur(this,'TELNO');"  />&nbsp;-&nbsp;
+									<input name="officePhone3" type="text" class="txt" value="" title="직장 전화번호 뒷자리" id="lebel_phone_office03" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');" onkeydown="checkLenB(this, frm1.officePhone2)" onblur="checkTypesOnBlur(this,'TELNO');" />
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_occupy" class="not_neccessary">직업</label></th>
+							<td colspan="3" class="cell_l">
+								<select name="selectJob" title="직업" id="label_occupy" class="input_job">
+									<option value=" " selected="selected">선택하세요</option>
+									<option value="학생">학생</option>
+									<option value="공무원">공무원</option>
+									<option value="자영업">자영업</option>
+									<option value="주부">주부</option>	
+									<option value="컴퓨터/인터넷">컴퓨터/인터넷</option>
+									<option value="금융/증권/보험">금융/증권/보험</option>
+									<option value="마케팅/영업/무역">마케팅/영업/무역</option>
+									<option value="언론/출판">언론/출판</option>
+									<option value="광고">광고</option>
+									<option value="디자인">디자인</option>
+									<option value="CG">CG</option>
+									<option value="운송">운송</option>
+									<option value="건설">건설</option>
+									<option value="전기/전자">전기/전자</option>
+									<option value="통신">통신</option>
+									<option value="유통">유통</option>
+									<option value="제조업">제조업</option>
+									<option value="교직자">교직자</option>
+									<option value="의료인">의료인</option>
+									<option value="법조인">법조인</option>
+									<option value="종교인">종교인</option>
+									<option value="예술인">예술인</option>
+									<option value="연예인">연예인</option>
+									<option value="스포츠">스포츠</option>
+									<option value="군인">군인</option>
+									<option value="농/축/수/임산업">농/축/수/임산업</option>
+									<option value="기타">기타</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label class="not_neccessary">차량보유</label></th>
+							<td colspan="3" class="cell_l">
+								<label for="label_car_chk01">
+									<input type="radio" class="chk" id="label_car_chk01" name="carStatus" title="차량보유" value="Y"/> 보유
+								</label>
+								<label for="label_car_chk02">
+									<input type="radio" class="chk" id="label_car_chk02" name="carStatus" title="차량미보유" value="N"/> 미보유
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_additional01" class="not_neccessary">연 소득액</label></th>
+							<td class="cell_l02">
+								<select name="yearlyIncome" title="연소득액" id="label_additional01" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">480만원미만</option>
+									<option value="020">480~840만원 미만</option>
+									<option value="030">840~1200만원 미만</option>
+									<option value="040">1200~1800만원 미만</option>
+									<option value="050">1800~3600만원 미만</option>
+									<option value="060">3600만원 이상</option>
+								</select>
+							</td>
+							<th scope="row" class="cell_l"><label for="label_additional02" class="not_neccessary">부동산 보유액</label></th>
+							<td class="cell_l02">
+								<select name="realEstate" title="부동산보유액" id="label_additional02" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">5천만원 미만</option>
+									<option value="020">1 ~ 2억</option>
+									<option value="030">2 ~ 3억</option>
+									<option value="040">3 ~ 5억</option>
+									<option value="050">5 ~ 7억</option>
+									<option value="060">7 ~ 10억</option>
+									<option value="070">10억이상</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_additional03" class="not_neccessary">주거형태</label></th>
+							<td class="cell_l02">
+								<select name="residentType" title="주거형태" id="label_additional03" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">아파트</option>
+									<option value="020">다세대</option>
+									<option value="030">빌라</option>
+									<option value="040">연립</option>
+									<option value="050">주택</option>
+									<option value="060">관사</option>
+									<option value="070">기숙사</option>
+									<option value="080">오피스텔</option>
+									<option value="090">기타</option>
+								</select>
+							</td>
+							<th scope="row" class="cell_l"><label for="label_additional04" class="not_neccessary">주거소유 형태</label></th>
+							<td class="cell_l02">
+								<select name="abodeCode" title="주거소유형태" id="label_additional04" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">본인소유</option>
+									<option value="050">가족소유</option>
+									<option value="020">전세</option>
+									<option value="030">월세</option>
+									<option value="060">친인척소유</option>
+									<option value="040">기타</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_additional05" class="not_neccessary">주 이용업소</label></th>
+							<td class="cell_l02">
+								<select name="customChainCode" title="주이용업소" id="label_additional05" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">숙박</option>
+									<option value="020">유통</option>
+									<option value="030">요식</option>
+									<option value="040">의류</option>
+									<option value="050">관광</option>
+									<option value="060">문화</option>
+									<option value="070">보건</option>
+									<option value="080">서비스</option>
+									<option value="090">기타</option>
+								</select>
+							</td>
+							<th scope="row" class="cell_l"><label for="label_additional06" class="not_neccessary">취미</label></th>
+							<td class="cell_l02">
+								<select name="hobbyCode" title="취미" id="label_additional06" class="input_additional">
+									<option value="000" selected="selected"> 선택 </option>
+									<option value="010">독서</option>
+									<option value="015">등산/낚시</option>
+									<option value="025">사진촬영</option>
+									<option value="050">쇼핑</option>
+									<option value="045">수집</option>
+									<option value="060">스포츠</option>
+									<option value="065">스포츠관람</option>
+									<option value="040">여행</option>
+									<option value="030">연극/콘서트</option>
+									<option value="035">영화</option>
+									<option value="055">요리</option>
+									<option value="020">음악</option>
+									<option value="070">컴퓨터게임</option>
+									<option value="090">기타</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- content_block -->
+		<div class="content_block fill_joinin clfix">
+			<p class="btnc"><a href="javascript:validation()"><img src="/images/common/btn_joinin.jpg" alt="회원가입" /></a></p>
+		</div>
+	</form>
+
+	<!-- footer_layer -->
+					
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+                
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1 class="none">마이키즈클럽</h1>
+                    <!-- 20130412 웹접근성(장차법)  수정  -->
+                    <div class="h1_desc"><img src="/images/cd/h1_myedu.jpg" alt="내 아이를 특별하게 젊은 엄마의 자녀사랑 마이키즈클럽" /></div><!-- 100126 -->
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_tab2 clfix">
+                    <!-- tab_area -->
+                    <div class="tab02 w810">
+                        <ul>
+                        
+                        	<!--2013.01.20 depth level 변경  -->
+                        	<li><a href="javascript:goTabPage('NHPIMCDMKC101', true);">마이키즈 소개</a></li>
+                        	<li><a href="javascript:goTabPage('NHPIMCDMKC102C1', true);">교육지원</a></li>
+                        	<li><a href="javascript:goTabPage('NHPIMCDMKC102C2', true);">문화생활지원</a></li>
+                        	<li><a href="javascript:goTabPage('NHPIMCDMKC102C4', true);">프리미엄</a></li>
+                        	<li class="on"><a href="javascript:goTabPage('NHPIMCDEDU010', true);">마이키즈 클럽</a></li>
+                        	
+                        	
+                            <!--li><a href="javascript:goTabPage('NHPIMCDMKC101', true);>마이키즈 소개</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMCDMKC102C1', true);">마이키즈 서비스</a></li>
+                            <li class="on"><a href="javascript:goTabPage('MyEduClubList', true);">마이키즈 클럽</a>
+                                <ul class="sub_tab">
+                                    <li><a href="javascript:goTabPage('MyEduClubList', true);">교육비 배우자 합산 등록조회</a></li>
+                                    <li><a href="javascript:goTabPage('NHPIMCDEDU002', true);">놀이공원 서비스 사용여부 확인</a></li>
+                                    <li class="on"><a href="javascript:goTabPage('NHPIMCDEDU003', true);">제대혈 할인 서비스 인증번호 받기</a></li>
+                                </ul>
+                            </li -->
+                        </ul>
+                    </div>
+
+                    <h2><img src="/images/cd/h2_blo_hospital.png" alt="차병원 제대형은행 아이코드 제대혈 보관 서비스 할인" /></h2>
+                    <div class="content_block_inner">
+			        <form name="form1" method="post" autocomplete="off">
+			        <input type="hidden" name="method" />
+			        <input type="hidden" name="input" />
+			        <input type="hidden" name="mode" value="" />
+                        <ol class="list_no01">
+                            <li><p>차병원 제대혈은행 아이코드 제대혈 보관 서비스 <strong class="t_black">5~10% 할인</strong></p></li>
+                            <li><p>마이키드 및 마이키즈 플러스카드로 차병원 제대혈은행 아이코드 제대혈 보과 서비스 이용시 <br />
+                            일반형 5%, 프리미엄형은 10% 할인됩니다. 결제시 정상금액 결제, 결제일에 청구대금에서 차감됩니다.<br />
+                            소지하고 있는 마이 My Edu카드 당 연 1회 서비스를 받으실 수 있습니다.</p></li>
+                            <li><p>반드시 홈페이지 ‘My Edu클럽’ 또는 전화(91588-8700)를 통하여 ‘제대혈 서비스 인증번호’를 받고 차병원 <br />
+                            아이코드 상담전화(080-561-3579)를 통하여 인증번호를 제시 하여야만 할인 서비스를 받으실 수 있습니다.</p></li>
+                        </ol>
+
+                        <table class="dtable02 dtable_inputfield mt15" summary="이용하실 카드의 할부이용 예정일, 이용금액, 할부시간을 입력하는 게시판입니다">
+                        <caption>카드할부금액 입력 게시판</caption>
+                        <colgroup><col width="25%" /><col width="75%" /></colgroup>
+                        <tbody>
+                            <!-- loop -->
+                            <tr>
+                                <th scope="row"><p>My Edu(Plus) 카드번호 입력</p></th>
+                                <td><p>
+                                    <select name="CARD_SELECT" id="label_chcard" title="카드종류 선택" style="width:370px" onchange="Change_Card(this.form)">
+                                        <option value="0">:: 카드를 선택해 주세요 ::</option>
+                                    </select>
+                                    <a href="#" onclick="go_submit();return false;" class="btn btn_s_blue"><span>조회</span></a>
+                                </p></td>
+                            </tr>
+                            <!-- //loop -->
+                            <tr>
+                                <th scope="row"><p>마이에듀회원 인증번호</p></th>
+                                <td><p>${string2}</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                         <div class="btnset">
+                            <div class="btnl t_desc04">본 서비스는 제휴업체 또는 카드사의 사정에 의해 중단 또는 변경될 수 있으며 그 내용을 사전에 알려드립니다.</div>
+                        </div>
+                        <div class="btnset">
+							<div class="btnr"> 
+								<a href="javascript:goTabPage('NHPIMCDEDU010', true);"  class="btn btn_blue"><span>확인</span></a> 
+							</div>
+                        </div>
+                       </form>
+                    </div>
+                </div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

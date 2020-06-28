@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">삼성체크카드 소액신용서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_checkcard.jpg" alt="삼성체크카드 소액신용서비스 - 체크카드 이용하시다 보면, 통장 잔고 부족이나 은행 점검 시간 때문에 불편한 점이 있으셨나요? 평소엔 체크카드로, 필요할 땐 신용카드처럼!" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<div class="flag_additional">
+						<img class="flag_sevice_point02" alt="" src="/images/mh/img_checkcard.png" />
+					</div>
+					<h2><img src="/images/mh/h2_checkcard_01.png" alt="소액신용서비스란 무엇인가요" /></h2>
+					<div class="content_block_inner">
+						<blockquote class="mb20"><img src="/images/mh/txt_checkcard.png" alt="30만원까지 신용한도를 드리는, 삼성체크카드 소액신용서비스" /></blockquote>
+						<p class="mt10">평소에는 체크카드로 이용하시고, 체크카드 결제가 어려우신 경우에는 <br />신용카드처럼 이용하실 수 있는 서비스 입니다.</p>
+					</div>
+				</div>
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_checkcard_02.png" alt="소액신용서비스 신청하기" /></h2>
+					<div class="content_block_inner">
+						<p>아래 정보를 입력하신 후 ‘신청’ 버튼을 눌러 주세요</p>
+						<table class="dtable02 mt10" summary="신청서 정보를 입력하는 게시판입니다">
+							<caption>신청자 정보 입력</caption>
+							<colgroup><col width="110" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="cell_l10"><p>성명(한글)</p></th>
+									<td class="cell_l10"><input type="text" class="txt"  name="userName" title="성명(한글)" value="<%=userName%>" id="label_k_name" style="width: 108px;" readonly="readonly" /></td>
+								</tr>
+								<tr>
+									<th scope="row" class="cell_l10"><p>주민등록번호</p></th>
+									<td class="cell_l10">
+										<input type="text" class="txt" value="<%=decIdenNo1%>" maxlength="6" title="주민등록번호 앞자리" style="width: 98px;" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="*******" maxlength="7" title="주민등록번호 뒷자리" style="width: 98px;" readonly="readonly" />
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="cell_l10"><p>휴대폰번호</p></th>
+									<td class="cell_l10">
+										<span class="input_phone">
+											<select title="휴대전화 앞자리 번호 선택" class="mr10" name="phoneNo1" style="width: 85px;">
+												<option value="010" >010</option>
+												<option value="011" >011</option>
+												<option value="016" >016</option>
+												<option value="017" >017</option>
+												<option value="018" >018</option>
+												<option value="019" >019</option>
+											</select>
+											<input type="text" class="txt" name="phoneNo2" value="" title="휴대전화 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.form1.phoneNo3);"  style="ime-mode:false;width: 98px;" />&nbsp;-&nbsp;
+											<input type="text" class="txt" name="phoneNo3" value="" title="휴대전화 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.form1.phoneNo2);"  style="ime-mode:false;width: 98px;" />
+<!-- 
+											<a href="javascript:gocert();" class="btn btn_s_white"><span>인증하기</span></a>
+ -->
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnr"><a class="btn btn_blue" href="javascript:apply();"><span>신청</span></a></p>
+						</div>
+
+					</div>
+				</div>
+
+</form>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

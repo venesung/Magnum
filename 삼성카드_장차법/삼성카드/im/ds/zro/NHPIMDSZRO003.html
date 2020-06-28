@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">제로할부서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_zeroinstallment.jpg" alt="디지털프라자에서 최대 300만원, 최장 60개월 이자부담 Zero! 원금부담 Zero!" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMDSZRO001', true);">제로할부서비스 안내</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMDSZRO003', true);">약정 시뮬레이션</a></li>
+							<li><a href="javascript:goTabPage('NHPIMDSZRO004', true);">신청/청구내역 조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_zero_simulation01.png" alt="시뮬레이션으로 미리확인해보세요" /></h2>
+					<div class="content_block_inner">
+						<p class="mb10"><img src="/images/mh/txt_zero_simulation01.png" alt="제로할부 시뮬레이션으로 약정금액을 미리 확인하실 수 있습니다." /></p>
+						<p class="p_txt">이용금액과 약정개월수로 입력하시고 조회버튼을 클릭하세요.</p>
+						<table class="dtable02 mt20" summary="이용금액, 약정개월수 등 약정 시뮬레이션을 보여주는 게시판입니다.">
+							<caption>약정금액을 조회</caption>
+							<colgroup><col width="15%" /><col width="35%" /><col width="15%" /><col width="35%" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><label for="zeroIntAmt">이용금액</label></th>
+									<td><p><input name="zeroIntAmt" id="zeroIntAmt" type="text" class="txt" onkeyup="Comma1(this, this.value);" style="text-align: right;" /> 원</p></td>
+									<th scope="row"><label for="zeroIntMt">약정개월수</label></th>
+									<td><p><input name="zeroIntMt" id="zeroIntMt" type="text" class="txt" onkeyup="Comma1(this, this.value);" style="text-align: right;" /> 개월</p></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btnset">
+                            <p class="btnr"><a href="javascript:fncCalculation();" class="btn btn_blue"><span>조회</span></a></p>
+						</div>
+						<div class="line_lgray">&nbsp;</div>
+						<p class="p_txt">월 상환이자는 <span class="t_tahoma18 t_point_org">6.4%</span>기준으로 이용하실 수 있으며, <strong class="t_point">월상환 원금</strong>은 <span id="monAmt" class="t_tahoma18 t_point_org">0</span>원으로 <br />
+							<strong class="t_point">월상환 이자</strong>는  <span id="monInt" class="t_tahoma18 t_point_org">0</span>원 입니다.</p>
+						<div class="line_lgray">&nbsp;</div>
+						<p class="p_txt"><strong class="t_point">월 무이자 약정액</strong><span class="pl20 t_desc03">월 위클리보너스입금액을 입력하신 후 조회버튼을 클릭하세요.</span></p>
+						<ol class="list_no01 mt20">
+							<li><p>위클리보너스 신청 고객</p>
+								<table class="dtable02 mt5 mb5" summary="위클리보너스 신청 고객의 월 기준 약정액 및 약정액을 보여주는 게시판입니다">
+									<caption>약정액 조회</caption>
+									<colgroup><col width="15%" /><col width="30%" /><col width="20%" /><col width="35%" /></colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="riline"><label for="wbStmonAmt">월 기준 약정액</label></th>
+											<td colspan="3"><p><input name="wbStmonAmt" id="wbStmonAmt" type="text" class="txt" style="text-align: right;" readonly="readonly" /> 원</p></td>
+										</tr>
+										<tr>
+											<th scope="rowgroup" rowspan="2" class="riline"><label for="wbEgmAmt">약정액</label></th>
+											<td rowspan="2"><p><input name="wbEgmAmt" id="wbEgmAmt" type="text" class="txt" style="text-align: right;" readonly="readonly" /> 원</p></td>
+											<td class="bo_no_line pd0"><span class="t_desc03">- 월 위클리보너스 입금액</span></td>
+											<td class="bo_no_line pd0"><input name="wbMonAmt" type="text" class="txt" style="text-align: right;"  onkeyup="Comma1(this, this.value);" title="월 위클리보너스 입금액" /> <a href="javascript:fncWBCalculation();" class="btn btn_s_white"><span>조회</span></a></td>
+										</tr>
+										<tr>
+											<td class="p0"><span class="t_desc03">- 월 청구 입금액</span></td>
+											<td class="p0"><input name="wbIbAmt" type="text" class="txt" style="text-align: right;" readonly="readonly" title="월 청구 입금액" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</li>
+							<li class="mt10"><p>위클리보너스 미신청고객</p>
+								<table class="dtable02 mt5 mb5" summary="위클리보너스 미신청고객의 약정액을 보여주는 게시판입니다.">
+									<caption>약정액 조회</caption>
+									<colgroup><col width="15%" /><col width="85" /></colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="riline"><label for="egmAmt">약정액</label></th>
+											<td><p><input name="egmAmt" id="egmAmt" type="text" class="txt" style="text-align: right;" readonly="readonly" title="약정액" /> 원</p></td>
+										</tr>
+									</tbody>
+								</table>
+							</li>
+						</ol>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

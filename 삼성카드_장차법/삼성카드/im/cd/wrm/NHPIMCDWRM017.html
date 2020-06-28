@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1 class="none">특별한 분께 선사하는 Roi de Vin 클럽</h1>
+                    <div class="h1_desc"><img src="/images/cd/h1_roidevin.jpg" alt="와인에 문화와 감성을 더하다 특별한 분께 선사하는 Roi de Vin 클럽" /></div>
+                </div>
+
+                <div class="content_block content_block_tab2 clfix">
+                    <div class="tab02 w810">
+	                    <ul>
+                            <li><a href="javascript:goTabPage('NHPIMCDWRM001', true);">Roi de Vin 소개</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMCDWRM002', true);">Roi de Vin 서비스</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMCDWRM004', true);">와인 바우처 Reward</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMCDWRM005', true);">와인 악세서리 Reward</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM008', true);">신청내역 조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM019', true);">포인트 조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM010', true);">이용안내</a></li>
+                        </ul>
+	                </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_card clfix">
+                    <h2><img src="/images/cd/h2_robertparker01.png" alt="로버트파커 포인트(RP)란?" /></h2>
+                    <div class="content_block_inner d_roidevin_top">
+                        <!--<div class="flag_additional"><img src="/images/cd/img_roidevin.jpg" class="flag_rp" alt="" /></div>-->
+                        <blockquote><img src="/images/cd/txt_robertparker01.png" alt="신뢰성과 영향력을 갖춘 와인 평가 점수" /></blockquote>
+                        <p class="p_desc">와인의 맛과 향을 100점 만점으로 평가하는 로버트파커만의 와인 평가 기준으로<br />전세계적인 신뢰성과 영향력을 갖춘 와인 평가 점수입니다.</p>
+
+                        <dl>
+                            <dt><span>현재 와인 포인트 점수</span></dt>
+                            <dd>1 P</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <form name="insertForm" action="/wrmOrder.do" method="post" autocomplete="off">
+				
+                <div class="content_block clfix">
+                    <h2><img src="/images/cd/h2_robertparker05.png" alt="주문하신 와인 정보입니다" /></h2>
+                    <div class="content_block_inner">
+                        <table class="dtable01" summary="와인의 상품명과 포인트를 확인할 수 있는 게시판입니다.">
+                        <caption>와인 주문 정보</caption>
+                        <colgroup><col width="20%" /><col width="*" /><col width="20%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">구분</th>
+                                <th scope="col" class="cell_l10">상품명</th>
+                                <th scope="col" class="cell_r10">와인포인트</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="cell_r10 cell_bg">총 구매 와인포인트 <em class="t_point_org">1</em> 포인트</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10">${goodsType}</td>
+                                <td class="cell_l10">${goodsName}</td>
+                                <td class="cell_r10 t_no">1</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <div class="tb_exp mt30">
+                            <h3>배송지 정보</h3>
+                        </div>
+
+                        <table class="dtable02" summary="배송지 정보(이름, 주소, 전화번호, 핸드폰번호, 추가메모)를 작성하는 게시판입니다">
+                        <caption>배송지 정보</caption>
+                        <colgroup><col width="20%" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><p>이름</p></th>
+                                <td><p class="inpit_name"><input type="text" class="txt" name="receiver" value="${member_info.receiver}" title="이름" /></p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>주소</p></th>
+                                <td>
+                                    <input type="hidden" name="zip_seq" value="${member_info.zip_seq}" />
+                                    <p class="input_zip"><input type="text" class="txt" name="zip_code1" value="${fn:substring(member_info.zip_code, 0, 3)}" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" name="zip_code2" value="${fn:substring(member_info.zip_code, 3, 6)}" title="우편번호 뒷자리" readonly="readonly" /><a href="#" class="btn btn_s_white" title="새창"><span>우편번호 검색</span></a></p>
+                                    <p class="input_address"><input type="text" class="txt" name="addr1" value="${member_info.rec_addr1}"  title="자택주소" id="label_address02" readonly="readonly" /></p>
+                                    <p class="input_address"><input type="text" class="txt" name="addr2" value="${member_info.rec_addr2}"  title="자택주소 상세" id="label_address03" /></p>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>전화번호</p></th>
+                                <td><p class="input_phone">
+                                    <input type="text" class="txt" name="home_phone1" value="${homePhone[0]}" title="전화번호 첫자리" id="label_phone01" />&nbsp;-&nbsp;
+                                    <input type="text" class="txt" name="home_phone2" value="${homePhone[1]}" title="전화번호 가운데자리" id="label_phone02" />&nbsp;-&nbsp;
+                                    <input type="text" class="txt" name="home_phone3" value="${homePhone[2]}" title="전화번호 뒷자리" id="label_phone03" />
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>핸드폰번호</p></th>
+                                <td><p class="input_phone">
+                                    <select name="hand_phone1" title="핸드폰 앞자리" id="label_cphone">
+                                        <option>선택</option>
+                                        <option></option>
+                                    </select>
+                                    <input type="text" class="txt" name="hand_phone2" value="${handPhone[1]}" title="핸드폰번호 가운데자리" id="label_cphone02" />&nbsp;-&nbsp;<input type="text" class="txt" name="hand_phone3" value="${handPhone[2]}" title="핸드폰번호 뒷자리" id="label_cphone03" />
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>추가메모</p></th>
+                                <td><p>
+                                    <textarea name="rec_msg" cols="80" rows="5" class="txt" title="추가메모 입력"></textarea>                                    
+                                </p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <div class="btnset">
+                            <p class="btnl t_desc04">신청하신 상품의 배송은 삼성카드의 제휴 배송엄체에의해 이루어집니다. 따라서, 위에 입력하시는 배송주소 정보가 배송업체에게 전달됨을 양지바라며, 해당 정보는 상품 배송과 관련된 내용만 사용됨을 알려드립니다.<br />배송정보가 배속업체에 전달되는 것에대해 동의합니다.</p>
+                        </div>
+
+                        <div class="line_lgray_p0 mt20">&nbsp;</div>
+
+                        <div class="btnset">
+                            <p class="btnl">
+                                <label for="label_agree"><input type="radio" class="rdo" id="label_agree" name="r_01" title="동의" /> 동의</label>
+                                <label for="label_notagree"><input type="radio" class="rdo" id="label_notagree" name="r_01" checked="checked" title="동의안함" /> 동의안함</label>
+                            </p>
+                            <p class="btnr">
+                                <a href="javascript:listGo();" class="btn btn_white"><span>주문취소</span></a>
+                                <a href="javascript:insertGo();" class="btn btn_blue"><span>주문완료</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

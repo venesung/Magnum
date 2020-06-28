@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100219 -->
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<!-- <li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>-->
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_verify_yourinfo.png" alt="본인정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02 dtable_inputfield" summary="본인정보 확인을 위해 카드번호, 카드비밀번호, 카드 CVC번호를 입력할 수 있는 게시판입니다">
+						<caption>본인확인 정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card"
+										style="width: 460px" name="CARD_SELECT">
+										<%
+											for (int i = 0; i < CardList.size(); i++) {
+										%>
+										<option value="<%=CardList.get(i).getCardindex() %>">
+										<%=CardList.get(i).getCardName()%>&nbsp;
+										<%=CardList.get(i).getCardNo16()%>
+										</option>
+										<%
+											}
+										%>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td><p class="input_2char">
+								<input class="txt" type="password" title="카드 비밀번호" name="PASSWORD_NO2" value="" size="4" maxlength="2" id="STD_TEXT_FIELD2" style="width:80px"
+								onkeyup="lengthCheck1(this.form, this.value)"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								/>
+					**(비밀번호 앞 2자리)
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td><p class="input_3char">
+								<input type="password" class="txt" title="카드 CVC번호" name="CVC_NO" value="" size="6" maxlength="3" id="STD_TEXT_FIELD3" style="width:80px"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								/>(카드뒷면 뒤 숫자 3자리)
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+							<a href="javascript:go_011();" class="btn btn_blue"><span>확인</span></a>
+						</div>
+
+						<dl class="cvc_view">
+							<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>
+
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_life_ft_cancel02.png" alt="해지시 유의사항을 알려드립니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>결제일에 잔고가 부족하더라도 생활비재테크서비스를 해지하지 않으셔도 됩니다.<br />
+							결제일 충전(옮겨놓기)시 약정금액보다 자동이체계좌 잔고가 부족할 경우 잔고범위 내에서만 출금되며, <br />
+							서비스 및 신용카드를 정상적으로 이용하실 수 있습니다.</p></li>
+							<li><p>홈페이지 또는 상담전화(지역번호 없이) 1588-8700으로 해지가 가능하며, 사용하지 않은 금액은 <br />
+							다음날(영업일 기준) 회원님의 자동이체 계좌로 입금해드립니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

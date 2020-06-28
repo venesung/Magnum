@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd_cps.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cf2.css" />
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/hp/im/cd/cps/NHPIMCDCPS501.jsp" %>
+
+	<!-- select-result -->
+	<div id="select-result">
+		<h3>고객님이 선택하신 카드입니다. 꼼꼼히 비교해 보세요!</h3>
+		<!-- cardinfo-wrap  cell-size4-->
+		<div class="cardinfo-wrap">	
+			<table class="card-data cell-size<%=compSize%>" summary="사용타입 별 카드를 비교하실 수 있습니다.">
+            <caption>선택한 카드 정보</caption>
+			<thead>
+                <tr>
+                    <th class="type" scope="col"><img src="/images/cd/cps/th_type.gif" alt="사용타입" /></th>
+                    <c:if test="${compareVo1 != null}">
+                    <th scope="col">${compareVo1.groupName}</th>
+                    </c:if>
+                    <c:if test="${compareVo2 != null}">
+                    <th scope="col">${compareVo2.groupName}</th>
+                    </c:if>
+                    <c:if test="${compareVo3 != null}">
+                    <th scope="col">${compareVo3.groupName}</th>
+                    </c:if>
+                    <c:if test="${compareVo4 != null}">
+                    <th scope="col">${compareVo4.groupName}</th>
+                    </c:if>
+                </tr>
+			</thead>
+			<tbody>
+			<tr class="category">
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typey_01.gif" alt="카드종류" /></th>
+				<c:if test="${compareVo1 != null}">
+					<td>
+						<div class="category-wrap">
+						<div class="card-img"><img src="${compareVo1.listImg03}" alt="${compareVo1.kindName}" /></div>
+							<strong class="card-tit">${compareVo1.kindName}</strong>
+							<p class="card-desc">${compareVo1.cardDesc}</p>
+						</div>
+						<!--  
+						<div class="button">
+                            <a href="javascript:goView('${compareVo1.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="자세히 보기" /></a>
+						</div>
+						-->
+					</td>
+				</c:if>				
+				<c:if test="${compareVo2 != null}">
+					<td>
+						<div class="category-wrap">
+						<div class="card-img"><img src="${compareVo2.listImg03}" alt="${compareVo2.kindName}" /></div>
+							<strong class="card-tit">${compareVo2.kindName}</strong>
+							<p class="card-desc">${compareVo2.cardDesc}</p>
+						</div>
+						<!-- 
+						<div class="button">
+                            <a href="javascript:goView('${compareVo2.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="자세히 보기" /></a>
+						</div>
+						 -->
+					</td>
+				</c:if>				
+				<c:if test="${compareVo3 != null}">
+					<td>
+						<div class="category-wrap">
+						<div class="card-img"><img src="${compareVo3.listImg03}" alt="${compareVo3.kindName}" /></div>
+							<strong class="card-tit">${compareVo3.kindName}</strong>
+							<p class="card-desc">${compareVo3.cardDesc}</p>
+						</div>
+						<!-- 
+						<div class="button">
+                            <a href="javascript:goView('${compareVo3.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="자세히 보기" /></a>
+						</div>
+						 -->
+					</td>
+				</c:if>				
+				<c:if test="${compareVo4 != null}">
+					<td>
+						<div class="category-wrap">
+						<div class="card-img"><img src="${compareVo4.listImg03}" alt="${compareVo4.kindName}" /></div>
+							<strong class="card-tit">${compareVo4.kindName}</strong>
+							<p class="card-desc">${compareVo4.cardDesc}</p>
+						</div>
+						<!-- 
+						<div class="button">
+                            <a href="javascript:goView('${compareVo4.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="자세히 보기" /></a>
+						</div>
+						 -->
+					</td>
+				</c:if>				
+			</tr>
+			
+			<tr class="category-button">
+				<th scope="row">&nbsp;</th>
+				<c:if test="${compareVo1 != null}">
+				<td>
+				    <% if("".equals(snsComp) || null == snsComp) { %>
+                    <a href="javascript:setCardBasket('${compareVo1.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goView('${compareVo1.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>    
+				    <% } else { %>
+                    <a href="javascript:setCardBasket('${compareVo1.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goViewOpen('${compareVo1.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>                                        
+				    <% } %> 
+				</td>
+				</c:if>
+				<c:if test="${compareVo2 != null}">
+				<td>
+					<% if("".equals(snsComp) || null == snsComp) { %>
+                    <a href="javascript:setCardBasket('${compareVo2.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goView('${compareVo2.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>    
+				    <% } else { %>
+                    <a href="javascript:setCardBasket('${compareVo2.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goViewOpen('${compareVo2.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>                                        
+				    <% } %> 
+					
+				</td>
+				</c:if>
+				<c:if test="${compareVo3 != null}">
+				<td>
+					<% if("".equals(snsComp) || null == snsComp) { %>
+                    <a href="javascript:setCardBasket('${compareVo3.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goView('${compareVo3.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>    
+				    <% } else { %>
+                    <a href="javascript:setCardBasket('${compareVo3.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goViewOpen('${compareVo3.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>                                        
+				    <% } %>  
+				</td>
+				</c:if>
+				<c:if test="${compareVo4 != null}">
+				<td>
+					<% if("".equals(snsComp) || null == snsComp) { %>
+                    <a href="javascript:setCardBasket('${compareVo4.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goView('${compareVo4.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>    
+				    <% } else { %>
+                    <a href="javascript:setCardBasket('${compareVo4.kindCode}')"><img src="/images/cd/cps/btn_addcard.gif" alt="카드담기" /></a>
+                    <a href="javascript:goViewOpen('${compareVo4.kindCode}')"><img src="/images/cd/cps/btn_viewnapp.gif" alt="상세보기 및 신청" /></a>                                        
+				    <% } %>  
+				</td>
+				</c:if>
+			</tr>
+			
+			
+			
+			<tr>
+			<th class="type" scope="row"><img src="/images/cd/cps/th_typey_02.gif" alt="브랜드" /></th>
+				<c:if test="${compareVo1 != null}">
+					<td>
+					 <div class="m-wrap">
+					  	<c:if test="${compareVo1.cardVisa   == 'Y'}">Visa<c:if test="${compareVo1.cardMaster == 'Y'|| compareVo1.cardAmex == 'Y' || compareVo1.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo1.cardMaster == 'Y'}">Master<c:if test="${compareVo1.cardAmex == 'Y'|| compareVo1.cardCup == 'Y' }">,</c:if> </c:if>
+						<c:if test="${compareVo1.cardAmex   == 'Y'}">Amex <c:if test="${compareVo1.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo1.cardCup    == 'Y'}">UnionPay(은련) </c:if>
+						<c:if test="${compareVo1.feeYearGubun == '1'}">/ </c:if>
+						<c:choose>
+						<c:when test="${compareVo1.feeYear == '0'}">
+							<c:if test="${compareVo1.feeYearGubun == '1'}">
+							<c:choose>
+								<c:when test="${compareVo1.kindCode == 'P0340'}">
+								옵션에 따라 연회비 부과
+								</c:when>
+								<c:otherwise>
+								연회비 없음
+								</c:otherwise>
+							</c:choose>
+								
+							</c:if>
+							<c:if test="${compareVo1.feeYearGubun == '2'}">국내전용 / 연회비없음</c:if><br />
+						</c:when>
+						<c:otherwise>
+							<c:if test="${compareVo1.feeYearGubun == '1'}">해외:</c:if>
+							<c:if test="${compareVo1.feeYearGubun == '2'}">국내전용:</c:if>
+							<fmt:formatNumber value="${compareVo1.feeYear}" type="number"/>원<br />
+						</c:otherwise>
+						</c:choose>
+						<c:if test="${compareVo1.trafficYn == 'Y'}">후불교통카드 선택할 수 있음</c:if>
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo2 != null}">
+					<td>
+					 <div class="m-wrap">
+					  <c:if test="${compareVo2.cardVisa   == 'Y'}">Visa<c:if test="${compareVo2.cardMaster == 'Y' || compareVo2.cardAmex == 'Y' || compareVo2.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo2.cardMaster == 'Y'}">Master<c:if test="${compareVo2.cardAmex == 'Y' || compareVo2.cardCup == 'Y' }">,</c:if> </c:if>
+						<c:if test="${compareVo2.cardAmex   == 'Y'}">Amex <c:if test="${compareVo2.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo2.cardCup    == 'Y'}">UnionPay(은련) </c:if>
+						<c:if test="${compareVo2.feeYearGubun == '1'}">/ </c:if>
+						<c:choose>
+						<c:when test="${compareVo2.feeYear == '0'}">
+							<c:if test="${compareVo2.feeYearGubun == '1'}">
+							<c:choose>
+								<c:when test="${compareVo2.kindCode == 'P0340'}">
+								옵션에 따라 연회비 부과
+								</c:when>
+								<c:otherwise>
+								연회비 없음
+								</c:otherwise>
+							</c:choose>
+							</c:if>
+							<c:if test="${compareVo2.feeYearGubun == '2'}">국내전용 / 연회비없음</c:if><br />
+						</c:when>
+						<c:otherwise>
+							<c:if test="${compareVo2.feeYearGubun == '1'}">해외:</c:if>
+							<c:if test="${compareVo2.feeYearGubun == '2'}">국내전용:</c:if>
+							<fmt:formatNumber value="${compareVo2.feeYear}" type="number"/>원<br />
+						</c:otherwise>
+						</c:choose>
+						<c:if test="${compareVo2.trafficYn == 'Y'}">후불교통카드 선택할 수 있음</c:if>
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo3 != null}">
+					<td>
+					 <div class="m-wrap">
+					  <c:if test="${compareVo3.cardVisa   == 'Y'}">Visa<c:if test="${compareVo3.cardMaster == 'Y' || compareVo3.cardAmex == 'Y' || compareVo3.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo3.cardMaster == 'Y'}">Master<c:if test="${compareVo3.cardAmex == 'Y' || compareVo3.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo3.cardAmex   == 'Y'}">Amex <c:if test="${compareVo3.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo3.cardCup    == 'Y'}">UnionPay(은련) </c:if>
+						<c:if test="${compareVo3.feeYearGubun == '1'}">/ </c:if>
+						<c:choose>
+						<c:when test="${compareVo3.feeYear == '0'}">
+							<c:if test="${compareVo3.feeYearGubun == '1'}">
+								<c:choose>
+									<c:when test="${compareVo3.kindCode == 'P0340'}">
+									옵션에 따라 연회비 부과
+									</c:when>
+									<c:otherwise>
+									연회비 없음
+									</c:otherwise>
+								</c:choose>							
+							</c:if>
+							<c:if test="${compareVo3.feeYearGubun == '2'}">국내전용 / 연회비없음</c:if><br />
+						</c:when>
+						<c:otherwise>
+							<c:if test="${compareVo3.feeYearGubun == '1'}">해외:</c:if>
+							<c:if test="${compareVo3.feeYearGubun == '2'}">국내전용:</c:if>
+							<fmt:formatNumber value="${compareVo3.feeYear}" type="number"/>원<br />
+						</c:otherwise>
+						</c:choose>
+						<c:if test="${compareVo3.trafficYn == 'Y'}">후불교통카드 선택할 수 있음</c:if>
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo4 != null}">
+					<td>
+					 <div class="m-wrap">
+					  <c:if test="${compareVo4.cardVisa   == 'Y'}">Visa<c:if test="${compareVo4.cardMaster == 'Y'|| compareVo4.cardAmex == 'Y' || compareVo4.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo4.cardMaster == 'Y'}">Master<c:if test="${compareVo4.cardAmex == 'Y'|| compareVo4.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo4.cardAmex   == 'Y'}">Amex <c:if test="${compareVo4.cardCup == 'Y'}">,</c:if> </c:if>
+						<c:if test="${compareVo4.cardCup    == 'Y'}">UnionPay(은련) </c:if>
+						<c:if test="${compareVo4.feeYearGubun == '1'}">/ </c:if>
+						<c:choose>
+						<c:when test="${compareVo4.feeYear == '0'}">
+							<c:if test="${compareVo4.feeYearGubun == '1'}">
+								<c:choose>
+									<c:when test="${compareVo4.kindCode == 'P0340'}">
+									옵션에 따라 연회비 부과
+									</c:when>
+									<c:otherwise>
+									연회비 없음
+									</c:otherwise>
+								</c:choose>							
+							
+							</c:if>
+							<c:if test="${compareVo4.feeYearGubun == '2'}">국내전용 / 연회비없음</c:if><br />
+						</c:when>
+						<c:otherwise>
+							<c:if test="${compareVo4.feeYearGubun == '1'}">해외:</c:if>
+							<c:if test="${compareVo4.feeYearGubun == '2'}">국내전용:</c:if>
+							<fmt:formatNumber value="${compareVo4.feeYear}" type="number"/>원<br />
+						</c:otherwise>
+						</c:choose>
+						<c:if test="${compareVo4.trafficYn == 'Y'}">후불교통카드 선택할 수 있음</c:if>
+					 </div>
+					</td>
+				</c:if>
+			</tr>
+			
+			<tr>
+			<th class="type" scope="row"><img src="/images/cd/cps/disnsave.gif" alt="할인 및 적립" /></th>
+				<c:if test="${compareVo1 != null}">
+					<td>
+					 <div class="m-wrap">
+					  	${compareVo1.serviceNm}
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo2 != null}">
+					<td>
+					 <div class="m-wrap">
+					  ${compareVo2.serviceNm}
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo3 != null}">
+					<td>
+					 <div class="m-wrap">
+					 ${compareVo3.serviceNm}
+					 </div>
+					</td>
+				</c:if>
+				<c:if test="${compareVo4 != null}">
+					<td>
+					 <div class="m-wrap">
+					  ${compareVo4.serviceNm}
+					 </div>
+					</td>
+				</c:if>
+			</tr>
+			
+			
+			<% if(getServiceTitle(compareServiceList1, "DI") != "" || getServiceTitle(compareServiceList2, "DI") != "" || getServiceTitle(compareServiceList3, "DI") != "" || getServiceTitle(compareServiceList4, "DI") != "") { %>
+			<tr>
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typey_04.gif" alt="외식" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "DI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "DI")%>
+						<%=getServiceContent(compareServiceList1, "DI") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "DI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "DI")%>
+						<%=getServiceContent(compareServiceList2, "DI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "DI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "DI")%>
+						<%=getServiceContent(compareServiceList3, "DI") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "DI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "DI")%>
+						<%=getServiceContent(compareServiceList4, "DI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				
+			</tr>
+			<%}%>
+			
+			<% if(getServiceTitle(compareServiceList1, "LE") != "" || getServiceTitle(compareServiceList2, "LE") != "" || getServiceTitle(compareServiceList3, "LE") != "" || getServiceTitle(compareServiceList4, "LE") != "") { %>
+			<tr>
+			 <th class="type" scope="row"><img src="/images/cd/cps/th_typey_05.gif" alt="여가" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "LE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "LE")%>
+						<%=getServiceContent(compareServiceList1, "LE") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "LE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "LE")%>
+						<%=getServiceContent(compareServiceList2, "LE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "LE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "LE")%>
+						<%=getServiceContent(compareServiceList3, "LE") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "LE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "LE")%>
+						<%=getServiceContent(compareServiceList4, "LE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+			</tr>			
+			<%} %>
+			
+			
+			<% if(getServiceTitle(compareServiceList1, "SH") != "" || getServiceTitle(compareServiceList2, "SH") != "" || getServiceTitle(compareServiceList3, "SH") != "" || getServiceTitle(compareServiceList4, "SH") != "") { %>
+			<tr>
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typex_01.gif" alt="쇼핑" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "SH") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "SH")%>
+						<%=getServiceContent(compareServiceList1, "SH") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "SH") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "SH")%>
+						<%=getServiceContent(compareServiceList2, "SH") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "SH") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "SH")%>
+						<%=getServiceContent(compareServiceList3, "SH") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "SH") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "SH")%>
+						<%=getServiceContent(compareServiceList4, "SH") %>
+						</div><%} %>
+				</td>
+				</c:if>
+			</tr>			
+			
+			<%}%>
+			
+			<%if(getServiceTitle(compareServiceList1, "ED") != "" || getServiceTitle(compareServiceList2, "ED") != "" || getServiceTitle(compareServiceList3, "ED") != "" || getServiceTitle(compareServiceList4, "ED") != "") { %>
+			<tr>
+			<th class="type" scope="row"><img src="/images/cd/cps/th_typey_07.gif" alt="교육" /></th>
+			<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "ED") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "ED")%>
+						<%=getServiceContent(compareServiceList1, "ED") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "ED") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "ED")%>
+						<%=getServiceContent(compareServiceList2, "ED") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "ED") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "ED")%>
+						<%=getServiceContent(compareServiceList3, "ED") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "ED") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "ED")%>
+						<%=getServiceContent(compareServiceList4, "ED") %>
+						</div><%} %>
+				</td>
+				</c:if>
+		</tr>
+		<%} 
+			if(getServiceTitle(compareServiceList1, "TR") != "" || getServiceTitle(compareServiceList2, "TR") != "" || getServiceTitle(compareServiceList3, "TR") != "" || getServiceTitle(compareServiceList4, "TR") != "") { %>
+			<tr>
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typey_08.gif" alt="여행" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "TR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "TR")%>
+						<%=getServiceContent(compareServiceList1, "TR") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "TR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "TR")%>
+						<%=getServiceContent(compareServiceList2, "TR") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "TR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "TR")%>
+						<%=getServiceContent(compareServiceList3, "TR") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "TR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "TR")%>
+						<%=getServiceContent(compareServiceList4, "TR") %>
+						</div><%} %>
+				</td>
+				</c:if>
+			</tr>
+			<%} %>
+			
+			<% if(getServiceTitle(compareServiceList1, "DR") != "" || getServiceTitle(compareServiceList2, "DR") != "" || getServiceTitle(compareServiceList3, "DR") != "" || getServiceTitle(compareServiceList4, "DR") != "") { %>
+			<tr>
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typey_09.gif" alt="자동차" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "DR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "DR")%>
+						<%=getServiceContent(compareServiceList1, "DR") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "DR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "DR")%>
+						<%=getServiceContent(compareServiceList2, "DR") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "DR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "DR")%>
+						<%=getServiceContent(compareServiceList3, "DR") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "DR") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "DR")%>
+						<%=getServiceContent(compareServiceList4, "DR") %>
+						</div><%} %>
+				</td>
+				</c:if>
+			</tr>
+			<%} %>
+			
+			<% if(getServiceTitle(compareServiceList1, "LI") != "" || getServiceTitle(compareServiceList2, "LI") != "" || getServiceTitle(compareServiceList3, "LI") != "" || getServiceTitle(compareServiceList4, "LI") != "") { %>
+			<tr>
+			<th class="type" scope="row"><img src="/images/cd/cps/th_typey_10.gif" alt="가정" /></th>
+			<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "LI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "LI")%>
+						<%=getServiceContent(compareServiceList1, "LI") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "LI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "LI")%>
+						<%=getServiceContent(compareServiceList2, "LI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "LI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "LI")%>
+						<%=getServiceContent(compareServiceList3, "LI") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "LI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "LI")%>
+						<%=getServiceContent(compareServiceList4, "LI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+					</tr>
+					<%} %>
+					<%    if(getServiceTitle(compareServiceList1, "BU") != "" || getServiceTitle(compareServiceList2, "BU") != "" || getServiceTitle(compareServiceList3, "BU") != "" || getServiceTitle(compareServiceList4, "BU") != "") { %>
+					<tr>
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_11.gif" alt="비즈니스" /></th>
+					<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "BU") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "BU")%>
+						<%=getServiceContent(compareServiceList1, "BU") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "BU") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "BU")%>
+						<%=getServiceContent(compareServiceList2, "BU") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "BU") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "BU")%>
+						<%=getServiceContent(compareServiceList3, "BU") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "BU") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "BU")%>
+						<%=getServiceContent(compareServiceList4, "BU") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				</tr>
+				<%} %>
+				
+				<% 
+				if(getServiceTitle(compareServiceList1, "FI") != "" || getServiceTitle(compareServiceList2, "FI") != "" || getServiceTitle(compareServiceList3, "FI") != "" || getServiceTitle(compareServiceList4, "FI") != "") { %>
+				<tr>
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_12.gif" alt="금융" /></th>
+					<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "FI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "FI")%>
+						<%=getServiceContent(compareServiceList1, "FI") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "FI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "FI")%>
+						<%=getServiceContent(compareServiceList2, "FI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "FI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "FI")%>
+						<%=getServiceContent(compareServiceList3, "FI") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "FI") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "FI")%>
+						<%=getServiceContent(compareServiceList4, "FI") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				</tr>
+				<%}%>
+				
+				<%if(getServiceTitle(compareServiceList1, "HE") != "" || getServiceTitle(compareServiceList2, "HE") != "" || getServiceTitle(compareServiceList3, "HE") != "" || getServiceTitle(compareServiceList4, "HE") != "") { %>
+				<tr>
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_10.gif" alt="가정" /></th>
+					<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "HE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "HE")%>
+						<%=getServiceContent(compareServiceList1, "HE") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "HE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "HE")%>
+						<%=getServiceContent(compareServiceList2, "HE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "HE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "HE")%>
+						<%=getServiceContent(compareServiceList3, "HE") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "HE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "HE")%>
+						<%=getServiceContent(compareServiceList4, "HE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				</tr>
+				<%} %>
+				
+				<%  if(getServiceTitle(compareServiceList1, "MT") != "" || getServiceTitle(compareServiceList2, "MT") != "" || getServiceTitle(compareServiceList3, "MT") != "" || getServiceTitle(compareServiceList4, "MT") != "") { %>
+			<tr>
+				<th class="type" scope="row"><img src="/images/cd/cps/th_typey_14.gif" alt="멀티" /></th>
+				<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "MT") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "MT")%>
+						<%=getServiceContent(compareServiceList1, "MT") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "MT") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "MT")%>
+						<%=getServiceContent(compareServiceList2, "MT") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "MT") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "MT")%>
+						<%=getServiceContent(compareServiceList3, "MT") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "MT") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "MT")%>
+						<%=getServiceContent(compareServiceList4, "MT") %>
+						</div><%} %>
+				</td>
+				</c:if>
+			</tr>
+			<%} else if(getServiceTitle(compareServiceList1, "GE") != "" || getServiceTitle(compareServiceList2, "GE") != "" || getServiceTitle(compareServiceList3, "GE") != "" || getServiceTitle(compareServiceList4, "GE") != "") { %>
+				<tr>
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_15.gif" alt="기타" /></th>
+					<c:if test="${compareServiceList1 != null}">
+					<%if(getServiceTitle(compareServiceList1, "GE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList1, "GE")%>
+						<%=getServiceContent(compareServiceList1, "GE") %>
+						</div><%} %>
+					</td>
+				</c:if>
+				
+				<c:if test="${compareServiceList2 != null}">
+				 <%if(getServiceTitle(compareServiceList2, "GE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList2, "GE")%>
+						<%=getServiceContent(compareServiceList2, "GE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				<c:if test="${compareServiceList3 != null}">
+				 <%if(getServiceTitle(compareServiceList3, "GE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList3, "GE")%>
+						<%=getServiceContent(compareServiceList3, "GE") %>
+						</div><%} %>
+				</td>
+				</c:if><c:if test="${compareServiceList4 != null}">
+				 <%if(getServiceTitle(compareServiceList4, "GE") == "") { %>
+						<td class="n">-
+						<%} else {%>
+						<td><div class="m-wrap">
+						<%=getServiceTitle(compareServiceList4, "GE")%>
+						<%=getServiceContent(compareServiceList4, "GE") %>
+						</div><%} %>
+				</td>
+				</c:if>
+				</tr>
+				<%} %>
+				
+				<tr class="preference">
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_16.gif" alt="선호도" /></th>
+					<c:if test="${compareVo1 != null}">
+					<td>
+						<p>
+							<strong>남자</strong>
+							<span><em>${compareVo1.menPro}</em>%</span>&nbsp;&nbsp;
+							<strong>여자</strong>
+							<span><em>${compareVo1.womenPro}</em>%</span>
+						</p>
+						<div id ="graphLayer_1"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("1","${compareVo1.totalCnt }");</script></div>
+						<!-- <div class="flash-gauge"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("1","${compareVo1.totalCnt }");</script></div> -->
+					</td>
+					</c:if>
+					<c:if test="${compareVo2 != null}">
+					<td>
+						<p>
+							<strong>남자</strong>
+							<span><em>${compareVo2.menPro }</em>%</span>&nbsp;&nbsp;
+							<strong>여자</strong>
+							<span><em>${compareVo2.womenPro }</em>%</span>
+						</p>
+						<div id ="graphLayer_2"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("2","${compareVo2.totalCnt }");</script></div>
+						<!-- <div class="flash-gauge"><img src="/images/cd/cps/tmp_flashgauge.gif" alt="" /></div> -->
+					</td>
+					</c:if>
+					<c:if test="${compareVo3 != null}">
+					<td>
+						<p>
+							<strong>남자</strong>
+							<span><em>${compareVo3.menPro }</em>%</span>&nbsp;&nbsp;
+							<strong>여자</strong>
+							<span><em>${compareVo3.womenPro }</em>%</span>
+						</p>
+						<div id ="graphLayer_3"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("3","${compareVo3.totalCnt }");</script></div>
+					</td>
+					</c:if>
+					<c:if test="${compareVo4 != null}">
+					<td>
+						<p>
+							<strong>남자</strong>
+							<span><em>${compareVo4.menPro }</em>%</span>&nbsp;&nbsp;
+							<strong>여자</strong>
+							<span><em>${compareVo4.womenPro }</em>%</span>
+						</p>
+						<div id ="graphLayer_4"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("4","${compareVo4.totalCnt }");</script></div>
+					</td>
+					</c:if>
+				</tr>
+				<tr class="grade">
+					<th class="type" scope="row"><img src="/images/cd/cps/th_typey_17.gif" alt="평점" /></th>
+					<c:if test="${compareVo1 != null}">
+					<td><div class="flash-gauge"><img src="/images/common/ico_star${compareVo1.grade}.png" alt="별점  ${compareVo1.grade}" /></div></td>
+					</c:if>
+					<c:if test="${compareVo2 != null}">
+					<td><div class="flash-gauge"><img src="/images/common/ico_star${compareVo2.grade}.png" alt="별점  ${compareVo2.grade}" /></div></td>
+					</c:if>
+					<c:if test="${compareVo3 != null}">
+					<td><div class="flash-gauge"><img src="/images/common/ico_star${compareVo3.grade}.png" alt="별점  ${compareVo3.grade}" /></div></td>
+					</c:if>
+					<c:if test="${compareVo4 != null}">
+					<td><div class="flash-gauge"><img src="/images/common/ico_star${compareVo4.grade}.png" alt="별점  ${compareVo4.grade}" /></div></td>
+					</c:if>
+				</tr>
+				<tr class="total">
+					<th class="type" scope="row"><img src="/images/cd/txt_cardcom07.png" alt="총 참여자" /></th>
+					<c:if test="${compareVo1 != null}">
+					<td>총 <strong>${compareVo1.attendNo}</strong> 명 참여  </td>
+					</c:if>
+					<c:if test="${compareVo2 != null}">
+					<td>총 <strong>${compareVo2.attendNo}</strong> 명 참여  </td>
+					</c:if>
+					<c:if test="${compareVo3 != null}">
+					<td>총 <strong>${compareVo3.attendNo}</strong> 명 참여  </td>
+					</c:if>
+					<c:if test="${compareVo4 != null}">
+					<td>총 <strong>${compareVo4.attendNo}</strong> 명 참여  </td>
+					</c:if>
+				</tr>
+			
+			
+			</tbody>
+			</table>
+			<!-- button-area -->
+			<div class="button-area">
+				<span class="button-l">
+                    <a href="javascript:openSNS('twitter');"><img src="/images/cd/cps/btn_twitter.gif" alt="트위터에 올리기" /></a>
+                    <a href="javascript:openSNS('facebook');"><img src="/images/cd/cps/btn_facebook.gif" alt="페이스북에 올리기" /></a>
+				</span>
+				<button class="print" onClick="samsungcard.ui.print();" title="인쇄하기버튼"><span>인쇄하기</span></button>
+			</div><!-- //button-area -->
+		</div><!-- //cardinfo-wrap -->
+		<!-- <button id="button-close" onclick="samsungcard.ui.openClose('select-result');"><span>카드 비교창 닫기</span></button> -->
+		<button id="button-close" onClick="history.back()" title="카드 비교창 닫기 버튼"><span>카드 비교창 닫기</span></button>
+	</div><!-- //select-result -->
+
+	</div><!-- contents -->
+
+	<div id="setBasketAll">
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/cps/NHPIMCDCPS502.jsp" %>
+	</div>
+</body>
+
+</html>

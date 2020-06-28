@@ -1,0 +1,260 @@
+<%
+String domain = (String)request.getAttribute("domain");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>삼성카드 지도 Frame - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<style>
+body{margin:0px; padding:0px;overflow:hidden;}
+</style>
+<!-- API 사용을 위한 기본 라이브러리  -->
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapAPI.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapConfig.js?ClientID=samsungcard"></script>
+
+<!-- 검색을 위한 스크립트 라이브러리 -->
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iaddress-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iregioncode-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/isearch-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-template.js?ClientID=samsungcard" ></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/ilistpage-manager.js?ClientID=samsungcard"></script>
+
+<script type="text/javascript"> 
+function setPng24(obj){ 
+    obj.width=obj.height=1; 
+    obj.className=obj.className.replace(/\bpng24\b/i,''); 
+    obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');" 
+    obj.src='';  
+    return ''; 
+} 
+
+
+var map = null;
+var mark = [];
+
+
+// 지도 초기화
+function setMap(){
+	var x = 505797;			
+	var y = 1110155;			
+	var level = 3;
+	
+	var point = new TPoint(x, y);
+	map = new TMap("mapDiv", {	point:point,
+								level:level,
+								contextMenu:false,
+								autosize:true
+								});
+	map.addControl(new TZoomControl());
+	
+	TEvent.addListener(map.main, "modechange", setRoutePoint);
+	
+	TEvent.addListener(map.main, "moveend", mapMoveEvent);
+
+//	setTimeout("parent.listFrm.marklist()",1000);
+}
+
+// 지도 클릭시 감지 후 출발지,도착지,경유지 설정
+function setRoutePoint(currMode, prevMode){
+	if(prevMode == "2") {
+		var point = map.main.clickPoint;
+		var label = getLocalAddress(point, 1);		// 좌표를 이용하여 주소검색
+		if(label == ""){
+			alert("주소 검색 실패");
+		}else{
+			tooltip = label;
+			if(parent.listFrm.currentTarget == "s"){
+				parent.listFrm._type = "sMark";
+			}else if(parent.listFrm.currentTarget == "e"){
+				parent.listFrm._type = "eMark";
+			}else if(parent.listFrm.currentTarget == "p"){
+				parent.listFrm._type = "pMark";
+			}
+			
+			parent.listFrm.searchSaveResult(point, label, tooltip);
+		}
+		
+	}
+}
+
+
+// 지도 이동시 일정 영역이상 움직임을 감지
+var _centerPoint = {"x":0, "y":0};	// 기본 좌표값
+var _distVal = 100;					// 거리 계산기준값(m)
+function mapMoveEvent(){
+	var _x = map.getCenter().x;
+	var _y = map.getCenter().y;
+	var _level = map.getLevel();
+	var _dist = Math.sqrt(Math.pow((_centerPoint.x/2.5-_x/2.5), 2)+Math.pow((_centerPoint.y/2.5-_y/2.5), 2));
+	// 기존 중심좌표에서 일정거리 이상 벗어날 경우 주소값 갱신 + 기본좌표 변경
+	if((_distVal*_level) < _dist){
+		_centerPoint.x = _x;
+		_centerPoint.y = _y;
+		var _fullAddr = getLocalAddress(_centerPoint, 0);
+		if(_fullAddr=="undefined" || _fullAddr==undefined) _fullAddr = "";
+		document.getElementById("locAddr").innerHTML = _fullAddr;
+	}
+}
+
+// 지역코드 검색서비스 초기화
+var congRegionSvc = new CongRegionCodeService("CONG", "samsungcard");
+congRegionSvc.setProxy("/talkyple/mapproxy.jsp", "http://biz.talkyple.com");
+// 좌표를 이용하여 주소값 가져오기
+function getLocalAddress(point, type) {
+	var res = congRegionSvc.getRegionCodeByCoordinates(point.x, point.y, "WCONGNAMUL");
+	if(res != null){
+ 		if(res.fullName != null){
+ 			var _addr = res.fullName.split(" ");
+ 			var _sido = _addr[0];
+ 			var _sigungu = "";
+ 			var _dong = "";
+ 			if(_addr.length == 3){
+ 				_sigungu = _addr[1];
+ 				_dong = _addr[2];
+ 			}else{
+ 				_sigungu = _addr[1]+" "+_addr[2];
+ 				_dong = _addr[3];
+ 			}
+ 			// 상위 주소 표시 객체에 데이터 주소 데이터 입력
+ 			var _fullAddr = "";
+ 			if(type == 0){
+ 				_fullAddr = _sido + " > " + _sigungu+" > " + _dong;
+ 			}else if(type == 1){
+ 				_fullAddr = _sido + " " + _sigungu+" " + _dong;
+ 			}
+ 			return _fullAddr;
+ 		}else{
+ 			// 중심좌표 검색 실패시
+ 			//alert('Error !');
+ 			return "";
+ 		}
+	}else{
+		return "";
+	}
+}
+
+// 그려진 마크를 이용하여 지도 영역 재정의
+function setBound() {
+	var top=-9999999;
+	var right=-9999999;
+	var bottom=9999999;
+	var left=9999999;
+
+	for(var i = 0 ; i < mark.length ; i++){
+		//minmaxx(mark[i].getPoint().x);
+		//minmaxy(mark[i].getPoint().y);
+		top = top < mark[i].getPoint().y ? mark[i].getPoint().y : top;
+		right = right < mark[i].getPoint().x ? mark[i].getPoint().x : right;
+		bottom = bottom > mark[i].getPoint().y ? mark[i].getPoint().y : bottom;
+		left = left > mark[i].getPoint().x ? mark[i].getPoint().x : left;
+	}
+	// 여백추가 (px * 지도 스케일 변수)
+	var space = 0;
+	left = parseInt(left)-space;
+	bottom = parseInt(bottom)-space;
+	right = parseInt(right)+space;
+	top = parseInt(top)+space;
+	//alert(left + " : " + bottom + " : " + right + " : " + top);
+	map.setBound(left, bottom, right, top);
+	
+	space = map.getScale()*200;
+	left = parseInt(left)-space;
+	bottom = parseInt(bottom)-space;
+	right = parseInt(right)+space;
+	top = parseInt(top)+space;
+	//alert(left + " : " + bottom + " : " + right + " : " + top);
+	map.setBound(left, bottom, right, top);
+}
+
+/*
+마크 그리기
+x : x좌표
+y : y좌표
+icon : icon 표시번호 ex)A
+id : 상세정보 페이지에서 받을 키값
+*/
+function drawMark(x, y, icon, id){
+	var domain = document.domain;
+	if(domain.indexOf("local")>=0 || domain.indexOf("veri")>=0){
+		domain = domain+":7111";
+	}else if(domain.indexOf("devwww")>=0){
+		domain = domain+":10080";
+	}
+	
+	var detailUrl = "http://"+domain + "/hp/im/ss/sbc/sbc.do?method=getViewLayer001&chain_no="+id+"&icon="+icon;	// 이부분이 상세정보 페이지에서 보여줄 URL
+	var point = new TPoint(x, y);
+	var tinfo = new TInfoWindow(detailUrl, {
+		removable:false,
+		show:false,
+		width:290,
+		height:140,
+		point:point,
+		type:"http"
+	});
+	
+	var tm = new TMark(point,{
+		infowindow:tinfo,
+		clickable:false,
+		mark:new TIcon("http://www.samsungcard.com/images/ss/"+icon+".png", new TSize(30, 31), new TPoint(-15, -15)),
+		infowindow_mouseover:false,
+		draggable:false		
+	});
+	//tm.setLink(new TLink("http://localhost:8080/ss/detail.html", "_blank"));
+	TEvent.addListener(tm, "click", function(){
+		// 클릭시 infowindow는 자동으로 open, open/close 체크 후 open일 경우 지도 이동
+		if(this.infowindow.isShow()){
+			//alert("mark click/map move");
+			detailMove(this.getPoint());
+		};
+	});
+	map.addOverlay(tm);
+	
+	mark.push(tm);
+}
+/*
+지도에 가맹점 상세정보 창 표시
+icon : drawMark와 동일한 icon값을 넘겨주시면 됩니다.
+*/
+function detail(icon){
+	// list click시 무엇을 선택했는지 확인
+	for(var i = 0 ; i < mark.length ; i++){
+		var _iconUrl = mark[i].icon.src;
+		var _icon = _iconUrl.replace("http://www.samsungcard.com/images/ss/", "").replace(".png","");
+		if(icon == _icon){
+			//alert(list+" click / map move");
+			mark[i].infowindow.show();
+			detailMove(mark[i].getPoint());
+		}
+	}
+}
+// 마크 클릭시 지도 이동
+function detailMove(point){
+	var _x = parseInt(point.x)-(map.getScale()*parseInt(70));
+	var _y = parseInt(point.y)+(map.getScale()*parseInt(100));
+	map.setCenter(new TPoint(_x, _y));
+}
+
+
+//마크 초기화 20120508 추가
+function clearMap(){
+	for(var i = 0 ; i < mark.length ; i++){
+		map.removeOverlay(mark[i]);
+	}
+	mark.length = 0;
+}
+
+function init() {
+	setMap();
+}
+</script>
+</head>
+<body onload="init();">
+	<div id="locAddr" class="location t_desc04" style="color:#999; font-size:11px; font-family:'돋움'; letter-spacing:-1px; line-height:16px"></div>
+	<div id="mapDiv" style="height:100%; width:100%;"></div>
+</body>
+</html>

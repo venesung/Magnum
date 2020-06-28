@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>달라진 삼성카드 이야기 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/cc.css" />
+	<script type="text/javascript">
+	function goView(kindCode,category) {
+		//opener.goDetailView(kindCode,category);
+		//window.open('/showroom/shw.do?method=getDetail&amp;prodCode='+kindCode+'&amp;category='+category);
+        opener.location.href='/showroom/shw.do?method=getDetail&amp;prodCode='+kindCode+'&amp;category='+category;
+		window.blur();
+    }
+	function goRep() {
+		//opener.goDetailView(kindCode,category);
+		//window.open('/showroom/shw.do?method=getDetail&amp;prodCode='+kindCode+'&amp;category='+category);
+        opener.location.href='/showroom/shw.do?method=getRep';
+		window.blur();
+    }
+	</script>
+</head>
+<body class="experience introduce">
+	<div id="wrapper">
+		<div id="container">
+			<div id="header">
+				<h1><img src="/images/cd/cps/cc/logo.gif" style="border:0; width:114px; height:20px;" alt="삼성카드" /></h1>
+				<h2><img src="/images/cd/cps/cc/title.gif" style="border:0; width:393px; height:75px;" alt="많은 분들의 마음 속 1등 카드. 왜! 삼성카드일까요?" /></h2>
+				<div class="gnb">
+					<h3>글로벌 네비게이션</h3>
+					<ul>
+					<li class="experience" ><a href="shw.do?method=getWhySamsungCard11" >삼성카드와 만나는 새로운 경험</a></li>
+					<li class="benefit"><a href="shw.do?method=getWhySamsungCard21">고객이 알고 싶은 삼성카드 혜택</a></li>
+					<li class="life"><a href="shw.do?method=getWhySamsungCard31">생활속의 삼성카드</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="lnb">
+				<h3>로컬 네비게이션</h3>
+				<ul>
+				<li class="recommend"><a href="#" onclick="javascript:goRep();">대표카드 한 눈에 보기</a></li>
+				<li class="request"><a href="shw.do?method=getWhySamsungCard12">이렇게 신청하세요</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<div id="introduce">
+					<div class="content"></div>
+					<div class="alternate">
+						<h3>달라진 삼성카드 이야기</h3>
+						<strong>이제부터, 7개의 숫자로 시작합니다. 당신에게 참 실용적인, 삼성카드</strong>
+						<p>
+							당신은 참 바쁩니다.<br />
+							당신은 참 기억할 것도 많습니다. 회사일, 집안일, 육아까지...<br />
+							그래서 삼성카드는 생각했습니다.<br />
+							당신에게 진정 도움이 되는 신용카드는 어떤 카드일까<br />
+							이름도 혜택도 꾸미지 않고 쉬워지기로 했습니다.<br />
+							꼭 기억해야 할 혜택의 숫자, 카드의 이름이 되었습니다.<br />
+							안 적어두면 자꾸 잊어버리는 당신을 위해, 카드 위에 혜택을 적었습니다.<br />
+							<em>당신에게 참 실용적인, 삼성카드가 되기로 했습니다.</em>
+						</p>
+					</div>
+                    <a class="detail" href="/html/popup/brand/main.html" onclick="window.open('/html/popup/brand/main.html','brand1110','width=1000, height=600, scrollbars=0, toolbar=no, menubar=0, status=0, location=0, resizable=0');return false;"><img src="/images/cd/cps/cc/bt_brand_story.gif" style="border:0;" alt="브랜드 스토리 자세히보기 새창" /></a>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<h3><img src="/images/cd/cps/cc/h_recom.gif" style="border:0; width:66px; height:13px;" alt="추천카드 안내" /></h3>
+			<ul>
+<%
+	for( int i = 0; i < categoryMapArr.length; i++ ) {
+		for( int j = 0; j < cardList.size(); j++ ) {
+			ITSHCMSCARDINFOTTVO temp = ( ITSHCMSCARDINFOTTVO )cardList.get( j );
+			/*ProdSImg에 대한 알트값(ProdName) 추가 (2013.02.04)*/
+			String PName = temp.getProdName();
+			String ProdName = "";
+			if(PName.indexOf("||") != -1){
+				String[] imgAlt = PName.split("[||]");
+				ProdName = imgAlt[0];
+			}else{
+				ProdName = PName;
+			}
+			if( categoryMapArr[ i ].equals( temp.getProdCode() ) ) {
+				out.print( "<li>" );
+                out.print( "<p><a href='javascript:goView(\"" + temp.getProdCode() + "\",\"" + getWhyCategory( temp.getProdCode() ) + "\");'>" );
+				out.print( "<img src='" + temp.getTargetPath() + "/" + temp.getProdSImg() + "' border='0' alt='"+ ProdName +"'/></a></p>" );
+				out.print( "<strong><a href='javascript:goView(\"" + temp.getProdCode() + "\",\"" + getWhyCategory( temp.getProdCode() ) + "\")'><span style='width:150px;display:block;word-wrap:break-word;-ms-word-break:break-all;'>" + ProdName + "</span></a></strong>" );
+				out.print( "<span style='width:150px;display:block;word-wrap:break-word;-ms-word-break:break-all;'>" + getConvertEnter( temp.getRecomWord() ) + "</span>" );
+				out.print( "</li>" );
+			}
+		}
+	}
+%>
+	</ul>
+		</div>
+	</div>
+</body>
+</html>

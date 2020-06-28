@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/fs/h1_chk_creditloan.png" alt="개인신용대출의 이용내역을 확인할 수 있습니다" /></h1>
+</div>
+<div class="content_block content_block_card clfix">
+<form name="form_main">
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTab(1);">거래내역조회</a></li>
+			<li><a href="javascript:goTab(2);">당월결제금액 조회</a></li>
+			<li class="on"><a href="#">미결제금액조회</a></li>
+		</ul>
+	</div>
+	<input name="tabNo" type="hidden" />
+</form>	
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_loan_unpaidinfo01.png" alt="개인신용대출미결제금액 조회" /></h2>
+	<div class="content_block_inner">
+		<div class="not_neccessary mb10">개인신용대출 총 연체금액 합계는 ${delaySum}원 입니다</div>
+		<table class="dtable01" summary="구분,대출잔액,연체금액, 연체료, 합계를 보여주는 표입니다">
+			<caption>개인신용대출미결제금액 조회</caption>
+			<colgroup>
+				<col width="20%" span="5" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10" rowspan="2">구분</th>
+					<th scope="col" class="cell_r10 riline" rowspan="2">대출잔액</th>
+					<th scope="colgroup" class="cell_r10 riline boline_b0" colspan="2">연체중인금액</th>
+					<th scope="col" class="cell_r10" rowspan="2">합계</th>
+				</tr>
+				<tr>
+					<th scope="col" class="cell_c">연체금액</th>
+					<th scope="col" class="cell_r10 riline">연체료</th>
+				</tr>
+			</thead>
+			<tbody >
+					<tr class="nodata">
+						<td colspan="5">고객님께서는 해당거래내역이 존재하지 않습니다.</td>
+					</tr>
+						<tr>
+							<td class="cell_l10">${result.gubun}</td>
+							<td class="cell_r10">${result.string3}</td>
+							<td class="cell_r10">${result.amt1}</td>
+							<td class="cell_r10">${result.amt2}</td>
+							<td class="cell_r10">${result.string10}</td>
+						</tr>
+			</tbody>
+		</table>
+		<div class="btnset mt20">
+		<p class="btnr"> <a href="#" onclick="openDetailResultPop();" class="btn btn_white"  title="새창"><span>상환방법 안내</span></a></p>
+		</div>
+	</div>
+</div>
+<div class="content_block content_block_card clfix">
+	<h2></h2>
+	<div class="content_block_inner">
+		<!--<h4>이용안내</h4>-->
+		<ol class="list_no01">
+			<li><p>연체료는 조회 일에 따라 매일 가산되므로 입금 전에 정확한 금액을 확인하시기 바랍니다.</p></li>
+			<li><p>연체금액 외에 당월분 입금액이 있을 수 있습니다. 당월결제금액 조회에서 확인가능합니다.</p></li>
+			<li><p>연체료 = 연체에 따른 이자금액</p></li>
+			<li><p>위의 연체 분 총 금액은 ${thisMonth}월 ${thisDay}일 현재까지 당사에 접수된 입금이 반영이 되어 있습니다.</p></li>
+			<li><p>이미 자동이체로 인출이 되었거나, 가상계좌 또는 무통장 입금하신 금액이 있더라도 은행별 입금반영 차이로 인해<br />
+				   전일 또는 전전일 입금하신 금액이  웹페이지에 반영되지 않을 수 있으니 이점 양해 바랍니다.</p></li>
+			<li><p>장기미납으로 인해 기타비용이 발생한 경우(법비용 등), 위 금액에 포함되지 않으므로 해당 고객께서는<br />
+				   고객상담센터를 통해 실제 납입금액을 확인하신 후 입금하시기 바랍니다.</p></li>
+			<li><p>보다 자세한 내용은 고객상담센터(1588-8700)를 통해 확인하실 수 있습니다.</p></li>
+		</ol>
+	</div>
+</div>
+
+<!--개인신용대출이용내역_미결제금액조회_상환방법안내  start-->
+<div id="detailLayer" style="display:;">
+<div class="pop_l_wrap" style="width:700px;height:750px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="가상계좌 입금안내 레이어 닫기" />
+	<h2 class="pop_tit"><img src="/images/fs/lpop_tit_virtualaccount.gif" alt="가상계좌 입금안내(아하론패스 입금만 가능)" /></h2>
+	<div class="pop_l_content">
+		<div class="mv_loan01">
+			<p class="lt mt10 mb20">&nbsp;&nbsp;&nbsp;&nbsp;발급받으신 아하론패스의 앞면에 우리/신한은행/농협 가상계좌가 기재되어 있습니다.<br/>
+									&nbsp;&nbsp;&nbsp;&nbsp;결제일전 입금을 원하시거나 연체 발생에 따른 입금을 하실 경우 아래의 계좌로 입금하시면<br/>
+									&nbsp;&nbsp;&nbsp;&nbsp;입금 즉시 처리하여 드립니다. 타행에서 무통장 송금이 가능합니다.</p>
+			<dl>
+				<dt><strong>CMS무통장 입금안내(모든거래 입금 시 사용가능)</strong></dt>
+				<dd>
+					<div class="oflowy" tabindex="0">
+					<table class="dtable02 dtable_inputfield" summary="은행명, 계좌번호, 대출/패스번호, 은행명, 계좌번호, 대출/패스번호를 보여주는 표입니다.">
+						<caption>CMS무통장 입금안내 화면</caption>
+						<tbody>
+							<tr>
+								<th scope="col" class="al_center"><p>은행명</p></th>
+								<th scope="col" class="al_center"><p>계좌번호</p></th>
+								<th scope="col" class="al_center"><p>대출/패스번호</p></th>
+								<th scope="col" class="al_center"><p>은행명</p></th>
+								<th scope="col" class="al_center"><p>계좌번호</p></th>
+								<th scope="col" class="al_center"><p>대출/패스번호</p></th>
+							</tr>
+							<tr>
+								<td class="al_center">우리</td>
+								<td class="al_center">103-05-008374</td>
+								<td class="al_center">CMS 란</td>
+								<td class="al_center">경남</td>
+								<td class="al_center">514-07-0173036</td>
+								<td class="al_center">타기관 계좌번호란</td>
+							</tr>
+							<tr>
+								<td class="al_center">우체국</td>
+								<td class="al_center">010041-01-026225</td>
+								<td class="al_center">CMS 란</td>
+								<td class="al_center">국민</td>
+								<td class="al_center">407501-96-200793</td>
+								<td class="al_center">CMS 란</td>
+							</tr>
+							<tr>
+								<td class="al_center">전북</td>
+								<td class="al_center">401-13-0311872</td>
+								<td class="al_center">주민등록번호란</td>
+								<td class="al_center">기업</td>
+								<td class="al_center">090-001110-01-053</td>
+								<td class="al_center">의뢰인 코드란</td>
+							</tr>
+							<tr>
+								<td class="al_center">조흥</td>
+								<td class="al_center">312-01-147997</td>
+								<td class="al_center">CMS 란</td>
+								<td class="al_center">농협</td>
+								<td class="al_center">056-01-102001</td>
+								<td class="al_center">코드란</td>
+							</tr>
+							<tr>
+								<td class="al_center">제일</td>
+								<td class="al_center">106-10-057671</td>
+								<td class="al_center">비고란</td>
+								<td class="al_center">대구</td>
+								<td class="al_center">025-05-479524-001</td>
+								<td class="al_center">CMS 란</td>
+							</tr>
+							<tr>
+								<td class="al_center">제주</td>
+								<td class="al_center">10-01-048582</td>
+								<td class="al_center">주민등록번호란(00+대출번호14자리)</td>
+								<td class="al_center">부산</td>
+								<td class="al_center">072-01-017982-0</td>
+								<td class="al_center">기관 코드란</td>
+							</tr>
+							<tr>
+								<td class="al_center">하나</td>
+								<td class="al_center">120-000843-01805</td>
+								<td class="al_center">집금인 번호란</td>
+								<td class="al_center">신한</td>
+								<td class="al_center">300-05-016904</td>
+								<td class="al_center">CMS 란</td>
+							</tr>
+							<tr>
+								<td class="al_center">광주</td>
+								<td class="al_center">200-127-008347</td>
+								<td class="al_center">CMS 란</td>
+								<td class="al_center">외환</td>
+								<td class="al_center">029-13-33975-7</td>
+								<td class="al_center">주민등록번호란</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</dd>
+			</dl><br/>
+			<ul class="lt mt10 mb30">
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;1. 예금주는 삼성카드(주) 타행입금은 불가능합니다.</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;2. 위의 대출번호/패스번호 기재란에 회원님의 대출번호/패스번호를 반드시 기재하여 주십시오.<br/>
+    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(패스번호는 앞자리부터 14자리를 기재합니다.)</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;3. 은행에서 직접 송금뿐만 아니라 인터넷뱅킹, 텔레뱅킹, CD기를 이용한 송금도 가능합니다.</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;4. 자동이체통장에 예금잔고가 있을 시 이중으로 출금될 수 있습니다.</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;5. 당일 입금하실 금액은 고객상담센터(지역번호 없이) 1588-8700에서 확인후 입금하여 주시기 바랍니다.</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;6. 무통장 입금시 해당은행 무통장입금 수수료 부과기준에 따라 수수료가 부가됨을 알려드립니다.</li>
+			</ul>
+			<p class="lt mb10"><strong>자동이체 입금안내(모든 거래 입금시 사용가능)</strong></p>
+			<p class="lt">- 기존에 등록하신 회원님의 자동이체 계좌에 입금하시면 은행출금주기에 따라 입금 처리 됩니다.</p>
+		</div>
+	</div>
+	<p class="btnc mt20"> <a href="#" onclick="closeLayer('detailLayer'); return false;" title="가상계좌 입금안내 레이어 닫기"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+</div>
+</div>
+<!--개인신용대출이용내역_미결제금액조회_상환방법안내  end-->
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

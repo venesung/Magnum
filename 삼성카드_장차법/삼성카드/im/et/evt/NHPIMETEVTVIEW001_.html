@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div class="tabbrowse_content layout3step clfix">
+		<!-- top_visual -->
+		<div class="top_visual">
+			<h1><img src="/images/et/h1_event.png" alt="삼성카드와 다양한 이벤트를 즐기세요" /></h1>
+		</div>	
+		
+		<!-- content_block -->
+		<div class="content_block content_block_card">
+			<div class="tab01 w810">
+				<ul>
+                    <li class="<%="".equals(tab_index)||"001".equals(tab_index)?"on":""%>"><a href="javascript:goTab('001');" >진행중인 이벤트</a></li>
+                    <li class="<%="004".equals(tab_index)?"on":""%>"><a href="javascript:goTab('004');">종료된 이벤트</a></li>
+                    <li class="<%="005".equals(tab_index)?"on":""%>"><a href="javascript:goTab('005');">당첨자발표</a></li>
+				</ul>
+			</div>
+		</div>
+			
+		
+		
+		<%if("004".equals(tab_index)){  %>
+		<jsp:include page="NHPIMETEVTVIEW006.jsp" />
+		<%}else if("005".equals(tab_index)) {%>
+		<jsp:include page="NHPIMETEVTVIEW008.jsp" />
+		<%}else{ %>
+		<jsp:include page="NHPIMETEVTVIEW002.jsp" />
+		<%} %>
+		
+</div>			
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+	

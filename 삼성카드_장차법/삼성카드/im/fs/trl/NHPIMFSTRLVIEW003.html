@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/fs/h1_chk_creditloan.png" alt="개인신용대출의 이용내역을 확인할 수 있습니다" /></h1>
+</div>
+<div class="content_block content_block_card clfix">
+<form name="form_main">
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTab(1);">거래내역조회</a></li>
+			<li  class="on"><a href="#">당월결제금액 조회</a></li>
+			<li><a href="javascript:goTab(3);">미결제금액조회</a></li>
+		</ul>
+	</div>
+	<input name="tabNo" type="hidden" />
+</form>	
+</div>
+
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_loan_paymentinfo01.png" alt="개인신용대출 당월결제금액 조회" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable01" summary="구분, 결제일, 대출번호, 금액으로 구성된 개인신용대출당월결제금액조회">
+			<caption>개인신용대출당월결제금액조회</caption>
+			<colgroup>
+				<col width="25%" span="4" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_c">결제일</th>
+					<th scope="col" class="cell_c">대출번호</th>
+					<th scope="col" class="cell_r10">금액</th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr class="nodata">
+					<td colspan="4">고객님께서는 해당거래내역이 존재하지 않습니다.</td>
+				</tr>
+				<tr>
+					<td class="cell_l10">${result.string4s}</td>
+					<td class="cell_c">${result.string6}</td>
+					<td class="cell_c">${result.string3s}</td>
+					<td class="cell_r10"><a href="#" onclick="yejungListDetailPop('${result.string3}');" title="상세내역조회 새창">${result.string7}</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="content_block content_block_card clfix">
+	<h2></h2>
+	<div class="content_block_inner">
+		<!--<h4>이용안내</h4>-->
+		<ol class="list_no01">
+			<li><p>금액을 클릭 하시면 상세 내역을 조회하실 수 있습니다.</p></li>
+			<li><p>위 금액은 당월분과 연체분을 합산한 금액이며 당월분은 청구서 작성일 기준 금액이므로,<br />이후 입금/취소액은 반영되지 않습니다.</p></li>
+			<li><p>장기미납으로 인해 기타비용이 발생한 경우(예:법조치 발생비용) 등은 위 금액에 포함되지 않으므로<br />고객상담센터를 통해 실제 납입금액을 확인하신 후 입금하시기 바랍니다.</p></li>
+			<li><p>보다 자세한 내용은 고객상담센터 (지역번호없이)1588-8700를 통해 확인하실 수 있습니다.</p></li>
+		</ol>
+	</div>
+</div>
+
+<!--결제예정금액 상세내역  start-->
+<div id="detailLayer" style="display:;">
+<div class="pop_l_wrap" style="width:750px;height:750px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('detailLayer');" value="레이어닫기" title="개인신용대출 당월 결제금액 상세내역 조회 레이어 닫기" />
+	<p class="pop_tit tc"><!-- img src="images/fs/layer_tit_fs03.png" alt="작성하신 신청정보를 확인하세요" /--></p>
+	<div class="pop_l_content">
+		<div class="mv_loan01">
+			<p class="lt mt10 mb10">&nbsp;&nbsp;&nbsp;&nbsp;개인신용대출 당월 결제금액 상세내역 조회</p>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="결제일, 대출번호를 보여주는 표입니다.">
+						<caption>개인신용대출 당월 결제금액 상세내역 조회</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10"><p>결제일</p></th>
+								<td class="cell_c" id="t_pay_dd_code">1</td>
+								<th scope="row" class="cell_l10"><p>대출번호</p></th>
+								<td class="cell_c" id="t_invoice_no">1</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl><br/>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="연체금액, 대출원금, 이자, 연체료, 소계를 보여주는 표입니다.">
+					<caption>개인신용대출 당월 결제금액 상세내역 조회</caption>
+						<tbody>
+							<tr>
+							    <th scope="rowgroup" class="cell_l10" rowspan="4"><p>연체금액</p></th>
+								<th scope="row" class="cell_l10"><p>대출원금</p></th>
+								<td class="cell_r10" id="delay_prin_sum">1</td>
+								<td class="cell_l10" rowspan="4">
+								연체료는 조회일에 따라 매일 가산됩니다.</br>
+								입금일에 정확한 금액을 확인해 주십시오.
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>이자</p></th>
+								<td class="cell_r10" id="delay_fee_sum">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>연체료</p></th>
+								<td class="cell_r10" id="delay_total_amt">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>소계(A)</p></th>
+								<td class="cell_r10" id="delay_total_sum">1</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl><br/>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="당월금액, 대출원금, 이자, 소계를 보여주는 표입니다.">
+					<caption>개인신용대출 당월 결제금액 상세내역 조회</caption>
+						<tbody>
+						    <tr>
+						        <th scope="rowgroup" class="cell_l10" rowspan="3"><p>당월금액</p></th>
+								<th scope="row" class="cell_l10"><p>대출원금</p></th>
+								<td class="cell_r10" id="normal_prin">1</td>
+								<td class="cell_l10" rowspan="3">본 금액은 청구서 작성일 기준 금액이므로</br>이후 입금 취소액은 반영되지 않습니다.</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>이자</p></th>
+								<td class="cell_r10" id="normal_fee">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>소계(B)</p></th>
+								<td class="cell_r10" id="normal_total_sum">1</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl><br/>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="총 합계를 보여주는 표입니다.">
+					<caption>개인신용대출 당월 결제금액 상세내역 조회</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_c"><p>총 합계(A+B)</p></th>
+								<td class="cell_r10" id="total_sum">1</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+			
+			<p class="lt mt10">- <b>이용안내</b><br />
+			                   - 위의 연체분 총금액은 <%=today.substring(0, 2) %>월 <%=today.substring(2) %>일 현재까지 당사에 접수된 입금이 반영되어있으며, <br />&nbsp;&nbsp;
+			                                          이미 자동이체로 인출이 되었거나, 무통장 입금하신 금액이 있더라도<br/>&nbsp;&nbsp;
+			                                          은행별 입금반영 차이로 인해 전일 도는 전전일 입금하신 금액이 웹페이지에 반영되지 않을 수 있으니 양해바랍니다.<br />
+			                   - 연체분은 전월 청구시 미입금된 부분이므로 결제일 이전에 상환해 주십시오<br />&nbsp;&nbsp;
+			                                          연체금액은 매일 연체료가 일할계산되어 가산되므로 빨리 상환하시는 것이 좋습니다.<br />&nbsp;&nbsp; 
+			                                          연체금액 조회 및 상환방법은 연체금액조회에서 확인하실 수 있습니다.<br />
+			                   - 연체료=연체에 따른 이자금액<br />&nbsp;&nbsp;
+		                         <b>주의:장기미납으로 인해 기타비용이 발생한경우에는 (법비용 등) 위 금액에 포함되지 않으므로 해당되시는 <br />&nbsp;&nbsp;
+		                                                 고객께서는 실제 납입금액을확인하신 후 입금하시기 바랍니다.</b><br />
+		                       - 보다 자세한 문의는 고객상담센터☎(지역번호없이)1588-8700 상담원을 통해 안내 받으시길 바랍니다.</p>
+		    
+		</div>
+	</div>
+	<p class="btnc mt20"> <a href="#" onclick="closeLayer('detailLayer');"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+</div>
+</div>
+<!--결제예정금액 상세내역  end-->
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

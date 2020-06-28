@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+
+<!--코드02,04,07일 경우 번호선택  start-->
+<form name="telForm">
+<div class="pop_l_wrap" style="width:470px;height:300px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();;" value="레이어닫기" title="전화번호 선택 레이어 닫기" />
+	<p class="pop_tit"><img src="/images/fs/layer_tit_fs04.png" alt="전화번호를 선택해주세요." /></p>
+	<div class="pop_l_content">
+		<div class="pop_l_alert03 mb40">
+			<p>입력하신 전화번호가 당사에 등록되어 있는 전화번호와 일치하지 않습니다.<br/>
+				통화 가능하신 전화번호를 선택해주세요.</p>
+			<div class="line_lgray"> </div>
+			<p  class="tc">
+				<label><input type="radio" name="phoneNo" value="" title="자택전화번호" />
+				자택 <%=telComp %></label><br/>
+				<label><input type="radio" name="phoneNo" value="" title="직장전화번호" />
+				직장 <%=telHome %></label></p>
+		</div>
+		<p class="btnc"><a href="javascript:goNext();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="javascript:closeLayerPopup();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+	</div>
+</div>
+</form>
+<!--코드02,04,07일 경우 번호선택  end--> 
+
+
+<!--// 여기까지 끝 -->
+</body>
+</html>

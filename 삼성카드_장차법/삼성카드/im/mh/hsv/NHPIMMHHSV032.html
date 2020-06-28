@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	<title>생활비재테크서비스 환불결과조회 - 삼성카드</title>
+	
+	<!-- 스타일 패키지 -->
+	<style type="text/css">
+	<!--
+		table { font-family: "돋움", "Seoul", "Arial", "Helvetica"; font-size: 10pt; color: #333333}
+	}
+	-->
+	</style>
+
+
+
+
+</head>
+
+<body>
+<font size="2">
+<!-- BEGIN: CONTENTS -->
+<!-- 내 템플릿 -->
+<table border="0" cellpadding="10" cellspacing="0" style="width:1000px;" summary="생활비재테크서비스 환불결과조회입니다">
+<caption>생활비재테크서비스 환불결과조회</caption>
+	<tr>
+		<td>
+		<!-- 개인 신상 정보 출력 부분 -->
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr><td colspan="3" style="text-align:left;">환불결과조회</td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="1" cellpadding="0" cellspacing="0" style="width:100%;" summary="조회기간을 확인할 수 있습니다.">
+            <caption>조회기간 확인</caption>
+				<tr style="background-color:#FFFF80">
+					<td style="text-align:center;">조회기간</td>
+				</tr>
+				<tr>
+					<td style="text-align:center"><%= startDate %>~<%=endDate %></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr><td style="height:20px;"></td></tr>
+
+	<tr>
+	  <td>
+	    <table border="1" cellpadding="0" cellspacing="0" style="width:100%;" summary="요청일,요청시간,환불일,환불시간,요청금액,환불금액,환불은행,환불계좌,처리경로,환불결과로 구성된  환불결과조회를 상세하게 확인할 수 있습니다.">
+        <caption>환불결과조회</caption>
+		  <tr style="text-align:center; background-color:#FFFF80;">
+		    <td>요청일</td>
+			<td>요청시간</td>
+			<td>환불일</td>
+			<td>환불시간</td>
+			<td>요청금액</td>
+			<td>환불금액</td>
+			<td>환불은행</td>
+			<td>환불계좌</td>
+			<td>처리경로</td>
+			<td>환불결과</td>
+		  </tr>
+
+
+			<%
+
+			if(errorMsg.equals("")){
+
+				if(result != null ){
+					listCnt = result.size();
+
+				for(int i = 0; i  < listCnt ; i ++){
+
+					int length = 0;
+					HOMEHMV5HPJ00070INVO inVo = result.get(i);
+					HOMEHMV5HPJ00070INRecVO1[] inRecVo = null ;
+
+					inRecVo = inVo.getInRecArray1();
+					length = inRecVo.length;
+
+					for(int j = 0 ; j < length ; j ++){
+
+	       	            String string3  = inRecVo[j].getString3().trim();  // 요청일자(승인일자)
+	       	            String string4  = inRecVo[j].getString4().trim();  // 요청시간(승인시간)
+	       	            String string5  = inRecVo[j].getString5().trim();  // 환불일자
+	       	            String string6  = inRecVo[j].getString6().trim();  // 환불일자
+	       	            String string7  = inRecVo[j].getString7().trim();  // 요청금액
+	       	            String string8  = inRecVo[j].getString8().trim();  // 환불은행
+	       	            String string9  = inRecVo[j].getString9().trim();  // 환불계좌
+	       	            String string10  = inRecVo[j].getString10().trim();  // 처리경로
+	       	            String string11  = inRecVo[j].getString11().trim();  // 처리결과
+	       	            String string12  = inRecVo[j].getString12().trim();  // 환불금액
+
+			%>
+
+          <tr>
+				<td><compress><%= string3.substring(2,4) + "." + string3.substring(5,7) + "." +string3.substring(8,10) %></compress></td>
+				<td><compress><%= string4.substring(0,2) + ":" + string4.substring(3,5) + ":" + string4.substring(6,8) %></compress></td>
+				<td><compress><%= string5.substring(2,4) + "." + string5.substring(5,7) + "." + string5.substring(8,10) %></compress></td>
+				<td><compress><%= string6.substring(0,2) + ":" + string6.substring(3,5) + ":" + string6.substring(6,8) %></compress></td>
+				<td><compress><%= string7 %></compress></td>
+				<td><compress><%= string12 %></compress></td>
+				<td><compress><%= string8 %></compress></td>
+				<td><% if( !string9.equals("") ){%><compress> <%=string9.substring(0,7 ) + "XXXXXXX" %></compress><%} %></td>
+				<td><compress><%= string10 %></compress></td>
+				<td><compress><%= string11 %></compress></td>
+          </tr>
+			<%
+						}
+					}
+				}
+			}else{
+			%>
+
+			<tr>
+				<td colspan="10"><%=errorMsg %></td>
+			</tr>
+			<%
+			}
+			%>
+
+        </table>
+	   </td>
+	</tr>
+
+</table>
+
+<!-- END: CONTENTS -->
+<!-- BEGIN: AD_SECTION --><!-- END: AD_SECTION -->
+</font>
+</body>
+</html>

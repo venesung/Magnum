@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>세이브상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_save_point.png" alt="세이브 상세내역" /></h1>		
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_save_point.png" alt="세이브 상세내역" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445">	<!-- 091203 -->
+		
+		<div class="content_block content_block_card clfix">
+			<h2 class="t_point mb10">가맹점명 : 000</h2>
+
+				<table class="dtable01" summary="청구일,최종완납일,청구금액(원금,이자,총금액),총상환(입금)액(포인트,현금),청구후잔액,연체료등으로 구성된 세이브 상세내역을 확인할 수 있는 게시판입니다.">
+					<caption>세이브 상세내역</caption>
+					<colgroup><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="10%" /><col width="11%" /><col width="12%" /><col width="10%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">청구일</th>
+							<th scope="col" rowspan="2" class="riline">최종완납일</th>
+							<th scope="colgroup" colspan="3" class="riline line_btm">청구금액</th>
+							<th scope="colgroup" colspan="2" class="riline line_btm">총 상환(입금)액</th>
+							<th scope="col" rowspan="2">청구 후 잔액</th>
+							<th scope="col" rowspan="2" class="cell_r10">연체료</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_r10 noline_top">원금</th>
+							<th scope="col" class="cell_r10 noline_top">이자</th>
+							<th scope="col" class="cell_r10 riline noline_top">총금액</th>
+							<th scope="col" class="cell_r10 noline_top">포인트</th>
+							<th scope="col" class="cell_r10 riline noline_top">현금</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td class="riline cell_bg" colspan="2">총계</td>
+							<td class="cell_r10 cell_bg"><em id="displaySlAmSum">&nbsp;</em></td>
+							<td class="cell_r10 cell_bg"><em id="displaySpointSum">&nbsp;</em></td>
+							<td class="cell_r10 riline cell_bg"><em id="displayBpointSum">&nbsp;</em></td>
+							<td class="cell_r10 cell_bg"><em id="backPointSum">&nbsp;</em></td>
+							<td class="cell_r10 riline cell_bg"><em id="displayPointTSum">&nbsp;</em></td>
+							<td class="cell_r10 cell_bg" colspan="2"><em id="latefeeSum">&nbsp;</em></td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<!-- loop -->
+						<tr> 
+							<td class="cell_l10 t_no">0</td> <!-- 청구일자 --> 
+							<td class="riline t_no">0</td>   <!-- 입금일자 -->
+							<td class="cell_r10 t_no"><span name="displaySlAm" >0</span></td> 
+							<td class="cell_r10 t_no"><span name="displaySpoint" >0</span></td> 
+							<td class="cell_r10 riline t_no"><span name="displayBpoint" >0</span></td> <!-- 여기까진 맞음 -->
+							<td class="cell_r10 t_no"><span name="backPoint">0</span></td> 
+							<td class="cell_r10 riline t_no"><span name="displayPointT" >0</span></td> 
+							<td class="cell_r10 t_no">0</td> <!-- 여기까진 맞음 --> 
+							<td class="cell_r10 t_no"><span name="latefee" >0</span></td> 
+						</tr>
+						<!-- //loop -->
+					<tr class="nodata"><td colspan="9">조회 결과가 없습니다.</td></tr>
+					</tbody>
+						
+				</table>
+	
+			<div class="btnc">
+			<img alt="확인" onClick="window.close()" src="/images/common/btn_s_confirm02.png" />
+			</div>
+
+		</div> 
+		
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+	
+</div>
+ 
+</body>
+</html>

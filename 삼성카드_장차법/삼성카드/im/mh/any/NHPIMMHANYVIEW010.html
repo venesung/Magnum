@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>애니세이브 시뮬레이션 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<form name="frm">
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_anisave_simul.png" alt="애니세이브 시뮬레이션" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_anisave_simul.png" alt="애니세이브 시뮬레이션" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445">
+
+		<div class="content_block content_block_card clfix">
+
+			<div class="tb_exp clfix">
+				<h3>세이브 이용 정보 </h3>
+			</div>
+
+			<table class="dtable01" summary="세이브금액, 세이브최초청구, 세이브원금, 세이브이자, 월 상환금액, 이자율로 구성된 세이브 이용 정보를 확인하실 수 있습니다">
+			<caption>세이브 이용 정보</caption>
+			<colgroup><col width="15%" /><col width="15%" /><col width="*" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">세이브금액</th>
+					<th scope="col">세이브최초청구</th>
+					<th scope="col" class="cell_r10">세이브원금</th>
+					<th scope="col" class="cell_r10">세이브이자</th>
+					<th scope="col" class="cell_r10">월 상환금액</th>
+					<th scope="col" class="cell_r10">이자율</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+				</tr>
+			</tbody>
+			</table>
+
+			<div class="tb_exp mt30 clfix">
+				<h3>세이브 시뮬레이션</h3>
+			</div>
+
+			<table class="dtable02 dtable_expand" summary="주유금액 고시가를 입력하는 게시판입니다">
+			<caption>주유금액 고시가 입력</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><p>주유금액 고시가</p></th>
+					<td><p><span class="input_point">
+					<input name="oil_gosi" type="text" class="txt" title="주유금액 고시가 입력" id="label_oilmoney01"
+					maxlength="5"
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					 />
+
+					</span></p></td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<p class="btnr">
+					<a href="javascript:total_amt();" class="btn btn_blue"><span>계산하기</span></a>
+					<a href="javascript:clear_simul();" class="btn btn_white"><span>초기화</span></a>
+				</p>
+			</div>
+
+			<table class="dtable01 mt20" summary="구분항목별 적립율을 확인하고 월 이용금액을 입력하여 적립액을 확인할 수 있는 게시판입니다">
+			<caption>구분 항목별 이용금액입력 후 적립액 확인</caption>
+			<colgroup><col width="20%" /><col width="20%" /><col width="*" /><col width="20%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_r10">적립율</th>
+					<th scope="col" class="cell_r10">月 이용금액</th>
+					<th scope="col" class="cell_r10">적립액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10">휴대폰 月 요금</td>
+					<td class="cell_r10"><span class="t_no">5</span> %</td>
+					<td class="cell_r t_no"><span class="input_point">
+					<input type="text" class="txt" title="휴대폰 月 요금 입력" id="label_payday1" name="hp_fee" value=""
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					/>
+					</span></td>
+					<td class="cell_r10 t_no"><span class="t_no">
+					<input type="text" class="readonly" name="hp_rev" value="" style="width: 80px; height: 15px;text-align:right" readonly="readonly" />
+					</span> 점</td>
+				</tr>
+				<tr>
+					<td class="cell_l10">S-Oil 月 주유비</td>
+					<td class="cell_r10"><span class="t_no">40</span>P/L</td>
+					<td class="cell_r t_no"><span class="input_point">
+					<input type="text" class="txt" title="S-Oil 月 주유비 입력" id="label_payday2" name="oil_fee" value=""
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					/>
+					</span></td>
+					<td class="cell_r10 t_no"><span class="t_no">
+					<input type="text" class="readonly" name="oil_rev" value="" style="width: 80px; height: 15px; text-align:right" readonly="readonly" />
+					</span> 점</td>
+				</tr>
+				<tr>
+					<td class="cell_l10">일반가맹점 月 사용액</td>
+					<td class="cell_r10"><span class="t_no">0.8</span>%</td>
+					<td class="cell_r t_no"><span class="input_point">
+					<input type="text" class="txt" title="일반가맹점 月 사용액 입력" id="label_payday3" name="nomal_fee" value=""
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					maxlength="10"
+					/>
+					</span></td>
+					<td class="cell_r10 t_no"><span class="t_no">
+					<input type="text" class="readonly" name="nomal_rev" value="" style="width: 80px; height: 15px; text-align:right" readonly="readonly" />
+					</span> 점</td>
+				</tr>
+				<tr>
+					<td class="cell_l10">합계</td>
+					<td class="cell_r10"><span class="t_no"></span>-</td>
+					<td class="cell_r t_no"><span class="input_point">
+					<input type="text" class="readonly" id="label_payday4" name="total_fee" value=""
+					style="width: 88px; height: 15px; text-align:right"
+					readonly="readonly" /></span></td>
+					<td class="cell_r10 t_no">
+					<span class="t_no">
+					<input type="text" name="total_rev" value=""
+					style="width: 80px; height: 15px; text-align:right" disabled="disabled"/>
+					</span> 점</td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<p class="btnl">자세한 적립 사항은 애니세이브 안내의 <a href="javascript:submit();" class="a_point">포인트 적립/기준</a>을 확인하시기 바랍니다.</p>
+			</div>
+
+		</div>
+
+	</div>
+</form>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+ <script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

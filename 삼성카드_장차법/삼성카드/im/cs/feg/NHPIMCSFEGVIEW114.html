@@ -1,0 +1,394 @@
+
+<%
+	/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+	 * File Name: NHPIMCSFEGVIEW001.jsp
+	 * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+	 * Created on 2010.03.31
+	 * 해외사용문의 입력 // 비대면 서비스 (물품주문)
+	 * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+	 */
+%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO"%>
+<%@ page import="com.scard.common.util.*"%>
+
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag"%>
+<%@ page import="com.scard.common.login.session.*" %>
+<%@ page import="com.scard.common.login.session.entity.Member" %>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+
+
+<%
+	String option = RequestUtil.getStringParameter(request, "option",
+			"0");
+	String history = RequestUtil.getStringParameter(request, "history",
+			"기타이용문의");
+	String subHistory = RequestUtil.getStringParameter(request, "sub_history",
+	"");
+	String historyView;
+	if(history.contains(subHistory)){
+		historyView = history.substring(history.lastIndexOf("/")+1);
+	}else {
+		historyView = history.substring(history.lastIndexOf("/")+1)+"("+subHistory+")";
+	}
+	Member mem = (Member)session.getAttribute("Member");
+	String email[] = new String[2];
+	if(mem.getEmail()==null){
+		email[0]="";email[1]="";
+	}else{
+		email=mem.getEmail().split("@");
+	}
+	String result = (String)request.getAttribute("result");
+	if(result==null){
+		result="";
+	}
+%>
+
+<script type="text/javascript">
+	PrintObjectTag();
+</script>
+
+<title>이용 문의 내용 작성 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+
+<!-- <script type="text/javascript" src="/js/common-hp-ajax.js"></script> -->
+<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript">
+	
+		function beforeSave(){
+			
+			 //각각의 옵션 시 구성하는 form 정보
+			 //option 1 : orderDay + money
+			 //option 2 : orderDay + deliveryDay
+			 //option 3 : orderDay + returnDay
+			 //option 4 : orderDay + 
+			 //option 5 : orderDay + useDay + realMoney
+			 //option 6 : orderDay + cancelDay
+			 
+			 
+			var form= document.registForm;
+			var str = "";
+			<%if (option.equals("1") || option.equals("2") || option.equals("3")
+					|| option.equals("4") || option.equals("5")
+					|| option.equals("6")) {%>
+					str+=mergeFields("orderDay");
+			<%}
+			if (option.equals("1")) {%>
+			str+=mergeFields("money");
+			flag =  (validation("money"));
+			if(flag==false){
+				return false;
+			}
+			<%}
+			if (option.equals("2")) {%>
+			str+=mergeFields("deliveryDay");
+			flag =  (validation("deliveryDay"));
+			if(flag==false){
+				return false;
+			}
+			<%}
+			if (option.equals("3")) {%>
+			str+=mergeFields("returnDay");
+			flag =  (validation("returnDay"));
+			if(flag==false){
+				return false;
+			}
+			<%}
+			if (option.equals("5")) {%>
+			str+=mergeFields("useDay");
+			str+=mergeFields("realMoney");
+			flag =  (validation("useDay")&&
+					validation("realMoney"));
+			if(flag==false){
+				return false;
+			}
+			<%}
+			if (option.equals("6")) {%>
+			str+=mergeFields("cancelDay");
+			flag =  (validation("cancelDay"));
+			if(flag==false){
+				return false;
+			}
+			<%}%>
+			str+=mergeFields("body");
+			str+=mergeFields("email");
+			str+=mergeFields("tel");
+			str+=mergeFields("phone");
+			str+=mergeFields("fax");
+			flag =  (validation("body")&&
+					validation("email")&&
+					validation("tel")&&
+					validation("phone")&&
+					validation("fax"));
+			str+"questionInfo : "+form.questionInfo.value+"\n";
+			str+"flag : "+flag+"\n";
+			//alert(str);
+			if(flag==false){
+				return false;
+			}
+		}
+		
+</script>
+</head>
+<body>
+<div id="wrap">
+<div class="content_block content_block_m0 clfix" style="border: 0px;">
+선택하신 문의항목 : <strong class="t_point_org"> <%=historyView%></strong>
+</div>
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+<h2><img src="/images/cs/h2_foreign_question01.png"
+	alt="이용 문의 내용을 작성해 주세요" /></h2>
+<div class="content_block_inner pos_rel">
+<div class="fill_joinin">
+	<ol class="list_no01">
+		<li><p>영수증, 주문서 및 신청서 등의 자료는 FAX로 보내주시기 바랍니다.</p></li>
+		<li><p>해외 매출담당자 : FAX  02-2172-7188</p></li>
+		<li><p>기타 기재하실 내용이 없으면 공란으로 두셔도 됩니다.</p></li>
+	</ol>
+
+<form id="registForm" name="registForm">
+<input type="hidden" id="category" name="category" value="/WEB-INF/jsp/hp/im/cs/feg/NHPIMCSFEGVIEW114.jsp" /> 
+<input type="hidden" id="subCategory" name="subCategory" value="<%=NHPIMCSAUQFLAGVO.CODE_SUB_001 %>" /> 
+<input type="hidden" id="email" name="email"  /> 
+<input type="hidden" id="tel" name="tel"  /> 
+<input type="hidden" id="phone" name="phone"  /> 
+<input type="hidden" id="fax" name="fax"  />
+<input type="hidden" id="questionInfo" name="questionInfo"  value="<%=history%><%=subHistory%>" />
+<input type="hidden" id="money" name="money"  />
+	
+<table class="dtable02 mt10" summary="이용문의 내용을 작성(주문신청일, 실제 사용 금액, 배달예정일, 반송일자, 청구서상 실제 사용일자, 청구서상 실제 사용금액, 취소일자, 남기실 말씀, E-mail, 전화번호, 휴대전화, 팩스번호 등)하는 게시판입니다.">
+	<caption>이용문의 내용 작성</caption>
+	<colgroup>
+		<col width="30%" />
+		<col width="70%" />
+	</colgroup>
+	<tbody>
+		<%
+			if (option.equals("1") || option.equals("2") || option.equals("3")
+					|| option.equals("4")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>주문신청일</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="orderDay" name="orderDay"  value="" title="주문신청일" /></span> <span
+				class="t_desc04">예) 20101231</span></td>
+		</tr>
+		<%
+			}
+			if (option.equals("1")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>실제
+			사용 금액</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="money01" name="money01" value="" title="실제 사용 금액 입력" /></span>
+			<select title="단위" id="money02" name="money02" style="width: 110px;"
+				onchange="sel('money',this);">
+				<option value="원">원 화</option>
+				<option value="US 달러">US 달러</option>
+				<option value="캐나다 달러">캐나다 달러</option>
+				<option value="호주 달러">호주 달러</option>
+				<option value="프랑스 프랑">프랑스 프랑</option>
+				<option value="스위스 프랑">스위스 프랑</option>
+				<option value="네덜란드 길더">네덜란드 길더</option>
+				<option value="독일 마르크">독일 마르크</option>
+				<option value="영국 파운드">영국 파운드</option>
+				<option value="이탈리아 리라">이탈리아 리라</option>
+				<option value="일본 엔">일본 엔</option>
+				<option value="중국 위엔">중국 위엔</option>
+				<option value="홍콩 달러">홍콩 달러</option>
+				<option value="싱가폴 달러">싱가폴 달러</option>
+				<option value="말레이시아 렝기트">말레이시아 렝기트</option>
+				<option value="태국 바트">태국 바트</option>
+				<option value="etc">기타</option>
+			</select> <span class="input_receipt_date02"><input type="text"
+				class="txt" id="money03" name="money03" disabled="disabled" value="기타 선택시 입력"
+				title="기타 선택시 입력" /></span> <span class="t_desc04"> 예) 20000US달러</span></td>
+		</tr>
+
+		<%
+			}
+			if (option.equals("2")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>배달예정일</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="deliveryDay" name="deliveryDay"  value="" title="배달예정일" /></span>
+			<span class="t_desc04">예) 20101231</span></td>
+		</tr>
+
+		<%
+			}
+			if (option.equals("3")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>반송일자</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="returnDay" name="returnDay"  value="" title="반송일자" /></span> <span
+				class="t_desc04">예) 20101231</span></td>
+		</tr>
+		<%
+			}
+			if (option.equals("5")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>청구서상
+			실제 사용일자</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="useDay" name="useDay"  value="" title="청구서상 실제 사용일자" /></span>
+			<span class="t_desc04">예) 20101231</span></td>
+		</tr>
+			<tr>
+			<th scope="row" class="cell_app02"><p>청구서상
+			실제 사용금액</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="realMoney01" name="realMoney01" value=""
+				title="청구서상 실제 사용금액 입력" /></span> <select title="단위" id="realMoney02" name="realMoney02"
+				style="width: 110px;" onChange="sel('realMoney',this);">
+				<option value="원">원 화</option>
+				<option value="US 달러">US 달러</option>
+				<option value="캐나다 달러">캐나다 달러</option>
+				<option value="호주 달러">호주 달러</option>
+				<option value="프랑스 프랑">프랑스 프랑</option>
+				<option value="스위스 프랑">스위스 프랑</option>
+				<option value="네덜란드 길더">네덜란드 길더</option>
+				<option value="독일 마르크">독일 마르크</option>
+				<option value="영국 파운드">영국 파운드</option>
+				<option value="이탈리아 리라">이탈리아 리라</option>
+				<option value="일본 엔">일본 엔</option>
+				<option value="중국 위엔">중국 위엔</option>
+				<option value="홍콩 달러">홍콩 달러</option>
+				<option value="싱가폴 달러">싱가폴 달러</option>
+				<option value="말레이시아 렝기트">말레이시아 렝기트</option>
+				<option value="태국 바트">태국 바트</option>
+				<option value="etc">기타</option>
+			</select> <span class="input_receipt_date02"><input type="text"
+				class="txt" id="realMoney03" name="realMoney03" disabled="disabled" value="기타 선택시 입력"
+				title="기타 선택시 입력" /></span> <span class="t_desc04"> 예) 20000US달러</span></td>
+		</tr>
+		<%
+			}
+			if (option.equals("6")) {
+		%>
+		<tr>
+			<th scope="row" class="cell_app02"><p>취소일자</p></th>
+			<td class="cell_app"><span class="input_receipt_date"><input
+				type="text" class="txt" id="cancelDay" name="cancelDay"  value="" title="취소일자" /></span> <span
+				class="t_desc04">예) 20101231</span></td>
+		</tr>
+		<%
+			}
+		%>
+
+		<tr>
+			<th scope="row" class="cell_app02"><p>남기실
+			말씀</p></th>
+			<td class="cell_app"><span class="input_body"><textarea
+				class="txt" id="body" name="body"  rows="80" cols="5" title="남기실 말씀 입력"></textarea></span>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>E-mail</p></th>
+			<td class="cell_app"><span class="input_email"> <input
+				type="text" class="txt" value="<%=email[0]%>" title="이메일명" id="email01" name="email01" />&nbsp;@&nbsp;<input
+				type="text" class="txt" value="<%=email[1].trim()%>" title="이메일공급자 직접입력" id="email02" name="email02" /><select
+				title="이메일공급자선택" id="email03" onChange="sel('email',this);">
+				<option value=" ">선택</option>
+				<option value="dreamwiz.com">dreamwiz.com</option>
+				<option value="empal.com">empal.com</option>
+				<option value="hanmail.net">hanmail.net</option>
+				<option value="hotmail.com">hotmail.com</option>
+				<option value="korea.com">korea.com</option>
+				<option value="lycos.co.kr">lycos.co.kr</option>
+				<option value="nate.com">nate.com</option>
+				<option value="naver.com">naver.com</option>
+				<option value="netian.com">netian.com</option>
+				<option value="orgio.net">orgio.net</option>
+				<option value="paran.com">paran.com</option>
+				<!--option value="yahoo.co.kr">yahoo.co.kr</option-->
+				<option value="">직접입력</option>
+			</select> </span></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>전화번호</p></th>
+			<td class="cell_app"><span class="input_phone"> <select
+				title="전화번호 앞자리 선택" id="tel01" name="tel01">
+				<option value="">선택</option>
+				<option value="02">02</option>
+				<option value="031">031</option>
+				<option value="032">032</option>
+				<option value="041">041</option>
+				<option value="042">042</option>
+				<option value="043">043</option>
+				<option value="051">051</option>
+				<option value="052">052</option>
+				<option value="053">052</option>
+				<option value="054">054</option>
+				<option value="055">055</option>
+				<option value="061">061</option>
+				<option value="062">062</option>
+				<option value="063">063</option>
+				<option value="064">064</option>
+			</select><input id="tel02" name="tel02" type="text" class="txt" value="" title="전화번호 가운데자리" />&nbsp;-&nbsp;<input
+				id="tel03" name="tel03" type="text" class="txt" value="" title="전화번호 뒷자리" /> </span></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>휴대전화</p></th>
+			<td class="cell_app"><span class="input_phone"> <select
+				title="휴대전화번호 앞자리 선택" id="phone01" name="phone01">
+				<option value="">선택</option>
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="017">017</option>
+				<option value="019">019</option>
+			</select><input id="phone02" name="phone02" type="text" class="txt" value=""
+				title="휴대전화번호 가운데자리" />&nbsp;-&nbsp;<input id="phone03" name="phone03" type="text"
+				class="txt" value="" title="휴대전화번호 뒷자리" /> </span></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>팩스번호</p></th>
+			<td class="cell_app"><span class="input_phone" > <select
+				title="팩스번호 앞자리 선택" id="fax01" name="fax01">
+				<option value="">선택</option>
+				<option value="02">02</option>
+				<option value="031">031</option>
+				<option value="032">032</option>
+				<option value="041">041</option>
+				<option value="042">042</option>
+				<option value="043">043</option>
+				<option value="051">051</option>
+				<option value="052">052</option>
+				<option value="053">052</option>
+				<option value="054">054</option>
+				<option value="055">055</option>
+				<option value="061">061</option>
+				<option value="062">062</option>
+				<option value="063">063</option>
+				<option value="064">064</option>
+			</select><input id="fax02" name="fax02" type="text" class="txt" value="" title="팩스번호 가운데자리" />&nbsp;-&nbsp;<input
+				id="fax03" name="fax03" type="text" class="txt" value="" title="팩스번호 뒷자리" /> </span></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<form name="tempXecureForm"><input type="hidden" name="p" /></form>
+</div>
+<!-- btn -->
+<div class="btnset">
+<p class="btnr"><a href="javascript:save();" class="btn btn_blue"><span>보내기</span></a>
+<a href="javascript:clear();" class="btn btn_white"><span>다시쓰기</span></a>
+<a href="javascript:back();" class="btn btn_white"><span>이전</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>
+

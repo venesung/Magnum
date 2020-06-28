@@ -1,0 +1,1005 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><span class="none">현재탭</span><a href="#">대학등록금납부신청</a></li>
+		</ul>
+	</div>
+</div>
+<form name="f1" action="" method="post">
+<input type="hidden" name="falseCode" value="" />
+<input type="hidden" name="NOW_TIME" value="<%=nowTime %>" />
+<input type="hidden" name="NOW_DATE" value="<%=nowDate %>" />	
+<input type="hidden" name="IDEN_NO" value="<%=idenNo %>" />
+<input type="hidden" name="USER_NAME" value="<%=userName %>" />
+<input type="hidden" name="totaldata" value="<%=totaldata %>" />
+
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ss/h2_registrationFee_service03.png" alt="납부방법을 선택하세요" /></h2>
+			<div class="content_block_inner">
+				<input type="hidden" name="handoAmt" value="<%=handoAmt%>" />
+				<input type="hidden" name="orderInt" value="0" /><!-- 주문번호를 위해 -->
+				<input type="hidden" name="tuiHandoIn" value="" />
+				<input type="hidden" name="handoUpIn" value="" />
+				<input type="hidden" name="korName" value="<%=StringUtil.nvl(vo.getKorName(),"") %>" />
+				<input type="hidden" name="totPreableAmt" value="<%=totPreableAmt %>" />
+
+<!--올앳 결제용 변수세팅-->
+<input type="hidden" name="allat_shop_id1" /> 					<!--파타너 ID-->
+<input type="hidden" name="allat_pmember_id1" />				<!--가맹점 회원ID-->
+<input type="hidden" name="allat_shop_id2" /> 					<!--파타너 ID-->
+<input type="hidden" name="allat_pmember_id2" />				<!--가맹점 회원ID-->
+<input type="hidden" name="allat_cross_key1"	value="<%=crossKey1%>" />	<!--폼키-->
+<input type="hidden" name="form_key1"			value="<%=crossKey1%>" />	<!--폼키-->
+<input type="hidden" name="allat_cross_key2"	value="<%=crossKey2%>" />	<!--폼키-->
+<input type="hidden" name="form_key2"			value="<%=crossKey2%>" />	<!--폼키-->
+<input type="hidden" name="CHAIN_NO1"			value="<%=chainNo1%>" />
+<input type="hidden" name="CHAIN_NAME1"			value="<%=chainName1%>" />
+<input type="hidden" name="CHAIN_NO2"			value="<%=chainNo2%>" />
+<input type="hidden" name="CHAIN_NAME2"			value="<%=chainName2%>" />
+<input type="hidden" name="allat_amt1" />            			<!--승인금액-->
+<input type="hidden" name="allat_amt2" />            			<!--승인금액-->
+
+<input type="hidden" name="allat_shop_id" /> 					<!--파타너 ID-->
+<input type="hidden" name="allat_card_no" /> 					<!--카드번호-->
+<input type="hidden" name="allat_order_no" />					<!--주문번호-->
+<input type="hidden" name="allat_amt" />            			<!--승인금액-->
+<input type="hidden" name="allat_pmember_id" />				<!--가맹점 회원ID-->
+<input type="hidden" name="allat_product_cd" value="" />	<!--상품ID임의부여-->
+<input type="hidden" name="allat_product_nm" value="" />	<!--상품명-->
+<input type="hidden" name="allat_buyer_nm" value="<%=StringUtil.nvl(vo.getHakbun(),"") %>" />	<!-- 결제자성명(학번) -->
+<input type="hidden" name="allat_pay_type" value="NOR" />		<!--결제방법선택 -->
+<input type="hidden" name="allat_enc_data" value="" />        	<!--주문정보암호화필드  -->
+<input type="hidden" name="allat_opt_pin" value="VIEW" /> 	  	<!--올앳참조필드-->
+<input type="hidden" name="allat_opt_mod" value="WEB" />
+
+<!--//----- 카드 결제시 필수 필드, 계좌 이체시에는 사용하지 않음 --------//-->
+<input type="hidden" name="allat_recp_nm" value="<%=StringUtil.nvl(vo.getHakbun(),"") %>" /><!-- 수취인(학번) -->
+<input type="hidden" name="allat_recp_addr" value=" " />		<!--수취인주소-->
+<input type="hidden" name="allat_zerofee_yn" value="N" /> 		<!--일반/무이자 할부 사용여부   -->
+<input type="hidden" name="KVP_QUOTA" value="" />  				<!--할부개월값-->
+<input type="hidden" name="allat_sell_mm" value="1" /> 			<!--할부개월수-->
+<input type="hidden" name="allat_bonus_yn" value="N" />			<!--보너스포인트 사용 여부  -->
+<input type="hidden" name="allat_cardcert_yn"  value="Y" /> 	<!--카드 인증 여부 -->
+
+<!--//-----------------------------일반결제   결제 필수 항목------------//-->
+<input type="hidden" name="allat_cardvalid_ym" value="" /> 		<!--카드 유효기간 -->
+<input type="hidden" name="allat_passwd_no" value="" /> 		<!--카드 비밀번호 -->
+<input type="hidden" name="allat_business_type" value="0" />	<!--결제자 카드종류 -->
+<input type="hidden" name="allat_registry_no"  /> <!--주민번호 -->
+<input type="hidden" name="allat_biz_no" value="" /> <!--사업자번호 -->
+<input type="hidden" name="allat_test_yn"  value="N" /> 
+<input type="hidden" name="allat_cross_key" value="<%=crossKey%>" />	<!--폼키-->
+<input type="hidden" name="form_key" value="<%=crossKey%>" />	<!--폼키-->
+
+<input type="hidden" name="allat_escrow_yn" value="N" />
+<input type="hidden" name="allat_escrow_no" value="" />
+<input type="hidden" name="allat_real_yn" value="N" />
+<input type="hidden" name="allat_recp_nm" value="" />
+<input type="hidden" name="allat_recp_addr" value="" />
+<input type="hidden" name="allat_email_addr" value="" />
+<input type="hidden" name="allat_gender" value="" />
+<input type="hidden" name="allat_birth_ymd" value="" />
+
+				<!-- 올앳승인 -->
+
+
+				<input type="hidden" name="UNIV_CODE" value="<%=StringUtil.nvl(vo.getUnivCode(),"") %>" />
+				<input type="hidden" name="HAKBUN"    value="<%=StringUtil.nvl(vo.getHakbun(),"") %>" />
+
+				<input type="hidden" name="PAYER_CARD_NO" value="<%=payerCardNo%>" />
+				<input type="hidden" name="EXPIRE_DATE"   value="<%=expireDate%>" />
+				<input type="hidden" name="PAYER_NAME"    value="<%=payerName%>" />
+				<input type="hidden" name="PAYER_IDEN_NO" value="<%=idenNo%>" />
+				<input type="hidden" name="HANDPHONE"     value="<%=phone%>" />
+				<input type="hidden" name="PAGER"         value="<%=StringUtil.nvl(vo.getPager(),"") %>" />
+
+				<input type="hidden" name="PAYMENT_AMOUNT"    value="<%=StringUtil.nvl(drTot,"0") %>" />
+				<input type="hidden" name="INSTALLMENT_MONTH" value="02" />
+				<input type="hidden" name="CHAIN_NO"          value="<%=chainNo%>" />
+				<input type="hidden" name="CHAIN_NAME"        value="<%=chainName%>" />
+
+				<input type="hidden" name="DR_TOT"    value="<%=StringUtil.nvl(drTot,"0") %>" />
+				<input type="hidden" name="PILSU_SUM"   value="<%=StringUtil.nvl(drPilsuSum,"0") %>" />
+				<input type="hidden" name="DORM_SUM"   value="<%=StringUtil.nvl(drOptionEtc,"0") %>" />
+				<input type="hidden" name="OPTION_SUM"   value="<%=StringUtil.nvl(drOptionSum,"0") %>" />
+<% if(onlyOption.equals("Y") && univCode.equals("0003")){ %>
+				<input type="hidden" name="TUITION_TYPE" value="02" />
+<% }else{ %>
+				<input type="hidden" name="TUITION_TYPE" value="04" />
+<% } %>
+<% if(univCode.equals("0001") || univCode.equals("0002")){ %>				
+				<table class="dtable02 dtable_inputfield" summary="학교, 학번, 학과, 학생명, 카드번호등의 정보를 확인할 수 있는 게시판입니다.">
+				<caption>학교정보 및 카드번호</caption>
+				<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="210" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>학교</p></th>
+						<td><p><%=univName %></p></td>
+						<th scope="row"><p>학번</p></th>
+						<td><p class="t_no"><%=StringUtil.nvl(hakbun,"") %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>학과</p></th>
+						<td><p><%=StringUtil.nvl(vo.getJojikName2(),"") %></p></td>
+						<th scope="row"><p>학생명</p></th>
+						<td><p><%=StringUtil.nvl(vo.getKorName(),"") %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드번호</p></th>
+						<td colspan="3"><p class="t_no"><%=cardNo %></p></td>
+					</tr>
+				</tbody>
+				</table>
+<% }else{ %>
+				<table class="dtable02 dtable_inputfield" summary="학교, 학번, 학생명, 카드번호등의 정보를 확인할 수 있는 게시판입니다.">
+				<caption>학교정보 및 카드번호</caption>
+				<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="210" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>학교</p></th>
+						<td><p><%=univName %></p></td>
+						<th scope="row"><p>학번</p></th>
+						<td><p class="t_no"><%=StringUtil.nvl(hakbun,"") %></p></td>
+					</tr>
+<% if("0023".equals(univCode)){ %>
+					<tr>
+						<th scope="row"><p>카드번호</p></th>
+						<td colspan="3"><p class="t_no"><%=cardNo %></p></td>
+					</tr>
+<% }else{ %>
+					<tr>
+						<th scope="row"><p>학생명</p></th>
+						<td><p><%=StringUtil.nvl(vo.getKorName(),"") %></p></td>
+						<th scope="row"><p>카드번호</p></th>
+						<td><p class="t_no"><%=cardNo %></p></td>
+					</tr>
+<% } %>
+				</tbody>
+				</table>
+<% } %>
+				<table class="dtable02 dtable_inputfield mt20" summary="납부구분, 납부방법을 선택하는 게시판입니다.">
+				<caption>납부구분, 납부방법 선택</caption>
+				<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="200" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>납부구분 선택</p></th>
+						<td colspan="3"><p>
+<% if("0015".equals(univCode)){ %>
+							<table border="0" summary="납부구분 선택을 할수 있습니다">
+                            <caption><납부구분 선택/caption>
+								<tr>
+									<td scope="row"><input type="checkbox" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" onclick="setPilsu('<%=StringUtil.nvl(drPilsuSum,"0") %>');" title="필수 선택" />필수</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="학생회비 선택" />선택1 (학생회비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="앨범비 선택" />선택2 (앨범비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="졸업비 선택" />선택3 (졸업비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_4" value="<%=StringUtil.nvl(drOption4,"0") %>" class="chk" id="label_gu5" checked="checked" onclick="setOption4('<%=StringUtil.nvl(drOption4,"0") %>');" title="신체검사비 선택" />선택4 (신체검사비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption4,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row" width="150"><input type="checkbox" name="DR_OPTION_5" value="<%=StringUtil.nvl(drOptionEtc,"0") %>" class="chk" id="label_gu6" checked="checked" onclick="setOptionEtc('<%=StringUtil.nvl(drOptionEtc,"0") %>');" title="기숙사비 선택" />기숙사비</td>
+									<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionEtc,"0"))) %> 원</td>
+									<td width="50"></td>
+									<td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td>
+								</tr>
+							</table>
+							</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>필수</p></th>
+						<td><p><div id="pilsu_layer">&nbsp;&nbsp;<span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %></span> 원</p></div></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>선택</p></th>
+						<td><p><div id="option_sum_layer">&nbsp;&nbsp;<span class="t_no"><%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionSum,"0"))) %> </span> 원 </div></p></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>기숙사</p></th>
+						<td colspan="3"><p><div id="dorm_layer">&nbsp;&nbsp;<span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionEtc,"0"))) %></span> 원</p></div></td>
+<% }else if("0016".equals(univCode)){ %>
+							<table border="0">
+             
+								<tr>
+									<td scope="row"><input type="checkbox" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" onclick="setPilsu('<%=StringUtil.nvl(drPilsuSum,"0") %>');" title="필수 선택" />필수</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="학생회비 선택" />선택1 (학생회비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="앨범비 선택" />선택2 (앨범비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row"><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="졸업비 선택" />선택3 (졸업비)</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td scope="row" width="150"><input type="checkbox" name="DR_OPTION_5" value="<%=StringUtil.nvl(drOptionEtc,"0") %>" class="chk" id="label_gu5" checked="checked" onclick="setOptionEtc('<%=StringUtil.nvl(drOptionEtc,"0") %>');" title="기숙사비 선택" />기숙사비</td>
+									<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionEtc,"0"))) %> 원</td>
+									<td width="50"></td>
+                                    <td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td>
+								</tr>
+							</table>
+							</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>필수</p></th>
+						<td><p><div id="pilsu_layer">&nbsp;&nbsp;<span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %></span> 원</p></div></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>선택</p></th>
+						<td><p><div id="option_sum_layer">&nbsp;&nbsp;<span class="t_no"><%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionSum,"0"))) %> </span> 원 </div></p></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>기숙사</p></th>
+						<td colspan="3"><p><div id="dorm_layer">&nbsp;&nbsp;<span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionEtc,"0"))) %></span> 원</p></div></td>
+<% }else{ %>
+
+
+
+
+
+<% if(onlyOption.equals("Y") && univCode.equals("0003")){ %>
+							<label for="label_gu"><input type="radio" class="chk" value="02" id="label_gu" name="TUITION_TYPE1" checked="checked" /> 선택</label>
+<% }else{ %>
+
+						<% if(paymentGubun01.equals("Y")){ %>
+							<% if(univCode.equals("0014")){ %>
+							<label for="label_gu"><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" onclick="setTuitionType('01')" checked="checked" /> 필수</label>
+							<% }else if(univCode.equals("0031")){ %>
+							<label for="label_gu2"><input type="radio" class="chk" value="02" id="label_gu2" name="TUITION_TYPE1" onclick="setTuitionType('04')" checked="checked" /> 필수+선택 </label>
+							<% }else{ %>
+							<label for="label_gu"><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" onclick="setTuitionType('01')" /> 필수</label>
+							<label for="label_gu2"><input type="radio" class="chk" value="02" id="label_gu2" name="TUITION_TYPE1" onclick="setTuitionType('04')" checked="checked" /> 필수+선택 </label>
+							<% } %>
+                            <span class="pl10"><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></span>
+						<% }else if(paymentGubun02.equals("Y")){ %>
+						<%
+								optTxt1 = "";
+								optTxt2 = "";
+								optTxt3 = "";
+								if(univCode.equals("0002")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (졸업앨범비)";
+									optTxt3 = "선택3 (액자비)";
+								}
+								else if(univCode.equals("0018")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (졸업앨범비)";
+									optTxt3 = "선택3 (기타잡부금)";
+								}
+								else if(univCode.equals("0035")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (잡부금1)";
+									optTxt3 = "선택3 (잡부금2)";
+								}
+						%>
+						
+						<% if(!univCode.equals("0035")){ %>
+							<label for="label_gu"><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" onclick="setTuitionType('01')" /> 필수</label>
+							<label for="label_gu2"><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" /><%=optTxt1 %></label>
+							<label for="label_gu3"><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" /><%=optTxt2 %></label>
+							<label for="label_gu4"><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" /><%=optTxt3 %></label>
+                            <span class="pl10"><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></span>
+						
+<!-- SR내역 12.02.01 -->
+						<% }else{ %>
+						<table border="0"> 
+							<tr> 
+								<td><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" title="필수 체크" />필수</td> 
+								<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td> 
+								<td></td> 
+								<td></td> 
+							</tr> 
+							<tr> 
+								<td><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="<%=optTxt1 %>" /><%=optTxt1 %></td> 
+								<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td> 
+								<td></td> 
+								<td></td> 
+							</tr> 
+							<tr> 
+								<td><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="<%=optTxt2 %>" /><%=optTxt2 %></td> 
+								<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td> 
+								<td></td> 
+								<td></td> 
+							</tr> 
+							<tr> 
+								<td width="150"><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="<%=optTxt3 %>" /><%=optTxt3 %></td> 
+								<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td> 
+								<td width="50"></td> 
+								<td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td> 
+							</tr> 
+						</table> 
+						<% } %>
+<!--// SR내역 12.02.01 -->
+						
+						<% }else if(paymentGubun03.equals("Y")){ %>
+						<%
+								optTxt1 = "";
+								optTxt2 = "";
+								optTxt3 = "";
+								optTxt4 = "";
+								if(univCode.equals("0005")){
+									optTxt1 = "선택1 (교재대금)";
+									optTxt2 = "선택2 (학보대금)";
+									optTxt3 = "선택3 (학생회비)";
+									optTxt4 = "선택4 (발전후원금)";
+								}
+								else if(univCode.equals("0008")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (학사모비)";
+									optTxt3 = "선택3 (앨범비)";
+									optTxt4 = "선택4 (기숙사비)";
+								}
+								else if(univCode.equals("0019")){
+									optTxt1 = "선택1 (건강공제회비)";
+									optTxt2 = "선택2 (학생회비)";
+									optTxt3 = "선택3 (교지대)";
+									optTxt4 = "선택4 (동창회비)";
+								}
+								else if(univCode.equals("0020")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (의료공제)";
+									optTxt3 = "선택3 (기타경비)";
+									optTxt4 = "선택4 (동문회비)";
+								}
+						%>
+							<table border="0">
+								<tr>
+									<td><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" title="필수 선택" />필수</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="<%=optTxt1 %> 선택" /><%=optTxt1 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="<%=optTxt2 %> 선택" /><%=optTxt2 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="<%=optTxt3 %> 선택" /><%=optTxt3 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td width="150"><input type="checkbox" name="DR_OPTION_4" value="<%=StringUtil.nvl(drOption4,"0") %>" class="chk" id="label_gu5" checked="checked" onclick="setOption4('<%=StringUtil.nvl(drOption4,"0") %>');" title="<%=optTxt4 %> 선택" /><%=optTxt4 %></td>
+									<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption4,"0"))) %> 원</td>
+									<td width="50"></td>
+                                    <td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td>
+								</tr>
+							</table>
+						<% }else if(paymentGubun05.equals("Y")){ %>
+						<%
+								optTxt1 = "";
+								optTxt2 = "";
+								optTxt3 = "";
+								optTxt4 = "";
+								optTxt5 = "";
+								if(univCode.equals("0025")){
+									optTxt1 = "선택1 (학생회비)";
+									optTxt2 = "선택2 (신문방송비)";
+									optTxt3 = "선택3 (동창회비)";
+									optTxt4 = "선택4 (졸업비)";
+									optTxt5 = "선택5 (졸업앨범비)";
+								}
+								else if(univCode.equals("0030")){
+									optTxt1 = "선택1 (보험료)";
+									optTxt2 = "선택2 (학생회비)";
+									optTxt3 = "선택3 (교지비)";
+									optTxt4 = "선택4 (졸업준비비)";
+									optTxt5 = "선택5 (동문회비)";
+								}
+								else if(univCode.equals("0033")){ 
+								    optTxt1 = "선택1 (학생회비)"; 
+								    optTxt2 = "선택2 (방송운영비)"; 
+								    optTxt3 = "선택3 (학과OT비)"; 
+								    optTxt4 = "선택4 (동창회비)"; 
+								    optTxt5 = "선택5 (앨범비)"; 
+								} 								
+						%>
+							<table border="0">
+								<tr>
+									<td><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" title="필수 선택" />필수</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="<%=optTxt1 %> 선택" /><%=optTxt1 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="<%=optTxt2 %> 선택" /><%=optTxt2 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="<%=optTxt3 %> 선택" /><%=optTxt3 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_4" value="<%=StringUtil.nvl(drOption4,"0") %>" class="chk" id="label_gu5" checked="checked" onclick="setOption4('<%=StringUtil.nvl(drOption4,"0") %>');" title="<%=optTxt4 %> 선택" /><%=optTxt4 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption4,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td width="150"><input type="checkbox" name="DR_OPTION_5" value="<%=StringUtil.nvl(drOption5,"0") %>" class="chk" id="label_gu6" checked="checked" onclick="setOption5('<%=StringUtil.nvl(drOption5,"0") %>');" title="<%=optTxt5 %> 선택" /><%=optTxt5 %></td>
+									<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption5,"0"))) %> 원</td>
+									<td width="50"></td>
+                                    <td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td>
+								</tr>
+							</table>
+						<% }else if(paymentGubun06.equals("Y")){ %>
+                        <%	// SR반영 2013.02.15
+		 					optTxt1 = "";
+	                        optTxt2 = "";
+	 	                    optTxt3 = "";
+	 	                    optTxt4 = "";
+	 	                    optTxt5 = "";
+	 	                    optTxt6 = "";
+	 	                    if(univCode.equals("0029")){
+	 	                    	optTxt1 = "선택1 (학생회비)";
+	 	                    	optTxt2 = "선택2 (원우회비)";
+	 	                        optTxt3 = "선택3 (OT비)";
+	 	                    	optTxt4 = "선택4 (자격고시)";
+	 	                        optTxt5 = "선택5 (논문지도비)";
+	 	                        optTxt6 = "선택6 (기업지원금)";
+	 	                	}
+	 	                    else if(univCode.equals("0030")){
+	 	                        optTxt1 = "선택1 (학생회비)";
+	 	                        optTxt2 = "선택2 (교지비)";
+	 	                        optTxt3 = "선택3 (졸업준비비)";
+	 	                        optTxt4 = "선택4 (동문회비)";
+	 	                        optTxt5 = "선택5 (보험료)";
+	 	                        optTxt6 = "선택6 (해외연수비)";
+	 	                     }
+	 	                %>
+							<table border="0">
+								<tr>
+									<td><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" title="필수 선택" />필수</td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+ 									<td><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onclick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="<%=optTxt1 %> 선택" /><%=optTxt1 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onclick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');" title="<%=optTxt2 %> 선택" /><%=optTxt2 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_3" value="<%=StringUtil.nvl(drOption3,"0") %>" class="chk" id="label_gu4" checked="checked" onclick="setOption3('<%=StringUtil.nvl(drOption3,"0") %>');" title="<%=optTxt3 %> 선택" /><%=optTxt3 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption3,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_4" value="<%=StringUtil.nvl(drOption4,"0") %>" class="chk" id="label_gu5" checked="checked" onclick="setOption4('<%=StringUtil.nvl(drOption4,"0") %>');" title="<%=optTxt4 %> 선택" /><%=optTxt4 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption4,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="DR_OPTION_5" value="<%=StringUtil.nvl(drOption5,"0") %>" class="chk" id="label_gu6" checked="checked" onclick="setOption5('<%=StringUtil.nvl(drOption5,"0") %>');" title="<%=optTxt5 %> 선택" /><%=optTxt5 %></td>
+									<td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption5,"0"))) %> 원</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td width="150"><input type="checkbox" name="DR_OPTION_6" value="<%=StringUtil.nvl(drOption6,"0") %>" class="chk" id="label_gu7" checked="checked" onclick="setOption6('<%=StringUtil.nvl(drOption6,"0") %>');" title="<%=optTxt6 %> 선택" /><%=optTxt6 %></td>
+									<td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption6,"0"))) %> 원</td>
+			<!--  SR반영 2013.02.15--><td width="50"></td>
+	 								<td><a href="javascript:layerPop1();" class="btn_link">상세보기</a></td>
+	 		                     </tr>
+	 		                 </table>
+	 						<% }else if(paymentGubun07.equals("Y")){ %>
+	 						<%
+	 		                	optTxt1 = "";
+	 		                    optTxt2 = ""; 
+	 		                    if(univCode.equals("0041")){
+	 		                    	optTxt1 = "선택1 (학생/원우회비)";
+	 		                        optTxt2 = "선택2 (동창회비)";
+	 		                    }
+	 		                %>
+                            <table border="0">
+                                <tr>
+                                    <td><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked/>필수</td>
+                                    <td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %> 원</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="DR_OPTION_1" value="<%=StringUtil.nvl(drOption1,"0") %>" class="chk" id="label_gu2" checked="checked" onClick="setOption1('<%=StringUtil.nvl(drOption1,"0") %>');" title="<%=optTxt1 %> 선택" /><%=optTxt1 %></td>
+                                    <td align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption1,"0"))) %> 원</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td width="150"><input type="checkbox" name="DR_OPTION_2" value="<%=StringUtil.nvl(drOption2,"0") %>" class="chk" id="label_gu3" checked="checked" onClick="setOption2('<%=StringUtil.nvl(drOption2,"0") %>');"  title="<%=optTxt2 %> 선택" /><%=optTxt2 %></td>
+                                    <td width="80" align="right"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOption2,"0"))) %> 원</td><!--  SR반영 2013.02.15-->
+									<td width="50"></td>
+                                    <td><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></td>
+								</tr>
+							</table>
+						<% }else if(paymentGubun04.equals("Y")){ %>
+							<label for="label_gu"><input type="radio" class="chk" value="01" id="label_gu" name="TUITION_TYPE1" checked="checked" /> 필수</label>
+                            <span class="pl10"><a href="javascript:layerPop1();" class="btn_link" title="대학별 상세보기 새창">상세보기</a></span>
+						<% } %>
+<% } %>
+							</p></td>
+					</tr>
+					<tr>
+<% if(onlyOption.equals("Y") && univCode.equals("0003")){ %>
+						<th scope="row"><p>선택</p></th>
+						<td><p><div id="option_sum_layer"><span class="t_no">&nbsp;&nbsp;<%=!univCode.equals("0002")?StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionSum,"0"))):"0" %> </span> 원 </div></p></td>
+						<td></td>
+						<td></td>
+<% }else{ %>
+	<% if(paymentGubun04.equals("Y")){ %>
+		<% if(univCode.equals("0007") || univCode.equals("0011")){ %>
+						<th scope="row"><p>필수</p></th>
+						<td><p><span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %></span> 원</p></td>
+						<th scope="row"><p>장학금</p></th>
+						<td><p><div id="option_sum_layer"><span class="t_no"> <%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drJangHakSum,"0"))) %> </span> 원 </div></p></td>
+		<% }else{ %>
+						<th scope="row"><p>필수</p></th>
+						<td><p><span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %></span> 원</p></td>
+						<td></td>
+						<td></td>
+		<% } %>
+	<% }else{ %>
+						<th scope="row"><p>필수</p></th>
+						<td><p><span class="t_no"><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drPilsuSum,"0"))) %></span> 원</p></td>
+						<th scope="row"><p>선택</p></th>
+						<td><p><div id="option_sum_layer"><span class="t_no"> <%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drOptionSum,"0"))) %> </span> 원 </div></p></td>
+	<% } %>
+<% } %>
+
+
+
+<% } %>
+					</tr>
+<% if((univCode.equals("0019") || univCode.equals("0020")) && !"0".equals(drJangHakSum)){ %>
+					<tr>
+						<th scope="row"><p>장학금</p></th>
+						<td><p><span class="t_no"><%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drJangHakSum,"0"))) %></span> 원</p></td>
+						<td></td>
+						<td></td>
+					</tr>
+<% } %>
+					<tr>
+						<th scope="row"><p><strong>납부하실 금액</strong></p></th>
+						<td colspan="3"><p><div id="amount"><strong class="t_point_org"><span class="t_no t_point_org">&nbsp;&nbsp;<%=StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drTot,"0"))) %></span> 원</strong></div></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>납부방법</p></th>
+						<td colspan="3"><p>
+							<label for="label_ha"><input type="radio" name="PAYMENT_TYPE" value="01" class="chk" value="" id="label_ha" name="label_ha" onclick="setPaymentType('01')" /> 일시불</label>
+							<label for="label_ha2"><input type="radio" name="PAYMENT_TYPE" value="02" class="chk" value="" id="label_ha2" name="label_ha" onclick="setPaymentType('02')" checked="checked" /> 할부</label>
+<!-- 수정 100730 -->
+							<select name="INSTALLMENT_MONTH_TMP" onchange="changeMonth()" id="a1" style="dispaly:block" title="할부개월 선택">
+								<option value="02">2개월</option>
+								<option value="03">3개월(다이어트할부)</option>
+								<option value="04">4개월</option>
+								<option value="05">5개월</option>
+								<option value="06">6개월(다이어트할부)</option>
+								<option value="07">7개월</option>
+								<option value="08">8개월</option>
+								<option value="09">9개월</option>
+								<option value="10">10개월(다이어트할부)</option>
+								<option value="11">11개월</option>
+								<option value="12">12개월(다이어트할부)</option>
+							</select>
+							<% if(univCode.equals("0015") || univCode.equals("0016") || univCode.equals("0033")){ %>
+							<p class="t_desc04 mt5"><font color="blue">※ 선택금액은 할부결제가 불가하오니 양해바라며, 고객님께 승인내역 SMS가 별도로 전송됩니다</font></p>
+							<% } %>
+<!-- // 수정 100730 -->
+							</p></td>
+					</tr>
+				</tbody>
+				</table>
+				
+<!-- 수정 110119 -->
+						<table class="dtable02 mt20 dtable_inputfield" summary="카드유효기간를 입력하는 게시판입니다.">
+						<caption>카드유효기간 입력</caption>
+						<colgroup><col width="120" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드유효기간</p></th>
+								<td>
+									<p>
+                                    <input name="VALIDITY_MONTH" type="text" maxlength="2" id="VALIDITY_MONTH"  onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" class="txt date" title="카드유효기간 월" /> 월
+                                    <input name="VALIDITY_YEAR" type="text" maxlength="2" id="VALIDITY_YEAR" class="txt date" title="카드유효기간 년도" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" /> 년
+									</p>
+									<p class="t_desc04 mt5">카드 앞면에 기재된 유효기간을 순서대로 입력하세요 (예:카드표기 11/14 → 입력 11/14)</p>
+								</td>
+							</tr>
+							<!--
+							<tr>
+								<th scope="row"><p>카드비밀번호</p></th>
+								<td>
+									<p class="input_cardno t_desc04">
+									<input name="CARD_PASS" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" type="password" maxlength="2" id="CARD_PASS" class="txt" value="" title="비밀번호 앞 두자리" /> ** <span class="pl10 t_desc04">비밀번호 앞의 2자리</span>
+									</p>
+								</td>
+							</tr>
+							-->
+						</tbody>
+						</table>
+<% if(tuiHandoFlag){ %>
+						<!--
+						<p class="ml10 mt15">고객님의 대학등록금 납부를 위해 등록금액만큼 전용한도를 부여하여 처리합니다.<br />
+							등록금전용한도는 대학등록금 납부용도에만 부여되는 한도로 고객님 일반한도에는 포함되지 않습니다.<br />
+							동의 하시겠습니까?</p>
+						-->
+						<p class="ml10 mt15">고객님의 대학등록금 납부를 위해 전용한도를 부여하여 처리합니다.(최대 500만원, 그 이상 금액은 일반한도 사용)<br />
+							등록금전용한도는 대학등록금 납부용도에만 부여되는 한도로 고객님 일반한도에는 포함되지 않습니다.<br />
+							동의 하시겠습니까?</p>
+						<div class="line_lgray10">&nbsp;</div>
+						<div class="btnr">
+							<label for="label_agr_private_credit1"><input type="radio" class="rdo" value="Y" id="label_agr_private_credit1" name="tuiHandoYn" onclick="setHando();" /> <strong>동의함</strong></label>
+							<label for="label_agr_private_credit2"><input type="radio" class="rdo" value="N" id="label_agr_private_credit2" name="tuiHandoYn" checked="checked" onclick="setHando();" /> 동의안함</label>
+						</div>
+<% } %>
+
+<% if(onlySearchUniv.indexOf(univCode) < 0){ %>
+						<div id="btn_style" class="btnset mt30">
+							<div class="btnc">
+                                <a href="javascript:Go();"><img src="/images/common/btn_confirm04.png" alt="납부신청" /></a>
+                                <a href="javascript:goTabPage('NHPIMSSTUI012','false');"><img src="/images/common/btn_cancel.png" alt="이전" /></a>
+							</div>
+						</div>
+						<div id="btn_style2" class="btnset mt30" style="display:none;">
+							<div class="btnc">
+								<img src="/images/common/btn_confirm04.png" alt="납부신청" />
+								<img src="/images/common/btn_cancel.png" alt="이전" />
+							</div>
+						</div>
+<% }else{ %>
+						<div id="btn_style" class="btnset mt30">
+							<div class="btnc">
+                                <a href="javascript:goTabPage('NHPIMSSTUI012','false');"><img src="/images/common/btn_cancel.png" alt="이전" /></a>
+							</div>
+						</div>
+<% } %>
+
+<%
+//<!-- 한도 상향 CONTENTS START-->
+if(handoUpFlag){
+%>
+						<input type="hidden" id="gubun" name="gubun" value="1" />
+						<input type="hidden" name="r_UPGRADE_getRcProdGb" value="<%=UPGRADE.getRcProdGb()%>" />
+						<input type="hidden" name="r_UPGRADE_getRcModDate" value="<%=UPGRADE.getRcModDate()%>" />
+						<input type="hidden" name="r_UPGRADE_getStatus" value="<%=UPGRADE.getStatus()%>" />
+						<input type="hidden" name="r_UPGRADE_getString2" value="<%=UPGRADE.getString2()%>" />
+						<input type="hidden" name="r_UPGRADE_getString4" value="<%=UPGRADE.getString4()%>" />
+						<input type="hidden" name="r_UPGRADE_getString5" value="<%=UPGRADE.getString5()%>" />
+
+						<!-- 카드이용한도 -->
+						<input type="hidden" name="r_LIMIT_getCardLimitAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getCardLimitAmt())/10000)%>" />
+						<input type="hidden" name="r_UPGRADE_getRcRemainTot" value="<%=UPGRADE.getRcRemainTot()%>" />
+						<!-- 일시불 -->
+						<input type="hidden" name="r_LIMIT_getIlsiLimitAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getIlsiLimitAmt())/10000)%>" />
+						<input type="hidden" name="r_UPGRADE_getRcRemainAmt" value="<%=UPGRADE.getRcRemainAmt()%>" />
+						<!-- 할부 -->
+						<input type="hidden" name="r_LIMIT_getHalbuLimitAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getHalbuLimitAmt())/10000)%>" />
+						<input type="hidden" name="r_UPGRADE_getRcConAmt" value="<%=UPGRADE.getRcConAmt()%>" />
+
+			<%if(UPGRADE.getString4().equals("N") && UPGRADE.getString2().equals("03")){ %>
+						<!-- 현금서비스 -->
+					    <input type="hidden" name="r_LIMIT_getCashLimitAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getCashLimitAmt())/10000)%>" />
+						<input type="hidden" name="r_UPGRADE_getRcRemain" value="<%=UPGRADE.getRcRemain()%>" />
+						<!-- 카드론 -->
+				        <input type="hidden" name="r_LIMIT_getLoanLmtAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000)%>" />
+						<input type="hidden" name="r_UPGRADE_getString3" value="<%=UPGRADE.getString3()%>" />
+		
+						<input type="hidden" name="r_UPGRADE_getString1" value="<%=UPGRADE.getString1()%>" />
+			<%}else if(UPGRADE.getString4().equals("N") && (UPGRADE.getString2().equals("01") || UPGRADE.getString2().equals("02"))){ %>
+						<!-- 굿캐시한도 -->
+			            <input type="hidden" name="r_LIMIT_getLoanLmtAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000)%>" /><br />
+						<input type="hidden" name="r_UPGRADE_getString1" value="<%=UPGRADE.getString1()%>" />
+		
+						<input type="hidden" name="r_UPGRADE_getRcRemain" value="<%=UPGRADE.getRcRemain()%>" />
+						<input type="hidden" name="r_UPGRADE_getString3" value="<%=UPGRADE.getString3()%>" />
+			<%}else if(UPGRADE.getString4().equals("Y") && UPGRADE.getString2().equals("03")){ %>
+						<!-- 굿캐시한도 -->
+			            <input type="hidden" name="r_LIMIT_getLoanLmtAmt" value="<%=HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000)%>" /><br />
+						<input type="hidden" name="r_UPGRADE_getString1" value="<%=UPGRADE.getString1()%>" />
+		
+						<input type="hidden" name="r_UPGRADE_getRcRemain" value="<%=UPGRADE.getRcRemain()%>" />
+						<input type="hidden" name="r_UPGRADE_getString3" value="<%=UPGRADE.getString3()%>" />
+			<%} %>
+						<!-- 카드이용한도 -->
+						<input type="hidden" name="p_rcRemainTot" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getRcRemainTot():""%>" />
+						<!-- 일시불 -->
+						<input type="hidden" name="p_rcRemainAmt" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getRcRemainAmt():""%>" />
+						<!-- 할부 -->
+						<input type="hidden" name="p_rcConAmt" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getRcConAmt():""%>" />	
+			<%if(UPGRADE.getString4().equals("N") && UPGRADE.getString2().equals("03")){ %>
+						<!-- 현금서비스 -->
+						<!-- 
+						<input type="hidden" name="p_rcRemain" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getRcRemain():""%>" />
+						-->
+						<input type="hidden" name="p_rcRemain" maxlength="8" value="<%=HpCommonUtil.StringToLong(LIMITS.getCashLimitAmt())/10000%>" />
+						<!-- 카드론 -->
+						<!-- 
+						<input type="hidden" name="p_string3" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getString3():""%>" />
+						-->
+						<input type="hidden" name="p_string3" maxlength="8" value="<%=HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000%>" />
+			<%}else if(UPGRADE.getString4().equals("N") && (UPGRADE.getString2().equals("01") || UPGRADE.getString2().equals("02"))){ %>
+						<!-- 굿캐시한도 -->
+						<!-- 
+						<input type="hidden" name="p_string1" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getString1():""%>" />
+						-->
+						<input type="hidden" name="p_string1" maxlength="8" value="<%=LIMITS!=null?HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000:""%>" />
+			<%}else if(UPGRADE.getString4().equals("Y") && UPGRADE.getString2().equals("03")){ %>
+						<!-- 굿캐시한도 -->
+						<!-- 
+						<input type="hidden" name="p_string1" maxlength="8" value="<%=UPGRADE!=null?UPGRADE.getString1():""%>" />
+						-->
+						<input type="hidden" name="p_string1" maxlength="8" value="<%=LIMITS!=null?HpCommonUtil.StringToLong(LIMITS.getLoanLmtAmt())/10000:""%>" />
+			<%} %>
+						<div id="hando_style" class="btnset mt30" style="display:none;">
+						<p class="mt20  ml10 p_txt">고객님의 현재사용한도가 등록금액보다 적어 한도상향이 필요합니다. <strong class="t_point">한도상향</strong> 에 동의하십니까?</p>
+						<!-- 
+						<p class="mt20  ml10 p_txt">고객님의 현재사용한도가 등록금액보다 적어 한도상향이 필요합니다.<br><strong class="t_point">한도상향은 1688-9702(등록금납부 전용상담)</strong>로 연락하신 후 납부가 가능합니다.</p>
+						-->
+						<table class="dtable02 mt5 dtable_inputfield" summary="카드 사용한도, 성향가능한도, 최종사용가능한도등의 등록금전용한도를 확인 할 수 있는 게시판입니다.">
+						<caption>등록금전용한도</caption>
+						<colgroup><col width="120" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드 사용한도</p></th>
+								<td><p><span class="t_no"><%=LIMITS!=null?HpCommonUtil.amountToString(HpCommonUtil.StringToLong(LIMITS.getCardLimitAmt())/10000):""%></span> 만원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>상향가능한도</p></th>
+								<td><p><span class="t_no"><%=UPGRADE!=null?UPGRADE.getRcRemainTot():""%></span> 만원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>최종사용가능한도</p></th>
+								<td><p><span class="t_no"><%=UPGRADE!=null?UPGRADE.getRcRemainTot():""%></span> 만원</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<div class="btnr">
+								<label for="label_agr_private_credit1"><input type="radio" class="rdo" value="" id="label_agr_private_credit1" name="handoUpYnChk" /> <strong>동의함</strong></label>
+								<label for="label_agr_private_credit2"><input type="radio" class="rdo" value="" id="label_agr_private_credit2" name="handoUpYnChk" checked="checked" /> 동의안함</label>
+							</div>
+						</div>
+						<div id="btn_style11" class="btnset mt30">
+							<div class="btnc">
+                                <a href="javascript:Go1();"><img src="/images/common/btn_confirm04.png" alt="납부신청" /></a>
+                                <a href="javascript:goTabPage('NHPIMSSTUI012','false');"><img src="/images/common/btn_cancel.png" alt="이전" /></a>
+							</div>
+						</div>
+						<div id="btn_style12" class="btnset mt30" style="display:none;">
+							<div class="btnc">
+								<img src="/images/common/btn_confirm04.png" alt="납부신청" />
+								<img src="/images/common/btn_cancel.png" alt="이전" />
+							</div>
+						</div>
+						</div>
+<%
+}
+%>
+						<div class="box_white w640 mt20"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+							<div class="d_alert d_alert_s noline clfix">
+								<p class="ico_alert"><img src="/images/common/img_s_pay_6.jpg" alt="" /></p>
+								<div class="p_desc2 mt10">
+									<img src="/images/ss/txt_registrationFee_6.png" alt="이젠 대학등록금도 &#13;다이어트 할부로 부담없이 납부하세요!" />
+									<div class="p_txt mt15">
+										<ul>
+											<li><strong>03개월</strong>(1회차 유이자, 2~3회차 이자면제)</li>
+											<li class="mt_5"><strong>06개월</strong>(1~2회차 유이자, 3~6회차 이자면제)</li>
+											<li class="mt_5"><strong>10개월</strong>(1~3회차 유이자, 4~10회차 이자면제)</li>
+											<li class="mt_5"><strong>12개월</strong>(1~3회차 유이자, 4~12회차 이자면제)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div></div>
+
+		</div>
+	</div>
+
+
+<div id="id_layer02" class="pop_l_position pop_l_wrap_mix" style="position:relative; left:140px;top:-420; height:0; font-size:0; line-height:0; z-index:900;display:none">
+	<div class="pop_l_wrap h350"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="대학등록금 납부확인 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/ss/pop_h1_registrationFee_payment.png" alt="대학등록금 납부확인" /></p>
+			<div class="pop_l_content">
+					<div class="registrationFreePop ">
+						<div id='layer_amount'><p class="al_center"><strong class="t_black"><%=StringUtil.nvl(vo.getKorName(),"") %></strong>고객님의 대학등록금 <strong class='t_point_org t_no'><%= StringUtil.amountToString(Integer.parseInt(StringUtil.nvl(drTot,"0"))) %></strong>원을<br />납부 하시겠습니까?</p></div>
+					</div>
+					<p>납부내역을 전송 받으실 고객님의 SMS 번호를 확인바랍니다</p>
+					<table class="dtable02 mt10" sumarry="SMS 번호 확인을 위한 휴대폰번호를 입력 합니다">
+                    <caption>SMS 번호 확인을 위한 휴대폰번호를 입력</caption>
+						<colgroup><col width="25%" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th><p>휴대폰번호</p></th>
+								<td><p class="input_phone">
+									<select name="layerPhone1" class="phonesel" title="휴대폰번호 국번 선택">
+										<option value="">--선택</option>
+										<option value="010" <%=(phone1.equals("010") ? "selected='selected'" : "" )%>>010</option>
+										<option value="011" <%=(phone1.equals("011") ? "selected='selected'" : "" )%>>011</option>
+										<option value="016" <%=(phone1.equals("016") ? "selected='selected'" : "" )%>>016</option>
+										<option value="017" <%=(phone1.equals("017") ? "selected='selected'" : "" )%>>017</option>
+										<option value="018" <%=(phone1.equals("018") ? "selected='selected'" : "" )%>>018</option>
+										<option value="019" <%=(phone1.equals("019") ? "selected='selected'" : "" )%>>019</option>
+									</select>
+									-
+									<input type="text" name="layerPhone2" value="<%=phone2 %>" class="txt phoneno" size="5" title="휴대폰번호 가운데자리 입력" />
+									-
+									<input type="text" name="layerPhone3" value="<%=phone3 %>" class="txt phoneno" size="5" title="휴대폰번호 끝자리 입력" /></p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<ol class="list_desc">
+						<li><p>납부신청 당일 이내에 승인결과를 고객님께 SMS로 안내 예정이며 안내 받으실<br />
+								핸드폰번호는  [회원정보조회/변경]에서 수정 가능합니다.</li>
+						<li><p>등록금 납부결제는 고객님 공인인증서가 반드시 필요하오니, 공인인증서가 없으신<br />
+								고객님은 1688-9702 (등록금납부 전용상담)로 연락하신 후 납부가 가능합니다.</p></li>
+					</ol>
+				</div>
+                <p class="btnc mt20"><a href="javascript:Go2();" onclick="hide_con('id_layer02'); show_select();"><img src="/images/common/btn_next02.png" alt="다음" /></a> <a href="#" onclick="hide_con('id_layer02'); show_select();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+		</div>
+</div>
+
+
+<div id="id_layer01" class="pop_l_position pop_l_wrap_mix" style="position:relative; left:140px;top:-420; height:0; font-size:0; line-height:0; z-index:900;display:none">
+	<div class="pop_l_wrap h490"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer01'); show_select();" value="레이어닫기" title="대학별 상세보기 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/ss/layer_tit_registrationFee_detail.png" alt="대학별 상세보기입니다." /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert">
+					<table class="dtable01" summary="대학별 필수,선택항목을 상세하게 확인할 수 있는 게시판입니다">
+						<caption>대학별 필수, 선택항목</caption>
+						<colgroup>
+							<col width="20%" /><col width="40%" /><col width="40%" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col" class="cell_l10 riline cell_bg">대학</th>
+							<th scope="col" class="cell_l10 riline">필수</th>
+							<th scope="col" class="cell_l10">선택</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td class="cell_l10 riline cell_bg">건국대</td>
+							<td class="cell_l10 riline">수업료,기성회비<br />장학금, 학비감면액</td>
+							<td class="cell_l10">학생회비, 졸업준비금, 교지대금, 학술활동비 등</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 riline cell_bg">대구한의대</td>
+							<td class="cell_l10 riline">입학금(신입생에 한함)<br />수업료</td>
+							<td class="cell_l10">학생회비(선택1),졸업 앨범비(선택2), 액자비(선택3)</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 riline cell_bg">동주대</td>
+							<td class="cell_l10 riline">입학금, 수업료, 기성회비</td>
+							<td class="cell_l10">학생회비, 앨범비, 동창회비</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 riline cell_bg">한국방송통신대</td>
+							<td class="cell_l10 riline">등록금</td>
+							<td class="cell_l10">교재대금, 학보대금, 학생회비, <br />발전후원금 등</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 riline cell_bg">성균관대</td>
+							<td class="cell_l10 riline">입학금(신입생에 한함)<br />수업료, 기성회비, 졸업앨범비</td>
+							<td class="cell_l10">학생회비</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 riline cell_bg">칼빈대</td>
+							<td class="cell_l10 riline">입학금, 수업료, 영성훈련비</td>
+							<td class="cell_l10">학생회비, 기숙사비</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="btnset mt30">
+                        <p class="btnc"><a href="javascript:hide_con('id_layer01'); show_select();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+					</div>
+				</div>			
+			</div>
+	</div>
+</div>
+</form>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

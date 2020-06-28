@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+		<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">자유결제 서비스입니다</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3961_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHRSM001M001', true);">자유결제서비스 안내</a></li>
+							<!-- <li><a href="javascript:goTabPage('NHPIMMHRSM001M002', true);">신청하기</a></li> -->
+							<li><a href="javascript:goTabPage('NHPIMMHRSM001M003', true);">결제비율변경</a></li>
+							<li ><a href="javascript:goTabPage('NHPIMMHRSM001M004', true);">해지/당일신청내용 취소</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHRSM001M005', true);">결제예정금액조회</a></li>
+						</ul>
+					</div>
+				</div>
+				<cms:include page="${cresult.targetPath}/${cresult.contentId}_hp_fi_view.html" flush="false"></cms:include>
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

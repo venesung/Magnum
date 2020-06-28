@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_chk_point02.png" alt="보유 포인트를 다른 포인트로 바꾸어 사용할 수 있습니다." /></h1><!-- 100322 -->
+	</div>
+
+	<!-- content_block 100322 -->
+	<div class="content_block content_block_card">
+		<div class="tab01 w810">
+			<ul>
+                <li><a href="#" id="selfP">자체 포인트 전환</a></li>
+                <li class="on"><a href="#" id="alianMileage">제휴사마일리지전환</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix"><!-- 100322 -->
+		<h2><img src="/images/mh/h2_chk_point02_01.png" alt="전환가능한 포인트를 확인하세요" /></h2>	<!-- 100322 -->
+		<div class="content_block_inner">
+			<form id="ptForm" name="ptForm">
+			<table class="dtable_point" summary="포인트명, 사용가능포인트/마일리지, 기준일, 상세보기로 구성된 전환가능 포인트를 확인할 수 있는 게시판입니다">
+			<caption>전환가능 포인트 확인</caption>
+			<colgroup><col width="25%" /><col width="40%" /><col width="20%" /><col width="15%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l20">포인트 명</th>
+					<th scope="col" class="cell_r10">사용 가능 포인트/마일리지</th>
+					<th scope="col">기준일</th>
+					<th scope="col">상세보기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l20"><div class="pos_rel"><p class="tr_point">&nbsp;</p></div>ㅇㅇ</td>
+					<td class="cell_r10"><strong class="t_org">123  P</strong></td>
+					<td class="t_no">12</td>
+                    <td><a href="javascript:goTabPage('NHPIMMHPIT031','true');" class="btn btn_s_gray" title="00포인트 상세보기"><span>확인하기</span></a></td>
+				</tr>
+				<tr>
+					<td class="cell_l20">0</td>
+					<td class="cell_r10"><strong class="t_org">0  P</strong></td>
+					<td class="t_no">0</td>
+					<td><a href="#" class="btn btn_s_white" id="btnPtGubun_039" title="00 상세보기"><span>확인하기</span></a></td>
+				</tr>
+			</tbody>
+			</table>
+					<p class="al_right mt5"><a href="#" class="btn btn_white" title="새창"><span>아멕스멤버십리워즈 확인하기</span></a></p><!-- 120807 추가 --> 
+			</form>
+		</div>
+	</div>
+
+<!-- 항공 마일리지 전환 시작 -->
+<div id="DIV_BONUS_ALIANMILEAGE_SECTION" style="display:;">
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<!--  <div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div>	SR내역 13.02.27-->
+		<h2><img src="/images/mh/h2_chk_point02_02.png" alt="포인트를 마일리지로 전환하실 수 있습니다" /></h2><!-- SR내역 13.03.22 -->
+		<div class="content_block_inner">
+			<h3 class="h3_point"><img src="/images/mh/h3_air_miles_conversion.png" alt="항공사/호텔 마일리지 전환" /></h3><!-- SR내역 13.03.22 -->
+			<p>회원님께서 보유하신 보너스포인트를 항공사 마일리지로 전환하실 수 있습니다.</p>
+			
+			<form name="amForm">
+				<table class="dtable02 dtable_inputfield mt5" summary="항공 마일리지 전환을 위해 보유 보너스포인트,전환대상,제휴사멤버십번호,전환요청포인트,전화될포인트등을 확인하고 입력하는 게시판입니다.">
+					<caption>항공 마일리지 전환 입력</caption>
+					<colgroup><col width="25%" /><col width="25%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<p>보너스포인트<br />(빅포인트, 멤버쉽리워즈 포함)
+								</p>
+							</th>
+							<td>
+								<p>
+									<span class="t_no">0</span> P
+								</p>
+							</td>
+							<th scope="row">
+								<label for="target_al">
+									전환대상
+								</label>
+							</th>
+							<td class="t_no"><p>
+								<select id="target_al" name="target_al" style="width:140px" onchange="conv_mile2();ctrlInField();">
+
+									<option></option>
+								</select>
+							</p></td>
+						</tr>
+						<tr id="membershipInfo">
+							<th scope="row">
+								<p>
+											항공사 호텔 멤버십 번호
+								</p>
+							</th>
+							<td class="t_no"><p><span class="input_3char"><input type="text" id="member_id" name="member_id" maxlength="12" class="txt" style="width:80px" title="항공사 호텔 멤버십 번호" /></span></p></td>
+							<th scope="row"><p>영문성명입력</p></th>
+							<td class="t_no">
+								<p>
+									<input type="text" name="fname" id="fname" onfocus='return reSetBgNAME(true);' onblur='return reSetBgNAME(false);' onkeyup="return check_eng(this);" class="txt" style="width:70px" value="" title="영문 성(Family name)" maxlength="10" />
+									<input type="text" name="gname" id="gname" onfocus='return reSetBgGNAME(true);' onblur='return reSetBgGNAME(false);' onkeyup="return check_eng(this);" class="txt" style="width:70px" value="" title="영문 이름(Given name)" maxlength="20" />
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p>전환요청포인트</p></th>
+							<td class="t_no"><p><span class="input_point"><input type="text" id="req_point" name="req_point" onkeyup="return conv_mile(this);" maxlength="7" class="txt" style="width:80px" />P</span></p></td>
+							<th scope="row"><p>전환 될 포인트</p></th>
+							<td class="t_no">
+								<p><span class="input_point"><input type="text" id="req_mile_txt" readonly="readonly" class="txt" style="width:80px" />마일</span></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnl">
+                    <a href="#" class="btn btn_white"><span id="orderList">신청내역 조회/변경 &gt;</span></a>
+				</p>
+				<p class="btnr">
+                    <a href="#" class="btn btn_blue"><span id="send">전환</span></a>
+				</p>
+			</div>
+			<!-- SR내역 13.03.28 시작 -->
+            <!-- SR내역 13.04.09 -->
+			<!--<ul class="list_rice_t12 mt10 mb10">
+				<li>제휴사의 사정으로 인해 현재 캐세이패시픽항공 마일리지 전환이 되지 않습니다.</li>
+			</ul>-->
+            <!-- //SR내역 13.04.09 삭제-->
+			<!-- SR내역 13.03.28 끝 -->
+			<div class="content_block_inner">
+				<div class="tb_exp clfix">
+					<span class="t_point">최소 전환 포인트 및 전환 단위</span><!-- 정기일반영 13.03.22 -->
+				</div>
+				<table class="dtable01 dtable01_bill" summary="항공사에 따른 최소전환포인트와 마일리지 전환단위를 확인할 수 있는 게시판입니다">
+				<caption>최소 전환 포인트 및 전환 단위</caption>
+				<colgroup><col width="25%" /><col width="33%" /><col width="*" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10 riline cell_bg">항공사</th>
+						<th scope="col" class="cell_r10">최소 전환 포인트</th>
+						<th scope="col" class="cell_r10">마일리지 전환 단위</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">싱가포르항공</th><!-- 정기일반영 13.03.22 -->
+						<td class="cell_r10 t_no">10,000</td>
+						<td class="cell_r10 t_no">10</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">아나(ANA)항공</th><!-- 정기일반영 13.03.22 -->
+						<td class="cell_r10 t_no">10,008</td>
+						<td class="cell_r10 t_no">18</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">캐세이패시픽항공</th><!-- 정기일반영 13.03.22 -->
+						<td class="cell_r10 t_no">10,000</td>
+						<td class="cell_r10 t_no">10</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">힐튼호텔 HHonors</th>
+						<td class="cell_r10 t_no">10</td>
+						<td class="cell_r10 t_no">10</td>
+					</tr>
+					<!-- tr>
+						<th scope="row" class="cell_l10 cell_bg">Priority Club</th>
+						<td class="cell_r10 t_no">10</td>
+						<td class="cell_r10 t_no">10</td>
+					</tr --> <!-- 2012.08.13 삭제 -->
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">주메이라 호텔 Sirius</th>
+						<td class="cell_r10 t_no">150</td>
+						<td class="cell_r10 t_no">150</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">0</th><!-- 정기일반영 13.03.22 -->
+						<td class="cell_r10 t_no">0</td>
+						<td class="cell_r10 t_no">0</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">0</th><!-- 정기일반영 13.03.22 -->
+						<td class="cell_r10 t_no">0</td>
+						<td class="cell_r10 t_no">0</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">스타우드 호텔</th>
+						<td class="cell_r10 t_no">6,600</td>
+						<td class="cell_r10 t_no">20</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">타이항공</th>
+						<td class="cell_r10 t_no">10</td>
+						<td class="cell_r10 t_no">10</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10 cell_bg">델타항공</th>
+						<td class="cell_r10 t_no">15</td>
+						<td class="cell_r10 t_no">15</td>
+					</tr>
+					<tr> 
+					    <th scope="row" class="cell_l10 cell_bg">에티하드항공</th> 
+					    <td class="cell_r10 t_no">15</td> 
+					    <td class="cell_r10 t_no">15</td> 
+					</tr> 
+					<tr> 
+					    <th scope="row" class="cell_l10 cell_bg">말레이시아항공</th> 
+					    <td class="cell_r10 t_no">15</td> 
+					    <td class="cell_r10 t_no">15</td> 
+					</tr> 					
+				</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+<!-- 정기일반영 13.03.22 -->
+	<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_air_miles_conversion01.png" alt="마일리지 전환 시 유의사항입니다." /></h2>  
+	<div class="content_block_inner">
+		<ul class="list_rice_t12">
+			<li>전환 취소는 전환 신청한 당일의 서비스 이용시간(오후 9시까지)에만 가능합니다.</li>
+			<li> 대한항공/아시아나항공은 연간 20,000 마일리지까지만 전환할 수 있습니다.</li>
+			<li>대한항공/아시아나항공 마일리지는 지정된 아멕스 포인트 계열 대상 카드를 이용 가능 상태로 보유하고 계신 회원인 경우에만 전환 가능합니다.
+				<ul class="list_dashed_t12">
+					<li>대상카드 : 삼성빅앤빅카드, 삼성아멕스카드, 삼성아멕스그린카드, 삼성아멕스골드카드, The Platinum Card, <br /><span style="padding-left:60px;">삼성카드7, 삼성카드7+</span></li>
+				</ul>
+			</li>
+			<li>삼성카드 3+ 정상카드 보유 회원의 경우, 대한항공 마일리지 전환이 가능합니다.</li>
+			<li>The Platinum Card의 경우, 대한항공은 연 60,000 마일리지까지, 아시아나항공은 연 75,000 마일리지까지 전환이 가능합니다.</li>
+			<li>캐세이패시픽항공/델타항공/타이항공/힐튼호텔 HHonors/주메이라호텔 Sirius/스타우드호텔마일리지는 지정된 아멕스 센추리온 계열 대상카드를 정상 카드로 보유하고 계신 회원인 경우에만 전환 가능합니다.
+				<ul class="list_dashed_t12">
+					<li>대상카드 : 삼성아멕스그린카드, 삼성아멕스골드카드, The Platinum Card</li>
+				</ul>
+			</li>
+			<li>마일리지 전환을 위해서는 해당 제휴사의 멤버십 번호를 보유하고 계셔야 합니다.</li>
+			<li>전환된 마일리지는 해당 제휴사의 마일리지 사용약관이 적용됩니다.</li>
+			<li>해당 제휴사로부터 마일리지 사용에 대하여 정확히 확인하시고 전환 신청하시기 바랍니다.</li>
+			<li>마일리지 전환 비율 
+				<ul class="list_dashed_t12">
+					<li>싱가포르항공 = 10 : 1</li>
+					<li>아나(ANA)항공 = 18 : 1</li>
+					<li>대한항공 = 15 : 1</li>
+					<li>아시아나항공 = 15 : 1</li>
+					<li>캐세이패시픽항공 = 10 : 1</li>
+					<li>델타항공 : 15 : 1</li>
+					<li>타이항공 = 10 : 1</li>
+				</ul>
+			</li>
+			<li>전환된 마일리지는 신청하신 날부터 약 15~30일 후에 확인 가능합니다.</li>
+			<li>전환 결과는 해당 제휴사 또는 신청내역조회 화면을 통해 확인하실 수 있습니다.</li>
+			<li>제휴사별 마일리지 사용 문의처
+				<ul class="list_dashed_t12">
+					<li>싱가포르항공(<a href="www.singaporeair.com/kr" target="_blank" class="a_point" title="새창">www.singaporeair.com/kr</a>) 온라인예약서비스</li>
+					<li>아나(ANA)항공(<a href="www.anaskyweb.com/kr/k" target="_blank" class="a_point" title="새창">www.anaskyweb.com/kr/k</a>), 아나마일리지 클럽 02-771-1190</li>
+					<li>대한항공(<a href="kr.koreanair.com" target="_blank" class="a_point" title="새창">kr.koreanair.com</a>), 대표전화 1588-2001</li>
+					<li>아시아나항공(<a href="www.flyasianaclub.com" target="_blank" class="a_point" title="새창">www.flyasianaclub.com</a> ), 대표전화 1588-8180</li>
+					<li>캐세이패시픽항공(<a href="www.cathaypacific.com" target="_blank" class="a_point" title="새창">www.cathaypacific.com</a>), 대표전화 02-311-2700</li>
+					<li>델타항공(<a href="ko.delta.com" target="_blank" class="a_point" title="새창">ko.delta.com</a>) 온라인 예약서비스</li>
+					<li>타이항공(<a href="www.thaiair.co.kr" target="_blank" class="a_point" title="새창">www.thaiair.co.kr</a>), 대표전화 02-3707-0114  </li>
+				</ul>
+			</li>
+			<li>해당 제휴사에 이용구간별 공제 마일리지를 확인하시고 보너스 항공권을 신청하시면 됩니다.</li>
+			<li>보너스 항공권 공제율은 해당 제휴사에 따라 기준이 다르므로 이용 시 사전에 확인하시기 바랍니다.</li>
+			<li>전환 요청 시 제휴사 멤버십 번호 및 영문성명을 잘못 입력하시면 마일리지 적립 오류가 발생할 수 있으므로 입력 시 주의하시기 바랍니다.<br />(Ex. 회원번호의 영문은 대문자로 입력하시고, 이름/성은 제휴사에 등록된 순서대로 기입)</li>
+		</ul>
+	</div>
+</div>
+
+
+<!-- S골프포인트 전환 시작 -->
+<div id="DIV_SGOLF_SBSGOLF_SECTION" style="display:;">
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<form name="golfPtForm">
+		<div class="flag_additional"><img src="/images/mh/img_saveservice03.jpg" class="flag_saveservice mt_10" alt="" /></div>
+		<h2><img src="/images/mh/h2_chk_point02_02.png" alt="포인트를 전환 이용하실 수 있습니다" /></h2>
+		<div class="content_block_inner">
+			<h3 class="h3_point"><img src="/images/mh/h3_sbs_golfcard_point.png" alt="SBS골프카드 포인트 전환" /></h3>
+			<ol class="list_no01">
+				<li><p>전환 신청은 오전 <span class="t_no">9</span>시부터 오후 <span class="t_no">6</span>시까지만 가능합니다.</p></li>
+				<li><p>카드상태가 정상인 경우에만 포인트 전환이 가능하며, 전환된 포인트는 취소가 불가능합니다.</p></li>
+				<li><p>최소 전환가능 포인트는 <span class="t_no">5,000</span>포인트 이상이며, <span class="t_no">1,000</span>포인트 단위로 전환 됩니다.</p></li>
+				<li><p>SBS골프포인트와 S골프포인트는 서로 전환이 가능하나 다른 삼성카드 포인트와는 전환되지 않습니다.</p></li>
+				<li><p>SBS골프포인트와 S골프포인트의 전환비율은 <span class="t_no">1</span>:<span class="t_no">1</span>입니다.</p></li>
+				<li><p>포인트 전환 문의 : 고객상담센터 (<span class="t_no">1588-8700</span>) , SBS골프닷컴 고객센터 (<span class="t_no">1588-6011</span>)</p></li>
+			</ol>
+			<div>&nbsp;&nbsp;※ 포인트 전환 신청 후 보유포인트 변화가 없을 경우 SBS골프닷컴 고객센터로 문의 바랍니다.</div>
+
+			<div class="mt25 tb_exp clfix">
+				<span class="t_point">포인트 보유현황</span>
+			</div>
+
+			<table class="dtable01" summary="포인트명, 보유 포인트로 구성된 포인트 보유현황 게시판입니다.">
+			<caption>포인트 보유현황</caption>
+			<colgroup><col width="50%" /><col width="*" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">포인트명</th>
+					<th scope="col" class="cell_r10">보유 포인트</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10">S골프포인트</td>
+					<td class="cell_r10"><span class="t_no">0</span> P</td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<td class="cell_l10">SBS골프포인트</td>
+					<td class="cell_r10"><span class="t_no">0</span> P</td>
+				</tr>
+			</tbody>
+			</table>
+
+
+			<div class="mt25 tb_exp clfix">
+				<span class="t_point">포인트 전환</span>
+			</div>
+
+			<table class="dtable01 dtable_inputfield" summary="포인트 전환을 위해 변경할 포인트, 전환할 포인트, 전환 포인트를 입력하는 게시판입니다.">
+			<caption>포인트 전환 입력</caption>
+			<colgroup><col width="33%" /><col width="33%" /><col width="*" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">변경할 포인트</th>
+					<th scope="col" class="cell_l10">전환할 포인트</th>
+					<th scope="col" class="cell_r10">전환 포인트</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10">
+						<select name="selChgType" title="변경할 포인트 선택" style="width:150px" onchange="chgTargetPtDesc(this.value)">
+							<option value="11" selected="selected">S골프포인트</option>
+							<option value="12">SBS골프포인트</option>
+						</select>
+					</td>
+					<td class="cell_l10" id="TARGET_PT_DESC">SBS골프포인트</td>
+					<td class="cell_r10"><input type="text" name="ptRequest" class="txt" style="width:130px" value="" title="전환 포인트" /> P</td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<p class="btnl">
+					<span class="t_desc04">S골프포인트를 SBS골프포인트로 전환하실 경우 S골프포인트가 변경포인트가 됩니다.</span>
+				</p>
+				<p class="btnr">
+                    <a href="javascript:golfPtSend()" class="btn btn_blue"><span id="golfPtSend">전환</span></a>
+				</p>
+			</div>
+
+		</div>
+		</form>
+	</div>
+</div>
+<!-- S골프포인트 전환 종료 -->
+
+	<div id="cfPop" class="pop_l_wrap" style="width:464px;height:269px; display:;">
+	  <div class="img_l_pop flag_tl"> </div>
+		<div class="img_l_pop flag_tr"> </div>
+		<div class="img_l_pop flag_bl"> </div>
+		<div class="img_l_pop flag_br"> </div>
+			<!-- header -->
+			<input type="button" class="img_l_pop btn_close btn_input" onclick="javascript:closePop();" value="레이어닫기" title="포인트전환 신청 레이어 닫기" />
+			<p class="pop_tit tc"><img src="/images/mh/layer_tit_member_point_change.png" alt="회원님의 포인트를 전환 하시겠습니까?" /></p>
+   		<!-- content -->
+   		<div class="pop_l_content mt30">
+			  <div class="pop_l_alert03">
+				  <p class="al_center mb40" id="cpDesc"></p>
+  				<p class="btnc"><a href="javascript:sendChange();" id="sendCp"><img src="/images/common/btn_s_change.png" alt="전환" /></a> <a href="javascript:closePop();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			  </div>
+      </div>
+	</div>
+	
+	
+	<div id="golfConfirmPop" style="display: ;">
+		<div id="pop_s_wrap">
+			<!-- header -->
+			<div id="pop_s_header3">
+				<h1 class="al_center"><img src="/images/mh/layer_tit_member_point_change_2.png" alt="회원님의 포인트를 전환 하시겠습니까?" /></h1>
+			</div>
+			<!-- content -->
+			<div id="pop_s_content3">
+				<!-- 팝업 콘텐츠 -->
+				<div class="pop_l_wrap">
+					<p class="al_center" id="golfConfirmDesc"></p>
+                    <p class="btnc"><a href="javascript:sendGolfPtChange();"><img src="/images/common/btn_s_change.png" alt="전환" /></a> <a href="javascript:closePop();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<div id="pop_s_footer12" style="width: 470px;"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address></div>
+	</div>
+	<div id="sucPop" style="display: ;">
+		<div id="pop_s_wrap">
+			<!-- header -->
+			<div id="pop_s_header3">
+				<h1 class="al_center"><img src="/images/mh/pop_h1_memberpoint_change_suc.png" alt="회원님의 포인트 전환이 성공적으로 완료되었습니다" /></h1>
+			</div>
+			<!-- content -->
+			<div id="pop_s_content3">
+				<div class="pop_l_wrap">
+					<p class="al_center" id="sucDesc"></p>
+				</div>
+                <p class="btnc"><a href="javascript:retryPrc();" id="addCp"><img src="/images/common/btn_change_morepoint.png" alt="포인트 더 전환하기" /></a> <a href="#" id="pList"><img src="/images/common/btn_confirm_list.png" alt="내역 확인하기" /></a></p>
+			</div>
+		</div>
+		<!-- footer -->
+		<div id="pop_s_footer2" style="width: 470px;" onclick="curPageDivLayerClose()"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address></div>
+	</div>
+	<div id="sucPop2" style="display: ;">
+		<div id="pop_s_wrap">
+			<!-- header -->
+			<div id="pop_s_header3">
+				<h1 class="al_center"><img src="/images/mh/pop_h1_memberpoint_change_suc_2.png" alt="회원님의 포인트 전환이 신청되었습니다" /></h1>
+			</div>
+			<!-- content -->
+			<div id="pop_s_content3">
+				<div class="pop_l_wrap">
+					<p class="al_center" id="sucDesc2"></p>
+				</div>
+                <p class="btnc"><a href="javascript:retryPrc();" id="addCp"><img src="/images/mh/btn_s_confirm.png" alt="확인" /></a></p>
+			</div>
+		</div>
+		<!-- footer -->
+		<div id="pop_s_footer12" style="width:470px;"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address></div>
+	</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

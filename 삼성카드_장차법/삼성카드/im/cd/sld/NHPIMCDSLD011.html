@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>셀디카드 - 삼성카드</title>
+
+<%
+  String host_url = "http://";
+  host_url += request.getServerName();
+
+  if (request.getServerPort() != 0) {
+    host_url += ":";
+  }
+
+  host_url += request.getServerPort();
+%>
+
+<script type="text/javascript" src="/seldi/swf/flashCheck.js"></script>
+<script type="text/javascript">
+<!--
+  function fnEval() {
+    if(confirm("사용하신 이미지는 저장되지 않습니다.\n셀디카드를 신청하시겠습니까.?")){
+      window.top.opener.goTabPageWithParam("NHPIMCDCPS002","theme=1&view_type=list&type1=4&amp;type2=7&etc_code=Y_SELDI&etc_name="+encodeURIComponent('셀디카드'));
+      window.top.close();
+    } else {
+      window.close();
+    }
+  }
+
+  function fnTest2(param) {
+    alert(param);
+  }
+
+  function fnTest(param) {
+    //alert(param);
+  }
+
+  function GetValue(param) {
+    var Dns = location.href;
+    Dns = Dns.split("//");
+    Dns = "http://"+Dns[1].substr(0,Dns[1].indexOf("/"));
+
+    var sendArr = new Array(11);
+    sendArr[0] = Dns+"/";
+    sendArr[1] = "F6E4C835E1219D31";
+    sendArr[2] = "V14327";
+    sendArr[3] = "01";
+    sendArr[4] = "00";
+    sendArr[5] = "20090819";
+    sendArr[6] = "CreditSeldTest";
+    sendArr[7] = Dns+"/seldi/xml/config.xml";
+    sendArr[8] = "03";
+    sendArr[9] = "";
+    sendArr[10]= "";
+
+    return sendArr;
+
+    /*
+    if(param == "SKEY0") {
+        return request_form.SKEY0.value;
+    }
+    else if(param == "SKEY1"){
+        return request_form.SKEY1.value;
+    }
+    else if(param == "SKEY2"){
+        return request_form.SKEY2.value;
+    }
+    else if(param == "SKEY3"){
+        return request_form.SKEY3.value;
+    }
+    else if(param == "SKEY4"){
+        return request_form.SKEY4.value;
+    }
+    else if(param == "SKEY5"){
+        return request_form.SKEY5.value;
+    }
+    else if(param == "SKEY6"){
+        return request_form.SKEY6.value;
+    }
+    else if(param == "SKEY7"){
+        return request_form.SKEY7.value;
+    }
+    else if(param == "SKEY8"){
+        return request_form.SKEY8.value;
+    }
+    */
+  }
+
+  function ShowMessage(msg) {
+    window.focus();
+  }
+
+  function SendValue(RKEY1, RKEY2, RKEY3) {
+    var fm = document.response_form;
+
+    if (RKEY1 == "V") {
+        RKEY1 = "03";
+    }
+    else if (RKEY1 == "L") {
+        RKEY1 = "01";
+    }
+    else if(!(RKEY1 == "01" || RKEY1 == "03")) {
+        RKEY1 = "01";
+    }
+    if (!(RKEY3 == "S")) {
+        RKEY3 = "R";
+    }
+
+    fm.RKEY1.value = RKEY1;
+    fm.RKEY2.value = RKEY2;
+    fm.RKEY3.value = RKEY3;
+
+    //fm.target = "return_f";
+    //fm.action = "";
+    //fm.submit();
+
+    //alert("이미지 입력이 성공적으로 완료되었습니다1111.");
+    //alert("이미지 입력이 성공적으로 완료되었습니다.\n" + "RKEY1:" + RKEY1 + ", RKEY2:" + RKEY2 + ", RKEY3:" + RKEY3);
+
+    //window.top.close();
+  }
+
+  // 완료 및 윈도우 닫기
+  function isClose() {
+    SendValue("V", "52", "S");
+    //alert("이미지 입력이 성공적으로 완료되었습니다1.");
+    //self.top.close();
+  }
+
+  // 도움말
+  function helpGuide(tmp) {
+    window.open('<%=host_url%>/seldi/selfDesign/seldCardTip.htm','','width=623,height=495');
+  }
+//-->
+</script>
+</head>
+
+<body style="margin:0;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,32,18" width="800" height="600" id="sdc" align="middle">
+  <param name="allowScriptAccess" value="sameDomain" />
+  <param name="movie"   value="<%=host_url%>/seldi/swf/newSelD.swf" />
+  <param name="menu"    value="false" />
+  <param name="quality" value="high" />
+  <param name="bgcolor" value="#ffffff" />
+  <embed src="<%=host_url%>/seldi/swf/newSelD.swf" quality="high" bgcolor="#fff" width="800" height="600" name="sdc" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<div style="left:-1000px; top:-1000px; position:absolute;">
+  <form action="" method="post" name="request_form">
+    <input type="hidden" name="SKEY0"  value="<%=host_url%>/" />
+    <input type="hidden" name="SKEY1"  value="F6E4C835E1219D31" />
+    <input type="hidden" name="SKEY2"  value="V14327" />
+    <input type="hidden" name="SKEY3"  value="01" />
+    <!-- 01:Local, 02:Master, 03:Vias, 04:Amex
+    <input type="hidden" name="SKEY4"  value="00">
+    -->
+    <input type="hidden" name="SKEY4"  value="00" />
+    <input type="hidden" name="SKEY5"  value="20090819" />
+    <!-- 리뉴얼 추가 -->
+    <input type="hidden" name="SKEY6"  value="CreditSeldTest" />
+    <input type="hidden" name="SKEY7"  value="<%=host_url%>/seldi/xml/config.xml" />
+    <input type="hidden" name="SKEY8"  value="03" />
+    <!-- 리뉴얼 추가 -->
+  </form>
+
+  <form action="" method="post" name="response_form">
+    <input type="hidden" name="RKEY1" />
+    <input type="hidden" name="RKEY2" />
+    <input type="hidden" name="RKEY3" />
+  </form>
+
+  <form method="post" name="apply_seld_form" action="/sldTest.do">
+    <input name="pid" type="hidden" value="apply_seld" />
+  </form>
+
+  <!--
+  <form action="" method="post" name="setFocus_form">
+    <input type="text" name="setFocus" id="setFocus">
+  </form>
+
+  <form  method="post" name="fnTest">
+    <input type="text" name="txt" id="txt" size="100"><br>
+    <input type="text" name="test1" id="test1">
+    <input type="text" name="test2" id="test2">
+  </form>
+  //-->
+</div>
+</body>
+</html>

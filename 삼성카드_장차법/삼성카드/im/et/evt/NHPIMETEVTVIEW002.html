@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- content_block --> 
+					<div class="content_block content_block_card clfix">
+						<div class="mv_EventBanner">
+						<h2 class="none">이벤트</h2>	
+						<ul id="id_ban_top">
+								<li><a href="#">
+										<img src="/images/et/btn_play_1.gif" width="605" height="300" alt="<%=vo.getTitle() %>" />
+									</a>
+								</li>
+						</ul>
+						<div class="btnType1">
+							<a id="evtBnPlayId" href="javascript:funEvtBnPlay()"><img src="/images/et/btn_play_1.gif" alt="배너 재생" /></a>
+							<a id="evtBnStopId" href="javascript:funEvtBnStop()"><img src="/images/et/btn_stop_1.gif" alt="배너 재생 멈춤" /></a>
+						</div>
+					</div>
+						<!-- 기타 배너 시작 -->
+						<div class="mv_EventBanner2"><a href="#"><img src="/images/et/img_banner_4.gif" alt="쿠폰 할인 혜택과 편리함을 누리세요." /></a></div>
+						<!--// 기타 배너 끝 -->
+
+						<div class="clear pt20"><!-- Clear Block --></div>
+						
+						<div class="mv_SelDate" id ="d_calenderIf">
+						</div>
+					</div>
+
+					<div class="clear pt20"><!-- Clear Block --></div>
+	 
+					<div class="content_block content_block_card">
+						<div class="tab02">
+							<ul>
+								<li class="on" id="sub_index1"><a href="javascript:goSubView3('');">전체</a></li>
+								<li id="sub_index2"><a href="javascript:goSubView3('CC0000000000001');">외식/카페</a></li>
+								<li id="sub_index3"><a href="javascript:goSubView3('CC0000000000002');">쇼핑</a></li>
+								<li id="sub_index4"><a href="javascript:goSubView3('CC0000000000003');">패션/뷰티</a></li>
+								<li id="sub_index5"><a href="javascript:goSubView3('CC0000000000004');">문화/여행</a></li>
+								<li id="sub_index6"><a href="javascript:goSubView3('CC0000000000005');">생활</a></li>
+							</ul>
+						</div>
+						
+						<!-- 검색 시작 -->
+						<div class="mv_etcList">
+							<div class="fl_left">
+								<a href="javascript:goSubView5('L');"><img src="/images/common/ico_view_list_on.png" id="ico_view_list" alt="리스트형 보기" /></a>
+								<a href="javascript:goSubView5('I');"><img src="/images/common/ico_view_image.png" id="ico_view_image" alt="이미지형 보기" /></a>
+							</div>
+							<div class="fl_right">
+							    <a href="javascript:goSubView2('00');" class="bul_desc" id="sub_index_01" title="최신일 순" >최신일 순</a>
+				                <a href="javascript:goSubView2('01');" class="bul_asc" id="sub_index_02" title="마감일 순" >마감일 순</a>
+								
+								<select id="sl_page_size" title="리스트 갯수 선택" onchange="goSubView6();">
+									<option value="9">9개씩 보기</option>
+								</select>
+								<input id="srch_Word" type="text" class="txt" title="검색어 입력" style="width:200px;" value="<%=srchGubun9%>" />
+								<a href="javascript:goSubView4();" class="btn btn_s_blue"><span>검색</span></a>
+							</div>
+						</div>
+						<!--// 검색 끝 -->
+<% if(srchGubun1.equals("999")){ %>
+						<iframe height="100%" width="100%" name="iframe" onLoad="javascript:autoResize(this);" src="/hp/im/et/evt.do?method=getPartnerEventList&srchGubun1=<%=srchGubun1%>&srchGubun2=<%=srchGubun2%>&srchGubun3=<%=srchGubun3%>&srchGubun4=<%=srchGubun4%>&srchGubun5=<%=srchGubun5%>&tab_index=<%=tab_index%>&srchGubun8=<%=srchGubun8%>&srchGubun9=<%=srchGubun9%>" frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="컨텐츠 프레임"></iframe>
+<% }else{ %>
+						<iframe height="100%" width="100%" name="iframe" onLoad="javascript:autoResize(this);" src="/hp/im/et/evt.do?method=getEventList&srchGubun1=<%=srchGubun1%>&srchGubun2=<%=srchGubun2%>&srchGubun3=<%=srchGubun3%>&srchGubun4=<%=srchGubun4%>&srchGubun5=<%=srchGubun5%>&srchGubun7=<%=srchGubun7%>&tab_index=<%=tab_index%>&cPage=<%=cPage %>&srchGubun8=<%=srchGubun8%>&srchGubun9=<%=srchGubun9%>&srchGubun10=<%=srchGubun10%>&pageSize=<%=pageSize%>" frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="컨텐츠 프레임"></iframe>
+				</div>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_uselist01.png" alt="승인금액 합계는" />
+		<span class="t_0" title="123">
+		<span class="ico_no ico_no_thingray02"><em>2</em></span>
+		</span>
+	<img src="/images/mh/h1_uselist02.png" alt="원입니다." /></h1>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_m0 ">	<!-- 100126 -->
+	<h2><img src="/images/mh/h2_uselist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">		
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="#" class="default" onclick="return false;">체크카드</a></p>
+			<div class="childlayer">
+				<ul>
+					<!--<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCorpUseList','P');">법인카드</a></li>
+					<li><a href="#">체크카드</a></li>-->
+					<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCardList','P');">법인카드</a></li>
+					<li><a href="#">체크카드</a></li>
+				</ul>
+			</div>
+		</div>		
+		<span class="selectbox_r_txt">개인카드, 법인카드, 체크카드 중 조회하실 카드를 선택하세요.</span>
+
+		<div class="line_lgray">&nbsp;</div>
+		<ol class="list_no01">
+			<li><p>최근 6개월 간의 이용내역을 확인할 수 있습니다.</p></li>
+            <!-- <li><p>그 이전 기간의 이용내역 확인을 원하시면 <a href="javascript:goTabPage('NHPIMCKB');" class="a_point">이용대금명세서</a>의 카드이용내역을 확인하시기 바랍니다.</p></li> -->
+			<li><p>해외승인내역은 제외 되어 있습니다.</p></li>
+			<li><p>포인트 이용매출은 포인트란에 "C" 라고 표시됩니다.</p></li>
+		</ol>
+	</div>
+</div>
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_uselist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">				
+		<table class="dtable02 dtable_inputfield" summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다.">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="125" /><col width="*" /></colgroup>
+		<tbody>
+
+			<!-- //카드사용 해외이용지역 체크시 display -->
+			<tr id="region_no8_2">
+				<th scope="row"><p>상태/카드선택</p></th>
+				<td><p>
+					<select name="card_state" id="select_6" style="width:100px" onchange="card_state_onchange(this.value);" title="카드상태 선택">
+						<option value="0">전체</option>
+						<option value="1">사용가능 카드</option>
+						<option value="2">사용불가능 카드</option>
+					</select>					
+					<select name="card_sel" id="select_2" style="width:365px" title="카드 선택">
+					<!--<option value="ALL">전 체</option>-->
+					</select>
+					</p>
+				</td>
+			</tr>
+
+
+			<tr id="region_no9">
+				<th scope="row"><p>이용기간</p></th>
+				<td id="id_cal_wrap"><p>
+					<a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay">당일</span></a>
+					<a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek">1주일</span></a>
+					<a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1">1개월</span></a>
+					<a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2">2개월</span></a>
+					<a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3">3개월</span></a>
+                    <a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6">6개월</span></a>
+					<span class="reset_date ml20">
+					<br />
+					<a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser">날짜지정</span></a>
+					</span></p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+			<a href="javascript:before_cCheckSearch();" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+
+
+
+    <div class="content_block_inner">
+        <ol class="list_no01">
+            <li><p>회원님은 보유하고 계신 체크카드가 없습니다.</p></li>
+            <!--<li><p>후불제 교통카드 발급을 원하시면 아래의 신청버튼을 클릭하시기 바랍니다. </p></li>-->
+        </ol>
+    </div>
+
+
+
+	</div>
+</div>
+
+
+
+<!-- content_block -->
+<div class="content_block clfix">	
+	<h2 class="h2_uselist"><img src="/images/mh/h2_uselist03.png" alt="국내 이용내역입니다" /></h2>
+	<p class="btnr mt_40 mb15">		
+		<a href="#" class="btn btn_white"><span>다운로드</span></a>
+		<a href="javascript:printPopup();" class="btn btn_white"><span>인쇄</span></a>
+	</p>	
+	<div class="d_easy">
+		<table class="dtable02 dtable_expand" summary="승인금액 합계, 일시불 합계, 할부 합계를 확인할 수 있는 게시판입니다">
+		<caption>국내이용금액 내역</caption>
+		<colgroup><col width="110" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>이용내역 합계</p></th>	
+				<td class="sum"><p>
+					<em class="first_none">승인금액합계 <span class="t_no">0</span>원</em>
+					<em>일시불 합계 <span class="t_no">0</span>원</em>
+				</p></td>
+				<td class="sum"><p>
+					<em class="first_none">승인금액합계 <span class="t_no">0</span>원</em>
+					<em>일시불 합계 <span class="t_no">0</span>원</em>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<table class="dtable01 dtable01_bill mt30" summary="카드명, 승인일, 승인시각, 이용가맹점, 승인금액, 승인번호, 취소여부, 포인트로 구성된 국내 이용 상세내역">
+		<caption>국내 이용 상세내역</caption>		
+		<colgroup><col width="20%" /><col width="8%" /><col width="8%" /><col width="20%" /><col width="20%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10a">카드명</th>
+				<th scope="col">승인일</th>
+				<th scope="col">승인시각</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+				<th scope="col" class="cell_r10">승인금액</th>
+				<th scope="col">승인번호</th>
+				<th scope="col">취소여부</th>
+				<th scope="col">포인트</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10a"><span class="nobreak_nolink w150">GS홈쇼핑 삼성애니패스포인트카드셀디카드</span></td>
+				<td>09.07.22</td>
+				<td>16:36:33</td>
+				<td  class="cell_l10"><span class="nobreak_nolink w150">(주) 이니시스 결제</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1,000,000,000</span> 원</td>
+				<td>26553801</td>
+				<td>Y</td>
+				<td>포인트</td>
+			</tr>	
+
+		</tbody>
+		</table>
+
+		<!-- paginate -->
+		<div class="paginate">	${_page}  </div>
+
+		<!-- btn -->
+		<div class="btnset">
+			<p class="btnl">
+				<!--<a href="javascript:goTabPage('NHPIMMHTRL', true);" class="btn btn_white"><span>대출 승인내역 &gt;</span></a>-->
+			</p>
+			<p class="btnr">
+				<a href="javascript:goGetResultHPF00013();" class="btn btn_blue"><span>캐시백 내역조회</span></a>
+				<a href="#" class="btn btn_white"><span>다운로드</span></a>
+				<a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+			</p>
+			<iframe name="ifrm" frameborder="0" width="0" height="0" title="빈 프레임"></iframe>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

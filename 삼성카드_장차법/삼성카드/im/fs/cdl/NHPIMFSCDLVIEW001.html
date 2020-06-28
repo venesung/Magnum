@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none"><%=result.getContentNm() %></h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3941_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMFSCDLM002',true);" class="mv_h1_btn depth4"><img src="/images/fs/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+
+<!-- content_block -->
+
+<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+	<form name="form_main">
+		<!-- tab_area -->
+		<div class="tab02 w810">
+			<ul id="tabs">
+				<li id="tabLi0" class="on"><a href="#">서비스안내</a></li>
+				<li id="tabLi2"><a href="javascript:setTabNo('2');goTabPage('NHPIMFSCDLM002',true);">신청</a></li>
+				<li id="tabLi1"><a href="javascript:setTabNo('1');goTabPage('NHPIMFSCDLM001',true);">시뮬레이션</a></li>
+				<li id="tabLi3"><a href="javascript:setTabNo('3');goTabPage('NHPIMFSCDLM003',true);">신청결과 조회</a></li>
+				<li id="tabLi5"><a href="javascript:setTabNo('5');goTabPage('NHPIMFSCDLM005',true);">이용내역조회</a></li>
+				<li id="tabLi4"><a href="javascript:setTabNo('4');goTabPage('NHPIMFSCDLM004',true);">만기연장 &middot; 상환신청</a></li>
+			</ul>
+		</div>
+		<input name="tabNo" type="hidden"/>
+	</form>
+</div>
+<form name="frmCardLoan" method="post" autocomplete="off">
+<input type="hidden" name="cardLoanGubun"  value="" />
+<input type="hidden" name="errorCodes"  value="" />
+<!--cms_content시작-->
+<div id="cma_content">
+	<cms:include page="${result.targetPath}/${result.contentId}_hp_fi_view.html" flush="false" />
+</div>
+</form>
+<!--cms_content끝-->
+<!-- 카드론 신청 불가 -->
+<div class="layer_spop" ID="layer_cardLoan_No" style="display:none;top: 85%;">
+	<div class="pop_l_wrap">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" title="카드론 이용거절 신청 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();" class="img_l_pop btn_close btn_input" />
+		<div class="pop_l_content">
+			<p class="al_center mt60 mb30"><img src="/images/fs/txt_reject3.png" alt="카드론 이용 거절에 이미 등록 되셨습니다." /></p>
+			<p class="txt_error">카드론 이용을 원하실 경우 <span class="t_point_org">대표전화(1588-8700)</span>로 요청하시면 <br />당사가 정하는 소정의 절차를 거쳐 이용 가능 여부를 회신해 드립니다.</p>
+			<p class="btnc">
+				<a href="javascript:close_layer('1');"><img src="/images/common/btn_s_confirm.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div><!-- //pop_l_wrap -->
+</div><!-- //layer_spop -->
+
+<!-- 카드론 이용거절 신청 -->
+<div class="layer_spop" ID="layer_cardLoan_Cancel" style="display:none;top: 85%;">
+	<div class="pop_l_wrap">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" title="카드론 이용거절 신청 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();" class="img_l_pop btn_close btn_input" />
+		<div class="pop_l_content">
+			<p class="img_txt2"><img src="/images/fs/txt_reject.png" alt="카드론 이용거절 신청" /></p>
+			<p class="txt_error">카드론 이용 거절을 신청하시겠습니까?</p>
+			<p class="btnc">
+				<a href="javascript:goCardLoanReject();"><img src="/images/common/btn_s_app.png" alt="신청" /></a>
+				<a href="javascript:close_layer('2');"  ><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div><!-- //pop_l_wrap -->
+</div><!-- //layer_spop -->
+
+<!-- 카드론 이용거절 신청 완료 -->
+<div class="layer_spop" ID="layer_cardLoan_Ok" style="display:none;top: 85%;">
+	<div class="pop_l_wrap">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" title="카드론 이용거절 신청 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();" class="img_l_pop btn_close btn_input" />
+		<div class="pop_l_content">
+			<p class="al_center mt60 mb30"><img src="/images/fs/txt_reject2.png" alt="카드론 이용거절 신청이 정상적으로 완료되었습니다." /></p>
+			<p class="txt_error">카드론 이용을 원하실 경우 <span class="t_point_org">대표전화(1588-8700)</span>로 요청하시면 <br />당사가 정하는 소정의 절차를 거쳐 이용 가능 여부를 회신해 드립니다.</p>
+			<p class="btnc">
+				<a href="javascript:pagemove();"><img src="/images/common/btn_s_confirm.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div><!-- //pop_l_wrap -->
+</div><!-- //layer_spop -->
+
+<!-- 카드론 이용거절 신청 에러메세지 출력 -->
+<div class="layer_spop" ID="layer_cardLoan_Error" style="display:none;top: 85%;">
+	<div class="pop_l_wrap">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" title="카드론 이용거절 신청 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();" class="img_l_pop btn_close btn_input" />
+		<div class="pop_l_content">
+			<p class="img_txt2"><img src="/images/fs/txt_reject.png" alt="카드론 이용거절 신청" /></p>
+			<p class="txt_error"><span id="lblName"></span></p>
+			<p class="btnc">
+				<a href="javascript:close_layer('4');"><img src="/images/common/btn_s_confirm.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div><!-- //pop_l_wrap -->
+</div><!-- //layer_spop -->
+
+<iframe src="" name="ifrCardLoan" width="0" height="0"  frameborder="0" title="빈 컨텐츠"></iframe>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_point_payment.png" alt="보유 보너스 포인트를 마음껏 누리세요" /></h1>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_point_payment01.png" alt="보유 보너스 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner point_payment">
+                        <div class="point_view">
+                            <p class="fl">
+                                <strong class="t_black">${Member.name}</strong> 회원님의 보유 보너스 포인트입니다.<br />
+                                <span class="t_desc04">회원님의 포인트로 구매 이용 가능한 상품을 알려드립니다.</span>
+                            </p>
+                            <p class="fr">
+                                	<span class="t_0" title="<%=myBonusPoint %>">0</span>
+                                <img src="/images/mh/txt_point_p.png" class="point_unit" alt="P" /></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- content_block 100419 -->
+                <div class="content_block content_block_tab clfix">
+                    <iframe src="http://shopping.samsungcard.com/ec/sp/ss/hp/hpFrame.do?method=selectBestHappy" frameborder="0" width="810" height="300" title="보너스포인트몰 해외쇼핑" scrolling="no" scrollbars="no"></iframe>
+                </div>
+
+                <!-- content_block -->
+<!-- 추가 111202 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_point_payment06.png" alt="보너스클럽 이용 금액을 홈페이지에서 포인트 사용 등록하세요" /></h2>
+					<div class="content_block_inner point_payment">
+						<div class="point_annualfee">
+							<p class="point_ico" style="left: -2px;"><img src="/images/mh/ico_point_payment02.png" alt="" /></p>
+							<div class="point_data">
+								<dl>
+									<dt><img src="/images/mh/txt_point_payment06.png" alt="보너스클럽 이용 금액에 대해 회원님 보유 포인트를 홈페이지에서 사용하실 수 있습니다." /></dt>
+									<dd>- 최소 사용 가능 포인트 : <strong class="t_black t_no">1</strong> 포인트 이상 </dd>
+									<!--dd>- 이용가능시간 : <strong class="t_black">09:00 ~ 17:00</strong> (주중) </dd-->
+									<dd>- 결제가능시간 : <strong class="t_black">주중 09:00 ~ 17:00</strong> (토,일,공휴일은 이용불가)</dd><!-- SR내역 13.01.07 -->
+								</dl>
+							</div>
+							<p class="point_btn"><a href="#" onclick="goTabPage('NHPIMMHPIT063','true');" class="btn btn_blue"><span>포인트 사용하기</span></a></p>
+						</div>
+					</div>
+				</div>
+<!-- //추가 111202 -->                
+<!-- 추가 110629 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_point_payment04.png" alt="보너스 포인트로 결제대금을 납부하세요" /></h2>
+					<div class="content_block_inner point_payment">
+						<div class="point_annualfee">
+							<p class="point_ico"><img src="/images/mh/ico_point_payment.png" alt="" /></p>
+							<div class="point_data">
+								<dl>
+									<dt><img src="/images/mh/txt_point_payment03.png" alt="이번달 결제대금을 회원님의 보유 포인트로 납부하실 수 있습니다" /></dt>
+									<dd>- 최소 납부 포인트 : <strong class="t_black t_no">30,000</strong> 포인트 이상 </dd>
+									<!--dd>-납부 가능 시간 : <strong class="t_black">09:00 ~ 18:00</strong> (주중) </dd-->
+									<dd>- 결제가능시간 : <strong class="t_black">주중 09:00 ~ 18:00</strong> (토,일,공휴일은 이용불가) </dd><!-- SR내역 13.01.07 -->
+								</dl>
+							</div>
+							<p class="point_btn"><a href="javascript:settlePayment();" class="btn btn_blue"><span>결제대금 납부하기</span></a></p>
+						</div>
+					</div>
+				</div>
+<!-- // 추가 110629 -->
+                <div class="content_block clfix">
+                    <h2><img src="/images/mh/h2_point_payment02.png" alt="보너스 포인트로 연회비를 납부하세요" /></h2>
+                    <div class="content_block_inner point_payment">
+                        <div class="point_annualfee">
+                            <p class="point_ico"><img src="/images/mh/ico_point_payment.png" alt="" /></p>
+                            <div class="point_data">
+                                <dl>
+                                    <dt><img src="/images/mh/txt_point_payment01.png" alt="매년 카드 연회비를 회원님의 보유 포인트로 결제 이용 하실 수 있습니다" /></dt>
+                                    <!--dd>결제 가능 시간 : <strong class="t_black">09:00 ~ 21:00</strong> (주중) </dd-->
+									<dd>- 결제가능시간 : <strong class="t_black">주중 09:00 ~ 21:00</strong> (토,일,공휴일은 이용불가) </dd>
+                                </dl>
+                            </div>
+                            <p class="point_btn"><a href="javascript:payment();" class="btn btn_blue"><span>연회비 결제하기</span></a></p>
+                        </div>
+                        <div class="line_lgray">&nbsp;</div>
+                        <ol class="list_no01">
+                            <li><p>연회비 결제는 회원님이 보유하신 카드에 연회비가 발생한 날로부터 결제일 이전까지 가능합니다.</p></li>
+                            <li><p>포인트 결제를 이용 하지 않을 경우 발생된 연회비는 회원님의 결제 명세서에 포함되어 청구 됩니다.</p></li>
+                        </ol>
+                    </div>
+                </div>
+<!-- 위치이동 120127 -->
+<!-- 추가 110803 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_point_payment05.png" alt="보너스 포인트로 결제대금을 납부하세요" /></h2>
+					<div class="content_block_inner point_payment">
+						<div class="point_annualfee">
+							<p class="point_ico"><img src="/images/mh/ico_point_payment01.png" alt="" /></p>
+							<div class="point_data">
+								<ul>
+									<li><img src="/images/mh/txt_point_payment04.png" alt="아멕스 그린, 골드, 플래티늄 카드 보유 회원을
+위한 전용 쇼핑몰에서 풍성한 혜택과 서비스를 누리시기 바랍니다. " /></li>
+								</ul>
+							</div>
+							<p class="point_btn"><a href="#" onclick="goTabPage('NHPIMSSCMS026');" class="btn btn_blue"><span>아멕스 멤버십 리워즈 몰</span></a></p>
+						</div>
+					</div>
+				</div>
+<!-- //추가 110803 -->
+<!-- //위치이동 120127 -->
+                
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <h2><img src="/images/mh/h2_point_payment03.png" alt="보너스 포인트로 더많은 사랑을 나누세요" /></h2>
+                    <div class="content_block_inner d_point_contribute">
+                        <div class="point_donation">
+                            <p class="pt20"><img src="/images/mh/txt_point_payment02.png" alt="보유 보너스 포인트로 사랑의 펀드에 기부하실 수 있습니다 " /></p>
+                            <blockquote class="mt10">더 많은 아이들에게 혜택을 주기 위해 10월 16일자 <br />사랑의 펀드 후원부분을 보다 폭넓게 조정하였습니다.</blockquote>
+                            <p class="btn"><a href="/hp/ci/ps/lfd/loveFund.do?method=viewMyLoveFund" onclick="window.open('/hp/ci/ps/lfd/loveFund.do?method=viewMyLoveFund','일시기부내역조회').focus();return false;" class="btn btn_blue" title="새창"><span>기부내역 조회하기</span></a></p>
+                        </div>
+
+                        <h3>0<img src="/images/mh/txt_suffix_year.png" alt="년" /> 0<img src="/images/mh/txt_suffix_contribute.png" alt="월 사업내용 및 기부현황" /></h3>
+                        <ul>
+                            <li>
+                                <div class="p_photo"><a href="#" style="cursor:hand;" title="새창" ><p class="frame130">&nbsp;</p><img src="<%=hopeChild.getThumImg1()%>" alt="<%=hopeChild.getSubject() %>" width="130" height="82" /></a><%}  %></div>
+                                <p class="p_icon"><img src="/images/common/ico_leukemia.png" alt="" /></p>
+                                <div class="p_desc">
+                                    <p class="p_tit">환아지원사업</p>
+                                    <p class="p_txt">희망키우기 | 백혈병어린이돕기</p>
+                                    <p class="p_money">기부현황 <strong>0</strong></p>
+                                    <div class="line_lgray10">&nbsp;</div>
+                                    <p class="t_desc04">0</p>
+                                    <br/><a href="/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=113&selectedTab=3" onclick="window.open('/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=113&selectedTab=3','환아지원사업기부현황').focus();return false;" class="btn btn_white" title="새창"><span>기부하기</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="p_photo"><a href="#" style="cursor:hand;"  title="새창"><p class="frame130">&nbsp;</p><img src="<%=happinessChild.getThumImg1()%>" alt="<%=happinessChild.getSubject() %>" width="130" height="82" /></a><%} %></div>
+                                <p class="p_icon"><img src="/images/common/ico_socialcare.png" alt="" /></p>
+                                <div class="p_desc">
+                                    <p class="p_tit">사회복지사업</p>
+                                    <p class="p_txt">행복키우기 | 키즈뱅크</p>
+                                    <p class="p_money">기부현황 <strong>0</strong></p>
+                                    <div class="line_lgray10">&nbsp;</div>
+                                    <p class="t_desc04">이달의 후원아동이 없습니다.</p>
+                                    <br/><a href="/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=114&selectedTab=3" onclick="window.open('/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=114&selectedTab=3','사회복지사업기부현황').focus();return false;" class="btn btn_white" title="새창"><span>기부하기</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="p_photo"><a href="#" style="cursor:hand;" title="새창" ><p class="frame130">&nbsp;</p><img src="<%=dreamChild.getThumImg1()%>" alt="<%=dreamChild.getSubject() %>" width="130" height="82" /></a><%} %></div>
+                                <p class="p_icon"><img src="/images/common/ico_westart.png" alt="" /></p>
+                                <div class="p_desc">
+                                    <p class="p_tit">교육장학사업</p>
+                                    <p class="p_txt">꿈키우기 | 위스타트</p>
+                                    <p class="p_money">기부현황 <strong>0</strong></p>
+                                    <div class="line_lgray10">&nbsp;</div>
+                                    <p class="t_desc04">0</p>
+                                    <br/><a href="/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=115&selectedTab=3" onclick="window.open('/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=115&selectedTab=3','교육장학사업기부현황').focus();return false;" class="btn btn_white" title="새창"><span>기부하기</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="p_photo"><a href="#" style="cursor:hand;"  title="새창"><p class="frame130">&nbsp;</p><img src="<%=passionChild.getThumImg1()%>" alt="<%=passionChild.getSubject() %>" width="130" height="82" /></a><%} %></div>
+                                <p class="p_icon"><img src="/images/common/ico_cultureart.png" alt="" /></p>
+                                <div class="p_desc">
+                                    <p class="p_tit">문화예술사업</p>
+                                    <p class="p_txt">열정키우기 | 특기적성후원</p>
+                                    <p class="p_money">기부현황 <strong>0</strong></p>
+                                    <div class="line_lgray10">&nbsp;</div>
+                                    <p class="t_desc04">0</p>
+                                    <br/><a href="/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=116&selectedTab=3" onclick="window.open('/hp/ci/ps/lfd/loveFund.do?method=viewLoveFund&fundGubun=116&selectedTab=3','문화예술사업기부현황').focus();return false;" class="btn btn_white" title="새창"><span>기부하기</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

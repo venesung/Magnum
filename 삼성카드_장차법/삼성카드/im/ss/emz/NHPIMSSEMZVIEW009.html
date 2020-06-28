@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<div class="content_block_inner representitve">
+		<div class="prod_list">
+			<p class="prod_img"><img src="/upload/good/ebilling/<%=result.getImgFn2() %>" alt="<%=result.getPdtNm() %>" /></p>
+			<div class="prod_desc">
+				<p class="prod_tit"><%=result.getPdtNm() %></p>
+				<dl>
+					<% if(!"3".equals(gubun)){%>
+					<dt class="first">신청회원수</dt>
+					<dd class="first">
+						<span class="t_0" title="<%=reqCntStr %>">
+							<span class="ico_no ico_no_sm_boldgray_comma"><em>,</em></span>
+					</span>
+					</dd>
+					<dt class="first">현재경쟁률</dt>
+					<dd class="first">
+					<fileTag:emzCommon pdt_cnt='<%=String.valueOf(result.getPdtCnt()) %>' req_cnt='<%=String.valueOf(result.getReqCnt())%>' inputCss="Y" />
+					<span class="ico_no ico_no_sm_boldgray_colon"><em>:</em>
+					</span><span class="ico_no ico_no_sm_boldgray01"><em>1</em></span>
+					</dd><%} %>
+					<dt>제조사</dt><dd><%=result.getMakerNm() %></dd>
+					<dt>모델명</dt><dd><%=result.getModelNm() %></dd>
+					<dt>상품수</dt><dd><span class="t_no"><%=result.getPdtCnt() %></span> 개</dd>
+				<%if("3".equals(gubun)){%>
+					<dt>신청회원수</dt><dd><span class="t_no">-</span> </dd>
+					<dt>당첨확률</dt><dd><span class="t_no">-</span></dd>
+				<%}else{ %>
+					<dt>신청회원수</dt><dd><span class="t_no"><%=result.getReqCnt() %></span> 명</dd>
+					<dt>당첨확률</dt><dd><span class="t_no"><fileTag:emzCommon pdt_cnt='<%=String.valueOf(result.getPdtCnt()) %>' req_cnt='<%=String.valueOf(result.getReqCnt())%>' inputCss="" /></span></dd>
+				<%} %>
+					<dt>소비자가</dt><dd><%=result.getCustPrc() %></dd>
+				</dl>
+				<!-- btn -->
+                <p class="btnr"><a href="javascript:cancelPop(<%=result.getPstCd()%>);" class="btn btn_white"><span>취소하기</span></a></p>
+                <p class="btnr"><a href="javascript:show_hide_layer(<%=result.getPstCd() %>)" class="btn btn_blue"><span>신청하기</span></a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="content_block_inner representitve">
+		<div class="prod_list">
+				<p class="prod_tit" align="center">이번 달 신청내역이 없습니다.</p>
+		</div>
+	</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cardloan_srvc_01.gif" alt="회원님의 이용가능금액을 알아보세요" /></h2>
+	<div class="content_block_inner" id="cidSimulHb001" > 
+		<div class="tb_exp clfix"><strong class="mv_rai_txt">${systemDateDD} <em>카드론 이용가능금액 안내</em>입니다</strong></div>
+		<table class="dtable01" summary="카드론 이용가능 금액과 최장대출가능개월을 안내하는 게시판입니다">
+			<caption>카드론 이용가능 금액 안내</caption>
+			<colgroup><col width="50%" /><col /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col">이용가능금액</th>
+					<th scope="col">최장대출가능개월</th>
+				</tr>
+			</thead>
+			<tbody>
+		<tr>
+			<td class="t_no">123</td>
+			<td class="t_no">123</td>
+		</tr>
+			</tbody>
+		</table>
+	</div>		
+	<div id="txtHandoCommnet" style="display:noen;"></div>
+</div>
+<div class="content_block clfix" id="cidSimulHb002" >
+	<h2><img src="/images/fs/h2_cardloan_srvc_02.gif" alt="삼성 카드론 시뮬레이션 입니다" /></h2>
+	<div class="content_block_inner">
+		<div class="clfix">${currentDtTm} 기준</div>
+		<div class="fl_right">
+			<a href="javascript:showLayer('notice03Layer');" class="a_point t_no" title="새창">상환방식 안내</a>
+			<a href="javascript:getIndivInterest();" class="a_point t_no" title="새창">개인별 이자율 보기</a>
+		</div>
+		<p class="mt10 t_desc03" id="dgGiganNotice">
+			* 신청금액을 입력하시면 이용가능한 대출기간을 선택하실 수 있습니다.
+		</p>
+		<table class="dtable02" summary="상환방식, 이용예정일, 신청금액, 대출금액, 거치기간등의 정보를 입력하는 게시판입니다" >
+			<caption style="display:none">카드론 시뮬레이션 정보 입력</caption>
+			<colgroup>
+				<col width="100" />
+				<col width="170" />
+				<col width="100" />
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>상환방식</p></th>
+					<td colspan="3">
+						<p>
+						<label class="mr25" for="label_form1"><input type="radio" class="rdo" name="cidSimulRb" id="label_form1" value="M" checked="checked" onclick="radioChangeCtrl();" /> 원금균등분할상환</label>
+						<label class="mr25" id="cidSimulMangiRbLbl" for="cidSimulMangiRb"><input type="radio" class="rdo" name="cidSimulRb" id="cidSimulMangiRb" value="H" onclick="radioChangeCtrl();" /> 만기일시상환</label>
+						<label class="mr25" id="cidSimulDeferRbLbl" for="cidSimulDeferRb"><input type="radio" class="rdo" name="cidSimulRb" id="cidSimulDeferRb" value="R" onclick="radioChangeCtrl();" /> 거치후 원금균등분할상환</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>이용예정일</p></th>
+					<td>
+						<p>
+							
+						</p>
+					</td>
+					<th scope="row"><p>신청금액</p></th>
+					<td>
+						<p>
+							<input type="text" id="cidRequireAmountTi" class="txt" style="width:100px;" name="cidRequireAmountTi" maxlenth="20" onblur="checkTypesOnBlur(this,'NUMB');" onkeypress="checkTypes(this,'NUMB');" onchange="textChageCtrl();" title="신청금액 입력" /> 만원
+							<a href="#" class="btn btn_s_blue ml5" id="btSearchGigan" onclick="searchGiganClick(); return false;" title="새창"><span>이용가능개월 조회</span></a>
+							<input type="hidden" id="btSearchGiganStat" name="__dummy__" value="1" />
+							<a href="#" class="btn btn_s_blue ml5" id="amtInputBtn" onclick="searchGiganClick(2);return false;" style="display:none;"><span>신청금액 재입력</span></a>
+						</p>
+					</td>
+				</tr>
+				<tr id="dgGigan" style="display:none;">
+					<th scope="row" id="cidDeaChulPeriodCbTh"><p>대출기간</p></th>
+					<td id="cidDeaChulPeriodCbTd">
+						<p>
+							<select title="대출기간 선택" id="cidDeaChulPeriodCb" name="cidDeaChulPeriodCb" >
+							</select>							
+						</p>
+					</td>
+					<th scope="row" id="cidDeferPeriodCbTh"><p>거치기간</p></th>
+					<td id="cidDeferPeriodCbTd">
+						<p>
+							<select title="거치기간 선택" id="cidDeferPeriodCb" name="cidDeferPeriodCb">
+							</select>						
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="mt10 mv_iiner_txt">
+			※ 카드론 신청금액에 따라 이용가능한 대출기간이 달라집니다.
+		</p>
+		<p class="mv_iiner_txt" id="txtSimulDeferDesc" style="display:none;">
+			※ 거치 후 원금균등분할상환 선택시 거치기간은 대출기간에 포함됩니다.<br />
+			거치기간은 대출기간 12개월 이하는 3개월, 대출기간 12개월 초과는 6개월까지 1개월 단위로 선택할 수 있습니다.
+		</p>
+		<div class="btnset">
+			<p class="btnr">
+				<a href="#" class="btn btn_blue" onclick="callServiceResultLoanSimulation(); return false;" ><span>시뮬레이션 조회</span></a>
+			</p>
+		</div>
+		
+		<table class="dtable02 dtable02_mvlar mt20" style="table-layout:fixed;display:;" summary="신청금액, 이자율, 취급수수료, 만기일, 실지급액등의 신청하신 내역을 확인하는 게시판입니다"  id="cidSimulHb003" >
+			<caption style="display:none">신청하신 내역 확인</caption>
+			<colgroup>
+				<col width="130" />
+				<col width="190" />
+				<col width="130" />
+				<col width="190" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>신청금액</p></th>
+					<td><p id="txtReqAmt"></p></td>
+					<th scope="row"><p>이자율</p></th>
+					<td><p id="txtRate"></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>취급수수료</p></th>
+					<td><p id="txtFee" ></p></td>
+					<th scope="row"><p>만기일</p></th>
+					<td><p id="txtExpDay"></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>실지급액</p></th>
+					<td colspan="3">
+						<p id="txtRealAmt">
+							
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+</div>
+<div class="content_block clfix" id="cidSimulHb004" style="display:none;">
+	<h2><img src="/images/fs/h2_cardloan_srvc_03.gif" alt="상환일정" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix">${currentDtTm} 기준</div>
+		
+		
+		<table class="dtable02 mv_tbl_head" summary="회차, 결제일, 원금, 이자, 회차별 입금액, 입금후 잔액으로 구성된 상환일정을 확인할 수 있는 게시판입니다.">
+		<caption>상환일정</caption>
+		<colgroup>
+			<col width="50" />
+			<col width="100" />
+			<col width="100" />
+			<col width="100" />
+			<col width="100" />
+			<col width="" />
+		</colgroup>
+		<tr>
+			<th scope="col" class="al_center">회차</th>
+			<th class="al_center">결제일</th>
+			<th class="cell_r10">원금</th>
+			<th class="cell_r10">이자</th>
+			<th class="cell_r10">회차별 입금액</th>
+			<th class="cell_r10"><span class="mv_scr_right_pad">입금후 잔액</span></th>
+		</tr>
+		</table>
+		
+		<div class="mv_scr_tbl">			
+			<table class="dtable01 dtable_inputfield" summary="회차, 결제일, 원금, 이자, 회차별 입금액, 입금후 잔액으로 구성된 상환일정을 확인할 수 있는 게시판입니다." style="width:620px;">
+			<caption style="display:none;">상환일정 안내</caption>
+			<colgroup>
+				<col width="50" />
+				<col width="100" />
+				<col width="100" />
+				<col width="100" />
+				<col width="100" />
+				<col width="" />
+			</colgroup>
+			<thead>
+			<tr style="height:0px;visibility: hidden;position:absolute;">
+				<th scope="col" class="al_center">회차</th>
+				<th scope="col" class="al_center">결제일</th>
+				<th scope="col" class="cell_r10">원금</th>
+				<th scope="col" class="cell_r10">이자</th>
+				<th scope="col" class="cell_r10">회차별 입금액</th>
+				<th scope="col" class="cell_r10">입금후 잔액</th>
+			</tr>
+			</thead>
+			<tbody id="cidSimulHb004TBody">
+			<tr>
+				<td>11</td>
+				<td>13.01.02</td>
+				<td class="cell_r10">000원</td>
+				<td class="cell_r10">1,760원</td>
+				<td class="cell_r10">1,706원</td>
+				<td class="cell_r10">300,000원</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>			
+		<table class="dtable02 mv_tbl_tot">
+		<colgroup>
+			<col width="150" />
+			<col width="100" />
+			<col width="100" />
+			<col width="100" />
+			<col width="" />
+		</colgroup>
+		<tr>
+			<td class="mv_left_align">합계</td>
+			<td class="cell_r10" id="sum1">000,000원</td>
+			<td class="cell_r10" id="sum2">000,000원</td>
+			<td class="cell_r10" id="sum3">000,000원</td>
+			<td></td>
+		</tr>
+		</table>
+		<p class="mt10">결제일이 휴일인 경우, 그 다음에 오는 첫 영업일 기준으로 이자가 산정됩니다.</p>
+		<div class="btnset">
+			<p class="btnr">
+				<a href="#" class="btn btn_white" onclick="reCalculate();return false;"><span>다시 계산하기</span></a>
+				<a href="#" class="btn btn_blue" onclick="goTabPage('NHPIMFSCDLM002',true);"><span>카드론 신청</span></a>
+			</p>
+		</div>
+	</div>		
+</div>	
+
+
+<div id="msgLayer" style="display:none;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;" id="cardNoErrLayer">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+
+<div id="notice03Layer" style="display:none;">
+	<div class="pop_l_wrap" style="height:auto;">
+		<div class="img_l_pop flag_tl">&nbsp;</div>
+		<div class="img_l_pop flag_tr">&nbsp;</div>
+		<div class="img_l_pop flag_bl">&nbsp;</div>
+		<div class="img_l_pop flag_br">&nbsp;</div>
+		<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('notice03Layer');" value="레이어닫기" title="상환방식안내 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/fs/lpop_tit_repay_way.gif" alt="상환방식안내" /></p>
+		<div class="pop_l_content">
+			<div class="pop_l_alert" style="height:auto;">
+				<ol class="mv_ol_txt_indent mt10">
+					<li>1. 만기일시상환 : 약정기간 동안 이자만 납부하고 대출 만기시점에<br />&nbsp;신용도에 따라 연장 또는 상환하는 방식
+						<p>- 대출 만기시점에 회원님의 신용도에 따라 대출기간이 자동 연장될 수 있습니다.</p></li>
+					<li>2. 원금균등분할상환 : 대출금을 대출 개월 수로 나눈 금액과 이자를<br />&nbsp;매월 상환하는 방식</li>
+					<li>3. 거치후 원금균등분할상환 : 거치기간 동안 이자만 납부하고 나머지<br />&nbsp;기간 동안 매월 원금과 이자를 상환하는 방식
+					    <p>- 거치기간은 대출기간에 포함됩니다.</p>
+					    <p>- 거치기간은 대출기간 12개월 이하는 3개월, 대출기간 12개월 초과는 6개월까지 1개월 단위로 선택하실 수 있습니다.</p>
+					</li>
+				</ol>
+			</div>
+			<div class="btnc">
+				<p class="btn mt25 mb40">
+					<a href="#" class="btn btn_blue" onclick="closeLayer('notice03Layer');return false;"><span>확인</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="interestLayer01" style="display: none;">
+<div class="pop_l_wrap " style="height: auto;">
+<div class="img_l_pop flag_tl">&nbsp;</div>
+<div class="img_l_pop flag_tr">&nbsp;</div>
+<div class="img_l_pop flag_bl">&nbsp;</div>
+<div class="img_l_pop flag_br">&nbsp;</div>
+<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('interestLayer01');return false;" value="레이어닫기" title="카드론 상세이자율 레이어 닫기" />
+<p class="pop_tit"><img
+	src="/images/fs/lpop_tit_card_detail_ratio.gif" alt="카드론 상세이자율" /></p>
+<div class="pop_l_content">
+<div class="d_desc">
+<div class="tab02">
+<ul>
+	<li class="on" id="layer02_tab01"><a
+		href="javascript:getInterest('M');">원금균등분할 상환</a></li>
+	<li id="layer02_tab02"><a href="javascript:getInterest('H');">만기일시상환</a></li>
+	<li id="layer02_tab03"><a href="javascript:getInterest('R');">거치후
+	원금균등분할 상환</a></li>
+</ul>
+</div>
+<table id="tableM" class="dtable01 mv_pop_tbl_list mt10"
+	summary="원금균등분할 상환의 개월수에 따른 이자율 및 취급수수료 안내">
+	<caption style="display: none">원금균등분할 상환</caption>
+	<colgroup>
+		<col width="33%" />
+		<col width="33%" />
+		<col width="33%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">개월수</th>
+			<th scope="col">이자율</th>
+			<th scope="col">취급수수료</th>
+		</tr>
+	</thead>
+	<tbody id="tableMBody">
+		<tr>
+			<td>02개월</td>
+			<td>8.70%</td>
+			<td>0.0%</td>
+		</tr>
+	</tbody>
+</table>
+<table id="tableH" class="dtable01 mv_pop_tbl_list mt10"
+	summary="만기일시상환의 개월수에 따른 이자율 및 취급수수료 안내" style="display: none;">
+	<caption style="display: none">만기일시상환</caption>
+	<colgroup>
+		<col width="33%" />
+		<col width="33%" />
+		<col width="33%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">개월수</th>
+			<th scope="col">이자율</th>
+			<th scope="col">취급수수료</th>
+		</tr>
+	</thead>
+	<tbody id="tableHBody">
+		<tr>
+			<td>02개월</td>
+			<td>8.70%</td>
+			<td>0.0%</td>
+		</tr>
+	</tbody>
+</table>
+<table id="tableR" class="dtable01 mv_pop_tbl_list mt10"
+	summary="거치후 원금균등분할의 개월수에 따른 이자율 및 취급수수료 안내" style="display: none;">
+	<caption style="display: none">거치후 원금균등분할 상환</caption>
+	<colgroup>
+		<col width="33%" />
+		<col width="33%" />
+		<col width="33%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">개월수</th>
+			<th scope="col">이자율</th>
+			<th scope="col">취급수수료</th>
+		</tr>
+	</thead>
+	<tbody id="tableRBody">
+		<tr>
+			<td>02개월</td>
+			<td>8.70%</td>
+			<td>0.0%</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="btnc">
+<p class="btn mt25 mb40"><a href="#"
+	onclick="closeLayer('interestLayer01');return false;" class="btn btn_blue"><span>확인</span></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="useDateOver3MonLayer"  class="pop_l_wrap_alert" style="left:0;top:0;display:none;">
+	<div class="pop_l_wrap" style="width:350px;height:auto;"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('useDateOver3MonLayer');" value="레이어닫기" title="이용예정일자 안내 레이어 닫기" />
+		<div class="pop_l_content" style="width:300px;">
+			<p class="mt50">이용예정일자는 금일부터 3개월까지 선택 가능합니다.</p>
+			<p class="btn mt25 mb40">
+				<a href="#" onclick="closeLayer('useDateOver3MonLayer');return false;" class="btn btn_blue"><span>확인</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

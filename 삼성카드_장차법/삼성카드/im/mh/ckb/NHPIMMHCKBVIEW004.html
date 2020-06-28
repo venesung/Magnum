@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usebill_confirm.png" alt="카드이용내역을 확인할 수 있습니다" /></h1>	<!-- 100317 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<div class="pt30">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:goTabPage('NHPIMCKB', true);" class="default" onclick="return false;">체크카드</a></p>
+			<div class="childlayer">
+				<ul>
+					<li><a href="javascript:goTabPage('NHPIMCKB', true);">체크카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHCIB');">법인카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHPIB001');">개인카드</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="selectbox_r_txt">개인카드, 법인카드, 체크카드를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab clfix">
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:send();">주요정보</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="javascript:send2();">이용내역</a></li><!-- choose -->
+			<!-- <li><a href="#">현황요약</a></li> 100317 -->
+		</ul>
+	</div>
+		
+		<div class="content_block_bill" id="useInfoNoticeDiv">
+		
+	<h2><img src="/images/mh/h2_carduselist_info01.png" alt="카드 이용내역 조회 안내입니다" /></h2>
+		<div class="content_block_inner" id="emailUseInfo">
+			<dl class="tb_period tb_period2"><!-- 100415 -->
+				<dt></dt>
+				<dd>
+					<dl>
+						<dt>카드이용기간</dt>
+						<dd>00</dd>
+					</dl>
+				</dd>
+			</dl>
+		</div>
+	</div>
+		
+	<div class="line_lgray">&nbsp;</div>					
+		
+	<div class="d_easy mt10" id="useInfoDiv1">
+	
+		<table class="dtable01" summary="이용일, 이용가맹점, 인출일자, 이용금액, 계좌인출금액, 당월결제금액을 알 수 있는 게시판입니다">
+		<caption>카드 이용내역</caption>
+		<colgroup><col width="13%" /><col width="20%" /><col width="13%" /><col width="18%" /><col width="18%" /><col width="18%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">이용일</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+				<th scope="col" class="">인출일자</th>
+				<th scope="col" class="cell_r10">이용금액</th>
+				<th scope="col" class="cell_r10">계좌인출금액</th>
+				<th scope="col" class="cell_r10">당월결제금액</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10 t_no">00</td>
+				<td class="cell_l">00</td>						
+				<td class="cell_r10 t_no">00</td>
+				<td class="t_no">00</td>
+				<td class="cell_r10 t_no">00</td>
+				<td class="cell_r10 t_no">00</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	
+	<p class="btnr">
+		<a href="javascript:down();" class="btn btn_white" title="엑셀 다운로드"><span>다운로드</span></a>
+		<a href="javascript:printEmailPopup('check');" class="btn btn_white" title="인쇄 새창"><span>인쇄</span></a>
+	</p>
+	<iframe frameborder="0" src="" width="0" id ="excel" name="excelDown" title="엑셀다운로드" style="width:0px;height:0px;display:none;"></iframe>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

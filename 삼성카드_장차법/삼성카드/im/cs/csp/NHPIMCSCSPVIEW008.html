@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+<h1 class="none">삼성카드 CS패널</h1>
+<!-- 20130415 웹접근성(장차법)  수정  -->
+<div class="h1_desc"><img src="/cms_content/images/cs/h1_card_cspanel.jpg" alt="삼성카드 CS패널.열린마음과 창의적인 생각으로 삼성카드 고객 자문단이 되어 주세요" /></div>
+</div>
+
+<div class="content_block content_block_tab2 clfix">
+<div class="tab01 w810">
+<ul>
+    <li class=""><a href="javascript:goTabPage('NHPIMCSCSP001', true);">CS패널 소개</a></li><!-- 정기일반영 13.02.18 -->
+    <!--li class=""><a href="javascript:goTabPage('NHPIMCSCSP002', true);">Voice of CS 패널</a></li--><!-- SR내역 13.02.18 -->
+    <li class="on"><a href="javascript:goTabPage('NHPIMCSCSP004', true);">CS패널 지원</a></li><!-- 정기일반영 13.02.18 -->
+    <!--li class=""><a href="javascript:goTabPage('NHPIMCSCSP006', true);">커뮤니티</a></li--><!-- SR내역 13.02.18 -->
+</ul>
+</div>
+</div>
+
+<!-- content_block -->
+
+<div class="content_block content_block_card clfix">
+
+<form name="imageFrm" method="post" enctype="multipart/form-data">
+	<h2><img src="/images/cs/h2_pannel_pic.png" alt="이미지를 등록해주세요" /></h2>
+	<div class="content_block_inner">
+	<table class="dtable02" summary="지원 기본 항목을 작성(사진 및 성명, 주민등록번호, E-mail 주소, 자택주소, 전화번호, 핸드폰번호, 회사명, 부서, 직위, 직장주소)하는 게시판입니다.">
+		<caption>지원 기본항목 작성</caption>
+		<colgroup>
+			<col width="19%" />
+			<col width="" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th class="cell_bg" scope="row"><p>미리보기</p></th>
+				<td>
+					<!-- p><input type="text" name="localFilePath" style="width:348px;" class="txt" readonly="readonly" />&nbsp;
+					<span class="btn"><input type="button" value="찾아보기" title="관련문서 첨부" onclick="selectUploadFile(document.all.localFilePath);"/></span></p -->
+					<input type="file" name="fileImage" title="이미지 첨부" onchange="uploadImage(this.value);" />
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_bg" scope="row"><p>이미지 첨부</p></th>
+				<td>
+					<p class="profile_img" style="float:left; width:123px; margin-right:10px;"><img id="profileImage" src="" width="123" height="163" alt="사진 이미지" /></p>
+					<ol class="list_desc" style="float:left;">
+						<li>
+						<p>사진사이즈 : 3 x 4 cm</p>
+						</li>
+						<li>
+						<p>최근 1년 이내의 파일로 필수 첨부 바랍니다.</p>
+						</li>
+						<li>
+						<p>파일 형식 jpg. Jpeg, bmp, gif</p>
+						</li>
+					</ol>
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+	</div>
+</form>
+<!-- 2013.02.14 폼 위치 이동 -->
+<form name="frm">
+	<span style="display:none;"><a id="uploadLink"></a></span>
+
+<h2><img src="/images/cs/h2_pannel_support01.png" alt="지원 기본 항목을 작성해 주세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02" summary="지원 기본 항목을 작성(사진 및 성명, 주민등록번호, E-mail 주소, 자택주소, 전화번호, 핸드폰번호, 회사명, 부서, 직위, 직장주소)하는 게시판입니다.">
+	<caption>지원 기본항목 작성</caption>
+	<colgroup>
+		<col width="19%" />
+		<col width="" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row" class="cell_bg"><p>성명 (한글)</p></th>
+			<td>
+			<p><span class="input_name"><input type="text" class="txt"
+				id="label_name" name="name"
+				value=""
+				readonly="readonly" title="성명 (한글)" /></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>주민등록번호</p></th>
+			<td>
+			<p><span class="input_idno"><input type="text" class="txt"
+				maxlength="6" title="주민등록번호 앞자리" name="idenNo1"
+				value="" readonly="readonly" />&nbsp;-&nbsp;<input type="password"
+				maxlength="7" class="txt" title="주민등록번호 뒷자리"
+				name="idenNo2" value="" readonly="readonly" /></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>E-mail 주소</p></th>
+			<td>
+			<p><span class="input_email02"><input type="text" class="txt" value="" name="email1" title="이메일 아이디 입력" />
+			@
+			<input type="text" class="txt" value="" title="이메일 공급자 직접입력" name="email2" />
+			<select title="이메일 공급자 선택" name="email3" onchange="comboChange(this.value)">
+				<option value="" selected="selected">직접입력</option>
+				<option value="dreamwiz.com">드림위즈</option>
+				<option value="empal.com">엠팔</option>
+				<option value="hanmail.net">한메일(다음)</option>
+				<option value="korea.com">코리아</option>
+				<option value="lycos.co.kr">라이코스</option>
+				<option value="nate.com">네이트</option>
+				<option value="naver.com">네이버</option>
+				<option value="netian.com">네띠앙</option>
+				<option value="orgio.net">오르지오</option>
+				<option value="paran.com">파란</option>
+				<!--option value="yahoo.co.kr">야후</option-->
+			</select></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>자택주소</p></th>
+			<td>
+			<p><span class="input_idno"><input type="text" class="txt" value="" title="자택주소 우편번호 앞자리" name="zipCode1" readonly="readonly" />&nbsp;-&nbsp; 
+			<input type="hidden" name="zip_seq" value="" /> 
+			<input type="text" class="txt" value="" title="자택주소 우편번호 뒷자리" name="zipCode2" readonly="readonly" /><a
+				href="#"
+				class="btn btn_s_white" title="새창"><span>우편번호조회</span></a></span>
+			<span class="input_address"><input type="text" class="txt" value="" title="자택주소 주소" name="zipAddr1" /></span> 
+			<span class="input_address"><input type="text" class="txt" value="" title="자택주소 상세주소" name="zipAddr2" /></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>전화번호</p></th>
+			<td>
+			<p><span class="input_phone"> <select title="전화번호 앞자리" name="phone1">
+				<option></option>
+			</select> &nbsp;-&nbsp;<input type="text" class="txt" value="" title="전화번호 가운데자리" name="phone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />
+			&nbsp;-&nbsp;<input type="text" class="txt" value="" title="전화번호 뒷자리" name="phone3" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" /></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>핸드폰번호</p></th>
+			<td>
+			<p><span class="input_phone"> <select title="휴대폰 앞자리" name="cellPhone1">
+				<option></option>
+			</select> &nbsp;-&nbsp;<input 
+			type="text" class="txt" value="" title="휴대폰 가운데자리" name="cellPhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input 
+			type="text" class="txt" value="" title="휴대폰 뒷자리" name="cellPhone3" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" /> </span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>회사명</p></th>
+			<td><p><input type="text" class="txt" value="" id="label_companyname" name="jobName" title="회사명" /></p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>부서</p></th>
+			<td><p><input type="text" class="txt" value="" id="label_com_position" name="jobDiv" title="부서" /></p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>직위</p></th>
+			<td><p><input type="text" class="txt" value="" id="label_com_position2" name="jobDiv" title="직위" /></p></td>
+		</tr>
+
+		<tr>
+			<th scope="row" class="cell_bg"><p>직장주소</p></th>
+			<td>
+			<p><input type="hidden" class="txt" name="job_zip_seq" value="" />
+			<span class="input_idno"><input type="text" class="txt" value="" title="직장주소 우편번호 앞자리" name="jobZipCode1" readonly="readonly" />
+			&nbsp;-&nbsp;<input type="text" class="txt" value="" title="직장주소 우편번호 뒷자리" name="jobZipCode2" readonly="readonly" /><a
+				href="#" class="btn btn_s_white" title="새창"><span>우편번호조회</span></a></span>
+			<span class="input_address"><input type="text" class="txt" value="" title="직장주소 주소" name="jobAddr1" readonly="readonly" /></span> <span
+				class="input_address"><input type="text" class="txt" value="" title="직장주소 상세 주소" name="jobAddr2" /></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<h2><img src="/images/cs/h2_pannel_support02.png" alt="학력 사항을 작성해 주세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02" summary="학력 사항을 작성(최종학력, 고등학교, 고등학교 졸업년도, 대학교, 전공, 대학교 재학 기간 등)하는 게시판입니다.">
+	<caption>학력 사항 작성</caption>
+	<colgroup>
+		<col width="19%" />
+		<col width="33%" />
+		<col width="19%" />
+		<col width="29%" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row" class="cell_bg"><p>최종학력</p></th>
+			<td colspan="3">
+			<p><select id="label_edulevel" name="finalSchool" title="최종학력 선택" >
+				<option value=''>최종학력선택</option>
+				<option value='A'>초등학교졸업</option>
+				<option value='B'>중학교 졸업</option>
+				<option value='C'>고등학교졸업예정</option>
+				<option value='D'>고등학교졸업</option>
+				<option value='E'>대학중퇴</option>
+				<option value='F'>대학졸업(2,3년)</option>
+				<option value='G'>대학교졸업예정</option>
+				<option value='H'>대학교졸업(4년)</option>
+				<option value='I'>대학원중퇴</option>
+				<option value='J'>대학원졸업예정</option>
+				<option value='K'>대학원수료</option>
+				<option value='L'>대학원졸업 이상</option>
+			</select></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>고등학교</p></th>
+			<td><p><span class="input_name"><input type="text" class="txt" value="" id="label_highschool" name="highName" title="고등학교" /></span>
+			고등학교</p></td>
+			<th scope="row" class="cell_bg"><p>고등학교 졸업년도</p></th>
+			<td><p><span class="input_name"><input type="text" class="txt" value="" id="label_highschool_year" name="highGraYear" onkeypress="checkTypes(this, 'DATE');" maxlength="4" title="고등학교 졸업년도" /></span> 년</p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>대학교</p></th>
+			<td><p><span class="input_name"><input type="text" class="txt"value="" id="label_university" name="univName" title="대학교" /></span> 대학교</p></td>
+			<th scope="row" class="cell_bg"><p>전공</p></th>
+			<td><p><span class="input_name"><input type="text" class="txt"value="" id="label_university_spec" name="majorName" title="전공" /></span>과</p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>대학교 재학 기간</p></th>
+			<td colspan="3">
+			<p><span class="input_name"><input type="text" class="txt" value="" title="대학교 재학기간 시작년도" name="univStartYear" onkeypress="checkTypes(this, 'DATE');" maxlength="4" /></span> 년
+			~ <span class="input_name"><input type="text" class="txt" value="" title="대학교 재학기간 종료년도" name="univEndYear" onkeypress="checkTypes(this, 'DATE');" maxlength="4" /></span> 년</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+
+<h2><img src="/images/cs/h2_pannel_support03.png"
+	alt="가족 사항을 작성해 주세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02 dtable_expand" summary="가족 여부에 대해서 선택하는 게시판입니다.">
+	<caption>가족여부</caption>
+	<colgroup>
+		<col width="19%" />
+		<col width="81%" />
+	</colgroup>
+	<tbody>
+
+		<tr>
+			<th scope="row" class="cell_bg"><p>가족여부</p></th>
+			<td><p>
+				<label for="famYn"><input type="radio" class="rdo" value="Y" id="famYn" name="famYn" onclick="showFamily(this.value);" title="있음" /> 있음</label> 
+				<label for="famYn2" class="ml10"><input type="radio" class="rdo" value="N" id="famYn2" name="famYn" onclick="showFamily(this.value);" checked="checked" title="없음" /> 없음</label>
+			</p></td>
+		</tr>
+	</tbody>
+</table>
+<div style="display: :none" id="family">
+	<div class="tb_exp clfix mt30">
+		<span>가족을 추가 하시려면 <strong class="t_black">가족추가</strong> 버튼을 눌러주세요 </span>
+		<span class="ab_tr">
+            <a href="javascript:addRow('file_field',1);" class="btn btn_white"><span>가족추가</span></a>
+            <a href="javascript:removeAllTr('file_field');" class="btn btn_white"><span>일괄삭제</span></a>
+			
+	</span>
+	</div>
+
+		<table id="file_field" border="0">
+		 <tr>
+		 <td></td>
+       </tr>
+      </table>
+</div>
+</div>
+
+
+
+<h2><img src="/images/cs/h2_pannel_support04.png"
+	alt="PC 활용 능력을 작성해 주세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02" summary="PC 활용 능력을 작성(워드, 프레젠테이션, 스프레드시트, 인터넷 등)하는 게시판입니다.">
+	<caption>PC 활용 능력 작성</caption>
+	<colgroup>
+		<col width="19%" />
+		<col width="28%" />
+		<col width="25%" />
+		<col width="28%" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row" class="cell_bg"><p>워드(한글/MS워드)</p></th>
+			<td><p>
+				<label for="wordLevel"><input type="radio" class="rdo" value="H" id="wordLevel" name="wordLevel" title="워드(한글/MS워드) 상" /> 상</label> 
+				<label for="wordLevel2" class="ml10"><input type="radio" class="rdo" value="M" id="wordLevel2" name="wordLevel" title="워드(한글/MS워드) 중" /> 중</label> 
+				<label for="wordLevel3" class="ml10"><input type="radio" class="rdo" value="L" id="wordLevel3" name="wordLevel" title="워드(한글/MS워드) 하" /> 하</label>
+			</p></td>
+			<th scope="row" class="cell_bg"><p>프레젠테이션 (파워포인트)</p></th>
+			<td><p>
+				<label for="ppLevel"><input type="radio" class="rdo" value="H" id="ppLevel" name="ppLevel" title="프레젠테이션 (파워포인트) 상" /> 상</label>
+				<label for="ppLevel2" class="ml10"><input type="radio" class="rdo" value="M" id="ppLevel2" name="ppLevel" title="프레젠테이션 (파워포인트) 중" /> 중</label>
+				<label for="ppLevel3" class="ml10"><input type="radio" class="rdo" value="L" id="ppLevel3" name="ppLevel" title="프레젠테이션 (파워포인트) 하" /> 하</label>
+			</p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>스프레드시트(엑셀)</p></th>
+			<td><p>
+				<label for="excelLevel"><input type="radio" class="rdo" value="H" id="excelLevel" name="excelLevel" title="스프레드시트(엑셀) 상" /> 상</label> 
+				<label for="excelLevel2" class="ml10"><input type="radio" class="rdo" value="M" id="excelLevel2" name="excelLevel" title="스프레드시트(엑셀) 중" /> 중</label> 
+				<label for="excelLevel3" class="ml10"><input type="radio" class="rdo" value="L" id="excelLevel3" name="excelLevel" title="스프레드시트(엑셀) 하" /> 하</label>
+			</p></td>
+			<th scope="row" class="cell_bg"><p>인터넷(정보검색/Outlook)</p></th>
+			<td><p>
+				<label for="internetLevel"><input type="radio" class="rdo" value="H" id="internetLevel" name="internetLevel" title="인터넷(정보검색/Outlook) 상" /> 상</label> 
+				<label for="internetLevel2" class="ml10"><input type="radio" class="rdo" value="M" id="internetLevel2" name="internetLevel" title="인터넷(정보검색/Outlook) 중" /> 중</label>
+				<label for="internetLevel3" class="ml10"><input type="radio" class="rdo" value="L" id="internetLevel3" name="internetLevel3" title="인터넷(정보검색/Outlook) 하" /> 하</label>
+			</p></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<h2><img src="/images/cs/h2_pannel_support05.png" alt="직장 경력 사항을 작성해 주세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02 dtable_expand" summary="직장 경력 사항을 작성(총 근무기간, 해외근무 경험여부 등)하는 게시판입니다.">
+	<caption>직장 경력 사항 작성</caption>
+	<colgroup>
+		<col width="19%" />
+		<col width="81%" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row" class="cell_bg"><p>총 근무기간</p></th>
+			<td><p>
+				<span class="input_name"><input type="text" class="txt" value="" id="totalWorkTerm1" title="총 근무기간 년수" name="totalWorkTerm1" size="2" maxlength="2" onkeypress="checkTypes(this, 'DATE');" /></span> 년 
+				<span class="input_name"><input type="text" class="txt" value="" id="totalWorkTerm2" title="총 근무기간 개월수" name="totalWorkTerm2" size="2" maxlength="2" onkeypress="checkTypes(this, 'DATE');" /></span> 개월
+			</p></td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg"><p>해외근무 경험여부</p></th>
+			<td><p><span class="check"><input type="checkbox" name="abroadYn" id="abroadYn" value="Y" /></span></p></td>
+		</tr>
+	</tbody>
+</table>
+<div class="tb_exp clfix mt30"><span>경력을 추가 하시려면 <strong
+	class="t_black">경력추가</strong> 버튼을 눌러주세요 </span> <span class="ab_tr"> 
+                                <a href="javascript:addRow('file_field1',2);" class="btn btn_white"><span>경력추가</span></a>
+                                <a href="javascript:removeAllTr('file_field1');" class="btn btn_white"><span>일괄삭제</span></a>
+</span></div>
+
+<table class='dtable02' summary='직장 경력 사항에 대한 자세한 정보를 기입(근무기간, 회사명, 담당 업무 등)하는 게시판입니다.'>
+	<caption>직장 경력 사항 입력</caption>
+	<colgroup>
+		<col width='19%' />
+		<col width='31%' />
+		<col width='19%' />
+		<col width='31%' />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row" class='cell_bg'><p>근무기간</p></th>
+			<td colspan='3'>
+			<p class='reset_date'><input type='text' class='txt'
+				maxlength='8' name='oldJobStartDt[]' id='oldJobStartDt[]' value='' title="근무시작일 입력 예시)20100101" />&nbsp;~&nbsp;
+			<input type='text' class='txt' maxlength='8' name='oldJobEndDt[]'
+				id='oldJobEndDt[]' value='' title="근무종료일 입력 예시)20100101" /> (예)20100101</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class='cell_bg'><p>회사명</p></th>
+			<td><p><span class='input_name'><input type='text' class='txt' value='' id='label_spec_company01' name='oldJobName[]' title="회사명" /></span></p></td>
+			<th scope="row" class='cell_bg'><p>직위</p></th>
+			<td id='id_cal_wrap'><p><span class='input_name'><input type='text' class='txt' value='' id='label_spec_company_position01' name='oldPosition[]' title="직위" /></span></p></td>
+		</tr>
+		<tr>
+			<th scope="row" class='cell_bg'><p>담당업무</p></th>
+			<td colspan='3'><p><span class='input_name'><input type='text' class='txt' value='' id='label_spec_position02' name='oldJobMainTask[]' title="담당업무" /></span></p></td>
+		</tr>
+	</tbody>
+</table>
+
+						<table id="file_field1" border="0"><tr><td></td></tr></table>
+					  
+	<h2><img src="/images/cs/h2_pannel_support06.png" alt="모니터링 경력 사항을 작성해 주세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_expand" summary="모니터링 경력사항을 작성하기 전 경력여부가 있는지 확인해주세요.">
+		<caption>모니터링 경력 사항 작성 게시판</caption>
+		<colgroup><col width="19%" /><col width="81%" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row" class="cell_bg"><p>경력여부</p></th>
+				<td><p>
+					<label for="label_monitoring01"><input type="radio" class="rdo" value="Y" id="label_monitoring01" name="monitoringYn" onclick="showMonitoring(this.value);" title="있음" /> 있음</label>
+					<label for="label_monitoring02" class="ml10"><input type="radio" class="rdo" value="N" id="label_monitoring02" name="monitoringYn" onclick="showMonitoring(this.value);" checked="checked" title="없음" /> 없음</label>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>						
+		<!--  모니터링 경력 게시판  -->
+		<div id="monitoring" style="display:none">
+		<div class="tb_exp clfix mt30">
+			<span>경력을 추가 하시려면 <strong class="t_black">경력추가</strong> 버튼을 눌러주세요 </span>
+			<span class="ab_tr">
+				<a href="javascript:addRow('file_field2',3);" class="btn btn_white"><span>경력추가</span></a>
+				<a href="javascript:removeAllTr('file_field2');" class="btn btn_white"><span>일괄삭제</span></a>
+			</span>
+		</div>
+		
+		<table id="file_field2" border="0">
+		 <tr><td>
+		 </td>
+	   </tr>
+	  </table>
+
+	</div>
+
+
+	<h2><img src="/images/cs/h2_pannel_support07.png" alt="지원 등록에 필요한 파일을 첨부해 주세요" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix"><span>CS패널 모집 공고를 확인하시고 관련 문서를 첨부해 주세요</span></div>
+	
+		<table class="dtable02" summary="지원 등록에 필요한 파일을 첨부하는 게시판입니다.">
+			<caption>관련 문서 첨부</caption>
+			<colgroup>
+				<col width="19%" />
+				<col width="81%" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" class="cell_bg"><p>관련 문서</p></th>
+					<td colspan="3">
+					<p>
+						<!-- input type="text" name="localFilePath" style="width:348px;" class="txt" readonly="readonly" />&nbsp; -->
+						<!-- span class="btn"><input type="button" value="찾아보기" title="관련문서 첨부" onclick="selectUploadFile(document.all.localFilePath);"/></span -->
+						<input type="file" name="uploadFile" title="관련문서 첨부" onchange="document.frm.localFilePath.value=this.value;" />
+					</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<ol class="list_desc"><!-- 100610 -->
+			<li><p>저장을 하지 않고 위 페이지를 벗어날 경우 작성한 내용이 삭제 됩니다.</p></li>
+			<li><p>"확인"을 클릭 하실 경우 작성하신 내용이 저장되며, CS패널 지원기간 마감 전 까지 수정 가능 합니다.</p></li>
+			<li><p>파일첨부는 MS오피스 파워포인트 2003/2007 호환버전만 최대 10MB까지 가능합니다.</p></li>
+		</ol>
+		
+<!-- SR내역 13.02.18 -->
+		<div class="line_lgray"></div> 
+		<dl>
+		<!-- loop -->
+			<!-- 20130411 웹접근성(장차법)  onFocus="this.blur()"  제거 -->
+			<dt><a href="javascript:show_content('1');"><strong><span style="text-decoration: underline;">개인(신용)정보 수집, 이용 동의</span>  (꼭 클릭하셔서 내용을 확인해주시기 바랍니다.)</strong></a></dt>
+			<dd id="content_1" style="display:none;" class="mt10"><!-- dt와 dd를 개행하시면 스크립트가 동작하지않습니다 -->
+				삼성카드 CS패널 계약과 관련하여 귀사가 본인의 개인정보를 수집·이용하고자 하는 경우에는 「개인정보보호법」 제15조 및 제22조, 제24조에 따라 동의를 얻어야 합니다. 이에 본인은 귀사가 아래의 내용과 같이 본인의 개인정보를 수집·이용하는데 동의합니다. 
+				<p class="mt10">□ 필수적인 개인정보의 수집·이용에 관한 사항</p>
+				<ol class="list_no01">
+					<li><p>개인(신용)정보의 수집·이용 목적<br />계약의 체결·유지, 이행·관리, 법령상 의무이행 등</p></li>
+					<li><p>수집·이용할 개인(신용)정보의 내용<br />
+						1) 개인식별정보 [성명, 생년월일, E-mail 주소, 자택 주소, (자택/휴대) 전화번호, <br />    직업(회사명, 부서, 직위, 주소 등)]<br />
+						2) 기타 계약의 체결·유지·이행·관리 등과 관련하여 본인이 제공한 정보 학력사항, 가족사항, <br />    PC프로그램활용수준, 직장근무경력, 패널활동경력</p>
+					</li>
+					<li><p>개인정보의 보유 이용 기간<br />수집 이용 동의일로부터 개인정보의 수집 이용 목적을 달성할 때까지</p></li>
+				</ol>
+				<p>※ 이에 대한 동의가 없을 경우 계약의 체결·유지·이행·관리 등이 불가능 할 수 있음을 알려 드립니다.</p>
+				<p>※ 계약이 성립되지 않거나 취소된 경우, 본 동의서의 효력은 상실합니다.</p>
+				<p>※ 본인은 귀사가 본인의 개인(신용)정보를 수집 이용시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 <br />    본인의 고유식별정보를 처리하는 것에 동의합니다.<br />    (고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호)</p>
+			</dd>
+		<!--// loop -->
+		</dl>
+<!--// SR내역 13.02.18 -->
+	</div>
+	
+</div>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<div class="btnset mt20"><!-- 100126 -->
+	<p class="btnc"><a href="#"><img
+		src="/images/common/btn_confirm02.png" alt="확인" /></a><a href="#"><img src="/images/common/btn_cancel02.png" alt="취소" /></a></p>
+	<!-- //100126 -->
+	</div>
+</div>
+
+<!-- 2013.01.16 웹접근성 및 보안강화 파일업로드 관련 추가 시작 -->
+<div style="width:0px; height:0px; display:none;">	
+	<iframe name="fileUploadFrame" id="fileUploadFrame" frameborder="0" width="0" height="0" title="빈프레임"></iframe>
+</div>
+<!-- 2013.01.16 웹접근성 및 보안강화 파일업로드 관련 추가 끝 -->
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

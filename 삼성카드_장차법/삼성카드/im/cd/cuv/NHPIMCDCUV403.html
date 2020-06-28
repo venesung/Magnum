@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_superS_signuse.png" alt="수퍼S / 시그니처 약정한도 차감내역입니다." /></h1>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="tab02 w810 clfix">
+						<ul>
+						    <li><a href="javascript:goTabPage401();">카드 이용내역</a></li>
+							<li class="on"><a href="javascript:goTabPage403();">약정한도 차감내역</a></li>
+							<li><a href="javascript:goTabPage406();">약정변경</a></li>
+							<!--  <li><a href="javascript:goTabPage408();">약정한도 전환</a></li>	--> 
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_discount_all.png" alt="약정한도 차감내역입니다" /></h2>
+					<div class="content_block_inner">						
+						<div class="tb_exp">
+							<span>사전 약정에 따라 부여받은 <strong class="t_black">약정한도로 약정한도 차감 가맹점</strong>에서 다양하게 할인 받을 수 있는 서비스입니다.</span>
+						</div>
+						<table class="dtable02" summary="총 부여 약정한도, 총사용 약정한도, 사용가능 약정한도, 기준일로 구성된 약정 현황">
+						<caption>약정 현황</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>총 부여 약정한도</p></th>
+								<td><p><span class="input_compno"><input type="text" class="txt" readonly="readonly" title="총 부여 약정한도 입력" /></span></p></td>
+								<th scope="row"><p>총사용 약정한도</p></th>
+								<td><p><span class="input_compno"><input type="text" class="txt" readonly="readonly" title="총사용 약정한도 입력" /></span></p></td>
+							</tr>							
+							<tr>
+								<th scope="row"><p>사용가능 약정한도</p></th>
+								<td><p><span class="input_compno"><input type="text" class="txt" readonly="readonly" title="사용가능 약정한도 입력" /></span></p></td>
+								<th scope="row"><p>기준일</p></th>
+								<td><p><span class="input_compno"><input type="text" class="txt" style="text-align:center;" readonly="readonly" title="기준일 입력" /></span></p></td>
+							</tr>
+						</tbody>
+						</table>
+						<ol class="list_desc">
+							<li><p>총사용 약정한도는 약정한도 차감누적액+유효기간 경과 약정한도액의 합계입니다.</p></li>
+							<li><p>약정한도 차감가맹점별 차감기준에 따라 청구 차감 됩니다.</p></li>
+							<li><p>약정한도 유효기간은 5년이며, 유효기간내 미사용시 자동소멸 됩니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<!-- <h2><img src="/images/mh/h2_discount_get.png" alt="부여받은 약정한도를  확인하세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp pos_rel clfix">
+							<span>&nbsp;</span>
+							<span class="ab_tr t_11">
+								<span>
+									<select name="sch_yyyy_1" id="sch_yyyy_1" title="년도 선택" >
+                                        <option value="2008" <c:if test="${ sch_yyyy_1 == '2008' }">selected="selected"</c:if> >2008</option>
+                                        <option value="2009" <c:if test="${ sch_yyyy_1 == '2009' }">selected="selected"</c:if> >2009</option>
+                                        <option value="2010" <c:if test="${ sch_yyyy_1 == '2010' }">selected="selected"</c:if> >2010</option>
+                                        <option value="2011" <c:if test="${ sch_yyyy_1 == '2011' }">selected="selected"</c:if> >2011</option>
+                                        <option value="2012" <c:if test="${ sch_yyyy_1 == '2012' }">selected="selected"</c:if> >2012</option>
+                                        <option value="2013" <c:if test="${ sch_yyyy_1 == '2013' }">selected="selected"</c:if> >2013</option>
+                                        <option value="2014" <c:if test="${ sch_yyyy_1 == '2014' }">selected="selected"</c:if> >2014</option>
+                                        <option value="2015" <c:if test="${ sch_yyyy_1 == '2015' }">selected="selected"</c:if> >2015</option>
+                                        <option value="2016" <c:if test="${ sch_yyyy_1 == '2016' }">selected="selected"</c:if> >2016</option>
+                                        <option value="2017" <c:if test="${ sch_yyyy_1 == '2017' }">selected="selected"</c:if> >2017</option>	
+									</select>
+									<select name="sch_mm_1" id="sch_mm_1" title="월 선택" >
+                                        <option value="01" <c:if test="${ sch_mm_1 == '01' }">selected="selected"</c:if> >01</option>
+                                        <option value="02" <c:if test="${ sch_mm_1 == '02' }">selected="selected"</c:if> >02</option>
+                                        <option value="03" <c:if test="${ sch_mm_1 == '03' }">selected="selected"</c:if> >03</option>
+                                        <option value="04" <c:if test="${ sch_mm_1 == '04' }">selected="selected"</c:if> >04</option>
+                                        <option value="05" <c:if test="${ sch_mm_1 == '05' }">selected="selected"</c:if> >05</option>
+                                        <option value="06" <c:if test="${ sch_mm_1 == '06' }">selected="selected"</c:if> >06</option>
+                                        <option value="07" <c:if test="${ sch_mm_1 == '07' }">selected="selected"</c:if> >07</option>
+                                        <option value="08" <c:if test="${ sch_mm_1 == '08' }">selected="selected"</c:if> >08</option>
+                                        <option value="09" <c:if test="${ sch_mm_1 == '09' }">selected="selected"</c:if> >09</option>
+                                        <option value="10" <c:if test="${ sch_mm_1 == '10' }">selected="selected"</c:if> >10</option>
+                                        <option value="11" <c:if test="${ sch_mm_1 == '11' }">selected="selected"</c:if> >11</option>
+                                        <option value="12" <c:if test="${ sch_mm_1 == '12' }">selected="selected"</c:if> >12</option>
+									</select>
+								</span>
+                                <span><a href="javascript:goSearch(1);" class="btn btn_s_blue"><span>조회</span></a></span>
+							</span>
+						</div>
+						<div style="height:140px; overflow:auto; overflow-x:hidden">
+						<table id="incomeRtnList_1"  class="dtable01 dtable01_bill" summary="통합할인한도 게시판입니다">
+						<caption>통합할인한도</caption>
+						<colgroup>
+							<col width="74" /><col width="150" /><col width="*" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">부여일자</th>
+								<th scope="col" class="cell_r10">약정한도</th>
+								<th scope="col">부여사유</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+<%			if(rsList1.size() > 0) {			
+				
+				for(int i=0; i<rsList1.size(); i++) {
+%>							
+							<tr>
+								<td class="cell_l10 t_no"><%=rsList1.get(i).get("egmLimSdt") %></td>
+								<td class="cell_r10 t_no"><%=rsList1.get(i).get("egmSvLimAm")%></td> 
+								<td><%=rsList1.get(i).get("egmLimRsc")%></td>
+							</tr>
+														
+<%				}
+			} else {		%>
+				<tr class="StdTable-RowOdd" align="center">
+				  <td class="StdTable-Col1E" colspan="3" height="50" align="center">조회된 정보가 없습니다.</td>
+				</tr>
+<%			}	    %>	
+
+						</tbody>
+						</table>
+						</div>
+
+			<div class="paginate">
+				<div class="paging">
+					<a id="btnMore_1" href="javascript:getMoreList_1()" class="btn btn_s_white" style="display:none;"><span>다음</span></a>
+				</div>
+			</div>
+				</div>-->
+				
+			    <h2><img src="/images/mh/h2_use_detail.png" alt="상세 이용내역 입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp pos_rel clfix">
+							<span>&nbsp;</span>
+							<span class="ab_tr t_11">
+								<span>
+									<select name="sch_yyyy_2" id="sch_yyyy_2" title="년도 선택" >
+                                        <option>00</option>
+									</select>
+									<select name="sch_mm_2" id="sch_mm_2" title="월 선택" >
+                                        <option>00</option>
+									</select>
+								</span>
+                                <span><a href="javascript:goSearch(2)" class="btn btn_s_blue"><span>조회</span></a></span>
+							</span>
+						</div>
+						<div style="height:420px; overflow:auto; overflow-x:hidden">
+						<table id="incomeRtnList_2" class="dtable01 dtable01_bill" summary="이용일자, 접수일자, 가맹점명, 이용금액, 할인금액으로 구성된 상세 이용 내역을 확인할 수 있는 게시판입니다">
+						<caption>상세 이용 내역</caption>
+						<colgroup>
+							<col width="74" /><col width="100" /><col width="*" /><col width="100" /><col width="100" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일자</th>
+								<th scope="col" class="cell_l10">접수일자</th>
+								<th scope="col">가맹점명</th>
+								<th scope="col" class="cell_r10">이용금액</th>
+								<th scope="col" class="cell_r10">할인금액</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+				<tr class="StdTable-RowOdd nodata">
+				  <td class="StdTable-Col1E" colspan="6">조회된 정보가 없습니다.</td>
+				</tr>					
+							<!-- //loop -->
+						</tbody>
+						</table>
+						</div>
+		<!-- btn -->
+			<div class="paginate">
+				<div class="paging">
+					<a id="btnMore_2" href="javascript:getMoreList_2()" class="btn btn_s_white" style="display:none;"><span>다음</span></a>
+				</div>
+			</div>
+		
+				</div>
+			</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

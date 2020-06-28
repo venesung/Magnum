@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_amex_dinnerclub.png" alt="아멕스 디너클럽 이용내역입니다." /></h1>
+</div>
+
+
+
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/mh/h2_account_myedu01.png" alt="카드 이용내역을 조회하세요" /></h2>
+		<div class="content_block_inner">
+			<table summary="카드이용내역 조회를 위한  카드를 선택하는 게시판입니다." class="dtable02 dtable_inputfield">
+			<caption>카드 이용내역 조회</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					
+					<th scope="row"><p>카드선택</p></th>
+					<td><p>
+						<select id="select1" style="width: 370px;" title="카드종류 선택" onchange="changeCard(this.options[this.selectedIndex].value)">
+							<option value="">카드를 선택해 주세요</option>
+						</select>
+					</p></td>
+					
+					</form>
+				</tr>
+			</tbody>
+			</table>
+			<!-- btn -->
+			<div class="btnr">
+				<!-- 100126 -->
+                <a href="javascript:goSearch();" class="btn btn_blue"><span>조회</span></a>
+				<!-- //100126 -->
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/mh/h2_amex_dinnerclub01.png" alt="이용실적 및 사용한도를 확인하세요" /></h2>
+		<div class="content_block_inner">
+			<ol class="list_no01">
+				<li><p><strong class="t_black">디너클럽 이용기준</strong> </p>
+					<ul class="list_dashed mt5">
+						<li><p>직전 3개월 (1일~말일) 아멕스 카드 일시불 및 할부 합계금액이 60만원 이상 회원<br />(본인카드 실적에 한하며, 가족카드 실적 합산 불가)</p></li>
+					</ul>
+				</li>
+				<li><p>현재 기준 직전 3개월 <strong class="t_black">일시불+할부 합계금액 : 0원</strong></p></li>
+			</ol>
+			
+			<div class="line_lgray">&nbsp;</div>
+			
+			<div class="tb_exp clfix">
+				<span class="t_black"><strong>사용한도조회</strong></span>
+			</div>
+			<table class="dtable02" summary="사용가능기간, 연간 사용한도, 사용가능한 금액, 사용한 금액을 확인하실 수 있는 게시판입니다">
+			<caption>사용한도조회</caption>
+			<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+			<tbody>
+								
+				<tr>
+					<th scope="row"><p>사용가능기간</p></th>
+					<td><p class="t_no">0</p></td>
+					<th scope="row"><p>연간 사용한도</p></th>
+					<td><p class="t_no">0</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>사용가능한 금액</p></th>
+					<td><p class="t_no">0</p></td>
+					<th scope="row"><p>사용한 금액</p></th>
+					<td><p class="t_no">0</p></td>
+				</tr>
+				<tr class="nodata"><td colspan="4">사용한도가 없습니다.</td></tr>
+			</tbody>
+			</table>
+			
+		</div>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_amex_dinnerclub02.png" alt="상세내역조회입니다" /></h2>
+		<div class="content_block_inner">
+			<table class="dtable01" summary="사용카드정보, 사용일자, 사용가맹점, 결제금액, 캐쉬백금액를 확인하는 게시판입니다.">
+			<caption>상세내역조회</caption>
+			<colgroup><col width="24%" /><col width="15%" /><col width="25%" /><col width="18%" /><col width="18%" /></colgroup>
+			<thead>
+				<tr>
+					<th class="cell_l10">사용카드정보</th>
+					<th>사용일자</th>
+					<th>사용가맹점</th>
+					<th class="cell_r10">결제금액</th>
+					<th class="cell_r10">캐쉬백금액</th>
+				</tr>
+			</thead>
+			<tbody>
+	
+				<tr>
+					<td class="cell_l10">0</td>
+					<td class="t_no">0</td>
+					<td>0</td>
+					<td class="cell_r10 t_no">0 원</td>
+					<td class="cell_r10 t_no">0 원</td>
+				</tr>
+				<tr class="nodata"><td colspan="5">사용내역 없습니다.</td></tr> 
+			</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_amex_dinnerclub03.png" alt="상품권 적립 안내입니다." /></h2>
+		<div class="content_block_inner">
+			<ol class="list_no01">
+				<li><p>이용가능기간 : 아멕스 카드 최초 발급월로부터 1년 (매년 동일기간 적용)</p></li>
+				<li><p>제공내용 : 디너클럽 이용 결제금액에서 최대 3만원까지 청구시 할인 (분할 사용 가능)</p></li>
+				<li><p><strong class="t_black">2009년6월25일 이후 디너클럽 할인 서비스 이용기준 변경 안내</strong><br />디너클럽 이용시점 기준, 직전 3개월(1일~말일) 아멕스 카드 일시불 및 할부 이용금액 (매출접수일 기준)<br />합계가 월 평균 20만원 이상인 회원<br />※ 본인카드 이용금액 합산금액 기준, 가족카드 이용금액 합산 불가</p></li>
+				<li><p><strong class="t_black">2009년6월25일 이후 디너클럽 할인 서비스 이용예시</strong> <span class="t_desc04">(2009년6월20일 아멕스 카드 최초 발급 회원의 경우)</span></p>
+					<ul class="list_dashed mt5">
+						<li><p>디너클럽 이용가능기간: 매년 6월 ~ 익년도 5월 말</p></li>
+						<li><p>2009년6월~8월 말까지 일시불+할부 이용금액 합계가 65만원인 상태에서,<br />9월 초 디너클럽에서 2만원 결제시 →총 3만원 할인가능금액 중 2만원 청구시 할인</p></li>
+						<li><p>2009년9월~11월 말까지 일시불+할부 이용금액 합계가 50만원인 상태에서,<br />12월 중순 디너클럽에서 4만원 결제시 → 1만원 할인잔여가능금액이 있으나 1만원 할인 불가<br />(직전3개월 이용금액이 월평균 20만원 미만)</p></li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	</div>
+	
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_amex_dinnerclub04.png" alt="확인사항입니다" /></h2>
+		<div class="content_block_inner">
+			<ol class="list_no01">
+				<li><p>가족카드는 서비스 이용이 불가능합니다.</p></li>
+				<li><p>디너클럽 식사할인 서비스는 청구대금에서 차감방식으로 제공되며,<br />이용내역은 청구서에서 확인하실 수 있습니다.</p></li>
+				<li><p>보너스포인트 결제시에는 3만원 할인 서비스가 제공되지 않습니다.</p></li>
+			</ol>
+		</div>
+	</div>
+	
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_amex_dinnerclub05.png" alt="디너 클럽 가맹점을 조회하세요" /></h2>
+		<div class="content_block_inner">
+			<p>디너클럽 할인서비스는 <strong class="t_black">지정된 아멕스 디너클럽 가맹점에서만 제공</strong> 됩니다.<br />사용전 반드시 디너클럽 가맹점 여부를 확인하시기 바랍니다.</p>
+			<p class="mt10"><a href="javascript:goTabPage('NHPIMCDAMX001')" class="btn_link">디너클럽 가맹점 조회하기 바로가기</a></p>
+		</div>
+	</div>
+
+
+		<h2></h2>
+		<div class="content_block_inner">
+			<p>회원님께서는 아멕스 카드 회원이 아니십니다.</p>
+		</div>
+	</div>
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>AnyStyle 서비스 변경</title>
+<link rel="stylesheet" type="text/css" href="/css/sgm.css" />
+
+
+
+<script type="text/javascript">
+<!--
+
+function initPage()
+{
+	var frm = document.form1;
+
+	if(window.opener.form1.chkService[<%=idx%>].checked)
+	{
+		var temp = window.opener.form1.companyNo.value;
+
+		if(temp.length == 10)
+		{
+			frm.business_no1.value = temp.substring(0, 3).replace(/(^\s*)|(\s*$)/gi, "");
+			frm.business_no2.value = temp.substring(3, 5).replace(/(^\s*)|(\s*$)/gi, "");
+			frm.business_no3.value = temp.substring(5, 10).replace(/(^\s*)|(\s*$)/gi, "");
+		}
+	}
+	frm.business_no1.focus();
+	return;
+}
+
+function cancelBiz()
+{
+	window.opener.form1.chkService[<%=idx%>].checked = false;
+	self.close();
+}
+
+function applyBiz(frm)
+{
+	if(frm.business_no1.value.length != 3 || checknum(frm.business_no1.value) == false)
+	{
+		alert("사업자 등록번호 첫번째 자리는 숫자 3자리 입니다.");
+		frm.business_no1.focus();
+		return;
+	}
+
+	if(frm.business_no2.value.length != 2 || checknum(frm.business_no2.value) == false)
+	{
+		alert("사업자 등록번호 두번째 자리는 숫자 2자리 입니다.");
+		frm.business_no2.focus();
+		return;
+	}
+
+	if(frm.business_no3.value.length != 5 || checknum(frm.business_no3.value) == false)
+	{
+		alert("사업자 등록번호 세번째 자리는 숫자 5자리 입니다.");
+		frm.business_no3.focus();
+		return;
+	}
+
+	window.opener.form1.companyNo.value = frm.business_no1.value + frm.business_no2.value + frm.business_no3.value;
+
+	self.close();
+}
+
+function checknum(num)
+{
+	for(k=0; k<num.length; k++)
+	{
+		if((num.charAt(k) <'0' || num.charAt(k) >'9'))
+			return false;
+		else
+			continue;
+	}
+	
+	return true;
+}
+
+//-->
+</script>
+</head>
+<body onLoad="initPage();">
+
+<form name="form1" method="post" action="">
+
+<div>
+<!--레이어 팝업창1 -->
+<div style="width:275px; height:140px; border:2px solid #245FB3; padding:3px; position:relative;" >
+ <p style="background-color:#F2F2F2; padding:5px 5px 10px 5px; margin:0px;">
+ 비즈니스지원 서비스는 본인카드 회원만<br/>
+ 신청이 가능하며, 사업자번호를 반드시<br/>
+ 입력해주셔야 서비스이용이 가능합니다.<br/>
+ <font style="margin-top:5px; display:block;">
+ 	<b>사업자번호</b>: 
+ 	<input type="text" name="business_no1" size="4" style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid" maxlength="3" title="사업자번호 앞자리 3자리 입력" /> - 
+ 	<input type="text" name="business_no2" size="3" style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid" maxlength="2" title="사업자번호 중간자리 2자리 입력" /> - 
+ 	<input type="text" name="business_no3" size="6" style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid" maxlength="5" title="사업자번호 뒷자리 5자리 입력" />
+ </font>
+ </p>
+ <p style="padding:0px; margin:5px; text-align:center;">
+ <a href="javascript:cancelBiz();"><img src="/images/cd/anystyle/btn_servicecc.gif" alt="서비스취소" /></a>
+ <a href="javascript:applyBiz(document.form1);"><img src="/images/cd/anystyle/btn_enter.gif" alt="입력" /></a>
+ </p>
+</div>
+
+</div>
+
+</form>
+
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>
+
+
+
+</body>
+</html>
+

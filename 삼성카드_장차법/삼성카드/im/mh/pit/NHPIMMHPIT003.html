@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+ 
+						<table class="dtable02 mt25" summary="총 적립금액,최근 바우처 발행일시로 구성된 코스트코 포인트 정보를 확인할 수 있는 게시판입니다">
+                        <caption>코스트코 포인트 정보</caption>
+                       <colgroup><col width="20%" /><col width="80%" /></colgroup><!-- 정기일반영 13.05.06 -->
+				        <tbody>
+                            <tr>
+                            	<th class="row"><p>총 적립금액</p></th>
+								<td><p><span class="t_no"><fmt:formatNumber value="${fn:trim(pointMap[p_type].recVO.string3)}" pattern=",###" /></span> <%=unit%></p></td>
+								<!--th class="row" class="cell_l10"><p>최근 바우처 발행일시</p></th>
+								<td><p><span class="t_no"><fmt:formatNumber value="" pattern=",###" /></span></p></td--><!-- 정기일반영 13.05.06 -->
+                            </tr>
+                        </tbody>
+                        </table>          
+
+                        <table class="dtable02 mt25" summary="총 발생포인트, 총 사용 포인트, 사용 가능 포인트, 기준일로 구성된 포인트 정보를 확인할 수 있는 게시판입니다">
+                        <caption>${pointMap[p_type].recVO.string2} 정보</caption>
+                        <colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+				        <tbody>
+  
+                            <tr>
+                                <th scope="row"><p><%=occr %></p></th>
+                                <td><p><span class="t_no"><fmt:formatNumber value="${fn:trim(pointMap[p_type].recVO.string3)}" pattern=",###" /></span> <%=unit%></p></td>
+                                <th scope="row"><p><%=using %></p></th>
+                                <td><p><span class="t_no"><fmt:formatNumber value="${fn:trim(pointMap[p_type].recVO.string4)}" pattern=",###" /></span> <%=unit%></p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p><%=able %></p></th>
+                                <td><p><span class="t_no"><fmt:formatNumber value="${fn:trim(pointMap[p_type].recVO.string5)}" pattern=",###" /></span> <%=unit%></p></td>
+                                <th scope="row"><p>기준일</p></th>
+                                <td><p><span class="t_no"><fmt:parseDate var="dateFmt" value="${fn:trim(pointMap[p_type].recVO.string6)}" pattern="yyyyMMdd" /><fmt:formatDate value="${dateFmt}" pattern="yy.MM.dd" /></span></p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+						
+                        <div class="btnset">
+								<p class="btnl t_desc04"><%=using %> = 사용<%=unittype %> 누적 + 유효기간경과 <%=unittype %> 누적
+								<br />※ 사용처별 사용기준에 따라 결제 시 현금처럼 사용하실 수 있습니다.  <!-- SR 130116 -->
+                           		 ※ 사용처별 사용기준에 따라 결제 시 현금처럼 사용하실 수 있습니다.<br />	<!-- SR 130116 -->
+                          		  ※ 보너스포인트의 유효기간은 5년이며, 유효기간 내 사용하시지 않을 경우 자동 소멸됩니다.	<!-- SR 130116 -->
+                            <p class="btnr"><a href="javascript:go_savinglist('${p_type}');" class="btn_link">연간 적립내역 확인하기</a></p>
+                            </p>
+                           		 코스트코리워드 포인트는 1년간 적립된 포인트를 총 합산하여 바우처로 발행됩니다. (적립된 포인트의 즉시 사용 불가)<br />
+                          		  바우처의 유효기간은 바우처 발송월 포함 1년이며, 유효기간 내 미사용 시 자동소멸 됩니다.
+                        </div>
+						
+						<div class="line_lgray">&nbsp;</div>
+						<div class="tb_exp clfix">
+							<h3>누적 이용금액 구간별 적립률 확인</h3>
+						</div>
+
+						<table class="dtable02 dtable_inputfield" summary="카드를 선택하는 게시판입니다.">
+						<caption>카드선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select name="sptCardList" style="width:265px" id="label_ch_card" title="카드 선택">
+										<option value="">카드를 선택해주세요</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<p class="btnl t_desc04">삼성애니패스포인트카드, 삼성지엔미포인트카드, 삼성빅앤빅카드, 삼성카드 3 등 연간 누적 이용금액에 따라 포인트 적립률이 <br />
+						변경되는 카드의 누적 이용금액을 조회하실 수 있습니다.<br />
+						※ 누적 이용금액별 차등 적립률 서비스가 없는 카드는 조회되지 않습니다.</p>
+						<div class="btnset">
+							<p class="btnr">
+								<a class="btn btn_blue" href="javascript:sptSrch();"><span>조회</span></a>
+							</p>
+						</div>
+						<div class="line_lgray">&nbsp;</div>
+						
+						<div id="sptResultLayerPopup" style="display:none;">
+							<div id="pop_s_wrap">
+                                <div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><a href="javascript:closeSlidingPtLayer();"><div  class="img_l_pop btn_close btn_input"  title="레이어닫기"  /></a><!-- <input type="button" class="img_l_pop btn_close btn_input" onclick="closeSlidingPtLayer();" value="레이어닫기" title="레이어 닫기" /> -->
+									<br />
+									<p align="center" class="pop_tit3"><img src="/images/mh/layer_tit_section_rates.png" alt="회원님의 구간별 적립률입니다." /></p>
+									<div class="ml20 mt25">
+										<div class="pop_l_alert03">
+											<ol class="list_no01">
+												<li id="SLIDING_PT_DESC_1"><p>고객님께서는 어제까지 <span id="SLIDING_PT_VAL_1" class="t_point_org"></span>원을 사용하시어 <br />
+															현재 기본 적립률은 <span id="SLIDING_PT_VAL_2" class="t_point_org"></span> 입니다.</p></li>
+												<li id="SLIDING_PT_DESC_2" style="display:none;" class="mt10"><p>추가로 <span id="SLIDING_PT_VAL_3" class="t_point_org"></span>원을 사용하시면 기본적립률이 <span id="SLIDING_PT_VAL_4" class="t_point_org"></span> 로 상향됩니다.</p></li>
+											</ol>
+						 				</div>
+                                        <div align="center"><br /><br /><br /><a href="javascript:openSptInfo();" title="새창"><img src="/images/mh/btn_section_rate.png" alt="이용금액 및 적립기준" /></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+
+                        <form method="post" name="form1" style="margin: 0;">
+                        <input type="hidden" name="p_type" value="${p_type}" />
+                        <div class="tb_exp mt30 clfix">
+                            <h3>적립 연도별 조회</h3>
+                            <span class="ab_tr">
+                                <select name="s_year" title="적립 연도 선택" style="width:80px">
+									<option></option>
+                                </select>
+                                <a href="javascript:tabSubmit('/pointSearch.do?method=search');" class="btn btn_s_blue"><span>조회</span></a>
+                            </span>
+                        </div>
+                        </form>
+                        
+<%-- 와인포인트, S마일, 보너스보인트, 블루캐시백, 카앤모아, 이마트포인트는 GO버튼이 포함된 테이블 --%>
+                        <!-- 포인트상세조회 팝업 버튼 -->
+                        <table class="dtable01" summary="기준년월, 적립 포인트, 사용 포인트, 유효기간경과, 상세보기로 구성된 적립연도별 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>적립 연도별 조회</caption>
+                        <colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="*" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="cell_l10" scope="col">기준년월</th>
+                                <th class="cell_r10" scope="col">적립 0</th>
+                                <th class="cell_r10" scope="col">사용 0</th>
+                                <th class="cell_r10" scope="col">유효기간경과</th>
+                                <th class="cell_r10" scope="col">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10"><a class="btn btn_s_white" href="#" title='0 월별 적립/사용내역 상세보기'><span>GO</span></a></td>
+                            </tr>
+                        </tbody>
+                        </table>
+<%-- 코스트코 포인트 처리 테이블  --%>
+
+                       <!-- 포인트상세조회 팝업 버튼 -->
+                        <table class="dtable01" summary="기준년월, 적립 포인트, 바우처 사용액, 유효기간경과, 상세보기로 구성된 적립연도별 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>적립 연도별 조회</caption>
+                        <colgroup><col width="15%" /><col width="24%" /><col width="24%" /><col width="25%" /><col width="*" /></colgroup>
+                        <thead>
+                            <tr>
+                            	<th class="cell_l10" scope="col">기준연월</th>
+								<th class="cell_r10" scope="col">적립 포인트</th>
+								<th class="cell_r10" scope="col">바우처 사용액</th>
+								<th class="cell_r10" scope="col">유효기간경과</th>
+								<th class="cell_r10" scope="col">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">&nbsp;</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10"><a class="btn btn_s_white" href="#" title='0 월별 적립/사용내역 상세보기'><span>GO</span></a></td>
+                            </tr>
+                        </tbody>
+						
+                      <table class="dtable01" summary="기준년월, 적립 포인트, 사용 포인트, 유효기간경과, 상세보기로 구성된 정보를 확인할 수 있는 게시판입니다.">
+                        <caption>적립 0, 사용0, 유효기간경과 확인 게시판</caption>
+                        <colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="cell_l10" scope="col">기준년월</th>
+                                <th class="cell_r10" scope="col">적립 0</th>
+                                <th class="cell_r10" scope="col">사용 0</th>
+                                <th class="cell_r10" scope="col">유효기간경과</th>
+                                <th class="cell_r10" scope="col">상세보기</th>
+                            </tr>
+                        </thead>
+                        
+    
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">
+                                 <a class="btn btn_s_white" href="#" title='00 월별 적립/사용내역 상세보기'><span>GO</span></a>
+                             </tr>
+                        </tbody>
+                        </table>    
+						
+                       <table class="dtable01" summary="적립 포인트, 사용 포인트, 유효기간경과로 구성된 정보를 확인할 수 있는 게시판입니다">
+                        <caption>적립 0, 사용0, 유효기간경과 확인 게시판</caption>
+                        <colgroup><col width="20%" /><col width="30%" /><col width="30%" /><col width="20%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="cell_l10" scope="col">기준년월</th>
+                                <th class="cell_r10" scope="col">적립 0</th>
+                                <th class="cell_r10" scope="col">사용 0</th>
+                                <th class="cell_r10" scope="col">유효기간경과</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+						
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                            </tr>
+							
+                        </tbody>
+                        </table>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

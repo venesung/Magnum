@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+/*
+* Filename    : NHPENNOMXMAILTIMECHECK.jsp
+* Comment     : 삼성카드 Mail 문의시 휴일 체크를 위한 Iframe 페이지
+* History     : 04/13/2010 
+* Version     : 1.0
+*/
+%>
+<%@ include file="./include/CommonHeader.jsp" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String szYear 	= blockSQLHack(request.getParameter("toYear"));
+	String szMonth	= blockSQLHack(request.getParameter("toMonth"));
+	String szDay	= blockSQLHack(request.getParameter("toDay"));
+	String strToDay = szYear+szMonth+szDay;
+	
+	out.println("현재 날짜 : " + szYear+ "년" + szMonth+ "월" + szDay + "일");
+	out.println(strToDay);
+	HoligubunByDate = (String)svcBean.getHoliGubunByDate(strToDay);
+	out.println(HoligubunByDate);
+	if(HoligubunByDate.equals("Y")){
+		%>
+		<script type="text/javascript">alert("선택하신 날짜는 휴일입니다. 다시 선택하여 주세요.");</script>
+		<%
+	}else if(HoligubunByDate.equals("N")){
+		%>
+		<script type="text/javascript">parent.isSubmit();</script>
+		<%
+	}else{
+		%>
+		<script type="text/javascript">alert("선택하신 날짜가 잘못 되었습니다. 다시 선택하여 주세요.");</script>
+		<%
+	}
+
+%>

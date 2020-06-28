@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>결제일별 청구대상 기간 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_setperson_date.png" alt="결제일별 청구대상 기간입니다" /></h1>		
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_setperson_date.png" alt="결제일별 청구대상 기간입니다" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<form name="frm" method="post">
+	<div id="pop_content" style="height:460px">		<!-- 100826 전체 수정 -->
+		<div class="content_block2 content_block_card d_alert">
+			<table class="dtable02" summary="조회월, 결제일을 조회하실 수 있습니다.">
+			<caption>조회일자, 결제일 선택</caption>
+			<colgroup><col width="20%" /><col width="35%" /><col width="20%" /><col width="25%" /></colgroup>
+                <tbody>
+                    <tr>
+                        <th><p>조회월</p></th >
+                        <td><p>
+                            <select name="YYYY" style="width:60px" title="조회 년 선택">
+                                <option></option>
+                            </select>년
+                            <select name="MM" style="width:50px" title="조회 월 선택">
+                                <option></option>
+                            </select>월</p></td>
+                        <th><p>결제일</p></th >
+                        <td><p>
+                            <select name="settlementDay" style="width:50px" title="결제일 선택">
+                                <option></option>
+                            </select>일</p></td>
+                    </tr>
+                </tbody>
+			</table>
+
+			<!-- btn -->
+			<div class="btnr mb20">
+                <a href="javascript:search();" class="btn btn_blue"><span>조회</span></a>
+			</div>
+		</div>
+
+
+		<div class="content_block2 content_block_card d_alert">
+			<div class="tb_exp clfix mt20">
+				<p class="t_point">일시불/할부 사용기간</p>
+			</div>
+			<table class="dtable01 mb20" summary="기간 청구일로 구성된 일시불/할부 사용기간을 보여주는 게시판입니다">
+			<caption>일시불/할부 사용기간</caption>
+			<colgroup><col width="20%" /><col width="50%" /><col width="30%" /></colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" class="cell_l10 cell_bg riline">구분</th >
+                        <th scope="col" class="t_no">기간</th>
+                        <th scope="col" class="t_no">청구일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="cell_l10 cell_bg riline">전월</th>
+                        <td class="t_no">2012.02.03
+                                       ~ 2012.02.03</td>
+                        <td class="t_no">2012.05.06</td>
+                    </tr>
+                </tbody>
+			</table>
+		</div>
+
+		<div class="content_block2 content_block_card">
+			<div class="tb_exp mt20 clfix">
+				<p class="t_point">현금서비스/카드론 사용기간</p>
+			</div>
+			<table class="dtable01" summary="기간, 청구일로 구성된 현금서비스/카드론 사용기간을 보여주는 게시판입니다">
+			<caption>현금서비스/카드론 사용기간</caption>
+			<colgroup><col width="20%" /><col width="50%" /><col width="30%" /></colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" class="cell_l10 cell_bg riline">구분</th >
+                        <th scope="col" class="t_no">기간</th>
+                        <th scope="col" class="t_no">청구일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="cell_l10 cell_bg riline">익월</th>
+                        <td class="t_no">2012.02.03
+                                       ~ 2012.02.03</td>
+                        <td class="t_no">2012.05.06</td>
+                    </tr>
+                </tbody>
+			</table>
+
+			<ol class="list_desc mt10">
+				<li><p>개인 신용카드 기준입니다.</p></li>
+				<li><p>일시불,할부,현금서비스,카드론 사용기간은 영업일 또는 업무사정에 따라 1~2일정도 변동될 수 있습니다.</p></li>
+			</ol>
+		</div>
+	</div>
+	</form>
+		<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+
+</body>
+</html>

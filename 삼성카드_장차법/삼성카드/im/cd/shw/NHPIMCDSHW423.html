@@ -1,0 +1,1088 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+
+<!-- 혜택시뮬레이션 -->
+	<div class="bgSimulBot">
+		<div class="bgSimulMid">
+			<table summary="혜택시뮬레이션(카드사용시 적립, S선포인트서비스 이용시 적립, 할인, 할인/무료서비스)을 확인하실 수 있습니다." class="table_simul">
+				<caption>혜택시뮬레이션</caption>
+				<colgroup>
+					<col width="143" />
+					<col width="104" />
+					<col width="690" />
+				</colgroup>
+				<tbody>
+					<tr class="first">
+						<th rowspan="6" scope="row"><img src="/images/cd/shw/card/txt_simul28.gif" width="91" height="15" alt="카드사용시 적립" /></th>
+						<td class="bold">&nbsp;</td>
+						<td class="padB5">
+							월 <input type="hidden" id="cc" /><span class="d"><em><strong style="color:#333;">800,000원</strong></em> </span>이용시  <span class="year">연 <em>222,000P</em> 적립</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">자동차, 호텔</td>
+						<td>
+							월<input type="text" value="100,000" class="c94afc6" id="point1" onKeyUp="comma(this);" title="자동차, 호텔 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>60,000P</em> 적립</span>
+							<span class="etc">(5% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">쇼핑, 외식</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point2" onKeyUp="comma(this);" title="쇼핑, 외식 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>72,000P</em> 적립</span>
+							<span class="etc">(3% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">교육, 교통</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point3" onKeyUp="comma(this);" title="교육, 교통 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>24,000P</em> 적립</span>
+							<span class="etc">(1% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">GS칼텍스</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point4" onKeyUp="comma(this);" title="GS칼텍스 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>60,000P</em> 적립</span><br/>
+							<span class="etc">(L당 2,000원 기준, L당 50P적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="last bold">일반가맹점</td>
+						<td class="last">
+							월<input type="text" value="100,000" class="c94afc6" id="point5" onKeyUp="comma(this);" title="일반가맹점 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>6,000P</em> 적립</span>
+							<span class="etc">(0.5% 적립)</span>
+						</td>
+					</tr>
+					<tr class="line">
+						<th scope="row" rowspan="6"><img src="/images/cd/shw/card/txt_simul29.gif" width="99" height="31" alt="S선포인트서비스 이용시 적립" /></th>
+						<td class="padB5 bold">&nbsp;</td>
+						<td class="padB5">
+							월 <input type="hidden" id="dd" /><span class="d"><em><strong style="color:#333;">800,000원</strong></em> </span>이용시 <span class="year">연 <em>414,000P</em> 적립</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">자동차, 호텔</td>
+						<td>
+							월<input type="text" value="100,000" class="c94afc6" id="point6" onKeyUp="comma(this);" title="자동차, 호텔 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>120,000P</em> 적립</span>
+							<span class="etc">(10% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">쇼핑, 외식</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point7" onKeyUp="comma(this);" title="쇼핑, 외식 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>120,000P</em> 적립</span>
+							<span class="etc">(5% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">교육, 교통</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point8" onKeyUp="comma(this);" title="교육, 교통 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>72,000P</em> 적립</span>
+							<span class="etc">(3% 적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="bold">GS칼텍스</td>
+						<td>
+							월<input type="text" value="200,000" class="c94afc6" id="point9" onKeyUp="comma(this);" title="GS칼텍스 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>96,000P</em> 적립</span>
+							<span class="etc">(L당 2,000원 기준, L당 80P적립)</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="last bold">일반가맹점</td>
+						<td class="last">
+							월<input type="text" value="100,000" class="c94afc6" id="point10" onKeyUp="comma(this);" title="일반가맹점 이용금액 입력" maxlength="11"/>원 이용시 <span class="year">연 <em>6,000P</em> 적립</span>
+							<span class="etc">(0.5% 적립)</span>
+						</td>
+					</tr>
+					<tr class="line">
+						<th scope="row"><img src="/images/cd/shw/card/txt_simul3.gif" width="24" height="15" alt="할인" /></th>
+						<td class="last bold">VIPS 현장할인</td>
+						<td class="last padT13">
+							연 <span class="c5a96c8">80,000원</span> <span class="c999">(10만원 이용, 20%할인, 일 1회)</span>
+						</td>
+					</tr>
+					<tr class="noLine">
+						<th scope="row"><img src="/images/cd/shw/card/txt_simul4.gif" width="98" height="15" alt="할인/무료서비스" /></th>
+						<td class="bold">
+							<p class="line18">놀이공원 할인</p>
+							<p class="line18">프로스포츠 할인</p>
+							<p class="line18">CGV 할인</p>
+							<p class="marB4">삼성미술관 리움<br/>할인</p>
+							<p class="line18">엔진오일 할인</p>
+						</td>
+						<td>
+							<p class="line18">연 <span class="c5a96c8">95,000원</span> <span class="c999">(38,000원 이용, 50%할인, 연 5회)</span></p>
+							<p class="line18">연 <span class="c5a96c8">16,000원</span> <span class="c999">(8,000원 이용, 최대 3인 50%할인 연 1회 + 1일 50% 할인)</span></p>
+							<p class="line18">연 <span class="c5a96c8">30,000원</span> <span class="c999">(9,000원 이용, 최대 3인 50%할인 연 1회, 1,500원 할인 연 11회)</span></p>
+							연 <span class="c5a96c8">15,000원</span> <span class="c999">(10,000원 이용, 최대 3인 50%할인, 연 1회)</span><br/><br/>
+							<p class="line18">연 <span class="c5a96c8">15,000원</span> <span class="c999">(15,000원 할인, 연 1회)</span></p>
+						</td>
+					</tr>
+					<tr class="h" style="height:55px;">
+						<td colspan="3">
+							<span class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />상기 혜택금액은 고객의 이해를 돕기 위한 시뮬레이션으로, 사용금액/사용처/제한조건 등에 따라 실제 혜택과 상이할 수 있습니다.</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="receiptBox2">
+				<p class="receipt1">
+					<img src="/images/cd/shw/card/txt_receipt1.gif" width="140" height="35" alt="연간 총 혜택" />
+				</p>
+				<p class="receipt2">
+					<img src="/images/cd/shw/card/txt_receipt5.gif" width="58" height="13" alt="카드 사용시" class="floatL" />
+					<span class="floatR">473,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+				</p>
+				<p class="receipt4">
+					<img src="/images/cd/shw/card/txt_receipt6.gif" width="92" height="13" alt="S선포인트 이용시" class="floatL" />
+					<span class="floatR">665,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+				</p>
+				<p class="receipt2">
+					<img src="/images/cd/shw/card/txt_receipt3.gif" width="56" height="27" alt="연회비(-) 해외겸용카드 기준" class="floatL" />
+					<span class="floatR">20,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+				</p>
+				<div class="receipt6">
+					<p style="height:28px;">
+						<img src="/images/cd/shw/card/txt_receipt7.gif" width="45" height="10" alt="카드 사용시" class="floatL mt7" />
+						<span class="floatR" id="c1" style="font:bold 16px/22px 'Dotum';">= 453,000<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignT2" style="margin:2px 0 0 1px;" /></span>
+					</p>
+					<p id="c2">
+						<img src="/images/cd/shw/card/txt_receipt8.gif" width="68" height="10" alt="S선포인트 이용시" class="floatL mt7" />
+						<span class="floatR" id="c21" style="font:bold 16px/22px 'Dotum';">= 645,000<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignT2" style="margin:2px 0 0 1px;" /></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 혜택시뮬레이션 -->
+<script type="text/javascript" src="/js/im/cd/cps/jquery.alphanumeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".c94afc6").numeric(); 
+	$(".c94afc6").css("ime-mode", "disabled"); //한글 입력 방지
+});	
+$("#point1").keyup(function() {
+	
+	var point = replace($("#point1").val(),",","");			
+	var sum = Math.round(point * 0.05 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+	//251000
+	var yearSum = sum + point2 +  point3 + point4 + point5  + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point2 +  point3 + point4 + point5 ;
+	var tSum = Number(replace($("#point1").val(),",","")) + Number(replace($("#point2").val(),",","")) + Number(replace($("#point3").val(),",","")) + Number(replace($("#point4").val(),",","")) + Number(replace($("#point5").val(),",",""));
+	
+	$("#cc").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#cc").siblings(".year").find("em").text(setComma(ySum)+"P");
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(0).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point2").keyup(function() {				
+	var point = replace($("#point2").val(),",","");			
+	var sum = Math.round(point * 0.03 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	var point2 = "";
+	var point3 = "";
+	var point4 = "";
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point2 +  point3 + point4 + point5  + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point2 +  point3 + point4 + point5 ;
+	var tSum = Number(replace($("#point1").val(),",","")) + Number(replace($("#point2").val(),",","")) + Number(replace($("#point3").val(),",","")) + Number(replace($("#point4").val(),",","")) + Number(replace($("#point5").val(),",",""));
+	
+	$("#cc").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");			
+	$("#cc").siblings(".year").find("em").text(setComma(ySum)+"P");
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(0).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point3").keyup(function() {
+	
+	var point = replace($("#point3").val(),",","");			
+	var sum = Math.round(point * 0.01 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");				
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point4").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point2 +  point3 + point4 + point5  + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point2 +  point3 + point4 + point5 ;
+	var tSum = Number(replace($("#point1").val(),",","")) + Number(replace($("#point2").val(),",","")) + Number(replace($("#point3").val(),",","")) + Number(replace($("#point4").val(),",","")) + Number(replace($("#point5").val(),",",""));
+	
+	$("#cc").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");			
+	$("#cc").siblings(".year").find("em").text(setComma(ySum)+"P");
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(0).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point4").keyup(function() {
+	
+	var point = replace($("#point4").val(),",","");			
+	var sum = Math.round((point / 2000) * 50 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point5").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+	var yearSum = sum + point2 +  point3 + point4 + point5  + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point2 +  point3 + point4 + point5 ;
+	var tSum = Number(replace($("#point1").val(),",","")) + Number(replace($("#point2").val(),",","")) + Number(replace($("#point3").val(),",","")) + Number(replace($("#point4").val(),",","")) + Number(replace($("#point5").val(),",",""));
+
+	$("#cc").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#cc").siblings(".year").find("em").text(setComma(ySum)+"P");
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(0).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point5").keyup(function() {
+	
+	var point = replace($("#point5").val(),",","");			
+	var sum = Math.round(point * 0.005 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point6").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point2 +  point3 + point4 + point5  + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point2 +  point3 + point4 + point5 ;
+	var tSum = Number(replace($("#point1").val(),",","")) + Number(replace($("#point2").val(),",","")) + Number(replace($("#point3").val(),",","")) + Number(replace($("#point4").val(),",","")) + Number(replace($("#point5").val(),",",""));
+	
+	$("#cc").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#cc").siblings(".year").find("em").text(setComma(ySum)+"P");
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(0).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+/* 폼이 필요함..*/
+$("#point6").keyup(function() {
+	
+	var point = replace($("#point6").val(),",","");			
+	var sum = Math.round(point * 0.1 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point7").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point7 + point8 + point9 + point10 + 251000;
+	var sumTot = yearSum - 20000;
+
+	var ySum = sum + point7 +  point8 + point9 + point10 ;
+	var tSum = Number(replace($("#point6").val(),",","")) + Number(replace($("#point7").val(),",","")) + Number(replace($("#point8").val(),",","")) + Number(replace($("#point9").val(),",","")) + Number(replace($("#point10").val(),",",""));
+	
+	$("#dd").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#dd").siblings(".year").find("em").text(setComma(ySum)+"P");
+
+	$(".receipt4").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(1).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');							
+});
+
+$("#point7").keyup(function() {
+	
+	var point = replace($("#point7").val(),",","");			
+	var sum = Math.round(point * 0.05 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point7 + point8 + point9 + point10 + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point7 +  point8 + point9 + point10 ;
+	var tSum = Number(replace($("#point6").val(),",","")) + Number(replace($("#point7").val(),",","")) + Number(replace($("#point8").val(),",","")) + Number(replace($("#point9").val(),",","")) + Number(replace($("#point10").val(),",",""));
+	
+	$("#dd").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#dd").siblings(".year").find("em").text(setComma(ySum)+"P");
+	
+				
+	$(".receipt4").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(1).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');	
+});
+$("#point8").keyup(function() {
+	
+	var point = replace($("#point8").val(),",","");			
+	var sum = Math.round(point * 0.03 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point7").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point7").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point7 + point8 + point9 + point10 + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point7 +  point8 + point9 + point10 ;
+	var tSum = Number(replace($("#point6").val(),",","")) + Number(replace($("#point7").val(),",","")) + Number(replace($("#point8").val(),",","")) + Number(replace($("#point9").val(),",","")) + Number(replace($("#point10").val(),",",""));
+	
+	$("#dd").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#dd").siblings(".year").find("em").text(setComma(ySum)+"P");
+	
+				
+	$(".receipt4").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(1).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');	
+});
+
+$("#point9").keyup(function() {
+	
+	var point = replace($("#point9").val(),",","");			
+	var sum = Math.round((point / 2000) * 80 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point7").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point7").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point10").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point10").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point10").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point7 + point8 + point9 + point10 + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point7 +  point8 + point9 + point10 ;
+	var tSum = Number(replace($("#point6").val(),",","")) + Number(replace($("#point7").val(),",","")) + Number(replace($("#point8").val(),",","")) + Number(replace($("#point9").val(),",","")) + Number(replace($("#point10").val(),",",""));
+	
+	$("#dd").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#dd").siblings(".year").find("em").text(setComma(ySum)+"P");
+	
+				
+	$(".receipt4").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(1).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');	
+});
+
+$("#point10").keyup(function() {
+	
+	var point = replace($("#point10").val(),",","");			
+	var sum = Math.round(point * 0.005 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	
+	var point2 = null;
+	var point3 = null;
+	var point4 = null;
+	var point5 = null;
+	var point6 = null;
+	var point7 = null;
+	var point8 = null;
+	var point9 = null;
+	var point10 = null;
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("P");
+		point4 = Number(replace(point4,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point4 = $("#point3").siblings(".year").find("em").text().split("원");
+		point4 = Number(replace(point4,",",""));
+	}
+	if($("#point4").siblings(".year").find("em").text().indexOf("P") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("P");
+		point5 = Number(replace(point5,",",""));
+	}else if($("#point4").siblings(".year").find("em").text().indexOf("원") > 0){
+		point5 = $("#point4").siblings(".year").find("em").text().split("원");
+		point5 = Number(replace(point5,",",""));
+	}
+	if($("#point5").siblings(".year").find("em").text().indexOf("P") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("P");
+		point6 = Number(replace(point6,",",""));
+	}else if($("#point5").siblings(".year").find("em").text().indexOf("원") > 0){
+		point6 = $("#point5").siblings(".year").find("em").text().split("원");
+		point6 = Number(replace(point6,",",""));
+	}
+
+	if($("#point6").siblings(".year").find("em").text().indexOf("P") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("P");
+		point7 = Number(replace(point7,",",""));
+	}else if($("#point6").siblings(".year").find("em").text().indexOf("원") > 0){
+		point7 = $("#point6").siblings(".year").find("em").text().split("원");
+		point7 = Number(replace(point7,",",""));
+	}
+	if($("#point8").siblings(".year").find("em").text().indexOf("P") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("P");
+		point8 = Number(replace(point8,",",""));
+	}else if($("#point8").siblings(".year").find("em").text().indexOf("원") > 0){
+		point8 = $("#point8").siblings(".year").find("em").text().split("원");
+		point8 = Number(replace(point8,",",""));
+	}
+	if($("#point9").siblings(".year").find("em").text().indexOf("P") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("P");
+		point9 = Number(replace(point9,",",""));
+	}else if($("#point9").siblings(".year").find("em").text().indexOf("원") > 0){
+		point9 = $("#point9").siblings(".year").find("em").text().split("원");
+		point9 = Number(replace(point9,",",""));
+	}
+	if($("#point7").siblings(".year").find("em").text().indexOf("P") > 0){
+		point10 = $("#point7").siblings(".year").find("em").text().split("P");
+		point10 = Number(replace(point10,",",""));
+	}else if($("#point7").siblings(".year").find("em").text().indexOf("원") > 0){
+		point10 = $("#point7").siblings(".year").find("em").text().split("원");
+		point10 = Number(replace(point10,",",""));
+	}
+
+	var yearSum = sum + point7 + point8 + point9 + point10 + 251000;
+	var sumTot = yearSum - 20000;
+	var ySum = sum + point7 +  point8 + point9 + point10 ;
+	var tSum = Number(replace($("#point6").val(),",","")) + Number(replace($("#point7").val(),",","")) + Number(replace($("#point8").val(),",","")) + Number(replace($("#point9").val(),",","")) + Number(replace($("#point10").val(),",",""));
+	
+	$("#dd").siblings(".d").find("em").html("<strong style='color:#333;'>"+setComma(tSum)+"원");				
+	$("#dd").siblings(".year").find("em").text(setComma(ySum)+"P");
+	
+				
+	$(".receipt4").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt6").find("span").eq(1).html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');	
+});
+
+
+</script>

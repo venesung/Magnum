@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" /><!-- SR내역 12.12.20 -->
+<style type="text/css"> 
+/* popup_layer */
+.pop_l_position	{position:absolute; left:40%; _left:480px; top:233px; _top:333px; z-index:600} /* position:fixed; _ */
+.pop_l_wrap	{position:relative; width:464px; height:294px; border:3px solid #5a96c8; background:white; z-index:511}/*120417 수정*/
+.h148	{height:148px;}
+.pop_l_wrap	.img_l_pop	 {position:absolute; background:url('/images/common/pop_bg_layer.gif') no-repeat; overflow:hidden; z-index:513}
+.pop_l_wrap	.img_l_pop.flag_tl	{left:-3px; top:-3px; width:10px; height:10px; background-position:0 0}
+.pop_l_wrap	.img_l_pop.flag_tr	{right:-3px; top:-3px; width:10px; height:10px; background-position:-10px 0}
+.pop_l_wrap	.img_l_pop.flag_bl	{left:-3px; bottom:-3px; width:10px; height:10px; background-position:0 -10px}
+.pop_l_wrap	.img_l_pop.flag_br	{right:-3px; bottom:-3px; width:10px; height:10px; background-position:-10px -10px}
+.pop_tit_data	{margin:50px 0 22px 0; text-align:center}
+.pop_l_wrap	.pop_l_content	{padding:0 33px 0; z-index:512}
+.pop_l_guidance	{width:400px; margin:0 auto; padding:0 !important}
+</style>
+</head>
+
+<body>
+
+<!-- 공통 헤더 시작 -->
+<div class="headerBox cate2">
+	<div class="header">
+		<div class="contents">
+			<ul class="quickBtn">
+				<li class="line"><a href="/showroom/shw.do?method=getIntro"><img src="/images/cd/shw/gnb/txt_home.gif" style="width:29px;height:11px;" alt="Home" /></a></li>
+				<li><a href="/showroom/shw.do?method=getEventList&amp;tabType=start"><img src="/images/cd/shw/gnb/txt_event.gif" style="width:29px;height:11px;" alt="이벤트" /></a></li>
+				<li><a href="/showroom/shw.do?method=getRep"><img src="/images/cd/shw/gnb/txt_card_quick.gif" style="width:96px;height:11px;" alt="대표카드 한눈에 보기" /></a></li>
+			</ul>
+			<ol class="menu">
+				<li class="menu1"><a href="/showroom/shw.do?method=getNumber"><img src="/images/cd/shw/gnb/menu1_on.gif" height="40" alt="숫자카드" /></a></li>
+                <li class="menu2"><a href="/showroom/shw.do?method=getList&amp;category=B"><img src="/images/cd/shw/gnb/menu2_off.gif" height="40" alt="주유/교통" /></a></li>
+                <li class="menu3"><a href="/showroom/shw.do?method=getList&amp;category=C"><img src="/images/cd/shw/gnb/menu3_off.gif" height="40" alt="쇼핑" /></a></li>
+                <li class="menu4"><a href="/showroom/shw.do?method=getList&amp;category=D"><img src="/images/cd/shw/gnb/menu4_off.gif" height="40" alt="외식/여가" /></a></li>
+                <li class="menu5"><a href="/showroom/shw.do?method=getList&amp;category=E"><img src="/images/cd/shw/gnb/menu5_off.gif" height="40" alt="멀티" /></a></li>
+                <li class="menu6"><a href="/showroom/shw.do?method=getList&amp;category=F"><img src="/images/cd/shw/gnb/menu6_off.gif" height="40" alt="여행/항공" /></a></li>
+				<!--  <li class="menu7"><a href="/showroom/shw.do?method=getInternet"><img src="/images/cd/shw/gnb/menu7_off.gif" height="40" alt="인터넷전용카드" /></a></li> SR내역 13.03.05-->
+			</ol>
+ 
+			<!-- 인트로 일 경우 보이는 배너 영역-->
+<div class='etc_sub'><dl>	<dt><img src='/images/cd/shw/gnb/txt_etc_card.gif' width='49' height='8' alt='New Card' /></dt><dd><a href='/showroom/shw.do?method=getStrategy&amp;contentId=13231' onclick='gnbBannerWebLogclick( "stra", "13231" )'>
+							<img src="/cms_content/hp/im/cd/shw/13231_SIMG.jpg" alt="새로 출시된 삼성카드6"/>
+</a><input type='hidden' name='contentId' value='13231'/><a href='/showroom/shw.do?method=getStrategy&amp;contentId=12869' onclick='gnbBannerWebLogclick( "stra", "12869" )'>
+							<img src="/cms_content/hp/im/cd/shw/12869_SIMG.jpg" alt="새로 출시된 삼성카드7"/>
+</a><input type='hidden' name='contentId' value='12869'/>	</dd></dl><dl class='last'>	<dt><img src='/images/cd/shw/gnb/txt_etc_hot.gif' width='18' height='8' alt='Hot' /></dt><dd><a href='/showroom/shw.do?method=getSeason&amp;contentId=12639' onclick='gnbBannerWebLogclick( "seas", "12639" )'>
+							<img src="/cms_content/hp/im/cd/shw/12639_SIMG.jpg" alt="놀이공원 할인카드"/>
+</a><input type='hidden' name='contentId' value='12639'/><a href='/showroom/shw.do?method=getList&amp;category=D' onclick='gnbBannerWebLogclick( "seas", "12641" )'>
+							<img src="/cms_content/hp/im/cd/shw/12641_SIMG.jpg" alt="외식여가카드"/>
+</a><input type='hidden' name='contentId' value='12641'/>	</dd></dl></div>
+		</div>
+	</div>
+</div>
+<!--// 공통 헤더 끝 -->
+
+<!-- 비주얼 영역 -->
+<div class="visualBox">
+<p><img src="/images/cd/shw/app/visual1.jpg" width="1000"	height="205" alt="주유/교통" /></p>
+</div>
+<!-- 비주얼 영역 -->
+
+
+<div class="wrap">		
+<form name="certForm" method="post" action="">	
+	
+	<div class="contentsBox_app">
+		<div class="appBox">
+			<ul class="stepBox">
+				<li><img src="/images/cd/shw/app/txt_step1_off.gif" width="259" height="51" alt="STEP1 실명인증 및 약관동의" /></li>
+				<li><img src="/images/cd/shw/app/txt_step2_on.gif" width="259" height="51" alt="STEP2 신청정보 입력" /></li>
+				<li class="last"><img src="/images/cd/shw/app/txt_step3_off.gif" width="259" height="51" alt="STEP3 신청완료" /></li>
+				
+			</ul>
+			<div class="app">
+				<input type="hidden" id="f01" value="check" />
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_1.gif" width="247" height="14" alt="발급 받으실 카드의 정보를 확인해 주세요." />
+							<!-- 고개유치개선 임시저장 정보 불러오기 버튼 -->
+							<a href="javascript:getTempInfo();"><img src="/images/cd/btn_save_temp.gif" border="0" alt="나의 임시저장정보 불러오기" /></a>
+							<!-- //고개유치개선 임시저장 정보 불러오기 버튼 -->
+				</p>				
+				<table summary="카드이름, 회원구분 등 입력정보를 확인하실 수 있습니다." class="table_app2 marB39">
+					<caption>입력정보확인</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><span class="padL14">카드이름</span></th>
+							<td><span class="padL10">${cardDetailMap.cardName}</span></td>
+						</tr>
+						<tr class="last">
+							<th scope="row"><span class="padL14">회원구분</span></th>
+							<td>
+								<span class="padL10">비웹멤버										
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="stit"><img src="/images/cd/shw/app/txt_step2_2.gif" width="205" height="14" alt="선택하신 브랜드를 확인해 주세요." /></p>
+				<table summary="카드 브랜드를 확인하는 게시판입니다" class="table_app2 marB39">
+					<caption>브랜드 확인</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr class="last">
+							<th scope="row"><span class="padL14">브랜드확인</span></th>
+							<td>
+								<span class="padL10">
+								    		<label for="cardLogo01">국내<input type="hidden" name="cardLogo" id="cardLogo01" value="01" /></label>
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 고객님의 신상정보를 알려 주세요 -->
+			<input type="hidden" id="f09" value="check" />
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_3.gif" width="205" height="14" alt="고객님의 신상정보를 알려 주세요." />
+					<span class="ck"><span style="display:none;">체크</span>표시는 필수입력 정보입니다</span>
+				</p>
+				<table summary="성명(한글), 주민등록번호, 성명(영문), 본인확인방법, 이메일주소, 자택주소, 전화번호, 휴대폰번호, 공인인증확인으로 구성된 신상정보를 입력하는 게시판입니다." class="table_app2 marB39">
+					<caption>신상정보 입력</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="245" />
+						<col width="125" />
+						<col width="245" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<input type="hidden" name="customerName" title="성명" id="customerName" value="${resultVo.customerName}" />
+								<span class="padL14">성명(한글)</span>
+							</th>
+							<td><span class="padL10">${resultVo.customerName}</span></td>
+							<th scope="row"><span class="padL14">주민등록번호</span></th>
+							<td><span class="padL10">${resultVo.idenNo1}-*******</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />성명(영문)</span></th>
+							<td colspan="3">
+									<input type="text" title="Family Name" style="width:80px;ime-mode:disabled;text-align:left;" class="text108_c999 marR5 marL10" value="${resultVo.englishName1}"  id="englishName1" name="englishName1" maxlength="17" />
+									<input type="text"  id="englishName2" name="englishName2" maxlength="13" title="Given Name" style="width:120px;ime-mode:disabled;text-align: left;" class="text108_c999 marR9" value="${resultVo.englishName2}" />
+								<span class="ex">예) <em>KIM SHINYOUNG</em> (기호 및 특수문자 등록 불가)</span>
+							</td> 
+						</tr>             
+							<tr class="ex1">
+								<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />본인확인방법</span></th>
+								<td style="border-right:1px solid #dcdcdc;">
+									<span class="radioSpan"> 
+										<label class="marR18" for="certificateGubun01"><input type="radio" id="certificateGubun01" name="certificateGubunR"  value="01" class="ju1" checked="checked" />주민등록번호</label>
+										<label for="certificateGubun02"><input type="radio" id="certificateGubun02" name="certificateGubunR"  value="02" class="ju2" />운전면허증</label>
+									</span>
+								</td>
+								<td colspan="2" rowspan="2" style="border-left:none;">
+									<img src="/images/cd/shw/app/img_ex1.jpg" width="221" height="80" alt="주민등록증 이미지 샘플" class="marL25" />
+								</td>
+							</tr>
+							<tr class="ex1">
+								<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />발행일자</span></th>
+								<td><input type="text" class="text108_c999 marL10" maxlength="8" id="certificateDate_01" name="certificateDate_01" onkeypress="checkTypes(this, 'NUMB');" title="주민등록증 발행일자 입력" /></td>
+							</tr>
+							<tr class="ex2_off">
+								<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />본인확인방법</span></th>
+								<td style="border-right:1px solid #dcdcdc;">
+									<span class="radioSpan">
+										<label class="marR18" for="certificateGubun03"><input type="radio" id="certificateGubun03" name="certificateGubunR1" value="01" class="ju1"   />주민등록번호</label>
+										<label for="certificateGubun04"><input type="radio" id="certificateGubun04" name="certificateGubunR1"  value="02" class="ju2" checked="checked"   />운전면허증</label>
+									</span>
+								</td>
+								<td colspan="2" rowspan="2" style="border-left:none;">
+									<img src="/images/cd/shw/app/img_ex2.jpg" width="231" height="80" alt="운전면허증 이미지 샘플" class="marL15" />
+								</td>
+							</tr>
+							<tr class="ex2_off">
+								<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />운전면허증</span></th>
+								<td>
+									<input type="text" class="text68_c333 marL10" maxlength="2" id="certificateDist" name="certificateDist" onkeypress="checkTypes(this, 'HCHR');" title="운전면허증 발행기관 입력" /> 
+									<input type="text" class="text108_c999 marL10"  maxlength="10" id="certificateDate_02" name="certificateDate_02" onkeypress="checkTypes(this, ' NUMB');" title="운전면허증 발행일자 입력" />
+								</td>
+							</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />이메일주소</span></th>
+							<td colspan="3">
+								<input type="text"  value="${resultVo.email}"  maxlength="30" id="email" name="email"  class="text108_c333 marL10" title="이메일 아이디 입력" /> <span class="font11">@</span> <input type="text"  name="email2" maxlength="19" class="text108_c333 marR5" value="${resultVo.email2}" readonly="readonly" title="이메일공급자 입력" /> 
+								<select title="이메일공급자선택" onchange="changeEmailSelect(this);">
+										<option value="">직접입력</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="h75">
+							<th scope="row" class="vAlignT"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />자택주소</span></th>
+							<td colspan="3">
+								<p>
+									<input type="text"  class="text108_c333 marL10" value="${resultVo.homeZipCode1}" id="homeZipCode1" name="homeZipCode1"  readonly="readonly" title="우편번호 앞자리 입력" /> 
+									<span class="font11">-</span> 
+									<input type="text"  class="text108_c333" value="${resultVo.homeZipCode2}" id="homeZipCode2" name="homeZipCode2" readonly="readonly" title="우편번호 뒷자리 입력" /> 
+									<a href="#" title="새창"><img src="/images/cd/shw/app/btn_addr.gif" alt="우편번호 검색" class="vAlignM" /></a>
+								</p>
+								<input type="text"  class="text242_c333 marL10"  value="${resultVo.homeAddrArea}" title="자택주소 상세입력" id="homeAddrArea" name="homeAddrArea" readonly="readonly" /> 
+								<input type="text" class="text242_c333" value="${resultVo.homeAddrDist}" id="homeAddrDist" name="homeAddrDist" title="자택주소 상세입력2" readonly="readonly" />
+								<input type="hidden" name="homeZipSeq" id="homeZipSeq" value="${resultVo.homeZipSeq}" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />자택번호</span></th>
+							<td colspan="3">
+								<select title="자택번호 국번 선택" id="homePhone1" name="homePhone1" class="marL10">
+									<option value="00">선택</option>
+								</select>
+								<input type="text" class="text68_c333"  value="${resultVo.homePhone2}" title="자택전화번호 앞자리 입력" id="homePhone2" name="homePhone2" maxlength="4" /> 
+								<span class="font11">-</span> 
+								<input type="text" class="text68_c333" value="${resultVo.homePhone3}" title="자택전화번호 뒷자리 입력" id="homePhone3" name="homePhone3" maxlength="4" /> 
+							</td>
+						</tr>
+						<tr class="last">
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />휴대전화번호</span></th>
+							<td colspan="3">
+									<select class="marL10"  title="휴대전화번호 앞자리 선택" id="handPhone1" name="handPhone1">
+										<option value="00">선택</option>
+									</select>
+									<input type="text"  class="text68_c333" value="${resultVo.handPhone2}" title="휴대전화번호 가운데자리 입력" id="handPhone2" name="handPhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.handPhone3);" />&nbsp;-&nbsp;
+									<input type="text"  class="text68_c333"  value="${resultVo.handPhone3}" title="휴대전화번호 뒷자리 입력" id="handPhone3" name="handPhone3" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.handPhone2);" maxlength="4" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />공인인증확인</span></th>
+							<td colspan="3">
+								&nbsp;&nbsp;<a id="btnCertVerify" href="javascript:makeSign();" title="새창"><img src="/images/cd/btn_paper_accreditation.gif" alt="공인인증으로 인증하기" /></a>
+								<iframe src="" name="verifyCertificationIframe" width="0" height="0"  frameborder="0" title="빈프레임"></iframe>
+								<input type="hidden" id="isCertVerified" name="isCertVerified" value="${resultVo.isCertVerified}" />
+								<input type="hidden" name="plain" value="카드신청공인인증" />
+								<input type="hidden" name="signed_msg" value="" />
+								<input type="hidden" name="vidMsg" value="" />
+								<input type="hidden" name="ssno" value="" />
+								<input type="hidden" name="loadCnt" value="0" />
+								<input type="hidden" name="signGubun" value="" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 고객님의 근무지를 입력해 주세요 -->
+			<input type="hidden" id="f10" value="check" />
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_4.gif" width="205" height="14" alt="고객님의 근무지를 입력해 주세요." class="marR10" /> 
+					<span class="txt">소득이 있는 본인 또는 배우자 직장정보를 입력해주시면 됩니다.</span>
+					<span class="ck"><span style="display:none;">체크</span>표시는 필수입력 정보입니다</span>
+				</p>
+				<table summary="소득정보 구분, 연소득, 직장명, 직장주소, 부서, 직위, 전화번호, 배우자성명, 배우자주민등록번호로 구성된 근무지 정보를 입력하는 게시판입니다." class="table_app2 marB10" id="imgDiv"><!-- SR내역 12.12.20 -->
+					<caption>근무지 정보 입력</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />소득정보 구분</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="incomeInfoGubun01"><input type="radio" class="self" id="incomeInfoGubun01" name="incomeInfoGubun" title="소득정보 구분 본인" value="1" checked="checked" />본인</label>
+									<label for="incomeInfoGubun02"><input type="radio"  class="spouse" id="incomeInfoGubun02" name="incomeInfoGubun" title="소득정보 구분 배우자"  value="2" />배우자</label>
+								</span>
+								<span class="ex">배우자 선택시 배우자 직장정보를 기재해 주십시오.</span>
+							</td> 
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />연소득</span></th>
+							<td>
+								<input type="text" class="text108_c333 marL10"  value="" id="yearIncome" name="yearIncome" maxlength="6" style="ime-mode:disabled;" title="연소득 직접입력" /> 만원 
+								<span class="ex" style="display:inline-block;">기재하신 연소득 및 요청한도 이내에서 한도가 부여됩니다.<br/>(연소득은 숫자로만 입력가능합니다.)</span>
+							</td> 
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />직장명</span></th>
+							<td>
+								<input type="text" class="text242_c333 marL10" id="companyName" name="companyName" title="직장명 입력" maxlength="15"  value="${resultVo.companyName}" />
+								<span class="ex">배우자 선택시 배우자 직장정보를 기재해 주십시오. </span>
+							</td>
+						</tr>
+						<tr class="h75">
+							<th scope="row" class="vAlignT"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />직장주소</span></th>
+							<td>
+								<p>
+									<input type="text" class="text108_c333 marL10" id="companyZipCode1" name="companyZipCode1" readonly="readonly"  value="${resultVo.companyZipCode1}" title="우편번호 앞자리 입력" /> 
+									<span class="font11">-</span> 
+									<input type="text" class="text108_c333"  id="companyZipCode2" name="companyZipCode2" readonly="readonly"  value="${resultVo.companyZipCode2}" title="우편번호 뒷자리 입력" />
+									<a href="#" title="새창" id="label_wp_zip"><img src="/images/cd/shw/app/btn_addr.gif" alt="우편번호 검색" class="vAlignM" /></a>
+								</p>
+								<input type="text" class="text242_c333 marL10"  id="companyAddrArea" name="companyAddrArea" title="직장주소 입력" readonly="readonly"  value="${resultVo.companyAddrArea}" /> 
+								<input type="text"  class="text242_c333" id="companyAddrDist" name="companyAddrDist" title="직장주소 상세입력2" readonly="readonly"  value="${resultVo.companyAddrDist}" />
+								<input type="hidden" name="companyZipSeq" id="companyZipSeq" value="${resultVo.companyZipSeq}" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />부서</span></th>
+							<td>
+								<input type="text"  class="text242_c333 marL10" id="deptName"  name="deptName"  value="${resultVo.deptName}" maxlength="15" title="부서명 입력" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />직위</span></th>
+							<td>
+								<input type="text"  class="text242_c333 marL10" id="grade" name="grade"  value="${resultVo.grade}" maxlength="10" title="직위입력" />
+							</td>
+						</tr>
+						<tr class="last2">
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />전화번호</span></th>
+							<td>
+								<select class="marL10" id="companyPhone1" name="companyPhone1" title="국번 선택">
+									<option value="00">선택</option>
+								</select>
+								<input type="text" class="text68_c333"  id="companyPhone2" name="companyPhone2" value="${resultVo.companyPhone2}" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.companyPhone3);" title="전화번호 중간 3~4 자리 입력" /> 
+								<span class="font11">-</span> 
+								<input type="text" class="text68_c333"  id="companyPhone3" name="companyPhone3" maxlength="4"  value="${resultVo.companyPhone3}" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.companyPhone2);" title="전화번호 마지막 4자리 입력" /> 
+							</td>
+						</tr>
+					<tr class="ex3_off">
+						<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />배우자성명</span></th>
+						<td>
+							<input type="text" class="text108_c333 marL10"  id="spouseName" name="spouseName" maxlength="8" onkeypress="checkTypes(this, 'HCHR');" title="배우자 이름 입력" /> 
+							<span class="ex">카드심사시 배우자분께 확인연락을 드립니다.</span>
+						</td> 
+					</tr>
+						<tr class="last ex3_off">
+							<th scope="row"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" class="marL14 marT8" /><span style="display:inline-block;">배우자<br />주민등록번호</span></th>
+							<td>
+								<input type="text" class="text108_c333 marL10" value="" maxlength="6" id="spouseIdenNo1" name="spouseIdenNo1" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, certForm.spouseIdenNo2);" title="배우자 주민등록번호 앞자리 6자리 입력" /> 
+								<span class="font11">-</span> 
+								<input type="password" class="text108_c333" value="" maxlength="7" id="spouseIdenNo2" name="spouseIdenNo2" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.spouseIdenNo1);" title="배우자 주민등록번호 뒷자리 7자리 입력" />
+							</td> 
+						</tr>
+					</tbody>
+				</table>
+					         
+				<ul class="info_more">
+					<li>삼성카드 심사기준에 따라 일부 회원님께 필요 서류를 요청드릴 수 있습니다.</li>
+				</ul>
+			<br/><br/>
+			<!-- 고객님의 근무지를 입력해 주세요 -->
+			<input type="hidden" id="f06" value="check" />				
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_5.gif" width="263" height="14" alt="발급 받으실 카드의  결제 정보를 정해 주세요." /> 
+					<span class="ck"><span style="display:none;">체크</span>표시는 필수입력 정보입니다</span>
+				</p>
+				<table summary="희망한도, 신청구분, 결제일, 카드수령지, 우편물수령지, 이용대금명세서로 구성된 결제 정보를 입력하는 게시판입니다." class="table_app2 marB39">
+					<caption>결제 정보 입력</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>		
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />희망한도</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="radio_requestLimit1"><input type="radio" id="radio_requestLimit1" name="radio_requestLimit"  value="300" />300만원</label>
+									<label class="marR10" for="radio_requestLimit2"><input type="radio" id="radio_requestLimit2" name="radio_requestLimit" value="500" />500만원</label>
+									<label class="marR10" for="radio_requestLimit3"><input type="radio" id="radio_requestLimit3" name="radio_requestLimit" />1,000만원</label>
+									<label class="marR10" for="radio_requestLimit4"><input type="radio" id="radio_requestLimit4" name="radio_requestLimit" value="2000" />2,000만원</label>
+									<label class="marR10" for="radio_requestLimit5"><input type="radio" id="radio_requestLimit5" name="radio_requestLimit" title="연소득 직접입력" />직접입력</label>
+									<input type="text" class="text68_c333"  id="text_requestLimit" name="text_requestLimit" readonly="readonly" value="" maxlength="6" title="연소득 입력" /> 만원
+									<input type="hidden" id="requestLimit" name="requestLimit" value="300" /> 
+								</span>
+							</td> 
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />신청구분</span></th>
+							<td>
+									<p class="marL10">신규신청 <span class="ex">삼성카드를 처음 신청합니다.<br />카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요청할 수 있습니다.<!-- SR내역 12.12.27 --></span><input type="radio" value="01" id="newGubun11" name="newGubun1" style="visibility:hidden"  checked="checked" title="삼성카드 최초 발급 선택" /></p>
+<!-- SR반영 2013.04.16 --> 
+										<!--<p class="marL10"><input type="radio" value="02" id="newGubun11" name="newGubun1" checked="checked" onclick="pop_save_card();" title="삼성카드 추가발급선택" /> 추가<span class="ex">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다.<br />카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요철할 수 있습니다.<br />카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.</span></p>--><!-- SR내역 12.12.27 -->
+                                        <p class="marL10"><input type="radio" value="02" id="newGubun11" name="newGubun1" checked="checked" onclick="pop_save_card();" /> 추가</p>
+                                        <!-- 130415 수정 -->
+                                        <p class="ex padL13">
+											※ 카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다. <br />
+											※ 카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요청할 수 있습니다.<br />
+											※ 카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.<br />
+											※ 카드 교체 발급시, 기존카드는 신카드 승인 후 매출표 접수 익일(영업일) 또는 신카드를 사용 등록한<br />
+											&nbsp;&nbsp;&nbsp; 익일(영업일)에 자동 사용 중지되며, 기존카드로 통신·전기요금이나 보험료 등 카드로 자동 납부하는<br />
+											&nbsp;&nbsp;&nbsp; 금액이 있다면 해당 업체로 결제카드 변경을 요청해 주시기 바랍니다.<br />
+										</p>
+										<p class="marL10">
+                                        <!-- //130415 수정 --> 
+											<input type="radio" value="02" id="newGubun11" name="newGubun1" title="삼성카드 추가발급선택" /> 추가
+												<input type="radio" value="03" id="newGubun12" name="newGubun1" title="삼성카드 교체발급선택" /> 교체
+												<select title="교체대상카드선택" name="changedCard" id="changedCard" disabled="disabled">
+													<option value="00">교체대상카드선택</option>
+												</select>
+												<input type="radio" value="03" id="newGubun12" name="newGubun1" onclick="pop_save_card()"  checked="checked" title="삼성카드 교체발급선택" /> 교체
+												<select title="교체대상카드선택" name="changedCard" id="changedCard">
+														<option></option>
+												</select>
+<!-- 정기일반영 13.04.15 -->
+										<!--span class="ex">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다..<br />카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요철할 수 있습니다.<br />카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.</span-->
+										</p>
+										<p class="ex padL13">
+											※ 카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다. <br />
+											※ 카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요청할 수 있습니다.<br />
+											※ 카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.<br />
+											※ 카드 교체 발급시, 기존카드는 신카드 승인 후 매출표 접수 익일(영업일) 또는 신카드를 사용 등록한<br />
+											&nbsp;&nbsp;&nbsp; 익일(영업일)에 자동 사용 중지되며, 기존카드로 통신·전기요금이나 보험료 등 카드로 자동 납부하는<br />
+											&nbsp;&nbsp;&nbsp; 금액이 있다면 해당 업체로 결제카드 변경을 요청해 주시기 바랍니다.<br /><!-- 정기일반영 13.04.18 -->
+										</p>
+<!--// 정기일반영 13.04.15 -->
+										<p class="marL10">
+										<input type="radio" value="02" id="newGubun11" name="newGubun1" title="삼성카드 추가발급선택" /> 추가
+										<input type="radio" value="03" id="newGubun12" name="newGubun1" title="삼성카드 교체발급선택"  onclick="jocument.getElementById('changedCard').disabled = false;pop_save_card()" /> 교체
+							    			<select title="교체대상카드선택" name="changedCard" id="changedCard" disabled="disabled" onchange="document.getElementById('selectedCard').value = this.value;">
+												<option value="00">교체대상카드선택</option>
+											</select>
+<!-- 정기일반영 13.04.15 -->
+							    			<!--br/><span class="ex">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다.<br />카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요철할 수 있습니다.<br />카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.</span-->
+							    		</p>
+										
+										<p class="ex padL13">
+											※ 카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다. <br />
+											※ 카드 이용한도 책정을 위해 별도의 소득서류 증빙을 요청할 수 있습니다.<br />
+											※ 카드 교체 발급시, 사용정지된 카드와 연계된 혜택 이용이 제한 됩니다.<br />
+											※ 카드 교체 발급시, 기존카드는 신카드 승인 후 매출표 접수 익일(영업일) 또는 신카드를 사용 등록한<br />
+											&nbsp;&nbsp;&nbsp; 익일(영업일)에 자동 사용 중지되며, 기존카드로 통신·전기요금이나 보험료 등 카드로 자동 납부하는<br />
+											&nbsp;&nbsp;&nbsp; 금액이 있다면 해당 업체로 결제카드 변경을 요청해 주시기 바랍니다.<br /><!-- 정기일반영 13.04.18 -->
+										</p>
+<!--// 정기일반영 13.04.15 -->
+									<input type="hidden" name="selectedCard" id="selectedCard" value="00" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />결제일</span></th>
+							<td>
+												<select id="settlementDay" name="settlementDay" class="marL10" title="결제일 선택">
+													<option value="00">선택</option>
+												</select>
+								<span class="ex">보유카드수와 상관없이 결제일과 결제 계좌는 본인카드 및 가족카드 통합적용됩니다. </span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />카드 수령지</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="cardGetGubun01"><input type="radio" id="cardGetGubun01" name="cardGetGubun" value="001" />직장</label>
+									<label class="marR10" for="cardGetGubun02"><input type="radio" id="cardGetGubun02" name="cardGetGubun" value="002" />자택</label>
+								</span>
+								<span class="ex">본인이 직접 수령 가능하신 수령지를 선택해 주십시오. </span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />우편물 수령지</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="billGetGubun01"><input type="radio" id="billGetGubun01" name="billGetGubun" value="001" />직장</label>
+									<label class="marR10" for="billGetGubun02"><input type="radio" id="billGetGubun02" name="billGetGubun" checked="checked" value="002" />자택</label>
+								</span>
+							</td>
+						</tr>
+						<tr class="last">
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />이용대금 명세서</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="emailBillGubun01"><input type="radio" id="emailBillGubun01" name="emailBillGubun"  value="2" />이메일 수령</label>
+									<label class="marR10" for="emailBillGubun02"><input type="radio" id="emailBillGubun02" name="emailBillGubun"  value="1" />우편 수령</label>
+								</span>
+								<!--span class="ex">이메일 선택시 매월 푸짐한 경품의 행운이 있습니다. </span--><!-- SR내역 12.12.27 -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			<input type="hidden" id="f08" value="check" />	 	
+				<!-- 자동이체 정보를 정해 주세요 -->
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_6.gif" width="181" height="14" alt="자동이체 정보를 정해 주세요." /> 
+					<span class="ck">표시는 필수입력 정보입니다</span>
+				</p>
+				<table summary="은행, 계좌번호로 구성된 자동이체 정보를 입력하는 게시판입니다." class="table_app2 marB39">
+					<caption>자동이체 정보 입력</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />은행</span></th>
+							<td>
+								<select id="bankCode" name="bankCode" class="w255 marL10" onchange="changeBankCode(this);" title="은행 선택">
+									<option value="00">선택</option>
+								</select>
+								<input type="hidden" id="bankName" name="bankName" value="" />
+								<span class="ex">보유 카드수와 상관없이 결제일과 결제계좌는 단일 적용됩니다.</span>
+								<br/><span class="ex">단, 해당 결제은행에 한해서 발급가능합니다(가상계좌 신청 불가).</span>
+							</td> 
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14"><img src="/images/cd/shw/app/icon_check.gif" alt="필수입력 항목" />계좌번호</span></th>
+							<td>
+									<input type="text" class="text242_c333 marL10" id="accountNo" name="accountNo" maxlength="32" title="계좌번호 입력" />
+								<span class="ex">반드시 실명인증된 본인 통장계좌번호를 정확히 기입해주세요.</span>
+								<input type="hidden" id="depositRelation" name="depositRelation" value="01" /> 
+							</td> 
+						</tr>
+					
+					
+					</tbody>
+				</table>
+				
+			<input type="hidden" id="f13" value="check" />
+			<!-- 부가서비스를 선택하시면 카드 생활이 더 편리해 집니다. -->
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_7.gif" width="322" height="14" alt="부가서비스를 선택하시면 카드 생활이 더 편리해 집니다." /> 
+				</p>
+				<table summary="후불하이패스 카드추가신청 부가서비스를 선택하는 게시판입니다." class="table_app2 marB20">
+					<caption>부가서비스 선택</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr class="h121">
+							<th scope="row" class="vAlignT"><span class="padL14" style="display:inline-block;">후불하이패스<br />카드추가신청</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="hipassYn1"><input type="radio" id="hipassYn1" name="hipassYn"  value="Y" />카드 신청하기</label>
+									<label class="marR10" for="hipassYn2"><input type="radio" id="hipassYn2" name="hipassYn"  value="N" />다음에 하기</label>
+								</span>
+								<p class="padL10">
+								도로공사의 후불 하이패스 기능이 탑재된 삼성카드(앞면 로고 HIPASS)로 전국 고속도로 통행료를 후불로<br />
+								결제할 수 있는 서비스</p>
+								<p class="ex">
+									- Life&amp;Pass 삼성카드를 신청하신 분이 서울춘천고속도로 통행료 할인을 받기 위해서는 후불하이패스카드를 신청하셔야 합니다.<br />
+									- &nbsp;&nbsp;(서울춘천고속도로 통행료 할인은 후불하이패스카드로만 가능)<br/>
+									- 해당 서비스 특성상 신청하시는 신용카드 이외에 추가로 고속도로 통행료 결제전용 후불하이패스카드가 발급됩니다.<br />
+									- 후불하이패스카드 제휴연회비 : 2,000원
+								</p>
+							</td> 
+						</tr>
+					</tbody>
+				</table>
+					<!-- (GROUP)S포인트 카드 START -->
+				<p class="stit">
+						<img src="/images/cd/shw/app/txt_step2_7_1.gif" width="202" height="14" alt="세이브서비스 해지에 동의하세요." />
+					</p>
+					<table summary="세이브 자동해지 동의 안내 정보입니다." class="table_app2">
+						<caption>세이브 자동해지</caption>
+						<colgroup>
+							<col width="740" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="soloTD">
+									<p class="padL10 marB2"><b>세이브 자동해지 동의 안내</b></p>
+									<p class="padL10 line18">
+										&quot;S class&quot; 카드신청시, 기존에 세이브서비스(세이브, 굿포인트, 선포인트, 수퍼 S 약정 등)을 이용하고 계시다면, 미상환포인트는 <br />
+										일괄 청구됩니다.
+									</p>
+								</td> 
+							</tr>
+						</tbody>
+					</table>	
+					<p class="check"><label for="label_agr_private1"><input type="radio" value="" id="label_agr_private1" name="sTotalPoint_Agree"  onclick="rad_sTotalPoint_aggYn('Y')" />약관동의</label> <label for="label_agr_private2"><input type="radio" value="" id="label_agr_private2" name="sTotalPoint_Agree" onclick="rad_sTotalPoint_aggYn('N')" />동의안함</label></p>
+				<input type="hidden" name="sTotalPointUseYn" value="" />
+				<p class="stit">
+					<img src="/images/cd/shw/app/txt_step2_7_2.gif" width="202" height="14" alt="카드론 이용동의를 확인해주세요." />
+					<!--<img src="images/cd/shw/app/txt_step2_7_3.gif" width="202" height="14" alt="09. 카드론 이용동의를 확인해주세요." />-->
+				</p>
+				<table summary="카드론 이용동의를 하는 게시판입니다." class="table_app2 marB20">
+					<caption>카드론 이용동의</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr class="h94">
+							<th scope="row" class="vAlignT"><span class="padL14">카드론 이용동의</span></th>
+							<td>
+								<p class="ex1">카드론 이용에 미리 동의한 회원에 한하여 당사가 정하는 금액 범위 내에서 카드론을 신청·이용할 수 있습니다.<br />
+								카드론 이용에 동의하지 않은 회원이 향후 <strong>카드론을 이용하려면?별도로 영업점 방문, 법정신분증 사본 <br /><!-- SR내역 12.12.20 -->
+								제출등의 절차를 거쳐</strong> 카드론 이용에 동의하여야 합니다.</p>
+								<p class="marL10"><input type="checkbox" id="cardLoanYn" name="cardLoanYn"   value="Y" title="카드론 이용동의 선택" /> <label for="cardLoanYn">동의합니다.</label></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>	
+				
+			<p class="alignC padB47">
+				<a href="javascript:movePage();"><img src="/images/cd/shw/app/btn_cancel.gif" width="54" height="28" alt="취소" /></a>
+				<a href="javascript:apply_total_validation();"><img src="/images/cd/shw/app/btn_ok.gif"  width="54" height="28" alt="확인" /></a>
+			</p>
+			
+			</div>
+		</div>
+		<div class="tip">
+			<div class="cardBox">
+				<img src="${cardInfo.bestImg02}"  width="110" height="69" alt="카드" />
+				<div id="cardLayout1">배경카드1</div>
+				<div id="cardLayout2">배경카드2</div>
+				<div id="cardLayout3">배경카드3</div>
+				<div id="cardLayout4">배경카드4</div>
+				<div id="cardLayout5">배경카드5</div>
+
+				<div id="cardLayout6">배경카드6</div>
+				<div id="cardLayout7">배경카드7</div>
+				<div id="cardLayout8">배경카드8</div>
+				<div id="cardLayout9">배경카드9</div>
+				<div id="cardLayout10">배경카드10</div>
+				<img src="/images/cd/shw/app/making.png" alt="marking" class="marking png24" />
+			</div>
+			<p>신청하신 카드가 완성되어 갑니다.<br />약 <b>5분</b> 정도 남았습니다. </p>
+			<img src="/images/cd/shw/app/layer_tip1.png" alt="TIP! 참고하세요! 개인 기본정보에서 성명(영문)을 꼭! 작성해주세요. 필수입력사항(체크표기되어 있는 항목)은 빠짐 없이 작성해주세요." class="png24" />
+		</div>
+		
+<!-- SR내역 12.12.20 -->
+		<!-- 121203 추가 --> 
+		<!-- 레이어 영역 --> 
+		<div class="pop_l_position pop_l_wrap_alert" id="id_layer01" style="display:none"> 
+			<div class="pop_l_wrap"> 
+				<p class="img_l_pop flag_tl"></p> 
+				<p class="img_l_pop flag_tr"></p> 
+				<p class="img_l_pop flag_bl"></p> 
+				<p class="img_l_pop flag_br"></p> 
+				<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="카드정보 안내 레이어 닫기" /> 
+				<p class="alignC padT50"><img src="/images/cd/h1_layer_sunpoint_title.png" alt="지금 신청중이신 카드는 선포인트/세이브 비대상 카드입니다." /></p> 
+				<p class="alignC padT30">본 카드의 사용금액은 선포인트/세이브 포인트 <br />적립이 되지 않으니 유의하시기 바랍니다.</p> 
+				<p class="alignC padT30"><a href="/index.do?menuId=NHPIMSSCMS005" target="_blank" title="새창"><img src="/images/common/btn_s_savepoint01.png" alt="선포인트 대상카드 보기" /></a> <a href="/index.do?menuId=NHPIMSSCMS009" target="_blank" title="새창"> <img src="/images/common/btn_s_savepoint02.png" alt="세이브 대상카드 보기" /></a></p> 
+			</div> 
+		</div>
+		<!-- 레이어 영역 --> 
+		<!-- //121203 추가 -->
+<!--// SR내역 12.12.20 -->
+		
+	</div>
+</form>
+</div> 
+<div class="footerBox">
+	<div class="footer">
+		<img src="/images/cd/shw/footer/txt_copyright.gif" alt="Copyright ⓒ 2013 SAMSUNGCARD Corp. All Rights Reserved." width="289" height="10" class="padT15" />
+		<span><img src="/images/cd/shw/footer/logo_samsung.gif" width="107" height="19" alt="Samsung" /></span>
+	</div>
+</div>
+
+</body>
+</html>
+

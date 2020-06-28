@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%-- JSP import or info --%>
+<%@ page import="java.util.*" %>
+<%
+	String resultMessage = (String)request.getAttribute("resultMessage");
+	String user_name = (String)request.getAttribute("user_name");
+	String platinumGrade = (String)request.getAttribute("platinumGrade");
+	String webCallYn = (String)request.getAttribute("webCallYn");
+	String to_date = (String)request.getAttribute("to_date");
+	String loginCheck = (String)request.getAttribute("loginCheck");
+	String isAbnormal = "";
+
+	resultMessage = resultMessage==null?"":resultMessage.trim();
+
+	if(request.getAttribute("isAbnormal") != null) {
+		isAbnormal = (String)request.getAttribute("isAbnormal");
+	}
+%>
+<html lang="ko" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>공인인증 - 삼성카드</title>
+<script type="text/javascript">
+	function onLoad() {
+		var form = certResultForm;
+
+<% if("Y".equals(isAbnormal)) { %>
+		alert("공인인증에 실패하였습니다.");
+		parent.certForm.loadCnt.value = "0";
+
+		return;
+<% } else {
+		if("".equals(resultMessage)) { %>
+
+		parent.certForm.isCertVerified.value = "Y";
+		parent.changeStatusToLogin("<%=platinumGrade%>", "<%=user_name%>");
+
+		try {
+			//인증 완료후 호출하는 메소드
+			if(parent.gongin_check_set) {
+				parent.gongin_check_set('${loginCheck}');
+			}
+		} catch (e) {}
+
+<%		} else { %>
+
+		alert(document.getElementById("certResultMessage").value);
+
+<% 		}
+	} %>
+		parent.certForm.loadCnt.value = "0";
+	}
+</script>
+</head>
+<body onload="onLoad();">
+<form name="certResultForm">
+	<input type="hidden" id="certResultMessage" name="resultMessage" value="<%=resultMessage%>" />
+	<input type="hidden" name="user_name" value="<%=user_name%>" />
+	<input type="hidden" name="platinumGrade" value="<%=platinumGrade%>" />
+	<input type="hidden" name="webCallYn" value="<%=webCallYn%>" />
+	<input type="hidden" name="to_date" value="<%=to_date%>" />
+	<input type="hidden" name="loginCheck" value="<%=loginCheck%>" />
+	<input type="hidden" name="isAbnormal" value="<%=isAbnormal%>" />
+</form>
+</body>
+</html>

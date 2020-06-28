@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_rcpt_statement.png" alt="명세서 수령방법을 변경하실 수 있습니다" /></h1><!-- 100126 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					<h2><img src="/images/mh/h2_email_member.png" alt="회원님의 이메일 주소를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>이메일로 매월 결제금액을 안내해 드리겠습니다.</p></li>
+							<li><p>아래에서 회원님의 이메일 주소를 다시 한번 확인해주시고, 이메일 주소가 바뀐 분께서는<br />정확한 이메일 주소를 수정해주시길 바랍니다.</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt20" summary="명세서 수령방법을 변경하고 이메일 주소를 확인하는 게시판입니다.">
+						<caption>명세서 수령방법 변경</caption>
+						<colgroup><col width="*" /><col width="78%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>명세서 수령방법 변경</p></th>
+								<td>
+									<p>
+									<label for="label_statement1">
+									<input name="mb_rcp_type" value="2" type="radio" class="rdo" id="label_statement1" /> 이메일 이용대금명세서</label>
+									<label for="label_statement2" class="ml10">
+									<input name="mb_rcp_type" value="1" type="radio" class="rdo" id="label_statement2" /> 우편 이용대금명세서</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>이메일 주소 확인</p></th>
+								<td><p>
+									<span class="input_email">
+									<input name="emailid" onchange="mailcheck='N'" maxlength="48" type="text" class="txt" id="label_email" value="" title="이메일 아이디"
+									onkeypress="checkTypes(this, 'URL');"
+									onblur="checkTypesOnBlur(this, 'URL');"
+									style="ime-mode:disabled"
+									/>&nbsp;@&nbsp;
+									<input name="emailaddr" onchange="mailcheck='N'" maxlength="30" type="text" class="txt" value="" title="email 공급자 직접입력"
+									onkeypress="checkTypes(this, 'URL');"
+									onblur="checkTypesOnBlur(this, 'URL');"
+									style="ime-mode:disabled"
+									/>
+									<select name="selemail" onchange="mailcheck='N';sel(this)" style="width:100px" title="email 공급자 선택">
+										<option selected value="">선택하세요</option>
+						                  <option value="dreamwiz.com">드림위즈</option>
+						                  <option value="empal.com">엠팔</option>
+						                  <option value="hanmail.net">한메일(다음)</option>
+						                  <option value="hotmail.com">hotmail</option>
+						                  <option value="korea.com">코리아</option>
+						                  <option value="lycos.co.kr">라이코스</option>
+						                  <option value="nate.com">네이트</option>
+						                  <option value="naver.com">네이버</option>
+						                  <option value="netian.com">네띠앙</option>
+						                  <option value="orgio.net">오르지오</option>
+						                  <option value="paran.com">파란</option>
+						                  <!-- <option value="yahoo.co.kr">야후</option>  -->
+				                            <option value="">직접입력</option>
+									</select></span>
+                                    <a href="javascript:searchEmail()" class="btn btn_s_white mt_btn" title="새창"><span>중복조회</span></a>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:submit();" class="btn btn_blue" title="새창"><span>변경</span></a>
+							</p>
+						</div>
+
+						<div class="line_lgray_p0 mt15">&nbsp;</div>
+						<div class="btnset mt5">
+							<div class="btnl t_desc04">핫메일(Hotmail)을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 <br />수신되지 않을 수 있으니 가급적 다른 메일계정을 등록하여 주시기 바랍니다.</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_note_check.png" alt="주의사항을 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>결제일까지 이메일 이용대금명세서를 수령하지 못하신 회원님께서는 회원 신상정보에<br />이메일 주소가 정확히 기재되어 있는지 다시 한번 확인해주시기 바랍니다. </p></li>
+                            <li><p>홈페이지 <a href="javascript:goTabPage('NHPIMMHPIB001');" class="a_point">이용대금명세서 조회</a>에서도 회원님의 이용대금명세서 내역을 조회하실 수 있습니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

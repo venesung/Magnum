@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">전화요금납부 서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/ss/h1_phone_payment.jpg" alt="편리한 공과금 카드납부 전화요금도 삼성카드로 전화요금 납부서비스 - LG U+ 전화요금 자동납부 신청하세요" /></div><!-- 정기일반영 13.04.25 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- // 100126 -->
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSTEL001M002',true);">전화요금 납부신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSTEL001M003',true);">납부내역조회</a></li><!-- 접근성 TF 메뉴명 변경 VOC 12.11.27 -->
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSTEL001M004',true);">SHOW 요금제 안내 및 신청</a></li>-->
+		</ul>
+	</div>
+</div>
+
+<div class="content_block content_block_tab clfix">
+	<div class="bg_step_phonebill bg_step_phonebill02">
+		<ol class="none">
+			<li>카드선택</li>
+			<li><abbr>현재단계</abbr>전화번호입력</li>
+			<li>신청내용확인</li>
+			<li>신청완료</li>
+		</ol>
+	</div>
+</div><!-- 접근성 TF Step 위치 변경 VOC 12.11.27 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">	<!-- 상단변경 -->
+	<h2><img src="/images/ss/h2_phone_payment01.png" alt="납부 신청하실 전화번호를 입력하세요" /></h2>
+	<div class="content_block_inner">
+		<!-- 20100126 -->
+		<!--div class="bg_step_phonebill bg_step_phonebill02">
+			<ol class="none">
+				<li>카드선택</li>
+				<li><abbr>현재단계</abbr>전화번호입력</li>
+				<li>신청내용확인</li>
+				<li>신청완료</li>
+			</ol>
+		</div-->
+		<!-- //20100126 -->
+
+		<div class="tb_exp pos_rel">
+			<p class="tb_exp">
+				<span><strong class="t_black">아래 표시된 전화번호에 대한 결제카드 및 가입자명을 수정할  수 있습니다.</strong></span><br />				
+				<span class="t_desc03">이동전화 (LG U+)는 본인명의의번호만 신청이 가능합니다.</span><!-- 정기일반영 13.04.25 -->
+			</p>
+		</div>
+		
+
+		<table class="dtable01 dtable_inputfield" summary="통신사, 지역번호, 전화번호, 가입자명을 선택하여 해당 전화번호에 대한 결제카드 및 가입자명을 수정할 수 있는 게시판입니다.">
+		<caption>결제카드 및 가입자명 수정 게시판</caption>
+		<colgroup><col width="15%" /><col width="15%" /><col width="50%" /><col width="20%" /><!-- 100223 --></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">통신사</th>
+				<th scope="col">지역번호</th>
+				<th scope="col">전화번호</th>
+				<th scope="col">가입자명</th>
+				<!-- 요금제선택필드삭제100223 -->
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">LG U+				
+				<input type="hidden" name="corpGubun1" value="3" />
+				</td>
+				<!-- 
+					<select title="통신사 선택" name="corpGubun<%=i %>" onchange="validMatching();">
+						<option value="" selected>선택</option>
+						<option value="5">KT</option>
+						<option value="1">SKT</option>
+						<option value="2">Olleh</option>
+						<option value="3">LG U+</option>
+					</select>
+				</td>	
+					 -->				
+				<td></td>
+				<td><span class="input_phone"><input type="text" name="telNo1" class="txt" value="" maxlength="4" title="전화번호 앞자리" />&nbsp;-&nbsp;<input type="text" name="telNo2" class="txt" value="" maxlength="4" title="전화번호 뒷자리" style="ime-mode:disabled;" /></span></td>
+				<td><span class="input_name"><input type="text" name="ownName" class="txt" value="" maxlength="10" title="가입자명" /></span></td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnset">
+			<div class="btnr">
+				<a href="javascript:goto(1,self.document.frm);" class="btn btn_blue"><span>확인</span></a>
+				<a href="javascript:goto(2,self.document.frm);" class="btn btn_white"><span>취소</span></a>
+			</div>
+		</div>
+
+		<ol class="list_no01 list_cvc">
+			<li><p>한번에 5개까지 신청하실 수 있습니다.</p></li>
+			<li><p>실제전화 가입자와 입력하신 가입자명이 상이할 경우 정상처리 되지 않습니다.</p></li>
+			<li><p>LG U+ 전화요금을 현재 신한,현대,시티카드로 결제하시고 계시면 처리되지 않습니다.</p></li><!-- 120905 수정 -->
+			<!-- <li><p>KT에서 가입한 Olleh핸드폰은 KT 통신사로 신청 바랍니다.</p></li> --><!-- 130425 삭제 -->
+			<li><p>LG U+의 요금제가 가족합산 요금제(가족사랑 할인)인 경우는 통신사로 신청 바랍니다.</p></li>
+			<li><p>LG U+ 대리점에서 가입한 별정통신업체의 핸드폰은 통신사로 신청 바랍니다.</p></li>
+			<li><p>통신요금 매출표 접수 시점에서 연결 카드가 사용 정지 중일때는 회원님께서 보유한 다른 정상카드로 변경 <br />
+			처리되며 해당 청구분부터 변경된 카드로 결제됩니다.</p></li>
+			<!-- <li><p>통신요금의 경우 한도 승인 절차가 없는 무승인 가맹점에서 발생하는 매출표로써 회원님의 한도와는 <br />
+			무관하게 운영됩니다.</p></li> --><!-- 130425 삭제 -->
+		</ol>
+
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

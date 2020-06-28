@@ -1,0 +1,58 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: "삼성SDS 김동현 사원"
+ * Created on 2009. 12. 15.
+ *  세션 정보보기
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>삼성카드</title>
+<script type="text/javascript">
+function detail(){
+	var url='/hp/im/ms/pop/NHPIMMSPOPVIEW001.do';
+	var state = "scrollbars=no,resizable=no,width=470,height=470";
+	window.open(url, '', state);
+}
+</script>
+</head>
+<body onload="detail();">
+	<table border="1" width="">
+			<tr><td>코드명</td>				<td>필드명</td>			  		<td>객체</td>			<td>내용</td></tr>
+			<tr><td>USER_ID</td>			<td>아이디</td>					<td>Member</td>			<td>${userid}</td></tr>
+			<tr><td>IDEN_NO</td>			<td>주민번호(법인번호)</td>		<td>Member</td>			<td>${idenNo}-${_idenNo}</td></tr>
+			<tr><td>USER_NAME</td>			<td>이름(사업장명)</td>			<td>Member</td>			<td>${userName}</td></tr>
+			<tr><td>USER_GUBUN</td>			<td>사용자구분</td>				<td>Member</td>			<td>${userGubun}</td></tr>
+			<tr><td>EMAIL</td>				<td>이메일</td>					<td>Member</td>			<td>${email}</td></tr>
+			<tr><td>REGIST_STATUS</td>		<td>등록상태</td>				<td>Member</td>			<td>${registStatus}</td></tr>
+			<tr><td>SERVICE2_STATUS</td>	<td>POWERmember</td>			<td>Member</td>			<td>${service2Status}</td></tr>
+			<tr><td>SERVICE3_STATUS</td>	<td>MVPmember</td>				<td>Member</td>			<td>${service3Status}</td></tr>
+			<tr><td>SERVICE4_STATUS</td>	<td>SF2000member</td>			<td>Member</td>			<td>${service4Status}</td></tr>
+			<tr><td>SERVICE5_STATUS</td>	<td>LEASEmember</td>			<td>Member</td>			<td>${service5Status}</td></tr>
+			<tr><td>CUSTOMER_NO</td>		<td>고객번호</td>				<td>Member</td>			<td>${customerNo}</td></tr>
+			<tr><td>ENGLISH_NAME</td>		<td>영문이름</td>				<td>Member</td>			<td>${englishName}</td></tr>
+			<tr><td>BONUS_POINT</td>		<td>보너스포인트</td>			<td>Member</td>			<td>${bonusPoint}</td></tr>
+			<tr><td>PREMIUM_GRADE</td>		<td>프리미엄회원등급</td>		<td>Member</td>			<td>${pGrade}</td></tr>
+			<tr><td>TEMP_ID</td>		  	<td>간편가입 아이디</td>			<td>Member</td>			<td>${tempId}</td></tr>
+			<tr><td>V_IDEN_NO_YN</td>	  	<td>가상주민번호여부</td>		<td>Member</td>			<td>${vIdenNoYn}</td></tr>
+			<tr><td>SIMPLE_JOIN</td>	  	<td>간편가입 여부</td>			<td>Member</td>			<td>${simpleJoin}</td></tr>
+			<tr><td>FAMILYSVC_MEMBER</td> 	<td>관계사/페밀리카드보유자</td>	<td></td>				<td>${familtsvcMember}</td></tr>
+			<tr><td>BUSINESS_NO</td>		<td>가맹점번호</td>				<td>ChainMember</td>	<td>${cBusinessNo}</td></tr>
+			<tr><td>FEE_RATE</td>			<td>가맹점 수수료율</td>			<td>ChainMember</td>	<td>${feeRate}</td></tr>
+			<tr><td>BOARD_NAME</td>			<td>간판이름</td>				<td>ChainMember</td>	<td>${boardName}</td></tr>
+			<tr><td>BUSINESS_NO</td>		<td>사업자번호</td>				<td>PublicMember</td>	<td>${pBusinessNo}</td></tr>
+			<tr><td>COPORATE_ID</td>		<td>법인번호</td>				<td>PublicMember</td>	<td>${coporateId}</td></tr>
+			<tr><td>MEMBERSHIP_GB</td>		<td>멤버쉽 구분</td>				<td>PublicMember</td>	<td>${membershipGb}</td></tr>
+			<tr><td>CORP_GUBUN</td>			<td>법인조직코드</td>			<td>PublicMember</td>	<td>${corpGubun}</td></tr>
+			<tr><td>USER_NAME</td>			<td>법인 사용자 이름</td>			<td>PublicMember</td>	<td>${pUserName}</td></tr>
+			<tr><td>IDEN_NO</td>			<td>법인 사용자 주민번호</td>		<td>PublicMember</td>	<td>${pIdenNo}</td></tr>
+			<tr><td>CORP_RES_YN</td>		<td>법인 정보</td>				<td>PublicMember</td>	<td>${corpResYn}</td></tr>
+	</table>
+</body>
+</html>

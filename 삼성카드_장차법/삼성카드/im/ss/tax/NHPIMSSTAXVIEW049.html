@@ -1,0 +1,99 @@
+
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMSSTAXVIEW005.jsp(세정담당자 로그인 화면)
+ * Author: "SDS 문철환 사원"
+ * Created on 2010. 1. 30.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.scard.hp.im.ss.tax.vo.NHPIMSSTAX001VO"%>
+<%@page import="java.util.Iterator"%>
+		
+<div id="tab_title"></div>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/common_security.jsp"%>
+		<%
+			String idenNo = (String)request.getAttribute("idenNo") != null ? (String)request.getAttribute("idenNo") : "";
+			String username = (String)request.getAttribute("username") != null ? (String)request.getAttribute("username") : "";
+			String password = (String)request.getAttribute("password") != null ? (String)request.getAttribute("password") : "";
+
+		%>
+	<!-- tab_script -->
+	<div id="tab_script">
+
+
+		<script type="text/javascript" language='javascript'>
+			var sign="";
+		
+			function credit_pop(){
+			
+				var frm = document.login_form ;
+				var cnt = frm.loadcnt.value;
+				var ssn = '<%=idenNo%>';
+
+			  	frm.plain.value="지방세수원시로그인체크";
+			  	
+				//sign = Sign_with_vid_web(0, frm.plain.value, s, ssn);	
+				
+				frm.iden_no.value = ssn;
+
+				XecureWeb.SetUITarget(document.body);
+				
+				//Sign_with_vid_web(0, frm.plain.value, ssn, s, signCallBack);
+				Sign_with_vid_user(_aOptionDefault_SCARD, frm.plain.value, s, signCallBack); //20120207 인증서 처리 to-be 적용
+				
+
+			}
+
+			function signCallBack(sign){
+				if ( sign == "" || sign == null ) {
+					tabSubmit("/hp/im/ss/tax/tax002.do?method=shwoLoginView",document.login_form);
+					return;
+				}
+				var frm = document.login_form ;
+				frm.signed_msg.value	= sign;
+				frm.vid_msg.value		= send_vid_info();
+				frm.loadcnt.value		= "1";
+				frm.SignGubun.value		= "YES";
+				
+				document.login_form.action="/hp/im/ss/tax/tax002.do?method=adminLoginForSuwon";
+
+				tabSubmit(document.login_form.action,document.login_form);
+			}
+
+			function $tabOnLoad() {
+				
+				 credit_pop();
+			}
+		</script>
+
+	</div>
+<div id="xecure_obj" ></div>
+<script type="text/javascript" src="/xwuni/xecureweb_up.js"></script>
+<script type="text/javascript" language='javascript'>
+	<%=v.ServerCertWriteScript()%>
+
+	PrintObjectTag (null,document.getElementById('xecure_obj'));
+	var useTranskey = false;
+</script>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">	<!-- //100126 -->
+
+														<form name="login_form" method="post"  autocomplete="off">	
+	<input type="hidden" name="plain" />
+	<input type="hidden" name="organ" />
+	<input type="hidden" name="signed_msg" />
+	<input type="hidden" name="vid_msg" />
+	<input type="hidden" name="loadcnt" value="0" />
+	<input type="hidden" name="SignGubun" />
+	<input type="hidden" name="iden_no" value="" />
+	<input type="hidden" name="username" value="<%=username %>" />
+	<input type="hidden" name="password" value="<%=password %>" />
+						</form>				
+				</div>
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

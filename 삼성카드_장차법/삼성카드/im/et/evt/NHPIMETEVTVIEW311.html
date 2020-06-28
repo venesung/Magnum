@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>금융  이벤트 - 삼성카드</title>
+<style type="text/css">
+body, *	 {margin:0; padding:0; color:#666; font-size:12px; font-family:"돋움"}
+a, img	{border:0 none}
+input {height:16px; padding:2px 4px 0 0; border:0 none; text-align:right}
+.fs_renewal	{position:relative; width:728px}
+.fs_renewal	p.p_txt	{position:absolute; left:90px; top:523px; color:#999; font-size:11px; letter-spacing:-1px}
+.fs_renewal	strong	{font-size:11px}
+.fs_renewal	.t_point_blue	{color:#214C9C}
+.fs_renewal	div	{position:absolute; left:273px; top:580px}
+.fs_renewal	div	p.mt10	{margin-top:10px}
+</style>
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="/js/common-main.js"></script>
+<script type="text/javascript" src="/js/common-hp-util.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+
+<script type="text/javascript">
+
+	function frmCheck(){
+		var frame = document.frm;
+
+		if(frame.string1.value ==""){
+			alert("현금서비스 이용가능금액을 입력해주세요.");
+			frame.string1.focus();
+			return false;
+		}
+
+		if(frame.string2.value ==""){
+			alert("현금서비스 이자율을 입력해주세요.");
+			frame.string2.focus();
+			return false;
+		}
+
+		if(frame.string3.value ==""){
+			alert("현금서비스 이자율을 입력해주세요.");
+			frame.string3.focus();
+			return false;
+		}
+
+		if(frame.string4.value ==""){
+			alert("삼성카드론 이용가능금액을 입력해주세요.");
+			frame.string4.focus();
+			return false;
+		}
+		if(frame.string5.value ==""){
+			alert("삼성카드론 이용가능금액을 입력해주세요.");
+			frame.string5.focus();
+			return false;
+		}
+		if(frame.string6.value ==""){
+			alert("삼성카드론 이용가능금액을 입력해주세요.");
+			frame.string6.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+	var sLayerPopFocusId = "";
+	//신청 용
+	function financeOpenEvent(returnId){
+
+		if(!frmCheck()){
+			return;
+		}
+		var frame = document.frm;
+
+
+		var params="";
+		params+="string1="+Number(delComma(frame.string1));
+		params+="&string2="+frame.string2.value;
+		params+="&string3="+frame.string3.value;
+		params+="&string4="+Number(delComma(frame.string4));
+		params+="&string5="+frame.string5.value;
+		params+="&string6="+frame.string6.value;
+
+		sLayerPopFocusId = returnId;
+
+		callJson("financeOpenEvent","com.scard.hp.im.et.evt.web.NHPIMETEVT003Ctrl","financeOpenEvent",params,null,null,null,true);
+	}
+	function jsonCallback(callId,result){
+
+		parent.submit_eventLog();
+
+		var param = "";
+		var msg ="";
+		switch(callId){
+			case "financeOpenEvent":
+
+
+				if(result.successYn=="Y"){
+					parent.openLayerPopupFocus("/hp/im/et/evt003.do?method=resLayerPop&resType=3", '', sLayerPopFocusId);
+				}else{
+					  //이벤트 결과  1: 당일 내 응모 고객  2: 이벤트 기존 당첨 고객  3:이벤트 당첨  4:이벤트 꽝 5:한도금액 입력 오류
+					switch(result.result){
+
+						case "1":
+							msg =result.usrName+" 회원님은 이미 응모하셨습니다.\n"
+							+"이벤트 응모는 1일 1회만 가능합니다.\n";
+							alert(msg);
+							break;
+						case "2":
+							msg =result.usrName+" 회원님은 "+result.applyDt+"에 서비스포인트\n"
+							+result.goodsName+"점에 이미 당첨 되셨습니다.\n"
+							+"이벤트 당첨은 응모기간 중 1회만 가능합니다\n"
+							+"당첨된 포인트는 8월 10일 확인 가능합니다.";
+							alert(msg);
+							//openLayerPopup("/hp/im/et/evt003.do?method=resLayerPop&resType=2");
+							break;
+						case "4":
+
+							parent.openLayerPopupFocus("/hp/im/et/evt003.do?method=resLayerPop&resType=4", '', sLayerPopFocusId);
+							break;
+						case "5":
+							msg ="안타깝습니다. 입력하신 이용가능금액ㆍ이자율이\n"
+								+"고객님의 이용가능금액ㆍ이자율과 다릅니다.\n"
+								+"다음 기회를 이용 해 주세요";
+							alert(msg);
+							break;
+						case "6":
+
+							msg ="회원님은 현재 상성카드 금융서비스를 \n"
+								+"이용하실 수 있는 한도가 없습니다.\n"
+								+"고객상담센터 지역번호없이 1588-8700";
+							alert(msg);
+							break;
+					}
+				}
+			break;
+		}
+	}
+	</script>
+
+
+</head>
+<body>
+<div class="fs_renewal">
+<img src="/event/fsopenevent/fs_renewal_100624.jpg" alt="대출가능 금액과 이자율 조회하고 포인트 받자!" usemap="#map_btn" />
+<p class="p_txt">[가능 금액/이자율조회]에서 조회하신 ${userName} 회원님의 <strong>이용가능금액과 이자율</strong><strong class="t_point_blue">(할인적용 전)</strong>을 입력해주세요.</p>
+<map name="map_btn" id="map_btn">
+<area shape="rect" alt="응모하기" coords="540,648,620,682" href="javascript:financeOpenEvent('NHPIMETEVTVIEW311_L01');" />
+</map>
+<form name="frm" action="">
+<div>
+	<p>
+		<input type="text" value="" name="string1" style="width:100px; margin-right:95px;" title="현금서비스 이용가능금액" onKeyUp="addComma(this);" />
+		<input type="text" value="" name="string2" maxlength="2" style="width:41px; margin-right:10px" title="현금서비스 이자율(할인적용전) - 소수점앞자리까지" />
+		<input type="text" value="" name="string3" maxlength="2" style="width:41px" title="현금서비스 이자율(할인적용전) - 소수점자리" />
+	</p>
+	<p class="mt10">
+		<input type="text" value="" name="string4" style="width:100px; margin-right:95px;" title="삼성카드론 이용가능금액" onKeyUp="addComma(this);" />
+		<input type="text" value="" name="string5" maxlength="2" style="width:41px; margin-right:10px" title="삼성카드론 이자율(할인적용전) - 소수점앞자리까지" />
+		<input type="text" value="" name="string6" maxlength="2" style="width:41px" title="삼성카드론 이자율(할인적용전) - 소수점자리" />
+	</p>
+</div>
+</form>
+</div>
+</body>
+</html>
+
+
+

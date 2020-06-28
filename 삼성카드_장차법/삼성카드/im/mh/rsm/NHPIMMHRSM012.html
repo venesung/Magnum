@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>자유결제 서비스 이용약관 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+function open_url2(url) {
+	var link = false;
+
+	if (window.ActiveXObject){
+		link = new ActiveXObject("Microsoft.XMLHTTP");
+	} else if (window.XMLHttpRequest) {
+		link = new XMLHttpRequest();
+	}
+	else
+		return false;
+	link.open('GET', url, false);
+	link.send(null);
+	response(link);
+}
+
+function response(link){
+	if (link.readyState == 4) {document.write(link.responseText);}
+}
+//]]>
+</script>	
+</head>
+<body>
+ 
+<div id="pop_wrap">
+	<!-- header -->
+	<!--div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_agree_freebilling.png" alt="자유결제 서비스 이용약관 입니다" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_agree_freebilling.png" alt="자유결제 서비스 이용약관 입니다" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445">
+		
+		<div class="content_block content_block_card clfix">
+			<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" tabindex="0"><script type="text/javascript">open_url2("/html/agreement/html_freepayment_app.html")</script><noscript><a href="/agreement/html_freepayment_app.html" title="새창" target="_blank">가맹점 회원가입 약관 동의서</a></noscript></div>
+			</div></div>
+			<p class="btn_print02">
+				<a href="javascript:window.print();"><img src="/images/common/btn_n_print02.png" alt="인쇄" /></a>
+				<a href="javascript:window.close();"><img src="/images/common/btn_n_cancel02.png" alt="취소" /></a>
+			</p>
+		</div> 
+		
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+ 
+</div>
+ 
+</body>
+</html>
+

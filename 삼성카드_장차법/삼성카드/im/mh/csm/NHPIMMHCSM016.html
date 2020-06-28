@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_checkcard_settlementday_change.png" alt="체크카드 결제 계좌를 조회ㆍ변경 하실 수 있습니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li class="on"><a href="javascript:goTabPage('NHPIMMHCSM015','false');">결제계좌변경</a></li>
+                                <li><a href="javascript:goTabPage('NHPIMMHCSM018','false');">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+ 
+					<div class="top_step_billing_account top_step_billing_account01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>은행선택 및 계좌번호입력</strong></li>
+							<li>신청 및 변경완료</li>
+						</ol>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"> 
+					<h2><img src="/images/mh/h2_billing_account_change01.png" alt="고객님의 정보를 입력해 주세요" /></h2>
+					<div class="content_block_inner"> 
+						<div class="tb_exp clfix">
+							<h3>정보 확인</h3>
+						</div>
+						<table class="dtable01" summary="보유카드명,결제은행명,계좌번호로 구성된 고객님의 정보를 확인하는 게시판입니다.">
+						<caption>고객 정보 확인</caption>
+						<colgroup><col width="200" /><col width="*" /><col width="200" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">보유카드명</th>
+								<th scope="col">결제은행명</th>
+								<th scope="col">계좌번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">/</td>
+								<td>0</td>
+								<td class="t_no">XXXXXXX</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						
+						<div class="tb_exp clfix mt30">
+							<h3>은행선택 및 계좌 번호 입력</h3>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="변경하실 은행선택 및 계좌 번호를 입력하는 게시판입니다">
+						<caption>변경하실 은행선택 및 계좌 번호 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>변경하실 은행</p></th>
+								<td><p class="choice_bank">
+									<select name="mb_bank" title="변경하실 은행 선택" id="label_bankname">
+										<option value="">선택</option>
+										<option value="04">국민</option>
+										<option value="03">기업</option>
+										<option value="11">농협중앙회</option>
+										<option value="12">지역농협</option>
+										<option value="93">새마을금고</option>
+										<option value="88">신한</option>
+										<option value="20">우리</option>
+										<option value="05">외환</option>
+										<option value="23">SC제일</option>
+										<option value="81">하나</option>
+										<option value="39">경남</option>
+										<option value="32">부산</option>
+										<option value="31">대구</option>
+										<option value="34">광주</option>
+										<option value="37">전북</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>계좌번호</p></th>
+								<td>
+									<p>
+									<input type="text" name="mb_account" minlength="1" maxlength="22" class="txt" id="label_account" value="" title="계좌번호 입력" />
+									<span id="usafeon_mb_account"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="tb_exp clfix mt30">
+							<h3>추가 정보 입력</h3>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="관계,예금주명,예금주,주민등록번호,사업자번호,예금주 연락처(전화번호,휴대폰 번호)등의 추가 정보를 입력하는 게시판입니다.">
+						<caption>추가 정보 입력</caption>
+						<colgroup><col width="115" /><col width="110" /><col width="100" /><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>관계</p></th>
+								<td colspan="2"><p>
+									<select title="관계 선택" id="label_relationships" name="mb_relation" onchange="return chgRelation2(this.value);">
+										<option value="">선택</option>
+										<option value="01">본인</option>
+										<option value="02">배우자</option>
+										<option value="03">부</option>
+										<option value="04">모</option>
+										<option value="05">자녀</option>
+										<option value="06">사업자</option>
+										<option value="07">보증인</option>
+										<option value="09">조부모</option>
+										<option value="10">형제자매</option>
+										<option value="11">손자손녀</option>
+										<option value="12">사위/며느리</option>
+										<option value="13">시부모</option>
+										<option value="14">장인/장모</option>
+										
+									</select>
+								</p></td>
+								<th scope="row"><p>예금주명</p></th>
+								<td><p class="input_name"><input type="text" class="txt" title="예금주명" id="label_holder_name" name="mb_owner" maxlength="15" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2"><p>예금주</p></th>
+								<td id="tdIden" style="font-weight:bold;"><p><label for="label_idno"><input type="radio" class="rdo" value="1" id="label_idno" name="mb_nGubun" checked="checked" onclick="selNGubun(this.value);" title="주민등록번호" />주민등록번호</label></p></td>
+								<td colspan="3">
+								<div id="divNo" style="display:inline;">
+								<p class="input_idno">
+								<!-- 20130411 웹접근성(장차법)  수정 -->
+								<!-- <input type="text" class="txt" maxlength="6" value="" title="주민등록번호 앞자리" name="jumin1" onkeyup="if(this.value.length == 6) form.jumin2.focus();" />&nbsp;-&nbsp; -->
+								<input type="text" class="txt" maxlength="6" value="" title="주민등록번호 앞자리" name="jumin1" />&nbsp;-&nbsp;
+								<input type="password" maxlength="7" class="txt" value="" title="주민등록번호 뒷자리" name="jumin2" />
+								<span id="usafeon_jumin1|jumin2"></span>
+								</p>
+								</div>
+								</td>
+							</tr>
+							<tr>
+								<td id="tdBusi"><p><label for="label_compno"><input type="radio" class="rdo" value="2" id="label_compno" name="mb_nGubun" onclick="selNGubun(this.value);" title="사업자번호" />사업자번호</label></p></td>
+								<td colspan="3">
+								<div id="divNo" style="display:none;">
+									<p class="input_compno">
+									<input type="text" class="txt" value="" title="사업자번호" name="business" maxlength="10" />
+									<span id="usafeon_business"></span>
+									</p>
+									<p class="t_desc04 mt5">사업자 번호로 등록된 공인인증서를 사용 하셔야 변경 가능합니다<br />사업자번호 10자리를 입력하여 주십시오</p>
+								</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2"><p>예금주 연락처</p></th>
+								<td id="tdCell" style="font-weight:bold;"><p><label for="label_handphone"><input type="radio" class="rdo" value="" id="label_handphone" name="rPhone" onclick="selPhone(2)" checked="checked" title="휴대폰번호" /> 휴대폰 번호</label></p></td>
+								<td colspan="3">
+								<div id="divPhone" style="display:inline;">
+								<p class="input_phone">
+									<fileTag:phoneSelect selectName="mobile1" selectValue="" gubun="2" />
+									&nbsp;-&nbsp;
+									<input type="text" class="txt" value="" title="휴대폰 가운데자리" name="mobile2" maxlength="4" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="휴대폰 뒷자리" name="mobile3" maxlength="4" />
+								</p>
+								</div>
+								</td>
+							</tr>
+							<tr>
+								<td id="tdPhone" style="font-weight:nomal;"><p><label for="label_tel"><input type="radio" class="rdo" value="" id="label_tel" name="rPhone" onclick="selPhone(1)" title="전화번호" /> 전화번호</label></p></td>
+								<td colspan="3">
+								<div id="divPhone" style="display:none;">
+								<p class="input_phone">
+									<fileTag:phoneSelect selectName="phone1" selectValue="" gubun="1" />
+									&nbsp;-&nbsp;<input type="text" class="txt" value="" title="전화번호 가운데자리" name="phone2" maxlength="4" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="전화번호 뒷자리" name="phone3" maxlength="4" />
+								</p>
+								</div>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="tb_exp clfix mt30">
+							<h3>공인인증서 선택</h3>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="공인인증서를 선택하는 게시판입니다.">
+						<caption>공인인증서 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>공인인증서</p></th>
+								<td>
+									<p class="fl_left"><label for="label_authentication1"><input type="radio" class="rdo" value="Y" id="label_authentication1" name="SIGN_GUBUN" checked="checked" onclick="check_cert(this.document.form);" onkeydown="checkEnter();" title="사용함" /> 사용함</label></p>
+									<p class="fl_right mr10"><a href="/hp/im/mh/csm/certInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="새창">공인인증서 이용방법</a> <a href="/hp/im/mh/csm/possibleCertInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="새창">사용가능한 공인인증서</a></p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<!-- btn -->
+						<div class="btnset">
+							<div class="btnl">
+								<ol class="list_desc">
+									<li><p>회원님의 정보 보안을 위해 본인확인이 필요합니다.</p></li>
+									<li><p>2007년 1월 시행되는 전자금융거래법 시행에 따른 출금이체에 대한 서면동의서<br />(전자 서명된 전자문서 포함)<br />징구 의무화에 따라 공인인증서를 사용 하셔야 자동이체 변경을 하실 수 있습니다.</p></li>
+								</ol>
+							</div>
+							<p class="btnr">
+                                <a href="javascript:submit(0)" class="btn btn_blue"><span>신청</span></a>
+                                <a href="javascript:goMyAccountInfo();" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_note_check.png" alt="주의사항을 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+					<ol class="list_no01">
+						<li><p>변경 완료 즉시 결제 계좌가 변경됩니다.<br />
+							   단, 변경 요청하신 계좌의 주민번호 및 계좌상태를 해당은행에 추가로 확인하여,<br />
+							   예금주의 주민번호가 일치하지 않거나 계좌번호 오류로 인하여 정상적으로 처리되지 않을 경우<br />
+							   자동이체가 해지처리 될 수 있으니 이점 유의하시기 바랍니다.</p></li>
+						<li><p>일반 체크카드(기본형)는 카드별 결제계좌 변경이 가능하며 그 외 금융기관 제휴형, CMA형 제휴형 체크카드의<br />
+							   결제정보 변경은 제휴사 고객상담센터 또는 삼성카드 고객상담센터(1588-8700)로 문의하시기 바랍니다.</p></li>
+						<li><p>증권사와 제휴된 가상계좌일 경우 증권사 출금 등록이 되어 있는 CMA계좌만 등록 가능합니다.</p></li>
+						<li><p><strong class="t_black">결제게좌 변경 서비스 가능시간</strong>은 월~금 09:00~20:30입니다. <span class="t_desc04">토/일/공휴일은 제외</span></p></li>
+						<li><p>결제계좌변경을 신청하신 후 반드시 <a href="javascript:goTabPage('NHPIMMHCSM005', 'true');" class="a_point">처리 결과 조회</a>를 확인하셔야 합니다.</p></li>
+					</ol>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

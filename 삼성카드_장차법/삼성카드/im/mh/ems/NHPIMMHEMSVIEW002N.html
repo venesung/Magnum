@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<div class="top_visual">
+
+	<h1 class="none">즉시결제서비스</h1>
+
+	<div class="h1_desc"><img src="/images/mh/h1_repay.jpg" alt="즉시결제서비스. 이번달 결제금액이 부담스러우신가요? 결제일 이전에 원하는 금액만 미리 결제하는 즉시결제 서비스를 이용해보세요" /></div>
+
+</div>
+
+
+<!--div id="flexObject" style="width: 99%"></div-->
+
+	<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 h60 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMMHEMSINFO','true');">즉시결제 서비스 안내</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMMHEMSS1','true');">카드회원 즉시결제 신청</a>
+				<!-- 
+				<ul class="sub_tab">
+					<li class="on"><a href="javascript:goTabPage('NHPIMMHEMSS2',true);">이용상품별 즉시결제</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHEMSS1',true);">이번달 결제금액 즉시결제</a></li>
+				</ul>
+				 -->
+			</li>
+			<li><a href="javascript:goTabPage('NHPIMMHEMS021','true');">할부금융회원 즉시결제 신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHEMS022','true');">처리결과 조회</a></li>
+		</ul>
+	</div>
+	<div class="top_step_repay_instant">
+		<ul>
+			<li class="first"><img src="/images/mh/midtitle_instant02.gif" alt="이용상품별 즉시결제 신청하기" /></li>
+			<li>이번달 결제금액 즉시결제 신청 <a href="javascript:goTabPage('NHPIMMHEMSS1',true);" class="btn btn_blue"><span>신청하기</span></a></li>
+		</ul>
+		
+	</div>
+	<!-- step -->
+	<div id="stepH" class="top_step_repay top_step_repay01">
+		<ol class="none">
+			<li id="stepH0"><abbr>현재단계</abbr> <strong>즉시결제 신청</strong></li>
+			<li id="stepH1">즉시결제 입금방법 선택</li>
+			<li id="stepH2">즉시결제 신청완료</li>
+		</ol>
+	</div>
+	<!-- // step -->
+	<br />
+</div>
+<div class="content_block content_block_card clfix">	
+	<table class="dtable02 dtable_inputfield" summary="회원님의 자동이체 계좌정보 입니다.">
+		<caption>계좌정보</caption>
+		<colgroup><col width="180" /><col width="*" /></colgroup>
+		<tbody>
+			<tr id='cardInfo1'>
+				<th rowspan="2" scope="row"><p>카드선택</p></th>
+				<td>
+					<p>
+						<label for="label_way01" class="mr25"><input type="radio" class="rdo" id="label_way01" name="label_way" value="1"  onclick="personCng(this.value)" checked="checked" title="개인카드" /> 개인카드</label>							
+					</p>
+				</td>
+			</tr>
+			<tr id='cardInfo2'>
+				<td>
+					<p>
+						<label for="label_way02"><input type="radio" class="rdo" id="label_way02" name="label_way" value="2" onclick="personCng(this.value)" title="법인카드" /> 법인카드</label>
+						<select id="cropCardList" title="법인카드 카드번호 선택하기" onchange="cropCardListCng(this.value)">
+						</select>					
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>나의 자동이체 계좌정보</p></th>					
+				<td> <p><span name="commonBankNm"></span>&nbsp;<span class="t_no"><span class="t_black" name="commonAccNo"></span></span><span name="lbComment"></span></p>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+</div>	
+<!-- 1단계 -->
+<div id="cidSelectAcc0">
+	
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+			
+		<h2 class="h2_uselist"><img src="/images/mh/h2_direct_03.gif" alt="즉시결제를 원하시는 이용건 및 금액을 선택해주세요." /></h2>
+		<p class="mb15">※ 이용금액은 당사접수 기준으로 조회됩니다.</p>
+	
+		<!-- Table Start -->
+		<table class="mv_tabType1" summary="항목별 즉시결제 신청 이용건과 신청금액을 확인할 수 있는 게시판입니다.">
+		<caption>항목별 즉시결제 신청내용</caption>
+		<colgroup>
+			<col width="9%" />
+			<col width="10%" />
+			<col id="colH1" width="10%" />
+			<col id="colH2" width="13%" />
+			<col id="colH3" width="10%" />
+			<col id="colH4" width="10%" />
+			<col id="colH5" width="10%" />
+			<col id="colH6" width="10%" />
+			<col id="colH7" width="10%" />
+			<col id="colH8" width="8%" />
+		</colgroup>
+			<thead>
+				<tr>
+					<th>&nbsp;</th>
+					<th scope="col"><strong>합계</strong></th>
+					<th scope="col" id="tabH1" class="tab_on"><span><a href="javascript:moveTab(1);">일시불</a></span></th>
+					<th scope="col" id="tabH2" class="tab"><span><a href="javascript:moveTab(2);">자유결제일시불</a></span></th>
+					<th scope="col" id="tabH3" class="tab"><span><a href="javascript:moveTab(3);">할부</a></span></th>
+					<th scope="col" id="tabH4" class="tab"><span><a href="javascript:moveTab(4);">현금서비스</a></span></th>
+					<th scope="col" id="tabH5" class="tab"><span><a href="javascript:moveTab(5);">자유결제현금</a></span></th>
+					<th scope="col" id="tabH6" class="tab"><span><a href="javascript:moveTab(6);">대출</a></span></th>
+					<th scope="col" id="tabH7" class="tab"><span><a href="javascript:moveTab(7);">마이너스론</a></span></th> 
+					<th scope="col" id="tabH8" class="tab"><span><a href="javascript:moveTab(8);">연회비</a></span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td class="t_no cell_r10" id="sum1"><strong>0</strong></td>
+					<td class="t_no cell_r10" id="callJoltOnePaySum">0</td>
+					<td class="t_no cell_r10" id="callJoltOnePayRevolSum">0</td>
+					<td class="t_no cell_r10" id="callJoltHalbuUSum">0</td>
+					<td class="t_no cell_r10" id="callJoltCashSum">0</td>
+					<td class="t_no cell_r10" id="callJoltCashRevolSum">0</td>
+					<td class="t_no cell_r10" id="callJoltLoanSum">0</td>
+					<td class="t_no cell_r10" id="callJoltMinusLoanSum">0</td>
+					<td class="t_no cell_r10" id="callJoltHPR00125Sum">0</td>
+				</tr>
+				<tr>
+					<td scope="row"><strong>신청금액</strong></td>
+					<td class="t_no cell_r10"><strong id="sum2">0</strong></td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltOnePaySum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltOnePayRevolSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltHalbuSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltCashSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltCashRevolSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltLoanSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltMinusLoanSum">0</td>
+					<td class="t_no cell_r10" id="inputDivede_callJoltHPR00125Sum">0</td>
+				</tr>		
+			</tbody>
+		</table>
+		<!--// Table End -->
+		<div id="tabDiv1" class="d_easy mt10" style="display:none">
+			<table id="callDisOnePayListTable" class="dtable01" summary="구분, 결제일, 이용카드, 이용구분, 이용금액 입금액(B), 잔여금액(A-B), 즉시결제 신청액등의 일시불 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>일시불 결제금액 입력</caption>
+				<colgroup><col width="7%" span="3" /><col width="20%" /><col width="8%" /><col width="10%" span="2" /><col width="15%" /><col width="16%" /></colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<br /><label><input type="checkbox" id="OnePay_All" onclick="allClickHead('OnePay')" title="전체선택" /></label></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">결제일</th>
+						<th rowspan="2" scope="col">이용카드</th>
+						<th rowspan="2" scope="col">이용구분</th>
+						<th rowspan="2" scope="col">이용금액(A)<br />입금액(B)</th>
+						<th rowspan="2" scope="col">잔여금액<br />(A-B)</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisOnePayListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02</td>
+						<td>XXXX-XXXX-1234-1XX4</td>
+						<td>본인/국내</td>
+						<td class="cell_r10">99,000,000<br />10,000</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+			<p class="btnl t_desc04">
+				일시불(자유결제)은 카드번호별로 이용금액이 합산하여 관리되고 있어 즉시결제 신청은 <strong class="t_default">금액단위로 신청</strong>이 가능합니다.<br />
+				이용매출건별로 즉시결제는 <a href="#" class="btn_link">카드이용내역</a>을 확인하시고 금액단위로 부분결제란에 입력하시면 됩니다.
+			</p>
+		</div>
+		
+		<div id="tabDiv2" class="d_easy mt10" style="display:none">
+			<table id="callDisOnePayRevolListTable" class="dtable01" summary="구분, 접수일, 결제일, 이용카드, 이용자, 이용구분, 이용금액 당일기준일자, 즉시결제 신청액등의 자유결제일시불 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>자유결제일시불 결제금액 입력</caption>
+				<colgroup>
+					<col width="7%" span="3" />
+					<col width="20%" />
+					<col width="8%" />
+					<col width="10%" span="2" />
+					<col width="10%" />
+					<col width="21%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<br /><label><input type="checkbox" id="OnePayRevol_All" onclick="allClickHead('OnePayRevol')"  title="전체선택" /></label></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">접수일<br />결제일</th>
+						<th rowspan="2" scope="col">이용카드</th>
+						<th rowspan="2" scope="col">이용자</th>
+						<th rowspan="2" scope="col">이용구분</th>
+						<th rowspan="2" scope="col">이용금액<br />당일기준이자</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisOnePayRevolListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02<br />12.02.02</td>
+						<td>XXXX-XXXX-1234-1XX4</td>
+						<td>홍길동</td>
+						<td>본인/일시불</td>
+						<td class="cell_r10">99,000,000<br />123</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>
+					--><!-- //loop -->
+
+				</tbody>
+			</table>
+			<p class="btnl t_desc04">
+				일시불(자유결제)은 카드번호별로 이용금액이 합산하여 관리되고 있어 즉시결제 신청은 <strong class="t_default">금액단위로 신청</strong>이 가능합니다.<br />
+				이용매출건별로 즉시결제는 <a href="#" class="btn_link">카드이용내역</a>을 확인하시고 금액단위로 부분결제란에 입력하시면 됩니다.
+			</p>		
+		</div>
+		
+		<div id="tabDiv3" class="d_easy mt10" style="display:none">
+			<table id="callDisHalbuListTable" class="dtable01" summary="구분, 이용일, 이용자, 이용가맹점, 이용금액, 잔여원금, 이자(당일기준), 즉시결제 신청액등의 할부 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>할부 결제금액 입력</caption>
+				<colgroup>
+					<col width="7%" span="3" />
+					<col width="8%" />
+					<col width="8%" />
+					<col width="10%" span="2" />
+					<col width="11%" />
+					<col width="11%" />
+					<col width="21%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<!--<br /><input type="checkbox" id="Halbu_All" onclick="allClickHead('Halbu')"  title="전체선택" />--></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">이용일<br />이용자</th>
+						<th rowspan="2" scope="col">이용가맹점</th>
+						<th rowspan="2" scope="col">이용금액</th>
+						<th rowspan="2" scope="col">잔여원금</th>
+						<th rowspan="2" scope="col">이자<br />(당일기준)</th>
+						<th colspan="3" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">당월결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisHalbuListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02<br />본인</td>
+						<td>금융결제원</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="당월결제 선택" class="fl_left" id="sel_payment2" /> <label class="fl_right" for="sel_payment2">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10">
+							<div class="fl_left"><input type="checkbox" title="부분결제 선택" /></div>
+							<div class="fl_right">
+								<label>원금입력 <input type="text" class="txt al_right" value="0" style="width:80px;" /></label>
+								<div class="mv_Vspace3"> Vertical Space </div>
+								<label>신청금액 <input type="text" class="txt al_right" value="0" style="width:80px;" /></label>
+							</div>
+						</td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="tabDiv4" class="d_easy mt10" style="display:none">
+			<table id="callDisCashListTable" class="dtable01" summary="구분, 청구월, 이용일, 이용자, 이용은행, 이용금액 당일기준이자, 수수료, 즉시결제 신청액등의 현금서비스 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>현금서비스 결제금액 입력</caption>
+				<colgroup>
+					<col width="8%" span="6" />
+					<col width="11%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="21%" /></colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<!--<br /><input type="checkbox" title="전체선택" />--></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">청구월</th>
+						<th rowspan="2" scope="col">이용일</th>
+						<th rowspan="2" scope="col">이용자</th>
+						<th rowspan="2" scope="col">이용은행</th>
+						<th rowspan="2" scope="col">이용금액<br />당일기준이자</th>
+						<th rowspan="2" scope="col">수수료</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisCashListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.03.02</td>
+						<td>12.03.02</td>
+						<td>본인</td>
+						<td>외환은행</td>
+						<td class="cell_r10">99,000,000<br />200</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+		</div>	
+		
+		<div id="tabDiv5" class="d_easy mt10" style="display:none">
+			<table id="callDisCashRevolListTable" class="dtable01" summary="구분, 청구월, 이용일, 이용자, 이용은행, 이용금액 당일기준이자, 수수료, 즉시결제 신청액등의 자유결제현금 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>자유결제현금 결제금액 입력</caption>
+				<colgroup>
+					<col width="10%" span="6" />
+					<col width="9%" />
+					<col width="10%" />
+					<col width="21%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<!--<br /><input type="checkbox" title="전체선택" />--></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">청구월<br />이용일</th>
+						<th rowspan="2" scope="col">이용자</th>
+						<th rowspan="2" scope="col">이용은행</th>
+						<th rowspan="2" scope="col">이용금액<br />당일기준이자</th>
+						<th rowspan="2" scope="col">수수료</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisCashRevolListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.03.02<br />12.03.05</td>
+						<td>본인</td>
+						<td>외환은행</td>
+						<td class="cell_r10">99,000,000<br />200</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="tabDiv6" class="d_easy mt10" style="display:none">
+			<table id="callDisLoanListTable" class="dtable01" summary="구분, 대출일, 대출기간, 대출금액, 잔여원금 당일기준이자, 수수료, 즉시결제 신청액등의 대출 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>대출 결제금액 입력</caption>
+				<colgroup>
+					<col width="7%" span="3" />
+					<col width="8%" />
+					<col width="8%" />
+					<col width="10%" span="2" />
+					<col width="11%" />
+					<col width="11%" />
+					<col width="21%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<!--<br /><input type="checkbox" title="전체선택" />--></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">대출일</th>
+						<th rowspan="2" scope="col">대출기간</th>
+						<th rowspan="2" scope="col">대출금액</th>
+						<th rowspan="2" scope="col">잔여원금<br />당일기준이자</th>
+						<th rowspan="2" scope="col">수수료</th>
+						<th colspan="3" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">당월결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisLoanListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02</td>
+						<td>12개월</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">99,000,000<br />2,000</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="당월결제 선택" class="fl_left" id="sel_payment2" /> <label class="fl_right" for="sel_payment2">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10">
+							<div class="fl_left"><input type="checkbox" title="부분결제 선택" /></div>
+							<div class="fl_right">
+								<label>원금입력 <input type="text" class="txt al_right" value="0" style="width:80px;" /></label>
+								<div class="mv_Vspace3"> Vertical Space </div>
+								<label>신청금액 <input type="text" class="txt al_right" value="0" style="width:80px;" /></label>
+							</div>
+						</td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+			<p class="btnl t_desc04">
+				프라임론 중도상환시 <strong class="t_default">중도상환수수료(중도상환 원금의 1%)</strong>가 발생됩니다.
+			</p>	
+		</div>
+		
+		<div id="tabDiv7" class="d_easy mt10" style="display:none">
+			<table id="callDisMinusLoanListTable" class="dtable01" summary="구분, 청구월, 이용일, 이용은행, 잔여금액, 당일기준이자, 수수료, 즉시결제 신청액등의 마이너스론 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>마이너스론 결제금액 입력</caption>
+				<colgroup><col width="7%" span="4" /><col width="11%" /><col width="10%" span="3" /><col width="15%" /><col width="16%" /></colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<!--<br /><input type="checkbox" title="전체선택" />--></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">청구월</th>
+						<th rowspan="2" scope="col">이용일</th>
+						<th rowspan="2" scope="col">이용은행</th>
+						<th rowspan="2" scope="col">잔여금액</th>
+						<th rowspan="2" scope="col">당일기준이자</th>
+						<th rowspan="2" scope="col">수수료</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisMinusLoanListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02</td>
+						<td>12.02.02</td>
+						<td>외환은행</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="tabDiv8" class="d_easy mt10" style="display:none">
+			<table id="callDisHPR00125ListTable" class="dtable01" summary="구분, 결제일, 이용카드, 이용자, 이용구분, 이용원금, 즉시결제 신청액등의 마이너스론 결제금액 정보를 확인하고 입력하는 게시판입니다">
+				<caption>연회비 결제금액 입력</caption>
+				<colgroup><col width="7%" span="3" /><col width="20%" /><col width="8%" /><col width="10%" span="2" /><col width="15%" /><col width="16%" /></colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col">선택<br /><label><input type="checkbox" id="HPR00125_All" onclick="allClickHead('HPR00125')" title="전체선택" /></label></th>
+						<th rowspan="2" scope="col">구분</th>
+						<th rowspan="2" scope="col">결제일</th>
+						<th rowspan="2" scope="col">이용카드</th>
+						<th rowspan="2" scope="col">이용자</th>
+						<th rowspan="2" scope="col">이용구분</th>
+						<th rowspan="2" scope="col">이용원금</th>
+						<th colspan="2" scope="col" class="boline_b0">즉시결제 신청액</th>
+					</tr>
+					<tr>
+						<th scope="col">전액결제</th>
+						<th scope="col">부분결제</th>
+					</tr>
+				</thead>
+				<tbody id="callDisHPR00125ListDiv">
+					<!-- loop -->
+					<!--<tr>
+						<td><input type="checkbox" title="한줄선택" /></td>
+						<td>가능</td>
+						<td>12.02.02</td>
+						<td>XXXX-XXXX-1234-1XX4</td>
+						<td>본인/국내</td>
+						<td class="cell_r10">99,000,000</td>
+						<td class="cell_r10">2,000</td>
+						<td class="cell_l10"><input type="checkbox" title="전액결제 선택" class="fl_left" id="sel_payment1" /> <label class="fl_right" for="sel_payment1">99,000,000 &nbsp;</label></td>
+						<td class="cell_l10"><input type="checkbox" title="부분결제 선택" id="sel_payment2" /> <label for="sel_payment2"><input type="text" class="txt al_right" value="0" style="width:80px;" /></label></td>
+					</tr>-->
+					<!-- //loop -->
+				</tbody>
+			</table>
+		</div>	
+		
+		<div class="btnset">
+			<p class="btnr">
+				<a id="btnGoSelectStep2" href="#" onclick="callSelectStep2(1); return false;" class="btn btn_blue"><span>다음</span></a>
+				<!--<a href="#" class="btn btn_white"><span>취소</span></a>-->
+			</p>
+		</div>
+	
+	</div>
+</div>
+
+<!-- 2단계 -->
+<div id="cidSelectAcc1" style="display:none">
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2 class="h2_uselist"><img src="/images/mh/h2_applyPayment_06.png" alt="신청하신 내역을 확인해주세요." /></h2>
+		<table id="callDisStepTwoListTable" class="dtable01"  summary="상품명, 신청구분, 신청일, 카드번호, 이용가맹점, 신청금액으로 구성된 신청 내역을 확인하고 취소선택하는 게시판입니다">
+			<caption>신청 내역 확인</caption>
+			<thead>
+				<tr>
+					<th scope="col">상품명</th>
+					<th scope="col">신청구분</th>
+					<th scope="col">신청일</th>
+					<th scope="col">카드번호</th>
+					<th scope="col">이용가맹점</th>
+					<th scope="col">신청금액</th>
+					<th scope="col">취소</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td class="cell_l10">총 신청금액</td>
+					<td colspan="5" class="cell_r10"><em id="selectStep2Sum">1,569,520</em></td>
+					<td class="cell_r10">&nbsp;</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<!--<tr>
+					<td class="cell_l10">일시불</td>
+					<td>전액결제</td>
+					<td class="t_no">2012.02.03</td>
+					<td class="t_no">XXXX-XXXX-0123-1XX0</td>
+					<td>금융결제원</td>
+					<td class="cell_r10">1,569,520</td>
+					<td><a href="#" class="btn btn_s_white"><span>취소</span></a></td>
+				</tr>
+				<tr>
+					<td colspan="7">신청내역이 없습니다.</td>
+				</tr>-->
+			</tbody>
+		</table>
+		
+		
+		<h2 class="h2_uselist"><img src="/images/mh/h2_direct_02.gif" alt="결제방법 및 인증방법을 선택해주세요." /></h2>
+		<table class="dtable02 dtable_inputfield" summary="결제방법, 인증방법, 카드선택, 카드비밀번호, 카드CVC번호등의 정보를 입력하는 게시판입니다.">
+		<caption>결제방법 및 인증방법 선택</caption>
+			<colgroup><col width="180" /><col width="150" /><col width="100" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>결제방법</p></th>
+					<td colspan="3">
+						<p>
+							<label for="paymentType1" class="mr25"><input type="radio" class="rdo" id="paymentType1" name="account1" onclick="setAccount1(this)" value="1" checked="checked" /> 자동이체계좌로 즉시결제하기</label>
+							<label for="paymentType2" class="mr25"><input type="radio" class="rdo" id="paymentType2" name="account1" onclick="setAccount1(this)" value="2" /> 가상계좌로 입금하기</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th rowspan="4" scope="row"><p>인증방법</p></th>
+					<td colspan="3">
+						<p>
+							<label for="label_way03" class="mr25"><input type="radio" class="rdo" id="label_way03" name="own1" value="02" onclick="ownInfo('1');" checked="checked" /> 공인인증</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="3">
+						<p>
+							<label for="label_way04" class="mr25"><input type="radio" class="rdo" id="label_way04" name="own1" value="01" onclick="ownInfo('0');" /> 카드인증</label>
+						</p>
+					</td>
+					<td><p>카드선택</p></td>
+					<td>
+						<p class="input_2char">
+							<select title="카드번호 선택하기" id="cidCardListCb" disabled="disabled">
+							</select>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><p>카드비밀번호</p></td>
+					<td><p class="input_2char"><input type="password" id="cardPassWord" name="cardPassWord" maxlength="2" class="txt" value="" title="비밀번호 앞 두자리 입력" disabled="disabled" enc="on"/><em>**</em>(비밀번호 앞 2자리)&nbsp;<span id="usafeon_cardPassWord"></span></p></td>
+				</tr>
+				<tr>
+					<td><p>카드CVC번호</p></td>
+					<td><p class="input_3char"><input type="text" id="cardCvc" name="cardCvc" maxlength="3" class="txt"  title="카드 뒷면 뒤 3자리 입력" disabled="disabled" enc="on"/>(카드 뒷면 뒤 3자리)&nbsp;<span id="usafeon_cardCvc"></span></p></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div class="btnset">
+			<p class="btnr">
+				<a href="#" class="btn btn_blue" id="submitBtn"><span >자동이체 계좌에서 즉시결제 하기</span></a>
+				<a href="#" onclick="goBack(1); return false;" class="btn btn_white"><span>이전</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+<!-- 3단계 -->
+<div id="cidSelectAcc2" style="display:none">
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/mh/img_pay_com.jpg" alt="" /></p>
+		<div id="resultMsg1" class="p_desc">		
+			<h2><img src="/images/mh/h2_applyPayment_02.png" alt="즉시출금 신청이 정상적으로 접수되었습니다." /></h2>
+			<div class="p_txt">
+				<span>통장잔고가 부족할 경우 결제되지 않으니<br /><strong class="t_black">처리결과 조회</strong>를 통해 정상출금 여부를 확인해주시기 바랍니다.</span><!-- 100310 -->
+			</div>
+			<div class="btnc">
+				<a href="#" class="btn btn_blue" onclick="resultInfoPopup(); return false;"><span>처리결과 조회</span></a>
+			</div>
+		</div>
+		<div id="resultMsg2" class="p_desc" style="display:none">		
+			<div class="p_txt" >
+				<span id="resultMsg3" style="display:none">회원님은 가상계좌가 없으십니다.먼저 가상계좌를 신청해주세요</span><!-- 100310 -->
+				<br/>
+				<span><strong class="t_black">가상계좌번호 : </strong><span id="bnkNm">&nbsp;</span> <span id="vtAcno"> </span><span>&nbsp;(예금주:삼성카드)</span></span><!-- 100310 -->	
+			</div>	
+			<div class="p_txt">
+				<span>가상계좌 입금하기 즉시결제 신청이 정상적으로 접수되었습니다.<br/>금일 22:00까지 입금하시면 결제가 처리완료됩니다.</span><!-- 100310 -->
+			</div>	
+			<div class="btnc">
+				<a href="#" id="vtAcnoApplyBtn" class="btn btn_blue" onclick="goTabPage('NHPIMMHCSM004','true'); return false;" style="display:none"><span>가상계좌 조회 및 신청하기</span></a>
+				<a href="#" class="btn btn_blue" onclick="goTabPage('NHPIMMHEMSINFO','true'); return false;"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</form>
+
+<!-- 여기부터 시작 -->
+<div id="id_layer01" style="display:none">
+	<!-- 일반적인 alert/ confirm -->
+	<div id="alertLayer"  class="pop_l_position pop_l_wrap_alert">
+		<div class="pop_l_wrap"  id="alertContent" style="width:350px;height:250px;">
+			<p class="img_l_pop flag_tl">&nbsp;</p>
+			<p class="img_l_pop flag_tr">&nbsp;</p>
+			<p class="img_l_pop flag_bl">&nbsp;</p>
+			<p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeEmsLayerPop();" value="레이어닫기" title="알림 레이어 닫기" />
+		
+			<p class="pop_tit3"><img src="/images/mh/lpop_tit_notice.gif" alt="알림"  id="titleImg" /></p>	
+			<div class="pop_l_content" style="width:300px;">
+				<p class="btn mt25" id="alertMsg"></p>			
+				<p class="btn mt25">
+					<a href="#" class="btn btn_blue" id="confirmBtn"><span>확인</span></a>
+					<a href="#" class="btn btn_white" id="cancelBtn"><span>취소</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--// 여기까지 끝 -->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/cd/h1_dc_dir.png" alt="바로할인 카드에 대한 안내입니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goBoroCardInfo();">바로할인카드란</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="javascript:checkBoroCard();">바로할인카드조회</a></li>
+		</ul>
+	</div>
+</div>
+
+
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<h2><img src="/images/cd/h2_dc_dir05.png" alt="주민등록번호를 기입하여주세요" /></h2>
+		<div class="content_block_inner">
+
+<!-- SR내역 13.03.21 -->
+			<ol class="list_no01">
+				<li><p><strong class="t_point">공인인증서 인증을 통해 회원님의 바로할인카드 정보를 조회할 수 있습니다.</strong></p></li>
+				<li><p>바로할인카드는 신청 후 1시간 내에 카드 정보를 우선 제공하여 결제하실 수 있는 카드입니다.<br />
+				  ※ 삼성카드의 발급 기준에 따라 일부 회원님께 필요 서류를 요청릴 수 있으며, 경우에 따라 발급이<br />    다소 지연될 수 있습니다. <br />
+				  ※ 실물 카드는 신청 후 1~2주일 이내로 배송됩니다. </p></li>
+				<li><p>보안을 위해 카드 정보는 카드 발급일 포함 3일(일자 기준)까지만 조회 가능하며, 해당 카드는 카드발급일 <br />
+					   다음날(영업일 기준) 자정부터 이용 중지됩니다. <br />    
+					   예)금요일에 바로할인카드를 발급받으셨을 경우, 일요일까지는 카드 정보 조회가 가능하며, 월요일 자정에 <br />
+					   카드 이용이 중지됩니다.</p></li> 
+			</ol>
+<!--// SR내역 13.03.21 -->
+
+			<table class="dtable02 mt10" summary="주민등록번호 기입하는 표입니다">
+            <caption>주민등록번호 입력</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row"><p>주민등록번호</p></th>
+                        <td><p class="input_idno"><input type="text" class="txt" id="idenNo1" name="idenNo1" maxlength="6" onkeyup="lengthCheck(this.form, this.value);" value="" title="주민등록번호앞6자리" enc="on"/> - <input type="password" class="txt" id="idenNo2" name="idenNo2" maxlength="7" value="" title="주민등록번호뒷7자리"  enc="on"/>
+                        <span id="usafeon_idenNo1|idenNo2"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:gongin_check();" class="btn btn_s_white"><span>인증하기</span></a></p></td>
+                    </tr>
+                </tbody>
+			</table>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
+			

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_foreign_uselist01a.png" alt="Overseas Transactions" /></h1><!-- 100428 -->
+</div>
+
+<!-- content_block 100428-->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_foreign_uselist01a.png" alt="Search your Recent Transactions" /></h2>
+	<div class="content_block_inner">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:180px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:cuvMovePage('getCorpUseList','P');" class="default" onclick="return false;">Corporate credit card</a></p>
+			<div class="childlayer">
+				<ul>
+                    <li><a href="javascript:cuvMovePage('getCardList','I');">Personal Credit Card</a></li>
+                    <li><a href="javascript:cuvMovePage('getCorpUseList','P');">Corporate credit card</a></li>
+                    <li><a href="javascript:cuvMovePage('getCheckCardList','C');">Check Card</a></li>
+				</ul>
+			</div>
+		</div>
+        <div class="line_lgray">&nbsp;</div>
+
+
+        <div class="tb_exp clfix mt20">
+            <span>&nbsp;</span>
+            <span class="ab_tr t_desc03">
+                <a href="javascript:cCorpSearch('3')" class="btn btn_s_white"><span>KOREAN</span></a><a href="#" class="btn btn_s_gray"><span>ENGLISH</span></a>
+            </span>
+        </div>
+        
+		<table class="dtable02 dtable_inputfield" summary="Select your Used card, Usage Date.">
+		<caption>Inqury your recent transactions</caption>
+        <colgroup><col width="100" /><col width="*" /></colgroup>
+        <tbody>
+            <tr class="dtable_english">
+                <th scope="row"><p>State/Used Card</p></th>
+                <td><p>
+      				<select name="card_state" id="select_6" style="width:100px" onchange="card_state_onchange(this.value);" title="State Card">
+						<option value="0">ALL</option>
+						<option value="1">USED</option>
+						<option value="2">UNUSED</option>
+					</select>                  
+                    <select title="choose card type" style="width:360px" name="card_select" title="Used Card">
+                    </select>
+                </p></td>
+            </tr>
+            <tr class="dtable_english">
+                <th scope="row"><p>Usage Date</p></th>
+                <td><p>
+					<a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay">Today</span></a><a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek">1Week</span></a><a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" >1Month</span></a><a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2">2Months</span></a><a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3">3Months</span></a><a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6">6Months</span></a><br />
+                    <!--<span class="reset_date ml20">--><a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" >Usage Period</span></a><fileTag:dblCalendarAdd calendarId="hp_double_cal" inputClass="txt" startTitle="시작하는날짜" startInputName="srchStartDate" startInputValue='' endTitle ="끝나는날짜" endInputName ="srchEndDate" endInputValue =''/><!--</span>-->
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnr">
+            <!-- 100126 -->
+            <a href="javascript:cCorpSearch('4')" class="btn btn_blue"><span>Show</span></a>
+            <!-- //100126 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_foreign_uselist02a.png" alt="Overseas Transactions" /></h2>
+	<div class="d_easy">
+		<table class="dtable01 dtable01_bill mt10" summary="Usage Date, Country, Merchant, Transaction Amount(USD), Billing Amount, Ref, Expected Statement Date">
+		<caption>Overseas Transactions</caption>
+		<colgroup><col width="9%" /><col width="20%" /><col width="19%" /><col width="15%" /><col width="15%" /><col width="10%" /><col width="9%" /></colgroup>
+		<thead>
+			<tr class="dtable_english">
+				<th scope="col" class="cell_l10">Usage Date</th>
+				<th scope="col" class="cell_l10">Country</th>
+				<th scope="col" class="cell_l10">Merchant</th>
+				<th scope="col" class="cell_r10">Transaction<br />Amount(USD)</th>
+				<th scope="col" class="cell_r10">Billing Amount(\)</th>
+				<th scope="col">Ref</th>
+				<th scope="col">Expected<br />Statement<br />Date</th>
+			</tr>
+		</thead>
+		<tbody>
+            <!-- loop -->
+			<tr>
+				<td class="cell_l10a">09.07.22</td>
+				<td class="cell_l10"><span class="nobreak_nolink w150">U.S</span></td>
+				<td class="cell_l10"><span class="nobreak_nolink w150">coffee 7gram</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1,000.000</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1,000,000,000</span></td>
+				<td>1,291</td>
+				<td>09.07.22</td>
+			</tr>
+			<tr class="nodata"><td colspan="7">Your credit cards don't have used record of oversea transaction.</td></tr>
+        </tbody>
+        </table>
+        <!-- paginate -->
+        <div class="paginate">	${_page}  </div>    
+        
+    </div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

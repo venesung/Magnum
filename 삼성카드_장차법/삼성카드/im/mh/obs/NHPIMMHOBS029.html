@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+
+				<div class="content_block content_block_tab2 clfix">
+					<div class="tab02 w810 h60">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">나의맞춤혜택</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<li class="on">
+								<a href="#">최대혜택조회</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:go_tabSubmit('028')">보유카드</a></li>
+									<li class="on"><a href="javascript:go_tabSubmit('029')">추천카드</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일알리미서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');"">왕대박 3 승인번호 등록</a></li>
+							--><li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</div>
+
+<%
+
+	ArrayList<NHPIMMHOBS003VO> ansList     = (ArrayList<NHPIMMHOBS003VO>)request.getAttribute("ansList");
+
+	int ansListCnt  = ansList.size();
+	int ansTotal    = 0;
+	int ansTotalMen = 0;
+	int ansTotalWomen = 0;
+%>
+
+		<script language="javascript" type="text/javascript">
+			var tmpAnsArrLen  = <%=ansListCnt%> ;
+			var tmpAnsArr     = new Array(tmpAnsArrLen);
+			var ansMen1       = "0";
+			var ansMen2       = "0";
+			var ansMen3       = "0";
+			var ansMen4       = "0";
+			var ansWomen1     = "0";
+			var ansWomen2     = "0";
+			var ansWomen3     = "0";
+			var ansWomen4     = "0";
+			var jsAnsTotal    = "0";
+			var jsAnsMenTotal = "0";
+			var jsAnsWomenTotal = "0";
+
+
+			<%	if( ansListCnt > 0) {
+				for(NHPIMMHOBS003VO list : ansList){
+					int userNo = Integer.parseInt(list.getUserNo());%>
+					var num = <%=userNo%>
+				<%int age = Integer.parseInt(list.getAge());
+
+					ansTotal += userNo;
+
+					if("1".equals(list.getSex())){
+
+					    switch(age){
+					    case 20 : %> ansMen1 = num;
+					    <%			 ansTotalMen += userNo; break;
+					    case 30 : %> ansMen2 = num;
+					    <%			 ansTotalMen += userNo; break;
+					    case 40 : %> ansMen3 = num;
+					    <%			 ansTotalMen += userNo; break;
+					    case 50 : %> ansMen4 = num;
+					    <%			ansTotalMen += userNo; break;
+					    default : %>
+		<%			    }
+
+					}else if("2".equals(list.getSex())){
+					    switch(age){
+					    case 20 : %> ansWomen1 = num;
+					    <%			 ansTotalWomen += userNo; break;
+					    case 30 : %> ansWomen2 = num;
+					    <%			 ansTotalWomen += userNo;break;
+					    case 40 : %> ansWomen3 = num;
+					    <%			 ansTotalWomen += userNo;break;
+					    case 50 : %> ansWomen4 = num;
+					    <%			 ansTotalWomen += userNo;break;
+					    default : %>
+		<%		   	 	}
+					}
+				}
+			} %>
+
+			jsAnsTotal    = '<%= ansTotal %>';
+			jsAnsMenTotal = '<%= ansTotalMen %>';
+			jsAnsWomenTotal = '<%= ansTotalWomen %>';
+
+			function IXFn_EmbedGraphStack()
+			{
+				var flashVars = {};
+				flashVars.men1   = ansMen1;
+				flashVars.men2   = ansMen2;
+				flashVars.men3   = ansMen3;
+				flashVars.men4   = ansMen4;
+				flashVars.women1 = ansWomen1;
+				flashVars.women2 = ansWomen2;
+				flashVars.women3 = ansWomen3;
+				flashVars.women4 = ansWomen4;
+				flashVars.label1 = "20대";
+				flashVars.label2 = "30대";
+				flashVars.label3 = "40대";
+				flashVars.label4 = "50대";
+
+				//alert("비율 = "+ (parseInt(jsAnsMenTotal) / (parseInt(jsAnsMenTotal) + parseInt(jsAnsWomenTotal))) * 100 );
+
+				if(jsAnsTotal != '0'){
+					var menRate          = Math.round( (parseInt(jsAnsMenTotal) / ( parseInt(jsAnsMenTotal) + parseInt(jsAnsWomenTotal) )) * 100 );
+					flashVars.menRatio   = menRate;
+					flashVars.womenRatio = 100 - parseInt(menRate);
+				}else{
+					flashVars.menRatio   = "0";
+					flashVars.womenRatio = "0";
+				}
+
+				embedSWF( "contentLayer", "/flash/graphstack/graphstack.swf", "188", "170", { id:"FL_GraphStack" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars );
+			}
+
+			function IXFn_Search( code )
+			{
+				// Debug Start
+				var temp = document.frmDebug.result.value;
+				document.frmDebug.result.value = "code:" + code + "\r" + temp;
+				// Debug End
+			}
+
+			//막대그래프 플래시 불러오기
+			function FFn_EmbedGraph(num)
+			{
+				var flashVars = {};
+				flashVars.numData = num;
+				embedSWF( "graphLayer", "/flash/graph/graph.swf", "185", "29", { id:"FL_graph" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars );
+			}
+		</script>
+<%
+
+	ArrayList<NHPIMMHOBS003VO> ansList2     = (ArrayList<NHPIMMHOBS003VO>)request.getAttribute("ansList2");
+
+	int ansListCnt2  = ansList.size();
+	int ansTotal2    = 0;
+	int ansTotalMen2 = 0;
+	int ansTotalWomen2 = 0;
+%>
+
+		<script language="javascript" type="text/javascript">
+			var tmpAnsArrLen2  = <%=ansListCnt2%> ;
+			var tmpAnsArr2     = new Array(tmpAnsArrLen2);
+			var ansMen12      = "0";
+			var ansMen22       = "0";
+			var ansMen32       = "0";
+			var ansMen42       = "0";
+			var ansWomen12     = "0";
+			var ansWomen22     = "0";
+			var ansWomen32     = "0";
+			var ansWomen42     = "0";
+			var jsAnsTotal2    = "0";
+			var jsAnsMenTotal2 = "0";
+			var jsAnsWomenTotal2 = "0";
+
+
+			<%	if( ansListCnt2 > 0) {
+				for(NHPIMMHOBS003VO list2 : ansList2){
+					int userNo2 = Integer.parseInt(list2.getUserNo());%>
+					var num2 = <%=userNo2%>
+				<%int age2 = Integer.parseInt(list2.getAge());
+
+					ansTotal2 += userNo2;
+
+					if("1".equals(list2.getSex())){
+
+					    switch(age2){
+					    case 20 : %> ansMen12 = num2;
+					    <%			 ansTotalMen2 += userNo2; break;
+					    case 30 : %> ansMen22 = num2;
+					    <%			 ansTotalMen2 += userNo2; break;
+					    case 40 : %> ansMen32 = num2;
+					    <%			 ansTotalMen2 += userNo2; break;
+					    case 50 : %> ansMen42 = num2;
+					    <%			ansTotalMen2 += userNo2; break;
+					    default : %>
+		<%			    }
+
+					}else if("2".equals(list2.getSex())){
+					    switch(age2){
+					    case 20 : %> ansWomen12 = num2;
+					    <%			 ansTotalWomen2 += userNo2; break;
+					    case 30 : %> ansWomen22 = num2;
+					    <%			 ansTotalWomen2 += userNo2;break;
+					    case 40 : %> ansWomen32 = num2;
+					    <%			 ansTotalWomen2 += userNo2;break;
+					    case 50 : %> ansWomen42 = num2;
+					    <%			 ansTotalWomen2 += userNo2;break;
+					    default : %>
+		<%		   	 	}
+					}
+				}
+			} %>
+
+			jsAnsTotal2    = '<%= ansTotal2 %>';
+			jsAnsMenTotal2 = '<%= ansTotalMen2 %>';
+			jsAnsWomenTotal2 = '<%= ansTotalWomen2 %>';
+
+			function IXFn_EmbedGraphStack2()
+			{
+				var flashVars2 = {};
+				flashVars2.men12   = ansMen12;
+				flashVars2.men22   = ansMen22;
+				flashVars2.men32   = ansMen32;
+				flashVars2.men42   = ansMen42;
+				flashVars2.women12 = ansWomen12;
+				flashVars2.women22 = ansWomen22;
+				flashVars2.women32 = ansWomen32;
+				flashVars2.women42 = ansWomen42;
+				flashVars2.label12 = "20대";
+				flashVars2.label22 = "30대";
+				flashVars2.label32 = "40대";
+				flashVars2.label42 = "50대";
+
+				//alert("비율 = "+ (parseInt(jsAnsMenTotal) / (parseInt(jsAnsMenTotal) + parseInt(jsAnsWomenTotal))) * 100 );
+
+				if(jsAnsTotal2 != '0'){
+					var menRate2          = Math.round( (parseInt(jsAnsMenTotal2) / ( parseInt(jsAnsMenTotal2) + parseInt(jsAnsWomenTotal2) )) * 100 );
+					flashVars2.menRatio   = menRate2;
+					flashVars2.womenRatio = 100 - parseInt(menRate2);
+				}else{
+					flashVars2.menRatio   = "0";
+					flashVars2.womenRatio = "0";
+				}
+
+				embedSWF( "contentLayer2", "/flash/graphstack/graphstack.swf", "188", "170", { id:"FL_GraphStack2" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars2 );
+			}
+
+			function IXFn_Search2( code2 )
+			{
+				// Debug Start
+				var temp = document.frmDebug.result.value;
+				document.frmDebug.result.value = "code2:" + code2 + "\r" + temp;
+				// Debug End
+			}
+
+			//막대그래프 플래시 불러오기 
+			function FFn_EmbedGraph2(num2)
+			{
+				var flashVars2 = {};
+				flashVars2.number  = num2;
+				embedSWF( "graphLayer2", "/flash/graph/graph.swf", "185", "29", { id:"FL_graph2" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars2);
+			}
+		</script>
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_onlyforyou_consult17.png" alt="다양한 혜택을 제공해 드리는 특별한 카드를 소개합니다" /></h2>
+					<div class="content_block_inner">
+<!-- 수정 101022 -->
+						<div class="tb_exp mt_10">
+							<p class="btnl"><strong class="t_point"><%=vo.getString25()%></strong> 회원님에게 추천해 드리는 카드입니다.</p>
+						</div>
+						<div class="d_cardcom"><div class="d_cardcom_top">&nbsp;</div>
+							<table class="dtable02 mt_20" summary="추천카드, 주요혜택, 선호도, 평점으로 구성된 추천 카드 정보를 확인할 수 있는 게시판입니다.">
+<!--// 수정 101022 -->		<caption>추천 카드 안내</caption>
+							<colgroup><col width="15%" /><col width="*" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="riline"><p>추천카드</p></th>
+									<td class="riline al_center">
+										<div class="p_desc">
+											<p class="p_tit mb5"><%=vo.getString27()%></p>
+											<p class="p_txt t_desc04 mb5"><%=kspTitle%></p>
+											<p class="p_card"><img src="<%=targetPath%>/<%=listImg03%>" alt="<%=vo.getString27()%>" /></p>
+											<p class="al_center">
+                                                <a href="javascript:goView('<%=vo.getString26()%>')" class="btn btn_s_white"  title="<%=vo.getString27()%> 자세히보기"><span>자세히보기</span></a>
+											</p>
+										</div>
+									</td>
+									<td class="al_center">
+										<div class="p_desc">
+											<p class="p_tit mb5"><%=vo.getString30()%></p>
+											<p class="p_txt t_desc04 mb5"><%=kspTitle2%></p>
+											<p class="p_card"><img src="<%=targetPath2%>/<%=listImg032%>" alt="<%=vo.getString30()%>" /></p>
+											<p class="al_center">
+                                                <a href="javascript:goView('<%=vo.getString29()%>')" class="btn btn_s_white"  title="<%=vo.getString30()%> 자세히보기"><span>자세히보기</span></a>
+											</p>
+										</div>
+									</td>
+								</tr>
+								<!-- 2010.12.12 삭제 브랜드 연회비
+
+								-->
+								<tr>
+									<th scope="row" class="riline"><p>주요혜택</p></th>
+									<td class="riline"><p class="t_lgray">
+										<%=usp3%><br /><br /><!-- USP-->
+										<%=ksp1title1%><br />
+										<%=ksp1title2%><br />
+										<%=ksp1title3%><br />
+									</p></td>
+									<td headers="th_card02"><p class="t_lgray">
+										<%=usp4%><br /><br /><!-- USP-->
+										<%=ksp2title1%><br />
+										<%=ksp2title2%><br />
+										<%=ksp2title3%><br />
+										<br />
+										<br />
+									</p></td>
+								</tr>
+								<tr>
+									<th scope="row" class="riline"><p>선호도</p></th>
+									<td class="riline al_center"><p class="t_no">
+									
+										<div id="graphLayer" ><script language="javascript" type="text/javascript">FFn_EmbedGraph("<%= HpCommonUtil.StringToLong(ansTotal+"")%>");</script></div>
+										<div id="contentLayer" class="mt5"><script language="javascript" type="text/javascript">IXFn_EmbedGraphStack();</script></div>
+					
+									</p></td>
+									<td class="al_center"><p class="t_no">
+									
+										<div id="graphLayer2" ><script language="javascript" type="text/javascript">FFn_EmbedGraph2("<%= HpCommonUtil.StringToLong(ansTotal2+"")%>");</script></div>
+										<div id="contentLayer2" class="mt5"><script language="javascript" type="text/javascript">IXFn_EmbedGraphStack2();</script></div>
+										
+									</p></td>
+								</tr>
+								<tr>
+									<th scope="row" class="riline"><p>평점</p></th>
+									<% if( "".equals(grade) )
+										grade = "0" ;
+									   if( "".equals(grade2) )
+										grade2 = "0" ;
+									
+									%>
+									<td  class="riline al_center"><p><img src="/images/common/ico_star<%=grade%>.png" alt="별점 4" /></p></td>
+									<td  class="riline al_center"><p><img src="/images/common/ico_star<%=grade2%>.png" alt="별점 5" /></p></td>
+								</tr>
+							</tbody>
+							</table>
+						
+							
+					</div>
+				</div>
+
+
+</form>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

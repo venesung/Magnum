@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>온라인문의 - 삼성카드 쇼핑</title>
+<base href="http://devshoppingmall.samsungcard.com:10080" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/js/common.js" />
+	
+	<script type="text/javascript" src="/js/modal.js"></script>
+	<script type="text/javascript" src="/js/ec/common/common.js"></script>
+	<script type="text/javascript" src="/js/ec/common/embedswf.js"></script>
+	<script type="text/javascript" src="/js/ec/common/quick.js"></script>
+	<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+	<script type="text/javascript" src="/js/ec/sw/mg/mgQuick.js"></script>
+	<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+	<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+</head>
+<body>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<form name="mgiftForm"  method="post" action="">
+<input type="hidden" name='tel' />
+<input type="hidden" name='email' />
+
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<!--title>LifeStyle Service 쇼핑 - 삼성카드 쇼핑</title-->
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />
+<!-- head -->
+<div id="head" style="background:red;">공통 상단메뉴</div>
+<!-- //head -->
+
+<!--// 공통 상단 끝 -->
+
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+	
+<!-- 공통 좌측 시작 -->
+	<div id="conLeft">	
+		좌측메뉴
+		<!-- 고객센터 -->
+		<div class="box_white182_mid mt10"><div class="box_white182_top"><div class="box_white182_btm">
+			<dl class="call_center">
+				<dt><strong>고객상담 문의</strong></dt>
+				<dd>
+					<ul>
+						<li><img src="${pageContext.request.contextPath}/images/gr/common/cs_represent_only.gif" alt="1588-8700" /></li>
+					</ul>
+					<div class="txt_hours t_11gray">평일 오전 9시 ~ 오후 6시<br />(주말/공휴일 제외)</div>
+					<div>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=764&amp;categoryId=933">FAQ</a></span>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=getInquiry">온라인 문의</a></span>
+					</div>
+				</dd>
+			</dl>
+		</div></div></div>
+		<!-- //고객센터 -->
+	</div>
+<!--// 공통 좌측메뉴 끝 -->
+
+			<div id="conRight" class="m_giftcard">
+				<!-- location -->
+				<div class="location">
+					<a href="http://sam.samsungcard.com/samIndex.do">HOME</a>
+					<span>&gt;</span>
+					<a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain">SHOPPING</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/gm/index.do?method=selectGMMain">기프트몰</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/sw/mg/fr/cc/customerCom100.do?method=mgiftMainForm">모바일Gift카드</a>
+					<span>&gt;</span>
+					<span class="end">온라인문의</span>
+				</div>
+				<!-- //location -->
+
+				<h2><img src="/images/gr/gr3/h2_online_consult.gif" alt="온라인문의" /></h2>
+
+				<ol class="use_step clfix">
+					<li><img src="/images/sw/mg/img_oncon_step01.gif" alt="1.상담문의신청" /></li>
+					<li><img src="/images/sw/mg/img_oncon_step02.gif" alt="2.접수" /></li>
+					<li><img src="/images/sw/mg/img_oncon_step03.gif" alt="3.담당자 답변" /></li>
+					<li><img src="/images/sw/mg/img_oncon_step04.gif" alt="4.결과확인" /></li>
+				</ol>
+
+				<div class="board_input mt10">
+					<table border="0" width="100%" summary="상담유형, 성명, 전화번호, 이메일, 답변수신방법, 제목, 내용으로 구성된 온라인 상담 입력">
+					<caption>온라인 상담</caption>
+					<colgroup><col width="119" /><col width="609" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">상담유형</th>
+							<td>
+								<select id='counselGubun' name='counselGubun' title="상담유형 카테고리1">
+									<option></option>
+								</select>
+								<select id='coounselType' name='coounselType' title="상담유형 카테고리2">
+									<option></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">성명</th>
+							<td>
+								<input name='counselName' maxlength="15" type="text" style="width:150px;" class="txt" value=""  readonly="readonly" title="고객성함 입력" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">전화번호</th>
+							<td>
+								<select name="tel1" title="지역번호">
+									<option value='010'>010</option>
+								</select>
+								<em>-</em>
+								<input name="tel2"  maxlength="4" type="text" style="width:50px;" class="txt" value="" title="전화번호 가운데자리" />
+								<em>-</em>
+								<input name="tel3"  maxlength="4" type="text" style="width:50px;" class="txt" value="" title="전화번호 뒷자리" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">이메일</th>
+							<td>
+								<input name="email1" type="text" style="width:150px;" maxlength="30"class="txt" value="" title="이메일 아이디" />
+								<em>@</em>
+								<input name="email2" type="text" style="width:150px;" maxlength="15" class="txt" value="" title="이메일 공급자 직접입력" />
+								<select title="이메일 공급자 선택">
+									<option value="">직접입력</option>
+									<option value="hanmail.net" >한메일(다음)</option>
+									<!--option value="yahoo.co.kr" >야후</option-->
+									<option value="lycos.co.kr" >라이코스</option>
+									<option value="paran.com" >파란</option>
+									<option value="naver.com" >네이버</option>
+									<option value="netian.com" >네띠앙</option>
+									<option value="dreamwiz.com" >드림위즈</option>
+									<option value="chol.com" >천리안</option>
+									<option value="freechal.com" >프리챌</option>
+									<option value="kebi.com" >깨비</option>
+									<option value="unitel.co.kr" >유니텔</option>
+									<option value="weppy.com" >웨피</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">답변수신방법</th>
+							<td class="t_11">
+								<input type="checkbox" name="mailCheck" id="mailCheck" class="chk" value="Y" title="이메일" /><label for="mailCheck">이메일</label>
+								&nbsp;&nbsp;
+								<input type="checkbox" name="smsCheck" id="smsCheck" class="chk"  value="Y" title="답변안내 SMS" /><label for="smsCheck">답변안내 SMS</label>
+								<span class="t_gray">(답변이 완료되었음을 안내드리는 문자서비스로 상담내용에 따라 발송되지 않을 수도 있습니다.)</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td>
+								<input name="title" id='title' type="text" style="width:580px;" maxlength="50" class="txt" value="" title="제목" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="end">내용</th>
+							<td class="end">
+								<textarea name="textClob" id="textClob" style="width:569px; height:70px;" cols="0" rows="0" title="내용"></textarea>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				<div class="btm_txt">
+					<p class="t_11gray"><span class="t_point"><a href="/ec/sp/ss/ms/ms301.do?method=selectQnaList">마이페이지 &gt; 상담 및 문의 내역</a></span>에서 작성하신 문의 내용과 답변을 확인하실 수 있습니다.</p>
+				</div>
+
+				<!-- btn -->
+				<div class="btn_big">
+                    <a href="javascript:go_submit();"><img src="/images/sw/mg/btn_register.gif" alt="등록" /></a>
+					<a href="/ec/sw/mg/fr/cc/customerCom100.do?method=mgiftMainForm"><img src="/images/gr/gr/btn_cancel.gif" alt="취소" /></a> 
+				</div>
+				<!-- //btn -->
+
+			</div>
+		</div>
+<!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	    </div>
+	
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+</form>
+</body>
+</html>

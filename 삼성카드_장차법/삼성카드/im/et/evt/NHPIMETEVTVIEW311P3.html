@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+<!-- 여기부터 시작 -->
+
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; closeWin();" />
+			<p class="pop_tit"><img src="/images/fs/layer_tit_congraturation.png" alt="축하합니다" /></p>
+			<div class="pop_l_content">
+				<p class="pop_l_alert"><strong class="t_blaack"><%=eventInfo.getGoodsRank() %>등</strong> 서비스포인트 <span class="t_point_org"><%=eventInfo.getGoodsName()==null?"":HpCommonUtil.getCommaStringForMoney(eventInfo.getGoodsName()) %> point</span>에 당첨되셨습니다.<br />당첨된 서비스포인트는 <span class="t_no">2010</span>년 <span class="t_no">8</span>월 <span class="t_no">10</span>일 확인가능합니다.</p>
+
+				<p class="btnc"><a href="#" onclick="closeWin();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+</body>
+</html>
+

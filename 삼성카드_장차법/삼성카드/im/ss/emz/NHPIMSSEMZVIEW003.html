@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100424 -->
+				<div class="top_visual">
+					<h1 class="none">이메일명세서를 이용하고 e메일존 선물받으세요</h1>
+					<p class="h1_desc"><img src="/cms_content/images/ss/h1_emailzone_main.jpg" alt="이메일명세서를 이용하고 e메일존 선물받으세요 - 편리한 이메일명세서 사용하고 한달에 한번씩 마음에 드는 상품 찍고! 이메일명세서 회원님께만 드리는 혜택입니다" /></p>
+                    <a href="javascript:goTabPage('NHPIMMHEPP001');" class="btn_findbenefit pt5"><img src="/images/common/btn_email_app2.png" alt="이메일 명세서 신청하기" /></a>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix emailzone">	<!-- //100126 -->
+
+					<div class="tab01 w810">
+						<ul>
+<!-- 수정 13.01.21 VOC40 -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMSSEMZ001M001', true);">서비스소개</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M002', true);">My ⓔ메일존</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M003', true);">지난 선물 내역</a></li>
+							<li><a href="javascript:goHit20();">인기선물 TOP20</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M004', true);">FAQ</a></li>
+							<!--li class="on"><a href="javascript:goTabPage('NHPIMSSEMZ001M001', true);">서비스소개</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M002', true);">My e메일존</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMSSEMZ001M003', true);">지난선물보기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M004', true);">FAQ</a></li-->
+<!--// 수정 13.01.21 VOC40 -->
+						</ul>
+					</div>
+
+					<h2><img src="/images/ss/h2_emailzone_arrive01.png" alt="회원님께서 신청하신 선물정보입니다" /></h2>
+					<!-- 상품정보 들어갈 위치-->
+					<div id="goodsInfo" style="display:inline"></div>
+					<!-- 상품정보 들어갈 위치-->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix pos_rel emailzone">
+					<h2><img src="/images/ss/h2_emailzone_arrive02.png" alt="배송주소를 등록해주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02 dtable_inputfield emailzone" summary="배송지선택, 수취인명, 주소, 전화번호(수취인), 핸드폰번호(수취인)를 입력하는 게시판입니다">
+						<caption>배송주소 등록</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>배송지선택</p></th>
+								<td><p>
+                                    <a href="javascript:goLastDeliveryList()" class="btn btn_s_white"><span>지난배송지 목록</span></a><a href="javascript:clearAll()" class="btn btn_s_gray"><span>새 배송지</span></a>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>수취인명</p></th>
+								<td><p>
+									<span class="input_name"><input id="recver" name="recver" maxlength="14" type="text" class="txt" value="<%=deliveryInfo.getRecver().trim()%>" title="수취인명" /></span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주소</p></th>
+								<td>
+									<p class="input_address">
+										<span class="input_zip">
+										<input type="text" id="zipCode1" name="zipCode1" class="txt" <%if(deliveryInfo.getZipCode()!=""){ %>value="<%= deliveryInfo.getZipCode().substring(0,3) %>"<%} %> title="우편번호 앞자리" id="label_address" readonly="readonly" />&nbsp;-&nbsp;
+										<input type="text" id="zipCode2" name="zipCode2" class="txt"<%if(deliveryInfo.getZipCode()!=""){ %> value="<%= deliveryInfo.getZipCode().substring(3,6) %>"<%} %> title="우편번호 뒷자리" id="label_address02" readonly="readonly" />
+										<a href="javascript:searchZipMain(frm2.zipCode1, frm2.zipCode2, frm2.zipSeq, frm2.Addr1, frm2.Addr2, '<%=newjusoYn %>')" class="btn btn_s_white" title="새창" id="label_zip"><span>우편번호 검색</span></a></span>
+										<span class="input_address"><input type="text"  name="Addr1" class="txt" value="<%= deliveryInfo.getAddr1().trim() %>"  title="주소" id="label_address03" readonly="readonly" /></span>
+										<span class="input_address"><input type="text"  name="Addr2" maxlength="40" class="txt" value="<%=HpCommonUtil.convAscii(deliveryInfo.getAddr2().trim()) %>" title="주소 상세입력" id="label_address04" /></span>
+										<input type="hidden" name = "zipSeq" <%if(deliveryInfo.getZipSeq()!=""){ %>value="<%= deliveryInfo.getZipSeq().trim() %>"<%} %>/>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>전화번호(수취인)</p></th>
+								<td><p class="input_phone">
+									<select title="국번" name="Phone1" id="Phone1">
+										<option value="02"<%if(phoneNum[0].equals("02"))out.write(" selected='selected'");%>> 02 </option>
+										<option value="031"<%if(phoneNum[0].equals("031"))out.write(" selected='selected'");%>> 031 </option>
+										<option value="032"<%if(phoneNum[0].equals("032"))out.write(" selected='selected'");%>> 032 </option>
+										<option value="033"<%if(phoneNum[0].equals("033"))out.write(" selected='selected'");%>> 033 </option>
+										<option value="041"<%if(phoneNum[0].equals("041"))out.write(" selected='selected'");%>> 041 </option>
+										<option value="042"<%if(phoneNum[0].equals("042"))out.write(" selected='selected'");%>> 042 </option>
+										<option value="043"<%if(phoneNum[0].equals("043"))out.write(" selected='selected'");%>> 043 </option>
+										<option value="051"<%if(phoneNum[0].equals("051"))out.write(" selected='selected'");%>> 051 </option>
+										<option value="052"<%if(phoneNum[0].equals("052"))out.write(" selected='selected'");%>> 052 </option>
+										<option value="053"<%if(phoneNum[0].equals("053"))out.write(" selected='selected'");%>> 053 </option>
+										<option value="054"<%if(phoneNum[0].equals("054"))out.write(" selected='selected'");%>> 054 </option>
+										<option value="055"<%if(phoneNum[0].equals("055"))out.write(" selected='selected'");%>> 055 </option>
+										<option value="061"<%if(phoneNum[0].equals("061"))out.write(" selected='selected'");%>> 061 </option>
+										<option value="062"<%if(phoneNum[0].equals("062"))out.write(" selected='selected'");%>> 062 </option>
+										<option value="063"<%if(phoneNum[0].equals("063"))out.write(" selected='selected'");%>> 063 </option>
+										<option value="064"<%if(phoneNum[0].equals("064"))out.write(" selected='selected'");%>> 064 </option>
+										<option value="0303"<%if(phoneNum[0].equals("0303"))out.write(" selected='selected'");%>> 0303 </option>
+										<option value="0502"<%if(phoneNum[0].equals("0502"))out.write(" selected='selected'");%>> 0502 </option>
+										<option value="0503"<%if(phoneNum[0].equals("0503"))out.write(" selected='selected'");%>> 0503 </option>
+										<option value="0504"<%if(phoneNum[0].equals("0504"))out.write(" selected='selected'");%>> 0504 </option>
+										<option value="0505"<%if(phoneNum[0].equals("0505"))out.write(" selected='selected'");%>> 0505 </option>
+										<option value="0506"<%if(phoneNum[0].equals("0506"))out.write(" selected='selected'");%>> 0506 </option>
+										<option value="070"<%if(phoneNum[0].equals("070"))out.write(" selected='selected'");%>> 070 </option>
+									</select>
+									<input type="text" name="Phone2" id="Phone2" class="txt" value="<%=phoneNum[1] %>" title="전화번호 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.frm2.Phone3);" />&nbsp;-&nbsp;
+									<input type="text" id="Phone3" name="Phone3" class="txt" value="<%=phoneNum[2] %>" title="전화번호 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.frm2.Phone2);" />
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>핸드폰번호(수취인)</p></th>
+								<td><p class="input_phone">
+									<select title="핸드폰번호 앞자리" name="Cell1" id="Cell1" >
+										<option value="010"<%if(cellNum[0].equals("010"))out.write(" selected='selected'");%>>010</option>
+										<option value="011"<%if(cellNum[0].equals("011"))out.write(" selected='selected'");%>>011</option>
+										<option value="016"<%if(cellNum[0].equals("016"))out.write(" selected='selected'");%>>016</option>
+										<option value="017"<%if(cellNum[0].equals("017"))out.write(" selected='selected'");%>>017</option>
+										<option value="018"<%if(cellNum[0].equals("018"))out.write(" selected='selected'");%>>018</option>
+										<option value="019"<%if(cellNum[0].equals("019"))out.write(" selected='selected'");%>>019</option>
+										<option value="130"<%if(cellNum[0].equals("130"))out.write(" selected='selected'");%>>130</option>
+										<option value="0502"<%if(cellNum[0].equals("0502"))out.write(" selected='selected'");%>>0502</option>
+										<option value="0503"<%if(cellNum[0].equals("0503"))out.write(" selected='selected'");%>>0503</option>
+										<option value="0504"<%if(cellNum[0].equals("0504"))out.write(" selected='selected'");%>>0504</option>
+										<option value="0505"<%if(cellNum[0].equals("0505"))out.write(" selected='selected'");%>>0505</option>
+										<option value="0506"<%if(cellNum[0].equals("0506"))out.write(" selected='selected'");%>>0506</option>
+										<option value="0303"<%if(cellNum[0].equals("0303"))out.write(" selected='selected'");%>>0303</option>
+									</select>
+									<input type="text" name="Cell2" id="Cell2" class="txt" value="<%=cellNum[1] %>" title="핸드폰번호 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.frm2.Cell3);" />&nbsp;-&nbsp;
+									<input type="text" id="Cell3" name="Cell3" class="txt" value="<%=cellNum[2] %>" title="핸드폰번호 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.frm2.Cell2);" />
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">배송주소를 정확히 입력하셔야 합니다. 배송주소는 고객님의 신상정보와 동일한 주소로 지정됩니다.</p>
+                            <p class="btnr"><a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_white"><span>개인정보 수정하기</span></a></p>
+						</div>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<h3>신청시 유의사항</h3>
+						<p>
+							신청시 유의사항 신청하신 선물의 배송은 삼성카드의 제휴 배송업체에 의해 이루어 집니다. 따라서, 위에 입력하시는 <br />배송주소정보가 배송업체에게 전달됨을 양지 바라며, 해당 정보는 선물 배송과 관련된 내용에만 사용됨을 알려 드립니다.
+						</p>
+
+						<p class="al_right mt20"><label for="label_agree_arrive"><input type="checkbox" name="agreeInfoShare" class="chk" value="" title="동의" id="label_agree_arrive" /> <strong class="t_black">배송정보가 배송업체에 전달되는 것에 동의합니다.</strong></label></p>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<div class="btnr">
+                            <a href="#" onclick="setRequest();" class="btn btn_blue"><span>확인</span></a>
+							<a href="#" onclick="goTabPage('NHPIMSSEMZ001M001', true);" class="btn btn_white"><span>취소</span></a>
+						</div>
+
+					</div>
+				</div>
+</form>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

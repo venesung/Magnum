@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/cd/h1_applist_domestic.png" alt="가족카드 이용한도를 조회할 수 있습니다." /></h1><!-- 100508 -->
+</div>
+
+<!-- content_block 100508 -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_applist_domestic01.png" alt="카드기본정보를 입력하세요" /></h2>
+	<div class="content_block_inner">
+
+        <table class="dtable02 dtable_inputfield" summary="조회내역 체크, 주민등록번호, 카드번호, CVC 번호, 비밀번호입력 등 카드 기본정보 입력을 하실 수 있습니다.">
+        <caption>카드 기본정보 입력</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>주민등록번호</p></th>
+                <td>
+                	<p>
+                    <span class="input_idno"><input type="text" class="txt" value="" title="주민등록번호 앞자리" name="idenNo1"  maxlength="6" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="주민등록번호 뒷자리" name="idenNo2" style="width:70px" maxlength="7" enc="on" /></span>
+                	<span id="usafeon_idenNo1|idenNo2"></span>
+                	</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><p>카드번호</p></th>
+<!-- SR내역 13.02.08 -->
+                <td><p class="input_cardno">
+                    	<label for="label_cardno01"  style="width:230px;"><input type="radio" class="rdo" value="1" title="비자/마스터/UnionPay(은련)/자체" id="label_cardno01" onclick="doDisabled()" name="cardKand" /> 비자/마스터/UnionPay(은련)/자체</label><br/>
+                        <span class="input_cardno mt3 ml20"><input type="password" class="txt" value="" title="카드번호 첫번째 네자리" name="mvsCardNo1" maxlength="4" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="카드번호 두번째 네자리" name="mvsCardNo2"  maxlength="4" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="카드번호 세번째 네자리" name="mvsCardNo3"  maxlength="4" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="카드번호 네번째 네자리" name="mvsCardNo4"  maxlength="4" enc="on" /></span>
+                    </p>
+                    <p class="input_cardno mt5">
+                    	<label for="label_cardno02"  style="width:230px;"><input type="radio" class="rdo" value="2" title="아멕스카드" id="label_cardno02" name="cardKand" onclick="doDisabled()" /> 아멕스카드</label><br/>
+                        <span class="input_cardno mt3 ml20"><input type="password" class="txt" value="" title="카드번호 첫번째 네자리" name="imaxCardNo1"  maxlength="4" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="카드번호 두번째  여섯자리" name="imaxCardNo2" maxlength="6" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" title="카드번호 세번째 다섯자리" name="imaxCardNo3" maxlength="5" enc="on" /></span>
+                    &nbsp;
+                	<span id="usafeon_mvsCardNo1|mvsCardNo2|mvsCardNo3|mvsCardNo4" style="display:inline"></span>
+                	<span id="usafeon_imaxCardNo1|imaxCardNo2|imaxCardNo3" style="display:none"></span>
+                </p></td>
+<!--// SR내역 13.02.08 -->
+            </tr>
+            <tr>
+                <th scope="row"><span class="flag_additional zIndex100"><img src="/images/common/img_cvc_lay.png" id="id_cvc_lay" class="flag_cvc_lay" onmouseout="hide_con('id_cvc_lay');show_select();" style="display:none" alt="비자/마스터/자체카드 - 카드뒷면 19자리숫자중 끝 3자리 혹은 카드뒷면 7자리 숫자 중 끝 3자리 / 아멕스카드-카드뒷면 18자리숫자 중 끝 3자리" /></span><p>CVC 번호</p></th>
+                <td>
+                	<p>
+                    <span class="input_3char"><input type="password" class="txt" style="width:30px" value="" title="CVC번호" name="cvcNo" maxlength="3" enc="on" />카드 뒷면 19자리 숫자 중 뒤의 3자리 <a href="#" onclick="document.getElementById('id_cvc_lay').style.display=(document.getElementById('id_cvc_lay').style.display=='none')?'block':'none'; (document.getElementById('id_cvc_lay').style.display=='none')? show_select() : hide_select();return false;" class="a_point">CVC 번호 등록 예</a></span>
+                	<span id="usafeon_cvcNo"></span>
+                	</p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><p>비밀번호입력</p></th>
+                <td>
+                	<p>
+                	<span class="input_3char"><input type="password" class="txt" style="width:20px" value="" title="비밀번호 앞 2자리" name="cardPassword" maxlength="2" enc="on" />XX (숫자 앞 2자리)</span>
+                	<span id="usafeon_cardPassword"></span>
+                	</p>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        
+        <!-- btn -->
+        <div class="btnr">
+            <a href="javascript:goSubmit('1');" class="btn btn_blue"><span>확인</span></a>    
+        </div>
+		<div id="idContents"></div>
+
+    </div>
+</div>
+
+</div>
+</body>
+</html>>

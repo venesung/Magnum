@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_reduct_income.png" alt="소득공제 내역입니다" /></h1>
+				</div>
+				
+				<!-- content_block 100304 -->
+				<div class="content_block content_block_card">
+					<div class="tab02 clfix">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM000', true)">소득공제 안내</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHDLM001', true)">소득공제 내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM004', true)">올앳카드 소득공제 내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM005', true)">소득공제 내역 발송신청</a></li>                                        
+						</ul>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- //100304 -->
+					<h2 class="cross_tit"><img src="/images/mh/h2_reduct_income01.png" alt="조회년도를 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">${MYEAR} 년</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="#">1234 년</a></li>
+                                    <li><a href="#">1234 년</a></li>
+                                    <li><a href="#">1234 년</a></li>
+                                    <li><a href="#">1234 년</a></li>
+                                    <li><a href="#">1234 년</a></li>
+								</ul>
+							</div>							
+						</div>
+                        <span class="selectbox_r_txt02"><a href="javascript:cmdgo('${MYEAR}')"><img src="/images/common/btn_inqury.png" alt="조회" /></a></span>
+						<span class="selectbox_r_txt03 t_desc03">최근 5년 동안 카드 이용금액을 조회하실 수 있습니다.</span><!-- 120409 수정 -->
+						<!--p class="t_point t_point_org mt5">※ 최종 확정된 소득공제 내역입니다.</p--><!-- 정기일반영 12.12.12 -->
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<!-- 120409 수정 -->
+					<h2><img src="/images/mh/h2_reduct_income02.png" alt="본인 신용카드 이용금액입니다" />
+					<p class="t_desc03">본인카드+가족카드<br />+선불카드+체크카드<br />+기프트카드</p></h2>
+                 <!-- //120409 수정 -->
+					<div class="content_block_inner">
+
+						<div style="text-align:right;">(단위 : 원)</div>
+						<table class="dtable01 dtable01_bill" summary="주민번호, 성명, 사용구분, 이용금액, 제외/비정상금액, 공제대상금액등의 본인 신용카드 이용금액을 상세하게 보여주는 게시판입니다">
+						<caption>본인 신용카드 이용금액</caption>
+						<colgroup><col width="10%" /><col width="7%" /><col width="10%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="8%" /></colgroup><!-- 121129 수정 --><!-- SR 반영 12.27 -->
+						<thead>
+							<tr>
+								<th rowspan="2" scope="col" class="cell_l10 riline">주민번호</th><!-- 121130 수정 -->
+								<th rowspan="2" scope="col" class="riline">성명</th>
+								<th rowspan="2" scope="col" class="riline">사용구분</th><!-- 121129 추가 -->
+								<th colspan="2" scope="col" class="boline_b0 riline">이용금액</th><!-- 120409 수정 -->
+								<th colspan="2" scope="col" class="boline_b0 riline">제외/비정상금액</th>
+								<th colspan="2" scope="col" class="boline_b0 riline">공제대상금액</th>
+								<th rowspan="2" scope="col">선택</th>
+							</tr>
+							<tr>
+								<!-- 20121206 일반영 SR -->
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no riline" rowspan="2">000000-*******</td>
+								<td class="riline" rowspan="2">0</td>
+								<td class="riline t_11">일반</td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td rowspan="2"><a href="#" class="btn btn_s_white" title="상세내역 조회"><span>조회하기</span></a></td> 
+                            </tr> 
+							<tr> 
+                                <td class="riline t_11">전통시장</td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+
+							</tr>
+							<tr class="nodata">
+								<td colspan="10">조회 결과가 없습니다.</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">회원님이 발급 받은 가족카드 이용금액도 합산되어 표기됩니다.</p><!-- 120409 수정 -->
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_reduct_income03.png" alt="본인 신청 가족카드의 이용자별 내역입니다." /></h2><!-- 120409 수정 -->
+					<div class="content_block_inner">
+
+						 <div style="text-align:right;">(단위 : 원)</div>
+						<table class="dtable01 dtable01_bill" summary="주민번호, 성명, 사용구분, 이용금액, 제외/비정상금액, 공제대상금액등의 본인 신청 가족카드의 이용자별 내역을 상세하게 보여주는 게시판입니다">
+						<caption>본인 신청 가족카드의 이용자별 내역</caption>
+						<colgroup><col width="10%" /><col width="7%" /><col width="10%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="8%" /></colgroup><!-- 121129 수정 -->
+						<thead>
+							<tr>
+								<th rowspan="2" scope="col" class="cell_l10 riline">주민번호</th><!-- 121130 수정 -->
+								<th rowspan="2" scope="col" class="riline">성명</th>
+								<th rowspan="2" scope="col" class="riline">사용구분</th><!-- 121129 추가 -->
+								<th colspan="2" scope="colgroup" class="boline_b0 riline">이용금액</th><!-- 120409 수정 -->
+								<th colspan="2" scope="colgroup" class="boline_b0 riline">제외/비정상금액</th>
+								<th colspan="2" scope="colgroup" class="boline_b0 riline">공제대상금액</th>
+								<th rowspan="2" scope="col">선택</th>
+							</tr>
+							<tr>
+								<!-- 20121206 일반영 SR -->
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+								<th scope="col" class="riline">신용</th>
+								<th scope="col" class="riline">선불/체크/<br />전통시장</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no riline" rowspan="2">000000-*******</td>
+								<td class="riline" rowspan="2">0</td>
+								<td class="riline t_11">일반</td>
+								<td class="cell_r10 riline"><span class="t_no">0</span> </td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span></td>
+								<td class="cell_r10 riline"><span class="t_no">0</span> </td>
+								<td class="cell_r10 riline"><span class="t_no">0</span> </td>
+								<td class="cell_r10 riline"><span class="t_no">0</span> </td>
+								<td rowspan="2"><a href="#" class="btn btn_s_white"><span>조회하기</span></a></td> 
+                            </tr> 
+                            <tr> 
+                                <td class="riline t_11">전통시장</td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span> </td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span></td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span> </td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span> </td> 
+                                <td class="cell_r10 riline"><span class="t_no">0</span> </td> 
+
+							</tr>
+							<tr class="nodata">
+	             				<td colspan="10" >가족카드 발급내용이 없습니다.</td>
+	             			</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">소득공제 확인서는 본인회원과 가족회원을 구분하여 조회됩니다.<br />‘선택’에서 ‘조회’를 클릭하시면 연간 카드이용금액이 조회됩니다.</p><!-- 120409 수정 -->
+						</div>
+
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>		 

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>전송조회 - 삼성카드 쇼핑</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://devshoppingmall.samsungcard.com:10080" />
+<link rel="stylesheet" href="/css/base.css" type="text/css" />
+<link rel="stylesheet" href="/css/shopping.css" type="text/css" />
+<link rel="stylesheet" href="/css/shopping_giftmall.css" type="text/css" />
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/quick.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+
+</head>
+<body>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />
+<!-- head -->
+<div id="head" style="background:red;">공통 상단메뉴</div>
+<!-- //head -->
+
+<!--// 공통 상단 끝 -->
+	
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+<!-- 공통 좌측 시작 -->
+	<div id="conLeft">	
+		좌측메뉴
+		<!-- 고객센터 -->
+		<div class="box_white182_mid mt10"><div class="box_white182_top"><div class="box_white182_btm">
+			<dl class="call_center">
+				<dt><strong>고객상담 문의</strong></dt>
+				<dd>
+					<ul>
+						<li><img src="${pageContext.request.contextPath}/images/gr/common/cs_represent_only.gif" alt="1588-8700" /></li>
+					</ul>
+					<div class="txt_hours t_11gray">평일 오전 9시 ~ 오후 6시<br />(주말/공휴일 제외)</div>
+					<div>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=764&amp;categoryId=933">FAQ</a></span>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=getInquiry">온라인 문의</a></span>
+					</div>
+				</dd>
+			</dl>
+		</div></div></div>
+		<!-- //고객센터 -->
+	</div>
+<!--// 공통 좌측메뉴 끝 -->
+			
+			<div id="conRight" class="m_giftcard">
+				<!-- location -->
+				<div class="location">
+					<a href="http://sam.samsungcard.com/samIndex.do">HOME</a>
+					<span>&gt;</span>
+					<a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain">SHOPPING</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/gm/index.do?method=selectGMMain">기프트몰</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/sw/mg/fr/cc/customerCom100.do?method=mgiftMainForm">모바일Gift카드</a>
+					<span>&gt;</span>
+					카드조회
+					<span>&gt;</span>
+					<span class="end">구매/전송 내역조회</span>
+				</div>
+				<!-- //location -->
+				
+				<div class="h2_wrap">
+					<h2><img src="/images/sw/mg/h2_send_search.gif" alt="전송조회" /></h2>
+				</div>
+				<div class="clfix">
+					<div class="fl_left"><h3><img src="/images/sw/mg/h3_send_search.gif" alt="전송(수령) 조회" /></h3></div>
+					<div class="fl_right"><span class="btn_white"><a href="javascript:fncPageBack();">구매목록 보기</a></span></div>
+				</div>
+
+				
+<form name="frm" method="post" action="">
+
+				<!-- search -->			
+				<dl class="search_period mb10">
+					<dt>성명/휴대폰</dt>
+					<dd class="input_num">						
+						<select name="selGbn" title="성명/휴대폰 선택">
+							<option ></option>
+						</select>	
+						<input class="txt" name="inputTxt" value="" style="width:120px;" type="text" title="Gift카드번호 넷째 네자리" />
+					</dd>
+					<dt>수령상태</dt>
+					<dd>
+						<select name="selReceiveStatus" title="수령상테">
+							<option value=""  >전체</option>
+						</select>						
+					</dd>
+				</dl>				
+				<!-- //search -->
+				<!--btn-->
+				<div class="al_right mb30">				
+                    <span class="btnS_point"><a href="javascript:fncSearch();" class="search">검색</a></span>    
+					<!-- <span class="btn_point"><a href="javascript:fncSearch();">상품검색</a></span>  -->
+				</div>
+				<!--//btn-->
+				
+				<table border="0" width="728" class="dtable_row" summary="선택, 구매일, 상품정보, 권종금액, 받으실 분, 수령상태, 재전송/선물하기로 구성된 수령상태 검색 내역">	
+				<caption>수령상태</caption>		
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col" class="cell_c br0">선택</th>
+						<th rowspan="2" scope="col" class="br0">구매일</th>
+						<th rowspan="2" scope="col" class="br0">상품정보</th>
+						<th rowspan="2" scope="col" class="cell_r">권종금액</th>
+						<th colspan="2" scope="col" class="cell_c">받으실 분</th>
+						<th rowspan="2" scope="col" class="br0">수령상태</th>
+						<th rowspan="2" scope="col" class="br0">재전송/선물하기</th>
+					    <!-- <th rowspan="2" scope="col" class="br0">LMS보내기</th> -->
+					</tr>
+					<tr>
+						<th scope="col" class="br0">성명</th>
+						<th scope="col">휴대폰 번호</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						 <td colspan="8" align="center" class="br0">데이터가 존재하지 않습니다.</td>
+					</tr>
+					<tr>
+						<td class="cell_c br0"><input type="checkbox" name="select_U_ID" value="" title="선택"  />
+						</td>
+						<td class="br0">1</td>
+						<td class="br0">1</td>
+						<td class="br0 cell_r">1원</td>
+						<td class="br0">1</td>
+						<td class="br0">1</td>
+						<td class="br0">1</td>
+						<td class="br0">
+                            <a href="#"><img src="/images/sp/common/btnS_resend_on.gif" alt="다시보내기" /></a>
+							<img src="/images/sp/common/btnS_info_off.gif" alt="다른분께 선물하기" />
+						</td>
+					   <!-- <td class="br0"><a href="javascript:fncAlert();"><img src="/images/sp/common/btn_lms_send.gif" alt="LMS보내기"></a></td> -->
+					</tr>	
+				</tbody>
+				</table>	
+
+				<div class="btm_txt">
+
+					<div class="mb10 al_right">
+                        <span class="btn_white"><a href="javascript:usrStop();">선택항목 사용중지 요청</a></span>
+					</div>
+
+					<span class="t_11gray t_11">
+						수령자가 휴대폰 번호를 변경한 경우 사용중지 등록 후 다른 분께 선물하기를 통해 번호변경 후 선물하실 수 있습니다.<br />
+						단, 수령완료건은 사용중지 요청이 불가합니다.<br />
+<!-- 						SMS문자 접속이 지원되지 않는 <span class="t_org">스마트폰, PDA폰</span>을 소지한 경우 다시보내기를 통해 <span class="t_org">LMS(Long Meassage Sevice)</span> 전송방식으로 선물하실 수 있습니다.<br /> -->
+<!--						<span class="list_refer">단, <span class="t_org">일부 스마트폰(아이폰,노키아,안드로이드등) 및 이통사KT 스마트폰은 LMS 수령이 안될</span> 수 있습니다. 사용 가능한 휴대폰으로 선물하시기 바랍니다.</span>-->
+<!-- 수정 100907 -->
+						<span class="list_refer"><span class="t_org">휴대폰 기종별 특성 및 통신사 사정에 의해 수령이 안될 수 있습니다.</span>  미수령 시 고객상담센터(1588-8700)로 문의하시기 바랍니다.</span>
+<!-- // 수정 100907 -->
+					</span>
+				</div>	
+				
+				<!-- paging -->
+					<div class="pagenate">1</div>
+				<!--// paging --> 
+
+				<!--수령상태 안내 -->
+				<div class="box_w728_mid attention"><div class="box_w728_top"><div class="box_w728_btm">
+					<strong class="mb10">수령상태 안내</strong>
+					<table border="0" width="656" class="dtable_col ml20" summary="수령 상태 구분, 세부 내용, 재전송, 선물하기로 구성된 수령상태 안내">
+					<caption>수령상태 안내</caption>
+					<colgroup><col width="110" /><col width="246" /><col width="150" /><col width="150" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="t_11">수령 상태 구분</th>
+							<th scope="col" class="t_11">세부 내용</th>
+							<th scope="col" class="cell_c t_11">재전송</th>
+							<th scope="col" class="cell_c t_11 end">선물하기</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="t_11gray">수령대기</td>
+							<td class="t_11gray">수신자가 수령하지 않아 대기하고 있습니다.</td>
+							<td class="cell_c "><span class="t_org t_11">O</span></td>
+							<td class="cell_c  end"><span class="t_org t_11">발송일 14일 이후</span></td>
+						</tr>
+						<tr>
+							<td class="t_11gray">수령완료</td>
+							<td class="t_11gray">수신자가 수령 완료하였습니다.</td>
+							<td class="cell_c "><span class="t_org t_11">O</span></td>
+							<td class="cell_c  end">X</td>
+						</tr>
+						<tr>
+							<td class="t_11gray">수령거부</td>
+							<td class="t_11gray">수신자가 수령을 거부하였습니다.</td>
+							<td class="cell_c "><span class="t_org t_11">O</span></td>
+							<td class="cell_c  end"><span class="t_org t_11">O</span></td>
+						</tr>
+						<tr>
+							<td class="t_11gray">전송오류</td>
+							<td class="t_11gray">수신자가 수령할 수 없는 상태입니다.</td>
+							<td class="cell_c t_11gray">X</td>
+							<td class="cell_c  end"><span class="t_org t_11">O</span></td>
+						</tr>
+						<tr>
+							<td class="t_11gray">사용중지</td>
+							<td class="t_11gray">오배송으로 사용중지를 요청한 상태입니다.</td>
+							<td class="cell_c t_11gray">X</td>
+							<td class="cell_c  end"><span class="t_org t_11">O</span></td>
+						</tr>
+						<!-- <tr>
+							<td colspan="4" class="data_none">내용이 없습니다.</td>
+						</tr> -->
+					</tbody>
+					</table>
+				</div></div></div>
+				<!--//수령상태 안내 -->
+			</form>
+			
+			</div>
+		</div><!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	<!-- //body content -->
+</div>
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+
+
+</body>
+</html>

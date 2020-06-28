@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li><a href="javascript:goMyAccountInfoMain()">결제일 변경</a></li>
+                                <li class="on"><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+
+<!-- 100224 -->
+					<h2><img src="/images/mh/h2_card_settlement_change01.png" alt="회원님의 개인/할부금융 정보입니다" /></h2>
+					<div class="content_block_inner">
+ 
+						<ol class="list_no01">
+							<li><p>보유 개인카드/할부금융, 법인개별카드에 대한 자동이체 신청/결제계좌 정보입니다.</p></li>
+							<!--  <li><p>[개인카드/할부금융]은 통합관리 운영하고 있습니다. 변경 시 유의하시기 바랍니다.</p></li> -->
+							<li><p>개별변경 선택시 자동이체를 구분하여 변경하실수 있습니다.</p></li>
+							<li><p>본인명의의 계좌가 아닌 타인명의의 계좌로 변경하실 경우 <strong class="t_black">고객상담센터(1588-8700)</strong>으로<br />요청하시기 바랍니다.</p></li>
+						</ol>
+						<form name="mform" method="method"  autocomplete="off" >
+						<table class="dtable01 mt20" summary="회원님의 할부금융정보(카드구분, 결제은행명, 계좌번호, 결제방법)를 변경할 수 있는 게시판입니다.">
+                        <caption>회원님의 개인/할부금융 정보</caption>
+						<colgroup><col width="7%" /><col width="30%" /><col width="10%" /><col width="*%" /><col width="16%" /></colgroup>
+						<thead>
+							<tr>
+							    <th scope="col">선택</th>
+								<th scope="col" class="cell_l10">카드구분</th>
+								<th scope="col">결제은행명</th>
+								<th scope="col">계좌번호</th>
+								<th scope="col">결제방법</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+							    <td><input type="checkbox" name="chgitem" title="00카드 결제계좌변경 선택" /></td>
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+							</tr>
+							<!-- //loop -->
+							<tr class="nodata">
+								<td colspan="4">-_-</td>
+							</tr>
+						</tbody>
+						</table>
+ 						</form>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:goChangeEachAccountForm();" class="btn btn_blue"><span>건별변경</span></a>&nbsp;<a href="javascript:goChangeAccountForm();" class="btn btn_blue"><span>통합변경</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+ 
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlement_change02.png" alt="회원님의 법인 개별카드 정보입니다" /></h2>
+					<div class="content_block_inner">
+						<form name="sform" method="post" autocomplete="off">
+                		<input type="hidden" name="input" />
+						<table class="dtable01" summary="회원님의 법인개별카드 정보(카드구분, 결제은행명, 계좌번호, 결제방법)를 변경할 수 있는 게시판입니다.">
+                        <caption>회원님의 법인개별카드 정보</caption>
+						<colgroup><col width="40%" /><col width="10%" /><col width="*%" /><col width="16%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드구분</th>
+								<th scope="col">결제은행명</th>
+								<th scope="col">계좌번호</th>
+								<th scope="col">결제방법</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="4">-_-</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						<input type="hidden" name ="index" value="" />
+ 						</form>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:goChangeAccountFormCm()" class="btn btn_blue"><span>변경</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

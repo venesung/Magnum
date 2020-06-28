@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>연체내역 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_beoverdue_list.png" alt="연체내역" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<div class="btnset">
+						<p class="btnl mt18">페이지 내 정보를 엑셀다운로드 받거나 인쇄하실 수 있습니다.<br />인쇄 時 페이지설정은 "가로"로 설정 후 출력하세요.</p>
+						<p class="btnr"><a href="#" class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+
+					<ol class="list_no01 mt30">
+						<li><p>아래의 연체내역은 <strong class="t_black">2013년2월1일</strong>  현재까지 입금이 반영된 것이며,<br />입금 은행 별 차이로 전일 또는 전전일 입금하신 금액은 반영되지 않을 수 있으니 참조하십시오.</p></li>
+						<li><p>연체금액 입금 시 <strong class="t_point">고객상담센터(1588-8700)</strong>에 현재일 기준의 금액을 확인하시고 입금하시기 바랍니다. </p></li><!-- 100519 -->
+					</ol>
+
+					
+						<div class="dtable_over1200 d_easy mt20" id="printDiv" tabindex="0"><!-- 100519 -->
+						<table class="dtable01" summary="조회하신 카드의 연체내역정보(그룹명, 조직명, 카드번호, 명의자, 결제일, 카드상태, 연체개월, 연체일수, 연체금액, 은행, 계좌번호, 원금, 연체료, 계)를 확인하실 수 있습니다.">
+						<caption>조회 카드 연체내역정보</caption>
+						<colgroup><col width="5%" /><col width="7%" /><col width="8%" /><col width="11%" /><col width="11%" /><col width="5%" /><col width="5%" /><col width="4%" /><col width="4%" /><col width="7%" /><col width="6%" /><col width="6%" /><col width="11%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="cell_l10a">번호</th>
+								<th scope="col" rowspan="2" class="cell_l10">그룹명</th>
+								<th scope="col" rowspan="2" class="cell_l10">조직명</th>
+								<th scope="col" rowspan="2">카드번호</th>
+								<th scope="col" rowspan="2" class="cell_l10">명의자</th>
+								<th scope="col" rowspan="2">결제일</th>
+								<th scope="col" rowspan="2">카드상태</th>
+								<th scope="col" rowspan="2">연체<br />개월</th>
+								<th scope="col" rowspan="2">연체<br />일수</th>
+								<th scope="col" colspan="3" class="boline_b0">연체금액 (원)</th>
+								<th scope="col" rowspan="2" class="cell_l10">은행</th>
+								<th scope="col" rowspan="2">계좌번호</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10">원금 (원)</th>
+								<th scope="col" class="cell_r10">연체료 (원)</th>
+								<th scope="col" class="cell_r10">계 (원)</th>
+							</tr>
+						</thead>
+						
+							<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10a">1</td>
+								<td class="cell_l10"><span class="nobreak_nolink"></span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w90"></span></td>
+								<td></td>
+								<td  class="cell_l10"><span class="nobreak_nolink w110"></span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="cell_r10"><span class="p_nowrap"></span></td>
+								<td class="cell_r10"><span class="p_nowrap"></span></td>
+								<td class="cell_r10"><span class="p_nowrap"></span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w110"></span></td>
+								<td><span class="p_nowrap"></span></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+					</div>
+
+					<!-- paginate -->
+					<div class="paginate">
+						1
+						<input type="hidden" name="cPage" value="<%=vos.getcPage() %>" />
+					</div>
+
+
+
+					<div class="tb_exp clfix mt40">
+						<h2><img src="/images/cm/h2_caution.png" alt="주의사항" /></h2>
+						<span class="ab_tr "><span class="mr10"><a href="/rec.do?method=selectInfo" class="btn_link">자동이체안내</a></span><span><a href="/rec.do?method=selectInfo&amp;tab=2" class="btn_link">무통장입금안내</a></span></span>
+					</div>
+
+					<ol class="list_no01">
+						<li><p>각 법인카드에 대하여 연체금액 5만원이상 연체기간 3개월 초과할 경우 은행연합회 등재규정에 의거하여<br />불량법인으로 등재됩니다.</p></li>
+						<li><p>회원님의 결제방법이 자동이체인 경우 통장에 입금하시면 되고, 무통장입금인 경우 무통장입금방법을 참조하셔서<br />입금하시면 됩니다.</p></li>
+						<li><p>만약 연체로 인하여 카드사용이 정지된 경우에는 무통장입금방법으로 입금하시면 입금즉시 카드 재사용이 가능하나,<br />통장에 잔고가 있는 경우 이중입금이 발생할 수 있으므로 주의하시기 바랍니다.</p></li>
+					</ol>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+
+</html>

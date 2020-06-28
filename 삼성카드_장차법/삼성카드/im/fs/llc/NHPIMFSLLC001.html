@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none"><%=result.getContentNm() %></h1>
+	<div class="h1_desc"><img src="/cms_content/lease/goods/3946_IMG_1.jpg" alt="실속있는 비즈니스 차량 대여 시스템 삼성장기렌터카 - 높은 유류비, 불안한 차량관리 때문에 고민된다면 믿을 수 있는 삼성장기렌터카를 이용하세요. 전화상담 02-2172-7420,7421" /></div>
+	<!-- /voc add btn -->
+	<a href="javascript:goTabPage('NHPIMFSFLS001M005');" class="mv_h1_btn type_ano_depth3"><img src="/images/fs/vis_btn_counsel.png" alt="상담신청" /></a>
+	<!-- voc add btn// -->
+</div>
+
+<!--
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area 
+	<div class="tab01 w810">
+		<ul>
+           <li class="on"><span class="none">현재탭</span><a href="#">서비스안내</a></li>
+           <li><a href="javascript:goTabPage('NHPIMFSFLS001M005', true);">상담신청</a></li>
+		</ul>
+	</div>
+</div>
+-->
+
+<form name="form">
+<!--cms_content시작-->
+<cms:include page="${result.targetPath}/${result.contentId}_hp_li_view.html" flush="false"></cms:include>
+<!--cms_content시작-->
+</form>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

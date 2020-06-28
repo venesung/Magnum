@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+<!-- Gnb 메뉴 -->
+<div class="headerBox cate2">
+	<div class="header">
+		<div class="contents">
+			<ul class="quickBtn">
+				<li class="line"><a href="/showroom/shw.do?method=getIntro"><img src="/images/cd/shw/gnb/txt_home.gif" style="width:29px;height:11px;" alt="Home" /></a></li>
+				<li><a href="/showroom/shw.do?method=getEventList&tabType=start"><img src="/images/cd/shw/gnb/txt_event.gif" style="width:29px;height:11px;" alt="이벤트" /></a></li>
+				<li><a href="/showroom/shw.do?method=getRep"><img src="/images/cd/shw/gnb/txt_card_quick.gif" style="width:96px;height:11px;" alt="대표카드 한눈에 보기" /></a></li>
+			</ul>
+			<ol class="menu">
+				<li class="menu1"><a href="/showroom/shw.do?method=getNumber"><img src="/images/cd/shw/gnb/menu1_off.gif" height="40" alt="숫자카드" /></a></li>
+                <li class="menu2"><a href="/showroom/shw.do?method=getList&amp;category=B"><img src="/images/cd/shw/gnb/menu2_off.gif" height="40" alt="주유/교통" /></a></li>
+                <li class="menu3"><a href="/showroom/shw.do?method=getList&amp;category=C"><img src="/images/cd/shw/gnb/menu3_off.gif" height="40" alt="쇼핑" /></a></li>
+                <li class="menu4"><a href="/showroom/shw.do?method=getList&amp;category=D"><img src="/images/cd/shw/gnb/menu4_off.gif" height="40" alt="외식/여가" /></a></li>
+                <li class="menu5"><a href="/showroom/shw.do?method=getList&amp;category=E"><img src="/images/cd/shw/gnb/menu5_off.gif" height="40" alt="멀티" /></a></li>
+                <li class="menu6"><a href="/showroom/shw.do?method=getList&amp;category=F"><img src="/images/cd/shw/gnb/menu6_off.gif" height="40" alt="여행/항공" /></a></li>
+				<!--  <li class="menu7"><a href="/showroom/shw.do?method=getInternet"><img src="/images/cd/shw/gnb/menu7_off.gif" height="40" alt="인터넷전용카드" /></a></li> SR내역 13.03.05-->
+			</ol>
+
+			<!-- 인트로 일 경우 보이는 배너 영역-->
+<div class='etc_sub'>	<ul><li class='on'><a href='/showroom/shw.do?method=getStrategy&amp;contentId=13231' onclick='gnbBannerWebLogclick( "istra", "13231" )'>
+							<img src="/cms_content/hp/im/cd/shw/13231_MIMG.jpg" alt="새로 출시된 삼성카드6"/>
+</a><input type='hidden' name='gnbBannerType' value='stra'/><input type='hidden' name='contentId' value='13231'/></li><li><a href='/showroom/shw.do?method=getStrategy&amp;contentId=12869' onclick='gnbBannerWebLogclick( "istra", "12869" )'>
+							<img src="/cms_content/hp/im/cd/shw/12869_MIMG.jpg" alt="새로 출시된 삼성카드7"/>
+</a><input type='hidden' name='gnbBannerType' value='stra'/><input type='hidden' name='contentId' value='12869'/></li><li><a href='/showroom/shw.do?method=getSeason&amp;contentId=12639' onclick='gnbBannerWebLogclick( "iseas", "12639" )'>
+								<img src="/cms_content/hp/im/cd/shw/12639_MIMG.jpg" alt="놀이공원 할인카드"/>
+</a><input type='hidden' name='gnbBannerType' value='seas'/><input type='hidden' name='contentId' value='12639'/></li><li><a href='/showroom/shw.do?method=getList&category=D' onclick='gnbBannerWebLogclick( "iseas", "12641" )'>
+							<img src="/cms_content/hp/im/cd/shw/12641_MIMG.jpg" alt="외식여가카드"/>
+</a><input type='hidden' name='gnbBannerType' value='seas'/><input type='hidden' name='contentId' value='12641'/></li>	</ul></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var gnbBannerStraWebLog = new Array();
+	var gnbBannerSeasWebLog = new Array();
+
+	function gnbBannerWebLogclick( type, tmp_num ) {
+		if( type == 'istra' || type == 'iseas' ) {
+			$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO01_1_"+tmp_num );
+		}else {
+			if( type == 'stra' ) {
+                //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerStraClick&amp;contenId="+tmp_num );
+				$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO02_1_"+tmp_num );
+			}else if( type == 'seas' ) {
+                //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerSeasClick&amp;contenId="+tmp_num );
+				$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO03_1_"+tmp_num );
+			}
+		}
+	}
+	
+	function gnbBannerWebLog( tmp_num, type ) {	// intro, stra, seas
+		if( type == 'intro' ) {
+			if( $( ".etc_sub li:eq(" + tmp_num + ") input:eq( 0 )" ).val() == 'stra' ) {
+				var isDuple = false;
+				var contentId = $( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val();
+				for( var i = 0; i < gnbBannerStraWebLog.length; i++ ) {					
+					if( contentId == gnbBannerStraWebLog[ i ] ) {
+						isDuple = true;
+						break;
+					}
+				}
+				gnbBannerStraWebLog.push( contentId );
+				if( !isDuple ) {
+                    //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerStraExpose&amp;contenId="+$( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val() );
+					$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO01_0_"+$( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val() );
+				}
+			}else if( $( ".etc_sub li:eq(" + tmp_num + ") input:eq( 0 )" ).val() == 'seas' ) {
+				var isDuple = false;
+				var contentId = $( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val();
+				for( var i = 0; i < gnbBannerSeasWebLog.length; i++ ) {
+					if( contentId == gnbBannerSeasWebLog[ i ] ) {
+						isDuple = true;
+						break;
+					}
+				}
+				gnbBannerSeasWebLog.push( contentId );
+				if( !isDuple ) {
+                    //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerSeasExpose&amp;contenId="+$( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val() );
+					$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO01_0_"+$( ".etc_sub li:eq(" + tmp_num + ") input[name='contentId']" ).val() );
+				}
+			}
+		}else if( type == 'stra' ) {
+			var isDuple = false;
+			var contentId = $( ".etc_sub input:eq(" + tmp_num + ")" ).val();
+			for( var i = 0; i < gnbBannerStraWebLog.length; i++ ) {					
+				if( contentId == gnbBannerStraWebLog[ i ] ) {
+					isDuple = true;
+					break;
+				}
+			}
+			gnbBannerStraWebLog.push( contentId );
+			if( !isDuple ) {
+                //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerStraExpose&amp;contenId="+contentId );
+				$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO02_0_"+contentId );
+			}
+		}else if( type == 'seas' ) {
+			var isDuple = false;
+			var contentId = $( ".etc_sub dl:eq(1) input:eq(" + tmp_num + ")" ).val();
+			for( var i = 0; i < gnbBannerStraWebLog.length; i++ ) {					
+				if( contentId == gnbBannerStraWebLog[ i ] ) {
+					isDuple = true;
+					break;
+				}
+			}
+			gnbBannerStraWebLog.push( contentId );
+			if( !isDuple ) {
+                //$( "#logIFrm" ).attr( "src", "/gatherLog.html?url=GnbBannerSeasExpose&amp;contenId="+contentId );
+				$( "#logIFrm" ).attr( "src", "/gatherLog.html?MENU=SRTO03_0_"+contentId );
+			}
+		}
+	}
+</script>
+<!-- Gnb 메뉴 -->
+
+</body></html>

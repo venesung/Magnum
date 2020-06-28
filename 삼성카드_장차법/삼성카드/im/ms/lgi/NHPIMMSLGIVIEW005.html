@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/ms/h1_findid.png" alt="아이디/비밀번호 찾기 및 변경입니다" /></h1>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_confirm_mem01.png" alt="카드정보를 통해 본인확인을 해주세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01"><!-- 100427 -->
+							<li><p>보유카드로 본인 확인이 가능합니다.</p></li><!-- SR내역 13.04.24 -->
+							<li><p>본인 확인을 위해 아래사항을 입력해주세요.</p></li>
+						</ol>						
+					
+						<table class="dtable_join" summary="본인학인을 위해 성명과 주민등록번호를 확인하고 카드번호, 카드비밀번호, 카드CVC번호등의 카드정보를 입력하는 게시판입니다">
+						<caption>카드정보를 통한 본인확인</caption>
+						<colgroup><col width="14%" /><col width="43%" /><col width="43%" /></colgroup>
+						<tbody>
+							<%if(!"Y".equals(ipin_check)){%>
+							<tr>
+								<th scope="row">주민등록번호</th>
+								<td colspan="2"><strong class="t_black t_no">${_idenNo}</strong></td>
+							</tr>
+							<%}%>
+							<tr>
+								<th scope="row" rowspan="2"><label for="label_visa">카드번호</label></th>
+								<td colspan="2" style="border-bottom:none;">
+									<label for="label_visa"><input type="radio" class="chk" id="label_visa" name="name_cardtype" value="비자/마스터/UnionPay(은련)/자체카드" title="비자/마스터/UnionPay(은련)/자체카드" checked="checked" /> 비자/마스터/UnionPay(은련)/자체카드<span class="ml10 t_desc04">(카드번호 뒤 8자리)</span></label>
+									<p class="mt5 t_default">XXXX - XXXX - <span class="bg_input">
+									<input type="password" maxlength="4" name="cardNo1" value="" title="카드번호 세번째 네자리" style="width:59px" onkeypress="checkTypes(this,'SSN');" onKeyUp="changeFocus('1');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>
+									<em>&nbsp;</em></span> - <span class="bg_input">
+									<input type="password" maxlength="4" name="cardNo2" value="" title="카드번호 네번째 네자리" style="width:59px" onkeypress="checkTypes(this,'SSN');" onKeyUp="changeFocus('2');" onblur="checkTypesOnBlur(this,'SSN');"  enc="on"/><em>&nbsp;</em></span> &nbsp;<span id="usafeon_cardNo1|cardNo2"></p>
+								</td>
+							</tr>
+							<tr>
+								
+								<td  colspan="2" style="border-top:none;">
+									<label for="label_amex"><input type="radio" class="chk" id="label_amex" name="name_cardtype" value="아멕스카드" title="아멕스카드" /> 아멕스카드<span class="ml10 t_desc04">(카드번호 뒤 11자리)</span></label>
+									<p class="mt5 t_default">XXXX - <span class="bg_input">
+									<input type="password" maxlength="6" name="cardNo3" value="" title="카드번호 두번째 여섯자리" style="width:84px" onkeypress="checkTypes(this,'SSN');" onKeyUp="changeFocus('3');" onblur="checkTypesOnBlur(this,'SSN');"  enc="on"/><em>&nbsp;</em></span> - <span class="bg_input">
+									<input type="password" maxlength="5" name="cardNo4" value="" title="카드번호 세번째 다섯자리" style="width:74px" onkeypress="checkTypes(this,'SSN');" onKeyUp="changeFocus('4');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/><em>&nbsp;</em></span> &nbsp;<span id="usafeon_cardNo3|cardNo4"></p>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="label_card_passno">카드비밀번호</label></th>
+								<td colspan="2"><span class="bg_input"><input type="password" maxlength="2" name="password" value="" title="카드 비밀번호" id="label_card_passno" style="width:59px" onkeypress="checkTypes(this,'SSN');" onKeyUp="changeFocus('5');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/><em>&nbsp;</em></span> xx<span class="ml10 t_desc04">(카드비밀번호 앞 2자리)</span>
+								&nbsp;<span id="usafeon_password"></span></td>
+							</tr>
+							<tr>
+								<th><label for="label_cvc">카드CVC번호</label></th>
+								<td colspan="2"><span class="bg_input"><input type="password" maxlength="3" name="cvcNo" value="" title="카드CVC번호" id="label_cvc" style="width:59px" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');" onkeydown="fn_enterSubmit(this);" enc="on"/><em>&nbsp;</em></span> <span class="ml10 t_desc04">(카드CVC번호 3자리)</span>
+								&nbsp;<span id="usafeon_cvcNo"></span></td><!-- 100427_xx삭제 -->
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">비밀번호 입력 3회 오류 시 본인확인을 거친 후 비밀번호를 변경하셔야 합니다.</p>
+                            <p class="btnr"><a href="javascript:verification()"><img src="/images/common/btn_confirm.png" alt="확인" /></a></p>
+						</div>
+
+						<hr />
+						<dl class="cvc_view">
+							<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+
+					</div>
+				</div>
+				<!-- SR내역 13.04.24
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_ahaloan02.png" alt="공인인증서를 통해 본인확인을 해주세요" /></h2>
+					<div class="content_block_inner">
+						<p>카드소지 정회원의 경우 <strong class="t_black">공인인증서 본인확인</strong>으로 ID찾기 및 비밀번호 변경 메뉴를 이용하실 수 있습니다.</p>
+                        <p class="btnl"><a href="javascript:publicVerification()" class="btn btn_white"><span>공인인증서 본인확인 &gt;</span></a></p>
+					</div>
+				</div> -->
+
+								
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

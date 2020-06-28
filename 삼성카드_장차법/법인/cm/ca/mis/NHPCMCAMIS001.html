@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>표준데이터 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+<!-- 수정 101001 -->
+				<h1><img src="/images/cm/h1_standard_data_quiry2.png" alt="표준데이터 " /></h1>
+<!-- // 수정 101001 -->
+				<p class="ab_br"><img src="/images/cm/img_misreport.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+	<!-- content_block -->
+	<form name="mForm" method="post" autocomplete="off">
+			<div class="content_block content_block2">
+				<div class="content_block_inner">
+					<p class="mt20">데이터는 매일 Update되며, 휴일은 익일 제공됩니다. (화,수,목,금,토)</p>
+					<div class="tb_exp mt30">
+						<h2><img src="/images/cm/h2_dataexp_condition.png" alt="자료추출조건" /></h2>
+						<span>미입력 시 최대 추출 가능기간이 적용됩니다.</span>
+					</div>
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt10">캘린더위치</div>
+					<table class="dtable02 " summary="표준데이터 추출 범위를 자료선택, 추출기간을 통해 선택하실 수 있습니다.">
+					<caption>데이터 추출 범위</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>자료선택</p></th>
+							<td><p>
+								<input checked="checked" type="radio" class="rdo" value="approve" id="label_approvalday01" name="mis_gubun" /> <label for="label_approvalday01" class="mr10">승인자료(승인일)</label>
+								<input type="radio" class="rdo" value="sale" id="label_approvalday02" name="mis_gubun" /> <label for="label_approvalday02" class="mr10">매출자료(매출접수일)</label>
+								<input type="radio" class="rdo" value="request" id="label_approvalday03" name="mis_gubun" /> <label for="label_approvalday03">청구결제일(결제일)</label>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>추출기간</p></th>
+							<td><p>
+								<span class="reset_date"></span>
+							</p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="btnset"><!-- 100404 -->
+						<p class="btnr">
+							<a href="javascript:openLayout();" class="btn btn_white"><span>Layout</span></a>
+							<a href="javascript:downFile();" class="btn btn_blue"><span>파일 다운로드</span></a>
+						</p>
+					</div>
+					<div class="line_lgray">&nbsp;</div>
+
+					<ol class="list_no01">
+						<li><p>승인자료 : 최근 6개월의 데이터 제공, 1회 최대 14일 분 다운로드 가능</p></li>
+						<li><p>매출자료 : 최근 6개월의 데이터 제공, 1회 최대 14일 분 다운로드 가능</p></li>
+						<li><p>청구자료 : 결제일이 1개이상일경우 추출기간 동안의 청구내역이 전체 조회 됩니다.<br />
+							<span class="t_desc04 pl60">예) 22일과 26일자 결제일을 모두 사용시 20100722~20100726 지정시 22일 결제 데이터와 26일 결제 데이터가 동시에 조회됩니다. </span><br /><br  class="lin5" />
+							<span class="pl60">해당 결제일만 조회시 추출기간을 동일 일자로 지정하면 됩니다.</span><br />
+							<span class="t_desc04 pl60">예) 7월 18일자 : 20100718~20100718</span></p></li>
+					</ol>
+				</div>
+			</div>
+	</form>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mscss" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div id="id_layer04" class="pop_l_position" style="top:150px">
+	<form name="frmLogin" onSubmit="return false" autocomplete="off">
+		<%=TokenUtil.getTokenTag(request)%>
+		<input type="hidden" name="plain" value="" />
+		<input type="hidden" name="signedMsg" value="" />
+		<input type="hidden" name="vidMsg" value="" />
+		<input type="hidden" name="loadcnt" value="0" />
+		<input type="hidden" name="signGubun" value="" />
+		<input type="hidden" name="ssno" value="" />
+		<input type="hidden" name="layerLogin" value="Y" />
+		<input type="hidden" name="mvcBeanId" value="logInController" />
+		<input type="hidden" name="methodName" value="loginProcessing" />
+		<input type="hidden" name="cardNo" value="" />
+		<input type="hidden" name="gubun" value="" />
+		<input type="hidden" name="nextGotoUrl" value="<%=nextGotoUrl%>" />
+		<input type="hidden" name="macAddress" />
+		<div class="pop_l_wrap pop_l_login" align="left"><p class="flag_login640_t">&nbsp;</p><p class="flag_login640_b">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopup();" value="레이어닫기" title="로그인 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/ms/layer_h2_login.png" alt="LOGIN" /></p>
+			<!-- 추가 100824 -->
+			<div class="pop_language">
+                <p><a href="javascript:changeLanguage('KOR');" id="btn_sel_lang_kor" class="btn btn_s_gray"><span>Korean</span></a></p>
+                <p><a href="javascript:changeLanguage('ENG');" id="btn_sel_lang_eng" class="btn btn_s_white"><span>English</span></a></p>
+			</div>
+			<!-- // 추가 100824 -->
+			<div class="pop_l_content">
+				<div class="flag_additional"><img src="/images/ms/layer_img_login01.jpg" id="layer_img_login01_id" class="flag_login" alt="" /></div>
+
+				<div id="ajax_login">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div id="webLogin" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_web_on.png" onclick="" value="웹로그인" alt="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccert_off.png" onclick="changeLoginType('publicLogin')" value="공인인증서" alt="공인인증서" /></li>
+		<li><!-- <input type="image" src="/images/ms/btn_login_cardcert_off.png" onclick="changeLoginType('cardLogin')" value="카드인증" />--></li>
+	</ul>
+
+	<div class="d_login d_weblogin">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_id.png" alt="아이디" /></dt>
+			<dd>
+				<div class="flag_additional" id="capsInfo" style="display:none"><img src="/images/ms/txt_capslock.png" class="flag_capslock" alt="Caps Lock이 켜져있습니다. 아이디 및 비밀번호 입력 시 영문 대문자, 소문자 구분을 합니다. 입력시 대문자, 소문자 확인후 입력바랍니다." /></div><!-- 100414 -->
+				<span class="bg_input"><input type="text" style="width:131px;" id="label_id"  name="userId" maxlength="12" title="아이디" onkeyup="changeFocus('1');" autocomplete="off" onkeypress="checkCapsLock(this, 'id')" /><em>&nbsp;</em></span>
+			</dd>
+			<dt><img src="/images/ms/layer_txt_pass.png" alt="비밀번호" /></dt>
+			<dd class="w264">
+				<div class="flag_additional" id="capsInfo2" style="display:none"><img src="/images/ms/txt_capslock.png" class="flag_capslock" alt="Caps Lock이 켜져있습니다. 아이디 및 비밀번호 입력 시 영문 대문자, 소문자 구분을 합니다. 입력시 대문자, 소문자 확인후 입력바랍니다." /></div><!-- 100414 -->
+				<span class="bg_input"><input type="password" style="width:143px" id="label_pass" name="password" maxlength="12" title="비밀번호" value="" onkeydown="fn_enterSubmit1(this);" onkeypress="checkCapsLock(this, 'pw')" /><em>&nbsp;</em></span>
+				<input type="image" src="/images/ms/btn_login.png" class="btn_login" value="로그인" alt="로그인" onclick="webLogin()" />
+			</dd>
+		</dl>
+
+		<ol class="list_desc">
+			<li><p>아이디 및 비밀번호는 영문 대소문자를 구별하니 입력 시 주의하시기 바랍니다.</p></li>
+			<li><p>비밀번호 입력 3회 이상 오류 시 본인확인을 거친 후 비밀번호를 변경하셔야 합니다.</p></li>
+		</ol>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();">로그인 오류안내</a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();">보안프로그램 설치</a>
+		</p>
+		<p class="btnr">
+            <a href="javascript:goSignUp();" class="btn_link" onclick="closeLayerPopup();">회원가입</a> |
+            <a href="javascript:goFindIdNpwd();" class="btn_link" onclick="closeLayerPopup();">ID/PW 찾기</a>
+		</p>
+	</div>
+</div>
+
+<div id="publicLogin" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_web_off.png" onclick="changeLoginType('webLogin')" value="웹로그인" alt="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccert_on.png" onclick="" value="공인인증서" alt="공인인증서" /></li>
+		<li><!-- <input type="image" src="/images/ms/btn_login_cardcert_off.png" onclick="changeLoginType('cardLogin')" value="카드인증" />--></li>
+	</ul>
+
+	<div class="d_login d_publiccert">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_idno.png" alt="주민등록번호" /></dt>
+			<dd class="w440">
+				<span class="bg_input"><input type="text" name="idenNo1" style="width:142px;" id="label_cardno" title="주민등록번호 앞 6자리" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('2');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>-
+				<span class="bg_input"><input type="password" name="idenNo2" style="width:142px;" id="label_cardno" title="주민등록번호 뒷 7자리" value="" maxlength="7" onkeypress="checkTypes(this,'SSN');" onBlur="checkTypesOnBlur(this,'SSN');" onkeydown="fn_enterSubmit2(this);" /><em>&nbsp;</em></span>
+				<input type="image" src="/images/ms/btn_login.png" class="btn_login" value="로그인" alt="로그인" onclick="publicLogin()" />
+			</dd>
+		</dl>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();">로그인 오류안내</a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();">보안프로그램 설치</a>
+		</p>
+		<p class="btnr">
+            <a href="javascript:goAuthInfo()" class="btn_link" onclick="closeLayerPopup();">공인인증서안내</a> |
+            <a href="javascript:goAuthCan()" class="btn_link" onclick="closeLayerPopup();">사용가능 인증서 안내</a>
+		</p>
+	</div>
+</div>
+
+<div id="cardLogin" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_web_off.png" onclick="changeLoginType('webLogin')" value="웹로그인" alt="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccert_off.png" onclick="changeLoginType('publicLogin')" value="공인인증서" alt="공인인증서" /></li>
+		<li><input type="image" src="/images/ms/btn_login_cardcert_on.png" onclick="" value="카드인증" alt="카드인증" /></li>
+	</ul>
+
+	<div class="d_login">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_cardno.png" alt="카드번호" /></dt>
+			<dd class="w440">
+				<label for="id_visa_master"><input type="radio" class="rdo" id="id_visa_master" name="name_cardtype" checked="checked" onclick="changeCardType('normal')" title="Visa,Master,Local"/><img src="/images/ms/layer_txt_visa.png" alt="Visa/Master/Local" /><span class="conts_hidden">Visa | Master | Local</span></label>
+				<label for="label_amex" class="ml10"><input type="radio" class="rdo" id="label_amex" name="name_cardtype" onclick="changeCardType('amex')" title="AMEX" /> <img src="/images/ms/layer_txt_amex.png" alt="Amex" /><span class="conts_hidden">AMEX</span></label><!-- 100308 -->
+				<div id="cardno_input" class="mt5">
+				</div>
+			</dd>
+			<dt><img src="/images/ms/layer_txt_cardpass.png" alt="카드 비밀번호" /></dt>
+			<dd>
+				<span class="bg_input"><input type="password" style="width:61px" id="label_cardno" name="cardPassword" title="카드 비밀번호 앞 두자리" value="" maxlength="2" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('10');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+				<img src="/images/ms/layer_txt_star.png" alt="**" />
+			</dd>
+			<dt style="float:left; width:66px; padding-top:18px; font-size:0; line-height:0"><img src="/images/ms/layer_txt_cvc.png" alt="CVC번호" /></dt>
+			<dd>
+				<span class="bg_input"><input type="password" style="width:61px" id="label_cardno" title="CVC번호" name="cvcNo" value="" maxlength="3" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('11');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+				<a id="NHPIMCDCPS511_L01" href="#" onclick="view_cvc('id_cvc');fnSetReturnFocusId('NHPIMCDCPS511_L01','id_cvc');"class="btn_link">CVC 보는 방법 <img src="/images/ms/btn_login_expand.png" alt="열기" /></a>
+				<div class="flag_additional"><p id="id_cvc" style="display:none"><img src="/images/ms/layer_img_login02.jpg" alt="CVC번호 보는 방법 - CVC 번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의해 주세요. (1.비자/마스터/자체 카드 - 카드 뒷면 19자리 숫자 중 끝 3자리, 카드 뒷면 7자리 숫자 중 끝 3자리), (2.아멕스 카드 - 카드 뒷면 18자리 숫자 중 끝 3자리)" /></p></div>
+			</dd>
+			<dt><img src="/images/ms/layer_txt_idno.png" alt="주민등록번호" /></dt>
+			<dd class="w440">
+				<span class="bg_input"><input type="text" style="width:142px;" id="label_cardno" title="주민등록번호 앞 6자리" name="idenNo3" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('12');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>-
+				<span class="bg_input"><input type="password" style="width:142px;" id="label_cardno" title="주민등록번호 뒷 7자리" name="idenNo4" value="" maxlength="7" onkeypress="checkTypes(this,'SSN');" onBlur="checkTypesOnBlur(this,'SSN');" onkeydown="fn_enterSubmit3(this);" /><em>&nbsp;</em></span>
+				<input type="image" src="/images/ms/btn_login.png" class="btn_login" value="로그인" onclick="cardLogin()" title="로그인" alt="로그인" />
+			</dd>
+		</dl>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();">로그인 오류안내</a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();">보안프로그램 설치</a>
+		</p>
+	</div>
+</div>
+
+<div id="cardno_normal" style="display:none">
+	<span class="bg_input"><input type="password" name="cardNo1" style="width:61px;" id="label_cardno" title="카드번호 첫번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('3');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+	<span class="bg_input"><input type="password" name="cardNo2" style="width:61px;" id="label_cardno2" title="카드번호 두번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('4');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+	<span class="bg_input"><input type="password" name="cardNo3" style="width:61px;" id="label_cardno3" title="카드번호 세번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('5');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+	<span class="bg_input"><input type="password" name="cardNo4" style="width:62px;" id="label_cardno4" title="카드번호 네번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('6');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+</div>
+
+<div id="cardno_amex" style="display:none">
+	<span class="bg_input"><input type="password" name="cardNo5" style="width:81px;" id="label_cardno" title="카드번호 첫번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('7');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+	<span class="bg_input"><input type="password" name="cardNo6" style="width:101px;" id="label_cardno2" title="카드번호 두번째 6자리" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('8');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+	<span class="bg_input"><input type="password" name="cardNo7" style="width:86px;" id="label_cardno3" title="카드번호 세번째 5자리" value="" maxlength="5" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('9');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+</div>
+
+<div id="webLogin_Eng" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_webEng_on.png" onclick="" value="웹로그인" alt="웹로그인" title="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccertEng_off.png" onclick="changeLoginType('publicLogin_Eng')" alt="공인인증서" value="공인인증서" title="공인인증서" /></li>
+		<li><!-- <input type="image" src="/images/ms/btn_login_cardcertEng_off.png" onclick="changeLoginType('cardLogin_Eng')" value="카드인증" title="카드인증 " />--></li>
+	</ul>
+	
+	<div class="d_login d_weblogin_eng">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_idEng.png" alt="user ID" /></dt>
+			<dt class="w264"><img src="/images/ms/layer_txt_passEng.png" alt="Password" /></dt>
+			<dd>
+				<div class="flag_additional" id="capsInfo" style="display:none"><img src="/images/ms/txt_capslockEng.png" class="flag_capslock" alt="User ID and Password are case-sensitive, please check upper-case, lower-case when you put in." /></div>
+				<span class="bg_input"><input type="text" style="width:131px;" id="label_id"  name="userId" maxlength="12" title="user ID" onkeyup="changeFocus('1');" autocomplete="off" onkeypress="checkCapsLock(this, 'id')" /><em>&nbsp;</em></span>		
+			</dd>
+			<dd class="w264">
+				<div class="flag_additional" id="capsInfo2" style="display:none"><img src="/images/ms/txt_capslockEng.png" class="flag_capslock" alt="User ID and Password are case-sensitive, please check upper-case, lower-case when you put in." /></div>
+				<span class="bg_input"><input type="password" style="width:143px" id="label_pass" name="password" maxlength="12" title="Password" value="" onkeydown="fn_enterSubmit1(this);" onkeypress="checkCapsLock(this, 'pw')" /><em>&nbsp;</em></span>
+				<input type="image" src="/images/ms/btn_login_eng.png" class="btn_login" value="login" onclick="webLogin()" alt="login" />
+			</dd>
+		</dl>
+
+		<p class="t_desc04">Please be cautious since User ID and Password are case-sensitive.</p>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();">Guide to LOGIN errors</a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();">Security Program Installation</a>
+		</p>
+		<p class="btnr">
+            <a href="javascript:goSignUp();" class="btn_link" onclick="closeLayerPopup();">Sign Up </a> |
+            <a href="javascript:goFindIdNpwd();" class="btn_link" onclick="closeLayerPopup();">Find ID/PW</a>
+		</p>
+	</div>
+</div>
+
+<div id="publicLogin_Eng" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_webEng_off.png" onclick="changeLoginType('webLogin_Eng')" value="웹로그인" alt="웹로그인" title="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccertEng_on.png" onclick="" value="공인인증서" alt="공인인증서" title="공인인증서" /></li>
+		<li><!-- <input type="image" src="/images/ms/btn_login_cardcertEng_off.png" onclick="changeLoginType('cardLogin_Eng')" value="카드인증" title="카드인증" />--></li>
+	</ul>
+
+	<div class="d_login d_publiccert_eng">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_idnoEng.png" alt="Resident Registration No. or Alien Registration No." /></dt>
+			<dd class="w514">
+				<span class="bg_input"><input type="text" name="idenNo1" style="width:142px;" id="label_cardno" title="Registration No" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('2');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>-
+				<span class="bg_input"><input type="password" name="idenNo2" style="width:142px;" id="label_cardno" title="Registration No" value="" maxlength="7" onkeypress="checkTypes(this,'SSN');" onBlur="checkTypesOnBlur(this,'SSN');" onkeydown="fn_enterSubmit2(this);" /><em>&nbsp;</em></span>
+				<input type="image" src="/images/ms/btn_login_eng.png" class="btn_login" value="login" alt="login" onclick="publicLogin()" />
+			</dd>
+		</dl>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();" title="New Window" >Guide to LOGIN errors </a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();" title="New Window" >Security Program Installation</a><br />
+            <a href="javascript:goAuthInfo();" class="btn_link" onclick="closeLayerPopup();" title="New Window" >Guide to Digital Certificate</a> | 
+            <a href="javascript:goAuthCan();" class="btn_link" onclick="closeLayerPopup();" title="New Window" >Guide to usable Digital certificate</a>
+		</p>
+	</div>
+</div>
+
+<div id="cardLogin_Eng" style="display:none">
+	<ul class="list_login clfix">
+		<li><input type="image" src="/images/ms/btn_login_webEng_off.png" onclick="changeLoginType('webLogin_Eng')" value="웹로그인" alt="웹로그인" title="웹로그인" /></li>
+		<li><input type="image" src="/images/ms/btn_login_publiccertEng_off.png" onclick="changeLoginType('publicLogin_Eng')" value="공인인증서" alt="공인인증서" title="공인인증서" /></li>
+		<li><input type="image" src="/images/ms/btn_login_cardcertEng_on.png" onclick="" value="카드인증" alt="카드인증" title="카드인증" /></li>
+	</ul>
+
+	<div class="d_login">
+		<dl>
+			<dt><img src="/images/ms/layer_txt_cardnoEng.png" alt="Card No." /></dt>
+			<dd class="w280 mt5">
+				<label for="id_visa"><input type="radio" class="rdo" id="id_visa" name="name_cardtype_eng" checked="checked" onclick="changeCardType('normal')" title="Visa,Master,Local" /><img src="/images/ms/layer_txt_visa.png" alt="Visa/Master/Local" /><span class="conts_hidden">Visa | Master | Local</span></label>
+				<label for="label_amex" class="ml10"><input type="radio" class="rdo" id="label_amex" name="name_cardtype_eng" onclick="changeCardType('amex')" title="AMEX" /> <img src="/images/ms/layer_txt_amex.png" alt="Amex" /><span class="conts_hidden">AMEX</span></label>
+			</dd>
+			<dt><img src="/images/ms/layer_txt_cardpassEng.png" alt="The first two digits of PIN" /></dt>
+			<dd class="w355">
+				<div id="cardno_input">
+				</div>
+			</dd>
+			<dd class="w159">
+				<span class="bg_input"><input type="password" style="width:61px" id="label_cardno" name="cardPassword" title="카드 비밀번호 앞 두자리" value="" maxlength="2" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('13');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+				<img src="/images/ms/layer_txt_star.png" alt="**" />
+			</dd>
+			<dt class="w355"><img src="/images/ms/layer_txt_idnoEng.png" alt="Resident Registration No. or Alien Registration No." /></dt>
+			<dt><img src="/images/ms/layer_txt_cvcEng.png" alt="CVC No" /></dt>
+			<dd class="w355">
+				<span class="bg_input"><input type="text" style="width:142px;" id="label_cardno" title="주민등록번호 앞 6자리" name="idenNo3" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('12');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>-
+				<span class="bg_input"><input type="password" style="width:142px;" id="label_cardno" title="주민등록번호 뒷 7자리" name="idenNo4" value="" maxlength="7" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('14');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+			</dd>
+			<dd class="w159">
+				<span class="bg_input"><input type="password" style="width:61px" id="label_cardno" title="CVC번호" name="cvcNo" value="" maxlength="3" onkeypress="checkTypes(this,'SSN');" onBlur="checkTypesOnBlur(this,'SSN');" onkeydown="fn_enterSubmit3(this);" /><em>&nbsp;</em></span>
+                <a id="NHPIMCDCPS511_L02" href="#" onclick="view_cvc('id_cvc');fnSetReturnFocusId('NHPIMCDCPS511_L02','id_cvc');"class="btn_link">Guide for CVC</a>
+				<div class="flag_additional"><p id="id_cvc" style="display:none"><img src="/images/ms/layer_img_loginEng.png" alt="Guide to see the CVC number - The CVC number is also an important credit information like PIN, please keep it secure from someone else. The last 3 digits number on the backside of credit card." /></p></div>
+			</dd>
+		</dl>
+	</div>
+
+	<div class="btnset">
+		<p class="btnl">
+            <a href="javascript:goLoginErrorInfo();" class="btn_link" onclick="closeLayerPopup();">Guide to LOGIN errors</a> |
+            <a href="javascript:goInstallXecure();" class="btn_link" onclick="closeLayerPopup();">Security Program Installation</a>
+		</p>
+		<p class="btnr">
+			<input type="image" src="/images/ms/btn_login_eng.png" class="btn_login" value="로그인" onclick="cardLogin()" alt="로그인" title="로그인" />
+		</p>
+	</div>
+</div>
+
+<form name="cpForm">
+<input type="hidden" name="menuIdx" value="1" />
+<input type="hidden" name="cpCode" value="" />
+<input type="hidden" name="loginChk" value="Y" />
+</form>
+
+<form name="cmsForm">
+<input type="hidden" name="cmsSeq" value="" />
+</form>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_chk_point.png" alt="사용가능한 포인트를 확인하세요" /></h1>
+                    <p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1');" class="btn btn_s_white"><span>포인트 적립 기준/세부 내용</span></a></p>
+                </div>				
+
+				<!-- content_block 100212 -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false">
+							<jsp:param value="savePointParam" name="viewLayerParam"/>
+						</jsp:include>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block clfix">	<!-- 100316 -->
+					<div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div>	<!-- 100316 -->
+					<h2><img src="/images/mh/h2_urpointinfo.png" alt="선택하신 포인트내용입니다" /></h2>	<!-- 100316 -->
+					<div class="content_block_inner">	<!-- 100316 -->
+						<h3 class="h3_point"><img src="/images/mh/h3_saveservice.png" alt="세이브서비스" /></h3>
+						<!-- tab -->
+						<div class="box_white02 mt_10"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+							<div class="category_tag">
+								<ul>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS001', true)">한도조회</a></li>
+									<li><p><a href="javascript:goTabPage('NHPIMMHPIS002', true)">이용내역조회<em>&nbsp;</em></a></p></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS003', true)">페이백세이브이용내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS004', true)">파워세이브이용내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS005', true)">포인트내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS006', true)">맞춤형상환신청</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS008', true)">맞춤형상환신청결과</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="tb_exp mt20 clfix">	<!-- 100316 -->
+							<span class="fl_left">조회일 : <span class="t_no">${CURRENT_DATE}</span> 현재 기준</span>
+						</div>
+
+						<table class="dtable02 dtable_inputfield " summary="총세이브이용금액,상환금액,미상환금액,당월청구원금으로 구성된 세이브 이용내역을 확인할 수 있는 게시판입니다.">
+						<caption>세이브 이용내역</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>총 세이브 이용 금액</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td>
+								<th scope="row"><p>상환 금액</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>미상환 금액</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td>
+								<th scope="row"><p>당월 청구원금</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td>
+							</tr>
+
+						</tbody>
+						</table>
+						<div class="tb_exp clfix mt15">
+							<span class="fl_left">&nbsp;</span>
+							<span class="ab_tr"><a href="javascript:goTabPage('NHPIMSSCMS006');" class="btn_link">서비스 안내</a></span>
+						</div>
+						<table class="dtable01 dtable01_bill" summary="구분,사용처,세이브이용금액,승인일,상환만기일,기상환금액,미상환금액,당월결제예정금액,상환회차,할부수수료율(년)로 구성된 현재 이용 중인 세이브 이용내역을 확인할 수 있는 게시판입니다.">
+						<caption>세이브 이용내역</caption>
+						<colgroup>
+							<col width="44" /><col width="44" /><col width="54" /><col width="50" /><col width="50 "/><col width="54" /><col width="54" /><col width="65" /><col width="70" /><col width="55" /><col width="42" /><col width="42" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th rowspan="2" scope="col" class="cell_l10">구분</th>
+								<th rowspan="2" scope="col">사용처</th>
+								<th rowspan="2" scope="col" class="cell_r10">세이브<br/>이용금액</th>
+								<th rowspan="2" scope="col" >승인일</th>
+								<th rowspan="2" scope="col">상환<br/>만기일</th>
+								<th rowspan="2" scope="col" class="cell_r10">기상환<br/>금액</th>
+								<th rowspan="2" scope="col" class="cell_r10 riline">미상환<br/>금액</th>
+								<th colspan="3" scope="colgroup" class="cell_c boline_b0 riline">당월 결제 예정금액</th>
+								<th rowspan="2" scope="col">상환<br/>회차</th>
+								<th rowspan="2" scope="col">할부수수료율<br/>(년)</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10">청구원금</th>
+								<th scope="col" class="cell_r10">할부수수료</th>
+								<th scope="col" class="cell_r10 riline">계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10">0</td>
+								<td ><a href="#onclick" title="새창">000</a></td><!-- 여기다 스크립트걸기 -->							
+								<td class="cell_r10 t_no">0</td>
+								<td class="t_no">0</td>
+								<td class="t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no riline">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no riline">0</td>
+								<td class="t_no">0</td>
+								<td class="t_no"><span class="t_no">0</span> %</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="12">현재 이용 중이신 세이브 이용내역이 없습니다.</td>
+							</tr>
+		<tr class="nodata">
+			<td colspan="12"><%=ERROR_MSG%></td>
+		</tr>							
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">맞춤형 상환 조정을 원하시면 맞춤형 상환신청 메뉴를 클릭하시기 바랍니다.<br />(단, 이마트, 애경백화점, 플라자 세이브, 페이백 세이브 서비스의 경우 맞춤형 상환 조정이 불가합니다.)</p>
+						</div>
+					</div>
+				</div>
+                
+      
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

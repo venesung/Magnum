@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>지방세 인터넷 납부 영수증 CARD SALES SLIP - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<style type="text/css">
+th  p, td   p    {padding-top:8px !important; padding-bottom:6px !important; font:normal 11px "돋움"}
+</style>
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" href="/css/ie6.css"/ > <![endif]-->
+<script type="text/javascript">
+var tempHtmlContent; 
+
+function printDiv () { 
+   if (document.all && window.print) { 
+       window.onbeforeprint = beforeDivs; 
+       window.onafterprint = afterDivs; 
+       window.print(); 
+   } 
+} 
+function beforeDivs () { 
+   if (document.all) { 
+       var rng = document.body.createTextRange( ); 
+       if (rng!=null) { 
+           //alert(rng.htmlText); 
+           tempHtmlContent = rng.htmlText; 
+           rng.pasteHTML("<table border=0 align=center><tr><td align=center>"  
+                                       + document.all("pop_content").innerHTML + "</td></tr></table>"); 
+       } 
+   } 
+} 
+function afterDivs () { 
+   if (document.all) { 
+       var rng = document.body.createTextRange( ); 
+           if (rng!=null) { 
+                       rng.pasteHTML(tempHtmlContent); 
+           } 
+   } 
+} 
+
+</script>
+<body onLoad="printDiv();">
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1><img src="/images/cd/layer_tit_status_level.png" alt="지방세 인터넷 납부 영수증 CARD SALES SLIP" /></h1>
+		
+	</div>-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/layer_tit_status_level.png" alt="지방세 인터넷 납부 영수증 CARD SALES SLIP" /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_s_content2" class="yscroll" tabindex="0">	
+		<div class="pop_l_wrap">
+			<table class="dtable02 mb20" summary="세목명, OCR 고지서번호, 회원번호, 거래일시, 취소시 당초거래일로 구성된 영수증 상세 화면">
+			<caption>지방세 인터넷 납부 영수증 중 기본 정보</caption>
+			<colgroup><col width="20%"><col width="30%"><col width="20%"><col width="30%"></colgroup>
+			<tbody>
+
+				<tr>
+					<th scope="row"><p>세목명</p></th>
+					<td><p><%=resultVo.getSemokName()%></p></td>
+					<th scope="row"><p>OCR 고지서번호</p></th>
+					<td><p><%=resultVo.getTaxOrgan()%>-<%= resultVo.getTaxType()%>-<%= resultVo.getTaxPeriod()%>-<%= resultVo.getDistrict()%>-<%= resultVo.getTaxNo()%></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>회원번호</p></th>
+					<td colspan="3"><p><%= resultVo.getCardNo16().substring(0,12)%>****</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>거래일시</p></th>
+					<td><p><span class="t_no"><%= resultVo.getApprovalDate().substring(0,4)%>/<%= resultVo.getApprovalDate().substring(4,6)%>/<%= resultVo.getApprovalDate().substring(6,8)%>&nbsp;<%= resultVo.getApprovalTime().substring(0,2)%>:<%= resultVo.getApprovalTime().substring(2,4)%></span></p></td>
+					<th scope="row"><p>취소시 <br />당초거래일</p></th>
+					<td><p><span class="t_no">&nbsp;</span></p></td>
+				</tr>
+
+			</tbody>
+			</table>
+
+			<table class="dtable02" summary="결제유형, 품명, 결제방법, 금액 등으로 구성된 영수증 상세 화면">
+			<caption>지방세 인터넷 납부 영수증 중 결제정보</caption>
+			<colgroup><col width="20%"><col width="30%"><col width="20%"><col width="30%"></colgroup>
+			<tbody>
+
+				<tr>
+					<th scope="row"><p>결제유형</p></th>
+					<td><p>신용승인</p></td>
+					<th scope="row"><p>품명</p></th>
+					<td><p><span class="t_no">&nbsp;</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>결제방법</p></th>
+					<td><p><span class="t_no">
+					<%if("1".equals(resultVo.getPaymentType())){ %>
+					일시불
+					<%}else if("2".equals(resultVo.getPaymentType())){ %>
+					할부 <%= resultVo.getInstallmentMonth()%> 개월
+					<%} %>
+					</span></p></td>
+					<th scope="row"><p>금액(AMOUNT)</p></th>
+					<td><p><span class="t_no"><%= FormatUtil.getMoney(resultVo.getPaymentAmount()) %></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>지자체명</p></th>
+					<td><p><span class="t_no"><%= COMPANYNAME%></span></p></td>
+					<th scope="row"><p>부가세(VAT)</p></th>
+					<td><p><span class="t_no">0</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>판매자</p></th>
+					<td><p><span class="t_no">&nbsp;</span></p></td>
+					<th scope="row"><p>봉사료(S/C)</p></th>
+					<td><p><span class="t_no">0</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>은행확인</p></th>
+					<td><p><span class="t_no">&nbsp;</span></p></td>
+					<th scope="row"><p>합계(TOTAL)</p></th>
+					<td><p><span class="t_no"><%= FormatUtil.getMoney(resultVo.getPaymentAmount()) %></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>대표자</p></th>
+					<td><p><span class="t_no"><%= REPRESENTATION%></span></p></td>
+					<th scope="row"><p>승인번호</p></th>
+					<td><p><span class="t_no"><%= resultVo.getApprovalNo()%></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>가맹점명</p></th>
+					<td><p><span class="t_no"><%= SHOP_NAME%></span></p></td>
+					<th scope="row"><p>거래고유번호</p></th>
+					<td><p><span class="t_no">&nbsp;</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>가맹점주소</p></th>
+					<td colspan="3"><p><%= COMPANYADDR%></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>가맹점번호</p></th>
+					<td><p><span class="t_no"><%= CHAIN_NO%></span></p></td>
+					<th scope="row"><p>사업자등록번호</p></th>
+					<td><p><span class="t_no"><%= COMPANYNO%></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>가맹점전화번호</p></th>
+					<td colspan="3"><p><%= COMPANYTEL%></p></td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+			<div class="btnset">
+				<p class="btnl"><span class="t_desc03">자세한 문의 전화는 1588-8700으로 요청해주세요</span></p>
+                <p class="btnr"><a href="javascript:printDiv();" class="btn btn_white"><span>인쇄</span></a></p>
+			</div>
+
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+	   <address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	   <input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

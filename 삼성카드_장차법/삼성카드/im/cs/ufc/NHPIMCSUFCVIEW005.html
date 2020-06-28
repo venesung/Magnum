@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img alt="신용 회복 프로그램" src="/images/cs/h1_prog_recover_credit.png" /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<% 
+					String tab_index = (request.getParameter("tab_index") == null ? "000" : request.getParameter("tab_index"));
+					%>
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li class="<%="000".equals(tab_index)?"on":"" %>"><a href="javascript:goView('000');">내게 맞는 제도 찾기</a></li>
+                            <li class="<%="001".equals(tab_index)?"on":"" %>"><a href="javascript:goView('001');">신용 회복 지원 프로그램</a></li>
+                            <li class="<%="002".equals(tab_index)?"on":"" %>"><a href="javascript:goView('002');">개인 워크아웃 제도</a></li>
+                            <li class="<%="003".equals(tab_index)?"on":"" %>"><a href="javascript:goView('003');">회생제도/파산제도</a></li>
+                            <li class="<%="004".equals(tab_index)?"on":"" %>"><a href="javascript:goView('004');">신용회복제도 비교</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<%
+					String url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW005C1.html";
+					if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW005C2.html"; 
+					else if("002".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW005C3.html";
+					else if("003".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW005C4.html";  
+					else if("004".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW005C5.html";
+				%>
+				<jsp:include page="<%= url%>" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

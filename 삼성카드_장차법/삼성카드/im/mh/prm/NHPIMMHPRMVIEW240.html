@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/premium_navi.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/common-hp-calendar.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<!--script type="text/javascript" src="/js/embedswf.js"></script--><!-- 플래시 삭제 13.04.10 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		premiumNavi.init({
+			depth1 : 0,
+			depth2 : 6
+		});
+	});
+</script>
+
+<!-- 공통 헤더 시작 -->
+<script type="text/javascript">
+ function prmPageNavigate(key){
+	 if(key == "002") { //프리미엄S  
+		var url='/pms002.do?method=primiumS';
+		var state = "scrollbars=yes,resizable=yes,status=yes";
+		window.open(url, '', state);
+		return;
+	}else if(key == "003") { //매거진S응모
+		var url='/pms002.do?method=magazineSApply';
+		var state = "width=730,height=600,scrollbars=yes,resizable=no";
+		var newwin = window.open(url, '', state);
+		return;
+	}
+
+	var goUrl;
+	switch(key){
+		case "001" : goUrl = "/pms001.do?method=premiumLoungeMain"; break; //프리미엄회원이란
+		case "004" : goUrl = "/pms003.do?method=noInterest"; break; //무이자할부
+		case "005" : goUrl = "/pms002.do?method=primiumCouponBook"; break; //쿠폰북
+		case "006" : goUrl = "/pms003.do?method=pointBack"; break; //포인트백
+		case "007" : goUrl = "/pms002.do?method=travel"; break; //국내테마여행
+		case "008" : goUrl = "/pms001.do?method=TravelService"; break; //SAM 여행할인서비스
+		case "009" : goUrl = "/pms001.do?method=sinla"; break; //신라면세점
+		case "010" : goUrl = "/pms001.do?method=ingEvent"; break; //진행중인 이벤트
+		case "011" : goUrl = "/pms001.do?method=oldEvent"; break; //종료된 이벤트
+		case "012" : goUrl = "/pms001.do?method=winEventList"; break; //당첨자발표
+		case "013" : goUrl = "/pms002.do?method=shopping"; break; //쇼핑
+		case "014" : goUrl = "/pms003.do?method=myPage"; break; //myPage
+		case "015" : goUrl = "/pms003.do?method=getCouponMain"; break; //myPage
+		case "016" : goUrl = "/pms003.do?method=getPointAddSave"; break; //포인트추가적립
+		
+		
+	}
+	document.form1.method = "post";
+	document.form1.action=goUrl;
+	tabSubmit(document.form1.action);
+			
+ }
+ </script>
+ 
+ <!-- premium lounge title,navi -->
+ <div class="mvint_premium">
+     <div class="premium_tit">
+         <h1 style="padding-left:0"><img src="/images/premium/h1_premium.gif" alt="프리미엄 S를 마음껏 누려보세요! 프리미엄 S 라운지" /></h1>
+         <p><img src="/images/premium/h1_premium_txt.gif" alt="프리미엄 S는 삼성카드 프리미엄 회원님께만 추가로 제공해 드리는 우대 프로그램입니다." /></p>
+         <ul>
+             <li><a href="javascript:prmPageNavigate('001');"><img src="/images/premium/btn_premium01.gif" alt="프리미엄회원이란" /></a></li>
+             <li><a href="javascript:prmPageNavigate('002');" title="새창"><img src="/images/premium/btn_premium02.gif" alt="뉴스레터" /></a></li><!-- 정기일반영 13.03.29 -->
+             	<li><a href="javascript:prmPageNavigate('003')" title="새창"><img src="/images/premium/btn_premium03.gif" alt="매거진S응모" /></a></li>
+         </ul>
+     </div>
+
+     <ul class="premium_navi">
+         <li class="n1">
+             <div class="off" style="display:none;">
+                 <a href="#"><img src="/images/premium/premium_navi01_off.gif" alt="프리미엄서비스S" /></a>
+             </div>
+             <div class="on" style="display:block;">
+                 <p><img src="/images/premium/premium_navi01_on.gif" alt="프리미엄서비스S" /></p>
+                 <ul> <!-- 20121218 modify -->
+                     <li class="sm1"><a href="javascript:prmPageNavigate('004');"><img src="/images/premium/premium_navi01_01_off.gif" alt="무이자할부" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('015');"><img src="/images/premium/premium_navi01_04_off.gif" alt="쿠폰북" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('006');"><img src="/images/premium/premium_navi01_03_off.gif" alt="포인트백" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('007');"><img src="/images/premium/premium_navi01_08_off.gif" alt="국내테마여행" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('008');"><img src="/images/premium/premium_navi01_07_off.gif" alt="여행할인" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('009');"><img src="/images/premium/premium_navi01_06_off.gif" alt="신라면세점 할인" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('016');"><img src="/images/premium/premium_navi01_02_off.gif" alt="포인트추가적립" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n2">
+             <div class="off" style="display:block;">
+                 <a href="#"><img src="/images/premium/premium_navi02_off.gif" alt="프리미엄이벤트" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <p><img src="/images/premium/premium_navi02_on.gif" alt="프리미엄이벤트" /></p>
+                 <ul> 
+                     <li><a href="javascript:prmPageNavigate('010');"><img src="/images/premium/premium_navi02_01_off.gif" alt="진행 중인 이벤트" /></a></li>
+                     <li><a href="javascript:prmPageNavigate('011');"><img src="/images/premium/premium_navi02_02_off.gif" alt="종료된 이벤트" /></a></li>                        
+                     <li><a href="javascript:prmPageNavigate('012');"><img src="/images/premium/premium_navi02_03_off.gif" alt="당첨자 발표" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n3">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_off.gif" alt="프리미엄쇼핑몰" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_on.gif" alt="프리미엄쇼핑몰 - 프리미엄 회원만의 특별한 공간" /></a>
+             </div>
+         </li>
+         <li class="n4">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_off.gif" alt="마이 페이지" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_on.gif" alt="마이 페이지 - 프리미엄 회원님께서 받은 혜택을 확인하세요." /></a>
+             </div>
+         </li>
+     </ul>
+ </div>
+<!--// 공통 헤더 끝 -->
+<form name="form1" method="post">
+	
+	
+	
+	<!-- content_block  -->
+	<div class="content_block content_block_card clfix">
+		<h2><img src="/images/premium/h2_premium_16.png" alt="포인트추가적립서비스 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<blockquote><img src="/images/premium/txt_premium_06.png" alt="자주 이용하시는 업종에서 포인트 추가 적립! " /></blockquote>
+			<p class="mt20 mb20">회원님이 선택하시는 업종에 대해 포인트 추가 적립 혜택을 드립니다.</p>
+			<strong class="t_black ">포인트추가적립서비스란? </strong>
+			<p class="mb20">매월 서비스를 신청하신 후, 신청 시점부터 말일까지 선택하신 업종에서 <br />개인신용카드로 일시불 및 할부로 총 30만원 이상 이용하시면 3,000 서비스포인트를 적립해드리는 서비스 입니다.</p>
+			<div class="tb_exp clfix">
+				<p><span class="t_black"><strong>업종 선택하기 </strong></span></p>
+			</div>
+			
+			<table class="dtable02 dtable_expand mt10" summary="포인트 추가적립 업종선택 게시판입니다.">
+			<caption>포인트 추가적립 업종선택</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" class="riline"><p>업종</p></th>
+					<td><p>
+					<input type="radio" name="rad_Type" value="U1" onclick="select_Type(this.value);" id="select_shop01" title="교육업종" /> <label for="select_shop01" class="mr10">교육 업종</label>
+					<input type="radio" name="rad_Type" value="U2" onclick="select_Type(this.value);" id="select_shop02" title="주유업종" /> <label for="select_shop02" class="mr10">주유 업종</label>
+					<input type="radio" name="rad_Type" value="U3" onclick="select_Type(this.value);" id="select_shop03" title="외식업종"/> <label for="select_shop03">외식 업종</label>
+					<span style="margin-left: 75px;"><a href="javascript:pointAddApply();" class="btn btn_blue" title="새창"><span>포인트추가적립서비스 신청</span></a></span> <!-- 정기일반영 13.03.27-->					
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+			<div class="btnset">
+				<div class="btnl">
+				<ol class="list_no01 mt10 ">
+					<li><p><strong class="t_black">서비스 신청 후 업종 변경은 불가합니다.</strong></p></li>
+					<li><p>서비스 신청기간: 매월 1일 ~ 말일</p></li>
+					<li><p>서비스 제공기간: 서비스 신청시점 ~ 매월 말일</p></li>
+					<li><p>포인트적립 : 선택업종에서 카드를 이용하신 다음달 15일<br /><span style="margin-left: 71px;">예시) 4월 5일 서비스 신청 후, 4월 5일 부터 30일까지 선택 업종에서 30만원 이상 이용 시,</span><br /><span style="margin-left: 104px;">5월 15일 3,000 서비스 포인트 적립</span></p></li><!-- 정기일반영 13.03.27 -->
+					<li><p><strong class="t_black">업종 구분</strong> <br />- 교육 업종: 학원(입시/보습/외국어/예체능/미용/요리/기술/사무/자동차), <br /><span style="margin-left: 69px">영유아(유치원/놀이방/어린이집), 기타(문화센터/직업훈련소)</span><br />- 주유 업종: 전국 주유소 및 가스충전소<br />- 외식 업종: 한식, 일식, 중식, 양식, 패밀리레스토랑, 뷔페, 패스트푸드, 간이음식점</p></li><!-- 정기일반영 13.03.06 -->
+				</ol>
+				</div>
+				<!--p class="btnr" style="margin-top:90px"><a href="javascript:pointAddApply();" class="btn btn_blue"><span>포인트추가적립서비스 신청</span></a></p--> <!-- 정기일반영 13.03.27 -->
+			</div>
+		</div>
+	</div>
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_03.png" alt="서비스 신청방법 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<div class="tb_exp clfix"><h3>전화 또는 인터넷으로 신청 가능</h3></div>
+				<p class="btnl ">프리미엄 전용 ARS <span class="t_point">1688-0871</span>, 대표전화 <span class="t_point">1588-8700</span> / 삼성카드 홈페이지</p>
+			<div class="line_lgray10">&nbsp;</div>
+			<p class="t_desc04">서비스 신청 취소는 신청 당일 대표전화(1588-8700)를 통해서만 가능합니다.</p>
+		</div>
+	</div>
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_08.png" alt="포인트 적립내역 안내입니다." /></h2>
+		<div class="content_block_inner">
+			<table class="dtable02 dtable_inputfield" summary="포인트 적립내역 조회를 위해 이용기간을 선택하는 게시판입니다.">
+			<caption>포인트 적립내역 안내</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>조회기간</p></th>
+					<td>
+						<p>
+							<span class="reset_date ml20">날짜지정</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<div class="btnl t_desc04">최근 12개월 적립내역을 확인할 수 있습니다.<br />이용금액 및 적립 포인트는 신청월 다음달 15일 이후 조회 가능합니다.</div><!-- 정기일반영 13.03.27 -->
+				<p class="btnr"><a href="javascript:pointAddSerch();" class="btn btn_blue"><span>조회</span></a></p>
+			</div>
+
+			<table class="dtable02 dtable_expand mt20" summary="선택업종 및 적립 포인트 합계를 알수있는 게시판입니다.">
+			<caption>선택업종 및 적립 포인트</caption>
+			<colgroup><col width="30%" /><col width="70%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>적립 포인트 합계</p></th>
+					<td><p class="t_no">${savePointTot}P</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<table class="dtable01 mt10" summary="선택한 이용기간에 따라 적립년월 , 구분, 이용금액, 적립 포인트를  알 수 있는 게시판입니다">
+			<caption>적립년월 , 구분, 이용금액, 적립 포인트 조회</caption>
+			<colgroup><col width="10%" /><col width="30%" /><col width="30%" /><col width="30%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">적립년월</th>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_r10">이용금액(적립월 전월 기준)</th>
+					<th scope="col" class="cell_r10">적립 포인트</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_10 t_no">1201년1월</td>
+					<td class="cell_l10">-_-</td>
+					<td class="cell_r10"><span class="t_no">12</span>원</td>
+					<td class="cell_r10 t_no">12P</td>
+				</tr>
+				<tr>
+					<td colspan="4">적립내역이 없습니다. </td>
+				</tr>
+			</tbody>
+			</table>
+			<ol class="list_no01 mt10">
+				<li><p>회원님이 선택하신 업종에서 매월 1일부터 말일까지 일시불 및 할부(가족카드 포함)로 월 30만원 이상<br />이용시  혜택이 제공됩니다.(매출전표 접수 기준)</p></li><!-- 정기일반영 13.04.22 -->
+				<li><p>적립된 포인트는 회원님의 포인트(보너스포인트/빅포인트/서비스포인트)를 합산하여 <br />전국 4만여 개 보너스클럽에서 사용하시거나,  3만 포인트 이상 보유 시 결제대금으로 납부하실 수 있습니다. <br />이외에도 포인트몰, 세이브ㆍ선포인트 상환, 마일리지 전환에도 사용하실 수 있습니다.</p></li>
+				<li><p>분기별 적립대상 업종과 포인트 적립기준 및 적립 포인트는 변경될 수 있습니다.</p></li>
+				<li><p>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한합니다.</p></li>
+				<li><p><strong class="t_black">포인트 추가 적립 서비스 제외 대상</strong></p>
+					<ul class="list_dashed">
+						<li>서비스 신청 전 이용건, 무이자할부 이용 건, 다이어트 할부 이용 건, <br /> 해외 매출 건, 무승인 매출 건, 선택 업종에서 총 30만원 미만 이용 시</li>
+					</ul>
+				</li>
+			</ol>
+			<div class="line_lgray10" >&nbsp;</div>
+			<p class="t_desc04">카드사 및 제휴사 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려 드립니다.</p>
+		</div>
+	</div>
+
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

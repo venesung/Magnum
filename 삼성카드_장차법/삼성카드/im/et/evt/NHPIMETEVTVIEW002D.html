@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<iframe frameborder="0" height="0" src="" width="0" id ="weblog_iframe" name="weblog_iframe" title="빈 프레임"></iframe>
+
+
+		<!-- top_visual -->
+		<div class="top_visual">
+<!-- 2012.12.31 VOC 삭제 추가 start -->
+<!-- 			<h1><img src="/images/et/h1_event.png" alt="삼성카드와 다양한 이벤트를 즐기세요"/></h1> -->
+			<%
+				if("004".equals(tab_index)) { 
+			%>
+			<h1><img src="/images/et/h1_event_2.gif" alt="종료된 이벤트" /></h1>
+			<%
+				}else if ("005".equals(tab_index)) { 
+			%>
+			<h1><img src="/images/et/h1_event_3.gif" alt="당첨자발표" /></h1>
+			<%
+				}else{
+			%>
+			<h1><img src="/images/et/h1_event_1.gif" alt="진행중인 이벤트" /></h1>
+			<%}%>
+<!-- 2012.12.31 VOC 삭제 추가 end -->
+		</div>
+
+		<!-- content_block -->
+				<div class="content_block content_block_card">
+					<!-- tab_area -->
+				<div id="cs">
+					<div class="board_event_view">
+						<!-- board_view -->
+						<table class="dtable01" summary=" 행사에 대한 행사제목, 행사기간, 행사내용을 확인하는 게시판입니다.">
+						<caption style="display:none">행사 상세보기</caption>
+						<colgroup><col width="70px" /><col width="570" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="row"><strong class="t_point">제목</strong></th>
+								<td>음..</td>
+							</tr>
+							<tr>
+								<th scope="row"><strong class="t_point">기간</strong></th>
+								<td class="t_no">
+									<span class="fl_left">2012.02.03 ~ 2012.05.06</span>
+									<span class="fl_right">
+										<a target="_blank" id="sns_facebook" href="" title="새창"><img src="/images/et/icon_sns_1.gif" alt="페이스북 담기" /></a>
+										<a target="_blank" id="sns_twitter" href="" title="새창"><img src="/images/et/icon_sns_2.gif" alt="트위터 담기" /></a>
+										<a target="_blank" id="sns_yozm" href="" title="새창"><img src="/images/et/icon_sns_3.gif" alt="요즘 담기" /></a>
+										<a target="_blank" id="sns_me2day" href="" title="새창"><img src="/images/et/icon_sns_4.gif" alt="미투데이 담기" /></a>
+									</span>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2">
+								<div class="cell_contents">
+									<iframe src="#" width="99%" height="100%"  frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="컨텐츠 프레임"></iframe>
+								</div>
+<!-- 
+								<div class="cell_contents">
+								<jsp:include page="${vo.path}/${vo.cmsSeq}_hp_evt4.html" flush="false"></jsp:include>
+								</div>
+ -->
+							
+								</td>
+							</tr>
+						</tbody>
+						</table>
+</div>
+						<!--btn -->
+						<div class="btnset">
+							<p class="btnr"><a href="javascript:goList('<%=tab_index%>');" class="btn btn_white" title="목록" ><span>목록</span></a></p>
+						</div>
+
+						<!-- pre_nex_article -->
+						<div class="prenext_article">
+							<table class="dtable01" summary="이전글, 다음글의 제목을 확인 할 수 있는 화면 입니다.">
+							<caption>이전글, 다음글</caption>
+							<colgroup><col width="55" /><col width="*" /></colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">이전글</th>
+                                        <td class="cell_l">
+                                        	<span class="fl_left"><a href="#">-_-</a></span>
+                                        	<span class="fl_right t_no">2012.02.03~2012.02.03</span>
+                                        </td>
+									</tr>
+									<tr>
+										<th scope="row">다음글</th>
+                                        <td class="cell_l">
+                                        	<span class="fl_left"><a href="#">-_-</a></span>
+                                        	<span class="fl_right t_no">2012.02.03~2012.02.03</span>
+                                        </td>
+									</tr>
+								</tbody>
+							</table>
+					</div>
+				</div>
+			</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

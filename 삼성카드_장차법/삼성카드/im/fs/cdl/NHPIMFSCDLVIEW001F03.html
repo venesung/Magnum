@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cardloan_srvc_04.gif" alt="고객님의 신청결과를 알아보세요" /></h2>
+	<div class="content_block_inner"> 
+		<div class="tb_exp clfix"><strong class="mv_rai_txt">123 기준 <em>${HName}</em> 님께서 신청하신 대출 내역입니다.</strong></div>
+		<div style="overflow-x:scroll;scrollbar-face-color:#fff;scrollbar-track-color:#fff;scrollbar-arrow-color:#666;scrollbar-highlight-color:#fff;scrollbar-3dlight-color:#cfcfcf;scrollbar-darkshadow-color:#cfcfcf;scrollbar-face-color:#fff;" tabindex="0">
+			<div style="width:1000px;">
+				<table class="dtable01" summary="접수번호, 이용일시, 이용카드, 금액, 처리결과, 입금은행, 계좌번호, 입금일자등의 카드론 신청결과를 확인할 수 있는 게시판입니다.">
+					<caption>카드론 신청 내역</caption>
+					<thead>
+						<tr>
+							<th scope="col">접수번호</th>
+							<th scope="col">이용일시</th>
+							<th scope="col">이용카드</th>
+							<th scope="col" class="cell_r10">금액</th>
+							<th scope="col">처리결과</th>
+							<th scope="col">입금은행</th>
+							<th scope="col">계좌번호</th>
+							<th scope="col">입금일자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="t_no"><a href="#" title="대출 상세내역 보기">111</a></td>
+							<td class="t_no">2012.03.02</td>
+							<td class="t_no">0000-0000-0000-0000</td>
+							<td class="cell_r10 t_no">1,200,000</td>
+							<td>대체완료</td>
+							<td>SC제일은행</td>
+							<td class="t_no">212-2536548-89546</td>
+							<td class="t_no">2012.03.02</td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="8">신청 내역이 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="line_lgray"></div>
+		
+		<ol class="list_no01">
+			<li><p>대출번호를 클릭 하시면 상세 내역을 조회하실수 있습니다.(완료건에 한함)</p></li>
+			<li><p>신청하신 내용을 취소하시려면 처리결과란의 '취소가능'을 클릭하여 주시기 바랍니다.(취소가능건에 한함)</p></li>
+			<li><p>입금신청계좌는 회원님이 대출금 입금을 신청한 계좌이며 실제 자동이체계좌는 상세 내역에서<br />조회하실수 있습니다.</p></li>
+			<li><p>최근 3개월 내용에 대해서만 확인 가능하며, 그외 회원님의 대출금 입금액 안내는 <a href="#" class="a_point" onclick="goTabPage('NHPIMFSCDLM005',true);">대출금 입금 안내</a>를<br />확인하시기 바랍니다.</p></li>
+		</ol>
+	</div>		
+</div>
+
+
+
+
+
+<div id="detailLayer" style="display:;">
+	<div class="pop_l_wrap pop_l_wrap710" style="height:auto;">
+		<div class="img_l_pop flag_tl">&nbsp;</div>
+		<div class="img_l_pop flag_tr">&nbsp;</div>
+		<div class="img_l_pop flag_bl">&nbsp;</div>
+		<div class="img_l_pop flag_br">&nbsp;</div>
+		<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('detailLayer');" value="레이어닫기" title="카드론 신청결과 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/fs/lpop_tit_card_detail_inq.gif" alt="카드론 신청결과 상세 내역 조회" /></p>
+		<div class="pop_l_content">
+			<div class="d_desc">
+				<table class="dtable02" summary="대출상품, 상환방식, 신청금액, 대출기간, 실지금액, 결제일, 취급수수료, 만기일, 이자율, 입금은행명, 입금계좌번호, 자동이체은행명, 자동이제계좌번호등으로 구성된 카드론 신청결과를 상세하게 확인할 수 있는 게시판입니다.">
+				<caption>카드론 신청결과 상세 내역</caption>
+				<colgroup>
+					<col width="20%" />
+					<col width="30%" />
+					<col width="20%" />
+					<col width="*" />
+				</colgroup>
+				<tbody id="detailLayerTbody">
+				<tr>
+					<th scope="row"><p>대출상품</p></th>
+					<td class="cell_r10"><p id="GOODS_NAME">&nbsp;</p></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>상환방식</p></th>
+					<td class="cell_r10"><p id="LOAN_MATH">만기일시상환</p></td>
+					<th scope="row"><p>신청금액</p></th>
+					<td class="cell_r10"><p id="REQLOAN_AMT">123,456,000 원</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>대출기간</p></th>
+					<td class="cell_r10"><p id="REQLOAN_MON">12개월</p></td>
+					<th scope="row"><p>실지금액</p></th>
+					<td class="cell_r10"><p id="REAL_AMT"> 원</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>결제일</p></th>
+					<td class="cell_r10"><p id="FIX_REP_DATE">매월 22일</p></td>
+					<th scope="row"><p>취급수수료</p></th>
+					<td class="cell_r10"><p id="COMMI_AMT">0 원</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>만기일</p></th>
+					<td class="cell_r10"><p id="EXPIRE_DATE1">2013년 10월 10일</p></td>
+					<th scope="row"><p>이자율</p></th>
+					<td class="cell_r10"><p id="FIXED_RATE">10.12 %</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>입금은행명</p></th>
+					<td class="cell_r10"><p id="BANK_NAME">은행</p></td>
+					<th scope="row"><p>입금계좌번호</p></th>
+					<td class="cell_r10"><p id="BANK_ACCT">102-20XXXXXXXX</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>자동이체은행명</p></th>
+					<td class="cell_r10"><p id="CHUNG_BANK_NAME">은행</p></td>
+					<th scope="row"><p>자동이체계좌번호</p></th>
+					<td class="cell_r10"><p id="CHUNG_BANK_ACCT">102-20XXXXXXXX</p></td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<div class="btnc">
+				<p class="btn mt25 mb40">
+					<a href="#" class="btn btn_blue" onclick="closeLayer('detailLayer'); return false;" ><span>확인</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+						
+								
+<!-- 여기까지 끝// -->
+<div id="msgLayer" style="display:;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

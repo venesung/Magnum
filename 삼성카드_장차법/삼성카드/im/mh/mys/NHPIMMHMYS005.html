@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+				<div class="content_block content_block_tab2 clfix">
+				<form name="frm1" method="post">
+					<div class="tab02 w810">
+						<ul>
+<!-- 2013.01.18 VOC 삭제 추가 start -->
+<!-- 
+							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">나의 맞춤혜택</a></li>
+ -->
+ 							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">진행중인 행사</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS003','true');">종료된 행사</a></li>
+<!-- 2013.01.18 VOC 삭제 추가 end -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">최대혜택조회</a></li>
+							--><li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의 상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일 알리미 서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');">왕대박 3 승인번호 등록</a></li>
+							--><li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+					</form>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100511 -->
+				<form name="form1">
+				<input type="hidden" name="app_year" value="" />
+				<input type="hidden" name="app_date" value="" />
+					<h2><img src="/images/mh/h2_onlyforyou_consult12.png" alt="연간 사용혜택 제공안내입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>삼성카드가 회원님께 제공한 혜택을 한눈에 확인하실 수 있습니다.</p></li>
+							<li><p>혜택 금액은 최근 3년까지 조회하실 수 있으며, 명세서 작업 완료 후에 반영됩니다.</p></li><!-- 정기일반영 13.03.26 -->
+							<li><p><strong class="t_black">항목별 혜택금액을 클릭하시면 상세내역</strong>을 확인하실 수 있습니다. </p></li>
+						</ol>
+						<table class="dtable02 dtable_inputfield mt30" summary="기준년도, 사용가능 보너스 포인트, 기준일을 선택하는 게시판입니다.">
+						<caption>연간 사용혜택 제공 내역</caption>
+						<colgroup><col width="140" /><col width="170" /><col width="140" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>기준년도</p></th>
+								<td colspan="3">
+									<p>
+									<select id="label_year" title="기준년도 선택" style="width:94px;" onchange="onYearChange();">
+										<option>00</option>
+									</select>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<th scope="row"><p>사용가능 보너스 포인트</p></th>
+								<td>
+                                    <p><a href="javascript:goTabPage('NHPIMMHPIT001');"><span class="t_no">00</span></a> P </p>
+								</td>
+								<th scope="row"><p>기준일</p></th>
+								<td>
+									<p class="t_no">00년 00월 00일</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="btnset">
+							<p class="btnr"><a href="#" class="btn btn_blue"><span>조회</span></a></p>
+						</div>
+
+						<table class="dtable01 mt30" summary="기준년월, 포인트사용, 할인·면제, 금융이자·수수료, 경품, 합계를 확인할 수 있는 게시판입니다.">
+						<caption>사용혜택 연간혜택제공내역 조회</caption>
+						<colgroup><col width="70" /><col width="110" /><col width="115" /><col width="115" /><col width="115" /><col width="115" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">기준년월</th>
+								<th scope="col" class="cell_r10">포인트사용</th>
+								<th scope="col" class="cell_r10">할인·면제</th>
+								<th scope="col" class="cell_r10">금융이자·수수료</th>
+								<th scope="col" class="cell_r10">경품</th>
+								<th scope="col" class="cell_r10">합계</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td class="cell_l10 t_no" scope="row">연간합계</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no" scope="row">0월</td>
+                                <td class="cell_r10"><a href="#"><span class="t_no">0</span></a> 원</td>
+                                <td class="cell_r10"><a href="#"><span class="t_no">0</span></a> 원</td>
+                                <td class="cell_r10"><a href="#"><span class="t_no">0</span></a> 원</td>
+                                <td class="cell_r10"><a href="#"><span class="t_no">0</span></a> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							 <!-- //loop  -->
+						</tbody>
+						</table>
+					</div>
+					</form>
+				</div>
+				<div class="content_block   clfix">
+					<h2><img src="/images/mh/h2_onlyforyou_consult13.png" alt="연간 사용혜택 조회안내입니다" /></h2>
+					<div class="content_block_inner">
+						<p><span class="ltxt02"> 특정 기준년도 1월1일~12월31일까지 사용하신 혜택금액의 월별ㆍ총합계입니다. </span></p><br />
+						<ol class="list_no01 ">
+							<li><p><strong class="ltxt01 t_black">포인트사용</strong> <span class="ltxt02">해당월 사용하신 포인트 합산금액입니다. </span></p></li>
+							<!-- 100126 -->
+							<li><p><strong class="ltxt01 t_black">할인·면제</strong> <span class="ltxt02">카드사용에 대해 할인 받으신 금액 및 각종 캐시백, 면제(무이자할부) 혜택에 대한 <br />내역입니다.</span></p></li>
+							<!-- //100126 -->
+							<li><p><strong class="ltxt01 t_black">금융 이자·수수료 </strong> <span class="ltxt02">금융상품(현금서비스, 카드론, 마이너스론) 사용 관련 혜택에 대한 내역입니다. </span></p></li>
+							<li><p><strong class="ltxt01 t_black">경품</strong> <span class="ltxt02">참여하신 이벤트에서 당첨되신 경품에 대한 내역입니다.</span></p></li>
+						</ol>
+						<div class="line_lgray"></div>
+						<p class="t_desc04">포인트사용과 경품은 해당 월 1일~말일 기준, 할인ㆍ면제와 금융 이자ㆍ수수료는 해당 월 명세서 기준입니다. </p>
+					</div>
+				</div>
+
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

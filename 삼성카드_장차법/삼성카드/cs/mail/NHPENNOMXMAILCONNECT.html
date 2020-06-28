@@ -1,0 +1,397 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+/*
+* Filename    : NHPENNOMXMAILCONNECT.jsp
+* Comment     : 삼성카드 Mail Connect 페이지
+* History     : 03/25/2010 
+* Version     : 1.0
+*/
+%>
+
+<%@ include file="./include/CommonHeaderNoLogin.jsp" %>
+<%@page import="kr.co.spectra.enomix.web.dao.exMailAttachBean" %>
+<%@ page import="kr.co.spectra.enomix.web.dao.exMailBean" %>
+<%@ page import="kr.co.spectra.enomix.web.beans.exMailMng"%>
+
+<%@ page import="kr.co.spectra.enomix.web.sqls.exMailSqls" %>
+<%@page import="com.scard.common.util.SecurityUtil"%>		
+		
+
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	//DesManager desManager = new DesManager("des.key.db");
+
+	exMailBean  exMailBn =  new exMailBean();
+	
+	boolean flag_success = true;
+	String strType = "";
+	String strNameChannel	= "";
+	String strFlagChannel	= "";
+	String strFlagCheck		= "";
+	
+	try {
+		// default values
+		String strTboxID 		= "";
+		String strTboxAlias		= "";
+		//String strAttachCount	= "0";
+		int iAttachCount = 0;
+		strNameChannel	= "WebForm";
+		strFlagChannel	= "INPUT00";
+		strFlagCheck	= "CHCK001";
+		String strFlagTicket	= "TCKT000";
+		String strAgentID		= "";
+		String strAgentName		= "";
+		String strMemberID		= "";
+		//대표카드번호 가져오기
+		//String card_no="";
+		
+		String strMemberType	= blockSQLHack(request.getParameter( "MemberType" ));
+		String strPageType 		= blockSQLHack(request.getParameter( "Option29" ));
+		String iden_no	 		= blockSQLHack(request.getParameter( "iden_no" ));
+	
+		//##################################################################################
+		// 초우량 고객 관련...
+		String Option27 	= "";
+		String Option28 	= "";
+		String strVipFrom 	= "";
+	
+		String szYear 		= "";
+		String szMonth		= "";
+		String szDay		= "";
+		String szTime		= "";
+	
+		String szVIP = blockSQLHack(request.getParameter("isvip"));
+		
+		//가맹점회원 여부
+		String agentYN = blockSQLHack(request.getParameter("agent_yn"));
+			if (agentYN==null) { 
+				agentYN="N";
+			}
+		int iTime;
+		if( szVIP!=null && szVIP.equals( "Y" ) ) {
+			szYear 	= blockSQLHack(request.getParameter("year"));
+			szMonth	= blockSQLHack(request.getParameter("month"));
+			szDay	= blockSQLHack(request.getParameter("day"));
+			szTime	= blockSQLHack(request.getParameter("time"));
+			iTime = Integer.parseInt(szTime);
+	
+			if (blockSQLHack(request.getParameter("chk_mail")).equals("Y")){  //전화상담이면 
+				//서비스 가능시간 check
+				
+				Option27 = szYear + "년 " + szMonth + "월 " + szDay + "일 " + iTime+":00~" +(iTime+1) + ":00" + "시"; 
+				Option28 = "전화";
+			}else if ( blockSQLHack(request.getParameter("chk_mail")).equals("N") ) { // 이메일이면
+				Option27 ="";
+				Option28 = "메일";
+			} else {
+				Option27 ="";
+				Option28 = "서면";
+			}
+		}
+		//##################################################################################
+	
+		
+		if( strPageType.equals( "EMAIL" ) ) 		{ strTboxAlias = "ROOT_EMAIL"; }
+		else if( strPageType.equals( "MINWON" ) ) 	{ strTboxAlias = "ROOT_MINWON"; }
+		else if( strPageType.equals( "SUGGEST" ) )  { strTboxAlias = "ROOT_SUGGEST";}
+		else if( strPageType.equals( "AHALOAN" ) )  { strTboxAlias = "ROOT_AHALOAN";}
+		else if( strPageType.equals( "AHALOAN_MINWON" ) )  { strTboxAlias = "ROOT_AHALOAN_MINWON";}
+		else if( strPageType.equals( "MO_WEB")) { strTboxAlias = "MO_WEB"; }
+		else { strTboxAlias = "ROOT_EMAIL"; }
+		
+		
+		//운영에 반영시 주석달고 위에꺼 주석 해제
+		/*
+		if( strPageType.equals( "EMAIL" ) ) 		{ strTboxAlias = "TEST_EMAIL";   }
+		else if( strPageType.equals( "MINWON" ) ) 	{ strTboxAlias = "TEST_EMAIL";  }
+		else if( strPageType.equals( "SUGGEST" ) )  { strTboxAlias = "TEST_EMAIL";  }
+		else if( strPageType.equals( "AHALOAN" ) )  { strTboxAlias = "TEST_EMAIL"; }
+		else if( strPageType.equals( "AHALOAN_MINWON" ) )  { strTboxAlias = "TEST_EMAIL"; }
+		else if( strPageType.equals( "MO_WEB")) { strTboxAlias = "TEST_EMAIL"; }
+		else { strTboxAlias = "TEST_EMAIL"; }
+		*/
+	
+	
+		if( Option28.equals("전화") ) {
+			strVipFrom 	 = strTboxAlias;
+	        strTboxAlias = "ROOT_CALLBACK"; 
+	        //운영에 반영시 주석달고 위에꺼 주석 해제
+	        //strTboxAlias = "TEST_EMAIL";
+	        
+		}	
+	
+		if( strPageType.equals( "MINWON" ) ) 		{ strPageType = "사이버민원실"; strType="MINWON"; }
+		else if( strPageType.equals( "SUGGEST" ) ) 	{ strPageType = "고객제안실"; strType="SUGGEST";}
+		else if( strPageType.equals( "AHALOAN" ) ) 	{ strPageType = "AHALOAN"; strType="AHALOAN";}
+		else if( strPageType.equals( "AHALOAN_MINWON" ) ) 	{ strPageType = "AHALOAN_MINWON"; strType="AHALOAN_MINWON"; }
+		else if( strPageType.equals( "MO_WEB")) { strPageType = "MO_WEB"; strType="MO_WEB";}
+		else { strPageType = "e_mail상담실"; strType="EMAILQUESTION"; }
+	
+		
+	
+		strMemberID = blockSQLHack(request.getParameter("memberid"));
+		if(strType.equals("MO_WEB")){
+		strNameChannel	= "MoForm";
+		strFlagChannel	= "INPUT07";
+		strFlagCheck	= "CHCK001";	//스팸체크 안함.
+		}
+		
+		// posted values
+		String Title = blockSQLHack(request.getParameter("Title"));
+		String Option04 = "";
+		String Content 	= blockSQLHack(request.getParameter("Content"));
+		if(strType.equals("MO_WEB")){
+			Title = "";
+			Option04 = blockSQLHack(request.getParameter("Option04"));
+			if(Content != null && Content.length() >= 100)
+			{
+			  Title = "(" + Option04.substring((Option04.length()-4),(Option04.length())) + ")" + Content.substring(0,99) + "...";
+			  Title = Utility.rplc(Title,"\r\n"," "); 
+	        }	
+			else
+			{
+				Title = "(" + Option04.substring((Option04.length()-4),(Option04.length())) + ")" + Content;
+			}
+			if(Content != null && Content.length() > 0)
+			{
+			 Content = Utility.rplc(Content,"\r\n","<br />");
+		   } 
+		}
+	  else
+	  {
+	    Content = StringUtil.replace(Content,"\n","<Br>");
+	  }
+	  
+		String Email 		= blockSQLHack(request.getParameter("Email"));
+		String IPADDR 		= blockSQLHack(request.getRemoteAddr());
+		
+		String Option01		= blockSQLHack(request.getParameter("Option01"));
+		String Option26		= blockSQLHack(request.getParameter("Option26"));
+				
+		/*
+		String Option02_1	= strJumin1;		// 주민등록번호 (Option02)
+		String Option02_2   = strJumin2;
+		*/
+		//20130306 보안취약성점검 대응
+		String Option02_1 = desManager.decryptNumber(strJumin1); // 주민등록번호 (Option02)
+		String Option02_2 = desManager.decryptNumber(strJumin2);
+	
+		if( Option02_1 == null ) 	Option02_1 = "";
+		if( Option02_2 == null ) 	Option02_2 = "";
+		
+		//20130306 보안취약성점검 대응		
+		String decOption02_1 = desManager.decryptNumber((String)request.getParameter("Option02_1"));		
+		String decOption02_2 = desManager.decryptNumber((String)request.getParameter("Option02_2"));
+		
+		
+		// 2012.03.19 비회원 시 주민번호 세팅을 위해 추가
+		if( strMemberType != null && strMemberType.equals( "none_member" ) ) {
+			String ssno = (String)session.getAttribute("NHPENNOMXMAIL008AUTH1"); //복호화
+			
+			ssno = desManager.decryptNumber(ssno); //20130306 보안취약성점검 대응
+			
+			String ssno1 = "";
+			String ssno2 = "";
+			if ( ssno != null && ssno.length() >= 13 ){
+				ssno1 = ssno.substring(0,6);
+				ssno2 = ssno.substring(6,13);
+				if ( !ssno1.equals( decOption02_1) || !ssno2.equals(decOption02_2) ) {
+					throw new com.scard.common.exception.ScardBaseException("실명인증 주민번호와 입력된 주민번호가 상이함");
+				}
+			}
+		}
+		
+		if ( Option02_1.equals("") ) Option02_1 = blockSQLHack(decOption02_1);
+		if ( Option02_2.equals("") ) Option02_2 = blockSQLHack(decOption02_2);
+		
+		
+		String Option02 = "";
+		String strResNo = "";
+	
+		//가맹점회원인 경우 Option30에 가맹점번호를 넣는다.
+		String Option30="";
+	
+		if (agentYN.equals("Y"))
+		{
+			if( strMemberType != null && !strMemberType.equals( "none_member" ) )
+				Option30=chainNo;
+			else
+				Option30=Option02_1;
+		} else
+		{
+			
+			Option02 = Option02_1 + "-" + Option02_2;
+		}
+		
+	
+	
+		String Option03 = "";
+		if(!strType.equals("MO_WEB")){
+			String Option03_1	= blockSQLHack(request.getParameter("Option03_1"));		// 전화번호	(Option03)
+			String Option03_2	= blockSQLHack(request.getParameter("Option03_2"));		
+			String Option03_3	= blockSQLHack(request.getParameter("Option03_3"));
+		
+			if( Option03_1 == null ) 	Option03_1 = "";
+			if( Option03_2 == null ) 	Option03_2 = "";
+			if( Option03_3 == null ) 	Option03_3 = "";
+			Option03 = Option03_1 + "-" + Option03_2 + "-" + Option03_3;
+		}else{
+			
+		}	
+		if(!strType.equals("MO_WEB")){
+			String Option04_1 	= blockSQLHack(request.getParameter("Option04_1"));		// 휴대폰 (Option04)
+			String Option04_2	= blockSQLHack(request.getParameter("Option04_2"));
+			String Option04_3	= blockSQLHack(request.getParameter("Option04_3"));
+		
+			if( Option04_1 == null ) 	Option04_1 = "";
+			if( Option04_2 == null ) 	Option04_2 = "";
+			if( Option04_3 == null ) 	Option04_3 = "";
+				Option04 = Option04_1 + "-" + Option04_2 + "-" + Option04_3;
+		}else{
+			
+		}
+		// 카드번호 (Option05)
+		String Option05 = "";
+		if( strMemberType != null && strMemberType.equals( "none_member" ) )
+			Option05 = "";
+		else 
+			Option05 = card_no;
+			
+		String Option06="", Option07="", Option08="", Option09="";
+		String Option10="", Option11="", Option12="", Option13="", Option14="";
+		String Option15="", Option16="", Option17="", Option18="", Option19="";
+		String Option20="", Option21="", Option22="", Option23="", Option24="";
+		String Option25="", Option29=strPageType;
+		
+		//******************************************************************
+		// 2012.03.16 변경 항목 세팅
+		// 09 : 체류국가/체류기간(해외)
+		// 14 : 직장명
+		// 19 : 부서명
+		// 22 : 주소
+		// 24 : 주소지구분
+		// 25 : 불만회원 상담채널
+		// 26 : 로그인 여부
+		// 29 : 질문경로:사이버민원실
+		//******************************************************************
+		
+		//Option02 = ( Option02_1 == null || Option02.equals("") ) ? blockSQLHack(request.getParameter("Option02")) : Option02;
+		//Option03 = ( Option03 == null || Option03.equals("") ) ? blockSQLHack(request.getParameter("Option03")) : Option03;
+		//Option04 = ( Option04 == null || Option04.equals("") ) ? blockSQLHack(request.getParameter("Option04")) : Option04;
+		
+		Option09 = SecurityUtil.makeTagString(blockSQLHack(request.getParameter("Option09")));
+		Option14 = SecurityUtil.makeTagString(blockSQLHack(request.getParameter("Option14")));
+		Option19 = SecurityUtil.makeTagString(blockSQLHack(request.getParameter("Option19")));
+		Option22 = SecurityUtil.makeTagString(blockSQLHack(request.getParameter("Option22")));
+		Option24 = blockSQLHack(request.getParameter("Option24"));
+		Option25 = blockSQLHack(request.getParameter("Option25"));
+		Option26 = blockSQLHack(request.getParameter("Option26"));
+		//Option29 = blockSQLHack(request.getParameter("Option29"));
+		
+		// start ...
+		//exMail01 exMail = new exMail01();
+		String strRawTicketID="";
+		
+		if(strType.equals("MO_WEB")){
+		//ARS인증여부
+		Option17 = "200";
+		//ARS인증시간
+		Option13 = DateUtil.getCurrDate("yyyyMMddHHmmss");
+		//MMS가능여부
+		Option16 = "N";
+		}
+		
+
+	exMailMng exMail = new exMailMng();
+
+	strTboxID = exMail.getTBIDByAlias(strTboxAlias);   //TBOX Alias로 tbox_id를 가져온다.
+	
+	exMailBn.setTicketid("_");
+	exMailBn.setTboxid(strTboxID);
+	exMailBn.setTboxalias(strTboxAlias);
+	exMailBn.setAttachcount(iAttachCount);
+	exMailBn.setNamechannel(strNameChannel);
+	exMailBn.setFlagchannel(strFlagChannel);
+	exMailBn.setFlagcheck(strFlagCheck);
+	exMailBn.setFlagticketing(strFlagTicket);
+	exMailBn.setFlagresponse("RES9999");
+	exMailBn.setFlagpublic("Y");			
+	exMailBn.setRef(-1); 
+	exMailBn.setAgentid(strAgentID);
+	exMailBn.setTickettitle(Title);
+	exMailBn.setRequestcontents(Content);
+	exMailBn.setMemberid(strMemberID);
+	exMailBn.setMemberemail(Email);
+	exMailBn.setIpaddress(IPADDR);
+	exMailBn.setOption01(Option01);
+	exMailBn.setOption02(Option02); 
+	exMailBn.setOption03(Option03); 
+	exMailBn.setOption04(Option04); 
+	exMailBn.setOption05(Option05);
+	exMailBn.setOption06(Option06); 
+	exMailBn.setOption07(Option07); 
+	exMailBn.setOption08(Option08); 
+	exMailBn.setOption09(Option09); 
+	exMailBn.setOption10(Option10);
+	exMailBn.setOption11(Option11); 
+	exMailBn.setOption12(Option12); 
+	exMailBn.setOption13(Option13); 
+	exMailBn.setOption14(Option14); 
+	exMailBn.setOption15(Option15); 
+	exMailBn.setOption16(Option16);
+	exMailBn.setOption17(Option17);
+	exMailBn.setOption18(Option18); 
+	exMailBn.setOption19(Option19); 
+	exMailBn.setOption20(Option20);
+	exMailBn.setOption21(Option21); 
+	exMailBn.setOption22(Option22); 
+	exMailBn.setOption23(Option23);
+	exMailBn.setOption24(Option24); 
+	exMailBn.setOption25(Option25); 
+	exMailBn.setOption26(Option26); 
+	exMailBn.setOption27(Option27); 
+	exMailBn.setOption28(Option28);
+	exMailBn.setOption29(Option29);
+	exMailBn.setOption30(Option30);
+	
+	strRawTicketID = exMail.insertTicketScard(exMailBn, null, 0);
+	/***********************************************************************/ 
+	//모바일 접수가 정상 완료 되었으면 접수 확인 문자를 발송한다.
+	//out.println("strTboxID : " + strTboxID);
+	if(strType.equals("MO_WEB")){
+	    String strSenderNumber = "#8700";
+	    String strNotifyContents = "[삼성카드 모바일상담센타]문자상담 접수가 완료되었습니다. 신속한 답변드리겠습니다.";
+	    strNotifyContents = "[삼성카드]문자상담 접수 완료, 신속한 답변드리겠습니다(개인신용회원 대상 서비스)";
+	    String strMobileNo = Option04;
+		    if(strRawTicketID!= null && !strRawTicketID.equals(""))
+		    {
+		      exMail.insertSendMoNotify(strMobileNo,strSenderNumber,strNotifyContents,"","",0);
+		    }
+	}
+    
+	}catch (Exception e){
+		e.printStackTrace();	
+		flag_success = false;
+//		return;
+	}
+	
+	if (flag_success){	//티켓인서트 성공
+    	%>
+    	
+
+	
+<%@page import="com.scard.hp.common.util.HpCommonUtil"%><script type="text/javascript">
+    	  parent.view('<%=strType%>');
+    </script>
+    	<%
+	}
+	else{						//티켓인서트 실패
+    	%><script type="text/javascript">alert("죄송합니다. 메일보내기에 실패하였습니다. \r\n잠시후에 다시 이용해 주십시요.");goTabPage('NHPIMCSFAQ1','true');</script><%
+	}
+
+
+
+%>

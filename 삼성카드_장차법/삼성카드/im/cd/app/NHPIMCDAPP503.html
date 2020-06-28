@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<!-- content_block -->
+<div id="wrap">
+		<p id="title">
+		<% if("M2".equals(SiteGubun)) { %>
+            <a href="/microSite/cardMain.jsp"><img src="/images/cd/microSite/tit_samsung.png"   alt="삼성카드 2" /></a>
+		<%}else{%>
+            <a href="/showroom/scard.jsp"><img src="/images/cd/showroom_title.jpg"   alt="삼성카드 갤러리" /></a>
+		<%}%>
+		</p>
+		<div  class="card-app-box">
+			<h1><%=vo.getCardName() %> 신청하기</h1>
+			<div id="content-box" > 
+				<div id="content" > 
+					<ul id="flow-3" class="flow">
+						<li>실명인증 및 약관동의</li>
+						<li>신청정보 입력</li>
+						<li><strong>신청완료</strong></li>
+					</ul>
+			 		<p class="txt-card-ok">
+						<img src="/images/cd/txt_card_ok.gif"   alt="선택하신 카드신청이 완료되었습니다." />
+					</p>
+					<div class="card-info">
+						<h2><img src="/images/cd/h2_card_3_1.gif" alt="카드 신청내역 확인하세요" /></h2>
+						<div class="info"> 
+							<div class="table">
+								<table  summary="성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지로 구성된 카드신청내역입니다."> 
+								<caption>카드신청내역</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="83%" />
+									</colgroup>
+									<tbody>
+									<tr>
+										<th scope="row"><p>성명</p></th>
+										<td ><%=vo.getCustomerName() %></td>
+									</tr>
+									<tr>
+										<th scope="row"><p>주민등록번호</p></th>
+									   <td ><%=vo.getIdenNo1()%>-*******</td>
+									</tr>
+									<tr>
+										<th scope="row"><p>신청카드명</p></th>
+									   <td ><%=vo.getCardName() %></td>
+									</tr>
+									 <tr>
+										<th scope="row"><p>신청일시</p></th>
+									   <td ><%=vo.getApplicationDate().substring(0,4) %>년 <%=vo.getApplicationDate().substring(4,6) %>월 <%=vo.getApplicationDate().substring(6,8) %>일 <%=vo.getApplicationTime().substring(0,2) %>시 <%=vo.getApplicationTime().substring(2,4) %>분</td>
+									</tr>
+									<tr>
+										<th scope="row"><p>카드수령지</p></th>
+										<td >[<%=vo.getZipCode1() %>-<%=vo.getZipCode2() %>] <%=vo.getAddrArea() %> <%=vo.getAddrDist() %></td>
+									</tr>
+									</tbody>
+								</table>
+							  </div>
+						</div>
+					</div> 
+					 
+					 <div class="card-info">
+						<h2><img src="/images/cd/h2_card_3_2.gif" alt="부가정보를 확인하세요" /></h2>
+						<div class="info"> 
+							<div class="table">
+								 <table summary="부가정보(본인생일, 결혼여부, 결혼기념일, 자녀유무, 자녀생일, 배우자생일)을 입력하는 게시판입니다" class="dtable02">
+									<caption>부가정보 입력</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="65%" />
+										<col width="18%" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row"><p>본인생일</p></th>
+											<td >
+												<select id="label_urbirth" onchange="setDay('label_urbirth');" title="본인생일 년 선택">
+												 	<option>선택</option>
+												</select> 년
+												<select id="label_urbirth2" onchange="setDay('label_urbirth');" title="본인생일 월 선택">
+													<option>선택</option>
+												</select> 월
+												<select id="label_urbirth3" title="본인생일 일 선택">
+													<option>선택</option>
+												</select> 일
+												&nbsp;
+												<label class="ml20" for="label_birth_moon"><input type="radio" class="in-check" id="label_birth_moon" name="selfLunarSolar" value="2" title="음력" />&nbsp;음력</label>
+												<label for="label_birth_sun"><input type="radio"  class="in-check" id="label_birth_sun" name="selfLunarSolar"  value="1" title="양력" />&nbsp;양력</label>
+												
+											</td>
+											<td>
+												<input type="hidden" name="selfBirthday" />
+                                                <input type="hidden" name="memo2" value="N" />
+                                                <label for="label_birth_chk"><input type="checkbox" id="label_birth_chk" name="chkMemo2" title="알리미 등록" /> 알리미 등록</label>
+                                                
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><p>결혼여부</p></th>
+											<td colspan="2">
+												<label for="label_marry_or_not"><input type="radio"  class="in-check" id="label_marry_or_not" name="marriedYn"  value="N" onclick="hideMarriedInfo();" checked="checked" title="미혼" />&nbsp;미혼</label>
+												<label for="label_marry_or_not2"><input type="radio" class="in-check" id="label_marry_or_not2" name="marriedYn" value="Y" onclick="showMarriedInfo();" title="기혼" />&nbsp;기혼</label>
+											</td>
+										</tr>
+										<tr hideYn="Y" style="display:none">
+											<th  scope="row"><p>결혼기념일</p></th>
+											<td >
+												<select id="label_marry_date" onchange="setDay('label_marry_date');" title="결혼기념일 년 선택">
+													<option>선택</option>
+												</select> 년
+												<select id="label_marry_date2" onchange="setDay('label_marry_date');" title="결혼기념일 월 선택">
+													<option>선택</option>
+												</select> 월
+												<select id="label_marry_date3" title="결혼기념일 일 선택">
+													<option>선택</option>
+												</select> 일
+											</td>
+											<td>
+												<input type="hidden" name="weddingAnniversary" />
+												<label for="label_marry_date_chk"><input type="checkbox" class="in-check"  id="label_marry_date_chk" name="chkMemo1" title="알리미 등록" /> 알리미 등록</label>
+												<input type="hidden" name="memo1" value="N" />
+                                                
+											</td>
+										</tr>
+										<tr hideYn="Y" style="display:none">
+											<th  scope="row"><p>자녀유무</p></th>
+											<td colspan="2">
+												<label for="label_baby_or_not"><input type="radio"  class="in-check" id="label_baby_or_not"   name="childrenYn"  value="Y"  onclick="showChildInfo();" title="있음" /> &nbsp;있음</label>
+												<label for="label_baby_or_not2"><input type="radio" class="in-check" id="label_baby_or_not2" name="childrenYn"  value="N" onclick="hideChildInfo();" checked="checked" title="없음" />&nbsp;없음</label>
+											</td>
+										</tr>
+										<tr hideYnCh="Y" style="display:none">
+											<th  scope="row"><p>자녀생일</p></th>
+											<td colspan="2">
+												<select id="label_baby_birth" onchange="setDay('label_baby_birth');" title="자녀생일 년 선택">
+													<option>선택</option>
+												</select> 년
+												<select id="label_baby_birth2" onchange="setDay('label_baby_birth');" title="자녀생일 월 선택">
+													<option>선택</option>
+												</select> 월
+												<select id="label_baby_birth3" title="자녀생일 일 선택">
+													<option>선택</option>
+												</select> 일&nbsp;
+												<input type="hidden" name="childBirthday" />
+												<label for="label_childLunarsolar_moon"><input type="radio" class="in-check" id="label_childLunarsolar_moon" name="childLunarsolar" value="2" title="음력" /> 음력</label>
+												<label for="label_childLunarsolar_sun"><input type="radio" class="in-check" id="label_childLunarsolar_sun" name="childLunarsolar" checked="checked" value="1" title="양력" /> 양력</label>
+											</td>
+										</tr>
+										<tr hideYn="Y" style="display:none">
+											<th  scope="row"></p>배우자생일</p></th>
+											<td >
+												<select id="label_spousebirth" onchange="setDay('label_spousebirth');" title="배우자생일 년 선택">
+													<option>선택</option>
+												</select> 년
+												<select id="label_spousebirth2" onchange="setDay('label_spousebirth');" title="배우자생일 월 선택">
+													<option>선택</option>
+												</select> 월
+												<select id="label_spousebirth3" title="배우자생일 일 선택">
+													<option>선택</option>
+												</select> 일&nbsp;
+												<label class="ml20" for="label_spousebirth_moon"><input type="radio" class="in-check" id="label_spousebirth_moon" name="mateLunarSolar" value="2" title="음력" />&nbsp;음력</label>
+												<label for="label_spousebirth_sun"><input type="radio" class="in-check" id="label_spousebirth_sun" name="mateLunarSolar" checked="checked" value="1" title="양력" />&nbsp;양력</label>
+											</td>
+											<td>
+												<label for="label_spousebirth_chk"><input type="checkbox" class="in-check" id="label_spousebirth_chk" name="chkMemo3" title="알리미 등록" /> 알리미 등록</label>
+											</td>
+
+                                        </tr>
+									</tbody>
+								</table>
+							</div>
+							<p class="mt-10 f11 fc-3">알리미 등록 : 등록한 기념일에 맞추어 D-3일에 E-mail과 SMS로 알려드리는 서비스입니다..</p>
+						</div>
+					</div> 
+					<div id="btn-bottom">
+						<a href="javascript:doComplete();"><img src="/images/cd/btn_ok_2.gif" alt="확인" /></a>
+					</div>
+				</div>
+				<!-- e: content -->  
+			</div>
+		</div>
+		<p id="footer">
+		<% if("M2".equals(SiteGubun)) {      %>
+			<img src="/images/cd/microSite/txt_copyright.png"  alt="Copyright (c) 2013 SAMSUNGCARD CO.,Ltd. All Rights Reserved." />
+			<img src="/images/cd/microSite/logo_samsungCard.png" class="png24" style="margin:3px 9px 0 0;" alt="삼성카드" /><img src="/images/cd/microSite/logo_samsung.png" class="png24" alt="samsung" />
+		<%}else{%>
+			<img src="/images/cd/showroom_footer.jpg"  alt="Copyright (c) 2013 SAMSUNGCARD Corp. All Rights Reserved." />
+		<%}%>
+		</p>
+	</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

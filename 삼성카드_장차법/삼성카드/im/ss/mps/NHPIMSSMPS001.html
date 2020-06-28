@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">개인정보 보호와 범죄 예방 주차안심 서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_parking_safeservice.jpg" alt="개인정보 보호와 범죄 예방 주차안심 서비스 - 핸드폰번호 대신 가상번호로 운전자와 호출자를 자동연결하는 서비스로 휴대번호 악용을 방지합니다" /></div>
+				</div>
+				
+				<% 
+					String type = request.getParameter("type") == null ? "S" : request.getParameter("type");
+				%>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div id="subtab" class="tab01 w810">
+						<ul>
+                            <li id="subtab1" <%if("S".equals(type)){ %>class="on" <%} %> ><a href="javascript:changeCMS('S')">서비스소개</a></li>
+                            <li id="subtab2" <%if("I".equals(type)){ %>class="on" <%} %> ><a href="javascript:changeCMS('I')">서비스신청/해지</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--cms_content시작-->
+				
+				<%if("I".equals(type)){ %>
+				<cms:include page="/cms_content/hp/im/ss/mps/NHPIMSSMPS001C2.html" flush="false"></cms:include>
+				<%}else{ %>
+				<cms:include page="/cms_content/hp/im/ss/mps/NHPIMSSMPS001C1.html" flush="false"></cms:include>
+				<%} %>
+				
+				<!--cms_content끝-->
+			
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

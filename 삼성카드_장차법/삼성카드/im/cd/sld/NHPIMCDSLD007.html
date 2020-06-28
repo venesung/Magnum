@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+  <h1 class="none">Sel-D 클럽</h1>
+  <div class="h1_desc"><img src="/images/cd/vis_seldcard.png" alt="세상에 단 하나뿐인 나만의 삼성 셀디카드.나만의 이미지 또는 삼성카드가 제공하는 전문가 이미지로 특별한 셀디카드를 만들어 보세요" /></div>  <!-- 130417 수정 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+	  <!-- SR반영 13.02.19 
+      <li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li>-->
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+  <h2><img src="/images/cd/h2_bestphoto.png" alt="Best Photo 3" /></h2>
+  <div class="content_block_inner">
+    <div class="tb_exp">
+      <span><strong class="t_black">회원님들이 많이 선택하신 포토갤러리 이미지 TOP3</strong></span>
+    </div>
+    <ol class="list_photogallery mt15">
+      <li>
+        <img src="/images/cd/ico_selld01.png" alt="" />
+        <p class="p_photo"><a href="#" title="새창"><img src="/images/main/banner_card_img.png" alt="" style="width:192px;height:121px;" /></a></p>
+        <p class="p_tit">00</p>
+        <p class="p_txt">00</p>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+  <h2><img src="/images/cd/h2_bestphoto02.png" alt="포토갤러리 프리뷰" /></h2>
+  <div class="content_block_inner">
+    <!--div id="flash_photo"-->
+    <form name="mainForm" autocomplete="off">
+      <input type="hidden" name="method" value="categoryPhoto" />
+      <input type="hidden" name="photoGroupNos" value="" />
+      <input type="hidden" name="imageType" value="" />
+      <input type="hidden" name="imageFile" value="" />
+      <input type="hidden" name="imageNo" value="" />
+
+      <table style="width:100%;border:0;border-collapse:collapse;border-spacing:0;background-color:#2C3643">
+        <tr>
+          <td style="padding:0 0 0 0; background:#2C3643">
+            <table style="width:100%;border:0;border-collapse:collapse;border-spacing:0;">
+              <tr>
+                <td>
+                  <table style="width:100%;">
+                    <tr>
+                      <td style="background:#475B72;"><img src="/TemplateImage/cybercard/good/selfdesign/common/gallery_review_t01.gif" alt="다양한 종류의 포토 갤러리 이미지를 쉽게 조회해 보실 수 있습니다" /></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643; height:10px"></td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643;">
+                  <!--테마선택 시작-->
+                  <table style="width:100%;">
+                    <tr>
+                      <td style="border-right:#798799 1px solid;padding:5px 0 5px 0;width:95px;vertical-align:top;">&nbsp;<img src="/TemplateImage/cybercard/good/selfdesign/common/gallery_review_t02.gif" alt="테마선택" style="width:66px;height:13px;" /></td>
+                      <td style="padding:0 10px 0 10px; width:545px;">
+                        <table style="width:100%;">
+                          <%
+                            int count = 0;
+                            List<ITCKSDGROUPTTVO> category_1_list = (ArrayList<ITCKSDGROUPTTVO>) request.getAttribute("category_1_list");
+                            if(category_1_list!=null && !category_1_list.isEmpty()) {
+                              for(ITCKSDGROUPTTVO vo : category_1_list) {
+                                if (!"000028".equals(vo.getGroup_no())) {
+                                  count++;
+                                  if(count ==1) {
+                                    out.print("<tr>");
+                                  } else if(count%4 == 1) {
+                                    out.print("<tr><td height=\"8\" colspan=\"4\"></td></tr><tr>");
+                                  }
+                                  %><td style="font-family:돋움;color:#FFF;line-height:13px;font-size:9pt;font-weight:bold;width:130px;"><label for="T_CODE"><input <%= (count==1)?"checked='checked'":"" %> type="radio" name="T_CODE" id="T_CODE" class="StdForm-Radio" value="<%= vo.getGroup_no() %>" onclick="javascript:subCategory(); setCountInit()"><%= vo.getGroup_name() %></label></td><%
+                                  if(count%4 == 0) {
+                                    out.print("</tr>");
+                                  }
+                                }
+                              }
+                            }
+                          %>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!--테마선택 끝-->
+                </td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643;height:8px;"></td>
+              </tr>
+              <tr>
+                <td style="background:#4E5F73;height:1px;"></td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643;height:8px;"></td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643;">
+                  <!--이미지그룹 선택 시작-->
+                  <table style="width:100%;border:0">
+                    <tr>
+                      <td style="border-right:#798799 1px solid;padding:5px 0 5px 0;width:95px;vertical-align:top;">&nbsp;<img src="/TemplateImage/cybercard/good/selfdesign/common/gallery_review_t03.gif" alt="이미지그룹선택" style="width:81px;height:10px;" /></td>
+                      <td style="padding:0 10px 0 10px;width:545px;">
+                        <div id="inner">
+                        </div>
+                        <script type="text/javascript" language="javascript">
+                          function subCategory() {
+                            inner_html = '';
+
+                            for (var i=0;i<mainForm.T_CODE.length;i++) {
+                              if (mainForm.T_CODE[i].checked == true) {
+                                pCode = mainForm.T_CODE[i].value;
+                              }
+                            }
+
+                            inner_html="<table width='100%' border='0' cellpadding='0' cellspacing='0'>";
+                            inner_html+="   <tr>";
+                            var count = 0;
+                            <%
+                              List<ITCKSDGROUPTTVO> category_2_list = (ArrayList<ITCKSDGROUPTTVO>) request.getAttribute("category_2_list");
+                              if(category_2_list!=null && !category_2_list.isEmpty()) {
+                                for(ITCKSDGROUPTTVO vo : category_2_list) {
+                            %>
+                            if (pCode == '<%= vo.getPgroup_no() %>') {
+                              count = count + 1;
+                              if (count == 1) {
+                                inner_html+="           <tr>";
+                              }else if (count%4 == 1) {
+                                inner_html+="           <tr>";
+                                inner_html+="               <td height='8' colspan='4'></td>";
+                                inner_html+="           </tr>";
+                                inner_html+="           <tr>";
+                              }
+                                inner_html+="               <td style='font-family: 돋움; color:#C8C8C8; line-height:13px; font-size: 9pt;' width='130'><input type='checkbox' class='StdForm-Radio' name='photoGroupNo' value='<%= vo.getGroup_no() %>' onclick='setPhotoGroup(this)' title='<%= vo.getGroup_name() %>'><%= vo.getGroup_name() %></td>";
+                              if (count%4 == 0) {
+                                inner_html+="           </tr>";
+                              }
+                            }
+                            <%
+                                }
+                              }
+                            %>
+                            if (count == 1) {
+                              inner_html+=" <td width='130'>&nbsp;</td> ";
+                              inner_html+=" <td width='130'>&nbsp;</td> ";
+                              inner_html+=" <td width='130'>&nbsp;</td></tr> ";
+                            } else if (count == 2) {
+                              inner_html+=" <td width='130'>&nbsp;</td> ";
+                              inner_html+=" <td width='130'>&nbsp;</td></tr> ";
+                            } else if (count == 3) {
+                              inner_html+=" <td width='130'>&nbsp;</td></tr> ";
+                            }
+                            inner_html+="</table>";
+
+                            document.all.inner.innerHTML = inner_html;
+                          }
+                        </script>
+                      </td>
+                    </tr>
+                  </table>
+                  <!--이미지그룹 선택 끝-->
+                </td>
+              </tr>
+              <tr>
+                <td style="background:#2C3643;height:8px;"></td>
+              </tr>
+              <tr>
+                <td style="padding:0 11px 0 11px;background-image:url(/TemplateImage/cybercard/good/selfdesign/common/gallery_review_bg.gif);height:281px;">
+                  <table style="width:100%;">
+                    <tr style="vertical-align:top;">
+                      <td colspan="3" style="height:28px;"><a href="javascript:setPhotoSearch();"><img src="/TemplateImage/cybercard/good/selfdesign/btn/btn_gallery.gif" alt="이미지 조회" style="width:85px;height:21px; border:0;" /></a></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="height:5px;"></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:top;">
+                        <table style="width:100%;">
+                          <tr>
+                            <td style="height:190px;"><iframe name="iframe_photo" scrolling="auto" width="300" height="190" src="/sldPhoto.do?method=categoryPhoto" border="no" frameborder="0" title="포토 프레임"></iframe></td>
+                          </tr>
+                          <tr>
+                            <td style="height:26px;text-align:center;vertical-align:botoom"><img src="/TemplateImage/cybercard/good/selfdesign/common/gallery_review_t04.gif" alt="원하시는 이미지를 선택하세요" width="130" height="11" /></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td style="width:8px;">&nbsp;</td>
+                      <td style="width:312px;">
+                        <!--선택이미지 뷰 시작-->
+                        <table style="width:100%;">
+                          <tr>
+                            <td style="text-align:right;"><img name="img_view" src="/TemplateImage/cybercard/good/selfdesign/photo/pic_big_01.jpg" alt="" style="width:302px;height:190px;" /></td>
+                          </tr>
+                          <tr>
+                            <td style="font-family: 돋움;color:#FFF;height:26px;text-align:right;vertical-align:top;"><input type="text" size="45" name="dataDesc" style="text-align:right;font-size:8pt;color:#fff;border:0;background-color:transparent;height:30px" /></td>
+                          </tr>
+                        </table>
+                        <!--선택이미지 뷰 끝-->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!--/div-->
+  </div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

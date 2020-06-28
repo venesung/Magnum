@@ -1,0 +1,166 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: SDS 정재부 사원
+ * Created on 2010. 2. 8.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/common_security.jsp"%>
+
+<div id="tab_title">마이너스론 </div>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<!-- tab_script -->
+<div id="tab_script">
+	<script type="text/javascript" language="javascript">
+	function $tabOnLoad(){
+		var params = "{movie:'/flex-resource/NHPIMFSMNSVIEW003.swf', flashVars:'gubun="+${gubun}+"',wmode:'transparent'}";
+		embedFlexOnTab("NHPIMFSMNSVIEW003","D27CDB6E-AE6D-11cf-96B8-444553540000","100%","1800",params);
+	}
+	var sign="";
+	var _idenNo = '';
+	function certificate(idenNo){
+		try{
+			var cnt = document.form1.loadCnt.value;
+			document.form1.plain.value="공인인증용";
+
+			//sign = Sign_with_vid_web(0, document.form1.plain.value,s,idenNo);
+			_idenNo = idenNo;
+			//Sign_with_vid_web(0, document.form1.plain.value,idenNo,s,signCallBack);
+
+			XecureWeb.SetUITarget(document.body);
+			Sign_with_vid_user(_aOptionDefault_SCARD, document.form1.plain.value, s, signCallBack); //20120207 인증서 처리 to-be 적용
+		}catch(e) {
+			alert(e.message);
+		}
+	}
+
+	function signCallBack(signVal){
+		sign =signVal;
+		if(sign==""||sign==null){
+			return ;
+		}
+		var params = "";
+			params="ssno="+_idenNo;
+			_idenNo = '';
+            params += "&amp;signedMsg="+sign;
+            params +="&amp;vidMsg="+send_vid_info();
+            params +="&amp;loadcnt="+'1';
+            params +="&amp;signGubun="+"P";
+
+            callJsonNonXecure("returnCertification","com.scard.hp.im.fs.com.web.NHPIMFSCOM001Ctrl","returnCertification",params,"jsonCallback");
+	}
+
+	function jsonCallback(callId,result){
+		switch(callId){
+		case "returnCertification":
+			try{
+				document.all.NHPIMFSMNSVIEW003.resultCertificate(result, sign);
+				//getMovie("NHPIMFSMNSVIEW003").resultCertificate(result,sign);
+			}catch(e){
+				alert(e.message);
+			}
+			break;
+		}
+	}
+
+	function getMovie(id){
+		if(navigator.appName.indexOf("Microsoft") != -1){
+			return window[id];
+		}else{
+			return window[id];
+		}
+	}
+	
+	function open_url2(url) {
+	    var link = false;
+	    var resultText = "약관";
+	    if (window.ActiveXObject){
+	        link = new ActiveXObject("Microsoft.XMLHTTP");
+	    } else if (window.XMLHttpRequest) {
+	        link = new XMLHttpRequest();
+	    }
+	    else
+	        return false;
+	    
+	    link.open('GET', url, false);
+	    link.send(null);
+	    if (link.readyState == 4) {
+	    	resultText = link.responseText;
+	    }
+	    return resultText;
+	}
+
+	function goUrl(url){
+		form1.action = url;
+		form1.method = "post";
+		tabSubmit(form1.action);
+	}
+
+	function switchTabZero(){
+		fcRemoveChart();
+		goTabPage('NHPIMFSMNS001', true);
+	}
+
+	function fcRemoveChart() {
+		if(document.getElementById("NHPIMFSMNSVIEW003")!=null){
+			document.getElementById("NHPIMFSMNSVIEW003").removeNode(true);
+		}
+		/*var arr = document.all.tags("object");
+		if (arr && arr.length) {
+			for (var i=arr.length-1; 0<=i; i--) {
+				arr[i].removeNode(true);
+			}
+		}*/
+	}
+
+	function bookMark(){
+		location.href('#flexObject');
+	}
+
+	function popup(){
+		   window.open('/hp/im/fs/mns/mnsPrint.do','agreement','width=710,height=440,left=0,top=0, scrollbars=no');
+	  }
+
+	function svcStopMsg()
+	{
+		var msg = "보다 나은 서비스를 위해 상품을 개선 중으로\n"
+				+ "당분간 원금균등상환 방식인 무지개론만 이용 가능합니다.\n"
+				+ "마이너스론 상환 신청 및 대출/상환내역 조회는 이용 가능합니다.\n"
+				+ "※ 마이너스론 카드로는 모든 국내은행 CD기에서 마이너스론 이용이 가능합니다.";
+		alert(msg);
+		switchTabZero();
+	}
+	</script>
+</div>
+<script type="text/javascript" src="/xwuni/xecureweb_up.js"></script>
+<script language='javascript' type="text/javascript">
+	<%=v.ServerCertWriteScript()%>
+
+	PrintObjectTag (null,document.getElementById('xecure_obj'));
+	var useTranskey = false;
+</script>
+
+<div id="xecure_obj" ></div>
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">마이너스통장처럼 편리한 마이너스론</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+<!-- content_block -->
+<div class="content_block" >
+	<form name="form1">
+		<input type="hidden" name="plain" value="" />
+		<input type="hidden" name="loadCnt" value="0" />
+		<input type="hidden" name="ssno" value="" />
+	</form>
+	<div id="flexObject"></div>
+</div>
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

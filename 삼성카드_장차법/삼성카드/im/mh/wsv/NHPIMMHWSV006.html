@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">상환방식변경 서비스</h1>
+					<div class="h1_desc"><img src="<%=cresult.getTargetPath()%>/<%=cresult.getTopImg()%>" alt="<%=cresult.getDescription() %>" /></div>					
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+				<form method="post" name="frm1" autocomplete="off">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:move1();">상환방식변경서비스안내</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHWSV001',true)">상환방식변경서비스 신청</a></li>
+						</ul>
+					</div>
+
+					<div class="top_step_settlement_chn top_step_settlement01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>이용가능금액 확인 및 카드선택</strong></li>
+							<li>약관 동의</li>
+							<li>신청내용 입력</li>
+							<li>입력확인, 서비스신청</li>
+							<li>신청완료</li>
+						</ol>
+					</div>
+					</form>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_limit_yourtotal.png" alt="고객님의 이용가능금액을 확인 하세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span><strong class="t_point">${userName }</strong> 회원님의 카드론 이용가능금액은 다음과 같습니다.</span>
+						</div>
+
+						<table class="dtable02 dtable_expand" summary="카드론 이용가능금액과 이자율을 확인할 수 있는 게시판입니다.">
+						<caption>카드론 이용가능금액</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>카드론 이용가능금액</p></th>
+								<td><p><span class="t_no">${STRING5 }</span> 원</p></td>
+								<th scope="row"><p>이자율</p></th>
+								<td><p><span class="t_no">0</span> %</p></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						<p class="t_desc04 mt10">상기 이자율은 원금균등상환 12개월 기준으로 상환방식 및 대출기간에 따라 일부 달라질 수 있습니다.</p>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+				<form name="form1" method="post">
+					<h2><img src="/images/mh/h2_select_carduse.png" alt="사용하실 카드를 선택하여 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>회원님께서 가지고 계신 삼성카드 중 서비스가 가능한 카드는 아래와 같습니다.</span>
+						</div>
+
+
+						<table class="dtable01" summary="카드명, 카드번호, CVC번호등으로 구성된 서비스가 가능한 카드를 확인하고 선택하는 게시판입니다.">
+						<caption>서비스가 가능한 카드 확인</caption>
+						<colgroup><col width="*" /><col width="170" /><col width="230" /><col width="55" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드명</th>
+								<th scope="col">카드번호</th>
+								<th scope="col">CVC번호</th>
+								<th scope="col">선택 </th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td class="t_no">0</td>
+
+								<td>
+									<p>
+									<span class="input_3char"><input type="password" class="txt" value="" title="CVC번호" maxlength="3" name="CVCNUMBER" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');"/></span>
+									</p>
+								</td>
+                                <td><a href="javascript:nextStep('<%=i%>');" class="btn btn_s_white" id="lockTarget"><span>확인</span></a></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<dl class="cvc_view cvc_view_noborder"><!-- 100511클래스변경 -->
+							<dt class="t_black"><strong class="t_black">CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+
+					</div>
+					</form>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

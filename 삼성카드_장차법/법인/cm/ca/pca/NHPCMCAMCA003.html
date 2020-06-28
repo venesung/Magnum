@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>개별카드 신청 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_apply_pcard.png" alt="개별카드 신청" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p>
+			</div>
+			<div class="top_step_appcard_byone top_step_appcard2">
+				<ol class="none">
+					<li>개인실명인증 및 약관동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+					<li><abbr>현재단계</abbr> <strong>신청정보 입력  - 카드 신청에  꼭 필요한 고객님의 소중한 정보를 알려주세요</strong></li>
+					<li>신청완료  - 삼성카드의 가족이 되신걸 영합니다 고객님의 소중한 정보는 안전하게 보호 하겠습니다</li>
+				</ol>
+			</div>
+			<!-- content_block -->
+			<div class="content_block content_block_b0">
+				<div class="content_block_inner fill_joinin">
+					<h2><img src="/images/cm/h2_corporation_info.png" class="fl_left" alt="법인사 정보" /><span class="neccessary ml10"><em><abbr>필수입력사항</abbr></em>표시는 필수입력사항입니다.</span></h2>
+					<table class="dtable02" summary="사업자번호로 법인코드 및 조직코드를 검색합니다.">
+						<caption>사업자번호로 법인코드 검색</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="not_neccessary">사업자번호</p></th>
+								<td class="cell_l">
+									<span class="input_phone">
+										<input type="text" name="business_no1" class="txt" title="사업자번호 앞 3자리" maxlength="3" /> -
+										<input type="text" name="business_no2" class="txt" title="사업자번호 가운데 2자리" maxlength="2" /> -
+										<input type="text" name="business_no3" class="txt" title="사업자번호 끝 5자리" maxlength="5" />
+										<input type="hidden" name="business_no" id="business_no" />
+										<a href="javascript:getCorpNo()" class="btn btn_white" id="btn_business"><span>확인</span></a>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="corp_no" class="neccessary"><em>필수입력사항</em>법인코드</label></th>
+								<td class="cell_l">
+								  <div id="corp_div">
+									<input type="text" class="txt" id="corp_no" name="corp_no" title="법인코드" maxlength="7" style="ime-mode:disabled" />
+									<span class="mt5 t_desc04">(7자리)</span>
+									<input type="text" class="txt" name="corp_name" id="corp_name" title="법인코드" readonly="readonly" />
+									<input type="hidden" class="txt" name="adt_gubun1" id="adt_gubun1" readonly="readonly" />
+								  </div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="corp_gubun" class="neccessary"><em>필수입력사항</em>조직코드</label></th>
+								<td class="cell_l">
+								  <!--label for="btn_corp_gubun"-->
+									<span class="input_address"><input type="text" class="txt" title="조직코드" id="corp_gubun" name="corp_gubun" readonly="readonly" /></span>
+									<a href="javascript:pop_up('chart','710','452','corp_gubun','corp_gubun_name');" id="btn_corp_gubun" class="btn btn_white" title="새창"><span>찾기</span></a>
+									<input type="text" class="txt" name="corp_gubun_name" id="corp_gubun_name" title="조직코드" readonly="readonly" />
+								  <!--/label-->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+<input type="hidden" name="card_name" id="card_name" />
+<input type="hidden" name="is_check_account" id="is_check_account" />
+<input type="hidden" name="relation_code" id="relation_code" value="01" />
+<input type="hidden" name="apl_lim_am" />
+
+<input type="hidden" name="ac_busi_no" id="ac_busi_no" value="${idenNo1}${idenNo2}" />
+<input type="hidden" name="company_option"  value="${company_option}" />
+<input type="hidden" name="other_company_option"  value="${other_company_option}" />
+					<div class="fill_joinin">
+						<h2><img src="/images/cm/h2_corporation_individual_app.png" alt="법인개별카드 신청" /></h2>
+						<table class="dtable02 dtable_inputfield" summary="성명(한글), 주민등록번호, 성명(영문), 신분증 정보, 발행일자, 부서, 직위, 사용한도, 청구지 발송, 이메일주소, 청구지 수령, 카드상품, 국내 외 구분, 자동 이체 정보, 직장주소, 직장전화, 휴대폰, 자택주소, 자택전화 등의 입력으로 법인개별카드 신청을 하실 수 있습니다.">
+						<caption>법인개별카드 신청</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><label for="use_name" class="not_neccessary">성명(한글)</label></th>
+								<td class="cell_l02">
+									<span class="input_address"><input type="text" class="txt" title="성명(한글)" id="use_name" name="use_name" style="ime-mode:active" value="${applyName}"  readonly="readonly" /></span>
+								</td>
+								<th scope="row" class="cell_l"><label for="use_iden_no1" class="not_neccessary">주민등록번호</label></th>
+								<td class="cell_l02">
+									<span class="input_idno">
+										<input type="text"     class="txt" title="주민등록번호 앞자리" value="${idenNo1}" id="use_iden_no1" name="use_iden_no1"  maxlength="6" style="ime-mode:disabled;width:60px" readonly="readonly" /> &nbsp;-&nbsp;
+										<input type="password" class="txt" title="주민등록번호 뒷자리" value="${idenNo2}" id="use_iden_no2" name="use_iden_no2"  maxlength="7" style="ime-mode:disabled" readonly="readonly" />
+									</span>
+									<input type="hidden" name="use_iden_no" id="use_iden_no" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="use_eng_name1" class="neccessary"><em>필수입력사항</em>성명(영문)</label></th>
+								<td colspan="3" class="cell_l">
+									<input type="text" class="txt" title="성명(영문)" id="use_eng_name1" name="use_eng_name1" style="ime-mode:disabled;width:50px;" />
+									<input type="text" class="txt" title="성명(영문)" id="use_eng_name2" name="use_eng_name2" style="ime-mode:disabled" />
+									<input type="hidden" name="use_eng_name" id="use_eng_name" />
+									<p class="mt5 t_desc04">예) KIM SHINYONG 여권상의 영문과 동일하게 기재要(기호/특수문자 등록불가)</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label class="neccessary"><em>필수입력사항</em>신분증 정보</label></th>
+								<td class="cell_l02 riline al_top">
+									<label for="cert_type1"><input type="radio" class="rdo" value="01" id="cert_type1" name="cert_type" checked="checked" />주민등록증</label>
+									<label for="cert_type2"><input type="radio" class="rdo" value="02" id="cert_type2" name="cert_type" />운전면허증</label>
+								</td>
+								<td colspan="2" rowspan="2" class="cell_l02"><img id="cert_type_img" src="/images/cd/img_ex_idcard.jpg" alt="주민등록증 이미지" /></td><!-- 운전면허증이미지:img_ex_idcard2.png -->
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="cert_no1" class="neccessary"><em>필수입력사항</em>발행일자</label></th>
+								<td class="cell_l02 riline al_top">
+									<div id="cert_no_div1">
+										<input type="text" name="cert_no1" class="txt" title="발행일자" id="cert_no1" style="width:120px" maxlength="8" />
+									</div>
+									<div id="cert_no_div2">
+										<input type="text" name="cert_no2" class="txt" title="지역" id="cert_no2" style="width:40px;ime-mode:active" maxlength="2" /><br/>
+										<input type="text" name="cert_no3" class="txt" title="번호" id="cert_no3" style="width:120px" maxlength="10" />
+									</div>
+									<input type="hidden" name="cert_no" id="cert_no" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="dept_name" class="neccessary"><em>필수입력사항</em>부서</label></th>
+								<td class="cell_l02">
+									<span class="input_address"><input type="text" class="txt" title="부서" id="dept_name" name="dept_name" style="ime-mode:active" /></span>
+								</td>
+								<th scope="row" class="cell_l"><label for="position_cd" class="neccessary"><em>필수입력사항</em>직위</label></th>
+								<td  class="cell_l02">
+									<select title="직위 선택" name="position_cd" id="position_cd">
+										<option value="">선택</option>
+									</select>
+									<input type="hidden" name="mem_pos_cd" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="apl_lim_am_str" class="neccessary"><em>필수입력사항</em>사용한도</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_address"><input type="text" class="txt" title="사용한도" id="apl_lim_am_str" name="apl_lim_am_str" maxlength="10" /> 만원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label class="neccessary"><em>필수입력사항</em>청구지 발송</label></th>
+								<td colspan="3" class="cell_l"><span class="sort">
+									<label for="bill_get_gubun1"><input type="radio" class="rdo" value="1" id="bill_get_gubun1" name="bill_get_gubun" checked="checked" /> 우편</label>
+									<label for="bill_get_gubun2" class="ml10"><input type="radio" class="rdo" value="2" id="bill_get_gubun2" name="bill_get_gubun" /> E-MAIL</label>
+								</span></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l" id="email_td"><label for="email1" class="not_neccessary">이메일주소</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_email">
+										<input type="text" class="txt" title="이메일명" id="email1" name="email1" style="ime-mode:disabled" /> &nbsp;@&nbsp;
+										<input type="text" class="txt" title="이메일공급자 직접입력" id="email2" name="email2" style="ime-mode:disabled" readonly="readonly" />
+										<select title="이메일공급자 선택" name="email_autoinput" id="email_autoinput">
+											<option value="" >선택하세요</option>
+										</select>
+										<input type="hidden" name="email" id="email" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label class="neccessary"><em>필수입력사항</em>청구지 수령</label></th>
+								<td colspan="3" class="cell_l"><span class="sort">
+									<label for="bill_get_code1"><input type="radio" class="rdo" value="1" id="bill_get_code1" name="bill_get_code" checked="checked" /> 직장</label>
+									<label for="bill_get_code2" class="ml10"><input type="radio" class="rdo" value="2" id="bill_get_code2" name="bill_get_code" /> 자택</label>
+								</span></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="card_code" class="neccessary"><em>필수입력사항</em>카드상품</label></th>
+								<td colspan="3" class="cell_l">
+									<select name="card_code" title="카드상품" id="card_code">
+										<option value="">발급을 원하시는 카드를 선택하세요</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label class="neccessary"><em>필수입력사항</em>국내 외 구분</label></th>
+								<td colspan="3" class="cell_l"><span class="sort" id="logo_dc">
+									<label for="logo_dc1"><input type="radio" name="logo_dc" class="rdo" value="01" id="logo_dc1" checked="checked" /> 국내용</label>
+									<label for="logo_dc2" class="ml10"><input type="radio" name="logo_dc" class="rdo" value="02" id="logo_dc2" /> 마스타</label>
+									<label for="logo_dc3" class="ml10"><input type="radio" name="logo_dc" class="rdo" value="03" id="logo_dc3" /> 비자</label>
+									<label for="logo_dc4" class="ml10"><input type="radio" name="logo_dc" class="rdo" value="04" id="logo_dc4" /> AMEX</label>
+								</span></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="settlement_day" class="neccessary"><em>필수입력사항</em>결제일자</label></th>
+								<td colspan="3" class="cell_l">
+									<select name="settlement_day" title="결제일자" id="settlement_day">
+										<option value="">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3" class="cell_l"><label class="neccessary"><em>필수입력사항</em>자동 이체 정보</label></th>
+								<td class="cell_l" colspan="3">
+									<label class="w80">계좌종류</label>
+									<label for="settle_method1"             ><input type="radio" name="settle_method" class="rdo" value="02" id="settle_method1" checked="checked" /> 개인 계좌</label>
+									<label for="settle_method2" class="ml10"><input type="radio" name="settle_method" class="rdo" value="01" id="settle_method2" /> 무통장 입금</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="cell_l" colspan="3">
+									<label for="bank_code" class="w80">은행명</label>
+									<select name="bank_code" title="은행명" id="bank_code">
+										<option value="">선택</option>
+									</select>
+									<label for="account_owner" class="ml20">예금주</label>
+									<span class="input_public"><input name="account_owner" type="text" class="txt" title="예금주" id="account_owner" maxlength="32" /></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="cell_l" colspan="3">
+									<label for="account_no" class="w80">계좌번호</label>
+									<span class="input_bank"><input type="text" name="account_no" class="txt" title="계좌번호" id="account_no" maxlength="20" style="ime-mode:disabled" /></span>
+									<!-- 가상키보드 적용-->
+									<span id="usafeon_account_no"></span>
+									<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
+									<a href="javascript:checkAccount()" class="btn btn_white">
+									<span>확인</span></a>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직장주소</p></th>
+								<td class="cell_l" colspan="3">
+									<p class="input_address">
+										<!--label for="label_zip1"-->
+											<input name="zip_code1" type="text" class="txt" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;
+											<input name="zip_code2" type="text" class="txt" title="우편번호 뒷자리" readonly="readonly" />
+											<input type="hidden" name="bl_pnsq" /><!-- 지번 -->
+											<input type="hidden" name="zip_code" />
+											<a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><!--/label--><br />											
+										<span class="detail">
+										  <!--label for="label_zip1"-->
+											<input name="address" id="address" type="text" class="txt" title="사업장주소" readonly="readonly" />
+											<input name="bl_address" id="bl_address" type="text" class="txt" title="사업장주소 상세입력" maxlength="122" readonly="readonly" />
+										  <!--/label-->
+										</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직장전화</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_phone">
+										<fileTag:phoneSelect gubun='1' selectName="office_ddd" />
+										<input name="office_no" id="office_no" type="text" class="txt" title="전화번호 가운데자리" maxlength="4" />&nbsp;-&nbsp;
+										<input name="office_phone1" id="office_phone1" type="text" class="txt" title="전화번호 뒷자리" maxlength="4" style="ime-mode:disabled" /> /
+										<input name="office_phone2" id="office_phone2" type="text" class="txt" title="내선번호" maxlength="4" style="ime-mode:disabled" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>휴대폰</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_phone">
+										<fileTag:phoneSelect gubun='2' selectName="hand_phone1" />
+										<input name="hand_phone2" type="text" class="txt" title="전화번호 가운데자리" maxlength="4" style="ime-mode:disabled" />&nbsp;-&nbsp;
+										<input name="hand_phone3" type="text" class="txt" title="전화번호 뒷자리" maxlength="4" style="ime-mode:disabled" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>자택주소</p></th>
+								<td class="cell_l" colspan="3">
+									<p class="input_address">
+										<!--label for="label_zip2"-->
+											<input name="home_zip_code1" type="text" class="txt" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;
+											<input name="home_zip_code2" type="text" class="txt" title="우편번호 뒷자리" readonly="readonly" />
+											<input type="hidden" name="home_pnsq" /><!-- 지번 -->
+											<input type="hidden" name="home_zip_code" />
+											<a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><!--/label--><br />
+										<span class="detail">
+										  <!--label for="label_zip2"-->
+											<input name="home_address_view" id="home_address_view" type="text" class="txt" title="자택주소" readonly="readonly" />
+											<input name="home_address" id="home_address" type="text" class="txt" title="자택주소 상세입력" maxlength="122" readonly="readonly" />
+										  <!--/label-->
+										</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>자택전화</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_phone">
+										<fileTag:phoneSelect gubun='1' selectName="home_ddd" />
+										<input name="home_no" id="home_no" type="text" class="txt" title="전화번호 가운데자리" maxlength="4" style="ime-mode:disabled" />&nbsp;-&nbsp;
+										<input name="home_phone1" id="home_phone1" type="text" class="txt" title="전화번호 뒷자리" maxlength="4" style="ime-mode:disabled" />
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<p class="btnc">
+							<a href="javascript:apply()" id="btn_apply"><img src="/images/common/btn_l_confirm.png" alt="확인" /></a><a href="/mca.do?method=viewAgreement"><img src="/images/common/btn_cancel.png" alt="취소" /></a>
+						</p>
+
+					</div>
+					
+<!-- 가상키보드 적용-->
+					<div class="line_lgray">&nbsp;</div>
+					<h3 class="p_tit">신청한도 요청 기준</h3>
+					<table class="dtable01 w450" summary="신청금액 범위, 신청금액 단위로 구성된 신청한도 요청 기준 게시판입니다">
+                    <caption>신청한도 요청 기준</caption>
+					<colgroup><col width="18%" /><col width="28%" /><col width="32%" /><col width="22%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="3" class="cell_l10 riline">신청금액 범위</th>
+							<th scope="col" class="cell_r10">신청금액 단위</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cell_l10"><span class="t_no">0</span>원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">1,000</span>만원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">10</span>만원</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">1,000</span>만원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">3,000</span>만원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">100</span>만원</td>
+						</tr>
+					</tbody>
+					</table>
+					<p class="flag_additional"><img src="/images/cm/img_limit_manage_detail.jpg" class="ab_br" alt="" /></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

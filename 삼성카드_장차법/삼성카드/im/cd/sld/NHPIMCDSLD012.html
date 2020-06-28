@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>셀디신청 이미지안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body>
+    <!-- 이미지가 없을때 -->
+	  <div id="pop_s_wrap">
+	    <!-- header -->
+		<!--
+	    <div id="pop_s_header">
+	      <h1><img src="/images/cd/pop_h1_seld_imgedit.png" alt="셀디신청 이미지안내" /></h1>
+	    </div>
+		-->
+		
+		<div id="mvint_pheader">
+			<h1><img src="/images/cd/pop_h1_seld_imgedit.png" alt="셀디신청 이미지안내" /></h1>
+		</div>
+
+	    <!-- content -->
+	    <div id="pop_s_content" style="height:270px;overflow:hidden;margin-top:15px;">
+	      <div class="al_center mt10">
+	        <p><img src="/images/cd/pop_txt_celd_imgedit01.png" alt="셀디신청 이미지안내" /></p>
+	        <p class="mt30">신청하신 이미지 정보가 없습니다.<br />원하시는 이미지를 신청하세요.</p>
+	        <div class="mt30">
+              <p class="btnc"><a href="javascript:goDesign();"><img src="/images/common/btn_s_confirm.png" border="0" alt="확인" /></a></p>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- footer -->
+	    <div id="pop_s_footer">
+	      <address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	      <input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	    </div>
+	  </div>
+	  
+    <!-- 이미지가 있을때 -->
+	  <div id="pop_s_wrap">
+	    <!-- header -->
+		<!--
+	    <div id="pop_s_header">
+	      <h1><img src="/images/cd/pop_h1_seld_imgedit.png" alt="셀디신청 이미지안내" /></h1>
+	    </div>
+		-->
+		
+		<div id="mvint_pheader">
+			<h1><img src="/images/cd/pop_h1_seld_imgedit.png" alt="셀디신청 이미지안내" /></h1>
+		</div>
+
+	    <!-- content -->
+	    <div id="pop_s_content" style="height:270px;overflow:hidden;margin-top:15px;">
+	      <div class="al_center mt10">
+	        <p><img src="/images/cd/pop_txt_celd_imgedit01.png" alt="셀디신청 이미지안내" /></p>
+            <p class="mt20"><img src="/sld.do?method=getSeldImage&amp;IMAGE_NO=${seldHash.seld_image}&amp;IMAGE_TYPE=T" alt="" style="width:220px;height:144px;" /></p>
+	        <p>신청하신 이미지가 맞습니까?</p>
+
+	        <div class="mt20">
+	          <p class="btnc">
+                <a href="JavaScript:gosend('${seldHash.seld_image}');"><img src="/images/common/btn_s_confirm02.png" border="0" alt="확인" /></a>
+	            <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" border="0" /></a>
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+
+	    <!-- footer -->
+	    <div id="pop_s_footer">
+	      <address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	      <input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	    </div>
+	  </div>
+
+</body>
+</html>

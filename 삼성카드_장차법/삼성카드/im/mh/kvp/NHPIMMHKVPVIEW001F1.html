@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>왕대박3을 잡아라 이벤트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+
+				<!--content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100511 -->
+					<p style="margin-top:20px;" ><strong class="t_black">왕대박3을 잡아라 이벤트 행사기간은 <strong class="t_point_org">2012년 1월 1일(일) ~ 8월 31일(금)</strong>,     <br />승인번호 등록기간은 <strong class="t_point_org">2012년 9월 30일(일)까지</strong>이니 이용시 참고해 주시기 바랍니다.</strong></p><!-- 120725 추가 -->
+					<h2><img src="/images/mh/h2_approval_number_check.png" alt="보너스클럽, 블루라인 방문내역, 승인번호를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li>회원님께서 카드 사용일 기준 30일 이내에 방문하신 <strong class="t_black">보너스클럽, 블루라인 내역과 승인번호3</strong>을 확인하세요.</li>
+							<li><strong class="t_black">왕대박! 3을 잡아라!</strong> 이벤트는 결제금액 3만원 이상의 경우에만 참여가 가능합니다.</li>
+						</ol>
+						<table>
+							<tr>
+								<td align="right">
+                                <a href="javascript:three_event_List('all')" <%if(threeEventMode.equals("N")){%>class="btn btn_s_gray"<%}else{%>class="btn btn_s_white"<%} %>><span>전체보기</span></a>
+                                <a href="javascript:three_event_List('three')" <%if(threeEventMode.equals("Y")){%>class="btn btn_s_gray"<%}else{%>class="btn btn_s_white"<%} %>><span>승인번호 3보기</span></a>
+								</td>
+							</tr>
+						</table>
+						<table class="dtable01 mt15" summary="이용일, 카드명, 이용가맹점, 승인번호, 승인금액, 우대혜택등을 확인 후 등록할 수 있는 게시판입니다.">
+						<caption>보너스클럽 승인번호 확인 게시판</caption>
+						<colgroup><col width="10%" /><col width="10%" /><col width="30%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col">카드명</th>
+								<th scope="col">이용가맹점</th>
+								<th scope="col">승인번호</th>
+								<th scope="col" class="cell_r10">승인금액</th>
+								<th scope="col" class="cell_l10">등록/완료</th>
+								<th scope="col">우대혜택</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<%if(resultList.size()> 0){%>
+
+							<%
+							int size = resultList.size();
+							for(int i=0 ; i<size ; i++){
+							cvo = (NHPIMMHKVP002VO)resultList.get(i);
+							%>
+								<tr>
+									<td>
+									<%=cvo.getApproveDate().substring(2,4)%>.
+									<%=cvo.getApproveDate().substring(4,6)%>.
+									<%=cvo.getApproveDate().substring(6,8)%>
+									</td>
+									<td><%=cvo.getCardName().substring(0,3)%>***</td>
+									<td><%=cvo.getChainName()%></td>
+									<td><%=cvo.getApproveNo().replace("3","<strong style='color:#0070C0'>3</strong>")%></td>
+									<td align="right">
+									<%
+									String amount=cvo.getApproveAmount();
+									amount=df.format(Integer.parseInt(amount));
+									%>
+									<%=amount%>
+									</td>
+									<%if((cvo.getApproveNo().indexOf("3") > -1)&&(Integer.parseInt(cvo.getApproveAmount().replace(",","")) >= 30000)){ %>
+										<%if(cvo.getGubun().equals("Y")){ %>
+										<!-- 등록 -->
+                                        <td align="center"><a href="javascript:three_event('<%=cvo.getCardNo()%>','<%=cvo.getApproveNo()%>','<%=cvo.getApproveAmount().replace(",","")%>','<%=cvo.getApproveDate()%>');" class="btn btn_s_white"><span>등록</span></a></td>
+										<%}else{ %>
+										<!-- 완료 -->
+										<td align="center">완료</td>
+										<%}%>
+									<%}else{%>
+									<td align="center">&nbsp;</td>
+									<%} %>
+									<td>
+										<%
+										String bonusYn = "";
+										if(cvo.getBonusYn() != null){
+											if(cvo.getBonusYn().equals("B")){
+												bonusYn = "<img src='/images/common/ico_bonus_b.png' alt='보너스클럽' />";
+											}
+										}
+										String bluelineYn = "";
+										if(cvo.getBluelineYn() != null){
+											if(cvo.getBluelineYn().equals("Y")){
+												bluelineYn = "<img src='/images/common/ico_blueline_b.png' alt='블루라인' />";
+											}
+										}
+										%>
+										<%=bonusYn%>
+										<%=bluelineYn%>
+									</td>
+								</tr>
+								<%} %>
+							<%}else{%>
+							<tr>
+							<td colspan="7">30일 이내에 이용내역이 없습니다.</td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+
+
+						<%
+						if(resultList != null && resultList.size() >0){
+						%>
+						<!-- paginate -->
+						<!-- 페이징 -->
+						<div class="paginate">
+							${_page}
+
+						</div>
+						<!-- //페이징 -->
+						<%}%>
+
+					<hr />
+				</div>
+
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

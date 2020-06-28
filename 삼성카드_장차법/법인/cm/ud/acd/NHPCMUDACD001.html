@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>항공권  전용카드 이용내역 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_plane_diversioncard_uselist.png" alt="항공권  전용카드 이용내역" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<div class="btnset">
+						<p class="btnl mt18">페이지 내 정보를 엑셀다운로드 받거나 인쇄하실 수 있습니다.<br />인쇄 時 페이지설정은 "가로"로 설정 후 출력하세요.</p>
+						<p class="btnr"><a href="javascript:saveExcel(this);" name="excelATag" class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+
+					<ol class="list_no01 mt30">
+						<!--li><p><strong class="t_black"><%=HpCommonUtil.convertYYMMDD(acd_dt)%></strong> 이후 거래승인내역들이 조회됩니다.</p></li-->
+						<li><p>검색기간 설정은 <strong class="t_black">최대 1개월</strong>까지 가능합니다. </p></li>
+					</ol>
+
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="카드번호와 이용기간을 입력하여 카드를 조회하실 수 있습니다.">
+					<caption>카드 조회</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p><a href="javascript:cardList('chart','710','580');"class="btn btn_s_white" title="새창"><span>카드번호 찾기</span></a> <span class="t_no"></span>  </p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>이용기간</p></th>
+							<td><p>
+							<span class="reset_date">
+								<fileTag:dblCalendarAddIf calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate()%>'
+                                                                                                   endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>' />
+							</span>
+                               </p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="btnr"><a href="javascript:search();" class="btn btn_blue"><span>조회</span></a></div>
+
+					<div id="printDiv">
+					<h2><img src="/images/cm/h2_plane_diversioncard_demandlist01.png" alt="이용 정보" /></h2>
+					
+					<table class="dtable02" summary="조회하신 카드의 이용정보(카드번호, 결제일자, 결제금액, 총 발권건수, 발권금액, 취소건수, 취소금액)를 확인하실 수 있는 게시판입니다">
+					<caption>조회 카드 정보 확인</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p class="t_no">0</p></td>
+							<th scope="row"><p>결제일자</p></th>
+							<td><p class="t_no">0</p></td>
+						</tr>
+					</tbody>
+					</c:if>
+					</table>
+					<div class="dtable_over1000 d_easy mt20" tabindex="0"><!-- 100519 -->
+						<table class="dtable01" summary="항공권 전용카드의 총 이용내역(조직명, 구분, 발권일, 항공권번호, 탑승자, 여정, 항공사, 등급, 승인번호, 가맹점명)을 확인하실 수 있는 게시판입니다.">
+						<caption>항공권 전용카드의 총 이용내역</caption>
+						<colgroup><col width="5%" /><col width="10%" /><col width="6%" /><col width="5%" /><col width="7%" /><col width="7%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="6%" /><col width="6%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a">번호</th>
+								<th scope="col" class="cell_l10">조직명</th>
+								<th scope="col">구분</th>
+								<th scope="col">발권일</th>
+								<th scope="col">항공권번호</th>
+								<th scope="col" class="cell_r10">항공비 (원)</th>
+								<th scope="col" class="cell_l10">탑승자</th>
+								<th scope="col" class="cell_l10">여정</th>
+								<th scope="col" class="cell_l10">항공사</th>
+								<th scope="col">등급</th>
+								<th scope="col">승인번호</th>
+								<th scope="col" class="cell_l10">가맹점명</th>
+							</tr>
+						</thead>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<td class="cell_l10a">0</td>
+							<td class="cell_l10"><span class="nobreak_nolink w90">0</span></td>
+							<td><span class="nobreak_nolink w60">0</span></td>
+							<td>0</td>
+							<td>0</td>
+							<td class="cell_r10"><span class="p_nowrap">0</span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+							<td><span class="nobreak_nolink w60">0</span></td>
+							<td>0</td>
+							<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+						</tr>
+					</tbody>
+					</table>
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+						${_page}
+						<p class="btnl"><a href="javascript:goReq();" class="btn btn_white"><span>청구내역 &gt;</span></a></p>
+					</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

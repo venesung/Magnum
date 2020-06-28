@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>일시불 (해외) 결제 예정 금액 상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+<form name="frm" method="post">
+	<table summary="일시불, 할부를 선택하는 게시판입니다" class="dtable02 dtable_inputfield">
+		<caption>일시불, 할부 선택</caption>
+		<colgroup><col width="100" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th class="cell_bg" scope="row"><p>조회구분</p></th>
+				<td id="id_cal_wrap" colspan="3"><p>
+					<label for="label_duepay1"><input type="radio" class="rdo" id="label_duepay1" name="name_duepay" value="1" onClick="redioCheck(this.value)" title="일시불 (국내)" /> 일시불 (국내)</label>
+					<label for="label_duepay2" class="ml10"><input type="radio" class="rdo" id="label_duepay2" name="name_duepay" value="V" checked="checked" onClick="redioCheck(this.value)" title="일시불 (해외)" /> 일시불 (해외)</label>
+					<label for="label_duepay3" class="ml10"><input type="radio" class="rdo" id="label_duepay3" name="name_duepay" value="3" onClick="redioCheck(this.value)" title="할부" /> 할부</label>
+				</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="tb_exp mt20 ml10">
+		<p>전월 결제일 이전 이용금액 취소 접수건은 이미 전월 결제금액에서 차감(또는 환불)처리 되었습니다.</p>
+	</div>		
+	<!-- <p class="mt3 ml10 t_desc04">해외매출 상세리스트는 최근 6개월 사용내역이 전건 조회됩니다. 결제예정금액은 당월 청구금액만 합계되오니 참고하시기 바랍니다.</p> -->
+	<div class="d_easy mt20"><!-- 100509 -->
+		<table class="dtable01" summary="결제예정 금액에 대해 결제월, 이용일, 이용카드, 이용가맹점, 업종명, 국가, 도시, 현지이용금액, 화폐단위, 접수금액(US$), 환율, 결제예정금액(원화), 할부 전환 여부를 확인할 수 있는 게시판입니다">
+		<caption>결제예정내역</caption>
+		<colgroup>
+			<col width="7%" />
+			<col width="7%" />
+			<col width="6%" />
+			<col width="10%" />
+			<col width="7%" />
+			<col width="7%" />
+			<col width="8%" />
+			<col width="9%" />
+			<col width="8%" />
+			<col width="7%" />
+			<col width="7%" />
+			<col width="9%" />
+			<col width="8%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">결제월</th>
+				<th scope="col">이용일</th>
+				<th scope="col">이용카드</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+				<th scope="col" class="cell_l10">업종명</th>
+				<th scope="col" class="cell_l10">국가</th>
+				<th scope="col" class="cell_l10">도시</th>
+				<th scope="col" class="cell_r10">현지<br />이용금액</th>
+				<th scope="col">화폐단위</th>
+				<th scope="col" class="cell_r10">접수금액<br />(US$)</th>
+				<th scope="col">환율</th>
+				<th scope="col" class="cell_r10">결제예정금액<br/>(원화)</th>
+				<th scope="col">할부 전환<br />여부</th>
+			</tr>
+		</thead>
+		<tfoot>	
+			<tr>
+				<td class="cell_l10 bg_none" colspan="7" scope="row">합계</td>
+				<td class="cell_r10 bg_none"><span class="total_number">&nbsp;</span></td>
+				<td class="cell_l10a bg_none" colspan="3"></td>
+				<td  class="cell_r10 bg_none"><em>-_-</em></td>
+				<td class="bg_none"></td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">-_-</td>
+				<td>-_-</td>
+				<td>-_-</td>
+				<td class="cell_l10"><span class="nobreak_nolink">-_-</span></td>
+				<td class="cell_l10"><span class="nobreak_nolink">-_-</span></td>
+				<td class="cell_l10"><span class="nobreak_nolink">-_-</span></td>
+				<td class="cell_l10"><span class="nobreak_nolink w60">-_-</span></td>
+				<td class="cell_r10"><span class="p_nowrap">-_-</span></td>
+				<td>-_-</td>
+				<td class="cell_r10"><span class="p_nowrap">-_-</span></td>
+				<td><span class="p_nowrap">0</span></td>
+				<td class="cell_r10 cell_bg"><span class="p_nowrap">-_-</span></td>
+				<td>-_-</td>
+			</tr>
+			<!-- //loop -->
+			<tr class="nodata">
+				<td colspan="13">조회내역이 없습니다.</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	
+	<!-- paginate -->
+	<div class="paginate">
+		<div class="paging">
+            <a href="javascript:goPpage()" class="btn btn_s_white"><span>이전</span></a>
+            <a href="javascript:goNpage()" class="btn btn_s_white"><span>다음</span></a>
+		</div>
+	</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

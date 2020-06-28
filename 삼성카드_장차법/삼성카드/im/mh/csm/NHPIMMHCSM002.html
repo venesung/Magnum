@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li class="on"><a href="javascript:goMyAccountInfoMain()">결제일 변경</a></li>
+                                <li><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="top_step_setcard step01_on">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>변경 결제일 선택</strong></li>
+							<li>변경시 결제스케줄 확인</li>
+							<li>결제일 변경 완료</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+
+					<h2><img src="/images/mh/h2_billingday_change01.png" alt="변경 결제일을 선택해 주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01 dtable_inputfield" summary="카드/대출번호,상태,현재결제일을 기준으로 변경 결제일을 선택하는 게시판입니다.">
+						<caption>변경 결제일 선택</caption>
+						<colgroup><col width="80" /><col width="*" /><col width="80" /><col width="90" /><col width="90" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">구분</th>
+								<th scope="col">카드/대출번호</th>
+								<th scope="col">상태</th>
+								<th scope="col">현재결제일</th>
+								<th scope="col">변경 결제일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">개인카드</td>
+								<td>보유카드 전체</td>
+								<td>0</td>
+								<td><strong class="t_black t_no">0</strong> 일</td>
+								<td>
+										<select title="변경 결제일 선택" id="label_billingday_change" name="settleday">
+										<option value="">선택</option>
+										<option value="01" >1 일</option>
+										<option value="05">5 일</option>
+										<option value="10">10 일</option>
+										<option value="11">11 일</option>
+										<option value="12">12 일</option>
+										<option value="14">14 일</option>
+										<option value="15">15 일</option>
+										<option value="18">18 일</option>
+										<option value="21">21 일</option>
+										<option value="22">22 일</option>
+										<option value="23">23 일</option>
+										<option value="24">24 일</option>
+										<option value="25">25 일</option>
+										<option value="26">26 일</option>
+									</select>
+								</td>
+							</tr>
+								
+							<tr>
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td>0</td>
+								<td><strong class="t_black t_no">0</strong> 일</td>
+								<td>
+									<select title="변경 결제일 선택" id="label_billingday_change_sub" name="settledaySub"  onchange="onChangeCheck2(this.value,'1');">
+										<option></option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:goNextStep();" class="btn btn_blue"><span>결제스케쥴 조회</span></a>
+							</p>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_billingday_change02.png" alt="신청시 주의사항을 알려드립니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>신용카드 결제일은 인당으로 변경되며 할부금융은 대출번호당 변경가능합니다.</p></li>
+							<li><p>신용카드는 변경 당일에 한해 취소 후 재변경 가능하고 할부금융은 당일에 한해 취소없이 재변경 처리 됩니다.</p></li>
+							<li><p>결제일은 변경 후 60일 이내 재변경 불가합니다.</p></li>
+							<li><p>결제일이 늦춰지거나 앞당겨짐에 따라 이자가 증감될 수 있습니다. 이자는 일할 계산됩니다.</p></li>
+							<li><p>결제일 변경 확정일 기준으로 연체 상태가 되면 결제일 변경이 취소되오니 유의하시기 바랍니다.</p></li>
+							<li><p>결제일 변경 가능시간 : 월~금 09:00~21:00 토/일/공휴일/결제일당일 제외 됩니다.</p></li>
+							<li><p>개인신용카드와 할부금융(캐피탈)을 같이 사용하신 회원님의 경우, 변경된 결제일로 적용되는<br /> 월은 달라 질 수 있습니다.</p></li>
+							<li><p>항공사 제휴카드(입금기준 적립)소지회원이 자유결제를 이용할 경우 결제일 변경 시 청구월 변동으로<br />해당 마일리지 적립월이 변경될 수 있습니다.</p></li><!-- 121004 추가 -->
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_billingday_change03.png" alt="변경 예시를 보여드립니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span><img src="/images/mh/txt_billingday_change01.png" alt="7월 5일에 결제일 26일을 12일로 변경하는 경우" /></span>
+						</div>
+						<p><img src="/images/mh/img_billingday_change01.png" alt="변경 예시 샘플 이미지" /></p>
+						<div class="conts_hidden">
+                        <table summary="결제일 변경에 따른 개인신용카드/할부금융 결제일 안내입니다">
+                        	<caption>개인신용카드/할부금융 결제일 변경 예시</caption>
+                            <thead>
+                            	<tr>
+                                	<th scope="col">구분</th>
+                                    <th scope="col">변경전</th>
+                                    <th scope="col">12일로 결제일 변경후</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<tr>
+                                	<th scope="row">개인 신용카드 결제일</th>
+                                    <td>7월 26일</td>
+                                    <td>익월적용 8월 12일</td>
+                                </tr>
+                                <tr>
+                                	<th scope="row">할부금융 결제일</th>
+                                    <td>7월 26일</td>
+                                    <td>당월적용 7월 12일</td>
+                                </tr>
+                            </tbody>
+                        </table>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_billingday_change04.png" alt="결제일 변경이 불가능한 경우를 알려드립니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>현재 연체 중이시거나, 최근 60일 이내 결제일 변경하신 경우</p></li>
+							<li><p>회원님의 결제일 당일 (결제일이 휴일인 경우, 다음 영업일까지 결제일 변경 불가)</p></li>
+							<li><p>현금서비스 월한도제 이용하면서 현재 현금서비스 이용 금액이 있는경우</p></li>
+							<li><p>법인개별 카드의 결제일 변경을 원하시는 회원님께서는 <strong class="t_black">고객상담센터(1588-8700)</strong>으로<br />결제일 변경을 요청하시기 바랍니다.</p></li><!-- 100511 -->
+						</ol>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

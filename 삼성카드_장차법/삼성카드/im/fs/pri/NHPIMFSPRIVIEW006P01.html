@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>직장명검색 - 삼성카드</title>
+	<base href="https://www.samsungcard.com" />
+<link href="/css/primeloan/prime_loan.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<!-- popup 직장명검색 --> 
+	<div class="popupbox w745" id="popup_s_cn">
+		<em onClick="closeCompany();">close</em>
+		<div class="t">&nbsp;</div>
+		<div class="m">
+			<div class="inner">
+				<h2>직장명검색</h2>
+				<ul class="form">
+					<li class="c">직장명:</li>
+					<li class="i"><input type="text" class="inputType01" name="COMPANY" value="" title="직장명" /></li>
+					<li class="s"><input type="button" onClick="Search();" title="검색" alt="검색" /></li>
+				</ul>
+				<table summary="업체명, 대표자명, 직장주소, 사업자번호로 구성된 직장명 검색결과 목록 게시판입니다">
+                <caption>직장명 검색결과 목록</caption>
+                <thead>
+					<tr>
+						<th scope="col" class="cn" style="width: 20%;">업체명</th>
+						<th scope="col" class="cn" style="width: 15%;">대표자명</th>
+						<th scope="col" class="caddr"  style="width: 45%;">직장주소</th>
+						<th scope="col" class="caddr"  style="width: 20%;">사업자번호</th>
+					</tr>
+                </thead>
+                <tbody>
+				<!-- loop -->
+						<tr>
+                            <td><a href="#">-_-</a></td>
+							<td>-_-</td>
+							<td>-_-</td>
+							<td>-_-</td>
+						</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+                </tbody>
+				</table>
+
+				<ul class="navi">
+					<li class="prev"><a href="#" onclick="noPage();">이전목록</a></li>
+					<li class="next"><a href="#" onclick="goNpage();">다음목록</a></li>
+				</ul>
+
+				<div class="btns">
+                    <a href="javascript:void(0);" onClick="closeCompany();return false;" id="btn_close">닫기</a>
+				</div>
+			</div>
+		</div>
+		<div class="b">&nbsp;</div>
+	</div>
+
+</body>
+</html>

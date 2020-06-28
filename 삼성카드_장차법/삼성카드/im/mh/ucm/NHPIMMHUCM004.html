@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트(명세서수령방법변경_메일주소변경완료)
+ * File Name: NHPIMMHUCM004.jsp
+ * Author: 삼성SDS 전형배 사원
+ * Created on 2009. 12. 16.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/hp/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/hp/css/mh.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<img src="/hp/guide/guide_header.png" alt="상단 유틸 영역" />
+	</div>
+	<div id="con_wrap" class="clfix">
+		<div id="gnb">
+			<img src="/hp/guide/guide_gnb.png" alt="GNB 및 좌측 모듈 영역" />
+		</div>
+		<div id="content_module">
+			<img src="/hp/guide/guide_content_module.png" alt="메인 모듈 영역" />
+		</div>
+	</div>
+	<div id="footer">
+		<img src="/hp/guide/guide_footer.png" alt="Copytright 영역" />
+	</div>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class="clfix" id="id_tablist">
+						<li>국문최대일곱자...<input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" /></li>
+						<li class="on" onmouseover="this.className='over';" onmouseout="this.className='on';">
+							<a href="#">카드이용내역</a> <input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" />
+							<div class="tabbrowse_sub">
+								<div><a href="#">국내이용내역</a><a href="#">청구내역 및 할부전환</a><a href="#">승인취소내역조회</a><a href="#">지역특화카드이용내역</a></div>
+								<div class="tabbrowse_sub_btm">&nbsp;</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id="id_ctr_btn">
+			<input type="button" class="btn_previous" onmouseover="t_over(this,'btn_previous');" onmouseout="t_out(this,'btn_previous');" id="id_ctr_prev" title="이전" />
+			<input type="button" class="btn_next" onmouseover="t_over(this,'btn_next');" onmouseout="t_out(this,'btn_next');" id="id_ctr_next" title="다음" />
+			<input type="button" class="btn_close" onmouseover="t_over(this,'btn_close');" onmouseout="t_out(this,'btn_close');" onclick="hide_con('tabbrowse_position');" title="탭 브라우저 레이어 닫기" />
+			</div>
+
+			<div class="tabbrowse_content">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/hp/images/mh/h1_statements_change_collection.png" alt="명세서 수령 방법을 변경해 주세요" /></h1>
+				</div>
+
+				<div class="content_block_alert content_block_line clfix">
+
+					<p class="flag_img"></p>
+					<div class="content_block_inner">
+						<h2><img src="/hp/images/mh/txt_com_email_use.png" alt="이메일 이용대금명세서 신청이 완료되었습니다." /></h2>
+						<p>10월부터 신청하신 E-mail 주소로 이메일 이용대금명세서를 발송하여 드립니다.<br />
+						<span class="t_desc03">신청하신 이메일 주소 : <strong class="t_black">amy9410@paran.com</strong></span></p>
+
+						<!-- btn -->
+						<p class="btn mt30 pb5"><a href="#"><img src="/hp/images/common/btn_confirm.png" alt="확인" /></a></p>
+					</div>
+				</div>
+
+
+				<div class="content_block content_block_m0 first_none clfix">
+					<h2><img src="/hp/images/mh/h2_check_contents.png" alt="내용을 꼭 확인하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+
+						<ol class="list_no01">
+							<li><p>결제일까지 이메일 이용대금명세서를 수령하지 못하신 회원님께서는 <a href="#" class="btn_link">회원 신상정보</a>에 e-mail 주소가 정확히 기재되어 있는지 다시 한번 확인해주시기 바랍니다.</p></li>
+							<li><p>잘못된 e-mail 주소, 메일 수신서버의 결함, 네트웍 상태 등 당사에서 통제할 수 없는 요인으로 인해 이메일 이용대금명세서가 전달되지 못하는 경우가 발생할 수 있습니다.</p></li>
+							<li><p>홈페이지 마이홈 > <a href="#" class="btn_link">이용대금 명세서</a>에서도 회원님의 이용대금명세서 내역을 조회하실 수 있습니다.</p></li>
+						</ol>
+					</div>
+				</div>
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="/hp/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+			</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
+</body>
+</html>

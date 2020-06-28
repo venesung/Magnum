@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+<style type="text/css">
+#pop_s_content	{height:445px !important}
+.print_content {_height:100% !important}
+.print_content .logo {margin:0 0 20px 0px !important}
+.print_content h2 {text-align:center; margin:0 0 30px 0; float:none !important}
+</style>
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<title>승인자료 파일 레이아웃 - 삼성카드</title>
+</head>
+
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/cm/pop_h1_layout_ok.png" alt="승인자료 파일 레이아웃" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cm/pop_h1_layout_ok.png" alt="승인자료 파일 레이아웃" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_s_content" style="margin-top:15px;" tabindex="0">
+		<div id="printDiv" >
+			<div class="print_content">
+			
+				<div class="logo"><img src="/images/common/img_logo2.png" alt="삼성카드" /></div>
+				<h2><img src="/images/cm/h2_dataexp03.png" alt="승인자료(승인일)" /></h2>
+			
+				<table class="dtable01" summary="HEADER RECORD의 순서, 항목명, 길이를 알 수 있는 게시판입니다.">
+                <caption>승인자료</caption>
+				<colgroup><col width="10%" /><col width="80%" /><col width="10%" /></colgroup><!-- 100608_header부분상단css참조도변경 -->
+				<thead>
+					<tr>
+						<th scope="colgroup" colspan="4" class="boline_b0">HEADER RECORD</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_l10">순서</th>
+						<th scope="col" class="cell_l10">항목명</th>
+						<!-- <th scope="col">항목ID</th> 100608 -->
+						<th scope="col">길이</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10 t_no">1</td>
+						<td class="cell_l10">법인번호</td>
+						<td class="t_no">7</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">2</td>
+						<td class="cell_l10">승인일자</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">3</td>
+						<td class="cell_l10">데이터구분(A:승인,S:매출,R:청구)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">4</td>
+						<td class="cell_l10">자료일련번호</td>
+						<td class="t_no">6</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">5</td>
+						<td class="cell_l10">매출/취소 구분(N:매출,Y:취소)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">6</td>
+						<td class="cell_l10">카드번호</td>
+						<td class="t_no">16</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">7</td>
+						<td class="cell_l10">회원명</td>
+						<td class="t_no">10</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">8</td>
+						<td class="cell_l10">부서명</td>
+						<td class="t_no">20</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">9</td>
+						<td class="cell_l10">은행명</td>
+						<td class="t_no">4</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">10</td>
+						<td class="cell_l10">계좌번호</td>
+						<td class="t_no">32</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">11</td>
+						<td class="cell_l10">카드구분(3:개별,4:공용)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">12</td>
+						<td class="cell_l10">카드종류구분(1:로컬,2:마스터,3:비자,4:AMAX,5:JCB)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">13</td>
+						<td class="cell_l10">승인번호</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">14</td>
+						<td class="cell_l10">결제일</td>
+						<td class="t_no">2</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">15</td>
+						<td class="cell_l10">거래금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">16</td>
+						<td class="cell_l10">거래금액(원화)</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">17</td>
+						<td class="cell_l10">거래봉사료(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">18</td>
+						<td class="cell_l10">거래봉사료</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">19</td>
+						<td class="cell_l10">거래현지금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">20</td>
+						<td class="cell_l10">거래현지금액</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">21</td>
+						<td class="cell_l10">거래USD금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">22</td>
+						<td class="cell_l10">거래USD금액</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">23</td>
+						<td class="cell_l10">국내외 사용구분(국내:I,해외:E)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">24</td>
+						<td class="cell_l10">이용국가코드</td>
+						<td class="t_no">3</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">25</td>
+						<td class="cell_l10">해외이용국가</td>
+						<td class="t_no">20</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">26</td>
+						<td class="cell_l10">전월미입금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">27</td>
+						<td class="cell_l10">전월미입금액</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">28</td>
+						<td class="cell_l10">연체금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">29</td>
+						<td class="cell_l10">연체금액</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">30</td>
+						<td class="cell_l10">선수금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">31</td>
+						<td class="cell_l10">선수금액</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">32</td>
+						<td class="cell_l10">총금액(양수:' ',음수:'-')</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">33</td>
+						<td class="cell_l10">총금액</td>
+						<td class="t_no">13</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">34</td>
+						<td class="cell_l10">당사 가맹여부</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">35</td>
+						<td class="cell_l10">가맹점사업자번호</td>
+						<td class="t_no">10</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">36</td>
+						<td class="cell_l10">가맹점명</td>
+						<td class="t_no">30</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">37</td>
+						<td class="cell_l10">가맹점번호</td>
+						<td class="t_no">11</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">38</td>
+						<td class="cell_l10">가맹점대표자명</td>
+						<td class="t_no">10</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">39</td>
+						<td class="cell_l10">가맹점우편번호</td>
+						<td class="t_no">6</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">40</td>
+						<td class="cell_l10">가맹점주소</td>
+						<td class="t_no">60</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">41</td>
+						<td class="cell_l10">가맹점업종</td>
+						<td class="t_no">16</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">42</td>
+						<td class="cell_l10">가맹점품목명</td>
+						<td class="t_no">16</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">43</td>
+						<td class="cell_l10">결제방법 코드(01:무통장,02:자동이체,03:지로)</td>
+						<td class="t_no">1</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">44</td>
+						<td class="cell_l10">할부개월</td>
+						<td class="t_no">2</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">45</td>
+						<td class="cell_l10">승인일자</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">46</td>
+						<td class="cell_l10">매출일자</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">47</td>
+						<td class="cell_l10">청구일자</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">48</td>
+						<td class="cell_l10">적용환율</td>
+						<td class="t_no">8</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no">49</td>
+						<td class="cell_l10">법인조직</td>
+						<td class="t_no">5</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="btnset">
+		<div class="btnc">
+			<a href="javascript:excelDown();" name="excelATag" class="btn btn_white"><img src="/images/common/btn_s_download_exc.png" alt="엑셀다운로드" /></a>
+			<a href="javascript:printDiv('printDiv')" class="btn btn_white"><img src="/images/common/btn_s_print2.png" alt="인쇄" /></a>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div> 
+</body>
+</html>

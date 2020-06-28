@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+<script type="text/javascript" src="/js/im/cd/cps/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/common-main.js"></script>
+
+<style type="text/css">
+/* popup_layer */
+.pop_l_position	{position:absolute; left:40%; _left:480px; top:233px; _top:333px; z-index:600} /* position:fixed; _ */
+.pop_l_wrap	{position:relative; width:464px; height:294px; border:3px solid #5a96c8; background:white; z-index:511}/*120417 수정*/
+.h148	{height:148px;}
+.pop_l_wrap	.img_l_pop	 {position:absolute; background:url('/images/common/pop_bg_layer.gif') no-repeat; overflow:hidden; z-index:513}
+.pop_l_wrap	.img_l_pop.flag_tl	{left:-3px; top:-3px; width:10px; height:10px; background-position:0 0}
+.pop_l_wrap	.img_l_pop.flag_tr	{right:-3px; top:-3px; width:10px; height:10px; background-position:-10px 0}
+.pop_l_wrap	.img_l_pop.flag_bl	{left:-3px; bottom:-3px; width:10px; height:10px; background-position:0 -10px}
+.pop_l_wrap	.img_l_pop.flag_br	{right:-3px; bottom:-3px; width:10px; height:10px; background-position:-10px -10px}
+.pop_tit_data	{margin:50px 0 22px 0; text-align:center}
+.pop_l_wrap	.pop_l_content	{padding:0 33px 0; z-index:512}
+.pop_l_guidance	{width:400px; margin:0 auto; padding:0 !important}
+</style>
+
+</head>
+	
+<body>
+<div class="headerBox cate2">공통헤더</div>
+<!-- 비주얼 영역 -->
+<div class="visualBox">
+<p><img src="/images/cd/shw/app/visual1.jpg" width="1000"	height="205" alt="주유/교통" /></p>
+</div>
+<!-- 비주얼 영역 -->
+<div id="block_event_layer"	style="position: absolute; top: 0px; left: 0px; width: 100%; background-color: white; filter: alpha(opacity = 1); opacity: 1/ 100; display: none; z-index: 1000;">
+<p id="block_event_layer_back"></p>
+</div>
+<div id="layer_popup" align="center" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: none; z-index: 1001;">
+<div id="layer_popup_content"></div>
+</div>
+<div id="loading_layer" align="center" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:none;z-index:1101;">
+	<div id="loading_layer_pop" class="pop_l_position " style="top:200px;left:550px;display:none;z-index:1101;">
+		<div class="pop_l_wrap h148"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+
+				<p class="pop_tit_data"><img src="${pageContext.request.contextPath}/images/gr/pop_txt_data.png" alt="데이터를 불러오고 있습니다" /></p>
+				<div class="pop_l_content pop_l_guidance">
+					<div style="position:relative;left:0px;">
+						<!-- img src="${pageContext.request.contextPath}/images/gr/loading_bar.png" alt="" / -->
+						<img alt="로딩중" src="${pageContext.request.contextPath}/images/common/ajax-loader.gif" />
+					</div>
+				</div>
+
+		</div>
+	</div>
+</div>
+<div id="id_fill_app">
+<!-- 2013.02.12 쇼룸 숫자카드 삭제 추가 start -->
+<jsp:include
+	page="/hp/im/cd/shw.do?method=newShowRoomAgreement&cardLog=${cardCode}&SiteGubun=${SiteGubun}"
+	flush="true" />
+</div>
+<!-- 2013.02.12 쇼룸 숫자카드 삭제 추가 end -->
+
+<script type="text/javascript">
+// 2013.02.12 쇼룸 숫자카드 삭제 추가 start
+//safeonAddNumberField("certForm", "idenNo1|idenNo2","gallery");
+safeonAddNumberField("certForm", "idenNo1|idenNo2","ec_ko");
+SafeonInit();
+TouchEnKey_ReScan();
+// 2013.02.12 쇼룸 숫자카드 삭제 추가 end
+</script>
+</body>
+</html>

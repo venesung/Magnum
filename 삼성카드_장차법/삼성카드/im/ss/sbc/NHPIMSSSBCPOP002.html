@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>SMS 전송 - 삼성카드</title>
+
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+
+<style type="text/css">
+#pop_s_header {width:100%; height:60px; background:url('/images/ss/pop_bg_body_s.jpg') no-repeat left top;}
+#pop_s_footer {position:relative; height:30px; background:url('/images/common/pop_bg_body_s.jpg') no-repeat left bottom;}
+#pop_s_footer .btn_s_close{position:absolute; top:4px;width:24px;height:24px; right:13px;}
+#pop_s_contents{width:100%;padding:30px;}
+.message{width:100%;overflow:hidden; clear:both;}
+.sns_txt{width:170px; height:140px; background:url('/images/ss/bg_sns_box.png') no-repeat left top;padding:10px; position:relative;float:left; }
+.sns_txt .byte{position:absolute; bottom:5px;right:10px;font-size:11px; color:#999; letter-spacing:-1px;}
+.phone_num{width:200px; float:left; margin-left:20px;}
+.phone_num .numBox{width:190px;height:17px; border:1px solid #ccc;padding:0 5px;margin-top:5px;position:relative;}
+.phone_num .numBox input{border:none; height:17px;font-size:11px;color:#666;}
+.phone_num .numBox .iconx{position:absolute; right:5px;top:3px;}
+.txt_input{background:url('/images/ss/txt_input.png') no-repeat left 3px;}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body >
+<form name="f1" method="post">
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_snssend.png" alt="SNS 전송" /></h1> 
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_snssend.png" alt="SMS 전송" /></h1>
+	</div>
+
+		<!-- content -->
+	<div id="pop_s_contents" style="margin-top:15px;">
+		<div class="message">
+		<div class="sns_txt">
+			<p class="">00</p>
+			<p class="byte">00 / 80 bytes</p>
+		</div>
+		
+		<div class="phone_num">
+		<p><img src="/images/ss/txt_to.png" alt="받는 사람" /></p>
+			<div class="numBox"><input type="text" name="rPhone1" class="txt_input" value="" mexlength="12" onClick="checkFocus(this);" onKeyDown="checkNum(this);" title="받는사람 전화번호 입력 1" /><span class="iconx"><a href="javascript:clearNum(1);"><img src="/images/ss/btn_input_x.png" alt="삭제" /></a></span></div>
+			<div class="numBox"><input type="text" name="rPhone2" class="txt_input" value="" mexlength="12" onClick="checkFocus(this);" onKeyDown="checkNum(this);" title="받는사람 전화번호 입력 2" /><span class="iconx"><a href="javascript:clearNum(2);"><img src="/images/ss/btn_input_x.png" alt="삭제" /></a></span></div>
+			<div class="numBox"><input type="text" name="rPhone3" class="txt_input" value="" mexlength="12" onClick="checkFocus(this);" onKeyDown="checkNum(this);" title="받는사람 전화번호 입력 3" /><span class="iconx"><a href="javascript:clearNum(3);"><img src="/images/ss/btn_input_x.png" alt="삭제" /></a></span></div>
+		<p class="mt10"><img src="/images/ss/txt_from.png" alt="보내는 사람" /></p>
+			<div class="numBox" style="width:150px;"><input type="text" name="sPhone" class="txt_input" value="" mexlength="12" onClick="checkFocus(this);" onKeyDown="checkNum(this);" title="보내는 사람 전화번호 입력" /></div>
+		</div>
+		</div>
+		
+
+		<div class="btnset mt30">
+            <p class="al_center"><a href="javascript:Go();"><img src="/images/ss/btn_send.png" alt="보내기" /></a>&nbsp;<a href="javascript:window.close();"><img src="/images/ss/btn_cancel.png" alt="취소" /></a></p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> 
+	</div>
+</div>
+</form>
+
+
+</body>
+</html>

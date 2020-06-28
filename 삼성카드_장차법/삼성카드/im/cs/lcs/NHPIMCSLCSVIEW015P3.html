@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>운전면허번호 입력 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+	<script type="text/javascript">
+	function fnClose(){
+		opener.document.InsForm.CERTIFICATE_DIST.value = document.form1.userInput1.value;
+		opener.document.InsForm.CERTIFICATE_NO.value = document.form1.userInput2.value;
+		window.close();
+	}
+	</script>
+</head>
+<body>
+<form name="form1">
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header3">
+		<h1 class="al_center"><img src="/images/cs/pop_h1_dlicensedate.png" alt="운전면허번호 입력" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cs/pop_h1_dlicensedate.png" alt="운전면허번호 입력" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_s_content3" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<div class="d_dlicense_publish">
+				<label for="label_id_publish">운전면허번호</label>
+				<p>
+					<input type="text" title="운전면허번호 앞자리" class="txt" id="label_id_publish" name="userInput1" maxlength="4"/> -
+					<input type="text" title="운전면허번호 뒷자리" class="txt" id="label_id_publish2" name="userInput2" maxlength="8" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');"/>
+					<a href="javascript:fnClose();" class="btn btn_s_blue"><span>확인</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+</form>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

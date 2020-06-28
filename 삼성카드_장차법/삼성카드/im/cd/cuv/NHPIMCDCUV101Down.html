@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드</title>
+<!-- 스타일 패키지 -->
+<style type="text/css">
+<!--
+	table { font-family: "돋움", "Seoul", "Arial", "Helvetica"; font-size: 9pt; color: #333333}
+-->
+</style>
+
+</head>
+<body>
+
+<font size="2">
+<div ID="objContents">
+<span id="d1">
+
+	<!-- BEGIN: CONTENTS -->
+	<table border="0" cellpadding="10" cellspacing="10">
+		<tr>
+			<td height="20">■ 카드이용내역</td>
+		</tr>
+	</table>
+
+<%
+	if(rsApproveSumPerCard.size()>0) {
+		for (int k = 0 ; k < 1 ; k++ ){ 
+        
+%>
+    <table border="2" cellpadding="3" cellspacing="0">
+        <tr>
+            <td><p>이용내역 합계</p></td>
+            <td class="sum"><p>
+                <em class="first_none">승인금액합계 <%=rsApproveSumPerCard.get(0).getTotalAmt()%>원</em>
+                <em>일시불 합계 <span><%=rsApproveSumPerCard.get(0).getIlsiAmt()%></span>원</em>
+                <em>할부 합계 <span><%=rsApproveSumPerCard.get(0).getHalbuAmt()%></span>원</em>
+            </p></td>
+        </tr>
+    </table>
+<%	    }	
+    }
+%>
+
+    <table border="2" cellpadding="3" cellspacing="0">
+        <tr>
+            <td colspan="12">◆ 국내 이용내역</td>
+        </tr>
+        <tr bgcolor="#B4C3FF">
+			<td>카드명</td>
+			<td>이용자</td>
+			<td>승인일</td>
+			<td>승인시각</td>
+			<td>이용가맹점</td>
+			<td>승인금액</td>
+			<td>이용구분</td>
+			<td>할부개월</td>
+			<td>승인번호</td>
+			<td>취소여부</td>
+			<td>포인트</td>
+			<td>결제예정일</td>
+		</tr>
+<%	
+	if(rsApproveCardList.size()>0) {
+		for (int j = 0 ; j < rsApproveCardList.size() ; j++ ){ 
+%>
+		<tr>
+			<td class="cell_l10"><%=rsApproveCardList.get(j).getCardName()%></td>
+			<td><%=rsApproveCardList.get(j).getFamilyName()%></td>
+			<td><%=StringUtil.formatStrDate(rsApproveCardList.get(j).getApproveDate(),"yyyy.mm.dd") %></td>
+			<td><%=StringUtil.formatStrTime(rsApproveCardList.get(j).getApproveTime(),"HH:MM:SS") %></td>
+			<td><%=rsApproveCardList.get(j).getChainName()%></td>
+			<td><span>
+
+			<%=utilEx.moneyFormat(rsApproveCardList.get(j).getApproveAmount())%>원<% if (!rsApproveCardList.get(j).getHybridAmt().equals("") && !rsApproveCardList.get(j).getHybridAmt().equals("0")) { %><br />(<%=utilEx.moneyFormat(rsApproveCardList.get(j).getHybridAmt())%>원)<% } else { %> &nbsp; <% } %>
+			</span></td>
+			<td><% if(rsApproveCardList.get(j).getInstallmentsMon().equals("000")) { %>일시불 <% } else { %> 할부<% } %></td>
+			<td><% if(rsApproveCardList.get(j).getInstallmentsMon().equals("000")) { %> <% } else { %><%=rsApproveCardList.get(j).getInstallmentsMon()%><% } %></td>
+
+			<td><%=rsApproveCardList.get(j).getApproveDate()%></td>
+			<td><% if(rsApproveCardList.get(j).getCancelGubun().equals("1")) {%>취소<% } %></td>
+			<td><% if(rsApproveCardList.get(j).getBigbonusYn().equals("B")) {%>보너스<% }else if(rsApproveCardList.get(j).getBigbonusYn().equals("S")) {%>페이백<% } else if(rsApproveCardList.get(j).getBigbonusYn().equals("W")) {%>와인P<% } %></td>
+			<td><%=rsApproveCardList.get(j).getScheduleDate()%>
+		<% 
+			if(!rsApproveCardList.get(j).getScheduleDate().equals("    ") && !rsApproveCardList.get(j).getScheduleDate().equals("nbsp") ) {
+		%>
+			<=rsApproveCardList.get(j).getScheduleDate().substring(4,6)%>:<%=rsApproveCardList.get(j).getApproveTime().substring(6,8)%>
+		<%
+			}
+			if(!rsApproveCardList.get(j).getHybridAmt().equals("") && !rsApproveCardList.get(j).getHybridAmt().equals("0") ) {
+		%>
+		선불
+		<%
+			}
+		%>
+			</td>
+		</tr>
+<%	
+		}
+
+	} else {
+%>
+        <tr>
+            <td colspan="12" align="center">이용내역이 없습니다.</td>
+        </tr>
+<%
+	}
+%>
+	</table>
+</span>
+</div>
+</font>
+
+</body>
+</html>

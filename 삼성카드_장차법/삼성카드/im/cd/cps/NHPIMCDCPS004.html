@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+	
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/cd/h1_card_ranking.png" alt="Ranking으로 보는 카드" /></h1>
+        <p class="flag_additional"><a href="javascript:goTabPage('NHPIMCDCPS001',true);"><img src="/images/cd/btn_txt_viewall_sscard.png" class="flag_viewall_sscard" alt="삼성카드 전체보기" /></a></p>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<!-- tab_area -->
+		<div class="tab01 w810 tab_card_ranking">
+			<ul>
+                <li id="li_title_1" class="on"  onclick="setClicked1(this);"><a href="javascript:FFn_EmbedTextRank();">인기 조회카드<em>매주 조회수가 가장 많은 카드상품</em></a></li>
+                <li id="li_title_2" class=""    onclick="setClicked2(this);"><a href="javascript:FFn_EmbedTextRank2();">인기 발급카드<em>전월 한달동안 가장 많이 발급된 카드상품</em></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- content_block -->
+	<div id="TextRankLayer"></div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

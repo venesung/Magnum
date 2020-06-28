@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">S.TravelCare 서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/fbsvc/4522_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSTC001M003', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M002', true);">지원 및 사례</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M003', true);">서비스 신청하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M004', true);">가입현황 조회</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSTC001M005', true);"><span class="none">현재탭</span>여행자보험</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSTC001M006', true);">FAQ</a></li>
+		</ul>
+	</div>
+</div>
+				
+<!-- content_block -->
+<div class="content_block first_none clfix">
+	<form name="form1" method="post">
+	<input type="hidden" name="insu_tot_amount" value="0" />
+	<input type="hidden" name="vStr1" value="" />
+	
+	
+	<h2><img src="/images/ss/h2_stravel_join01.png" alt="여행자 보험 가입내역입니다" /></h2>
+	<div class="content_block_inner pos_rel">
+
+		<table class="dtable01" summary="접수번호, 성명, 여행기간, 여행지역으로 구성된 여행자 보험 가입내역을 확인할 수 있는 게시판입니다.">
+		<caption>여행자 보험 가입내역</caption>
+		<colgroup><col width="145" /><col width="145" /><col width="145" /><col width="145" /></colgroup>
+		<thead>
+			<tr align="center">
+				<th scope="col" class="cell_l10">접수번호</th>
+				<th scope="col">성명</th>
+				<th scope="col">여행기간</th>
+				<th scope="col">여행지역</th>
+				<!-- th scope="col" class="cell_r10">이용보험료</th-->
+			</tr>
+		</thead>
+		<tbody>		
+			<tr class="nodata">
+				<td colspan="4">데이터가 존재하지 않습니다</td>
+			</tr>
+			<tr align="center">
+				<td>00</td>
+				<td>00</td>
+				<td class="t_no">00 ~ 00</td>
+				<td>00</td>
+				<!--  td class="cell_r10 t_no">
+					<%if(vo.getInsuAmount()>0){%><%=StringUtil.amountToString(vo.getInsuAmount())%><%}%>
+					<input type="hidden" name="insuYn"  value="N"></input>
+					<input type="hidden" name="join_iden_no" value="<%= vo.getJoinIdenNo() %>"></input>
+					<input type="hidden" name="apply_date" value="<%=vo.getApplyDate() %>"></input>
+					<input type="hidden" name="applyNo"  value="<%=vo.getApplyNo() %>"></input>
+					<input type="hidden" name="use_seq" value="<%=vo.getUseSeq() %>"></input>
+					<input type="hidden" name="insuAmt"  value="<%=vo.getInsuAmount() %>"></input>
+					<input type="hidden" name="use_iden_no" value="<%=vo.getUseIdenNo() %>"></input>
+					<input type="hidden" name="useAge" value="<%=vo.getUseAge()%>"></input>
+					<input type="hidden" name="stayDays" value="<%=vo.getStayDays()%>"></input>
+					<input type="hidden" name="amexGubun" value="<%=vo.getAmexGubun()%>"></input>
+				</td-->
+			</tr>
+		</tbody>
+		</table>
+		<br>
+		<p class="t_desc04 mt10">11년 6월 1일부터 트래블케어에 무료로 여행자 보험 혜택이 추가 되었습니다.<br />
+						트래블케어 서비스 중 여행자 보험과 관련된 서비스는 여권법 제<span class="t_gray t_no">17</span>조(여권의 사용제한 등),  여권법 제<span class="t_gray t_no">26</span>조(벌칙)에 근거하여 외교통상부가 지정하는 여행경보단계 중 여행제한, 여행금지 국가에서 발생하는 사고에 대해서는 제공 및 보상되지  않습니다.</p>
+		<input type="hidden" name="payCnt" value="<%=payCnt%>" />	
+	</div>
+	</form>
+</div>
+<!-- cms_content시작 -->
+<cms:include page="/cms_content/hp/im/ss/stc/NHPIMSSSTCVIEW006C1.html" flush="false" />
+<!-- cms_content끝 -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

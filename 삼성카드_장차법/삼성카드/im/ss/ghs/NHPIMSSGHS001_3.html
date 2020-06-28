@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="com.scard.hp.im.ss.ghs.vo.NHPIMSSGHS002INVO"%>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<%
+NHPIMSSGHS002INVO inVo = new NHPIMSSGHS002INVO();
+if((NHPIMSSGHS002INVO) request.getAttribute("result")!=null) {
+	inVo = (NHPIMSSGHS002INVO) request.getAttribute("result");
+}
+%>
+<div id="tab_script">
+</div>
+<div class="content_block content_block_card">
+	<iframe src="http://www.dpay.co.kr/UCD/UCD0402D.jsp?param1=<%=inVo.getEncGubun()%>&param2=<%=inVo.getEncCardNo()%>&param3=<%=inVo.getEncCardPassword()%>&param4=<%=inVo.getEncExpireDate()%>&param5=<%=inVo.getEncCpNo()%>&param6=<%=inVo.getEncIdenNo2()%>" width="0" height="0"  frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="안심귀가서비스 서비스 컨텐츠"></iframe>
+</div>
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

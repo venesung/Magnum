@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<title>카드취소 내역 - 삼성카드</title>
+</head>
+<body>
+<div id="pop_wrap">
+<!-- header -->
+<!--
+<div id="pop_header" style="padding-left:10px;">
+	<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+</div>
+-->
+<div id="mvint_pheader">
+	<h1><img src="/images/mh/pop_h1_usecard_cancellist.gif" alt="국내 카드이용취소 내역"  /></h1>
+</div>
+
+<!-- content -->
+<div id="pop_content" class="h445">
+	<div id="printArea"> 
+		
+		<!-- content_block -->
+		
+		<div class="content_block_inner" style="width:620px; padding-left:10px;">
+			<div class="tb_exp clfix">
+			<% if(tmpCancelType.equals("1")){%>
+				<h3>승인취소 내역</h3>
+			<% }else{%>
+				<h3>매출 취소 내역</h3>
+			<%} %>
+			</div>
+			
+			<div class="d_easy">
+				<table class="dtable01 dtable01_bill" summary="카드명, 이용자, 이용가맹점, 취소금액, 승인일자, 승인번호로 구성된 국내 카드이용취소(승인취소)내역">
+					<caption>
+					국내 카드이용취소(승인취소)내역 게시판
+					</caption>
+					<colgroup>
+					<col width="23%" />
+					<col width="7%" />
+					<col width="21%" />
+					<col width="13%" />
+					<col width="10%" />
+					<col width="10%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10a">카드명</th>
+							<th scope="col">이용자</th>
+							<th scope="col" class="cell_l10">이용가맹점</th>
+							<th scope="col" class="cell_r10">취소금액</th>
+							<th scope="col">승인일자</th>
+							<th scope="col">승인번호</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- loop --> 
+						<tr>
+							<td class="cell_l10a">0</td>
+							<td>0</td>
+                            <td class="cell_l10"><a href="#" title="새창" >0000000</a></td>
+							<td class="cell_r10"><span class="p_nowrap">0</span> 원</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr class="nodata"><td colspan="6">${REQHASH.msg}</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="content_block content_block_card clfix" style="height:50px;">
+				<p class="btnr" style="margin-right:30px;">
+					<a href="javascript:window.print();"><img src="/images/common/btn_s_print.png" alt="인쇄" /></a>
+					<a href="javascript:window.close();"><img src="/images/common/btn_s_close.png" alt="닫기" /></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="pop_footer">
+	<address class="none">
+	Copyright 2013. SamsungCard. All Rights Reserved.
+	</address>
+	<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+</div>
+</body>
+</html>

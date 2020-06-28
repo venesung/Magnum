@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">자유결제 서비스입니다</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3961_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+
+				<div class="content_block content_block_card clfix">
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHRSM001M001', true);">자유결제서비스 안내</a></li>
+                            <!-- <li><a href="javascript:goTabPage('NHPIMMHRSM001M002', true);">신청하기</a></li> -->
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M003', true);">결제비율변경</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHRSM001M004', true);">해지/당일신청내용 취소</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M005', true);">결제예정금액조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_chk_todayapp.png" alt="당일신청건을 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01" summary="당일 신청건에 대해 신청경로, 신청내용을 확인할 수 있는 게시판입니다">
+						<colgroup><col width="50%" /><col width="50%" /></colgroup>
+						<caption>당일신청건 확인</caption>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">신청경로</th>
+								<th scope="col" class="cell_l10">신청내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10"><%=path %></td>
+								<td class="cell_l10"><%=memo %></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_chk_todayapp02.png" alt="본인 정보를 확인해주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="본인정보 확인을 위해 카드선택, 카드비밀번호, 카드 CVC번호를 입력하는 게시판입니다">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card" name="cardNo" style="width:360px">
+										<option>000</option>
+									</select>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+									<p class="input_2char">
+									<input type="password" name="label_ch_cardpass" class="txt" value="" id="label_ch_cardpass" onkeyup="changeFocus();" title="카드 비밀번호 앞 두자리 입력" maxlength="2" /><em>**</em>(비밀번호 앞의 2자리)
+									<span id="usafeon_label_ch_cardpass"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td>
+									<p class="input_3char">
+									<input type="password" name="label_ch_cvcnum" class="txt" value="" id="label_ch_cvcnum" title="카드 CVC번호 입력" maxlength="3" />(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+									<span id="usafeon_label_ch_cvcnum"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnr"><a href="javascript:cancle();" class="btn btn_white"><span>당일신청취소</span></a></p>
+						</div>
+
+
+						<dl class="cvc_view">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

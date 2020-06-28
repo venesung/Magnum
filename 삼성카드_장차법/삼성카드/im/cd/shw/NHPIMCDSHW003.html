@@ -1,0 +1,1692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+<div class="headerBox cate2">공통헤더</div>
+
+
+<!-- 네비 영역 -->
+<div class="naviBox">
+<div class="navi">
+<p class="con" style="width: 600px;">
+	<a href="shw.do?method=getIntro"><img src="/images/cd/shw/common/navi_home.gif" width="12" height="11" alt="home" /></a>	
+	
+		<img src="/images/cd/shw/common/bg_navi.gif" width="5" height="11" alt="&gt;" class="marL9" />
+		
+			<a href="shw.do?method=getList&category=B">주유/교통</a>
+		
+	
+	<img src="/images/cd/shw/common/bg_navi.gif" width="5" height="11" alt="&gt;" class="marL9" />
+	삼성카드 6
+</p>
+
+<div class="sns">
+<a href="javascript:cFacebook();" title="새창"><img src="/images/cd/shw/common/icon_f.gif" width="21" height="21" alt="페이스북" /></a>
+<%-- 
+<button id="fb-auth" class="bface"></button>
+--%>
+<a href="javascript:cTweet();" title="새창"><img    src="/images/cd/shw/common/icon_t.gif" width="21" height="21" alt="트위터" /></a>
+<a href="javascript:plusEmailCnt();" class="layer popupUrl"><img src="/images/cd/shw/common/btn_url.gif" width="45" height="21" alt="url 복사하기" /></a>
+</div>
+</div>
+</div>
+<!-- 네비 영역 -->
+
+<!-- 비주얼 영역 -->
+<div class="visualBox_sub"><img src="/cms_content/hp/im/cd/shw/13237_TIMG.jpg" width="940" height="150" alt="삼성카드 6
+- 열심히 살고, 멋지게 즐기는 남자를 위해~ 남자를 위한 할인과 적립!" /></div>
+<!-- 비주얼 영역 -->
+
+<div class="wrap">
+<div class="contentsBox_sub padB50">
+<div class="cardviewBox"><img
+	src="/cms_content/hp/im/cd/shw/13237_VKIMG.jpg"
+	width="430" height="280" alt="주유 - 모든 주유소 최대 3,000원 할인 / 
+4대 업종 - 택시, 편의점, 커피, 골프 1,000원 할인 / 
+5대 업종 - 외식, 주점, 교통, 통신, 쇼핑 1% 적립 / 
+자동차 - 엔진오일 할인 및 자동차보험 무이자할부 / 
+CGV - 온라인예매 및 현장결제 3,000원 할인 / 
+기본 적립 - 모든 가맹점 기본 0.5% 적립" class="illust" />
+
+<!-- 카드 신청 -->
+<form name="form2" method="post">
+ 
+<div class="columnA"><img src="/cms_content/hp/im/cd/shw/13237_LIMG.jpg" width="206" height="130" alt="삼성카드 6" class="imgCard" />
+<dl>
+	<!-- 후불교통 -->
+	<dt id="applyCardTrafficId1" style="display: none;"><img src="/images/cd/shw/card/txt_info1.gif" width="40" height="11" alt="후불교통" /></dt>
+	<dd id="applyCardTrafficId2" style="display: none;">
+		<label for="label_trf1"><input type="radio" name="cardOptTraffic" id="label_trf1" value="Y" onClick="cardOptClick( 'traffic', 'Y' );" title="선택" />선택</label> 
+		<label for="label_trf2"><input type="radio" name="cardOptTraffic" id="label_trf2" value="N" onClick="cardOptClick( 'traffic', 'N' );" title="선택안함" />선택안함</label>
+	</dd>
+	<!-- 바로할인 -->
+	<dt id="applyCardBaroId1" style="display: none;">
+		<div class="poRelative" style=" z-index:99;">
+			<img src="/images/cd/shw/card/txt_info2.gif" width="40" height="11" alt="바로할인" /> 
+			<img src="/images/cd/shw/card/icon_q.gif" width="12" height="13" alt="?" class="icon_q" />
+			<div class="txt_baro">
+				<p><em>바로할인 카드란?</em></p>
+				<p>1. 바로할인카드는 카드 신청 후 <em>1시간 이내에</em><br />&nbsp;&nbsp;&nbsp;<em>카드정보만을 미리 제공</em>해드립니다.</p>
+				<p>2. 실물카드 발급 이전에 바로 사용할 수 있는<br />&nbsp;&nbsp;&nbsp;카드입니다.</p>
+				<p>3. 신청은 <em>평일 09:00 ~ 21:00</em> 사이에 가능하며,<br />&nbsp;&nbsp;&nbsp;실물카드는 <em>1~2주일 내로 배송</em>해드립니다.</p>
+			</div>
+		</div>
+	</dt>
+	<dd id="applyCardBaroId2" style="display: none;">
+		<label for="label_baro1"><input type="radio" name="cardOptBaro" id="label_baro1" value="Y" title="선택" onClick="cardOptClick( 'baro', 'Y' );" />선택</label> 
+		<label for="label_baro2"><input type="radio" name="cardOptBaro" id="label_baro2" value="N" title="선택안함" onClick="cardOptClick( 'baro', 'N' );" />선택안함</label>
+	</dd>
+	<!-- 브랜드 -->
+	<dt id="cardOptBrandId1" style="display: none;"><img src="/images/cd/shw/card/txt_info3.gif" width="30" height="11" alt="브랜드" /></dt>
+	<dd id="cardOptBrandId2" style="display: none;"></dd>
+
+</dl>
+<!-- 정기일반영 13.04.01 -->
+
+<!-- // 정기일반영 13.04.01 -->
+<p style="position:absolute; left:0; bottom:5px;"><a href="javascript:goApplyCheckGift( 'P1297' );"><img src="/images/cd/shw/card/btn_card.gif" alt="카드신청"
+	class="marB5" /></a> <a href="#popupDues" class="layer popupDues"><img id="yearFeeId"
+	src="/images/cd/shw/card/btn_fee.gif" alt="연회비 정보확인" /></a> <a
+	href="javascript:cardCompare( 'add', '', 'P1297', '삼성카드 6', '/cms_content/hp/im/cd/shw/13237_SIMG.gif', '/cms_content/hp/im/cd/shw/13237_LIMG.jpg', '/cms_content/hp/im/cd/shw/13237_NIMG.jpg', '/cms_content/hp/im/cd/shw/13237_HKIMG.jpg', '25000', '20000', 'B', 'N', '주유 - 모든 주유소 최대 3,000원 할인 / 
+4대 업종 - 택시, 편의점, 커피, 골프 1,000원 할인 / 
+5대 업종 - 외식, 주점, 교통, 통신, 쇼핑 1% 적립 / 
+자동차 - 엔진오일 할인 및 자동차보험 무이자할부 / 
+CGV - 온라인예매 및 현장결제 3,000원 할인 / 
+기본 적립 - 모든 가맹점 기본 0.5% 적립', '', '' );"><img
+	src="/images/cd/shw/card/btn_vsCart2.gif" alt="비교함 담기" /></a></p></div>
+</form>
+<!-- 카드 신청 -->
+	
+<ul class="bannerBox">
+	<script type="text/javascript">existGift = 'Y'; cardEventNo = '488';</script><li><a href='javascript:eventPopUpClick="N";goCardEvent_PopUp( "488", "P1297" );' title='새창'><img alt='100% 당첨의 행운! 지금보고 있는 삼성카드의 사은품 신청은 하셨나요? 사은품 신청' src='/images/cd/shw/card/banner6.jpg' width='160' height='140' /></a></li>
+	<li><a href='#' class='layer popupBaro' title='새창'><img alt='빠르고 편리하게 카드 신청하시고, 놀라운 혜택을 경험하세요. 자세히 보기' src='/images/cd/shw/card/banner4.gif' width='160' height='140' /></a></li>
+	<!-- <li><a href="#" class="layer popupCGV"><img src="/images/cd/shw/card/cgv_banner.jpg" width="160" height="140" alt="CGV에서 더 커진 할인혜택을 확인하세요!" /></a></li> -->
+	
+
+</ul>
+</div>
+
+<p class="txt_i2"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />카드사 및 제휴사의 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려드립니다.</p><!-- 정기일반영 12.11.13 -->
+
+
+<div class="simulBox">
+<ul class="tab">
+	<li class="on"><a href="#"><img src="/images/cd/shw/card/tab_simul1_on.gif" alt="혜택시뮬레이션" /></a></li>
+	<li><a href="#"><img src="/images/cd/shw/card/tab_simul2_off.gif" alt="상세서비스" /></a></li>
+</ul>
+
+<div class="simul marB40">
+<!-- 2012.04.16 추가 및 수정 --> <!-- 혜택시뮬레이션 -->
+    
+		
+
+
+<!-- 혜택시뮬레이션 -->
+<div class="bgSimulBot">
+	<div class="bgSimulMid">
+		<table summary="혜택시뮬레이션(빅포인트 적립, 할인서비스)을 확인하실 수 있습니다." class="table_simul">
+			<caption>혜택시뮬레이션</caption>
+			<colgroup>
+				<col width="143" />
+				<col width="174" />
+				<col width="620" />
+			</colgroup>
+			<tbody>
+				<tr class="first">
+					<th scope="row" rowspan="2"><img src="/images/cd/shw/card/txt_simul1.gif" width="78" height="14" alt="빅포인트 적립" /></th>
+					<td class="bold">기본</td>
+					<td class="padB5">
+						월<input type="text" value="350,000" class="c94afc6" id="point1" onKeyUp="comma(this);" maxlength="11" title="기본 이용금액 입력" />원 이용 시 <span class="year">연 <em>21,000P</em> 적립</span>
+						<span class="etc">(0.5% 적립)</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="last bold">외식, 주점, 대중교통,<br />이동통신요금,<br />온라인 쇼핑몰</td>
+					<td class="last">
+						월<input type="text" value="200,000" class="c94afc6" id="point2" onKeyUp="comma(this);" maxlength="11" title="외식, 주점, 대중교통, 이동통신요금, 온라인 쇼핑몰 이용금액 입력" />원 이용 시 <span class="year">연 <em>24,000P</em> 적립</span>
+						<span class="etc">(1% 적립)</span>
+					</td>
+				</tr>
+				<tr class="noLine">
+					<th scope="row"><img src="/images/cd/shw/card/txt_simul4_1.gif" alt="할인서비스" /></th>
+					<td class="bold">
+						<p class="marB4">택시, 편의점,<br />커피전문점, 골프연습장</p>
+						<p class="marB4">주유 할인</p>
+						<p class="marB2">&nbsp;</p>
+						<p class="marB2 marT10">CGV 온라인예매 할인</p>
+						<p class="marB2 mt7">CGV 현장결제 할인</p>
+						<p class="line18">엔진오일 할인</p>
+					</td>
+					<td>
+						<p class="marB4">연 <span class="c5a96c8">72,000원</span> <span class="c999">(1,000원 할인, 월 6회)</span></p>
+						<p class="marB4 marT15">연 <span class="c5a96c8">72,000원</span> <span class="c999">(3,000원 할인, 월 2회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">24,000원</span> <span class="c999">(2,000원 할인, 월 1회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">18,000원</span> <span class="c999">(3,000원 할인, 연 6회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">18,000원</span> <span class="c999">(3,000원 할인, 연 6회)</span></p>
+						<p class="line18">연 <span class="c5a96c8">40,000원</span> <span class="c999">(20,000원 할인, 연 2회)</span></p>
+					</td>
+				</tr>
+				<tr class="h" style="height:105px;">
+					<td colspan="3">
+						<span class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />위의 혜택 금액은 고객의 이해를 돕기 위한 시뮬레이션으로 이용금액, 이용처, 이용조건 등에 따라 실제 혜택과 달라질 수 있습니다.</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="receiptBox">
+			<p class="receipt1">
+				<img src="/images/cd/shw/card/txt_receipt1.gif" width="140" height="35" alt="연간 총 혜택" />
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt2.gif" width="69" height="12" alt="연간 혜택금액" class="floatL" />
+				<span class="floatR">289,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt3.gif" width="56" height="27" alt="연회비" class="floatL" />
+				<span class="floatR">-25,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt3">= 264,000<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" /></p>
+		</div>
+	</div>
+</div>
+<!-- 혜택시뮬레이션 -->
+<script type="text/javascript" src="/js/im/cd/cps/jquery.alphanumeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".c94afc6").numeric(); 
+	$(".c94afc6").css("ime-mode", "disabled"); //한글 입력 방지
+});	
+
+$("#point1").keyup(function() {				
+
+var point = replace($("#point1").val(),",","");	
+var sum = Math.round(point * 0.005 * 12);
+var point2 = null;
+
+$(this).siblings(".year").find("em").text(setComma(sum)+"원");						
+
+if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+	point2 = $("#point2").siblings(".year").find("em").text().split("P");
+	point2 = Number(replace(point2,",",""));
+}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+	point2 = $("#point2").siblings(".year").find("em").text().split("원");
+	point2 = Number(replace(point2,",",""));
+}
+
+var yearSum = sum + point2 + 244000;
+var sumTot = yearSum-25000;
+			
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+
+$("#point2").keyup(function() {
+
+var point = replace($("#point2").val(),",","");				
+var sum = Math.round(point * 0.01 * 12);				
+var point2 = null;
+
+$(this).siblings(".year").find("em").text(setComma(sum)+"원");				
+
+if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+	point2 = $("#point1").siblings(".year").find("em").text().split("P");
+	point2 = Number(replace(point2,",",""));
+}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+	point2 = $("#point1").siblings(".year").find("em").text().split("원");
+	point2 = Number(replace(point2,",",""));
+}
+
+var yearSum = sum + point2 + 244000;
+var sumTot = yearSum-25000;
+			
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+</script>    
+
+</div>
+<!-- 혜택시뮬레이션 --> 
+
+<!-- 상세 서비스 -->
+<div id="detailCMSServiceId" class="simul marB40" style="padding:15px 0; border:1px solid #e2e2e2; border-top:none; display:none;">
+				 <!-- 기본 서비스 정보  상세정보  --> 
+	<div class="infoBox">
+		<div class="infoTabBox">
+			<ul class="infoTab">
+
+
+			<li
+ 					><a href="#" class='on'><span>포인트 적립</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>청구할인</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>차량정비할인</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>무이자할부</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>CGV할인</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>엔터테인먼트</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>보너스클럽</span></a></li> 					
+
+			<li
+ 					><a href="#"><span>삼성카드공통서비스 S</span></a></li> 					
+
+			<li class='last'
+ 					><a href="#"><span>연회비</span></a></li> 					
+
+	 		</ul>
+		</div>
+
+ 				<div class="infoTxt" style='display:block;'>
+ 
+ 					<div class="list_card_benefit">
+         <h4>0.5~1% 빅포인트 적립</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>모든 가맹점 기본 0.5% 빅포인트 적립</p>
+
+               <ul class="dash_list">
+                  <li>
+                     <p>전월 이용금액에 관계없이, 적립한도 없이 모든 가맹점에서 0.5% 적립</p>
+                  </li>
+               </ul>
+            </li>
+
+            <li class="mt5">
+               <p>많이 쓰는 5대 업종 1% 빅포인트 적립</p>
+
+               <ul class="dash_list">
+                  <li>
+                     <p>외식, 주점, 대중교통, 이동통신요금, 온라인 쇼핑몰 1% 적립</p>
+
+                     <ul>
+                        <li class="ico_diamond">외식 : 한식, 양식, 일식, 중식, 뷔페, 패밀리레스토랑, 간이음식점, 패스트푸드 등</li>
+
+                        <li class="ico_diamond">주점 : 일반주점, 유흥주점, 노래방 등</li>
+
+                        <li class="ico_diamond">대중교통 : 버스(시외·고속버스 제외), 지하철</li>
+
+                        <li class="ico_diamond">이동통신요금 : SKT, KT, LG U+ 자동이체 시&nbsp;<br />
+                        &nbsp;(결합상품요금, 휴대폰 단말기 구매 및 대리점 카드 결제&nbsp;금액 제외)</li>
+
+                        <li class="ico_diamond">온라인 쇼핑몰 : G마켓, 옥션, 신세계몰, GS SHOP, CJ몰, 롯데아이몰, 현대Hmall ,11번가</li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한해 적립됩니다.</li>
+
+            <li>대중교통의 경우 실제 카드 이용일이 아닌 이용대금 명세서 상 기재된 이용일 기준으로 제공됩니다.</li>
+
+            <li>보너스클럽 이용 시 보너스포인트와 빅포인트 중 높은 적립률의 포인트가 적립됩니다.</li>
+
+            <li>빅포인트의 유효기간은 3년입니다.</li>
+
+            <li>일부 임대매장 및 식품매장 결제건은 제외될 수 있습니다.</li>
+
+            <li>빅포인트 적립 제외 대상&nbsp;<br />
+            무이자할부, 다이어트할부, 주유, 삼성카드 할인이 적용된 일시불 및 할부 이용금액, 고용/산재보험 및 장애인 고용부담금, 국세/지방세/공과금, 대학 등록금, 선불카드 충전 (삼성유포인트카드, 삼성전자 멤버십 BLUE 삼성선불카드, 삼성올앳카드), 휴대폰알림서비스 (S.InfoCare), 스마트오토서비스, 이마트 이클럽 등의 이용금액은 적립에서 제외됩니다.</li>
+         </ul>
+      </div>
+
+
+			</div>
+
+ 				<div class="infoTxt">
+ 
+ 					<div class="list_card_benefit">
+         <h4>모든 주유소 2,000원ㆍ3,000원 할인</h4>
+
+         <ul class="list_dashed">
+            <li>
+               모든 주유소에서 5만원 이상 결제 시 2,000원, 7만원 이상 결제 시 3,000원 청구할인 
+
+               <table class="dtable01 mt4" summary="모든 주유소 2,000원ㆍ3,000원 할인 안내 표 - 업종, 할인금액, 이용조건에 대한 정보가 있습니다.">
+                  <caption>
+                     모든 주유소 2,000원ㆍ3,000원 할인 안내
+                  </caption>
+
+                  <colgroup>
+                     <col width="25%" />
+                     <col width="15%" />
+                     <col width="65%" />
+                  </colgroup>
+
+                  <thead>
+                     <tr>
+                        <th class="cell_l10 riline cell_bg" scope="col">업종</th>
+
+                        <th class="cell_l10 riline cell_bg" scope="col">할인금액</th>
+
+                        <th class="cell_l10 cell_bg" scope="col">이용조건</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="cell_l10 riline" style="VERTICAL-ALIGN: middle" rowspan="3">모든 주유소<br />
+                        (LPG충전소 포함)</td>
+
+                        <td class="cell_l10 riline" style="VERTICAL-ALIGN: middle">2,000원</td>
+
+                        <td class="cell_l10">건당 결제금액 5만원 이상</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline" style="VERTICAL-ALIGN: middle">3,000원</td>
+
+                        <td class="cell_l10">건당 결제금액 7만원 이상</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10" style="VERTICAL-ALIGN: middle" colspan="2">주유금액을 제외한 전월 일시불 및 할부 이용금액에 따라 횟수 제공<br />
+                        - 30만원 이상 시 일 1회, 월 3회, 60만원 이상 시 일 1회, 월 6회</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>발급월+1개월까지는 전월 이용금액에 관계없이 월 6회 할인이 제공됩니다.</li>
+
+            <li>정상적으로 매출 접수된 금액의 순서대로 할인이 적용됩니다.</li>
+
+            <li>무이자할부 이용 시 할인은 적용되지 않습니다.</li>
+
+            <li>본인카드와 가족카드의 이용실적 및 할인 횟수는 합산됩니다.</li>
+
+            <li>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한합니다.</li>
+
+            <li>삼성카드의 다른 할인 혜택과 중복 적용되지 않으며, 할인 혜택이 큰 금액만 적용됩니다.</li>
+
+            <li>할인이 적용된 결제건을 취소할 경우 취소 접수 이후에 할인 횟수가 복구됩니다.</li>
+
+            <li>주유 할인금액의 1,000원을 흥국화재가 부담하며, 서비스 제공을 위해 회원님의 정보가 흥국화재와 공유되어,<br />
+            전문 상담원이 자동차보험 안내 전화를 드릴 수 있습니다.</li>
+         </ul>
+      </div>
+
+ 
+ 					<div class="list_card_benefit">
+         <h4>4대 업종 1,000원 할인</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>택시, 편의점, 골프연습장, 커피전문점에서 1만원 이상 결제 시 1,000원 청구할인</p>
+
+               <table class="dtable01 mt4" summary="4대 업종 1,000원 할인안내 표 - 업종, 할인금액, 이용조건이 있습니다.">
+                  <caption>
+                     4대 업종 1,000원 할인안내
+                  </caption>
+
+                  <colgroup>
+                     <col width="25%" />
+                     <col width="15%" />
+                     <col width="65%" />
+                  </colgroup>
+
+                  <thead>
+                     <tr>
+                        <th class="cell_l10 riline cell_bg" scope="col">업종</th>
+
+                        <th class="cell_l10 riline cell_bg" scope="col">할인금액</th>
+
+                        <th class="cell_l10 cell_bg" scope="col">이용조건</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="cell_l10 riline" style="VERTICAL-ALIGN: middle" rowspan="2">택시, 편의점,골프연습장,커피전문점</td>
+
+                        <td class="cell_l10 riline" style="VERTICAL-ALIGN: middle">1,000원</td>
+
+                        <td class="cell_l10" style="VERTICAL-ALIGN: middle">건당 결제금액 1만원 이상</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10" style="VERTICAL-ALIGN: middle" colspan="2">주유금액을 제외한 전월 일시불 및 할부 이용금액<br />
+                        - 30만원 이상 시 업종 통합 월 3회<br />
+                        - 60만원 이상 시&nbsp;업종 통합 월 6회</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>발급월+1개월까지는 전월 이용금액에 관계없이&nbsp;통합 월 6회 할인이 제공됩니다.</li>
+
+            <li>이용조건 미충족 및 할인 횟수 초과 시, 기본 0.5% 빅포인트 적립 혜택을 드립니다.</li>
+
+            <li>정상적으로 매출 접수된 금액의 순서대로 할인이 적용됩니다.</li>
+
+            <li>무이자할부 이용 시 할인은 적용되지 않습니다.</li>
+
+            <li>본인카드와&nbsp;가족카드의 이용실적 및 할인 횟수는 합산됩니다.</li>
+
+            <li>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한합니다.</li>
+
+            <li>삼성카드의 다른 할인 혜택과 중복 적용되지 않으며, 할인 혜택이 큰 금액만 적용됩니다.</li>
+
+            <li>할인이 적용된 결제건을 취소할 경우 취소 접수 이후에 할인 횟수가 복구됩니다.</li>
+         </ul>
+      </div>
+
+
+			</div>
+
+ 				<div class="infoTxt">
+ 
+ 					<div class="list_card_benefit">
+         <h4>닥터카서비스 엔진오일 교환 할인</h4>
+
+         <ul class="list_rice">
+            <li>2013년 4월 1일부터, 20,000원(연 2회) 청구할인에서 현장할인으로 변경됩니다.</li>
+         </ul>
+
+         <table class="dtable02" summary="닥터카서비스 엔진오일 교환 할인 안내표로 2013년 3월 31일까지 제공, 2013년 4월 1일부터 제공되는 내용을 확인하실 수 있습니다.">
+            <caption>
+               닥터카서비스 엔진오일 교환 할인 안내표
+            </caption>
+
+            <colgroup>
+               <col width="20%" />
+               <col width="80%" />
+            </colgroup>
+
+            <tbody>
+               <tr>
+                  <th class="riline cell_bg" scope="row">
+                     <p>2013년 3월 31일(일)까지 제공</p>
+                  </th>
+
+                  <td class="cell_l5">
+                     <ul style="WIDTH: 450px" class="list_dashed">
+                        <li>엔진오일(오일필터ㆍ에어클리너 포함) 교환 시 20,000원 청구할인(연 2회)</li>
+
+                        <li>18가지 필수 항목 점검 무료(연 1회)</li>
+
+                        <li>타이어 펑크 수리 무료(연 1회, 1개 기준)</li>
+
+                        <li>타이어 위치 교환 무료(연 1회, 휠밸런스 2개 포함)<br />
+                        - 전국 스피드메이트에서 이용 가능</li>
+                     </ul>
+
+                     <ul class="list_rice">
+                        <li>직전 3개월 월평균 일시불 및 할부 이용금액 30만원 이상 시 제공됩니다.</li>
+
+                        <li>이용 전 닥터카서비스 이용의사를 말씀해 주시면 됩니다.</li>
+
+                        <li>엔진오일 할인은 현장에서 정상가격 결제 후 카드대금 청구 시에 할인되어 청구됩니다.</li>
+
+                        <li>엔진오일 교환은 제휴사 기본 엔진오일 기준이며, 다른 고급엔진오일로 교환 시 닥터카서비스 적용이 제한될 수 있습니다.</li>
+
+                        <li>수입차 및 1톤 이상 트럭은 대상에서 제외됩니다.</li>
+
+                        <li>본인카드와 가족카드의 이용실적 및 이용횟수는 각각 별도로 산정됩니다.</li>
+
+                        <li>문의 : 스피드메이트(1600-1600)</li>
+                     </ul>
+                  </td>
+               </tr>
+
+               <tr>
+                  <th class="riline cell_bg" scope="row">
+                     <p>2013년 4월 1일(월)부터 제공</p>
+                  </th>
+
+                  <td class="cell_l5">
+                     <ul style="WIDTH: 450px" class="list_dashed">
+                        <li>엔진오일(오일필터ㆍ에어클리너 포함) 교환 시 20,000원 현장할인(연 2회)</li>
+
+                        <li>차량 안전점검 무료(연 1회)</li>
+
+                        <li>타이어 펑크 수리 무료(연 1회, 1개 기준)</li>
+
+                        <li>타이어 위치 교환 무료(연 1회, 휠밸런스 2개 포함)<br />
+                        - 전국 스피드메이트, 애니카랜드, 카젠, 오토오아시스(마트 입점매장 제외)<br />
+                        &nbsp; 에서 이용 가능</li>
+                     </ul>
+
+                     <ul class="list_rice">
+                        <li>연 기준은 1월 1일~12월 31일입니다.</li>
+
+                        <li>직전 3개월 월평균 일시불 및 할부 이용금액 30만원 이상 시 제공됩니다.</li>
+
+                        <li>이용 전 닥터카서비스 이용의사를 말씀해 주시면 됩니다.</li>
+
+                        <li>엔진오일 교환 시 정상가격에서 할인 후 나머지 금액만 결제하시면 됩니다.</li>
+
+                        <li>스피드메이트는 ZIC A, 애니카랜드는 Mobile special 및 KIXX DA, 카젠은 S-OIL SSU GXO, 오토오아시스는 KIXX G1/D1 엔진오일 기준이며, 다른 고급엔진오일로 교환 시 닥터카서비스 적용이 제한될 수 있습니다.</li>
+
+                        <li>수입차 및 1.4톤 이상 트럭은 대상에서 제외됩니다.</li>
+
+                        <li>본인카드와 가족카드의 이용실적 및 이용횟수는 각각 별도로 산정됩니다.</li>
+
+                        <li>문의 : 스피드메이트(1600-1600), 애니카랜드(1588-5114), 카젠(1588-0720), 오토오아시스(1588-1984)</li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+
+			</div>
+
+ 				<div class="infoTxt">
+ 
+ 					<div class="list_card_benefit">
+         <h4>자동차보험 2~3개월 무이자할부</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>자동차손해보험 5만원 이상 결제 시 2~3개월 무이자할부</p>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한합니다.</li>
+
+            <li>무이자할부 이용 시 할인 및 적립 혜택은 적용되지 않습니다.</li>
+         </ul>
+      </div>
+
+ 
+ 					<div class="list_card_benefit">
+         <h4>흥국화재 자동차보험 2~5개월 무이자할부</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>흥국화재 자동차보험 5만원 이상 결제 시 2~5개월 무이자할부</p>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>삼성카드 가맹점 업종 분류 기준에 의한 등록 가맹점에 한합니다.</li>
+
+            <li>무이자할부 이용 시 할인 및 적립 혜택은 적용되지 않습니다.</li>
+         </ul>
+      </div>
+
+
+			</div>
+
+ 				<div class="infoTxt">
+ 
+ 					<div class="list_card_benefit">
+         <h4>CGV 온라인예매 및 현장결제 3,000원 할인</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>CGV 홈페이지 및 스마트폰 App을 통한 예매 시 3,000원 청구할인</p>
+            </li>
+
+            <li>
+               <p>CGV 현장결제 시 3,000원 현장할인</p>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>연 12회 제공됩니다. (온라인예매/현장예매 각 일 1회, 연 6회 제공)</li>
+
+            <li>직전 3개월 월평균 일시불 및 할부 이용금액 30만원 이상 시 제공됩니다.</li>
+
+            <li>신규회원 및 직전 3개월 동안 무실적 회원의 추가 및 교체 발급 시 발급월+2개월까지는 이용금액에 관계없이 1회 제공됩니다.(3개월 이내 이용 시 연 12회 이용한도에 포함)</li>
+
+            <li>티켓가격 최소 5천원 이상 시 할인 적용되며, 일반티켓 외 3D 영화, 골드클래스 등에도 할인 혜택이 적용됩니다.</li>
+
+            <li>CGV 홈페이지 예매 시에만 할인이 적용되며, 예매 대행사이트 이용 시 할인이 적용되지 않습니다.</li>
+
+            <li>결제건 당 삼성카드의 다른 청구할인 혜택과 중복 적용되지 않으며, 할인 혜택이 큰 금액만 적용됩니다.</li>
+
+            <li>본인카드와 가족카드의 이용실적 및 이용횟수는 각각 별도로 산정됩니다.</li>
+         </ul>
+      </div>
+
+
+			</div>
+
+ 				<div class="infoTxt">
+ 
+ 					<div class="list_card_benefit">
+         <h4>프로스포츠 할인</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>제휴 구단 정규시즌 홈 경기장 일반석에 한해 50%까지 예매할인 및 현장할인</p>
+            </li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>전월 이용금액에 관계없이 정상카드로 결제 시 할인됩니다.</li>
+
+            <li>
+               할인 내용 
+
+               <table class="dtable02 mt4" summary="프로스포츠 입장료 최대 50% 할인 안내 표 - 현장할인, 예매할인 정보가 있습니다.">
+                  <caption>
+                     프로스포츠 입장료 최대 50% 할인 안내
+                  </caption>
+
+                  <colgroup>
+                     <col width="25%" />
+                     <col width="75%" />
+                  </colgroup>
+
+                  <tbody>
+                     <tr>
+                        <th class="riline cell_bg" scope="row">
+                           <p>현장할인</p>
+                        </th>
+
+                        <td class="cell_l10">현장 매표소에서 할인 대상 카드로 결제 시 할인(승인시점 할인 적용)</td>
+                     </tr>
+
+                     <tr>
+                        <th class="riline cell_bg" scope="row">
+                           <p>예매할인</p>
+                        </th>
+
+                        <td class="cell_l10">삼성카드 홈페이지에서 할인 대상 카드로 온라인예매 시 할인<br />
+                        - 삼성카드 홈페이지 &gt; 서비스 &gt; 문화여가 &gt; 스포츠할인<br />
+                        <br />
+                        ※ 카드 승인 시점에 할인이 적용됩니다.(삼성블루윙즈는 청구할인)</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </li>
+         </ul>
+
+         <ul class="dash_list">
+            <li>
+               <p>제휴 구단별 할인 안내</p>
+
+               <table class="dtable01 mt4" summary="제휴 구단별 할인 안내 표 - 구분, 대상, 할인 구분, 할인혜택, 할인매수의 대한 정보가 있습니다.">
+                  <caption>
+                     제휴 구단별 할인 안내
+                  </caption>
+
+                  <colgroup>
+                     <col width="10%" />
+                     <col width="15%" />
+                     <col width="12%" />
+                     <col width="12%" />
+                     <col width="42%" />
+                  </colgroup>
+
+                  <thead>
+                     <tr>
+                        <th class="cell_l10 riline cell_bg" scope="col">종목</th>
+
+                        <th class="cell_l10 riline cell_bg" scope="col">대상 구단</th>
+
+                        <th class="cell_l10 riline cell_bg" scope="col">대상 카드</th>
+
+                        <th class="cell_l10 riline cell_bg" scope="col">할인구분</th>
+
+                        <th class="cell_l10 cell_bg" scope="col">할인 내용</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="cell_l10 riline" rowspan="5">야구</td>
+
+                        <td class="cell_l10 riline">넥센히어로즈</td>
+
+                        <td class="cell_l10 riline" rowspan="5">모든 삼성카드</td>
+
+                        <td class="cell_l10 riline">현장할인</td>
+
+                        <td>
+                           <p style="TEXT-ALIGN: left" align="left">&nbsp;&nbsp; 일반석 입장료 2,000원, 1매 할인</p>
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">삼성라이온즈</td>
+
+                        <td class="cell_l10 riline">현장할인<br />
+                        예매할인</td>
+
+                        <td class="cell_l10">일반석 입장료 2,000원, 1매 할인<br />
+                        일반석 입장료 2,000원, 2매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">기아타이거즈</td>
+
+                        <td class="cell_l10 riline">현장할인<br />
+                        예매할인</td>
+
+                        <td class="cell_l10">일반석 입장료 1,000원, 1매 할인<br />
+                        일반석 입장료 1,000원, 1매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">SK와이번스</td>
+
+                        <td style="VERTICAL-ALIGN: middle" class="cell_l10 riline">현장할인</td>
+
+                        <td class="cell_l10">일반석 입장료 1,000원, 2매 할인<br />
+                        SK와이번스&nbsp;삼성카드는 연 3회 입장 무료</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">한화이글스</td>
+
+                        <td class="cell_l10 riline">현장할인</td>
+
+                        <td class="cell_l10">일반석 입장료 1,500원, 2매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline" rowspan="4">&nbsp;축구</td>
+
+                        <td class="cell_l10 riline">전남드래곤즈</td>
+
+                        <td class="cell_l10 riline">모든 삼성카드</td>
+
+                        <td class="cell_l10 riline">현장할인<br />
+                        예매할인</td>
+
+                        <td style="VERTICAL-ALIGN: middle" class="cell_l10">일반석 입장료 3,500원, 2매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline" rowspan="2">삼성블루윙즈</td>
+
+                        <td class="cell_l10 riline">모든 삼성카드</td>
+
+                        <td class="cell_l10 riline">현장할인</td>
+
+                        <td class="cell_l10">일반석 입장료 2,000원, 4매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">일부<br />
+                        삼성카드</td>
+
+                        <td class="cell_l10 riline">예매할인</td>
+
+                        <td class="cell_l10">일반석 입장료 50%, 2매 할인<br />
+                        ※ 직전 6개월 이용실적이 있는 회원에 한해<br />
+                        &nbsp;&nbsp;&nbsp; 제공<br />
+                        ※ 통합 일 1회, 월 2회, 연 10매에 한해 제공</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">경남FC</td>
+
+                        <td class="cell_l10 riline">모든 삼성카드</td>
+
+                        <td class="cell_l10 riline">현장할인</td>
+
+                        <td class="cell_l10">일반석 입장료 3,000원, 2매 할인</td>
+                     </tr>
+
+                     <tr>
+                        <td class="cell_l10 riline">농구</td>
+
+                        <td class="cell_l10 riline">삼성썬더스</td>
+
+                        <td class="cell_l10 riline">모든 삼성카드</td>
+
+                        <td class="cell_l10 riline">현장할인</td>
+
+                        <td class="cell_l10">일반석 입장료 50%, 2매 할인</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </li>
+         </ul>
+
+         <ul class="dash_list">
+            <li>모든 삼성카드 : 법인공용/선불/올앳/기프트카드를 제외한 모든 삼성카드</li>
+
+            <li>삼성블루윙즈 일부 삼성카드 : 삼성애니패스카드, 삼성애니패스포인트카드, 삼성패밀리카드,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 신그룹사원증카드, 르노삼성자동차카드, 공무원연금 삼성카드</li>
+
+            <li>삼성카드 S클래스 삼성스포츠단 할인 서비스 안내 <a href="JAVASCRIPT:goTabPageWithParam('NHPIMCDCPS011','kind_code=P1179');">바로가기</a></li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>각 제휴 구단별 홈 경기 관람 입장료에 한해 제공됩니다.</li>
+
+            <li>체크카드의 경우 현장할인에 한해 제공됩니다.</li>
+
+            <li>프로스포츠(야구, 축구, 농구) 할인은 매 정규리그 시즌 단위로 할인구단/할인내용/할인방법이 변경되며,<br />
+            매년 정규리그 시즌 오픈 시점에 홈페이지에 안내됩니다.</li>
+         </ul>
+      </div>
+
+ 
+ 					<div class="list_card_benefit">
+         <h4>삼성카드 여행 항공권 국내선&nbsp;및 국제선&nbsp;5%~7% 할인</h4>
+
+         <ul class="list_dashed">
+            <li>삼성카드 여행을 통해 항공권 결제 시 아시아나 국내선 5% 할인 및 항공사별 국제선 5%~7%<br />
+            할인</li>
+         </ul>
+
+         <ul class="list_rice">
+            <li>TAX 및 유류할증료를 제외한 금액에 할인이 적용됩니다.</li>
+
+            <li>일부 구간 및 성수기에는 할인이 되지 않으므로 항공권 예약 및 구매 시 상담직원에게 자세한 안내를 받으시기 바랍니다.<br />
+            - 상담 및 문의 : 삼성카드 여행 1688-8200</li>
+
+            <li>할인 제외 대상<br />
+            - 서울 출발 항공권에 대해 할인이 적용되며, 해외 구간만의 항공권을 구입하는 경우는 할인에서 제외됩니다.<br />
+            - 로스앤젤레스↔뉴욕 구간, 유럽 구간 등 출발지가 대한민국이 아닌 항공권 및 삼성카드 결제가 되지 않는<br />
+            &nbsp;&nbsp; 항공사는 할인에서 제외됩니다.<br />
+            - CZ 중국 민항은 할인에서 제외되며, 국내전용카드의 경우 결제가 되지 않을 수 있으므로 예약 전 항공사에<br />
+            &nbsp; 문의하시기 바랍니다.</li>
+
+            <li>환불 규정<br />
+            - 삼성카드 여행을 통해 발권한 항공권을 환불하실 경우, 반드시 삼성카드 여행을 통해 처리하셔야 하며,<br />
+            &nbsp;&nbsp; 항공사 규정에 따른 환불 페널티와 항공권 환불에 따른 별도의 환불수수료가 발생됩니다.<br />
+            - 환불수수료는 항공사별, 항공권 요금별로&nbsp;다르게 적용됩니다.</li>
+
+            <li>취급수수료 적용<br />
+            - 삼성카드 여행을 통해 발권하신 항공권 중 대한항공 및 에어프랑스 등 일부 항공사에 대해서는 항공권 발권<br />
+            &nbsp;&nbsp; 대행 수수료인 '취급수수료'가 최대 7%까지 적용됩니다.</li>
+         </ul>
+      </div>
+
+
+			</div>
+  
+			<div class="infoTxt"> 
+			<div class="list_card_benefit">
+	<h4>최대 5% 보너스포인트 적립 및 100% 포인트 사용</h4>
+	<ul class="list_dashed">
+		<li><p>전국 4만 여 보너스클럽 이용 시 최대 5% 보너스포인트 적립 및 100% 포인트 사용 가능 <br />
+			<span style="color:#999">* 일부 보너스클럽은 포인트 사용률(100% 미만)이 달라질 수 있습니다. <br />&nbsp;&nbsp;대상가맹점은 홈페이지 우대혜택가맹점 검색에서 확인하실 수 있습니다. </span></p>
+		</li>
+		<li><p>주요 보너스 클럽 : <span  style="color:#999">이마트, 제일모직, 신세계몰, CJ오쇼핑, GS SHOP, 현대Hmall, 메가박스, <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 예스24, 베니건스, 불고기브라더스, 보광휘닉스파크 등</span></p></li>
+	</ul>
+	<p class="mt10">※ 포인트 사용방법</p>
+	<ol class="list_no00 ">
+		<li><p>보유 포인트를 확인하세요. <br /><span style="color:#999">- 명세서, 홈페이지, 대표전화(1588-8700)</span></p></li>
+		<li><p>보너스클럽에서 결제 시 매장 직원에게 "삼성카드 포인트로 결제할게요."라고 말씀하세요. </p></li>
+		<li><p>결제 후 카드 영수증의 할부 개월 표기란에 '60+할부 개월 수'로 표기되어 있는지 확인하세요.</p></li>
+		<li><p>포인트 결제 시 부족한 금액은 카드 대금으로 청구됩니다. <br />단, 체크카드의 경우 포인트 사용후 부족금액에 대해 결제계좌에서 즉시 출금됩니다.</p></li>
+	</ol>
+	<ul class="list_rice pt10">
+		<li>보너스클럽 이용 시 보너스포인트와 빅포인트 중 높은 적립률의 포인트가 적립됩니다.</li>
+		<li>가족카드의 이용금액은 본인카드의 이용금액과 합산되어 실적이 산정되며, 포인트는 본인카드로 적립됩니다.</li>
+		<li>보너스클럽임과 동시에 자동차 및 금융카드 특별 가맹점인 경우, 보너스포인트 대신 제휴카드 포인트만 적립됩니다.</li>
+		<li>포인트는 양도 및 상속되지 않으며, 카드 이용계약의 해지ㆍ해제 또는 이용자의 사망 등으로 종료 시 소멸됩니다. </li>
+	</ul>
+</div>
+ 
+			</div>  
+  
+			<div class="infoTxt">
+				<div class="list_card_benefit">
+         <h4>삼성카드공통서비스 S</h4>
+
+         <ul class="list_dashed">
+            <li>
+               <p>삼성카드만 있으면 누구나 누릴 수 있는 선별된 실용 혜택 모음</p>
+
+               <p class="mt3">- 매주 금요일 해피포인트 더블 적립</p>
+
+               <p>- CGV 1,000원 추가 할인</p>
+
+               <p>- 페이백서비스</p>
+
+               <p>- 3대 업종(병원/의류/차량 정비) 2~3개월 무이자할부</p>
+
+               <p>- 국립극장 단독 할인</p>
+
+               <p>- Chic Outlet Shopping® VIP카드 제공</p>
+            </li>
+         </ul>
+
+         <p class="mt5"><a class="btn btn_s_white" onclick="javascript:goTabPage('NHPIMCD09&amp;ZONE=CAIN05&amp;MENU=CAIN05_1_Sservice');" href="#"><span>삼성카드공통서비스 S 자세히 보기</span></a></p>
+      </div>
+
+			</div> 
+ 
+ 			<div class="infoTxt"><div class="list_card_benefit">
+         <h4>본인 연회비</h4>
+
+         <table class="dtable01" summary="구분(해외겸용/국내용), 총연회비, 기본연회비, 제휴연회비로 구성">
+            <caption>
+               본인 연회비
+            </caption>
+
+            <colgroup>
+               <col width="25%" />
+               <col width="25%" />
+               <col width="25%" />
+               <col width="25%" />
+            </colgroup>
+
+            <thead>
+               <tr>
+                  <th class="cell_l10 riline cell_bg" scope="col">구분</th>
+
+                  <th class="cell_r10" scope="col">총연회비</th>
+
+                  <th class="cell_r10" scope="col">기본연회비</th>
+
+                  <th class="cell_r10" scope="col">제휴연회비</th>
+               </tr>
+            </thead>
+
+            <tbody>
+               <tr>
+                  <td class="cell_l10 riline cell_bg">해외겸용</td>
+
+                  <td class="cell_r10 t_no">25,000원</td>
+
+                  <td class="cell_r10 t_no">5,000원</td>
+
+                  <td class="cell_r10 t_no">20,000원</td>
+               </tr>
+
+               <tr>
+                  <td class="cell_l10 riline cell_bg">국내용</td>
+
+                  <td class="cell_r10 t_no">20,000원</td>
+
+                  <td class="cell_r10 t_no">5,000원</td>
+
+                  <td class="cell_r10 t_no">15,000원</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <div class="list_card_benefit">
+         <h4>가족 연회비</h4>
+
+         <table class="dtable01" summary="구분(해외겸용/국내용), 총연회비, 기본연회비, 제휴연회비로 구성">
+            <caption>
+               가족 연회비
+            </caption>
+
+            <colgroup>
+               <col width="25%" />
+               <col width="25%" />
+               <col width="25%" />
+               <col width="25%" />
+            </colgroup>
+
+            <thead>
+               <tr>
+                  <th class="cell_l10 riline cell_bg" scope="col">구분</th>
+
+                  <th class="cell_r10" scope="col">총연회비</th>
+
+                  <th class="cell_r10" scope="col">기본연회비</th>
+
+                  <th class="cell_r10" scope="col">제휴연회비</th>
+               </tr>
+            </thead>
+
+            <tbody>
+               <tr>
+                  <td class="cell_l10 riline cell_bg">해외겸용</td>
+
+                  <td class="cell_r10 t_no">20,000원</td>
+
+                  <td class="cell_r10 t_no">-</td>
+
+                  <td class="cell_r10 t_no">20,000원</td>
+               </tr>
+
+               <tr>
+                  <td class="cell_l10 riline cell_bg">국내용</td>
+
+                  <td class="cell_r10 t_no">15,000원</td>
+
+                  <td class="cell_r10 t_no">-</td>
+
+                  <td class="cell_r10 t_no">15,000원</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <div class="list_card_benefit">
+         <h4>연회비 안내</h4>
+
+         <ol class="list_no00">
+            <li>
+               <p>연회비는 카드발급월을 기준으로 매년 청구됩니다.</p>
+
+               <p class="mt5">&nbsp;&nbsp;&nbsp; [예외기준]</p>
+
+               <ul class="list_dashed_l">
+                  <li>
+                     <p>초년도(1회차)에는 발급 후 최초 이용일자 기준으로 해당 결제월에 청구되며,<br />
+                     발급 후 3개월 이내 이용실적이 없는 경우에는 3개월차 결제월에 청구됩니다.</p>
+                  </li>
+
+                  <li>
+                     <p>매년 카드발급월을 기준으로 직전1년 이내 실적이 없는 경우 연회비는 청구되지 않습니다.<br />
+                     (초년도 연회비는 무실적 여부에 관계없이 청구됩니다)</p>
+                  </li>
+
+                  <li>
+                     <p>재발급, 갱신 시에는 이전 카드의 카드발급월을 기준으로 연회비가 청구됩니다.</p>
+                  </li>
+               </ul>
+            </li>
+
+            <li class="mt5">
+               <p>연회비는 기본연회비와 제휴연회비로 구분되며(법인카드 제외),<br />
+               기본연회비는 보유하신 카드매수에 관계없이 연1회만 청구되고,<br />
+               제휴연회비는 보유하신 카드별로 청구됩니다.</p>
+            </li>
+
+            <li class="mt5">
+               <p>가족카드 연회비는 본인카드와 동일한 카드 상품으로 발급하실 경우 면제됩니다.</p>
+            </li>
+         </ol>
+      </div>
+      <!-- list_card_benefit -->
+
+      <div class="mt10">
+         <p class="t_desc03">* 카드사 및 제휴사의 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려 드립니다.</p>
+      </div>
+</div> 
+
+	</div>
+</div>
+<!-- 상세 서비스 -->
+
+<!-- SR내역 13.01.24 -->
+<ul class="list_star">
+	<li>신용카드 남용은 가계경제에 위협이 됩니다.</li>
+	<li>계약 체결 전에 상품설명서, 홈페이지, 약관에서 자세한 이용조건을 확인하여 주십시오.</li>
+	<li>연체이자율 : 연21.0% ~ 연29.9% (회원 별, 연체기간별, 이용상품별 차등 적용)</li>
+	<li>심의번호 : H3715-13-46, 심의일 : 2013. 1. 17</li>
+</ul>
+<!--// SR내역 13.01.24 -->
+
+
+			<!-- sns 수정 -->
+			<div class="snsBox marB10">
+				<div class="snsBoxTop"></div>
+				<div class="snsContent">
+					<img src="/images/cd/shw/card/stit_sns.gif" alt="카드정보 퍼가기" style="float:left; margin-right:83px;"  />
+					
+					<div class="twitter">
+						<dl style="background:none;">
+							<dt><img src="/images/cd/shw/card/img_facebook.gif" alt="facebook 공유하기 새창" style="cursor:pointer;" onClick="cFacebook();" /></dt>
+							<dd>
+								<img src="/images/cd/shw/card/txt_face.gif" alt="facebook에 공유된 수" class="marR5" /><span class="face_num"><span>51</span></span>
+							</dd>
+						</dl>
+					</div>
+					<div class="twitter">
+						<dl style="padding-left:16px;">
+							<dt><img src="/images/cd/shw/card/img_twitter.gif" alt="twitter 공유하기 새창" style="cursor:pointer;" onClick="cTweet();" /></dt>
+							<dd>
+								<img src="/images/cd/shw/card/txt_twi.gif" alt="twitter에 트윗된 수" class="marR5" /><span class="twi_num"><span>27</span></span>
+							</dd>
+						</dl>
+					</div>
+					<div class="twitter" style="margin-top:3px;">
+						<dl style="padding-left:16px;">
+							<dt style="margin-bottom:11px;">
+								<a href="#" class="layer popupUrl">
+									<img src="/images/cd/shw/card/img_url.gif" alt="url 메일보내기 새창" style="cursor:pointer;" onClick="plusEmailCnt();" />
+								</a>
+							</dt>
+							<dd>
+								<img src="/images/cd/shw/card/txt_url.gif" alt="메일로 url보낸 수" class="marR5" /><span class="url_num"><span>38</span></span>
+							</dd>
+						</dl>
+					</div>
+						<!-- SR내역 13.04.01
+						<a href="#" onClick="whySamsungCard_PopUp();" title="새창"><img src="/images/cd/shw/card/banner_sns1.gif" alt="왜! 삼성카드일까요?" /></a>-->
+						<!--a onClick="window.open('/html/why/01.html','why01','width=1000,height=720, scrollbars=yes,toolbar=no,status=no,resize=no,menubar=no');mboxUpdate('mboxclick','conv=hpbanner');sendWeblog('both','MABO05','MABO05_1_L05');return false;" href="/html/why/01.html" title="새창"><img src="/images/cd/shw/card/banner_sns1.gif" alt="왜! 삼성카드일까요?" /></a--><!-- 삭제 13.05.03 -->
+						
+				</div>
+				<div class="snsBoxBot"></div>
+			</div>
+			<!-- //sns 수정 -->
+			
+
+<div class="snsBox">
+<div class="snsBoxTop"></div>
+<div class="snsContent">
+<p class="card"><img src="/images/cd/shw/card/stit_card.gif" alt="다른카드 보기" /></p>
+
+<div class="cardList"><a href="#"><img
+	src="/images/cd/shw/card/btnL_off.gif" width="16" height="23" alt="좌측으로 이동"
+	class="btnL" /></a>
+<div class="list">
+<ul>
+	<li><a href='shw.do?method=getDetail&prodCode=P1271&category=B&pSeasonContentId=&pSeasonMapStr='>	<img src='/cms_content/hp/im/cd/shw/12863_SIMG.jpg' alt='SK에너지 삼성카드 4' width='73' height='46'/></a>	<a href='shw.do?method=getDetail&prodCode=P1271&category=B&pSeasonContentId=&pSeasonMapStr='>SK에너지 삼성카드 4</a></li><li><a href='shw.do?method=getDetail&prodCode=P0379&category=B&pSeasonContentId=&pSeasonMapStr='>	<img src='/cms_content/hp/im/cd/shw/12461_SIMG.jpg' alt='삼성오일앤세이브플러스카드' width='73' height='46'/></a>	<a href='shw.do?method=getDetail&prodCode=P0379&category=B&pSeasonContentId=&pSeasonMapStr='>삼성오일앤세이브플러스카드</a></li><li><a href='shw.do?method=getDetail&prodCode=P0505&category=B&pSeasonContentId=&pSeasonMapStr='>	<img src='/cms_content/hp/im/cd/shw/12400_SIMG.jpg' alt='삼성카앤모아카드' width='73' height='46'/></a>	<a href='shw.do?method=getDetail&prodCode=P0505&category=B&pSeasonContentId=&pSeasonMapStr='>삼성카앤모아카드</a></li><li><a href='shw.do?method=getDetail&prodCode=P0544&category=B&pSeasonContentId=&pSeasonMapStr='>	<img src='/cms_content/hp/im/cd/shw/12462_SIMG.jpg' alt='삼성티클래스앤오일카드' width='73' height='46'/></a>	<a href='shw.do?method=getDetail&prodCode=P0544&category=B&pSeasonContentId=&pSeasonMapStr='>삼성티클래스앤오일카드</a></li><li><a href='shw.do?method=getDetail&prodCode=P0344&category=B&pSeasonContentId=&pSeasonMapStr='>	<img src='/cms_content/hp/im/cd/shw/12404_SIMG.jpg' alt='삼성애니카플러스티클래스오일앤카드' width='73' height='46'/></a>	<a href='#'>삼성애니카플러스티클래스오일앤카드</a></li>
+</ul>
+</div>
+<a href="#"><img src="/images/cd/shw/card/btnR_off.gif" width="16"
+	height="23" alt="우측으로 이동" class="btnR" /></a></div>
+</div>
+<div class="snsBoxBot"></div>
+</div>
+
+<!-- //2012.04.16 추가 및 수정 --></div>
+
+		<!-- 비교함 --> 
+		
+		
+		<!-- 비교함 -->
+		<div id="vsBox" class="AandB">
+			<a href="#" class="btnVs"><img src="/images/cd/shw/common/btn_vs_off.png" style="width:26px; height:116px;" alt="카드 비교함" class="png24" /></a>
+			<span class="txtVs"></span>
+			<div class="vsCont">
+				<img src="/images/cd/shw/common/bg_andTop.gif" alt="" class="marB5" />
+				<dl>
+					<dt><a href="#"><img src="/images/cd/shw/common/img_nocard.jpg" style="width:73px; height:46px;" alt="no image" /></a></dt>
+					<dd>카드를 추가해 주세요</dd>
+				</dl>
+				<dl>
+					<dt><a href="#"><img src="/images/cd/shw/common/img_nocard.jpg" style="width:73px; height:46px;" alt="no image" /></a></dt>
+					<dd>카드를 추가해 주세요</dd>
+				</dl>
+				<dl>
+					<dt><a href="#"><img src="/images/cd/shw/common/img_nocard.jpg" style="width:73px; height:46px;" alt="no image" /></a></dt>
+					<dd>카드를 추가해 주세요</dd>
+				</dl>
+                <a href="javascript:cardCompare( 'allDel', '', '', '', '', '' );" style="margin:0 0 2px 17px; display:inline-block;">
+					<img src="/images/cd/shw/common/btn_vs_del.gif" style="width:74px; height:20px;" alt="카드전체삭제" />
+				</a>
+				<a href="#" class="layer popupVs" style="margin:0 0 2px 17px; display:inline-block;">
+					<img id="compareCardButtonImgId" src="/images/cd/shw/common/btn_vs_go.gif" style="width:74px;height:20px;display:none;" alt="카드비교하기" />
+				</a>
+				<img src="/images/cd/shw/common/bg_andBot.png" alt="" class="png24" style="position:absolute; right:0; bottom:-13px;" />
+			</div>
+		</div>
+		<!-- 비교함 -->
+
+		<!-- 비교함 -->
+		
+	</div>
+</div>
+
+<!-- 레이어 영역 -->
+
+<!-- 카드 비교하기 -->
+
+		
+<!-- 카드 비교하기 -->
+<div class="bg_dim"></div>
+<div id="popupVs" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_vs719.png" style="width:719px; height:45px;" alt="카드 비교하기" class="png24" /></h3>
+	<div class="contentBox">
+		<dl class="card">
+			<dt><img src="/images/cd/shw/popup/stit_vs1.gif" style="width:37px; height:31px;" alt="카드종류" /></dt>
+			<dd>
+				<ul>
+					<li id="compareCardLiId1" style="display:none;">
+						<img alt="비교할 카드를 선택하세요." src="/images/cd/shw/popup/img_card_no.jpg" style="width:180px; height:113px;" class="imgCard" />
+						<p class="txtCard"><img alt="삼성카앤모아카드" src="/images/cd/shw/popup/txt_vs1.gif" /></p>
+						<p class="dues"><img alt="연회비" src="/images/cd/shw/popup/txt_dues.gif" /> 10,000원 <span>(해외일반)</span></p>
+						<a href="#"><img alt="상세보기" src="/images/cd/shw/popup/btn_vsinfo.gif" /></a> <a href="#" class="layer popupApp1"><img alt="신청서작성" src="/images/cd/shw/popup/btn_vsbaro.gif" /></a>
+					</li>
+					<li id="compareCardLiId2" style="display:none;">
+						<img alt="삼성티클래스앤오일카드 이미지" src="/images/cd/shw/popup/img_card2.jpg" style="width:180px; height:113px;" class="imgCard" />
+						<p class="txtCard"><img alt="삼성티클래스앤오일카드" src="/images/cd/shw/popup/txt_vs2.gif" /></p>
+						<p class="dues"><img alt="연회비" src="/images/cd/shw/popup/txt_dues.gif" /> 10,000원 <span>(해외일반)</span></p>
+						<a href="#"><img alt="상세보기" src="/images/cd/shw/popup/btn_vsinfo.gif" /></a> <a href="#" class="layer popupApp1"><img alt="신청서작성" src="/images/cd/shw/popup/btn_vsbaro.gif" /></a>
+					</li>
+					<li class="last" id="compareCardLiId3" style="display:none;">
+						<img alt="코레일멤버십 삼성티클래스카드 이미지" src="/images/cd/shw/popup/img_card3.jpg" style="width:180px; height:113px;" class="imgCard" />
+						<p class="txtCard"><img alt="코레일멤버십 삼성티클래스카드" src="/images/cd/shw/popup/txt_vs3.gif" /></p>
+						<p class="dues"><img alt="연회비" src="/images/cd/shw/popup/txt_dues.gif" /> 10,000원 <span>(해외일반)</span></p>
+						<a href="#"><img alt="상세보기" src="/images/cd/shw/popup/btn_vsinfo.gif" /></a> 
+						<a href="#" class="layer popupApp1"><img alt="신청서작성" src="/images/cd/shw/popup/btn_vsbaro.gif" /></a>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+		<dl class="txt">
+			<dt><img src="/images/cd/shw/popup/stit_vs2.gif" style="width:37px; height:39px;" alt="대표혜택" /></dt>
+			<dd>
+				<ul>
+					<li id="compareCardLiId1_1" style="display:none;"><img src="/images/cd/shw/popup/txt_vs_info1.gif" alt="전국 모든 주유소 리터당 60원 할인, CGV 동반 1인 50% 현장할인, 스타벅스 만원 결제시 1,000원 청구할인" style="width:180px;" /></li>
+					<li id="compareCardLiId2_1" style="display:none;"><img src="/images/cd/shw/popup/txt_vs_info2.gif" alt="S-Oil포인트 리터당 최대 80포인트 적립, 놀이공원 자유이용권 최대 50% 할인, 외식업체 최대 20% 할인" style="width:180px;" /></li>
+					<li class="last" id="compareCardLiId3_1" style="display:none;"><img src="/images/cd/shw/popup/txt_vs_info3.gif" alt="철도승차권 최대 10% 청구할인, 빅포인트 최대 0.8% 적립, 놀이공원 자유이용권 최대 50% 할인" style="width:180px;" /></li>
+				</ul>
+			</dd>
+		</dl>
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" style="width:18px;height:17px;" alt="카드비교하기 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot719.png" style="width:719px; height:20px;" alt="" class="png24" />
+</div>
+<!-- 카드 비교하기 -->
+
+<!-- 카드 비교하기 -->
+
+<!-- 바로신청 레이어 -->
+
+<!-- 바로신청 레이어 -->
+<form name="form1" method="post">
+
+<input type="hidden" name="cardCode" value="" />
+<input type="hidden" name="brand" value="" /> 
+<input type="hidden" name="SITE" value="" />
+<input type="hidden" name="INFO" value="" />
+<input type="hidden" name="MEM_CODE" value="" />
+<input type="hidden" name="url" value="home.htm" />
+<input type="hidden" name="eventGiftNo"  value ="" />
+<input type="hidden" name="eventNo" value="" />
+<input type="hidden" name="kindCode" value="" />
+<input type="hidden" name="category" value="" />
+<input type="hidden" name="giftNo" value="" />
+
+		
+<div id="popupApp1" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_baro428.png" width="428" height="45" alt="신청서작성" class="png24" /></h3>
+	<div class="contentBox">
+		<p class="marB20">
+			<img src="/images/cd/shw/popup/txt_baro4.gif" width="65" height="13" alt="신청 카드명 :" /> <strong id="baroCardNameId">삼성 카드</strong>
+		</p>
+
+		<img src="/images/cd/shw/popup/txt_baro5.gif" width="73" height="12" alt="카드 옵션 선택" class="marB8" />
+		<table summary="후불교통, 바로할인, 브랜드, 기프트리워드 등으로 카드 옵션을 선택하실 수 있습니다." class="table_app2 marB15" style="width:372px;">
+			<caption>카드옵션 폼</caption>
+			<colgroup>
+				<col width="125" />
+				<col width="247" />
+			</colgroup>
+			<tbody>
+				<tr id="applyCardLayerTrafficId1" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">후불교통</span></th>
+					<td style="display:none;">
+						<span class="radioSpan" id="applyCardLayerTrafficId2">
+							<label for="label_traf1" class="marR18" style="width:75px; display:inline-block;"><input type="radio" title="후불교통 선택" name="cardOptTraffic" id="label_traf1" onclick="layerCardOptClick( 'traffic', 'Y', '' );" />선택</label>
+							<label for="label_traf2"><input type="radio" title="후불교통 선택안함" name="cardOptTraffic" id="label_traf2" onclick="layerCardOptClick( 'traffic', 'N', '' );" />선택안함</label>
+						</span>
+					</td>
+				</tr>
+				<tr id="applyCardLayerBaroId1" class="pad13" style="display:none;">
+					<th scope="row" class="vAlignT" style="height:auto; padding:13px 0; font:0; display:none;"><span class="padL14">바로할인</span></th>
+					<td style="height:auto; padding:13px 0; display:none;">
+						<span class="radioSpan" id="applyCardLayerBaroId2">
+							<label for="label_baro1" class="marR18" style="width:75px; display:inline-block;"><input type="radio" title="바로할인 선택" name="cardOptBaro" id="label_baro1" onclick="layerCardOptClick( 'baro', 'Y', '' );" />선택</label>
+							<label for="label_baro2"><input type="radio" title="바로할인 선택안함" name="cardOptBaro" id="label_baro2" onclick="layerCardOptClick( 'baro', 'N', '' );" />선택안함</label>
+						</span>
+						<p class="font11 padL10" style="margin-top:8px;">1. 바로할인카드는 카드 신청 후 <em style="color:#333;">1시간<br />
+						&nbsp;&nbsp;&nbsp;이내</em>에 <em style="color:#333;">카드정보만을 미리 제공</em>해드립니다.</p>
+						<p class="font11 padL10" style="margin-top:8px;">2. 실물카드 발급 이전에 <em style="color:#333;">바로 사용할 수<br />
+						&nbsp;&nbsp;&nbsp;있는 카드</em>입니다.</p>
+						<p class="font11 padL10" style="margin-top:8px;">3. 신청은 <em style="color:#333;">평일 09:00 ~ 21:00</em> 사이에 가능하며,<br />
+						&nbsp;&nbsp;&nbsp;실물카드는 <em style="color:#333;">1~2주일 내로 배송</em>해드립니다.</p>
+					</td>
+				</tr>
+				<tr id="applyCardLayerBrandId1" class="last" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">브랜드</span></th>
+					<td style="display:none;">
+						<span class="radioSpan" id="applyCardLayerBrandId2">
+							
+						</span>
+					</td>
+				</tr>
+				<tr id="applyCardLayerGiftReward" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">기프트리워드</span></th>
+					<td style="display:none;">포인트형</td>
+				</tr>
+			</tbody>
+		</table>
+        <p class="alignC"><a href="javascript:goApplyLayer();"><img src="/images/cd/shw/popup/btn_app.gif" width="84" height="24" alt="카드 신청" /></a></p>
+
+        <a href="#" onclick="applyCardNowLayerClose();return false;" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="신청서작성 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot428.png" width="428" height="20" alt="" class="png24" />
+</div>
+<!-- 바로신청 레이어 -->
+</form>
+<!-- 바로신청 레이어 -->
+
+<!-- 삼성카드 이렇게 신청하세요 -->
+<div id="popupBaro" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_baro815.png" width="815" height="45" alt="삼성카드 이렇게 신청하세요" class="png24" /></h3>
+	<div class="contentBox">
+		<img src="/images/cd/shw/popup/txt_baro1.gif" width="454" height="69" alt="바로할인카드를 빠르고 편리하게 신청하실 수 있게 필요한 정보를 안내해 드립니다." class="marB37" />
+		<img src="/images/cd/shw/popup/txt_baro2.gif" width="759" height="170" alt="바로할인카드 신청 &gt; 카드 심사 및 카드 조회 &gt; 바로할인카드 결제 &gt; 카드발송 및 수령" />
+		<div style="padding:0; margin:0; font:0; position:absolute; visibility:hidden">
+			<ol>
+				<li>
+					<p>바로할인카드 신청</p>
+					<ul>
+						<li>공인인증서를 통해서만 카드신청이 가능해요.</li>
+						<li>평일 09:00~21:00사이만 신청할 수 있어요.</li>
+					</ul>
+				</li>
+				<li>
+					<p>카드 심사 및 카드 조회</p>
+					<ul>
+						<li>카드 심사는 1시간내로 완료되니 조금만 기다려주세요.</li>
+						<li>카드 조회는 삼성카드홈페이지를 통해서 확인해주세요.</li>
+					</ul>
+				</li>
+				<li>
+					<p>바로할인카드 결제</p>
+					<ul>
+						<li>카드정보(카드번호 등)을 제공받아 즉시 결제하세요.</li>
+					</ul>
+				</li>
+				<li>
+					<p>카드 발송 및 수령</p>
+					<ul>
+						<li>실물 카드는 1~2주 후 배송 됩니다.</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="카드신청 안내 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot815.png" width="815" height="20" alt="" class="png24" />
+</div>
+<!-- 삼성카드 이렇게 신청하세요 -->
+
+<!-- 바로할인 -->
+<div id="popupBaro2" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_baro876.png" width="876" height="45" alt="삼성카드 이렇게 신청하세요" class="png24" /></h3>
+	<div class="contentBox">
+		<img src="/images/cd/shw/popup/txt_baro6.gif" width="750" height="99" alt="할인카드가 없어 할인혜택을 받지 못할때, 1시간 내로 할인 받을 수 있는 바로할인카드를 신청하시고 지금 바로 할인 받으세요!! 신용카드신청 후 1시간 이내에 미리 카드 정보만을 제공하여 실물카드 발급 이전에 원하는 할인혜택을 받으실 수 있습니다." class="marB37" />
+		<img src="/images/cd/shw/popup/txt_baro3.gif" width="805" height="192" alt="할인카드가 없어 할인 못받을때 삼성카드 바로할인카드를 신청하면 1시간 내에 카드 정보 받아서 바로할인카드로 결제하고, 혜택받고 1~2주내 실물카드 수령" class="marB15" />
+		<p class="alignC" style="margin-bottom:-15px;"><a href="shw.do?method=getInternet"><img src="/images/cd/shw/popup/btn_info.gif" alt="자세히보기" /></a></p>
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="카드안내 신청 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot876.png" width="876" height="20" alt="" class="png24" />
+</div>
+<!-- 바로할인 -->
+
+<!-- 이메일 발송 레이어 -->
+
+
+<!-- 이메일 발송 레이어 -->
+<div id="popupUrl" class="layer_popup">
+<h3><img src="/images/cd/shw/popup/tit_url.png" style="width:409px; height:45px;" alt="URL 보내기" class="png24" /></h3>
+<div class="contentBox">
+<p class="marB20"><img src="/images/cd/shw/popup/txt_url1.gif" style="width:44px; height:13px;"
+	alt="링크주소" class="vAlignM marR10" /> <input
+	type="text" title="링크주소" id="emailLinkUrl" value="https://www.samsungcard.com/showroom/shw.do?method=getDetail&prodCode=P1297&category=B"
+	class="text242_c333" readonly="readonly" style="width:253px;" /></p>
+
+
+<img src="/images/cd/shw/popup/txt_url2.gif" style="width:120px; height:12px;"
+	alt="URL을 이메일로 보내기" class="marB8" />
+	<p class="marB20">
+   <input type="text" title="이메일 아이디" id="receiver1" class="text108_c333" style="width:90px;" /> <span class="font11">@</span> <input type="text" title="이메일 공급자 직접입력" id="receiver2" value="" class="text108_c333" style="width:90px;" />
+   <select id="receiver3" title="이메일 공급자 선택" style="width:100px;" onchange="changeEmail('receiver', this);">
+	<option value="">직접입력</option>
+	<option value="hanmail.net">hanmail.net</option>
+	<!--option value="yahoo.co.kr">yahoo.co.kr</option-->
+	<option value="lycos.co.kr">lycos.co.kr</option>
+	<option value="paran.com">paran.com</option>
+	<option value="naver.com">naver.com</option>
+	<option value="korea.com">korea.com</option>
+	<option value="netian.com">netian.com</option>
+	<option value="dreamwiz.com">dreamwiz.com</option>
+	<option value="chollian.net">chollian.net</option>
+	<option value="freechal.com">freechal.com</option>
+	<option value="empal.com">empal.com</option>
+	<option value="kebi.com">kebi.com</option>
+	<option value="unitel.co.kr">unitel.co.kr</option>
+	<option value="weppy.com">weppy.com</option>
+	</select>
+  </p>
+	
+
+<p class="alignC"><a href="#"><img
+	src="/images/cd/shw/popup/btn_email.gif" style="width:82px; height:24px;"
+	alt="이메일 보내기" onclick="checkEmail();" /></a></p>
+
+<a id="emailCloseAId" href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" style="width:18px; height:17px;" alt="URL 보내기 레이어 닫기" class="png24" /></a></div>
+<img src="/images/cd/shw/popup/img_bot409.png" style="width:409px; height:20px;" alt="" class="png24" />
+</div>
+<!-- 이메일 발송 레이어 -->
+
+<!-- 이메일 발송 레이어 -->
+
+<!-- 이벤트 레이어 -->
+<!-- 2012.7.3 이벤트 팝업 수정 -->
+<div id="popupEvent" class="layer_popup">
+ <h3><img src="/images/cd/shw/popup/tit_event_view.png" width="809" height="45" alt="이벤트 상세보기" class="png24" /></h3>
+ <div class="contentBox">
+  <div class="eventScroll">
+   
+
+  </div>
+  <a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="이벤트 레이어 닫기" class="png24" /></a>
+ </div>
+ <img src="/images/cd/shw/popup/img_bot809.png" width="809" height="20" alt="" class="png24" />
+</div>
+<!-- 2012.7.3 이벤트 팝업 수정 완료 -->
+<!-- 이벤트 레이어 -->
+
+<!-- 연회비 레이어 -->
+
+
+<!-- 연회비 레이어 -->		
+<div id="popupDues" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_dues.png" width="385" height="45" alt="연회비 정보확인" class="png24" /></h3>
+	<div class="contentBox">
+		<table summary="연회비를 해외 및 국내별로 확인하실 수 있습니다." class="table_app2" style="width:327px;">
+			<caption>연회비 정보확인 폼</caption>
+			<colgroup>
+				<col width="123" />
+				<col width="101" />
+				<col width="102" />
+			</colgroup>
+			<tbody>
+				
+				<tr>
+					<th scope="row"><span class="padL14">해외</span></th>
+					<td>
+					
+							<span class="duesFont">일반 <em>25,000</em></span>
+					
+					</td>
+					<td>
+					
+						<span class="duesFont">가족 <em>20,000</em></span>
+					
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<th scope="row"><span class="padL14">국내</span></th>
+					<td>
+					
+							<span class="duesFont">일반 <em>20,000</em></span>
+					
+					</td>
+					<td>
+					
+						<span class="duesFont">가족 <em>15,000</em></span>
+					
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="연회비정보 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot385.png" width="385" height="20" alt="" class="png24" />
+</div>
+<!-- 연회비 레이어 -->
+
+<!-- 연회비 레이어 -->
+
+
+<div id="popupCGV" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_cgv.png" width="585" height="45" alt="CGV에서 더 커진 할인혜택을 확인하세요." class="png24" /></h3>
+	<div class="contentBox" style="padding-bottom:0;">
+		<img src="/images/cd/shw/popup/txt_cgv1.gif" alt="영화 볼 땐, 삼성카드! CGV에서, 무비존에서, 더 커진 삼성카드 영화 할인 서비스를 만나보세요." class="marB40" />
+		<img src="/images/cd/shw/popup/stit_cgv1.gif" alt="1. CGV 현장 예매 시 기본 영화 할인 혜택에, 최대 2000원 추가 할인까지!" class="marB8" />
+		<ul class="txtCGV">
+			<li>삼성카드 전 회원 1,000원(동반 1인 포함 최대 2,000원) 추가 현장할인
+				<ul>
+					<li>- 행사기간 : 2012년 12월 31일 까지 </li>
+					<li>- 삼성카드로 5,000원 이상 이용시 할인이 제공됩니다.(일 1회, 월 5회) </li>
+					<li>- 법인/올앳/선불/체크/기프트카드는 제외됩니다. </li>
+					<li>- CJ ONE 삼성카드는 추가 할인이 제외됩니다. </li>
+					<li>- 청소년, 조조할인, 4D 및 특화관, 인터넷 예매건 및 CGV 제휴할인 이용건은 제외입니다.</li>
+				</ul>
+			</li>
+			<li>삼성카드 전 회원 1,000원(동반 1인 포함 최대 2,000원) 추가 현장할인</li>
+		</ul>
+		<table summary="변경전, 변경후의 할인 정보를 확인하실 수 있습니다." class="table_cgv marB10" style="width:529px;">
+			<caption>할인 정보</caption>
+			<colgroup>
+				<col width="264" />
+				<col width="264" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">변경전</th>
+					<th scope="col" class="noBorder">변경후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="last">
+					<td>청구할인</td>
+					<td class="noBorder"><b>현장할인</b></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="txt_i marB20"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />CJ 제휴 및 멤버십카드, 수퍼S 카드는 제외됩니다.</p>
+
+		<img src="/images/cd/shw/popup/stit_cgv2.gif" alt="2. 이제, 삼성카드 무비존에서 예매수수료 부담이 사라집니다!" class="marB8" />
+		<table summary="변경전, 변경후의 수수료 정보를 확인하실 수 있습니다." class="table_cgv marB10" style="width:529px;">
+			<caption>수수료 정보</caption>
+			<colgroup>
+				<col width="264" />
+				<col width="264" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">변경전</th>
+					<th scope="col" class="noBorder">변경후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="last">
+					<td>예매수수료 : 건당 500원<br />좌석선택 불가</td>
+					<td class="noBorder"><b>예매수수료 : 없음<br />좌석 선택 가능<br />(CGV는 좌석 선택할 수 없음)</b></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<img src="/images/cd/shw/popup/stit_cgv3.gif" alt="3. 갖고 계신 삼성카드의 영화 할인 혜택을 확인해 보세요!" class="marB5" />
+		<p class="c999 marB5">예시)</p>
+		<table summary="서비스카드, 기본 영화 할인, 추가할인, 최대할인으로 구성된 할인 혜택 정보입니다." class="table_cgv marB10" style="width:529px;">
+			<caption>할인 혜택</caption>
+			<colgroup>
+				<col width="144" />
+				<col width="144" />
+				<col width="119" />
+				<col width="119" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">서비스카드</th>
+					<th scope="col">기본 영화 할인</th>
+					<th scope="col">추가할인</th>
+					<th scope="col" class="noBorder">최대할인</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>삼성카드3<br />삼성빅앤빅카드</td>
+					<td>주중 : CGV 동반자 무료<br />(9,000원 할인) <br />주말 : CGV 50% 할인<br /> (4,500원 할인)</td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 11,000원 할인</span></td>
+				</tr>
+				<tr>
+					<td>삼성아멕스블루카드<br />삼성애니스타일카드</td>
+					<td>동반자 CGV 50% 할인<br />(4,500원 할인) </td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 6,500원 할인</span></td>
+				</tr>
+				<tr class="last">
+					<td>삼성애니패스포인트카드 <br />삼성지엔미포인트카드 <br />삼성더아파트카드</td>
+					<td>CGV 1,500원 할인</td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 3,500원 할인</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />회원님의 삼성카드에 기본 영화 할인 서비스가 없더라도, CGV에서 1,000원(동반 1인 포함 최대 2,000원) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현장할인 혜택을 받으실 수 있습니다. </p>
+
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="카드혜택 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot585.png" width="585" height="20" alt="" class="png24" />
+</div>
+
+
+<!-- 레이어 영역 -->
+
+
+	<form name='xecure'><input type='hidden' name='p' /></form>
+
+	<!--safeon 화면해킹방지툴-->
+	<!--safeon 화면해킹방지툴 2013.03.26 마우스 입력 사용 화면 개별 적용-->
+	<!--safeon 화면해킹방지툴-->
+
+<div class="footerBox">
+	<div class="footer">
+		
+<!-- SR내역 12.12.14 -->		
+		<p style="padding-top:14px"><img src="/images/cd/shw/footer/footer_ie8.png" alt="삼성카드 웹사이트는 Internet Explorer 8.0 이하에 최적화 되어 있습니다." style="vertical-align:middle"/> <a href="/html/popup/ie90error/pop/ie90pop.html" onclick="window.open('/html/popup/ie90error/pop/ie90pop.html', 'popup', 'width=710px, height=610px, menubar=no, toolbar=no, location=no, status=no, scrollbars=no');return false;" title="새창"><img src="/images/cd/shw/footer/footer_ie9.png" alt="IE9.0 사용자 에러조치 방법" style="vertical-align:middle" /></a></p>
+		<span><img src="/images/cd/shw/footer/txt_copyright.gif" alt="Copyright ⓒ 2013 SAMSUNGCARD Corp. All Rights Reserved." width="289" height="10"style="padding:6px 8px 0 0" /> <img src="/images/cd/shw/footer/logo_samsung.gif" width="107" height="19" alt="Samsung" /></span>
+<!--// SR내역 12.12.14 -->
+	</div>
+</div>
+
+<iframe src="" id="logIFrm" width="0" height="0"  frameborder="0" title="로그프레임"></iframe>
+
+
+<iframe id="innerIFrame" width="0" height="0" frameborder="0" title="빈프레임"></iframe>
+
+<iframe src="" name="ifrm" width="0" height="0"  frameborder="0" title="빈프레임"></iframe>
+<form name="emailForm" method="post" autocomplete="off" >
+
+<input type="hidden" name="cardCode" value="16925" />
+<input type="hidden" name="cardName" value="삼성카드 6" />
+<input type="hidden" name="cardUrl" value="" />
+<input type="hidden" name="idenNo" value="" />
+<input type="hidden" name="email1" value="" />
+<input type="hidden" name="email2" value="" />
+<input type="hidden" name="email3" value="" />
+<input type="hidden" name="email4" value="" />
+</form>
+</body>
+</html>

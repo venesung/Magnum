@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>가맹점 승인서 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+	<link rel="stylesheet" type="text/css" href="css/mvint_pop.css" />
+	<style type="text/css">
+	@media print {
+		#pop_header {display: none}
+		#pop_content {display: block}
+		.h445#pop_content {margin: 0;}
+		.arsBanner .arsrBanner {height: 190px;width: 330px;}
+		.text_Rcon .text_list01 {float: none !important;width: 300px;}
+	}
+	</style>
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/al/h1_confirmation_title.png" alt="가맹점 승인서" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/al/h1_confirmation_title.png" alt="가맹점 승인서" /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll" tabindex="0">
+		<div class="content_block_card content_wrap">
+			<h2><img src="/images/al/h2_confirmation_title.png" alt="삼성카드 가맹점 가입 확인서" /></h2>
+			<p class="h2_text">저희 삼성카드 가맹점으로 모시게 되었음을 알려 드리며, 가맹점 대표님의 만족을 위해 최선을 다할 것을 약속 드립니다.<br />저희 삼성카드 회원의 편리한 카드 이용을 위해 적극 협조해 주실 것을 부탁 드리며,<br />삼성카드와 함께 하는 귀 가맹점과 대표님의 앞날에 무궁한 발전을 기원합니다. 감사합니다.</p>
+			<!-- 출력일자 테이블 -->
+			<p class="outputDate">출력일자 : <%=vo.getPrintDate() %></p>
+			<table class="dtable01" summary="삼성카드 가맹점 가입 확인서(사업자번호, 대표자명, 가맹점상호, 가맹점번호, 가입일자, 가맹점수수료, 가맹점한도(일시불, 할부), 가맹점주소, 결제계좌, 예금주, 매출표 접수처)정보입니다." border="0" cellspacing="0" cellpadding="0">
+			<caption>삼성카드 가맹점 가입 확인서</caption>
+			<colgroup><col width="100" /><col width="105" /><col width="70" /><col width="90" /><col width="80" /><col width="100" /><col width="100" /></colgroup>
+				<tr>
+					<th scope="row" class="cell_l10">사업자번호</th>
+					<td class="riline cell_l10"><%=vo.getBusinessNo() %></td>
+					<th scope="row" class="cell_l10">대표자명</th>
+					<td class="riline cell_l10"><%=vo.getMasterName() %></td>
+					<th scope="row" class="cell_l10">가맹점상호</th>
+					<td class="cell_l10"><%=vo.getChainName() %></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l10">가맹점번호</th>
+					<td class="riline cell_l10"><%=vo.getChainNo() %></td>
+					<th scope="row" class="cell_l10">가입일자</th>
+					<td class="riline cell_l10"><%=joinDate %></td>
+					<th scope="row" rowspan="3">가맹점<br />수수료</th>					
+					<td colspan="2" rowspan="3" style="padding: 0;">
+					<!-- 가맹점 수수료 (디자인 때문에 td안에 table삽입 -->
+                        <table summary="국내,체크, 해외, 선불 등 가맹점 수수료 정보입니다." border="0" cellspacing="0" cellpadding="0" class="td_tble">
+	<caption class="conts_hidden">가맹점 수수료 테이블</caption>
+						<colgroup><col width="17%" /><col width="33%" /><col width="17%" /><col width="33%" /></colgroup>
+							<tr>
+								<td scope="row" class="cell_l10 border-b">국내</td>
+								<td class="border-r border-b"> <%=vo.getInboundRate() %>%</td>
+								<td scope="row" class="cell_l10">체크</td>
+								<td class="border-b"> <%=vo.getCheckRate() %>%</td>
+							</tr>
+							<tr>
+								<td scope="row" class="cell_l10 border-b">해외</td>
+								<td class="border-r border-b"> <%=vo.getVisaMaster() %>%</td>
+								<td scope="row" class="cell_l10">선불</td>
+								<td class="border-b"> <%=vo.getPayRate() %>%</td>
+							</tr>
+						</table>
+						<!-- //가맹점 수수료 (디자인 때문에 td안에 table삽입 -->
+					</td>					
+				</tr>
+				<tr>
+					<th rowspan="2" scope="row" class="cell_l10">가맹점한도</th>
+					<th class="cell_l10" scope="row">일시불</th>
+					<td colspan="2" class="riline cell_l10"><%=vo.getIlsiLimit() %> (만원)</td>
+				</tr>
+				<tr>
+					<th class="cell_l10" scope="row">할부</th>
+					<td colspan="2" class="riline cell_l10"><%=vo.getHalbuLimit() %> (만원)<br>할부개월수 <%=vo.getHalbuMonth() %> 개월</td>
+				</tr>
+				<tr>
+					<th class="cell_l10" scope="row">가맹점주소</th>
+					<td colspan="6" class="cell_l10"><%=vo.getAddress() %></td>					
+				</tr>
+				<tr>
+					<th class="cell_l10" scope="row">결제계좌</th>
+					<td colspan="3" class="riline cell_l10"><%=vo.getAccountNo() %></td>
+					<th class="cell_l10" scope="row">예금주</th>
+					<td colspan="2" class="cell_l10"><%=vo.getAccountName() %></td>
+				</tr>
+				<tr>
+					<th class="cell_l10" scope="row">매출표 접수처</th>
+					<td colspan="6" class="cell_l10">기업, 제주, 하나</td>
+				</tr>
+			</table>
+			<!-- //출력일자 테이블 -->
+			<div class="arsBanner">
+				<div class="arslBanner">
+					<h3 class="pb10"><img src="/images/al/h3_l_confirmation_title.png" alt="삼성카드 고객상담센터 ARS안내" /></h3>
+					<p class="arslBannertext">ARS 1588-8700 연결 <strong>&gt;</strong> 가맹점 </p>
+					<div class="text_Lcon" style="margin-top: -23px;overflw: none;">
+						<ol class="text_list">
+							<li>① 거래승인 요청</li><li>② 가맹점 매출실적 조회</li><li>③ 가맹점번호 조회</li><li>④ 가맹점대금 조회</li><li>⑤ 거래승인 조회</li><li>⑥ SDC 취소</li><li>⑦ 상담원 연결</li>
+						</ol>
+					</div>					
+				</div>
+				<div class="arsrBanner">
+					<h3  class="pb10"><img src="/images/al/h3_r_confirmation_title.png" alt="삼성카드 고객상담센터 ARS안내" /></h3>
+                    <p class="arsrBannertext">삼성카드 홈페이지 <a href="http://www.samsungcard.com/index.do" class="btn_link" target="_blank" title="새창" >www.samsungcard.com</a>접속 <strong>&gt;</strong><br />오른쪽 상단 '"가맹점주" 클릭</p>
+					<div class="text_Rcon">
+						<ol class="text_list01">
+							<li>1. 입금, 승인, 매출내역 등 조회<br />&nbsp;&nbsp;&nbsp;&nbsp;(내 가맹점관리   거래내역 조회)</li><li>2. 우대혜택 가맹점 제휴, 지원 정보 안내<br />&nbsp;&nbsp;&nbsp;&nbsp;(우대혜택가맹점 제휴/지원)</li><li>3. 가맹점 번호, 정보 조회<br />&nbsp;&nbsp;&nbsp;&nbsp;(내 가맹점 관리   가맹점 정보관리)</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<div class="introText">
+				<h3><img src="/images/al/h3_b_confirmation_title.png" alt="안내말씀-다음 사항을 기억하여 주시기 바랍니다." /></h3>
+					<ol class="introCon">
+						<li>1. 신용카드 상의 서명과 매출전표 상의 서명이 일치하는지 확인하셔야 합니다.</li><li>2. 카드이용금액이 50만원을 초과하는 경우 카드이용자의 신분증을 확인하셔야 합니다.</li><li>3. 신용카드를 받지 않거나 가맹점 수수료를 회원에게 전가하는 등 신용카드 거래를 이유로 회원에게 불리한 대우를 하여서는<br />&nbsp;&nbsp;&nbsp;&nbsp;안됩니다.</li>
+					</ol>
+					<ul class="introList">
+						<li>- 삼성Gift카드는 삼성카드가 발행하는 무기명 선불카드로 삼성카드와 매출승인 및 가맹점대금 지급절차가 동일하므로<br />&nbsp;&nbsp;&nbsp;안심하시고 취급하시면 됩니다.</li><li>- 가맹점 가입 확인서 상의 내용은 출력일자 기준입니다.</li><li>- 가맹점 해지시에는 계약사항 일체가 종료되오니 카드거래와 관련하여 대여받은 각종표시물 및 광고물 제거를 부탁드립니다.</li>
+					</ul>
+				<p class="confirmationStemp"><img src="/images/al/confirmation_stamp.png" alt="삼성카드 주식회사 대표이사 사장 최치훈" /></p>
+			</div>			
+			<p class="copyright">삼성카드 대표전화 : (지역번호없이)1588-8700  /  전화한도 승인 : (지역번호없이)1588-8900</p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+<%@ include file="/WEB-INF/jsp/hp/al/common_al_header.jsp"%>
+</body>
+<% }else{ %>
+<table height="600" align="center" border="0">
+	<tr>
+		<td width="300"><img src="/images/common/img_error_warning.jpg" alt="" /></td>
+		<td align="left">
+			<table>
+				<tr>
+					<td><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /><br><br></td>
+				</tr>
+				<tr>
+					<td>죄송합니다. 지금은 사용자가 많아 처리가 지연되고 있습니다.<br>잠시 후 다시 이용해 주시기 바랍니다.<br><br></td>
+				</tr>
+				<tr>
+					<td><a href="javascript:window.close();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<% } %>
+</html>

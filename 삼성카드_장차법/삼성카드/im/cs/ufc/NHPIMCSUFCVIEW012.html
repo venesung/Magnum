@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+
+<title>신용정보 제공사실 안내 조회 - 삼성카드</title>
+
+
+<!-- 스타일 패키지 -->
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<style type="text/css">
+#confidenceWrap{ width: 650px; overflow: hidden; padding: 40px 0 40px 30px; }
+#confidenceWrap .confidenceList{padding: 0 0 25px 0;}
+#confidenceWrap .confidenceList li{padding: 0 0 0 15px; background: url("/images/common/bul_sqaure_gray.png") no-repeat left 9px; letter-spacing: -0.1em;}
+#confidenceWrap .confidenceList li{padding: 0 0 0 15px; background: url("/images/common/bul_sqaure_gray.png") no-repeat left 9px; letter-spacing: -0.1em;}
+#confidenceWrap .idnumText{padding: 15px 0; border-top: 1px solid #f2f2f2; border-bottom: 1px solid #f2f2f2; background: #fafafa; }
+#confidenceWrap .idnumText span{color: #666;}
+
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+
+</head>
+<body>
+
+
+  <div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/pop/h1_confidence_pop.png" alt="신용정보 제공사실 안내 조회" /></h1>		
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/pop/h1_confidence_pop.png" alt="신용정보 제공사실 안내 조회" /></h1>
+	</div>
+		
+	<!-- content -->	
+	<div id="confidenceWrap">
+		<ul class="confidenceList">
+			<li>신용정보의 이용 및 보호에 관한 법률 제32조 규정에 의하여 최근 1년간 공공기관(법원, 경찰서, 세무서 등)에 제공한<br />귀하의 신용정보 제공사실을 다음과 같이 알려드립니다. </li>
+			<li>신용정보의 이용 및 보호에 관한 법률 제32조 제4항 제5호 및 제7호에 근거하여 공공기관에 제공된 신용정보 제공내역에 한하여<br /> 조회됩니다. </li>
+		</ul>
+		<h2 class="t_point pb10">공인인증서를 통한 본인 확인을 위하여 주민등록번호를 입력하여 주십시오.</h2><!-- 정기일반영 13.04.17 -->
+		<div class="idnumText">
+			<span class="input_idno idnumTitle pl10">주민등록번호&nbsp;&nbsp;
+                <input name="rrno1" type="text" class="txt" style="width:100px;" maxlength="6" readonly="readonly" title="주민등록번호 앞자리" enc="on"/>
+			     - 
+    			<input name="rrno2" type="password" class="txt" style="width:100px;" maxlength="7"  readonly="readonly"   title="주민등록번호 뒷자리" enc="on"/>
+    			
+    <input type="hidden" name="rrno" />
+	<span id="usafeon_rrno1|rrno2"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" onClick="selectList();"><img src="/images/pop/confidence_btn01.png" alt="조회" class="pl5" /></a>
+<a href="#" onClick="parent.close();"><img src="/images/pop/confidence_btn02.png" alt="취소" class="pl5" /></a>
+
+</span>
+
+</div>
+
+
+
+<table class="dtable01 mt20" summary="신용정보 제공일자, 제공기관, 이용목적, 제공내역을 확인할 수 있는 게시판입니다.">
+		<caption>신용정보 제공사실 안내</caption>
+		<colgroup><col width="20%" /><col width="28%" /><col width="27%" /><col width="24%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">제공일자</th>
+				<th scope="col" class="al_center">제공기관</th>
+				<th  scope="col" class="al_center">이용목적</th>
+				<th scope="col" class="cell_r10">제공내역</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+				<tr>
+                <td class="cell_l10 t_no">${lst.SND_DT}</td>
+                <td class="al_center" >0</td>
+                <td class="al_center">0</td>
+                <td class="cell_r10" >0</td>
+           		</tr>
+			<tr class="nodata">
+               <td colspan="4"  class="al_center">제공내역이 없습니다.</td>
+            </tr>
+
+       		</tbody>
+			</table>
+			
+            	</div>
+	
+			<!-- footer -->
+			<div id="pop_footer">
+				<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+				<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> 
+			</div>	
+		
+		</div>
+
+</body>
+</html>

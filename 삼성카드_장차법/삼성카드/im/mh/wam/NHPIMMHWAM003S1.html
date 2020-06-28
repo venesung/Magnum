@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+			<!-- top_visual -->
+			<div class="top_visual">
+				<h1><img src="/images/mh/h1_sendsms.png" alt="문자 메세지를 보내세요" /></h1>
+			</div>
+
+			<form name="frm1" method="post" autocomplete="off">
+
+			  <input type="hidden" name="message" value="" />
+			  <input type="hidden" name="idd" value="" />
+			  <input type="hidden" name="mphone" value="" />
+			  <input type="hidden" name="srchImoticonGubun" value="<%=vos.getSrchImoticonGubun() %>" />
+			  <input type="hidden" name="bytecount" maxlength="2" readonly="readonly" value="0" />
+			  <!-- input type="hidden" name="curr_page" value="${navigator.currpage}" -->
+			  <input type="hidden" name="sms_code" value="<%= smsCode %>" />
+			  <input type="hidden" name="sendGubun" value="<%=sendGubun %>" />
+			<!-- content_block -->
+			<div class="content_block content_block_m0 clfix">
+
+				<div class="d_phone">
+					<textarea name="SendWin" cols="10" rows="9" value="내용을입력하세요." onkeyup="CheckMsgLen();" onfocus="setSendWin(this);" title="문자메세지 내용입력"></textarea>
+					<p class="p_limit"><em id="msgLength">0</em> / <em>80</em></p>
+					<p class="p_btn">
+						<input type="image" src="/images/mh/btn_phone_send.png" alt="전송" onclick="messageSend();return false;" /><input type="image" src="/images/mh/btn_phone_cancel.png" alt="취소" onclick="" />
+					</p>
+					<div class="p_desc">
+						이번달 발송건수 <strong class="t_point_org"><%=sendCount %></strong><strong class="t_black">/<%=amount %> 회</strong>
+						<p class="t_desc03">메시지는 한글 40자, 영문 80자<br />이내에서만 전송이 가능합니다</p>
+					</div>
+				</div>
+				<!-- senderinfo -->
+				<div class="d_senderinfo">
+					<h3><span><img src="/images/mh/txt_sendsms01.png" alt="보내는 사람" /></span></h3>
+					<span class="bg_input"><input name="send_phone_no" type="text" value="" title="보내는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" onkeypress="checkEnter_sendphone();" /><em>&nbsp;</em></span>
+					<h3><span><img src="/images/mh/txt_sendsms02.png" alt="받는 사람" /></span><a href="javascript:popuptel();" class="btn_link" title="새창">최근발신번호</a></h3>
+					<span class="bg_input"><input name="mobile_phone_no" type="text" value="" title="받는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" /><em>&nbsp;</em></span>
+					<span class="bg_input"><input name="mobile_phone_no" type="text" value="" title="받는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" /><em>&nbsp;</em></span>
+					<span class="bg_input"><input name="mobile_phone_no" type="text" value="" title="받는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" /><em>&nbsp;</em></span>
+					<span class="bg_input"><input name="mobile_phone_no" type="text" value="" title="받는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" /><em>&nbsp;</em></span>
+					<span class="bg_input"><input name="mobile_phone_no" type="text" value="" title="받는사람 번호" maxlength="12" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" /><em>&nbsp;</em></span>
+					<p class="t_desc03">동시에 5명까지 가능합니다.</p>
+				</div>
+				</
+				<!-- sms_example -->
+				<div class="d_smsex">
+					<div class="tab02">
+						<ul>
+							<li <%if( vos.getSrchImoticonGubun().equals("L")){ %> class="on" <%} %> ><a href="javascript:fetchImoticon('L');">사랑</a></li>
+							<li <%if( vos.getSrchImoticonGubun().equals("E")){ %> class="on" <%} %> ><a href="javascript:fetchImoticon('E');">표정</a></li>
+							<li <%if( vos.getSrchImoticonGubun().equals("A")){ %> class="on" <%} %> ><a href="javascript:fetchImoticon('A');">생물</a></li>
+							<li <%if( vos.getSrchImoticonGubun().equals("P")){ %> class="on" <%} %> ><a href="javascript:fetchImoticon('P');">그림</a></li>
+						</ul>
+					</div>
+					<ul class="list_theme">
+					<%
+							int eleSize = element.size();
+							//System.out.println("ELEMENT_SIZE : " + eleSize);
+
+							for(int i = 0 ; i< 8 ; i++){
+
+								String title = "";
+								String content = "";
+
+								NHPIMMHWAM004VO vo = new NHPIMMHWAM004VO();
+								if(	i< eleSize){
+									vo = element.get(i);
+									title = vo.getTitle() + "";
+									content = vo.getContent() + "";
+									//System.out.println("CNT : [" + (i + 1) + "], Title : [" + title + "], content : [" + content + "]");
+								}
+
+								//TODO 수정 필요
+								content = content.replace("\"", "`" );
+
+					%>
+						<li><a href="javascript:AddChar1('<%=content %>');">[<%= title %>]&nbsp;</a></li>
+					<%
+							}
+					%>
+					</ul>
+
+					<!-- paginate -->
+					<div class="paginate">
+						${_page}
+					</div>
+
+					<!-- entity_chracter -->
+					<div class="box_white02"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+						<div>
+							<h3><img src="/images/mh/txt_sendsms03.png" alt="특수문자" /></h3>
+                                  <a href="" onclick="AddChar('♥');CheckMsgLen();return false;"><span style="color:#000;">♥</span></a>
+                                  <a href="" onclick="AddChar('★');CheckMsgLen();return false;"><span style="color:#000;">★</span></a>
+                                  <a href="" onclick="AddChar('☆');CheckMsgLen();return false;"><span style="color:#000;">☆</span></a>
+                                  <a href="" onclick="AddChar('♠');CheckMsgLen();return false;"><span style="color:#000;">♠</span></a>
+                                  <a href="" onclick="AddChar('♤');CheckMsgLen();return false;"><span style="color:#000;">♤</span></a>
+                                  <a href="" onclick="AddChar('♣');CheckMsgLen();return false;"><span style="color:#000;">♣</span></a>
+                                  <a href="" onclick="AddChar('♧');CheckMsgLen();return false;"><span style="color:#000;">♧</span></a>
+                                  <a href="" onclick="AddChar('◆');CheckMsgLen();return false;"><span style="color:#000;">◆</span></a>
+                                  <a href="" onclick="AddChar('◇');CheckMsgLen();return false;"><span style="color:#000;">◇</span></a>
+                                  <a href="" onclick="AddChar('▽');CheckMsgLen();return false;"><span style="color:#000;">▽</span></a>
+                                  <a href="" onclick="AddChar('△');CheckMsgLen();return false;"><span style="color:#000;">△</span></a>
+                                  <a href="" onclick="AddChar('▒');CheckMsgLen();return false;"><span style="color:#000;">▒</span></a>
+                                  <a href="" onclick="AddChar('▨');CheckMsgLen();return false;"><span style="color:#000;">▨</span></a>
+                                  <a href="" onclick="AddChar('▩');CheckMsgLen();return false;"><span style="color:#000;">▩</span></a>
+                                  <a href="" onclick="AddChar('▣');CheckMsgLen();return false;"><span style="color:#000;">▣</span></a>
+                                  <a href="" onclick="AddChar('◐');CheckMsgLen();return false;"><span style="color:#000;">◐</span></a>
+                                  <a href="" onclick="AddChar('◈');CheckMsgLen();return false;"><span style="color:#000;">◈</span></a>
+                                  <a href="" onclick="AddChar('⊙');CheckMsgLen();return false;"><span style="color:#000;">⊙</span></a>
+                                  <a href="" onclick="AddChar('◎');CheckMsgLen();return false;"><span style="color:#000;">◎</span></a>
+                                  <a href="" onclick="AddChar('♂');CheckMsgLen();return false;"><span style="color:#000;">♂</span></a>
+                                  <a href="" onclick="AddChar('♀');CheckMsgLen();return false;"><span style="color:#000;">♀</span></a>
+                                  <a href="" onclick="AddChar('※');CheckMsgLen();return false;"><span style="color:#000;">※</span></a>
+                                  <a href="" onclick="AddChar('♨');CheckMsgLen();return false;"><span style="color:#000;">♨</span></a>
+                                  <a href="" onclick="AddChar('☎');CheckMsgLen();return false;"><span style="color:#000;">☎</span></a>
+                                  <a href="" onclick="AddChar('℡');CheckMsgLen();return false;"><span style="color:#000;">℡</span></a>
+                                  <a href="" onclick="AddChar('☜');CheckMsgLen();return false;"><span style="color:#000;">☜</span></a>
+                                  <a href="" onclick="AddChar('☞');CheckMsgLen();return false;"><span style="color:#000;">☞</span></a>
+                                  <a href="" onclick="AddChar('♩');CheckMsgLen();return false;"><span style="color:#000;">♩</span></a>
+                                  <a href="" onclick="AddChar('●');CheckMsgLen();return false;"><span style="color:#000;">●</span></a>
+                                  <a href="" onclick="AddChar('○');CheckMsgLen();return false;"><span style="color:#000;">○</span></a>
+                                  <a href="" onclick="AddChar('■');CheckMsgLen();return false;"><span style="color:#000;">■</span></a>
+                                  <a href="" onclick="AddChar('□');CheckMsgLen();return false;"><span style="color:#000;">□</span></a>
+                                  <a href="" onclick="AddChar('◀');CheckMsgLen();return false;"><span style="color:#000;">◀</span></a>
+                                  <a href="" onclick="AddChar('▶');CheckMsgLen();return false;"><span style="color:#000;">▶</span></a>
+                                  <a href="" onclick="AddChar('◁');CheckMsgLen();return false;"><span style="color:#000;">◁</span></a>
+                                  <a href="" onclick="AddChar('▷');CheckMsgLen();return false;"><span style="color:#000;">▷</span></a>
+                                  <a href="" onclick="AddChar('▼');CheckMsgLen();return false;"><span style="color:#000;">▼</span></a>
+                                  <a href="" onclick="AddChar('▲');CheckMsgLen();return false;"><span style="color:#000;">▲</span></a>
+                                  <a href="" onclick="AddChar('↖');CheckMsgLen();return false;"><span style="color:#000;">↖</span></a>
+                                  <a href="" onclick="AddChar('↗');CheckMsgLen();return false;"><span style="color:#000;">↗</span></a>
+                                  <a href="" onclick="AddChar('↑');CheckMsgLen();return false;"><span style="color:#000;">↑</span></a>
+                                  <a href="" onclick="AddChar('↓');CheckMsgLen();return false;"><span style="color:#000;">↓</span></a>
+                                  <a href="" onclick="AddChar('→');CheckMsgLen();return false;"><span style="color:#000;">→</span></a>
+                                  <a href="" onclick="AddChar('←');CheckMsgLen();return false;"><span style="color:#000;">←</span></a>
+                                  <a href="" onclick="AddChar('⊃');CheckMsgLen();return false;"><span style="color:#000;">⊃</span></a>
+                                  <a href="" onclick="AddChar('⊂');CheckMsgLen();return false;"><span style="color:#000;">⊂</span></a>
+                                  <a href="" onclick="AddChar('≪');CheckMsgLen();return false;"><span style="color:#000;">≪</span></a>
+                                  <a href="" onclick="AddChar('≫');CheckMsgLen();return false;"><span style="color:#000;">≫</span></a>
+                                  <a href="" onclick="AddChar('↔');CheckMsgLen();return false;"><span style="color:#000;">↔</span></a>
+                                  <a href="" onclick="AddChar('㉿');CheckMsgLen();return false;"><span style="color:#000;">㉿</span></a>
+                                  <a href="" onclick="AddChar('㈜');CheckMsgLen();return false;"><span style="color:#000;">㈜</span></a>
+                                  <a href="" onclick="AddChar('ⓒ');CheckMsgLen();return false;"><span style="color:#000;">ⓒ</span></a>
+                                  <a href="" onclick="AddChar('™');CheckMsgLen();return false;"><span style="color:#000;">™</span></a>
+                                  <a href="" onclick="AddChar('￦');CheckMsgLen();return false;"><span style="color:#000;">￦</span></a>
+                                  <a href="" onclick="AddChar('＄');CheckMsgLen();return false;"><span style="color:#000;">＄</span></a>
+                                  <a href="" onclick="AddChar('￥');CheckMsgLen();return false;"><span style="color:#000;">￥</span></a>
+                                  <a href="" onclick="AddChar('∵');CheckMsgLen();return false;"><span style="color:#000;">∵</span></a>
+                                  <a href="" onclick="AddChar('∴');CheckMsgLen();return false;"><span style="color:#000;">∴</span></a>
+						</div>
+					</div>
+					<fileTag:pagingParameter cPage="<%= vos.getcPage() %>" pageSize="<%= vos.getPageSize() %>" srchFg="N" />
+				</div>
+				
+			</div><!--
+				<div class="content_block content_block_card clfix pt5">
+					<p class="ml20 t_desc03">※ 무료 SMS서비스는 준회원을 대상으로 제공되는 서비스로, 정회원 전환시 제공되지 않습니다.</p>
+				</div>			
+			--></form>
+
+			<!-- footer_layer -->
+		
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

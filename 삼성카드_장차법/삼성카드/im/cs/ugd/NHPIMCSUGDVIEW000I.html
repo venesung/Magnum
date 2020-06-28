@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+<title>지점 상세 정보 - 삼성카드</title>
+</head>
+<body>
+ <div id="wrap">
+ 	<div id="tab_script">
+		<script type="text/javascript">
+			function printDiv() {
+				this.window.print();
+			}
+		</script>
+	</div>
+	<!-- layer_popup w640 -->
+	
+			<div class="pop_l_content" style="width:850px; ">
+				<div class="branch_info_wrap" style="float:left; width:300px;">
+					<div class="branch_info">
+						<table class="dtable02" summary="지점명, 전화번호, FAX, 주소, 영업시간, 오시는길, 영업안내 등 지점 상세정보를 확인하실 수 있는 게시판입니다.">
+						<caption>지점 상세 정보</caption>
+						<colgroup><col width="75" /><col width="*" align="left"/></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>지점 명</p></th>
+								<td><p><strong class="t_black">0</strong></p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>전화번호</p></th>
+								<td><p><span class="t_no">0</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>FAX</p></th>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주소</p></th>
+								<td><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>영업시간</p></th>
+								<td><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>오시는길</p></th>
+								<td><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>영업안내</p></th>
+								<td><p>0</p></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<p>- 인쇄시 용지방향을 가로로 설정해 주시기 바랍니다.</p>
+                    <p class="btnr" style="margin-bottom:30px;"><a href="javascript:printDiv();" class="btn btn_blue"><span>인쇄하기</span></a></p>
+				</div>
+				<div id="map_openapi">
+					<iframe src="/hp/im/cs/ugd.do?method=getMapByAddress&set_x=<%=branchList.get(0).getBranchX()%>&set_y=<%=branchList.get(0).getBranchY()%>" scrolling="no" width="520px;" height="500px;" frameborder="0"  name="content_frame" style="float:right; padding: 1px 1px 1px 1px; border: 1px solid #333; margin-bottom:30px; background:#333; display:; z-index:1;" title="지도 상세화면 프레임"></iframe>
+				</div>
+			</div>		
+		</div>
+	
+ 
+</body>
+</html>
+
+

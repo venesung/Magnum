@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>항공마일리지 신청내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/common-main.js"></script>
+<script language="javascript" type="text/javascript">
+
+	function gosend(prekey, str1, str2, str3, str12){
+		if (confirm("취소하시겠습니까?")){
+            var params = 'prekey=' + prekey + '&amp;string1=' + str1 + '&amp;string2=' + str2 + '&amp;string3=' + str3 + '&amp;string12=' + str12;
+            callJsonNonXecure('amPointCancel', 'com.scard.hp.im.mh.pit.web.NHPIMMHPIT003Ctrl', 'amPointCancel', params, null, null, null, true);
+		}
+	}
+
+	function jsonCallback(callId, result){
+		if(callId === 'amPointCancel'){
+			if(result === 'Y'){
+				//var frm = document.form;
+				alert('신청이 취소되었습니다.');
+				opener.refresh();
+				//tabSubmit("/pointChange.do?method=alianMileageList", frm);
+				window.close();
+			}else{
+				alert(result);
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div id="pop_wrap" style="height: 100%">
+		<!-- header -->
+		<!--
+		<div id="pop_header">
+			<h1><img src="/images/mh/pop_h1_plane_mileage_app.png" alt="항공마일리지 신청내역입니다" /></h1>
+			<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+		</div>
+		-->
+		
+		<div id="mvint_pheader">
+			<h1><img src="/images/mh/pop_h1_plane_mileage_app.png" alt="항공마일리지 신청내역입니다" /></h1>
+		</div>
+
+		<!-- content -->
+		<form name="form">
+		<div id="pop_content">
+			<div class="content_block content_block_card clfix">
+
+				<table class="dtable01" summary="신청일, 대상 항공사, 멤버쉽 번호, 전환 포인트, 현 상태, 취소여부로 구성된 항공마일리지 신청내역을 확인 할 수 있는 게시판입니다.">
+				<caption>항공마일리지 신청내역</caption>
+				<colgroup><col width="16%" /><col width="16%" /><col width="17%" /><col width="17%" /><col width="17%" /><col width="17%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">신청일</th>
+						<th scope="col">대상 항공사</th>
+						<th scope="col">멤버쉽 번호</th>
+						<th scope="col" class="cell_r10">전환 포인트</th>
+						<th scope="col">현 상태</th>
+						<th scope="col">취소</th>
+					</tr>
+				</thead>
+				<tbody>
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>말레이시아항공 	</td>
+								<td class="t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td>포인트 복원 완료</td>
+								<td>
+                                            <a href="#" class="btn btn_s_white" title="00 취소하기"><span>취소하기</span></a>
+								</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="6">이용 내역이 없습니다.</td>
+							</tr>
+				</tbody>
+				</table>
+
+				<ul class="list_rice mt10">
+					<li><p class="t_desc03">전환취소는 신청한 당일 21시(오후 9시)까지만 가능합니다.<br />
+						</p></li>
+					<li><p class="t_desc03">멤버쉽 번호 오류로 전환 실패한 경우에는 전환 신청한 포인트를 다시 회원님께 적립시켜 드리며, <br />
+					전환신청을 다시 하시기 전에 멤버쉽 번호를 해당 항공사로부터 정확히 확인하신 후 전환 신청하여 주십시오. </p></li>
+				</ul>
+
+			</div>
+
+		</div>
+	 	</form>
+		<!-- footer -->
+		<div id="pop_footer"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address><input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /></div>
+
+	</div>
+</body>
+
+</html>
+
+

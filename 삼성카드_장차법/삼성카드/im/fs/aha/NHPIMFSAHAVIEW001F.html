@@ -1,0 +1,58 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMFPRIVIEW001.jsp
+ * Author: 삼성SDS 
+ * Created on 2010. 2. 1.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">아하론</div>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<div id="tab_script" >
+<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<script type="text/javascript" language="javascript">
+
+		/* @param flexId : flex object tag ID
+		 * @param classId : flex classid, "clsid:" 제외된 나머지 값만 입력
+		 * @param width : flex width size
+		 * @param height : flex height size
+		 * @param jsonParam : json type, movie값 필수
+		 * @param divId : [optional], default : flexObject*/
+		function $tabOnLoad() {
+			var params = "{movie:'/flex-resource/NHPIMFSAHAVIEW001.swf',flashVars:'tabNo="+${tabNo }+"',wmode:'transparent'}"
+			embedFlexOnTab("NHPIMFSAHAVIEW001", "D27CDB6E-AE6D-11cf-96B8-444553540000", "100%", "800", params );
+		}
+
+		function moveTab0(){
+			goTabPage('NHPIMFSAHA',true);
+		}
+
+		//FLEX OBJECT 선언부분을 찾는 부분 
+		function getMovie( id ) {
+		    var obj = document.getElementById( id );
+		    return obj;
+		}
+				
+	</script>
+</div>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="계획적으로 차근차근 나눠서 상환하는 아하론패스" /></h1><!-- 100519 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix" >
+	<form name="form1">
+		<input type="hidden" name="plain" value="" />
+		<input type="hidden" name="loadCnt" value="0" />
+		<input type="hidden" name="ssno" value="" />
+	</form>
+	<div id="flexObject" style="z-index: 1"></div>
+</div>
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

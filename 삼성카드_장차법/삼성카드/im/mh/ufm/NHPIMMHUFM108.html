@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_change_info.png" alt="회원님의 수신정보동의를 변경하실 수 있습니다" /></h1>
+</div>
+<div class="content_block first_none clfix">
+	<div class="tab02 w810 h60">
+		<ul>
+		
+			<!-- 2013.01.21 depth level변경 -->
+			<li class="on"><a href="javascript:goTabPage('NHPIMMHUFM008', true);">마케팅 수신정보 변경</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHUFM009', true);">제휴사 마케팅 동의여부변경</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHUFM010', true);">출입국정보 동의여부변경</a></li>
+			
+			<!-- li class="on">
+				<a href="javascript:goTabPage('NHPIMMHUFM008', true);">마케팅 수신정보 변경</a>
+				<ul class="sub_tab">
+					<li id="mailTab"  name="mailTab" class="on"><a href="javascript:local_showTab('mail');">우편</a></li>
+					<li id="telTab"   name="telTab"><a href="javascript:local_showTab('tel');">전화마케팅</a></li>
+					<li id="emailTab" name="emailTab"><a href="javascript:local_showTab('email');">E-mail</a></li>
+					<li id="smsTab"   name="smsTab"><a href="javascript:local_showTab('sms');">SMS</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:goTabPage('NHPIMMHUFM009', true);">제휴사 마케팅 동의여부변경</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHUFM010', true);">출입국정보 동의여부변경</a></li-->
+		</ul>
+	</div>
+</div>
+
+
+
+<!-- content_block -->
+<form name="sandForm">
+
+<div class="content_block content_block_m0 first_none clfix">
+	<h2><img src="/images/mh/h2_change_info01.png" alt="고객님의 카드정보를 확인 하세요" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix">
+			<span>회원님의 정보 보안을 위해 <strong class="t_black">카드정보</strong>를 확인해 주십시오.</span>
+		</div>
+
+		<table class="dtable02 dtable_inputfield" summary="카드선택, 카드 비밀번호, 카드 CVC번호 정보를 입력하는 게시판입니다.">
+		<caption>카드정보 입력</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select id="cardListCombo" name="cardListCombo" title="카드선택" style="width:360px">
+					</select>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드 비밀번호</p></th>
+				<td>
+					<p class="input_2char">
+					<input id="pinNo" name="pinNo" type="password" maxlength="2" class="txt" value="" title="카드비밀번호" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" onkeyup="scard_onfocus('pinNo', 'idenNo', '2')" enc="on"/><em>**</em>(비밀번호 앞의 2자리)
+					<span id="usafeon_pinNo"></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>주민등록번호</p></th>
+				<td>
+					<p class="input_3char">
+					<input type="password" name="idenNo" size="7" maxlength="7" class="txt" value="" id="idenNo" title="주민등록번호" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');"  onkeydown="if (window.event.keyCode == 13) {local_submit();}" enc="on"/>(주민번호 13자리 숫자 중 뒷7자리)
+					<span id="usafeon_idenNo"></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+
+		<!-- btn -->
+		<div class="btnset">
+			<p class="btnr">
+				<a id="confirmBtn" name="confirmBtn" href="javascript:local_submit();" class="btn btn_blue" onclick="hide_select();"><span>확인</span></a>
+				<a id="cancelBtn" name="cancelBtn" href="javascript:goTabPage('NHPIMMHUFM008', true);" class="btn btn_white" onclick="hide_select();"><span>취소</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+</form>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

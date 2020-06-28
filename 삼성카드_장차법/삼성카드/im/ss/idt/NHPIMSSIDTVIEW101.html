@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<!-- layer_pop_content -->
+<div class="pop_l_position pop_l_wrap_mix">
+
+<!-- 월간정액제 서비스신청 완료 -->
+	<div id="id_monthly" class="pop_l_position pop_l_wrap_mix"  <%if(!applyType.equals("2")){%> style="display:none" <%}%> >
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="goTabPage('NHPIMSSIDT001M001','false');  this.parentNode.parentNode.style.display='none'; closeLayerPopup();" value="레이어닫기" title="ID-Doctor서비스 가입 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/ss/lalyer_tit_iddoctor_success_join.png" alt="ID-Doctor서비스가 성공적으로 가입완료 되었습니다." /></p>
+			<div class="pop_l_content">
+				<p class="pop_l_alert03 line_weithline">연간정액제를 신청하시면 같은 이용료에 <span class="t_point">USB배송</span> 및 <br />
+				<span class="t_point">개인정보피해 보상보험</span> 가입 등의 추가 서비스를 받으실 수 있는 <br />
+				더 많은 혜택을 드립니다. <br /><br />
+					<span class="t_desc03">연간정액제 39,600원 일시 납부 → 1개월당 3,300원 / VAT포함</span>
+				</p>
+                <p class="btnc"><a href="javascript:goTabPage('NHPIMSSIDT001M001','false'); " onclick="closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 연간정액제 서비스신청 완료 -->
+	<div id="id_yearly" class="pop_l_position pop_l_wrap_alert" <%if(!applyType.equals("3")){%> style="display:none" <%}%> >
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="goTabPage('NHPIMSSIDT001M001',true);  this.parentNode.parentNode.style.display='none'; closeLayerPopup();" value="레이어닫기" title="ID-Doctor서비스 가입 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/ss/lalyer_tit_iddoctor_success_join2.png" alt="ID-Doctor서비스가 성공적으로 가입완료 되었습니다." /></p>
+			<div class="pop_l_content">
+				<p class="pop_l_alert">상품 배송은 입력하신 주소로 배송 됩니다.<br />
+					감사합니다.<br /><br />
+				</p>
+                <p class="btnc"><a href="javascript:goTabPage('NHPIMSSIDT001M001',true); " onclick="closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+	
+</div>

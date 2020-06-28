@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_specialarea_uselist01.png" alt="지역특화카드 이용내역입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_specialare_usecard01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	
+	<div class="content_block_inner pos_rel">
+
+
+		<table class="dtable02 dtable_inputfield mt20" summary="지역특화카드 이용내역입니다.">
+		<caption>지역특화카드 이용내역</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+				
+						<select title="카드종류 선택" id="select_card" style="width:450px" >
+						<option value="">카드를 선택하세요.</option>
+					</select>
+
+					<a href="javascript:goView();" class="btn_link">카드상품보기</a>
+			
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>조회년월</p></th>
+				<td><p>
+                       <select name="start_year" style="width:55px" id="label_userchoice" title="조회 년 선택">
+                           <option>00</option>
+                       </select>년
+                       <select name="start_month" style="width:40px" title="조회 월 선택">
+                           <option>00</option>
+                       </select>월
+
+                            </p></td>
+			</tr>
+		</tbody>
+		</table>
+              <!-- form start -->        
+		
+		<!-- btn -->
+		<div class="btnr">
+            <a href="javascript:goSearch('0')" class="btn btn_blue"><span>조회</span></a>
+		</div>
+
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_specialare_usecard02.png" alt="지역특화카드 이용내역입니다" /></h2>
+	<div class="content_block_inner">
+
+		<table class="dtable02 dtable_expand" summary="지역특화카드 이용내역 중 전월신판이용금액 총 내역 게시판입니다.">
+		<caption>지역특화카드 전월신판 총 이용금액 게시판</caption>
+		<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>전월신판이용금액</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+				<th scope="row"><p>할인한도</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+
+		<table class="dtable01 dtable01_bill mt20" summary="매출일자, 매출접수일자, 카드번호, 이용가맹점, 이용금액, 할인금액으로 구성된 지역특화카드 이용내역">
+		<caption>지역특화카드 이용내역 게시판</caption>
+		<colgroup><col width="80" /><col width="90" /><col width="150" /><col width="*" /><col width="100" /><col width="100" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">매출일자</th>
+				<th scope="col">매출접수일자</th>
+				<th scope="col">카드번호</th>
+				<th scope="col">이용가맹점</th>
+				<th scope="col" class="cell_r10">이용금액</th>
+				<th scope="col" class="cell_r10">할인금액</th>
+			</tr>
+		</thead>
+		<tbody>			
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td>0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+			</tr>
+			<tr class="nodata"><td colspan="6">조회 결과가 없습니다.</td></tr>		
+		</tbody>
+		</table>
+
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_specialare_usecard03.png" alt="서비스별 이용내역입니다" /></h2>
+	<div class="content_block_inner">
+
+		<table class="dtable01 dtable01_bill" summary="서비스별 이용내역(서비스별, 월이용, 월횟수, 금액)을 확인할 수 있는 게시판입니다.">
+		<caption>서비스별 이용내역 게시판</caption>
+		<colgroup><col width="260" /><col width="180" /><col width="*" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">서비스</th>
+				<th scope="col">월이용횟수 / 월횟수한도</th>
+				<th scope="col" class="cell_r10">월할인금액 / 월할인금액한도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			
+			<tr>
+				<td class="cell_l10">0</td>
+				<td class="t_no">0&nbsp;/&nbsp;0</td>
+				<td class="cell_r10 t_no">0&nbsp;/&nbsp;0</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<div class="paginate">
+			<div class="paging">
+					<span class="btn btn_s_white"><input type="button" onclick="goSearch('1');" title="다음" value="다음" /></span>
+			</div>
+		</div>
+		
+		<!-- btnset -->
+		<div class="btnset">
+			<p class="btnl t_desc04">GS칼텍스적립 서비스의 경우 1일 2회, 1회 15만원 월 30만원에 한하여 적립서비스가 제공됩니다.<br />고속도록통행할인 서비스의 경우 1일 1회에 한하여 할인서비스가 제공됩니다.</p>
+		</div>
+
+	</div>
+</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

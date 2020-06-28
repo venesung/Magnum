@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+</head>
+<body topmargin="0px" leftmargin="0" style="background-color:#a3c8ff;">
+<form name="f1" action="" method="post">
+<input type="hidden" name="GUBUN" value="<%=p_gubun%>" />
+<input type="hidden" name="OFFER_GBN1" value="0" />
+<input type="hidden" name="OFFER_GBN_CHK1" value="<%if ( !p_email_offer_desc.substring(0,2).equals("00") && !p_email_offer_desc.substring(2,4).equals("00") && !p_email_offer_desc.substring(4,6).equals("00")){%>0<%}else{%>1<%}%>" />
+    <div><img src="/images/mh/20100205/t1.gif" alt="온라인 행복~ 만점! 100% 당첨 이벤트 - 웹멤버 정회원 당첨 경품 받기"  style="display:block;" /></div>
+    <div style="background:url(/images/mh/20100205/c_bg.gif); font:12px dotum; color:#666666; width:500px; padding:0px 0px 0px 30px;">
+          <p style="line-height:1.2em;">
+            웹멤버 정회원 가입을 진심으로 축하 드립니다.<br/>
+            100% 당첨 이벤트 혜택을 드립니다.</p>
+        <span style="margin-top:10px; display:inline-block;">
+        <b>행 사 기 간</b> : 2010년 2월 22일 ~ 2010년 4월 22일</span><br/>
+        <span style="margin-top:8px; display:inline-block;">
+        <b>행사참여방법</b> : 아래 서비스 상품을 선택 후 경품 받기 버튼을 클릭하시면 </span><br/>
+        <span style="padding-left:90px; margin-top:3px; display:inline-block;">혜택을 받으실 수 있습니다.</span>
+        <p><img src="/images/mh/20100205/line.gif"></p>
+        <div style="zoom:1;">
+        <%if(p_web_offer_desc.substring(0,2).equals("00")){%>
+        <dl style="float:left;">
+        <dt><img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료"></dt>
+        <dd style="padding:0px 0px 0px 10px;">
+          <input name="OFFER_GUBUN1" type="radio" value="1" onClick="setOfferGubun1(this.value)" title="S.InfoCare 3개월 무료" />
+        </dd>
+        </dl>
+        <%} %>
+        <%if(p_web_offer_desc.substring(2,4).equals("00")){%>
+        <dl style="float:left;">
+        <dt><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료"></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN1" type="radio" value="2" onClick="setOfferGubun1(this.value)" title="SMS 문자 월 50건 3개월 무료" />
+        </dd>
+        </dl>
+        <%} %>
+        <%if(p_web_offer_desc.substring(4,6).equals("00")){%>
+        <dl style="float:left;">
+        <dt><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점"></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN1" type="radio" value="3" onClick="setOfferGubun1(this.value)" title="서비스포인트 2,000점" />
+        </dd>
+        </dl>
+        <%}%>
+        </div>
+        </div>
+    <div style="clear:both; padding-left:16px;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+    <p style="font:11px dotum; color:#668dd1; line-height:1.4em; letter-spacing:-1px; padding-left:25px;">
+    * 해당 이벤트 페이지를 통해 서비스 경품 신청을 하셔야 혜택을 받으실 수 있습니다.<br/>
+    * 선택한 상품은 변경을 하실 수 없습니다.<br/>
+    * S.InfoCare 무료 혜택 서비스 기간이 지나면 유료로 자동 전환 처리 됩니다.<br/>
+    &nbsp;&nbsp;기존 S.InfoCare 를 이용하신 회원이면 S.InfoCare 무료 혜택을 받으실 수 없습니다.<br/>
+    * SMS 선택 시 다음날 마이홈 메인 우측 배너를 통해 SMS 무료 문자를 보내실 수 있습니다.<br/>
+    * 서비스 포인트 선택시 2010년 3월 31일 일괄 적립 처리 됩니다.<br/>
+    </p>
+    <div style="text-align:center; width:500px;">
+    <a href="javascript:Go();"><img src="/images/mh/20100205/btn_web.gif" alt="경품받기"  border="0" /></a></div>
+    <div style="background-color:#638ccc; width:490px; text-align:right; padding:5px 10px 3px 0px; margin-top:20px;">
+   <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_close.gif" alt="닫기" border="0" /></a>
+    </div>
+</form>
+<form name="hidden_form" method="post" action="/hp/im/mh/ofp001.do?method=offerPopUp" autocomplete="off">
+  <input type="hidden" name="input" />
+  <input type="hidden" name="OFFER_GBN1" />
+</form>
+</body>
+</html>
+<%}else if(p_gubun.equals("2")){%>
+<!--
+#################################################################
+##2222222222222222222222222222222222222222222222222222222222222##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+<script type="text/javascript" language="javascript">
+self.focus();
+function setOfferGubun2(offer_gubun2){
+	document.f1.OFFER_GBN2.value=offer_gubun2;
+}
+function Go(){
+	var frm = document.f1;
+	var offerGubun2 = frm.OFFER_GBN2.value;
+	var offerGubunChk2 = frm.OFFER_GBN_CHK2.value;
+	var submitChk = false;
+  if(offerGubun2 == 0 && offerGubunChk2==1){
+      alert("이메일명세서 가입 경품을 선택하세요");
+      return;
+  }
+  if(offerGubunChk2 != 0){
+   if(offerGubun2 != 0){
+      submitChk = true;
+    }
+  }
+  if(submitChk){
+    if(confirm("선택하신 경품을 신청 하시겠습니까?")){
+  	  self.document.hidden_form.OFFER_GBN2.value=frm.OFFER_GBN2.value;
+      self.document.hidden_form.submit();
+    }
+  }
+}
+</script>
+</head>
+<body topmargin="0px" leftmargin="0" style="background-color:#a3c8ff;">
+<form name="f1" action="" method="post">
+<input type="hidden" name="GUBUN" value="<%=p_gubun%>" />
+<input type="hidden" name="OFFER_GBN2" value="0" />
+<input type="hidden" name="OFFER_GBN_CHK2" value="<%if ( !p_web_offer_desc.substring(0,2).equals("00") && !p_web_offer_desc.substring(2,4).equals("00") && !p_web_offer_desc.substring(4,6).equals("00")){%>0<%}else{%>1<%}%>" />
+    <div><img src="/images/mh/20100205/happy_email.jpg" alt="온라인 행복~ 만점! 100% 당첨 이벤트 - 이메일 명세서 신청 경품 받기"  style="display:block;" />
+    </div>
+
+    <div style="background:url(/images/mh/20100205/c_bg.gif); font:12px dotum; color:#666666; width:500px; padding:0px 0px 0px 30px;">
+        <p style="line-height:1.2em;">
+            이메일 명세서 이용회원님께 드리는 100% 당첨 혜택을 드립니다.<br/>
+            100% 당첨 이벤트 혜택을 드립니다.</p>
+
+        <span style="margin-top:10px; display:inline-block;">
+        <b>행 사 기 간</b> : 2010년 2월 22일 ~ 2010년 4월 22일</span><br/>
+        <span style="margin-top:8px; display:inline-block;">
+        <b>행사참여방법</b> : 아래 서비스 상품을 선택 후 경품 받기 버튼을 클릭하시면 </span><br/>
+        <span style="padding-left:90px; margin-top:3px; display:inline-block;">혜택을 받으실 수 있습니다.</span>
+
+        <p><img src="/images/mh/20100205/line.gif"></p>
+
+        <div>
+        <dl style="float:left		;">
+        <%if(p_web_offer_desc.substring(0,2).equals("00")){%>
+        <dt><img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료"></dt>
+        <dd style="padding:0px 0px 0px 10px;">
+          <input name="OFFER_GUBUN2" type="radio" value="1" onClick="setOfferGubun2(this.value)" title="S.InfoCare 3개월 무료" />
+        </dd>
+        <%} %>
+        </dl>
+        <dl style="float:left;">
+        <%if(p_web_offer_desc.substring(2,4).equals("00")){%>
+        <dt><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료"></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN2" type="radio" value="2" onClick="setOfferGubun2(this.value)" title="SMS 문자 월 50건 3개월 무료" />
+        </dd>
+        <%}%>
+        </dl>
+        <dl style="float:left;">
+        <%if(p_web_offer_desc.substring(4,6).equals("00")){%>
+        <dt><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점"></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN2" type="radio" value="3" onClick="setOfferGubun2(this.value)" title="서비스포인트 2,000점" />
+        </dd>
+        <%}%>
+        </dl>
+        </div>
+    </div>
+    <div style="clear:both; padding-left:16px;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+    <p style="font:11px dotum; color:#668dd1; line-height:1.4em; letter-spacing:-1px; padding-left:25px;">
+    * 해당 이벤트 페이지를 통해 서비스 경품 신청을 하셔야 혜택을 받으실 수 있습니다.<br/>
+    * 선택한 상품은 변경을 하실 수 없습니다.<br/>
+    * S.InfoCare 무료 혜택 서비스 기간이 지나면 유료로 자동 전환 처리 됩니다.<br/>
+    &nbsp;&nbsp;기존 S.InfoCare 를 이용하신 회원이면 S.InfoCare 무료 혜택을 받으실 수 없습니다.<br/>
+    * SMS 선택 시 다음날 마이홈 메인 우측 배너를 통해 SMS 무료 문자를 보내실 수 있습니다.<br/>
+    * 서비스 포인트 선택시 2010년 3월 31일 일괄 적립 처리 됩니다.<br/>
+    </p>
+    <div style="text-align:center; width:500px;">
+    <a href="javascript:Go();"><img src="/images/mh/20100205/btn_web.gif" alt="경품받기"  border="0" /></a></div>
+
+    <div style="background-color:#638ccc; width:490px; text-align:right; padding:5px 10px 3px 0px; margin-top:20px;">
+   <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_close.gif" alt="닫기" border="0" /></a>
+    </div>
+</form>
+<form name="hidden_form" method="post" action="/hp/im/mh/ofp001.do?method=offerPopUp" autocomplete="off">
+  <input type="hidden" name="input" />
+  <input type="hidden" name="OFFER_GBN2" />
+</form>
+</body>
+</html>
+<%}else if(p_gubun.equals("3")){%>
+<!--
+#################################################################
+##3333333333333333333333333333333333333333333333333333333333333##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+<script language="javascript">
+  self.focus();
+  function setOfferGubun1(offer_gubun1){
+  	document.f1.OFFER_GBN1.value=offer_gubun1;
+  	var offerGubun1 = document.f1.OFFER_GBN1.value;
+  	var offerGubun2 = document.f1.OFFER_GBN2.value;
+  	if(offerGubun1==offerGubun2){
+  	  if(offerGubun1==1){
+        document.f1.OFFER_GBN1.value = "";
+        document.f1.OFFER_GUBUN1[offer_gubun1-1].checked = false;
+        alert("[S.InfoCare 3개월 무료] 경품은 1번만 선택 가능합니다.");
+      }
+      else if(offerGubun1==2){
+        document.f1.OFFER_GBN1.value = "";
+        document.f1.OFFER_GUBUN1[offer_gubun1-1].checked = false;
+        alert("[SMS 문자 월 50건 3개월 무료] 경품은 1번만 선택 가능합니다.");
+      }
+  	}
+  }
+  function setOfferGubun2(offer_gubun2){
+  	document.f1.OFFER_GBN2.value=offer_gubun2;
+  	var offerGubun1 = document.f1.OFFER_GBN1.value;
+  	var offerGubun2 = document.f1.OFFER_GBN2.value;
+  	if(offerGubun1==offerGubun2){
+  	  if(offerGubun1==1){
+        document.f1.OFFER_GBN2.value = "";
+        document.f1.OFFER_GUBUN2[offer_gubun2-1].checked = false;
+        alert("[S.InfoCare 3개월 무료] 경품은 1번만 선택 가능합니다.");
+      }
+      else if(offerGubun1==2){
+        document.f1.OFFER_GBN2.value = "";
+        document.f1.OFFER_GUBUN2[offer_gubun2-1].checked = false;
+        alert("[SMS 문자 월 50건 3개월 무료] 경품은 1번만 선택 가능합니다.");
+      }
+  	}
+  }
+  function Go(){
+  	var frm = document.f1;
+  	var offerGubun1 = frm.OFFER_GBN1.value;
+  	var offerGubun2 = frm.OFFER_GBN2.value;
+  	var offerGubunChk1 = frm.OFFER_GBN_CHK1.value;
+  	var offerGubunChk2 = frm.OFFER_GBN_CHK2.value;
+  	var submitChk = false;
+  	if(offerGubun1==offerGubun2){
+  		if(offerGubun1==1){
+          alert("[S.InfoCare 3개월 무료] 경품은 1번만 선택 가능합니다.");
+          return;
+  		}
+  		else if(offerGubun1==2){
+          alert("[SMS 문자 월 50건 3개월 무료] 경품은 1번만 선택 가능합니다.");
+          return;
+  		}
+  	}
+    if(offerGubun1 == 0 && offerGubunChk1==1){
+        alert("웹멤버 가입 경품을 선택하세요");
+        return;
+    }
+    if(offerGubun2 == 0 && offerGubunChk2==1){
+        alert("이메일명세서 가입 경품을 선택하세요");
+        return;
+    }
+    if(offerGubunChk1 != 0 && offerGubunChk2 != 0){
+      if(offerGubun1 != 0 && offerGubun2 != 0){
+        submitChk = true;
+      }
+    }
+    else{
+      if(offerGubunChk1 != 0){
+        if(offerGubun1 != 0){
+          submitChk = true;
+        }
+      }
+      else if(offerGubunChk2 != 0){
+        if(offerGubun2 != 0){
+          submitChk = true;
+        }
+      }
+    }
+    if(submitChk){
+      if(confirm("선택하신 경품을 신청 하시겠습니까?")){
+    	self.document.hidden_form.OFFER_GBN1.value=frm.OFFER_GBN1.value;
+    	self.document.hidden_form.OFFER_GBN2.value=frm.OFFER_GBN2.value;
+        self.document.hidden_form.submit();
+      }
+    }
+  }
+</script>
+</head>
+<body topmargin="0px" leftmargin="0" style="background-color:#a3c8ff;">
+<form name="f1" action="" method="post">
+<input type="hidden" name="GUBUN" value="<%=p_gubun%>" />
+<input type="hidden" name="OFFER_GBN1" value="0" />
+<input type="hidden" name="OFFER_GBN2" value="0" />
+<input type="hidden" name="OFFER_GBN_CHK1" value="<%if ( !p_email_offer_desc.substring(0,2).equals("00") && !p_email_offer_desc.substring(2,4).equals("00") && !p_email_offer_desc.substring(4,6).equals("00")){%>0<%}else{%>1<%}%>" />
+<input type="hidden" name="OFFER_GBN_CHK2" value="<%if ( !p_web_offer_desc.substring(0,2).equals("00") && !p_web_offer_desc.substring(2,4).equals("00") && !p_web_offer_desc.substring(4,6).equals("00")){%>0<%}else{%>1<%}%>" />
+    <div><img src="/images/mh/20100205/happy_we.jpg" alt="온라인 행복~ 만점! 100% 당첨 이벤트 - 웹멤버 이메일 명세서 당첨 경품 받기"  style="display:block;" /></div>
+
+    <div style="background:url(/images/mh/20100205/c_bg.gif); font:12px dotum; color:#666666; width:500px; padding:0px 0px 0px 30px;">
+        <p style="line-height:1.2em;">
+            웹멤버 정회원 가입 및 이메일 명세서 이용회원님께 드리는 100% 당첨<br/>
+            혜택을 드립니다.<br/>
+           100% 당첨 이벤트 혜택을 드립니다.</p>
+
+        <span style="margin-top:10px; display:inline-block;">
+        <b>행 사 기 간</b> : 2010년 2월 22일 ~ 2010년 4월 22일</span><br/>
+        <span style="margin-top:8px; display:inline-block;">
+        <b>행사참여방법</b> : 아래 서비스 상품을 선택 후 경품 받기 버튼을 클릭하시면 </span><br/>
+        <span style="padding-left:90px; margin-top:3px; display:inline-block;">혜택을 받으실 수 있습니다.</span>
+
+        <p><img src="/images/mh/20100205/line.gif"></p>
+
+<%if ( p_web_offer_desc.substring(0,2).equals("00") || p_web_offer_desc.substring(2,4).equals("00") || p_web_offer_desc.substring(4,6).equals("00")){%>
+
+        <div style="text-algin:center;">
+        <p style="font:bold 12px dotum; color:#0050aa; margin:0px;">⊙ 웹멤버 가입 상품</p>
+        <dl style="float:left		;">
+        <%if ( p_web_offer_desc.substring(0,2).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /></dt>
+        <dd style="padding:0px 0px 0px 10px;">
+          <input name="OFFER_GUBUN1" type="radio" value="1" onClick="setOfferGubun1(this.value)" title="S.InfoCare 3개월 무료" />
+        </dd>
+        <%} %>
+        </dl>
+        <dl style="float:left;">
+        <%if ( p_web_offer_desc.substring(2,4).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN1" type="radio" value="2" onClick="setOfferGubun1(this.value)" title="SMS 문자 월 50건 3개월 무료" />
+        </dd>
+        <%} %>
+        </dl>
+        <dl style="float:left;">
+        <%if ( p_web_offer_desc.substring(4,6).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" /></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN1" type="radio" value="3" onClick="setOfferGubun1(this.value)" title="서비스포인트 2,000점" />
+        </dd>
+        <%} %>
+        </dl>
+        </div>
+<%} %>
+<%if ( p_email_offer_desc.substring(0,2).equals("00") || p_email_offer_desc.substring(2,4).equals("00") || p_email_offer_desc.substring(4,6).equals("00")){%>
+        <p style="font:bold 12px dotum; color:#0050aa; margin:0px; clear:both; margin-top:25px;">⊙ ⓔ메일 명세서 가입 상품</p>
+
+        <div style="text-algin:center;">
+        <dl style="float:left		;">
+        <%if ( p_email_offer_desc.substring(0,2).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /></dt>
+        <dd style="padding:0px 0px 0px 10px;">
+          <input name="OFFER_GUBUN2" type="radio" value="1" onClick="setOfferGubun2(this.value)" title="S.InfoCare 3개월 무료" />
+        </dd>
+        <%} %>
+        </dl>
+        <dl style="float:left;">
+        <%if ( p_email_offer_desc.substring(2,4).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN2" type="radio" value="2" onClick="setOfferGubun2(this.value)" title="SMS 문자 월 50건 3개월 무료" />
+        </dd>
+        <%} %>
+        </dl>
+        <dl style="float:left;">
+        <%if ( p_email_offer_desc.substring(4,6).equals("00")) {%>
+        <dt><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" /></dt>
+        <dd style="padding:0px 0px 0px 30px;">
+          <input name="OFFER_GUBUN2" type="radio" value="3" onClick="setOfferGubun2(this.value)" title="서비스포인트 2,000점" />
+        </dd>
+        <%} %>
+        </dl>
+        </div>
+<%} %>
+    </div>
+    <div style="clear:both; padding-left:16px;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+    <p style="font:11px dotum; color:#668dd1; line-height:1.4em; letter-spacing:-1px; padding-left:25px;">
+    * 해당 이벤트 페이지를 통해 서비스 경품 신청을 하셔야 혜택을 받으실 수 있습니다.<br/>
+    * 선택한 상품은 변경을 하실 수 없습니다.<br/>
+    * S.InfoCare 무료 혜택 서비스 기간이 지나면 유료로 자동 전환 처리 됩니다.<br/>
+    &nbsp;&nbsp;기존 S.InfoCare 를 이용하신 회원이면 S.InfoCare 무료 혜택을 받으실 수 없습니다.<br/>
+    * SMS 선택 시 다음날 마이홈 메인 우측 배너를 통해 SMS 무료 문자를 보내실 수 있습니다.<br/>
+    * 서비스 포인트 선택시 2010년 3월 31일 일괄 적립 처리 됩니다.<br/>
+    </p>
+    <div style="text-align:center; width:500px;">
+    <a href="javascript:Go();"><img src="/images/mh/20100205/btn_web.gif" alt="경품받기"  border="0" /></div>
+
+    <div style="background-color:#638ccc; width:490px; text-align:right; padding:5px 10px 3px 0px; margin-top:20px;">
+   <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_close.gif" alt="닫기" border="0" /></a>
+    </div>
+
+</form>
+<form name="hidden_form" method="post" action="/hp/im/mh/ofp001.do?method=offerPopUp" autocomplete="off">
+  <input type="hidden" name="input" />
+  <input type="hidden" name="OFFER_GBN1" />
+  <input type="hidden" name="OFFER_GBN2" />
+</form>
+</body>
+</html>
+<%}else if(p_gubun.equals("4")){%>
+<!--
+#################################################################
+##4444444444444444444444444444444444444444444444444444444444444##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+</head>
+<script type="text/javascript" language="javascript">
+function submit(){
+	window.opener.tabSubmit("/hp/im/mh/epp001.do?method=moveForm001",window.opener.form);
+	window.top.close();
+}
+</script>
+<body topmargin="0px" leftmargin="0" style="background-color:#a3c8ff;">
+    <div><img src="/images/mh/20100205/happy_w_e.jpg" alt="온라인 행복~ 만점! 100% 당첨 이벤트 - 이메일 명세서"  style="display:block;" />
+    </div>
+
+    <div style="background:url(/images/mh/20100205/c_bg.gif); font:12px dotum; color:#666666; width:470px; padding:0px 0px 0px 30px;">
+        <p style="line-height:1.4em;">
+            이메일 명세서 신청을 하시면 회원님께 100% 당첨 혜택을 드립니다.</p>
+
+        <span style="margin-top:10px; display:inline-block;">
+        <b>행사기간</b> : 2010년 2월 22일 ~ 2010년 4월 22일</span><br/>
+        <span style="margin-top:8px; display:inline-block;">
+        <b>행사내용</b> : 이메일명세서 신청 완료 후 마이홈 100% 당첨 이벤트 경품 응모창에서</span>    <br/>
+        <span style="padding-left:64px; margin-top:3px; display:inline-block;">
+        원하시는 경품을 선택 후 경품받기 버튼을 클릭하시면 됩니다.</span>
+
+        <p><img src="/images/mh/20100205/line.gif" /></p>
+
+
+        <div>
+<%if (p_string6.equals("00")) {%>
+        <dl style="float:left		;">
+        <dt><img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /></dt>
+        </dl>
+<%} %>
+<%if (p_string7.equals("00")) {%>
+        <dl style="float:left;">
+        <dt><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /></dt>
+        </dl>
+<%} %>
+<%if (p_string8.equals("00")) {%>
+        <dl style="float:left;">
+        <dt><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" /></dt>
+        </dl>
+<%} %>
+        </div>
+    </div>
+    <div style="clear:both; padding-left:16px;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+    <p style="font:11px dotum; color:#668dd1; line-height:1.4em; letter-spacing:-1px; padding-left:25px;">
+    * 해당 이벤트 페이지를 통해 서비스 경품 신청을 하셔야 혜택을 받으실 수 있습니다.<br/>
+    * 선택한 상품은 변경을 하실 수 없습니다.<br/>
+    * S.InfoCare 무료 혜택 서비스 기간이 지나면 유료로 자동 전환 처리 됩니다.<br/>
+    &nbsp;&nbsp;기존 S.InfoCare 를 이용하신 회원이면 S.InfoCare 무료 혜택을 받으실 수 없습니다.<br/>
+    * SMS 선택 시 다음날 마이홈 메인 우측 배너를 통해 SMS 무료 문자를 보내실 수 있습니다.<br/>
+    * 서비스 포인트 선택시 2010년 3월 31일 일괄 적립 처리 됩니다.<br/>
+    </p>
+    <div style="text-align:center; width:500px;">
+    <a href="javascript:submit();"><img src="/images/mh/20100205/btn_eeee.gif" alt="이메일 명세서 신청하기"  border="0" /></a></div>
+
+    <div style="background-color:#638ccc; width:490px; text-align:right; padding:5px 10px 3px 0px; margin-top:20px;">
+   <a href="javascript:self.close();"><img src="/images/mh/20100205/btn_close.gif" alt="닫기" border="0" /></a>
+    </div>
+
+</body>
+</html>
+<%}else if(p_gubun.equals("5")){%>
+<!--
+#################################################################
+##5555555555555555555555555555555555555555555555555555555555555##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+</head>
+<body topmargin="0" leftmargin="0">
+    <div style="background-color:#a3c8ff; width:470px; padding:15px 15px 10px 15px;">
+       <div style="background:url(/images/mh/20100205/w_bg.gif) ; width:435px; margin:0 auto;
+       font:12px dotum; color:#666666; padding:15px 15px 5px 15px;">
+       <span style="font:bold 14px dotum; color:#666666;">
+       정상적으로 경품신청이 완료 되었습니다.</span><br/><br/>
+       <span>◎ SMS 문자 보내기 서비스 이용 방법 안내</span><br/>
+       <span style="padding:5px 0px 0px 15px; display:inline-block;">
+       <font color="red"><b>경품 신청하신 다음날부터 이용이 가능합니다.</b></font></span>
+       <span style="padding:5px 0px 0px 15px; display:inline-block;">
+       삼성카드 > 로그인 > 마이홈 좌측 하단 SMS무료 50건 이용하기</span>
+       <span style="padding:5px 0px 0px 15px; display:inline-block;">
+       배너 클릭 이용</span>
+       </div>
+       <div style="width:435x; text-align:left;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+       <div style="text-align:right; padding:6px 3px 0px 0px;">
+       <a href="javascript:self.close();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+    </div>
+</body>
+</html>
+<%}else if(p_gubun.equals("6")){%>
+<!--
+#################################################################
+##6666666666666666666666666666666666666666666666666666666666666##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+<script type="text/javascript" language="javascript">
+function submit(){
+	window.opener.tabSubmit("/hp/im/ms/crn/NHPIMMSCRN001JSP.do?web_email_offer_yn="<%=web_email_offer_yn%>",window.opener.form");
+	window.top.close();
+}
+</script>
+</head>
+<body topmargin="0" leftmargin="0">
+    <div style="background-color:#a3c8ff; width:470px; padding:15px 15px 10px 15px;">
+
+        <div style="background:url(/images/mh/20100205/w_bg.gif) ; width:435px; margin:0 auto;
+        font:12px dotum; color:#666666; padding:15px 15px 5px 15px;">
+        <span style="padding-left:15px; display:inline-block; line-height:1.2em;">삼성카드 홈페이지에서 웹멤버 정회원 가입 신청하시면 100% 당첨 <br/>
+         혜택을 드립니다.</span><br/>
+        <span style="margin-top:10px; display:inline-block;">
+        <b>ㆍ응모방법</b> : 100% 당첨 헤택 제공 대상자 회원 중 마이홈 로그인 후</span> <br/>
+        <span style="padding-left:80px;">응모를 해주시면 됩니다.</span>
+
+        <div style="text-align:center; background-color:#ffffff;  width:435px;">
+<img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" />
+        </div>
+
+        </div>
+       <div style="width:435x; text-align:left;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+       <div style="text-align:right; padding:6px 3px 0px 0px;">
+ <%if( p_link.equals("N") ){%>
+       <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%}else{ %>
+       <a href="javascript:submit();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%} %>
+    </div>
+</body>
+</html>
+<%}else if(p_gubun.equals("7")){%>
+<!--
+#################################################################
+##7777777777777777777777777777777777777777777777777777777777777##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+<script type="text/javascript" language="javascript">
+function submit(){
+	window.opener.tabSubmit("/hp/im/ms/crn/NHPIMMSCRN001JSP.do?web_email_offer_yn="<%=web_email_offer_yn%>",window.opener.form");
+	window.top.close();
+}
+</script>
+</head>
+<body topmargin="0" leftmargin="0">
+    <div style="background-color:#a3c8ff; width:470px; padding:15px 15px 10px 15px;">
+
+        <div style="background:url(/images/mh/20100205/w_bg.gif) ; width:435px; margin:0 auto;
+        font:12px dotum; color:#666666; padding:15px 15px 5px 15px;">
+        <span style="padding-left:15px; display:inline-block; line-height:1.2em;">
+        삼성카드 홈페이지에서 ⓔ메일명세서를 신청하시면 100% 당첨 혜택을<br/>
+          드립니다.</span><br/>
+        <span style="margin-top:10px; display:inline-block;">
+        <b>ㆍ응모방법</b> : 100% 당첨 헤택 제공 대상자 회원 중 마이홈 로그인 후</span> <br/>
+        <span style="padding-left:80px;">응모를 해주시면 됩니다.</span>
+
+        <div style="text-align:center; background-color:#ffffff;  width:435px;">
+<img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" />
+        </div>
+        </div>
+       <div style="width:435x; text-align:left;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+       <div style="text-align:right; padding:6px 3px 0px 0px;">
+   <%if( p_link.equals("N") ){%>
+       <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%}else{ %>
+       <a href="javascript:submit();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%} %>
+    </div>
+</body>
+</html>
+<%}else if(p_gubun.equals("8")){%>
+<!--
+#################################################################
+##8888888888888888888888888888888888888888888888888888888888888##
+#################################################################
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>온라인 행복~ 만점! 100% 당첨 이벤트 - 삼성카드</title>
+<script type="text/javascript" language="javascript">
+function submit(){
+	window.opener.tabSubmit("/hp/im/ms/crn/NHPIMMSCRN001JSP.do?web_email_offer_yn="<%=web_email_offer_yn%>",window.opener.form");
+	window.top.close();
+}
+</script>
+</head>
+<body topmargin="0" leftmargin="0">
+    <div style="background-color:#a3c8ff; width:470px; padding:15px 15px 10px 15px;">
+
+        <div style="background:url(/images/mh/20100205/w_bg.gif) ; width:435px; margin:0 auto;
+        font:12px dotum; color:#666666; padding:15px 15px 5px 15px;">
+        <span style="padding-left:15px; display:inline-block; line-height:1.2em;">삼성카드 홈페이지에서 웹멤버 정회원 가입 및 ⓔ메일명세서를 신청하시면<br/>
+        100% 당첨 혜택을 드립니다.</span><br/>
+        <span style="margin-top:10px; display:inline-block;">
+        <b>ㆍ응모방법</b> : 100% 당첨 헤택 제공 대상자 회원 중 마이홈 로그인 후</span> <br/>
+        <span style="padding-left:80px;">응모를 해주시면 됩니다.</span>
+        <div style="text-align:center; background-color:#ffffff;  width:435px;">
+<img src="/images/mh/20100205/s_1.gif" alt="S.InfoCare 3개월 무료" /><img src="/images/mh/20100205/s_2.gif" alt="SMS 문자 월 50건 3개월 무료" /><img src="/images/mh/20100205/s_3.gif" alt="서비스포인트 2,000점" />
+        </div>
+        </div>
+       <div style="width:435x; text-align:left;"><img src="/images/mh/20100205/c_bottom.gif" alt="" /></div>
+       <div style="text-align:right; padding:6px 3px 0px 0px;">
+  <%if( p_link.equals("N") ){%>
+       <a href="javascript:window.close();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%}else{ %>
+       <a href="javascript:submit();"><img src="/images/mh/20100205/btn_check.gif" alt="확인" border="0" /></a></div>
+  <%} %>
+    </div>
+</body>
+</html>
+<%}%>

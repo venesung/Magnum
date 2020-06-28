@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+<title>삼성카드</title>
+
+</head>
+<body >
+	<table summary="순번, 사업자번호, 업체명, 업종, 연락처, 상태, 접수일 등을 볼 수 있는 게시판입니다.">
+		<caption>가맹점 정보 확인</caption>
+		<thead>
+					<tr>
+						<th scope="col" class="cell_l10">&nbsp;순번  <%=vos.gettCnt() %></th>
+						<th scope="col">&nbsp;사업자번호</th>
+						<th scope="col">&nbsp;업체명</th>
+						<th scope="col">&nbsp;업종</th>
+						<th scope="col">&nbsp;연락처</th>
+						<th scope="col">&nbsp;상태</th>
+						<th scope="col">&nbsp;접수일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<c:forEach var="result" items="<%=vos.getListPage() %>" varStatus="status">
+						<tr>
+							<td class="cell_l10 t_no">${status.count}</td>
+							<td class="t_no">${result.businessNo }</td>
+							<td>${result.mallName }</td>
+							<td>${result.businessType}</td>
+							<td class="t_no">${result.phoneNo1}-${result.phoneNo2}-${result.phoneNo3}</td>
+							<td class="t_no">${result.processCode}</td>
+							<td>${result.registDate}</td>
+						</tr>
+					</c:forEach>
+					<!-- //loop -->
+				</tbody>
+	</table>
+
+</body>
+</html>

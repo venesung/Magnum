@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div class="d_card_list">
+	<table border='1' summary="카드 안내 및 신청 표로 순번, 카드명, 명세, KIND_CODE로 구성되어 있습니다.">
+    	<caption>카드 안내 및 신청</caption>
+		<tr style="background:#DCDCDC"><td scope="col">순번</td><td scope="col">카드명 (카드명 순)</td><td scope="col">명세</td><td scope="col">KIND_CODE</td></tr>
+		<%
+			for(int i=0 ;i <list.size();i++){
+				NHPIMCDCPS001VO vo = (NHPIMCDCPS001VO)list.get(i);
+		%>
+		<tr><td width="10"><%=i+1 %></td>
+            <td width="30%"><a href="javascript:goView('<%=vo.getKindCode() %>');"><%=vo.getKindName() %></a></td>
+		    <td width="*"><%=vo.getCardDesc() %></td>
+		    <td width="50"><%=vo.getKindCode() %></td>
+		</tr>
+		<%	} %>
+	</table>
+</div>
+
+<!--// 여기까지 끝 -->
+</body>
+</html>
+
+

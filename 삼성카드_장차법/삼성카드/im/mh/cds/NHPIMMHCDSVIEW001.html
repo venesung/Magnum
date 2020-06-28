@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual 100407 -->
+				<div class="top_visual">
+					<h1 class="none">카드대금결제서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3955_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+                            <li><a href="javascript:move1();">카드대금결제서비스안내</a></li>
+                            <li class="on"><a href="javascript:move2();">카드대금결제서비스신청</a></li>
+						</ul>
+					</div>
+
+					<div class="top_step_settlement top_step_settlement01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>이용가능금액 및 카드선택</strong></li>
+							<li>신청내용입력</li>
+							<li>약관동의</li>
+							<li>확인 후 서비스신청</li>
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_limit_yourtotal.png" alt="고객님의 이용가능금액을 확인 하세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span><strong class="t_point">${username}</strong> 회원님의 이용가능금액은 다음과 같습니다.</span>
+						</div>
+
+						<table class="dtable01" summary="현금서비스, 카드론의 이용가능금액과 행사적용금액,이자율(적용이자율)을 확인할수 있는 게시판입니다.">
+						<caption>이용가능금액 및 이자율</caption>
+						<!--colgroup>
+							<col width="20%" />
+							<col width="40%" />
+							<col width="40%" />
+						</colgroup-->
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 cell_bg riline">구분</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+								<th scope="col" class="cell_r10">행사적용금액</th>
+								<th scope="col" class="cell_r10">이자율(적용이자율)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 cell_bg riline" scope="row">현금서비스</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0%</td>
+							</tr>
+							<tr>
+								<td class="cell_l10 cell_bg riline" scope="row">카드론</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<tr>
+								<td class="cell_l10 cell_bg riline" scope="row">카드론</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<!-- //loop -->
+
+						</tbody>
+						</table>
+						
+						<div class="btnset">
+							<div class="btnl">
+								<p>회원님께서는 대출한도상향 행사대상입니다. 현재 행사적용금액으로 이용이 가능하며  2012년 01월 01일까지
+								 <br/>이용하시면 행사적용한도로 대출한도를 상향시켜 드립니다.<br/>단, 행사기간 내 미사용시 기존 한도로 복원됩니다.</p>
+							</div>
+						</div>
+						
+						<div class="btnset">
+							<div class="btnl">
+								<p>삼성카드론 이자율은 상환방식 및 대출기간에 따라 일부 달라질 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_select_carduse.png" alt="사용하실 카드를 선택하여 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>회원님께서 가지고 계신 삼성카드 중 서비스가 가능한 카드는 아래와 같습니다.</span>
+						</div>
+
+
+						<table class="dtable01" summary="카드명,카드번호,CVC번호로 구성된 카드정보를 선택하는 게시판입니다.">
+						<caption>사용하실 카드 선택</caption>
+						<colgroup><col width="*" /><col width="250" /><col width="90" /><col width="55" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드명</th>
+								<th scope="col">카드번호</th>
+								<th scope="col">CVC번호</th>
+								<th scope="col">선택 </th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						
+						
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<!-- td class="t_no"><%=starCardNo16.get(i)%></td-->
+								<td class="cell_400">
+
+								<span class="input_cardno">XXXX-XXXX-
+								<input name="cardNo1" type="text" class="txt" value="" title="카드번호 세번째 네자리"
+								style="ime-mode:disabled" maxlength="4"
+								/>&nbsp;-&nbsp;
+								<input name="cardNo2" type="text" class="txt" value="" title="카드번호 네번째 네자리"
+								style="ime-mode:disabled" maxlength="4"
+								/>
+								</span>
+
+								<!-- input name="cardNo1" type="text" class="txt" value="" title="카드번호 세번째 네자리"
+										onkeyup="chkFocus(4, this.value.length, 'cardNo2')"
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled"
+										maxlength="4" readOnly/>&nbsp;-&nbsp;
+								<input name="cardNo2" type="text" class="txt" value="" title="카드번호 네번째 네자리"
+								onkeyup="chkFocus(4, this.value.length, 'cardPwd')"
+								onkeypress="javascipt:checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								maxlength="4" readOnly/>
+								<span class="t_desc04 ml10">(카드 번호 뒤 8자리)</span-->
+								</td>
+
+								<td><p><span class="input_3char">
+								<input name="CVCNO" type="password" maxlength="3" class="txt" value="" title="CVC번호"
+								style="ime-mode:disabled"
+								/></span></p></td>
+                                <td><a href="#" class="btn btn_s_white" title="00카드 선택"><span>확인</span></a></td>
+							</tr>
+							<!-- //loop -->
+		            		<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<!-- td class="t_no"><%=starCardNo16.get(i)%></td-->
+								<td class="cell_400">
+
+								<span class="input_cardno">XXXX-XXX
+								<input name="cardNo1" type="text" class="txt" value="" title="카드번호 세번째 네자리"
+								style="ime-mode:disabled" maxlength="3"
+								/>&nbsp;-&nbsp;
+								<input name="cardNo2" type="text" class="txt" value="" title="카드번호 네번째 네자리"
+								style="ime-mode:disabled" maxlength="5"
+								/>
+								</span>
+								</td>
+
+								<td><p><span class="input_3char">
+								<input name="CVCNO" type="password" maxlength="3" class="txt" value="" title="CVC번호"
+								style="ime-mode:disabled"
+								/></span></p></td>
+                                <td><a href="#" class="btn btn_s_white" title="00카드 선택"><span>확인</span></a></td>
+							</tr>
+							<!-- //loop -->
+
+						</tbody>
+						</table>
+
+						<dl class="ft_cvc_view">
+							<dt class="t_black conts_hidden"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03 conts_hidden">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

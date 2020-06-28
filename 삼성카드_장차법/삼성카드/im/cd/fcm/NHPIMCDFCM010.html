@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<!-- layer_pop_content -->
+<div class="pop_l_position pop_l_wrap_mix">
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert">
+		<div class="pop_l_wrap" style="height:50px;"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p>
+			<p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+			<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopup();" value="레이어닫기" title="가족카드 해외이용 할부전환 신청 레이어 닫기" />
+
+	<form name="form" method="post">
+		<input type="hidden" name="receive_date" value="<%=RECEIVE_DATE %>" />
+	  	<input type="hidden" name="sale_no" value="<%=SALE_NO%>" />
+		<input type="hidden" name="reqday" value="<%=F_REQDAY %>" />
+		<input type="hidden" name="family_num" value="<%=FAMILY_NUM %>" />
+		<input type="hidden" name="CARD_NO" value="<%=CARD_NO %>" />
+		<input type="hidden" name="used_date" value="<%=USED_DATE %>" />
+		<input type="hidden" name="city" value="<%=CITY %>" />
+		<input type="hidden" name="used_amount" value="<%=USED_AMOUNT %>" />
+		<input type="hidden" name="currency" value="<%=CURRENCY %>" />	
+		<input type="hidden" name="receive_amount" value="<%=RECEIVE_AMOUNT %>" />
+		<input type="hidden" name="request_amount" value="<%=REQUEST_AMOUNT %>" />
+		<input type="hidden" name="f_settle" value="<%=F_SETTLE %>" />
+		<input type="hidden" name="settle_dateno" value="<%=SETTLE_DATENO %>" />
+		<input type="hidden" name="country" value="<%=COUNTRY%>" />
+		
+		<!-- top_visual -->
+		<div class="top_visual">
+			<h1><img src="/images/cd/h1_chn_install_fam.png" alt="가족카드 해외이용 할부전환 신청입니다" /></h1>
+		</div>
+		
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<div class="step"><img src="/images/cd/step_chn_install_fam01.png" alt="할부개월수선택" />
+				<!--ol class="none">
+					<li><abbr>현재단계</abbr><strong>할부개월수선택</strong></li>
+					<li>신청내역확인</li>
+					<li>할부전환완료</li>
+				</ol-->
+			</div>
+		</div>
+	
+		
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/cd/h2_chn_install_fam01.png" alt="할부전환 안내입니다" /></h2>
+			<div class="content_block_inner">
+				<div class="tb_exp clfix"><span class="fl_left"><strong class="t_black">${USERNAME}</strong> 고객님의 해외에서 사용하신 <strong class="t_black">일시불 매출을 할부매출</strong>로 전화 신청하실 수 있습니다.</span></div>
+				<div class="line_lgray_p0">&nbsp;</div>
+				<ol class="list_no01">
+					<li><p>해외할부매출에는 국내할부매출 수수료율과 동일한 할부 수수료율이 적용되며, 회원님에 따라 할인<br />적용될 수 있습니다. 서비스 가능시간은 <strong class="t_black">월~금 08:30~20:30</strong> 까지입니다.(토/일/공휴일 제외)<br />(할부수수료=할부잔액 X 수수료율 / 12 )</p></li>
+					<li><p>할부매출은 건별 금액 <span class="t_point_org">5만원 이상 일시불 매출</span>에만 적용되며, <span class="t_point_org">결제일 2일이전</span>(영업일수 기준)까지 할부신청<br />가능합니다. (해외 현금서비스, 법인카드, 리볼빙 카드는 할부전환 대상 카드에서 제외)</p></li>
+					<li><p>할부매출 등록 후 등록 당일에만 할부개월수 수정, 할부신청 취소 및 재등록이 가능합니다.(익일 처리불가)</p></li>
+				</ol>
+			</div>
+		</div>
+		
+		<!-- content_block -->
+		<div class="content_block clfix">
+			<h2><img src="/images/cd/h2_chn_install_fam02.png" alt="할부전환 신청 내역입니다" /></h2>
+			<div class="content_block_inner">
+				<div class="d_easy">
+					<table class="dtable01" summary="이용일자, 사용지역, 이용금액, 청구금액, 요청개월수, 적용수수료율, 1회차 청구일을 알 수 있는 게시판입니다">
+                    <caption>할부전환 신청 내역</caption>
+					<colgroup><col width="12%" /><col width="25%" /><col width="14%" /><col width="14%" /><col width="12%" /><col width="12%" /><col width="12%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10a">이용일자</th>
+							<th scope="col" class="cell_l10">사용지역</th>
+							<th scope="col" class="cell_r10">이용금액</th>
+							<th scope="col" class="cell_r10">청구금액</th>
+							<th scope="col">요청개월수</th>
+							<th scope="col">적용수수료율</th>
+							<th scope="col" class="cell_r10">1회차청구일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cell_l10a"><%=StringUtil.formatStrDate(USED_DATE, "yyyy.mm.dd")%></td>
+							<td class="cell_l10"><span class="nobreak_nolink w150"><%=COUNTRY%><br/><%=CITY %></span></td>
+							<td class="cell_r10"><%=USED_AMOUNT %>(<%=CURRENCY %>)<br /><%=RECEIVE_AMOUNT %>(USD)<br /></td>
+							<td class="cell_r10"><%=StringUtilEx.moneyFormat(REQUEST_AMOUNT)%></td>
+							<td>
+								 <select name="ratedata" onchange="calc()" id="select" title="요청개월수 선택">
+								 <%--
+								 <% if("".equals(MAXMONTH)) MAXMONTH = "12";
+								 	int maxMonth = Integer.parseInt(MAXMONTH);
+								 %>
+								 
+								 <% for(int i=2;i<maxMonth;i++){ %>
+									<option value="<%=i%>"><%=i %> 개월</option>
+								 <%} %>
+								  --%>
+									<option value="002">2 개월</option>
+									<option value="003">3 개월</option>
+									<option value="004">4 개월</option>
+									<option value="005">5 개월</option>
+									<option value="006">6 개월</option>
+									<option value="007">7 개월</option>
+									<option value="008">8 개월</option>
+									<option value="009">9 개월</option>
+									<option value="010">10 개월</option>
+									<option value="011">11 개월</option>
+									<option value="012">12 개월</option>
+			                       	<option value="013">13 개월</option>
+			                       	<option value="014">14 개월</option>
+			                       	<option value="015">15 개월</option>
+			                       	<option value="016">16 개월</option>
+			                       	<option value="017">17 개월</option>
+			                       	<option value="018">18 개월</option>
+			                       	<option value="019">19 개월</option>
+			                       	<option value="020">20 개월</option>
+			                       	<option value="021">21 개월</option>
+			                       	<option value="022">22 개월</option>
+			                       	<option value="023">23 개월</option>
+			                       	<option value="024">24 개월</option>
+								</select>
+							</td>
+							<td>
+								<!-- 20130411 웹접근성(장차법)  수정 -->
+								<!-- <input type="text" class="txt" value="" style="width:50px" name="commission" onfocus="blur()" title="적용 수수료율" />% -->
+								<input type="text" class="txt" value="" style="width:50px" name="commission" title="적용 수수료율" />%
+							</td>
+							<td class="cell_r10"><%=StringUtil.formatStrDate(F_REQDAY,"mm.dd") %></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+		
+				<!-- btn -->
+				<div class="btnr">
+                    <a id="NHPIMCDFCM010_L01" href="javascript:clickButton('NHPIMCDFCM010_L01');" class="btn btn_blue" title="새창"><span>신청</span></a>
+                    <a href="javascript:fnCancel();" class="btn btn_white"><span>취소</span></a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div></div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

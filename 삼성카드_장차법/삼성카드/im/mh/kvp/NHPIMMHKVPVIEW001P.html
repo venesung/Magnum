@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>왕대박3 을 잡아라 승인번호 등록 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common-hp-util.js"></script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common-btn-check.js"></script>
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+function gogo() {
+	if(lockBtn('lockTarget')) {
+
+	<%if(approve_no == null){%>
+		alert("승인번호를 확인하세요");
+		unlockBtn('lockTarget');
+		return;
+	<%}%>
+	<%if(approve_amount == null){%>
+		alert("승인금액을 확인하세요");
+		unlockBtn('lockTarget');
+		return;
+	<%}%>
+	<%if(card_no == null || cardNoEnc == null){%>
+		alert("카드번호를 확인하세요");
+		unlockBtn('lockTarget');
+		return;
+	<%}%>
+
+	if (document.insertForm.cardNo1.value == "" || document.insertForm.cardNo2.value == ""
+		|| document.insertForm.cardNo3.value == "" || document.insertForm.cardNo4.value == "") {
+		alert("카드번호를 입력하세요.");
+		document.insertForm.cardNo1.focus();
+		unlockBtn('lockTarget');
+		return;
+	}
+
+	if (document.insertForm.cardNo1.value.length != "4" || document.insertForm.cardNo2.value.length != "4"
+		|| document.insertForm.cardNo3.value.length != "4" || document.insertForm.cardNo4.value.length < 1) {
+		alert("카드번호가 잘못 입력하셨습니다.");
+		document.insertForm.cardNo1.focus();
+		unlockBtn('lockTarget');
+		return;
+	}
+
+	if (document.insertForm.APPROVE_NO.value == "") {
+		alert("승인번호를 입력하세요.");
+		document.insertForm.APPROVE_NO.focus();
+		unlockBtn('lockTarget');
+		return;
+	}
+
+	if (document.insertForm.APPROVE_NO.value.length != 8) {
+		alert("승인번호를 잘못 입력하셨습니다.\r\n다시 확인해주세요.");
+		document.insertForm.APPROVE_NO.focus();
+		unlockBtn('lockTarget');
+		return;
+	}
+
+	if (!checkApproveNo(insertForm.APPROVE_NO.value)) {
+		alert("승인번호에 3이 1개이상 나오신 경우에만 등록이 가능합니다.");
+		document.insertForm.APPROVE_NO.focus();
+		unlockBtn('lockTarget');
+		return;
+	}
+
+	if (document.insertForm.APPROVE_AMMOUNT.value == "") {
+		alert("매출금액을 입력하세요.");
+		document.insertForm.APPROVE_AMMOUNT.focus();
+		unlockBtn('lockTarget');
+		return;
+	} else {
+		if (eval(document.insertForm.APPROVE_AMMOUNT.value) < 20000) {
+			alert("매출금액이 2만원이상일 경우에만 등록이 가능합니다.");
+			document.insertForm.APPROVE_AMMOUNT.focus();
+			unlockBtn('lockTarget');
+			return;
+		}
+	}
+	ScardSubmit(insertForm);
+	}
+}
+
+function checkApproveNo(approveNo) {
+	var count = 0;
+
+	for (var i=0;i<approveNo.length;i++) {
+		if (approveNo.charAt(i) == '3') {
+			count++;
+		}
+	}
+
+	if (count >=1) {
+		return true;
+	}
+
+	return false;
+}
+
+function chkNum(that) {
+	var regNum =/^[.0-9]+$/;
+
+	if(that.value != "") {
+		if(!regNum.test(that.value)) {
+			alert ("숫자만 입력가능합니다. ");
+			that.value="";
+			that.focus();
+			return false;
+		}
+	}
+    return true;
+}
+
+function shiftFocus(that, that2, len) {
+	if (that.value.length == len) {
+		// 20130411 웹접근성(장차법)  수정
+		//that2.focus();
+	}
+}
+</script>
+</head>
+
+<body>
+
+<form name="insertForm" method="post" action="/hp/im/mh/kvp001.do?method=moveForm003" autocomplete="off" onSubmit="return ScardSubmit(this);">
+<input type="hidden" name="input" />
+<input type="hidden" name="CARD_NO" value="<%=card_no%>" />
+<input type="hidden" name="CARD_NO_ENC" value="<%=cardNoEnc%>" />
+<input type="hidden" name="APPROVE_NO2" value="<%=approve_no%>" />
+<input type="hidden" name="APPROVE_AMMOUNT2" value="<%=approve_amount%>" />
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1 class="al_center"><img src="/images/mh/pop_h1_king3_regnum_write.png" alt="왕대박3 을 잡아라 승인번호 등록" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_king3_regnum_write.png" alt="왕대박3 을 잡아라 승인번호 등록" /></h1>
+	</div>
+	
+	
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<!-- 팝업 콘텐츠 -->
+		<div class="pop_l_wrap">
+			<p class="al_center">아래의 정보를 확인하시고, 확인 버튼을 클릭하시면 왕대박 3 <br />
+			매출전표 승인번호 등록이 완료됩니다.</p>
+
+			<table class="dtable02 dtable_inputfield" summary="카드번호, 승인번호, 매출금액을 입력하는 게시판입니다.">
+			<caption>왕대박3 을 잡아라 승인번호 입력</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드번호</p></th>
+					<td><p>
+						<span class="input_cardno">
+						<input name="cardNo1" type="text" maxlength="4" class="txt" title="카드번호 첫째 네자리" value="<%=maskCardNo.substring(0,4) %>" id="label_card_no01" 
+						onkeypress="checkTypes(this, 'NUMB');"
+						onblur="checkTypesOnBlur(this, 'NUMB');"
+						style="ime-mode:disabled"
+						disabled="disabled"
+						onkeyup="shiftFocus(this,insertForm.cardNo2,4);chkNum(this);" /> -
+						<input name="cardNo2" type="text" maxlength="4" class="txt" title="카드번호 두번째 네자리" value="<%=maskCardNo.substring(4,8) %>" id="label_card_no02"
+						onkeypress="checkTypes(this, 'NUMB');"
+						onblur="checkTypesOnBlur(this, 'NUMB');"
+						style="ime-mode:disabled"
+						disabled="disabled"
+						onkeyup="shiftFocus(this,insertForm.cardNo3,4);chkNum(this);" /> -
+						<input name="cardNo3" type="text" maxlength="4" class="txt" title="카드번호 세번째 네자리" value="<%=maskCardNo.substring(8,12) %>" id="label_card_no03"
+						onkeypress="checkTypes(this, 'NUMB');"
+						onblur="checkTypesOnBlur(this, 'NUMB');"
+						style="ime-mode:disabled"
+						disabled="disabled"
+						onkeyup="shiftFocus(this,insertForm.cardNo4,4);chkNum(this);" /> -
+						<input name="cardNo4" type="text" maxlength="4"  class="txt" title="카드번호 네번째 네자리" value="<%=maskCardNo.substring(12,length)%>" id="label_card_no04"
+						onkeypress="checkTypes(this, 'NUMB');"
+						onblur="checkTypesOnBlur(this, 'NUMB');"
+						style="ime-mode:disabled"
+						onkeyup="chkNum(this);" disabled="disabled" />
+
+						</span>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>승인번호</p></th>
+					<td><p><input name="APPROVE_NO" value="<%=approve_no%>"
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					onkeyup="chkNum(this);" maxlength="8" type="text" class="txt" value="" id="label_reg_no" title="승인번호 입력"
+					disabled="disabled"
+					/></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>매출금액</p></th>
+					<td><p><input name="APPROVE_AMMOUNT" value="<%= approve_amount %>" maxlength="12"
+					onkeypress="checkTypes(this, 'NUMB');"
+					onblur="checkTypesOnBlur(this, 'NUMB');"
+					style="ime-mode:disabled"
+					onkeyup="chkNum(this);" type="text" class="txt" value="" id="label_sellingmoney" title="매출금액 입력"
+					disabled="disabled" /></p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<p class="btnc">
+            <a href="javascript:gogo();" id="lockTarget"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+            <a href="javascript:close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>
+</body>
+</html>

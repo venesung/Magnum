@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>캐시백 이벤트 - 삼성카드</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript">
+function goCashBack(){
+
+	var resultMesg = document.evtFrm.resultMsg.value; 
+	var loginYN = document.evtFrm.loginYN.value;
+
+	if( loginYN == "N")
+	{
+        parent.scardLogin('/hp/im/et/evt.do?method=getEventDetail&amp;cmsSeq=9807','eventLogin');
+		return;
+	}
+			
+	if( resultMesg != "")
+	{
+		alert(resultMesg);
+		parent.submit_eventLog(); 
+	}
+	
+    document.evtFrm.submit();
+    parent.submit_eventLog(); 
+
+    return;
+  }
+</script>
+<%
+	String resultMsg = (String) request.getAttribute("resultMsg");
+	String loginYN = (String) request.getAttribute("loginYN");
+	
+%>
+</head>
+
+<body>
+<form id="evtFrm" name="evtFrm" action="/hp/im/et/evt003.do?method=applyCashBack" method="post">
+	<input name="resultMsg" type="hidden" value="<%=resultMsg%>"/>
+	<input name="loginYN" type="hidden" value="<%=loginYN%>"/>
+</form>
+<table width="712" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="/images/et/cashback_event.jpg" width="712" height="854" border="0" usemap="#Map" alt="해외에서도 역시 삼성카드! $200이용하면 $20이 캐시백!" /></td>
+  </tr>
+</table>
+
+<p><map name="Map" id="Map">
+    <area shape="rect" coords="251,504,438,572" href="javascript:goCashBack();" alt="응모하기" />
+  </map>
+</p>
+</body>
+
+
+</html>

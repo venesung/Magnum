@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_3_gift.png" alt="삼성카드 3+ 이용내역입니다." /></h1>
+</div>
+
+
+	
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/mh/h2_3_gift01.png" alt="서비스 이용내역을 조회하세요" /></h2>
+		<div class="content_block_inner">
+			<table class="dtable02 dtable_inputfield" summary="서비스 이용내역을 조회하세요">
+			<caption>카드 이용내역 조회</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드선택</p></th>
+					<td><p>
+						<select name="select_card" title="카드종류 선택" style="width:370px">
+							<option>00</option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>최초발급월</p></th>
+					<td><p id="fst_isu_dt"></p></td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<div class="btnr">
+				<a id="btn_search" href="#" class="btn btn_blue"><span>조회</span></a>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- 조회버튼 클릭시 기프트내역조회 출력 -->
+	<!-- content_block -->
+	<div id="result_area" class="content_block content_block clfix" style="display:;">
+		<h2><img src="/images/mh/h2_3_gift02.png" alt="삼성카드 3+ 이용내역을 조회하세요" /></h2>	
+		<div class="content_block_inner">	
+			<p class=" t_point">최초발급일자 기준으로 다음년도 발급월 말일까지 받은 기프트 내역입니다.</p>
+			<table class="dtable01 dtable01_bill mt10" summary="적립년월, 연차, 서비스명, 적립헤택, 적립금액, 이용실적, 상세보기로 구성된 적립 연도별 조회">
+			<caption>적립 연도별 조회</caption>
+			<colgroup><col width="10%" /><col width="10%" /><col width="32%" /><col width="10%" /><col width="13%" /><col width="13%" /><col width="12%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">적립년월</th>
+					<th scope="col">연차</th>
+					<th scope="col">서비스명</th>
+					<th scope="col">적립혜택</th>
+					<th scope="col" class="cell_r10">적립금액</th>
+					<th scope="col" class="cell_r10">이용실적</th>
+					<th scope="col">상세보기</th>
+				</tr>
+			</thead>
+			
+			<tbody id="list_result">
+			</tbody>
+			</table>
+			
+	    	<!-- btn -->
+			<div class="paginate">
+				<div class="paging">
+					<a id="pre" href="javascript:getMoreList('prePage601');" 	class="btn btn_s_white"><span>이전</span></a>
+					<a id="next" href="javascript:getMoreList('nextPage601');" 	class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>	
+			
+			<p class="mt15 t_desc04 "><span class="t_desc">※</span> 카드 발급 후 받은 웰컴기프트는 0차, 1년차 이후 받은 기프트는 1차 입니다.</p>
+		</div>
+	</div>
+</form>			
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/ms/h1_member_info.png" alt="회원관련 안내입니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+					<div class="tab01 w810">
+						<ul id="tab">
+                            <li class="<%="1".equals(tabIndex)?"on":"" %>"><a href="javascript:goView('1')">공인인증서 안내</a></li>
+                            <li class="<%="2".equals(tabIndex)?"on":"" %>"><a href="javascript:goView('2')">사용가능 인증서 안내</a></li>
+                            <li class="<%="3".equals(tabIndex)?"on":"" %>"><a href="javascript:goView('3')">로그인 주의사항</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!--cms_content시작-->
+
+				<%
+				String url = "/cms_content/hp/im/ms/lgi/NHPIMMSLGIVIEW009C1.html";
+				if("1".equals(tabIndex)) 			 url = "/cms_content/hp/im/ms/lgi/NHPIMMSLGIVIEW009C1.html";
+				else if("2".equals(tabIndex))		 url = "/cms_content/hp/im/ms/lgi/NHPIMMSLGIVIEW009C2.html";
+				else if("3".equals(tabIndex))		 url = "/cms_content/hp/im/ms/lgi/NHPIMMSLGIVIEW009C3.html";
+				%>
+
+				<cms:include page="<%= url%>" flush="false" />
+
+				<!--cms_content끝-->
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

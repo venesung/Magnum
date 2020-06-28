@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_family_limitcard01.png" alt="가족카드 이용한도는" />
+							<span class="ico_no ico_no_thingray05"><em>5</em></span>
+					<img src="/images/mh/h1_family_limitcard02.png" alt="원입니다." /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					<h2><img src="/images/mh/h2_family_limit01.png" alt="카드 이용한도를 조회하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030201');" ><a href="#">개인카드</a></li>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030202');"  ><a href="#">법인카드</a></li>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030203');"  ><a href="#">체크카드</a></li>
+								</ul>
+							</div>
+						</div>						
+						
+						<span class="selectbox_r_txt">(개인카드, 법인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+
+						<div class="line_lgray">&nbsp;</div>
+						<!-- 					
+						<div class="tb_exp clfix mt20">
+							<span>&nbsp;</span>
+							<span class="ab_tr t_desc03"><a href="#" class="btn btn_s_gray"><span>국문보기</span></a><a href="#" class="btn btn_s_white"><span>ENGLISH</span></a></span>
+						</div>
+						 -->
+						<table class="dtable02 dtable_inputfield" summary="카드 이용한도 조회를 위해 사용자와 카드를 선택하는 게시판입니다.">
+						<caption>사용자/카드 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+							
+								<th scope="row"><p>사용자/카드선택</p></th>
+								<td><p>
+									<div id="divSelectUser" style="display:block;">
+										<select title="사용자 선택" style="width:100px" id="s_selectUser" name="s_selectUser" onchange="onChangeUser(this.value);">
+											<option value="self" >본인</option>
+										</select>
+									</div>
+									<div id="divSelectCard" style="display:block;">
+										<select title="카드종류 선택" style="width:360px" id="s_selectCard" name="s_selectCard" onchange="onChangeCard(this.value);">
+											<option>00</option>									
+										</select>
+									</div>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+                            <a href="javascript:viewHando();" class="btn btn_blue"><span>조회</span></a>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+			<div id="divHando" style="display:block;">				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_family_limit02.png" alt="가족카드 이용한도입니다" /></h2>
+					<div class="content_block_inner">
+					
+						<table class="dtable01 dtable01_bill" summary="구분별 한도금액, 이용하신금액, 이용가능금액을 확인할 수 있는 게시판입니다.">
+						<caption>가족 카드이용한도</caption>
+						<colgroup><col width="10%" /><col width="15%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+							</tr>
+						</thead>
+						<tbody>				
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">카드이용한도</th> 
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">할부</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>	
+							
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림.  -->
+							<tr>
+								<th scope="rowgroup" rowspan="2" class="cell_l10 cell_bg">해외</th>
+								<th scope="row" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원(USD 0)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원(USD 0)</td>
+							</tr>
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림.  -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goHandoAdj();" class="btn btn_white"><span>이용 한도조정 &gt;</span></a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>	

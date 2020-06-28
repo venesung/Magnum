@@ -1,0 +1,1214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LifeStyle Service 쇼핑 - 삼성카드 쇼핑</title>
+<base href="http://devshoppingmall.samsungcard.com:10080" />
+<link rel="stylesheet" type="text/css" href="/css/base.css?123" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_saveshop.css" />
+<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/slider.js"></script>
+<script type="text/javascript" src="/js/ec/common/quick.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/goods.js"></script>
+<script type="text/javascript" src="/js/mbox.js"></script>
+<!-- 2013.02.24 플래시교체 추가 start -->
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+<!-- 2013.02.20 플래시교체 추가 start -->
+samsungcardUIComponent.fnSlider({
+	slider : '.mvt_asp1',
+	time : 5000, // 자동 롤링 시간 : 기본값 2초
+	menu : false
+});
+samsungcardUIComponent.fnSlider({
+	slider : '.mvt_asp2',
+	time : 3000, // 자동 롤링 시간 : 기본값 2초
+	menu : false
+});
+<!-- 2013.02.20 플래시교체 추가 end -->
+	navigation.LNB2({
+		ElementObjectName : '.mv_cate_hei ol',
+		Gnbtime: 300
+	});
+});
+</script>
+<!-- 2013.02.24 플래시교체 추가 end -->
+<script type="text/javascript">
+//<![CDATA[
+// 롤링배너
+    var rollingz    =   function(){
+        var bools       =   true;
+        var interval    =   0;
+        var btn_bannerz, img_bannerz, banner_length;
+        var nowBanner   =   0;
+
+        var init    =   function(){
+            btn_bannerz =   document.getElementById('btn_bannerz').getElementsByTagName('img');
+            img_bannerz =   document.getElementById('img_bannerz').getElementsByTagName('li');
+
+            if( btn_bannerz.length !== img_bannerz.length ){
+                alert("버튼 갯수와 배너이미지의 갯수가 일치하지 않습니다"); return false;
+            }
+
+            for( var i = 0 ; i < btn_bannerz.length ; i++ ){
+                btn_bannerz[i].onmouseover  =   function(){
+                    rollingz.pause();
+                    changeBtn(this);
+                }
+                btn_bannerz[i].onmouseout   =   rollingz.play;
+            }
+
+
+            banner_length   =   btn_bannerz.length
+
+            for( var i = 0 ; i < banner_length ; i++ ){
+                img_bannerz[i].style.cursor =   "pointer";
+                img_bannerz[i].onmouseover  =   rollingz.pause;
+                img_bannerz[i].onmouseout   =   rollingz.play;
+            }
+
+            loopTimer();
+        };
+
+        var changeBtn   =   function(obj){
+            for ( var i = 0 ; i < btn_bannerz.length ; i++ )    {
+                if(btn_bannerz[i] === obj){
+                    btn_bannerz[i].src  =   "/images/sp/ss/num_0" + (i+1) + "_on.gif";
+                    changeBanner(img_bannerz[i]);
+                }else{
+                    btn_bannerz[i].src  =   "/images/sp/ss/num_0" + (i+1) + "_off.gif";
+                }
+            }
+        };
+
+        var changeBanner    =   function(obj){
+            for ( var i = 0 ; i < img_bannerz.length ; i++ )    {
+                if(img_bannerz[i] === obj){
+                    img_bannerz[i].style.display    =   "";
+                }else{
+                    img_bannerz[i].style.display    =   "none";
+                }
+            }
+        };
+
+        var loopTimer   =   function(){
+
+            var innerFunc   =   function(){
+
+                if(bools) doChange();
+
+                setTimeout(innerFunc, interval);
+            };
+
+            if(bools) setTimeout(innerFunc, 0);
+        };
+
+        var doChange    =   function(){
+
+            if(nowBanner > (banner_length-1))   nowBanner   =   0;
+
+            changeBanner(img_bannerz[nowBanner]);
+            changeBtn(btn_bannerz[nowBanner]);
+
+            nowBanner   =   nowBanner + 1;
+        };
+
+        return {
+            start   :   function( opt ){
+                interval    =   opt.interval;
+
+                init();
+            },
+            pause   :   function(){
+                bools   =   false;
+            },
+            play    :   function(){
+                bools   =   true;
+            }
+        };
+    }();
+
+	function FFn_EmbedSaveShopLnb(){
+		var flashVars = {};
+		flashVars.XMLURL = "/ec/sp/ss/index.do?method=selectSSMainAllCategoryList";
+		flashVars.fontURL = "/flash/gr/YGO550.swf";
+		flashVars.goLink = "lnbGoLink"; 
+		flashVars.reSizeFn= "changeFlashLng";
+		
+		embedSWF( "SaveShopLnbLayer", "/flash/sp/saveShopLnb.swf", "183", "550", { id:"SaveShopLnb" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars );
+	}
+	
+	function changeFlashLng(dataObj){
+		var swfmovie = document.getElementById( dataObj.movieid );
+	
+	 	if(swfmovie){
+	  		if(dataObj.wid != null){
+				swfmovie.setAttribute("width", Number(dataObj.wid)+1);
+	  		}
+	
+	  		if(dataObj.hei != null){
+				swfmovie.setAttribute("height", dataObj.hei);
+	  		}
+	 	}
+	}
+	
+	function lnbGoLink(dataObj){
+		// dataObj.link
+		// dataObj.tar	
+		location.href = "<%=ssPath%>" + dataObj.link +"&LIGB11";
+	}
+
+	function openEscrow(){
+		openWindow("/ec/sp/ss/om/order101.do?method=selectEscrow&amp;ZONE=LIGB07", "escrow_pop", 480, 229);
+	}
+	
+	// Winodw Load Event
+	$(function(){
+		//FFn_EmbedSaveShopLnb();
+	});
+//]]>
+</script>
+</head>
+<body>
+<div id="skip_navi" class="none">
+    <a href="#conRight">주요내용 바로가기</a>
+</div>
+<!--div id="skip_navi" class="none">
+	<a href="#lifestyle_gnb" title="주 메뉴 바로가기">주메뉴 바로가기</a>
+	<a href="#contenWrap" title="본문 바로가기">본문 바로가기</a>
+	<a href="#footer" title="페이지하단 바로가기">하위메뉴 바로가기</a>
+</div-->
+<div class="mboxDefault"></div>
+<script type="text/javascript">mboxCreate('conv_shoppingMall');
+</script>
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<script type="text/javascript" src="/js/ec/sp/common/search.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	navigation.menuOver({
+		ElementObjectName : '.util_menu,.mv_srvc_mnu'
+	});
+	// topGnb
+	navigation.GNB({
+		ElementObjectName : '.mv_ls_global',
+		Depth1: 0,
+		Depth2: 1
+	});
+	// subGnb
+	navigation.GNB({
+		ElementObjectName : '.mv_ls_local',
+		Depth1:1
+	});
+});
+</script>
+<!--h1 class="conts_hidden">삼성카드 LifeStyle Service 쇼핑</h1-->
+<div id="head">
+    <div id="gnb">
+		<div class="lifestyle_gnb" style="line-height:100%; font-size:12px;">
+			<script type="text/javascript">
+				//<![CDATA[
+				function FFn_Link(linkUrl){
+					location.href = linkUrl;
+				}
+
+				function addfavorites(){
+					var favoriteurl = "/ec/sp/ss/index.do?method=selectSSMain";
+					var favoritetitle = "삼성카드 쇼핑";
+					
+					if (document.all)
+					window.external.AddFavorite(favoriteurl,favoritetitle);
+					return;
+				}
+
+				function openShortCutForm(){
+					window.open('/ec/sp/ss/index.do?method=selectShortCutForm','popupShortCut', 'toolbar=no scrollbars=auto resizable=yes width=480 height=305');
+				}
+				
+				function openEmoneyPop(){
+					window.open('/ec/sp/ss/eMoney.do?method=selectEmoneyForm','popupEmoney', 'toolbar=no scrollbars=auto resizable=yes width=480 height=258');
+				}
+
+			     function makeAbsPath(domain, url) {
+			         var sUrl;
+			         var sPort = window.location.port;
+			         switch (domain) {
+			             case "www.samsungcard.com" :
+			                 sPort = "";
+			                 break;
+			             case "travel.samsungcard.com" :
+			                 sPort = "";
+			                 break;
+			             case "social.samsungcard.com":
+				             sPort = ":28080";
+				             break;			                 
+			             default :
+			                 sPort = ':10080';
+			                 break;
+			         }
+			         if (window.location.protocol == "https:") {
+			             sUrl = 'https://'+domain+sPort+url;
+			         } else {
+			        	 sUrl = 'http://'+domain+sPort+url;
+			         }
+
+			         location.href = sUrl;
+			     }					
+				//]]>
+			</script>
+					
+			<a href="javascript:makeAbsPath('shopping.samsungcard.com','/ec/sp/spMain.do?method=selectSPMain&amp;ZONE=LIGB01');" class="mv_logo"><img src="/images/gr/common/ls_logo_shopping.gif" alt="SAMSUNGCARD SHOPPING" /></a>					
+			<ul class="mv_ls_global">
+				<li><a href="javascript:makeAbsPath('shopping.samsungcard.com','/ec/sp/spMain.do?method=selectSPMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_off.gif" alt="쇼핑" /></a>			
+					<ol class="mv_sh_inner_mnu">
+						<li><a href="javascript:makeAbsPath('shoppingmall.samsungcard.com','/ec/sp/pc/index.do?method=selectPCMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner01_off.gif" alt="포인트적립" /></a></li>
+						<li><a href="/ec/sp/ss/index.do?method=selectSSMain&amp;ZONE=LIGB01"><img src="/images/gr/common/ls_gnb_shopping_inner02_off.gif" alt="포인트몰" /></a></li>
+						<li><a href="javascript:makeAbsPath('social.samsungcard.com','/social/shop/main/main?ref=shopmenu');"><img src="/images/gr/common/ls_gnb_shopping_inner03_off.gif" alt="TheSocial" /></a></li>
+						<li><a href="javascript:makeAbsPath('shoppingmall.samsungcard.com','/ec/mc/ma/Main.do?method=selectMCMain');"><img src="/images/gr/common/ls_gnb_shopping_inner04_off.gif" alt="모바일쿠폰몰" /></a></li>
+						<li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/gm/index.do?method=selectGMMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner05_off.gif" alt="기프트몰" /></a></li>					
+					</ol>
+				</li>
+				<li><a href="javascript:makeAbsPath('travel.samsungcard.com','/ec/te/pk/fr/travelMain.do?method=selectTravelMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_travel_off.gif" alt="여행" /></a></li>
+				<li><a href="javascript:makeAbsPath('wedding.samsungcard.com','/ec/wd/fr/wdMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_wedding_off.gif" alt="웨딩" /></a></li>
+				<li><a href="javascript:makeAbsPath('insurance.samsungcard.com','/ec/ns/nsMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_insurance_off.gif" alt="보험" /></a></li>
+			</ul>
+			<ul class="mv_ls_local">
+				<li><a href="/ec/sp/ss/gi/goods501.do?method=selectBestGoodsList&amp;ZONE=LIGB02"><img src="/images/gr/common/ls_shop_mall_snb01off.gif" alt="베스트랭킹" /></a></li>
+				<li><a href="/ec/sp/ss/gi/goods501.do?method=selectNewGoodsList&amp;ZONE=LIGB02"><img src="/images/gr/common/ls_shop_mall_snb02off.gif" alt="신상품" /></a></li>
+				<li><a href="/ec/sp/ss/pr/pr301.do?method=selectPlanningList&amp;ZONE=LIGB02"><img src="/images/gr/common/ls_shop_mall_snb03off.gif" alt="기획전" /></a></li>
+				<li><a href="/ec/sp/ss/gi/goodshappy601.do?method=recipeMain"><img src="/images/gr/common/ls_shop_mall_snb04off.gif" alt="맛있는 레시피" /></a></li>
+			</ul>
+			<ul class="mv_srvc_mnu">
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/gr/gr101.do?ZONE=LIGB02');"><img src="/images/gr/common/ls_service_mnu01_off.gif" alt="정보&amp;혜택" /></a> </li>
+				<li><a href="javascript:makeAbsPath('shoppingmall.samsungcard.com','/ec/sp/pc/gr/gr110.do?method=newsLetterForm&amp;ZONE=LIGB02');"><img src="/images/gr/common/ls_service_mnu02_off.gif" alt="뉴스레터" /></a> </li>
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/pvi/samService.do?tabGb=SP&amp;ZONE=LIGB02');"><img src="/images/gr/common/ls_service_mnu03_off.gif" alt="LifeStyle Service" /></a> </li>
+			</ul>
+		</div>    	
+		<!-- 타이틀 및 검색 -->
+        <div class="menu_tit_wrap">
+            <div class="menu_con">
+                <a href="/ec/sp/ss/index.do?method=selectSSMain"><img src="/images/sp/ss/tit_point_mall.png" class="png24" alt="포인트 몰" /></a>
+                <div class="bg_search">
+                    <p class="fl_left"><input type="text" name="kwd" id="kwd" onfocus="this.value='';" title="통합검색 입력" value="통합검색" /></p>
+    				<p class="fl_right"><a href="javascript:goKonanSearch();"><img src="/images/gr/common/btn_search.gif" alt="검색" class="al_middle" /></a></p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 및 검색 -->
+
+		<!-- 바탕화면 저장 / 즐겨찾기 -->
+		<div class="gnb_btn">
+            <a href="javascript:openShortCutForm();"><img src="/images/gr/common/btn_go_save.gif" alt="바로가기 저장" /></a>
+            <a href="javascript:addfavorites()"><img src="/images/gr/common/btn_bookmark.gif" alt="즐겨찾기" /></a>
+			<a href="http://www.samsungcard.com"  target="_blank" title="새창"><img src="/images/gr/common/btn_samsung_card.gif" alt="삼성카드 홈페이지" /></a>
+		</div>
+		<!-- 유틸메뉴 -->
+		<%
+			if(null != member){
+		%>
+		<ul class="util_menu login">
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList');" class="rollover"><img src="/images/gr/common/util_home_off.gif" alt="홈" /><img src="/images/gr/common/util_home_on.gif" alt="홈" class="over" /></a></li>
+            <li><a href="/logout.do?afterLogin=/ec/sp/ss/index.do?method=selectSSMain&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_logout_off.gif" alt="로그아웃" /><img src="/images/gr/common/util_logout_on.gif" alt="로그아웃" class="over" /></a></li>
+            <li><a href="/ec/sp/my/myMain.do?method=selectMyMain&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_mypage_off.gif" alt="마이페이지" /><img src="/images/gr/common/util_mypage_on.gif" alt="마이페이지" class="over" /></a></li>
+            <li><a href="/ec/sp/ss/om/order101.do?method=selectCartList&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_cart_off.gif" alt="장바구니" /><img src="/images/gr/common/util_cart_on.gif" alt="장바구니" class="over" /></a></li>
+            <li><a href="/ec/sp/ss/om/om201.do?method=selectOrderList&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_order_off.gif" alt="주문ㆍ배송조회" /><img src="/images/gr/common/util_order_on.gif" alt="주문ㆍ배송조회" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/sw/mg/fr/cd/cardData100.do?method=selectOrderList&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_mgiftcard_off.gif" alt="ⓜGift카드 전송조회" /><img src="/images/gr/common/util_mgiftcard_on.gif" alt="ⓜGift카드 전송조회" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/evt/nechbfrevt011.do?method=getIngSpEventList&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_event_off.gif" alt="이벤트" /><img src="/images/gr/common/util_event_on.gif" alt="이벤트" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=762&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_service_off.gif" alt="고객서비스" /><img src="/images/gr/common/util_service_on.gif" alt="고객서비스" class="over" /></a></li>
+		<!-- SAM브랜드제거 -->	
+            <li class="end"><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb011&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_sitemap_off.gif" alt="사이트맵" /><img src="/images/gr/common/util_sitemap_on.gif" alt="사이트맵" class="over" /></a></li>
+            <!-- <li class="end" style="display:none;"><a href="javascript:open_pop('<%=serverPath %>/aboutSam.do');" class="rollover"  title="Do you know SAM?" ><img src="/images/gr/common/util_about_off.gif" alt="Do you know SAM?"><img src="/images/gr/common/util_about_on.gif" alt="Do you know SAM?" class="over"></a></li>-->
+		<!--// SAM브랜드제거 -->
+		</ul>
+		<%
+			}else{
+		%>
+		<ul class="util_menu">
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList');" class="rollover"><img src="/images/gr/common/util_home_off.gif" alt="홈" /><img src="/images/gr/common/util_home_on.gif" alt="홈" class="over" /></a></li>
+            <li><a href="/loginForm.do?afterLogin=/ec/sp/ss/index.do?method=selectSSMain&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_login_off.gif" alt="로그인" /><img src="/images/gr/common/util_login_on.gif" alt="로그인" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('www.samsungcard.com','/mainPage.do?menuId=NHPIMMSCRN001&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_join_off.gif" alt="회원가입" /><img src="/images/gr/common/util_join_on.gif" alt="회원가입" class="over" /></a></li>
+            <li><a href="/ec/sp/ss/om/order101.do?method=selectCartList&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_cart_off.gif" alt="장바구니" /><img src="/images/gr/common/util_cart_on.gif" alt="장바구니" class="over" /></a></li>
+            <li><a href="/ec/sp/ss/om/om201.do?method=selectOrderList&amp;ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_order_off.gif" alt="주문ㆍ배송조회" /><img src="/images/gr/common/util_order_on.gif" alt="주문ㆍ배송조회" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/sw/mg/fr/cd/cardData100.do?method=selectOrderList&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_mgiftcard_off.gif" alt="ⓜGift카드 전송조회" /><img src="/images/gr/common/util_mgiftcard_on.gif" alt="ⓜGift카드 전송조회" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/evt/nechbfrevt011.do?method=getIngSpEventList&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_event_off.gif" alt="이벤트" /><img src="/images/gr/common/util_event_on.gif" alt="이벤트" class="over" /></a></li>
+            <li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=762&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_service_off.gif" alt="고객서비스" /><img src="/images/gr/common/util_service_on.gif" alt="고객서비스" class="over" /></a></li>
+		<!-- SAM브랜드제거 -->	
+            <li class="end"><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb011&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_sitemap_off.gif" alt="사이트맵" /><img src="/images/gr/common/util_sitemap_on.gif" alt="사이트맵" class="over" /></a></li>
+            <!-- <li class="end" style="display:none;"><a href="javascript:open_pop('<%=serverPath %>/aboutSam.do');" class="rollover"  title="Do you know SAM?" ><img src="/images/gr/common/util_about_off.gif" alt="Do you know SAM?"><img src="/images/gr/common/util_about_on.gif" alt="Do you know SAM?" class="over"></a></li>-->
+		<!--// SAM브랜드제거 -->
+		</ul>
+		<%
+			}
+		%>
+		<!-- //유틸메뉴 -->
+	</div>
+</div>
+<!--// 공통 상단 끝 -->
+    <div id="contentWrap">
+        <div id="contentBody" class="saveshop_main">
+            <jsp:include page="/WEB-INF/jsp/ec/sp/ss/include/ssquicksearch.jsp" flush="false" />
+            <div class="overflow">
+                <div id="conLeft">
+                    <div class="lnb_category" >
+<!-- 2013.02.24 플래시교체 삭제 start -->
+<!-- 						<div id="SaveShopLnbLayer"></div> -->
+<!-- 2013.02.24 플래시교체 삭제 end -->
+<!-- 2013.02.24 플래시교체 추가 start -->
+<div class="mv_cate_tp"></div>
+	<div class="mv_ul_wrap">
+	<ul class="mv_cate_hei">
+		<li><span class="txt_02">기프트코너</span><!--strong><img src="/images/gr/common/ls_lnb_pm_a00off.gif" alt="기프트코너" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="/ec/sp/ss/gi/goods111.do?method=selectGoodsList&amp;parentId=SS283">쥬얼리/금</a></span><!--a href="/ec/sp/ss/gi/goods111.do?method=selectGoodsList&parentId=SS283"><img src="/images/gr/common/ls_lnb_pm_a01off.gif" alt="쥬얼리/금" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">목걸이</a></li>
+									<li><a href="#">반지</a></li>
+									<li><a href="#">귀걸이</a></li>
+									<li><a href="#">순금</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">패션/잡화</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_a02off.gif" alt="패션/잡화" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="/ec/sp/ss/gi/goods101.do?method=selectCategoryBest&amp;middleParam=SS25">화장품/향수</a></li>
+									<li><a href="#">시계</a></li>
+									<li><a href="#">아웃도어</a></li>
+									<li><a href="#">골프</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">생활/가전</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_a03off.gif" alt="생활/가전" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">소형가전</a></li>
+									<li><a href="#">조리기구</a></li>
+									<li><a href="#">생활가전</a></li>
+									<li><a href="#">침구용품</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+		<li class="padT12"><span class="txt_02">가전/영상/디지털</span><!--strong><img src="/images/gr/common/ls_lnb_pm_b00off.gif" alt="가전/영상/디지털" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="/ec/sp/ss/gi/goods101.do?method=selectCategoryBest&amp;middleParam=SS01">대형/계절가전</a></span><!--a href="/ec/sp/ss/gi/goods101.do?method=selectCategoryBest&middleParam=SS01"><img src="/images/gr/common/ls_lnb_pm_b01off.gif" alt="대형/계절가전" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">대형가전</a></li>
+									<li><a href="#">겨울가전용품</a></li>
+									<li><a href="#">여름가전용품</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">소형가전</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_b02off.gif" alt="소형가전" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">생활가전</a></li>
+									<li><a href="#">주방가전</a></li>
+									<li><a href="#">음향가전</a></li>
+									<li><a href="#">카메라/캠코더</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">브랜드관</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_b03off.gif" alt="브랜드관" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">삼성전자</a></li>
+									<li><a href="#">필립스</a></li>
+									<li><a href="#">일렉트로룩스</a></li>
+									<li><a href="#">캔우드</a></li>
+									<li><a href="#">한경희생활과학</a></li>
+									<li><a href="#">신일</a></li>
+									<li><a href="#">카이젤</a></li>
+									<li><a href="#">유닉스</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+		<li class="padT12"><span class="txt_02">생활/주방/가구</span><!--strong><img src="/images/gr/common/ls_lnb_pm_c00off.gif" alt="생활/주방/가구" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="#">주방용품</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_c01off.gif" alt="주방용품" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">후라이팬</a></li>
+									<li><a href="#">냄비류(압력솥)</a></li>
+									<li><a href="#">조리기구</a></li>
+									<li><a href="#">주방소품</a></li>
+									<li><a href="#">밀폐용기/물병/보온병</a></li>
+									<li><a href="#">도자기/찻잔/컵</a></li>
+									<li><a href="#">브랜드관</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">생활/욕실제품</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_c02off.gif" alt="생활/욕실제품" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">세면/개인위생용품</a></li>
+									<li><a href="#">세제/세탁편의용품</a></li>
+									<li><a href="#">청소용품/티슈</a></li>
+									<li><a href="#">행거/정리/선반/체중계</a></li>
+									<li><a href="#">기타</a></li>
+									<li><a href="#">욕실용품</a></li>
+									<li><a href="#">브랜드관</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">가구/인테리어</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_c03off.gif" alt="가구/인테리어" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">거실가구</a></li>
+									<li><a href="#">사무/학습가구</a></li>
+									<li><a href="#">수납가구</a></li>
+									<li><a href="#">인테리어소품</a></li>
+									<li><a href="#">침실/거실용품</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+		<li class="padT12"><span class="txt_02">패션/잡화/사무</span><!--strong><img src="/images/gr/common/ls_lnb_pm_d00off.gif" alt="패션/잡화/사무" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="#">화장품/시계</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_d01off.gif" alt="화장품/시계" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">화장품</a></li>
+									<li><a href="#">바디/헤어케어/향수</a></li>
+									<li><a href="#">손목시계</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">의류/신발/가방/잡화</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_d02off.gif" alt="의류/신발/가방/잡화" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">스포츠 의류</a></li>
+									<li><a href="#">패션의류</a></li>
+									<li><a href="#">지갑/벨트/백/가방</a></li>
+									<li><a href="#">신발/여성화</a></li>
+									<li><a href="#">모자/양말/장갑</a></li>
+									<li><a href="#">우산/손수건/스카프</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">사무기기/휴대폰/펜시</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_d03off.gif" alt="사무기기/휴대폰/펜시" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">PC/PC 용품</a></li>
+									<li><a href="#">복합기/프린터/USB</a></li>
+									<li><a href="#">휴대폰 ACC</a></li>
+									<li><a href="#">전화기/전자사전</a></li>
+									<li><a href="#">펜시</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+		<li class="padT12"><span class="txt_02">스포츠/레져/등산</span><!--strong><img src="/images/gr/common/ls_lnb_pm_e00off.gif" alt="스포츠/레져/등산" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="#">스포츠/골프/자전거</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_e01off.gif" alt="스포츠/골프/자전거" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">골프용품</a></li>
+									<li><a href="#">헬스용품</a></li>
+									<li><a href="#">야구용품</a></li>
+									<li><a href="#">자전거 용품</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">등산/캠핑용품</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_e02off.gif" alt="등산/캠핑용품" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">등산의류</a></li>
+									<li><a href="#">등산용품</a></li>
+									<li><a href="#">등산화</a></li>
+									<li><a href="#">등산배낭</a></li>
+									<li><a href="#">캠핑용품</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">자동차 용품</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_e03off.gif" alt="자동차 용품" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">핸들/시트커버</a></li>
+									<li><a href="#">세차/관리용품</a></li>
+									<li><a href="#">안전/편의용품</a></li>
+									<li><a href="#">네비게이션/블랙박스</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+		<li class="padT12"><span class="txt_02">유아/아동/식품</span><!--strong><img src="/images/gr/common/ls_lnb_pm_f00off.gif" alt="기프트코너" /></strong-->
+			<ol>
+				<li class="padT07"><span class="txt_05"><a href="#">유아용품/장난감/티슈</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_f01off.gif" alt="유아용품/장난감/티슈" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">장난감/학습완구</a></li>
+									<li><a href="#">유아동 잡화</a></li>
+									<li><a href="#">출산/임부용품</a></li>
+									<li><a href="#">유아가구/기타</a></li>
+									<li><a href="#">분유/기저귀/물티슈</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">신선식품/쌀/김치</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_f02off.gif" alt="신선식품/쌀/김치" /></a-->
+					<div class="mv_wrap_box none">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">쌀/잡곡</a></li>
+									<li><a href="#">김치/반찬/장류</a></li>
+									<li><a href="#">채소</a></li>
+									<li><a href="#">견과</a></li>
+									<li><a href="#">청과</a></li>
+									<li><a href="#">축산</a></li>
+									<li><a href="#">해산물</a></li>
+									<li><a href="#">기타(미숫가루 외)</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+				<li class="padT05"><span class="txt_05"><a href="#">가공식품/홍삼/라면</a></span><!--a href="#"><img src="/images/gr/common/ls_lnb_pm_f03on.gif" alt="가공식품/홍삼/라면" /></a-->
+					<div class="mv_wrap_box">
+						<div class="mv_lnb_sub_wrap">
+							<div class="mv_lnb_sub_tp"></div>
+							<div class="mv_lnb_sub_rpt">
+								<ul class="mv_lyr_on">
+									<li><a href="#">즉석식품</a></li>
+									<li><a href="#">물/차/음료</a></li>
+									<li><a href="#">과자/간식류</a></li>
+									<li><a href="#">건강유지류</a></li>
+									<li><a href="#">홍삼</a></li>
+									<li><a href="#">참치/라면/가공</a></li>
+									<li><a href="#">기타(핫도그 외)</a></li>
+								</ul>
+							</div>
+							<div class="mv_lnb_sub_btm"></div>
+						</div>
+						<div class="mv_spot"></div>
+					</div>
+				</li>
+			</ol>
+		</li>
+	</ul>
+</div>
+<div class="mv_cate_btm"></div>
+<!-- 2013.02.24 플래시교체 추가 end -->
+					</div>
+					<p><a href="/ec/sp/ss/gi/goods171.do?method=selectGoodsList&amp;gbp=00"><img src="/images/sp/ss/btn_price_search.gif" alt="가격대별 상품찾기" /></a></p>
+                </div>
+                <div id="conRight">
+<!-- 2013.02.20 플래시교체 추가 start -->
+					<div class="mvt_sp_pbnr">
+						<div class="mvt_sp_pbnr1">
+							<ul class="mvt_asp1">
+								<li class="ui-Slider-List">
+									<div class="ui-Slider-Contents">
+										<a href="#">
+											<img src="/cms_content/ec/sp/pc/617_2.jpg" alt="dma.." />
+										</a>
+									</div>
+								</li>	
+							</ul>
+						</div><!-- //mvt_sp_pbnr1 메인롤링 -->
+<!-- 2013.02.20 플래시교체 추가 end -->
+<!-- 2013.02.20 플래시교체 추가 start -->
+						<div class="mvt_sp_pbnr2" style="background:red;">
+							WCMS 배포
+						</div><!-- //mvt_sp_pbnr2 메인우측롤링 -->
+<!-- 2013.02.20 플래시교체 추가 end -->                    </div>
+                    <div class="happy_relay">
+                        <h1 class="none">333 해피릴레이</h1>
+                        <div class="period">
+                        	<p class="none">7일동안만 포인트몰에서만 특별한 가격!</p>
+						</div>
+                        <div class="happy_wrap">
+                            <ul class="product_list">
+                                <li>
+                                    <div class="product">
+                                        <p class="photo">
+                                            <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma.." width="110" height="110" /></a></span>
+                                            <span class="ico_btn">
+                                                <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                            </span>
+                                        </p>
+                                        <p class="tit"><a href="#">dma..</a></p>
+                                        <p>
+                                            <span class="t_line">1원</span>
+                                                <img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><strong class="t_point">1원</strong>
+                                                <br />
+                                            	<span class="t_11">
+                                                <strong class="t_blue">dma...</strong>
+                                                <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" />
+                                                                                                                                부터 구매가능
+                                            	</span>
+                                            <br />
+                                            <span class="t_11gray">남은 수량:</span>
+                                            <strong class="t_11">1</strong><span class="t_11gray">개</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="best_product">
+                <h1><img src="/images/sp/ss/h1_best_product.gif" alt="베스트상품" /></h1>
+                <div class="box_white950_mid"><div class="box_white950_top"><div class="box_white950_btm">
+                    <div class="product_wrap">
+                        <ul class="product_list">
+                            <li>
+                                <div class="product">
+                                    <p class="photo">
+                                        <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma.." width="149" height="149" /></a></span>
+
+                                        <span class="ico_btn">
+                                            <a href="#" class="rollover"><img src="/images/sp/common/btn_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/common/btn_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/common/btn_compare_off.gif" alt="비교" /><img src="/images/sp/common/btn_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/common/btn_imprint_off.gif" alt="찜" /><img src="/images/sp/common/btn_imprint_over.gif" alt="찜" class="over" /></a>
+                                        </span>
+                                    </p>
+                                    <p class="tit"><a href="#">dma...</a></p>
+                                    <p>
+										<span class="t_line">1원</span>
+										<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" />
+                                        <strong class="t_point">1원</strong><br />
+                                        <span class="t_11">
+                                            <strong class="t_blue">dma..</strong>
+                                            <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                        </span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div></div></div>
+            </div>
+
+            <div class="new_best">
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_living.gif" alt="생활/주방/가구" /></h1>
+                        <ul class="best_tab" id="livingID">
+                            <li class="on"><a href="javascript:tabView('livingID',1);">신상품</a></li>
+                            <li><a href="javascript:tabView('livingID',2);">베스트상품</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="livingID_con1">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">dma..</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="livingID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma.." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">dma..</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_digital.gif" alt="가전/영상/디지털" /></h1>
+                        <ul class="best_tab" id="digitalID">
+                            <li class="on"><a href="javascript:tabView('digitalID',1);">신상품</a></li>
+                            <li><a href="javascript:tabView('digitalID',2);">베스트상품</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="digitalID_con1">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma.." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma..</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">dma..</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="digitalID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_fashion.gif" alt="패션/잡화/사무" /></h1>
+                        <ul class="best_tab" id="fashionID">
+                            <li class="on"><a href="javascript:tabView('fashionID',1);">신상품</a></li>
+                            <li><a href="javascript:tabView('fashionID',2);">베스트상품</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="fashionID_con1">
+                        <li>
+                            <div class="product">
+                               <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="fashionID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_sport.gif" alt="스포츠/레져/등산" /></h1>
+                        <ul class="best_tab" id="sportID">
+                            <li class="on"><a href="javascript:tabView('sportID',1);">신상품</a></li>
+                            <li><a href="javascript:tabView('sportID',2);">베스트상품</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="sportID_con1">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="sportID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_child.gif" alt="유아/아동/식품" /></h1>
+                        <ul class="best_tab" id="childID">
+                            <li class="on"><a href="javascript:tabView('childID',1);">신상품</a></li>
+                            <li><a href="javascript:tabView('childID',2);">베스트상품</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="childID_con1">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="childID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category_con">
+                    <div class="round_box">
+                        <h1 class="ml10"><img src="/images/sp/ss/h1_price.gif" alt="기프트코너" /></h1>
+                        <ul class="best_tab price" id="priceID">
+                            <li class="on"><a href="javascript:tabView('priceID',1);" style="padding:10px 25px 0 25px;">주얼리</a></li>
+                            <li><a href="javascript:tabView('priceID',2);" style="padding:10px 25px 0 25px;">화장품</a></li>
+                            <li><a href="javascript:tabView('priceID',3);" style="padding:10px 25px 0 25px;">시계</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_list" id="priceID_con1">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="priceID_con2" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="product_list" id="priceID_con3" style="display:none;">
+                        <li>
+                            <div class="product">
+                                <p class="photo">
+                                    <span><a href="#"><img src="/images/gr/common/noimg_110x110.gif" alt="dma..." width="110" height="110" /></a></span>
+
+                                    <span class="ico_btn">
+                                        <a href="#" class="rollover"><img src="/images/sp/ss/btn2_quickView_off.gif" alt="퀵뷰" /><img src="/images/sp/ss/btn2_quickView_over.gif" alt="퀵뷰" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_compare_off.gif" alt="비교" /><img src="/images/sp/ss/btn2_compare_over.gif" alt="비교" class="over" /></a><a href="#" class="rollover"><img src="/images/sp/ss/btn2_imprint_off.gif" alt="찜" /><img src="/images/sp/ss/btn2_imprint_over.gif" alt="찜" class="over" /></a>
+                                    </span>
+                                </p>
+                                <p class="tit"><a href="#">dma...</a></p>
+                                <p>
+                                	<span class="t_line">1원</span>
+									<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+                                    <strong class="t_point">2원</strong><br />
+                                    <span class="t_11">
+                                    <strong class="t_blue">3</strong>
+                                    <img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" /> 부터 구매가능
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+			<div class="util_wrap">
+				<div class="notice">
+                    <h1><img src="/images/sp/ss/h1_notice.gif" alt="공지사항" /></h1>
+                    <p class="more t_org"><a title="공지사항 더보기" href="#">더보기</a></p>
+                    <ul class="bul_dot t_12" style="background:red;">
+                       WCMS 배포
+                    </ul>
+                </div>
+                <div class="call_center">
+                    <h1><img src="/images/sp/bp/h1_call_center.gif" alt="고객상담" /></h1>
+                    <img src="/images/sp/bp/number_callcenter.gif" alt="1688-6315" class="mb5" /><br />
+                    <span class="t_11gray ls0">
+					평일 오전 9시 ~ 오후 5시<br />(주말/공휴일 제외)
+					</span>
+                    <p class="mt10">
+                        <span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=getInquiry&amp;ZONE=LIGB05">온라인문의</a></span>
+                        <span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=762&amp;ZONE=LIGB05">FAQ</a></span>
+                    </p>
+                </div>
+				<div class="info">
+					<h1><img src="/images/sp/ss/h1_info.gif" alt="이용안내" /></h1>
+					<span class="more t_org"><a href="/ec/hb/fr/gr/gr101.do?ZONE=LIGB06">바로가기</a></span>
+					<span class="t_11gray">포인트몰을 편리하게<br />이용 하실 수 있도록<br />안내 해드립니다.</span>
+                </div>
+				<div class="service">
+					<h1><img src="/images/sp/pc/h1_shopping_newsletter.gif" alt="삼성카드 쇼핑 뉴스레터" /></h1>
+					<p class="t_11gray mb10">
+						삼성카드 쇼핑의 다양한 상품과<br /> 할인혜택, 이벤트, 쇼핑정보를  <br />정기적으로확인하실 수 있습니다.  
+					</p>
+                    <span class="btnS_white"><a href="http://shoppingmall.samsungcard.com/ec/sp/pc/gr/gr110.do?method=newsLetterForm&amp;ZONE=LIGB02">뉴스레터 신청</a></span>                    
+				</div>
+            </div>
+        </div>
+<!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	    </div>
+	
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+</body>
+</html>

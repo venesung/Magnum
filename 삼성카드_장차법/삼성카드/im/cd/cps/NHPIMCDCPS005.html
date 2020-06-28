@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- 추가 110310 -->
+	<!-- content_block -->
+	<div class="content_block content_block_card3 clfix">
+		<!-- tab_area -->
+		<div class="tab01 w810card">
+			<ul>
+                <li id="li_aClass" class="on"><a href="javascript:goSearchCardClass('A');">대표카드 (1)</a></li>
+                <li id="li_bClass"><a href="javascript:goSearchCardClass('B');">주요카드 (2)</a></li>
+			</ul>
+		</div>
+	</div>
+<!-- // 추가 110310 -->
+
+<!-- 수정 110310 -->
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<h2 class="card_view mb10">
+			<span>선택하신 <strong class="t_point_org">${vos.cmsKeyword }</strong> 에는 총 <strong class="t_point_org t_no">1</strong> 개의 카드가 있습니다.</span>
+		<label for="label_sort1"><input id="label_sort1" type="radio" class="rdo" name="name_sort" value="조회수 순" title="조회수 순" onclick="goSearchTheme('1')" /> 조회수 순</label>
+		<label for="label_sort2"><input id="label_sort2" type="radio" class="rdo" name="name_sort" value="최신등록 순" title="최신등록 순" onclick="goSearchTheme('2')" /> 최신등록 순</label>
+		<label for="label_sort3"><input id="label_sort3" type="radio" class="rdo" name="name_sort" value="연회비" title="연회비" onclick="goSearchTheme('3')" /> 연회비</label>
+		<em class="btn_view">
+			<img src="/images/common/ico_view_list_on.png"   onclick="goSearchViewType('list')"  alt="리스트로보기" />
+			<img src="/images/common/ico_view_image.png" onclick="goSearchViewType('image')" alt="이미지로보기" />
+		</em>
+		</h2>
+<!-- // 수정 110310 -->
+
+		<div class="line_lgray_p0">&nbsp;</div>
+
+		<!-- 연회비 -->
+		<div class="tb_exp mt30 clfix" id="div_theme">
+				<h3 class="bul_arrow_squre" >연회비  1만원 미만 <span class="t_desc03 t_normal">연회비는 해외/우대등급 카드 기준입니다. 단, 국내전용카드는 국내/우대등급 기준입니다.</span></h3>
+			
+			<div class="ab_tr">
+				<select id="select_yearfee" title="연회비 선택" onchange="setYearFee(this.value)">
+					<option value="">연회비를 선택해주세요</option>
+					<option value="0">1만원 미만</option>
+					<option value="1">1만원대</option>
+					<option value="2">2만원대</option>
+					<option value="3">3만원대</option>
+					<option value="5">5만원대</option>
+					<option value="6">6만원대</option>
+					<option value="10">10만원대</option>
+					<option value="30">30만원이상</option>
+				</select>
+			</div>
+		</div>
+		<div class="line_gray">&nbsp;</div>
+		<ul class="view_listtype clfix">
+			<!-- loop -->
+					<li>
+                        <p class="p_card"><a href="javascript:goView('${lst.kindCode}')"><img src="${lst.listImg03}" alt="${lst.kindName}" /></a></p>
+						<div class="p_desc">
+                            <p class="p_tit"><a href="javascript:goView('${lst.kindCode}');" class="t_point">${lst.kindName}</a></p>
+							<p class="p_txt">${lst.cardDesc}</p>								
+                            <p class="p_btn"><a href="javascript:goView('${lst.kindCode}');"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기" /></a></p>
+						</div>
+						<div class="p_score">
+							<p class="ico_star"><img src="/images/common/ico_star${lst.grade}.png" alt="" />총 <span class="t_point_org">${lst.attendNo}</span> 명 참여</p>
+						</div>
+					</li>						
+					
+						<li>
+							<p class="p_card"><a href="javascript:goView('${lst.kindCode}')"><img src="${lst.listImg03}" alt="${lst.kindName}" /></a></p>
+							<div class="p_desc">
+								<p class="p_tit"><a href="javascript:goView('${lst.kindCode}');" class="t_point">${lst.kindName}</a></p>
+								<p class="p_txt">${lst.cardDesc}</p>
+							</div>
+							<div class="p_score">
+								<p class="ico_star"><img src="/images/common/ico_star${lst.grade}.png" alt="" />총 <span class="t_point_org">${lst.attendNo}</span> 명 참여</p><!-- 100309 -->
+                                <p class="p_btn"><a href="javascript:goView('${lst.kindCode}');"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기" /></a></p>
+							</div>
+						</li>		
+						
+		</ul>
+		
+		<ul class="list_card list_card_new view_imgtype clfix">
+			<!-- loop -->
+				<li>
+					<p class="p_card"><a href="javascript:goView('${lst.kindCode}')"><img src="${lst.listImg03}" alt="${lst.kindName}" /></a></p>
+					<div class="p_desc">
+                        <p class="p_tit2"><a href="javascript:goView('${lst.kindCode}')">${lst.kindName}</a></p>
+                        <p class="btnset"><a href="javascript:goView('${lst.kindCode}')"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기·신청" /></a></p>
+					</div>
+				</li>
+		</ul>
+		
+		<!-- paginate -->
+		<div class="paginate">
+				${_page}
+		</div>
+	
+	</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

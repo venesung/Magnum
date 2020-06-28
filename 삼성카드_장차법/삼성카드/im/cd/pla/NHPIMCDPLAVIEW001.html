@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+			<div class="tabbrowse_content">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_pla_service_rose.png" alt="로즈플래티늄 이용내역입니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+	<form method="post" name="frm">
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_pla_service05.png" alt="이용내역을 조회하세요." /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="fl_left">조회 연도 및 카드번호를 입력하시면, 고객님의 <strong class="t_black">서비스 이용내역을 조회 및 등록</strong>하실 수 있습니다.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield">
+						<colgroup><col width="20%" /><col width="80%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>조회연도</p></th>
+								<td><p>
+									<select name="string1" title="조회연도 선택">
+                        			   		<option>dd</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select name="Rose_card" title="카드 선택">
+										<option>카드를 선택해주세요</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+                            <p class="btnr"><a href="javascript:goSearch();" class="btn btn_blue"><span>조회</span></a></p>
+						</div>
+					</div>
+				</div>
+	</form>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_pla_service06.png" alt="서비스 이용내역입니다" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01">
+						<colgroup>
+							<col width="30%" /><col width="25%" /><col width="20%" /><col width="10%" /><col width="15%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">서비스명</th>
+								<th scope="col" class="cell_l10">회사명</th>
+								<th scope="col" class="cell_l10">지점명</th>
+								<th scope="col" class="cell_r10">사용일자</th>
+								<th scope="col" class="cell_l10">상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+								<tr>
+									<td class="cell_l10">쁘띠스파 무료 이용권</td>
+									<td class="cell_l10">록시땅 쁘띠스파</td>
+									<td class="cell_l10">0</td>
+									<td class="t_no">0</td>
+									<td class="cell_l10">사용가능</td>
+								</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+
+						<ol class="list_no01 mt20">
+							<li><p>전년 1월1일~12월31일까지 서비스 이용 내역입니다.</p></li>
+						</ol>
+						
+						<ol class="list_no01 mt20">
+							<li><p>직전 3개월내 일시불 또는 할부 구입실적이 있으며, 정상카드 소지고객에 한하여 서비스 이용가능합니다.<br /><span class="t_desc04">단, 가족카드 소지고객은 이용불가합니다.</span></p></li>
+							<li><p>년간 1가지 서비스를 이용 가능하며, 우수고객은 년간 2가지 서비스를 이용 가능합니다.<br /><span class="t_desc04">단, 가족카드 소지고객은 이용불가합니다.</span></p></li>
+							<li><p><strong class="t_black">서비스 이용가능기간 : 매년 1월1일 ~12월31일 까지</strong><br /><span class="t_desc04">단, 우수고객에게 제공되는 추가 서비스의 이용가능기간은 매년 2월1일 ~ 12월 31일 까지입니다.<br />(우수고객 : 전년 일시불과 할부 사용액이 2천만원 이상인 고객)</span></p></li>
+							<li><p>'유기농/건강식품 무료 구입권'은 올가홀푸드 및 CJ 뉴트라에서 제공하는 서비스를 모두 이용하실 수 있습니다.</p></li>
+							<li><p>문의사항 : <strong class="t_black">고객상담센터(1588-8700)</strong></p></li>
+						</ol>
+						
+						
+						<ol class="list_no01 mt20">
+							<li><p>회원님의 금년 서비스 이용내역입니다.</p></li>
+							<li><p>회원님의 전년 서비스 이용내역입니다.</p></li> 
+							<li><p> <strong class="t_black">일반고객</strong>입니다.년간 1가지 서비스 이용 가능합니다.</p></li>
+							<li><p> <strong class="t_black">우수회원</strong>입니다.년간 2가지 서비스 이용 가능합니다.</p></li>
+							<li><p> 서비스 이용 <strong class="t_black">불가회원</strong>입니다.</p></li>
+						</ol>
+						
+					</div>
+				</div>
+		</div>
+				<!-- footer_layer -->
+		<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

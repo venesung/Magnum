@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">즉시결제 서비스</h1>
+	<div class="h1_desc"><img src="/images/mh/h1_repay.jpg" alt="즉시결제서비스. 이번달 결제금액이 부담스러우신가요? 결제일 이전에 원하는 금액만 미리 결제하는 즉시결제 서비스를 이용해보세요" /></div>
+</div>
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 h40 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMMHEMSINFO','true');">즉시결제 서비스 안내</a></li>
+            <li><a href="javascript:goTabPage('NHPIMMHEMSS1','true');">카드회원 즉시결제 신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMMHEMS021','true');">할부금융회원 즉시결제 신청</a></li>
+            <li class="on"><a href="javascript:goTabPage('NHPIMMHEMS022','true');">처리결과 조회</a></li>
+		</ul>
+	</div>
+</div>	
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_applyPayment_07.png" alt="즉시결제 처리결과를 조회합니다." /></h2>
+	<table class="dtable02 dtable_inputfield" summary="즉시결제처리결과를 조회하기 위해 조회방법을 선택하고 날짜지정을 하는 게시판입니다">
+		<caption>즉시결제처리결과 조회조건 입력</caption>
+		<colgroup><col width="150" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>조회방법</p></th>
+				<td>
+					<p>
+						<label for="label_way01" class="mr25"><input type="radio" class="rdo" id="label_way01" name="label_way" onclick="egmblType('1')" checked="checked" title="자동이체계좌 출금내역"  /> 자동이체계좌 출금내역</label>
+						<label for="label_way02"><input type="radio" class="rdo" id="label_way02" name="label_way" onclick="egmblType('2')" title="가상계좌 입금내역" /> 가상계좌 입금내역</label>
+					</p>
+				</td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p> </p></th>
+				<td id="id_cal_wrap"><p>
+					<span class="reset_date block mt5">날짜지정
+					
+					</span>
+				</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="btnset">
+		<p class="btnl t_desc04"><span class="t_12">※</span> 최근 3개월간의 내역을 확인하실 수 있습니다.</p>
+		<p class="btnr">
+            <a href="javascript:middles()" class="btn btn_blue"><span>조회</span></a>
+		</p>
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_applyPayment_08.png" alt="자동이체계좌 출금내역" /></h2>
+	<table class="dtable01" summary="구분,요청일,요청시간,출금일,출금시간,요청액,출금액,출금은행/계좌,처리결과,비고등으로 구성된 자동이체계좌의 출금내역을 확인하고 선택할 수 있는 게시판입니다.">
+		<caption>자동이체계좌 출금내역</caption>
+		<colgroup>
+			<col width="5%" /><col width="8%" /><col width="6%" /><col width="8%" /><col width="7%" />
+			<col width="8%" /><col width="9%" /><col width="9%" /><col width="24%" /><col width="8%" />
+			<col width="8%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">선택</th>
+				<th scope="col">구분</th>
+				<th scope="col">요청일</th>
+				<th scope="col" class="cell_l10">요청시간</th>
+				<th scope="col">출금일</th>
+				<th scope="col">출금시간</th>
+				<th scope="col" class="cell_r10">요청액</th>
+				<th scope="col" class="cell_r10">출금액</th>
+				<th scope="col" class="cell_l10">출금은행/계좌</th>
+				<th scope="col" class="cell_l10">처리결과</th>
+				<th scope="col">비고</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10">
+					<input type="radio" class="rdo" id="label_select01" name="id_select" title="00 출금내역 선택" />
+				</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="t_no"> </td>
+				<td class="t_no"> </td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_l10">0</td>
+				<td>기타에러</td>
+			</tr>
+			<tr class="nodata">
+				<td colspan="11">즉시결제 처리내역이 존재하지 않습니다.	</td>
+			</tr>
+	</tbody>
+	</table>
+	<!-- paginate -->
+	<div class="paginate">
+		<div class="paging">
+            <a href="javascript:goPrPage();" class="btn btn_s_white"><span>이전</span></a>
+			<a href="#" class="btn btn_s_white" onclick="goNextPage();"><span>다음</span></a>
+		</div>
+		<div class="btnr">
+            <a href="javascript:details()" class="btn btn_blue"><span>상세조회</span></a>
+		</div>
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix" id="details" style="display:">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_applyPayment_09.png" alt="처리결과 상세내역" /></h2>
+	<table class="dtable01" summary="구분,사용일,카드번호/대출번호,상품,이용 가맹점,매출금액/이용잔액,요청액,처리결과로 구성된 처리결과 상세내역 입니다.">
+		<caption>처리결과 상세내역</caption>
+		<colgroup>
+			<col width="8%" /><col width="8%" /><col width="18%" /><col width="16%" /><col width="14%" />
+			<col width="14%" /><col width="12%" /><col width="10%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">구분</th>
+				<th scope="col">사용일</th>
+				<th scope="col" class="cell_l10">카드번호/대출번호</th>
+				<th scope="col" class="cell_l10">상품</th>
+				<th scope="col" class="cell_l10">이용 가맹점</th>
+				<th scope="col" class="cell_r10">매출금액/이용잔액</th>
+				<th scope="col" class="cell_r10">요청액</th>
+				<th scope="col" class="cell_r10">처리결과</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="8" align="center">결제금액별입금 방식으로 1일 1건 상환하셨습니다.</td>
+			</tr>
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="cell_l10 t_no">&nbsp;</td>
+				<td class="cell_l10 t_no">0</td>
+				<td class="cell_l10">0</td>
+				<td class="cell_l10">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td>0</td>
+			</tr>
+			<tr class="nodata">
+				<td colspan="8">즉시결제 처리 상세 내역이 존재하지 않습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="btnset"><p class="btnl t_desc04">일시불(자유결제일시불, 리볼빙구매)의 상세 이용내역은 <a href="javascript:goTabPage('NHPIMCDCUV101');" class="a_point">카드이용내역조회</a>를 클릭하시어 확인하시기 바랍니다.</p></div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

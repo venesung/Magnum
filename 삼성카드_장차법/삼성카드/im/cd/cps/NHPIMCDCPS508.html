@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd_cps.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cf2.css" />
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/hp/im/cd/cps/NHPIMCDCPS501.jsp" %>
+	<!-- loading --><!-- div class="loading"></div --><!-- //loading -->
+	
+	<!--  컨텐츠 가 들어가는 영역입니다. -->
+	
+	<!-- search-cardlist -->
+	<div id="search-cardlist">
+			<h3><span>총</span> <em><%=cnt %></em><span>건의 카드를 검색하였습니다.</span></h3>
+
+		<!-- cardlist-wrap -->
+		<div id="cardlist-wrap">
+			<table summary="카드 검색 결과를 확인하실 수 있습니다.">
+            <caption>카드검색 결과 목록</caption>
+			<tbody>
+						
+			<c:forEach items="<%=rsList%>" var="lst">
+				<tr>
+					<td class="card-image"><img src="${lst.listImg03}" alt="${lst.kindName}" /></td>
+					<td class="card-app">
+						<span class="button-wrap">
+                            <a href="javascript:setCardBasket('${lst.kindCode}')" class="add-card">카드담기</a>
+                            <a href="javascript:goView('${lst.kindCode}')" class="card-detailview">자세히보기</a>
+							<em></em>
+						</span>
+					</td>
+					<td class="card-info">
+						<h4>${lst.kindName}</h4>
+						<p>${lst.cardDesc}</p>
+					</td>
+				</tr>
+			 </c:forEach>
+
+			</tbody>
+			</table>
+		</div><!-- //cardlist-wrap -->
+		<button id="button-research" onClick="history.back()" title="카드 다시 검색하기"><span>카드 다시 검색하기</span></button>
+	</div><!-- //search-cardlist -->
+	
+	</div><!-- contents -->
+	<div id="setBasketAll">
+<%@ include file="/WEB-INF/jsp/hp/im/cd/cps/NHPIMCDCPS502.jsp" %>
+	</div>
+</body>
+</html>
+	

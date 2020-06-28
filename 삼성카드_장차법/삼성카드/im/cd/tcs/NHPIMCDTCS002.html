@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual 100317 -->
+                <div class="top_visual">
+                    <h1 class="none">티클래스 클럽</h1>
+                    <!-- 20130412 웹접근성(장차법)  수정  -->                    
+                    <div class="h1_desc h268"><img src="/images/cd/h1_entertain310.jpg" alt="여행, 레저, 엔터테인먼트의 고품격 맞춤카드 티클래스클럽" /></div>
+                    <div class="flag_tclass_top">
+                        <img src="/images/cd/btn_tclass_top04.png" alt="" usemap="#map_tclass_top" />
+                        <map name="map_tclass_top" id="map_tclass_top">
+                            <area shape="rect" alt="티클래스클럽소개" coords="0,0,81,100" href="javascript:goTabPage('NHPIMCDTCS003', true);" />
+                            <area shape="rect" alt="티클래스카드서비스" coords="81,0,160,100" href="javascript:goTabPage('NHPIMCDTCSVIEW101', true);" />
+                            <area shape="rect" alt="우수회원서비스" coords="161,0,230,100" href="javascript:goTabPage('tcsLinkCLUB051', true);" />
+                            <area shape="rect" alt="가맹점포인트조회" coords="231,0,310,100" href="javascript:goTabPage('NHPIMCDTCS001', true);" />
+                            <area shape="rect" alt="우수회원서비스이용내역조회" coords="311,0,400,100" href="javascript:goTabPage('NHPIMCDTCS006', true);" />
+                        </map>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <form name="searchForm" method="post">
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_travel_club01.png" alt="가맹점 상세검색입니다" /></h2>
+                    <div class="content_block_inner">
+                        <table class="dtable02 dtable_inputfield" summary="가맹점 상세검색을 위해 지역선택, 가맹점명, 전화번호,를 입력하는 게시판입니다.">
+                        <caption>가맹점 상세검색</caption>
+                        <colgroup><col width="115" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><p>지역선택</p></th>
+                                <td><p>
+                                        <select title="시 선택" id="sido" onchange="getSiGugunListByJQuery();" name="sido" style="width:120px">
+                                            <option value="">선택하세요.</option>
+                                            <option value="서울" >서울</option>
+                                            <option value="부산" >부산</option>
+                                            <option value="인천" >인천</option>
+                                            <option value="대전" >대전</option>
+                                            <option value="대구" >대구</option>
+                                            <option value="광주" >광주</option>
+                                            <option value="울산" >울산</option>
+                                            <option value="경기" >경기</option>
+                                            <option value="강원" >강원</option>
+                                            <option value="충북" >충북</option>
+                                            <option value="충남" >충남</option>
+                                            <option value="전북" >전북</option>
+                                            <option value="전남" >전남</option>
+                                            <option value="경북" >경북</option>
+                                            <option value="경남" >경남</option>
+                                            <option value="제주" >제주</option>
+                                        </select>
+                                        
+                                        <select title="구 선택" id="guguns" onchange="getDongListByJQuery();" name="guguns" style="width:130px">
+                                            <option value="">선택하세요</option>
+                                        </select>
+                                        <select title="동 선택" id="dongs" name="dongs" style="width:120px">
+                                            <option value="">선택하세요</option>
+                                        </select>
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>가맹점명</p></th>
+                                <td><p><span class="input_store"><input type="text" class="txt" value="${param.tchainName}" title="가맹점명" name="tchainName" /></span>
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>전화번호</p></th>
+                                <td><p>
+                                    <span class="input_phone">
+                                        <select title="전화번호 앞자리" name="phone1">
+                                            <option value="all">선택</option>
+                                        </select>&nbsp;-&nbsp;<input type="text" class="txt" value="${param.phone2}" title="전화번호 가운데자리" name="phone2" />&nbsp;-&nbsp;
+                                        <input type="text" class="txt" value="${param.phone3}" title="전화번호 뒷자리" name="phone3" />
+                                    </span>
+                                </p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+ 
+                        <!-- btn -->
+                        <div class="btnr">
+                            <a href="javascript:test();" class="btn btn_blue"><img src="/images/common/btn_s_search.png" alt="검색" /></a>
+                        </div>
+ 
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <h2><img src="/images/mh/h2_travel_club02.png" alt="가맹점 번호검색입니다" /></h2>
+                    <div class="content_block_inner">
+                        <table class="dtable02 dtable_inputfield" summary="가맹점 검색을 위해 가맹점 번호를 입력하는 게시판입니다.">
+                        <caption>가맹점 번호검색</caption>
+                        <colgroup><col width="115" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><p>가맹점 번호</p></th>
+                                <td><p>
+                                    <span class="">
+                                        <span class="input_store_num">
+                                        <input type="text" class="txt" value="${param.chainNo}" name="chainNo" title="가맹점 번호 입력" />
+                                        <a href="javascript:getList2();" class="btn btn_s_white"><span>확인</span></a>
+                                        </span>
+                                    </span>
+                                </p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <table class="dtable01 mt20" summary="가맹점명, 주소, 전화번호, 포인트 적립율, 가맹점 상태 등 가맹점 리스트입니다.">
+                        <caption>가맹점 리스트</caption>
+                        <colgroup><col width="150" /><col width="*" /><col width="110" /><col width="110" /><col width="110" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">가맹점명</th>
+                                <th scope="col">주소</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">포인트 적립율</th>
+                                <th scope="col">가맹점 상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td class="t_no">0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                </form>
+                
+                <div class="paginate">
+                    <div class="paging">
+                        ${_page}
+                    </div>
+                </div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

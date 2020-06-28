@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트(청구지정보조회변경_청구지정보조회변경 2단계)
+ * File Name: NHPIMMHUCM010.jsp
+ * Author: 삼성SDS 전형배 사원
+ * Created on 2009. 12. 16.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<img src="/html/guide/guide_header.png" alt="상단 유틸 영역" />
+	</div>
+	<div id="con_wrap" class="clfix">
+		<div id="gnb">
+			<img src="/html/guide/guide_gnb.png" alt="GNB 및 좌측 모듈 영역" />
+		</div>
+		<div id="content_module">
+			<img src="/html/guide/guide_content_module.png" alt="메인 모듈 영역" />
+		</div>
+	</div>
+	<div id="footer">
+		<img src="/html/guide/guide_footer.png" alt="Copytright 영역" />
+	</div>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class="clfix" id="id_tablist">
+						<li>국문최대일곱자...<input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" /></li>
+						<li class="on" onmouseover="this.className='over';" onmouseout="this.className='on';">
+							<a href="#">카드이용내역</a> <input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" />
+							<div class="tabbrowse_sub">
+								<div><a href="#">국내이용내역</a><a href="#">청구내역 및 할부전환</a><a href="#">승인취소내역조회</a><a href="#">지역특화카드이용내역</a></div>
+								<div class="tabbrowse_sub_btm">&nbsp;</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id="id_ctr_btn">
+			<input type="button" class="btn_previous" onmouseover="t_over(this,'btn_previous');" onmouseout="t_out(this,'btn_previous');" id="id_ctr_prev" title="이전" />
+			<input type="button" class="btn_next" onmouseover="t_over(this,'btn_next');" onmouseout="t_out(this,'btn_next');" id="id_ctr_next" title="다음" />
+			<input type="button" class="btn_close" onmouseover="t_over(this,'btn_close');" onmouseout="t_out(this,'btn_close');" onclick="hide_con('tabbrowse_position');" title="탭 브라우저 레이어 닫기" />
+			</div>
+
+			<div class="tabbrowse_content">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="mb10"><img src="/images/mh/h1_address_info_modify.png" alt="청구지 정보조회 및 변경을 해주세요" /></h1>
+				</div>
+
+				<div class="content_block content_block_m0 first_none clfix">
+					<div class="top_step_change_profile top_step_change_profile02">
+						<ol class="none">
+							<li>본인확인</li>
+							<li><abbr>현재단계</abbr> <strong>정보변경</strong></li>
+							<li>변경완료</li>
+						</ol>
+					</div>
+				</div>
+				<div class="content_block content_block_m0 first_none clfix">
+					<h2><img src="/images/mh/h2_address_info_modify01.png" alt="회원님의 청구지 정보를 변경해 주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="청구지와 명세서 수령방법을 변경할 수 있는 게시판입니다.">
+						<caption>청구지 정보 변경</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>청구지</p></th>
+								<td>
+									<p>
+									<label for="label_addr1"><input type="radio" class="rdo" value="" id="label_addr1" name="label_addr" /> 자택</label>
+									<label for="label_addr2" class="ml10"><input type="radio" class="rdo" value="" id="label_addr2" name="label_addr" /> 직장</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>명세서 수령방법</p></th>
+								<td>
+									<p>
+									<label for="label_statement1"><input type="radio" class="rdo" value="" id="label_statement1" name="label_statement" /> 이메일</label>
+									<label for="label_statement2" class="ml10"><input type="radio" class="rdo" value="" id="label_statement2" name="label_statement" /> 우편</label>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04"><strong class="t_org">주의하세요!</strong>  회원님이 보유하신 개인신용카드 및 할부금융의 청구지, <br />청구서수령방법, E-mail주소 가 동시에 변경됩니다.</p>
+							<p class="btnr">
+                                <a href="#" class="btn btn_blue"><span>변경</span></a>
+                                <a href="#" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+						<div class="mt30"><img src="/images/mh/@sample_img.png" alt="" /></div>
+					</div>
+				</div>
+
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="/html/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+			</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
+</body>
+</html>

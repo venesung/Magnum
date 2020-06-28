@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+    <!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">현금서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3943_IMG_1.jpg" alt="24시간 생활속 어디서나 현금서비스- 밤늦게 갑자기 현금이 필요할 때도, 통장에 카드결제대금이 부족할 때도, 365일 24시간 바로바로 편리하게! " /></div>
+</div>
+<!-- content_block -->
+	<form name="form1">
+		<input type="hidden" name="plain" value="" />
+		<input type="hidden" name="loadCnt" value="0" />
+		<input type="hidden" name="ssno" value="" />
+	</form>
+	<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+		<form name="form_main">
+			<!-- tab_area -->
+			<div class="tab01 w810">
+				<ul>
+					<li><a href="javascript:goTab(1);">서비스 안내</a></li>
+					<li><a href="javascript:goTab(2);">신청</a></li>
+					<li class="on"><a href="#">시뮬레이션</a></li>
+					<li><a href="javascript:goTab(3);">이용내역 조회</a></li><!-- SR 12 11 21  -->
+				</ul>
+			</div>
+			<input name="tabNo" type="hidden" />
+		</form>
+	</div>
+	<!-- content_block -->
+    <!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cash_srvc_01.gif" alt="회원님의 이용한도를 알아보세요" /></h2>
+	<div class="content_block_inner"> 
+		<div class="tb_exp clfix"><strong class="mv_rai_txt">2012년 11월 25일 <em>현금서비스 이용한도 안내</em>입니다</strong></div>
+		
+			<table class="dtable01" summary="이용한도, 이용한금액, 이용가능금액을 보여주는 표입니다">
+				<caption>현금서비스 이용한도 안내</caption>
+				<thead>
+					<tr>
+						<th scope="col">이용한도</th>
+						<th scope="col">이용한금액</th>
+						<th scope="col">이용가능금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span class="t_no">1</span> 원</td>
+						<td><span class="t_no">1</span> 원</td>
+						<td><span class="t_no">1</span> 원</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>		
+</div>
+
+<form name="form_cash">
+<input type="hidden" name="gcode" value="1" />
+<input type="hidden" name="setDay" value="" />
+<div class="content_block clfix">
+	<h2><img src="/images/fs/h2_cash_srvc_02.gif" alt="현금서비스를 미리 체험해 보세요" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix">2012.02.03 기준</div>
+		<table class="dtable02" summary="현금서비스 시뮬레이션을 위해 상환방법, 이용예정일, 결제예정일, 신청금액을 입력하는 게시판입니다">
+			<caption style="display:none;">현금서비스 시뮬레이션 정보 입력</caption>
+			<colgroup><col width="115" /><col /><col width="115" /><col /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>상환방법</p></th>
+					<td colspan="3">
+						<p>
+						<label for="cashHire1" class="mr25">
+						<input type="radio" class="rdo" id="cashHire1" name="cashHire" value="N" title="일시상환" checked="checked" /> 일시상환</label>
+						<!-- 
+						<label for="cashHire2" class="mr25">
+						<input type="radio" class="rdo" id="cashHire2" name="cashHire" value="Y" title="할부상환" checked="checked" /> 할부상환</label>
+						 -->
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>이용예정일</p></th>
+					<td>
+						<p>
+							
+						</p>
+					</td>
+					<th scope="row"><p>결제예정일</p></th>
+					<td>
+						<p>
+							
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>신청금액</p></th>
+					<td colspan="3">
+						<p><input type="text" id="ableAmt" name="ableAmt" maxlength="30" value="" class="txt" title="신청금액 입력" /> 만원</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="btnset">
+			<p class="btnr">
+				<a href="#" class="btn btn_blue" onclick="viewSimulation();return false;"><span>시뮬레이션 조회</span></a>
+			</p>
+		</div>
+		<table class="dtable02 dtable02_mvlar mt20" style="display:none;" id="resultDiv" summary="신청금액, 이자율, 할부신청여부로 구성된 신청하신 내역을 확인하는 게시판입니다">
+			<caption style="display:none;">신청 내역 확인</caption>
+			<colgroup><col width="115" /><col /><col width="115" /><col /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>신청금액</p></th>
+					<td><p id="resultAbleAmt"></p></td>
+					<th scope="row"><p>이자율</p></th>
+					<td><p id="resultFeeRate"></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>할부신청여부</p></th>
+					<td colspan="3">
+						<p id="resultHireYn"></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+</div>
+</form>
+
+<!-- 오류메세지 -->
+<div id="msgLayer" style="display:none;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;" id="cardNoErrLayer">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+<!-- 오류메세지 -->
+
+<div class="content_block clfix" style="display:;" id="resultListDiv">
+	<h2><img src="/images/fs/h2_cash_srvc_03.gif" alt="상환일정" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix" id="resultHistDt">2012년 11월 25일 12:16:56 기준</div>
+		<table class="dtable01" summary="회차, 결제일, 원금, 이자, 회차별 입금액, 입금후 잔액으로 구성된 상환일정을 확인하는 게시판입니다">
+			<caption>상환일정</caption>
+			<colgroup>
+				<col width="50" />
+				<col width="100" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">회차</th>
+					<th scope="col">결제일</th>
+					<th scope="col" class="cell_r10">원금</th>
+					<th scope="col" class="cell_r10">이자</th>
+					<th scope="col" class="cell_r10">회차별 입금액</th>
+					<th scope="col" class="cell_r10">입금후 잔액</th>
+				</tr>
+			</thead>
+			<tfoot id="resultListTFoot">
+				<tr>
+					<td colspan="2" class="cell_l10">합계</td>
+					<td class="cell_r10">100,000원</td>
+					<td class="cell_r10">1,760원</td>
+					<td class="cell_r10">101,706원</td>
+					<td class="cell_r10">&nbsp;</td>
+				</tr>
+			</tfoot>
+			<tbody id="resultListTBody">
+				<tr>
+					<td>1</td>
+					<td>13.01.25</td>
+					<td class="cell_r10">100,000원</td>
+					<td class="cell_r10">1,760원</td>
+					<td class="cell_r10">101,706원</td>
+					<td class="cell_r10">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="mt10">결제일이 휴일인 경우, 그 다음에 오는 첫 영업일 기준으로 이자가 산정됩니다.</p>
+		<div class="btnset mt30">
+			<p class="btnr">
+				<a href="#" class="btn btn_white" onclick="javascript:simulReset();return false;"><span>다시계산</span></a>
+				<a href="javascript:goTab(2);" class="btn btn_blue"><span>현금서비스 신청</span></a>
+			</p>
+		</div>
+	</div>		
+</div>	
+
+<script language="JavaScript" type="text/javascript"> initAppComplete();</script>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

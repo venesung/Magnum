@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_limit_check.png" alt="체크카드 이용한도를 조정 하실 수 있습니다." /></h1>
+				</div>
+
+<!-- 100126 -->
+				<!-- content_block -->
+				<form name="form1" method="post">
+				<div class="content_block content_block_card clfix">
+					<div class="top_step_arbitration_limit top_step_arbitration_limit01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>조정신청 한도입력</strong></li>
+							<li>입력내용 확인</li>
+							<li>완료</li>
+						</ol>
+					</div>
+<!-- //100126 -->
+				
+					<h2><img src="/images/mh/h2_limit_check11.png" alt="이용한도 조정하실 카드를 선택하세요" /></h2>
+					<div class="content_block_inner">
+                        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);"  style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">체크카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li onclick="goTabPage('NHPIMMHCLM002M001', true);"><a href="#">개인카드</a></li>
+                                    <li onclick="local_search();"><a href="#">체크카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt">(개인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다.</span>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<ol class="list_no01">
+							<li><p>000 님의 체크카드 한도는 다음과 같습니다.</p></li>
+							<li><p>체크카드는 사용시 사용대금이 계좌에서 인출되는 카드이나,<br />일/월별로 한도를 초과한 사용금액에 대해서는 승인 및 계좌에서 출금이 되지 않습니다.</p></li>
+							<li><p>한도 조정은 10만원 단위로 가능합니다. 단, 이미 사용하신 금액 이하의 한도로는 조정되지 않습니다.<br />(최저 조정가능한도 : 일 이용한도 10만원 / 월 이용한도 50만원)</p></li>
+							<li><p>사용한도의 조정은 1일 3회만 변경 가능합니다.</p></li>
+							<li><p>체크카드 일/월 한도 내에서 국내외 한도가 통합 운영되고 있으며,<br />총 한도에서 국내 사용 금액을 제외한 잔여 한도 내에서 해외 사용이 가능합니다.</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt30" summary="카드를 선택하는 게시판입니다.">
+						<caption>카드선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select id="checkCardListCombo" name="checkCardListCombo" title="카드종류 선택" style="width:360px" onchange="isSearch='false';">
+									<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+							<a href="#" id="searchBtn" name="searchBtn" class="btn btn_blue"><span>조회</span></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_limit_change.png" alt="조정하실 이용한도를 입력하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01 dtable_inputfield" summary="구분(국내,해외)별 현재한도를 보여주고 조정 요청 한도를 입력하는 게시판입니다">
+						<caption>이용한도 입력</caption>
+						<colgroup><col width="120" /><col width="120" /><col width="200" /><col width="200" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">현재한도</th>
+								<th scope="col" class="cell_r10">조정 요청 한도</th>
+							</tr>
+						</thead>
+						<tbody id="mainTBody" name="mainTBody">
+							<tr>
+								<th rowspan="2" class="cell_l10 cell_bg">카드사용금액(국내)</th>
+								<th class="cell_l10 cell_bg">일 승인제한금액</th>
+								<td class="cell_r10"><span class="t_no">00</span>원</td>
+								<td class="cell_r10"><span class="input_point"><input type="text" id="reqDayLmt" name="reqDayLmt" size="8" maxlength="8" class="txt" title="일 승인제한금액" value="" style="ime-mode:disabled" />원</span></td>
+							</tr>
+							<tr>
+								<th class="cell_l10 cell_bg">월 승인제한금액</th>
+								<td class="cell_r10"><span class="t_no">00</span>원</td>
+								<td class="cell_r10"><span class="input_point"><input type="text" id="reqMonLmt" name="reqMonLmt" size="8" maxlength="8" class="txt" title="월 승인제한금액" value="" style="ime-mode:disabled" />원</span></td>
+							</tr>
+							<tr>
+								<th rowspan="2" class="cell_l10 cell_bg">카드사용금액(해외)</th>
+								<th class="cell_l10 cell_bg">일 승인제한금액</th>
+								<td class="cell_r10 t_no"><span class="t_no">US$ 00</span></td>
+								<td class="cell_r10"><span class="input_point"></span></td>
+							</tr>
+							<tr>
+								<th class="cell_l10 cell_bg">월 승인제한금액</th>
+								<td class="cell_r10 t_no"><span class="t_no">US$ 00</span></td>
+								<td class="cell_r10"><span class="input_point"></span></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">국내한도 조정시 해외한도는 조정된 국내한도와 동일한 한도로 자동 조정됩니다.</p>
+
+							<div class="btnr" >
+								<a href="#" id="applyBtn" name="applyBtn" class="btn btn_blue"><span>신청</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</form>
+				
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

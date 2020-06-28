@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/fs/h1_chk_creditloan.png" alt="개인신용대출의 이용내역을 확인할 수 있습니다" /></h1>
+</div>
+<div class="content_block content_block_card clfix">
+<form name="form_main">
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><a href="#">거래내역조회</a></li>
+			<li><a href="javascript:goTab(2);">당월결제금액 조회</a></li>
+			<li><a href="javascript:goTab(3);">미결제금액조회</a></li>
+			
+		</ul>
+	</div>
+	<input name="tabNo" type="hidden" />
+</form>	
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_loan_traninfo01.png" alt="개인신용대출 거래내역 조회" /></h2>
+	<div class="content_block_inner">
+		<div class="not_neccessary mb10">현재 진행중인 대출은 ${ingCount}건입니다.</div>
+		<table class="dtable01" summary="현황, 구분, 대출번호, 대출원금, 계약지점으로 구성된 개인신용대출거래내역 조회">
+			<caption>개인신용대출거래내역 조회</caption>
+			<colgroup>
+				<col width="20%" span="5" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_c">현황</th>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_c">대출번호</th>
+					<th scope="col" class="cell_r10">대출원금</th>
+					<th scope="col" class="cell_c">계약지점</th>
+				</tr>
+			</thead>
+			<tbody >
+					<tr class="nodata">
+						<td colspan="5">고객님께서는 해당거래내역이 존재하지 않습니다.</td>
+					</tr>
+						<tr>
+							<td class="cell_c">${result.status}</td>
+							<td class="cell_l10">${result.prod_nm}</td>
+							<td class="cell_c"><a href="#" onclick="openDetailLoanPop('${result.invoice_param}', '${result.l_dept_nm}', '${result.status}');" title="대출상세내역 확인">${result.invoice_no}</a></td>
+							<td class="cell_r10">${result.inst_amt}</td>
+							<td class="cell_c">${result.l_dept_nm}</td>
+						</tr>
+				</tbody>
+		</table>
+	</div>
+</div>
+<div class="content_block content_block_card clfix">
+	<h2></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>대출번호를 클릭 하시면 대출건의 상세 내역을 확인 하실 수 있습니다.</p></li>
+			<li><p>고객님의 정보보호를 위해 청구지 및 결제계좌 등은 소유하고 있으신 카드정보 확인을 통해 변경 가능합니다.</p></li>
+			<li><p>1999년 12월 31일 이전에 종결된 거래는 조회되지 않습니다.</p></li>
+		</ol>
+	</div>
+	<div class="btnset">
+		<p class="btnr">
+			<a href="javascript:goTabPage('NHPIMMHCSM001',false);" class="btn btn_white"><span>결제계좌변경</span></a>
+			<a href="javascript:goTabPage('NHPIMMHBSU001',false);" class="btn btn_white"><span>청구지변경</span></a>
+		</p>
+	</div>
+</div>
+
+<!--거래 상세내역  start-->
+<div id="detailLayer" style="display:;">
+<div class="pop_l_wrap" style="width:750px;height:700px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('detailLayer');" value="레이어닫기" title="개인신용대출 거래내역 조회 레이어 닫기" />
+	<p class="pop_tit tc"><!--img src="images/fs/layer_tit_fs03.png" alt="작성하신 신청정보를 확인하세요" /-->&nbsp;</p>
+	<div class="pop_l_content">
+		<div class="mv_loan01">
+			<!-- p class="lt mt10 mb10">&nbsp;&nbsp;&nbsp;&nbsp;만기일인 2012년 12월 01일에 90,345원이 해당월 카드 결제대금과 함께<br/>&nbsp;&nbsp;&nbsp;&nbsp;자동이체계좌(국민 208-14-31XXXXXX)로 청구됩니다.</p-->
+			
+			<p class="lt mt10 mb10" id="msg"></p>
+			
+			
+			<table class="dtable02 dtable_inputfield" summary="고객명, 주민번호, 대출번호를 보여주는 표입니다.">
+				<caption>개인신용대출 거래내역 조회 화면</caption>
+				<colgroup>
+				<col width="90"/>
+				<col width="120"/>
+				<col width="90"/>
+				<col width="120"/>
+				<col width="90"/>
+				<col width="*"/>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row" class="cell_l10"><p>고객명</p></th>
+						<td class="cell_c" id="userName"></td>
+						<th scope="row" class="cell_l10"><p>주민번호</p></th>
+						<td class="cell_c" id="jumin_no"></td>
+						<th scope="row" class="cell_l10"><p>대출번호</p></th>
+						<td class="c" id="invoice_no"></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10"><p>약정금액</p></th>
+						<td class="cell_r10" id="inst_amt"></td>
+						<th scope="row" class="cell_l10"><p>납입누계</p></th>
+						<td class="cell_r10" id="pay_total_amt"></td>
+						<th scope="row" class="cell_l10"><p>잔여채권액</p></th>
+						<td class="cell_r10" id="remain_amt"></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10"><p>분할횟수</p></th>
+						<td class="cell_r10" id="mn_cnt"></td>
+						<th scope="row" class="cell_l10"><p>불입횟수</p></th>
+						<td class="cell_r10" id="pay_mn_cnt"></td>
+						<th scope="row" class="cell_l10"><p>만기예정일</p></th>
+						<td class="cell_r10" id="end_plan_ymd"></td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l10"><p>초회불입일</p></th>
+						<td class="cell_l10" colspan="5" id="first_pay_ymd"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<div style="width: 660; height: 300; overflow: auto">
+				<table class="dtable02 dtable_inputfield" summary="연장신청금액, 대출기간, 이자율, 연체이자율, 결제일, 만기일을 보여주는 표입니다.">
+					<caption>개인신용대출 거래내역 조회 화면</caption>
+					<colgroup>
+					<col width="50"/>
+					<col width="90"/>
+					<col width="90"/>
+					<col width="100"/>
+					<col width="100"/>
+					<col width="*"/>
+					</colgroup>
+					<tbody id="dgBeforeGrid">
+						<tr></tr>
+					</tbody>
+				</table>
+				</div>
+		</div>
+	</div>
+	<p class="btnc mt20"> <a href="#" onclick="closeLayer('detailLayer');"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+</div>
+</div>
+<!--거래 상세내역  end-->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: "삼성SDS 김동현 사원"
+ * Created on 2010. 1. 9.
+ * 메인페이지 이동
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">메인</div>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<%
+	String nextGotoUrl = (String)request.getAttribute("menuId");
+%>
+<div id="tab_script">
+<script type="text/javascript" language="javascript">
+function $tabOnLoad() {
+	var nextGotoUrl = document.form1.nextGotoUrl.value;
+	var url = "/hp/main.do?method=myhome";
+
+	if(nextGotoUrl != null && nextGotoUrl != "" && nextGotoUrl != "/webLogin.do"){
+        url = "/hp/main.do?method=myhome&amp;menuId="+nextGotoUrl;
+	}
+	location.href = url;
+}
+</script>
+</div>
+<form name="form1" method="post">
+<input type="hidden" name="nextGotoUrl" value="${menuId}" />
+</form>
+				<!-- top_visual -->
+				<div class="top_visual">
+					
+				</div>
+				
+		
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					
+				</div>
+
+
+<!-- footer_layer -->
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>
+		
+

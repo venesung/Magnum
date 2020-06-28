@@ -1,0 +1,50 @@
+
+<%/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCSFEGVIEW001.jsp
+ * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+ * Created on 2010.03.31
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%
+String rootHistory = RequestUtil.getStringParameter(request, "rootHistory", "렌트카/취소함/");
+%>
+
+	<title>해외에서 렌트카를 사용 중 서비스를 취소하였을 경우 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	
+		<!-- <script type="text/javascript" src="/js/common-hp-ajax.js"></script> -->
+	<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+</head>
+<body>
+	<div id="wrap">
+			<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_foreign_faqtype02.png" alt="위 항목에 대한 구체적인 문제는 무엇입니까?" /></h2>
+					<div class="content_block_inner pos_rel">
+						<div class="tb_exp clfix">
+							<span class="fl_left"><img src="/images/cs/txt_qa_foreign_1619.png" alt="해외에서 렌트카를 사용 중 서비스를 취소하였을 경우" /></span>
+							
+						</div>
+						<div class="mt10"><img src="/images/cs/img_qa_foreign_1619.png" usemap="#foreignfaq_1619" alt="" />
+							<map name="foreignfaq_1619" id="foreignfaq_1619">
+								<area shape="rect" coords="425,5,540,26" id="<%=NHPIMCSAUQFLAGVO.REG_RENT_PAGE%>" onclick="goPage(this,3)" alt="<%=rootHistory %>취소처리안됨 - 취소 약속 증빙을 보관" href="#"/>
+								<area shape="rect" coords="426,45,567,63" id="<%=NHPIMCSAUQFLAGVO.REG_RENT_PAGE%>" onclick="goPage(this,3)" alt="<%=rootHistory %>취소처리안됨 - 취소 약속 증빙을 보관 안 함" href="#"/>
+							</map>
+					  </div>
+						<div class="line_lgray">&nbsp;</div>
+					
+					</div>
+				</div>
+	</div>
+</body>
+</html>			
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

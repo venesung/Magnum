@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_issue.png" alt="신청하신 카드의 발급진행 상황을 조회하세요" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">	<!-- 100126 -->
+					<h2><img src="/images/mh/h2_card_issue01.png" alt="카드발급상황을 조회하세요" /></h2>
+					<div class="content_block_inner">
+					
+						<table class="dtable02 dtable_inputfield" summary="카드발급상황 조회를 위한 주민등록번호를 입력하는 게시판입니다.">
+						<caption>카드발급상황 조회</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td>
+									<p class="input_idno">
+										<input name="resno1" type="text" maxlength="6" class="txt" title="주민등록번호 앞자리"  onkeyup="lengthCheck1(this.form, this.value);" enc="on" /> -
+										<input name="resno2" type="password" maxlength="7" class="txt" title="주민등록번호 뒷자리" enc="on" />&nbsp;<span id="usafeon_resno1|resno2"></span>
+									</p>
+									<script type="text/javascript">
+										safeonAddNumberField("SPITAI101", "resno1|resno2");
+										SafeonInit();											
+										TouchEnKey_ReScan();
+									</script>									
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+							<a href="javascript:SPITAI101_validation(self.document.SPITAI101)" class="btn btn_blue"><span>조회</span></a>
+							<!-- //100126 -->
+						</div>
+
+						<table class="dtable01 mt20" summary="이름, 신청카드, 접수일자, 처리상황 등 카드발급상황 조회 내용입니다.">
+						<caption>카드발급상황 조회</caption>
+						<colgroup><col width="15%" /><col width="20%" /><col width="30%" /><col width="20%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">순서</th>
+								<th scope="col">이름</th>
+								<th scope="col">신청카드</th>
+								<th scope="col">접수일자</th>
+								<th scope="col">처리상황</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 t_no">0</td> 
+								<td>0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>
+								접수중
+								<a href="#" class="btn btn_s_white" title="00 처리상황 상세보기"><span>상세보기</span></a>
+								</td>
+							</tr>
+							<tr>
+								<td class="cell_l10 t_no">0</td> 
+								<td>0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td><a href="#" class="btn btn_s_white" title="00 처리상황 상세보기"><span>상세보기</span></a></td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="5">해당 내역이 없습니다.</td>
+							</tr>	
+						</tbody>
+						</table>
+
+
+						<ol class="list_no01 mt30">
+						<!-- 정기일반영 12.12.20 -->
+						<!--						
+							<li><p>접수일은 회원님의 카드 신청 접수일자를 의미합니다.</p></li>
+							<li><p>안전한 카드 사용을 위해 카드 수령 시 본인이 직접 삼성카드 고객상담센터(지역번호없이)<strong class="t_black">1588-8700</strong> 또는 <br />홈페이지 <a href="javascript:goTabPage('NHPIMCDCIM002');" class="a_point">카드사용등록</a> 메뉴를 통해 카드사용등록 후 이용 가능합니다.</p></li>
+							<li><p>해당 처리상황을 클릭하시면 카드 별 세부 발급진행상황을 확인 할 수 있습니다.</p></li>
+							<li><p>최근 1개월 이내의 신청내역이 조회됩니다.</p></li>
+							<li><p>카드 신청내역이 조회되지 않으실 경우 삼성카드 고객상담센터(지역번호 없이)1588-8700으로 <br />문의해 주시기 바랍니다.</p></li>
+							<li><p>신청을 취소할경우 익일 발급진행상황에서 확인가능합니다.</p></li>
+						-->		
+							<li><p>접수일자는 고객님의 카드 신청 접수일을 의미하며, 접수일자로부터 1개월 이내의 신청 내역이 조회됩니다.</p></li>
+							<li><p>상기의 처리상황 상세보기 버튼을 클릭하시면 자세한 카드발급진행 상황을 확인 하실 수 있습니다.</p></li>
+							<li><p>카드발급진행 상황이 조회되지 않으실 경우 삼성카드 고객상담센터(지역번호 없이)1588-8700으로<br /> 문의해 주시기 바라며, 신청을 취소한 경우 익일 카드발급진행 상황에서 확인 가능합니다.</p></li>
+							<li><p>본인이 직접 카드를 수령하지 않은 경우 고객상담센터(지역번호없이)1588-8700 또는<br /> 홈페이지 <a href="javascript:goTabPage('NHPIMCDCIM002');" class="a_point">카드사용등록</a> 메뉴를 통해 카드사용등록 후 이용 가능합니다.<br />※ 단, 본인이 직접 카드를 수령하신 경우에도 PDA 통신 장애 등으로 자동사용등록이<br /> &nbsp;&nbsp; 안되는 경우가 발생 할 수 있습니다.</p></li>
+							<li><p>삼성카드 고객센터(신세계백화점 등)에서 즉시(현장)발급 받으신 카드는 해당 화면에서 조회 되지 않습니다.</p></li>
+						<!--// 정기일반영 12.12.20 -->	
+						
+						</ol>
+					</div>
+				</div>
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardissuing_status.png" alt="신청하신 카드의 발급상황입니다" /></h2>
+					<div class="content_block_inner">
+						<!-- <h3><img src="/images/mh/h3_completion_status_cardapp.png" alt="현재, 고객님의 카드신청이 완료된 상태입니다" /></h3> -->
+						
+						<!--카드신청시 안내되는 문구-->
+						<ol class="list_no01 mt20">
+							<li><p>신청일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING4%></span></p></li>
+							<li><p>고객님께서 신청하신 카드가 정상적으로 접수되었습니다.</p></li>
+						</ol>
+						
+						<!--카드 신청접수 안내되는 문구-->
+						<ol class="list_no01 mt20">
+							<li><p>접수일자  &nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING10%></span></p></li>
+							<!--
+							<li><p>카드수령지&nbsp;<img src="/images/common/img_division.png" alt="" />&nbsp;<%=this.recF(STRING9)%></p></li> 
+							-->
+							<li><p>고객님께서 신청하신 카드는 심사절차가 진행되고 있습니다.</p></li>
+						</ol>
+						
+						<!--카드 심사 완료 안내되는 문구-->
+						<ol class="list_no01 mt20">
+							<li><p>심사완료일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING12%></span></p></li>
+							<!-- 
+							<li><p>카드수령지 &nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="" />&nbsp;<%=this.recF(STRING9)%></p></li>
+							-->
+							<li><p>고객님의 카드를 안전하게 보내드리기 위해 배송 준비중입니다.<br /> 이용해주셔서 감사합니다.</p></li>
+						</ol>
+						
+						<!--카드 심사 완료 안내되는 문구[부적격시 안내되는 문구]-->
+						<ol class="list_no01 mt20">
+							<li><p>부적격처리일&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING11%></span></p></li>
+							<li><p>고객님께서 신청하신 카드가 발급보류중입니다.</p></li>
+						</ol>
+<!-- 정기일반영 12.11.21 -->
+						<div style="margin-left:8px;">
+							<p>※ 자세한 사항은 아래의 연락처로 문의해 주시기 바랍니다.</p>
+							<table class="dtable01 mt5 " summary="카드발급보류 문의 내용입니다.">
+								<caption>카드발급보류 문의</caption>
+								<colgroup><col width="32%" /><col width="*" /></colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="cell_l10 riline">개인카드</th>
+										<th scope="col" class="cell_l10">법인카드</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- loop -->
+									<tr>
+										<td class="cell_l10 riline" style="vertical-align:top; padding-top:5px;"><span class="t_point">삼성카드 대표전화 : 1588-3941</span></td>
+										<td class="cell_l10" style="padding-top:5px; padding-bottom:5px;">
+											<span class="t_point">삼성카드 대표전화 : 1588-8700</span><br />
+											- 법인사업본부(서울, 수도권, 경기, 강원지역) : 02-2172-8556 / 8545 / <br /><span style="padding-left:260px;">8523 / 8558 / 8566 / 8519</span><br />
+											- 중부법인(충청, 호남지역) : 042-486-9622~4<br />
+											- 대구법입(대구, 경북지역) : 053-572-0783<br />
+											- 부산법인(부산, 경남, 제주지역) : 051-640-8339 / 8397
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+<!--// 정기일반영 12.11.21 -->
+
+						<!--카드 심사 완료 안내되는 문구[부적격시 안내되는 문구]-->
+						<ol class="list_no01 mt20">
+							<li><p>부적격처리일&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING11%></span></p></li>
+							<li><p>고객님께서 신청하신 카드가 당사 자격기준에 부합되지 않아 발급보류중입니다.</p></li>
+						</ol>
+<!-- 정기일반영 12.11.21 -->
+						<div style="margin-left:8px;">
+							<p>※ 자세한 사항은 아래의 연락처로 문의해 주시기 바랍니다.</p>
+							<table class="dtable01 mt5 " summary="카드발급보류 문의 내용입니다.">
+								<caption>카드발급보류 문의</caption>
+								<colgroup><col width="32%" /><col width="*" /></colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="cell_l10 riline">개인카드</th>
+										<th scope="col" class="cell_l10">법인카드</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- loop -->
+									<tr>
+										<td class="cell_l10 riline" style="vertical-align:top; padding-top:5px;"><span class="t_point">삼성카드 대표전화 : 1588-3941</span></td>
+										<td class="cell_l10" style="padding-top:5px; padding-bottom:5px;">
+											<span class="t_point">삼성카드 대표전화 : 1588-8700</span><br />
+											- 법인사업본부(서울, 수도권, 경기, 강원지역) : 02-2172-8556 / 8545 / <br /><span style="padding-left:260px;">8523 / 8558 / 8566 / 8519</span><br />
+											- 중부법인(충청, 호남지역) : 042-486-9622~4<br />
+											- 대구법입(대구, 경북지역) : 053-572-0783<br />
+											- 부산법인(부산, 경남, 제주지역) : 051-640-8339 / 8397
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+<!--// 정기일반영 12.11.21 -->
+
+						<!--카드 발급완료 안내되는 문구[특송업체인 경우 : 조회 제외]-->
+						<ol class="list_no01 mt20">
+							<li><p>해당카드의 발급 이후 진행상태는 삼성카드CRM센터로 문의해 주시기 바랍니다.</p></li>
+							<li><p>삼성카드 고객센터 (지역번호없이)1588-8700</p></li>
+						</ol>
+						<ol class="list_no01 mt20">
+							<li><p>업체인계일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING14%></span></p></li>
+							<li><p>카드수령지&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=this.recF(STRING9)%></span></p></li>
+						<!--카드 발급완료 안내되는 문구[특송업체인 경우 : 조회 제외 아님 ]-->
+							<li><span>배송업체&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><a href="#"><%=this.senC(STRING24)%>&nbsp;<%=STRING29 %></a></span></span></li>
+                            <li><span>카드는 배송업체를 통해 고객님께 전해드릴 예정입니다. 배송업체명을 클릭하시면 자세한 배송진행상황을 확인 하실 수 있습니다.</span></li>
+							<li><span>배송업체&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=this.senC(STRING24)%>&nbsp;</span></span></li>
+                            <li><span>카드는 배송업체를 통해 고객님께 전해드릴 예정입니다. 배송업체명을 클릭하시면 자세한 배송진행상황을 확인 하실 수 있습니다.</span></li>
+						<!--카드 발급완료 안내되는 문구[등기우편인 경우]-->
+							<li><span>배송업체&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><a href="javascript:epost('<%=STRING24 %>')">우체국  (1588-1300)&nbsp;&nbsp;등기번호 : <%=STRING24%></a></span></span></li>
+                            <li><span>카드는 우체국을 통해 고객님께 전해드릴 예정입니다. 등기번호를 클릭하시면 자세한 배송진행상황을 확인 하실 수 있습니다.</span></li>
+						</ol>
+						<!--카드 배송완료 안내되는 문구-->
+						<ol class="list_no01 mt20">					
+							<li><p>배송완료일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=STRING22%></span></p></li>
+							<li><p>카드수령지&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=this.recF(STRING9)%></span></p></li>
+							<li><p>수령인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=this.recF(STRING23)%></span></p></li>
+							<li><p>카드배송이 완료되었습니다. 카드사용등록을 하셔야 카드사용이 가능합니다. <a href="javascript:goTabPage('NHPIMCDCIM002');">[카드사용등록 바로가기]</a></p></li>
+						</ol>	
+						<!--카드 배송완료 안내되는 문구 [카드반송인경우]-->
+						<ol class="list_no01 mt20">
+							<li><p>카드반송일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%=this.senC(STRING25)%></span></p></li>
+							<li><p>고객님께서 신청하신 카드가 정상적으로 전달되지 못했습니다.<br />삼성카드 CRM센터로 연락주시면 신속하게 처리해 드리겠습니다.</p></li>
+						</ol>	
+						<ol class="list_no01 mt20">
+							<li><p>카드사용등록일자&nbsp;<img src="/images/common/img_division.png" alt="|" />&nbsp;<span class="t_point"><%= STRING30 %></span></p></li>
+							<li><p>고객님께서 수령하신 카드는 사용등록이 완료되어 카드사용이 가능한 상태입니다. 많은 이용 부탁드립니다.</p></li>
+						</ol>
+
+
+						<div class="line_lgray02">&nbsp;</div>
+					</div>
+				</div>	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				

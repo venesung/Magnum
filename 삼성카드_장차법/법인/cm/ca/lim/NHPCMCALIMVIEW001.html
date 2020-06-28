@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>한도관리 - 삼성카드</title>
+</head>
+
+<body>
+<div id="xecure_obj" ></div>
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_limit_management.png" alt="한도관리" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<h2><img src="/images/cm/h2_detail_limitman01.png" alt="카드한도 정보" /></h2>
+					<table class="dtable02" summary="카드명, 카드번호, 회원명등 카드 한도정보를 확인하실 수 있습니다">
+					<caption>카드 한도정보</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드명</p></th>
+							<td><p></p></td>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p><span class="t_no"></span></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>회원명</p></th>
+							<td colspan="3"><p></p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="tb_exp clfix mt15"><!-- 100622 -->
+						<span class="fl_left">&nbsp;</span>
+						<p class="fl_right t_desc04">(단위 : 원)</p>
+					</div>
+					<table class="dtable02" summary="금일 기준 사용한도,  해외 사용한도 금액, 사용하신 금액, 사용가능 금액를 확인하실 수 있는 게시판입니다">
+					<caption>카드 한도정보</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>총 사용한도</p></th>
+							<td><p><span class="t_no mr10">123</span></p></td>
+							<th scope="row"><p>해외 사용한도 금액</p></th>
+							<td><p><span class="t_no">(USD )</span></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>사용하신 금액</p></th>
+							<td><p><span class="t_no"></span></p></td>
+							<th scope="row"><p>사용가능 금액</p></th>
+							<td><p><span class="t_n o"></span></p></td>
+						</tr>
+					</tbody>
+					</table>
+				
+					<h2><img src="/images/cm/h2_detail_limitman02.png" alt="카드한도 변경" /></h2>
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt10">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="한도 방식, 적용기간 등 카드한도 변경하실 수 있습니다.">
+					<caption>카드한도 변경</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>한도 방식</p></th>
+							<td><p>
+								<input type="radio" class="rdo" value="1" id="limit_type1" name="limit_type"  checked="checked" /> <label for="limit_type1" class="mr10">계속</label>
+								<input type="radio" class="rdo" value="2" id="limit_type2" name="limit_type" /> <label for="limit_type2">일시</label>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>적용기간</p></th>
+							<td><p><span id="limit_period" class="reset_date" style="display: none"></span>
+							</p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<table class="dtable01 dtable_inputfield mt15" summary="현재 한도를 확인후 한도 변경으로 카드한도를 변경하실 수 있습니다.">
+					<caption>카드한도 변경</caption>
+					<colgroup><col width="24%" /><col width="38%" /><col width="38%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10 cell_bg riline"><p>구분</p></th>
+							<th scope="col" class="cell_r10"><p>현재 한도</p></th>
+							<th scope="col" class="cell_r10"><p>한도 변경</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<td scope="row" class="cell_l10 cell_bg riline"><p>카드사용한도</p></td>
+							<td class="cell_r10"><p><span class="t_no"></span> 원</p></td>
+							<td class="cell_r10"><p><span class="input_point"><input type="text" class="txt" name="use_limit" title="한도변경 금액" id="use_limit" maxlength="15" />원</span></p></td>
+						</tr>
+
+					</tbody>
+					</table>
+					<div class="btnset">
+						<p class="btnl"><a href="/lim.do?method=selectMonthLimitList" class="btn btn_white"><span>월 한도 관리 </span></a>&nbsp;<a href="/lim.do?method=selectTermLimitList" class="btn btn_white"><span>기간한도관리</span></a></p>
+						<p class="btnr"><a href="javascript:sendLimit();" id="btn_apply" class="btn btn_blue"><span>확인</span></a> <a href="javascript:clear();" class="btn btn_white"><span>취소</span></a> <a href="javascript:goMenu('lim.do?method=selectLimitList');" class="btn btn_white"><span>목록</span></a></p>
+					</div>
+				</div>
+			    <p align="center">　</p>
+				<p align="center"><b>죄송합니다. 온라인 카드신청 대상 법인이 아니옵니다.<br />
+				자세한 내용은 법인 담당자에게 문의해주시기 바랍니다.</b></p>
+
+					<div class="line_lgray">&nbsp;</div>
+					<h3 class="p_tit">신청한도 요청 기준</h3>
+					<table class="dtable01 w450" summary="신청금액 범위,신청금액 단위 등 신청한도 요청 기준 정보를 제공합니다.">
+                    <caption>신청한도 요청 기준</caption>
+					<colgroup><col width="18%" /><col width="28%" /><col width="32%" /><col width="22%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="3" class="cell_l10 riline">신청금액 범위</th>
+							<th scope="col" class="cell_r10">신청금액 단위</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cell_l10"><span class="t_no">0</span>원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">1,000</span>만원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">10</span>만원</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">1,000</span>만원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">1</span>억</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">100</span>만원</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">1</span>억</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_apoint_org">10</span>억</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">1,000</span>만원</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">10</span>억</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">100</span>억</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">1</span>억</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">100</span>억</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">1,000</span>억</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">1</span>억</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">1,000</span>억</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">999,999,900,000</span>원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">10</span>억</td>
+						</tr>
+					</tbody>
+					</table>
+					<p class="mt5"><strong class="t_black t_no">최대 999,999,990,000원까지 입력 가능</strong></p>
+					<p class="flag_additional"><img src="/images/cm/img_limit_manage_detail.jpg" class="ab_br" alt="" /></p>
+					
+					<div class="line_lgray">&nbsp;</div>
+					<h3 class="p_tit">신청한도 요청 기준</h3>
+					<table class="dtable01 w450">
+					<colgroup><col width="18%" /><col width="28%" /><col width="32%" /><col width="22%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="3" class="cell_l10 riline">신청금액 범위</th>
+							<th scope="col" class="cell_r10">신청금액 단위</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cell_l10"><span class="t_no">0</span>원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">1,000</span>만원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">10</span>만원</td>
+						</tr>
+						<tr>
+							<td class="cell_l10"><span class="t_no">1,000</span>만원</td>
+							<td class="cell_l10">&lt; 신청한도 금액 ≤</td>
+							<td class="cell_l10 riline t_point_org"><span class="t_no t_point_org">3,000</span>만원</td>
+							<td class="cell_r10 t_point_org"><span class="t_no t_point_org">100</span>만원</td>
+						</tr>
+					</tbody>
+					</table>
+					<p class="flag_additional"><img src="/images/cm/img_limit_manage_detail.jpg" class="ab_br" alt="" /></p>
+					
+			<div class="btnset">
+						<p class="btnl"><a href="/lim.do?method=selectMonthLimitList" class="btn btn_white"><span>월 한도 관리 </span></a>&nbsp;<a href="/lim.do?method=selectTermLimitList" class="btn btn_white"><span>기간한도관리</span></a></p>
+						<p class="btnr"><a href="javascript:goMenu('lim.do?method=selectLimitList');" class="btn btn_white"><span>목록</span></a></p>
+					</div>
+					
+			</div>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+
+</body>
+
+</html>

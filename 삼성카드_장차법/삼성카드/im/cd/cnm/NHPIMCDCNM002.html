@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 맞춤형복지 대상가맹점 검색 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_search_welfarecard.png" alt="삼성카드 맞춤형복지 대상가맹점 검색" /></h1>		
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_search_welfarecard.png" alt="삼성카드 맞춤형복지 대상가맹점 검색" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll" style="height: 555px; overflow: hidden;" tabindex="0">
+		<div class="content_block content_block_card clfix" >			
+			<div class="tb_exp clfix">
+				<span class="fl_left"><strong class="t_black mr10">가맹점검색</strong><span class="t_desc04">| 검색을 통해 회원님께서 원하시는 가맹점을 쉽게 찾아보실 수 있습니다.</span></span>
+			</div>
+
+			<table class="dtable02" summary="가맹점 검색을 위해 지역과 업종을 선택하는 게시판입니다.">
+            <caption>삼성카드 맞춤형복지 대상가맹점 검색조건 입력</caption>
+			<colgroup><col width="15%" /><col width="35%" /><col width="15%" /><col width="35%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>지역선택</p></th>
+					<td>
+						<p class="input_email"><select id="sido" onChange="getSiGugunListByJQuery();" name="sido" class="w100p" title="시 선택">
+							<option value="">선택하세요.</option>
+						</select></p>
+						<p class="input_email"><select id="guguns" onChange="getDongListByJQuery();" name="guguns" class="w100p" title="군/구 선택">
+							<option value="">선택하세요.</option>
+						</select></p>
+						<p class="input_email"><select id="dongs" name="dongs" class="w100p" title="읍/면/동 선택">
+							<option value="">선택하세요.</option>
+						</select></p>
+					</td>
+					<th scope="row"><p>업종선택</p></th>
+					<td>
+						<p class="mt3"><select name="sWord1" class="w100p" onChange="makeSelect(this.selectedIndex);" title="업종 선택">
+							<option>00</option>
+						</select></p>
+						<p class="mt3"><select name="sWord2" id="select12" class="w100p" title="업종 상세 선택">
+							<option value="" >전체</option>
+						</select></p>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+
+            <div class="btnset"><p class="btnr"><a href="javascript:search_submit();" class="btn btn_blue"><span>검색</span></a></p></div>
+
+			<div class="d_easy d_easy2 mt30" >
+				<table class="dtable01" summary="가맹점명, 가맹점주소, 전화번호, 업종명으로 구성된 가맹점 검색 결과를 확인할 수 있는 게시판입니다">
+				<caption>삼성카드 맞춤형복지 대상가맹점 검색결과</caption>
+				<colgroup><col width="8%" /><col width="25%" /><col width="35%" /><col width="15%" /><col width="17%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">번호</th>
+						<th scope="col" class="cell_l10">가맹점명</th>
+						<th scope="col" class="cell_l10">가맹점주소</th>
+						<th scope="col" class="cell_l10">전화번호</th>
+						<th scope="col" class="cell_l10">업종명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10 t_no">0</td>
+						<td class="cell_l10">0</td>
+						<td class="cell_l10">0</td>
+						<td class="cell_l10 t_no">0</td>
+						<td class="cell_l10">0</td>
+					</tr>
+					<!-- //loop -->
+				</tbody>
+				</table>
+
+				<!-- paginate -->
+        		<div class="paginate">	${_page}  </div>
+
+			<div class="line_lgray">&nbsp;</div>
+
+				<p class="t_desc04">상기 맞춤형복지 대상가맹점은 사정에따라 맞춤형복지 대상가맹점에서 제외될 수 있습니다.</p>
+			</div>
+		</div>
+	</div>
+ 
+ 	
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div> 
+</body>
+</html>

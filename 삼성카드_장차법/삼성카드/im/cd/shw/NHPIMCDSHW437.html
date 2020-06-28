@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+
+<!-- 혜택시뮬레이션 -->
+<div class="bgSimulBot">
+	<div class="bgSimulMid">
+		<table summary="혜택시뮬레이션(빅포인트 적립, 할인서비스)을 확인하실 수 있습니다." class="table_simul">
+			<caption>혜택시뮬레이션</caption>
+			<colgroup>
+				<col width="143" />
+				<col width="174" />
+				<col width="620" />
+			</colgroup>
+			<tbody>
+				<tr class="first">
+					<th scope="row" rowspan="2"><img src="/images/cd/shw/card/txt_simul1.gif" width="78" height="14" alt="빅포인트 적립" /></th>
+					<td class="bold">기본</td>
+					<td class="padB5">
+						월<input type="text" value="350,000" class="c94afc6" id="point1" onKeyUp="comma(this);" maxlength="11" title="기본 이용금액 입력" />원 이용 시 <span class="year">연 <em>21,000P</em> 적립</span>
+						<span class="etc">(0.5% 적립)</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="last bold">외식, 주점, 대중교통,<br />이동통신요금,<br />온라인 쇼핑몰</td>
+					<td class="last">
+						월<input type="text" value="200,000" class="c94afc6" id="point2" onKeyUp="comma(this);" maxlength="11" title="외식, 주점, 대중교통, 이동통신요금, 온라인 쇼핑몰 이용금액 입력" />원 이용 시 <span class="year">연 <em>24,000P</em> 적립</span>
+						<span class="etc">(1% 적립)</span>
+					</td>
+				</tr>
+				<tr class="noLine">
+					<th scope="row"><img src="/images/cd/shw/card/txt_simul4_1.gif" alt="할인서비스" /></th>
+					<td class="bold">
+						<p class="marB4">택시, 편의점,<br />커피전문점, 골프연습장</p>
+						<p class="marB4">주유 할인</p>
+						<p class="marB2">&nbsp;</p>
+						<p class="marB2 marT10">CGV 온라인예매 할인</p>
+						<p class="marB2 mt7">CGV 현장결제 할인</p>
+						<p class="line18">엔진오일 할인</p>
+					</td>
+					<td>
+						<p class="marB4">연 <span class="c5a96c8">72,000원</span> <span class="c999">(1,000원 할인, 월 6회)</span></p>
+						<p class="marB4 marT15">연 <span class="c5a96c8">72,000원</span> <span class="c999">(3,000원 할인, 월 2회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">24,000원</span> <span class="c999">(2,000원 할인, 월 1회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">18,000원</span> <span class="c999">(3,000원 할인, 연 6회)</span></p>
+						<p class="marB4">연 <span class="c5a96c8">18,000원</span> <span class="c999">(3,000원 할인, 연 6회)</span></p>
+						<p class="line18">연 <span class="c5a96c8">40,000원</span> <span class="c999">(20,000원 할인, 연 2회)</span></p>
+					</td>
+				</tr>
+				<tr class="h" style="height:105px;">
+					<td colspan="3">
+						<span class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />위의 혜택 금액은 고객의 이해를 돕기 위한 시뮬레이션으로 이용금액, 이용처, 이용조건 등에 따라 실제 혜택과 달라질 수 있습니다.</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="receiptBox">
+			<p class="receipt1">
+				<img src="/images/cd/shw/card/txt_receipt1.gif" width="140" height="35" alt="연간 총 혜택" />
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt2.gif" width="69" height="12" alt="연간 혜택금액" class="floatL" />
+				<span class="floatR">289,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt3.gif" width="56" height="27" alt="연회비" class="floatL" />
+				<span class="floatR">-25,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt3">= 264,000<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" /></p>
+		</div>
+	</div>
+</div>
+<!-- 혜택시뮬레이션 -->
+<script type="text/javascript" src="/js/im/cd/cps/jquery.alphanumeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".c94afc6").numeric(); 
+	$(".c94afc6").css("ime-mode", "disabled"); //한글 입력 방지
+});	
+
+$("#point1").keyup(function() {				
+
+var point = replace($("#point1").val(),",","");	
+var sum = Math.round(point * 0.005 * 12);
+var point2 = null;
+
+$(this).siblings(".year").find("em").text(setComma(sum)+"원");						
+
+if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+	point2 = $("#point2").siblings(".year").find("em").text().split("P");
+	point2 = Number(replace(point2,",",""));
+}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+	point2 = $("#point2").siblings(".year").find("em").text().split("원");
+	point2 = Number(replace(point2,",",""));
+}
+
+var yearSum = sum + point2 + 244000;
+var sumTot = yearSum-25000;
+			
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+
+$("#point2").keyup(function() {
+
+var point = replace($("#point2").val(),",","");				
+var sum = Math.round(point * 0.01 * 12);				
+var point2 = null;
+
+$(this).siblings(".year").find("em").text(setComma(sum)+"원");				
+
+if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+	point2 = $("#point1").siblings(".year").find("em").text().split("P");
+	point2 = Number(replace(point2,",",""));
+}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+	point2 = $("#point1").siblings(".year").find("em").text().split("원");
+	point2 = Number(replace(point2,",",""));
+}
+
+var yearSum = sum + point2 + 244000;
+var sumTot = yearSum-25000;
+			
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+</script>

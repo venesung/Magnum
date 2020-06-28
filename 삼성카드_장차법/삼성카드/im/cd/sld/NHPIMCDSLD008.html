@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+  <div class="h1_desc"><img src="/images/cd/vis_seldcard.png" alt="세상에 단 하나뿐인 나만의 삼성 셀디카드.나만의 이미지 또는 삼성카드가 제공하는 전문가 이미지로 특별한 셀디카드를 만들어 보세요" /></div>  <!-- 130417 수정 -->
+  <h1 class="none">나만의 디자인카드 셀디클럽</h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+  <!-- tab_area -->
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+      <!-- SR반영 13.02.19 
+	  <li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li>-->
+      <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<form name="form1">
+  <input type="hidden" name="method" value="imageEdit" />
+  <input type="hidden" name="STRING2" value="" />
+  <input type="hidden" name="STRING3" value="" />
+  <input type="hidden" name="STRING4" value="" />
+  <input type="hidden" name="STRING11" value="" />
+  <input type="hidden" name="modifyCardName" value="" />
+  <input type="hidden" name="modifyImageNo" value="" />
+
+  <!-- content_block -->
+  <div class="content_block content_block_card clfix">
+    <h2><img src="/images/cd/h2_app_seldinfo01.png" alt="셀디카드 이미지교체 신청 안내입니다" /></h2>
+    <div class="content_block_inner">
+      <ol class="list_no01">
+        <li><p>정확한 카드 재발급을 위해 신상정보를 확인해주세요.</p></li>
+        <li><p>신상정보에 변경사항이 있으신 경우 <a href="javascript:goTabPage('NHPIMMHUFM001M001', true);" class="a_point">신상정보조회변경</a>에서 확인, 변경해주시기 바랍니다.</p></li>
+        <li><p>이미지 교체 신청시 셀디 <span class="t_point_org">발급비 2,000원</span>이 부과됩니다.</p></li>
+        <li><p>교체 전 카드는 새로 발급받으신 카드 사용등록 후 사용이 중지됩니다.</p></li>
+        <li><p>교체신청은 하루에 한번만 가능합니다.</p></li>
+        <li><p>서비스 가능시간은 월~금 08:00~21:00까지 입니다.</p></li>
+        <li><p>토/일/공휴일은 서비스를 이용하실 수 없습니다.</p></li>
+      </ol>
+
+      <table class="dtable01 mt30" summary="카드명, 카드이미지를 확인하고 수정을 선택할 수 있는 게시판입니다.">
+	  <caption>카드 선택</caption>
+        <colgroup><col width="40%" /><col width="50%" /><col width="10%" /></colgroup>
+        <thead>
+          <tr>
+            <th scope="col" class="cell_l10">카드명</th>
+            <th scope="col" class="cell_l10">카드이미지</th>
+            <th scope="col">선택</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="seldTableTr1">
+            <td class="cell_l10">00</td>
+            <td class="cell_l10 cell_img"><img src="/images/main/banner_card_img.png" width="148" height="89" alt="카드명" /></td>
+            <td>
+                 	<input type="checkbox" name="checkbox1" value="" title="00 선택" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- btnset -->
+      <div class="btnset">
+        <p class="btnl">
+          <a href="javascript:goTabPage('NHPIMCSSC001',true);" class="btn btn_white"><span>셀디카드 이미지 사용중지 &gt;</span></a>
+          <!--a href="javascript:popupCenterWindow('/seldi/selfDesign/seldTIP.html','710','580');" class="btn btn_white"><span>셀디카드 Q&amp;A &gt;</span></a-->
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- content_block -->
+  <div class="content_block clfix">
+    <h2><img src="/images/cd/h2_app_seldinfo02.png" alt="셀디카드 약관에 동의해주세요" /></h2>
+    <div class="content_block_inner fill_joinin">
+      <div class="mb30"><img src="/images/cd/step_seld01.png" alt="카드선택, 약관동의" />
+        <!--ol class="none">
+          <li><abbr>현재스텝</abbr><strong>카드선택, 약관동의</strong></li>
+          <li>이미지편집</li>
+          <li>신상확인</li>
+          <li>신청완료</li>
+        </ol-->
+      </div>
+
+      <div class="tb_exp clfix">
+        <h3>삼성셀디카드 이용자격 기준 동의 여부</h3>
+        <span class="ab_tr"><a href="javascript:openPopup('/sldChange.do?method=moveAgreePopup','POPAGREEMENT','710','580');" class="btn_link" title="새창">삼성셀디카드 이용자격 기준 상세보기</a></span>
+      </div>
+
+      <fieldset class="fieldset_agree">
+      <div class="d_desc">
+        <div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+          <div class="agree" id="agree1" agreePath="/agreement/html_NHPIMCDSLD008.html" tabindex="0"></div>
+        </div></div>
+      </div>
+      </fieldset>
+
+      <!-- 약관동의 -->
+      <div class="btnset">
+        <div class="btnl">
+          <label for="label_agree1"><input type="radio" class="rdo" value="" id="label_agree1" name="okseld" title="약관 동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+          <label for="label_agree2"><input type="radio" class="rdo" value="" id="label_agree2" name="okseld" checked="checked" title="약관 동의안함" /> 동의안함</label>
+        </div>
+      </div>
+
+      <div class="line_lgray"></div>
+
+      <p class="btnc_50"><a href="javascript:goNext();"><img id="nextButton" src="/images/common/btn_next_step02.png" alt="다음 단계" /></a><a href="javascript:goTabPage('NHPIMCDSLD001', true);"><img src="/images/common/btn_cancel_request.png" alt="신청 취소" /></a></p>
+    </div>
+  </div>
+</form>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

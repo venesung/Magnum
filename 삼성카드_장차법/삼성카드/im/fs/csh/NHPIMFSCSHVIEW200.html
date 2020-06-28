@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+    <h1><img src="/images/mh/h1_applist_domestic.png" alt="가족카드 이용내역을 조회할 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+<form name="form1">
+    <h2><img src="/images/mh/h2_applist_domestic01.png" alt="카드기본정보를 입력하세요" /></h2>
+    <div class="content_block_inner">
+        <div class="tb_exp clfix"><!-- 100402 -->
+            <span class="fl_left">&nbsp;</span>
+            <span class="ab_tr"><a href="javascript:goTabPage('NHPIMCDFCM101', true);" class="btn_link">현금서비스신청</a></span>
+        </div>
+        <table class="dtable02 dtable_inputfield" summary="가족카드 이용내역을 조회하기 위해 조회내역 체크, 주민등록번호, 카드번호, CVC번호 등록/변경할 비밀번호를 입력하는 게시판입니다.">
+        <caption>카드 기본정보 입력</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>조회내역 체크</p></th>
+                <td><p>
+                    <label for="label_gobun" class="mr10"><input type="radio" class="rdo" id="label_gobun" name="GUBUN" checked="checked" value="limit" /> 이용한도</label>
+                    <label for="label_gobun2" class="mr10"><input type="radio" class="rdo" id="label_gobun2" name="GUBUN" value="his" /> 현금서비스</label>
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>주민등록번호</p></th>
+                <td><p><span class="input_idno">
+                <input type="text" maxlength="6" class="txt" value="890122" title="주민등록번호 앞자리" />&nbsp;-&nbsp;
+                <input type="password" maxlength="7" class="txt" value="1111111" title="주민등록번호 뒷자리" /></span>
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>카드번호</p></th>
+                <td><p>
+                    <span class="input_cardno"><label for="label_cardno01">
+                    <input name="CARD_GUBUN" type="radio" class="chk" value="master" title="마스터/비자/자체" id="label_cardno01" onclick="sel(this.value);" /> 마스터/비자/자체</label>
+                    <input name="CARD1" type="password" maxlength="4" class="txt" value="8989" title="카드번호 첫번째 네자리" disabled="disabled" />&nbsp;-&nbsp;
+                    <input name="CARD2" type="password" maxlength="4" class="txt" value="8989" title="카드번호 두번째 네자리" disabled="disabled" />&nbsp;-&nbsp;
+                    <input name="CARD3" type="password" maxlength="4" class="txt" value="8989" title="카드번호 세번째 네자리" disabled="disabled" />&nbsp;-&nbsp;
+                    <input name="CARD4" type="password" maxlength="4" class="txt" value="8989" title="카드번호 네번째 네자리" disabled="disabled" /></span><br />
+                    <span class="input_cardno"><label for="label_cardno02">
+                    <input name="CARD_GUBUN" type="radio" class="chk" value="amex" title="아멕스카드" id="label_cardno02" onclick="sel(this.value);" /> 아멕스카드</label>
+                    <input name="CARD5" type="password" maxlength="4" class="txt" value="8989" title="카드번호 첫번째 네자리" disabled="disabled" />&nbsp;-&nbsp;
+                    <input name="CARD6" type="password" maxlength="4" class="txt" value="8989" title="카드번호 두번째 네자리" disabled="disabled" />&nbsp;-&nbsp;
+                    <input name="CARD7" type="password" maxlength="4" class="txt" value="8989" title="카드번호 세번째 네자리" disabled="disabled" /></span>
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>CVC 번호</p></th>
+                <td><p><span class="input_3char">
+                <input name="CVC" type="text" maxlength="3" class="txt" value="092" title="CVC번호" />카드 뒷면 19자리 숫자 중 뒤의 3자리 <a href="#" class="a_point">CVC 번호 등록 예</a></span>
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>비밀번호</p></th>
+                <td><p><span class="input_3char">
+                <input name="PASSWORD" type="password" maxlength="4" class="txt" value="0922" title="비밀번호 앞 2자리" />숫자 2자리</span>
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnr">
+            <!-- 100126 -->
+            <a href="javascript:getResult();" class="btn btn_blue"><span>확인</span></a>
+            <!-- //100126 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <div id ='cashLimit' style="display:none">
+    <h2><img src="/images/mh/h2_family_limit03.png" alt="가족카드 사용한도를 조회하세요" /></h2>
+    <div class="content_block_inner">
+        <table class="dtable02 dtable_inputfield" summary="가족카드 사용한도 조회를 위한 카드선택하는 게시판입니다.">
+        <caption>가족카드 사용한도 조회</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>카드선택</p></th>
+                <td><p>
+                    <select name="CARDNO2" title="카드종류 선택" style="width:360px">
+                        <option>BIG&amp;BIG 아멕스카드 4***-****-****-352*</option>
+                    </select>
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnr"><a href="getLimit()" class="btn btn_blue"><span>조회</span></a></p>
+        </div>
+        <table class="dtable01 dtable_inputfield mt30" summary="가족카드사용한도, 일시불, 할부, 현금서비스, 해외, 현금서비스 등 조회된 가족카드 한도 내용입니다.">
+        <caption>가족카드 사용한도</caption>
+        <colgroup><col width="120" /><col width="120" /><col width="400" /></colgroup>
+        <thead>
+            <tr>
+                <th scope="col" colspan="2" class="cell_l10 riline cell_bg">구분</th>
+                <th scope="col" class="cell_r10">현재 사용 가능 금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="2" class="cell_l10 cell_bg">카드사용한도</th>
+                <td class="cell_r10"><span class="t_no">9,000,000 </span>원</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="cell_l10 cell_bg">일시불</th>
+                <td class="cell_r10"><span class="t_no">9,000,000 </span>원</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="cell_l10 cell_bg">할부</th>
+                <td class="cell_r10"><span class="t_no">9,000,000 </span>원</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="cell_l10 cell_bg">현금서비스</th>
+                <td class="cell_r10"><span class="t_no">9,000,000 </span>원</td>
+            </tr>
+            <tr>
+                <th rowspan="2" class="cell_l10 cell_bg">해외</th>
+                <th class="cell_l10 cell_bg">일시불</th>
+                <td class="cell_r10 t_no"><span class="t_no">US$ 1,555.55</span></td>
+            </tr>
+            <tr>
+                <th class="cell_l10 cell_bg">현금서비스</th>
+                <td class="cell_r10 t_no"><span class="t_no">US$ 1,555.55</span></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnl t_desc04">카드사용한도(해외사용포함)內에서 일시불, 할부를 사용할 수 있으며, 현금서비스는 별도한도입니다.<br />(단, 실 결제회원짐의 Good! Cash한도內에서 이용가능함)</p>
+        </div>
+    </div>
+    </div>    
+    <div id = 'cashHis' style="display:none">
+    <h2><!-- img src="/images/mh/h2_family_limit03.png" alt="가족카드 사용한도를 조회하세요" /--></h2>
+    <div class="content_block_inner">
+    <table class="dtable01 mt30" summary="이용카드, 거래종류, 일자/시간, 접수번호, 금액, 은행/계좌번호 예금주, 처리결과/취소신청, 입금일자/시간,  결제예정일 등 가족카드 사용정보를 확인 하실 수 있습니다.">
+    <caption>가족카드 사용 정보</caption>
+    <colgroup><col width="24%" /><col width="10%" /><col width="8%" /><col width="8%" /><col width="13%" /><col width="13%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+    <thead>
+        <tr>
+            <th scope="col" class="cell_l10">이용카드</th>
+            <th scope="col">거래종류</th>
+            <th scope="col">일자/<br />시간</th>
+            <th scope="col">접수<br />번호</th>
+            <th scope="col" class="cell_r10">금액</th>
+            <th scope="col">은행/계좌번호<br />/예금주</th>
+            <th scope="col">처리결과<br />/취소신청</th>
+            <th scope="col">입금일자<br />/시간</th>
+            <th scope="col">결제<br />예정일</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="nodata">
+            <td colspan="9">회원님께서 거래하신 내역이 없습니다.</td>
+        </tr>
+        <tr class="lh16">
+            <td class="cell_l10">삼성패밀리 마스타 플래티늄 보너스포인트</td>
+            <td>-</td>
+            <td class="t_no">10.04.08<br />13:10:59</td>
+            <td class="t_no">3234</td>
+            <td class="cell_r10 t_no">1,000,000,000</td>
+            <td class="t_no">신한은행<br />2343-0000-<br />0000-0000<br />김신한</td>
+            <td>-</td>
+            <td class="t_no">10.04.18<br />13:34:39</td>
+            <td class="t_no">10.04.25</td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_selldcard_agreeinfo.png" alt="셀디카드 관련근거 약관 안내입니다." /></h1>
+				</div>
+				
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="tab01 w810">
+						<ul>
+                            <li class="on"><a href="javascript:goView('000');" onclick="tab_link(this.href);">내부규정</a></li>
+                            <li><a href="javascript:goView('001');" onclick="tab_link(this.href);">관련법규</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				<%
+					String url = "/cms_content/hp/im/cs/scs/NHPIMCSSCSVIEW002C1.html";
+					if("001".equals(tab_index)) 		url = "/cms_content/hp/im/cs/scs/NHPIMCSSCSVIEW002C2.html"; 
+				%>
+				<jsp:include page="<%= url%>" flush="false"/>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

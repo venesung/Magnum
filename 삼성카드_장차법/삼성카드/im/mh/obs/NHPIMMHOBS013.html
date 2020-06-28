@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+				<div class="content_block content_block_tab2 clfix"><!-- 100511 -->
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">나의맞춤혜택</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">최대혜택조회</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일알리미서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');"">왕대박 3 승인번호 등록</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100511 -->
+					<h2><img src="/images/mh/h2_onlyforyou_consult04.png" alt="할인·면제혜택 안내입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>삼성카드가 회원님께 제공한 혜택을 한눈에 확인하실 수 있습니다.</p></li>
+							<li><p>2009년 7월부터 제공된 혜택을 보실 수 있습니다. </p></li>
+							<li><p><strong class="t_black">항목별 혜택금액을 클릭하시면 상세내역</strong>을 확인하실 수 있습니다. </p></li>
+						</ol>
+						<table class="dtable02 dtable_inputfield mt30" summary="기준년도를 선택하는 게시판입니다.">
+						<caption>기준년도 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>기준년도</p></th>
+								<td>
+									<p>
+									<select id="label_year" title="기준년도 선택" style="width:94px;" name="app_year" onchange="go_serarch();">
+										<option>00</option>
+									</select>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<table class="dtable01 mt30" summary="기준년월, 할인, 캐시백ㆍ면제로 구성된 할인·면제혜택 조회 결과를 확인할 수 있는 게시판입니다.">
+						<caption>할인·면제혜택 조회결과</caption>
+						<colgroup><col width="200" /><col width="220" /><col width="220" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">기준년월</th>
+								<th scope="col" class="cell_r10">할인</th>
+								<th scope="col" class="cell_r10">캐시백ㆍ면제</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td class="cell_l10 t_no" scope="row">연간합계</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">00년 00월</td>
+                                <td class="cell_r10"><span class="t_no"><a href="javascript:go_detail('<%=vo.getString1() %>', '0202')">00</a></span> 원</td>
+                                <td class="cell_r10"><span class="t_no"><a href="javascript:go_detail('<%=vo.getString1() %>', '0203')">00</a></span> 원</td>
+							</tr>
+							 <!-- //loop  -->
+							 <tr class="nodata">
+								<td colspan="3">조회된 데이타가 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goTab('/hp/im/mh/mys001.do?method=getBonus');" class="btn btn_white"><span>사용혜택 조회 ></span></a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+				<div class="content_block   clfix">
+					<h2><img src="/images/mh/h2_onlyforyou_consult07.png" alt="할인·면제혜택 조회안내입니다" /></h2>
+					<div class="content_block_inner">
+						<p><span class="ltxt02">특정기준년도 1월1일~12월31일까지 현금성으로 할인/면제 받으신 금액을 월별로 조회할 수 있습니다. </span></p><br />
+						<ol class="list_no01 ">
+							<li><p><strong class="ltxt01 t_black">할인</strong> <span class="ltxt02">회원님께서 카드상품 서비스, 프로모션 등을 통해 받으신 할인 내역을 안내해드리는 <br />항목입니다. </span></p></li>
+							<!-- 100126 -->
+							<li><p><strong class="ltxt01 t_black">캐시백ㆍ면제 </strong> <span class="ltxt02">생활비재테크 캐시백, 무이자할부, 연회비면제 등 회원님께 제공되는 각종  캐시백 및 <br />면제내역을 안내해  드리는  항목입니다.</span></p></li>
+							<!-- //100126 -->
+						</ol>
+					</div>
+				</div>
+</form>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

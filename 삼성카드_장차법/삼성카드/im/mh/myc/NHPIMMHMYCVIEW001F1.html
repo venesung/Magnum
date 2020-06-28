@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>개인카드 보유내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+	<!--content_block 개인카드 보유내역 -->
+	<div class="content_block content_block_card clfix" style="margin-left:0px;">
+		<h2><img src="/images/mh/h2_check_urcard01.png" alt="개인카드 보유내역입니다" /></h2>
+			<div class="content_block_inner">
+				<table class="dtable01 dtable01_bill" summary="보유하고 계신 개인카드명, 카드번호, 카드종류, 걸제일, 상태, 보유카드평가, 카드발급일자, 연회비조회를 확인할 수 있는 게시판입니다.">
+					<caption>개인카드 보유내역</caption>
+						<colgroup><col width="20%" /><col width="15%" /><col width="15%" /><col width="7%" /><col width="10%" /><col width="15%" /><col width="13%" /><col /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드명</th>
+								<th scope="col" class="cell_l10">카드 번호</th>
+								<th scope="col">카드종류</th>
+								<th scope="col">결제일</th>
+								<th scope="col">상태</th>
+								<th scope="col">보유카드평가</th>
+								<th scope="col">카드발급일자</th>
+								<th scope="col">연회비조회</th>
+							</tr>
+						</thead>
+					
+						<tbody>
+								<!-- loop -->
+								<tr>
+									<td class="cell_l10">
+                                                <a href="#" class="btn_link"><%=myCardVo.getCardName() %></a>
+									</td>
+									<td class="cell_l10 t_no">0</td>
+									<td>0</td>
+									<td><span class="t_no">0</span> 일</td>
+									<td>사용가능</td>
+									<td>
+                                        <a href="#"  class="btn btn_s_blue" title="<%=myCardVo.getCardName() %> 평가하기 새창"><span>평가하기</span></a>
+									</td>
+									<td>0</td>
+                                    <td><a href="#" class="btn btn_s_blue" title="<%=myCardVo.getCardName() %> 연회비조회"><span>조회</span></a></td>
+									<td><input type="hidden" name="cardno" value="<%=myCardVo.getCardNo16()%>" /></td>
+								</tr>
+								<!-- //loop -->
+					<tr class="nodata">
+						<td colspan="8">조회된 결과가 없습니다.</td>
+					</tr>
+				<tr class="nodata">
+					<td colspan="8">조회된 결과가 없습니다.</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		
+		<!--content_block 개인카드 보유내역 (연회비정보)-->
+		<div id="myLayer01" style="<%=myLayer01%>">
+		<h2><img src="/images/mh/h2_check_urcard04.png" alt="선택하신 카드의 연회비를 확인하세요" /></h2>
+			<div class="content_block_inner">
+				<table class="dtable01 dtable01_bill" summary="선택하신 카드의 카드명, 카드번호, 연회비 기준일자, 기본연회비, 제휴연회비, 면제혜택 적용여부를 확인할 수 있는 게시판입니다.">
+					<caption>개인카드 연회비정보</caption>
+						<colgroup><col width="20%" /><col width="15%" /><col width="15%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="10%" /></colgroup>	<!-- 12.12.13 SR -->
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10" rowspan="2">카드명</th>
+								<th scope="col" class="cell_l10" rowspan="2">카드 번호</th>
+								<th scope="col" rowspan="2">연회비 <br />기준일자</th>
+								<th scope="col" rowspan="2">기본 <br />연회비</th>
+								<th scope="col" rowspan="2" class="riline">제휴 <br />연회비</th>
+								<th scope="colgroup" colspan="3" class="boline_b0">면제혜택 적용여부</th>	<!-- 12.12.13 SR -->
+							</tr>
+							<tr>
+								<!-- 12.12.13 SR -->
+								<th scope="col" >초년도 <br />면제</th>
+								<th scope="col"> 유효기간<br />면제</th>
+								<th scope="col">실적<br />면제</th>
+								<!-- 12.12.13 SR -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10">
+                                                <a href="#" class="btn_link"><%=cardName %></a>
+								</td>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td>0</td>		<!-- 12.12.13 SR -->
+								<td>0</td>
+								<td>0</td>
+							</tr>
+					<tr>
+						<td colspan="8">조회된 연회비 가  없습니다.</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+				<hr />
+		</div>	
+		
+		<!--content_block 개인카드 보유내역 (실적면제정보)-->
+		<div id="myLayer02" style="">	
+					<h2><img src="/images/mh/h2_check_urcard05.png" alt="선택하신 카드의 실적정보를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01 dtable01_bill" summary="선택하신 카드의 카드번호, 면제사유, 실적면제 구분코드, 실적면제 기준금액/건, 실적누계 금액/건, 실적누계기간을 확인할 수 있는 게시판입니다.">
+						<caption>개인카드 실적면제정보</caption>
+						<colgroup><col width="20%" /><col width="20%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드번호</th>
+								<th scope="col">면제사유</th>
+								<th scope="col">실적면제 <br />구분코드</th>
+								<th scope="col">실적면제 <br />기준금액/건</th>
+								<th scope="col">실적누계 <br />금액/건</th>
+								<th scope="col">실적누계기간</th>
+							</tr>
+	
+						</thead>
+						<tbody>
+							<!-- loop -->
+                			<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span></td>
+								<td><span class="t_no">0</span></td>
+								<td>~<br /></td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnl t_desc04"><span class="t_desc">※</span> 전가맹점 실적누계금액/건은 당해 년도 기준일자 기준 직전1년간의 일시불,할부, 현금서비스, 카드론 이용금액/건의 합계이며 만원 단위로 <br />
+							                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회됩니다.</br><br />
+							                         <span class="t_desc">※ </span> 연회비는 카드당 청구되므로 가족카드의 실적은 합산되지 않습니다. </br></p>
+						</div>
+						
+					</div>		
+				<hr />		
+		</div>
+
+	</div>
+
+	<!--content_block 가족카드 보유내역-->
+	<div class="content_block content_block_card clfix" style="margin-left:0px;">
+		<h2><img src="/images/mh/h2_check_urcard02.png" alt="가족카드 보유내역입니다" /></h2>
+			<div class="content_block_inner">
+				<table class="dtable01 dtable01_bill" summary="보유하고 계신 가족카드명, 카드번호, 성명, 관계, 상태, 보유카드평가, 연회비조회를 확인할 수 있는 게시판입니다.">
+				<caption>가족카드 보유내역</caption>
+					<colgroup><col width="20%" /><col width="15%" /><col width="15%" /><col width="14%" /><col width="13%" /><col width="13%" /><col width="10%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10">카드명</th>
+							<th scope="col" class="cell_l10">카드 번호</th>
+							<th scope="col">성명</th>
+							<th scope="col">관계</th>
+							<th scope="col">상태</th>
+							<th scope="col">보유카드평가</th>
+							<th scope="col">연회비조회</th>
+						</tr>
+					</thead>
+					<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">
+                                    <a href="#" class="btn_link">000</a>
+								</td>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>분실</td>
+								<td>
+                                    <a href="#"  class="btn btn_s_blue" title="<%=myCardVo.getCardName() %> 평가하기 새창"><span>평가하기</span></a>
+								</td>
+                                <td><a href="#" class="btn btn_s_blue" title="<%=myCardVo.getCardName() %> 연회비조회"><span>조회</span></a></td>
+								<td><input type="hidden" name="cardno" value="<%=myCardVo.getCardNo16()%>" /></td>
+							</tr>
+							<!-- //loop -->
+					<tr class="nodata">
+						<td colspan="7">조회된 결과가 없습니다.</td>
+					</tr>
+				<tr class="nodata">
+					<td colspan="7">조회된 결과가 없습니다.</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+
+		<!--content_block 가족카드 보유내역 (연회비정보)-->
+		<div id="fmLayer01" style="">
+		<h2><img src="/images/mh/h2_check_urcard04.png" alt="선택하신 카드의 연회비를 확인하세요" /></h2>
+			<div class="content_block_inner">
+				<table class="dtable01 dtable01_bill" summary="선택하신 카드의 카드명, 카드번호, 연회비 기준일자, 기본연회비, 제휴연회비, 면제혜택 적용여부를 확인할 수 있는 게시판입니다.">
+					<caption>가족카드 연회비정보</caption>
+						<colgroup><col width="20%" /><col width="15%" /><col width="15%" /><col width="14%" /><col width="13%" /><col width="13%" /><col width="10%" /></colgroup>	<!-- 12.12.13 SR -->
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10" rowspan="2">카드명</th>
+								<th scope="col" class="cell_l10" rowspan="2">카드 번호</th>
+								<th scope="col" rowspan="2">연회비 <br />기준일자</th>
+								<th scope="col" rowspan="2">기본 <br />연회비</th>
+								<th scope="col" rowspan="2" class="riline">제휴 <br />연회비</th>
+								<th scope="col" colspan="3" class="boline_b0">면제혜택 적용여부</th>		<!-- 12.12.13 SR -->
+							</tr>
+							<tr>
+								<!-- 12.12.13 SR -->
+								<th scope="col" >초년도 <br />면제</th>
+								<th scope="col"> 유효기간<br />면제</th>
+								<th scope="col">실적<br />면제</th>
+								<!-- 12.12.13 SR -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10">
+                                                <a href="#" class="btn_link">00</a>
+								</td>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td>0</td>	<!-- 12.12.13 SR -->
+								<td>0</td>
+								<td>0</td>
+							</tr>
+					<tr class="nodata">
+						<td colspan="8">조회된 연회비 가  없습니다.</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+				<hr />
+		</div>	
+
+		<!--content_block 가족카드 보유내역 (실적면제정보)-->
+		<div id="fmLayer02" style="<%=fmLayer02%>">	
+					<h2><img src="/images/mh/h2_check_urcard05.png" alt="선택하신 카드의 실적정보를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01 dtable01_bill" summary="선택하신 카드의 카드번호, 면제사유, 실적면제 구분코드, 실적면제 기준금액/건, 실적누계 금액/건, 실적누계기간을 확인할 수 있는 게시판입니다.">
+						<caption>가족카드 실적면제정보</caption>
+						<colgroup><col width="20%" /><col width="20%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드번호</th>
+								<th scope="col">면제사유</th>
+								<th scope="col">실적면제 <br />구분코드</th>
+								<th scope="col">실적면제 <br />기준금액/건</th>
+								<th scope="col">실적누계 <br />금액/건</th>
+								<th scope="col">실적누계기간</th>
+							</tr>
+	
+						</thead>
+						<tbody>
+							<!-- loop -->
+                			<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span></td>
+								<td><span class="t_no">0</span></td>
+								<td>0~<br />0</td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnl t_desc04"><span class="t_desc">※</span> 전가맹점 실적누계금액/건은 당해 년도 기준일자 기준 직전1년간의 일시불,할부, 현금서비스, 카드론 이용금액/건의 합계이며 만원 단위로 <br />
+							                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회됩니다.</br><br />
+							                         <span class="t_desc">※ </span> 연회비는 카드당 청구되므로 가족카드의 실적은 합산되지 않습니다. </br></p>
+						</div>
+						
+					</div>		
+				<hr />		
+		</div>		
+		
+	</div>
+					
+	<!--content_block 법인카드 보유내역 -->
+	<div class="content_block content_block_card clfix" style="margin-left:0px;">
+		<h2><img src="/images/mh/h2_check_urcard03.png" alt="법인카드 보유내역입니다" /></h2>
+			<div class="content_block_inner">
+				<table class="dtable01 dtable01_bill" summary="보유하고 계신 법인카드명, 카드번호, 카드종류, 결제일, 상태, 보유카드평가를 확인할 수 있는 게시판입니다.">
+					<caption>법인카드 보유내역</caption>
+					<colgroup><col width="25%" /><col width="25%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="20%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10">카드명</th>
+							<th scope="col" class="cell_l10">카드 번호</th>
+							<th scope="col">카드종류</th>
+							<th scope="col">결제일</th>
+							<th scope="col">상태</th>
+							<th scope="col">보유카드평가</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">
+                                    <a href="#" class="btn_link">00</a>
+								</td>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span> 일</td>
+								<td>사용가능</td>
+								<td>
+                                    <a href="#"  class="btn btn_s_blue"><span>평가하기</span></a>
+								</td>
+								</td>
+							</tr>
+							<!-- //loop -->
+					<tr class="nodata">
+						<td colspan="6">조회된 결과가 없습니다.</td>
+					</tr>
+				<tr class="nodata">
+					<td colspan="6">조회된 결과가 없습니다.</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+	</div>
+
+
+</body>
+</html>

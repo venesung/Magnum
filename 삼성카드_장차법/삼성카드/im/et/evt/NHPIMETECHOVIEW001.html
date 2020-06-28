@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link href="/event/echo/eco.css" rel="stylesheet" type="text/css" />
+<title>에코캠페인 이메일명세서 전환 이벤트 - 삼성카드</title>
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+
+<script language="javascript" type="text/javascript">
+<!--  
+	function makeExecFrame()
+	{
+		try {var execFrmSrc = execFrm.src;}
+		catch (e) {document.body.insertAdjacentHTML("beforeEnd", "<iframe id=execFrm name=execFrm frameborder=0 scroll=auto width=0 height=0></iframe>");}
+	}
+
+	//전환 팝업
+	function openPop(){  
+		makeExecFrame();
+		document.form.target ="execFrm";
+		document.form.action = "/hp/im/et/echo.do?method=emailChange"; 	
+		document.form.submit();  
+		document.form.target = "_self"; 
+	}
+	
+	//입력
+	function submit_to() {  
+		/*
+		if(!document.form.agree.checked){
+			alert("동의에 체크해 주세요.");
+			document.form.agree.focus();
+			return;
+		} 
+		*/  
+		makeExecFrame();
+		document.form.target ="execFrm";
+		document.form.action = "/hp/im/et/echo.do?method=insertEmailInfo"; 	
+		document.form.submit();  
+		document.form.target = "_self";  
+	}	 
+
+	//리스트 팝업
+	function myList() { 
+		makeExecFrame();
+		document.form.target ="execFrm";
+		document.form.action = "/hp/im/et/echo.do?method=popListOne"; 	
+		document.form.submit();  
+		document.form.target = "_self";   
+	}  
+//-->
+</script> 
+</head>
+<body>
+<form name="form" method="post" target="_blank" action="" >    
+<div id="wrap">
+  <div id="eco01"><img src="/event/echo/images/eco_img01.jpg" alt="삼성카드에코캠페인 이메일명세서 전환 100%당첨 이벤트" /></div>
+  <div id="eco02"> <a href="javascript:openPop();"><img src="/event/echo/images/btn_event01.jpg" alt="이메일명세서 전환하기" /></a> </div>
+  <div id="eco03">  
+    <ul>
+      <li><a href="javascript:submit_to();"><img src="/event/echo/images/btn_event02.jpg" alt="경품응모" /></a></li>
+      <li><a href="javascript:myList();"><img src="/event/echo/images/btn_event03.jpg" alt="경품당첨현황" /></a></li>
+    </ul>
+  </div>
+  <div id="eco04"><img src="/event/echo/images/eco_img04.jpg" alt="공지사항" /></div>
+  	<ul class="hidden">
+		<li>이벤트 기간 내에 삼성카드 기존 회원 및 신규 발급 고객에 한하여 이벤트 참여 가능합니다.</li>
+		<li>법인공용/체크카드/기프트카드/올앳카드 회원님은 이벤트 참여가 불가능 합니다.</li>
+		<li>이메일명세서 수령 회원이 우편명세서로 전환 후 다시 이메일명세서를 신청하신 경우 행사 대상에서 제외됩니다.</li>
+		<li>상기 행사는 카드사 및 제휴사 사정에 의하여 변경 중단 될 수 있으며 그 내용은 사전에 안내해 드립니다.</li>
+	</ul>
+  
+</div>
+</form>  
+<script language="javascript" type="text/javascript">
+<!--   
+	function insertMember(){  
+		makeExecFrame();
+		document.form.target ="execFrm";
+		document.form.action = "/hp/im/et/echo.do?method=insertNewMember"; 	
+		document.form.submit();  
+		document.form.target = "_self"; 
+	} 
+	insertMember();
+</script>
+</body>
+</html>

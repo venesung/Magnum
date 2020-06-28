@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>대출 결제 예정 금액 상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+<form name="frm" method="post">
+	<table summary="현금서비스,대출,마이너스론을 선택하는 게시판입니다" class="dtable02 dtable_inputfield">
+		<caption>현금서비스,대출,마이너스론 선택</caption>
+		<colgroup><col width="100" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th class="cell_bg" scope="row"><p>조회구분</p></th>
+				<td id="id_cal_wrap" colspan="3"><p>
+					<label for="label_duepay1"><input type="radio" class="rdo" id="label_duepay1" name="name_duepay" value="4" onClick="redioCheck(this.value)" title="현금서비스" /> 현금서비스</label>
+					<label for="label_duepay2" class="ml10"><input type="radio" class="rdo" id="label_duepay2" name="name_duepay" value="6" checked="checked" onClick="redioCheck(this.value)" title="대출" /> 대출</label>
+					<label for="label_duepay3" class="ml10"><input type="radio" class="rdo" id="label_duepay3" name="name_duepay" value="M" onClick="redioCheck(this.value)" title="마이너스론" /> 마이너스론</label>
+				</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="d_easy mt20"><!-- 100509 -->
+		<table class="dtable01" summary="결제예정 금액에 대해 상품명, 대출일, 만기일, 대출개월, 청구회차, 대출금액, 대출잔액, 이율, 이자(결제일,당일), 이번달결제예정금액, 수수료를 확인할 수 있는 게시판입니다">
+		<caption>결제예정내역</caption>
+		<colgroup><col width="16%" /><col width="7%" /><col width="7%" /><col width="4%" /><col width="4%" /><col width="11%" /><col width="11%" /><col width="5%" /><col width="8%" /><col width="8%" /><col width="10%" /><col width="9%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" rowspan="2" class="cell_l10a">상품명</th>
+				<th scope="col" rowspan="2">대출일</th>
+				<th scope="col" rowspan="2">만기일</th>
+				<th scope="col" rowspan="2">대출<br />개월</th>
+				<th scope="col" rowspan="2">청구<br />회차</th>
+				<th scope="col" rowspan="2" class="cell_r10">대출금액</th>
+				<th scope="col" rowspan="2" class="cell_r10">대출잔액</th>
+				<th scope="col" rowspan="2" class="cell_r10">이율</th>
+				<th scope="col" colspan="2" class="boline_b0">이자</th>
+				<th scope="col" rowspan="2" class="cell_r10">이번 달 <br />결제예정 금액</th>
+				<th scope="col" rowspan="2" class="cell_r10">수수료</th><!-- 100225 추가 -->
+			</tr>
+			<tr>
+				<th scope="col" class="cell_r10">결제일</th>
+				<th scope="col" class="cell_r10">당일</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td class="cell_l10a" scope="row">합계</td>
+				<td colspan="10" class="cell_r10"><em>0</em></td>
+				<td>&nbsp;</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10a"><span class="nobreak_nolink w90">0</span></td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td><!-- 100225 추가 -->
+			</tr>
+			<!-- //loop -->
+			<tr class="nodata">
+				<td colspan="12">조회내역이 없습니다.</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<!-- paginate -->
+	<div class="paginate">
+		<div class="paging">
+            <a href="javascript:goPpage()" class="btn btn_s_white"><span>이전</span></a>
+            <a href="javascript:goNpage()" class="btn btn_s_white"><span>다음</span></a>
+		</div>
+	</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

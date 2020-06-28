@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>이벤트 - 삼성카드</title>
+<base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="/css/sme.css" />
+</head>
+
+<body style="background:none">
+					<div class="board_list">
+									<div class="search">
+										<form action="">
+											<fieldset>
+												<div>
+													<label for="search_text">이벤트명</label>
+													<!--<input class="input_txt input_evt" type="text" name="srchGubun6" id="search_text" />-->
+													<input type="text" title="이벤트명 기입" value="" id="search_text" maxlength="20" class="input_txt" name="searchtext" size="20" onkeydown="return checkEnter()" />&nbsp;
+													<a href="#" onclick="javascript:goToSearch();"><img src="/images/sme/btn_board_search.png" style="vertical-align:middle" alt="검색"></a>
+												</div>
+											</fieldset>
+										</form>
+									</div>
+			<!-- content_block -->
+			<div class="list_event_ing">
+					<!-- loop -->
+		   		<div class="list"> 
+					<table summary="번호 제목,기간으로 구성된 진행중인 이벤트 목록입니다..">
+                    	<caption>진행중인 이벤트 목록</caption>
+						<colgroup>
+							<col width="42" />
+							<col width="" />
+							<col width="210" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">제목</th>
+								<th scope="col">기간</th>
+							</tr>
+						</thead>
+						<tbody>
+   	  				<tr>
+								<td>0</td>
+								<td class="cell_l cell_tit"><a href="#">-_-</a>
+								</td>
+								<td>2012.02.03 ~ 2012.03.03</td>
+							</tr>
+					 <ul>
+					 <li>
+					 	<p>조회된 결과가 없습니다.</p>
+					 </li>	
+					 </ul>
+					</tbody>
+				</table>
+			</div>
+			<!-- paginate -->
+			<!-- 페이징 -->
+			<div class="paginate">
+				${_page}
+			</div>
+			<!-- //페이징 -->
+					<div class="calendar_txt">
+						<p class="txt"><img src="/images/et/txt_event_sorry.png" alt=" 죄송합니다. 현재 진행중인 이벤트가 없습니다." /></p>
+					</div>
+			
+			</div> 
+          </div>
+</body>
+</html>

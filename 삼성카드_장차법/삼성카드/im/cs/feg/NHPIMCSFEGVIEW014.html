@@ -1,0 +1,55 @@
+
+<%/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCSFEGVIEW001.jsp
+ * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+ * Created on 2010.03.31
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%
+String rootHistory = RequestUtil.getStringParameter(request, "rootHistory", "비대면서비스/물품주문/사용중/");
+%>
+
+	<title>해외에서 물품주문 사용 중 발생한 문제 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	
+		<!-- <script type="text/javascript" src="/js/common-hp-ajax.js"></script> -->
+	<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+</head>
+<body>
+	<div id="wrap">
+			<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_foreign_faqtype02.png" alt="위 항목에 대한 구체적인 문제는 무엇입니까?" /></h2>
+					<div class="content_block_inner pos_rel">
+						<div class="tb_exp clfix">
+							<span class="fl_left"><img src="/images/cs/txt_qa_foreign_16113.png" alt="해외에서 물품주문 사용 중 발생한 문제를 아래에서 선택해주세요" /></span>
+							
+						</div>
+						<div class="mt10"><img src="/images/cs/img_qa_foreign_16113.png" usemap="#foreignfaq_16113" alt="" />
+							<map name="foreignfaq_16113" id="foreignfaq_16113">
+								<area shape="rect" coords="47,16,141,54" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,4)" style="cursor:pointer;" alt="<%=rootHistory %>실제 사용 일보다 늦게 청구됨" href="#"/>
+								<area shape="rect" coords="427,107,581,126" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,1)" style="cursor:pointer;" alt="<%=rootHistory %>사용 금액과 다르게 청구됨 - 주문서/신청서를 보관하고 있음" href="#"/>
+								<area shape="rect" coords="427,146,606,163" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,1)" style="cursor:pointer;" alt="<%=rootHistory %>사용 금액과 다르게 청구됨 - 주문서/신청서를 보관하고 있지 않음" href="#"/>
+								<area shape="rect" coords="48,216,128,256" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,2)" style="cursor:pointer;" alt="<%=rootHistory %>주문한 물건을 받지 못함" href="#"/>
+								<area shape="rect" coords="426,306,515,326" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,3)" style="cursor:pointer;" alt="<%=rootHistory %>주문한 물건과 다른 물건이 배달됨 - 물건을 돌려 보냄" href="#"/>
+								<area shape="rect" coords="426,344,549,364" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,4)" style="cursor:pointer;" alt="<%=rootHistory %>주문한 물건과 다른 물건이 배달됨 - 물건을 돌려 보내지 않음" href="#"/>
+								<area shape="rect" coords="427,406,516,426" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,3)" style="cursor:pointer;" alt="<%=rootHistory %>파손 상태로 배달됨 - 물건을 돌려 보냄" href="#"/>
+								<area shape="rect" coords="427,445,550,464" id="<%=NHPIMCSAUQFLAGVO.REG_ORDER_PAGE%>" onclick="goPage(this,4)" style="cursor:pointer;" alt="<%=rootHistory %>파손 상태로 배달됨 - 물건을 돌려 보내지 않음" href="#"/>
+							</map>
+					  </div>
+						<div class="line_lgray">&nbsp;</div>
+						
+					</div>
+	</div>
+</body>
+</html>			
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

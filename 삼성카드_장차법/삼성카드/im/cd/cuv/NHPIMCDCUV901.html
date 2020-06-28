@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usebill_card6.png" alt="삼성카드 6/6+ 이용내역입니다." /></h1>	
+</div>
+		
+	<!-- content_block -->
+				<div class="content_block content_block_tab clfix">	<!-- 100407 content_block_tab추가 -->
+
+					<h2><img src="/images/mh/h2_card5_01.png" alt="조회하실카드 및 서비스를선택하세요" /></h2>
+					<div class="content_block_inner">
+                        <p class="mb10 t_point">삼성카드 6/6+ 이용실적을 조회하실 카드를 선택하세요.</p>
+                        <table class="dtable02 dtable_inputfield" summary="조회하실카드 및 서비스하는 게시판입니다.">
+						<caption>조회하실카드 및 서비스</caption>
+						<colgroup><col width="130" /><col width="*" /></colgroup>
+						<tbody>
+                        <tr>
+								<th scope="row"   class="cell_bg"><p>카드선택</p></th>
+								<td>
+									<p>
+									 <select name="select_card" style="width:360px" title="카드선택" >
+							 	     <option value="00">카드를 선택하세요</option>
+							</select>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnr">
+                            <a class="btn btn_blue" href="#" id="btn_search"><span>조회</span></a>
+                        </div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+                <h2><img src="/images/mh/h2_card6_01.png" alt="서비스별 이용내역 조회입니다." /></h2>
+					<div class="content_block_inner"  style="margin-top:15px">
+					<ol class="list_no01">
+						<li><p>아래 "서비스별 이용가능횟수"가 표시되어 있는 서비스만 이용 가능합니다.</p></li>
+						<li><p>주유 및 자주 가는 4대업종 할인의 경우 카드상품 계열별 전월 이용금액(일시불+할부) 30만원 이상 시<br />(주유사용금액 제외) 월 3회,
+							   60만원 이상 시 월 6회 이상 시 이용 가능합니다. <br />(주유할인의 경우 일 1회 이용 가능)</p></li>
+						<li><p>기타 삼성카드 6의 부가서비스는 [<a href="javascript:goTabPage('NHPIMCDCUV213');" class="a_point">놀이공원 영화할인 닥터카 이용내역</a>]에서 조회 가능합니다.</p></li>
+					</ol>
+							<table summary="서비스내용, 총횟수, 사용횟수, 이용가능횟수, 상세이용내역으로 구성된 서비스별 이용내역" class="dtable01 mt10">
+                            <caption>서비스별 이용내역</caption>
+                            <colgroup><col width="40%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="cell_l10  riline" scope="col">서비스내용</th>
+                                    <th class="riline" scope="col">총횟수</th>
+                                    <th class="riline" scope="col">사용횟수</th>
+                                    <th class="riline" scope="col">이용가능횟수</th>
+                                    <th  scope="col">상세이용내역</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list_result">
+					        </tbody>
+                            </table>
+							<div class="btnr">
+								<a class="btn btn_blue" href="javascript:go_pop();" title="새창"><span>이용실적 조회</span></a>
+							</div>
+					</div>
+				</div>
+				
+					<!-- content_block -->
+				<div class="content_block clfix">
+                <h2><img src="/images/mh/h2_card6_02.png" alt="알려드립니다." /></h2>
+					<div class="content_block_inner"  style="margin-top:15px">
+						<ol class="list_no01">
+							<li><p>상기 서비스에 대한 카드별 세부혜택을 확인하신 후 사용하시기 바랍니다.</p></li>
+							<li><p>이용가능횟수가 00회로 셋팅되는 경우는 대상카드가 아니거나, 이용기준이 맞지  않는 경우입니다.</p></li>
+							<li><p>주유 할인의 경우 모든 주유소 5만원 이상 이용 시 2,000원, 7만원 이상 이용 시 3,000원 할인됩니다.</p></li>
+							<li><p>자주 가는 4대업종 할인의 경우 택시 커피전문점, 편의점, 골프연습장에서 1만원 이상 이용 시 1,000원 <br />할인됩니다.</p></li>
+							<li><p>서비스별 이용내역은 "상세이용내역"에서 확인하시기 바랍니다.</p></li>
+						</ol>
+					</div>
+				</div>								
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>삼성카드 이벤트 - 삼성카드</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+<form id="iframeFrm" name="iframeFrm" method="post" action="">
+
+<!-- 2012.12.26 VOC 추가 start -->
+		<!-- 검색결과 시작 -->
+		<p class="mv_searchResult"><strong>000</strong> 검색결과 총 <strong>0</strong> 개의 이벤트가 있습니다.</p>
+		<!--// 검색결과 끝 -->
+		
+			<div class="board_list">
+					<!-- loop -->
+					<%
+		   			if(resultList != null && resultList.size() > 0){
+		   			%>
+		   			<table class="dtable01" summary="진행중인 행사 내용을 확인할 수 있는 화면입니다.">
+					<colgroup><col width="70" /><col width="*" /><col width="150" /><col width="70" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col">제목</th>
+							<th scope="col">기간</th>
+							<th scope="col">조회</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="t_no"><%=vo.getNewSeq() %></td>
+						<td class="cell_l"><a href="javascript:goDetail('<%=vo.getCmsSeq() %>','<%=vo.getNewSeq() %>','<%=vos.getcPage() %>');" ><%=vo.getTitle().length()>18?vo.getTitle().substring(0,18)+"...":vo.getTitle() %></a></td>
+						<td class="t_no"><%=HpCommonUtil.convertYYMMDDComma(vo.getSdate())%>~<%=HpCommonUtil.convertYYMMDDComma(vo.getEdate())%></td>
+						<td class="t_no"><%=vo.getHitCnt() %></td>
+					</tr>
+		   			</tbody>
+					</table>
+					 <ul>
+					 <li>
+					 	<p>조회된 결과가 없습니다.</p>
+					 </li>	
+					 </ul>
+			</div>
+			
+			<div class="mv_EventList">
+				<ul>
+					<!-- loop -->
+					<li>
+					<dl>
+						<dt><a href="#">-_-</a></dt>
+						<dd class="pic">
+						<a href="#">
+							<img src="<%=vo.getThumImg()%>" alt="<%=vo.getTitle().length()>18?vo.getTitle().substring(0,18)+"...":vo.getTitle() %>" width="228"  height="110" />
+						</a>
+						</dd>
+						<dd>
+							<span>000</span>
+							<strong>0000.00.00 ~ 0000.00.00</strong>
+						</dd>
+					</dl>
+					</li>
+				</ul>	
+					 <ul>
+					 <li>
+					 	<p>조회된 결과가 없습니다.</p>
+					 </li>	
+					 </ul>
+			</div>
+<!-- 2012.12.26 VOC 추가 start -->
+			<div class="clear"><!-- Clear Block --></div>
+<!-- 2012.12.26 VOC 추가 end -->
+			<!-- paginate -->
+			<!-- 페이징 -->
+			<div class="paginate">
+				${_page}
+			</div>
+			<!-- //페이징 -->
+			<%}else{%>
+					<div class="calendar_txt">
+						<p class="txt"><img src="/images/et/txt_event_sorry.png" alt=" 죄송합니다. 현재 진행중인 이벤트가 없습니다." /></p>
+					</div>
+			<%}%>
+</body>
+</html>

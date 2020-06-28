@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>아이폰 어플리케이션 오픈 안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<style type="text/css">
+#pop_footer	{position:relative; width:100%; height:30px; background:url('/images/common/pop_bg_body710.jpg') no-repeat left bottom}
+</style>
+<script type="text/javascript">
+function goAndClose(menuId) {
+	try {
+		opener.goTabPage(menuId);
+	} catch(e) {
+	}
+
+	window.close();
+}
+
+function postponePop() {
+	setCookie("EVTPOP2","Y",1);
+	window.close(); 
+	
+}
+
+function setCookie(name, value, expiredays){
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+</script>
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img alt="삼성카드 아이폰 어플리케이션 오픈 안내" src="/images/cs/pop_h1_iphoneApp.png" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cs/pop_h1_iphoneApp.png" alt="삼성카드 아이폰 어플리케이션 오픈 안내" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" style="height:305px">
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/cs/pop_h2_iphoneApp.png" alt="삼성카드 아이폰 어플리케이션이 오픈 되었습니다" /></h2>
+			<div class="mt10"><br />홈페이지의 다양한 서비스를 스마트폰으로 이용 하실 수 있으며,<br />
+				CS개발방식을 적용하여 타 금융 어플리케이션보다 빠른 로딩 속도로 이용이 가능합니다.</div>
+			<table class="dtable01 mt10" summary="출시일, 서비스내용, 지원 단말기, 설치방법으로 구성된 아이폰 어플리케이션 오픈 안내 게시판입니다.">
+            	<caption>아이폰 어플리케이션 오픈 안내</caption>
+				<colgroup><col width="15%" /><col width="80%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10 riline">구분</th>
+						<th scope="col" class="cell_l10">아이폰</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10 riline" scope="row">출시일</td>
+						<td class="cell_l10">2010년 7월 24일</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline" scope="row">서비스 내용</td>
+						<td class="cell_l10">
+							<ol class="list_no01"> 
+								<li><p>조회서비스: 이용대금명세서, 국내이용내역, 해외이용내역, 취소내역, <br /> 교통카드이용내역, 결제예정금액, 카드이용한도, 포인트 입금내역조회 등</p></li>
+								<li><p>카드/금융서비스: 현금서비스신청 및 결과조회<br />대출서비스신청 및 결과조회,카드안내 및 신청, 카드사용등록 등</p></li>
+								<li><p>고객플라자: 카드분실신고, 고객상담센터, 공인인증서관리, 이용안내 등</p></li>
+								<li><p>할인/혜택 서비스 : 우대혜택가맹점, 뉴스, 이벤트, 당첨자 조회 등</p></li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline" scope="row">지원 단말기</td>
+						<td class="cell_l10">아이폰 3GS, 아이폰 4</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline" scope="row">설치방법</td>
+						<td class="cell_l10"><a href="/html/popup/goAppStore.html?goAppStore=true" class="btn_link" target="_blank" title="새창">어플리케이션 바로가기</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- footer -->
+	
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+		<label for="label_chk" class="nottoday2"><input type="checkbox" class="chk" id="label_chk" title="오늘 하루 이창을 열지 않음" onClick="postponePop();" />오늘 하루 이창을 열지 않음</label>
+	</div>
+</div> 
+
+
+</body>
+</html>
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

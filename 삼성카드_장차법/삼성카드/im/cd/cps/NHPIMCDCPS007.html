@@ -1,0 +1,35 @@
+<%
+/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDCPS007.jsp
+ * Description : 시그니처카드 KIND_CODE 조회
+ * Author: e_biz 김경숙 과장
+ * Created on 2010. 11. 09
+ *
+ * COPYRIGHT 2010 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>시그니처카드 KIND_CODE 조회 - 삼성카드</title>
+<%
+	String kindCode = (String)request.getAttribute("kindCode");
+%>
+<script language="javascript" type="text/Javascript">
+function go_next(){
+	parent.form1.kind_code.value ="<%=kindCode%>";
+	parent.goNext();
+	
+	
+}
+</script>
+</head>
+<body onload="go_next()">
+</body>
+</html>
+
+

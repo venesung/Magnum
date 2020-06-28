@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_rate_of_interest.png" alt="회원님의 이자율을 확인하세요" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_rate_of_interest01.png" alt="할부 이자율을 확인하세요 (연리)" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01" summary="할부개월에 따른 수수료율, 할부수수료 (100원당)를 확인하는 게시판입니다.">
+						<caption>할부 이자율 (연리)</caption>
+						<colgroup><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="13%" /><col width="13%" /><col width="13%" /><col width="13%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 cell_bg riline">할부개월</th>
+								<th scope="col">2개월</th>
+								<th scope="col">3개월</th>
+								<th scope="col">4~5개월</th>
+								<th scope="col">6~9개월</th>
+								<th scope="col">10~12개월</th>
+								<th scope="col">13~18개월</th>
+								<th scope="col">19~24개월</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">수수료율</th>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">할부수수료<br />(100원당)</th>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+									<td class="t_no">0</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<ol class="list_no01 mt20">
+							<li><p>월간 할부수수료 = 할부잔액 x 연수수료율 x 월 이용일수 / 365<br />(100원당 할부수수료는 1회차에 부담하셔야 할 예상금액입니다.)</p></li>
+							<li><p>2개월 할부는 <strong class="t_black">할부거래에 관한 법률</strong>이 적용되지 않아 <strong class="t_black">철회권, 항변권</strong>이 적용되지 않습니다.</p></li>
+							<li><p>일부 가맹점에서는 최대 할부 이용개월수가 제한될 수 있습니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_rate_of_interest02.png" alt="현금서비스 이자율을 확인하세요 (연리)" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_expand" summary="현금서비스 이자율을 확인하실 수 있는 게시판입니다">
+						<caption>현금서비스 이자율</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>현금서비스 이자율</p></th>
+								<td><p>연리 <span class="t_no">${resultVo.rcRate}</span> %</p></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+<!-- 수정 100714 -->
+                        <ol class="list_no01 mt20">
+                            <li><p>위 이자율은 회원님께만 적용되는 이자율이며, 연체 등 신용하락 시 회원님의 이자율은 조정될 수 있습니다.</p></li>
+                        </ol>
+<!-- // 수정 100714 -->
+					</div>
+				</div>
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_rate_of_interest03.png" alt="대출 이자율을 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<p>대출상품별로 이자율이 다르니 <strong class="t_black">대출이자율 조회</strong>를 클릭해서 확인하시기 바랍니다.
+						<a href="javascript:goTabPage('NHPIMFSLMT');" class="btn btn_blue" title="새창"><span>대출이자율 조회 바로가기</span></a></p>
+					</div>
+				</div>
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_rate_of_interest04.png" alt="자유결제서비스 수수료율 입니다 (연리)" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_expand" summary="자유결제 일시불, 자유결제 현금서비스 수수료율을 확인하실 수 있는 게시판입니다">
+						<caption>자유결제서비스 수수료율</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>자유결제 일시불</p></th>
+								<td><p><span class="t_no">${resultVo.string2}</span> %</p></td>
+								<th scope="row"><p>자유결제 현금서비스</p></th>
+								<td><p><span class="t_no">${resultVo.string3}</span> %</p></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+                            <p class="btnl t_desc04">자유결제 서비스는 우수회원에게만 제공되는 결제서비스입니다. 지금 그 혜택을 누려보십시오. <a href="javascript:goTabPage('NHPIMMHRSM001M001');" class="btn_link">자세히보기</a></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_rate_of_interest05.png" alt="연체 이자율 입니다" /></h2>
+					<div class="content_block_inner">
+<!-- 정기일반영 13.04.24 -->
+						<p><strong class="t_black">유이자할부/현금서비스/카드론/자유결제서비스</strong></p>
+						<table class="dtable02 mt5" summary="연체기간, 정상이자율 13% 미만, 정상이자율 18% 미만, 정상이자율 18% 이상으로 구성된 유이자할부/현금서비스/카드론/자유결제서비스의 연체 이자율">
+							<caption>연체 이자율</caption>
+							<colgroup><col width="25%" span="4" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="riline"><p>연체기간</p></th>
+									<th scope="col" class="riline"><p>정상이자율 13% 미만</p></th>
+									<th scope="col" class="riline"><p>정상이자율 18% 미만</p></th>
+									<th scope="col"><p>정상이자율 18% 이상</p></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="riline"><p>연체 1개월 미만</p></td>
+									<td class="riline"><p><span class="t_no">21.0</span> %</p></td>
+									<td class="riline"><p><span class="t_no">24.0</span> %</p></td>
+									<td><p><span class="t_no">29.0</span> %</p></td>
+								</tr>
+								<tr>
+									<td class="riline"><p>연체 2개월 미만</p></td>
+									<td class="riline"><p><span class="t_no">21.3</span> %</p></td>
+									<td class="riline"><p><span class="t_no">24.3</span> %</p></td>
+									<td><p><span class="t_no">29.3</span> %</p></td>
+								</tr>
+								<tr>
+									<td class="riline"><p>연체 3개월 미만</p></td>
+									<td class="riline"><p><span class="t_no">21.6</span> %</p></td>
+									<td class="riline"><p><span class="t_no">24.6</span> %</p></td>
+									<td><p><span class="t_no">29.6</span> %</p></td>
+								</tr>
+								<tr>
+									<td class="riline"><p>연체 1개월 이상</p></td>
+									<td class="riline"><p><span class="t_no">21.9</span> %</p></td>
+									<td class="riline"><p><span class="t_no">24.9</span> %</p></td>
+									<td><p><span class="t_no">29.9</span> %</p></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p class="mt20"><strong class="t_black">일시불/무이자할부</strong></p>
+						<p>21.0%~24.9%이며, 연체기간별 연체이율 차등 적용</p>
+<!--// 정기일반영 13.04.24 -->
+					</div>
+				</div>
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

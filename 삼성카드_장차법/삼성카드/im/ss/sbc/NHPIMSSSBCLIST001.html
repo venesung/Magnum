@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>검색 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+<body>
+
+
+<div class="list_map_wrap">
+	<div class="list_map_detail pb5">
+		<span style="margin-bottom:10px; color:#333; font-size:12px;"><strong>검색 내 주요 보너스클럽</strong></span><span class=" t_normal t_desc03">(총 <%=b_vos.gettCnt() %>건)</span>
+		<ul class="list_map_no clfix">
+		<c:forEach items="<%=rsList1%>" var="lst" varStatus="status">
+			<li>
+				<p class="mb5">
+				<c:if test='${lst.main_image !=""}'>
+					<a href="javascript:parent.parent.bcInfo('${lst.keychaincode}');">
+					<img src="${lst.main_image}" width="100" height="60" alt=""  />
+					</a>
+				</c:if>
+				</p>
+				<p class="p_tit"><span class="no_merc no_merc0${status.index+1}">&nbsp;</span> <a href="javascript:parent.parent.bcInfo('${lst.keychaincode}');">${lst.display_board_name}</a></p>
+				<p class="p_txt">${lst.address_city} ${lst.address_ku}</p>
+				<p class="p_point">${lst.rate} <c:if test="${lst.rate != ''}"></c:if></p>
+			</li>
+		</c:forEach>
+		</ul>
+		<!-- paginate -->
+		<div class="paginate pb25">
+			<div class="paging">
+			<% if(rsList1.size() > 0){ %>
+				${b_page}
+			<%	}else{ %>
+				<p align="center">검색 하신 결과 내 주요보너스클럽이 없습니다.</p>
+			<% 	} %>
+			</div>
+		</div>
+	</div> 
+	<div class="greyline"></div>
+	<div class="list_map_detail pt10 ">
+		<span style="margin-bottom:10px; color:#333; font-size:12px;"><b>검색 내 혜택보기</b></span><span class=" t_normal t_desc03">(총 <%=s_vos.gettCnt() %> 건)</span>
+		<div class="list_benefit_merc2" id="benefitCss">
+            <a href="javascript:parent.parent.sub_search('');" class="btn btn_s_blue3"><span>전체혜택</span></a>
+            <a href="javascript:parent.parent.sub_search('bc');" class="btn btn_s_gray3"><span>보너스클럽</span></a>
+            <a href="javascript:parent.parent.sub_search('mb');" class="btn btn_s_gray3"><span>맞춤형보너스클럽</span></a>
+            <a href="javascript:parent.parent.sub_search('pb');" class="btn btn_s_gray3"><span>페이백</span></a>
+            <a href="javascript:parent.parent.sub_search('bl');" class="btn btn_s_gray3"><span>블루라인</span></a>
+            <a href="javascript:parent.parent.sub_search('mz');" class="btn btn_s_gray3"><span>마이존</span></a>
+            <a href="javascript:parent.parent.sub_search('mo');" class="btn btn_s_gray3"><span>멤버스주유소</span></a>
+            <a href="javascript:parent.parent.sub_search('ms');" class="btn btn_s_gray3"><span>의료지원</span></a>
+            <a href="javascript:parent.parent.sub_search('gv');" class="btn btn_s_gray3"><span>Gvalley 우대가맹점</span></a>
+		</div>
+		<table class="dtable01" style="width:320px" summary="선택한 카테고리별 혜택을 보는 화면입니다.">
+			<caption>검색 내 혜택보기</caption>
+			<colgroup><col width="" /><col width="" /><col width="" /><col width="" /></colgroup>
+			<tbody>
+			<!-- loop -->
+			<c:forEach items="<%=rsList%>" var="lst" varStatus="status">
+			<c:set var="cassName" value="<%=cssName%>"/>
+				<tr>
+					<td class="cell_l"><span class="no_merc ${cassName[status.index]}">&nbsp;</span> <a href="javascript:parent.parent.chainInfo('${lst.chain_no}');">${lst.display_board_name}</a></td>
+					<td class="t_desc04">${lst.main_name} > ${lst.sub_name}</td>
+					<td class="t_desc04">${lst.address_city} ${lst.address_ku}</td>
+					<td class="cell_r">
+					<c:if test="${lst.bonus_yn =='Y' && lst.keychaincode != 'C2040600'}">
+						<img src="/images/ss/icon_bonus_s.png" alt="보너스클럽" />
+					</c:if>
+					<c:if test="${lst.bonus_yn =='Y' && lst.keychaincode == 'C2040600'}">
+						<img src="/images/ss/icon_gvalley_s.png" alt="Gvalley 우대가맹점" />
+					</c:if>
+					<c:if test="${lst.payback_yn =='Y'}">
+						<img src="/images/ss/icon_payback_s.png" alt="페이백" />
+					</c:if>
+					<c:if test="${lst.blueline_yn =='Y'}">
+						<img src="/images/ss/icon_blueline_s.png" alt="블루라인" />
+					</c:if>
+					<c:if test="${lst.my_zone =='Y'}">
+						<img src="/images/ss/icon_apt_s.png" alt="마이존" />
+					</c:if>
+					<c:if test="${lst.members_oil =='Y'}">
+						<img src="/images/ss/icon_oil_s.png" alt="멤버스주유소" />
+					</c:if>
+					<c:if test="${lst.medical_support =='Y'}">
+						<img src="/images/ss/icon_medical_s.png" alt="의료지원" />
+					</c:if>
+					</td>
+				</tr>
+			</c:forEach>
+			<!-- //loop -->
+			</tbody>
+		</table>
+		<!-- paginate -->
+		<div class="paginate pb15">
+			<div class="paging">
+			<% if(rsList.size() > 0){ %>
+				${s_page}
+			<%	}else{ %>
+				<p align="center">검색 하신 결과 내 우대혜택가맹점이 없습니다.</p>
+			<% 	} %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<form name="frm">
+<input type="hidden" name="sPage" value="<%=s_vos.getcPage() %>" />
+<input type="hidden" name="bPage" value="<%=b_vos.getcPage() %>" />
+</form>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" language="javascript">
+	benefitCss();
+//	parent.mapFrm.setMap();
+
+var _checkTime = 200;	// 체크 시간 (ms)
+var _checkCount = 50;	// 체크 횟수
+var _isCount = 0;		// 현재 체크횟수
+function mapInitCheck(){
+	try{
+		if(typeof parent.mapFrm.map == "undefined" ||
+			parent.mapFrm.map == null ||
+			parent.mapFrm.map.getCenter() == null ||
+			typeof parent.mapFrm.map.getCenter().x == "undefined"){
+			_isCount++;
+			if(_isCount >= _checkCount){
+				//alert("지도 초기화 실패");
+			}else{
+				setTimeout("mapInitCheck()", _checkTime);
+			}
+		}else{
+			// 지도 초기화 데이터 기존데이터를 삭제
+			parent.mapFrm.clearMap();
+			// 예시 데이터 그리기
+			marklist();
+		}
+	}catch(error){
+		_isCount++;
+		if(_isCount >= _checkCount){
+			//alert("지도 초기화 실패");
+		}else{
+			setTimeout("mapInitCheck()", _checkTime);
+		}
+	}
+	
+}
+
+// 페이지를 최초로 열었을 때 사용하는 function 
+window.onload = function(){
+	mapInitCheck();
+};
+</script>
+
+</body>
+</html>

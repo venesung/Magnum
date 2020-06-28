@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+                
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <!--div class="flag_additional"><img src="/images/mh/img_milleage_fs.jpg" class="flag_saveservice" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 -->
+                    <h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3 class="h3_point"><img src="/images/mh/h3_financial_miles.png" alt="금융 마일리지" /></h3>                     
+                        <jsp:include page="NHPIMMHPIT003.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW017C1.html" flush="false" />
+                
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

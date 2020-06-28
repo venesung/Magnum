@@ -1,0 +1,250 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: 삼성SDS 박정교 사원
+ * Created on 2010. 10. 4.
+ * 전체업종안내(pop-up)
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.scard.hp.anylink.vo.HOMEHMV5HPP00023INRecVO1"%>
+<%@ page import="com.scard.hp.anylink.vo.HOMEHMV5HPP00023INVO"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="com.scard.hp.im.mh.obs.web.NHPIMMHOBS003Ctrl"%>
+<%@ page import="java.util.*" %>
+<%
+	HOMEHMV5HPP00023INRecVO1[] RESULT_LIST = (HOMEHMV5HPP00023INRecVO1[])request.getAttribute("serviceInfo");
+	HOMEHMV5HPP00023INVO vo = (HOMEHMV5HPP00023INVO)request.getAttribute("VO");	
+	String beforeYear = (String)request.getAttribute("beforeYear");
+	String beforeMonth = (String)request.getAttribute("beforeMonth");
+	String before2Year = (String)request.getAttribute("before2Year");
+	String before2Month = (String)request.getAttribute("before2Month");
+	String curYear = (String)request.getAttribute("curYear");
+	String curMonth = (String)request.getAttribute("curMonth");
+	String klaCode = (String)request.getAttribute("clickKla");
+%>
+ 
+
+
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript" src="/js/common-hp-ajax.js"></script>
+	<script type="text/javascript">
+	
+	
+
+
+	function goView12(kindCode)
+	{
+		opener.goView(kindCode);
+	} 
+	
+	
+	</script>
+
+	
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+ 수정 101022 
+		<h1><img src="/images/mh/pop_h1_benefit_more.png" alt="더 많은 혜택보기" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_benefit_more.png" alt="더 많은 혜택보기" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445">
+		
+		<div class="content_block content_block_card clfix">
+
+			<table class="dtable01 " summary="업종,구분,혜택/서비스로 구성된 혜택 안내입니다">
+			<caption>혜택 안내</caption>
+			<colgroup><col width="20%" /><col width="35%" /><col width="45%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">업종</th>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_l10">혜택/서비스</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				String tempString1 = RESULT_LIST[0].getString1().trim();
+				String tempString2 = RESULT_LIST[0].getString2().trim();
+				
+				if( !"".equals( tempString1 ) && !"".equals( tempString2 )   ){
+					//for(HOMEHMV5HPP00022INRecVO1 cardInfo : RESULT_LIST){
+					for(int i=0 ; i<RESULT_LIST.length ; i++ ){ 
+				%>
+				<tr>
+
+						<%
+						if( klaCode.equals( RESULT_LIST[i].getString1() ) ) {
+							if( i>=1 && RESULT_LIST[i].getString2().equals (RESULT_LIST[i-1].getString2()) ){ 
+							%>
+							<td class="cell_l10"></td>
+							 <%
+							}else{
+							 %> 										
+							<td class="cell_l10"><b><%=RESULT_LIST[i].getString2()%></b></td>
+							<%
+							}
+							%>
+							<td class="cell_l10"><b><%=RESULT_LIST[i].getString3()%></b></td>
+<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건)  -->
+							<%
+							String tempString9 = RESULT_LIST[i].getString9().trim()  ;	//기능상품코드
+							String tempString4 = RESULT_LIST[i].getString4().trim() ;	//서비스코드
+							if( "".equals( tempString9 ) )	//전사서비스일때
+							{
+								if( "A5526".equals(tempString4) ){		//생활비재테크서비스							
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMMHINFO');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4774".equals(tempString4) ){		//의료지원서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSMSS001');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4776".equals(tempString4) ){		//부동산지원서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSEMS001');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4718".equals(tempString4) ){		//마이패밀리서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSFAM001M002');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4703".equals(tempString4) ){		//블루라인
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPageWithParam('NHPIMSSFAM001M002','menuIdx=4');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4701".equals(tempString4) ){		//페이백
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPageWithParam('NHPIMSSFAM001M002','menuIdx=3');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4721".equals(tempString4) ){		//프리미엄포인트백
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMMHPMS001M002');"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%
+								}else if ( "A4933".equals(tempString4) || "A4934".equals(tempString4) || "A4936".equals(tempString4) ){		//SAM여행 관련
+								%>
+                                <td class="cell_l10"><a href="http://travel.samsungcard.com/ec/te/pk/fr/travelMain.do?method=selectTravelMain"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+								<%								
+								}else {
+								%>
+								<td class="cell_l10"><b><%=RESULT_LIST[i].getString5()%></b></td>
+								<%								
+								}	
+							}else{		//일반상품서비스
+							%>
+                            <td class="cell_l10"><a href="javascript:goView12('<%=RESULT_LIST[i].getString9()%>')"><b><%=RESULT_LIST[i].getString5()%></b></a></td>
+							<%
+							}
+							%>
+							<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건) 여기까지  -->		
+						<% 
+						} else{ 
+							if( i>=1 && RESULT_LIST[i].getString2().equals (RESULT_LIST[i-1].getString2()) ){ 
+							%>
+							<td class="cell_l10"></td>
+							 <%
+							}else{
+							 %> 										
+							<td class="cell_l10"><%=RESULT_LIST[i].getString2()%></td>
+							<%
+							}
+							%>
+							<td class="cell_l10"><%=RESULT_LIST[i].getString3()%></td>
+							<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건)  -->
+							<%
+							String tempString9 = RESULT_LIST[i].getString9().trim()  ;	//기능상품코드
+							String tempString4 = RESULT_LIST[i].getString4().trim() ;	//서비스코드
+							if( "".equals( tempString9 ) )	//전사서비스일때
+							{
+								if( "A5526".equals(tempString4) ){		//생활비재테크서비스							
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMMHINFO');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4774".equals(tempString4) ){		//의료지원서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSMSS001');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4776".equals(tempString4) ){		//부동산지원서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSEMS001');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4718".equals(tempString4) ){		//마이패밀리서비스
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMSSFAM001M002');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4703".equals(tempString4) ){		//블루라인
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPageWithParam('NHPIMSSFAM001M002','menuIdx=4');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4701".equals(tempString4) ){		//페이백
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPageWithParam('NHPIMSSFAM001M002','menuIdx=3');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4721".equals(tempString4) ){		//프리미엄포인트백
+								%>
+                                <td class="cell_l10"><a href="javascript:goTabPage('NHPIMMHPMS001M002');"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%
+								}else if ( "A4933".equals(tempString4) || "A4934".equals(tempString4) || "A4936".equals(tempString4) ){		//SAM여행 관련
+								%>
+                                <td class="cell_l10"><a href="http://travel.samsungcard.com/ec/te/pk/fr/travelMain.do?method=selectTravelMain"><%=RESULT_LIST[i].getString5()%></a></td>
+								<%								
+								}else {
+								%>
+								<td class="cell_l10"><%=RESULT_LIST[i].getString5()%></td>
+								<%								
+								}	
+							}else{		//일반상품서비스
+							%>
+                            <td class="cell_l10"><a href="javascript:goView12('<%=RESULT_LIST[i].getString9()%>')"><%=RESULT_LIST[i].getString5()%></a></td>
+							<%
+							}
+							%>
+							<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건) 여기까지  -->				
+				
+							<%
+							} 
+							%>
+							</tr>
+						<!-- // loop -->
+						<%
+						}
+										
+					}
+
+					else {
+				 %>
+				 <tr class="nodata">
+					<td colspan="5">추가 혜택이 없습니다.</td>
+				</tr>
+				 <%
+				}
+				 %>		
+
+			</tbody>
+			</table>
+<!-- 수정 101022 -->
+			<p class="t_desc03 mt10">
+				상기 혜택은 업종내/서비스간 중복 적용이 불가할 수 있으며, 회원님의 이용실적 및 제공 기준에 따라 이용가능 여부가 변경될 수 있습니다. <br />
+				서비스명을 클릭하시면 자세한 내용을 확인하실 수 있습니다. 
+			</p>
+<!--// 수정 101022 -->
+		</div>
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div> 
+
+ 

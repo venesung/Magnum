@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usebill_card5.png" alt="삼성카드 5/5+ 이용내역조회 입니다" /></h1>	<!-- 100317 -->
+</div>
+
+	
+	<!-- content_block -->
+	<div class="content_block content_block_tab clfix">	<!-- 100407 content_block_tab추가 -->
+		<div class="tab01 w810">
+			<ul>
+				<li><a href="javascript:goTabPage('NHPIMCDCUV810', 'true');">카드이용실적조회</a></li>
+                <li><a href="javascript:goTabPage('NHPIMCDCUV812', 'true');">청구할인서비스조회</a></li>
+                <li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMCDCUV814', 'true');">기프트 청구할인</a></li><!-- choose -->
+            </ul>
+		</div>
+		<h2><img src="/images/mh/h2_card5_01.png" alt="조회하실 카드 및 서비스를 선택하세요" /></h2>
+		<div class="content_block_inner">
+        	<p class="mb10 t_point">삼성카드 5/5+ 이용실적을 조회하실 카드 및 서비스를 선택해 주십시오.</p>
+            <table class="dtable02 dtable_inputfield" summary="조회하실카드 및 서비스를 선택하는 게시판입니다.">
+				<caption>조회하실카드 및 서비스 선택</caption>
+				<colgroup><col width="130" /><col width="*" /></colgroup>
+				<tbody>
+		              	<tr>
+						<th scope="row" class="cell_bg"><p>카드선택</p></th>
+						<td>
+							<p>
+							 <select name="select_card" title="카드종류 선택" style="width:360px">
+							 	<option value="00">카드를 선택하세요</option>
+							</select>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_bg"><p>최초 발급월</p></th>
+						<td>
+							<p id="isuDate"></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+            <div class="btnr">
+                <a class="btn btn_blue" href="#" id="btn_search"><span>조회</span></a>
+            </div>
+		</div>
+	</div>
+				
+	<div class="content_block clfix">
+	 <h2><img src="/images/mh/h2_card5_05.png" alt="삼성카드 5+ 이용내역을조회하세요" /></h2>
+		<div class="content_block_inner" style="margin-top:15px">
+			<div style="clear:both;" class="mt10">
+               <table class="dtable01 " summary="이용일자, 연차, 가맹점명, 이용금액, 할인금액으로 구성된 삼성카드 5+ 이용내역">
+				<caption>삼성카드 5+ 이용내역</caption>
+                  <colgroup><col width="17%" /><col width="12%" /><col width="25%" /><col width="22%" /><col width="*" /></colgroup>
+                  <thead>
+                      <tr>
+                          <th class="cell_l10"  scope="col">이용일자</th>
+                          <th class=""  scope="col">연차</th>
+                          <th class="cell_l10"  scope="col">가맹점명</th>
+                          <th class="cell_r10"  scope="col">이용금액</th>
+                          <th class="cell_r10"  scope="col">할인금액</th>
+                      </tr>
+                  </thead>
+                   <tbody id="list_result">
+					</tbody>
+				</table>
+				<div class="paginate">
+					<div class="paging">
+						<a id="pre" href="javascript:getMoreList('prePage813');" 	class="btn btn_s_white"><span>이전</span></a>
+						<a id="next" href="javascript:getMoreList('nextPage813');" 	class="btn btn_s_white"><span>다음</span></a>
+					</div>
+				</div>	
+				 <p class="mt10 t_desc04">
+			               ※ 카드 첫해에는 50만원 이상 이용 시, 2차년 이후부터는 전년도 600만원 이상 이용 시,  <br />&nbsp;&nbsp; 쇼핑 및 교육업종에서 10만원 이용하시면 10만원 할인됩니다. (발급월 기준 연 1회 제공) <br /> 
+                                               ※쇼핑 및 교육업종은 삼성카드 5+ 특별적립처 + 신세계첼시 아울렛입니다. <br />
+                                               ※할인 적용된 매출취소 시, 취소 매출 접수 이후 대상 가맹점 매출부터 할인 가능합니다.   
+			    </p>
+			</div>
+		</div>
+	</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

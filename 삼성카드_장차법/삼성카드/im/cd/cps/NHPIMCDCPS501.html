@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<div id="header">
+        <h1><a href="/cardsearch/cps.do?method=getIndexPage">삼성카드</a></h1>
+		<% if(depth1code != 0){ // sub navigation %>
+		<!-- snb -->
+		<ul id="snb" class="sn<%=depth1code%>active">
+            <li class="sn1"><a href="/cardsearch/cps.do?method=getCardMicroMyfit2">혜택으로 찾기</a></li>
+            <!--<li class="sn2"><a href="/cardsearch/cps.do?method=getFit">나만의 맞춤 카드 추천</a></li>
+            <li class="sn3"><a href="/cardsearch/cps.do?method=getForme">간단설문 카드추천</a></li>
+            --><li class="sn4"><a href="/cardsearch/cps.do?method=getPartner">제휴사로 찾기</a></li>
+            <li class="sn5"><a href="/cardsearch/cps.do?method=getKey">키워드/태그로 찾기</a></li>
+		</ul><!-- //snb -->
+		<% }else{ // index header %>
+			<h2>카드 찾기 2.0</h2>	
+			<p>나에게 꼭 맞는 카드를 쉽고 빠르게 찾는 방법!</p>
+		<% } %>
+			<!-- card-search -->
+			<div id="card-search">
+				<fieldset><legend>검색할 카드명을 입력하세요.</legend>
+					<form name="frm1" method="post" onsubmit="getKeywordPopupSearch()">
+						<input type="text" id="searchStr" name="searchStr" class="input_txt" onfocus="this.style.background='none';" name="" value="" title="카드명 검색어 입력" />
+						<input type="submit" class="input_submit" name="" value="검색하기" />
+					</form>
+				</fieldset>
+			</div><!-- //card-search -->
+	</div><!-- //header -->
+<!-- contents -->
+<div id="contents">
+			
+			
+			
+			
+			
+

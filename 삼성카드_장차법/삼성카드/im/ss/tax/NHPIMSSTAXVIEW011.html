@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	    
+	    <!-- top_visual -->
+	    <div class="top_visual">
+	   	<h1 class="none">지방세 카드납부 서비스</h1>
+	   	<div class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></div>
+	    </div>
+
+		<!-- content_block -->
+		<div class="content_block content_block_tab2 clfix">
+			<div class="tab01 w810 h60">
+				<ul>
+					<li>
+						<a href="javascript:goTabPage('NHPIMSSTAX001M001', true);">지방세납부</a>
+						<ul class="sub_tab">
+							<li><a href="#">지방세 납부안내</a></li>
+							<li><a href="#">지방세 납부하기</a></li>
+							<li><a href="#">지방세 납부 결과조회</a></li>
+						</ul>
+					</li>
+					<li class="on">
+                        <a href="javascript:goTabPage('NHPIMSSTAX002M004', true);">세정담당자</a>
+						<ul class="sub_tab">
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M001', true);">대사처리</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M002', true);">대사 결과조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M003', true);">단말기 승인내역 조회</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMSSTAX002M004', true);">단말기 매입내역 조회</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- content_block -->
+		<div>
+			<iframe name="sform" width="0" height="0" frameborder="0" title="빈프레임"></iframe>
+			<iframe name="actionIfrm" src="" height="0" width="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" title="빈프레임"></iframe>
+			
+			<form name="form1" method="post" action="/hp/im/ss/tax/tax002.do?method=adminPaymentProcess">
+				
+				<input type="hidden" name="flag" />
+				<input type="hidden" name="progress" />
+				<input type="hidden" name="search_gubun" />
+				<input type="hidden" name="srchDateFrom" />
+				<input type="hidden" name="srchDateEnd" />
+				<input type="hidden" name="srchDateGubun" />
+					
+				<input type="hidden" name="tax_organ" />
+				<input type="hidden" name="tax_type" />
+				<input type="hidden" name="tax_period" />
+				<input type="hidden" name="district" />
+				<input type="hidden" name="tax_no" />
+				<input type="hidden" name="scardSystemId" value="tab" />
+				
+				<input type="hidden" name="page" value="${page}" />
+				<input type="hidden" name="listcount" />
+				<input type="hidden" name="typeGubun" />
+				<input type="hidden" name="typeGubun1" />
+				<input type="hidden" name="list_cnt" value="${taxPaymentCnt}" />
+				
+		    <!-- content_block -->
+			<div class="content_block content_block_card clfix">	
+					
+				<h2><img src="/images/ss/h2_terminal_buy01.png" alt="단말기 매입내역을 조회해 주세요" /></h2>
+				<div class="content_block_inner">
+					<div class="tb_exp clfix">
+                        <span class="t_black">지방세 카드납부 수납, <strong>${StrOrgan}</strong>입니다. <a href="javascript:log_out();" class="btn btn_s_white"><span>로그아웃</span></a></span>
+					</div>
+						
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="단말기 매입내역 조회를 위하여 이용기간, 진행상태, 조회조건, 가맹점번호를 입력하는 게시판입니다.">
+					<caption>단말기 매입내역 조회 입력</caption>
+					<colgroup><col width="20%" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>이용기간</p></th>
+							<td><p>
+								<a id="date" href="javascript:SearchDate('date');" class="btn btn_s_gray"><span>당일</span></a>
+								<a id="week" href="javascript:SearchDate('week');" class="btn btn_s_white"><span>1주일</span></a>
+								<a id="month" href="javascript:SearchDate('month');" class="btn btn_s_white"><span>1개월</span></a>
+								<span class="reset_date ml20">날짜지정
+								<input type="hidden" name=	"" value="n" id="call_check" />
+								<input type="hidden" name=	"srchStartDate" value="<%=new SimpleDateFormat("yyyyMMdd").format(new Date()) %>" id="hp_double_cal_start_value" />
+								<input type="text" id="hp_double_cal_start_value_display" name="srchStartDate_display" class="txt" value="<%=new SimpleDateFormat("yyyy.MM.dd").format(new Date()) %>" title="시작하는날짜" readonly="readonly" 
+									onclick="generate_cal(document.getElementById('hp_double_cal_start_value').value, 'srchStartDate_layer', 'start', 'srchStartDate', 'hp_double_cal', 'hp_double_cal_start_pos');
+	 								show_cal('srchStartDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_start_pos');SearchDate('user','');" />
+								<a href="javascript:generate_cal(document.getElementById('hp_double_cal_start_value').value, 'srchStartDate_layer', 'start', 'srchStartDate', 'hp_double_cal', 'hp_double_cal_start_pos');
+	 								javascript:show_cal('srchStartDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_start_pos'); javascript:SearchDate('user','');" title="이용기간 시작일 달력">
+								<img src="/images/common/ico_calendar.png" id="hp_double_cal_start_pos" alt="달력" /></a>
+								&nbsp;~&nbsp;
+								<input type="hidden" name="srchEndDate" value="<%=new SimpleDateFormat("yyyyMMdd").format(new Date()) %>" id="hp_double_cal_end_value" />
+								<input type="text" id="hp_double_cal_end_value_display" name="srchEndDate_display" class="txt" value="<%=new SimpleDateFormat("yyyy.MM.dd").format(new Date()) %>" title="끝나는날짜" readonly="readonly"
+									onclick= "generate_cal(document.getElementById('hp_double_cal_end_value').value, 'srchEndDate_layer', 'end', 'srchEndDate', 'hp_double_cal', 'hp_double_cal_end_pos');
+	 								show_cal('srchEndDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_end_pos');SearchDate('user','');" />
+								<a href="javascript:generate_cal(document.getElementById('hp_double_cal_end_value').value, 'srchEndDate_layer', 'end', 'srchEndDate', 'hp_double_cal', 'hp_double_cal_end_pos');
+	 								javascript:show_cal('srchEndDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_end_pos'); javascript:SearchDate('user','');" title="이용기간 종료일 달력">
+								<img src="/images/common/ico_calendar.png" id="hp_double_cal_end_pos" alt="달력" /></a>
+								<div id='hp_double_cal' class='pos_rel_cal'></div></span>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>진행상태</p></th>
+							<td><p>
+								<select id="srchStatus" name="srchStatus" title="진행상태" style="width:120px" >
+								   	<option value="" >전체</option>
+	                            	<option value="정상" <%if(vos.getSrchStatus().equals("정상")){%>selected='selected'<%}%> >매입완료</option>
+	                            	<option value="취소" <%if(vos.getSrchStatus().equals("취소")){%>selected='selected'<%}%> >매입취소</option>		       
+								</select>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>조회조건</p></th>
+							<td><p>
+								<select id="srchType" name="srchType" title="조회조건" style="width:120px" onchange="setNumberField(this.value)">
+									<option value="0">전체</option>
+                                    <option value="1" <%if(vos.getSrchType().equals("1")){%>selected='selected'<%}%> >주민번호</option>
+                                    <option value="2" <%if(vos.getSrchType().equals("2")){%>selected='selected'<%}%> >카드번호</option>	                                   
+								</select>
+								<input type="hidden" value="<%=vos.getAnyNum()%>" name="anyNum" id="anyNum" class="txt" value="" />
+								<span name="divJumin" id="divJumin" style="display:none;">
+									<input type="text" name="jumin1" class="txt" style="width:80px;" maxlength="6" onkeydown="checkLenN(this,6,form.jumin2);" value="" onkeypress="checkTypes(this, 'SSN1');" title="주민번호 앞자리" /> -  
+		  							<input type="password" name="jumin2" class="txt" style="width:80px;" maxlength="7" onkeydown="checkLenB(this,form.jumin1);" value="" onkeypress="checkTypes(this, 'SSN2');" title="주민번호 뒷자리"  />
+	  							</span>
+	  							<span name="divCard" id="divCard" style="display:none;">
+									<input type="text" name="card1" class="txt" style="width:40px;"  maxlength="4" onkeydown="checkLenN(this,4,form.card2);" value="" onkeypress="checkTypes(this, 'NUMB');" title="카드번호 첫번째 4자리 숫자" /> -  
+									<input type="text" name="card2" class="txt" style="width:40px;" maxlength="4" onkeydown="checkLenN(this,4,form.card3);checkLenB(this,form.card1);" value="" onkeypress="checkTypes(this, 'NUMB');" title="카드번호 두번째 4자리 숫자" /> -  
+									<input type="password" name="card3" class="txt" style="width:40px;" maxlength="4" onkeydown="checkLenN(this,4,form.card4);checkLenB(this,form.card2);" value="" onkeypress="checkTypes(this, 'NUMB');"  title="카드번호 세번째 4자리 숫자" /> -  
+									<input type="password" name="card4" class="txt" style="width:40px;" maxlength="4" onkeydown="checkLenB(this,form.card3);" value="" onkeypress="checkTypes(this, 'NUMB');" title="카드번호 네번째 4자리 숫자" />
+								</span>
+							</p></td>
+						</tr>
+					    <tr>
+					       <th scope="row"><p>가맹점번호</p></th>
+					       <td><p><input type="text" class="txt" id="chainNo" name="chainNo" style="width:110px" value="<%=vos.getChainNo()%>"  maxlength="12" onkeypress="checkTypes(this, 'NUMB');" title="가맹점번호 입력" /></p></td>
+					    </tr>
+					</tbody>
+					</table>
+
+					<!-- btn -->
+					<div class=btnset>
+                        <p class="btnr"><a class="btn btn_blue" href="#" onclick="searchData();"><span>조회</span></a></p>
+					</div>
+					
+				</div>
+			</div>
+				
+			<div class="content_block clfix">
+				<h2><img src="/images/ss/h2_terminal_buy02.png" alt="단말기 매입내역을 확인해 주세요" /></h2>
+				<div class="content_block_inner pos_rel">
+					<table class="dtable02 dtable_expand" summary="단말기 매입내역 중 해당기간 총 납부건수와 해당기간 총 납부금액을 확인하는 게시판입니다.">
+					<caption>단말기 매입내역</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>해당기간 총 납부건수</p></th>
+							<td><p><span class="t_no">${taxPaymentCnt}</span> 건</p></td>
+							<th scope="row"><p>해당기간 총 납부금액</p></th>
+							<td><p><span class="t_no">${taxPaymentTotalAmt}</span> 원</p></td>
+						</tr>                           
+						<!-- //loop -->
+					</tbody>
+					</table>
+
+					<table class="dtable01 mt20" summary="납부(승인)날짜, 카드번호, 회원명, 회원주민번호, 납부금액, 진행상태로 구성된 단말기 매입내역을 확인하실 수 있는 게시판입니다.">
+					<caption>단말기 매입내역 상세</caption>
+					<colgroup><col width="100" /><col width="*" /><col width="80" /><col width="*" /><col width="120" /><col width="80" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10">납부(승인)날짜</th>
+							<th scope="col">카드번호</th>
+							<th scope="col">회원명</th>
+							<th scope="col">회원주민번호</th>
+							<th scope="col" class="cell_r10">납부금액</th>
+							<th scope="col">진행상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							NHPIMSSTAX001VO vo = new NHPIMSSTAX001VO();
+
+							if(rsList.size()<=0){
+						%>
+						<tr class="nodata"><td colspan="9">조회된 내용이 없습니다.</td></tr>
+						<% }else{
+							for(int i=1; i<=rsList.size(); i++){
+								vo = rsList.get(i-1);
+							%>
+							<tr>
+								<td class="t_no cell_l10"><%=vo.getApprovalDate().substring(0,4)+"."
+										 +vo.getApprovalDate().substring(4,6)+"."+vo.getApprovalDate().substring(6,8)%></td>
+								<td class="t_no"><%=vo.getCardNo16().substring(0,12)%>****</td>
+								<td><%=vo.getPayerName()%></td>
+								<td class="t_no"><%=vo.getPayerNo6()%> - *******</td>
+								<td class="t_no cell_r10"><%=HpCommonUtil.getCommaStringForMoney(vo.getPaymentAmount())%></td>
+								<td><%=vo.getStatus()%></td>
+							</tr>
+						<%}
+						} %>
+					</tbody>
+					</table>
+					<%
+					if(rsList.size() >0){
+					%>
+						<!-- paginate -->
+						<!-- 페이징 -->
+						<div class="paginate">
+							${_page}
+						</div>
+						<!-- //페이징 -->
+					<%}%>
+					<div class="btnset">
+						<p class="btnr">
+							<a href="/hp/im/ss/tax/tax002.do?method=downExcel" name="excelATag" title="엑셀다운로드"></a>
+                            <a href="javascript:downExcel();" class="btn btn_white"><span>다운로드</span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+			

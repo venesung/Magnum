@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDCUV201.jsp
+ * Author: 유큐브 신원식 과장 
+ * Created on 2010. 02. 11.
+ *
+ * COPYRIGHT 2010 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="org.easymock.internal.ResultList"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="com.scard.common.util.StringUtil"%>
+<%@ page import="com.scard.common.util.StringUtilEx"%>
+<%@ page import="com.scard.hp.common.util.HpCommonUtil"%>
+<%@ page import="com.scard.hp.im.cd.cuv.vo.NHPIMCDCUV213VO"%>
+<%@ page import="com.scard.hp.im.cd.cuv.vo.NHPIMCDCUV101VO"%>
+<%@ page import="com.scard.hp.im.cd.cuv.vo.NHPIMCDCUV102VO"%>
+<%@ page import="com.scard.hp.im.cd.cuv.vos.NHPIMCDCUV001VOS"%>
+
+
+
+<%
+	StringUtilEx utilEx = new StringUtilEx();
+	StringUtil sUtil = new StringUtil();
+
+	HashMap requestHash = (HashMap)request.getAttribute("requestHash");
+    String RECORD_CNT   =  (String)requestHash.get("RECORD_CNT")==null ? "":(String)requestHash.get("RECORD_CNT");
+
+    ArrayList<NHPIMCDCUV101VO> rsList = (ArrayList<NHPIMCDCUV101VO>)request.getAttribute("rsList");
+%>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>국내 이용카드 이용내역 - 삼성카드</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/common-hp-ajax.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/common-hp-calendar.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/common-hp.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/im/cd/cuv/hp-im-cd-cuv.js"></script>
+</head>
+<body>
+ 
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+    <div class="top_visual"><img src="/images/mh/h1_uselist_domestic.png" alt="국내 이용카드의 이용내역입니다." /></div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="images/mh/h1_uselist_domestic.gif" alt="국내 이용카드 이용내역" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_content">	
+
+
+		<div class="tb_exp clfix mt20">
+
+			<span class="fl_left">&nbsp;</span>
+			<span class="ab_tr t_desc03"><img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" /> 삼성 보너스클럽&nbsp;&nbsp;
+			<img src="/images/common/ico_blueline.png" alt="블루라인" /> 블루라인</span>
+		</div>
+
+		<table class="dtable01 dtable01_bill" summary="국내(일시불,할부) 이용내역을 승인일과 결제예정일을 보여주는 게시판입니다">
+		<caption>국내(일시불,할부) 이용 상세내역</caption>
+		<colgroup><col width="110" /><col width="42" /><col width="48" /><col width="48" /><col width="*" /><col width="70" /><col width="36" /><col width="36" /><col width="36" /><col width="36" /><col width="42" /><col width="48" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">카드명</th>
+				<th scope="col">이용자</th>
+				<th scope="col">승인일</th>
+				<th scope="col">승인시각</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+				<th scope="col" class="cell_r10">승인금액</th>
+				<th scope="col">이용<br />구분</th>
+				<th scope="col">할부<br />개월</th>
+				<th scope="col">승인<br />번호</th>
+				<th scope="col">취소<br />여부</th>
+				<th scope="col">포인트</th>
+				<th scope="col">결제<br />예정일</th>
+			</tr>
+		</thead>
+		<tbody>
+<%	
+    if(rsList.size()>0 && rsList!=null){
+        for(NHPIMCDCUV101VO list1 : rsList){
+%>
+			<tr>
+				<td class="cell_l10"><%=list1.getCardName()%></td>
+				<td><%=list1.getFamilyName()%></td>
+				<td class="t_no"><%=StringUtil.formatStrDate(list1.getApproveDate(),"yyyy.mm.dd") %></td>
+				<td class="t_no"><%=StringUtil.formatStrTime(list1.getApproveTime(),"HH:MM:SS") %></td>
+				<td  class="cell_l10">
+					<% if (HpCommonUtil.getAsString(rsApproveCardList.get(j).getBigBonusGubun()).equals("B")) { %>
+							<!--// 보너스클럽이미지 2006.06.30 //-->
+							<img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" />
+					<%} %>
+					<% if (HpCommonUtil.getAsString(rsApproveCardList.get(j).getBlueYn()).equals("C")) { %>
+							<!--// 블루라인 이미지 2009.02.03 //-->
+							<img src="/images/common/ico_blueline.png" alt="블루라인" />
+					<% } %>
+					
+					<% if (HpCommonUtil.getAsString(rsApproveCardList.get(j).getChainName()).equals("")) { %>
+							<%=rsApproveCardList.get(j).getChainName()%>
+					<% } else { %>
+                            <a href= "javascript:window_open1(<%=rsApproveCardList.get(j).getChainNo()%>)" title="새창"><%=rsApproveCardList.get(j).getChainName()%></a>
+					<% } %>
+				</td>
+				<td class="cell_r10"><span class="t_no">
+
+				<%=utilEx.moneyFormat(list1.getApproveAmount())%>원<% if (!list1.getHybridAmt().equals("") && !list1.getHybridAmt().equals("0")) { %><br />(<%=utilEx.moneyFormat(list1.getHybridAmt())%>원)<% } else { %> &nbsp; <% } %>
+				</span></td>
+				<td><% if(list1.getInstallmentsMon().equals("000")) { %>일시불 <% } else { %> 할부<% } %></td>
+				<td class="t_no"><% if(list1.getInstallmentsMon().equals("000")) { %> <% } else { %><%=list1.getInstallmentsMon()%><% } %></td>
+
+				<td class="t_no"><%=list1.getApproveDate()%></td>
+				<td><% if(list1.getCancelGubun().equals("1")) {%>취소<% } %></td>
+				<td><% if(list1.getBigbonusYn().equals("B")) {%>보너스<% }else if(list1.getBigbonusYn().equals("S")) {%>페이백<% } else if(list1.getBigbonusYn().equals("W")) {%>와인P<% } %></td>
+				<td class="t_no">
+				<% if(!list1.getScheduleDate().equals("    ") && !list1.getScheduleDate().equals("nbsp") ) {
+                %>
+				<%=list1.getScheduleDate().substring(4,6)%>/<%=list1.getScheduleDate().substring(6,8)%>
+				<% }
+				   if(!list1.getHybridAmt().equals("") && !list1.getHybridAmt().equals("0") ) out.println("선불");
+				%>
+				</td>
+			</tr>
+<%	
+		}
+	}
+%>
+		</tbody>
+		</table>
+
+		
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+ 
+</div>
+ 
+</body>
+</html>

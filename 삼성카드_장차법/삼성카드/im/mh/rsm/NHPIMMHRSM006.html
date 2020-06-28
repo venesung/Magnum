@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+ 
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">자유결제 서비스입니다</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3961_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+ 
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHRSM001M001', true);">자유결제서비스 안내</a></li>
+                            <!-- <li><a href="javascript:goTabPage('NHPIMMHRSM001M002', true);">신청하기</a></li> -->
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M003', true);">결제비율변경</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHRSM001M004', true);">해지/당일신청내용 취소</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M005', true);">결제예정금액조회</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- content_block --> 
+				<div class="content_block content_block_tab content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_freepayment_revocation01.png" alt="자유결제해지 서비스 이용안내 입니다" /></h2> 
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>자유결제서비스를 해지 하시더라도 잔액한도제는 계속 유지됩니다.</p></li>
+							<li><p>해지 요청 할 경우, 회원님의 해지 요청일을 기준으로 일반 결제방식으로 전체 잔액에 대해 이용대금을<br />청구합니다.
+								   단, 당월 결제할 카드 이용대금이 확정된 이후 해지신청을 하는 경우에는<br />차월 결제일부터 일반 결제방식이 적용됩니다.</p></li>
+							<li><p>보다나은 서비스를 위하여 자유결제 서비스 상품을 개선중에 있으며, 해지 하시면 재신청이 불가합니다.</p></li>
+						</ol>
+					</div> 
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_revocation02.png" alt="고객님의 정보를 확인해주세요" /></h2> 
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="고객정보 확인을 위해 카드선택, 카드비밀번호, 카드 CVC번호를 입력하는 게시판입니다">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card" name="cardNo" style="width:360px; z-index:-1; z-order:-1;">
+										<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+									<p class="input_2char">
+									<input type="password" name="label_ch_cardpass" class="txt" value="" onkeyup="changeFocus();" id="label_ch_cardpass" title="카드 비밀번호 앞 두자리 입력" maxlength="2" /><em>**</em>(비밀번호 앞의 2자리)
+									<span id="usafeon_label_ch_cardpass"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td>
+									<p class="input_3char">
+									<input type="password" name="label_ch_cvcnum" class="txt" value="" id="label_ch_cvcnum" title="카드 CVC번호 입력" maxlength="3" />(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+									<span id="usafeon_label_ch_cvcnum"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+ 
+						<dl class="cvc_view cvc_view_noborder">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div> 
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_revocation03.png" alt="고객님의 결제비율을 조회합니다" /></h2> 
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span>신청시 현재 남아있는 이월잔액이 그 달 또는 다음달 결제일에 전액 일시 청구됩니다.</span>
+						</div>
+						<table class="dtable02 dtable_expand" summary="현재 결제비율을 확인할 수 있는 게시판입니다.">
+						<caption>현재 결제비율</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>현재 결제비율</p></th>
+								<td><p><span class="t_no">0</span> %</p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+                        <div class="btnr"><a id="NHPIMMHRSM006_L01" href="javascript:fncDel();fnSetReturnFocusId('NHPIMMHRSM006_L01','id_layer03');" class="btn btn_white"><span>해지</span></a></div>
+					</div> 
+				</div> 
+</form>
+				
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:200px;top:-620; height:0; font-size:0; line-height:0; z-index:900;display:none">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" value="레이어닫기" title="자유결제 서비스 해지안내 레이어 닫기" />
+			<p class="pop_tit3"><img src="/images/mh/layer_tit_freepayment_cancelinfo.png" alt="자유결제 서비스 해지안내" /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert03">
+					<p class="t_desc04">자유결제서비스는 우수회원님께 드리는 <br />결제편의 서비스로 서비스를 해지 하지 않더라도 결제비율을<br />100%로 선택하시면 일반결제방식과 동일하게 매월 <br />결제대금을 전액 상환하실 수 있습니다.</p>
+					<div class="line_lgray">&nbsp;</div>
+					<p class="pop_l_alert2">자유결제서비스를 해지하시면 재신청이 불가능합니다.<br /><strong class="t_black">해지신청을 진행 하시겠습니까?</strong></p>
+ 				</div>
+                <p class="btnc"><a href="#1" onclick="delRevol();"> <img src="/images/common/btn_s_cancel_at.png" alt="해지" /></a> <a href="#2" onclick="hide_con('id_layer03'); show_select();closeLayerPopup();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	safeonAddNumberField("frm","label_ch_cardpass");
+	safeonAddNumberField("frm","label_ch_cvcnum");
+</script>
+
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

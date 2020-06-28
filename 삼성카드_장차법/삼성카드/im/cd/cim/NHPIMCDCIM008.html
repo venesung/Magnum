@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+
+
+				<div class="top_visual">
+					<h1><img src="/images/cd/h1_cardreceipt_regi.png" alt="Card Receipt Registration" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">	<!-- 100126 -->
+					<h2><img src="/images/cd/h2_cardreceipt_regi01.png" alt="Please Register Before Using" /></h2>
+					<div class="content_block_inner pos_rel">
+						<ol class="list_no01">
+							<li><p>In order to ensure safe card usage, the cardholders must activate their own cards.</p></li>
+							<li><p>Card activation can only be completed with customers who were granted a 4-digit personal password.<br />If you do not have a 4-digit password, please contact our customer service to obtaion one.</p></li>
+							<li><p>You can also activate you new card via samsung Card Main Number : 1588-8700<br />
+								<strong class="t_black">ARS</strong> &nbsp;&nbsp; <span class="t_gray mr10">|</span> 1588-8700 &gt; Press 8 &gt; Press 4 : for New Card Registration / Activation
+							</p></li>
+						</ol>
+
+<!-- 100428 -->
+						<table class="dtable02 dtable_inputfield mt20 clfix" summary="13-byte National ID, Account Number, CVC, Personal Password for card reciept registration">
+                        <caption>Use the card registration</caption>
+<!-- //100428 -->
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>13-byte National ID</p></th>
+								<td><p><span class="input_idno"><input name="IDEN_NO1" type="text" maxlength="6" class="txt" value="" title="first 6 bytes"  onkeyup="lengthCheck01(this.value)" />&nbsp;-&nbsp;<input name="IDEN_NO2" type="password" maxlength="7" class="txt" value="" title="last 7 bytes" /></span>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>Account Number</p></th>
+								<td><p>
+									<span class="input_cardno"><label for="label_cardno01"><input type="radio" class="chk" title="MasterCard/Visa/Local" id="label_cardno01" value="visa" name="card_type"  onclick="clickVisa()" /> MasterCard/Visa/Local</label><input name="CARD_NO1" type="password" maxlength="4" class="txt" value="" title="first 4 bytes"  onkeyup="lengthCheck1(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO2" type="password" maxlength="4" class="txt" value="" title="2nd 4 bytes" onkeyup="lengthCheck2(this.value)" />&nbsp;-&nbsp;<input  name="CARD_NO3" type="text" maxlength="4" class="txt" value="" title="3rd 4 bytes" onkeyup="lengthCheck3(this.value)" />&nbsp;-&nbsp;<input  name="CARD_NO4" type="text" maxlength="4" class="txt" value="" title="last 4 bytes" onkeyup="lengthCheck4(this.value)" /></span><br />
+									<span class="input_cardno"><label for="label_cardno02"><input type="radio" class="chk" title="AmexCard" id="label_cardno02" value="amex"  name="card_type"  onclick="clickAmex()" /> Amex Card</label><input name="CARD_NO21" type="password" maxlength="4" class="txt" value="" title="first 4 bytes" onkeyup="lengthCheck21(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO22" type="password" maxlength="6" class="txt" value="" title="mid 6 bytes" onkeyup="lengthCheck22(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO23" type="text" maxlength="5" class="txt" value="" title="last 5 bytes" onkeyup="lengthCheck23(this.value)" /></span>
+									<span class="input_cardno"><label for="label_cardno03"><input type="radio" class="chk" title="MinusLoan Card" id="label_cardno03" value="minus"  name="card_type"  onclick="clickMinus()" /> MinusLoan Card</label><input name="CARD_NO31" type="password" maxlength="4" class="txt" value="" title="first 4 bytes" onkeyup="lengthCheck31(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO32" type="password" maxlength="4" class="txt" value="" title="2nd 4 bytes" onkeyup="lengthCheck32(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO33" type="text" maxlength="4" class="txt" value="" title="3rd 4 bytes" onkeyup="lengthCheck33(this.value)" />&nbsp;-&nbsp;<input name="CARD_NO34" type="text" maxlength="4" class="txt" value="" title="last 4 bytes" onkeyup="lengthCheck34(this.value)" /></span><!-- 100309 -->
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>CVC</p></th>
+								<td><p><span class="input_3char"><input name="CVCNO" type="password" maxlength="3" class="txt" value="" title="CVC Number"  onkeyup="lengthCheck01(this.value)" />Last 3 bytes from Back of the card</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>Personal Password</p></th>
+								<td><p><span class="input_2char"><input name="PASSWD" type="password" maxlength="2" class="txt" value="" title="First 2 bytes of personal password"  onkeyup="lengthCheck01(this.value)" />&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;First 2 bytes of personal password</span>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+ 
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+							<a href="javascript:" class="btn btn_blue" onclick="Validation()"><span>OK</span></a>
+							<!-- //100126 -->
+						</div>
+
+						<dl class="cvc_view">
+							<dt class="t_black"><strong>CVC</strong></dt>
+							<dd><img src="/images/sp_eng/img_cvc.jpg" alt="CVC number is the  last 3-digit number on the back of the card" /></dd>
+						</dl>
+					</div>
+				</div>		
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<%
+	/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+	 * File Name: NHPIMCSFEGVIEW001.jsp
+	 * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+	 * Created on 2010.03.31
+	 * 해외사용문의 입력 // 문의등록 처리후 리턴처리
+	 * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+	 */
+%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO"%>
+<%@ page import="com.scard.common.util.*"%>
+
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag"%>
+<%@ page import="com.scard.common.login.session.*" %>
+<%@ page import="com.scard.common.login.session.entity.Member" %>
+
+
+<%
+	//문의등록 처리 후 리턴 값 : true -> success popup 호출 false -> failure popup 호출 
+	String result = (String)request.getAttribute("result");
+	if(result==null){
+		result="false";
+	}
+%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+
+<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript">
+	
+		function onLoad(){
+			var resultSuccess="true",resultFailure="false";
+			if(resultSuccess=="<%=result%>"){
+				parent.submitComplete(true);
+			}else if(resultFailure=="<%=result%>"){
+				parent.submitComplete(false);
+			}
+		}
+</script>
+</head>
+<body onload="onLoad();">
+
+</body>
+</html>
+

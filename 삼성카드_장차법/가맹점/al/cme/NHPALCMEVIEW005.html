@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+<title>아이디/비밀번호 찾기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+<link rel="stylesheet" type="text/css" href="/css/al.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common-hp-util.js"></script>
+<script type="text/javascript" language="javascript">
+	function updateChainPassword(){
+		var frame = document.frm;
+		if(validation()){
+			frame.action="/chainmember.do?method=updateChainPassword";
+            frame.onSubmit='this.submit();';
+			//frame.submit();
+            frm.submit();
+		}
+		return;
+	}
+
+	function validation(){
+		var passwordValue = document.frm.password.value;
+		var passwordReValue = document.frm.passwordRe.value;
+
+		if(/[0-9]+/.test(passwordValue) == false ){
+			alert("영문과 숫자를 혼용하여 주십시오.");
+			document.frm.password.focus();
+			return;
+		}
+		if(/[a-zA-Z]+/.test(passwordValue) == false ){
+			alert("영문과 숫자를 혼용하여 주십시오.");
+			document.frm.password.focus();
+			return;
+		}
+		if(/[\s]+/.test(passwordValue) == true){		
+			alert("빈칸이 있습니다.");
+			document.frm.password.focus();
+			return;
+		}
+		
+		if ( passwordValue != passwordReValue )
+		{
+			alert ("입력하신 비밀번호가 틀립니다. \n다시 입력해주세요");
+			document.frm.password = "";
+			document.frm.passwordRe = "";
+			return false;
+		}
+		
+		if(!(passwordValue.length >= 6) && (passwordValue.length <= 12)) {
+			alert("\패스워드는 6~12자 입니다.");
+			document.frm.password = "";
+			document.frm.passwordRe = "";
+			document.frm.password.focus();
+			return false;
+		}
+		if( !passChk(passwordValue) ) {return false};
+		
+		return true;
+	}
+
+	function  passChk(p_pass)
+	{
+	    obj = p_pass;
+		var cnt=0,cnt2=1,cnt3=1;
+		var temp="";
+		for(i=0;i < p_pass.length;i++){
+			temp_pass1 = p_pass.charAt(i);
+			next_pass = (parseInt(temp_pass1.charCodeAt(0)))+1;
+			temp_p = p_pass.charAt(i+1);
+			temp_pass2 = (parseInt(temp_p.charCodeAt(0)));
+			if (temp_pass2 == next_pass)
+			    cnt2 = cnt2 + 1;
+			else
+			    cnt2 = 1;
+			if (temp_pass1 == temp_p)
+			    cnt3 = cnt3 + 1;
+			else
+			    cnt3 = 1;
+			if (cnt2 > 3) break;
+			if (cnt3 > 3) break;
+		}
+		if (cnt2 > 3){
+			alert("비밀번호에 연속된 글이나 순차적인 숫자를 4개이상 사용해서는 안됩니다.");
+			return  false;
+		}
+		if (cnt3 > 3){
+			alert("비밀번호에 반복된 문자/숫자를 4개이상 사용해서는 안됩니다.");
+			return  false;
+		}
+		return true;
+	}
+	
+	function checkEnter(){
+		if (event.keyCode==13)
+		{
+			Validation(self.document.login_form);
+		}
+	} 
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<form name="xecure"><input type="hidden" name="p" /></form>
+<form name="frm" method="post" autocomplete="off">
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	<!-- header -->
+	<fileTag:alTopMenuView topMenuGubun="0" />
+
+	<div id="con_wrap" class="clfix">
+		<!-- left -->
+		<fileTag:alLeftMenuView leftMenuGubun="6" leftOrderGubun="2" />
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">회원가입&nbsp;&gt;&nbsp;아이디/비밀번호 찾기</div>
+				<h1><img src="/images/al/h1_find_idpw.png" alt="아이디/비밀번호찾기" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<p class="t_black"><strong>회원님의 사용자 ID는 다음과 같습니다.</strong></p>
+					<p class="t_black">비밀번호 변경 후, 다시 로그인 후 사이트를 이용해 주세요.</p>
+					<div class="line_lgray"></div>
+					<fieldset class="user_verify mt30">
+						<legend>비밀번호찾기</legend>
+						<dl>
+							<dt>아이디</dt>
+							<dd><strong class="t_black">${chainId }</strong></dd>
+							<dt><label for="label_newpass">새비밀번호</label></dt>
+							<dd><span class="bg_input"><input type="password" value="" title="새비밀번호" id="label_newpass" style="width:277px" name="password" maxlength="12" style="ime-mode:disabled" onblur="checkTypesOnBlur(this, 'ECNO');" /><em>&nbsp;</em></span>&nbsp;&nbsp;<span>비밀번호는 영문/숫자 혼용하여 6~12자리</span></dd>
+							<dt><label for="label_newpass_ok">새비밀번호 확인</label></dt>
+							<dd><span class="bg_input"><input type="password" value="" title="새비밀번호 확인" id="label_newpass_ok" style="width:277px" name="passwordRe" maxlength="12" style="ime-mode:disabled" onblur="checkTypesOnBlur(this, 'ECNO');" /><em>&nbsp;</em></span></dd>
+						</dl>
+					</fieldset>
+					<div class="line_lgray">&nbsp;</div>
+					<div class="btnr">
+                        <a href="javascript:updateChainPassword();" class="btn btn_blue"><span>비밀번호 변경</span></a>
+                        <a href="javascript:document.frm.reset();" class="btn btn_white"><span>취소</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<jsp:include page="/WEB-INF/jsp/hp/al/NHPALFOOTER.jsp" flush="false"></jsp:include>
+
+</div>
+</form>
+</body>
+</html>

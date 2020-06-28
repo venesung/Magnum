@@ -1,0 +1,32 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: "삼성SDS 김동현 사원"
+ * Created on 2010. 1. 9.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%
+	String nextGotoUrl = (String)request.getAttribute("menuId");
+%>
+<title>마이홈 - 삼성카드</title>
+</head>
+<body onLoad="goMainPage();">
+<script type="text/javascript" language="javascript">
+function goMainPage(){
+	var nextGotoUrl = document.form1.nextGotoUrl.value;
+	var url = "/hp/main.do?method=myhome";
+	
+	if(nextGotoUrl != null && nextGotoUrl != ""){
+        url = "/hp/main.do?method=myhome&amp;menuId="+nextGotoUrl;
+	}
+	location.href = url;
+}
+</script>
+<form name="form1">
+<input type="hidden" name="nextGotoUrl" value="${menuId}" />
+</form>
+</body>
+</html>

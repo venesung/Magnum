@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>안정적인 서비스 제공을 위한 휴대폰 번호 인증 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+var ncount=0;
+var lcount=0;
+
+function sendOk(){
+	if (document.form1.smsCert.value==""){
+		alert("인증번호를 입력하세요");
+		return;
+	}
+	if (document.form1.smsCert.value.length!=4){
+		lcount=lcount+1;
+		if (lcount==4){
+			alert("3회 인증번호 입력에 실패했습니다.");
+			self.close();
+			return;
+		}
+		alert("인증번호는 4자리 입니다.");
+		return;
+	}
+ 	self.close();
+	
+}
+function sendcert(){
+	if (ncount==0){
+		ncount=1
+		document.form1.smsCert.focus();
+	}
+}
+</script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+</head>
+<body>
+<form name="form1" method="post" >
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1 class="al_center"><img src="/images/ss/layer_tit_safeservice_phoneregist.png" alt="안정적인 서비스 제공을 위한 휴대폰 번호 인증" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_safeservice_phoneregist.png" alt="안정적인 서비스 제공을 위한 휴대폰 번호 인증" /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<p class="pop_sub_desc">등록하신 휴대폰으로 인증번호가 잠시 후 전송됩니다. 수신한 인증번호를 아래 인증번호란 입력하신 후 확인 버튼을 클릭해 주시기 바랍니다.</p>
+			<table class="dtable02 dtable_inputfield" summary="휴대폰 번호 정보를 확인하고 인증번호를 입력하는 게시판입니다">
+			<caption>휴대폰 번호 인증</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>휴대폰번호</p></th>
+					<td><p class="t_no">${showPhoneNo}</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="smsCert">인증번호</label></th>
+					<td><p><span class="input_3char"><input type="text" name="smsCert" id="smsCert" class="txt" value="" onkeypress="checkTypes(this, 'NUMB');" style="ime-mode:disabled" /></span></p></td>
+				</tr>
+			</tbody>
+			</table>
+			<p class="pop_sub_desc02">인증번호를 못 받으셨을 경우 해당 이동통신사 또는 (지역번호없이)<br />1588-8700으로 문의해 주시기 바랍니다.</p>
+		</div>
+        <p class="btnc"><a href="javascript:sendOk()"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="#"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input class="btn_s_close btn_input" title="창닫기" onClick="window.close();" type="button" />
+	</div>
+</div>
+</form>
+</body>
+</html>

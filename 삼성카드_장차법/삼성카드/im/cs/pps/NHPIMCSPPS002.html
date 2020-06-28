@@ -1,0 +1,65 @@
+<%
+/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDTCS001.jsp
+ * Author: 이공오 한은미 주임
+ * Created on 2010.02.05
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+ %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" isELIgnored="false"%>
+
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<div id="tab_title">People Say</div>
+
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+
+<script type="text/javascript">
+	function autoResize(i) {
+	    var iframeHeight=
+	    (i).contentWindow.document.body.scrollHeight;
+	    (i).height=iframeHeight+20;
+	}
+</script>
+</div>
+
+<!-- top_visual 100510 -->
+<div class="top_visual">
+	<h1 class="none">People say</h1>
+	<!-- 20130415 웹접근성(장차법)  수정  -->
+	<div class="h1_desc"><img src="/images/cs/h1_people_say.jpg" alt="People say 회원님의 삼성카드 Life를 삼성카드에서 들려주세요." /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100623 -->
+	<div class="tab01 w810">
+		<ul>
+            <li class=""><a href="javascript:goTabPage('NHPIMCSPPS000', true);">고객에게 듣습니다</a></li><!-- 100204 -->
+            <!--<li class="on"><a href="javascript:goTabPage('NHPIMCSPPS001', true);">나의 카드 생활 백서</a></li>
+		--></ul>
+	</div>
+</div>
+
+				<!-- 수정 110902 -->
+				<!-- content_block  -->
+				<!--<div class="content_block content_block_card clfix">
+					<h2><img src="/images/cs/h2_people_say03.png" alt="삼성카드 카드생활 백서 안내입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="cardThank">
+							<h3><img src="/images/cs/h3_cardthank_title.png" alt="2011 나의 카드생활 백서와 함께해준 회원님께 감사드립니다." /></h3>
+							<p><img src="/images/cs/h3_cardthank_text.png" alt="2011년 한 해 동안 '나의 카드생활백서'에 깊은 관심을 가지고 참여해 주신 고객님께 진심으로 감사드립니다.2012년에 더욱 좋은 모습으로 찾아 뵙겠습니다. 감사합니다." /></p>
+						</div>
+						
+					</div>
+				</div>
+--><!-- // 수정 110902 -->
+
+<!--<div class="content_block clfix">
+	<h2><img src="/images/cs/h2_people_say04.png" alt="카드생활 백서에 참여해보세요" /></h2>
+	<div class="content_block_inner">
+        <iframe height="100%" width="100%" name="iframe" onload="javascript:autoResize(this);"src="/hp/im/cs/pps/NHPIMCSPPS002F.do" frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="본문 프레임"></iframe>
+	</div>
+</div>      	
+
+--><%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

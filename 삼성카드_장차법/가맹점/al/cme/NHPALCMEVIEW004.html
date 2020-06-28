@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+
+<title>아이디/비밀번호 찾기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+<link rel="stylesheet" type="text/css" href="/css/al.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common-hp-util.js"></script>
+
+<script type="text/javascript" language="javascript">
+	function selectChainId(){
+		var frame= document.frm;
+		if(validation()){
+			frame.action="/chainmember.do?method=selectChainId";
+            frame.onSubmit='this.submit();';
+			//frame.submit();
+            frm.submit();
+		}
+	}
+
+	function validation(){
+	//추가 필수~!!!
+		var frame = document.frm;
+		if(frame.chainNo.value==""){
+			alert("가맹점번호를 입력해 주십시오.");
+			frame.chainNo.focus();
+			return false;
+		}
+		//사업자 번호 validation 체크
+		if(!isBizNo(frame.businessNo)){
+			alert("사업자번호를 확인하십시오.");
+			frame.businessNo.focus();
+			return false;
+		}
+		if(frame.idenNo.value==""){
+			alert("주민번호/법인번호를 입력해 주십시오.");
+			frame.idenNo.focus();
+			return false;
+		}
+		if(!(frame.idenNo.value.length == 13)){
+			alert("주민번호/법인번호 13자리를  입력해 주십시오.");
+			frame.idenNo.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	
+	function checkEnter(){
+		if (event.keyCode==13)
+		{
+			selectChainId();
+		}
+	}
+</script>
+
+</head>
+<body>
+<form name="xecure"><input type="hidden" name="p" /></form>
+<form name="frm" method="post" autocomplete="off">
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	<!-- header -->
+	<fileTag:alTopMenuView topMenuGubun="0" />
+
+	<div id="con_wrap" class="clfix">
+		<!-- left -->
+		<fileTag:alLeftMenuView leftMenuGubun="6" leftOrderGubun="2" />
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">웹멤버&nbsp;&gt;&nbsp;아이디/비밀번호 찾기</div>
+				<h1><img src="/images/al/h1_find_idpw.png" alt="아이디/비밀번호찾기" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<p class="t_black"><strong>가맹점 회원 확인</strong></p>
+					<p class="t_black">하이픈 “-” 없이 다음 사항을 입력해 주세요. </p>
+					<div class="line_lgray">&nbsp;</div>
+					<fieldset class="find_id mt30">
+						<legend>비밀번호찾기</legend>
+						
+						<!-- 100107 -->
+						<dl>
+							<dt><label for="label_merchant_num" class="t_12">가맹점 번호</label></dt>
+							<dd><span class="bg_input"><input type="text" name="chainNo" title="가맹점번호" id="label_merchant_num" style="width:277px" maxlength="12" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /><em>&nbsp;</em></span><span class="ml10 t_desc04">가맹점번호 8자리 이상</span></dd>
+							<dt><label for="label_business_num">사업자 등록 번호</label></dt>
+							<dd><span class="bg_input"><input type="text" name="businessNo"  title="사업자 등록 번호" id="label_business_num" style="width:277px" maxlength="10" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /><em>&nbsp;</em></span><span class="ml10 t_desc04">사업자번호 10자리 이상</span></dd>
+							<dt><label for="label_business_jumin">사업자 주민 번호</label></dt>
+							<dd class="pos_rel"><span class="bg_input"><input type="text" name="idenNo" title="사업자 주민 번호" id="label_business_jumin" style="width:277px" maxlength="13" onKeyDown="checkEnter();" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /><em>&nbsp;</em></span><span class="t_desc04 ab_tr">주민번호 13자리<br />(법인가맹점인 경우는 법인등록번호 13자리)</span></dd>
+						</dl>
+						<!-- //100107 -->
+
+					</fieldset>
+					<div class="line_lgray">&nbsp;</div>
+					<div class="btnr">
+                        <a href="javascript:selectChainId();" class="btn btn_blue" ><span>확인</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<jsp:include page="/WEB-INF/jsp/hp/al/NHPALFOOTER.jsp" flush="false"></jsp:include>
+
+</div>
+</form>
+</body>
+</html>

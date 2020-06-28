@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual_100327 -->
+<div class="top_visual">
+  <div class="h1_desc"><img src="/images/cd/h1_sel_d.jpg" alt="나만의 스타일로 직접 디자인하는 나만의 디자인카드 셀디클럽" /></div>
+  <h1 class="none">나만의 디자인카드 셀디클럽</h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">    <!-- 100126 -->
+  <!-- tab_area -->
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+      <!--li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li-->
+      <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+  <h2><img src="/images/cd/h2_app_seldinfo01.png" alt="셀디카드 이미지교체 신청 안내입니다" /></h2>
+  <jsp:include page="/WEB-INF/jsp/hp/im/cd/sld/NHPIMCDSLD017.jsp" flush="false" />
+</div>
+
+<!-- content_block -->
+<form name="form1" method="post" action="" autocomplete="off" >
+  <div class="content_block clfix">
+    <h2><img src="/images/cd/h2_app_seldinfo04.png" alt="본인 확인해주세요" /></h2>
+    <div class="content_block_inner fill_joinin">
+      <div class="mb30"><img src="/images/cd/step_seld03.png" alt="신상확인" /></div>
+
+
+          <table class="dtable02" summary="셀디카드 이미지 교체 신청(신청하신카드, E-mail ID, 성명, 주민등록번호, 청구지, 자택우편번호, 자택전화, 자택주소, 직장우편번호, 직장전화, 직장주소, 직장명, 직위, 부서명, 휴대폰, 카드수령지,카드비밀번호 앞2자리)을  하실 수 있습니다. ">
+          <caption>셀디카드 이미지 교체 신청</caption>
+            <colgroup><col width="25%" /><col width="30%" /><col width="20%" /><col width="25%" /></colgroup>
+            <tbody>
+              <tr>
+                <th scope="row"><p>신청하신 카드</p></th>
+                <td class="cell_l10"><p>${STRING4}</p></td>
+                <th scope="row"><p>E-mail ID</p></th>
+                <td class="cell_l10"><p class="t_no">${MEMBER.mbEmail}</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>성명</p></th>
+                <td class="cell_l10"><p>${MEMBER.mbHname}</p></td>
+                <th scope="row"><p>주민등록번호</p></th>
+                <td class="cell_l10"><p class="t_no">${decIdenNo}</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>청구지</p></th>
+                <td colspan="3" class="cell_l10">
+                  <p>직장</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><p>자택우편번호</p></th>
+                <td class="cell_l10"><p class="t_no">-</p></td>
+                <th scope="row"><p>자택전화</p></th>
+                <td class="cell_l10"><p class="t_no">000-000-000</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>자택주소</p></th>
+                <td colspan="3" class="cell_l10">
+                  <p></p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><p>직장우편번호</p></th>
+                <td class="cell_l10"><p class="t_no">0</p></td>
+                <th scope="row"><p>직장전화</p></th>
+                <td class="cell_l10"><p class="t_no">0</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>직장주소</p></th>
+                <td colspan="3" class="cell_l10">
+                  <p>${OFFICE_ADDR}${MEMBER.mbOfficeAddrDist}</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><p>직장명</p></th>
+                <td class="cell_l10"><p>${MEMBER.mbCompany}</p></td>
+                <th scope="row"><p>직위</p></th>
+                <td class="cell_l10"><p>${MEMBER.mbTitle}</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>부서명</p></th>
+                <td class="cell_l10"><p>${MEMBER.mbDepartment}</p></td>
+                <th scope="row"><p>휴대폰</p></th>
+                <td class="cell_l10"><p class="t_no">0</p></td>
+              </tr>
+              <tr>
+                <th scope="row"><p>카드수령지</p></th>
+                <td colspan="3" class="cell_l10">
+	                <input type="radio" id="cardGetGubun" name="cardGetGubun" value="001" title="카드수령지 직장" /><label for="cardGetGubun">직장</label> &nbsp;&nbsp;&nbsp;
+	                <input type="radio" id="cardGetGubun2" name="cardGetGubun" value="002"  title="카드수령지 자택" /><label for="cardGetGubun2">자택</label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><p>카드비밀번호 앞2자리</p></th>
+                <td colspan="3" class="cell_l10"><p class="t_no"><input type="password" name="STRING5" value="" size="4" maxlength="2" title="카드비밀번호 앞2자리" />XX</p></td>
+              </tr>
+            </tbody>
+          </table>
+		  
+          <table class="dtable02 mt20" summary="셀디카드 이미지 교체 신청(신청하신카드, 카드수령지, 카드비밀번호 앞2자리)을 하실 수 있습니다.">
+          <caption>셀디카드 이미지 교체 신청</caption>
+            <colgroup><col width="25%" /><col width="*" /></colgroup>
+            <tbody>
+              <tr>
+                <th scope="row"><p>신청하신 카드</p></th>
+                <td class="cell_l10"><p>${STRING4}</p></td>
+              </tr>
+              <tr class="nodata">
+                <td colspan="2">회원님에 해당하는 신상정보가 없습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><p>카드수령지</p></th>
+                <td class="cell_l10">
+                  <input type="radio" id="cardGetGubun" name="cardGetGubun" value="001" /><label for="cardGetGubun" title="카드수령지 직장" >직장</label> &nbsp;&nbsp;&nbsp;
+                  <input type="radio" id="cardGetGubun2" name="cardGetGubun" value="002" /><label for="cardGetGubun2" title="카드수령지 자택" >자택</label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><p>카드비밀번호 앞2자리</p></th>
+                <td class="cell_l10"><p class="t_no"><input type="password" name="STRING5" value="" size="4" maxlength="2" title="카드비밀번호 앞 두자리" />XX</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+      <p class="btnc_50"><a href="javascript:goSend();"><img src="/images/common/btn_next_step02.png" alt="신청" /></a>
+	  <a href="javascript:memberhistory();"><img src="/images/common/btn_r_chan_myinfo.png" alt="신상정보 확인/변경" /></a></p>
+
+    </div>
+  </div>
+</form>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

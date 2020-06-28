@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>가맹점 목록 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+
+<script type="text/javascript" language='javascript'>
+function bcChainAreaList(middivcode){
+	var frm = document.hiddenFrm;
+	frm.middivcode.value=middivcode;
+    frm.action = "/hp/im/ss/sbc/sbc.do?method=getBcAreaList";
+    frm.target = "_self";
+    frm.submit();
+}
+
+function chainDetail(chain_no){
+	var frm = document.hiddenFrm;
+	frm.chain_no.value = chain_no;
+	parent.tabSubmit('/hp/im/ss/sbc/sbc.do?method=selectChainInfo',document.hiddenFrm);
+}
+</script>
+</head>
+<body onLoad="resize();">
+
+<div class="content_block clfix">
+	<h2><img src="/images/ss/h2_detail_bonusclub04.png" alt="가맹점 목록입니다." /></h2>
+	<div class="content_block_inner">
+		<table>
+			<colgroup><col width="92%" /><col width="8%" /></colgroup>
+			<tr>
+				<td align="left">
+					<ul class="list_map_no clfix">
+						<!-- loop -->
+						<li>
+							<a href="javascript:bcChainAreaList('ALL');">
+							<p class="t_point mb10">전체</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:bcChainAreaList('${lst.middivcode}');">
+							<p class="t_point mb10">0</p>
+							</a>
+						</li>
+						<!-- //loop -->
+					</ul>
+				</td>
+				<td align="right">
+					<p class="t_point mb10"><font color="#E67E17">0 개</font></p>
+				</td>
+			</tr>
+		</table>
+		<table class="dtable01" summary="가맹점 명, 업종, 지역, 혜택, 혜택 상세정보로 구성된 가맹점 목록입니다.">
+		<caption>가맹점 목록</caption>
+			<colgroup><col width="22%" /><col width="13%" /><col width="35%" /><col width="15%" /><col width="15%" /></colgroup>
+			<thead>
+				<tr>
+					<th class="cell_l10 t_11" scope="col">가맹점 명</th>
+					<th class="cell_l10 t_11" scope="col">업종</th>
+					<th class="cell_l10 t_11" scope="col">지역</th>
+					<th class="cell_l10 t_11" scope="col">혜택</th>
+					<th class="cell_l10 t_11" scope="col">혜택상세</th>
+				</tr>
+			</thead>
+			<tbody>
+			<!-- loop -->
+				<tr>
+					<td class="cell_l10"><a href="javascript:chainDetail('${lst.chainNo}');">${lst.chainName}</a></td>
+					<td class="cell_l10 t_gray">${mainCodeNm}</td>
+					<td class="cell_l10 t_gray">${lst.addressArea}</td>
+					<td class="cell_l10">
+						<img src="/images/ss/icon_bonus_s.png" alt="보너스클럽" />
+					</td>
+					<td class="cell_l10">${lst.applyDescription}</td>
+				</tr>
+			<!-- //loop -->
+			</tbody>
+		</table>
+		<!-- paginate -->
+		<div class="paginate pb15">
+			<div class="paging">
+				${page}
+				<div class="btnr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- //END 검색결과  -->
+<form name="hiddenFrm" method="post">
+<input type="hidden" name="page"		value="<%=vos.getcPage() %>" />
+<input type="hidden" name="joinConNo"	value="<%=joinConNo %>" />
+<input type="hidden" name="middivcode"	value="<%=middivcode %>" />
+<input type="hidden" name="mainCodeNm"	value="<%=mainCodeNm %>" />
+<input type="hidden" name="chain_no"	value="" />
+</form>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

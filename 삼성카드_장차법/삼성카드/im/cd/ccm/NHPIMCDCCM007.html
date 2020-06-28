@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>실명인증 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<style type="text/css">
+.list_deny_stealname	li	{float:left; width:275px; height:199px; margin-right:10px; padding:20px 20px 0; background:url('/images/cd/pop_bg_whitebox.png') no-repeat}
+</style>
+</head>
+<body onload="onLoad()">
+	<div id="pop_s_wrap">
+		<!-- header -->
+		<!--
+		<div id="pop_s_header">
+			<h1><img src="/images/cd/pop_h1_chk_realname.png" alt="실명확인" /></h1>
+		</div>-->
+		<div id="mvint_pheader">
+			<h1><img src="/images/cd/pop_h1_chk_realname.png" alt="실명확인" /></h1>
+		</div>
+		<!-- content -->
+		<div id="pop_s_content" class="noscroll">
+			<div class="al_center mt30 mb30">
+				<img src="/images/mh/layer_tit_name_check_finish.png" alt="실명확인이 완료되었습니다" />
+				<p class="mt20">실명 확인이 되었습니다.</p>
+				<p class="mt20"><!--카드신청은 가까운 지점으로 문의 해주세요.-->실명 확인이 되었습니다. <br />	카드신청은 공인인증서 인증방법으로 가능합니다.
+				</p>
+				<p class="mt20">
+					-_-
+				</p>
+			</div>
+			<div class="btnset">
+                <p class="btnc"><a href="javascript:setVerifyYn()"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+		<!-- footer -->
+		<div id="pop_s_footer">
+			<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+			<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+		</div>
+	</div>
+	
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_error_realname.png" alt="실명확인오류" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_error_realname.png" alt="실명확인오류" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll">	
+		<div class="content_block content_block_card clfix">
+			<!-- d_complete -->
+			<div class="content_block_inner">
+				<div class="d_alert d_alert_s clfix">
+					<p class="ico_alert"><img src="/images/common/img_s_private_deny.jpg" alt="" /></p>
+					<div class="p_desc">						
+						<div class="p_txt">
+							귀하께서 입력하신 <strong class="t_black">이름</strong>과 <strong class="t_black">주민등록번호</strong>가<br />일치하지 않거나 자료가 없습니다.
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2 class="flnone pt30"><img src="/images/cd/pop_txt_err_namecert01.png" alt="실명 확인 오류 안내입니다." /></h2>
+			<ol class="list_no01 mt20">
+				<li><p>자신이 입력한 이름과 주민등록번호를 입력했음에도 불구하고 이름과 주민등록번호가 일치하지 않는다고<br />메시지가 나오면 한국신용평가정보 실명확인 콜센터에서 확인하시기 바랍니다.</p></li>
+				<li><p>본인의 신분증 사본을 한국신용평가정보로 이메일(스캔 혹은 디지털카메라 등으로 찍은 사진 파일) 혹은<br />팩스로 보내주시면 20분 내외로 바로 등록 처리해 드립니다.</p></li>
+				<li><p><strong class="t_black">업무시간</strong> : 평일 오전 9시~21시, 업무 외 시간에 접수된 서류는 다음날 처리됩니다.</p></li>
+				<li><p><strong class="t_black">사용가능 신분증</strong> : 주민등록증, 의료보험증, 운전면허증, 여권, 주민등록증 초본, 실명확인 요청이라는 제목으로<br />연락가능 전화번호를 함께 기재해주시기 바랍니다.</p></li>
+			</ol>
+
+			<div class="line_lgray">&nbsp;</div>
+			<div class="flag_additional pt10"><img src="/images/cd/pop_img_namechk.jpg" alt="인터넷 실명확인" class="ab_tr mr20" /></div>
+			
+			<h2 class="flnone"><img src="/images/cd/pop_txt_err_namecert02.png" alt="한국신용평가정보 실명확인 콜센터" /></h2>
+			<p class="mt10"><a href="http://www.namecheck.co.kr/per/p00.asp" target="_blank" class="btn_link" title="새창">바로가기</a></p>
+
+			<table class="dtable02 mt30">
+                <colgroup><col width="20%"><col width="30%"><col width="20%"><col width="30%"></colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row"><p>이메일</p></th>
+                        <td><p class="t_no">sscard@samsungman.com</p></td>
+                        <th scope="row"><p>팩스</p></th>
+                        <td><p class="t_no">02-3771-4818</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>홈페이지</p></th>
+                        <td><p><a href="http://www.namecheck.co.kr" target="_blank" class="btn_link" title="새창">www.namecheck.co.kr</a></p></td>
+                        <th scope="row"><p>전화번호</p></th>
+                        <td><p class="t_no">1600-1522</p></td>
+                    </tr>
+                </tbody>
+			</table>
+
+		</div> 
+		
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+ 
+</div>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_deny_stealname.png" alt="명의도용차단" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_deny_stealname.png" alt="명의도용차단" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll">	
+		<div class="content_block content_block_card clfix">
+			<!-- d_complete -->
+			<div class="content_block_inner">
+				<div class="d_alert d_alert_s clfix">
+					<p class="ico_alert"><img src="/images/common/img_s_private_deny.jpg" alt="" /></p>
+					<div class="p_desc">						
+						<div class="p_txt mt_40">
+							 귀하가 입력하신 주민등록번호는 크레딧뱅크에스<br /><strong class="t_black">명의보호설정</strong>되어 있는 주민등록번호입니다.
+							 <p class="mt10 t_gray lh14">타인의 주민등록번호를 도용할 경우 주민등록법 제37조에<br />의거 주민등록번호 단순도용에 대해서도 3년이하의 징역<br />또는 1,000만원 이하의 벌금에 처할 수 있음을 알려드립니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2 class="flnone pt30"><img src="/images/cd/pop_txt_deny_stealname.png" alt="해당 주민등록번호의 차단 해제를 원하실 경우" /></h2>
+
+			<ul class="list_deny_stealname mt20 clfix">
+				<li>
+					<strong class="t_black">크레딧뱅크 로그인</strong>
+					<p class="mt10 lh14">크레딧뱅크 로그인 후<br />설정상태를 변경할 수 있습니다.</p>
+					<p class="mt20"><a href="http://www.creditbank.co.kr/its/itsProtect.cb?m=protectList" target="_blank" class="btn_link" title="새창">개인정보차단 내역보기</a></p>
+				</li>
+				<li>
+					<strong class="t_black">본인인증</strong>
+					<p class="mt10 lh14">본인확인단계를 거친 후<br />설정상태를 변경할 수 있습니다.</p>
+					<p class="mt20"><a href="http://www.creditbank.co.kr/its/itsProtect.cb?m=protectStateForJoin" target="_blank" class="btn_link" title="새창">차단 해제하러 가기</a></p>
+				</li>
+			</ul>
+		</div> 
+		
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+ 
+</div> 
+
+</body>
+</html>

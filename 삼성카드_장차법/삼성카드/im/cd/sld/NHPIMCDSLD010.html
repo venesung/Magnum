@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>Null이미지 - 삼성카드</title>
+<style type="text/css">
+<!--
+  body {
+  {scrollbar-face-color: #4C5F76;
+  scrollbar-shadow-color: #4C5F76;
+  scrollbar-highlight-color: #4C5F76;
+  scrollbar-3dlight-color: #2C3643;
+  scrollbar-darkshadow-color: #2C3643;
+  scrollbar-track-color: #2C3643;
+  scrollbar-arrow-color: #73879F}
+//-->
+</style>
+
+<SCRIPT language="JScript">
+  function setImgView(pFileName, pTitle, pOwner){
+    parent.document.mainForm.imageFile.value = "${imgUrl2}"+ pFileName;
+    parent.document.mainForm.imageNo.value = pFileName.substring(0, 6);
+    parent.document.mainForm.img_view.src = "${imgUrl2}"+pFileName;
+    //parent.document.mainForm.dataName.value = pTitle;
+    parent.document.mainForm.dataDesc.value = pTitle + " / " + pOwner;
+  }
+</SCRIPT>
+</head>
+<body style="margin:0;background:#2C3643;">
+<table style="width:277px;border:0;border-spacing:0;border-collapse:collapse;"><tr>
+    <td style="background-image:url(/TemplateImage/cybercard/good/selfdesign/common/gallery_review_imgbg.gif); width:42px;"><a href="javascript:setImgView('<%= data.getData_file() %>', '<%= StringUtils.replace(StringUtils.replace(data.getData_name(), "'", ""), "\\", "") %>', '<%= StringUtils.replace(StringUtils.replace(data.getData_owner(), "'", ""), "\\", "") %>');"><img src="${imgUrl}<%= data.getData_file() %>" alt="" style="width:42px; height:34px; border:0;" /></a></td>
+          <td style="width:5px;">&nbsp;</td>
+          <td style="width:42px;background-image:/TemplateImage/cybercard/good/selfdesign/common/gallery_review_imgbg.gif">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="11" style="height:5px;"></td>
+</table>
+</body>
+</html>

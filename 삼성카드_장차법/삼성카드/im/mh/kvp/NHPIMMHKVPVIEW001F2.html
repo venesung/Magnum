@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!--content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100511 -->
+					<h2><img src="/images/mh/h2_approval_number_check02.png" alt="블루라인 방문내역, 승인번호를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li>회원님께서 카드 사용일 기준 30일 이내에 방문하신 <strong class="t_black">블루라인 내역과 승인번호3</strong>을 확인하세요.</li>
+							<li><strong class="t_black">왕대박! 3을 잡아라!</strong> 이벤트는 결제금액 3만원 이상의 경우에만 참여가 가능합니다.</li>
+						</ol>
+						<!-- content_block -->
+						<table>
+							<tr>
+								<td style="text-align:right">
+                                <a href="javascript:three_event_List('all')" <%if(threeEventMode.equals("N")){%>class="btn btn_s_gray"<%}else{%>class="btn btn_s_white"<%} %>><span>전체보기</span></a>
+                                <a href="javascript:three_event_List('three')" <%if(threeEventMode.equals("Y")){%>class="btn btn_s_gray"<%}else{%>class="btn btn_s_white"<%} %>><span>승인번호 3보기</span></a>
+								</td>
+							</tr>
+						</table>
+						<table class="dtable01 mt15" summary="이용일, 카드명, 이용가맹점, 승인번호, 적립률, 승인금액등을 확인 후 등록할 수 있는 게시판입니다.">
+						<caption>블루라인 승인번호 확인 게시판</caption>
+						<colgroup><col width="10%" /><col width="10%" /><col width="30%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col">카드명</th>
+								<th scope="col">이용가맹점</th>
+								<th scope="col">승인번호</th>
+								<th scope="col">적립률</th>
+								<th scope="col" class="cell_r10">승인금액</th>
+								<th scope="col" class="cell_l10">등록/완료</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<%if(resultList2.size()> 0){%>
+
+							<%
+							int size = resultList2.size();
+							for(int i=0 ; i<size ; i++){
+							cvo2 = (NHPIMMHKVP002VO)resultList2.get(i);
+							%>
+								<tr>
+									<td>
+									<%=cvo2.getApproveDate().substring(2,4)%>.
+									<%=cvo2.getApproveDate().substring(4,6)%>.
+									<%=cvo2.getApproveDate().substring(6,8)%>
+									</td>
+									<td><%=cvo2.getCardName().substring(0,3)%>***</td>
+									<td><%=cvo2.getChainName()%></td>
+									<td><%=cvo2.getApproveNo().replace("3","<strong style='color:#0070C0'>3</strong>")%></td>
+									<td><%=cvo2.getRate()%></td>
+									<td align="right">
+									<%
+									String amount=cvo2.getApproveAmount();
+									amount=df.format(Integer.parseInt(amount));
+									%>
+									<%=amount%>
+									</td>
+									<%if((cvo2.getApproveNo().indexOf("3") > -1)&&(Integer.parseInt(cvo2.getApproveAmount().replace(",","")) >= 30000)){ %>
+										<%if(cvo2.getGubun().equals("Y")){ %>
+										<!-- 등록 -->
+                                        <td><a href="javascript:blue_event('<%=cvo2.getChainNo()%>','<%=cvo2.getCardNo()%>','<%=cvo2.getApproveNo().replace(",","")%>','<%=cvo2.getApproveAmount().replace(",","")%>','<%=cvo2.getApproveDate()%>');" class="btn btn_s_white"  title="등록" ><span>등록</span></a></td>
+										<%}else{ %>
+										<!-- 완료 -->
+										<td>완료</td>
+										<%}%>
+									<%}else{%>
+									<td align="center">&nbsp;</td>
+									<%} %>
+								</tr>
+								<%} %>
+							<%}else{%>
+							<tr>
+							<td colspan="7">30일 이내에 이용내역이 없습니다.</td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+
+
+						<%
+						if(resultList2 != null && resultList2.size() >0){
+						%>
+						<!-- paginate -->
+						<!-- 페이징 -->
+						<div class="paginate">
+							${_page2}
+
+						</div>
+						<!-- //페이징 -->
+						<%}%>
+
+					<hr />
+				</div>
+
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

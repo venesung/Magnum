@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1 class="none">삼성카드 회원으로 가입하세요</h1>
+		<div class="h1_desc"><img src="/images/ms/bg_joinin.jpg" alt="삼성카드 웹멤버 회원가입을 하시면 삼성카드의 편리하고 폭넓은 서비스를 활용하실 수 있습니다." /></div>
+	</div>
+
+	<div class="content_block content_block_card clfix">
+		<div class="top_step top_step_appcard top_step_appcard03">
+			<ol class="none">
+				<li>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</li>
+				<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+				<li><abbr>현재단계</abbr> <strong>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</strong></li>
+				<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+			</ol>
+		</div>
+	</div>
+
+	<form name="frm1" method="post">
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ms/h2_fill_joinin01.png" alt="가입 신청 정보를 입력하세요" /></h2>
+			<div class="content_block_inner fill_joinin">
+				<div class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 사항입니다.</div>
+				<table class="dtable02" summary="회원님의 성명(한글), 주민등록번호를 확인하고 삼성카드번호, 카드비밀번호, 카드CVC번호의 가입 신청 정보를 입력하는 게시판입니다">
+					<caption>가입 신청 정보 입력</caption>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">성명(한글)</p></th>
+							<td class="cell_l02"><strong class="t_black"><%=userName %></strong></td>
+							<th scope="row" class="cell_l"><p class="not_neccessary">주민등록번호</p></th>
+							<td  class="cell_l02"><strong class="t_black"><%=juminNo1 %>-*******</strong></td>
+						</tr>
+<!-- 정회원 가입 화면 CVC 부분 추가 시작  10/02/18-->								
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>삼성카드번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_cardno"><span class="pano">XXXX - XXXX - </span>
+	                                      <input type="text" name="cardCode1" value="" maxlength="4" title="카드번호 뒤에서 8자리부터 입력" class="txt" id="label_cardno01" enc="on" /><!--  onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');"  --> - 
+									<input type="text" name="cardCode2" value="" maxlength="4" onkeypress="checkTypes(this,'NUMB');" class="txt" title="카드번호 뒤에서 4자리부터 입력" id="label_cardno02" enc="on" /><!--  onblur="checkTypesOnBlur(this,'NUMB');" onkeyup="lengthCheck21(this.form, this.value);" --></span>
+									<label for="label_cardno"><input type="radio" class="chk" id="label_cardno" name="cardType" value="visa" title="비자/마스터/자체카드" onclick="javascript:changeCardType('0');" checked="checked" /> 비자/마스터/UnionPay(은련)/자체</label><br />	<!-- 12.12.20 SR -->
+									<span class="input_cardno" style="padding-bottom:0"><span class="pano">XXXX - XXX </span>
+									<input type="text" name="cardCode21" maxlength="3" value="" onkeypress="checkTypes(this,'NUMB');" class="txt" title="카드번호 뒤에서 8자리부터 입력" id="label_cardno03" enc="on" /><!--  onblur="checkTypesOnBlur(this,'NUMB');" onkeyup="lengthCheck_a2(this.form, this.value);" --> - 
+									<input type="text" name="cardCode22" maxlength="5" value="" onkeypress="checkTypes(this,'NUMB');" class="txt" title="카드번호 뒤에서 5자리부터 입력" id="label_cardno04" enc="on" /><!--  onblur="checkTypesOnBlur(this,'NUMB');" onkeyup="lengthCheck_a21(this.form, this.value);" --></span>
+									<label for="label_cardno03"><input type="radio" class="chk" id="label_cardno04" name="cardType" value="amex" title="아멕스카드" onclick="javascript:changeCardType('1');"/> 아멕스카드</label>     <!-- 12.12.20 SR -->
+									<span id="usafeon_cardCode1|cardCode2" style="display:inline"></span>
+									<span id="usafeon_cardCode21|cardCode22" style="display:none"></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>카드비밀번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_cardpassword">
+									<input type="password" name="cardPasswd" class="txt" value="" maxlength="2" onfocus="clearValue(this);" title="카드비밀번호 앞 두자리 입력" id="label_password" enc="on" /><!--  onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" --> XX</span> <span class="t_desc04 ml10">카드비밀번호 앞 2자리 </span>&nbsp;&nbsp;<span id="usafeon_cardPasswd"></span>  
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>카드CVC번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_cardpassword"><input type="password" name="cvcNo" class="txt" value="" maxlength="3" title="카드CVC번호 앞 세자리 입력" id="label_cvcno" enc="on" /><!-- onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');"  --></span> <span class="t_desc04 ml10">카드 CVC번호 3자리</span>&nbsp;&nbsp;<span id="usafeon_cvcNo"></span>  
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<dl class="cvc_view_ms">
+					<dt class="t_black"><strong>CVC번호 보는방법</strong></dt>
+					<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+					<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+				</dl>
+			</div>
+		</div>
+
+		<!-- content_block --><!-- 100217 content_block 전체 변경 -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ms/h2_webmembership_input02.png" alt="웹멤버쉽 정보를 입력하세요" /></h2>
+			<div class="content_block_inner fill_joinin">
+				<div class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 사항입니다.</div>
+				<table class="dtable02" summary="회원님의 아아디, 비밀번호, 이메일주소, 청구서 수령방법, 핸드폰번호, 실제생일, 결혼여부, 결혼기념일, 배우자 생일등의 웹멤버쉽 정보를 입력하는 게시판입니다.">
+					<caption>웹멤버쉽 정보 입력</caption>
+					<tbody>
+<!-- 정회원 가입 화면 CVC 부분 추가 끝  10/02/18-->
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>아이디</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_id">
+									<input name="webId" type="text" class="txt"  maxlength="12" title="아이디" id="label_id" style="ime-mode:disabled" onchange="IDchange('N');" />
+									<a href="javascript:check();" class="btn btn_s_white" title="새창"><span>아이디 중복확인</span></a><span id="ID_change" style="display:none" class="ico_fill ico_fill01"></span>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_pass"><input type="password" class="txt" name="webpass" value="" title="비밀번호" id="label_pass" maxlength="12" style="ime-mode:disabled" enc="on" /><!--  onkeypress="checkTypes(this,'PSWD');" onblur="checkTypesOnBlur(this,'PSWD');" --> <span id="usafeon_webpass"></span></span> 
+								<p class="t_desc03 mt10">영문/숫자 혼용 8~12자리, 대소문자 구별<br />특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]</p> 
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호 확인</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_pass" style="width:30px"><input type="password" class="txt" name="webpass1" value="" title="비밀번호확인" id="label_pass_ok" style="ime-mode:disabled" maxlength="12" onchange="checkPassword();" enc="on" /><!--  onkeypress="checkTypes(this,'PSWD');" onblur="checkTypesOnBlur(this,'PSWD');" --></span>&nbsp;<span id="usafeon_webpass1"></span><br></br><span id="chkPw" style="display:none; marign-top:5px;" class="ico_fill ico_fill02"></span>
+							</td>
+						</tr>
+<!-- 정회원 가입 화면 이메일 위치변경 및 청수서 수령방법 추가 시작   10/02/18-->
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>이메일주소</p></th>
+							<td colspan="3" class="cell_l">
+								<span class="input_email">
+									<input name="emailId" type="text" class="txt" value="" title="이메일명" id="label_email" maxlength="30" style="ime-mode:disabled" onkeypress="checkTypes2(this,'EMAIL');" onblur="checkTypesOnBlur2(this,'EMAIL');" onchange="mailcheck='N'" />&nbsp;@&nbsp;
+									<input name="emailAddr" maxlength="30" value="" onchange="mailcheck='N'" type="text" class="txt" style="ime-mode:disabled" onkeypress="checkTypes2(this,'EMAIL');" onblur="checkTypesOnBlur2(this,'EMAIL');" title="이메일공급자 직접입력"  id="label_email02" />
+									<select name="selemail" onchange="sel(this);" title="이메일공급자선택" id="label_email03">
+										<option value="" selected="selected">직접입력</option>
+                           				<option value="naver.com">naver.com</option>
+                           				<option value="hanmail.net">hanmail.net</option>
+                           				<option value="hotmail.com">hotmail.com</option>
+                           				<option value="nate.com">nate.com</option>
+                           				<!--option value="yahoo.co.kr">yahoo.co.kr</option--><!-- SR내역 12.12.21 -->
+                           				<option value="empas.com">empas.com</option>
+                           				<option value="dreamwiz.com">dreamwiz.com</option>
+                           				<option value="freechal.com">freechal.com</option>
+                           				<option value="lycos.co.kr">lycos.co.kr</option>
+                           				<option value="korea.com">korea.com</option>
+                           				<option value="gmail.com">gmail.com</option>
+                            			<option value="hanmir.com">hanmir.com</option>
+                            			<option value="paran.com">paran.com</option>
+									</select>
+									<a href="javascript:searchEmail()" class="btn btn_s_white" title="새창"><span>이메일 중복확인</span></a>
+								</span>
+								<p class="t_desc03 mt10">핫메일(Hotmail을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+							</td>
+						</tr>							
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>청구서 <br />수령방법</p></th>
+							<td colspan="3" class="cell_l">
+								<label for="label_letter_receipt01"><input type="radio" class="chk" id="label_letter_receipt01" name="billMthdEmail" value="etop" title="우편 수령" /> 우편</label>
+								<label for="label_letter_receipt02"><input type="radio" class="chk" id="label_letter_receipt02" name="billMthdEmail" value="ptoe" title="이메일 수령" /> 이메일</label>
+								<span><a href="javascript:pup()" class="btn_link" title="새창">이메일 명세서 혜택보기</a></span>
+							</td>
+						</tr>
+<!-- 정회원 가입 화면 이메일 위치변경 및 청수서 수령방법 추가 끝 10/02/18-->
+						
+						<tr>
+							<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>실제생일</p></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="birthdayYear" type="text" class="txt" value="" title="실제생일 년도 입력" id="label_realbirth" maxlength="4" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');checkLenN( this, 4, frm1.birthdayMonth);" onblur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+									<select name="birthdayMonth" title="실제생일 달 선택" id="label_realbirth02">
+										<option value="" selected="selected">선택</option>
+									</select>&nbsp;월&nbsp;
+									<select name="birthdayDay" title="실제생일 일 선택" id="label_realbirth03">
+										<option value="" selected="selected">선택</option> 
+									</select>&nbsp;일
+									<span class="detail"><label for="id_birth_sun">
+										<input type="radio" class="chk" value="1" title="양력" id="id_birth_sun" name="lunarSolar" />&nbsp;양력</label><label for="id_birth_moon">
+										<input type="radio" class="chk" value="2" title="음력" id="id_birth_moon" name="lunarSolar" />&nbsp;음력</label></span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_marry01" class="not_neccessary">결혼여부</label></th>
+							<td colspan="3" class="cell_l">
+								<label for="label_marry01"><input type="radio" class="chk" id="label_marry01" name="marriedYn" value="N" title="미혼" onclick="clickMar('1');" />&nbsp;미혼</label>
+								<label for="label_marry02"><input type="radio" class="chk" id="label_marry02" name="marriedYn" value="Y" title="기혼" onclick="clickMar('1');" />&nbsp;기혼</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_marry_ceremoney" class="not_neccessary">결혼 기념일</label></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="weddingAnniversaryYear" type="text" class="txt" value="" title="결혼 기념일 년도 입력" id="label_marry_ceremoney" maxlength="4" onchange="clickMar()" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');checkLenN( this, 4, frm1.weddingAnniversaryMonth);" onblur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+									<select name="weddingAnniversaryMonth" title="결혼 기념일 달 선택" id="label_marry_ceremoney02" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>
+									</select>&nbsp;월&nbsp;
+									<select name="weddingAnniversaryDay" title="결혼 기념일 일 선택" id="label_marry_ceremoney03" onchange="clickMar()">  
+										<option value="" selected="selected">선택</option> 				
+									</select>&nbsp;일
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><label for="label_hisbirth" class="not_neccessary">배우자 생일</label></th>
+							<td colspan="3" class="cell_l">
+								<p class="input_birth">
+									<input name="mateBirthdayYear" type="text" class="txt" value="" title="배우자 생일 년도 입력" id="label_hisbirth" maxlength="4" onchange="clickMar()" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');checkLenN( this, 4, frm1.mateBirthdayMonth);" onblur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+									<select name="mateBirthdayMonth" title="배우자 생일 달 선택" id="label_hisbirth02" onchange="clickMar()">
+										<option value="" selected="selected">선택</option>  
+									</select>&nbsp;월&nbsp;
+									<select name="mateBirthdayDay" title="배우자 생일 일 선택" id="label_hisbirth03" onchange="clickMar()">
+										<option value=""   selected="selected">선택</option> 
+									</select>&nbsp;일
+									<span class="detail">
+										<label for="id_hisbirth_sun">
+											<input type="radio" class="chk" value="1" title="양력" id="id_hisbirth_sun" name="mateLunarSolar" onchange="clickMar()"  />&nbsp;양력
+										</label>
+										<label for="id_hisbirth_moon">
+											<input type="radio" class="chk" value="2" title="음력" id="id_hisbirth_moon" name="mateLunarSolar" onchange="clickMar()"  />&nbsp;음력
+										</label>
+									</span>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- //100126 -->
+
+		<!-- content_block -->
+		<div class="content_block fill_joinin clfix">
+			<p class="btnc">
+				<a href="javascript:validation();"><img src="/images/sp/btn_confirm_01.gif" alt="확인" /></a>
+				<a href="#"><img src="/images/sp/btn_cancel_01.gif" alt="취소" /></a>
+			</p>
+		</div>
+	</form>
+<!--
+	<form name="frm2" method="post">
+		<input type="hidden" name="iden_no" value="" />
+		<input type="hidden" name="webId" value="" />
+	</form>
+-->
+	<form name="form1">
+		<input type="hidden" name="certYn" value="N" />
+	</form>
+
+	<script type="text/javascript">
+		safeonAddNumberField("frm1", "cardCode21|cardCode22","ec_ko");
+		safeonAddNumberField("frm1", "cardCode1|cardCode2","ec_ko");
+		safeonAddNumberField("frm1", "cardPasswd","ec_ko");
+		safeonAddNumberField("frm1", "cvcNo","ec_ko");
+		safeonAddCharField("frm1", "webpass","ec_ko");
+		safeonAddCharField("frm1", "webpass1","ec_ko");
+
+		SafeonInit();
+		TouchEnKey_ReScan();
+	</script>
+
+	<!-- footer_layer -->
+					
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

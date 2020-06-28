@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>휴면회원 안내 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript">
+		function goCardCancel() {
+			if(opener && opener.goTabPage) {
+				opener.goTabPage('NHPIMCSLCS101');
+			}
+	
+			window.close();
+		}
+	</script>
+</head>
+<body>
+
+<div id="pop_s_wrap">	<!--  470 x 322 -->
+	<!-- header -->
+	<!--
+	<div id="pop_s_header3">
+		<h1><img src="/images/mh/pop_h1_noactive.png" alt="휴면회원 안내" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_noactive.png" alt="휴면회원 안내" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_s_content3" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<p><%=member.getName()%>님은 장기휴면카드(1년이상 무실적) 소지회원이십니다.</p>
+			<div class="line_lgray10">&nbsp;</div>
+			<p class="t_desc04">장기휴면카드의 해지를 원하시는 회원분께서는 고객플라자 &gt; 삼성카드 상품별 해지<br />신청을 통해 해지처리 하시기 바랍니다.</p>
+			<div class="line_lgray10">&nbsp;</div>
+
+		</div>
+		<p class="btnc"><a href="#" onclick="goCardCancel();"><img src="/images/common/btn_s_cancel_card.png" alt="카드상품별 해지 바로가기" /></a></p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+</body>
+</html>

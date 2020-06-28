@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+
+                <!-- content_block 100212 -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block 100429 -->
+                <div class="content_block content_block clfix">
+                    <h2 class="h2_uselist"><img src="/images/mh/h3_goodpoint.png" alt="굿포인트" /></h2>
+                    <div class="tab02 w810 mt10">
+                        <ul>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHPIT029', true);">월별조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHPIT030', true);">일별조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHPIT041', true);">전체이용내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHPIT042', true);">중도해지</a></li>
+                        </ul>
+                    </div>
+
+                    <ol class="list_no01 mt30">
+                        <li><p>청구전환 액 : 현재 일자 해지 시 미차감(미상환)액과 미차감(미상환)이자액을 합친 가상금액임.</p></li>
+                        <li><p>현재일자 해지 시 회원님께 원금과 이자를 합하여 <strong class="t_black t_no"><fmt:formatNumber value="${fn:trim(pointInVO.string12)}" pattern=",###" /></strong>원 이 청구됩니다. (실제 청구 내역과 다를 수 있습니다.)</p></li>
+                    </ol>
+                    
+                    <table class="dtable02 mt20" summary="신청일,계약 만기일, 최초 사용일, 계약 종료일, 신청액, 사용액, 사용가능액, 차감액(상환액), 미차감액(미상환액), 미차감(미상환)이자액, 청구전환액등으로 구성된 굿포인트 월별 포인트 조회결과를 확인할 수 있는 게시판입니다.">
+                    <caption>굿포인트 월별 포인트 조회 내역</caption>
+                    <colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><p>신청일</p></th>
+                            <td><p class="t_no">0</p></td>
+                            <th scope="row"><p>계약 만기일</p></th>
+                            <td><p class="t_no">0</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>최초 사용일</p></th>
+                            <td><p class="t_no">0</p></td>
+                            <th scope="row"><p>계약 종료일</p></th>
+                            <td><p>진행중</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>신청액</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                            <th scope="row"><p>사용액</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>사용가능 액</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                            <th scope="row"><p>차감액(상환액)</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>미차감 액(미상환액)</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                            <th scope="row"><p>미차감(미상환)이자액</p></th>
+                            <td><p><span class="t_no">0</span> 원</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><p>청구전환액</p></th>
+                            <td colspan="3"><p><span class="t_no">0</span> 원</p></td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="tb_exp clfix mt20">
+                        <span class="fl_left">&nbsp;</span>
+                        <span class="ab_tr"><a href="javascript:goTabPage('NHPIMSSCMS003');" class="btn_link">서비스 안내</a></span>
+                    </div>
+
+                    <div class="d_easy">
+                        <table class="dtable01 dtable01_bill" summary="조회하신 포인트 접수월, 월매출액, 사용액, 차감액(상환액), 미차감액(미상환액), 미차감(미상환)이자액, 청구전환액 등의 내역을 확인할 수 있는 게시판입니다.">
+                        <caption>접수월, 사용액, 차감액 청구전환액 등 상세내역</caption>
+                        <colgroup><col width="10%" /><col width="16%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="14%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10a">접수월</th>
+                                <th scope="col" class="cell_r10">원매출액</th>
+                                <th scope="col" class="cell_r10">사용액</th>
+                                <th scope="col" class="cell_r10">차감액<br />(상환액)</th>
+                                <th scope="col" class="cell_r10">미차감액<br />(미상환액)</th>
+                                <th scope="col" class="cell_r10">미차감<br />(미상환)<br />이자액</th>
+                                <th scope="col" class="cell_r10">청구전환액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                            </tr>
+                        </tbody>
+                        </table>
+						
+                        <!-- paginate -->
+                        <div class="paginate">
+                            <div class="paging">
+                                <a href="javascript:goPage('prePage');" class="btn btn_s_white"><span>이전</span></a>
+                                <span>|</span> <a href="javascript:goPage('nextPage');" class="btn btn_s_white"><span>다음</span></a>
+                            </div>
+                        </div>
+                        
+                        <!-- btnset -->
+                        <div class="btnset">
+                            <p class="btnl t_desc04">보너스클럽이나 페이백서비스를 이용하시면 보다 빠르고 편리하게 포인트를 적립하실 수 있습니다.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>가맹점주 웹회원가입 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+
+			<div class="top_visual">
+                <div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;가맹점주 웹회원&nbsp;&gt;&nbsp;가맹점주 웹회원가입</div>
+				<h1><img src="/images/al/h1_agr_affl.png" class="png24" alt="가맹점주 웹회원가입" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_agr_affl.png" class="png24" alt="가맹점주 웹회원으로 가입해 보세요" /></p>
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p>				
+			</div>
+
+			<div class="top_step_join top_step_join02">
+				<ol class="none">
+					<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+					<li><abbr>현재단계</abbr> <strong>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</strong></li>
+					<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+				</ol>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block_agree">
+				<p><img src="/images/al/txt_join01.png" alt="Samsungcard.com은 개인정보보호 우수사이트 마크(ePRIVACY)를 획득한 사이트입니다. 회원님께서 제공해 주신 개인정보 보호를 안전하게 관리하기 위해 최선을 다하겠습니다." /></p>
+			</div>
+
+			<div class="content_block">
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h3><img src="/images/al/h3_agreement02_1.png" alt="가맹점 기본정보를 입력해 주세요" /></h3></div>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02 dtable_inputfield" summary="가맹점 명, 가맹점 번호, 사업자등록 번호, 사업자 구분, 대표자 주민번호 또는 법인등록번호 등의 입력을 통해 가맹점 확인정보를 등록 할 수 있습니다.">
+						<caption>가맹점 확인정보 등록</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<!--thead><tr class="nowidth"><th width="115"></th><th width="*"></th></tr></thead-->
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_merchant_name">가맹점 명</label></th>
+								<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="가맹점 명" id="label_merchant_name" maxlength="25" name="userName" /><span class="t_desc ml10">예 : 행복의 집</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_merchant_num">가맹점 번호</label></th>
+								<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" title="가맹점 번호" id="label_merchant_num" maxlength="12" name="chainNo" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /><span class="t_desc ml10">하이픈”-” 없이 입력해 주세요</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">사업자등록 번호</p></th>
+								<td class="cell_l"><p class="input_com_num">
+                                <input type="text" class="txt" value="" title="사업자 번호 앞자리" maxlength="3" name="businessNo1" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled"/>&nbsp;-&nbsp;
+                                <input type="text" class="txt" value="" title="사업자 번호 가운데자리" maxlength="2" name="businessNo2" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" onkeydown="checkLenB(this, form1.businessNo1);" style="ime-mode:disabled"/>&nbsp;-&nbsp;
+                                <input type="text" class="txt" value="" title="사업자 번호 뒷자리" maxlength="5" name="businessNo3" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled"/>
+								<input type="hidden" name="businessNo" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">사업자 구분</p></th>
+								<td class="cell_l"><p>
+								<input type="radio" class="chk" id="businessGubun" name="businessGubun" checked="checked" onclick="bgubunChange();" /> <label for="businessGubun">개인사업자</label>
+								<span class="ml20"><input type="radio" class="chk" id="businessGubun2" name="businessGubun" onclick="bgubunChange();" /> <label for="businessGubun2">법인사업자</label></span></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_com_jumin" style="display:block;">
+									<div id="businessNoDiv" name="businessNoDiv">대표자 주민번호</div>
+									<div id="businessNoDiv2" name="businessNoDiv2" style="display:none">법인등록번호</div></label></th>
+								<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" id="label_com_jumin" name="idenNo" maxlength="13" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" style="ime-mode:disabled" /><span class="t_desc ml10">하이픈”-” 없이 입력해 주세요</span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="t_desc04 mt15">사업자주민번호 입력 시 일반가맹점인 경우 대표자 주민번호 입력, 법인가맹점인 경우 법인등록번호 입력을 해주십시오.<br />
+						미등기법인인 경우에는 대표자 주민번호를 법인등록번호에 입력하십시요. </div>
+
+					</div>
+				</div>
+
+				<div class="content_n_wrap mt20">
+					<div class="content_l_tit"><h3><img src="/images/al/h3_agreement02_2.png" alt="웹회원 정보를 입력해 주세요" /></h3></div>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02 dtable_inputfield " summary="웹회원 ID, 비밀번호, 비밀번호 확인, 이메일 주소 등 웹회원 정보를 입력 할 수 있습니다.">
+						<caption>웹회원 정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<!--thead><tr class="nowidth"><th width="115"></th><th width="*"></th></tr></thead-->
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_membership_id">웹회원 ID</label></th>
+								<td class="cell_l"><p class="input_name"><input type="text" class="txt" value="" id="label_membership_id" name="userId" maxlength="12" style="ime-mode:disabled"  onchange="idChange();" /><a href="javascript:checkId();" class="btn btn_white" id="label_idcheck"><span>아이디 중복확인</span></a></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_userPassword">비밀번호</label></th>
+								<td class="cell_l"><p class="input_name"><input type="password" class="txt" value="" id="label_userPassword" name="userPassword" maxlength="12" />
+								<!-- 화면해킹툴 방지적용  --> &nbsp; <span id="usafeon_userPassword"></span>
+								</p>
+								<p>비밀번호는 영문/숫자 혼용하여 8~12자리.<br />특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_userPassword2">비밀번호 확인</label></th>
+								<td class="cell_l"><p class="input_name"><input type="password" class="txt" value="" id="label_userPassword2" name="userPasswordRe" maxlength="12" />
+								<!-- 화면해킹툴 방지적용  --> &nbsp; <span id="usafeon_userPasswordRe"></span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">이메일 주소</p></th>
+								<td class="cell_l">
+									<span class="input_email">
+										<input type="hidden" name="email" onkeydown="checkEnter()" value="" />
+										<input type="text" class="txt" value="" title="이메일명" name="email1" maxlength="20" style="ime-mode:disabled" />&nbsp;@&nbsp;
+										<input type="text" class="txt" value="" title="이메일공급자 직접입력" name="email2" maxlength="20" style="ime-mode:disabled" disabled="disabled" /><select title="이메일공급자선택" onchange="sel(this)" name="email3">
+											<option value="" selected="selected">선택</option>
+											<option value="dreamwiz.com">드림위즈</option>
+											<option value="empal.com">엠팔</option>
+											<option value="hanmail.net">한메일(다음)</option>
+											<option value="hotmail.com">hotmail</option>
+											<option value="korea.com">코리아</option>
+											<option value="lycos.co.kr">라이코스</option>
+											<option value="nate.com">네이트</option>
+											<option value="naver.com">네이버</option>
+											<option value="netian.com">네띠앙</option>
+											<option value="orgio.net">오르지오</option>
+											<option value="paran.com">파란</option>
+											<!--option value="yahoo.co.kr">야후</option-->
+											<option value="99">직접입력</option>
+										</select><!-- <a href="#" class="btn btn_white" id="label_email"><span>이메일 중복확인</span></a>-->
+									</span>
+									<p class="t_desc03 mt10">핫메일(Hotmail)을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="line_lgray">&nbsp;</div>
+
+				<div class="btnset mt20">
+                    <p class="btnc"><a href="javascript:joinChainMember();"><img src="/images/common/btn_joinin_finish.jpg" alt="가입완료" /></a></p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100219 -->
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스안내</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li>
+						</ul>
+					</div>
+				</div>
+
+<script type="text/javascript" src="/xwuni/xecureweb_up.js"></script>
+<script type="text/javascript" language='javascript'>
+	<%=v.ServerCertWriteScript()%>
+
+	PrintObjectTag (null,document.getElementById('xecure_obj'));
+	var useTranskey = false;
+</script>
+
+<div id="xecure_obj" ></div>
+<form name="frm1">
+<input type="hidden" name="input" />
+<input type="hidden" name="user_key" value="" />
+<input type="hidden" name="user_key_check" value="" />
+<input type="hidden" name="recom_user_id" value="" />
+<input type="hidden" name="recom_user_id_check" value="" />
+<input type="hidden" name="event_check" value="" />
+<input type="hidden" name="user_id" value="${USER_ID}" />
+<input type="hidden" name="iden_no" value="${IDEN_NO}" />
+</form>
+
+<form name="form" >
+	<input type="hidden" name="input" />
+	<!-- <input type="hidden" name="query_yn" value="${QUERY_YN}">-->
+	<!-- <input type="hidden" name="resp_code" value="${RESP_CODE}"> -->
+	<!-- <input type="hidden" name="currentdate" value="${CURRENTDATE}">-->
+
+	<input type="hidden" name="index" />
+	<input type="hidden" name="popchk" value="" />
+
+	<input type="hidden" name="recommender" value="" />
+	<input type="hidden" name="user_key_check" value="" />
+	<input type="hidden" name="recom_user_id_check" value="" />
+	<input type="hidden" name="hybrid_Site" />
+	<input type="hidden" name="hybrid_MemCode" />
+
+    <!-- 2011.01.11 공인인증 추가 -->
+    <input type="hidden" name="loadCnt" value="0" />
+    <input type="hidden" name="plain" value="" />
+	<input type="hidden" name="signedMsg" />
+	<input type="hidden" name="vidMsg" />
+	<input type="hidden" name="ssno" />     
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<h2><img src="/images/mh/h2_living_ftech_app01.png" alt="본인정보를 입력해 주세요" /></h2>
+<div class="content_block_inner">
+	<table class="dtable02 dtable_inputfield mb20" summary="본인인증방식을 선택하는 게시판입니다">
+		<caption>본인인증방식 선택</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>본인인증방식</p></th>
+						<td><p>
+						<label for="label_ch01"><input type="radio" id="label_ch01" name="cert_1" value="01" onclick="certification_card()" title="카드인증" checked="checked" /> 카드인증</label>
+						<span class="pl10"><label for="label_ch02"><input type="radio" id="label_ch02" name="cert_1" value="02" onclick="certification_doc()" title="공인인증서" /> 공인인증서</label></span>
+						&nbsp;&nbsp;
+						<a href="javascript:vidInfo(2);" class="btn btn_s_white" title="새창"><span>공인인증서사용방법</span></a>
+						<a href="javascript:vidInfo(1);" class="btn btn_s_white" title="새창"><span>사용가능한공인인증서</span></a>
+						</p></td>
+					</tr>
+				</tbody>
+	</table>
+
+						<!-- 카드인증 선택시만 -->
+<div id="id_card_select">
+<div class="neccessary"><strong>필수입력</strong> 사항입니다.</div>							
+<table class="dtable02 dtable_inputfield" summary="카드인증 선택시 카드번호, 카드비밀번호, 카드 CVC번호를 입력할 수 있는 게시판입니다">
+	<caption>카드인증 선택시 정보 입력</caption>
+	<colgroup>
+		<col width="115" />
+		<col width="*" />
+	</colgroup>
+	<tbody>
+		<!-- loop -->
+		<tr>
+			<th scope="row"><label for="label_ch_card">카드선택</label></th>
+			<td>
+			<p><select title="카드번호 선택" id="label_ch_card" style="width: 460px" name="CARD_SELECT">
+				<%
+					for (int i = 0; i < CardList.size(); i++) {
+				%>
+				<option value="<%=CardList.get(i).getCardindex() %>">
+				<%=CardList.get(i).getCardName()%>&nbsp;
+				<%=CardList.get(i).getCardNo16()%>
+				</option>
+				<%
+					}
+				%>
+			</select></p>
+			</td>
+		</tr>
+		<!-- //loop -->
+		<tr>
+			<th scope="row"><label for="STD_TEXT_FIELD2">카드 비밀번호</label></th>
+			<td>
+			<p class="input_2char">
+
+			<input class="txt" type="password" title="카드 비밀번호" name="PASSWORD_NO2" value="" size="4" maxlength="2" id="STD_TEXT_FIELD2" style="width:80px"
+			onkeyup="lengthCheck1(this.form, this.value)"
+			onkeypress="checkTypes(this, 'NUMB');"
+			onblur="checkTypesOnBlur(this, 'NUMB');"
+			style="ime-mode:disabled"
+			/>
+					**(비밀번호 앞 2자리)
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="STD_TEXT_FIELD3">카드 CVC번호</label></th>
+			<td>
+			<p class="input_3char">
+			<input type="password" class="txt" title="카드 CVC번호"  name="CVC_NO" value="" size="6" maxlength="3" id="STD_TEXT_FIELD3" style="width:80px"
+			onkeypress="checkTypes(this, 'NUMB');"
+			onblur="checkTypesOnBlur(this, 'NUMB');"
+			style="ime-mode:disabled"
+			/>(카드뒷면 뒤 숫자 3자리)
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<dl class="cvc_view cvc_view_noborder">
+	<dt class="t_black"><strong>CVC보는방법</strong></dt>
+	<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지	않도록 주의 해 주세요.</dd>
+	<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+</dl>
+</div>
+<!-- // 카드인증 선택시만 -->
+</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_living_ftech_app02.png" alt="약정금액을 선택해 주세요" /></h2>
+<div class="content_block_inner">
+<div class="neccessary"><strong>필수입력</strong> 사항입니다.</div>
+<table class="dtable02 dtable_inputfield" summary="약정금액을 설정하실 수 있는 게시판입니다.">
+	<caption>약정금액 선택</caption>
+	<colgroup>
+		<col width="115" />
+		<col width="*" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row"><label for="label_ch_money">금액</label></th>
+			<td>
+			<p>
+
+			<select name="parm_STRING5" style="width: 70px" title="금액 선택" id="label_ch_money">
+							<option value="0" selected="selected">선택</option>
+							<option value="1">10 만원</option>
+							<option value="2">20 만원</option>
+							<option value="3">30 만원</option>
+							<option value="4">40 만원</option>
+							<option value="5">50 만원</option>
+							<option value="6">60 만원</option>
+							<option value="7">70 만원</option>
+							<option value="8">80 만원</option>
+							<option value="9">90 만원</option>
+							<option value="10">100 만원</option>
+							<option value="11">110 만원</option>
+							<option value="12">120 만원</option>
+							<option value="13">130 만원</option>
+							<option value="14">140 만원</option>
+							<option value="15">150 만원</option>
+							<option value="16">160 만원</option>
+							<option value="17">170 만원</option>
+							<option value="18">180 만원</option>
+							<option value="19">190 만원</option>
+							<option value="20">200 만원</option>
+							<!--
+							<option value="25">250 만원</option>
+							<option value="30">300 만원</option>
+							<option value="35">350 만원</option>
+							<option value="40">400 만원</option>
+							<option value="45">450 만원</option>
+							<option value="50">500 만원</option>
+							-->
+					</select>
+			 <span class="t_desc03">약정금액은 10~200만원까지 10만원 단위로 선택하여 주세요.</span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- btn -->
+<div class="btnset">
+<p class="btnl t_desc04">약정금액은 매월 결제일에 회원님의 계좌에서 삼성카드로 자동이체 되어 보관하는 금액입니다.</p>
+</div>
+
+
+</div>
+</div>
+
+<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_living_ftech_app03.png" alt="생활비 재테크 서비스 약관입니다" /></h2>
+					<div class="content_block_inner">
+
+						<fieldset class="fieldset_agree">
+							<div class="tb_exp clfix pos_rel">
+								<div class="neccessary"><strong>필수입력</strong> 사항입니다.</div>
+							</div>
+							<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+								<div class="agree" id="agreeDiv" tabindex="0">
+								</div>
+							</div></div>
+							<div class="btnl">
+								<label for="label_living_ftechagree01">
+								<input type="radio" class="chk" id="label_living_ftechagree01" name="group_1" value="1" checked="checked" title="생활비 재테크 서비스 약관에 동의합니다." /> 동의</label>
+								<label for="label_living_ftechagree02">
+								<input type="radio" class="chk" id="label_living_ftechagree02" name="group_1" value="2" title="생활비 재테크 서비스 약관에 동의하지 않습니다." /> 동의안함</label>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+<!-- content_block -->
+<!--  <div class="content_block clfix">
+<h2><img src="/images/mh/h2_living_ftech_app04.png"	alt="삼성카드 추천인을 입력해 주세요" /></h2>
+<div class="content_block_inner">
+
+<div class="tb_exp clfix"><span>추천인 번호를 입력 해 주세요</span></div>
+
+
+<table class="dtable02 dtable_inputfield" summary="추천인 번호를 입력하시는 게시판입니다.">
+	<caption>추천인 입력 게시판</caption>
+	<colgroup>
+		<col width="115" />
+		<col width="*" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row"><label for="label_nominate_id">추천인 번호</label></th>
+			<td>
+			<p class="input_email"><input type="text" class="txt"
+				name="user_key" value="" size="6" maxlength="8"
+				onkeypress="javascript:checkTypes(this, 'ECNO');"
+				onblur="javascript:checkTypesOnBlur(this, 'ECNO');"
+				style="ime-mode:disabled ; text-transform: uppercase"
+
+				title="추천 웹 아이디 입력" id="label_nominate_id" /><a href="javascript:user_key_Check();"
+				class="btn btn_s_white"><span>조회</span></a><span
+				class="t_desc03 ml10">입력예시) C1234567 또는 S123456 또는 K1234567</span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<div class="btnset">
+<p class="btnl t_desc04">추천인번호가 없으신 경우에는 입력하지 않으셔도 됩니다.</p>
+</div>
+
+</div>
+</div>-->
+
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_living_ftech_app05.png"	alt="자동이체 계좌번호를 확인해 주세요." /></h2>
+<div class="content_block_inner">
+<table class="dtable02 dtable_inputfield" summary="은행,계좌번호로 구성된 자동이체 계좌번호정보를 확인하실 수 있는 게시판입니다.">
+	<caption>자동이체 계좌번호 확인</caption>
+	<colgroup>
+		<col width="115" />
+		<col width="*" />
+		<col width="115" />
+		<col width="*" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row"><p>은행</p></th>
+			<td><p><%=nHPIMMHHSV003VO.getMb_bank_name() %></p></td>
+			<th scope="row"><p>계좌번호</p></th>
+			<td><p>
+			<span class="t_no">
+			<%=nHPIMMHHSV003VO.getDec_account_no().substring(0,7) %>
+			XXXXXXX
+			</span>
+			</p></td>
+		</tr>
+	</tbody>
+</table>
+
+<ol class="list_no01 mt10">
+	<li>
+	<p class="t_desc03">생활비재테크서비스는 전자금융거래법에 의해 회원님의 자동이체계좌로만 신청 가능합니다.</p>
+	</li>
+	<li>
+	<p class="t_desc03">다른 계좌로 신청하시길 원하시면 회원님의 자동이체계좌를 변경해야 합니다.</p>
+	</li>
+</ol>
+
+</div>
+</div>
+</form>
+<!-- content_block -->
+<div class="content_block fill_joinin clfix">
+<p class="btnc"><a href="javascript:go_203();"><img src="/images/common/btn_n_application.png" alt="신청" /></a></p>
+<iframe name="iform" width="0" height="0" frameborder="0" title="빈프레임"> </iframe>
+<iframe name="iform2" width="0" height="0" frameborder="0" title="빈프레임"> </iframe>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div id="goodsDiv" style="display:block">
+	<table>
+		<tr>
+			<td width="260">
+				<!-- tab_content -->
+				<div class="tab_con" id="goodsGraphDiv" />
+				<form name="goodsChartDivForm">
+					<input type="hidden" name="graphType" value="goods" />
+					<input type="hidden" name="d1" value="<%=chartInfo1.getData1()%>" />
+					<input type="hidden" name="d2" value="<%=chartInfo1.getData2()%>" />
+					<input type="hidden" name="d3" value="<%=chartInfo1.getData3()%>" />
+					<input type="hidden" name="d4" value="<%=chartInfo1.getData4()%>" />
+					<input type="hidden" name="d5" value="<%=chartInfo1.getData5()%>" />
+					<input type="hidden" name="d6" value="<%=chartInfo1.getData6()%>" />
+					<input type="hidden" name="d7" value="<%=chartInfo1.getData7()%>" />
+					<input type="hidden" name="d8" value="<%=chartInfo1.getData8()%>" />
+					<input type="hidden" name="d9" value="<%=chartInfo1.getData9()%>" />
+					<input type="hidden" name="d10" value="0">
+				</form>
+			</td>
+			<td>
+				<h3><img src="/images/mh/txt_goodstrend.png" alt="상품별 Trend" /></h3>
+				그래프를 이번 결제일 입금하실 금액 중<br /><span class="t_point_org">당월 내역에 대한 상품별 트렌드를 %로 표현</span>한 것입니다.
+				<p class="mt15"><a href="javascript:viewCiBillInfo();" class="btn_link">입금하실 금액 자세히보기</a></p>
+			</td>
+		</tr> 
+	</table>
+</div>
+<script type="text/javascript">
+	renderChart(goodsChartDivForm, "goodsGraphDiv");
+</script>
+
+<div id="dayDiv" style="display:none">
+	<table>
+		<tr>
+			<td width="260">
+				<!-- tab_content -->
+				<div class="tab_con" id="dayGraphDiv" />
+				<form name="dayChartDivForm">
+					<input type="hidden" name="graphType" value="day" />
+					<input type="hidden" name="d1" value="<%=chartInfo2.getData1()%>" />
+					<input type="hidden" name="d2" value="<%=chartInfo2.getData2()%>" />
+					<input type="hidden" name="d3" value="<%=chartInfo2.getData3()%>" />
+					<input type="hidden" name="d4" value="<%=chartInfo2.getData4()%>" />
+					<input type="hidden" name="d5" value="<%=chartInfo2.getData5()%>" />
+					<input type="hidden" name="d6" value="<%=chartInfo2.getData6()%>" />
+					<input type="hidden" name="d7" value="<%=chartInfo2.getData7()%>" />
+					<input type="hidden" name="d8" value="<%=chartInfo2.getData8()%>" />
+					<input type="hidden" name="d9" value="<%=chartInfo2.getData9()%>" />
+					<input type="hidden" name="d10" value="<%=chartInfo2.getData10()%>" />
+				</form>
+			</td>
+			<td>
+				<h3><img src="/images/mh/txt_daystrend.png" alt="요일별 Trend" /></h3>
+				그래프는 카드이용내역의 <span class="t_point_org">당월 이용액 (청구금액) 기준</span>으로<br />요일별 트렌드를 나타낸 것입니다.
+                <p class="mt15"><a href="javascript:viewEmsInfo();" class="btn_link">카드이용내역 자세히보기</a></p>
+			</td>
+		</tr> 
+	</table>
+</div>
+<script type="text/javascript">
+	renderChart(dayChartDivForm, "dayGraphDiv");
+</script>
+
+<div id="currentDiv" style="display:none">
+	<table>
+		<tr>
+			<td width="260">
+				<!-- tab_content -->
+				<div class="tab_con" id="currentGraphDiv" />
+				<form name="currentChartDivForm">
+					<input type="hidden" name="graphType" value="current" />
+					<input type="hidden" name="d1" value="<%=chartInfo3.getData1()%>" />
+					<input type="hidden" name="d2" value="<%=chartInfo3.getData2()%>" />
+					<input type="hidden" name="d3" value="<%=chartInfo3.getData3()%>" />
+					<input type="hidden" name="d4" value="<%=chartInfo3.getData4()%>" />
+					<input type="hidden" name="d5" value="<%=chartInfo3.getData5()%>" />
+					<input type="hidden" name="d6" value="<%=chartInfo3.getData6()%>" />
+					<input type="hidden" name="d7" value="<%=chartInfo3.getData7()%>" />
+					<input type="hidden" name="d8" value="<%=chartInfo3.getData8()%>" />
+					<input type="hidden" name="d9" value="<%=chartInfo3.getData9()%>" />
+					<input type="hidden" name="d10" value="<%=chartInfo3.getData10()%>" />
+				</form>
+			</td>
+			<td>
+				<h3><img src="/images/mh/txt_3monthstrend.png" alt="3개월 결제금액 현황" /></h3>
+				그래프는 해당 월의 <span class="t_point_org">청구서 총결제 금액기준</span>이며,<br />중도상환/매출취소 등이 발생한 경우 회원님께서<br />실제 입금하신 금액과는 상이할 수 있습니다.
+			</td>
+		</tr> 
+	</table>
+</div>
+<script type="text/javascript">
+	renderChart(currentChartDivForm, "currentGraphDiv");
+</script>
+
+<div id="jobDiv" style="display:none">
+	<table>
+		<tr>
+			<td width="260">
+				<!-- tab_content -->
+				<div class="tab_con" id="jobGraphDiv" />
+				<form name="jobChartDivForm">
+					<input type="hidden" name="graphType" value="job" />
+					<input type="hidden" name="d1" value="<%=chartInfo4.getData1()%>" />
+					<input type="hidden" name="d2" value="<%=chartInfo4.getData2()%>" />
+					<input type="hidden" name="d3" value="<%=chartInfo4.getData3()%>" />
+					<input type="hidden" name="d4" value="<%=chartInfo4.getData4()%>" />
+					<input type="hidden" name="d5" value="<%=chartInfo4.getData5()%>" />
+					<input type="hidden" name="d6" value="<%=chartInfo4.getData6()%>" />
+					<input type="hidden" name="d7" value="<%=chartInfo4.getData7()%>" />
+					<input type="hidden" name="d8" value="<%=chartInfo4.getData8()%>" />
+					<input type="hidden" name="d9" value="<%=chartInfo4.getData9()%>" />
+					<input type="hidden" name="d10" value="<%=chartInfo4.getData10()%>" />
+				</form>
+			</td>
+			<td>
+				<h3><img src="/images/mh/txt_usetrend.png" alt="이용현황 Trend" /></h3>
+				그래프는 당월 카드이용내역을 <span class="t_point_org">가맹점 정보를 기준</span>으로<br />업종별 트렌드를 나타낸 것입니다.
+				<p class="mt10 t_desc03">당월내역 중 가맹점 정보가 정확한<br />내용만 표기됩니다.</p>
+                <p class="mt15"><a href="javascript:viewEmsInfo();" class="btn_link">카드이용내역 자세히보기</a></p>
+			</td>
+		</tr> 
+	</table>
+</div>
+<script type="text/javascript">
+	renderChart(jobChartDivForm, "jobGraphDiv");
+</script>

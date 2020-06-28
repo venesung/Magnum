@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>그룹관리 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_group_management.png" alt="그룹관리" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+
+			<!-- content_block -->
+			<div class="content_block">
+
+				<div class="searchgroup">
+					<h2><img src="/images/cm/h2_searchgroup.png" alt="SEARCH" /></h2>
+					<div class="groupname">
+						<label for="group_name">그룹명</label>
+
+							<input class="txt" type="text" id="group_name" name="group_name" value="" style="ime-mode:active" maxlength="30" />
+							<input type="hidden" name="checkYN" id="checkYN" />
+							<a href="javascript:fncCheck('chart','470','300');" class="btn btn_s_blue"><span>중복확인</span></a>
+
+					</div><!--end of searchgroup -->
+				</div>
+
+				<div class="tb_exp mt30">
+					<span>조직을 선택해주세요</span>
+				</div>
+
+				<div class="groupset">
+
+					<div style="display:inline; float:left">
+						<div class="box_white"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+							<div class="groupselect" id="id_group_left">
+                                 <select name="items_left" id="items_left" class="groupselect" size="20" multiple="multiple" title="조직 선택">
+	                                 	<option value="">음...</option>
+							    </select>
+							</div>
+						</div></div>
+					</div>
+					<div class="gmid">
+							<p><img src="/images/cm/img_move.png" alt="move" /></p>
+							<p class="mt10"><a href="javascript:move_item(f1.items_left, f1.items_right);" class="btn btn_s_white"><span>조직추가</span></a></p>
+							<p class="mt5"><a href="javascript:delete_item(f1.items_right,f1.items_left);" class="btn btn_s_white"><span>조직삭제</span></a></p>
+					</div>
+
+					<div class="fl_right">
+						<div class="box_white org"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+							<div class="groupselect" id="id_group_right">
+								<select name="items_right" id="items_right" class="dtable_group" size="20" multiple="multiple" title="조직 선택">
+							    </select>
+							</div>
+						</div></div>
+					</div>
+				</div>
+				<input type="hidden" id="corp_gubun" name="corp_gubun" value="" />
+				<div class="btnset">
+					<!-- btn -->
+					<div class="btnr">
+
+						<a href="javascript:saveMe();" class="btn btn_white"><span>등록</span></a>
+						<a href="javascript:fncCancle();" class="btn btn_white"><span>취소</span></a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

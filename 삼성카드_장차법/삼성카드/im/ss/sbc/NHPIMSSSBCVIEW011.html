@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>가맹점 위치 안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<!-- 
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/json.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapService.js?ClientID=samsungcard"></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-service.js?ClientID=samsungcard"></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/iaddress-service.js?ClientID=samsungcard"></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/iregioncode-service.js?ClientID=samsungcard"></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/isearch-service.js?ClientID=samsungcard"></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-template.js?ClientID=samsungcard" ></script>
+<script language="javascript" src="http://biz.talkyple.com/API/tpInterface/ilistpage-manager.js?ClientID=samsungcard"></script>
+-->
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapAPI.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapConfig.js?ClientID=samsungcard"></script>
+
+<script type="text/javascript" language="javascript">
+var CongnamulMap;	// 콩나물 맵 객체
+var mapX = '${mapX}';
+var mapY = '${mapY}';
+
+function setCongnamul(){
+	var level = 2;
+	
+	var point = new TPoint(mapX, mapY);
+	map = new TMap("CongDiv", {	point:point,
+								level:level,
+								contextMenu:false,
+								autosize:false
+								});
+	map.addControl(new TZoomControl());
+	drawMark();
+}
+
+function drawMark(){
+	
+	var point = new TPoint(mapX, mapY);
+	
+	var tm = new TMark(point,{
+		clickable:false,
+		mark:new TIcon("http://"+ location.host +"/images/ss/mapPoint.png", new TSize(31, 33), new TPoint(-15, -15)),
+		draggable:false		
+	});
+
+	map.addOverlay(tm);
+}
+/*
+function setCongnamul() {
+
+	CongnamulMap = new TMap('samsungcard', 'CongDiv',
+		{
+			x:mapX,
+			y:mapY,
+			scrollWheelable:false,
+			contextMenu:false,
+			level:2,
+			proxy:'http://' + location.host + '/TMapClient/mapproxy.jsp'
+
+		}
+	);
+
+	drawMark();
+}
+*/
+
+/**
+* 지도 위에 간단한 심볼 마크 넣기
+* @return
+*/
+
+/*
+function drawSimpleMark() {
+
+	CongnamulMap.drawClickableMark(1,1, 100, new TPoint(mapX, mapY),null, null,null, null);
+	pause(200);
+	CongnamulMap.redraw();
+}
+
+function drawMark() {
+
+	CongnamulMap.setIcon(100, "http://"+ location.host +"/images/ss/mapPoint.png", new TSize(31, 33), new TPoint(-15, -15));
+	pause(100);
+
+	// 마크가 찍힐 위치 좌표
+	var point = new TPoint(mapX, mapY);
+
+	// 툴팁에 사용할 인포윈도우 설정
+	var infoWin = false;
+
+	// Mark의 옵션 값
+	var options = {
+ 		mark : 100,						// 아이콘 고유 번호 (0 인 경우 기본 심볼 사용)
+ 		removable:false, 				// 심볼을 사제할 수 있는지 여부 (X표가 나타남)
+ 		clickable:false, 				// 클릭가능하도록 설정
+ 		infowindow_mouseover:false,		// 아이콘 이미지에 마우스를 댈 경우 인포윈도우가 나타나게 할 것인지 여부
+ 		//link : {url:"javascript:alert(1)", target:"returnAction"},	// 클릭시 URL이 javascript로 시작하면 스크립트 실행
+ 		link : false,	// 클릭시 특정 URL로 연결하도록 설정 (URL값, 타킷 윈도우 명)
+ 		//label : "<font color=blue><b>테스트 심볼</b></font>",			// 아이콘 이미지 하단에 나타날 명칭 레이블
+		label : false,			// 아이콘 이미지 하단에 나타날 명칭 레이블
+ 		label_offset : {"x":-5, "y":3},	// 레이블위 위치 조정 (지정 좌표로부터 얼마나 뗄지)
+ 		editableLabel : true,			// 레이블 수정가능하도록 설정할지 여부
+ 		infowindow:false				// 인포윈도우 지정
+	};
+
+	CongnamulMap.drawMark(1, 1, point, options);
+	CongnamulMap.redraw();
+	CongnamulMap.setCenter(point);
+}
+*/
+
+
+function pause(numberMillis) {
+    var now = new Date();
+    var exitTime = now.getTime() + numberMillis;
+
+
+    while (true) {
+         now = new Date();
+         if (now.getTime() > exitTime)
+             return;
+    }
+}
+
+function mapUseInfo(){
+	window.open("/hp/im/ss/sbc/sbc.do?method=getViewPop001","chainPop001","width=710,height=630,scrollbars=no,toolbar=no,status=no,resize=no,menubar=no");
+}
+</script>
+</head>
+<body onLoad="setCongnamul();">
+<div class="content_block content_block_card ciflx">
+	<h2><img src="/images/ss/h2_intro_goodmerc04.png" alt="가맹점 위치 안내입니다." /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp clfix">
+			<span class="fl_left"><img src="/images/ss/txt_intro_goodmerc03.png" alt="지도 확인으로 편리한 길찾기" /></span>
+            <span class="ab_tr"><a href="javascript:print();" class="btn_link" title="새창">출력하기</a> <a href="javascript:mapUseInfo();" class="btn_link">지도이용안내</a></span>
+		</div>
+		<div class="map_openapi">
+			<div id="CongDiv" style="width: 640px; height: 388px;"></div>
+		</div>
+			</div>
+</div>
+
+
+
+</body>
+</html>

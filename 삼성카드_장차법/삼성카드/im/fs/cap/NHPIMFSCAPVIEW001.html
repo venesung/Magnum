@@ -1,0 +1,128 @@
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%
+HOMEHTM0HP100075INRecVO1[] resultList = (HOMEHTM0HP100075INRecVO1[])request.getAttribute("inRecVo");
+String tableType = "2";
+
+for(int i = 0;i< resultList.length ;i++){
+	if(!(resultList[i].getBaseRate().equals(resultList[i].getDcRate()))){
+		tableType = "1";
+	}
+}
+%>
+
+<%@page import="com.scard.hp.anylink.vo.HOMEHTM0HP100075INRecVO1"%><div id="tab_title"></div>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+<script type="text/javascript" src="/js/common-hp-ajax.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+</div>
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">특별한 회원님만을 위한 스마트한 맞춤상품</h1>
+					<div class="h1_desc"><img src="/cms_content/images/fs/h1_premium_prd.jpg" alt="특별한 회원님만을 위한 스마트한 맞춤상품 - 내게 꼭 맞는 대출상품이 없어 실망하셨나요? 회원님께 꼭 맞춘 상품으로 더 큰 여유로움을 드립니다" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/fs/h2_premium_prd01.png" alt="회원님을 위한 맞춤상품입니다" /></h2>
+					<div class="content_block_inner">
+						<%if("1".equals(tableType)){ %>
+						<table class="dtable01" summary="상품, 상환방식, 이용한도, 이용가능 금액, 개월수, 이자율, 판매기간, 신청하기 등 맞춤상품을 확인하신 후 신청을 하실수 있습니다.">
+						<caption>맞춤상품 안내</caption>
+						<colgroup><col width="11%" /><col width="15%" /><col width="12%" /><col width="11%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="18%" /><col width="11%" /></colgroup>
+						<thead>
+							<tr>
+								<th rowspan="2" scope="col" class="cell_l10 ls01">상품</th>
+								<th rowspan="2" scope="col" class="cell_l10 ls01">상환방식</th>
+								<th rowspan="2" scope="col" class="cell_r10 ls01">이용한도</th>
+								<th rowspan="2" scope="col" class="cell_r10 ls01">이용가능<br />금액</th>
+								<th rowspan="2" scope="col" class="riline ls01">개월수</th>
+								<th colspan="2" scope="col" class="boline_b0 riline ls01">이자율</th>
+								<th rowspan="2" scope="col" class="cell_l10 ls01">판매기간</th>
+								<th rowspan="2" scope="col" class="cell_l10 ls01">신청하기</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10 riline ls01">할인전</th>
+								<th scope="col" class="cell_r10 riline ls01">할인후</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<%for(int i = 0;i<resultList.length;i++){
+								if(!"".equals(resultList[i].getLoanName().trim())){
+							%>
+							<tr>
+								<td class="cell_l10 ls01"><span class="nobreak_nolink w70"><%=resultList[i].getLoanName() %></span></td>
+								<td class="cell_l10 ls01"><%=resultList[i].getLoanMath()%></td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getLmtAmt() %></span> 만원</td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getAvailAmt() %></span> 만원</td>
+								<td class="ls01"><span class="t_no"><%=resultList[i].getAvailMon() %></span> 개월</td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getBaseRate() %></span> %</td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getDcRate() %></span> %</td>
+								<td class="cell_l10 ls01"><span class="t_no"><%=resultList[i].getStartDate() %> ~ <%=resultList[i].getEndDate() %></span></td>
+								<td class="cell_l10"><p class="btn"><a href="#" class="btn btn_s_white">
+								<%if("".equals(resultList[i].getMenuId())){
+									String itemCode = resultList[i].getLoanItemCode();%>
+                                <a href="javascript:goTabPageWithParam('NHPIMFSBNB001M001','itemCode=<%=itemCode%>');" class="btn btn_s_white">
+								<%}else{ %>
+                                <a href="javascript:goTabPage('<%=(resultList[i].getMenuId())%>');" class="btn btn_s_white">
+								<%} %>
+								<span>신청</span></a></p></td>
+							</tr>
+							<%}	
+							}	%>
+							
+						</tbody>
+						</table>
+						<%}else if("2".equals(tableType)){ %>
+<!-- 수정-테이블추가 101019 -->
+						<table class="dtable01" summary="상품, 상환방식, 이용한도, 이용가능 금액, 개월수, 이자율, 판매기간, 신청하기 등 맞춤상품을 확인하신 후 신청을 하실수 있습니다.">
+						<caption>맞춤상품 안내</caption>
+						<colgroup><col width="12%" /><col width="15%" /><col width="13%" /><col width="15%" /><col width="9%" /><col width="9%" /><col width="20%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 ls01">상품</th>
+								<th scope="col" class="cell_l10 ls01">상환방식</th>
+								<th scope="col" class="cell_r10 ls01">이용한도</th>
+								<th scope="col" class="cell_r10 ls01">이용가능금액</th>
+								<th scope="col" class="ls01">개월수</th>
+								<th scope="col" class="cell_r10 ls01">이자율</th>
+								<th scope="col" class="cell_l10 ls01">판매기간</th>
+								<th scope="col" class="cell_l10 ls01">신청하기</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<%for(int i = 0;i<resultList.length;i++){
+								if(!"".equals(resultList[i].getLoanName().trim())){
+							%>
+							<tr>
+								<td class="cell_l10 ls01"><span class="nobreak_nolink w70"><%=resultList[i].getLoanName() %></span></td>
+								<td class="cell_l10 ls01"><%=resultList[i].getLoanMath()%></td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getLmtAmt() %></span> 만원</td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getAvailAmt() %></span> 만원</td>
+								<td class="ls01"><span class="t_no"><%=resultList[i].getAvailMon() %></span> 개월</td>
+								<td class="cell_r10 ls01"><span class="t_no"><%=resultList[i].getDcRate() %></span> %</td>
+								<td class="cell_l10 ls01"><span class="t_no"><%=resultList[i].getStartDate() %> ~ <%=resultList[i].getEndDate() %></span></td>
+								<td class="cell_l10"><p class="btn"><a href="#" class="btn btn_s_white">
+								<%if("".equals(resultList[i].getMenuId())){
+									String itemCode = resultList[i].getLoanItemCode();%>
+                                <a href="javascript:goTabPageWithParam('NHPIMFSBNB001M001','itemCode=<%=itemCode%>');" class="btn btn_s_white">
+								<%}else{ %>
+                                <a href="javascript:goTabPage('<%=(resultList[i].getMenuId())%>');" class="btn btn_s_white">
+								<%} %>
+								<span>신청</span></a></p></td>
+							</tr>
+							<%}	
+							}	%>
+						</tbody>
+						</table>
+						<%} %>
+					</div>
+				</div>
+				<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

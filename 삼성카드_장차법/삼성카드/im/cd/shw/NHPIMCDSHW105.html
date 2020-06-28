@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+		
+<!--div id="popupApp1" class="layer_popup"-->
+<div id="popupApp1">
+	<h3><img src="/images/cd/shw/popup/tit_baro428.png" width="428" height="45" alt="신청서작성" class="png24" /></h3>
+	<div class="contentBox">
+		<p class="marB20">
+			<img src="/images/cd/shw/popup/txt_baro4.gif" width="65" height="13" alt="신청 카드명 :" /> <strong id="baroCardNameId">삼성 카드</strong>
+		</p>
+
+		<img src="/images/cd/shw/popup/txt_baro5.gif" width="73" height="12" alt="카드 옵션 선택" class="marB8" />
+		<table summary="후불교통, 바로할인, 브랜드, 기프트리워드 등으로 카드 옵션을 선택하실 수 있습니다." class="table_app2 marB15" style="width:372px;">
+			<caption>카드옵션 폼</caption>
+			<colgroup>
+				<col width="125" />
+				<col width="247" />
+			</colgroup>
+			<tbody>
+				<tr id="applyCardLayerTrafficId1" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">후불교통</span></th>
+					<td style="display:none;">
+						<span class="radioSpan" id="applyCardLayerTrafficId2">
+							<label for="label_traf1" class="marR18" style="width:75px; display:inline-block;"><input type="radio" title="후불교통 선택" name="cardOptTraffic" id="label_traf1" onclick="layerCardOptClick( 'traffic', 'Y', '' );" />선택</label>
+							<label for="label_traf2"><input type="radio" title="후불교통 선택안함" name="cardOptTraffic" id="label_traf2" onclick="layerCardOptClick( 'traffic', 'N', '' );" />선택안함</label>
+						</span>
+					</td>
+				</tr>
+				<tr id="applyCardLayerBaroId1" class="pad13" style="display:none;">
+					<th scope="row" class="vAlignT" style="height:auto; padding:13px 0; font:0; display:none;"><span class="padL14">바로할인</span></th>
+					<td style="height:auto; padding:13px 0; display:none;">
+						<span class="radioSpan" id="applyCardLayerBaroId2">
+							<label for="label_baro1" class="marR18" style="width:75px; display:inline-block;"><input type="radio" title="바로할인 선택" name="cardOptBaro" id="label_baro1" onclick="layerCardOptClick( 'baro', 'Y', '' );" />선택</label>
+							<label for="label_baro2"><input type="radio" title="바로할인 선택안함" name="cardOptBaro" id="label_baro2" onclick="layerCardOptClick( 'baro', 'N', '' );" />선택안함</label>
+						</span>
+						<p class="font11 padL10" style="margin-top:8px;">1. 바로할인카드는 카드 신청 후 <em style="color:#333;">1시간<br />
+						&nbsp;&nbsp;&nbsp;이내</em>에 <em style="color:#333;">카드정보만을 미리 제공</em>해드립니다.</p>
+						<p class="font11 padL10" style="margin-top:8px;">2. 실물카드 발급 이전에 <em style="color:#333;">바로 사용할 수<br />
+						&nbsp;&nbsp;&nbsp;있는 카드</em>입니다.</p>
+						<p class="font11 padL10" style="margin-top:8px;">3. 신청은 <em style="color:#333;">평일 09:00 ~ 21:00</em> 사이에 가능하며,<br />
+						&nbsp;&nbsp;&nbsp;실물카드는 <em style="color:#333;">1~2주일 내로 배송</em>해드립니다.</p>
+					</td>
+				</tr>
+				<tr id="applyCardLayerBrandId1" class="last" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">브랜드</span></th>
+					<td style="display:none;">
+						<span class="radioSpan" id="applyCardLayerBrandId2">
+							<%-- 
+							<label for="h2_1" class="marR18" style="width:75px; display:inline-block;"><input type="radio" id="h2_1" name="h2" />MASTER</label>
+							<label for="h2_2"><input type="radio" id="h2_2" name="h2" />국내전용</label>
+							--%>
+						</span>
+					</td>
+				</tr>
+				<tr id="applyCardLayerGiftReward" style="display:none;">
+					<th scope="row" style="display:none;"><span class="padL14">기프트리워드</span></th>
+					<td style="display:none;">포인트형</td>
+				</tr>
+			</tbody>
+		</table>
+        <p class="alignC"><a href="javascript:goApplyLayer();"><img src="/images/cd/shw/popup/btn_app.gif" width="84" height="24" alt="카드 신청" /></a></p>
+
+        <a href="#" onclick="applyCardNowLayerClose();return false;" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="신청서작성 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot428.png" width="428" height="20" alt="" class="png24" />
+</div>
+<!-- 바로신청 레이어 -->
+</form>

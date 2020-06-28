@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 이벤트 - 삼성카드</title>
+<script type="text/javascript">
+	function openWindow(url, width, height) {
+	  Top  = (window.screen.availHeight - 600) / 2;
+	  Left = (window.screen.availWidth  - 780) / 2; 
+	  Future = "fullscreen=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=" + Left + ",top=" + Top + ",width="+width+",height="+height+"";
+	  newsWindow = window.open(url, "" , Future); 
+	  newsWindow.focus();
+	} 
+<%
+	String resultMsg = (String)request.getAttribute("resultMsg");
+	String procType = (String)request.getAttribute("procType");
+	String loginYN = (String)request.getAttribute("loginYN"); 
+	if(resultMsg == null){
+		resultMsg = "";
+	}
+%>
+
+//경고창 띄우기
+<%	if(!"".equals(resultMsg) && !"로그인 후 이용가능 합니다.".equals(resultMsg)){%>
+	alert("<%=resultMsg%>");
+<%}%>
+
+//로그인후 다시돌아오기
+<%	if("N".equals(loginYN) && !"NEWMEMBER".equals(procType)){ %>	
+	parent.parent.eventLogin('9833'); 
+<%	}%> 
+
+//경품당첨현황   팝업
+<%if("PRIZELIST".equals(procType)  && "".equals(resultMsg) && "Y".equals(loginYN) ){%>
+	openWindow("/hp/im/et/echo.do?method=popListTwo","500","570");
+<%}%> 
+
+//이용대금 명세서 변경 페이지 이동
+<%if("EMAILCHANGE".equals(procType) && "Y".equals(loginYN)){%>
+	parent.parent.goTabPage('NHPIMMHEPP001');
+<%}%> 
+
+//경품응모 당첨 팝업
+<%if("INSERTEMAILINFO".equals(procType) && "".equals(resultMsg)&& "Y".equals(loginYN)){%>
+	openWindow("/hp/im/et/echo.do?method=prizePopup","500","540");
+<%}%> 
+
+</script> 
+</head>
+<body> 
+procType = <%=procType%><br />
+resultMsg = <%=resultMsg%><br />
+loginYN = <%=loginYN%>
+
+
+</body>
+</html>

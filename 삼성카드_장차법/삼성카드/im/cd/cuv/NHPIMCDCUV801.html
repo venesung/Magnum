@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_4plus_gift.png" alt="삼성카드 4+ 기프트 이용내역입니다." /></h1>
+</div>
+
+	
+	
+	
+
+	
+	<!-- content_block -->
+	<div class="content_block content_block clfix">
+		<h2><img src="/images/mh/h2_4plus_gift02.png" alt="삼성카드 4+ 이용내역을 조회하세요" /></h2>	
+		<div class="content_block_inner" style="margin-top:14px;">	
+			<div class="btnset">
+				<div class="btnl" style="float:left"><p class="pt10 t_point">조회연도를 선택하시면, 고객님의 기프트 이용내역을 조회 하실 수 있습니다</p></div>
+				<div class="btnl" style="float:right">
+					<select name="search_Year" title="조회연도 선택">
+						<option>00</option>
+					</select>
+					<a id="btn_search" href="#" class="btn btn_blue"><span>조회</span></a>
+				</div>
+			</div>
+			<table class="dtable01 dtable01_bill mt10" summary="기준년월, 서비스명, 이용실적, 할인금액, 할인제공일자로 구성된 적립 연도별 조회">
+				<caption>적립 연도별 조회</caption>
+				<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">기준년월</th>
+						<th scope="col">서비스명</th>
+						<th scope="col" class="cell_r10">이용실적</th>
+						<th scope="col" class="cell_r10">할인금액</th>
+						<th scope="col">할인제공일자</th>
+					</tr>
+				</thead>
+				<tbody id="list_result">
+				</tbody>
+			</table>
+			<!-- btn -->
+			<div class="paginate">
+				<div class="paging">
+					<a id="pre" href="javascript:getMoreList('prePage801');" 	class="btn btn_s_white"><span>이전</span></a>
+					<a id="next" href="javascript:getMoreList('nextPage801');" 	class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>	
+			<p class="mt15 t_desc04 "><span class="t_desc">※</span> 플러스 기프트는 당월에 이용금액이 있을 경우에만 조회됩니다.</p>
+		</div>
+	</div>
+</form>			
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

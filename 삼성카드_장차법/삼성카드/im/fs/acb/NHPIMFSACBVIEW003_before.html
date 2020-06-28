@@ -1,0 +1,396 @@
+
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMFSACVIEW003.jsp (2010.03.22 변경 건 반영 전 화면)
+ * Author: 삼성SDS 
+ * Created on 2009. 12. 08.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="anyframe.common.util.DateUtil"%>
+
+<div id="tab_title">오토캐쉬백</div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+
+<!-- tab_script -->
+<div id="tab_script">
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<%
+		String name = (String)request.getAttribute("name");
+		String idenNo = (String)request.getAttribute("idenNo");
+	%>
+	
+	<script type="text/javascript" src="/js/common-hp.js"></script>
+	<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+	
+	<script type="text/javascript" language="javascript">
+	function $tabOnLoad() {
+		
+	}
+
+	/*
+	 * 구입예정일 년도 목록 생성.
+	 */
+	function get_year_list(){
+		today = new Date();
+		year = today.getYear();
+		for(var i=year; i<=year+9; i++){
+			document.write('<option value="' + i + '">' + i + '</option>');
+		}
+	}
+
+
+	function input_payment(){
+		i = document.form.prepayment.value - document.form.carPrice.value;
+
+		if(i>0){
+			alert('선수금이 차량가격보다 적은 금액이어야 합니다.');
+			//form.carPrice.value = parseInt(form.prepayment.value) + 1;
+			form.prepayment.value = 0;
+			document.form.prepayment.focus();
+			return false;
+		}
+
+		input_rage();
+	}
+
+	/*
+	 * 할부이자율, 이용금액, 월불입금 계산
+	 */
+	function input_rage(){
+		 delNumberComma();
+		 
+		 var rate = "6.9"; // 할부이자율.
+		 m = document.form.installmentMonth.options[document.form.installmentMonth.selectedIndex].value;
+
+		 if(m!='0'){
+
+			 if(m>36) 
+				 rate = "7.9";
+			 
+			 document.form.installmentRate.value = rate;
+
+			 car_price_int = parseInt(form.carPrice.value) * 10000;
+			 prepayment_int = parseInt(form.prepayment.value) * 10000;
+
+			 form.installmentUse.value = form.carPrice.value - form.prepayment.value;
+			 rate = rate/100/12;  // 월이율.
+			 
+			 //초회월불입금(월원리금) = 원금 * 월이율 * ((1+월이율) ** 기간) / ((1+월이율) ** 기간 - 1)		 	
+			 x = (car_price_int - prepayment_int)*rate*(Math.pow(1+rate,m))/(Math.pow(1+rate,m)-1);
+			 x = Math.round(x);
+			 form.monthPayment.value = x;
+
+			 if( isNaN(form.installmentUse.value) || isNaN(form.monthPayment.value) ||
+					 (form.carPrice.value < 0) || (form.prepayment.value < 0) ){
+				 form.installmentUse.value = 0;
+				 form.monthPayment.value = 0;					 
+			 }
+		}
+
+		 addNumberComma();
+		 return;
+	}
+
+	/*
+	 * 자동차전시장
+	 */
+	function openMegaAuto() {
+		  var e_url = "http://www.megaauto.com/samsungcard/samsungCarinfo.php";
+		  var e_state = "scrollbars=yes,resizable=no,width=740,height=600";
+		  window.open(e_url,'',e_state);
+	}
+		
+	/*
+	 * 오토캐시백 상담신청
+	 */
+	function go_url(){
+
+		delNumberComma();
+		
+		if(checkData()){
+			
+			form.purchasePlan.value 
+			= form.purchasePlan1.options[form.purchasePlan1.selectedIndex].value 
+			+ form.purchasePlan2.options[form.purchasePlan2.selectedIndex].value+"01";
+
+			yyyyMm = getToDayLocal().substring(0,6)+"01";
+			if(form.purchasePlan.value <= yyyyMm){
+			      alert("구입예정일은 이용일자(현재월)보다 커야 합니다.");
+			      addNumberComma();
+			      return;
+			}	
+
+			form.carPrice.value = parseInt(delCommaStr(form.carPrice.value)) * 10000;
+			form.prepayment.value = parseInt(delCommaStr(form.prepayment.value)) * 10000;
+			form.installmentUse.value = parseInt(delCommaStr(form.installmentUse.value)) * 10000;
+			form.monthPayment.value = delCommaStr(form.monthPayment.value);
+
+			/*
+			if(form.installmentMonth.value == '1'){
+				form.purchaseMethod.value = '1';
+			}else{
+				form.purchaseMethod.value = '2';
+			}
+			*/
+			
+			//alert('자동차할부계산 상담신청이 정상적으로 접수되었습니다.');
+
+			// submit	
+			location.href = "#";
+			tabSubmit("/hp/im/fs/acb.do?method=applyAutoCashbackCounsel", form);
+			
+		}else{
+			addNumberComma();
+			return;
+		}
+	}
+
+
+
+	function checkData(){
+		
+		// 차량가격
+		if(!isNumeric(form.carPrice) || form.carPrice.value < 1){
+			alert("차량가격을 확인해주시기 바랍니다.");
+			form.carPrice.value = "";
+			form.carPrice.focus();
+		    return false;
+		}
+
+		// 선수금
+		if(!isNumeric(form.prepayment) || form.prepayment.value < 1){
+			alert("선수금을 확인해주시기 바랍니다.");
+		    form.prepayment.value = "";
+		    form.prepayment.focus();
+		    return false;
+		}
+
+		if(input_payment() == false){
+			return false;
+		}
+
+		if(form.installmentMonth.value == 0 ) {
+			alert("할부개월수를 선택하세요");
+			return false;
+		}
+
+		if(form.phoneNo1.value == ""){
+			alert("연락가능번호를 확인하여 주십시오.");
+			return false;
+		}
+		
+		if(!isNumeric(form.phoneNo2) || form.phoneNo2.value == ""){
+			alert("연락가능번호를 확인하여 주십시오.");
+	    	form.phoneNo2.value = "";
+	    	form.phoneNo2.focus();
+		    return false;
+		}
+		
+		if(!isNumeric(form.phoneNo3) || form.phoneNo3.value == ""){
+			alert("연락가능번호를 확인하여 주십시오.");
+	    	form.phoneNo3.value = "";
+	    	form.phoneNo3.focus();
+		    return false;
+		}
+		
+		return true;
+	}
+	/*
+	 * 화폐단위에 3자리 쉼표 표시.
+	 */
+	function addNumberComma(){	
+		delNumberComma();
+		
+		form.carPrice.value = addCommaStr(form.carPrice.value);
+		form.prepayment.value = addCommaStr(form.prepayment.value);
+		form.monthPayment.value = addCommaStr(form.monthPayment.value);
+		form.installmentUse.value = addCommaStr(form.installmentUse.value);
+	}
+	/*
+	 * 화폐단위 쉼표 제거.
+	 */
+	function delNumberComma(){
+		form.carPrice.value = delCommaStr(form.carPrice.value);
+		form.prepayment.value = delCommaStr(form.prepayment.value);
+		form.monthPayment.value = delCommaStr(form.monthPayment.value);
+		form.installmentUse.value = delCommaStr(form.installmentUse.value);
+	}
+		
+	</script>
+</div>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">차값의 1%를 현금으로 돌려받는 스마트오토서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/fs/h1_auto_cashbag.jpg" alt="자동차 구매하고 현금캐시백 받고 차값의 0.3% ~ 1%를 현금으로 돌려받는 스마트오토서비스 -  전화상담 1688-3001" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/acb/nhpimfsacb001.do', null);">서비스안내</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/acb/nhpimfsacb002.do', null);">FAQ</a></li>
+            <li class="on"><a href="javascript:tabSubmit('/hp/im/fs/acb.do?method=checkServiceApply', null);">상담신청</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<form name="form" method="post">
+	
+	<input type="hidden" name="purchaseMethod" value="" /> <!-- 구매방법 (1:일시불, 2:할부) -->
+	<input type="hidden" name="carCode" value="" /> <!-- 차량코드  -->
+	<input type="hidden" name="purchasePlan" maxlength="8" value="" />
+	<input type="hidden" name="reqGubun" value="SPITCC191" />
+				
+	<h2><img src="/images/fs/h2_autocashbag01.png" alt="스마트오토서비스 상담을 신청하세요" /></h2>
+	<div class="content_block_inner">						
+		<table class="dtable02" summary="스마트오토서비스를 위한 이름, 주민등록번호, 상품선택, 상환방법, 차량가격, 선수금, 할부개월수, 할부이자율, 할부이용금액, 월불입금, 구입예정일, 연락가능번호 등 입력하는 게시판입니다">
+		<caption>스마트오토서비스 상담신청</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>이름</p></th>
+				<td>
+					<p><strong class="t_black"><%= name %></strong></p>
+					<input type="hidden" name="userName" maxlength="10" value="<%= name.trim() %>" />
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>주민등록번호</p></th>
+				<td><p class="t_no"><%= idenNo %>-*******</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>상품선택</p></th>
+				<td>
+					<p><strong class="t_black">신차</strong></p>
+					<input type="hidden" name="goodsGubun" maxlength="2" value="01" /> <!-- 상품구분코드 (01:신차,02:중고) -->
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>상환방법</p></th>
+				<td>
+				<p><strong class="t_black">정액불</strong></p>
+				<input type="hidden" name="repaymentMethod" maxlength="2" value="01" /> <!-- 상환방법구분코드 (01:정액불,06:마음대로) -->
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>차량가격</p></th>
+				<td>
+					<p class="input_point"><input type="text" name="carPrice" id="carPrice" maxlength="5" class="txt" value="0" onblur="input_rage();" onchange="addNumberComma();" onkeypress="checkTypes(this, 'NUMB');" onclick="form.carPrice.value='';" title="차량가격 입력" />만원
+                    <span class="ml20"><a href="javascript:openMegaAuto();" class="btn_link" title="새창">자동차전시장 보기</a></span></p>
+					<p class="t_desc03">자동차 전시장에서 차량가격, 옵션, 기타 상세정보를 확인하시고 차량가격을 입력해주십시오.</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p">선수금</p></th> 
+				<td><p class="input_point"><input type="text" name="prepayment" id="prepayment" maxlength="5" class="txt" value="0" onblur="input_rage();" onchange="addNumberComma();" onkeypress="checkTypes(this, 'NUMB');" onclick="form.prepayment.value='';" title="선수금 입력" />만원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부개월수</p></th>
+				<td><p>
+					<select name="installmentMonth" id="installmentMonth" onchange="input_rage();" title="할부개월수 선택" >
+					<%
+						int maxMonth = 60;
+						for(int i = 1; i <= maxMonth; i++){
+					%>
+						<option value='<%= i %>'><%= i %></option>
+					<%
+						}
+					%>
+					</select> 회
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부이자율</p></th>
+				<td><p class="input_point"><input type="text" name="installmentRate" id="installmentRate" maxlength="5" class="txt" value="" readonly="readonly" title="할부이자율"  />%</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부이용금액</p></th>
+				<td><p class="input_point"><input type="text" name="installmentUse" id="installmentUse" maxlength="5" class="txt" value="" title="할부이용금액" readonly="readonly" />만원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>월불입금</p></th>
+				<td><p class="input_point"><input type="text" name="monthPayment" id="monthPayment" maxlength="5" class="txt" value="" title="월불입금" readonly="readonly" />원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>구입예정일</p></th>
+				<td><p class="input_cardlimit">
+				<select title="구입예정일 년" name="purchasePlan1">
+				<%
+					Date today = new Date();
+					int year = Integer.parseInt(DateUtil.getCurrentTime("yyyy"));
+					
+					for(int i = year; i <= year+9; i++){
+				%>
+					<option value='<%= i %>'><%= i %></option>
+				<%
+					}
+				%>									
+				</select> 년
+				<select name="purchasePlan2" title="구입예정일 월">
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select> 월
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>연락가능번호</p></th>
+				<td><p class="input_phone">
+				<%
+					String[] phoneNo1List 
+						= {"010", "011", "016", "017", "018"
+							, "019", "0130", "02", "031", "032"
+							, "033", "041", "042", "043", "0502"
+							, "0505", "0506", "051", "052", "053"
+							, "054", "055", "061", "062", "063"
+							, "064"};
+				%>
+					<select name="phoneNo1" title="휴대폰 앞자리">
+						<!-- 공통코드 처리하기 -->
+						<option value="">선택</option>
+						<%
+							for(int i = 0; i < phoneNo1List.length; i++){
+						%>
+						<option value='<%= phoneNo1List[i] %>'><%= phoneNo1List[i] %></option>
+						<%
+							}
+						%>
+                    </select>&nbsp;-&nbsp;<input type="text" name="phoneNo2" id="phoneNo2" maxlength="4" class="txt" value="" title="휴대폰 가운데자리" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" name="phoneNo3" id="phoneNo3" maxlength="4" class="txt" value="" title="휴대폰 뒷자리" onkeypress="checkTypes(this, 'NUMB');" />
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+	
+		<!-- btn -->
+		<div class="btnset">
+			<p class="btnl t_desc04">결제금액의 1% 기프트카드를 제공해드립니다.</p>
+		</div>
+	</div>	
+</form>				
+</div>
+
+<!-- content_block -->
+<div id="id_service_apply"  class="btnc_30" style="display: block;">
+    <a href="javascript:go_url();"><img src="/images/common/btn_l_application.png" alt="신청하기" /></a>
+</div>
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

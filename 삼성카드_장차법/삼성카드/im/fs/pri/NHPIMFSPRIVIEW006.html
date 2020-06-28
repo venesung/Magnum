@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>삼성프라임론 인터넷신청 - 삼성카드</title>
+	
+	<link rel="stylesheet" type="text/css" href="/css/primeloan/prime_loan_hp.css" />
+</head>
+<body>
+	<div id="container">
+
+		<div id="wrapper">
+			<div id="content">
+				<div class="box_s">
+					<h2 class="rtitle">삼성프라임론 인터넷신청</h2>
+					<br />
+					<h3 class="step s03">3단계 직장정보 입력</h3>
+					<p class="info">
+						대출신청 가능여부 확인을 위한 신용조회는 고객님의 신용등급에 영향을 주지 않습니다.
+						시스템 장애	또는 기타 사유로 대출신청 정차가 완료되지 못한 경우, 상담원이 전화드릴 수 있습니다. 
+					</p>
+					<h4 class="title">고객 정보입력 <em>는 필수입력항목입니다</em></h4>
+					<table summary="프라임론 인터넷신청을 하기위한 성명, 주민등록번호, 휴대전화번호등의 정보를 확인하고 직종선택, 직장명, 연속득의 정보를 입력하는 게시판입니다" class="form s3">
+                    <caption>신청내용입력</caption>
+						<tr>
+							<th scope="row" class="check">성명</th>
+							<td class="strong"></td>
+							<th scope="row" class="check">주민등록번호</th>
+							<td class="strong"> - *******</td>
+						</tr>
+						<tr>
+							<th scope="row" class="check">휴대전화번호</th>
+							<td class="strong" colspan="3"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="check">직종선택</th>
+							<td class="i"><input type="text" id="jb" name="JOB_NAME" maxlength="30" class="input_text" readonly="readonly" title="직종선택" />&nbsp;<a href="#" title="새창"><img src="/images/primeloan/sub_step_btn_job.png" align="absmiddle" alt="직종검색" id="s_job" /></a></td>
+							<th scope="row" class="check i">직장명</th>
+							<td class="i"><input type="text" id="cn" name="COMPANY_NAME" maxlength="30" class="input_text" readonly="readonly" title="직장명" />&nbsp;<a href="#" title="새창"><img src="/images/primeloan/sub_step_btn_jobname.png" align="absmiddle" alt="직장명검색" id="s_cn" /></a></td>
+						</tr>
+						<tr>
+							<th scope="row" class="check">연소득</th>
+							<td colspan="3"><input type="text" id="ic" name="YEAR_INCOME" maxlength="6" class="input_text" style="text-align:right" title="연소득" />&nbsp;만원</td>
+						</tr>
+					</table>
+					<p class="guide">
+						다음 버튼 클릭시, 2분이상 소용될 수 있습니다.
+					</p>
+<!--
+					<a href="javascript:setSimulationFail('2011.11.03');">미승인일때</a>
+-->
+					<ul id="buttons">
+                        <li class="a"><a href="javascript:Go();"><img src="/images/primeloan/sub_step_btn_next.png" alt="다음" /></a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+
+
+
+	<!-- popup 직종검색 --> 
+	<div class="popupbox w745" id="popup_s_job" style="display:;">
+		<a href="#" onclick="document.getElementById('popup_s_job').style.display='none';" class="close">close</a>
+		<div class="t">&nbsp;</div>
+		<div class="m">
+			<div class="inner">
+				<h2>직종검색</h2>
+				<div class="btns h25">
+                    <a href="javascript:void(0);" onclick="setJobType();return false;" class="txt_right"><img src="/images/primeloan/pop01_btn_ok.png" alt="확인" /></a>
+				</div>
+				<table summary="선택, 구분, 대상자로 구성된 직종 구분별 대상자 확인 및 선택 화면입니다.">
+                <caption>직종 구분별 대상자 확인 및 선택</caption>
+                <thead>
+					<tr>
+						<th scope="col" class="sel">선택</th>
+						<th scope="col" class="dv">구분</th>
+						<th scope="col" class="ap">대상자</th>
+					</tr>
+                </thead>
+                <tbody>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="00" title="우량법인 선택" /></td>
+						<td>우량법인</td>
+						<td>30대그룹 계열사 및 거래소 상장업체<br />(법정관리 및 화의신청/진행 업체, 관리종목 업체는 대출이 불가할 수 있습니다.) 
+						</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="01" title="공무원 선택" /></td>
+						<td>공무원</td>
+						<td>공무원증 소지자<br />
+						</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="02" title="교육기관종사자 선택" /></td>
+						<td>교육기관종사자</td>
+						<td>교육인적자원부가 인가한 학교의 교사 및 교직원<br />(공무원증소지자는 공무원으로 선택하십시요)</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="03" title="삼성그룹 선택" /></td>
+						<td>삼성그룹</td>
+						<td>삼성그룹 관계사 임직원</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="04" title="공공기관종사자 선택" /></td>
+						<td>공공기관종사자</td>
+						<td>정부투자 및 재투자기관, 정부지원 연구기관 정부재정 지원기관, 공기업</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="05" title="전문직 종사자 선택" /></td>
+						<td>전문직 종사자</td>
+						<td>공인회계사, 변호사, 세무사, 변리사, 감정평가사, 관세사, 기술사, 법무사, 손해사정인, 수의사, 한의사, 의사(개업의 또는 인턴이상), 약사</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="06" title="금융기관 선택" /></td>
+						<td>금융기관</td>
+						<td>은행(농/수협 포함), 보험사, 증권사, 할부금융사, 카드사, 투신사, 종금사, 새마을금고 限</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="07" title="의료기관 선택" /></td>
+						<td>의료기관</td>
+						<td>종합병원 1년 이상 정규직 근로자(단, 의사/약사는 전문직으로 선택하십시요)</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="08" title="언론기관 선택" /></td>
+						<td>언론기관</td>
+						<td>공중파 방송사, Cable TV(유선방송은 제외), 주요 일간지 또는 지역 유력 종합일간지(광역시도 지역이상), 로이터, AP, AFP UPI, 연합뉴스 等 통신사</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="09" title="외국기관 선택" /></td>
+						<td>외국기관</td>
+						<td>대사관/영사관, UN, 유니세프 등 공공성이 인정되는 기관 및 국제기구 </td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="JOB_TYPE" value="10" title="코스닥등록법인 또는 외감법인 선택" /></td>
+						<td>코스닥등록법인<br /> 또는 외감법인</td>
+						<td>코스닥등록법인 또는 외부감사 대상 법인<br />(법정관리 및 화의 신청/진행 업체, 관리종목인 업체는 대출이 불가할 수 있습니다)</td>
+					</tr>
+                </tbody>
+				</table>
+				<div class="btns">
+                    <a href="#" id="c_sel" onClick="setJobType();return false;">확인</a>
+				</div>
+			</div>
+		</div>
+		<div class="b">&nbsp;</div>
+	</div>
+
+	<!-- popup 직장명검색 --> 
+	<div class="popupbox w745" id="popup_s_cn" style="display:none;">
+		<iframe name="company" marginwidth="0" src="" frameborder="0" scrolling="no" width="745" height="745" title="직장명검색 컨텐츠"></iframe>
+	</div>
+
+	<!-- popup 인터넷신청 실패 --> 
+	<div class="popupbox w566" id="popup_f" style="display:;top:1300px;">
+		<a href="#" onclick="failClose();" class="close">close</a>
+		<div class="t">&nbsp;</div>
+		<div class="m">
+			<ul class="inner">
+				<li class="emd" id="msg">죄송합니다. 프라임론 대출신청이 승인되지 않았습니다.</li>
+				<li id="tbl">
+					<table summary="프라임론 대출신청 미승인인 경우 고객명, 주민등록번호, 신청일시 승인결과를 확인할 수 있는 게시판입니다.">
+                    <caption>프라임론 대출신청 미승인 확인</caption>
+						<tr>
+							<th scope="row">고객명</th>
+							<td></td>
+							<th scope="row">주민등록번호</th>
+							<td>-*******</td>
+						</tr>
+						<tr>
+							<th scope="row">신청일시</th>
+							<td><div id="divString40"></div></td>
+							<th scope="row">승인결과</th>
+							<td>미승인</td>
+						</tr>
+					</table>
+				</li>
+				<li class="emd" id="d_msg">고객님께서 신청시 입력하신 내용을 근거로 당사 심사기준을 적용한 결과 대출신청이 승인되지 않았습니다.</li>
+				<li class="emd" id="c_list">대출신청이 되지 않은 이유는 다음과 같습니다.</li>
+                <li class="emd" id="btn_ok"><a href="#" onClick="failClose();return false;">확인</a></li>
+				<li class="emd" id="title">현재 삼성카드 고객님이시라면 카드론을 이용하실 수 있습니다.</li>
+                <li class="emd" id="btn_req"><a href="#" onClick="cardloan();return false;">카드론 신청하기</a></li>
+			</ul>
+		</div>
+		<div class="b">&nbsp;</div>
+	</div>
+	<iframe name="simulation" marginwidth="0" src="" frameborder="0" scrolling="no" width="0" height="0" title="빈 컨텐츠"></iframe>
+	</div>
+
+</body>
+</html>

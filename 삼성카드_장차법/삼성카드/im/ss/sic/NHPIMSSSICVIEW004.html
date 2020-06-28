@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">실시간 휴대폰 문자서비스 S.InfoCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1200/3965_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M001', true);">서비스소개</a></li>
+            <li><a href="javascript:goTabPage('NHPIMSSSIC001M002', true);">신청하기</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSIC001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M005', true);">가입정보보기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M006', true);">신용정보내역E-Mail신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMSSSIC001M007', true);">신용정보조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix"><!-- 상단변경 -->
+	<h2><img src="/images/ss/h2_sinfocare03.gif" alt="서비스 이용현황을 안내해 드립니다" /></h2>
+	<div class="content_block_inner pos_rel">
+		<img src="/images/ss/txt_sinfocare01.gif" alt="고객님은 현재 S.InfoCare 서비스를 이용하고 계십니다." class="txt_exp" />
+		<p class="t_11 t_gray">아래의 고객님의 정보를 확인해주세요</p>
+		<!--img src="/images/ss/img_service01.gif" alt="" class="ab_tr2" /-->
+	</div>
+</div>
+<div class="content_block clfix">
+<form name="form1" method="post" >
+
+	<h2><img src="/images/ss/h2_sinfocare04.gif" alt="카드정보를 확인해주세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_inputfield" summary="카드번호, 카드비밀번호, 카드 CVC번호, 휴대폰 번호입력, 상품 선택, 포인트결제여부, 자동결제 요금 문자 알림으로 구성된 서비스 변경 정보를 입력할 수 있는 게시판입니다.">
+		<caption>서비스 변경 정보</caption>
+		<colgroup><col width="135" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><label for="cardIndex">카드번호</label></th>
+				<td><p>
+					<select name="cardIndex" id="cardIndex" style="width:360px">
+						<option></option>
+					</select>
+				</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>카드 비밀번호</p></th>
+				<td><p class="input_2char"><input type="password" class="txt" value="" name="cardPassword" id="cardPassword" title="비밀번호 앞 두자리" onkeypress="checkTypes(this, 'NUMB');" maxlength="2" style="ime-mode:false;" enc="on" />
+				<em>**</em>(비밀번호 앞의 2자리)  &nbsp;<span id="usafeon_cardPassword"></span>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><label for="cvcNo">카드 CVC번호</label></th>
+				<td><p class="input_3char"><input type="password" class="txt" value="" name="cvcNo" id="cvcNo" onkeypress="checkTypes(this, 'NUMB');" maxlength="3" style="ime-mode:false;" enc="on" />
+				(카드 뒷면 19자리(아멕스카드의 경우 18자리) 숫자 중 뒤의 3자리)  &nbsp;<span id="usafeon_cvcNo"></span>
+				</p>			
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>휴대폰 번호 입력</p></th>
+				<td><p>
+					<span class="input_phone">
+						<select title="휴대폰 앞자리" name="phoneNo1" onchange="phonechange()">
+							<option></option>
+						</select>&nbsp;-&nbsp;
+						<input type="text" name="phoneNo2" class="txt" title="휴대폰 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.form1.phoneNo3);" onchange="phonechange()" style="ime-mode:false;" />&nbsp;-&nbsp;
+						<input type="text" name="phoneNo3" class="txt" title="휴대폰 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.form1.phoneNo2);" onchange="phonechange()" style="ime-mode:false;" />
+                        <a href="javascript:gocert()" class="btn btn_s_white"  title="새창"><span>인증번호받기</span></a>
+					</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>상품선택</p></th>
+				<td><p><label for="label_goods" class="mr10"><input type="radio" class="rdo" id="label_goods" name="goodGubun" value="7"  checked="checked" /> S.InfoCare (월 700원)</label></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>포인트결제여부</p></th>
+				<td><p><input type="radio" class="rdo" name="pointYN" id="pointYN_1" title="포인트로 결제" /> <label for="pointYN_1">Yes</label> <input type="radio" class="rdo" name="pointYN" id="pointYN_2" title="포인트로 결제 안함" /> <label for="pointYN_2">No</label><br />
+				※ 포인트 결제를 선택하시면 포인트 보유시  매월 포인트로 우선 결제 되며,<br />
+				&nbsp;&nbsp;&nbsp; 포인트가 부족할 시 부족분은 일반 카드 결제로 진행됩니다.</p>
+				</td>
+				</tr>
+			<tr>
+				<th scope="row"><p>자동결제 요금 문자 알림</p></th>
+				<td><p>
+				  <label for="label_goodsZ_Y" class="mr10"><input type="radio" class="rdo" id="label_goodsZ_Y" name="goodGubunZ" value="Z" title="자동결제 요금 문자 알림 신청" /> 신청</label>
+				  <label for="label_goodsX_N" class="mr10"><input type="radio" class="rdo" id="label_goodsX_N" name="goodGubunZ" value="" title="자동결제 요금 문자 알림 해지" /> 해지</label>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+            <a href="javascript:modSMS()" class="btn btn_blue"><span>확인</span></a>
+            <a href="javascript:goTabPage('NHPIMSSSIC001M001', true);" class="btn btn_white"><span>취소</span></a>
+		</div>
+
+		<ol class="list_no01 list_cvc">
+			<li><p>결제 가능한 카드번호를 선택하세요.</p></li>
+			<li><p>변경하실 휴대폰 번호를 입력하세요.<br />오전 06시~07시 30분 사이 휴대폰번호 변경 시 다음날 오전8시부터 적용되며<br />06시~07시 30분 이외의 시간에 변경해주시면 실시간으로 적용됩니다.</p></li>
+			<li><p>S.InfoCare상품을 변경하시려면 해당상품을 선택하세요.</p></li>
+		</ol>
+
+		<dl class="cvc_view">
+			<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+			<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+			<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+		</dl>
+	</div>
+</form>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

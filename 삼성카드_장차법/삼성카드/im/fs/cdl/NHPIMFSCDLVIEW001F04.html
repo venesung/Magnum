@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+	<!-- step start-->
+	<div class="content_block content_block_tab clfix">
+		<div class="top_step_expiry_app top_step_expiry_app01">
+			<ol class="none">
+				<li><abbr>현재단계</abbr><strong>카드선택</strong></li>
+				<li>연장 건 조회</li>
+				<li>신청정보 입력 및 확인</li>
+				<li>약관동의</li>
+				<li>신청완료</li>
+			</ol>
+		</div>
+	</div>
+	<!-- step end-->
+	<div class="content_block content_block_card clfix"> 
+		<!-- section1 start -->
+		<h2><img src="/images/fs/h2_cardloan_expiry01.png" alt="만기연장 및 상환 신청정보를 입력하세요" /></h2>
+		<div class="content_block_inner fill_joinin">
+			<p class="mb10">카드선택 및 카드정보를 입력하세요.</p>
+			<table class="dtable02" summary="카드번호, 카드비밀번호, 카드CVC번호 등 만기연장 및 상환 신청정보를 입력하실 수 있습니다.">
+				<caption>만기연장 및 상환 신청정보를 입력</caption>
+				<tbody>
+					<tr>
+						<th scope="row" class="cell_l">
+							<p class="not_neccessary">카드번호</p>
+						</th>
+						<td colspan="3" class="cell_l">
+							<select name="cardNo16" title="카드선택" id="cardNo16" style="width:250px;" onchange="cardListItemChange();">
+								<option value="${cardinfo.cardNo16}">${cardinfo.cardName} ${cardinfo.pCardNo16}</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l">
+							<p class="not_neccessary">카드비밀번호</p>
+						</th>
+						<td colspan="3" class="cell_l">
+							<span class="input_cardpassword">
+								<input id="rnum" name="rnum" class="txt" type="password" title="카드비밀번호 앞 두자리 입력" onkeyup="" onkeypress="" maxlength="2" value="" style="width:50px;" /> XX
+							</span>
+							<span class="t_desc04 ml10">카드비밀번호 앞 2자리</span>&nbsp;&nbsp;
+							<span id="usafeon_rnum"></span>
+							<script type="text/javascript">
+								safeonAddNumberField("cdlForm", "rnum");
+							</script>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l">
+							<p class="not_neccessary">카드CVC번호</p>
+						</th>
+						<td colspan="3" class="cell_l">
+							<span class="input_cardpassword">
+								<input id="cnum" name="cnum" class="txt" type="password" title="카드CVC번호 세자리 입력" onkeyup="" onkeypress="" maxlength="3" value="" style="width:50px;" />
+							</span>
+							<span class="t_desc04 ml10">카드 CVC번호 3자리</span>&nbsp;&nbsp;
+							<a class="a_point" href="#" title="CVC번호 안내 팝업 새창열림" onclick="clickOpenCvcPop();return false;">CVC번호안내</a>&nbsp;&nbsp;
+							<span id="usafeon_cnum"></span>
+							<script type="text/javascript">
+								safeonAddNumberField("cdlForm", "cnum");
+							</script>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btnset mt10">
+				<p class="btnr mb30"><a href="#" class="btn btn_blue" onclick="clickExtFirstStep();return false;"><span>다음</span></a></p>
+			</div>
+		</div>
+		<!-- section1 end --> 
+	</div>
+	<!-- content_block end --> 
+</form>
+<div id="cvclayer" style="display:none;">
+	<div class="pop_l_wrap" style="width:660px;height:370px;">
+		<div class="img_l_pop flag_tl"> </div>
+		<div class="img_l_pop flag_tr"> </div>
+		<div class="img_l_pop flag_bl"> </div>
+		<div class="img_l_pop flag_br"> </div>
+		<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopupCdl04();" value="레이어닫기" title="CVC 보는방법안내 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/fs/layer_tit_fs09.png" alt="CVC 보는방법안내" /></p>
+		<div class="pop_l_content">
+			<p class="pop_stit"><img src="/images/fs/layer_tit_fs10.png" alt="CVC번호 보는방법 CVC 번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의해 주세요." /></p>
+			<p class="pop_stit mt30"><img src="/images/fs/layer_ct_fs01.png" alt="CVC보는방법 이미지" /></p>
+			<ul class="conts_hidden">
+				<li>비자/마스터/UnlonPay(은련)/국내 카드 1 - 카드 뒷면 19자리 숫자 중 끝 3자리</li>
+				<li>비자/마스터/UnlonPay(은련)/국내 카드 2 - 카드 뒷면 7자리 숫자 중 끝 3자리</li>
+				<li>아멕스 카드 - 카드 뒷면 18자리 숫자 중 끝 3자리</li>
+			</ul>
+		</div>
+		<p class="btnc  mt30"><a href="#" onclick="closeLayerPopupCdl04();return false;"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

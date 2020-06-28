@@ -1,0 +1,63 @@
+<%
+// +-------------------------------------------------------------------------------------------------+
+// |	ClickStory - GatePage Example  JSP Version 2007.4.17
+// +-------------------------------------------------------------------------------------------------+
+// |	본 게이트 파일에 대한 업그레이드가 있을 수 있으므로 항상 최신 버전으로 유지해 주십시오.
+// |	직접 수정하실 부분은 쿠키 관련 도메인 셋팅 부분과 대표 URL 셋팅 부분으로 2가지 입니다.
+// |	그 외 다른 부분을 수정하시거나 변경하실 경우 제대로 동작하지 않을 수 있습니다.
+// |	기타 문의 사항이 있으실 경우 클릭스토리의 기술지원을 받으십시오.
+// +-------------------------------------------------------------------------------------------------+
+
+    // P3P 헤더 관련 셋팅 (쿠키 오류 제거용)
+	// 아래의 P3P 설정을 절대 삭제하지 마십시오.
+%>
+<%@ page contentType = "text/html; charset=utf-8"; %>
+<%@ page language="java" import="java.net.*,java.util.*,java.io.*,javax.servlet.http.*"; %>
+<% response.setHeader("P3P","CP='ALL CURa ADMa DEVa TAIa OUR BUS IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC OTC'"); %>
+<%
+
+	String vanilla    = request.getParameter("vanilla");
+	String link_url   = request.getParameter("link_url");
+	String expired    = request.getParameter("expired");
+	if(expired == null) expired = "0";
+	int    cs_expired = Integer.parseInt(expired);
+
+	if (vanilla != null)
+	{
+		// 쿠키 기간 설정
+		if (cs_expired == 0) cs_expired = -1;
+		else	cs_expired = cs_expired * 86400;
+
+		Cookie cs_cookie = new Cookie("vanilla", vanilla);
+
+// +-------------------------------------------------------------------------------------------------+
+// |	직접 수정하실 부분 - #1
+// +-------------------------------------------------------------------------------------------------+
+// |	쿠키 생성의 경우 2차 도메인이 다를 경우 서로 호환되지 못하는 문제가 발생할 수 있습니다.
+// |	이 문제를 해결하기 위해 setcookie의 5번째 파라미터에 도메인을 셋팅 하십시오.
+// |	예를 들어 www.domain.com 일 경우 .domain.com 으로 설정해 주시면 됩니다.
+// +-------------------------------------------------------------------------------------------------+
+		cs_cookie.setDomain(".samsungcard.com");
+		cs_cookie.setPath("/");
+		cs_cookie.setMaxAge(cs_expired);
+		response.addCookie(cs_cookie);
+
+
+// +-------------------------------------------------------------------------------------------------+
+// |	직접 수정하실 부분 - #2
+// +-------------------------------------------------------------------------------------------------+
+// |	게이트에 이동할 URL을 같이 전송해 드리오나 사용자 브라우져의 상태에 따라 이동할 URL이
+// |	누락되는 경우가 있습니다. 이 경우를 대비하여 대표URL을 셋팅해 주시면 됩니다.
+// |	예를 들어 www.domain.com 일 경우 http://www.domain.com 으로 설정해 주시면 됩니다.
+// +-------------------------------------------------------------------------------------------------+
+		link_url = "/primeloan/";
+
+		// 실제 이동
+		out.println("<script language='javascript'>");
+		out.println("<!--");
+		out.println("document.location.replace('" + link_url + "');");
+		out.println("//-->");
+		out.println("</script>");
+	}
+
+%>

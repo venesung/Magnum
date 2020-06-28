@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>아이디/비밀번호 찾기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+<script type="text/javascript">
+function updatePassword(){
+	with(document.form1){
+		var pwd1="";
+		var pwd2="";
+		pwd1 = password1.value;
+		pwd2 = password2.value;	
+		if ( pwd1 != pwd2 )
+		{
+			alert ("입력하신 비밀번호가 틀립니다. \n다시 입력해주세요");
+			password1.value = "";
+			password2.value = "";
+			return;
+		}
+		if(!(pwd1.length >= 6) && (pwd1.length <= 12)) {
+			alert("\패스워드는 6~12자 입니다.");
+			password1.value = "";
+			password1.focus();
+			return;
+		}
+		
+		form1.action="/logininfo.do?method=updatePassword";
+		form1.method="post";
+		form1.submit();
+	}
+}
+</script>
+<form name="form1" method="post" >
+<div id="wrap">
+	<div id="header">
+		<img src="/images/al/guide_header_al.png" alt="상단 유틸 영역" />
+	</div>
+	<div id="con_wrap" class="clfix">
+		<div id="gnb">
+			<img src="/images/al/guide_gnb_al.jpg" alt="GNB 및 좌측 모듈 영역" />
+		</div>
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location"><a href="#">회원가입</a>&nbsp;&gt;&nbsp;아이디/비밀번호 찾기</div>
+				<h1><img src="/images/al/h1_check_merchantprofile_success.png" alt="가맹점 회원 확인을 성공하였습니다" /></h1>
+				<p class="ab_find_idpw"><img src="/images/al/img_coffencom.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<p class="t_black"><strong>회원님의 사용자 ID는 다음과 같습니다.</strong></p>
+					<p class="t_black">비밀번호 변경 후, 다시 로그인 후 사이트를 이용해 주세요.</p>
+					<div class="line_lgray"></div>
+					<fieldset class="user_verify mt30">
+						<legend>비밀번호찾기</legend>
+						<dl>
+							<dt>아이디</dt>
+							<dd><strong class="t_black">${userId}</strong></dd>
+							<dt><label for="label_newpass">새비밀번호</label></dt>
+							<dd><span class="bg_input"><input type="text" value="" title="새비밀번호" id="label_newpass" name="password1" style="width:277px" /><em>&nbsp;</em></span>&nbsp;&nbsp;<span>비밀번호는 영문/숫자 혼용하여 6~12자리</span></dd>
+							<dt><label for="label_newpass_ok">새비밀번호 확인</label></dt>
+							<dd><span class="bg_input"><input type="text" value="" title="새비밀번호 확인" id="label_newpass_ok" name="password2" style="width:277px" /><em>&nbsp;</em></span></dd>
+						</dl>
+					</fieldset>
+					<div class="line_lgray">&nbsp;</div>
+					<div class="btnr">
+                        <a href="javascript:updatePassword()" class="btn btn_blue"><span>비밀번호 변경</span></a>
+                        <a href="#" class="btn btn_white"><span>취소</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<img src="/images/al/gnb_footer_al.png" alt="Copytright 영역" />
+	</div>
+
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

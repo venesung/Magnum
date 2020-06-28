@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_inquiry_receipt.jpg" alt="입금내역을 조회하세요" /></h1>
+				</div>
+				
+				<!-- content_block 100424 -->
+				<div class="content_block content_block_card">
+					<div class="tab01 w810">
+						<ul>
+                            <li class="on"><a href="javascript:goIndividual();">입금내역조회</a></li>
+                            <li><a href="javascript:goCmsInputList();">무통장입금내역조회</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100424 -->
+					<h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="javascript:goIndividual();">개인카드</a></li>
+                                    <li><a href="javascript:goCorporate();">법인카드</a></li>
+								</ul>
+							</div>							
+						</div>
+						<span class="selectbox_r_txt ">개인카드, 법인카드 중 조회하실 카드를 선택하세요</span>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<table class="dtable02 dtable_expand" summary="작성기준일, 조회기간을 확인할 수 있는 게시판입니다">
+						<caption>작성기준일, 조회기간</caption>
+						<colgroup><col width="15%" /><col width="35%" /><col width="15%" /><col width="35%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>작성기준일</p></th>
+								<td><p>00년 00월 00일 현재</p></td>
+								<th scope="row"><p>조회기간</p></th>	
+								<td><p>00/00/00 ~ 00/00/00</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<br/>
+						<span>※ 휴일에 입금하신 내역은 익영업일+1일부터 조회 가능합니다.</span>
+					</div>
+				</div>
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_inquiry_receipt02.png" alt="조회하신 카드의 입금내역입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span>최근 3개월 동안 입금하신 내역입니다. <span class="t_desc03">(신판 : 일시불/할부/현금 이용내역)</span></span>
+							<span class="ab_tr"><a href="/hp/im/mh/ilm/inputMethod1.do" onclick="window.open(this.href,'','width=710px,height=571px'); return false;" class="btn_link" title="새창">결제대금 입금방법안내 </a></span>
+							<div class="tb_exp clfix">
+								<span>신규 가입시에는 20건만 조회가 가능하며, 모든 입금내역의 조회는 익일부터 가능합니다.</span>
+							</div>
+						</div>
+						
+						<div class="d_easy">
+							<table class="dtable01 " summary="입금일자, 입금경로, 입금액으로 구성된 입급내역을 보여주는 게시판입니다"><!-- 100509_입금경로,대출번호필드삭제 -->
+							<caption>조회하신 카드의 입금내역</caption>
+							<colgroup><col width="20%" /><col width="50%" /><col width="30%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="cell_l10a">입금일자</th>
+									<th scope="col" class="cell_l10a">입금경로</th>
+									<th scope="col" class="cell_r10">입금액</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td class="cell_l10a">0</td>
+									<td class="cell_l10a">0</td>
+									<td class="cell_r10"><span class="t_no">0 원</span></td>
+								</tr>
+								<tr>
+									<td class="cell_l10a">0</td>
+									<td class="cell_l10a">0</td>
+									<td class="cell_r10"><span class="t_no">0 원</span></td>
+								</tr>
+								<tr class="nodata">
+									<td colspan="3">입금내역이 없습니다.</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+						
+						<!--div class="btnset mt15">
+                            <a href="javascript:goCardUseLimit()" class="btn btn_white"><span>카드사용한도  &gt;</span></a>
+						</div--><!-- SR내역 13.03.14 -->
+					</div>
+				</div>
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_inquiry_receipt03.png" alt="자동이체 입금 반영절차안내입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span>자동이체로 카드이용대금을 입금하시는 경우 통장인출에서 입금결과 조회까지 처리절차입니다. </span>
+						</div>
+						<table class="dtable01 " summary="삼성카드와 제휴중인 은행과 제휴가 안된 은행의 대상은행과 입금결과 반영일을 보여주는 게시판입니다.">
+						<caption>자동이체 입금 반영절차안내</caption>
+						<colgroup><col width="105" /><col width="*" /><col width="105" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 riline">구분</th>
+								<th scope="col" class="cell_l10 riline">대상은행</th>
+								<th scope="col" class="cell_l10">입금결과 반영일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 al_top riline">삼성카드와 <br />제휴중인 은행을<br />이용하시는 경우</td><!-- 100609 -->
+								<td class="cell_l10 riline">경남은행, 광주은행, 국민은행, 기업은행, 외환은행, 대구은행,<br />부산은행, 신한은행, 신협, 새마을금고, 산업은행, 전북은행,<br />우리은행, 우체국, 농협, 제일은행, 하나은행, 씨티은행, 제주은행,<br />삼성증권, 동양종합금융증권</td><!-- 정기일반영 13.01.16 -->
+								<td class="cell_l10 al_top">결제일 + 1~2일후<br /><a href="/hp/im/mh/ilm/inputProcess1.do" onclick="window.open(this.href,'','width=710px,height=571px'); return false;" class="a_point" title="새창">프로세스보기</a></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline">삼성카드와 <br />제휴가 안된 은행을 <br />이용하시는 경우</td><!-- 100609 -->
+								<td class="cell_l10 riline">수협은행, 홍콩상하이은행, 상호저축은행중앙회,<br />도이치뱅크, 산림조합중앙회, 기타 증권사</td><!-- 정기일반영 13.01.16 -->
+								<td class="cell_l10">결제일 + 1~2일후<br /><a href="/hp/im/mh/ilm/inputProcess2.do" onclick="window.open(this.href,'','width=710px,height=571px'); return false;" class="a_point" title="새창">프로세스보기</a></td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnl t_desc04">입금결과 반영일은 영업일 기준입니다.</p>
+						</div>
+					</div>
+				</div>
+<!-- 추가 100722 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_inquiry_receipt05.png" alt="채무변제순서 안내입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<p>결제금액 전액을 입금하지 못하신 경우에는 연회비, 제반비용, 지연배상금, 상품별 수수료, 이자 등이 <br />
+								원금에 우선 변제되며, 상품별 이자율이 높은 순으로 연체원금 변제 후 정상원금이 변체처리 됩니다.</p>
+						</div>
+					</div>
+				</div>
+<!-- // 추가 100722 -->				
+				<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

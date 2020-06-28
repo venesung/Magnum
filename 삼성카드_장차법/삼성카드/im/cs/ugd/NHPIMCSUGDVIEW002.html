@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 Mobile 서비스</h1>
+					<p class="h1_desc"><img src="/cms_content/images/cs/h1_mobile_banking.jpg" alt="삼성카드 Mobile 서비스" /></p>
+				</div>
+
+				<div class="content_block content_block_tab2 clfix">
+				
+					<div class="tab02 w810">
+						<ul>
+						<!-- 2013.01.04 DEPTH LEVEL 변경 -->						
+                            <li class="on"><a href="javascript:goView('000');">삼성카드 모바일서비스</a></li>
+                            <li><a href="javascript:goView('013');">공인인증서 복사안내</a></li>
+                            <li><a href="javascript:goView('011');">삼성카드</a></li>
+                            <li><a href="javascript:goView('015');">m포켓</a></li>
+                            <li><a href="javascript:goView('002');">샵파인더</a></li>
+                            <li><a href="javascript:goView('003');">m기프트카드</a></li>
+                            <li><a href="javascript:goView('016');">m간편결제서비스</a></li>
+						</ul>
+					</div>
+					
+				</div>
+
+				<!-- content_block -->
+				<%
+				String url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C4.html";
+				if("012".equals(tab_index)) 				 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C2.html"; 
+				else if("013".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C3.html";
+				else if("011".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C1.html";
+				else if("000".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C4.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C6.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C5.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C7.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMCSUGDVIEW002C8.html";
+				else if("015".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMMPK001.html";
+				else if("016".equals(tab_index))		 url = "/cms_content/hp/im/cs/ugd/NHPIMMPK002.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				
+

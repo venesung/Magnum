@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/cd/h1_cashservice_fam.png" alt="가족카드로 현금서비스를 받을 수 있습니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<div class="step"><img src="/images/cd/step_cashservice_fam03.png" alt="입력내용 확인 및 서비스신청" />
+		<!--ol class="none">
+			<li>신청금액 및 카드정보 입력</li>
+			<li>추가정보입력</li>
+			<li><abbr>현재단계</abbr><strong>입력내용 확인 및 서비스신청</strong></li>
+			<li>신청완료</li>
+		</ol-->
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+<form name="form1" autocomplete="off"> 
+   
+    
+	<h2><img src="/images/cd/h2_cashservice_fam03.png" alt="입력내용 확인 후 서비스 신청하세요" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>취급수수료는 회원님의 결제일에 청구됩니다.</p></li>
+			<li><p>최근 거래내역을 정확히 확인하시어 중복신청이되지 않도록 유의하시기 바랍니다.</p></li>
+			<li><p>신청 버튼을 누르시면 현금서비스 신청이 완료됩니다.</p></li>
+		</ol>
+
+		<table class="dtable02 dtable_inputfield mt30" summary="신청금액, 입금구분, 은행명, 계좌번호, 긴급연락처, 이자율 등 입력내용 확인 후 서비스 신청을 하실 수 있습니다.">
+        <caption>입력내용 확인 및 서비스신청</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>신청금액</p></th>
+				<td><p><span class="t_no">1</span> 만원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>입금구분</p></th>
+				<td><p>본인통장입금</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>은행명</p></th>
+				<td><p>	1</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>계좌번호</p></th>
+				<td><p class="t_no">1</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>긴급연락처</p></th>
+				<td><p class="t_no">1 - 1 - 1</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>이자율</p></th>
+				<td><p class="t_no">1 % </p></td>
+			</tr>
+			<!-- 현금서비스 취급 수수료 20100719 부터 면체 처리SR
+			<tr>
+				<th scope="row"><p>취급수수료</p></th>
+				<td><p class="t_no"><%= request.getAttribute("FEEAMT") %> </p></td>
+			</tr>
+			 -->
+		</tbody>
+		</table>
+
+		<!-- btnset -->
+		<div class="btnset">
+            <p class="btnr"><a href="javascript:go_submit(this.document.form1);" class="btn btn_blue" id="lockTarget"><span>신청</span></a></p>
+		</div>
+		
+		<table class="dtable01 mt30" summary="거래종류, 일자/시간, 접수번호, 금액, 계좌번호 예금주, 처리상태, 입금일자 시간 등 신청정보 확인할 수 있는게시판입니다.">
+        <caption>신청확인</caption>
+		<colgroup><col width="8%" /><col width="14%" /><col width="10%" /><col width="10%" /><col width="14%" /><col width="14%" /><col width="10%" /><col width="10%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">번호</th>
+				<th scope="col" class="cell_l10">거래종류</th>
+				<th scope="col">일자/시간</th>
+				<th scope="col">접수번호</th>
+				<th scope="col" class="cell_r10">금액</th>
+				<th scope="col">계좌번호<br />예금주</th>
+				<th scope="col">처리상태</th>
+				<th scope="col">입금일자/<br />시간</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10">1</td>
+				<td class="cell_l10">djajsk...<br /></td>
+				<td class="t_no">2012.02.03<br />11:11:11</td>
+				<td class="t_no">1</td>
+				<td class="cell_r10 t_no">1</td>
+				<td><p class="t_no">1<br />1<br />1</p></td>
+				<td>1</td>
+				<td class="t_no">1<br />1</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

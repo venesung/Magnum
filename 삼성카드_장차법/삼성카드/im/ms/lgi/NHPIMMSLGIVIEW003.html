@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<!--<p class="ab_tr_sm"><img src="/images/ms/img_findid.jpg" alt="" /></p> 13.04.30 삭제-->
+					<h1><img src="/images/ms/h1_findid.png" alt="아이디/비밀번호 찾기 및 변경입니다" /></h1><!-- 100427 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_findnewpass01.png" alt="회원확인을 정상적으로 성공하였습니다" /></h2>
+					<div class="content_block_inner">
+						<p class="mb30"><img src="/images/ms/txt_urid.png" alt="고객님의 아이디는 아래와 같습니다" /></p>
+
+						<dl class="find_id find_id_login clfix">
+							<dt class="newpw"><label>아이디</label></dt>
+							<dd class="newpw_txt"><strong class="t_black t_no">${userId}</strong></dd>
+						</dl>
+						
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_findpass03.png" alt="새로운 비밀번호를 등록하세요" /></h2>
+					<div class="content_block_inner">	
+					
+						<ol class="list_no01 mt20">
+							<li><p>아래의 입력란에 새로운 웹 비밀번호를 입력하시고 로그인 하십시오.</p></li>
+							<li><p>비밀번호는 영문과 숫자를 혼용하여 8~12자리입니다.<br />특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]</p></li>
+							<li><p>웹ID 및 패스워드는 영문 대소문자를 구별하오니, 입력 시 주의하시기 바랍니다.</p></li>
+						</ol>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<fieldset class="find_id find_id_pw">
+							<legend>새로운 비밀번호 등록</legend>
+							<dl>
+								<dt><label for="label_newpass">새로운 비밀번호</label></dt>
+								<dd><span class="bg_input"><input type="password" name="password1" value="" title="새로운 비밀번호" style="width:200px" id="label_newpass" enc="on"/><em>&nbsp;</em></span>
+								<!-- 가상키보드 적용-->
+								<span id="usafeon_password1"></span>
+								</dd>
+								<dt><label for="label_newpass_ok">새로운 웹 비밀번호 확인</label></dt>
+								<dd><span class="bg_input"><input type="password" name="password2" value="" title="새로운 웹 비밀번호 확인" style="width:200px" id="label_newpass_ok" enc="on"/><em>&nbsp;</em></span>
+								<!-- 가상키보드 적용-->
+							    <span id="usafeon_password2"></span>
+								</dd>
+							</dl>
+	
+							<div class="line_lgray_p0 mt20">&nbsp;</div>
+							<div class="btnset">
+                                <p class="btnr"><a href="javascript:goChangePass();" class="btn btn_blue"><span>비밀번호 변경</span></a></p>
+							</div>
+						</fieldset>
+					</div>
+				</div>							
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

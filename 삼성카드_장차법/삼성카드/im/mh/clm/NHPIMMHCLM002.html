@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_limit_card.png" alt="개인카드 이용한도를 조정 하실 수 있습니다." /></h1>
+				</div>
+
+<!-- 100126 -->
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="top_step_use_limit top_step_use_limit01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> 하향신청 한도입력</li>
+							<li>입력내용 확인</li>
+							<li><strong>완료</strong></li>
+						</ol>
+					</div>
+<!-- //100126 -->
+					<h2><img src="/images/mh/h2_limit_selection.png" alt="이용한도 조정하실 대상을 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+									<li><a href="#">개인카드</a></li>
+									<li onclick="goTabPage('NHPIMCD030203');"><a href="#;">체크카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt">(개인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<ol class="list_no01">
+							<li><p>현재 한도 이하로만 신청이 가능하며, 이후 고객님의 한도는 상향 조정되지 않습니다.</p></li>
+							<li><p>할부한도는 일시불한도를 초과할 수 없습니다. (카드사용한도와 일시불한도는 같습니다.)</p></li>
+							<li><p>하향 요청 한도는 최저 10만원부터 10만원 단위로 입력하실 수 있습니다.<br /> - 현금서비스 및 카드론 이용을 원하지 않으실 경우 0원으로 입력하시면 됩니다.</p></li>
+							<li><p>할부한도와 현금서비스한도는 일시불한도를 초과할 수 없습니다. (카드사용한도와 일시불한도는 같습니다.)</p></li>
+							<li><p>하향 요청 한도는 최저 10만원부터 10만원 단위로 입력하실 수 있습니다.<br /> - 현금서비스 및 카드론 이용을 원하지 않으실 경우 0원으로 입력하시면 됩니다.</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt30" summary="사용자를 선택하는 게시판입니다.">
+						<caption>사용자 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>사용자</p></th>
+								<td><p>
+									<select title="사용자 선택" style="width:100px" onchange="onChangeUser(this.value);">
+										<option value="self" >본인</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+							<a href="#" onclick="viewLimit();" class="btn btn_blue"><span>조회</span></a>
+							<!-- //100126 -->
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+
+
+					<h2><img src="/images/mh/h2_limit_down.png" alt="하향신청하실 이용한도를 입력하세요" /></h2>
+					<div class="content_block_inner">
+						<!-- 100126 -->
+						<table class="dtable01 dtable_inputfield" summary="구분항목별 현재한도를 확인하고 하향 요청 한도를 입력하는 게시판입니다">
+						<!-- //100126 -->
+						<caption>하향신청 이용한도 입력</caption>
+						<colgroup><col width="120" /><col width="260" /><col width="260" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">구분</th>
+								<th scope="col" class="cell_r10">현재한도</th>
+								<th scope="col" class="cell_r10">하향 요청 한도</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">카드이용한도</td>
+								<td class="cell_r10"><span class="t_no">00 </span>만원
+								</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_CARD_HANDO" type="text" class="txt" value="" title="카드이용한도 조정요청한도"  maxlength="4" style="ime-mode:disabled" />만원</span></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10">일시불</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원
+								</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_ILSI_HANDO" type="text" class="txt"  title="일시불 조정요청한도"  maxlength="4" style="ime-mode:disabled" />만원</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10">할부</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원
+								</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_HALBU_HANDO" type="text" class="txt" value="" title="할부 조정요청한도"  maxlength="4" style="ime-mode:disabled" />만원</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10">굿캐시한도</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원
+								</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_CASH_HANDO" type="text" class="txt" value="" title="현금서비스 조정요청한도"  maxlength="4" style="ime-mode:disabled" />만원</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10">카드론한도</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원
+								</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_RAIN_HANDO" type="text" class="txt" value="" title="카드론 조정요청한도"  maxlength="4" style="ime-mode:disabled" />만원</span></td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+								 <a href="javascript:go_sub(document.limit)" class="btn btn_blue"><span>신청</span></a>
+							</p>
+						</div>
+
+						<!-- 100518추가 -->
+						<div class="line_lgray">&nbsp;</div>
+						<ol class="list_no01">
+							<li><p>한도하향 신청은 월~금 09:00~ 21:00까지 가능합니다,(토/일/공휴일은 불가)<br />(단, 전산시스템의 사정에 따라 약간의 변동이 있을 수 있습니다.)</p></li>
+							<li><p>한도하향 신청 후 현재한도로 복원은 불가하며, 상향 요청시 재심사 후 새로운 한도가 부여되오니<br />주의하시기 바랍니다.</p></li>
+							<li><p>현금서비스 한도는 카드이용한도의 40% 이내로만 조정 가능합니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<!-- 여기부터 시작 -->
+</head>
+<body>
+    <table class="dtable01 dtable01_bill" summary="조회하신 후불 하이패스 이용내역(이용일자, 구분, 출발시점, 출발시각, 도착시점, 도착시각, 통행료 등)을 확인할 수 있는 게시판입니다.">
+    <caption>후불 하이패스 이용내역 게시판</caption>
+	<colgroup><col width="10%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="14%" /><col width="16%" /></colgroup>
+	<thead>
+		<tr>
+			<th id="hipass_date" scope="col" class="cell_l10">이용일자</th>
+			<th id="hipass_gubun" scope="col">구분</th>
+			<th id="hipass_start" scope="col">출발시점</th>
+			<th id="hipass_start_time" scope="col">출발시각</th>
+			<th id="hipass_dest" scope="col">도착시점</th>
+			<th id="hipass_dest_time" scope="col">도착시각</th>
+			<th id="hipass_amount" scope="col" class="cell_r10">통행료(원)</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td scope="row" colspan="4" class="cell_l10" header="hipass_date hipass_gubun hipass_start hipass_start_time hipass_dest hipass_dest_time">합계 (총 <em><%=Integer.parseInt(inVO.getHipassTotCnt())%></em>건)</td>
+			<td class="cell_r10"><em>0</em></td>
+			<td colspan="2" ></td>
+		</tr>
+	</tfoot>
+	<tbody>
+							
+		<tr>
+			<td class="cell_l10 t_no"><%=useDate%></td>
+			<td><%=useGubunStr %></td>
+			<td><%=inRevVO.getGetonStation()%></td>
+			<td class="t_no"><%=getonTime%></td>
+			<td><%=inRevVO.getGetoffStation()%></td>
+			<td class="t_no"><%=getonTime%></td>
+			<td class="cell_r10 t_no">0</td>
+		</tr>				
+	</tbody>
+	</table>
+
+	<!-- paginate -->
+	<div class="paginate">
+		<div class="paging">
+		<form name="hipassPageForm">
+
+            <a href="javascript:getTodayTransferInfoByPage('hipass', 'pre');" class="btn btn_s_white"><span>이전</span></a>
+        <a href="javascript:getTodayTransferInfoByPage('hipass', 'next');" class="btn btn_s_white"><span>다음</span></a>
+		</form>
+		</div>
+	</div>
+	
+</body>
+</html>

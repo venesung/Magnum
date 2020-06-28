@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<div class="top_visual">
+	<h1><img src="/images/cd/anystyle/h1_anystyle_uselist01.png" alt="사용하신 카드이용내역을 조회하실 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+
+
+
+	<h2><img src="/images/cd/anystyle/h2_anystyle01.png" alt="서비스 이용내역을 선택하세요." /></h2>
+	<div class="content_block_inner">
+		
+		<span id="ascTitleArea1" style="font:bold 12px dotum; color:#666666;"><%=memName%>님의 신청하신 서비스 내용입니다.</span>
+		<span id="ascTitleArea2" style="font:bold 12px dotum; color:#666666; display:none;"><%=memName%>님 아래의 선택사항 변경하시고 변경완료를 하시면 변경이 됩니다.</span>
+
+		<table class="dtable01" summary="서비스 이용내역(MY Choice, 서비스명, 제휴연회비, 시작일, 종료(예정)일, 서비스선택)을 확인하실 수 있는 게시판입니다">
+		<caption>서비스 이용내역 조회 게시판</caption>
+		<colgroup><col width="24%" /><col width="25%" /><col width="18%" /><col width="13%" /><col width="13%" /><col width="7%" /></colgroup>
+		
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10 riline">MY Choice</th>
+				<th scope="col" class="cell_l10 riline">서비스명</th>
+				<th scope="col" class="cell_r10 riline">제휴연회비</th>
+				<th scope="col" class="riline">시작일</th>
+				<th scope="col" class="riline">종료(예정)일</th>
+				<th scope="col">선택</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+					<td rowspan="<%=CNT_05%>" class="cell_l10 riline">교통카드 선택</td>
+				<td class="cell_l10 riline">
+					<span id="ascSvcDesc_<%=i%>" onmouseover="displayDecs(event, <%=i%>, true)" onmouseout="displayDecs(event, <%=i%>, false)">-_-</span>
+				</td>
+				<td class="cell_r10 riline">
+					 원
+				</td>
+				<td class="riline">0</td>
+				<td class="riline">0</td>
+				<td>
+								<input type="checkbox" name="chkService" class="chk" title="00 서비스 선택" />
+				</td>
+				<div id="divDesc" style="padding:3px; position:absolute; display:none; width:280px; border:solid 1px; background:#ffffff;">-_-</div>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>	
+
+		<!-- btn -->
+		<div class="btnset">
+			<p class="btnl">
+                <a href="javascript:goTabPage('NHPIMCDASC002','false');" class="btn btn_white"><span>이용실적 및 포인트 적립률 조회 ></span></a>
+                <a href="javascript:goTabPage('NHPIMCDASC003','false');" class="btn btn_white"><span>서비스 신청이력 조회 ></span></a>
+			</p>
+			<p class="btnr">
+                <a href="javascript:goModify();" id="ascBtnModify" class="btn btn_blue"><span>수정</span></a>
+                <a href="javascript:goTabPage('NHPIMCDASC001','true');" id="ascBtnCancel" class="btn btn_blue" style="display:none;"><span>취소</span></a>
+                <a href="javascript:goCompare();" id="ascBtnCompare" class="btn btn_blue" style="display:none;"><span>변경완료</span></a>
+			</p>
+		</div>
+	</div>
+	
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/cd/anystyle/h2_anystyle02.png" alt="서비스 이용안내 입니다." /></h2>
+	<div class="content_block_inner">
+
+		<ol class="list_no01">
+			<li><p>서비스 개요는 해당 서비스명을 클릭하시면 됩니다.</p></li>
+			<li><p>서비스 추가신청 또는 해지 방법<br />
+				<span class="t_desc04">- 하단의 수정하기 버튼을 클릭<br />
+				- 신청(해지)하고자 하는 서비스의 옆에 있는 체크박스를 클릭<br />
+				- 하단의 '변경완료' 클릭</span></p></li>
+			<li><p>국내/해외 겸용 카드 또는 후불교통카드 선택 시에는<br />기존에 가지고 있던 카드를 교체발급하기 때문에 카드신청을 다시 하셔야 합니다. </p></li>
+			<li><p>CJ멤버십을 신청하거나 해지하시면, CJ로고로 인해 카드가 교체되어 발급됩니다.</p></li>
+			<li><p>리워드 서비스 변경 시에는 변경된 리워드는 다음달 1일부터 반영되며, 변경된 연회비가 청구됩니다. </p></li>
+			<li><p>선택서비스 해지 시에는 다음 날 서비스가 종료 됩니다.<br />
+				<span class="t_desc04">(단 서비스 시작일로부터 30일이전에 해지하시더라도 30일간은 서비스가 제공됩니다) </span></p></li>
+			<li><p>제휴사의 사정으로 다이닝서비스 신청이 종료되었습니다.</p></li><!-- 정기일반영 13.03.05 -->
+		</ol>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

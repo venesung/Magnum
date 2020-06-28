@@ -1,0 +1,271 @@
+
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+
+<%@page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00079INVO"%>
+<%@page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00080INRecVO1"%>
+<%@page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00080INVO"%>
+
+<%@page import="com.scard.common.util.CommonUtil"%>
+<%@page import="com.scard.common.util.StringUtil"%>
+<div id='tab_title'>미니결제 2단계</div>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+
+HOMEHMV5HPR00080INVO dataList = (HOMEHMV5HPR00080INVO)request.getAttribute("datalist");  
+%>
+
+<%@ include file="/WEB-INF/jsp/common/common_security.jsp"%>
+<div id="tab_script">
+
+<script type="text/javascript" language='javascript'>
+<%= request.getAttribute("VID_STR") %> 
+function cancel(){
+	if( confirm('미니결제 신청을 취소하시겠습니까?') == true ){
+		goTabPage( "NHPIMFSMIN001M001", true );
+	}
+}
+
+function check_count() {
+	form = document.form_main;
+	form.txtTotCount.value  = '<%= request.getAttribute( "sTotCount" ) %>' ; // 총건수
+	form.txtTotAmt.value    = '<%= request.getAttribute( "sTotAmt" ) %>'; // 총잔액
+	form.hid_string9.value  = '<%= request.getAttribute( "sTotCount" ) %>'; // 총건수
+	form.hid_string10.value = '<%= request.getAttribute( "sTotAmt" ) %>'; // 총잔액
+	form.hid_string8.value  = "1";
+}
+
+
+function check_ok() {
+    form = document.form_main;
+    if( lockBtn('lockTarget')){   
+	    check_count() ;
+	
+	  
+		if ( eval(form.txtTotCount.value) == 0 ) {
+	        alert( "연장신청할 건이 없습니다.") ;
+	        goTabPage('NHPIMFSMIN001M001', true );
+	        return ;
+		}
+		
+	    // 공인인증 처리부분
+		var ssn = "<%= request.getAttribute("CERT_IDEN_NO") %>";
+	    var sign = "";
+		var sign_message = "";
+		
+		if ( ssn == "" || ( ssn.length != 13 && ssn.length !=10) ){
+	        alert("입력된 사용자 정보가 다릅니다. 처음부터 다시 시작하시기 바랍니다.");
+	        goTabPage('NHPIMFSMIN001M001', true );
+	        return;
+	    }
+	  
+	    // sign_message
+	    // 전체연장 : 주민번호:카드번호:"전체연장":건수:금액:-
+	    // 건별연장 : 주민번호:카드번호:"건별연장":건수:금액:-
+	    
+	    if ( "<%= request.getAttribute("SIGN_GUBUN") %>" == "Y" ) {
+	
+	 		sign_message = "<%= request.getAttribute("IDEN_NO")%>" + ":" + "<%= request.getAttribute("CARD_NO")%>" + ":";
+	    	sign_message += "전체연장:" + form.hid_string6.value + ":" + form.hid_string7.value + ":-" ;
+	
+			form.plain.value = sign_message;
+			//sign = Sign_with_vid_web(0, form.plain.value, s, ssn);
+			//Sign_with_vid_web(0, form.plain.value, ssn, s, signCallBack);
+			XecureWeb.SetUITarget(document.body);
+			Sign_with_vid_user(_aOptionDefault_SCARD, form.plain.value, s, signCallBack); //20120207 인증서 처리 to-be 적용
+						
+	    }
+	
+	   
+    }
+
+}
+
+function signCallBack(sign){
+
+	if ( sign == "" || sign == null ) {
+        alert("공인인증서 제출을 취소하셨습니다.\n");
+        //form.action = "/hp/im/fs/min/openhpimfsmin001.do";
+        //form.submit();
+        goTabPage('NHPIMFSMIN001M001', true );
+        
+    }
+
+    var form = document.form_main;
+    
+	 //공인인증 
+    if ( form.dbcheck.value == "Y" ) {
+    	form.signed_msg.value = sign;
+    	form.vid_msg.value = send_vid_info();
+		form.dbcheck.value = "N";
+		form.loadcnt.value = '1';
+		tabSubmit('/hp/im/fs/min001.do?method=submitCashMini', form );
+ 	} else {
+        alert("이미 신청하신 거래가 처리중입니다.\n처리결과를 확인하신 후 다시 이용하여 주십시오.");
+    }
+}
+</script>
+</div>
+<script type="text/javascript" src="/xwuni/xecureweb_up.js"></script>
+<script type="text/javascript" language='javascript'>
+	<%=v.ServerCertWriteScript()%>
+
+	PrintObjectTag (null,document.getElementById('xecure_obj'));
+	var useTranskey = false;
+</script>
+<div id="xecure_obj" ></div>
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">원금 10%만, 부담없고 간편한 현금서비스 미니결제</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+<!-- content_block -->
+<div id="content_block">
+<form name="form_main" method="post" >
+	<div class="content_block content_block_tab2 clfix">
+		<!-- tab_area -->
+		<div class="tab01 w810">
+			<ul>
+                <li><a href="javascript:goTabPage('NHPIMFSMIN001M001', true );">서비스안내</a></li>
+                <li class="on"><span class="none">현재단계</span><a href="#">미니결제신청</a></li>
+                <li><a href="javascript:goTabPage('NHPIMFSMIN001M005', true );">신청결과조회</a></li>                            
+			</ul>
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_tab clfix">
+		<p><img src="/images/mh/step_cash_minipay02.png" alt="조회 및 신청" /></p>
+		<ol class="none">
+			<li>CVC 입력 및 신청카드 선택</li>
+			<li><abbr>현재단계</abbr><strong>조회 및 신청</strong></li>
+			<li>신청결과 및 확인</li>
+		</ol>
+		<h2><img src="/images/mh/h2_cash_minipay04.png" alt="결제대상 내역을 확인해주세요" /></h2>
+		<div class="content_block_inner d_cash_minipay">
+			<div class="tb_exp clfix">
+				<span class="fl_left"><strong class="t_black"><%= request.getAttribute("USERNAME") %></strong> 님의 당월 결제대상 현금서비스 내역입니다.</span>
+			</div>
+	
+			<table class="dtable02 dtable_expand" summary="결제대상 총 건수와 총 잔액을 확인할 수 있는 게시판입니다">
+            <caption>당월 결제대상 현금서비스 내역</caption>
+			<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>총 건수</p></th>
+					<td><p><span class="t_no"><%= request.getAttribute("sTotCount") %></span> 건</p></td>
+					<th scope="row"><p>총 잔액</p></th>
+					<td><p><span class="t_no"><%= request.getAttribute("sTotAmt") %></span> 원</p></td>
+				</tr>
+			</tbody>
+			</table>
+	
+			<table summary="카드사용에 대한 사용일, 사용금액, 잔액을 확인할 수 있는 게시판입니다" class="dtable01 mt20">
+			<caption>카드 상세 사용 내역</caption>
+			<colgroup><col width="20%"/><col width="40%"/><col width="40%"/></colgroup>
+			<thead>
+				<tr>
+					<th class="cell_l10" scope="col">사용일</th>
+					<th class="cell_r10" scope="col">사용금액</th>
+					<th class="cell_r10" scope="col">잔액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<% 
+				
+				HOMEHMV5HPR00080INRecVO1[] dataArr = dataList.getInRecArray1();
+				int length = Integer.parseInt(dataList.getProcCnt());
+				for( int ix=0; ix < length ; ix ++ ){
+					if( ix < 1 ){
+				%>
+					<input type="hidden" name="hid_string1" value="<%= dataList.getString1() %>" />
+					<input type="hidden" name="hid_string6" value="<%= dataList.getString6() %>" />
+					<input type="hidden" name="hid_string7" value="<%= dataList.getString7() %>" />
+					<input type="hidden" name="hid_string9" value="<%= dataList.getString8() %>" />
+					<input type="hidden" name="hid_string10" value="<%= dataList.getString10() %>" />
+					<input type="hidden" name="hid_string23" value="<%= dataList.getString23() %>" />
+					<input type="hidden" name="hid_string15" value="<%= dataList.getString15() %>" />
+				<%
+					}
+				%>
+				<tr>
+					<!-- 사용일 -->
+					<td class="cell_l10 t_no"><%= StringUtil.formatStrDate( dataArr[ix].getString19(), "yyyy년mm월dd일" ) %></td>
+					<!-- 사용금액 -->
+					<td class="cell_r10 t_no"><%= StringUtil.amountToString(Integer.parseInt( dataArr[ix].getString20().trim())) %></td>
+					<!-- 잔액 -->
+					<td class="cell_r10 t_no"><%= StringUtil.amountToString(Integer.parseInt( dataArr[ix].getString21().trim())) %></td>
+				</tr>
+					<input type="hidden" name="hid_check_<%=ix+1%>" />
+					<input type="hidden" name="hid_string16_<%=ix+1%>" value="<%= dataArr[ix].getString16() %>" />
+					<input type="hidden" name="hid_string17_<%=ix+1%>" value="<%= dataArr[ix].getString17()%>" />
+					<input type="hidden" name="hid_string18_<%=ix+1%>" value="<%= dataArr[ix].getString18()%>" />
+					<input type="hidden" name="hid_string19_<%=ix+1%>" value="<%= dataArr[ix].getString19()%>" />
+					<input type="hidden" name="hid_string20_<%=ix+1%>" value="<%= dataArr[ix].getString20()%>" />
+					<input type="hidden" name="hid_string21_<%=ix+1%>_for_calc" value="<%= dataArr[ix].getString21()%>" />
+					<input type="hidden" name="hid_string21_<%=ix+1%>" value="<%= dataArr[ix].getString21()%>" />
+				<% } %>
+				<!-- //loop -->
+			</tbody>
+			</table>
+	
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_tab clfix">
+		<h2><img src="/images/mh/h2_cash_minipay05.png" alt="상세 사용내역을 확인해주세요" /></h2>
+		<div class="content_block_inner">
+			<table class="dtable02 dtable_expand" summary="미니결제 신청금액과 이월금액을 확인할 수 있는 게시판입니다">
+            <caption>상세 사용내역</caption>
+			<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>미니결제 신청금액</p></th>
+					<td><p><strong class="t_black t_no"><%= StringUtil.amountToString( Math.round(Integer.parseInt(((String)request.getAttribute("sTotAmt")).replace(",","")) * 0.1)) %></strong> 원</p></td>
+					<th scope="row"><p>이월금액</p></th>
+					<td><p><span class="t_no"><%= StringUtil.amountToString( Math.round(Integer.parseInt(((String)request.getAttribute("sTotAmt")).replace(",", "")) * 0.9) ) %></span> 원</p></td>
+				</tr>
+			</tbody>
+			</table>
+	
+			<!-- btnset -->
+			<div class="btnset">
+				<p class="btnr">
+                    <a href="javascript:cancel();" class="btn btn_white"><span>취소</span></a>
+                    <a href="javascript:check_ok();" class="btn btn_blue" id="lockTarget"><span>확인</span></a>
+				</p>
+			</div>
+	
+			<div class="line_lgray">&nbsp;</div>
+	
+			<ol class="list_no01">
+				<li><p>현금서비스 미니결제 이용 시 총 잔액의 10%만 당월 청구되며 이월금액은 다음달 결제금액에 포함됩니다.</p></li>
+				<li><p>현금서비스 미니결제는 원금에 대해서만 적용되며 이자는 예정대로 당월 결제일에 청구됩니다.</p></li>
+				<li><p>결제 대상 내역은 최대 30건까지만 조회되며 30건 초과 시 상세 사용내역 확인을 원하실 경우<br />
+					   현금서비스 신청결과조회를 확인 하시기 바랍니다. <a href="javascript:goTabPage('NHPIMFSMIN001M005', true );" class="ml10 a_point">신청결과조회 바로가기</a></p></li>
+				<li><p>미니결제신청 및 취소는 결제일 전일까지만 가능합니다. (금융망 자동이체 기관의 경우 결제일 2일전까지 가능)<br />
+					   <strong class="t_black">※  금융망 자동이체 기관</strong> : 수협, 신협, 상호저축은행, HSBC, 기타 증권사(삼성, 동양제외)</p></li>
+			</ol>
+		</div>
+	</div>
+<input type="hidden" name="dbcheck" value="Y" />
+<input type="hidden" name="sign_gubun" value="<%= request.getAttribute("SIGN_GUBUN") %>" />
+<input type="hidden" name="signed_msg" value="" />
+<input type="hidden" name="plain" value="" />
+<input type="hidden" name="vid_msg" value="" />
+<input type="hidden" name="loadcnt" value="0" />
+<input type="hidden" name="hid_string8" />
+<input type="hidden" name="hid_sTotCount" value="<%= request.getAttribute("sTotCount") %>" />
+<input type="hidden" name="hid_sTotAmt" value="<%= request.getAttribute("sTotAmt") %>" />
+<input name="txtTotCount" type="hidden" value="" />
+<input name="txtTotAmt"   type="hidden" value="" />	
+</form>
+</div>
+
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>				

@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+
+<title>시뮬레이션 입금액 확인 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/mh.css" />
+</head>
+<body onLoad="Initialize();">
+<div id="wrap">
+	<jsp:include page="/WEB-INF/jsp/common/menu.jsp" flush="false">
+		<jsp:param value="카드이용안내" name="mTitle"/>
+		<jsp:param value="할부시뮬레이션" name="sTitle"/>
+	</jsp:include>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class="clfix" id="id_tablist">
+						<li>국문최대일곱자...<input type="button" value="닫기" class="btn_tab" onMouseOver="t_over(this,'btn_tab');" onMouseOut="t_out(this,'btn_tab');" title="닫기" /></li>
+						<li class="on" onMouseOver="this.className='over';" onMouseOut="this.className='on';">
+							<a href="#">카드이용내역</a> <input type="button" value="닫기" class="btn_tab" onMouseOver="t_over(this,'btn_tab');" onMouseOut="t_out(this,'btn_tab');" title="닫기" />
+							<div class="tabbrowse_sub">
+								<div><a href="#">국내이용내역</a><a href="#">청구내역 및 할부전환</a><a href="#">승인취소내역조회</a><a href="#">지역특화카드이용내역</a></div>
+								<div class="tabbrowse_sub_btm">&nbsp;</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id="id_ctr_btn">
+			<input type="button" class="btn_previous" onMouseOver="t_over(this,'btn_previous');" onMouseOut="t_out(this,'btn_previous');" id="id_ctr_prev" title="이전" />
+			<input type="button" class="btn_next" onMouseOver="t_over(this,'btn_next');" onMouseOut="t_out(this,'btn_next');" id="id_ctr_next" title="다음" />
+			<input type="button" class="btn_close" onMouseOver="t_over(this,'btn_close');" onMouseOut="t_out(this,'btn_close');" onClick="hide_con('tabbrowse_position');" title="탭 브라우저 레이어 닫기" />
+			</div>
+
+			<div class="tabbrowse_content">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="${pageContext.request.contextPath}/images/cd/h1_simulation_info.png" alt="시뮬레이션으로 입금액을 확인할 수 있습니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+			<form name="simulation" method="post" action="/Goood/card.simulation.SPITAS102.htm" autocomplete="off">
+
+			<input type="hidden" name="input" />
+			<input type="hidden" name="ABLE_AMT" value="${ABLE_AMT}" />
+			<input type="hidden" name="today" value="${SYS_DATE}" />
+				<div class="content_block clfix">
+					<h2><img src="${pageContext.request.contextPath}/images/cd/h2_usecard_installment01.png" alt="이용하실 카드 할부 금액을 입력하세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02 dtable_inputfield" summary="이용하실 카드의 할부이용 예정일, 이용금액, 할부시간을 입력하는 게시판입니다">
+						<caption>카드할부금액 입력 게시판</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>이용 예정일</p></th>
+								<td><p>
+									<select name="APP_YEAR" title="년도 선택" id="label_useday01">
+			                          <option value="<%=CUR_YEAR %>" selected="selected"><%=CUR_YEAR %></option>
+			                          <option value="<%=AFT_YEAR %>"><%=AFT_YEAR %></option>
+			                        </select> 년
+									<select name="APP_MON" title="월 선택" id="label_useday02">
+			                          <option value="01" <%if(CUR_MON == "01"){ %> selected="selected" <%} %> >01</option>
+			                          <option value="02" <%if(CUR_MON == "02"){ %> selected="selected" <%} %> >02</option>
+			                          <option value="03" <%if(CUR_MON == "03"){ %> selected="selected" <%} %> >03</option>
+			                          <option value="04" <%if(CUR_MON == "04"){ %> selected="selected" <%} %> >04</option>
+			                          <option value="05" <%if(CUR_MON == "05"){ %> selected="selected" <%} %> >05</option>
+			                          <option value="06" <%if(CUR_MON == "06"){ %> selected="selected" <%} %> >06</option>
+			                          <option value="07" <%if(CUR_MON == "07"){ %> selected="selected" <%} %> >07</option>
+			                          <option value="08" <%if(CUR_MON == "08"){ %> selected="selected" <%} %> >08</option>
+			                          <option value="09" <%if(CUR_MON == "09"){ %> selected="selected" <%} %> >09</option>
+			                          <option value="10" <%if(CUR_MON == "10"){ %> selected="selected" <%} %> >10</option>
+			                          <option value="11" <%if(CUR_MON == "11"){ %> selected="selected" <%} %> >11</option>
+			                          <option value="12" <%if(CUR_MON == "12"){ %> selected="selected" <%} %> >12</option>
+			                        </select> 월
+									<select name="APP_DAY" title="일 선택" id="label_useday03">
+			                          <option value="01" <%if(CUR_DAY == "01"){ %> selected="selected" <%} %> >01</option>
+			                          <option value="02" <%if(CUR_DAY == "02"){ %> selected="selected" <%} %> >02</option>
+			                          <option value="03" <%if(CUR_DAY == "03"){ %> selected="selected" <%} %> >03</option>
+			                          <option value="04" <%if(CUR_DAY == "04"){ %> selected="selected" <%} %> >04</option>
+			                          <option value="05" <%if(CUR_DAY == "05"){ %> selected="selected" <%} %> >05</option>
+			                          <option value="06" <%if(CUR_DAY == "06"){ %> selected="selected" <%} %> >06</option>
+			                          <option value="07" <%if(CUR_DAY == "07"){ %> selected="selected" <%} %> >07</option>
+			                          <option value="08" <%if(CUR_DAY == "08"){ %> selected="selected" <%} %> >08</option>
+			                          <option value="09" <%if(CUR_DAY == "09"){ %> selected="selected" <%} %> >09</option>
+			                          <option value="10" <%if(CUR_DAY == "10"){ %> selected="selected" <%} %> >10</option>
+			                          <option value="11" <%if(CUR_DAY == "11"){ %> selected="selected" <%} %> >11</option>
+			                          <option value="12" <%if(CUR_DAY == "12"){ %> selected="selected" <%} %> >12</option>
+			                          <option value="13" <%if(CUR_DAY == "13"){ %> selected="selected" <%} %> >13</option>
+			                          <option value="14" <%if(CUR_DAY == "14"){ %> selected="selected" <%} %> >14</option>
+			                          <option value="15" <%if(CUR_DAY == "15"){ %> selected="selected" <%} %> >15</option>
+			                          <option value="16" <%if(CUR_DAY == "16"){ %> selected="selected" <%} %> >16</option>
+			                          <option value="17" <%if(CUR_DAY == "17"){ %> selected="selected" <%} %> >17</option>
+			                          <option value="18" <%if(CUR_DAY == "18"){ %> selected="selected" <%} %> >18</option>
+			                          <option value="19" <%if(CUR_DAY == "19"){ %> selected="selected" <%} %> >19</option>
+			                          <option value="20" <%if(CUR_DAY == "21"){ %> selected="selected" <%} %> >20</option>
+			                          <option value="21" <%if(CUR_DAY == "21"){ %> selected="selected" <%} %> >21</option>
+			                          <option value="22" <%if(CUR_DAY == "22"){ %> selected="selected" <%} %> >22</option>
+			                          <option value="23" <%if(CUR_DAY == "23"){ %> selected="selected" <%} %> >23</option>
+			                          <option value="24" <%if(CUR_DAY == "24"){ %> selected="selected" <%} %> >24</option>
+			                          <option value="25" <%if(CUR_DAY == "25"){ %> selected="selected" <%} %> >25</option>
+			                          <option value="26" <%if(CUR_DAY == "26"){ %> selected="selected" <%} %> >26</option>
+			                          <option value="27" <%if(CUR_DAY == "27"){ %> selected="selected" <%} %> >27</option>
+			                          <option value="28" <%if(CUR_DAY == "28"){ %> selected="selected" <%} %> >28</option>
+			                          <option value="29" <%if(CUR_DAY == "29"){ %> selected="selected" <%} %> >29</option>
+			                          <option value="30" <%if(CUR_DAY == "30"){ %> selected="selected" <%} %> >30</option>
+			                          <option value="31" <%if(CUR_DAY == "31"){ %> selected="selected" <%} %> >31</option>
+			                        </select> 일
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>이용금액</p></th>
+								<td><p><span class="input_point"><input name="REQ_AMT" type="text" class="txt" value="" id="label_usemoney" title="이용금액 입력" />원</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>할부시간</p></th>
+								<td><p>
+									<select name="DIV_DUR" title="할부시간 선택" id="label_usetime">
+			                          <option value="02" selected="selected"> 2</option>
+			                          <option value="03" > 3</option>
+			                          <option value="04" > 4</option>
+			                          <option value="05" > 5</option>
+			                          <option value="06" > 6</option>
+			                          <option value="07" > 7</option>
+			                          <option value="08" > 8</option>
+			                          <option value="09" > 9</option>
+			                          <option value="10" >10</option>
+			                          <option value="11" >11</option>
+			                          <option value="12" >12</option>
+			                          <option value="13" >13</option>
+			                          <option value="14" >14</option>
+			                          <option value="15" >15</option>
+			                          <option value="16" >16</option>
+			                          <option value="17" >17</option>
+			                          <option value="18" >18</option>
+			                          <option value="19" >19</option>
+			                          <option value="20" >20</option>
+			                          <option value="21" >21</option>
+			                          <option value="22" >22</option>
+			                          <option value="23" >23</option>
+			                          <option value="24" >24</option>
+			                        </select> 개월
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<div class="btnr">
+                                <a href="javascript:Form_Clear(this.document.simulation);" class="btn btn_white"><span>다시 계산하기</span></a>
+                                <a href="javascript:Form_Check(this.document.simulation);" class="btn btn_blue"><span>확인</span></a>
+							</div>
+						</div>
+
+						<table class="dtable01 mt30" summary="이용하신 카드의 결제일, 할부원금, 할부수수료, 계, 할부잔액을 확인하실 수 있는 게시판입니다">
+						<caption>할부내역 리스트</caption>
+						<colgroup><col width="8%" /><col width="16%" /><col width="19%" /><col width="19%" /><col width="19%" /><col width="19%" /></colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="cell_l10">회차</th>
+                                    <th scope="col">결제일</th>
+                                    <th scope="col" class="cell_r10">할부원금</th>
+                                    <th scope="col" class="cell_r10">할부수수료</th>
+                                    <th scope="col" class="cell_r10">계</th>
+                                    <th scope="col" class="cell_r10">할부잔액</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td class="cell_l10">합계</td>
+                                    <td></td>
+                                    <td class="cell_r10"><em>3,000,000</em> 원</td>
+                                    <td class="cell_r10"><em>53,930</em> 원</td>
+                                    <td class="cell_r10"><em>3,053,930</em> 원</td>
+                                    <td class="cell_r10"><em>0</em> 원</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <!-- loop -->
+                                <tr>
+                                    <td class="cell_l10"><span class="t_no">1</span></td>
+                                    <td><span class="t_no">09.11.22</span></td>
+                                    <td class="cell_r10"><span class="t_no">1,000,000</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">15,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">1,015,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">2,000,000</span> 원</td>
+                                </tr>
+                                <!-- //loop -->
+                                <tr>
+                                    <td class="cell_l10"><span class="t_no">2</span></td>
+                                    <td><span class="t_no">09.11.22</span></td>
+                                    <td class="cell_r10"><span class="t_no">1,000,000</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">15,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">1,015,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">2,000,000</span> 원</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell_l10"><span class="t_no">3</span></td>
+                                    <td><span class="t_no">09.11.22</span></td>
+                                    <td class="cell_r10"><span class="t_no">1,000,000</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">15,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">1,015,287</span> 원</td>
+                                    <td class="cell_r10"><span class="t_no">2,000,000</span> 원</td>
+                                </tr>
+                            </tbody>
+						</table>
+
+						<ol class="list_desc mt10">
+							<li><p>결제일이 휴일일 경우, 다음 영업일로 연기됩니다.</p></li>
+							<li><p>사용하신 할부 원금을 할부 개월수로 나누어 원금이 100원 미만일 경우<br />
+							1회차에 청구되고 2회차 부터는 일정한 금액으로 청구됩니다.</p></li>
+						</ol>
+
+					</div>
+				</div>
+			</form>
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="${pageContext.request.contextPath}/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+		</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
+</body>
+</html>

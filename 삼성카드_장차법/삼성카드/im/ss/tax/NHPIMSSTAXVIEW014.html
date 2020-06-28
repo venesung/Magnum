@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/ss/h1_loan_app_service.png" alt="국세납부대출신청 서비스" /></h1>
+				</div>
+				<div class="content_block content_block_tab clfix">
+					<div class="top_step_loan_app top_step_loan_app03">
+						<ol class="none">
+							<li>카드선택</li>
+							<li>한도조회</li>
+							<li><abbr>현재단계</abbr> <strong>납세정보 및 세부코드입력</strong></li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 start ////////////////////////-->
+							<li>신청정보확인</li>
+							<li>약관동의</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 end ////////////////////////-->
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+<form name="form1">
+
+				<!-- content_block -->
+				<div id="layer1" class="content_block clfix">
+
+					<h2><img src="/images/ss/h2_loan_app_service03.png" alt="납세 정보를 입력해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span><strong class="t_black">납세종류선택</strong></span>
+						</div>
+						<table class="dtable02 dtable_expand " summary="납세종류를 선택할 수 있는 게시판입니다">
+						<caption>납세종류선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>종류</p></th>
+								<td><p>
+									<select name="selGbn" onclick="chg_balcode();" title="종류" id="label_kind" style="width:143px;">
+									<option value="1">납세고지서</option>
+									<option value="2">자진납세서</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="tb_exp mt30 clfix">
+							<span><strong class="t_black">납세번호입력</strong></span>
+						</div>
+						<table class="dtable01 dtable_inputfield" summary="분류기호, 서코드, 납부연월, 결정구분, 세목, 발행번호로 구성된 납세번호입력을 할 수 있는 게시판입니다.">
+						<caption>납세번호입력</caption>
+						<colgroup><col width="11%" /><col width="11%" /><col width="45%" /><col width="11%" /><col width="11%" /><col width="11%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">분류기호</th>
+								<th scope="col">서코드</th>
+								<th scope="col" class="cell_l10">납부연월</th>
+								<th scope="col">결정구분</th>
+								<th scope="col">세목</th>
+								<th scope="col">발행번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10"><span class="input_tax3"><input name="semok1" type="text" class="txt" value="0126" readonly="readonly" title="분류기호" /></span></td>
+								<td><span class="input_tax3"><input name="semok2"  onkeyup="lengthCheck21(this.form, this.value);" maxlength="3" size="3" type="text" class="txt" value="" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" title="서코드" /></span></td>
+								<td class="cell_l10">
+									<select name="semok3" title="납부년 선택">
+										<option value="00">2000</option>
+										<option value="01">2001</option>
+										<option value="02">2002</option>
+										<option value="03">2003</option>
+										<option value="04">2004</option>
+										<option value="05">2005</option>
+										<option value="06">2006</option>
+										<option value="07">2007</option>
+										<option value="08">2008</option>
+										<option value="09">2009</option>
+										<option value="10">2010</option>
+										<option value="11">2011</option>
+										<option value="12">2012</option>
+										<option value="13">2013</option>
+									</select> 년
+									<select  name="semok4" title="납부월 선택">
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select> 월
+									<span class="t_desc04">예: 2003년 4월 → 3년 4월</span>
+								</td>
+								<td><span class="input_tax3"><input name="semok5" type="text" class="txt" value="" title="결정구분"  onkeyup="lengthCheck22(this.form, this.value);" onkeydown="getOnlyNumberKey()"  style="ime-mode:disabled" maxlength="1" size="1" /></span></td>
+								<td><span class="input_tax3">
+								<!-- <input name="semok6" type="text" class="txt" value="" title="세목"  onkeyup="lengthCheck23(this.form, this.value);" onkeydown="getOnlyNumberKey()"  style="ime-mode:disabled" maxlength="2" size="2" />-->
+								
+								<select name="semok6" title="세목 선택">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="77">77</option>
+                                </select>
+								</span>
+								</td>
+								<td><span class="input_tax3"><input name="semok7" type="text" class="txt" value="" title="발행번호"  onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"  maxlength="5" size="5" /></span></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl t_desc04">납세 종류가 자진납부서 일 경우, 발행번호는 입력하지 마십시오.<br />납부하고자 하는 세목의 코드가 표기되지 않는 경우 납부가 불가능합니다.</p>
+							<p class="btnr">
+                                <a href="javascript:checkTaxLoan();" class="btn btn_blue"><span>확인</span></a>
+								<a href="javascript:goTabPage('NHPIMSSPSM003',true);" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div id="layer2" class="content_block clfix" style="display:none;" >
+					<h2><img src="/images/ss/h2_loan_app_service04.png" alt="세금 내역을 입력해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="inblock">아래의 사항을 잘못 입력할 경우 납세정보 누락에 따라 가산금 및 재산상의 피해를 받을 수 있습니다.<br />주의를 기울여 입력해 주시기 바랍니다.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="납세자 성명, 주민등록번호, 사업자등록번호, 납부기한, 본세, 교육세, 농특세, 가산금등의 세금 내역을 입력하고 합계를 확인할 수 있는 게시판입니다">
+						<caption>세금 내역 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tfoot>
+							<tr>
+								<td scope="row"><p><strong class="t_black">합계</strong></p></td>
+								<td><p class="input_point input_tax"><strong class="t_black"><input name="totalamt"  type="text" class="txt" value="0" id="" title="합계" readonly="readonly" />원 <span class="t_desc04"></span></strong></p></td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<th scope="row"><p>납세자 성명</p></th>
+								<td><p><%=userName %></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p class="t_no"><%=strJuminNo%></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>사업자등록번호</p></th>
+								<td><p><span class="input_compno"><input type="text" name="recordno1"  onkeyup="lengthCheck11(this.form, this.value);" maxlength="3"  size="3" class="txt" value="" id="label_compno01" onkeyup="lengthCheck17(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" title="사업자등록번호 첫번쨰" /> - <input type="text" name="recordno2"   maxlength="2"  size="2" class="txt" onkeydown="getOnlyNumberKey()" onkeyup="lengthCheck12(this.form, this.value);" style="ime-mode:disabled" value="" id="label_compno02" title="사업자등록번호 두번째" /> - <input name="recordno3"  maxlength="5"  size="5"  type="text" class="txt" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="lengthCheck13(this.form, this.value);" value="" id="label_compno03" title="사업자등록번호 세번째" /></span> <span class="t_desc04">사업관련 세금이 아니면 생략</span></p></td>
+								<input type="hidden" name="recordno" />
+							</tr>
+							<tr>
+								<th scope="row"><p>납부기한</p></th>
+								<td><p class="input_cardlimit">
+									<select name="nabbugihan1" title="월">
+										 <option value="01">01</option>
+			 							 <option value="02">02</option>
+			 							 <option value="03">03</option>
+			 							 <option value="04">04</option>
+			 							 <option value="05">05</option>
+			 							 <option value="06">06</option>
+			 							 <option value="07">07</option>
+			 							 <option value="08">08</option>
+			 							 <option value="09">09</option>
+			 							 <option value="10">10</option>
+			 							 <option value="11">11</option>
+			 							 <option value="12">12</option>
+									</select>월
+									<select name="nabbugihan2" title="일">
+			 							 <option value="01">01</option>
+			 							 <option value="02">02</option>
+			 							 <option value="03">03</option>
+			 							 <option value="04">04</option>
+			 							 <option value="05">05</option>
+			 							 <option value="06">06</option>
+			 							 <option value="07">07</option>
+			 							 <option value="08">08</option>
+			 							 <option value="09">09</option>
+			 							 <option value="10">10</option>
+			 							 <option value="11">11</option>
+			 							 <option value="12">12</option>
+			 							 <option value="13">13</option>
+			 							 <option value="14">14</option>
+			 							 <option value="15">15</option>
+			 							 <option value="16">16</option>
+			 							 <option value="17">17</option>
+			 							 <option value="18">18</option>
+			 							 <option value="19">19</option>
+			 							 <option value="20">20</option>
+			 							 <option value="21">21</option>
+			 							 <option value="22">22</option>
+			 							 <option value="23">23</option>
+			 							 <option value="24">24</option>
+			 							 <option value="25">25</option>
+			 							 <option value="26">26</option>
+			 							 <option value="27">27</option>
+			 							 <option value="28">28</option>
+			 							 <option value="29">29</option>
+			 							 <option value="30">30</option>
+			 							 <option value="31">31</option>
+									</select>일								
+							</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>본세</p></th>
+								<td><p class="input_point input_tax"><input name="bonseamt"  type="text" class="txt" value="0" id="label_bonse"  maxlength="14" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="sumTax()" title="본세" />원 <span class="t_desc04">가산세포함</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>교육세</p></th>
+								<td><p class="input_point input_tax"><input name="eduamt"  type="text" class="txt" value="0" id="label_studymoney" maxlength="14" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="sumTax()" title="교육세" />원 <span class="t_desc04">가산세포함</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>농특세</p></th>
+								<td><p class="input_point input_tax"><input name="nongtamt" type="text" class="txt" value="0" id="label_localtax"  maxlength="14" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="sumTax()"  title="농특세" />원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>가산금</p></th>
+								<td><p class="input_point input_tax"><input name="gasanamt"type="text" class="txt" value="0" id="label_plustax" maxlength="14" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="sumTax()"  title="가산금" />원</p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:checkTaxLoan2();" class="btn btn_blue"><span>확인</span></a>
+								<a href="javascript:goTabPage('NHPIMSSPSM003',true);" class="btn btn_white"><span>취소</span></a>
+                                <!--  <a href="javascript:goFront();" class="btn btn_white"><span>이전</span></a>-->
+							</p>
+						</div>
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

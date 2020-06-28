@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%/* 세정담당자 대사처리 리스트 다운로드
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: 삼성SDS 여상석 사원
+ * Created on 2010. 02. 17.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <%@page import="com.scard.common.security.util.DesManager"%>
+<head>
+<title>삼성카드</title>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript">
+
+ 	//PrintFileObjectTag();
+ 
+	function fileDownload(fileLoc){
+			
+			if(fileLoc != "" ){
+				<%
+				String fileName = (String)request.getAttribute("fileLoc"); 
+				DesManager manager = new DesManager("des.key.db");
+				String encrypted = manager.encryptString(fileName);
+				%>
+
+				var url = location.protocol + '//' + location.hostname + location.port;
+
+				var anchorObj = document.getElementById("anchor");
+                anchorObj.href = url + "/file/download.xecure?mode=hpimss&file=<%=encrypted%>";
+
+				FileDownload('<%=fileName%>', anchorObj, 1, 0);
+			}
+	}
+</script>
+
+</head>
+<body onload="fileDownload('${fileLoc}');">
+<span style="display:hidden;"><a id="anchor"></a></span>
+</body>
+</html>

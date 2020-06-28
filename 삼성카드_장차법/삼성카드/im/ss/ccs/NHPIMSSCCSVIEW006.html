@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+
+<!-- 여기부터 시작 -->
+
+	<!-- layer_popup 컨텐츠+메세지 -->
+	<div id="id_layer02" class="pop_l_position pop_l_wrap_mix">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopup();intro();" value="레이어닫기" title="체크카드 휴대폰알림 서비스 변경 레이어 닫기" />
+			<p class="pop_tit"><img src="${pageContext.request.contextPath}/images/mh/layer_tit_complete_modify.png" alt="변경이 완료 되었습니다." /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert">
+					<table class="dtable02" summary="휴대폰 번호, 성명, 상품 정보를 확인할 수 있는 게시판입니다">
+					<caption>체크카드 휴대폰알림 서비스 변경 확인</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>휴대폰번호</p></th>
+							<td class="t_no"><p class="t_no">${phoneNo1} – ${phoneNo2} – ${phoneNo3}</p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><p>성명</p></th>
+							<td><p>${userName}</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>상품</p></th>
+							<td><p>체크카드 SMS (무료)</p></td>
+						</tr>
+					</tbody>
+					</table>
+					<p class="pop_sub_desc02">상기와 같이 완료 되었습니다. 서비스는 내일 오전 8시부터 제공됩니다.</p>
+				</div>
+                <p class="btnc"><a href="javascript:closeLayerPopup();intro();"  title="새창"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+<!--// 여기까지 끝 -->
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드</title>
+<style type="text/css">
+	table { font-family: "돋움", "Seoul", "Arial", "Helvetica"; font-size: 9pt; color: #333333}
+</style>
+<script type="text/javascript" language="javascript">
+
+	function window::onload(){
+
+		var form = excelForm;
+
+		form.excelTag.value = document.getElementById("excelDiv").innerHTML;
+		
+		form.submit();
+		
+
+	}
+
+</script>
+</head>
+<body>
+<form name="excelForm" method="post" action="/hp/com/com.do?method=insertExcelTag">
+	<input type="hidden" name="excelTag"/>
+	<input type="hidden" name="fileName" value="<%=(String)request.getAttribute("fileName")%>"/>
+</form>
+<div id="excelDiv">
+
+			<h3 class="t_black">체크카드 조회</h3>
+			<br/>
+			<table border="1" cellpadding="3" cellspacing="0">
+			<colgroup><col width="17%" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드번호</p></th>
+					<td align="right"><p>
+					 	<%= displayCardno%>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>결제월</p></th>
+					<td align="right"><p>
+						<%=paydate %>
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+			<br/>
+			
+					<table border="1" cellpadding="3" cellspacing="0">
+					<caption><B>결제예정금액</B></caption>
+
+					<tbody>
+							<tr>
+						<%if( tdslist1.get(0).getDelay_amt().equals("0") ) 
+						{
+						%>	
+							<th scope="col" colspan="2" class="cell_l10"><strong>미리 입금하신금액</strong></th>
+						<%
+						}
+						else
+						{
+						%>
+							<th scope="col" colspan="2" class="cell_l10"><strong>지난달 미결제금액</strong></th>
+						<%
+						}
+						%>
+						</tr>
+						
+						<tr>
+						<%if( tdslist1.get(0).getDelay_amt().equals("0") ) 
+						{
+						%>	
+							<td scope="row" class="cell_l10">미리 입금하신금액</td>
+							
+						<%
+						}
+						else
+						{ %>
+							<td scope="row" class="cell_l10">지난달 미결제금액</td>
+							
+						<%
+						}
+						%>
+						<%
+							if(tdslist1.get(0).getDelay_amt() != "0")
+							{
+						%>
+							<td class="cell_r10  t_no"><%=nf.format(Integer.parseInt(tdslist1.get(0).getDelay_amt())) %>원</td>
+						<%		
+							}
+							else
+							{
+								if(tdslist1.get(0).getPre_deposit_amt() != "0")
+								{
+							%>
+								<td class="cell_r10  t_no"><%=nf.format(Integer.parseInt(tdslist1.get(0).getPre_deposit_amt()))%>원</td>
+							<%
+								}
+							}
+						%>
+						</tr>
+						<tr>
+						<td scope="row" class="cell_l10 boline_b0">소계</td>
+						<%if(tdslist1.get(0).getDelay_amt() != "0")
+						{
+						%>	
+							<td class="cell_r10 boline_b0  t_no"><%=nf.format(Integer.parseInt(tdslist1.get(0).getDelay_amt())) %>원</td>
+						<%
+						}
+						else
+						{
+							if(tdslist1.get(0).getPre_deposit_amt() != "0")
+							{
+							%>
+								<td class="cell_r10 boline_b0  t_no"><%=nf.format(Integer.parseInt(tdslist1.get(0).getPre_deposit_amt()))%>원</td>	
+							<%
+						}
+						}
+						%>
+						</tr>
+						<tr>
+							<td scope="row" class="cell_l10">일시불</td>
+							<td class="cell_r10  t_no">
+							<%
+								if(tdslist1.get(0).getIlsi_amt().equals(""))
+								{
+									tdslist1.get(0).setIlsi_amt("0");
+								}
+							%>
+								<%=tdslist1.get(0).getIlsi_amt() %>원
+							</td>
+						</tr>
+						<tr>
+							<td scope="row" class="cell_l10">현금서비스</td>
+							<td class="cell_r10  t_no">
+							<%
+								if(tdslist1.get(0).getFee_amt().equals(""))
+								{
+									tdslist1.get(0).setFee_amt("0");
+								}
+							%>
+								<%=nf.format(Integer.parseInt(tdslist1.get(0).getFee_amt())) %>원
+							</td>
+						</tr>
+						<tr>
+							<td scope="row" class="cell_l10 boline_b0">소계</td>
+							<td class="cell_r10 boline_b0 t_no">
+								<%= nf.format(Integer.parseInt(tdslist1.get(0).getIlsi_amt()) + Integer.parseInt(tdslist1.get(0).getFee_amt())) %>원
+							</td>
+						</tr>
+					<tfoot>
+						<tr>
+							<td class="cell_l10">합계</td>
+							<td class="cell_r10"><em class="t_point_org">
+									<%
+									if(tdslist1.get(0).getIlsi_amt().equals(""))
+									{
+										tdslist1.get(0).setIlsi_amt("0");
+									}
+									if(tdslist1.get(0).getFee_amt().equals(""))
+									{
+										tdslist1.get(0).setFee_amt("0");
+									}
+									%>
+									<%
+									if(tdslist1.get(0).getDelay_amt() != "0")
+									{
+									%>
+									<%=nf.format(Integer.parseInt(tdslist1.get(0).getDelay_amt()) + Integer.parseInt(tdslist1.get(0).getIlsi_amt())
+									+ Integer.parseInt(tdslist1.get(0).getFee_amt())) %>원
+									<%
+									} 
+									%>	
+									
+							</em></td>
+						</tr>
+					</tfoot>
+					</tbody>
+					</table>
+						<br/>
+						<table border="1" cellpadding="3" cellspacing="0">
+						<caption><B>카드 이용내역</B></caption>
+						<colgroup><col width="14%" /><col width="*" /><col width="14%" /><col width="14%" /><col width="16%" /><col width="16%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col" class="cell_l">이용 가맹점</th>
+								<th scope="col" class="cell_r10">이용금액</th>
+								<th scope="col">인출일자</th>
+								<th scope="col" class="cell_r10">계좌인출금액</th>
+								<th scope="col" class="cell_r10">금월결제하실금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%for(int i=0; i<tdslist2.size(); i++)
+							{%>
+							<tr>
+								<%if(tdslist2.get(i).getUseddate().equals("9999/12/31"))
+									{
+										tdslist2.get(i).setUseddate("");		
+									 }	
+								%>
+								<td class="cell_l10 t_no"><%=tdslist2.get(i).getUseddate() %></td>
+								<td class="cell_l"><%=tdslist2.get(i).getChain_hname() %></td>						
+								<td class="cell_r10 t_no"><%=nf.format(Integer.parseInt(tdslist2.get(i).getUsed_korea_amt())) %></td>
+								<td class="t_no"><%=tdslist2.get(i).getChul_dt() %></td>
+								<td class="cell_r10 t_no"><%=nf.format(Integer.parseInt(tdslist2.get(i).getChul_amt())) %></td>
+								<td class="cell_r10 t_no"><%=nf.format(Integer.parseInt(tdslist2.get(i).getMichul_amt())) %></td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+</div>						
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>이메일 중복확인 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript" src="/js/Form_Check.js"></script>
+<script type="text/javascript">
+var mailcheck="N";
+function sel(field) {
+	var str = field.value
+	frm1.emailaddr.value = str
+	if ( str == "")
+		frm1.emailaddr.focus();
+}
+function go_check(_form) {
+	if (document.frm1.emailid.value==""){
+		alert("이메일 주소를 입력해 주세요");
+		document.frm1.emailid.focus();
+		return false;
+	}
+
+	var memail = document.frm1.emailid.value+"@"+document.frm1.emailaddr.value;
+
+	if(memail.length > 50) {
+		alert('이메일 주소는 최대 50자를 초과할 수 없습니다.');
+		frm1.emailid.focus();
+		return false;
+	}
+	
+	if (!mailSum(memail)) {
+    		alert("EMail이 올바르지 않습니다. 다시 입력하십시요.");
+    		    frm1.emailid.focus();
+    		return false;
+    } else {
+		_form.selemail_sub.value=_form.selemail.selectedIndex;
+		//_form.action="/crn.do?method=dupCheckEmail2";
+		//_form.submit();
+
+        var url = "/crn.do?method=dupCheckEmail2"
+                + "&enc_iden_no=" + frm1.enc_iden_no.value
+                + "&email=" + frm1.email.value
+                ;
+		//var url = "/crn.do?method=dupCheckEmail&dec_iden_no=" + frm1.dec_iden_no.value + "&email="+frm1.email.value + "&vIdenNo=" + frm1.vIdenNo.value;
+		var state = "toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,resize=no,width=480,height=350";
+		//newsWindow = window.open("/crn.do?method=dupCheckEmail&dec_iden_no="+miden_no+"&email="+memail, 'emailCheck' , Feature);
+        open( url, 'emailCheck', state);
+
+	}
+	return false;
+}
+function mailSum(strEmail) {
+
+	frm1.email.value = strEmail;
+	var ret=checkEmail1(this.frm1.email, false) ;
+	return ret;
+}
+<%if(!USE_GUBUN.equals("USE")){%>
+function go(){
+
+	opener.document.change_content.email.value			= "<%=email%>";
+	opener.document.change_content.emailid.value		= "<%=emailid%>";
+	opener.document.change_content.emailaddr.value		= "<%=emailaddr%>";
+	<% if (selemail_sub != null){%>
+	//opener.document.change_content.selemail.selectedIndex	= "<%=selemail_sub%>";
+	<%}%>
+	opener.mailcheck="Y";
+	self.close();
+}
+<% } %>
+
+function fnonload() {
+    self.resizeTo(document.body.scrollWidth + 5 , document.body.scrollHeight + 40);
+}
+
+function checkEmail1 (theField, emptyOK) {
+	if (checkEmail1.arguments.length == 1) emptyOK = defaultEmptyOK;
+    if ((emptyOK == true) && (isEmpty(theField.value))) return true;
+    else if (!isEmail(theField.value, false))
+       return false;
+    else return true;
+}
+
+$(document).ready(function(){
+	fnonload();
+});
+</script>
+</head>
+<body >
+
+<form name="frm1" method="post">
+<input type="hidden" name="input" />
+<input type="hidden" name="enc_iden_no" value="<%=enc_iden_no%>" />
+<!-- 이메일 중복 확인 2단계 -->
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--div id="pop_s_header2">
+		<h1><img src="/images/ms/layer_tit_email_dupcheck.png" alt="E-mail 중복확인" /></h1>
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ms/layer_tit_email_dupcheck.gif" alt="E-mail 중복확인" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_s_content2">
+		<!-- 팝업 콘텐츠 -->
+		<div class="pop_l_wrap">
+<% if(!USE_GUBUN.equals("USE")) { %>
+				<div class="mslayer_conbox">
+					<span class="t_point_org"><strong>'<%=email%>'</strong></span>는 등록 가능한 E-mail입니다.
+                    <p class="mt10"><a href="javascript:go();" class="btn btn_blue"><span>본인 E-mail로 등록</span></a></p>
+				</div>
+				<p class="t_desc04 mt10 ml10">등록하시려면 [본인 E-mail로 등록]을 클릭하시기 바랍니다</p>
+<% } else { %>
+			<div class="mslayer_conbox"><span class="t_point_org"><strong>'<%=email%>'</strong></span>는 이미 등록된 E-mail입니다.</div>
+				<ol class="list_no01 pop_numlist mt10 ml10">
+					<li><p>개인정보 보호를 위해 <span class="t_11 t_black">회원본인 E-mail</span>만 등록/사용하실 수 있습니다.</p></li>
+					<li><p>실제 본인 E-mail이 이미 등록된 경우는 가족등록, 타회원 오류등록 등의 원인으로<br />인터넷 고객상담 또는 상담원 (지역번호없이) <span class="t_11 t_black">1588-8700</span> 으로 문의하시기 바랍니다.</p></li>
+				</ol>
+<% } %>
+
+				<div class="mslayer_subbox">
+					<dl>
+						<dt><label for="label_emailenter_sec01">E-mail</label></dt>
+						<dd><span class="input_emailcheck">
+						<input type="hidden" name="email"  size="20" maxlength="50" value="" />
+						<input name="emailid" maxlength="30" type="text" class="txt" id="label_emailenter_sec01" value="" title="이메일 아이디"
+						onkeypress="checkTypes2(this, 'EMAIL');"
+						onblur="checkTypesOnBlur2(this, 'EMAIL');"
+						style="ime-mode:disabled"
+						/>&nbsp;@&nbsp;
+						<input name="emailaddr" maxlength="30" type="text" class="txt" id="label_emailenter_sec02" value="" title="이메일 공급자 직접입력"
+						onkeypress="checkTypes2(this, 'EMAIL');"
+						onblur="checkTypesOnBlur2(this, 'EMAIL');"
+						style="ime-mode:disabled"
+						/>
+							<select name="selemail" id="STD_MENU" style="width:90px" onChange="sel(this)" title="이메일 공급자 선택">
+			                  	<option value="" selected="selected">선택</option>
+								<option value="dreamwiz.com">드림위즈</option>
+								<option value="empal.com">엠팔</option>
+								<option value="hanmail.net">한메일(다음)</option>
+								<option value="hotmail.com">hotmail</option>
+								<option value="korea.com">코리아</option>
+								<option value="lycos.co.kr">라이코스</option>
+								<option value="nate.com">네이트</option>
+								<option value="naver.com">네이버</option>
+								<option value="netian.com">네띠앙</option>
+								<option value="orgio.net">오르지오</option>
+								<option value="paran.com">파란</option>
+								<!--option value="yahoo.co.kr">야후</option-->
+								<option value="chollian.net">천리안</option>
+								<option value="freechal.com">프리챌</option>
+								<option value="kebi.com">깨비</option>
+								<option value="unitel.co.kr">유니텔</option>
+								<option value="weppy.com">웨피</option>
+			                  <option value="">직접입력</option>
+							</select>
+							<input type="hidden" name="selemail_sub" value="" />
+                        </span><a href="javascript" onClick="return go_check(self.document.frm1);return false"><span>중복확인</span></a></dd>
+					</dl>
+				</div>
+
+		</div>
+	</div>
+	<!-- footer -->
+	<!--div id="pop_s_footer2"><address class="none">Copyright 2010. SamsungCard. All Rights Reserved.</address>
+	<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div-->
+	<div id="pop_s_footer2"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 CS패널</h1>
+					<!-- 20130415 웹접근성(장차법)  수정  -->
+					<div class="h1_desc"><img src="/cms_content/images/cs/h1_card_cspanel.jpg" alt="삼성카드 CS패널.열린마음과 창의적인 생각으로 삼성카드 고객 자문단이 되어 주세요" /></div>
+				</div>
+				<div class="content_block content_block_card clfix">
+				<div class="tab01 w810 h60">
+					<ul>
+                        <li class=""><a href="javascript:goTabPage('NHPIMCSCSP001', true);">CS 패널 소개</a></li>
+                        <li class=""><a href="javascript:goTabPage('NHPIMCSCSP002', true);">Voice of CS 패널</a></li>
+                        <li class=""><a href="javascript:goTabPage('NHPIMCSCSP004', true);">CS 패널 지원</a></li>
+                        <li class="on"><a href="javascript:goTabPage('NHPIMCSCSP006', true);">커뮤니티</a>
+							<ul class="sub_tab">
+                                <li class="on"><span class="none">현재단계</span><a href="javascript:goTabPage('NHPIMCSCSP006', true);">CS패널 Gallery</a></li>
+                                <li class=""><a href="javascript:goTabPage('NHPIMCSCSP007', true);">나도 CS패널</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+	
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix" style="margin-left:0px">
+					<h2><img src="/images/cs/h2_imcspannel01.png" alt="CS패널 Gallery를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span>패널의 활동 사진을 보여 드립니다.</span>
+							<span class="ab_tr">
+								<select title="활동 사진 선택" style="width:80px" name="srchGubun" onchange="goSearch(this.value);">
+									<option  value="" <%= "".equals(vos.getSrchGubun())?"selected='selected'":""%>>전체보기</option>
+									<option  value="발대식"<%= "발대식".equals(vos.getSrchGubun())?"selected='selected'":""%>>발대식</option>
+									<option  value="정기간담회"<%= "정기간담회".equals(vos.getSrchGubun())?"selected='selected'":""%>>정기간담회</option>
+									<option  value="오프라인모임" <%= "오프라인모임".equals(vos.getSrchGubun())?"selected='selected'":""%>>오프라인모임</option>
+								</select>
+							</span>
+						</div>
+
+						<div class="board_gallery">
+							<ul>
+							 <%
+					   			if(resultList != null && resultList.size() > 0){
+					   				int num = vos.gettCnt()- ((vos.getcPage()-1) * 10);
+					   				for (int i=0;i<resultList.size();i++){
+					   						ITCSCSPTTVO vo = (ITCSCSPTTVO)resultList.get(i);
+					   	  %>
+					   	  	
+									<li>
+                                        <a href="javascript:goGalDetail('<%=vo.getSeq() %>');" title="새창"><img src="<%=vo.getImg()%>" alt="<%= vo.getSubject()%>" style="width:143px; height:88px;" /></a>
+                                        <a href="javascript:goGalDetail('<%=vo.getSeq() %>');" title="새창"><strong><%= vo.getSubject()%></strong></a> <span><%=StringUtil.formatStrDate(vo.getActDate(),"yyyy.mm.dd") %></span>
+									</li>
+
+							<%	
+					   				}	
+								}else{ 
+						 %>
+						 		<li> 조회하신 목록이 없습니다.</li>
+						 <%} %>	
+							</ul>
+						</div>
+						<div class="line_lgray_p0 mt_1"></div>
+						<%			
+								if(resultList != null && resultList.size() >0){
+						%>
+									<!-- paginate -->
+									<!-- 페이징 -->
+									<div class="paginate">
+										${_page}
+										</div>
+									</div>
+									<!-- //페이징 -->
+						<%}%>		
+					</div>
+				</div>
+				
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Mall현황조회 - 삼성카드</title>
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;<a href="/scchainquickmenu.do?method=selectFpg110">PG MALL 관리</a>&nbsp;&gt;&nbsp;Mall현황조회</div>
+				<h1><img src="/images/al/h1_pgmall_mall_detail.png" class="png24" alt="Mall현황조회" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_pgmall_mall_detail.png" class="png24" alt="Mall의 현황을 확인 및 수정하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p>				
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+					<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_pgmall_mall_detail.png" alt="Mall 상세 현황을 확인하실 수 있습니다" /></h2></div>
+					<div class="content_r_conts">
+						<!-- calendar_position -->
+						<div class="pos_rel_cal">캘린더레이어위치</div>
+						<table class="dtable02 dtable_inputfield" summary="심사진행별 조회, Submall 사업자 번호, 업체명, 접수일 등으로  Mall현황조회를 하실 수 있습니다.">
+						<caption>Mall현황조회</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<!--thead><tr class="nowidth"><th width="115"></th><th width="*"></th></tr></thead-->
+						<tbody>
+							<!-- loop -->
+							<tr>
+						<th scope="row"><label for="srchProcessCode">심사진행별 조회</label></th>
+							<td><p>
+								<select style="width:150px" name="srchProcessCode" id="srchProcessCode">
+									<option value="10">접수</option>
+									<option value="20">반송</option>
+									<option value="30">정상(승인)</option>
+									<option value="60">PG사 해지</option>
+									<option value="60C">카드사 해지</option>
+									<option value="99">전체</option>
+								</select></p>
+							</td>
+						</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>Submall 사업자 번호</p></th>
+								<td>
+                                    <p><input type="text" class="txt" value="" title="사업자번호 앞자리" style="width:55px" name="businessNo1" maxlength="3" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+                                       <input type="text" class="txt" value="" title="사업자번호 가운데자리" style="width:40px" name="businessNo2" maxlength="2" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');"  />&nbsp;-&nbsp;
+                                       <input type="text" class="txt" value="" title="사업자번호 뒷자리" style="width:55px" name="businessNo3" maxlength="5" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB'); " />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="srchMallName">업체명</label></th>
+								<td><p><input type="text" class="txt" style="width:200px" title="업체명" value="" name="srchMallName" id="srchMallName" maxlength="40" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>접수일</p></th>
+								<td><p>
+									<span class="reset_date">
+							<fileTag:dblCalendarAddIfNoVal calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate() %>'
+                                                                                                   endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>' />
+
+							</span>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:fncGetSubMallList('search');" class="btn btn_blue"><span>조회</span></a>
+							</p>
+						</div>
+
+						<table class="dtable01 mt30" summary="순번, 사업자번호, 업체명, 업종, 연락처, 상태, 접수일 등을 볼 수 있는 게시판입니다.">
+						<caption>Mall현황 리스트</caption>
+						<colgroup><col width="7%" /><col width="15%" /><col width="30%" /><col width="15%" /><col width="13%" /><col width="10%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">순번</th>
+								<th scope="col">사업자번호</th>
+								<th scope="col">업체명</th>
+								<th scope="col">업종</th>
+								<th scope="col">연락처</th>
+								<th scope="col">상태</th>
+								<th scope="col">접수일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+								<tr>
+									<td class="cell_l10 t_no">1</td>
+                                    <td class="t_no"><a href="/scchainquickmenu.do?method=selectFpg131&businessNo=<%=vo.getBusinessNo() %>"  title="좋은가맹점 상세정보 보기" >000-00-00000</a></td>
+									<td>좋은가맹점</td>
+									<td>서비스</td>
+									<td class="t_no">00-000-0000</td>
+									<td class="t_no">정상</td>
+									<td>00.00.00</td>
+								</tr>
+								<tr>
+									<td class="cell_l10 t_no">1</td>
+                                    <td class="t_no"><a href="/scchainquickmenu.do?method=selectFpg131&businessNo=<%=vo.getBusinessNo() %>"  title="좋은가맹점 상세정보 보기" >000-00-00000</a></td>
+									<td>좋은가맹점</td>
+									<td>서비스</td>
+									<td class="t_no">00-000-0000</td>
+									<td class="t_no">정상</td>
+									<td>00.00.00</td>
+								</tr>
+								<tr>
+									<td class="cell_l10 t_no">1</td>
+                                    <td class="t_no"><a href="#"  title="좋은가맹점 상세정보 보기" >000-00-00000</a></td>
+									<td>좋은가맹점</td>
+									<td>서비스</td>
+									<td class="t_no">00-000-0000</td>
+									<td class="t_no">정상</td>
+									<td>00.00.00</td>
+								</tr>
+						</tbody>
+						</table>
+
+						<!-- paginate -->
+						<div class="paginate">
+								${_page}
+								<div class="btnr">
+                                    <a href="/scchainquickmenu.do?method=selectFpg120" class="btn btn_blue"><span>등록</span></a>
+									<a href="/scchainquickmenu.do?method=ExcelFpg130" name="excelATag"></a>
+									<a href="javascript:excelDown();" class="btn btn_white"><span>저장</span></a>
+								</div>
+
+						</div>
+					</div>
+
+
+
+			</div>
+			<!-- content_block -->
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

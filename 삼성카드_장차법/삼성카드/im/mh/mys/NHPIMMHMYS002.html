@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+				<div class="content_block content_block_tab2 clfix">
+				<form name="frm1" method="post">
+					<div class="tab02 w810">
+						<ul>
+<!-- 2013.01.19 VOC 삭제 추가 start -->
+<!-- 
+							<li class="on">
+								<a href="javascript:goTab('/hp/im/mh/mys001.do?method=getApplyCampaignList');">나의 맞춤혜택</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTab('/hp/im/mh/mys001.do?method=getApplyCampaignList');">진행중인 행사</a></li>
+									<li><a href="javascript:goTab('/hp/im/mh/mys001.do?method=getEndCampaignList');">종료된 행사</a></li>
+								</ul>
+							</li>
+ -->
+ 							<li class="on"><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">진행중인 행사</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS003','true');">종료된 행사</a></li>
+<!-- 2013.01.19 VOC 삭제 추가 end -->
+							<li><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">최대혜택조회</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의 상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일 알리미 서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');">왕대박 3 승인번호 등록</a></li-->
+							<li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</form>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<!-- board_view -->
+					<div id="cs">
+					<div class="board_event_view my_mys_view">
+							<table class="dtable01" summary="진행중인 행사에 대한 행사제목, 행사기간, 행사내용을 상세하게 확인하는 게시판입니다.">
+							<caption>진행중인 행사 상세보기</caption>
+							<colgroup><col width="70px" /><col width="570" /></colgroup>
+							<thead>
+								<tr>
+								<th scope="row"><strong class="t_point">제목</strong></th>
+								<td><%=vo.getTitle()%></td>
+							</tr>
+							<tr>
+								<th scope="row"><strong class="t_point">기간</strong></th>
+ 								<td class="t_no">
+									<span class="fl_left"><%=StringUtil.formatStrDate(sDate, "yy.mm.dd")%> ~ <%=StringUtil.formatStrDate(eDate, "yy.mm.dd")%></span>
+									<span class="fl_right">
+										<a target="_blank" id="sns_facebook" href="" title="새창"><img src="/images/et/icon_sns_1.gif" alt="페이스북 담기" /></a>
+										<a target="_blank" id="sns_twitter" href="" title="새창"><img src="/images/et/icon_sns_2.gif" alt="트위터 담기" /></a>
+										<a target="_blank" id="sns_yozm" href="" title="새창"><img src="/images/et/icon_sns_3.gif" alt="요즘 담기" /></a>
+										<a target="_blank" id="sns_me2day" href="" title="새창"><img src="/images/et/icon_sns_4.gif" alt="미투데이 담기" /></a>
+									</span>
+								</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="2">
+										<div class="cell_contents">
+										<jsp:include page="/cms_content/hp/im/mh/mys/${landingHtml}" flush="false"></jsp:include>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+
+							<!--btn -->
+							<div class="btnset">
+                                <p class="btnr"><a href="javascript:goList();" class="btn btn_white"><span>목록</span></a></p>
+							</div>
+	
+							<!-- pre_nex_article -->
+							<div class="prenext_article">
+								<table class="dtable01" summary="이전글,다음글 게시글을 확인할 수 있습니다.">
+                                <caption>이전글,다음글 확인</caption>
+								<colgroup><col width="55" /><col width="*" /></colgroup>
+									<tbody>
+ 										<tr>
+											<th scope="row">이전글</th>
+                                            <td class="cell_l">
+                                            	<span class="fl_left"><a href="#" 0>000</a></span>
+                                            	<span class="fl_right t_no"><%=StringUtil.formatStrDate(sDate1, "yy.mm.dd")%>~<%=StringUtil.formatStrDate(eDate1, "yy.mm.dd")%></span>
+                                            </td>
+										</tr>
+										<tr>
+											<th scope="row">다음글</th>
+                                            <td class="cell_l">
+                                            	<span class="fl_left"><a href="#">00</a></span>
+                                            	<span class="fl_right t_no"><%=StringUtil.formatStrDate(sDate2, "yy.mm.dd")%>~<%=StringUtil.formatStrDate(eDate2, "yy.mm.dd")%></span>
+                                            </td>
+										</tr>
+<!-- 2013.01.19 VOC 삭제 추가 end -->
+									</tbody>
+								</table>
+							</div>
+						</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

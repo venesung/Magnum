@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/premium_navi.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<!--script src="/js/embedswf.js" language="javascript" type="text/javascript"></script--><!-- 플래시 삭제 13.04.10 -->
+<script type="text/javascript">
+$(document).ready(function(){
+	premiumNavi.init({
+		depth1 : 0,
+		depth2 : 0
+	});
+});
+</script>
+
+<!-- 공통 헤더 시작 -->
+<script type="text/javascript">
+ function prmPageNavigate(key){
+	 if(key == "002") { //프리미엄S  
+		var url='/pms002.do?method=primiumS';
+		var state = "scrollbars=yes,resizable=yes,status=yes";
+		window.open(url, '', state);
+		return;
+	}else if(key == "003") { //매거진S응모
+		var url='/pms002.do?method=magazineSApply';
+		var state = "width=730,height=600,scrollbars=yes,resizable=no";
+		var newwin = window.open(url, '', state);
+		return;
+	}
+
+	var goUrl;
+	switch(key){
+		case "001" : goUrl = "/pms001.do?method=premiumLoungeMain"; break; //프리미엄회원이란
+		case "004" : goUrl = "/pms003.do?method=noInterest"; break; //무이자할부
+		case "005" : goUrl = "/pms002.do?method=primiumCouponBook"; break; //쿠폰북
+		case "006" : goUrl = "/pms003.do?method=pointBack"; break; //포인트백
+		case "007" : goUrl = "/pms002.do?method=travel"; break; //국내테마여행
+		case "008" : goUrl = "/pms001.do?method=TravelService"; break; //SAM 여행할인서비스
+		case "009" : goUrl = "/pms001.do?method=sinla"; break; //신라면세점
+		case "010" : goUrl = "/pms001.do?method=ingEvent"; break; //진행중인 이벤트
+		case "011" : goUrl = "/pms001.do?method=oldEvent"; break; //종료된 이벤트
+		case "012" : goUrl = "/pms001.do?method=winEventList"; break; //당첨자발표
+		case "013" : goUrl = "/pms002.do?method=shopping"; break; //쇼핑
+		case "014" : goUrl = "/pms003.do?method=myPage"; break; //myPage
+		case "015" : goUrl = "/pms003.do?method=getCouponMain"; break; //myPage
+		case "016" : goUrl = "/pms003.do?method=getPointAddSave"; break; //포인트추가적립
+		
+		
+	}
+	document.form1.method = "post";
+	document.form1.action=goUrl;
+	tabSubmit(document.form1.action);
+			
+ }
+ </script>
+ 
+ <!-- premium lounge title,navi -->
+ <div class="mvint_premium">
+     <div class="premium_tit">
+         <h1 style="padding-left:0"><img src="/images/premium/h1_premium.gif" alt="프리미엄 S를 마음껏 누려보세요! 프리미엄 S 라운지" /></h1>
+         <p><img src="/images/premium/h1_premium_txt.gif" alt="프리미엄 S는 삼성카드 프리미엄 회원님께만 추가로 제공해 드리는 우대 프로그램입니다." /></p>
+         <ul>
+             <li><a href="javascript:prmPageNavigate('001');"><img src="/images/premium/btn_premium01.gif" alt="프리미엄회원이란" /></a></li>
+             <li><a href="javascript:prmPageNavigate('002');" title="새창"><img src="/images/premium/btn_premium02.gif" alt="뉴스레터" /></a></li><!-- 정기일반영 13.03.29 -->
+             	<li><a href="javascript:prmPageNavigate('003')" title="새창"><img src="/images/premium/btn_premium03.gif" alt="매거진S응모" /></a></li>
+         </ul>
+     </div>
+
+     <ul class="premium_navi">
+         <li class="n1">
+             <div class="off" style="display:none;">
+                 <a href="#"><img src="/images/premium/premium_navi01_off.gif" alt="프리미엄서비스S" /></a>
+             </div>
+             <div class="on" style="display:block;">
+                 <p><img src="/images/premium/premium_navi01_on.gif" alt="프리미엄서비스S" /></p>
+                 <ul> <!-- 20121218 modify -->
+                     <li class="sm1"><a href="javascript:prmPageNavigate('004');"><img src="/images/premium/premium_navi01_01_off.gif" alt="무이자할부" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('015');"><img src="/images/premium/premium_navi01_04_off.gif" alt="쿠폰북" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('006');"><img src="/images/premium/premium_navi01_03_off.gif" alt="포인트백" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('007');"><img src="/images/premium/premium_navi01_08_off.gif" alt="국내테마여행" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('008');"><img src="/images/premium/premium_navi01_07_off.gif" alt="여행할인" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('009');"><img src="/images/premium/premium_navi01_06_off.gif" alt="신라면세점 할인" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('016');"><img src="/images/premium/premium_navi01_02_off.gif" alt="포인트추가적립" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n2">
+             <div class="off" style="display:block;">
+                 <a href="#"><img src="/images/premium/premium_navi02_off.gif" alt="프리미엄이벤트" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <p><img src="/images/premium/premium_navi02_on.gif" alt="프리미엄이벤트" /></p>
+                 <ul> 
+                     <li><a href="javascript:prmPageNavigate('010');"><img src="/images/premium/premium_navi02_01_off.gif" alt="진행 중인 이벤트" /></a></li>
+                     <li><a href="javascript:prmPageNavigate('011');"><img src="/images/premium/premium_navi02_02_off.gif" alt="종료된 이벤트" /></a></li>                        
+                     <li><a href="javascript:prmPageNavigate('012');"><img src="/images/premium/premium_navi02_03_off.gif" alt="당첨자 발표" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n3">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_off.gif" alt="프리미엄쇼핑몰" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_on.gif" alt="프리미엄쇼핑몰 - 프리미엄 회원만의 특별한 공간" /></a>
+             </div>
+         </li>
+         <li class="n4">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_off.gif" alt="마이 페이지" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_on.gif" alt="마이 페이지 - 프리미엄 회원님께서 받은 혜택을 확인하세요." /></a>
+             </div>
+         </li>
+     </ul>
+ </div>
+<!--// 공통 헤더 끝 -->
+<form name = "form1" method="post">
+
+
+	<!-- content_block  -->
+	<div class="content_block content_block_card clfix">
+		<h2><img alt="무이자 할부서비스 이용을 위한 안내입니다" src="/images/mh/h2_installment_customer_news.png" /></h2>
+		<div class="content_block_inner">
+           	<div class="tb_exp clfix">
+            	<h3>이용방법</h3>
+            </div>
+            <ol class="list_no01">
+                <li><p>무이자할부서비스를 신청하신 후 적용기간동안 이용하신 2~4개월 할부에 대해 할부수수료를 면제해드립니다.<br />(가족카드 이용건 포함)</p></li><!-- 정기일반영 13.04.22 -->
+                <li><p>적용기간 : 서비스 신청시점 ~ 30일(서비스신청일, 토/일요일, 공휴일 포함)</p></li>
+                <li><p>30일 경과 후에는 재신청 후 이용이 가능합니다.<br />(예 : 1월 1일 무이자 서비스 신청시 1월 31일에 재신청 후 이용 가능)</p></li>
+                <li><p>일부 유의대상 가맹점 및 국세·지방세/대학등록금/제약업종에서는 무이자 할부 혜택을 받으실 수 없습니다.</p></li>
+				<li><p>해외에서 사용한 건에 대해서 할부 전환 시 무이자 할부 혜택을 받으실 수 없습니다.</p></li><!-- SR내역 13.01.28 -->
+            </ol>
+		</div> 
+	</div>
+	
+	<!-- content_block 20121218 modify -->
+	<div class="content_block clfix">
+		<h2><img  alt="무이자할부 서비스를 신청하세요" src="/images/mh/h2_installment_customer_news02.png" /></h2>
+		<div class="content_block_inner">
+        	<div class="tb_exp clfix">
+                <h3 style="margin-left:0;">서비스 신청 횟수 1회</h3>
+            </div>
+<!-- 정기일반영 13.04.30 -->
+			<div class="btnset">
+				<p class="btnl ">전화 또는 인터넷으로 신청 가능 : 프리미엄 전용 ARS <span class="t_point">1688-0871</span> / 삼성카드 홈페이지 </p>
+				<p class="btnr"><a href="javascript:fncReg();" class="btn btn_blue"><span>무이자 할부서비스 신청</span></a></p>
+			</div>
+			<div class="line_lgray" style="padding-bottom:10px;margin-bottom:10px">&nbsp;</div>
+			<p class="t_desc04">취소는 고객상담센터(1588-8700) 에서 신청 가능합니다.</p>
+
+            <!--div class="btnset">
+                <p class="btnl t_desc04">취소는 고객상담센터(1588-8700) 신청시 가능합니다.</p>
+                <p class="btnr"><a class="btn btn_blue" href="javascript:fncReg();"><span>무이자 할부서비스 신청</span></a></p>
+            </div-->
+<!--// 정기일반영 13.04.30 -->
+		</div>
+	</div>	
+		
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_04.png" alt="서비스 신청내역 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<table class="dtable01" summary="서비스 신청일, 시작일자, 종료일자, 진행여부, 취소여부를 알 수 있는 게시판입니다.">
+			<caption>서비스 신청내역 안내</caption>
+			<colgroup><col width="*%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="10%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col">서비스 신청일</th>
+					<th scope="col">시작일자</th>
+					<th scope="col">종료일자</th>
+					<th scope="col">진행여부</th>
+					<th scope="col">취소여부</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10 ">-_-</td>
+					<td class="t_no">2012.02.03</td>
+					<td class="t_no">2012.02.02</td>
+					<td class="t_no">2012.02.03</td>
+					<td>종료</td>
+					<td>취소</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- paginate -->
+			<div class="paginate">
+				<div class="paging">			
+					<a href="javascript:preFunc();" class="btn btn_s_white"><span>이전</span></a>
+					<a href="javascript:nextFunc();" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+
+			<!-- 100610 -->
+			<div class="line_lgray">&nbsp;</div>
+			<p>위 신청내역은 프리미엄 회원 서비스, My패밀리서비스, 기타 혜택으로 제공되는 무이자할부에 대한 <br />신청 및 취소 이력을 포함하고 있습니다. </p>
+			<ol class="list_desc">
+				<li><p>프리미엄 무이자할부서비스 신청 전에 할부를 이용하신 경우, 서비스 신청일과 동일하더라도 <br />무이자할부 혜택이 제공되지 않습니다.<br />(예 : 2월 1일 오전 10시에 3개월 할부 이용 후, 당일 오후 2시에 서비스 신청 시무이자할부 제공되지 않음)</p></li>
+				<li><p>무이자할부 이용 시 포인트 및 마일리지는 적립되지 않습니다.</p></li>
+				<li><p>무이자할부 제외 대상 <br />- 일시불 결제 후 할부로 전환한 이용건, 자동차 장기할부, 일부 유의대상 가맹점 및 국세/지방세/공과금, 대학 등록금,  <br />  &nbsp;&nbsp; 제약 업종 및 일부 가맹점 이용금액은 제외됩니다.</p></li>
+			</ol>
+		</div>
+	</div>
+
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_05.png" alt="서비스 이용내역 안내입니다." /></h2>
+			<div class="content_block_inner">
+			<p>항목별 금액을 클릭하시면 상세내역을 확인하실 수 있습니다.  <br />(2012년 이후 이용내역부터 조회 가능)</p><!-- 정기일반영 13.03.27 -->
+
+			<table class="dtable02 dtable_expand mt10" summary="서비스 이용내역 조회를 위해 연도를 선택하는 게시판입니다.">
+			<caption>서비스 이용내역 연도별 조회</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><label for="category_list">연도별 조회</label></th>
+					<td><p>
+						<select name="category_list" id="category_list">
+							<option></option>
+						</select> 년
+					</p></td>
+				</tr>
+			</tbody> 
+			</table>
+			<p class="al_right mt10 mb20"><a href="javascript:fncYear();" class="btn btn_blue"><span>조회</span></a></p>
+			<table class="dtable01 mt15" summary="선택한 연도의 월별로 면제받은 할부 수수료를 알수 있는 게시판입니다">
+			<caption>월별 면제 할부 수수료</caption>
+			<colgroup><col width="10%" /><col width="90%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">기준년월</th>
+					<th scope="col" class="cell_r10">면제받은 할부수수료</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td class="cell_l10 cell_bg">연간합계</td>
+					<td class="cell_r10 cell_bg"><em>${string6_289}</em> 원</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<!-- loop -->
+					<tr>
+						<td class="cell_l10 t_no">-</td>
+						<td class="cell_r10"><span class="t_no"><a href="#" class="a_point" title="새창">123</a></span> 원</td>
+					</tr>
+					<tr>
+						<td colspan="2">현재 제공받은 내역이 없습니다.</td>
+	 				</tr>
+				<!-- //loop -->
+				
+			</tbody>
+			</table>
+			<p class="t_desc04 mt10">카드사 및 제휴사 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려 드립니다. </p>
+		</div>
+	</div>
+</form>	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

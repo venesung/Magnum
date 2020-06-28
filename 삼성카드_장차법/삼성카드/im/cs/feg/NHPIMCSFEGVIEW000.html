@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<iframe id="fegFrmHidden" name="fegFrmHidden" frameborder="0" marginwidth="0" scrolling="no" width="0" height="0" title="빈 프레임"></iframe>
+				<!-- top_visual -->
+				<form id="registForm" name="registForm">
+				<input type="hidden" id="stayDate" name="stayDate" /> 
+				<input type="hidden" id="email" name="email" /> 
+				<input type="hidden" id="tel" name="tel" /> 
+				<input type="hidden" id="phone" name="phone" />
+				<input type="hidden" id="fax" name="fax" /> 
+				<input type="hidden" id="questionInfo" name="questionInfo" value="" />
+				</form>
+				<form name="tempXecureForm"><input type="hidden" name="p"/></form>
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_faq_foreign.png" alt="해외 이용 시 궁금한 사항을 문의 하세요" /></h1>
+					<div class="content_block content_block_m0 clfix" style="border:0px;">
+					<div id="divSubBtn" class="tab02 w810" style="display:none;">
+							<ul>
+                                <li class="on"><a href="javascript:goSub('01');" class="btn btn_white" id="btn_sub_01" style="margin:0px; padding: 0px;">물품주문</a></li>
+                                <li><a href="javascript:goSub('02');" class="btn btn_white" id="btn_sub_02" style="margin:0px; padding: 0px;">유료사이트</a></li>
+                                <li><a href="javascript:goSub('03');" class="btn btn_white" id="btn_sub_03" style="margin:0px; padding: 0px;">국제전화</a></li>
+                                <li><a href="javascript:goSub('04');" class="btn btn_white" id="btn_sub_04" style="margin:0px; padding: 0px;">세미나참석</a></li>
+                                <li><a href="javascript:goSub('05');" class="btn btn_white" id="btn_sub_05" style="margin:0px; padding :0px;">학비</a></li>
+                                <li><a href="javascript:goSub('06');" class="btn btn_white" id="btn_sub_06" style="margin:0px; padding: 0px;">정기간행물</a></li>
+                                <li><a href="javascript:goSub('07');" class="btn btn_white" id="btn_sub_07" style="margin:0px; padding: 0px;">기타</a></li>
+							</ul>
+					</div>
+					</div>
+				</div>
+				<!-- content_block -->
+				<!-- selection block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/cs/h2_foreign_faqtype01.png" alt="해외이용시 발생한 문제는 어떤 경우인가요?" /></h2>
+					<div class="content_block_inner pos_rel">
+
+						<jsp:include page="/WEB-INF/jsp/hp/im/cs/feg/NHPIMCSFEGVIEW000_1F.jsp" />
+
+						<div class="line_lgray">&nbsp;</div>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:onConfirm();" class="btn btn_blue"><span>확인</span></a>
+                                <a href="javascript:goFirst();" class="btn btn_white"><span>첫화면</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- mapping block -->
+				<iframe id="fegFrm" name="fegFrm" src="#" onLoad="autoResize(this);" frameborder="0" marginwidth="0" scrolling="no" height="500px;" width="100%" title="해외이용시 발생한 문제"></iframe>
+				<!-- footer_layer -->
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

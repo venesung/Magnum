@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>새 차 구입 절약안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script>
+function goAndClose(menuId) {
+	try {
+		opener.goTabPage(menuId);
+	} catch(e) {
+	}
+
+	window.close();
+}
+
+function goAndClose2() {
+	try {
+		opener.location.href="/link/index.jsp?url=EVENT?eventNo=9888";
+	} catch(e) {
+	}
+
+	window.close();
+}
+
+function postponePop() {
+	setCookie("EVTPOP1","Y",1);
+	window.close();
+}
+
+function setCookie(name, value, expiredays){
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+</script>
+</head>
+<body>
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2" class="pop_s_header710">
+		<div class="d_pop_fs">
+			<h1><img src="/images/ms/pop_h1_fs.png" alt="새 차 살 땐 무조건 삼성카드. 1%돌려받거나 최대 216만원 절약하자!" /></h1>
+			<p><strong class="t_black"><%=member.getName() %></strong>님은 신용등급이 우수하여 <strong class="t_black">자동차 특별한도 부여대상자</strong>입니다.</p>
+		</div>
+	</div>
+	-->
+	
+	<div id="mvint_pheader" style="width:710px;">&nbsp;</div><!-- 빈 Heading -->
+	
+	<div class="d_pop_fs">
+		<h1><img src="https://www.samsungcard.com/images/ms/pop_h1_fs.png" alt="새 차 살 땐 무조건 삼성카드. 1%돌려받거나 최대 216만원 절약하자!" /></h1><!-- 100618 -->
+		<!-- p><strong class="t_black"><%=member.getName() %></strong>님은 신용등급이 우수하여 <strong class="t_black">자동차 특별한도 부여대상자</strong>입니다.</p -->
+	</div>
+	<!-- content -->
+	<div id="pop_s_content2">
+		<div class="pop_l_wrap">
+			<p class="step"><img src="/images/ms/pop_img_fs01.png" alt="새차를 구입하려면 전화하여 바로 상담받으세요. 전화상담 1688-3001 - 회원님 신용도 및 직장, 부동산 보유기준 등으로 이용시 제한될 수 있습니다. 자세한 사항은 상담원과 통화하여 안내받으시길 바랍니다." /></p>
+
+			<div class="d_pop_fs2">
+				<div class="fl_left"><!-- 100618 -->
+					<p><img src="/images/ms/pop_txt_fs01.png" alt="1. 스마트오토서비스로 자동차 값 1% 돌려받자" /></p>
+					<p class="lh16">현금으로 자동차를 구매할 때 삼성카드로 결제하시면,<br />결제금액의 1%를 현금으로 돌려받으시는<br />똑똑한 서비스입니다.</p>
+					<p class="t_desc04">대상차종 - 전 차종 가능<a href="#" class="btn_link" onClick="goAndClose('NHPIMFSACB001M001');">자세히보기</a></p>
+				</div>
+
+				<div class="fl_right">
+					<p><img src="/images/ms/pop_txt_fs02.png" alt="2. 자동차카드할부로 수수료 최대 216만원 절약하자!" /></p>
+					<p class="lh16">사용하고 계시는 삼성카드 한장으로 OK!  취급수수료, 중도상환수수료없이 임시한도를 부여 받아 자동차를 할부로 구매하는 서비스입니다.</p>
+					<p class="t_desc04">대상차종 - 현대, 기아, 쌍용, GM대우,<br />모든수입차(르노삼성제외)<a href="#" class="btn_link mt_15" onClick="goAndClose('NHPIMFSCFN101C1');">자세히보기</a></p>
+				</div>
+			</div>
+			<p><img src="/images/ms/img_commissionFree.png" alt="더 이상 삼성카드 금융서비스에 취급수수료는 없다. 전화상담 1588-8700 삼성카드에 보내주신 회원님의 애정과 관심에 보담하고자 대출상품(삼성카드론, 마이너스론, 빅앤론, 프라임론)과 현금서비스의 취급수수료를 폐지 하였습니다. 이제부터는 최대 2.5%까지 부담하셨던 취급수수료 없이 편리하게 이용하세요." class="al_top" usemap="#commissionFree" /></p>
+			<map name="commissionFree">
+				<area shape="rect" coords="39,137,107,158" alt="자세히보기" href="#" onClick="goAndClose2();" />
+				</map>			
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2" class="pop_s_footer710">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<label for="label_chk" class="nottoday">하루동안 이 창을 열지않음 <input type="checkbox" class="chk" id="label_chk" onClick="postponePop();" title="하루동안 이 창을 열지않음" /></label>
+	</div>
+</div>
+</body>
+</html>
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

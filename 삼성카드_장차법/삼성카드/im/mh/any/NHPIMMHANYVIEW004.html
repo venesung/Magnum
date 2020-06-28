@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual 100407 디비전 전체수정 -->
+				<div class="top_visual">
+					<h1 class="none">애니세이브 서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/mh/h1_anysave.jpg" alt="애니세이브 서비스. 이번 달 지출이 많으셨다면 간편한 신청으로 최대 70만원까지 세이브 신청이 가능합니다" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHANY001','true');">애니세이브 서비스 안내</a></li><!-- 수정 13.01.18 VOC40 -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHANY002','true');">신청하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHANY003','true');">당일신청건취소</a></li><!-- //100219 -->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="top_step_anysave top_step_anysave01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>결제예정금액 확인 및 Save금액 입력</strong></li>
+							<li>Save상환일정 및 약관동의</li>
+							<li>신청완료</li>
+						</ol>
+					</div>
+					<h2><img src="/images/mh/h2_anysave01.png" alt="본인정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>당월 일시불 청구금액이 <span class="t_point_org">10만원 이상</span>일 경우에만 애니세이브 서비스를 신청하실 수 있습니다.</p></li>
+							<li><p>세이브이용이 가능한 카드를 확인하세요.<br /><strong class="t_black">이용가능</strong>으로 확인되는 카드 이용시에 한해 세이브 포인트 적립이 가능합니다.</p></li>
+						</ol>
+						<table class="dtable02 dtable_inputfield mt5" summary="카드선택, 비밀번호, 카드 CVC번호 정보를 입력하는 게시판입니다.">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select name="cardSelect" title="카드선택" style="width:420px">
+										<option></option>
+									</select>
+									<a href="javascript:goTabPage('NHPIMSSCMS009');" class="a_point t_11 ml10">대상카드보기</a>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>비밀번호</p></th>
+								<td>
+								<p class="input_2char">
+								<input title="비밀번호 앞 2자리" class="txt" type="password" name="PASSWORD_NO2" value="" size="4" maxlength="2" id="STD_TEXT_FIELD2" style="ime-mode:disabled;width:40px"
+								onkeyup="lengthCheck1(this.form, this.value)"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								enc="on"
+								/>
+								<em>**</em>(비밀번호 앞의 2자리)
+								<span id="usafeon_PASSWORD_NO2"></span>
+								</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td>
+								<p class="input_3char">
+								<input type="password" title="카드 CVC번호" class="txt" name="CVC_NO" value="" size="6" maxlength="3" id="STD_TEXT_FIELD3" style="ime-mode:disabled;width:40px"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								enc="on"
+								/>
+								(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+								<span id="usafeon_CVC_NO"></span>
+								</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						<dl class="cvc_view cvc_view_noborder">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내카드 : 카드 뒷면 19자리 또는 카드 뒷면 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>
+
+				<div class="content_block clfix"><!-- 100219 -->
+					<h2><img src="/images/mh/h2_anysave03.png" alt="세이브금액을 신청해주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="세이브금액 신청을 위해 이번달 결제예정금액,세이브대상금액,세이브 신청금액,상환개월수,적용후 결제하실 금액,세이브이용가능카드의 정보를 입력하는 게시판입니다.">
+						<caption>세이브금액 신청</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>이번달 결제예정금액</p></th>
+								<td><p>
+								<input name="totalSum" class="readonly" type="text" value="원" readonly="readonly" style="width:80px;height:20px" title="이번달 결제예정금액" />
+								<span class="t_desc04 ml10">0</span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>세이브대상금액</p></th>
+								<td><p>
+								<input class="readonly" type="text" value="원" readonly="readonly" style="width:80px;height:20px" title="세이브대상금액" />
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>세이브 신청금액</p></th>
+								<td><p>
+									<select id="label_lspay" class="mr10" name="maxAm" onchange="setAnysaveOpt(self.document.frm)" title="세이브 신청금액 선택">
+										<option value="0" selected="selected">선택</option>
+									</select>
+									<span class="ml10"><a href="javascript:popSize_no('/hp/im/mh/any002.do?method=popCreate','710','575')" class="btn_link" title="새창">시뮬레이션</a></span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>상환개월수</p></th>
+								<td><p>
+								<input name="anyMonth" class="readonly" type="text" value="" readonly="readonly" style="width:80px;height:20px" title="상환개월수" />
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>적용후 결제하실 금액</p></th>
+								<td><p>
+								<input name="disMoney" class="readonly" type="text" value="원" readonly="readonly" style="width:80px;height:20px" title="적용후 결제하실 금액" />
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>세이브이용가능카드</p></th>
+								<td><p>0</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<ol class="list_desc"><!-- 100608 -->
+							<li><p>세이브포인트 적립 가능한 카드를 반드시 확인 바랍니다.</p></li>
+							<li><p>세이브 최초 상환일은 서비스 신청일로부터 30일 이후 최초 도래하는 결제일입니다.</p></li>
+							<li><p>세이브 대상 금액은 일시불 금액만 가능합니다.</p></li>
+						</ol>
+						<p class="ml10 t_desc04">※ 청구서 작업 이전인 경우 결제 예정 금액이 추가될 수 있습니다.</p><!-- 100608 -->
+					</div>
+				</div>
+
+				<div class="content_block clfix"><!-- 100219 -->
+					<div class="btnc"><a href="javascript:submit()"><img src="/images/common/btn_n_application.png" border="0" alt="신청" /></a></div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>월별 캐시백내역 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="../images/mh/h1_cashback_title.png" alt="월별 캐시백내역입니다." /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/h1_cashback_title.png" alt="월별 캐시백내역입니다" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_content" class="yscroll" style="height:340px;" tabindex="0">
+		<div class="content_block content_block_card clfix">
+			<div class="mt10 t_point">캐시백 상세내역</div>
+			<table class="dtable01 dtable01_bill mt15" summary="카드별 캐시백 내역을 확인할 수 있는 화면입니다.">
+				<caption>캐시백 상세내역</caption>
+				<colgroup><col width="11" /><col width="13%" /><col width="20%" /><col width="24%" /><col width="11%" /><col width="11%" /><col width="11%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">매출일자</th>
+						<th scope="col" class="blNone cell_l10">매출접수일자</th>
+						<th scope="col" class="blNone">카드번호</th>
+						<th scope="col" class="blNone cell_l10">이용가맹점</th>
+						<th scope="col" class="blNone cell_r10">이용금액</th>
+						<th scope="col" class="blNone cell_r10">캐시백금액</th>
+						<th scope="col" class="blNone">캐시백율</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10"><%=SlDt %></td>
+						<td class="blNone cell_l10"><%=SlRcpdt %></td>
+						<td class="blNone"><%=vo.getCdno() %></td>
+						<td class="blNone cell_l10"><%=vo.getMcNm() %></td>
+						<td class="blNone cell_r10"><%=SlAm %></td>
+						<td class="blNone cell_r10"><%=CsbAm %></td>
+						<td class="blNone"><%=CsbR %></td>
+					</tr>
+
+					<!-- //loop -->
+					<tr class="nodata">
+						<td colspan="7"><%=ERRORMESSAGE %></td>
+					</tr>
+				</tbody>
+				</table>
+		  </div>
+		  <!-- paginate -->
+			</div>
+			<!-- footer -->
+			<div id="pop_footer">
+				<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+				<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+			</div>
+		</div>
+</body>
+</html>

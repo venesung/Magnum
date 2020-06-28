@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/ss/h1_loan_app_service.png" alt="국세납부대출신청 서비스" /></h1>
+				</div>
+				<div class="content_block content_block_tab clfix">
+					<div class="top_step_loan_app top_step_loan_app02">
+						<ol class="none">
+							<li>카드선택</li>
+							<li><abbr>현재단계</abbr> <strong>한도조회</strong></li>
+							<li>납세정보 및 세부코드입력</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 start ////////////////////////-->
+							<li>신청정보확인</li>
+							<li>약관동의</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 end ////////////////////////-->
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+<form name = "taxinsert" method="post"  autocomplete="off">
+
+					<h2><img src="/images/ss/h2_loan_app_service02.png" alt="대출 한도를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span><strong class="t_black">최근 국세납부 대출내역</strong></span>
+						</div>
+						<table class="dtable02 dtable_expand " summary="대출액, 대출일로 구성된 최근 국세납부 대출내역 정보를 확인할 수 있는 게시판입니다">
+						<caption>최근 국세납부 대출내역</caption>
+						<colgroup><col width="115" /><col width="*" /><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>대출액</p></th>
+								<td><p><span class="t_no"><%=strDispPreLoanAmt %></span> 원</p></td>
+								<th scope="row"><p>대출일</p></th>
+								<td><p><span class="t_no"><%=strDispPreLoanDate %></span></p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="tb_exp mt30 clfix">
+							<span><strong class="t_black">국세납부대출 가능금액 및 대출 정보 입력</strong></span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="국세납부대출 가능금액, 대출기간, 연락처 등의 대출정보를 입력하는 게시판입니다">
+						<caption>국세납부대출 가능금액 및 대출 정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>국세납부대출<br>가능금액</p></th>
+								<td><p><strong class="t_black"><%= strSmallAmt%> 만원</strong> (원금균등상환식) <br />(최저 300,000원부터 신청이 가능합니다)</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>대출기간</p></th>
+								<td><p>	
+								<input type= "hidden" name="realmonth" />
+						  <%if("3".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <%}else if("6".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  
+						  <%}else if("12".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  <label for="label_date3"><input type="radio" class="rdo" value="012" id="label_date3" name="label_date" title="12개월" /> 12개월</label>
+						  
+						  <%}else if("18".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  <label for="label_date3"><input type="radio" class="rdo" value="012" id="label_date3" name="label_date" title="12개월" /> 12개월</label>
+						  <label for="label_date4"><input type="radio" class="rdo" value="018" id="label_date4" name="label_date" title="18개월" /> 18개월</label>
+						  
+						  <%}else if("24".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  <label for="label_date3"><input type="radio" class="rdo" value="012" id="label_date3" name="label_date" title="12개월" /> 12개월</label>
+						  <label for="label_date4"><input type="radio" class="rdo" value="018" id="label_date4" name="label_date" title="18개월" /> 18개월</label>
+                          <label for="label_date5"><input type="radio" class="rdo" value="024" id="label_date5" name="label_date" title="24개월"/> 24개월</label>
+						  
+						  <%}else if("30".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  <label for="label_date3"><input type="radio" class="rdo" value="012" id="label_date3" name="label_date" title="12개월" /> 12개월</label>
+						  <label for="label_date4"><input type="radio" class="rdo" value="018" id="label_date4" name="label_date" title="18개월" /> 18개월</label>
+                          <label for="label_date5"><input type="radio" class="rdo" value="024" id="label_date5" name="label_date" title="24개월"/> 24개월</label>
+						  <label for="label_date6"><input type="radio" class="rdo" value="030" id="label_date6" name="label_date" title="30개월"/> 30개월</label>
+						  
+						  <%}else if("36".equals(nMaxMonth)){ %>
+						  <label for="label_date1"><input type="radio" class="rdo" value="003" id="label_date1" checked="checked" name="label_date" title="3개월" /> 3개월</label>
+						  <label for="label_date2"><input type="radio" class="rdo" value="006" id="label_date2" name="label_date" title="6개월" /> 6개월</label>
+						  <label for="label_date3"><input type="radio" class="rdo" value="012" id="label_date3" name="label_date" title="12개월" /> 12개월</label>
+						  <label for="label_date4"><input type="radio" class="rdo" value="018" id="label_date4" name="label_date" title="18개월"/> 18개월</label>
+                          <label for="label_date5"><input type="radio" class="rdo" value="024" id="label_date5" name="label_date" title="24개월"/> 24개월</label>
+						  <label for="label_date6"><input type="radio" class="rdo" value="030" id="label_date6" name="label_date" title="30개월"/> 30개월</label>
+						  <label for="label_date7"><input type="radio" class="rdo" value="036" id="label_date7" name="label_date" title="36개월"/> 36개월</label>
+						  
+						  <%} %>
+
+					
+					</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>연락처</p></th>
+								<td><p><span class="input_phone">
+									<select name="emgphone1" size = "1" title="전화번호 앞자리" id="label_phone">
+                            <option value="010" <%if("010".equals(hphone1.trim())){%>selected="selected"<%}%>>010</option>
+                            <option value="011" <%if("011".equals(hphone1.trim())){%>selected="selected"<%}%>>011</option>
+                            <option value="016" <%if("016".equals(hphone1.trim())){%>selected="selected"<%}%>>016</option>
+                            <option value="017" <%if("017".equals(hphone1.trim())){%>selected="selected"<%}%>>017</option>
+                            <option value="018" <%if("018".equals(hphone1.trim())){%>selected="selected"<%}%>>018</option>
+                            <option value="019" <%if("019".equals(hphone1.trim())){%>selected="selected"<%}%>>019</option>
+                            <option value="0130" <%if("0130".equals(hphone1.trim())){%>selected="selected"<%}%>>0130</option>
+                            <option value="02" <%if("02".equals(hphone1.trim())){%>selected="selected"<%}%>>02</option>
+                            <option value="031" <%if("031".equals(hphone1.trim())){%>selected="selected"<%}%>>031</option>
+                            <option value="032" <%if("032".equals(hphone1.trim())){%>selected="selected"<%}%>>032</option>
+                            <option value="033" <%if("033".equals(hphone1.trim())){%>selected="selected"<%}%>>033</option>
+                            <option value="041" <%if("019041".equals(hphone1.trim())){%>selected="selected"<%}%>>041</option>
+                            <option value="042" <%if("042".equals(hphone1.trim())){%>selected="selected"<%}%>>042</option>
+                            <option value="043" <%if("043".equals(hphone1.trim())){%>selected="selected"<%}%>>043</option>
+                            <option value="051" <%if("051".equals(hphone1.trim())){%>selected="selected"<%}%>>051</option>
+                            <option value="052" <%if("052".equals(hphone1.trim())){%>selected="selected"<%}%>>052</option>
+                            <option value="053" <%if("053".equals(hphone1.trim())){%>selected="selected"<%}%>>053</option>
+                            <option value="054" <%if("054".equals(hphone1.trim())){%>selected="selected"<%}%>>054</option>
+                            <option value="055" <%if("055".equals(hphone1.trim())){%>selected="selected"<%}%>>055</option>
+                            <option value="0502" <%if("0502".equals(hphone1.trim())){%>selected="selected"<%}%>>0502</option>
+                            <option value="0505" <%if("0505".equals(hphone1.trim())){%>selected="selected"<%}%>>0505</option>
+                            <option value="0506" <%if("0506".equals(hphone1.trim())){%>selected="selected"<%}%>>0506</option>
+                            <option value="061" <%if("061".equals(hphone1.trim())){%>selected="selected"<%}%>>061</option>
+                            <option value="062" <%if("062".equals(hphone1.trim())){%>selected="selected"<%}%>>062</option>
+                            <option value="063" <%if("063".equals(hphone1.trim())){%>selected="selected"<%}%>>063</option>
+                            <option value="064" <%if("064".equals(hphone1.trim())){%>selected="selected"<%}%>>064</option>
+                            <option value="070" <%if("070".equals(hphone1.trim())){%>selected="selected"<%}%>>070</option>
+							</select><input type="text" id="emgphone2" name="emgphone2" value="<%=hphone2.trim() %>" class="txt ml10" size="4" maxlength="4" title="전화번호 가운데자리" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" onkeyup="lengthCheck22(this.form, this.value);" />&nbsp;-&nbsp;<input type="text" id="emgphone3" name="emgphone3" size="4" maxlength="4" class="txt" value="<%=hphone3 %>"  style="ime-mode:disabled" onkeydown="getOnlyNumberKey()" title="전화번호 뒷자리" /><span class="t_desc04 ml10">연락 가능한 휴대폰 번호를 남겨주십시오</span>
+								</span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl t_desc04">2008년 4월부터 공인인증서 사용이 필수입니다.</p>
+							<p class="btnr">
+								<!--- ////////////////////// 20121126 확인,취소로 변경해주세요 mv_강승희 start//////////////////////////////////////--->
+								<a href="javascript:checkTaxLoan();" class="btn btn_blue"><span>확인</span></a>
+								<a href="javascript:goTabPage('NHPIMSSPSM003',true);" class="btn btn_white"><span>취소</span></a>
+							<!--- //////////////////////  20121126 확인,취소로 변경해주세요 mv_강승희 end//////////////////////////////////////--->
+							</p>
+						</div>
+
+						<ol class="list_no01 list_cvc">
+						    <!-- 국세납부대출 이용안내 메시지 변경 20100610 안내메시지 수정 요청 -->
+							<li><p>국세납부대출은 대출이용가능 금액 내에서 이용가능합니다.</p></li>
+						    <!-- 
+							<li><p>세금납부액이 <%= nSamllAmt%>만원을 초과할 경우에는 (지역번호없이)1588-8600으로 전화하거나 <br />인터넷을 통한 신용대출을 회원님의 자동이체통장으로 받아 세금으로 납부하십시오.</p></li>
+                            <li><p>인터넷 신용대출을 하시려면 <a href="javascript:goTabPage('NHPIMFSCDLM');" class="a_point">여기</a>를 클릭해 주십시오. </p></li>
+							<li><p>공인인증서 이용이 어려운 고객님께서는 <strong class="t_black">고객상담센터(1588-8700)</strong>을 통해서 신청해 주시기 바랍니다.</p></li>
+							 -->
+						</ol>
+						
+
+					</div>
+					
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

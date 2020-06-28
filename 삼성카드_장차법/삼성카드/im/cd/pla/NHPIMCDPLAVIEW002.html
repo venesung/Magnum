@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+
+<title>사용금액 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body>
+<form name='xecure'><input type="hidden" name='p' /></form>
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_inqury_rose.jpg" alt="사용금액 조회" /></h1>100514
+	</div>
+ 	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_inqury_rose.jpg" alt="사용금액 조회" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_content" class="h445">
+		<div class="content_block content_block_card clfix">
+			<div class="tb_exp clfix">
+<!--				<h3>사용금액 조회</h3>-->
+				<span class="fl_left mt5">조회 년도를 선택하시면, 고객님의 해당년도의 로즈플래티늄카드 총 이용금액을 조회하실 수 있습니다.</span>
+			</div>
+<form method="post" name="frm">
+			<table class="dtable02 dtable_inputfield" summary="조회년도를 선택하는 화면입니다.">
+			<caption>조회년도 선택</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>조회년도</p></th>
+					<td><p>
+						<select name="string2" title="조회년도 선택">
+        			   		<option></option>
+						</select>
+                        <a href="javascript:goSearch();" class="btn btn_s_blue"><span>조회</span></a>
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+</form>
+			<div class="tb_exp clfix mt30">
+				<h3>사용금액 현황</h3>
+				<span class="fl_left mt5">고객님의 금년도(혹은 전년도) 로즈플래티늄카드 총 이용금액입니다.</span>
+			</div>
+			<table class="dtable01" summary="조회년도, 일시불, 할부, 합계로 구성된 이용금액 목록 입니다.">
+			<caption>이용금액 목록</caption>
+			<colgroup><col width="20%" /><col width="25%" /><col width="30%" /><col width="25%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">조회년도</th>
+					<th scope="col" class="cell_r10">일시불</th>
+					<th scope="col" class="cell_r10">할부</th>
+					<th scope="col" class="cell_r10">합계</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td class="cell_l10">합계</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10"><em>0</em></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr class="nodata">
+					<td colspan="4">내역이 없습니다.</td>
+				</tr>
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+				</tr>
+			</tbody>
+			</table>
+
+			<ol class="list_desc mt10">
+				<li><p>전년도(1월 1일~12월 31일) 로즈플래티늄카드의 일시불 및 할부 구입실적이 2천만원 이상인 회원은 금년도<br />Premium Invitation 서비스를 1회 더 이용하실 수 있습니다.  (단, 동일 서비스 중복사용 불가)</p></li>
+				<li><p>금년도 이용금액 조회시, 실제 카드 사용일부터 1~7일이 경과하지 않은 금액이 정확하게 반영되지 않을 수 있으므로<br />참고하시기 바랍니다.</p></li>
+				<li><p>우수회원에게 제공되는 Plus One(+1) 서비스의 이용가능 기간은 2월 1일~12월 31일 까지입니다.</p></li>
+				<li><p>문의사항: <strong class="t_black">고객상담센터(1588-8700)</strong></p></li>
+			</ol>
+
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div> 
+</div> 
+</body>
+</html>

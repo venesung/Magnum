@@ -1,0 +1,58 @@
+<div id="tab_title">빅앤빅론</div>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<%String itemCode = (String)request.getAttribute("itemCode"); %>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+<script type="text/javascript" language="javascript">
+function goTab1(itemCode) {
+    document.frm.action="/hp/im/fs/bnb/bnb001.do?method=selectTab&amp;tabNo=1";
+	document.frm.method="post";
+	document.frm.target="_self";
+	document.frm.itemCode.value=itemCode;
+
+	tabSubmit(document.frm.action, document.frm);
+}
+
+function goTab2(itemCode) {
+    document.frm.action="/hp/im/fs/bnb/bnb001.do?method=selectTab&amp;tabNo=2";
+	document.frm.method="post";
+	document.frm.target="_self";
+	document.frm.itemCode.value=itemCode;
+
+	tabSubmit(document.frm.action, document.frm);
+}
+</script>
+</div>
+<form name="frm" action="" method="" target="">
+<input type="hidden" name="itemCode" />
+</form>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none"><%=result.getContentNm() %></h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription()%>" /></div>
+</div>
+
+<br/>
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li class="on"><a href="#">서비스안내</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSBNB001',true);">이용가능금액조회</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSBNB002',true);">시뮬레이션</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSBNB003',true);">신청</a></li>
+		</ul>
+	</div>
+</div>
+<!--cms_content시작-->
+<div id="cma_content" >
+	<cms:include page="${result.targetPath}/${result.contentId}_hp_fi_view.html" flush="false" />
+</div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

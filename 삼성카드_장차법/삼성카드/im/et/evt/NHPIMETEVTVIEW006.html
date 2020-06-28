@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.scard.common.util.RequestUtil"%>
+<%
+	//목록으로 돌아갈때 필요한 이벤트명
+	// 2012.12.28 VOC 삭제 추가 start
+//	String srchGubun1 = request.getParameter("srchGubun1");
+	String srchGubun1 = RequestUtil.getStringParameter(request, "srchGubun1", "");
+	// 2012.12.28 VOC 삭제 추가 end
+%>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+
+<script language="javascript" type="text/javascript">
+//Main Body Resizing
+function autoResize(i)
+{
+    var iframeHeight=
+    (i).contentWindow.document.body.scrollHeight;
+    (i).height=iframeHeight+50;
+}	
+</script>
+</div>
+<iframe height="100%" width="99%" name="iframe"  onload="autoResize(this);" frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="컨텐츠 프레임"></iframe>
+<form name = "frm1" method = "post">
+	<input type="hidden" name = "srchGubun1" value ="<%=srchGubun1 %>" />
+</form>
+
+<script language="javascript" type="text/javascript">
+   frm1.action = "/hp/im/et/evt.do?method=getEndEventList";
+   frm1.target = "iframe";
+   frm1.submit();
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<!--<p class="ab_tr_sm"><img src="/images/ms/img_findid.jpg" alt="" /></p> 13.04.30 삭제-->
+					<h1><img src="/images/ms/h1_findid.png" alt="아이디/비밀번호 찾기 및 변경입니다." /></h1>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_ahaloan01.png" alt="질문을 통해 본인확인을 해주세요" /></h2>
+					<div class="content_block_inner">
+						<p>본인 확인을 위해 아래사항을 입력해주세요.</p>	<!-- SR내역 13.04.24 -->						
+						<table class="dtable_join" summary="본인학인을 위해 성명과 주민등록번호를 확인할 수 있는 게시판입니다">
+						<caption>본인확인</caption>
+						<colgroup><col width="10%" /><col width="20%" /><col width="15%" /><col width="50%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">성명</th>
+								<td><strong class="t_black">${userName}</strong></td>
+								<%if(!"Y".equals(ipin_check)){%>
+								<th scope="row">주민등록번호</th>
+								<td><strong class="t_black t_no">${_idenNo}</strong></td>
+								<%}%>
+							</tr>
+						</tbody>
+						</table>
+
+						<fieldset class="find_id_login">
+							<legend>본인확인 질문</legend>
+							<dl>
+								<dt class="newpw3"><label for="label_question"><strong class="t_black">본인확인 질문 :</strong> 
+								<% if("1".equals(questionGubun)){%>
+									내가 태어난 고향 은 무엇입니까?
+								<%}else if("2".equals(questionGubun)){%>
+									내가 가장 가고 싶은 곳내가 가장 가고 싶은 곳은 무엇입니까?
+								<%}else if("3".equals(questionGubun)){%>
+									내 여자친구의 이름은 무엇입니까?
+								<%}else if("4".equals(questionGubun)){%>
+									내 아버지의 이름은 무엇입니까?
+								<%}else if("5".equals(questionGubun)){%>
+									내 어머니의 이름은 무엇입니까?
+								<%}else if("6".equals(questionGubun)){%>
+									내가 가장 존경하는 인물은 무엇입니까?
+								<%}else if("7".equals(questionGubun)){%>
+									우리집 강아지의 이름은 무엇입니까?
+								<%}else if("8".equals(questionGubun)){%>
+									내가 가장 좋아하는 색깔은 무엇입니까?
+								<%}else if("9".equals(questionGubun)){%>
+									내 여자친구의 생일은 무엇입니까?
+								<%} %></label></dt>
+								<dd class="newpw3"><span class="bg_input mr10"><input type="text" value="" title="본인확인 질문 답" style="width:491px" id="label_question" name="answer" onkeydown="fn_enterSubmit(this);" /><em>&nbsp;</em></span><a href="javascript:verification()"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+								</dd>
+							</dl>
+						</fieldset>
+
+					</div>
+				</div>
+				<!-- SR내역 13.04.24
+				<div class="content_block clfix">
+					<h2><img src="/images/ms/h2_ahaloan02.png" alt="공인인증서를 통해 본인확인을 해주세요" /></h2>
+					<div class="content_block_inner">
+						<p>카드소지 정회원의 경우 <strong class="t_black">공인인증서 본인확인</strong>으로 ID찾기 및 비밀번호 변경 메뉴를 이용하실 수 있습니다.</p>
+						<p class="btnl"><a href="javascript:publicVerification()" class="btn btn_white"><span>공인인증서 본인확인 &gt;</span></a></p>
+					</div>
+				</div> -->
+</form>
+												
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

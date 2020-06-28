@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_familylimit_card00.png" alt="가족카드 이용한도를 조정 하실 수 있습니다." /></h1>
+				</div>
+
+<!-- 100126 -->
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="top_step_use_limit top_step_use_limit01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>하향신청 한도입력</strong></li>
+							<li>입력내용 확인</li>
+							<li>완료</li>
+						</ol>
+					</div>
+<!-- //100126 -->
+
+					<h2><img src="/images/mh/h2_limit_selection.png" alt="이용한도 조정하실 대상을 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+									<li onclick="javascript:goTabPage('NHPIMMHCLM002M001');"><a href="#">개인카드</a></li>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030203');"><a href="#">체크카드</a></li>
+								</ul>
+							</div>
+						</div>						
+						<span class="selectbox_r_txt">(개인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다.</span>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<ol class="list_no01">
+							<li><p>가족카드한도는 현재 본인 한도내에서 상하향 조정이 가능합니다.</p></li>
+							<li><p>할부한도와 현금서비스한도는 일시불한도를 초과할 수 없습니다. (카드사용한도와 일시불한도는 같습니다.)</p></li>
+							<li><p>일시불/할부/현금서비스 10만원단위로 입력하셔야 합니다.</p></li>
+							<li><p>할부한도는 일시불한도를 초과할 수 없습니다.(카드사용한도와 일시불한도는 같습니다.)</p></li>
+							<li><p>일시불/할부/굿캐시 한도금액은 최저 10만원이상, 10만원 단위로 입력하셔야 합니다.</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt30" summary="사용자/카드를 선택하는 게시판입니다.">
+						<caption>사용자/카드 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>사용자/카드선택</p></th>
+								<td><p>
+									<div id="divSelectUser" style="display:block;">
+										<select title="사용자 선택" style="width:100px" id="s_selectUser" name="s_selectUser" onchange="onChangeUser(this.value);">
+											<option value="self" >본인</option>
+										</select>
+									</div>
+									<div id="divSelectCard" style="display:block;">
+										<select title="카드종류 선택" style="width:360px" id="s_selectCard" name="s_selectCard" onchange="onChangeCard(this.value);">
+											<option>00</option>										
+										</select>
+									</div>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+							<a href="javascript:viewLimit();" class="btn btn_blue"><span>조회</span></a>
+							<!-- //100126 -->
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+					<div id="divTable" style="display:block;" class="content_block clfix">
+					<h2><img src="/images/mh/h2_limit_change.png" alt="조정하실 이용한도를 입력하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01 dtable_inputfield" summary="구분항목별 본인 현재한도, 가족 현재한도를 확인하고 조정 요청 한도를 입력하는 게시판입니다">
+						<caption>조정 이용한도 입력</caption>
+						<colgroup><col width="130" /><col width="170" /><col width="170" /><col width="170" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">구분</th>
+								<th scope="col" class="cell_r10">본인 현재한도</th>
+								<th scope="col" class="cell_r10">가족 현재한도</th>
+								<th scope="col" class="cell_r10">조정 요청 한도</th>
+							</tr>
+						</thead>
+						<tbody> 
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">카드이용한도</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_CARD_HANDO"  maxlength="4" type="text" class="txt" value="" onkeyup="document.limit.CHG_ILSI_HANDO.value=document.limit.CHG_CARD_HANDO.value;" title="카드이용한도 조정요청한도"  />만원</span></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10">일시불</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="input_point"><input  name="CHG_ILSI_HANDO"  maxlength="4" type="text" class="txt" value="" onkeyup="document.limit.CHG_CARD_HANDO.value=document.limit.CHG_ILSI_HANDO.value;" title="일시불 조정요청한도" />만원</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10">할부</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="input_point"><input  name="CHG_HALBU_HANDO" maxlength="4" type="text" class="txt" value="" title="할부 조정요청한도" />만원</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10">현금서비스</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="t_no">0 </span>만원</td>
+								<td class="cell_r10"><span class="input_point"><input name="CHG_CASH_HANDO" maxlength="4" type="text" class="txt" value="" title="현금서비스 조정요청한도" />만원</span></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">
+								한도조정 신청은 월~금 09:00 ~ 21:00까지 가능합니다. (토/일/공휴일은 불가)<br />
+								(단, 전산시스템의 사정에 따라 약간의 변동이 있을 수 있습니다.)
+							</p>
+							<p class="btnr">
+								<a href="javascript:go_sub(this.document.limit);" class="btn btn_blue"><span>신청</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>그룹관리 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_group_management.png" alt="그룹관리" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="searchgroup">
+			    		<h2><img src="/images/cm/h2_searchgroup.png" alt="SEARCH" /></h2>
+
+			    		<div class="groupname">
+							<!--label for="그룹명"></label-->
+								<select name="searchKey" title="검색 조건 선택"  style="width:100px">
+									<option value="">전체</option>
+								</select>&nbsp;
+
+								<input class="txt" type="text" id="searchValue" name="searchValue" value="" style="width:365px" title="검색어 입력" />
+								<a href="javascript:search()"  class="btn btn_s_blue"><span>조회</span></a>
+						</div><!--end of searchgroup -->
+
+				</div>
+
+				<!-- board_list -->
+				<div class="board_list mt20">
+					<table class="dtable01" summary="선택, no, 그룹명, 조직명, 조직코드로 구성된 그룹관리 정보를 확인 하실 수 있습니다.">
+					<caption>조회결과</caption>
+					<colgroup><col width="50" /><col width="70" /><col width="*" /><col width="150" /><col width="130" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col">선택</th>
+							<th scope="col">no</th>
+							<th scope="col">그룹명</th>
+							<th scope="col">조직명</th>
+							<th scope="col">조직코드</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<!-- loop -->
+						<tr>
+							<td><input type="radio" class="rdo" id="id_select1" name="id_select" title="선택" /></td>
+							<td class="t_no">1</td>
+							<td class="cell_l"><label for="id_select1">음...</label></td>
+							<td>음...</td>
+							<td class="t_no">1</td>
+						</tr>
+						<!-- //loop -->
+
+					</tbody>
+					</table>
+
+					<!-- btn -->
+					<div class="btnset">
+						<p class="btnl">
+							<a href="group.do?method=selectGroupList" class="btn btn_white"><span>그룹등록 &gt;</span></a>
+						</p>
+						<div class="btnr">
+							<a href="javascript:fncDeleteList()" class="btn btn_white"><span>삭제</span></a>
+							<a href="javascript:fncGetGroupList();" class="btn btn_white"><span>수정</span></a>
+						</div>
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+						1
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+
+</body>
+</html>

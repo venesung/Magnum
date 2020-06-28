@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- //100219 -->
+					<div class="tab02 w810">
+						<ul>
+						
+						<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+						
+						
+                            <!-- li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">약정금액변경</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV006','true');">캐시백/포인트/카드대금 선택하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV007','true');">환불하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV008','true');">환불결과조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+<form name="form" >
+	<input type="hidden" name="input" />
+
+<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_not_living_ftech01.png" alt="약정금액을 변경해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02" summary="현재약정금액을 확인하고 변경약정금액을 입력하는 게시판입니다.">
+						<caption>약정금액 변경</caption>
+						<colgroup><col width="100" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>현재약정금액</p></th>
+								<td><p><span class="t_no"><%=nHPIMMHHSV009VO.getString5()%></span> 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>변경약정금액</p></th>
+								<td>
+									<p><select id="label_lspay" class="mr10" name="change_STRING5" title="변경약정금액 선택">
+										<option value="0" selected="selected">선택</option>
+										<option value="100000">10 만원</option>
+										<option value="200000">20 만원</option>
+										<option value="300000">30 만원</option>
+										<option value="400000">40 만원</option>
+										<option value="500000">50 만원</option>
+										<option value="600000">60 만원</option>
+										<option value="700000">70 만원</option>
+										<option value="800000">80 만원</option>
+										<option value="900000">90 만원</option>
+										<option value="1000000">100 만원</option>
+										<option value="1100000">110 만원</option>
+										<option value="1200000">120 만원</option>
+										<option value="1300000">130 만원</option>
+										<option value="1400000">140 만원</option>
+										<option value="1500000">150 만원</option>
+										<option value="1600000">160 만원</option>
+										<option value="1700000">170 만원</option>
+										<option value="1800000">180 만원</option>
+										<option value="1900000">190 만원</option>
+										<option value="2000000">200 만원</option>
+										<!--
+										<option value="2500000">250 만원</option>
+										<option value="3000000">300 만원</option>
+										<option value="3500000">350 만원</option>
+										<option value="4000000">400 만원</option>
+										<option value="4500000">450 만원</option>
+										<option value="5000000">500 만원</option>
+										-->
+									</select>
+									<span class="t_desc03">약정금액은 10~200만원까지 10만원 단위로 선택하여 주세요.</span></p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnl t_desc04"></p>
+                            <p class="btnr"><a href="javascript:go_005();" class="btn btn_blue"><span>약정금액 변경</span></a></p>
+						</div>
+
+						<ol class="list_no01 mt10">
+									<li><p>약정금액은 매월 결제일에 약정한 금액만큼 삼성카드로 자동 이체되는 금액의 한도입니다.</p></li>
+									<li><p>매월 결제일에 약정한 금액만큼 삼성카드로 자동 이체됩니다.<br />
+									<span class="t_desc03">단, 미사용금액이 있을 경우 약정한 금액에서 미사용 금액을 뺀 금액만 자동 이체됩니다.</span></p></li>
+									<li><p>약정금액 변경으로 인한 초과 충전금액은 다음날(영업일기준) 자동 환불됩니다.<br /></p></li>
+						</ol>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_not_living_ftech02.png" alt="신청 후 약정금액 변경시 유의사항입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li class="pb10"><p><span class="t_point inblock pb5">결제일-2 영업일까지 약정금액 변경 시</span><br />
+							그 달 결제일에 바뀐 변경약정금액으로 결제일충전(옮겨놓기)가 됩니다.<br />
+							<span class="t_desc03">예) 결제일이 20일인 회원이 18일에 약정금액을 50만원에서 30만원으로 변경하면, 그 달 결제일에 30만원으로 결제일충전 <br />
+							(옮겨놓기)가 됩니다.</span></p></li>
+							<li><p><span class="t_point inblock pb5">결제일-1 영업일까지 약정금액 변경 시</span><br />
+							그 달은 변경적용이 안되고 다음달 결제일에 바뀐 변경약정금액으로 결제일충전(옮겨놓기)가 됩니다.<br />
+							<span class="t_desc03">예) 결제일이 20일인 회원이 19일에 약정금액을 50만원에서 30만원으로 변경하면, 그 달 결제일에 50만원으로 결제일충전<br />
+							(옮겨놓기)가 되고, 다음달 결제일부터는 변경된 약정금액으로 결제일충전(옮겨놓기)가 됩니다.</span><br />
+							단, 결제일에 충전된 50만원 중 초과 충전금액 20만원은 결제계좌로 다음날(영업일 기준) 자동환불 됩니다.</p></li>
+						</ol>
+					</div>
+				</div>
+</form>
+
+		<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

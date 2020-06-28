@@ -1,0 +1,33 @@
+<%/*
+ * Project Name	: 삼성카드 웹 이노베이션 프로젝트
+ * File Name	: NHPIMCSLCSVIEW001.jsp
+ * Author		: 이공오디자인 한은미 주임
+ * Created on 2010. 2. 10.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<div id="tab_title">삼성카드 해지신청 안내</div>
+
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+<script type="text/javascript">
+	function comfirmPop(){
+		openLayerPopupNonXecure('/hp/im/cs/lcs/NHPIMCSLCSVIEW009P.do');
+	}
+
+	function goPage(str){
+		if(str=="ok"){
+			tabSubmit('/hp/im/cs/lcs.do?method=forwordSCardDerequisition');
+		}
+	}
+</script>
+</div>
+			<!-- content_block -->
+			<%//추후 include 처리
+				String url = "/cms_content/hp/im/cs/lcs/NHPIMCSLCSVIEW009C1.html";
+			%>
+			<cms:include page="<%= url%>" flush="false" />
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

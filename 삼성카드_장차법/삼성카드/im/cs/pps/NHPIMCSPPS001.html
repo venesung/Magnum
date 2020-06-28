@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual 100510 -->
+<div class="top_visual">
+
+	<h1 class="none">People say</h1>
+	<!-- 20130415 웹접근성(장차법)  수정  -->
+	<div class="h1_desc"><img src="/images/cs/h1_people_say.jpg" alt="People say 회원님의 삼성카드 Life를 삼성카드에서 들려주세요." /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100623 -->
+	<div class="tab01 w810">
+		<ul>
+            <li class="on"><a href="javascript:goTabPage('NHPIMCSPPS000', true);">고객에게 듣습니다</a></li><!-- 100204 -->
+            <!--<li class=""><a href="javascript:goTabPage('NHPIMCSPPS001', true);">나의 카드 생활 백서</a></li>
+		--></ul>
+	</div>
+</div>
+
+<div class="content_block content_block_card clfix"><!-- 100126 -->
+
+	<h2><img src="/images/cs/h2_people_say01.png" alt="고객님의 아이디어를 작성해주세요" /></h2>
+	<div class="content_block_inner fill_joinin">
+		<div class="tb_exp clfix">
+			<span>테마별 주제를 선택하여 작성해 주시면 됩니다.</span>
+		</div>
+		<form name="insertForm" method="post">
+<span style="display:none;"><a id="uploadLink"></a></span>
+<!--<input type="hidden" name="searchcondition1" value=""/>-->
+<!--<input type="hidden" name="searchcondition2" value=""/>-->
+<!--<input type="hidden" name="input" />-->
+<!--<iframe name = "hiddenFrame" src="" width=0 height=0 ></iframe>-->
+<span style="display:none;"><input type="checkbox" name="del" class="radio" title="첨부파일 삭제 선택" /></span>
+<input type="hidden" id="localFilePath" name="localFilePath" value="" />
+		<table class="dtable02" style="border-bottom:0 !important;" summary="고객님의 아이디어(테마, 주제, 설명, 성명, 제목, 내용, 전화번호, 휴대전화번호)를 작성하실 수 있습니다.">
+		<caption>고객님의 아이디어 작성</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row" class="cell_l"><p>테마</p></th>
+				<td class="cell_l"><p>
+					<select  id="label_yheme" style="width:170px"  name="theme" onchange="questionSelect(this.value);" title="테마 선택" >
+						<option ></option>
+					</select>
+					</p>
+				</td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row" class="cell_l"><p>주제</p></th>
+				<td class="cell_l"><p>
+					<select id="label_subject" style="width:300px" name="question_title" onchange="subTitle(this.value)" title="주제 선택" >
+							<option></option>
+					</select>
+					</p>
+				</td>
+			</tr>
+			<tr>
+			<th scope="row" class="cell_l"><p>설명</p></th>
+				<td class="cell_l">
+				<div id="question">
+				</div></td>
+			</tr>
+			<tr>
+				<th scope="row" class="cell_l"><p>성명</p></th>
+				<td class="cell_l"><p>${user_name}</p></td>
+			</tr>
+			<tr>
+				<th scope="row" class="cell_l"><p>제목</p></th>
+				<td class="cell_l"><span class="input_subject"><input type="text" class="txt" id="label_title" value="" onkeyup="updateChar(100);" name="title" title="제목" /></span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="cell_l"><p>내용</p></th>
+				<td class="cell_l"><span class="input_body"><textarea class="txt" id="label_body" rows="80" cols="5" onkeyup="updateChar(3000);" name="content" title="내용" ></textarea></span></td>
+			</tr>
+			
+
+			<tr>
+				<th scope="row" class="cell_l"><p>전화번호</p></th>
+				<td class="cell_l">
+					<span class="input_phone"> 
+						<select title="전화번호 앞자리 선택" name="phone1">
+							<option value="">선택</option>
+							<option value="02" >02 </option>
+							<option value="031">031</option>
+							<option value="032">032</option>
+							<option value="033">033</option>
+							<option value="041">041</option>
+							<option value="042">042</option>
+							<option value="043">043</option>
+							<option value="051">051</option>
+							<option value="052">052</option>
+							<option value="053">053</option>
+							<option value="054">054</option>
+							<option value="055">055</option>
+							<option value="061">061</option>
+							<option value="062">062</option>
+							<option value="063">063</option>
+							<option value="064">064</option>
+						</select> - 
+						<input type="text" class="txt" value="" title="전화번호 가운데자리"  name="phone2" maxlength="4" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" />&nbsp;-&nbsp;<input 
+						type="text" class="txt" value="" title="전화번호 뒷자리"  name="phone3" maxlength="4" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" />
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+				<td class="cell_l">
+					<span class="input_phone">
+						<select title="휴대전화번호 앞자리 선택" name="handphone1">
+							<option value="">선택</option>
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select> - 
+						<input type="text" class="txt" value="" title="휴대전화번호 가운데자리" name="handphone2" maxlength="4" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" />&nbsp;-&nbsp;<input 
+						type="text" class="txt" value="" title="휴대전화번호 뒷자리" name="handphone3" maxlength="4" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" />
+					</span>
+				</td>
+			</tr>
+		</tbody>
+		</table></form><form name="fileUploadForm" method="post" enctype="multipart/form-data">
+		<table class="dtable02" style="border-top:0 !important;" summary="아이디어 제안을 위한 첨부파일을 등록하는 게시판입니다.">
+		<caption>아이디어 제안 첨부파일 등록</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row" class="cell_l"><p>첨부파일</p></th>
+				<td class="cell_l">
+					<span style="display:none;"><input type="checkbox" name="del" class="radio" title="첨부파일 삭제 선택" /></span>
+					<input type="file" name="fileUpload" id="fileUpload" style="width:348px; height:21px !important;" class="txt" value="" onchange="document.getElementById('localFilePath').value = this.value;" title="첨부파일" /><span class="t_desc04">GUL,HWP,DOC,PPT,PDF 파일만 등록가능</span>
+				</td>
+			</tr>
+		</tbody>
+		</table></form>
+		
+<!-- 100126 --> 
+        <p class="btnc"><a href="javascript:frmsubmit();"><img src="/images/common/btn_send.png" alt="보내기" /></a><a href="javascript:reset1();"><img src="/images/common/btn_rewrite.png" alt="다시쓰기" /></a></p>
+<!-- //100126 -->
+	</div>
+</div>
+
+<div class="content_block clfix">
+	<h2><img src="/images/cs/h2_people_say02.png" alt="아이디어 제안 시 주의사항입니다" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>본 아이디어 제안과 상관없는 등록물은 접수되지 않으며, 별도 통보없이 삭제될 수 있습니다.</p></li>
+			<li><p>광고,폭력,음란,사행성,반사회적 제작물 등 개인 또는 단체의 순수 창작 아이디어에 한하여 제안하실 수 있습니다.</p></li>
+			<li><p>저작권법 위반, 사생활침해 등 관련 법률에 위반사항 발생시 모든 책임은 등록자에게 있습니다.</p></li>
+			<li><p>제출한 아이디어는 취소 또는 반환 요청하실 수 없으며, 제출한 <strong class="t_black">아이디어의 저작권은 삼성카드</strong>에 귀속됩니다.</p></li>
+		</ol>
+	</div>
+</div>	
+<!-- /form -->
+<%-- 파일 업로드시 추가  END --%>
+
+<!-- 2013.01.16 웹접근성 및 보안강화 파일업로드 관련 추가 시작 -->
+<div style="width:0px; height:0px; display:none;">	
+	<iframe name="fileUploadFrame" id="fileUploadFrame" frameborder="0" width="0" height="0" title="빈프레임"></iframe>
+</div>
+<!-- 2013.01.16 웹접근성 및 보안강화 파일업로드 관련 추가 끝 -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+			

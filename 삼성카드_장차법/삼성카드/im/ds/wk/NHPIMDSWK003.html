@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1 class="none">위클리보너스 서비스</h1>
+		<!-- 20130412 웹접근성(장차법)  수정  -->
+		<div class="h1_desc"><img src="/images/mh/h1_weeklybonus.jpg" alt="위클리보너스 서비스.주단위의 계획적인 소비 최대 2%의 U-POINT가 보입니다." /></div>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block content_block_tab2 clfix"> 
+		<!-- tab_area -->
+		<div class="tab02 w810">
+			<ul>
+				<!-- 2013.01.03 depth level 수정 -->
+				<li><a href="javascript:goTabPage('NHPIMDSWK008',true);">서비스안내</a></li>
+                <li><a href="javascript:goTabPage('NHPIMDSWK001',true);">서비스 신청하기</a></li>
+                <li><a href="javascript:goTabPage('NHPIMDSWK002',true);">신청내역</a></li>
+                <li class="on"><a href="javascript:goTabPage('NHPIMDSWK020',true);">조회하기</a></li>
+                <!-- 
+                	<ul class="sub_tab">
+                        <li class="on"><a href="#" onclick="javascript:goTabPage('NHPIMDSWK003',true);return false;">주단위 입금내역</a></li>
+                        <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK006',true);return false;">월명세서별 입금내역</a></li>
+                        <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK013',true);return false;">U-Point 적립내역</a></li>
+					</ul>                
+                </li>
+                -->
+                <li><a href="javascript:goTabPage('NHPIMDSWK0011',true);">해지하기</a></li>
+                <li><a href="javascript:goTabPage('NHPIMDSWK0010',true);">FAQ</a></li>
+                
+                
+                
+                <!-- li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK008',true);return false;">위클리보너스서비스 안내</a></li>
+                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK001',true);return false;">서비스 신청</a></li>
+                <li class="on"><a href="#" onclick="javascript:goTabPage('NHPIMDSWK003',true);return false;">조회하기</a>
+                <li><a href="javascript:goTabPage('NHPIMDSWK008',true);">위클리보너스서비스 안내</a></li>
+                <li><a href="javascript:goTabPage('NHPIMDSWK001',true);">서비스 신청</a></li>
+                <li class="on"><a href="javascript:goTabPage('NHPIMDSWK003',true);">조회하기</a>
+					<ul class="sub_tab">
+                        <li class="on"><a href="javascript:goTabPage('NHPIMDSWK003',true);">주단위 입금내역</a></li>
+                        <li><a href="javascript:goTabPage('NHPIMDSWK006',true);">월명세서별 입금내역</a></li>
+                        <li><a href="javascript:goTabPage('NHPIMDSWK013',true);">U-Point 적립내역</a></li>
+					</ul>
+				</li>
+                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK0011',true);return false;">해지하기</a></li -->
+			</ul>
+		</div>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<h2><img src="/images/mh/h2_weekly05.png" alt="주단위내역을 조회하세요" /></h2>
+		<div class="content_block_inner">
+			<ol class="list_no01">
+				<li><p>최근 6개월 간의 이용내역을 확인할 수 있습니다.</p></li>
+				<li><p>위클리보너스입금 이후 발생한 매출취소 및 입금취소는 반영되어 있지 않습니다.</p></li>
+			</ol>
+			<table class="dtable02 dtable_inputfield mt30" summary="위클리보너스의 입금일을 조회 하실 수 있는 게시판입니다." border="0">
+				<caption>입금일 조회 게시판</caption>
+				<colgroup>
+					<col width="115" />
+					<col width="*" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>입금일</p></th>
+						<td><p> 
+								<!-- 
+									<a id="term1" href="javascript:changeTerm('1');" class="btn <%=arClasses[0]%>"><span>당일</span></a>
+									<a id="term2" href="javascript:changeTerm('2');" class="btn <%=arClasses[1]%>"><span>1주일</span></a>
+									 --> 
+								<a id="term3" href="javascript:changeTerm('3');" class="btn btn_s_white"><span>1개월</span></a> <a id="term4" href="javascript:changeTerm('4');" class="btn btn_s_white"><span>2개월</span></a> <a id="term5" href="javascript:changeTerm('5');" class="btn btn_s_white"><span>3개월</span></a> <a id="term6" href="javascript:changeTerm('6');" class="btn btn_s_white"><span>6개월</span></a>
+								<input type="hidden" name="termGubun" value="" />
+								<br />
+								<span class="reset_date block mt5">날짜지정
+								
+								</span></p></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<!-- btn -->
+			<div class="btnr"> 
+				<!-- 100126 --> 
+                <a href="#onclick" class="btn btn_blue" onclick="fnSearch();return false;"><span>조회</span></a> 
+				<!-- //100126 --> 
+			</div>
+		</div>
+	</div>
+	
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_weekly06.png" alt="입금/포인트 적립내역입니다" /></h2>
+		<div class="content_block_inner">
+			<table id="incomeByWeekRtnList" class="dtable01" summary="위클리보너스, 상세이용내역, 입금일, 청구액, 입금액내역을 보여주는 게시판입니다">
+				<caption>
+				입금/포인트 적립내역
+				</caption>
+				<colgroup>
+				<col width="120" />
+				<col width="120" />
+				<col width="120" />
+				<col width="*" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="colgroup" colspan="3" class="cell_c riline boline_b0">위클리보너스</th>
+						<th scope="col" rowspan="2" class="cell_c">상세 이용내역</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_l10">입금일</th>
+						<th scope="col" class="cell_r10">청구액</th>
+						<th scope="col" class="cell_r10 riline">입금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10 t_no">1</td>
+						<td class="cell_r10 t_no">1</td>
+						<td class="cell_r10 t_no riline">1</td>
+						<td class="t_no"><a href="#onclick" class="btn btn_s_white"><span>상세내역보기</span></a></td>
+					</tr>
+					<tr class="nodata">
+						<td colspan="4">조회 결과가 없습니다.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="paginate">
+				<div class="paging"> <a id="btnMore" href="javascript:getMoreList()" class="btn btn_s_white" style="display:none;"><span>다음</span></a> </div>
+			</div>
+			<!-- 상세페이지 DIV -->
+			<div id="moreLayer">
+				<p class="mt20 ml10"><strong class="t_point">입금 상세내역</strong></p>
+			</div>
+			<table class="dtable01 mt10" id="detailIncomeByWeekRtnList" summary="이용일, 이용자, 카드번호, 가맹점명, 이용금액, 위클리, 월결제일, 월결제예상금액등 입금 상세내역을 알 수 있는 게시판입니다.">
+            <caption>입금 상세내역</caption>
+				<colgroup>
+				<col width="7%" />
+				<col width="8%" />
+				<col width="20%" />
+				<col width="14%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="11%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col" class="cell_l10">이용일</th>
+						<th rowspan="2" scope="col" class="cell_l10">이용자</th>
+						<th rowspan="2" scope="col" class="cell_l10">카드번호</th>
+						<th rowspan="2" scope="col" class="cell_l10">가맹점명</th>
+						<th rowspan="2" scope="col" class="cell_l10 riline">이용금액</th>
+						<th colspan="2" scope="colgroup" class="boline_b0 riline">위클리</th>
+						<th rowspan="2" scope="col" class="cell_l10">월결제일</th>
+						<th rowspan="2" scope="col"class="cell_r10">월결제<br />예상금액</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_r10">청구액</th>
+						<th scope="col" class="cell_r10 riline">입금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nodata">
+						<td colspan="9">조회 결과가 없습니다.</td>
+					</tr>
+					
+					<!-- loop -->
+				</tbody>
+			</table>
+			
+			<!-- paginate -->
+			<div class="paginate">
+				<div class="paging"> <a id="btnMore2" href="javascript:fn_getMoreList2(document.frm.incomeByWeekRtnListParam.value)" class="btn btn_s_white" style="display:none;"><span>다음</span></a> </div>
+			</div>
+			
+			<!-- 포인트 상세내역 -->
+			<p class="mt20 ml10"><strong class="t_point">포인트 상세내역</strong></p>
+			<table class="dtable01 mt10" id="detailIncomeByWeekList" summary="이용일, 가맹점명, 이용금액, 포인트내역 등 포인트 상세내역을 알 수 있는 게시판입니다.">
+            <caption>포인트 상세내역</caption>
+				<colgroup>
+				<col width="12%" />
+				<col width="26%" />
+				<col width="23%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col" class="cell_l10">이용일</th>
+						<th rowspan="2" scope="col" class="cell_l10">가맹점명</th>
+						<th rowspan="2" scope="col" class="cell_r10 riline">이용금액</th>
+						<th colspan="4" scope="colgroup" class="boline_b0">포인트</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_r10">U-Point </th>
+						<th scope="col" class="cell_r10">U-Point(전환) </th>
+						<th scope="col" class="cell_r10">보너스P/<br />
+							세이브P</th>
+						<th scope="col" class="cell_r10">합계</th>
+					</tr>
+				</thead>
+				
+				<tfoot id="sumField">
+					<tr>
+						<td class="cell_l10 t_no"></td>
+						<td class="cell_l10"></td>
+						<td class="cell_r10 riline"><span id="displaySlAmSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displaySpointSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayCUpointSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayBpointSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayPointTSum" class="t_no"></span></td>
+					</tr>
+				</tfoot>
+				
+				<tbody>
+					<tr class="nodata">
+						<td colspan="7">조회 결과가 없습니다.</td>
+					</tr>
+					
+					<!-- //loop -->
+				</tbody>
+			</table>
+			<div class="paginate">
+				<div class="paging"> <a id="btnMore3" href="javascript:fn_getMoreList3(document.frm.incomeByWeekRtnListParam.value)" class="btn btn_s_white" style="display:none;"><span>다음</span></a> </div>
+			</div>
+		</div>
+		<div class="btnr"> 
+			<a class="btn btn_blue" href="javascript:goTabPage('NHPIMDSWK020',true);"><span>확인</span></a> 
+		</div>
+	</div>
+	
+	<div id="prt_layer" name="prt_layer" style="display:none">
+		<div class="content_block content_block_card clfix">
+            <div class="btnr"> <a href="#onclick" class="btn btn_blue" onclick="fnPrint();"><span>인쇄</span></a> </div>
+		</div>
+	</div>
+	
+<div id="go_layer2" name="go_layer2" style="display:none">
+	<div id="print_content"> <br />
+		<br />
+		<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+		<div style="width:90%;">
+			<p>
+			<div id="morePrintLayer">
+				<h3>입금 상세내역</h3>
+			</div>
+			<p class="mt20 ml10"><strong class="t_point">입금 상세내역</strong></p>
+			<table class="dtable01 mt10" id="detailIncomeByWeekRtnListPrint" summary="이용일, 이용자, 카드번호, 가맹점명, 이용금액, 위클리, 월결제일, 월결제 예상금액 등 입금 상세내역을 보여주는 게시판입니다.">
+			<caption>입금 상세내역</caption>
+				<colgroup>
+				<col width="7%" />
+				<col width="8%" />
+				<col width="20%" />
+				<col width="14%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="11%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col" class="cell_l10">이용일</th>
+						<th rowspan="2" scope="col" class="cell_l10">이용자</th>
+						<th rowspan="2" scope="col" class="cell_l10">카드번호</th>
+						<th rowspan="2" scope="col" class="cell_l10">가맹점명</th>
+						<th rowspan="2" scope="col" class="cell_l10 riline">이용금액</th>
+						<th colspan="2" scope="colgroup" class="boline_b0 riline">위클리</th>
+						<th rowspan="2" scope="col" class="cell_l10">월결제일</th>
+						<th rowspan="2" scope="col" class="cell_r10">월결제<br />
+							예상금액</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_r10">청구액</th>
+						<th scope="col" class="cell_r10 riline">입금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nodata">
+						<td colspan="9">조회 결과가 없습니다.</td>
+					</tr>
+					<!-- loop -->
+				</tbody>
+			</table>
+			
+			<!-- 포인트 상세내역 -->
+			<p class="mt20 ml10"><strong class="t_point">포인트 상세내역</strong></p>
+			<table class="dtable01 mt10" id="detailIncomeByWeekListPrint" summary="이용일, 가맹점명, 이용금액, 포인트내역 등 포인트 상세내역을 보여주는 게시판입니다.">
+			<caption>포인트 상세내역</caption>
+				<colgroup>
+				<col width="12%" />
+				<col width="26%" />
+				<col width="26%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2" scope="col" class="cell_l10">이용일</th>
+						<th rowspan="2" scope="col" class="cell_l10">가맹점명</th>
+						<th rowspan="2" scope="col" class="cell_r10 riline">이용금액</th>
+						<th colspan="4" scope="colgroup" class="boline_b0">포인트</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_r10">U-Point </th>
+						<th scope="col" class="cell_r10">U-Point(전환) </th>
+						<th scope="col" class="cell_r10">보너스P/<br />
+							세이브P</th>
+						<th scope="col" class="cell_r10">합계</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nodata">
+						<td colspan="7">조회 결과가 없습니다.</td>
+					</tr>
+					<!-- //loop -->
+				</tbody>
+				<tfoot id="sumFieldPrint">
+					<tr>
+						<td class="cell_l10 t_no"></td>
+						<td class="cell_l10"></td>
+						<td class="cell_r10 riline"><span id="displaySlAmPrintSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displaySpointPrintSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayCUpointPrintSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayBpointPrintSum" class="t_no"></span></td>
+						<td class="cell_r10"><span id="displayPointTPrintSum" class="t_no"></span></td>
+					</tr>
+				</tfoot>
+			</table>
+			</p>
+		</div>
+	</div>
+	<div class="btnr"> 
+		<a class="btn btn_blue" href="javascript:goTabPage('NHPIMDSWK020',true);"><span>확인</span></a> 
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

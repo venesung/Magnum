@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">전화요금납부 서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/ss/h1_phone_payment.jpg" alt="편리한 공과금 카드납부 전화요금도 삼성카드로 전화요금 납부서비스 - LG U+ 전화요금 자동납부 신청하세요" /></div><!-- 정기일반영 13.04.25 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- // 100126 -->
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSTEL001M002',true);">전화요금 납부신청</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSTEL001M003',true);">납부내역조회</a></li><!-- 접근성 TF 메뉴명 변경 VOC 12.11.27 -->
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSTEL001M004',true);">SHOW 요금제 안내 및 신청</a></li>-->
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">	<!-- 상단변경 -->
+	<h2><img src="/images/ss/h2_phonecharge02.png" alt="자동납부를 수정해주세요" /></h2>
+	<div class="content_block_inner">
+		
+		<!-- 100126 -->
+		<div class="step_autophone step_autophone01">
+			<ol class="none">
+				<li><abbr>현재단계</abbr>결제카드 변경</li>
+				<li>변경완료</li>
+			</ol>
+		</div>
+		<!-- //100126 -->
+
+		<div class="tb_exp pos_rel">
+			<p class="tb_exp">
+				<span><strong class="t_black">통신요금 삼성카드 자동납부 신청 수정 현황입니다.</strong></span><br />
+				<span class="t_desc03">해당 통신사별로 결제기간의 반영이 변경될 수 있습니다.</span>
+			</p>
+		</div>
+
+		<table class="dtable01 dtable_inputfield" summary="자동납부 수정을 위한 결제카드 선택, CVC값, 전화번호, 가입자명을 입력하는 게시판 입니다.">
+		<caption>자동납부 수정</caption>
+		<colgroup><col width="*" /><col width="120" /><col width="120" /><col width="130" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">결제카드</th>
+				<th scope="col">CVC값</th>
+				<th scope="col">전화번호</th>
+				<th scope="col">가입자명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10">
+					<select name="cardNo" title="카드번호 선택" style="width:180px">
+						<option></option>
+					</select>
+				</td>
+				<td><span class="input_3char"><input type="password" name="cvcNo" class="txt" maxlength="3" value="" title="CVC번호" onkeypress="checkTypes(this, 'NUMB')" style="ime-mode:disabled;" /></span></td>
+				<td>000-000-0000</td>
+				<td><span class="input_name"><input type="text" name="ownName" class="txt" value="${ownName }" maxlength="10" title="성명" onkeypress="checkTypes(this, 'HCHR')" /></span></td>
+			</tr>
+
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnset">
+			<div class="btnl">
+				<ol class="list_desc">
+					<li><p>실제 전화 가입자와 입력하신 가입자명이 상이할 경우 정상처리 되지 않습니다.</p></li>
+					<li><p>전화요금을 현재 他신용카드로 결제하고 계시면 처리되지 않습니다.</p></li>
+					<li><p>결제카드가 분실, 교체 등의 이유로 변경될 경우 전화요금 결제카드도 변경됩니다.</p></li>
+				</ol>
+			</div>
+
+			<p class="btnr">
+				<a href="javascript:checkSubmit();" class="btn btn_blue"><span>확인</span></a>
+				<a href="javascript:goTabPage('NHPIMSSTEL001M003',true);" class="btn btn_white"><span>취소</span></a>
+			</p>
+		</div>
+		
+		
+		<dl class="cvc_view">
+			<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+			<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+			<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+		</dl>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

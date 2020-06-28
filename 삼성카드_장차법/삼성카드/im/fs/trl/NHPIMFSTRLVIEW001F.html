@@ -1,0 +1,35 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMFSTRLVIEW001.jsp
+ * Author: 삼성SDS 
+ * Created on 2010. 2. 1.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">개인신용 대출</div>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<div id="tab_script" >
+<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<script language="javascript" type="text/javascript">
+		/* @param flexId : flex object tag ID
+		 * @param classId : flex classid, "clsid:" 제외된 나머지 값만 입력
+		 * @param width : flex width size
+		 * @param height : flex height size
+		 * @param jsonParam : json type, movie값 필수
+		 * @param divId : [optional], default : flexObject*/
+		function $tabOnLoad() {
+			embedFlexOnTab("NHPIMFSTRLVIEW001", "D27CDB6E-AE6D-11cf-96B8-444553540000", "100%", "800", "{movie:'/flex-resource/NHPIMFSTRLVIEW001.swf',wmode:'transparent'}");
+		}
+
+	</script>
+</div>
+
+<div class="top_visual">
+	<h1><img src="/images/fs/h1_chk_creditloan.png" alt="개인신용대출이 이용내역을 확인할 수 있습니다" /></h1>
+</div>
+<!-- content_block -->
+<div class="content_block content_block_card clfix" >
+	<div id="flexObject"></div>
+</div>
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

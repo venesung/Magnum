@@ -1,0 +1,26 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: 
+ * Author: 
+ * Created on 
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<% String snsCode = request.getParameter("snsCode");
+   if( !"".equals(snsCode) ){
+	   %>
+	<script type="text/javascript">
+		var snsCode = '<%=snsCode%>';
+		//location.href = "http://local.samsungcard.com:7111/cardsearch/cps.do?method=getCompareView&kind_code=" + snsCode +"&page=cardComp&snsComp=snsComp";
+        location.href = "http://www.samsungcard.com/cardsearch/cps.do?method=getCompareView&kind_code=" + snsCode +"&page=cardComp&snsComp=snsComp";
+		//location.href = "http://www.samsungcard.com/cardsearch/cps.do?method=getCompareView&kind_code=" + snsCode;
+	</script>
+<%	   
+   }
+%>
+
+
+

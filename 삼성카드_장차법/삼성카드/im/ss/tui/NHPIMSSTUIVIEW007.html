@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab01 w810 ">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSTUI002','false');">대학등록금납부신청</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="#">납부이력조회/취소</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_registrationFee_inquiry01.png" alt="학교 정보를&#13;입력하세요" /></h2>
+	<div class="content_block_inner">
+		<form name="f1" action="" method="post">
+		<table class="dtable02 dtable_inputfield" summary="학교, 학번등의 학교정보를 입력하는 게시판입니다">
+		<caption>학교정보 입력</caption>
+		<colgroup><col width="120" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><label for="label_school">학 교</label></th>
+				<td><p>
+					<select name="UNIV_CODE" id="label_school" title="학교선택">
+						<option></option>
+					</select>
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><label for="label_classcode">학 번</label></th>
+				<td><p><input type="text" name="HAKBUN" class="txt" value="" id="label_classcode" title="학번" /></p></td>
+			</tr>
+		</tbody>
+		</table>
+		</form>
+		
+		<div class="btnset">
+			<p class="btnr">
+				<a href="javascript:Search();" class="btn btn_blue"><span>조회</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<!-- content_block -->
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img alt="" src="/images/common/img_pay_deny.jpg" /></p>
+		<div class="p_desc">
+			<h2><img src="/images/ss/txt_sorry_stopped.png" alt="죄송합니다 고객님" /></h2>
+			<div class="p_txt">
+				<p>해당학번이 존재하지 않거나 초과등록 대상자이오니 확인 바랍니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content_block clfix">
+	<h2><img src="/images/ss/h2_registrationFee_inquiry02.png" alt="대학등록금 납부결과&#13;내역입니다." /></h2>
+	<div class="content_block_inner">
+		<div class="d_alert d_alert_s noline clfix">
+			<p class="ico_alert"><img src="/images/common/img_s_pay_deny.jpg" alt="" /></p><!-- 100531 -->
+			<div class="p_desc">
+				<img src="/images/ss/txt_registrationFee_none.png" alt="해당 조건에 맞는 납부내역이 없습니다" />
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

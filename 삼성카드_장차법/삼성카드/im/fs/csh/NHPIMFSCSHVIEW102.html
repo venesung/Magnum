@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+    <h1><img src="/images/cd/h1_cashservice_fam.png" alt="가족카드로 현금서비스를 받을 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+    <div class="step"><img src="/images/cd/step_cashservice_fam02.png" alt="추가정보입력" />
+        <!--ol class="none">
+            <li>신청금액 및 카드정보 입력</li>
+            <li><abbr>현재단계</abbr><strong>추가정보입력</strong></li>
+            <li>입력내용 확인 및 서비스신청</li>
+            <li>신청완료</li>
+        </ol-->
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<form name="form1" autocomplete="off">
+    <h2><img src="/images/cd/h2_cashservice_fam02.png" alt="추가정보를 입력하세요" /></h2>
+    <div class="content_block_inner">
+        <table class="dtable02 dtable_inputfield" summary="신청금액, 입금구분, 은행명, 계좌번호, 긴급연락처, 공인인증서 등 추가정보를 입력할 수 있는 게시판입니다.">
+        <caption>추가정보 입력</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>신청금액</p></th>
+                <td><p><span class="t_no">1</span> 만원</p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>입금구분</p></th>
+                <td><p>본인통장입금 [ 2]</p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>은행명</p></th>
+                <td><p>
+                	<!-- 20130411 웹접근성(장차법)  수정 -->
+                	<!-- <select size="1" name="BANK" title="은행선택" onchange="alert_msg(this.value);document.form1.ACCOUNT_NO2.focus();">   -->
+                    <select size="1" name="BANK" title="은행선택" onchange="alert_msg(this.value);">
+                        <option selected="selected">은행선택</option>
+                    </select>
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>계좌번호</p></th>
+                <td><p><input type="text" name="ACCOUNT_NO2" class="txt" value='' maxlength="25" onkeydown="checkEnter();" title="계좌번호" onkeypress="checkTypes(this, 'NUMB');" />
+                <span class="inblock ml10 t_desc04 al_top">(하이픈'-'없이 입력)<br />본인명의 계좌로 입금 가능합니다</span></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>긴급연락처</p></th>
+                <td><p class="input_phone">
+                    
+                    <!-- 20130411 웹접근성(장차법)  수정 -->
+                    <!-- <select name="TEL_NO1" size="1" title="전화번호 앞자리 선택" onchange="document.form1.TEL_NO2.focus()" >   -->
+                    <select name="TEL_NO1" size="1" title="전화번호 앞자리 선택" >
+                        <option value="0000" selected="selected">선택</option>
+                     </select>
+                     <input type="text" class="txt" value="" name="TEL_NO2" size="4" maxlength="4" onkeydown="checkEnter();" title="전화번호 가운데자리" onkeypress="checkTypes(this, 'NUMB');" /> -
+                     <input type="text" class="txt" value="" name="TEL_NO3" size="4" maxlength="4" onkeydown="checkEnter();" title="전화번호 뒷자리" onkeypress="checkTypes(this, 'NUMB');" />
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>공인인증서</p></th>
+                <td><p><label><input type="radio" name="SIGN_GUBUN" value="Y" title="사용함" onclick="check_cert(this.document.form1);" onkeydown="checkEnter();" checked="true" />사용함</label>
+                <a href="/hp/im/mh/csm/certInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="공인인증서 이용방법 새창">공인인증서 이용방법</a> 
+                <a href="/hp/im/mh/csm/possibleCertInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="사용가능한 공인인증서 새창">사용가능한 공인인증서</a>
+				</p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btnset -->
+        <div class="btnset">
+            <p class="btnl t_desc04">공인인증서 이용이 어려운 회원님께서는 금융ARS(<span class="t_point_org t_no">1588-8600</span>)를 통해 이용해주시기 바랍니다.</p>
+            <p class="btnr"><a href="javascript:checkForm(this.document.form1);" class="btn btn_blue"><span>확인</span></a></p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

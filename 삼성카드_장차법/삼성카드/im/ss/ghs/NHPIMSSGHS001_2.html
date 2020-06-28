@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">대리운전도 카드로 안심귀가서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_samsungcard_safeturn.jpg" alt="대리운전도 카드로 안심귀가서비스 - 믿을 수 있는 대리업체로 안전하게 귀가하세요" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMSSGHS001M002', true);">서비스 소개</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMSSGHS001M003', true);">신청하기</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMSSGHS001M004', true);">이용내역조회 및 영수증 출력</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ss/h2_sinfocare01.png" alt="약관에 동의해 주세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						<h3 class="none">약관</h3>
+						<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+							<div id="agreeDiv" name="agreeDiv" class="agree" tabindex="0"><noscript><a href="/agreement/html_srv_safereturn.html" title="새창" target="_blank">안심귀가서비스 가입약관</a></noscript></div>
+						</div></div>
+						<div class="btnset">
+                            <div class="btnl">
+                                <label for="rdo1_agree"><input name="rdo1_agree" id="rdo1_agree" type="radio" class="rdo" value="" onclick="rdoClick('1_a');" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+                                <label for="rdo1_disagree"><input name="rdo1_disagree" id="rdo1_disagree" type="radio" class="rdo" value="" checked="checked" onclick="rdoClick('1_d');" title="동의안함" /> 동의안함</label>
+                            </div>
+
+                            <!-- btn -->
+                            <div class="btnr">
+                                <a href="#id_infocare_step02" class="btn btn_blue" onclick="agree1('id_goHomeSafety_2step');"><span>확인</span></a>
+                                <a href="#" class="btn btn_white" onclick="goTabPage('NHPIMSSGHS001M002', true);"><span>취소</span></a>
+                                <a href="javascript:printDiv('agreeDiv');" class="btn btn_white"><span>인쇄</span></a>
+                            </div>
+                        </div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div id="id_goHomeSafety_2step" class="content_block clfix" style="display:">
+					<h2><img src="/images/ss/h2_sinfocare02.png" alt="개인정보 입력 및 제휴사 정보 제공 동의입니다." /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="카드구분, 카드번호, 유효기간, 주민등록번호, 휴대폰 번호를 입력하는 게시판입니다.">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드구분</p></th>
+								<td>
+									<p>
+										<label><input type="radio" class="rdo" value="" name="card_agree" checked="checked" onclick="rdoClick('card_a');" title="개인" /> 개인&nbsp;&nbsp;&nbsp;</label>
+										<label><input type="radio" class="rdo" value="" name="card_disagree" onclick="rdoClick('card_d');" title="법인(개인명의)" /> 법인(개인명의)&nbsp;&nbsp;&nbsp;</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td>
+									<p class="input_idno">
+										<input name="card_no1" type="text" class="txt" value="" title="카드번호 첫번째자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.initform.card_no2);" maxlength="4" enc="on"/>
+										&nbsp;-&nbsp;
+										<input name="card_no2" type="text" class="txt" value="" title="카드번호 두번째자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.initform.card_no3);" onkeydown="checkLenB(this, document.initform.card_no1);" maxlength="4" enc="on"/>
+										&nbsp;-&nbsp;
+										<input name="card_no3" type="text" class="txt" value="" title="카드번호 세번째자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.initform.card_no4);" onkeydown="checkLenB(this, document.initform.card_no2);" maxlength="4" enc="on"/>
+										&nbsp;-&nbsp;
+										<input name="card_no4" type="password" class="txt" value="" title="카드번호 네번째자리" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.initform.card_no3);" maxlength="4" enc="on"/>
+										&nbsp;<span id="usafeon_card_no1|card_no2|card_no3|card_no4"></span>
+									</p>
+									<p class="t_desc04">(자동결제 대상카드번호를 입력해주세요) 아멕스카드는 15자리만 입력해주세요 (예:3779-12345-52156)</p>
+									
+									<script type="text/javascript">
+									//<![CDATA[
+										safeonAddNumberField("initform", "card_no1|card_no2|card_no3|card_no4");
+									//]]>
+									</script>
+									
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>유효기간</p></th>
+								<td>
+									<p>
+										<select name="month" title="유효기간 월 선택" onchange="saveMonth(this.value);">
+													<option value="0" selected="selected">==</option>
+										</select>
+										&nbsp;월 
+										<select name="year" title="유효기간 년도 선택" onchange="saveYear(this.value);">
+													<option value="0" selected="selected">====</option>
+										</select>
+										&nbsp;년 
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td>
+									<p class="input_idno">
+									<input name="iden_no1" type="text" class="txt" value="" title="주민등록번호 앞자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, document.initform.iden_no2);"  maxlength="6" enc="on"/>&nbsp;-&nbsp;
+									<input name="iden_no2" type="password" class="txt" value="" title="주민등록번호 뒷자리" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.initform.iden_no1);" maxlength="7" enc="on"/>
+									&nbsp;<span id="usafeon_iden_no1|iden_no2"></span>
+									</p>
+									
+									<script type="text/javascript">
+										safeonAddNumberField("initform", "iden_no1|iden_no2");
+									</script>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>휴대폰 번호 입력</p></th>
+								<td><p>
+									<span class="input_phone">
+										<select name="cp_no" title="휴대폰 앞자리" onchange="selCp(this.value)">
+											<option>===</option>
+											<option value="010">010</option>
+											<option value="011">011</option>
+											<option value="016">016</option>
+											<option value="017">017</option>
+											<option value="018">018</option>
+											<option value="019">019</option>
+										</select>&nbsp;-&nbsp;<input name="cp_no1" type="text" class="txt" value="" title="휴대폰 가운데자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.initform.cp_no2);" maxlength="4" />&nbsp;-&nbsp;
+										<input name="cp_no2" type="text" class="txt" value="" title="휴대폰 뒷자리" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.initform.cp_no1);" maxlength="4" />
+									</span>
+								</p></td>
+							</tr>
+							
+						</tbody>
+						</table>
+
+                        <div class="btnset">
+                            <div class="btnl">
+                                <label for="rdo2_agree"><input type="radio" class="rdo" value="" name="rdo2_agree" id="rdo2_agree" onclick="rdoClick('2_a');" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+                                <label for="rdo2_disagree"><input type="radio" class="rdo" value="" name="rdo2_disagree" id="rdo2_disagree" checked="checked" onclick="rdoClick('2_d');" title="동의안함" /> 동의안함</label>
+                            </div>
+                            <div class="btnr">
+                                <a href="javascript:agree2('id_goHomeSafety_3step');" class="btn btn_blue"><span>확인</span></a>
+                                <a href="#" class="btn btn_white" onclick="close2step();"><span>취소</span></a>
+                            </div>
+                        </div>
+                        
+                        <ol class="list_no01 list_cvc">
+                            <li><p class="t_desc02">본인은 본인이 등록한 위 신용카드로 대리운전요금을 자동결제 하는 데 동의합니다.</p></li>
+                            <li><p class="t_desc02">서비스 신청시 회원님께서 입력하신 개인정보를 제휴사인 (주)베스텍컴에 제공하여 결제에 활용되는데 동의합니다.</p></li>
+                        </ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div id="id_goHomeSafety_3step" class="content_block clfix" style="display:">
+					<h2><img src="/images/ss/h2_verf_creditcard.png" alt="신용카드인증입니다" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="신용카드인증을 위하여 신용카드 비밀번호를 입력하는 게시판입니다.">
+						<caption>신용카드인증</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>신용카드 비밀번호</p></th>
+								<td><p class="input_2char"><input name="cardPassword" type="password" class="txt" value="" title="비밀번호 앞 두자리" maxlength="2" /><em>**</em>앞 2자리 입력</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<div class="btnl">
+								<span class="t_desc03">회원의 개인신용정보 제공과 관련, 본인인증을 위하여 신용카드 비밀번호를 입력해 주시기 바랍니다. </span>
+							</div>
+							<div class="btnr">
+                                <a href="#" onclick="window.location='#top';submit_request();" class="btn btn_blue"><span>확인</span></a>
+                                <a href="#" onclick="close3step();" class="btn btn_white"><span>취소</span></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

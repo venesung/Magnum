@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+                
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="NHPIMMHPIT002.jsp" flush="false">
+                        	<jsp:param value="savePointParam" name="viewLayerParam" />
+                        </jsp:include>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <!--div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 --> 
+                    <h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3 class="h3_point"><img src="/images/mh/h3_save_digital.png" alt="디지털세이브" /></h3>                      
+
+                        <table class="dtable02" summary="총 발생포인트, 총 사용포인트, 사용가능포인트, 기준일로 구성된 선택한 포인트의 정보를 확인할 수 있는 게시판입니다">
+                        <caption>세이브 포인트 확인</caption>
+                        <colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+                        <tbody>
+                             <tr>
+                                <th scope="row"><p>총 발생포인트</p></th>
+                                <td><p><span class="t_no">${pointInfo.string6}</span> 원</p></td>
+                                <th scope="row"><p>총 사용포인트</p></th>
+                                <td><p><span class="t_no">${pointInfo.string7}</span> 원</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>사용 가능 포인트</p></th>
+                                <td><p><span class="t_no">${pointInfo.string8}</span> 원</p></td>
+                                <th scope="row"><p>기준일</p></th>
+                                <td><p><span class="t_no"><fmt:parseDate var="dateFmt" value="${pointInfo.string9}" pattern="yyyyMMdd" /><fmt:formatDate value="${dateFmt}" pattern="yy.MM.dd" /></span></p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW028C1.html" flush="false" />
+
+                        <form method="post" name="form1" autocomplete="off">
+                        <div class="tb_exp mt30 clfix">
+                            <h3>적립 연도별 조회</h3>
+                            <span class="ab_tr">
+                                <select name="s_year" title="적립 연도 선택" style="width:80px">
+                                 <option></option>
+                                </select>
+                                <a href="javascript:tabSubmit('/pointSearch.do?method=dsPoint');" class="btn btn_s_blue"><span>조회</span></a>
+                            </span>
+                        </div>
+                        </form>    
+                        
+                        <table class="dtable01" summary="기준년월, 적립액, 사용액, 캐쉬백, 상세보기로 구성된 적립 연도별 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>적립 연도별 조회 결과</caption>
+                        <colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="cell_l10" scope="col">기준년월</th>
+                                <th class="cell_r10" scope="col">적립액</th>
+                                <th class="cell_r10" scope="col">사용액</th>
+                                <th class="cell_r10" scope="col">캐쉬백</th>
+                                <th class="cell_r10" scope="col">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10"><a class="btn btn_s_white" href="javascript:go_detail('<%= recVO.getString11() %>');" title="00월 적립/사용 상세내역"><span>GO</span></a></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <ol class="list_desc">
+                            <li><p>상세보기를 누르시면 해당 월의 적립/사용 상세내역을 조회하실 수 있습니다.</p></li>
+                            <li><p>적립/사용 상세내역은 조회 월을 기준으로 직전 1년까지 조회하실 수 있습니다.</p></li>
+                        </ol>
+                    </div>
+                </div>
+                <!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

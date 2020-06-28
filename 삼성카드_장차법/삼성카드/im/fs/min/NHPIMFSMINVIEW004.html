@@ -1,0 +1,71 @@
+
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<div id="tab_title">미니결제 신청 3단계</div>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">원금 10%만, 부담없고 간편한 현금서비스 미니결제</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMFSMIN001M001', true);">서비스안내</a></li>
+            <li class="on"><span class="none">현재단계</span><a href="#">미니결제신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSMIN001M005', true );">신청결과조회</a></li>                            
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab clfix">
+	<p><img src="/images/mh/step_cash_minipay03.png" alt="신청결과 및 확인" /></p>
+	<ol class="none">
+		<li>CVC 입력 및 신청카드 선택</li>
+		<li>조회 및 신청</li>
+		<li><abbr>현재단계</abbr><strong>신청결과 및 확인</strong></li>
+	</ol>
+	<h2><img src="/images/mh/h2_cash_minipay06.png" alt="신청 결과를 확인해주세요" /></h2>
+	<div class="content_block_inner">
+		<!-- d_complete -->
+		<div class="d_alert d_alert_s noline clfix">
+			<p class="ico_alert"><img src="/images/common/img_s_service_com.jpg" alt="" /></p>
+			<div class="p_desc">
+				<h2 class="mt_20"><img src="/images/mh/txt_cash_minipay03.png" alt="현금서비스 미니결제 신청이 접수되었습니다." /></h2>
+				<div class="p_txt t_desc03">
+					결제일 전 당, 타사 연체 등 신용상태에 문제가 발생할 경우 신청내용이<br />취소될 수 있으니 결제일에 적용여부를 확인하시기 바랍니다.
+				</div>
+			</div>
+		</div>
+								
+		<table class="dtable02 dtable_expand mt20" summary="이월금액, 당월청구금액을 확인할 수 있는 게시판입니다">
+        <caption>미니결제금액 신청 결과</caption>
+		<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>이월금액</p></th>
+				<td><p class="t_no"><%= request.getAttribute("sRequestAmt")%></p></td>
+				<th scope="row"><p>당월청구금액</p></th>
+				<td><p class="t_no"><%= request.getAttribute("sMonthAmt") %></p></td>
+			</tr>
+		</tbody>
+		</table>
+		
+		<!-- btnset -->
+		<div class="btnset">
+			<p class="btnl t_desc04">당월 청구금액 : 미니결제 신청금액 + 당월이자</p>
+            <p class="btnr"><a href="javascript:goTabPage('NHPIMFSMIN001M005', true );" class="btn btn_blue"><span>확인</span></a></p>
+		</div>
+
+	</div>
+</div>
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>				

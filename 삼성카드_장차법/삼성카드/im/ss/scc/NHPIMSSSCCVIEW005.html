@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">채무면제&middot;유예상품 S.CreditCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1000/4371_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSCC001M006', true);" class="mv_h1_btn depth5"><img src="/images/common/btn_apply_01.gif" alt="상품 신청하기" /></a>
+</div>
+
+<form name="form" method="post">
+<!-- content_block -->
+<div id="id_terms_layer" class="content_block content_block_tab2 clfix">	<!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M001', true);">상품소개</a></li><!-- 정기일반영 13.03.06 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M006', true);">상품 신청/조회</a></li><!-- 정기일반영 13.03.06 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M002', true);">보상상담안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M003', true);">보상상담신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M004', true);">보상진행사항</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSCC001M005', true);">고객지원</a>		
+				<ul class="sub_tab">
+                    <li class="on"><span class="none">현재탭</span><a href="javascript:init();">상품 약관</a></li><!-- 정기일반영 13.03.06 -->
+                    <li><a href="javascript:openFaq();">FAQ</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 여기서부터 시작 -->
+	<div class="list_screditcare"> 
+		<ul id="subtab">
+			<li><a href="javascript:tabChange('tab1','1');" id="svc01"><img name="svc01" alt="실업보장형" src="/images/ss/list_sccare01_on.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab2','2');" id="svc02"><img name="svc02" alt="입원보장형" src="/images/ss/list_sccare02.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab3','3');" id="svc03"><img name="svc03" alt="가족형" src="/images/ss/list_sccare03.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab4','4');" id="svc04"><img name="svc04" alt="개인형" src="/images/ss/list_sccare04.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab5','5');" id="svc05"><img name="svc05" alt="일반형" src="/images/ss/list_sccare05.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab6','6');" id="svc06"><img name="svc06" alt="라이프개인형" src="/images/ss/list_sccare06.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab7','7');" id="svc07"><img name="svc07" alt="라이프가족형" src="/images/ss/list_sccare07.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab8','8');" id="svc08"><img name="svc08" alt="장기실업보장형" src="/images/ss/list_sccare08.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab9','9');" id="svc09"><img name="svc09" alt="건강보장형" src="/images/ss/list_sccare09.jpg" border=0 /></a></li>
+			<li><a href="javascript:tabChange('tab10','10');" id="svc10"><img name="svc10" alt="가맹점보장형" src="/images/ss/list_sccare10.jpg" border=0 /></a></li>
+		</ul>
+	</div>
+<!-- 여기까지 끝 -->
+</div>
+<!-- [상품 약관] content_block -->
+				
+<!-- [FAQ] content_block -->
+<div id="id_faq_layer" class="content_block content_block_tab2 clfix" style="display:none"> 	<!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab01 w810 h60">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M001', true);">상품소개</a></li><!-- SR내역 13.03.29 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M002', true);">보상상담안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M003', true);">보상상담신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M004', true);">보상진행사항</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSCC001M005', true);">고객지원</a>	
+				<ul class="sub_tab">
+					<li><a href="javascript:init();">상품 약관</a></li><!-- 정기일반영 13.03.06 -->
+                    <li class="on"><span class="none">현재탭</span><a href="javascript:openFaq();">FAQ</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- [FAQ] content_block -->
+				
+<!--cms_content시작-->
+<!-- 상품 약관 -->
+<div id="id_terms_content01" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C1.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content02" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C2.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content03" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C3.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content04" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C4.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content05" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C5.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content06" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C6.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content07" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C7.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content08" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C8.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content09" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C9.html" flush="false"></cms:include>
+</div>
+<div id="id_terms_content10" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C10.html" flush="false"></cms:include>
+</div>
+<!--cms_content끝-->
+				
+<!-- cms_content시작 -->
+<div id="id_faq_content" style="display:none">
+	<cms:include page="/cms_content/hp/im/ss/scc/NHPIMSSSCCVIEW005C11.html" flush="false"></cms:include>
+</div>	
+<!-- cms_content끝 -->
+
+<div>
+	<br />
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

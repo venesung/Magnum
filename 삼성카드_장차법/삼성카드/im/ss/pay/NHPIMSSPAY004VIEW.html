@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual 상단변경 -->
+<div class="top_visual">
+	<h1 class="none">전화요금 납부서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/ss/h1_phone_payment.jpg" alt="편리한 공과금 카드납부 전화요금도 삼성카드로 전화요금 납부서비스 - LG U+ 전화요금 자동납부 신청하세요" /></div><!-- 정기일반영 13.04.25 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSTEL001M002',true);">전화요금 납부신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSTEL001M003',true);">납부내역조회</a></li><!-- 접근성 TF 메뉴명 변경 VOC 12.11.27 -->
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSTEL001M004',true);">SHOW 요금제 안내 및 신청</a></li>-->
+		</ul>
+	</div>
+</div>
+
+<div class="content_block content_block_tab clfix">
+	<div class="bg_step_phonebill bg_step_phonebill04">
+		<ol class="none">
+			<li>카드선택</li>
+			<li>전화번호입력</li>
+			<li>신청내용확인</li>
+			<li><abbr>현재단계</abbr>신청완료</li>
+		</ol>
+	</div>
+</div><!-- 접근성 TF Step 위치 변경 VOC 12.11.27 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">	<!-- 상단변경 -->
+	<h2><img src="/images/ss/h2_phone_payment03.png" alt="납부 신청하실 전화번호를 입력하세요" /></h2>
+	<div class="content_block_inner">
+		<!-- 100126 -->
+		<!--div class="bg_step_phonebill bg_step_phonebill04">
+			<ol class="none">
+				<li>카드선택</li>
+				<li>전화번호입력</li>
+				<li>신청내용확인</li>
+				<li><abbr>현재단계</abbr>신청완료</li>
+			</ol>
+		</div-->
+
+		<!-- d_complete -->
+		<div class="d_alert d_alert_s noline clfix">
+			<p class="ico_alert"><img src="/images/common/img_s_service_com.jpg" alt="" /></p>
+			<div class="p_desc">
+				<h2 class="mt_20"><img src="/images/ss/txt_phone_payment_success.png" alt="전화요금 납부신청이 아래와 같이 완료되었습니다." /></h2>
+				<div class="p_txt t_desc03">
+					처리결과를 반드시 확인하시기 바랍니다.
+				</div>
+			</div>
+		</div>
+		<!-- //100126 -->
+
+		
+		<table class="dtable01 mt30" summary="통신사, 지역번호, 전화번호, 가입자명, 처리결과를 확인할 수 있는 게시판입니다.">
+		<caption>전화요금 납부신청 처리결과</caption>
+		<colgroup><col width="80" /><col width="80" /><col width="*" /><col width="160" /><col width="120" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">통신사</th>
+				<th scope="col">지역번호</th>
+				<th scope="col">전화번호</th>
+				<th scope="col">가입자명</th>
+				<th scope="col">처리결과</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="5">
+					신청 처리된 내용이 없습니다
+				</td>
+			</tr>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">SKT</td>
+				<td></td>
+				<td>-</td>
+				<td><%=result[i].getMbOwnName() %></td>
+				<td>기타에러</td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnset">
+			<div class="btnr">
+				<a href="javascript:goTabPage('NHPIMSSTEL001M003', true);" class="btn btn_blue"><span>확인</span></a>
+			</div>
+		</div>
+		
+	<!-- 130423 삭제 -->	
+		<!--<div class="line_lgray">&nbsp;</div>
+		<div class="tb_exp">
+			<span>자동납부 선정에 대한 정상처리 여부는 통신사별로 다음과 같이 처리됩니다.</span>
+		</div>
+		<table class="dtable01" summary="통신사, 고객센터, 처리확인가능일, 반영에 대한 내용을 확인할 수 있는 게시판입니다.">
+		<caption>통신사별 자동납부 선정에 대한 정상처리 여부</caption>
+		<colgroup><col width="80" /><col width="80" /><col width="218" /><col width="*" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10 riline">통신사</th>
+				<th scope="col" class="cell_l10 riline">고객센터</th>
+				<th scope="col" class="cell_l10 riline">처리확인가능일</th>
+				<th scope="col" class="cell_l10">반영</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10 riline cell_bg al_top">KT</td>
+				<td class="cell_l10 t_no riline al_top">100</td>
+				<td rowspan="3" class="cell_l10 riline al_top" >접수 후 2일 이후 <span class="t_desc04">영업일 기준</span></td>
+				<td class="cell_l10">전월 사용요금 <span class="t_desc04">당월 1일~15일 신청자</span><br />당월 사용요금 <span class="t_desc04">당월 16일~말일 신청자</span></td>
+			</tr>
+			<tr>
+				<td class="cell_l10 riline cell_bg">Olleh</td>
+				<td class="cell_l10 t_no riline">1588-1618</td>
+				
+				<td class="cell_l10">당월 사용요금</td>
+			</tr>
+			<tr>
+				<td class="cell_l10 riline cell_bg al_top">SKT</td>
+				<td class="cell_l10 t_no riline al_top">1566-0011</td>
+				<td class="cell_l10 al_top">전월 사용요금 <span class="t_desc04">당월1일~4일 신청자</span><br />
+				당월 사용요금 <span class="t_desc04">당월 5일~말일 신청자</span></td>
+			</tr>
+			<tr>
+				<td class="cell_l10 riline cell_bg ">LG U+</td>
+				<td class="cell_l10 t_no riline al_top">1544-0010</td>
+				<td class="cell_l10 riline ">접수 후 2일 이후</td>
+				<td class="cell_l10 ">당월 사용요금 </td>
+			</tr>
+		</tbody>
+		</table>
+
+		<ol class="list_no01 mt10">
+			<li><p>해당 통신사별로 결제기간의 반영이 변경될 수 있습니다.</p></li>
+			<li><p>기존에 결제하고 계시는 은행 계좌이체는 해지하지 않아도 자동으로 카드결제로 전환됩니다.</p></li>
+			<li><p>LG텔레콤은 당사에서 신청 및 변경,해지 처리가 불가하므로, 통신사(1544-0010)에 <br />직접 전화로 신청해 주시기 바랍니다.</p></li>
+		</ol>
+		-->
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

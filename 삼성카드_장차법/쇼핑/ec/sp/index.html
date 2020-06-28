@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+ 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://shoppingmall.samsungcard.com" />
+	<script type='text/javascript' src="/js/weblog/makePCookie.js"></script>
+ 
+ 
+	<script type="text/javascript" language="javascript" src="https://secwebclinic.ahnlab.com/aos/plugin/aosmgr_common.js"></script>
+	<script type="text/javascript" language="javascript" src="/js/aos/aos_run.js"></script>
+	<script type="text/javascript" src="/js/aos/aos_install.js"></script>
+	<script type="text/javascript" language="javascript">
+		aoswrap_run_aos();
+	</script>
+ 
+ 
+ 
+ 
+	<script type='text/javascript'>
+		function ScardSubmit(frm){
+		//Xecure flag에 따라 본 함수 구현부 차별 출력 됨
+		
+			frm.submit();
+		
+		return false;
+		}
+	</script>
+ 
+ 
+	<title>LifeStyle Service 쇼핑 - 삼성카드</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/shopping.css" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/shopping_point.css" />
+	<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+	<script type="text/javascript" src="/js/ec/common/embedswf.js"></script>
+	<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+	<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+	<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<!-- 2013.02.21 플래시교체 추가 start -->
+	<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+	<script>
+	$(document).ready(function() {
+		samsungcardUIComponent.init();
+		samsungcardUIComponent.fnSlider({
+			slider : '.mvt_abb',
+			time : 5000, // 자동 롤링 시간 : 기본값 2초
+			menu : false
+		});
+	});
+	</script>
+<!-- 2013.02.21 플래시교체 추가 end -->
+	<script type="text/javascript">
+ 
+	function openEscrow(){
+		openWindow("/ec/sp/ss/om/order101.do?method=selectEscrow", "escrow_pop", 480, 229);
+	}
+	function goPlanningDetail(id){
+		document.goDetailForm.planningId.value = id;
+		document.goDetailForm.submit();
+		
+	}
+	</script>
+</head>
+<body>
+<form name="goDetailForm" method="post" action="/ec/sp/ss/pr/pr301.do?method=selectPlanningDetail">
+	<input type="hidden" name="planningId" />
+</form>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap">
+	<!-- head -->
+	
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript" language="javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" language="javascript" src="/js/ec/sp/common/search.js"></script>
+<script type="text/javascript" language="javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/js/commonUIComponent.js"></script>
+<script> 
+$(document).ready(function() {
+	navigation.menuOver({
+		ElementObjectName : '.util_menu'
+	});
+	// topGnb
+	navigation.GNB({
+		ElementObjectName : '.mv_ls_global',
+		Depth1: 0,
+		Depth2: -1//선택된 메뉴가 없을경우 -1 //이후 0번부터 첫번째 메뉴
+	});
+});
+</script>
+<div id="head">
+	<div id="gnb">
+		<div class="lifestyle_gnb" style="line-height:100%; font-size:12px;">
+			<script language="javascript" type="text/javascript">
+				function FFn_Link(linkUrl){
+					location.href = linkUrl;
+				}
+ 
+				function openShortCutForm(){
+					window.open('/ec/gm/index.do?method=selectShortCutForm','popupShortCut', 'toolbar=no scrollbars=auto resizable=yes width=480 height=305');
+				}
+ 
+				function addfavorites(){
+					var favoriteurl = "http://shoppingmall.samsungcard.com";
+					var favoritetitle = "삼성카드 쇼핑";
+					
+					if (document.all)
+					window.external.AddFavorite(favoriteurl,favoritetitle);
+					return;
+				}
+ 
+			     function makeAbsPath(domain, url) {
+			         var sUrl;
+			         var sPort = window.location.port;
+			         switch (domain) {
+			             case "www.samsungcard.com" :
+			                 sPort = "";
+			                 break;
+			             case "travel.samsungcard.com" :
+			                 sPort = "";
+			                 break;
+			             case "social.samsungcard.com":
+			             	//sPort = ":28080";
+			             	sPort = "";
+			             	break;
+			             default :
+			                 //sPort = ':10080';
+			            	 sPort = "";
+			                 break;
+			         }
+			         if ("social.samsungcard.com" == domain) {
+			        	sUrl = 'http://'+domain+sPort+url;
+			         } else if ("lifestyleservice.samsungcard.com" == domain) {
+				        sUrl = 'http://'+domain+sPort+url;					        	
+				     } else if (window.location.protocol == "https:") {
+			             sUrl = 'https://'+domain+sPort+url;
+			         } else {
+			        	 sUrl = 'http://'+domain+sPort+url;
+			         }
+ 
+			         location.href = sUrl;
+			     }
+			</script>		
+		
+			<a href="/ec/sp/spMain.do?method=selectSPMain&ZONE=LIGB01" class="mv_logo"><img src="/images/gr/common/ls_logo_shopping.gif" alt="SAMSUNGCARD SHOPPING" /></a>
+			<ul class="mv_ls_global">
+				<li><a href="/ec/sp/spMain.do?method=selectSPMain&ZONE=LIGB01"><img src="/images/gr/common/ls_gnb_shopping_off.gif" alt="쇼핑" /></a>			
+					<ol class="mv_sh_inner_mnu">
+						<li><a href="javascript:makeAbsPath('shoppingmall.samsungcard.com','/ec/sp/pc/index.do?method=selectPCMain&ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner01_off.gif" alt="포인트적립" /></a></li>
+						<li><a href="javascript:makeAbsPath('pointmall.samsungcard.com','/ec/sp/ss/index.do?method=selectSSMain&ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner02_off.gif" alt="포인트몰" /></a></li>
+						<li><a href="javascript:makeAbsPath('social.samsungcard.com','/social/shop/main/main?ref=shopmenu');"><img src="/images/gr/common/ls_gnb_shopping_inner03_off.gif" alt="TheSocial" /></a></li>
+						<li><a href="javascript:makeAbsPath('shoppingmall.samsungcard.com','/ec/mc/ma/Main.do?method=selectMCMain');"><img src="/images/gr/common/ls_gnb_shopping_inner04_off.gif" alt="모바일쿠폰몰" /></a></li>
+						<li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/gm/index.do?method=selectGMMain&ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner05_off.gif" alt="기프트몰" /></a></li>
+					</ol>
+				</li>
+				<li><a href="javascript:makeAbsPath('travel.samsungcard.com','/ec/te/pk/fr/travelMain.do?method=selectTravelMain&ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_travel_off.gif" alt="여행" /></a></li>
+				<li><a href="javascript:makeAbsPath('wedding.samsungcard.com','/ec/wd/fr/wdMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_wedding_off.gif" alt="웨딩" /></a></li>
+				<li><a href="javascript:makeAbsPath('insurance.samsungcard.com','/ec/ns/nsMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_insurance_off.gif" alt="보험" /></a></li>
+			</ul>
+		</div>	
+		<!-- 타이틀 및 검색 -->
+        <div class="menu_tit_wrap">
+            <div class="menu_con">
+                <img src="/images/sp/pc/tit_shopping.png" class="png24" alt="shopping" />
+                <div class="bg_search">
+                    <p class="fl_left"><input type="text" name="kwd" id="kwd" value="" onfocus="this.value='';" title="통합검색 입력" OnKeyDown="if(event.keyCode==13){goKonanSearch();}" /></p>
+                    <p class="fl_right"><a href="javascript:goKonanSearch();"><img src="/images/gr/common/btn_search.gif" alt="검색" class="al_middle" /></a></p>
+                </div>
+            </div>
+        </div>
+        <!-- //타이틀 및 검색 -->
+ 
+		<!-- 바탕화면 저장 / 즐겨찾기 -->
+		<div class="gnb_btn">
+			<a href="javascript:openShortCutForm();"><img src="/images/gr/common/btn_go_save.gif" alt="바탕화면에 바로가기 저장" /></a>
+			<a href="javascript:addfavorites()"><img src="/images/gr/common/btn_bookmark.gif" alt="즐겨찾기 추가" /></a>
+			<a href="http://www.samsungcard.com" target="_blank"><img src="/images/gr/common/btn_samsung_card.gif" alt="삼성카드 홈페이지" /></a>
+		</div>
+ 
+		<!-- //유틸메뉴 -->
+		
+			<!-- 유틸메뉴 로그인 전 -->
+			<ul class="util_menu shoppingMain">
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList');" class="rollover"><img src="/images/gr/common/util_home_off.gif" alt="Home" /><img src="/images/gr/common/util_home_on.gif" alt="Home" class="over" /></a></li>
+				<li><a href="/loginForm.do?afterLogin=/ec/sp/spMain.do?method=selectSPMain&ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_login_off.gif" alt="로그인" /><img src="/images/gr/common/util_login_on.gif" alt="로그인" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('www.samsungcard.com','/mainPage.do?menuId=NHPIMMSCRN001&ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_join_off.gif" alt="회원가입" /><img src="/images/gr/common/util_join_on.gif" alt="회원가입" class="over" /></a></li>
+				<li><a href="/ec/sp/ss/om/order101.do?method=selectCartList&ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_cart_off.gif" alt="장바구니" /><img src="/images/gr/common/util_cart_on.gif" alt="장바구니" class="over" /></a></li>
+				<li><a href="/ec/sp/ss/om/om201.do?method=selectOrderList&tabId=BP&ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_order_off.gif" alt="주문ㆍ배송조회" /><img src="/images/gr/common/util_order_on.gif" alt="주문ㆍ배송조회" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/sw/mg/fr/cd/cardData100.do?method=selectOrderList&ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_mgiftcard_off.gif" alt="ⓜGift카드 전송조회" /><img src="/images/gr/common/util_mgiftcard_on.gif" alt="ⓜGift카드 전송조회" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/evt/nechbfrevt011.do?method=getIngSpEventList&ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_event_off.gif" alt="이벤트" /><img src="/images/gr/common/util_event_on.gif" alt="이벤트" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_service_off.gif" alt="고객서비스" /><img src="/images/gr/common/util_service_on.gif" alt="고객서비스" class="over" /></a></li>
+			<!-- SAM브랜드제거 -->
+				<li class="end"><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb011&ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_sitemap_off.gif" alt="사이트맵" /><img src="/images/gr/common/util_sitemap_on.gif" alt="사이트맵" class="over" /></a></li>
+				<!--  <li class="end"><a href="javascript:open_pop('http://lifestyleservice.samsungcard.com/aboutSam.do');" class="rollover"><img src="/images/gr/common/util_about_off.gif" alt="Do you know SAM?"><img src="/images/gr/common/util_about_on.gif" alt="Do you know SAM?" class="over"></a></li>-->
+			<!-- //SAM브랜드제거 -->
+			</ul>
+			<!-- //유틸메뉴 로그인 전 -->
+		
+	</div>
+</div>
+	<!-- //head -->
+ 
+	<div id="contentWrap" class="shopping_main">
+		<div id="contentBody" class="contentBody955">
+ 
+ 
+		<div class="main_banner" style="background:red;">
+			WCMS
+		</div>
+ 
+			<div class="util_wrap">
+				<div class="notice">
+					<form name="srchForm" method="post" action="" onSubmit="return false;">
+							<input type="hidden" name="seqNo" value="" />
+							<input type="hidden" name="seqNoParam" value="" />
+							<h1><img src="/images/sp/pc/h1_notice.gif" alt="공지사항" /></h1>
+							<span class="more t_org"><a href="http://lifestyleservice.samsungcard.com/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList" title="공지사항 더보기">더보기</a></span>
+							<ul class="bul_dot t_12">
+<li>
+<a href="http://sam.samsungcard.com/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList&amp;&amp;search_boardId=163">[당첨자발표] 삼성카드 포인트몰...
+			</a>
+</li>
+<li>
+<a href="http://sam.samsungcard.com/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList&amp;&amp;search_boardId=162">제휴몰 위메프 '우주초특가 10...
+			</a>
+</li>
+<li>
+<a href="http://sam.samsungcard.com/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList&amp;&amp;search_boardId=161">삼성ⓜGift카드 구매 시 결제...
+			</a>
+</li>
+<li>
+<a href="http://sam.samsungcard.com/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList&amp;&amp;search_boardId=160">[당첨자발표] 7일간 펼쳐지는 ...
+			</a>
+</li>
+ 
+							</ul>
+						</form>
+				</div>
+ 
+				<div class="exhibition">
+					<h1><img src="/images/sp/pc/h1_exhibition.gif" alt="기획전" /></h1>
+					<span class="more t_org"><a href="/ec/sp/ss/pr/pr301.do?method=selectPlanningList" title="기획전 더보기">더보기</a></span>
+					
+                    <p><a href="javascript:goPlanningDetail('PL10000564')"  title="감사의 마음 기획전" ><img src="http://shopping.samsungcard.com/upload/planning/tnx226x92.jpg" alt="감사의 마음 기획전" width="226" height="92" /></a></p>
+					
+				</div>
+ 
+				<div class="s_service">
+					<h1><img src="/images/sp/pc/h1_shopping_service.gif" alt="삼성카드 쇼핑 특별서비스" /></h1>
+					<ol class="list_exp">
+						<li><p><span class="t_point">보너스포인트</span>를 현금처럼 사용</p></li>
+						<!-- <li><p>전 상품 <span class="t_point">2,3개월 무이자</span></p></li> --><!-- 121002 삭제 -->
+						<li><p>전 상품 <span class="t_point">높은 할인</span> 혜택</p></li>
+					</ol>
+				</div>
+ 
+				<div class="service">
+					<h1><img src="/images/sp/pc/h1_shopping_newsletter.gif" alt="삼성카드 쇼핑 뉴스레터" /></h1>
+					<p class="t_11gray mb10">
+						삼성카드 쇼핑의 다양한 상품과<br /> 할인혜택, 이벤트, 쇼핑정보를  <br />정기적으로확인하실 수 있습니다.  
+					</p>
+                    <span class="btnS_white"><a href="http://shoppingmall.samsungcard.com/ec/sp/pc/gr/gr110.do?method=newsLetterForm&ZONE=LIGB02"  title="뉴스레터 신청" >뉴스레터 신청</a></span>                    
+				</div>
+			</div>
+	<!-- 120801 추가 -->
+			<div class="clall_info">
+				<p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+				<p class="call">포인트적립 1688-0003 <span class="leline">&nbsp;</span> 포인트몰 1688-6315 <span class="leline">&nbsp;</span> 더소셜 1688-3183 <span class="leline">&nbsp;</span> 모바일쿠폰몰 1688-3183<span class="leline">&nbsp;</span> 리마인드 02-3782-2800</p>
+			</div> 
+	<!-- //120801 추가 -->	
+		</div>
+	</div>
+	<!-- footer -->
+	
+ 
+ 
+ 
+ 
+<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+<script type="text/javascript"> 
+function openWindow1(url, name, width, height){
+	
+    str = "height=" + height + ",width=" + width;
+    
+	if (window.screen) {
+		
+		var ah = screen.availHeight;
+		var aw = screen.availWidth;
+        var xc = (aw - width) / 2;
+        var yc = (ah - height) / 2;
+        
+        str += ",left=" + xc + ",top=" + yc + ",scrollbars=no,toolbar=no,status=yes,location=no,resizable=yes";
+	}
+	
+	var popup = window.open(url, name, str);
+	
+	popup.focus();	
+}
+ 
+	var global_campain_id;
+	var global_in_channel;
+ 
+	if('' != ('null') && 
+			'null' != ('null'))
+	{
+		global_campain_id = 'null';
+	}
+	else
+	{
+		global_campain_id = '';
+	}
+ 
+	if('null' != 'null' &&
+			'' != 'null')
+	{
+		global_in_channel = 'null';
+	}
+	else
+	{
+		global_in_channel = 'W';
+	}
+ 
+	var global_requrl = location.href;
+ 
+	var global_good_code;
+ 
+	if('' != 'null' && 
+			'null' != 'null')
+	{
+		global_good_code = 'null';
+	}
+	else if('' != 'null' && 
+			'null' != 'null')
+	{
+		global_good_code = 'null';
+	}
+	else if('' != 'null' && 
+			'null' != 'null')
+	{
+		global_good_code = 'null';
+	}
+	else if('' != ('null') && 
+			'null' != 'null')
+	{
+		global_good_code = 'null';
+	}
+	else
+	{
+		global_good_code = '';
+	}
+ 
+ 
+	if(global_campain_id != '')
+	{
+		if(global_good_code != '')
+			webLogging(global_campain_id, global_in_channel, global_requrl, '2', '', global_good_code);
+		else
+			webLogging(global_campain_id, global_in_channel, global_requrl, '2');
+	}
+	
+</script>
+<script type="text/javascript"> 
+/* S2P : 2012-12-28 Footer Family 추가 */
+ var FamliySiteNew = function() {
+   var $this;
+   var $selectBTN;
+   var $list;
+   var flag = false;
+   return {
+	   init : function() {
+		   
+		   $this = $('div.family_site');
+		   $selectBTN =  $this.find('>h3>a');
+		   $list =  $this.find('.list');
+		   
+			// 스크롤 Plug 활성화
+			$('.scroll-pane').jScrollPane({
+				verticalDragMinHeight: 63,
+				verticalDragMaxHeight: 63
+			});
+			
+			FamliySiteNew.hide();
+			
+			$selectBTN.click(function() {
+				FamliySiteNew.toggle();
+				return false;
+			});
+			
+			$list.find('a:last').blur(function() {
+				FamliySiteNew.toggle();
+			});
+	   },
+	   show : function() {
+		   flag = true;
+		   var src = $selectBTN.find('img').attr('src').replace('_off.png','_on.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideDown();
+	   },
+	   hide : function() {
+		   flag = false;
+		   var src = $selectBTN.find('img').attr('src').replace('_on.png','_off.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideUp();
+	   },
+	   toggle : function() {
+		   if (flag == false) {
+			   FamliySiteNew.show();
+		   }
+		   else {
+			   FamliySiteNew.hide();
+		   }
+	   }
+   }
+}();
+</script>
+<script src="/js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="/js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+//window.onload = initPage;
+//function initPage() {
+//	FamliySiteNew.init();
+//}
+ 
+$(document).ready(function() {
+	//footer family site
+	FamliySiteNew.init();	
+});
+</script>
+ 
+ <!-- footer -->
+	<div id="footer">
+		<div class="footer_logo"><a href="http://www.samsungcard.com"  target="_blank" title="새창"><img src="/images/gr/common/footer_logo.gif" alt="삼성카드" /></a></div>
+		<div class="footer_info">
+			<div class="menu">
+				<ul>
+					<li><a href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUFCVIEW003&amp;ZONE=LIGB08"  target="_blank" title="새창"><img src="/images/gr/common/footer_menu_01.gif" alt="자율준수프로그램" /></a></li>
+					<li><a href="http://lifestyleservice.samsungcard.com/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb071&amp;ZONE=LIGB08"><img src="/images/gr/common/footer_menu_06.gif" alt="개인정보처리방침" /></a></li>
+					<li><a href="http://lifestyleservice.samsungcard.com/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb021&amp;ZONE=LIGB08"><img src="/images/gr/common/footer_menu_02.gif" alt="개인정보취급방침" /></a></li>
+					<li><a href="http://lifestyleservice.samsungcard.com/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb031&amp;gubun=1&ZONE=LIGB08"><img src="/images/gr/common/footer_menu_03.gif" alt="이용약관" /></a></li>
+					<li><a href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSPCX001&amp;ZONE=LIGB08" target="_blank" title="새창"><img src="/images/gr/common/footer_menu_04.gif" alt="보안프로그램설치" /></a></li>
+					<li><a href="javascript:openWindow1('http://lifestyleservice.samsungcard.com/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb051p1&amp;ZONE=LIGB08', 'email', '480', '305');"><img src="/images/gr/common/footer_menu_05.gif" alt="이메일주소 무단수집 거부" /></a></li>
+					<li><a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank" title="새창"><img src="/images/gr/common/footer_menu_07.gif" alt="공정위 사업자정보확인" /></a></li><!-- 120820 추가 -->
+				</ul>
+				<div class="family_site">
+			<h3><a href="#none"><img alt="Family Site" src="/images/sp/pc/h3_family_title_off.png" /></a></h3>
+			<div class="list">
+				<div class="scroll-pane">
+					<ul>  
+						<li><a target="_blank" title="새창" href="http://www.samsungcard.com"><img alt="삼성카드" src="/images/sp/pc/familly_site17_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://travel.samsungcard.com"><img alt="여행" src="/images/sp/pc/familly_site02_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://wedding.samsungcard.com"><img alt="웨딩" src="/images/sp/pc/familly_site03_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://insurance.samsungcard.com"><img alt="보험" src="/images/sp/pc/familly_site04_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.americanexpress-samsung.co.kr/amex_main.htm"><img alt="American Express Card" src="/images/sp/pc/familly_site06_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.theaptcard.com/"><img alt="삼성 The APT카드" src="/images/sp/pc/familly_site07_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.allat.co.kr/"><img alt="올앳카드" src="/images/sp/pc/familly_site08_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.u-point.co.kr/"><img alt="U-point" src="/images/sp/pc/familly_site10_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.umoneymembers.co.kr/"><img alt="U-money" src="/images/sp/pc/familly_site11_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://twitter.com/withsamsungcard"><img alt="삼성카드트위터" src="/images/sp/pc/familly_site12_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.facebook.com/withSamsungCard"><img alt="삼성카드페이스북" src="/images/sp/pc/familly_site13_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://corp.samsungcard.com/cmIndex.do"><img alt="법인" src="/images/sp/pc/familly_site18_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://partnet.samsungcard.com/chain.do"><img alt="가맹점" src="/images/sp/pc/familly_site19_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.bizbridge.co.kr/"><img alt="비즈브릿지" src="/images/sp/pc/familly_site14_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://efamily.samsungcard.co.kr/"><img alt="이패밀리" src="/images/sp/pc/familly_site16_off.png" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<!--<div id="hpfooterFamilySiteLayer" style="position:relative;"><script language="javascript" type="text/javascript">FFn_EmbedHpFooterFamilySite();</script></div>-->
+		</div>
+			</div>
+			<address>
+				<img src="/images/gr/common/footer_txt_information.gif" alt="서울시 중구 세종대로 67 (100-742)/대표이사 최치훈/사업자등록번호 202-81-45602/통신판매업 신고번호 제2009-서울중구-1449호/분실신고&middot;한도승인 1588-8900/고객상담 1588-8700/해외 82-2-2000-8100, 800-1588-8700/삼성카드쇼핑 고객센터 포인트 적립 1688-0003/포인트몰 1688-6315" />
+				<img src="/images/gr/common/footer_txt_copyright.gif" alt="COPYRIGHTⓒ 2013 SAMSUNGCARD CO., LTD. ALL RIGHTS RESERVED." class="img_margin" />
+			</address>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- //footer -->
+</div>
+<iframe name="popupFrm" title="컨텐츠 프레임" src="/cms/popup/PopupMain.jsp?popup_id=11" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" width="0" height="0"></iframe> 
+<!-- STANDARD FOOTER BLOCK -->
+ 
+	
+ 
+	
+	<!-- UsafeOn Javascript 로드 시작 -->
+	<!-- script type="text/javascript" src="/besoft/safeon/safeon.js"></script -->
+	<!-- UsafeOn Javascript 로드  끝-->
+ 
+	<!-- get방식으로 파라미터 전송 시 파리미터 실종사건 발생으로 인한 임시 조치..2013.01.12 -->
+	<script type="text/javascript">
+		try {
+			$(document).ready(function() {
+				$("form").each(function(i) {
+					$(this).attr("method", "post");
+				});
+			});
+		} catch(e) {
+			try {
+				var frms = document.getElementsByTagName("form");
+				for(var i = 0;i < frms.length;i++) {
+					frms[i].method = "post";
+				}
+			} catch(e1) { }
+		}
+	</script>
+ 
+	<!--script type="text/javascript" src="/js/ec/common/jquery-1.3.2.min.js"></script--><!-- Footer 패밀리사이트 스크립트 충돌 삭제 13.03.26 -->
+	<script type="text/javascript" src="/js/ec/common/jquery.coda-slider-2.0.js"></script>
+ 
+	<script type="text/javascript">
+		$().ready(function() {
+			$('#slider1').codaSlider({
+				autoHeight: false,
+				autoSlide: true,
+				autoSlideInterval: 7000,
+				autoSlideStopWhenClicked: false,
+				crossLinking: false,
+				dynamicArrows: false,
+				dynamicTabsAlign: "right",
+				dynamicTabsPosition: "bottom"		
+			});
+		});
+	</script>	
+	
+</body>
+</html>
+ 
+

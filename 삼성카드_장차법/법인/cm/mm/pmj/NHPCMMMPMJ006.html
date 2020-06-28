@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<title>아이디 중복확인 - 삼성카드</title>
+</head>
+
+<body>	
+<form name="form1" method="post" autocomplete="off">
+<!-- 이메일 중복 확인 1단계 -->
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1><img src="/images/cm/layer_tit_id_redundancy_check.png" alt="이디 중복확인" /></h1>
+	</div>
+	-->
+		<div id="mvint_pheader">
+			<h1><img src="/images/cm/layer_tit_id_redundancy_check.png" alt="아이디 중복확인" /></h1>
+		</div>
+		
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<!-- 팝업 콘텐츠 -->
+		<div class="pop_l_wrap">
+
+			<div class="mslayer_conbox">
+				<span class="inblock mt3">입력하신 아이디 <span class="t_point_org"><strong>${userId}</strong></span>는사용할 수 없습니다</span>
+			</div>
+			<ol class="list_no01 pop_numlist mt10 ml10">
+				<li><p>다른 아이디(ID)를 확인하고자 하시면 아래에 다른 아이디(ID)를 입력하시고 <br />중복여부를 확인하시기 바랍니다.</p></li>
+				<li><p>회원가입 ID설정 시 삼성카드 비밀번호와 동일한 숫자를 사용하지 마세요.</p></li>
+			</ol>
+			<div class="mslayer_subbox pb20">
+				<dl>
+					<dt><label for="label_identer_first">아이디입력</label></dt>
+					<dd><span class="input_idcheck"><input type="text" class="txt" name="userId" id="label_identer_first" value="" title="아이디 입력" maxlength="12" style="ime-mode:disabled" /></span><a href="javascript:checkId()" class="btn btn_white" title="새창"><span>아이디 중복확인</span></a></dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+
+</form>
+</body>
+</html>

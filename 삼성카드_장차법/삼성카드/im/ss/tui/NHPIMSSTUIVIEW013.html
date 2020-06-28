@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab01 w810 ">
+		<ul>
+			<li class="on"><span class="none">현재탭</span><a href="#">대학등록금납부신청</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<% if("01".equals(falseCode)){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20">해당학번이 존재하지 않거나 초과등록 대상자이오니 확인 바랍니다.</div><!-- mb추가 100311 -->
+			<div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div>
+<% }else if("02".equals(falseCode)){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20">지금은 납부신청가능 시간이 아닙니다.<br>
+	<% if(holidayYn.equals("Y")){ %>
+			본 서비스는
+			<br><%=drFrDt %> ~ <%=drToDt %> <%=payStime %> ~ <%=payEtime %> 까지
+			<br>대학 등록금 납부가 가능합니다.
+	<% }else{ %>
+			본 서비스는 평일(토요일제외)
+			<br><%=drFrDt %> ~ <%=drToDt %> <%=payStime %> ~ <%=payEtime %> 까지
+			<br>대학 등록금 납부가 가능합니다.
+	<% } %>
+			</div>
+            <div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div>
+<% }else if("03".equals(falseCode)){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20"><%=certResult %></div><!-- mb추가 100311 -->
+			<div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div>
+<% }else if(falseCode.equals("04")){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20">카드한도 부족으로 등록금 결제가 불가 대상자이오니 확인 바랍니다.</div><!-- mb추가 100311 -->
+            <div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div>
+<% }else if(falseCode.equals("05")){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20">납부 대상 금액이 0 원 입니다.</div><!-- mb추가 100311 -->
+            <div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div>
+<% }else if(falseCode.equals("06")){ %>
+<div class="content_block content_block_card error_minheight">	<!-- 100402 -->
+	<!-- d_complete -->
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+			<h2><img src="/images/gr/h2_sorry.png" alt="죄송합니다." /></h2>
+			<div id="errorMsgDiv" class="p_txt mb20">지금은 납부신청가능 일자가 아닙니다.<br><!-- ※ 납부신청기간 : <%=payStime %> ~ <%=payEtime %> --></div><!-- mb추가 100311 -->
+            <div id="goUrlButton" class="btnl"><a href="#" onclick="Go();"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	</div>
+</div><% }else if(falseCode.equals("07")){ // SR반영 2013.02.20 %>
+	<div class="content_block content_block_card error_minheight"> <!-- 100402 -->
+	    <!-- d_complete -->
+	    <div class="d_alert noline clfix">
+		<p class="ico_alert"><img src="/images/common/img_error_warning.jpg" alt="" /></p>
+		<div class="p_desc"><!-- 100223 / 상단 top_visual 삭제 -->
+		    <p><b><font color="#000000" size="4">회원 정보 불일치</font></b></p><br>
+		    <div id="errorMsgDiv" class="p_txt mb20">결제하신 회원의 고객정보와 취소하신 회원의 고객 정보가 상이합니다.<br>등록금 납부 취소는 납부한 본인만 가능합니다.<br></div><!-- mb추가 100311 -->
+		    <div id="goUrlButton" class="btnl"><a href="#" onclick="javascript:goTabPage('NHPIMSSTUI012','false');"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+		</div>
+	    </div>
+	</div><% }else if(falseCode.equals("cancel")){ %>
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<div class="d_alert noline clfix">
+		<p class="ico_alert"><img alt="" src="/images/common/img_pay_cancel.jpg" /></p>
+		<div class="p_desc">
+			<h2 class="mb10"><img src="/images/ss/txt_cancel_stopped.png" alt="고객님의 등록금 납부가 정상적으로 승인취소 되었습니다." /></h2>
+			<div class="btnl">
+				<a href="javascript:goTabPage('NHPIMSSTUI012','false');"><img alt="확인" src="/images/common/btn_confirm.png" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+  <h1 class="none">Sel-D 클럽</h1>
+  <div class="h1_desc"><img src="/images/cd/h1_sel_d.jpg" alt="나만의 스타일로 직접 디자인하는 나만의 디자인카드 셀디클럽" /></div>  <!-- 100126 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">    <!-- 100126 -->
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+  <h2><img src="/images/cd/h2_seld_thisstory.png" alt="이달의 베스트 셀디 스토리" /></h2>
+  <div class="content_block_inner">
+        <div class="tb_exp tb_exp_line"><span>가장 많은 감동을 드린 셀디스토리입니다.</span></div>
+        <div class="d_roidevin_detail seld_story mt20">
+          <p class="p_photo">
+            <img src="/images/cd/seld_card01.jpg" alt="" style="width:225px;height:142px;" />
+          </p>
+          <dl>
+            <dt>제목</dt><dd><strong>${best_seld_story.title}</strong>&nbsp;</dd>
+            <dt class="line">작성자</dt><dd class="line">${best_seld_story.user_name} 회원님&nbsp;</dd>
+            <dt>내용</dt>
+            <dd id="contentA">
+              <span id="seld_story_content_substring"><pre>${best_seld_story.contents != fn:replace(best_seld_story_substring,".","") ? best_seld_story_substring : fn:replace(best_seld_story_substring,".","")}</pre></span>
+              <span id="seld_story_content" style="display:none;" ><pre>${best_seld_story.contents}</pre></span>
+              <p class="mt10"><a href="javascript:contentFull();" class="btn_link">스토리 자세히 보기</a></p>
+            </dd>
+          </dl>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;검색 결과가 없습니다.</div>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+  <h2><img src="/images/cd/h2_seld_laststory.png" alt="이달의 셀디 스토리" /></h2>
+  <div class="content_block_inner">
+    <div class="tb_exp tb_exp_line clfix">
+      <span class="fl_left t_desc04">사진을 클릭하시면 셀디스토리를 자세히 보실 수 있습니다.<br />사진의 스토리를 보시고 추천해주세요.</span>
+      <span class="ab_tr"><a href="javascript:popup=window.open('/seldi/swf/seldStory.html','SelfDesignFunStory', 'width=800,height=600,left=60,top=50');popup.focus();" class="btn_link" title="새창">즐거운 셀디이야기 바로가기</a></span>
+    </div>
+    <ul class="list_card140 mt20">
+        <li>
+          <p class="p_card"><a href="javascript:contentGo('<%= vo.getSeld_story_no() %>');"><img src="/images/cd/seld_card01.jpg" alt="" style="width:140px;height:89px;" /></a></p>
+          <p class="p_tit"><strong>0</strong></p>
+          <!--p class="p_txt"><%= StringUtils.defaultIfEmpty(vo.getContents(), "&nbsp;") %></p-->
+          <p class="p_txt">추천수 : 0회</p>
+        </li>
+    </ul>
+
+    <!-- paginate -->
+    <br /><br />
+    <div class="paginate">
+      ${_page}
+    </div>
+
+    <div class="line_lgray">&nbsp;</div>
+      <form name="form1" method="post" autocomplete="off">
+        <fieldset class="al_center">
+          <legend>정렬방식</legend>
+          <label for="label_date" class="ls01"><input type="radio" value="REG_DATE" id="label_date" name="orderBy" title="등록일" > 등록일</label>
+          <label for="label_hit" class="ls01"><input type="radio" value="HIT_COUNT" id="label_hit" name="orderBy" title="추천수" > 추천수</label>
+          <select name="choice" title="구분선택">
+            <option value="">전체</option>
+          </select>
+          <input name="searchKeyWord" type="text" class="txt" onkeypress='return checkEnterKey(event);' value="${param.searchKeyWord}" title="검색어입력" />
+          <a href="javascript:search();" class="btn btn_s_blue"><span>검색</span></a>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

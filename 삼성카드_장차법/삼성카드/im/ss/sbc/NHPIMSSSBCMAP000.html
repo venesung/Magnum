@@ -1,0 +1,242 @@
+<%
+// 사용안함 
+// /talkyple/mapproxy.jsp 로  변경
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%><%@ page import="java.io.*,java.net.*"%><%!public String getUrlStream(String URLVal, String ClientID) {
+
+		BufferedReader br = null;
+		URL url = null;
+		StringBuffer readLineVal = new StringBuffer();
+		try {
+			//클라이언트가 있으면 URL뒤에 붙여준다.
+			if (ClientID != "" && ClientID != null) {
+				URLVal = URLVal + "&clientId=" + ClientID;
+			}
+			
+//			System.out.println("URLVal :  " +URLVal);
+			
+			url = new URL(URLVal);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			
+			br = new BufferedReader(new InputStreamReader(con.getInputStream(),"UTF-8"));
+			readLineVal = new StringBuffer();
+			String s1;
+ 
+			while ((s1 = br.readLine()) != null)
+				System.out.println("s1 :  " +s1);
+				readLineVal.append(s1 + "\n");
+			br.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		//readLineVal.append("<resultList totalDataCount='15' totalPageCount='2'><result dataType='0' id='2114423.0' x='506386.0' y='1109858.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(시내버스정류장명)' vname='강남역' address='서울특별시서초구서초제2동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2114445.0' x='506135.0' y='1110418.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(마을버스)' vname='강남역' address='서울특별시서초구서초제2동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='1081477.0' x='505892.0' y='1110572.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(시내버스정류장)' vname='강남역' address='서울특별시서초구서초2동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2274110.0' x='506281.0' y='1110052.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(버스)' vname='강남역' address='서울특별시서초구서초2동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2114429.0' x='506264.0' y='1110109.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(시내버스정류장)' vname='강남역' address='서울특별시서초구서초2동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2113054.0' x='505656.0' y='1111717.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(공항버스)' vname='강남역' address='서울특별시서초구서초4동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='1081509.0' x='505819.0' y='1111273.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(시내버스정류장명)' vname='강남역' address='서울특별시서초구서초4동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='1636953.0' x='506114.0' y='1110700.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(서울2호선)' vname='강남역' address='서울특별시강남구역삼1동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2638183.0' x='506125.0' y='1110634.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(환승역공사중)' vname='강남역(2011년9월완공예정)' address='서울특별시강남구역삼1동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/><result dataType='0' id='2234125.0' x='506223.0' y='1110384.0' hname1='' hname2='' hname3='' kname1='' kname2='' gname='강남역(신분당선공사중)' vname='강남역(2011년9월완공예정)' address='서울특별시강남구역삼1동' url='' etc1='' etc2='' etc3='' desc='' photosString=',' keywordsString=''/></resultList>");
+		
+		//System.out.println(readLineVal.toString());
+		return readLineVal.toString();
+	}
+
+	public boolean getIsEncodedColumn(String pVal) {
+		boolean isEncoded = false;
+		String checkChar = "&#";
+
+		if (pVal.startsWith(checkChar))
+			isEncoded = true;
+
+		return isEncoded;
+	}
+
+	/*	
+	 String[] encodingParams = {"addr", "name", "keyword", "code", "gu", "city", "dong", "sido", "gugun", "sigungu", "li", "jimok"};
+
+	 public boolean isEncodingParams(String pName) {
+	 boolean isEncoding = false;
+	 for(int i=0; i<encodingParams.length; i++) {
+	 if(pName.equalsIgnoreCase(encodingParams[i])) {
+	 isEncoding = true;
+	 break;
+	 }
+	 }
+	 return isEncoding;
+	 }
+	 */
+	public String getParameterValue(HttpServletRequest request, String paramName) {
+		String value = "";
+
+		boolean isEncoded = getIsEncodedColumn(request.getParameter(paramName));
+		if (isEncoded) {
+			String data = request.getParameter(paramName);
+			if (data == null || data.equals(""))
+				return data;
+			char[] charBuffer = decode(data);
+			value = new String(charBuffer);
+			//if(isEncodingParams(paramName)) {
+			try {
+				value = URLEncoder.encode(value, "UTF-8");
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			//}
+		} else {
+			value = request.getParameter(paramName);
+			try {
+				value = URLEncoder.encode(value, "UTF-8");
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+
+		return value;
+	}
+
+	public char[] decode(String src) {
+		String[] dataCode = src.replaceAll("&#", "").split(";");
+		char[] charBuffer = new char[dataCode.length];
+		for (int i = 0; i < dataCode.length; i++) {
+			charBuffer[i] = (char) Integer.valueOf(dataCode[i]).intValue();
+		}
+		return charBuffer;
+	}%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	response.setHeader("X-XSS-Protection", "0");
+	response.setHeader("Pragma", "No-cache");
+	response.setDateHeader("Expires", 0);
+	response.setHeader("Cache-Control", "no-cache");
+
+	/**
+	 * 사용자 Request 전달시
+	 */
+	String ClientID = request.getParameter("ClientID") == null ? ""
+			: request.getParameter("ClientID");
+	String query = request.getParameter("QUERY") == null ? "" : request
+			.getParameter("QUERY");
+	String mapFrame = request.getParameter("MAPFRAME") == null ? ""
+			: request.getParameter("MAPFRAME");
+
+	//GET또는 POST파라미터로 넘어온값이 없을경우 쿠키에서 ClientID를 가져온다.
+	if (ClientID == "" || ClientID == null) {
+		//쿠키셋을 구한다.
+		Cookie[] cookies = request.getCookies();
+		//POST로 넘어온ClientId값이 없고 쿠키가 있는경우 쿠키를 참조한다.
+		if (cookies != null) {
+			for (int i = 0; i < cookies.length; i++) {
+				Cookie cookie = cookies[i];
+
+				if (cookie.getName().equals("clientId")) {
+					if (cookie.getValue() != null
+							&& cookie.getValue() != "") {
+						ClientID = cookie.getValue();
+						System.out.println("Cookie not null="
+								+ ClientID);
+					}
+					break;
+				}
+			}
+		}
+	}
+
+	String SVCURL_FOR_PROXY = request.getParameter("SVCURL_FOR_PROXY") == null ? ""
+			: request.getParameter("SVCURL_FOR_PROXY");
+	//System.out.println(SVCURL_FOR_PROXY);
+	/**
+	 * 결과 전송 받을 때
+	 */
+	String mapIdx = request.getParameter("MapIDX") == null ? "0"
+			: request.getParameter("MapIDX");
+	String cmd = request.getParameter("CMD") == null ? "" : request
+			.getParameter("CMD");
+	String result = request.getParameter("RESULT") == null ? ""
+			: request.getParameter("RESULT");
+
+	if (result != null && result.length() > 0 && !result.equals("")) {
+		//System.out.println("[ClientProxy] CMD, RESULT : " + cmd + ", " + result);
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /-->
+<title>Congnamul Map Client Proxy Service - 삼성카드</title>
+</head>
+<body onload="init()">
+	<form name="nFrm" method="post">
+		<input type="hidden" name="CMD" value="<%=cmd%>" />
+		<textarea cols="" rows="" name="RESULT"><%=result%></textarea>
+	</form>
+	<script type="text/javascript">
+//<![CDATA[
+	function init() {
+		try {
+			var map = parent.parent._tmapList[<%=mapIdx%>];
+			parent.parent._serviceCallResult = new Array();
+			parent.parent._serviceCallResult[0] = document.nFrm.CMD.value;
+			parent.parent._serviceCallResult[1] = document.nFrm.RESULT.value;
+			parent.parent._serviceCallResult[2] = map;
+
+<%if (cmd.endsWith("Changed")
+						|| cmd.equalsIgnoreCase("initialized")
+						|| cmd.equalsIgnoreCase("gourl")
+						|| cmd.equalsIgnoreCase("contextmenu")
+						|| cmd.equalsIgnoreCase("hideinfowindow")) {%>
+			//alert('<%=cmd%>');
+				map._checkActionResult();
+<%} else if (cmd.endsWith("setBound")) {%>
+			
+<%}%>
+		} catch(ex) {
+			alert(ex.message);
+		}
+	}
+//]]>
+</script>
+</body>
+</html>
+<%
+	} else if (query.startsWith("http://")
+			|| query.startsWith("https://")) {
+		response.setContentType("text/xml");
+		out.println(getUrlStream(query, ClientID));
+	} else if (!SVCURL_FOR_PROXY.equals("")) {
+		String reqUrl = SVCURL_FOR_PROXY + "?";
+		String isEncoding = request.getParameter("CONGSVC_ENCODING") == null ? "true"
+				: request.getParameter("CONGSVC_ENCODING");
+
+		java.util.Enumeration en = request.getParameterNames();
+
+		while (en.hasMoreElements()) {
+			String key = (String) en.nextElement();
+			if (!key.equals("SVCURL_FOR_PROXY")
+					&& !key.equals("CONGSVC_ENCODING")
+					&& key.indexOf("route") == -1) {
+				reqUrl += key
+						+ "="
+						+ (isEncoding.equals("true") ? getParameterValue(
+								request, key) : request
+								.getParameter(key)) + "&";
+			}
+		}
+		for (int i = 0; i < 22; i++) {
+			try {
+				String x = request.getParameter("routex" + i);
+				String y = request.getParameter("routey" + i);
+				if (x != null && y != null) {
+					reqUrl += "x=" + x + "&";
+					reqUrl += "y=" + y + "&";
+				}
+			} catch (Exception ex) {
+			}
+		}
+		reqUrl = reqUrl.substring(0, reqUrl.length() - 1);
+		response.setContentType("text/xml");
+		//out.println(reqUrl);
+		out.println(getUrlStream(reqUrl, ClientID));
+	} else {
+		//String reqUrl = "http://flyhigh.tilo.co.kr/TMap/command.jsp?ClientID=" + ClientID + "&MAPFRAME=" + mapFrame + "&QUERY=" + query;
+		//System.out.println(reqUrl);
+		//response.sendRedirect(reqUrl);
+	}
+%>

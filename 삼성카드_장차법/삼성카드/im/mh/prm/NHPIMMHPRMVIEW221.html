@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+
+<iframe id="applyResult" name="applyResultFrame" height="0" width="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" title="빈프레임"></iframe>
+<form name="form1" action="/pms003.do?method=setCouponPopApply" method="post">
+<input type="hidden" name="gubun" value="${gubun}" />
+<input type="hidden" name="popgubun" value="${strPopGubun}" />
+<input type="hidden" name="magazineSYn" value="${magazineSYn}" />
+<input type="hidden" name="magazineSApplyYn" value="${magazineSApplyYn}" />
+<!-- SR내역 13.04.12
+<div id="pop_wrap"> 710 x 575
+	header
+	<div id="pop_header">
+		<h1><img src="/html/pms/images/pop_h1_premium_coupon.png" alt="삼성카드 프리미엄 회원만을 위한 특별 혜택, 프리미엄 쿠폰" /></h1>
+	</div>
+	<div id="mvint_pheader">
+		<h1><img src="/html/pms/images/pop_h1_premium_coupon.png" alt="삼성카드 프리미엄 회원만을 위한 특별 혜택, 프리미엄 쿠폰" /></h1>
+	</div>
+		<jsp:include page="/html/premium/premium_couponBook_${strPopGubun}.html" flush="false"></jsp:include>
+		footer
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="CLOSE" />
+	</div>
+</div>-->
+	<jsp:include page="/cms_content/popup/Pcoupon_${strPopGubun}.html" flush="false"></jsp:include>
+</form>
+
+<!--// 여기까지 끝 -->
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">한국전력 전기요금 지동납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_auto_payment.jpg" alt="전기요금 카드납부 한국전력 전기요금 자동납부서비스 - 금융기관이나 한전지점 방문 없이 전기요금을 삼성카드로 자동 납부해드리는 서비스 입니다" /></div>
+</div>
+
+<div class="content_block content_block_tab2 clfix mt0">
+<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSELE001M002',true);">전기요금 납부신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSELE001M005',true);">납부내역조회</a></li>
+		</ul>
+	</div>
+</div>
+
+
+	<div class="content_block content_block_tab clfix">
+		<div class="bg_step_autopay">
+			<ol class="none">
+				<li><abbr>현재단계</abbr>약관동의</li>
+				<li>신청정보 입력</li>
+				<li>신청정보 확인</li>
+				<li>신청완료</li>
+			</ol>
+		</div>
+	</div>
+	
+<div class="content_block clfix bor_tnone">
+	<h2><img src="/images/ss/h2_autopay01.png" alt="서비스 신청을 위해 약관을 확인하시고 동의해주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<fieldset class="fieldset_agree">
+			<p class="txt_autopay"><img src="/images/ss/txt_autopay01.png" alt="신청하시기 전에 다음의 사항을 꼭 읽고 동의하여 주세요. 약관 및 동의서 내용이 필요하실 경우, 인쇄하여 보관하시기 바랍니다." /></p>
+			<div class="tb_exp clfix">
+				<h3>개인정보 수집ㆍ이용 동의</h3>
+				<span class="ab_tr"><a href="javascript:popup('1');" class="btn_link" title="새창">동의서 상세보기</a></span>
+			</div>
+			<div class="box_white w660"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" id="agree1" tabindex="0"><a href="/agreement/html_ss_private1.html" title="새창" target="_blank">카드론 거래약관</a></div>
+			</div></div>
+			<div class="btnl">
+				<label for="label_company_directdebit01">
+				<input type="radio" class="chk" id="label_company_directdebit01" name="private01" onclick="private01Agree();" title="동의선택" /> 동의</label>
+				<label for="label_company_directdebit02">
+				<input type="radio" class="chk" id="label_company_directdebit02" name="private01" checked="checked" title="동의안함선택" /> 동의안함</label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+		<fieldset class="fieldset_agree mb10">
+			<div class="tb_exp clfix">
+				<h3>개인정보 제공 동의</h3>
+				<span class="ab_tr"><a href="javascript:popup('2')" class="btn_link" title="새창">동의서 상세보기</a></span>
+			</div>
+			<div class="box_white w660"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" id="agree2" tabindex="0"><a href="/agreement/html_ss_private2.html" title="새창">개인신용정보의 제공·활용동의서</a></div>
+			</div></div>
+			<div class="btnl">
+				<label for="label_partners_information01_01">
+				<input type="radio" class="chk" id="label_partners_information01_01" name="private02" onclick="private02Agree();" title="동의선택" /> 동의</label>
+				<label for="label_partners_information01_02">
+				<input type="radio" class="chk" id="label_partners_information01_02" name="private02" checked="checked" title="동의안함선택" /> 동의안함</label>
+			</div>
+		</fieldset>
+		
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree mb10">
+			<div class="tb_exp clfix">
+				<h3>자동납부 이용약관</h3>
+				<span class="ab_tr"><a href="javascript:popup('3')" class="btn_link" title="새창">이용약관 상세보기</a></span>
+			</div>
+			<div class="box_white w660"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" id="agree3" tabindex="0"><a href="/agreement/html_ss_private3.html" title="새창">제휴사 정보제공동의서</a></div>
+			</div></div>
+			<div class="btnl">
+				<label for="label_partners_information02_01">
+				<input type="radio" class="chk" id="label_partners_information02_01" name="private03" title="동의선택" /> 동의</label>
+				<label for="label_partners_information02_02">
+				<input type="radio" class="chk" id="label_partners_information02_02" name="private03" checked="checked" title="동의안함선택" /> 동의안함</label>
+			</div>
+		</fieldset>
+
+		<div class="line_lgray_p0">&nbsp;</div>
+		 <!-- btn 100508 -->
+		<div class="btnset"> 							
+			<div class="btnr">
+				<a href="javascript:valid();" class="btn btn_blue"><span>동의</span></a>
+				<a href="#" class="btn btn_white"><span>취소</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- layer_popup 메세지 -->
+</form>
+
+<!-- layer 팝업부분 -->
+
+<div id="id_layer01" style="display:">
+<form name="form2" method="post">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="confirmCancel1(); closeLayerPop('id_layer01'); " value="레이어닫기" title="카드정보 입력 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/ss/layer_tit_cardinfo.png" alt="카드 정보 입력" /></p>
+		<div class="pop_l_content">
+			<p class="mb5">삼성카드 개인정보 수집ㆍ이용 동의를 위해 카드 정보를 입력해 주세요</p>
+			<table summary="카드선택, 비밀번호, CVC번호로 구성된 카드 정보를 입력하는 게시판입니다." class="dtable02 dtable_inputfield mb30">
+				<caption>카드 정보 입력</caption>
+				<colgroup><col width="80" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row" style="text-align:left"><p>카드선택</p></th>
+						<td>
+							<p style="text-align:left"><select style="width:250px" id="label_ch_card" title="카드번호 선택" name="CARD_SELECT_1">
+								<option></option>
+								</select>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" ><p>비밀번호</p></th>
+						<td class="mv_ct01"><p style="text-align:left"><span class="layer_input">
+							<input type="password" name="PASSWORD_NO2_1" class="txt" size="4" maxlength="2" 
+							style="ime-mode:disabled" 
+							onkeyup ="lengthCheck1(this.form, this.value, this.name);"
+							onkeypress="checkTypes(this, 'NUMB');" 
+							onblur="checkTypesOnBlur(this, 'NUMB');" title="비밀번호 앞 2자리" />
+							<span class="pwtxt">**</span> 비밀번호 앞 2자리</span><span id="usafeon_PASSWORD_NO2_1"></span></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>CVC 번호</p></th>
+						<td><p style="text-align:left"><span class="layer_input">
+							<input type="password" class="txt" name="CVC_NO_1" id="CVC_NO_1" value="" size="6" maxlength="3"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled" title="CVC번호" />
+							 (카드서명란 숫자중 뒷3자리)</span>&nbsp;<span id="usafeon_CVC_NO_1"></span>
+						</p></td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="btnc">
+				<a href="javascript:checkAccount1();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+				<a href="javascript:confirmCancel1();closeLayerPop('id_layer01');"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div>
+	</form>
+</div>
+
+
+<div id="id_layer02" style="display:">
+<form name="form3" method="post">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick=" confirmCancel2();closeLayerPop('id_layer02');" value="레이어닫기" title="카드정보 입력 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/ss/layer_tit_cardinfo.png" alt="카드 정보 입력" /></p>
+		<div class="pop_l_content">
+			<p class="mb5">삼성카드 개인정보 제공 동의를 위해 카드 정보를 입력해 주세요</p>
+			<table summary="카드선택, 비밀번호, CVC번호로 구성된 카드 정보를 입력하는 게시판입니다." class="dtable02 dtable_inputfield mb30">
+				<caption>카드 정보 입력</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>카드선택</p></th>
+						<td>
+							<p style="text-align:left"><select style="width:250px" id="label_ch_card" title="카드번호 선택" name="CARD_SELECT_2">
+								<option></option>
+								</select>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p>비밀번호</p></th>
+						<td><p style="text-align:left"><span class="layer_input">
+							<input type="password" title="비밀번호 앞 2자리" class="txt" name="PASSWORD_NO2_2" value="" size="4" maxlength="2"
+							        onkeyup="lengthCheck2(this.form, this.value, this.name);"
+							        onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled"  />
+							 <span class="pwtxt">**</span> 비밀번호 앞 2자리</span><span id="usafeon_PASSWORD_NO2_2"></span></p></td>
+					</tr>
+					<tr>
+						<th scope="row" ><p>CVC 번호</p></th>
+						<td><p style="text-align:left"><span class="layer_input">
+							<input type="password" title="CVC번호" class="txt" name="CVC_NO_2" id="CVC_NO_2" value="" size="6" maxlength="3"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled" />
+							 (카드서명란 숫자중 뒷3자리)</span>&nbsp;<span id="usafeon_CVC_NO_2"></span>
+						</p></td>
+					</tr>
+				</tbody> 
+			</table>
+			<p class="btnc">
+				<a href="javascript:checkAccount2();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+				<a href="javascript:confirmCancel2();closeLayerPop('id_layer02');"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div>
+	</form>
+</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				
+
+

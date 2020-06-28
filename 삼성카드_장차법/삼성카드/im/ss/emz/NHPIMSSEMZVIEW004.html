@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100424 -->
+				<div class="top_visual">
+					<h1 class="none">이메일명세서를 이용하고 e메일존 선물받으세요</h1>
+					<p class="h1_desc"><img src="/cms_content/images/ss/h1_emailzone_main.jpg" alt="이메일명세서를 이용하고 e메일존 선물받으세요 - 편리한 이메일명세서 사용하고 한달에 한번씩 마음에 드는 상품 찍고! 이메일명세서 회원님께만 드리는 혜택입니다." /></p>
+                    <a href="javascript:goTabPage('NHPIMMHEPP001');" class="btn_findbenefit pt5"><img src="/images/common/btn_email_app2.png" alt="이메일 명세서 신청하기" /></a>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix emailzone" >	<!-- //100126 -->
+					
+					<div class="tab01 w810">
+						<ul>
+						
+							<!--2013.01.21 level depth 변경  -->
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M001', true);">서비스소개</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMSSEMZ001M002', true);">My ⓔ메일존</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M003', true);">지난 선물 내역</a></li>
+							<li><a href="javascript:goHit20();">인기선물 TOP20</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M004', true);">FAQ</a></li>
+							
+							
+							<!-- li><a href="javascript:goTabPage('NHPIMSSEMZ001M001', true);">서비스소개</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMSSEMZ001M002', true);">My e메일존</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M003', true);">지난선물보기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSEMZ001M004', true);">FAQ</a></li-->
+						</ul>
+					</div>
+					<h2><img src="/images/ss/h2_emailzone_my01.png" alt="현재 회원님께서 신청하신 내역입니다" /></h2>
+					<!-- 상품정보 들어갈 위치-->
+					<div id="goodsInfo" style="display:inline"></div>
+					<!-- 상품정보 들어갈 위치-->
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix pos_rel">
+					<h2><img src="/images/ss/h2_emailzone_my02.png" alt="지난 신청내역을 확인해보세요" /></h2>
+					<div class="content_block_inner">
+
+						<div class="tb_exp clfix">
+							<span>지난 이벤트에 <strong class="t_point">응모한 선물</strong>을 확인 해 보실 수 있습니다.</span>
+							<span class="ab_tr">
+								<select title="년도 선택" id="years" name="years" style="width:80px">
+									<option></option>
+								</select>
+                                <a href="javascript:getMyEmailZone()" class="btn btn_s_blue"><span>조회</span></a>
+							</span>
+						</div>
+
+						<table class="dtable01 dtable01_bill" summary="응모기간, 응모한선물, 선물수, 응모자수, 확률(%)을 볼수 있는 게시판입니다">
+						<caption>지난 신청내역</caption>
+						<colgroup><col width="65" /><col width="*" /><col width="65" /><col width="75" /><col width="70" /></colgroup><!-- 120615 수정 -->
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">응모기간</th>
+								<th scope="col">응모한선물</th>
+								<th scope="col" class="cell_r10">선물수</th>
+								<th scope="col" class="cell_r10">응모자수</th>
+								<th scope="col" class="cell_r10">확률(%)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr class="nodata">
+								<td colspan="5">지난 신청 내역이 존재하지 않습니다.</td>
+							</tr>
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+						</tbody>
+						</table>
+                        <p class="btnr"><a href="http://www.samsungcard.com/index.do?menuId=NHPIMETEVT003" class="btn btn_blue" ><span>당첨자 보기 </span></a></p><!-- 120615 추가 -->
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+

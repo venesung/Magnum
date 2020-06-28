@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<title>휴대폰 인증 - 삼성카드</title>
+</head>
+<body>
+
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1 class="al_center"><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /></h1>
+	</div>-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<table class="dtable02 dtable_inputfield" summary="주민번호와 휴대폰번호 입력 후 휴대폰으로 전송된 번호로 인증번호를 입력하세요">
+			<caption>휴대폰 번호 인증</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>주민번호</p></th>
+					<td><p><%=idenNo.substring(0, 6)%> – *******</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>휴대폰번호</p></th>
+					<td><p>
+							<span class="input_phone">
+								<select title="휴대폰 앞자리" name="phone_no1">
+									<option>00</option>
+								</select>&nbsp;-&nbsp;
+								<input type="text" name="phone_no2" class="txt" value="" title="휴대폰 가운데자리" 
+								       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, form.phone_no3);"
+									   onblur="checkTypesOnBlur(this, 'NUMB');" num="i" maxlength="4" required="required" />&nbsp;-&nbsp;
+								<input type="text" name="phone_no3" class="txt" value="" title="휴대폰 뒷자리"
+								       onkeypress="javascipt:checkTypes(this, 'NUMB');" onKeyDown="javascript:checkLenB(this, form.phone_no2);"
+									   onblur="checkTypesOnBlur(this, 'NUMB');" num="i" maxlength="4" required="required" />
+                                <a href="javascript:gocert();" class="btn btn_s_white" title="새창"><span>인증번호받기</span></a>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>인증번호</p></th>
+					<td>
+						<p><span class="input_3char">
+						<input type="text" name="SMS_CERT" class="txt" id="label_num" value="" onKeyPress="checkTypes(this, 'NUMB');" num="i" title="인증번호" />
+						</span></p>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			
+		</div>
+		<p class="btnc">
+		<p class="pop_sub_desc02">
+		<%
+			if("01".equals(VerifyResp)){
+		%>
+			주민번호 오류 입니다.<br />실명확인 후 다시 시도해주세요.
+		<%
+			}else if("02".equals(VerifyResp)){
+		%>
+			휴대폰 번호 오류입니다.<br />재입력 후 다시 시도해주세요.
+		<%
+			}else if("22".equals(VerifyResp)){
+		%>
+			<strong>주민등록번호와 핸드폰번호를 확인해주십시오.</strong>
+		<%
+			}else if("99".equals(VerifyResp) || "11".equals(VerifyResp)){
+		%>
+			휴대폰 인증이 정상적으로 이루어지지 않았습니다.<br />
+			공인인증서로 카드신청 바랍니다. [<%=VerifyResp%>}]
+		<%
+			}else if("21".equals(VerifyResp)){
+		%>
+			<strong>인증번호를 전송하였습니다.</strong>
+		<%
+			}else{
+		%>
+			휴대폰번호를 정확히 입력하시고, 휴대폰으로 전송되어온 <br/>
+			인증번호를 입력 후 아래의 확인버튼을 눌러주세요.<br />
+			본인 명의의 휴대폰이 아닌 경우 인증이 이루어지지 않습니다.
+		<%
+			}
+		%>
+		</p></p>
+		<p class="btnc">
+		
+		<center>
+		<div id="cardApplyVerifySuccess">
+            <a href="javascript:sendOk();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> 
+            <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+		</div>
+		<div id="cardApplyVerifyFail" style="display:none">
+            <a href="javascript:alert('공인인증서 인증처리');"><img src="/images/common/btn_certificate.png" alt="공인인증서 인증" /></a> 
+            <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+		</div>
+		</center>
+		
+		
+		</p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+	
+</div>
+</form>
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>
+</body>
+</html>

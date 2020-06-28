@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_issue_guides.png" alt="항상 새로운 News를 전해드리는 뉴스레터입니다" /></h1><!-- 정기일반영 13.03.29 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="tab01 w810">
+						<ul>
+<!-- 정기일반영 13.03.29 -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHGPSVIEW001','true')">뉴스레터</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHGPSVIEW002','true')">뉴스레터 - 프리미엄 회원</a></li>
+							<!--li><a href="javascript:goTabPage('NHPIMMHGPSVIEW003','true')">스토리S</a></li--><!-- SR내역 13.03.29 -->
+<!--// 정기일반영 13.03.29 -->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_issue_guides.png" alt="매월 새롭게 기획되는 삼성카드 소식을 확인하세요" /></h2>
+					<div class="content_block_inner d_guides clfix">
+						<div class="d_view_guides">
+							<h3>00.00&nbsp;<img src="/images/mh/h3_issue_guides01.png" alt="뉴스레터 보기" /></h3><!-- 정기일반영 13.03.29 -->
+							<!-- <a href="#" onclick="MM_callJS('OpenEBook.OpenBook(<%=event_frow.getCentralAddr()%>)')">-->
+							<a href="http://asp3.rise7.co.kr" onclick="puzzle.book.open('<%=event_frow.getCentralAddr()%>','http://asp3.rise7.co.kr');return false;" title="00.00뉴스레터 새창">
+							<!-- img src="/imgUpload/good/event/<%=event_frow.getEventImageUrl()%>" alt="" width="218" height="440" border="0"/-->
+							<img src="/cms_content/hp/im/mh/gps/<%=event_frow.getEventImageUrl()%>" alt="<%=event_frow.getEventYear()%>.<%=event_frow.getEventMonth()%>" style="width:218px; height:440px; border:0;" />
+							</a>
+						</div>
+						<div class="d_view_guides_past">
+							<h3><img src="/images/mh/h3_issue_guides02.png" alt="지난 뉴스레터 보기" /></h3><!-- 정기일반영 13.03.29 -->
+							<ul>
+								<li><a href="http://asp3.rise7.co.kr" onclick="puzzle.book.open('<%=rsList2.get(i).getCentralAddr()%>','http://asp3.rise7.co.kr');return false;" title="00.00뉴스레터 새창"><img src="/cms_content/hp/im/mh/gps/<%=rsList2.get(i).getEventImageUrl()%>" alt="00.00.00" width="84" height="174" border="0" /></a><p class="t_desc04">00.00</p></li>
+								<!-- onclick="MM_callJS('OpenEBook.OpenBook(<%=rsList2.get(i).getCentralAddr()%>)')" -->
+							</ul>
+							<!--  
+							<p class="p_step"><img src="/images/mh/ban_emailbill.jpg" alt="이메일명세서받고 선물콕콕!" usemap="#map_emailzone" /></p>
+							-->
+							<p class="p_step"><img src="/images/mh/ban_emailbill.jpg" alt="편리하고 안전한 이메일 명세서를 이용해 보세요~" usemap="#map_emailzone" /></p><!-- 121224 수정 -->	
+							<map name="map_emailzone" id="map_emailzone">
+								<area shape="rect" coords="28,119,152,140" href="/index.do?menuId=NHPIMMHEPP001" title="이메일 명세서 새창" alt="이메일 명세서 신청하기" target="_blank" /><!-- 121224 수정 -->			
+							</map>
+						</div>
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

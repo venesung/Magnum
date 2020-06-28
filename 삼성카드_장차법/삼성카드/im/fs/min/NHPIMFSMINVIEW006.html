@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<div id='tab_title'>현금서비스 미니결제</div>
+<div id='tab_script'>
+</div>
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">현금서비스 미니결제</h1>
+					<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMFSMIN001M001', true );">서비스안내</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMFSMIN001M002', true );">미니결제신청</a></li>
+                            <li class="on"><span class="none">현재단계</span><a href="#">신청결과조회</a></li>                                
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+					<!-- d_complete -->
+					<div class="d_alert mt_30 clfix">
+						<p class="ico_alert"><img src="/images/common/img_service_com.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/mh/txt_cash_minipay04.png" alt="현금서비스 미니결제 신청취소가 정상적으로 완료되었습니다." /></h2>
+							<div class="p_txt t_desc03">
+								 
+							</div>
+                            <div class="mt_20"><a href="javascript:goTabPage('NHPIMFSMIN001M001', true );"><img src="/images/common/btn_confirm.png" alt="확인" /></a></div>
+						</div>
+					</div>
+				</div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>	

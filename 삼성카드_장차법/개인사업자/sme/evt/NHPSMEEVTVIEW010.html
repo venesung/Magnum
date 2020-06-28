@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>이벤트 - 삼성카드</title><base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="/css/sme.css" />
+</head>
+<body style="background:none">
+			<div class="board_col21">
+				<h2><img src="/images/sme/evt_tit2.png" alt="종료된 이벤트입니다." /></h2>
+			</div>
+			
+			<div class="board_col22">
+			
+				<div class="board_list">
+					<div class="info_txt">
+						종료된 이벤트를 쉽게 찾아보세요
+					</div>
+					<div class="search">
+						<form name="frm1" method="post">
+							<fieldset>
+								<div>
+									<label for="search_text">이벤트명</label>
+									<input type="text" title="이벤트명 기입" value="<%=srchGubun1 %>" id="search_text" maxlength="20" class="input_txt" name="search_text" size="20" onkeydown="return checkEnter()" />
+									<input type="hidden" name ="srchGubun1" value="<%=srchGubun1 %>" />
+									<a class="btn btn_s_blue" href="javascript:goEndEvent();"><img src="/images/sme/btn_board_search.png" style="vertical-align:middle" alt="검색"></a>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					
+					<div class="list">
+						<table summary="번호 제목,기간으로 구성된 종료된 이벤트 목록입니다.">
+	                        <caption>종료된 이벤트 목록</caption>
+							<colgroup>
+								<col width="42" />
+								<col width="" />
+								<col width="210" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">기간</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td>1</td>
+									<td class="cell_l cell_tit"><a href="#">-_-</a></td>
+									<td>2012.02.02-2012.03.05</td>
+								</tr>
+								<!-- loop -->
+								 	<tr>
+									<td colspan="3">조회된 결과가 없습니다.</td>
+									</tr>
+							</tbody>
+							</table>
+							</div>
+											<!-- paginate -->
+											<!-- 페이징 -->
+											<div class="paginate">
+												${_page}
+											</div>
+											<!-- //페이징 -->
+							<%}%>
+							
+						
+
+				</div>
+	</div>
+
+</body>
+</html>

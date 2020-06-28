@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_chk_duepay.png" alt="결제 예정 금액을 확인하세요." /></h1>
+</div>
+<!-- 100218 -->
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+	<div class="content_block_inner">
+        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+			<div class="childlayer">
+				<ul>
+                    <li><a href="javascript:goIndividual()">개인카드</a></li>
+                    <li><a href="javascript:goCorporate()">법인카드</a></li>
+				</ul>
+			</div>							
+		</div>
+		<span class="selectbox_r_txt">개인카드, 법인카드 중 조회하실 카드를 선택하세요.</span>
+		<div class="line_lgray">&nbsp;</div>
+		<ol class="list_no01">
+			<li><p>결제예정금액은 2012.02.01까지 삼성카드로 접수된 이용금액 기준으로 작성되어 실제 결제대금과 다를 수<br /> 있습니다.</p></li>
+			<li><p>결제예정금액의 이자금액은(할부, 대출, 자유결제 등)조회일 당일까지 계산된 금액입니다.</p></li>
+			<li><p>위클리보너스서비스를 이용하시는 회원의 경우는 주단위 출금액에 따라 실제결제금액(일시불)은 달라질 수<br /> 있으며,
+				   위클리보너스서비스 상세내역은 「카드 → 디지털멤버십카드서비스 → 위클리보너스서비스」<br />메뉴에서 확인하실 수 있습니다. </p></li>
+			<li><p>전월 청구서 발송 이후 취소매출이 접수된 경우 해당 금액은 전월 결제대금 반영 또는 환불처리됩니다.<br />
+				   이 경우 취소거래 안내를 위해 부득이 익월 거래내역에 취소매출을 표기함으로 결제예정금액과<br /> 카드이용내역이 상이할 수 있습니다.</p></li><!-- SR내역 13.02.04 -->
+			<li><p>자동이체 출금액이 현재 입금처리 중입니다.<br />
+				   자동이체 계좌에서 정상적으로 출금되신 경우, 입금처리는 출금일로부터 1~2일 정도 소요되어<br />익일부터 금액조회가 가능합니다.</p></li>
+			<li><p>현재 미결제된 금액이 없습니다.</p></li>
+		</ol>
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_duepay02.png" alt="결제 예정 금액 요약내역입니다" /></h2>
+	<div class="content_block_inner">
+		당일은 자동이체 출금 금액 확인중입니다. 서비스는 익일부터 가능합니다.
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_duepay02.png" alt="결제 예정 금액 요약내역입니다" /></h2>
+	<div class="content_block_inner">
+<!-- 현업확인필요....
+		<form name="ingGubunForm">
+		<input type="hidden" name="ING_GUBUN" value="<%=ING_GUBUN %>" /> 
+		<div class="tab01 w640 mb30">
+			<ul>
+			<%
+			if(("1").equals(ING_GUBUN)){ 
+			%>
+                <li class="on"><span class="none">현재탭</span><a href="javascript:goToday()" style="width:190px;">(<%=todayUsedByTab%>일) 당일 입금하시는 경우</a></li>
+                <li><a href="javascript:goSttday()" style="width:190px;">(<%=hldBrSttDt.substring(4, 6) + "/" + hldBrSttDt.substring(6, 8)%>일) 결제일 입금하시는 경우</a></li>
+			<%
+			}else if(("2").equals(ING_GUBUN)){ 
+			%>
+                <li><a href="javascript:goToday()" style="width:190px;">(<%=todayUsedByTab%>일) 당일 입금하시는 경우</a></li>
+                <li class="on"><span class="none">현재탭</span><a href="javascript:goSttday()" style="width:190px;">(<%=hldBrSttDt.substring(4, 6) + "/" + hldBrSttDt.substring(6, 8)%>일) 결제일 입금하시는 경우</a></li>
+			<%
+			}
+			%>
+			</ul>
+		</div>
+		</form>
+ -->
+		<div class="table_style01">
+			<p class="txt_unit">[단위 : 원]</p>
+			<table class="dtable01" summary="이용상품,당월 결제예정금액(A),당월 결제 후 잔여금액(B),총 결제예정 금액(A)+(B)을 상세히 확인할 수 있는 게시판입니다.">
+				<caption>결제 예정 금액 요약내역</caption>
+				<colgroup>
+					<col width="13%" />
+					<col width="13%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="14%" />
+					<col width="14%" />
+					<col width="14%" />
+				</colgroup>
+				<thead>
+				<tr>
+					<th class="cell_l10 riline" rowspan="3" scope="col">이용상품</th>
+					<th class="cell_c riline boline_b0" colspan="5" scope="colgroup"><b>당월 결제예정금액(-_-) (A)</b></th>
+					<th class="cell_l10 riline"  rowspan="3" scope="col"><b>당월 결제 후 <br />잔여금액(B)</b></th>
+					<th class="cell_r10 " rowspan="3" scope="col"><b>총 결제예정 <br />금액(A)+(B)</b></th>
+				</tr>
+				<tr>
+					<th rowspan="2" scope="col" class="cell_r10 riline">원금</th>
+					<th colspan="2" scope="colgroup" class="boline_b0 riline">이자/수수료</th>
+					<th rowspan="2" scope="col" class="cell_r10 riline">연체료</th>
+					<th rowspan="2" scope="col" class="cell_r10 riline">소계</th>
+				</tr>
+				<tr>
+					<th scope="col" class="riline cell_r10">결제일</th>
+					<th scope="col" class="riline cell_r10">당일</th>
+				</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td class="cell_l10 riline cell_bg" colspan="5" scope="row">총 결제예정금액</td>
+						<td class="cell_r10 riline"></td>
+						<td class="cell_r10 riline"></td>
+						<td class="cell_r10 cell_bg">-_-</td>
+					</tr>
+				</tfoot>
+				<tbody>
+				<tr>
+					<td class="cell_l10 riline">-_-</td>
+					<td class="cell_r10 riline t_no">-_-</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10">-_-</td>
+				</tr>			
+				<tr>
+					<td class="cell_l10 riline" colspan="5">미리 입금하신 금액</td>
+					<td class="cell_r10 riline">-_-</td>
+					<td class="cell_r10 riline">0</td>
+					<td class="cell_r10">-_-</td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="t_org">당월 약정결제 금액(-_-%)</strong></td>
+					<td class="cell_r10 riline cell_bg"><strong class="t_org">-_-</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline" colspan="5" scope="row">(당월 최소결제 금액 -_-%)</td>
+					<td class="cell_r10 riline">(-_-)</td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="t_org">당월 결제예정금액</strong></td>
+					<td class="cell_r10 riline cell_bg"><strong class="t_org">-_-</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="bold_txt1">당월 결제 후 잔여금액</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10 riline cell_bg"><strong class="bold_txt1">-_-</strong></td>
+					<td class="cell_r10"></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="btnset">
+			<p class="btnl">
+                <a href="javascript:goInputList()" class="btn btn_white"><span>입금내역 조회 &gt;</span></a>
+                <a href="javascript:goYejung1()" class="btn btn_white"><span>미결제금액 조회 &gt;</span></a>
+                <a href="javascript:goEmsApply()" class="btn btn_white"><span>즉시결제 신청 &gt;</span></a>
+                <a href="javascript:goCardUse()" class="btn btn_white"><span>카드이용내역 조회 &gt;</span></a>
+                <a href="javascript:goCardLoan()" class="btn btn_white"><span>만기연장 신청 &gt;</span></a>
+                <!--<a href="javascript:goAutoPay()" class="btn btn_white"><span>결제일 직전영업일 출금신청  &gt</span></a>
+			--></p>
+		</div>
+			<p class="mt10">
+			<!-- 120920 추가 -->※ 결제일이 휴일인 경우 익영업일에 출금됩니다. 결제일 이전에  결제를 원하시는 경우, 상단의  &quot;즉시결제 신청&quot; <br />&nbsp;&nbsp;&nbsp;&nbsp;을 이용해주시기 바랍니다.<br /><!--// 120920 추가 -->
+			※ 자동이체 계좌에서 정상적으로 출금되신 경우 카드사와 은행간의 출금자료 송수신 관계로 1일정도 소요되어 <br />
+			&nbsp;&nbsp;&nbsp;&nbsp;결제예정금액 조회시 미결제금액으로 조회될 수 있으니 양해부탁드립니다.<br />
+			※ 결제일변경 신청 후 변경완료전까지 결제일은 명세서를 참조해주시기 바랍니다.</p>	
+			
+		<div class="content_block_inner">
+			<p class="p_tit">자유결제서비스 이용고객 안내사항</p>
+			<ol class="list_no01 mt5">
+				<li><p>자유결제 약정결제금액과 최소결제금액은 결제일 -13일 전 부터 조회됩니다.</p></li>
+				<li><p>자유결제서비스 이용회원은 일시불, 현금서비스에 한해 선택하신 약정 결제율로 청구됩니다.</p></li>
+				<li><p>당월신규로 사용한 이용상세내역은 전건조회되나 이월잔액 이용상세내역은 조회가 불가합니다.<br />(전월 명세서 참조)</p></li>
+			</ol>
+		</div>
+		
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_chk_duepay02a.png" alt="결제 예정 금액 상세내역입니다" /></h2>
+		<div class="tb_exp clfix">
+			<span>익월에 결제하실 상세내역이 포함되어 있습니다.<!-- SR내역 13.02.04 -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[단위 : 원]</span>
+		</div>
+		<form name="tabform">
+		<!-- 암호화를 위한 dummy object--> 
+		<!-- tab -->
+		<div class="tab02 w810 mb30">
+			<ul id="subtab">
+                <li class="on"><a href="javascript:tabChange('tab1','1');">일시불 &middot; 할부</a></li><!-- choose -->
+                <li><a href="javascript:tabChange('tab2','2');">현금서비스 &middot; 대출 &middot; 마이너스론</a></li>
+                <li><a href="javascript:tabChange('tab3','3');">연회비 &middot; 신용보호</a></li>
+                <li><a href="javascript:tabChange('tab4','4');">자유결제/리볼빙 일시불 &middot; 현금서비스</a></li>
+			</ul>
+		</div>
+		</form>
+        <!--form name="tempXecureForm"><input type="hidden" name="p" /></form-->
+		<!-- 상세내역 iframe 영역 -->
+		<iframe id="subtabIframe" name="iframe" height="813px" width="100%" frameborder="0" scrolling="no" title="결제 예정 금액 상세내역"></iframe>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_duepay04.png" alt="결제 예정 금액 이용 안내입니다" /></h2>
+	<div class="content_block_inner">
+			<p class="p_tit">용어설명</p>
+			<ol class="list_no01 mt5">
+				<li><p>이월잔액 :  전월 결제일 입금 이후 남은 잔액</p></li>
+				<li><p>당월이용 :  당월 신규로 이용한 금액</p></li>
+				<li><p>약정청구율 : 자유결제 상품 결제일 결제비율</p></li>
+				<li><p>최소청구율 : 자유결제 상품이용회원 최소 결제비율</p></li>
+				<li><p>결제원금 : 약정청구원금</p></li>
+				<li><p>이자/수수료 : 자유결제 이월잔액 이자 및 현금서비스 수수료 금액<br />(자유결제서비스 이용 시 이월잔액에 대한 이자가 부과됩니다.)</p></li>
+				<li><p>자유결제 이용상세내역은 당월 신규 이용분에 한해서 확인하실 수 있습니다. <br />(이월잔액 및 연체금액은 상세내역이 조회되지 않습니다.)</p></li><!-- 100509 -->
+			</ol>
+			<p class="p_tit mt20">용어설명</p>
+			<ol class="list_no01 mt5">
+				<li><p>이월잔액 : 전월 결제일 입금 이후 남은 잔액</p></li>
+				<li><p>당월이용 : 당월 신규로 이용한 금액</p></li>
+				<li><p>약정청구율 : 자유결제 상품 결제일 청구비율</p></li>
+				<li><p>결제원금 : 약정청구원금</p></li>
+				<li><p>이자/수수료 : 자유결제 이월잔액 이자 및 현금서비스 수수료 금액<br />(자유결제서비스 이용 시 이월잔액에 대한 이자가 부과됩니다.)</p></li>
+				<li><p>자유결제 이용상세내역은 당월 신규 이용분에 한해서 확인하실 수 있습니다. <br />(이월잔액 및 연체금액은 상세내역이 조회되지 않습니다.)</p></li><!-- 100509 -->
+			</ol>
+		<p class="p_tit mt20">생활비재테크 서비스 이용고객 안내사항</p>
+		<blockquote class="mt5">회원님의 선불약정금액은 <strong class="t_black t_no">-_- 원</strong>이며 <strong class="t_black t_no">-_-</strong> 현재 충전잔고는 <strong class="t_black t_no">-_- 원</strong> 입니다.<br /></blockquote>
+		<p class="p_tit mt20">위 금액에 할부금융, 론패스, 리스 등을 이용한 금액은 포함되지 않습니다.</p>
+		<p class="p_tit mt20">상세 이용내역조회 안내사항</p>
+		<ol class="list_no01 mt5">
+			<li><p>결제일 이전 선입금한 금액은 결제예정금액에서 제외되나 이용한 매출 상세내역은 모두 조회됩니다.</p></li>
+			<li><p>은행별로 자동이체 출금액에 대한 삼성카드의 입금반영 시간이 다르므로<br />
+				   전일 또는 전전일에 입금하신 금액이 반영되어 있지 않을 수도 있습니다. <a href="/hp/im/mh/csm/reflectByBank.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="새창">결제은행별 입금반영기준</a>을 확인하세요.</p></li><!-- 100509 -->
+		</ol>
+		<p class="p_tit mt20">채무변제순서</p>
+		<p>결제금액 전액을 입금하지 못하신 경우에는 연회비, 제반비용, 지연배상금, 상품별 수수료, 이자 등이 <br />원금에 우선 변제되며, 상품별 이자율이 높은 순으로 연체원금 변제 후 정상원금이 변제처리됩니다.</p>						
+		
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100219 -->
+					<div class="tab02 w810">
+						<ul>
+						
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+							
+							
+							<!--li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMMH009','true');">이용내역 및 남은금액조회</a></li>
+									<li class="on"><a href="javascript:goTabPage('NHPIMMH010','true');">캐시백 정산내역조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div id="print_content" class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_cash_paydetail01.png" alt="캐시백 정산내역 상세보기입니다" /></h2>
+					<div class="content_block_inner">
+ 
+						<div class="tb_exp">
+							<span>최근 12개월까지 2개월 단위로 조회됩니다.</span>
+						</div>
+ 
+						<!-- calendar_position -->
+						<div class="pos_rel_cal">캘린더위치</div>
+
+						<table class="dtable02" summary="캐시백 정산내역을 조회하기 위해 정산년월,적립일자를 선택하는 게시판입니다.">
+						<caption>캐시백 정산 조회 입력</caption>
+						<colgroup><col width="115" /><col width="*" /><col width="115" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>정산년월</p></th>
+								<td><p>
+									<select title="정산년월 선택" name="yyyymm" id="label_yyyymm">
+										<option value="">선택</option>
+									</select>
+								</p></td>
+								<td>
+                                    <p class="btnr"><a href="javascript:clear_next(1);" class="btn btn_blue"><span>조회</span></a></p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>적립일자</p></th>
+								<td><p class="reset_date"><!-- 날짜지정 -->
+									<fileTag:dblCalendarAdd calendarId="hp_double_cal" inputClass="txt" startTitle="시작하는날짜" startInputName="start_date" startInputValue='<%=start_date %>'
+                                                                                                        endTitle ="끝나는날짜" endInputName ="end_date" endInputValue ='<%=end_date %>'/>
+									<!-- <input type="text" class="txt" value="2009.10.12" title="시작하는날짜" />
+                                    <a href="javascript:show_cal('layer_calendar01','start');"><img src="/images/common/ico_calendar.png" id="id_cal_start" alt="달력" /></a>&nbsp;~&nbsp;
+									<input type="text" class="txt" value="2009.11.12" title="끝나는날짜" />
+                                    <a href="javascript:show_cal('layer_calendar01','end');"><img src="/images/common/ico_calendar.png" id="id_cal_end" alt="달력" /></a> -->
+									</p>
+								</td>
+								<td>
+                                    <p class="btnr"><a href="javascript:clear_next(2);" class="btn btn_blue"><span>조회</span></a></p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+<!--						<div class="btnset">-->
+<!--                            <p class="btnr"><a href="javascript:clear_next(1);" class="btn btn_blue"><span>조회</span></a></p>-->
+<!--						</div>-->
+
+						<table class="dtable02 mt30" summary="선불사용금액 합계와 캐시백금액 합계를 확인할 수 있는 게시판입니다.">
+                        <caption>선불사용금액과 캐시백금액 내역</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>선불사용금액 합계</p></th>
+								<td><p><span class="t_no">1</span> 원</p></td>
+								<th scope="row"><p>캐시백금액 합계</p></th>
+								<td><p><span class="t_no">1</span> 원</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+
+						<div class="d_easy mt20"><!-- 100506 -->
+							<table class="dtable01" summary="사용일자, 적립일자, 가맹점명, 카드번호, 사용금액, 선불사용금액, 캐시백지급률, 캐시백금액, 캐시백정산일자로 구성된 캐시백 정산 내역 조회결과를 확인할 수 있는 게시판입니다.">
+							<caption>캐시백 정산 내역</caption>
+							<colgroup><col width="9%" /><col width="8%" /><col width="15%" /><col width="19%" /><col width="12%" /><col width="11%" /><col width="8%" /><col width="10%" /><col width="8%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="cell_l10a">사용일자</th>
+									<th scope="col">적립<br />일자</th>
+									<th scope="col">가맹점명</th>
+									<th scope="col">카드번호</th>
+									<th scope="col">사용금액</th>
+									<th scope="col">선불<br />사용금액</th>
+									<th scope="col">캐시백<br />지급률</th>
+									<th scope="col">캐시백<br />금액</th>
+									<th scope="col">캐시백<br />정산일자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td class="cell_l10a">0</td>
+									<td>0</td>
+									<td class="cell_l10"><span class="nobreak_nolink w90">0</span></td>
+									<td><span class="p_nowrap">0</span></td>
+									<td class="cell_r10"><span class="p_nowrap">0</span></td>
+									<td class="cell_r10"><span class="p_nowrap">0</span></td>
+									<td class="cell_r10">0</td>
+									<td class="cell_r10"><span class="p_nowrap">0</span></td>
+									<td>0</td>
+								</tr>
+								<!-- //loop -->
+								<tr class="nodata">
+									<td colspan="9">0</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:excelDown();" class="btn btn_white"><span>다운로드</span></a>
+								<!-- 파라미터 전달용 더미 A TAG -->
+								<a href="/hp/im/mh/hsv2.do?method=makeExcelCashbackDetail" name="excelATag"></a>
+                                <a href="javascript:print_content('serviceaddress');" class="btn btn_white"><span>인쇄</span></a>
+							</p>
+						</div>
+						
+					</div>
+				</div>
+</form>
+
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+				
+
+				<div class="content_block content_block_card clfix">
+					<div class="btnr">
+						<a class="btn btn_blue" href="javascript:goTabPage('NHPIMMHINFO2','true');"><span>확인</span></a>
+					</div>
+				</div>
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

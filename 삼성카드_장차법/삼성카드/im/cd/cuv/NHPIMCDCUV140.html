@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+    <h1><img src="/images/cd/h1_simulation_info.png" alt="시뮬레이션으로 입금액을 확인할 수 있습니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">	<!-- 100126 -->
+    <h2><img src="/images/cd/h2_usecard_installment01.png" alt="이용하실 카드 할부 금액을 입력하세요" /></h2>
+    <div class="content_block_inner">
+
+
+
+
+        <table class="dtable02 dtable_inputfield" summary="이용하실 카드의 할부이용 예정일, 이용금액, 할부기간을 입력하는 게시판입니다">
+        <caption>카드할부금액 입력 게시판</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <th scope="row"><p>이용 예정일</p></th>
+                <td><p>
+<!--
+                    <select title="년도 선택" id="label_useday01">
+                        <option>2009</option>
+                    </select> 년
+                    <select title="월 선택" id="label_useday02">
+                        <option>12</option>
+                    </select> 월
+                    <select title="일 선택" id="label_useday03">
+                        <option>25</option>
+                    </select> 일
+-->
+                        <select name="APP_YEAR" id="select7" style="width:60px" title="이용 예정일 년 선택">
+                          <option></option>
+                        </select> 년
+                        <select name="APP_MON" id="select8" style="width:40px" onchange="changeMonth();" title="이용 예정일 월 선택">
+                          <option></option>
+                        </select> 월
+                        <select name="APP_DAY" id="select9" style="width:40px" title="이용 예정일 일 선택">
+                        </select> 일            
+                                                
+                                                
+                </p></td>                       
+            </tr>                               
+            <!-- //loop -->
+            <tr>
+                <th scope="row"><p>이용금액</p></th>
+                <td><p><span class="input_point"><input type="text" class="txt"  name="REQ_AMT" style="width:66px" id="label_usemoney" title="이용금액 입력" />원</span><span style="color:#EE8F09;">(0 원 이용가능)</span></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>할부기간</p></th>
+                <td><p>
+                        <select name="DIV_DUR" id="STD_MENU" style="width:50px" title="할부기간" >
+                          <option></option>
+                        </select> 개월
+
+<!--
+                    <select title="할부시간 선택" id="label_usetime">
+                        <option>3 개워 15.50%</option>
+                    </select>
+-->
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="btnset">
+            <div class="btnr">
+                <a href="javascript:Form_Clear(this.document.simulation);" class="btn btn_white"><span>다시 계산하기</span></a>
+                <a href="javascript:Form_Check(this.document.simulation);" class="btn btn_blue"><span>확인</span></a>
+            </div>
+        </div>
+		
+        <table class="dtable01 mt30" summary="이용일, 이용금액, 할부기간, 수수료율로 구성된 할부내역">
+        <caption>할부내역</caption>
+        <colgroup><col width="20%" /><col width="40%" /><col width="20%" /><col width="20%" /></colgroup>
+        <thead>
+            <tr>
+                <th scope="col" class="cell_l10">이용일</th>
+                <th scope="col">이용금액</th>
+                <th scope="col" class="cell_r10">할부기간</th>
+                <th scope="col" class="cell_r10">수수료율</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <td class="cell_l10"><span class="t_no">0년&nbsp;0월&nbsp;0일&nbsp;</span></td>
+                <td><span class="t_no">0 </span>원</td>
+                <td class="cell_r10"><span class="t_no">0 </span> 개월</td>
+                <td class="cell_r10"><span class="t_no">0 %</span></td>
+            </tr>
+            <!-- //loop -->
+        </tbody>
+        </table>
+
+
+        <table class="dtable01 mt30" summary="이용하신 카드의 결제일, 할부원금, 할부수수료, 계, 할부잔액을 확인하실 수 있는 게시판입니다">
+        <caption>할부내역 리스트 게시판</caption>
+        <colgroup><col width="8%" /><col width="16%" /><col width="19%" /><col width="19%" /><col width="19%" /><col width="19%" /></colgroup>
+        <thead>
+            <tr>
+                <th scope="col" class="cell_l10">회차</th>
+                <th scope="col">결제일</th>
+                <th scope="col" class="cell_r10">할부원금</th>
+                <th scope="col" class="cell_r10">할부수수료</th>
+                <th scope="col" class="cell_r10">계</th>
+                <th scope="col" class="cell_r10">할부잔액</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td scope="row" class="cell_l10">합계</td>
+                <td></td>
+                <td class="cell_r10"><em>0</em> 원</td>
+                <td class="cell_r10"><em>0</em> 원</td>
+                <td class="cell_r10"><em>0</em> 원</td>
+                <td class="cell_r10"><em>0</em> 원</td>
+            </tr>
+        </tfoot>
+
+
+        <tbody>
+            <tr>
+                <td class="cell_l10"><span class="t_no">0 </span></td>
+                <td><span class="t_no">0</span></td>
+                <td class="cell_r10"><span class="t_no">0</span> 원</td>
+                <td class="cell_r10"><span class="t_no">0</span> 원</td>
+                <td class="cell_r10"><span class="t_no">0</span> 원</td>
+                <td class="cell_r10"><span class="t_no">0</span> 원</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <ol class="list_desc mt10">
+            <li><p>결제일이 휴일인 경우 그 다음에 오는 첫 영업일로 결제일이 조정되며<br />조정된 결제일 기준으로 이자가 산정되어 할부수수료금액이 변동될 수 있습니다.
+</p></li>
+            <li><p>사용하신 할부 원금을 할부 개월수로 나누어 원금이 100원 미만일 경우<br />
+            1회차에 청구되고 2회차 부터는 일정한 금액으로 청구됩니다.</p></li>
+            <li><p>할부 이용금액은 50,000원 이상부터 이용 가능합니다.</p></li>
+            <li><p>할부 개월은 2개월~24개월까지 선택할 수 있습니다.</p></li>
+            <li><p>일부 가맹점에서는 최대 할부 개월수가 제한될 수 있습니다.</p></li>
+        </ol>
+
+</form>
+
+    </div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

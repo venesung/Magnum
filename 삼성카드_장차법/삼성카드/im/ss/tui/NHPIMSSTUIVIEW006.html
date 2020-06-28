@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+	
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab01 w810 ">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSTUI002','false');">대학등록금 납부</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="#">납부이력조회/취소</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_registrationFee_inquiry01.png" alt="학교 정보를&#13;입력하세요" /></h2>
+	<div class="content_block_inner">
+		<form name="f1" action="" method="post">
+		<table class="dtable02 dtable_inputfield" summary="학교, 학번등의 정보를 입력하는 게시판입니다">
+		<caption>학교정보 입력</caption>
+		<colgroup><col width="120" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>학 교</p></th>
+				<td><p>
+					<select name="UNIV_CODE" id="label_school" title="학교">
+						<option></option>
+					</select>
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학 번</p></th>
+				<td><p><input type="text" name="HAKBUN" class="txt" value="" id="label_classcode" title="학번" /></p></td>
+			</tr>
+		</tbody>
+		</table>
+		</form>
+		
+		<div class="btnset">
+			<p class="btnr">
+				<a href="javascript:Search();" class="btn btn_blue"><span>조회</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/ss/h2_registrationFee_inquiry02.png" alt="대학등록금 납부결과&#13;내역입니다." /></h2>
+	<div class="content_block_inner">
+		<div id="printArea">
+		<table class="dtable02" summary="학교, 학번, 학과, 학생명, 카드번호, 등록금액, 할부여부, 등록학기 구분, 할부개월, 납부일자로 구성된 대학등록금 납부결과 정보를 확인 할수 있는 게시판입니다">
+		<caption>대학등록금 납부결과 조회</caption>
+		<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="200" /></colgroup>
+		<tbody><!-- 100728 -->
+			<tr>
+				<th scope="row"><p>학교</p></th>
+				<td><p><%=univName %></p></td>
+				<th scope="row"><p>학번</p></th>
+				<td><p class="t_no"><%=hakBun %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학과</p></th>
+				<td><p><%=jojikName2 %></p></td>
+				<th scope="row"><p>학생명</p></th>
+				<td><p><%=korName %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td><p class="t_no"><%=cardNo %></p></td>
+				<th scope="row"><p>등록금액</p></th><!-- 100730 -->
+				<td><p class="t_black"><strong><span class="t_no"0</span> 원</strong></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부여부</p></th>
+				<td><p><%=paymentType %></p></td>
+				<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+				<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+			</tr>
+			<tr><!-- 100728 -->
+				<th scope="row"><p>할부개월</p></th>
+				<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+				<th scope="row"><p>납부일자</p></th>
+				<td><p class="t_no">0</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학교</p></th>
+				<td><p><%=univName %></p></td>
+				<th scope="row"><p>학번</p></th>
+				<td><p class="t_no"><%=hakBun %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학생명</p></th>
+				<td colspan="3"><p><%=korName %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td><p class="t_no"><%=cardNo %></p></td>
+				<th scope="row"><p>기숙사비</p></th><!-- 100730 -->
+				<td><p class="t_black"><strong><span class="t_no">0</span> 원</strong></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부여부</p></th>
+				<td><p><%=paymentType %></p></td>
+				<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+				<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+			</tr>
+			<tr><!-- 100728 -->
+				<th scope="row"><p>할부개월</p></th>
+				<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+				<th scope="row"><p>납부일자</p></th>
+				<td><p class="t_no">0</p></td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+		
+		<div class="btnset">
+			<div id="btn_cancel02">
+			<p class="btnr">
+				&nbsp;
+                <a href="javascript:check02();" class="btn btn_white"><span>승인취소</span></a>
+			</p>
+			</div>
+			<p class="btnr">
+                <a href="javascript:Print02();" class="btn btn_blue"><span>인쇄</span></a>
+			</p>
+		</div>
+		</form>
+
+		<div id="id_layer02" class="pop_l_position pop_l_wrap_mix" style="position:relative; left:140px;top:-420; height:0; font-size:0; line-height:0; z-index:900;display:none">
+			<div class="pop_l_wrap h350"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer02();" value="레이어닫기" title="대학등록금 납부 승인취소 확인 레이어 닫기" />
+		
+				<p class="pop_tit" style="padding-top: 50px;"><img src="/images/ss/pop_h1_registrationFee_cancel.png" alt="대학등록금 납부 승인취소 확인" /></p>
+					<div class="pop_l_content">
+							<div class="registrationFreePop ">
+								<p class="al_center"><strong class="t_black"><%=korName %></strong>고객님의 대학등록금 <strong class="t_point_org t_no"><%=StringUtil.amountToString(Integer.parseInt(paymentAmount)) %></strong>원을<br /><strong class="t_black">승인취소</strong>  하시겠습니까?</p>
+							</div>
+					</div>
+                <p class="btnc mt20"><a href="cancel02();" title="확인"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="#" onclick="closeLayer02();" title="취소"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+		
+		<div class="btnset">
+			<div id="btn_cancel">
+			<p class="btnr">
+				&nbsp;
+                <a href="javascript:check();" class="btn btn_white"><span>승인취소</span></a>
+			</p>
+			</div>
+			<p class="btnr">
+                <a href="javascript:Print();" class="btn btn_blue"><span>인쇄</span></a>
+			</p>
+		</div>
+		</form>
+
+		<div id="id_layer" class="pop_l_position pop_l_wrap_mix" style="position:relative; left:10px;top:-100; height:0; font-size:0; line-height:0; z-index:900;display:none">
+			<div class="pop_l_wrap h350"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer();" value="레이어닫기" title="대학등록금 납부 승인취소 확인 레이어 닫기" />
+				<p class="pop_tit" style="padding-top: 50px;"><img src="/images/ss/pop_h1_registrationFee_cancel.png" alt="대학등록금 납부 승인취소 확인" /></p>
+					<div class="pop_l_content">
+							<div class="registrationFreePop ">
+								<p class="al_center"><strong class="t_black"><%=korName %></strong>고객님의 대학등록금 <strong class="t_point_org t_no"><%=StringUtil.amountToString(Integer.parseInt(paymentAmount)) %></strong>원을<br /><strong class="t_black">승인취소</strong>  하시겠습니까?</p>
+							</div>
+					</div>
+                <p class="btnc mt20"><a href="javascript:cancel();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="#" onclick="closeLayer();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+
+		<div class="line_lgray"></div>
+		<p>※ 등록금 납부취소는 불가합니다. (단, 당일 납부건에 한해 취소가능)</p>
+		<p>※ 우송대/우송정보대학 납부취소의 경우 반드시 필수금액, 선택금액을 각각 취소하시길 바랍니다.</p>
+		<p>※ 카톨릭상지대학교 납부취소의 경우 반드시 필수금액, 선택금액을 각각 취소하시길 바랍니다.</p>
+	</div>
+</div>
+
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

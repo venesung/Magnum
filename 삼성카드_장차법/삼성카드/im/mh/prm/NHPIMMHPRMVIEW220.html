@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/premium_navi.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<!--script type="text/javascript" language="javascript" src="/js/embedswf.js"></script--><!-- 플래시 삭제 13.04.10 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		premiumNavi.init({
+			depth1 : 0,
+			depth2 : 1
+		});
+	});		
+</script>
+
+<!-- 공통 헤더 시작 -->
+<script type="text/javascript">
+ function prmPageNavigate(key){
+	 if(key == "002") { //프리미엄S  
+		var url='/pms002.do?method=primiumS';
+		var state = "scrollbars=yes,resizable=yes,status=yes";
+		window.open(url, '', state);
+		return;
+	}else if(key == "003") { //매거진S응모
+		var url='/pms002.do?method=magazineSApply';
+		var state = "width=730,height=600,scrollbars=yes,resizable=no";
+		var newwin = window.open(url, '', state);
+		return;
+	}
+
+	var goUrl;
+	switch(key){
+		case "001" : goUrl = "/pms001.do?method=premiumLoungeMain"; break; //프리미엄회원이란
+		case "004" : goUrl = "/pms003.do?method=noInterest"; break; //무이자할부
+		case "005" : goUrl = "/pms002.do?method=primiumCouponBook"; break; //쿠폰북
+		case "006" : goUrl = "/pms003.do?method=pointBack"; break; //포인트백
+		case "007" : goUrl = "/pms002.do?method=travel"; break; //국내테마여행
+		case "008" : goUrl = "/pms001.do?method=TravelService"; break; //SAM 여행할인서비스
+		case "009" : goUrl = "/pms001.do?method=sinla"; break; //신라면세점
+		case "010" : goUrl = "/pms001.do?method=ingEvent"; break; //진행중인 이벤트
+		case "011" : goUrl = "/pms001.do?method=oldEvent"; break; //종료된 이벤트
+		case "012" : goUrl = "/pms001.do?method=winEventList"; break; //당첨자발표
+		case "013" : goUrl = "/pms002.do?method=shopping"; break; //쇼핑
+		case "014" : goUrl = "/pms003.do?method=myPage"; break; //myPage
+		case "015" : goUrl = "/pms003.do?method=getCouponMain"; break; //myPage
+		case "016" : goUrl = "/pms003.do?method=getPointAddSave"; break; //포인트추가적립
+		
+		
+	}
+	document.form1.method = "post";
+	document.form1.action=goUrl;
+	tabSubmit(document.form1.action);
+			
+ }
+ </script>
+ 
+ <!-- premium lounge title,navi -->
+ <div class="mvint_premium">
+     <div class="premium_tit">
+         <h1 style="padding-left:0"><img src="/images/premium/h1_premium.gif" alt="프리미엄 S를 마음껏 누려보세요! 프리미엄 S 라운지" /></h1>
+         <p><img src="/images/premium/h1_premium_txt.gif" alt="프리미엄 S는 삼성카드 프리미엄 회원님께만 추가로 제공해 드리는 우대 프로그램입니다." /></p>
+         <ul>
+             <li><a href="javascript:prmPageNavigate('001');"><img src="/images/premium/btn_premium01.gif" alt="프리미엄회원이란" /></a></li>
+             <li><a href="javascript:prmPageNavigate('002');" title="새창"><img src="/images/premium/btn_premium02.gif" alt="뉴스레터" /></a></li><!-- 정기일반영 13.03.29 -->
+             	<li><a href="javascript:prmPageNavigate('003')" title="새창"><img src="/images/premium/btn_premium03.gif" alt="매거진S응모" /></a></li>
+         </ul>
+     </div>
+
+     <ul class="premium_navi">
+         <li class="n1">
+             <div class="off" style="display:none;">
+                 <a href="#"><img src="/images/premium/premium_navi01_off.gif" alt="프리미엄서비스S" /></a>
+             </div>
+             <div class="on" style="display:block;">
+                 <p><img src="/images/premium/premium_navi01_on.gif" alt="프리미엄서비스S" /></p>
+                 <ul> <!-- 20121218 modify -->
+                     <li class="sm1"><a href="javascript:prmPageNavigate('004');"><img src="/images/premium/premium_navi01_01_off.gif" alt="무이자할부" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('015');"><img src="/images/premium/premium_navi01_04_off.gif" alt="쿠폰북" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('006');"><img src="/images/premium/premium_navi01_03_off.gif" alt="포인트백" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('007');"><img src="/images/premium/premium_navi01_08_off.gif" alt="국내테마여행" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('008');"><img src="/images/premium/premium_navi01_07_off.gif" alt="여행할인" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('009');"><img src="/images/premium/premium_navi01_06_off.gif" alt="신라면세점 할인" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('016');"><img src="/images/premium/premium_navi01_02_off.gif" alt="포인트추가적립" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n2">
+             <div class="off" style="display:block;">
+                 <a href="#"><img src="/images/premium/premium_navi02_off.gif" alt="프리미엄이벤트" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <p><img src="/images/premium/premium_navi02_on.gif" alt="프리미엄이벤트" /></p>
+                 <ul> 
+                     <li><a href="javascript:prmPageNavigate('010');"><img src="/images/premium/premium_navi02_01_off.gif" alt="진행 중인 이벤트" /></a></li>
+                     <li><a href="javascript:prmPageNavigate('011');"><img src="/images/premium/premium_navi02_02_off.gif" alt="종료된 이벤트" /></a></li>                        
+                     <li><a href="javascript:prmPageNavigate('012');"><img src="/images/premium/premium_navi02_03_off.gif" alt="당첨자 발표" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n3">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_off.gif" alt="프리미엄쇼핑몰" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_on.gif" alt="프리미엄쇼핑몰 - 프리미엄 회원만의 특별한 공간" /></a>
+             </div>
+         </li>
+         <li class="n4">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_off.gif" alt="마이 페이지" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_on.gif" alt="마이 페이지 - 프리미엄 회원님께서 받은 혜택을 확인하세요." /></a>
+             </div>
+         </li>
+     </ul>
+ </div>
+<!--// 공통 헤더 끝 -->
+<form name="form1" method="post">
+	<input type="hidden" name="gubun" value="${gubun}" />
+	<input type="hidden" name="magazineSYn" value="${magazineSYn}" />
+	<input type="hidden" name="magazineSApplyYn" value="${magazineSApplyYn}" />
+	<input type="hidden" name="popgubun" value="" />
+	<!-- SR내역 13.04.12 
+	<div class="content_block content_block_card d_premium_bg clfix">
+		<h2><img src="/images/premium/h2_coupon_premium.png" alt="프리미엄 쿠폰북 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<div>
+				<img src="/images/premium/txt_coupon_premium.png" alt="할인, 서비스 등 알찬 혜택이 가득! 마음대로 골라 쓰는 즐거움! 프리미엄 쿠폰북" />
+			</div>
+			<p class="mt10 mb30"><img src="/images/premium/couponBook/txt_coupon_premium_date5.png" alt="출력기간  2013.3.4 ~ 4.30 (일부 쿠폰에 한해 3월 31일까지 출력 가능합니다.)" /></p> 130212 수정
+			<ul class="list_img_coupon">
+				<li><a href="javascript:goPopup('01');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_1.png" alt="매드 포 갈릭  HOT 메뉴 Gorgonzola Pizza 무료 교환권" /></a></li>
+				<li><a href="javascript:goPopup('02');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_2.png" alt="토니로마스 HOT 메뉴 Hot Pepper Seafood Rice 무료 교환권" /></a></li>
+				<li><a href="javascript:goPopup('03');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_3.png" alt="스파게띠아  HOT 메뉴 Baked Oven Spaghetti 무료 교환권" /></a></li>
+				<li><a href="javascript:goPopup('04');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_4.png" alt="모락  HOT 메뉴 차돌박이구이와 향채무침 무료 교환권" /></a></li>
+				<li><a href="javascript:goPopup('05');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_5.png" alt="시추안하우스 HOT 메뉴 꿔바로우 무료 교환권" /></a></li>
+				<li><a href="javascript:goPopup('06');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_6.png" alt="비스트로 서울  HOT 메뉴 인삼 숯불 떡갈비 무료 교환권" /></a></li>
+			</ul>
+			<div class="line_lgray mb5 pb15">&nbsp;</div>
+			<ul class="list_img_coupon">
+				<li><a href="#" onclick="goPopup('07'); return false"><img src="/images/premium/couponBook/img_coupon_0212_7.png" alt="맞춤정비 스피드메이트 엔진오일 2만원 할인권" /></a></li>
+				<li><a href="#" onclick="goPopup('08'); return false"><img src="/images/premium/couponBook/img_coupon_0212_8.png" alt="맞춤정비 스피드메이트 항균필터 교환 1만원 할인권" /></a></li>
+				<li><a href="#" onclick="goPopup('09'); return false"><img src="/images/premium/couponBook/img_coupon_0212_9.png" alt="맞춤정비 스피드메이트 차량 안전점검 무료 이용권" /></a></li> 정기일반영 13.03.29
+				<li><a href="javascript:goPopup('10');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_10.png" alt=" XGOLF 국내 골프 패키지 20% 할인권" /></a></li>
+				<li><a href="javascript:goPopup('11');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_11.png" alt=" XGOLF 세인트나인 골프볼 25% 할인 + 빅야드 증정권" /></a></li>
+			</ul>
+			<div class="line_lgray mb5 pb15">&nbsp;</div>
+			<ul class="list_img_coupon">
+				<li><a href="javascript:goPopup('12');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_12.png" alt="GNC 코랄칼슘 증정권(35,000 상당) 무료 증정권" /></a></li>
+				<li><a href="javascript:goPopup('13');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_13.png" alt="천지인 홍삼정 명작 30% 할인권 " /></a></li>
+				<li><a href="javascript:goPopup('14');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_14.png" alt="차움 건강검진 우대권" /></a></li>
+				<li><a href="javascript:goPopup('15');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_15.png" alt="차움 테라스파 20% 할인권" /></a></li>
+				<li><a href="javascript:goPopup('16');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_16.png" alt="14일동안 다이어트 프로그램 30% 할인권" /></a></li>
+				<li><a href="javascript:goPopup('17');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_17.png" alt="14일동안 슬렌더 핫요가  30% 할인권" /></a></li>
+			</ul>
+			<div class="line_lgray mb5 pb15">&nbsp;</div>
+			<ul class="list_img_coupon">
+				<li><a href="#" onclick="goPopup('18'); return false"><img src="/images/premium/couponBook/img_coupon_0212_18.png" alt="삼성카드 여행 모두투어 해외여행 패키지 동반자 10만원 할인" /></a></li> 정기일반영 13.03.29
+				<li><a href="javascript:goPopup('19');" title="쿠폰 출력하기 새창"><img src="/images/premium/couponBook/img_coupon_0212_19.png" alt="예스 24 영화예매 3,000원 할인권" /></a></li>
+			</ul>
+			<p class="t_desc04 mt10">카드사 및 제휴사 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려 드립니다.</p>
+		</div>
+	</div>-->
+	<cms:include page="/cms_content/hp/im/mh/pms/NHPIMFSBNB001M020.html" flush="false"/>
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

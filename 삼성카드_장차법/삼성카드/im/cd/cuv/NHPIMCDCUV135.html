@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">    
+    	<h1><img src="/images/mh/h1_transfer_01.gif" alt="후불 교통카드 이용내역입니다." /></h1>
+		<h1><img src="/images/mh/h1_transfer_02.gif" alt="후불 하이패스 이용내역입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+    <h2><img src="/images/mh/h2_traffic_hipadd_uselist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+    <div class="content_block_inner">
+
+        <ol class="list_no01">
+            <li><p>본인카드 이용내역만 조회하실 수 있습니다.</p></li>
+            <li><p>가족카드 이용내역은 <a href="javascript:moveFamilyTraffic();" class="a_point">가족교통/후불하이패스이용내역</a>를 클릭해 주십시오.</p></li>
+        </ol>
+
+        <table class="dtable02 dtable_inputfield mt30 dtable_bor_sepe"  summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다." cellpadding="0" cellspacing="0">
+        <caption>교통카드 · 후불 하이패스 이용내역 조회 게시판</caption>
+        <colgroup><col width="125" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+			<tr>
+				<th scope="row"><p>이용지역</p></th>
+				<td><p>
+					<label for="label_region" class="mr10"><input type="radio" class="rdo" id="label_region" name="id_region" onclick="clickRegion()" value="K" checked="checked" title="국내" /> 국내</label>
+					<label for="label_region02"><input type="radio" class="rdo" id="label_region02" name="id_region"  onclick="clickRegion()" value="A" title="해외" /> 해외</label>
+				</p></td>
+			</tr>
+			<!-- //국내카드이용내역 체크시 display -->
+			<tr id="region_no3">
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="lebel_type01" class="mr10"><input type="radio" class="rdo" id="lebel_type01" name="id_type" onclick="clickUseFlag()" value="1" title="일시불+할부"/> 일시불+할부</label>
+					<label for="lebel_type02" class="mr10"><input type="radio" class="rdo" id="lebel_type02" name="id_type" onclick="clickUseFlag()" value="2" title="할부"/> 할부</label>
+					<label for="lebel_type03" class="mr10"><input type="radio" class="rdo" id="lebel_type03" name="id_type" onclick="clickUseFlag()" value="3" title="현금서비스" /> 현금서비스</label>
+					<label for="lebel_type04"><input type="radio" class="rdo" id="lebel_type04" name="id_type" onclick="clickUseFlag()" value="4"  title="카드이용취소내역" /> 카드이용취소내역</label><br />
+					<label for="lebel_type05"><input type="radio" class="rdo" id="lebel_type05" name="id_type" onclick="clickUseFlag()" value="5" title="후불 교통카드" /> 후불 교통카드</label>
+					<label for="lebel_type06"><input type="radio" class="rdo" id="lebel_type06" name="id_type" onclick="clickUseFlag()" value="6" title=" 후불 하이패스" /> 후불 하이패스</label>
+				</p></td>
+			</tr>
+            <tr id="region_no5" style="display:">
+                <th scope="row"><p>교통수단 선택</p></th>
+                <td><p>
+                    <label for="label_traffic01" class="mr10"><input type="radio" class="rdo" id="label_traffic01" name="TGUBUN" value="all"    title="전체" /> 전체</label>
+                    <label for="label_traffic02" class="mr10"><input type="radio" class="rdo" id="label_traffic02" name="TGUBUN" value="subway" title="지하철" /> 지하철</label>
+                    <label for="label_traffic03" class="mr10"><input type="radio" class="rdo" id="label_traffic03" name="TGUBUN" value="bus" title="버스/마을버스"  /> 버스/마을버스</label>
+                    <label for="label_traffic04" class="mr10"><input type="radio" class="rdo" id="label_traffic04" name="TGUBUN" value="toll" title="통행료" /> 통행료</label>
+                    <label for="label_traffic05" class="mr10" style="display:none;"><input type="radio" class="rdo" id="label_traffic05" name="TGUBUN" value="hipass" title="후불 하이패스 이용내역" /> 후불 하이패스 이용내역</label>
+                </p></td>
+            </tr>
+
+            <!-- 조회방식선택 추가 2011.09.09 KSW -->
+            <tr id="region_no5_1">
+                <th scope="row"><p>조회방식 선택</p></th>
+                <td><p>
+                    <label for="label_type01" class="mr10"><input type="radio" class="rdo" id="label_type01" name="sType" value="yearMonth" onclick="clickUseFlag();" title="청구년월" /> 청구년월</label>
+                    <label for="label_type02" class="mr10"><input type="radio" class="rdo" id="label_type02" name="sType" value="fromTo"    onclick="clickUseFlag();" title="이용기간" /> 이용기간</label>
+                </p></td>
+            </tr>
+            			<!-- //국내카드,이용구분:할부,현금서비스 체크시 display -->
+			<tr id="region_no4_1" style="display:none;">
+				<th scope="row"><p>조회구분</p></th>
+				<td><p>
+					<label for="install_type01" class="mr10"><input type="radio" class="rdo" id="install_type01" name="install_type" value="1" checked="checked" title="할부진행" /> 할부진행</label>
+					<label for="install_type02" class="mr10"><input type="radio" class="rdo" id="install_type02" name="install_type" value="2" title="할부전체" /> 할부전체</label>
+					<label for="install_type03" class="mr10"><input type="radio" class="rdo" id="install_type03" name="install_type" value="3" title="할부종료" /> 할부종료</label>
+				</p></td>
+			</tr>
+			<!-- //국내카드,이용구분:카드이용취소내역 체크시 display -->
+			<tr id="region_no4_2" style="display:none;">
+				<th scope="row"><p>조회구분</p></th>
+				<td><p>
+					<label for="cancel_type01" class="mr10"><input type="radio" class="rdo" id="cancel_type01" name="cancel_type" value="Y" checked="checked" title="승인취소" /> 승인취소</label>
+					<label for="cancel_type02" class="mr10"><input type="radio" class="rdo" id="cancel_type02" name="cancel_type" value="N" title="매출취소" /> 매출취소</label>
+				</p></td>
+			</tr>
+
+			<!-- //카드사용 해외이용지역 체크시 display -->
+			<tr id="region_no4_3" style="display:none;">
+				<th scope="row"><p>조회구분</p></th>
+				<td><p>
+					<label for="approve_type01" class="mr10"><input type="radio" class="rdo" id="approve_type01" name="approve_type" value="1" onclick="clickOvalFlag()" checked="checked" title="승인내역" /> 승인내역</label>
+					<label for="approve_type02" class="mr10"><input type="radio" class="rdo" id="approve_type02" name="approve_type" value="2"  onclick="clickOvalFlag()" title="청구내역" /> 청구내역</label>
+				</p></td>
+			</tr>
+
+			<!-- //카드사용 국내이용지역 체크시 display -->
+			<tr id="region_no8_1" style="display:none;">
+				<th scope="row"><p>사용자/상태/카드선택</p></th>
+				<td><p>
+					<select name="family_self" id="select_1" style="width:100px" onchange="family_self_onchange(this.value);" title="사용자 선택">
+					</select>
+					<select name="card_state" id="select_6" style="width:100px" onchange="card_state_onchange(this.value);" title="상태 선택">
+						<option value="0">전체</option>
+						<option value="1">사용가능 카드</option>
+						<option value="2">사용불가능 카드</option>
+					</select>					
+					<select name="card_sel" id="select_2" style="width:365px" title="카드 선택"></select>
+					<!--<option value="ALL">전 체</option>-->
+					</p>
+				</td>
+			</tr>
+			<!-- //카드사용 해외이용지역 체크시 display -->
+			<tr id="region_no8_2" style="display:none;">
+				<th scope="row"><p>사용자/상태/카드선택</p></th>
+				<td><p>
+					<select name="family_self_oval" id="select_1_oval" style="width:100px" onchange="family_self_oval_onchange(this.value);" title="사용자 선택">
+					</select>
+					<select name="card_state_oval" id="select_7" style="width:100px" onchange="card_state_oval_onchange(this.value);" title="상태 선택">
+						<option value="0">전체</option>
+						<option value="1">사용가능 카드</option>
+						<option value="2">사용불가능 카드</option>					
+					</select>						
+					<select name="card_select" id="select_3" style="width:365px" title="카드 선택">
+					<!--<option value="ALL">전 체</option>-->
+					</select>
+					</p>
+				</td>
+			</tr>
+
+			<!-- //이용지역:국내 체크, 이용구분:카드이용취소내역 체크 display -->
+			<tr id="region_no8_3" style="display:none;">
+				<th scope="row"><p>사용자</p></th>
+				<td><p>
+					<select name="family_user" id="select_4" style="width:100px" title="사용자 선택">
+					</select>
+					</p>
+				</td>
+			</tr>			
+			<tr id="region_no10" style="display:">	
+				<th scope="row"><p>조회방식</p></th>
+				<td><p>
+					<label for="view_type01" class="mr10"><input type="radio" class="rdo" id="view_type01" name="view_type" value="1" onclick="clickUseFlag()" title="표 형식으로 보기" /> 표 형식으로 보기</label>
+					<label for="view_type02" class="mr10"><input type="radio" class="rdo" id="view_type02" name="view_type" value="2" onclick="clickUseFlag()" title="캘린더 형식으로 보기" /> 캘린더 형식으로 보기</label>					
+				</p></td>
+			</tr>			
+			<tr id="region_no9" style="display:">			
+				<th scope="row"><p>이용기간</p></th>
+				<td id="id_cal_wrap"><p>
+                    <a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+                    <a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+                    <a href="javascript:srchDate(3);" class="btn btn_s_gray" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+                    <a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+                    <a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3" style="width:30px">3개월</span></a>
+                    <a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6" style="width:30px;display:none;">6개월</span></a>
+                    <a href="javascript:srchDate(7);" class="btn btn_s_white" id="btnYear1"><span id="dateYear" style="width:20px;display:none;">1년</span></a>
+
+					<span class="reset_date ml20">
+					<br/>
+					<a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>					
+					</span>
+				</p></td>
+			</tr>						
+			<tr id="region_no11" style="display:">				
+                <th scope="row"><p>조회 월 선택</p></th>
+                <td><p>
+                    <select name="MONTH" id="select_5" title="조회기간 선택" style="width:210px">                    
+                        <option></option>
+                    </select><span class="t_desc03 ml10">(최근  <span id="monthTerm">3</span>개월 내역조회)</span>
+                </p></td>
+            </tr>
+            
+</form>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnr">
+            <!-- 100126 -->
+            <a href="javascript:tabSearch();" class="btn btn_blue"><span>조회</span></a>
+            <!-- //100126 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+    	<h2><img src="/images/mh/h2_traffic_hipadd_uselist02.png" alt="후불 교통카드 이용내역입니다." /></h2>
+		<!--h2><img src="/images/mh/h2_traffic_hipadd_uselist03.png" alt="후불 하이패스 이용내역입니다" /></h2-->
+	<div class="content_block_inner">
+		
+		<!-- calendar -->
+		<div class="dtable_calendar">
+			<span class="select_month">
+				<a href="javascript:tabMoveMonth('-');" class="btn_cal"><img src="/images/common/btn_prev_cal.png" alt="이전" /></a>
+                        <span class="ico_no ico_no_sm_boldgray01"><em>1</em></span>
+				<a href="javascript:tabMoveMonth('+');" class="btn_cal"><img src="/images/common/btn_next_cal.png" alt="다음" /></a>
+			</span>
+		</div>
+			<p class="btnr mt_30 mb15">
+				<a href="#" class="btn btn_white"><span>다운로드</span></a>							
+				<a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+			</p>		
+		
+			<table class="dtable01 dtable01_bill" summary="이용일자, 구분, 사용금액, 사용건수로 구성된 후불 교통카드 이용내역">
+			<caption>후불 교통카드 이용내역 게시판</caption>
+			<colgroup><col width="100" /><col width="*" /><col width="100" span="2" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">이용일자</th>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_r10">사용금액</th>
+					<th scope="col">사용건수</th>
+				</tr>
+			</thead>  
+			
+			<tfoot>
+				<tr>
+					<td class="cell_l10">합계(총 0건)</td>
+					<td colspan="2" class="cell_r10 t_no"><em>0 원</em></td>					
+					<td class="cell_r10">&nbsp;</td>
+				</tr>
+			</tfoot>	
+			<tbody>
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_l10">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="t_no">0</td>					
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+		<div class="btnset">
+			<p class="btnl t_desc04">교통카드 이용내역의 접수일은 대중교통 운송기관 및 수집기관의 사정에 의해 다소 지연될 수 있습니다.</p>
+		<!-- btn -->
+			
+			<p class="btnr">
+				<a href="#" class="btn btn_white"><span>다운로드</span></a>							
+				<a href="javascript:printPopup();" class="btn btn_white"><span>인쇄</span></a>
+			</p>
+		</div>
+
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <h2><img src="/images/mh/h2_traffic_hipadd_uselist04.png" alt="자주 이용하시는 지하철 역세권 혜택 검색 서비스입니다." /></h2>
+    <div class="content_block_inner">
+
+        <table class="dtable02" summary="자주 이용하시는 지하철 역세권 혜택을 검색하실 수 있는 조회 게시판입니다."> 
+        <caption>자주 이용하시는 지하철 역세권 혜택</caption>
+        <colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup> 
+        <tbody> 
+        <!-- loop --> 
+            <tr> 
+                <th scope="row"><p>순위</p></th>
+                <td class="riline"><p>1위</p></td> 
+                <td class="riline"><p>2위</p></td>
+                <td class="riline"><p>3위</p></td> 
+                <td><p>4위</p></td>
+            </tr>
+                <!-- //loop --> 
+            <tr> 
+                <th scope="row"><p>지하철역</p></th> 
+                <td class="riline"><p><a href="#" class="a_point">0</a></p></td>
+                <td class="riline"><p><a href="#" class="a_point">0</a></p></td>
+                <td class="riline"><p><a href="#" class="a_point">0</a></p></td>
+                <td class="riline"><p><a href="#" class="a_point">0</a></p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnl t_desc04">회원님께서 최근에 주로 이용하신 지하철역 인근의 특별한 혜택, 보너스클럽, 무이자, 할인쿠폰 등을 알려드립니다.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

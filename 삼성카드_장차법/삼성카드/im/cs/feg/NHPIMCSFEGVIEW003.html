@@ -1,0 +1,141 @@
+
+
+<%
+	/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+	 * File Name: NHPIMCSFEGVIEW001.jsp
+	 * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+	 * Created on 2010.03.31
+	 * 해외사용문의 입력 // 기타 문의
+	 * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+	 */
+%>
+
+<%@ page import="com.scard.common.util.*"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+
+<%@include file="/WEB-INF/jsp/common/header.jsp" %>
+
+<%
+	String operation = (String)request.getAttribute("operation");
+	String status = (String)request.getAttribute("status");
+	System.out.println("["+operation+"]");
+	if(operation==null){
+		operation=" ";
+	}
+	if(status==null){
+		status="";
+	}
+%>
+
+<script type="text/javascript">
+	function popupclose(){
+		closeLayerPopup();
+	}
+</script>
+<title>삼성카드</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+</head>
+<body>
+<div id="wrap" style="margin-top:100px;">
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onClick="popupclose();" value="레이어닫기" title="해외이용문의 접수 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/cs/layer_tit_regcan_form.png" alt="등록하신 내용이 다음과 같이 처리되었습니다" /></p>
+			<div class="pop_l_content">
+				<p class="pop_l_alert al_center">
+					<%if(operation.equals("01")){ %>
+		담당자에게 문의해 주세요 이원진(2197-8711) 
+	<%}else if(operation.equals("02")){ %>
+	담당자에게 문의해 주십시오. 이원진(2197-8711) 
+	<%}else if(operation.equals("09")){ %>
+	처리가 종결되었습니다.
+	<%}else if(operation.equals("11")){ %>
+	해외 카드사로 고객님의 사용 내역 확인을 요청하였으며, 확인 즉시 연락드리겠습니다. 
+	<%}else if(operation.equals("12")){ %>
+	해외 카드사로 고객님의 사용 내역 확인을 요청하였으며, 확인 즉시 연락드리겠습니다. 당 금액은 고객님께서 결제하시지 않도록 처리해드리겠습니다 
+	<%}else if(operation.equals("13")){ %>
+	해외 카드사로 고객님의 사용 내역 확인을 요청하였으며,확인 즉시 연락드리겠습니다. 이미 결제하신 금액은 고객님께 환불이 될 수 있도록 처리해드리겠습니다. 
+	<%}else if(operation.equals("19")){ %>
+	처리가 종결되었습니다. 
+	<%}else if(operation.equals("21")){ %>
+	고객님께서 요청하신 매출 증빙을 송부하였습니다. 확인해보시고 문의사항이 있으시면 국제파트(2197-8702~09)로 연락주시기 바랍니다. 
+	<%}else if(operation.equals("31")){ %>
+	해외 가맹점으로부터 취소가 접수되어 처리를 종결하였습니다. 
+	<%}else if(operation.equals("32")){ %>
+	고객님께서 사용하신 것으로 확인되어 처리를 종결하였습니다. 
+	<%}else if(operation.equals("33")){ %>
+	해외가맹점으로부터 취소가 접수되어 처리를 종결하였으며,보류해 드린 결제 대금에 대해서는 재청구하도록 하겠습니다. 
+	<%}else if(operation.equals("34")){ %>
+	고객님께서 사용하신 것으로 확인되어 처리를 종결하였으며, 보류해 드린 결제 대금에 대해서는 재청구하도록 하겠습니다. 
+	<%}else if(operation.equals("35")){ %>
+	문의하신 내용에 대해 이메일로 답변을 드렸으니 확인해 보시기 바랍니다. 
+	<%}else if(operation.equals("36")){ %>
+	해당건에 대해 고객님과 기 통화한 건으로 종결처리하도록 하겠습니다. 
+	<%}else if(operation.equals("37")){ %>
+	문의하신 해외 일시불매출건에 대한 할부전환 처리가 가능합니다.해당건에 대한 할부전환을 원하실 경우 당사 홈페이지 및 대표전화(지역번호없이)1588-8700로 문의하시기 바랍니다. 
+	<%}else if(operation.equals("39")){ %>
+	문의하신　해외　일시불매출에　대해　요청하신대로　할부전환　처리를　완료하였습니다．해당건에　대해서는　당월　결제일부터　할부수수료를　포함한　１회차　할부원금이　청구됩니다．（기타　문의사항이　있으시면　 국제파트（２１９７－８７０３，９）로　문의주시기　바랍니다．）　　 
+	<%}else if(operation.equals("40")){ %>
+	문의하신　해외　일시불　매출에　대해　요청하신대로　할부전환　처리를　완료하였습니다．해당건에　대해서는　당월　결제일에는　전액청구되지　않으며，차월　결제일부터　할부수수료를　포함한　１회차할부원금이　청구됩니다．（기타　문의사항이　있으시면국제파트（２１９７－８７０３，９）로　문의주시기　바랍니다．）　　　　　　　 
+	<%}else if(operation.equals("41")){ %>
+	해외카드사를　상대로　청구　금액　회수　조치를 취하였습니다．해외카드사의　이의　제기가　없다면４５일　후　대금　회수가　확정됩니다．청구　금액에 대해서는　결제하시지　않도록　처리해드리겠습니다．
+	<%}else if(operation.equals("42")){ %>
+	해외카드사를　상대로　청구　금액　회수　조치를 취하였습니다．해외카드사의　이의　제기가　없다면 ４５일　후　대금　회수가　확정됩니다．이미　결제하신　금액에　대해서는　환불　처리해드리겠습니다． 
+	<%}else if(operation.equals("43")){ %>
+	회원님께서　보내주신　증빙을　첨부하여　해외카드사를 상대로　청구　금액　회수　조치를　취하였습니다．해외　카드사의　이의　제기가　없다면　４５일　후 대금회수가　확정됩니다．　청구　금액에　대해서는 결제하시지　않도록　처리해드리겠습니다 
+	<%}else if(operation.equals("44")){ %>
+	고객님께서　보내주신　증빙을　첨부하여　해외　카드사를　상대로　청구　금액회수　조치를　취하였습니다．해외　카드사의　이의　제기가　없다면　４５일　후 대금　회수가　확정됩니다　이미　결제하신　금액에 대해서는　환불　처리해드리겠습니다
+	<%}else if(operation.equals("45")){ %>
+	불량 의심 매출에 대해 전과 동일하게 해외카드사를 상대로 회수 조치를 취하였습니다. 
+	<%}else if(operation.equals("46")){ %>
+	불량 의심 매출에 대해 전과 동일하게 해외카드사를 상대로 회수 조치를 취하였습니다.청구 금액에 대해서는 결제하시지 않도록 처리해드리겠습니다 
+	<%}else if(operation.equals("51")){ %>
+	해외카드사를　상대로　청구　금액　회수　조치를 취하였습니다．해외카드사의　이의　제기가　없다면 ６０일　후　대금　회수가　확정됩니다．청구　금액에 대해서는　결제하시지　않도록　처리해드리겠습니다 
+	<%}else if(operation.equals("52")){ %>
+	해외카드사를 상대로 청구 금액 회수 조치를 취하였습니다.해외카드사의 이의 제기가 없다면 60일 후 대금 회수가 확정됩니다.이미 결제하신 금액에 대해서는 환불 처리해드리겠습니다. 
+	<%}else if(operation.equals("53")){ %>
+	고객님께서　보내주신　증빙을　첨부하여　해외카드사를 상대로　청구　금액　회수조치를　취하였습니다．해외　카드사의　이의　제기가　없다면　６０일　후　대금회수가　확정됩니다．청구　금액에　대해서는결제하시지　않도록　처리해드리겠습니다． 
+	<%}else if(operation.equals("54")){ %>
+	고객님께서　보내주신　증빙을　첨부하여　해외　카드사를　상대로　청구　금액회수　조치를　취하였습니다．해외　카드사의　이의　제기가　없다면　６０일　후대금　회수가　확정됩니다．이미　결제하신　금액에대해서는　환불　처리해드리겠습니다．
+	<%}else if(operation.equals("55")){ %>
+	불량 의심 매출에 대해 전과 동일하게 해외카드사를 상대로 회수 조치를 취하였습니다 
+	<%}else if(operation.equals("56")){ %>
+	불량 의심 매출에 대해 전과 동일하게 해외카드사를 상대로 회수 조치를 취하였습니다.청구 금액에 대해서는 결제하시지 않도록 처리해드리겠습니다. 
+	<%}else if(operation.equals("57")){ %>
+	해외 카드사에서 새로운 증빙서류를 제시하였으나 청구사유에 충분하지 않아 재차 대금 회수조치를 취하였습니다.해외 카드사의 이의제기가 없다면60일 이후 대금 회수가 확정됩니다. 
+	<%}else if(operation.equals("61")){ %>
+	해외 카드사는 당사의 대금 회수 조치에 반론을 제기하였습니다. 조사 후 해외 카드사를 상대로 추가 조치를 취하도록 하겠습니다. 
+	<%}else if(operation.equals("71")){ %>
+	해외 가맹점으로부터 취소가 접수되어 처리를 종결하였습니다. 
+	<%}else if(operation.equals("72")){ %>
+	고객님께서 사용하신 것으로 확인되어 처리를 종결하였으며, 해외 카드사로부터 받은 증빙을 송부하였습니다. 
+	<%}else if(operation.equals("73")){ %>
+	해외 가맹점으로부터 취소가 접수되어 처리를 종결하였으며, 보류해 드린 결제 대금에 대해서는 재청구하도록 하겠습니다. 
+	<%}else if(operation.equals("74")){ %>
+	고객님께서 사용하신 것으로 확인되어 처리를 종결하였으며, 해외 카드사로부터 받은 증빙을 송부하였습니다. 보류해 드린 결제 대금에 대해서는 재청구하도록 하겠습니다. 
+	<%}else if(operation.equals("75")){ %>
+	해외 카드사는 삼성카드의 대금 회수 요청을 수용하여 처리를 종결하였습니다. 
+	<%}else if(operation.equals("76")){ %>
+	해외 카드사는 삼성카드의 대금 회수 요청을 수용하여 처리를 종결하였으며, 이미 결제하신 금액에 대해서는 환불 처리해드리겠습니다. 
+	<%}else if(operation.equals("81")){ %>
+	해외 카드사를 상대로 2차 대금 회수 조치를 취하였습니다. 해외 카드사의 이의 제기가 없다면90일 후 회수가 확정됩니다. 
+	<%}else if(operation.equals("82")){ %>
+	해외 카드사를 상대로 2차 대금 회수 조치를 취하였습니다.해외 카드사의 이의 제기가 없다면60일 후 회수가 확정됩니다. 
+	<%}else if(operation.equals(" ")){ %>
+	처리진행중 입니다.
+	<% } %>	
+				</p>
+
+				<p class="btnc"><a href="#" onClick="popupclose();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

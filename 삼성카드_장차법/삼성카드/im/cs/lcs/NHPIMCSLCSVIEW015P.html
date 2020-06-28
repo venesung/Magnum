@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>사고접수 확인 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript">
+	function fnClose(){
+		//opener.fnCancel();
+		window.close();
+	}
+	</script>
+</head>
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img alt="사고접수를 확인하세요" src="/images/common/pop_h1_confirm_incident.png" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/common/pop_h1_confirm_incident.png" alt="사고접수를 확인하세요" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content" style="height:400px;overflow:hidden;">
+		<ol class="list_no01 mb10">
+			<li><p>사고접수가 정상적으로 되었습니다.</p></li>
+			<li><p>회원님의 담당 조사역이 2~3일 (영업일 기준) 이내 연락 드리겠습니다.</p></li>
+			<li><p>조사역과 통화 이후 사고조사가 시작됩니다.</p></li>
+		</ol>
+		<table class="dtable02" summary="사고접수 진행내용(사고접수일, 카드번호, 성명, 사고금액, 사고조사 담당자, 사고조사 담당자 전화번호)을 확인 할 수 있는 화면 입니다.">
+		<caption>사고접수 확인</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>사고접수일</p></th>
+				<td><p class="t_no">${toDay}</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td><p class="t_no">${cardNo}</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>성명</p></th>
+				<td><p>${userName}</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사고금액</p></th>
+				<td><p class="t_no">${lostAmt} 원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사고조사 담당자</p></th>
+				<td><p>${STRING3}</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사고조사 담당자<br /> 전화번호</p></th>
+				<td><p class="t_no">${STRING4}</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<p class="t_desc mt10">연락가능 시간은 평일 09:00~17:00입니다. </p>
+		<p class="btnc mt20"><a href="javascript:fnClose();"><img alt="확인" src="/images/common/btn_s_confirm02.png" /></a></p>
+
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" title="창닫기" onClick="fnClose();" class="btn_s_close btn_input" /> <!-- 100311 -->
+	</div>
+</div> 
+</body>
+</html>

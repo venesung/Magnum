@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>후불 교통카드 이용내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+ 
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="images/mh/pop_h1_transfer.gif" alt="후불 교통카드 이용내역"  /></h1>
+		<h1><img src="images/mh/pop_h1_hipass.gif" alt="후불 하이패스 이용내역"  /></h1>
+	</div>
+	
+	<!-- Button Start -->		
+	<!--	
+	<div class="mv_btnPopTop">
+		<a href="#" class="btn btn_white"><span>다운로드</span></a>
+		<a href="/cuv1.do?method=getCardTraffUsedListExcel<%=param%>" onClick="FileDownload('<%=downFile%>', this, 1, 0); return false;" class="btn btn_white"><span>다운로드</span></a>
+		<a href="javascript:window.print();" class="btn btn_white"><span>인쇄</span></a>
+	</div>-->
+	 
+	<!-- content -->
+	<div id="pop_content">		
+		<div class="content_block content_block_card clfix">
+			<div class="mv_btnPopTop02">
+				<div class="tb_exp clfix">
+					<h3>이용내역</h3>
+				</div>
+				<div class="btnset">
+					<p class="btnr">
+						<a href="#" class="btn btn_white"><span>다운로드</span></a>
+						<a href="javascript:window.print();" class="btn btn_white"><span>인쇄</span></a>	
+					</p>
+				</div>
+			</div>
+			
+			<div class="d_easy d_easy2">
+				<table summary="이용일자, 구분, 승차역, 승차시간, 하차역, 하차시간, 사용금액, 노선번호, 승차인원으로 구성된 후불 교통카드 이용내역" class="dtable01 dtable01_bill">
+				<caption>후불 교통카드 이용내역 게시판</caption>
+				<colgroup>
+					<col width="74" /><col width="54" /><col width="64" /><col width="64" /><col width="58" /><col width="64" /><col width="*" /><col width="64" /><col width="64" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">이용일자</th>
+						<th scope="col">구분</th>
+						<th scope="col">승차역</th>
+						<th scope="col">승차시간</th>
+						<th scope="col">하차역</th>
+						<th scope="col">하차시간</th>
+						<th scope="col" class="cell_r10">사용금액</th>
+						<th scope="col">노선번호</th>
+						<th scope="col">승차인원</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="6" class="cell_l10">합계 (총 <em>0</em>건)</td>
+	                    <td class="cell_r10"><em>0</em>원</td>
+	                    <td colspan="2"></td>
+					</tr>
+				</tfoot>			
+				<tbody>
+                <tr>
+                    <td class="cell_l10 t_no">0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="t_no">0</td>
+                    <td>0</td>
+                    <td class="t_no">0</td>
+                    <td class="cell_r10 t_no">0원</td>
+                    <td class="t_no">0</td>
+                    <td class="t_no">0</td>
+                </tr>
+				</tbody>
+				</table>
+			</div>			
+
+			<div class="d_easy d_easy2">
+				<table class="dtable01 dtable01_bill" summary="이용일자, 구분, 출발지, 출발시각, 도착지, 도착시각, 통행료로 구성된 후불 하이패스 이용내역">
+				<caption>후불 하이패스 이용내역 게시판</caption>
+				<colgroup>
+					<col width="74" /><col width="100" /><col width="84" span="4" /><col width="*" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">이용일자</th>
+						<th scope="col">구분</th>
+						<th scope="col">출발지</th>
+						<th scope="col">출발시각</th>
+						<th scope="col">도착지</th>
+						<th scope="col">도착시각</th>
+						<th scope="col" class="cell_r10">통행료(원)</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="6" class="cell_l10">합계 (총 <em>0</em>건)</td>
+                    	<td class="cell_r10"><em>0</em>원</td>
+					</tr>
+				</tfoot>
+				<tbody>
+		                <tr>
+		                    <td class="cell_l10 t_no">0</td>
+		                    <td>0</td>
+		                    <td>0</td>
+		                    <td class="t_no">0</td>
+		                    <td>0</td>
+		                    <td class="t_no">0</td>
+		                    <td class="cell_r10 t_no">0원</td>
+		                </tr>
+				</tbody>
+				</table>
+			</div>			
+			
+		
+
+				<div class="btnset">
+					<p class="btnr">
+						<a href="#" class="btn btn_white"><span>다운로드</span></a>
+						<a href="javascript:window.print();" class="btn btn_white"><span>인쇄</span></a>	
+					</p>
+				</div>
+			</div>
+		</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div> 
+</div>
+ <script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>
+
+
+
+ 

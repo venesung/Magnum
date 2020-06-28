@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/cd/h1_cashservice_fam.png" alt="가족카드로 현금서비스를 받을 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+
+   <h2><img src="/images/mh/h2_applist_domestic01.png" alt="카드기본정보를 입력하세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_inputfield" summary="카드기본정보인 주민등록번호, 카드번호를 입력할 수 있는 게시판입니다.">
+        <caption>카드기본정보 입력</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>주민등록번호</p></th>
+				<td>
+					<p>
+                    <span class="input_idno"><input name="SSNO1" type="text" value="" maxlength="6" class="txt" title="주민등록번호 앞자리" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input name="SSNO2" type="password" value="" maxlength="7" class="txt" title="주민등록번호 뒷자리" onkeypress="checkTypes(this, 'NUMB');" enc="on" /></span>
+	               	<span id="usafeon_SSNO1|SSNO2"></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td>
+					<p class="input_cardno">
+                    	<label for="label_cardno01"  style="width:230px;"><input type="radio" class="chk" value="1" title="비자/마스터/UnionPay(은련)/자체" id="label_cardno01" name="CARD_GUBUN" onclick="set_disabled(1)" /> 비자/마스터/UnionPay(은련)/자체</label><br/>
+                        <span class="input_cardno mt3 ml20"><input name="CARD_NO1" type="password" value="" maxlength="4" class="txt" title="카드번호 첫번째 네자리"  onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input name="CARD_NO2" type="password" value="" maxlength="4" class="txt" title="카드번호 두번째 네자리"  onkeypress="checkTypes(this, 'NUMB');"  enc="on" />&nbsp;-&nbsp;<input name="CARD_NO3" type="password" value="" maxlength="4" class="txt" title="카드번호 세번째 네자리"  onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input name="CARD_NO4" type="password" value="" maxlength="4" class="txt" title="카드번호 네번째 네자리" onkeypress="checkTypes(this, 'NUMB');" enc="on" /></span>
+					</p>
+					<p class="input_cardno mt5">
+                    	<label for="label_cardno02"  style="width:230px;"><input type="radio" class="chk" value="2" title="아멕스카드" id="label_cardno02" name="CARD_GUBUN" onclick="set_disabled(2)" /> 아멕스카드</label><br/>
+                        <span class="input_cardno mt3 ml20"><input name="CARD_NO5" type="password" value="" maxlength="4" class="txt" title="카드번호 첫번째 네자리" onkeypress="checkTypes(this, 'NUMB');"  disabled="disabled" enc="on" />&nbsp;-&nbsp;<input name="CARD_NO6" type="password" value="" maxlength="6" class="txt" title="카드번호 두번째 여섯자리" onkeypress="checkTypes(this, 'NUMB');" disabled="disabled" enc="on" />&nbsp;-&nbsp;<input name="CARD_NO7" type="password" value="" maxlength="5" class="txt" title="카드번호 세번째 다섯자리" onkeypress="checkTypes(this, 'NUMB');" disabled="disabled" enc="on" /></span>
+	               		&nbsp;<span id="usafeon_CARD_NO1|CARD_NO2|CARD_NO3|CARD_NO4" style="display:inline"></span>
+	               		<span id="usafeon_CARD_NO5|CARD_NO6|CARD_NO7" style="display:none"></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btnset -->
+		<div class="btnset">
+		    <p class="btnl t_desc04">공인인증서 이용이 어려운 회원님께서는 금융ARS(<span class="t_point_org t_no">1588-8600</span>)을 통해 이용해주시기 바랍니다.<br />
+            <a href="/hp/im/mh/csm/certInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="공인인증서 이용방법 새창">공인인증서 이용방법</a>&nbsp; 
+            <a href="/hp/im/mh/csm/possibleCertInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="사용가능한 공인인증서 새창">사용가능한 공인인증서</a></p>
+            <p class="btnr"><a href="javascript:ok();" class="btn btn_blue"><span>확인</span></a></p>
+		</div>
+	</div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

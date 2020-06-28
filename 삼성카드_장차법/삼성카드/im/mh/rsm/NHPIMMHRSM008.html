@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+		<!-- top_visual_100327 -->
+		<div class="top_visual">
+			<h1 class="none">자유결제 서비스입니다</h1>
+			<div class="h1_desc"><img src="/cms_content/finance/svc/3961_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+		</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix"><!-- 100126 -->
+<div class="d_desc">
+<div class="tab02 w810">
+<ul>
+    <li><a href="javascript:goTabPage('NHPIMMHRSM001M001', true);">자유결제서비스
+	안내</a></li>
+	<!-- <li><a href="javascript:goTabPage('NHPIMMHRSM001M002', true);">신청하기</a></li> -->
+	<li><a href="javascript:goTabPage('NHPIMMHRSM001M003', true);">결제비율변경</a></li>
+	<li><a href="javascript:goTabPage('NHPIMMHRSM001M004', true);">해지/당일신청내용 취소</a></li>
+	<li class="on"><a
+		href="javascript:goTabPage('NHPIMMHRSM001M005', true);">결제예정금액조회</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 100202 --> <!-- content_block --> 
+
+
+<div class="content_block content_block_card clfix">
+<h2><img src="/images/mh/h2_payschedule_info01.png" alt="결제예정금액조회 안내입니다" /></h2>
+<div class="content_block_inner"><!-- d_complete -->
+<div class="d_alert d_alert_s noline clfix">
+<p class="ico_alert"><img src="/images/common/img_s_pay_chan.jpg" alt="" /></p>
+<div class="p_desc">
+<h2 class="mt_20 t_12">신자동이체 출금액이 현재 입금처리 중입니다.</h2>
+<div class="p_txt">
+<p class="t_desc03">자동이체 계좌에서 정상적으로 출금되신 경우,<br />
+입금처리는 출금일로부터 1~2일 정도 소요되어 익일부터 금액조회가 가능합니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="content_block content_block_card clfix">
+<h2><img src="/images/mh/h2_payschedule_info01.png" alt="결제예정금액조회 안내입니다" /></h2>
+<div class="content_block_inner"><!-- d_complete -->
+<div class="d_alert d_alert_s noline clfix">
+<p class="ico_alert"><img src="/images/common/img_s_pay_chan.jpg" alt="" /></p>
+<div class="p_desc">
+<h2 class="mt_20 t_12">현재 미결제된 금액이 없습니다. 감사합니다.</h2>
+</div>
+</div>
+</div>
+</div>
+
+
+ <!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_payschedule_info01.png" alt="결제예정금액조회 안내입니다" /></h2>
+<div class="content_block_inner">
+<ol class="list_no01">
+	<li><p>회원님께서 결제일에 입금하셔야 할 결제예정금액입니다.</p></li>
+	<li><p>사용하신 거래금액 중 가맹점으로부터 <strong class="t_black">${result.string4}</strong>까지 접수된 이용건을 기준으로<br />작성된 결제예정금액이므로 명세서 금액과 다를 수 있습니다.</p></li>
+	
+	<li><p>회원님의 선불약정금액은 <strong class="t_black"><span	class="t_no t_black">1,000</span> 원</strong>이며 <strong class="t_black">2012.03.05</strong> 현재 충전잔고는 <strong class="t_black"><span class="t_no t_black">1,000,000</span>	원</strong> 입니다.</p></li>
+	<li><p>충전예정금액은 결제일에 상기 신용카드 결제대금과 합산하여 자동이체계좌에서 출금됩니다.</p></li>
+	
+</ol>
+</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_payschedule_info02.png"	alt="청구예정일 및 결제비율 입니다" /></h2>
+<div class="content_block_inner">
+
+<table class="dtable02 dtable_inputfield" summary="청구예정일, 결제금액 확정일, 현재 결제비율, 결제비율 변경 선택으로 구성된 청구예정일 및 결제비율을 확인할 수 있는 게시판입니다.">
+	<caption>청구 예정일 및 결제비율 확인</caption>
+	<colgroup>
+		<col width="16%" />
+		<col width="34%" />
+		<col width="16%" />
+		<col width="34%" />
+	</colgroup>
+	<tbody>
+		<!-- loop -->
+		<tr>
+			<th scope="row">
+			<p>청구예정일</p>
+			</th>
+			<td>
+			<p>${result.string5}</p>
+			</td>
+			<th scope="row">
+			<p>결제금액 확정일</p>
+			</th>
+			<td>
+			<p>${result.string6}</p>
+			</td>
+		</tr>
+		<!-- //loop -->
+		<tr>
+			<th scope="row">
+			<p>현재 결제비율</p>
+			</th>
+			<td>
+			<p><span class="t_no">${result.string7}</span> %</p>
+			</td>
+			<th scope="row"><p>결제비율
+			변경시</p></th>
+			<td>
+			<p><select id="label_paychange_date01" name="label_paychange_date01" title="변경 결제비율">
+				<option>000</option>
+            </select> <a href="javascript:checkForm();" class="btn btn_s_white"><span>조회</span></a>
+			</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_payschedule_info03.png"	alt="연체금액을 확인 하세요" /></h2>
+<div class="content_block_inner">
+<table class="dtable02"	summary="연체원금, 연체수수료, 연체금액의 소계를 확인할 수 있는 게시판입니다.">
+	<caption>연체금액 확인</caption>
+	<colgroup>
+		<col width="16%" />
+		<col width="84%" />
+	</colgroup>
+	<tbody>
+		<!-- loop -->
+
+		<tr>
+			<th scope="row">
+			<p>연체원금</p>
+			</th>
+			<td>
+			<p><span class="t_no">${string2}</span> 원</p>
+			</td>
+		</tr>
+		<!-- //loop -->
+		<tr>
+			<th scope="row">
+			<p>연체수수료</p>
+			</th>
+			<td>
+			<p><span class="t_no">${string3}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><strong class="t_black">소계</strong></p>
+			</th>
+			<td>
+			<p><strong class="t_black"><span class="t_no t_black">${string4}</span>
+			원</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="dtable02" summary="연체원금, 연체수수료, 연체금액의 소계를 확인할 수 있는 게시판입니다.">
+	<caption>연체금액 확인</caption>
+	<colgroup>
+		<col width="16%" />
+		<col width="84%" />
+	</colgroup>
+	<tbody>
+		<!-- loop -->
+
+		<tr>
+			<th scope="row">
+			<p>연체원금</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string8}</span> 원</p>
+			</td>
+		</tr>
+		<!-- //loop -->
+		<tr>
+			<th scope="row">
+			<p>연체수수료</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string9}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><strong class="t_black">소계</strong></p>
+			</th>
+			<td class="cell_r10">
+			<p><strong class="t_black"><span class="t_no t_black">${result.string10}</span>
+			원</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_payschedule_info04.png"
+	alt="결제예정금액을 확인하세요" /></h2>
+<div class="content_block_inner">
+
+<table class="dtable02"	summary="자유결제, 자유결제 외 결제일 기준금액을 이용금액,원금,수수료별로 확인할 수 있는 게시판입니다">
+	<caption>결제예정금액 확인</caption>
+	<colgroup>
+		<col width="115" />
+		<col width="115" />
+		<col width="*" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<td scope="rowgroup" rowspan="4" class="riline">
+			<p>자유결제</p>
+			</td>
+			<th scope="row" class="cell_bg riline">
+			<p>이용금액</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string11}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg riline">
+			<p>원금</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string12}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg riline">
+			<p>수수료</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string13}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg riline">
+			<p>소계</p>
+			</th>
+			<td class="cell_r10">
+			<p><strong class="t_black"><span class="t_no t_black">${result.string14}</span>
+			원</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td scope="rowgroup" rowspan="3" class="riline">
+			<p>자유결제 외</p>
+			</td>
+			<th scope="row" class="cell_bg riline">
+			<p>원금</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string18}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg riline">
+			<p>수수료 + 연회비</p>
+			</th>
+			<td class="cell_r10">
+			<p><span class="t_no">${result.string19}</span> 원</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_bg riline">
+			<p>소계</p>
+			</th>
+			<td class="cell_r10">
+			<p><strong class="t_black"><span class="t_no t_black">${result.string20}</span>
+			원</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td scope="row" colspan="2" class="riline cell_bg">
+			<p>결제일 기준금액</p>
+			</td>
+			<td class="cell_r10">
+			<p><strong class="t_black"><span class="t_no t_black">${
+			result.string21}</span> 원</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<ol class="list_desc">
+	<li>
+	<p>본 화면에서 안내되는 금액은 ‘결제일’기준으로 계산된 결제예정금액이며, 정확한 최소 결제금액은 <br />
+	회원님의 결제금액확정일 이후에 확인하실 수 있습니다.</p>
+	</li>
+	<li>
+	<p>카드사용금액을 결제일 전에 입금하시려면 고객상담센터(지역번호 없이)1588-8700이나 홈페이지 내 <br />
+	중도상환 메뉴를 이용하시기 바랍니다.</p>
+	</li>
+</ol>
+
+</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+<h2><img src="/images/mh/h2_payschedule_info05.png"
+	alt="용어를 쉽게 설명해 드립니다" /></h2>
+<div class="content_block_inner">
+<ol class="list_no01">
+	<li><p><strong class="t_black">자유결제 이용금액</strong> : 일시불 및 현금서비스의 이번달의 이용금액 및 이월잔액의 합계입니다.</p></li>
+	<li><p><strong class="t_black">자유결제 원금</strong> : 이용금액 중 이번달에 삼성카드에 입금해야하는 금액으로 결제비율 및<br />최소 결제월에 의해 계산됩니다.</p></li>
+	<li><p><strong class="t_black">자유결제 수수료</strong> : 이용금액의 이용기간에 따라 발생되는 수수료 금액입니다.</p></li>
+	<li><p><strong class="t_black">자유결제 외 원금</strong> : 할부 및 카드론 등 자유결제에 해당되지 않는 이용건 중<br />이번달에 삼성카드에 입금해야하는 금액입니다.</p></li>
+	<li><p><strong class="t_black">자유결제 외 수수료</strong> : 할부 및 카드론의 수수료 및 연회비 금액이 표시됩니다.</p></li>
+</ol>
+</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

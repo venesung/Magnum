@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>구매내역 조회 - 삼성카드 쇼핑</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://devshoppingmall.samsungcard.com:10080" />
+<link rel="stylesheet" href="/css/base.css" type="text/css" />
+<link rel="stylesheet" href="/css/shopping.css" type="text/css" />
+<link rel="stylesheet" href="/css/shopping_giftmall.css" type="text/css" />
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/sw/common/calendar-selectbox.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+<script type="text/javascript" src="/js/ec/common/quick.js"></script>
+<script type="text/javascript" src="/js/ec/sw/mg/mgQuick.js"></script>
+</head>
+<body>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />
+<!-- head -->
+<div id="head" style="background:red;">공통 상단메뉴</div>
+<!-- //head -->
+
+<!--// 공통 상단 끝 -->
+	
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+<!-- 공통 좌측 시작 -->
+	<div id="conLeft">	
+		좌측메뉴
+		<!-- 고객센터 -->
+		<div class="box_white182_mid mt10"><div class="box_white182_top"><div class="box_white182_btm">
+			<dl class="call_center">
+				<dt><strong>고객상담 문의</strong></dt>
+				<dd>
+					<ul>
+						<li><img src="${pageContext.request.contextPath}/images/gr/common/cs_represent_only.gif" alt="1588-8700" /></li>
+					</ul>
+					<div class="txt_hours t_11gray">평일 오전 9시 ~ 오후 6시<br />(주말/공휴일 제외)</div>
+					<div>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=764&amp;categoryId=933">FAQ</a></span>
+						<span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=getInquiry">온라인 문의</a></span>
+					</div>
+				</dd>
+			</dl>
+		</div></div></div>
+		<!-- //고객센터 -->
+	</div>
+<!--// 공통 좌측메뉴 끝 -->
+			
+			<div id="conRight" class="m_giftcard">
+				<!-- location -->
+				<div class="location">
+					<a href="http://sam.samsungcard.com/samIndex.do">HOME</a>
+					<span>&gt;</span>
+					<a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain">SHOPPING</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/gm/index.do?method=selectGMMain">기프트몰</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/sw/mg/fr/cc/customerCom100.do?method=mgiftMainForm">모바일Gift카드</a>
+					<span>&gt;</span>
+					카드조회
+					<span>&gt;</span>
+					<span class="end">구매/전송 내역조회</span>
+				</div>
+				<!-- //location -->
+				
+				<div class="h2_wrap">
+					<h2><img src="/images/sw/mg/h2_buy_search.gif" alt="구매내역 조회" /></h2>
+				</div>
+
+
+				
+				<!-- search -->
+				<dl class="search_period mb30">
+					<dt>기간별 조회 </dt>
+					<dd id="searchDate">
+                        <span id="search_date_1" class="btnS_white"><a href="javascript:setDate('1','day','-7');">1주</a></span>
+                        <span id="search_date_2" class="btnS_white"><a href="javascript:setDate('2','month','-1');">1개월</a></span>
+                        <span id="search_date_3" class="btnS_white"><a href="javascript:setDate('3','month','-3'); ">3개월</a></span>
+                        <span id="search_date_4" class="btnS_white"><a href="javascript:setDate('4','month','-6');">6개월</a></span>
+                        <span id="search_date_5" class="btnS_white"><a href="javascript:setDate('5','year','-1');">1년</a></span>
+		 
+						<p class="mt6">
+							<select name="fromYear" title="년도선택">
+								<option></option>
+							</select>
+							년
+							<select name="fromMonth" title="월선택" onchange="setDay(this.id);">
+								<option></option>
+							</select>
+							월
+							<select name="fromDay" title="일선택">
+								<option></option>
+							</select>
+							일  
+							&nbsp;
+                            <a href="javascript:calendar('fromDate', event);" ><img src="/images/gr/common/btn_calendar.gif" alt="달력보기" class="al_middle" style="cursor:pointer" /></a><!--  -->    
+													
+							&nbsp;~&nbsp;
+							
+							<select name="toYear" title="년도선택">
+								<option></option>
+							</select>
+							년
+							<select name="toMonth" title="월선택" onchange="setDay(this.id);">
+								<option></option>
+							</select>
+							월
+							<select name="toDay" title="일선택">
+								<option></option>
+							</select>
+							일 
+							&nbsp;																
+                            <a href="javascript:calendar('toDate', event);"><img src="/images/gr/common/btn_calendar.gif" alt="달력보기" class="al_middle" style="cursor:pointer" /></a>
+							
+							&nbsp;&nbsp;&nbsp;
+                            <span class="btnS_point"><a href="javascript:fncSearch();" class="search">검색</a></span>
+						</p>
+					</dd>
+				</dl>
+				<!-- //search -->
+				
+						
+				<table border="0" width="100%"  class="dtable_col " summary="번호, 구매일, 상품명, 수량, 총 결제금액, 결제정보로 구성된 상세 수령 상황">
+				<caption class="tit_caption"><strong class="t_org">구매일자</strong>를 클릭하시면 상세 수령 상황을 보실 수 있습니다.</caption>
+				<colgroup>
+				<col width="55" />
+				<col width="110" />
+				<col width="235" />
+				<col width="90" />
+				<col width="125" />
+				<col width="113" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">구매일</th>
+						<th scope="col">상품명</th>
+						<th scope="col">수량</th>
+						<th scope="col" class="cell_r"> 총 결제금액</th>
+						<th scope="col">결제정보</th>
+					</tr>
+				</thead>
+				<tbody>					
+					<!-- loop -->
+					<tr>
+						<td colspan="6" class="data_none">구매/전송 내역이 없습니다.</td>
+					</tr>
+					<tr>
+						<td><span class="t_num">1 </span></td> 
+                        <td class="t_org"><strong><a href="#" >dma...</a></strong></td>
+						<td>dma..</td>
+						<td>1건</td>
+						<td class="cell_r">1원</td>
+						<td>
+						<span class="btnS_white">
+                        <a href="#">계좌전표</a>
+						</span>
+						</td>
+					</tr>
+					<!--// loop -->
+				</tbody>
+				</table>
+				<!-- paging -->
+				<div class="pagenate">1</div>
+				<!--// paging -->
+
+		</div>
+	</div>
+<!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	<!-- //body content -->
+</div>
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+
+
+</body>
+</html>

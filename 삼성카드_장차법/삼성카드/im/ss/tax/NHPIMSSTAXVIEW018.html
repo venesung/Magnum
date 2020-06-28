@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>조건출력 내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" href="/css/ie6.css"/ > <![endif]-->
+<script type="text/javascript">
+var tempHtmlContent; 
+
+function printDiv () { 
+   if (document.all && window.print) { 
+       window.onbeforeprint = beforeDivs; 
+       window.onafterprint = afterDivs; 
+       window.print(); 
+   } 
+} 
+function beforeDivs () { 
+   if (document.all) { 
+       var rng = document.body.createTextRange( ); 
+       if (rng!=null) { 
+           //alert(rng.htmlText); 
+           tempHtmlContent = rng.htmlText; 
+           rng.pasteHTML("<table border=0 align=center><tr><td align=center>"  
+                                       + document.all("pop_content").innerHTML + "</td></tr></table>"); 
+       } 
+   } 
+} 
+function afterDivs () { 
+   if (document.all) { 
+       var rng = document.body.createTextRange( ); 
+           if (rng!=null) { 
+                       rng.pasteHTML(tempHtmlContent); 
+           } 
+   } 
+} 
+
+</script>
+<body onLoad="printDiv();">
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/ss/pop_h1_loan_app_print.png" alt="조건출력 내역입니다" /></h1>
+		
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_loan_app_print.png" alt="조건출력 내역입니다" /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll">
+		<div class="content_block content_block_card clfix">
+			<div class="tb_exp clfix">
+				<span class="fl_left">&nbsp;</span>
+				<span class="ab_tr t_desc04">단위 : 원</span>
+			</div>
+			<table class="dtable02 " summary="납세종류, 납부번호, 분류기호, 서코드, 납부연월, 결정구분, 세목, 발행번호, 납세고지서등의 내용을 확인할 수 있는 게시판입니다">
+			<caption>조건출력 내역 중 납세관련 정보</caption>
+			<colgroup><col width="18%" /><col width="13%" /><col width="13%" /><col width="14%" /><col width="14%" /><col width="14%" /><col width="14%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" rowspan="2"><p class="pt15">납세종류</p></th>
+					<td colspan="6" class="cell_c"><p>납부번호</p></td>
+				</tr>
+				<tr>
+					<td><p>분류기호</p></td>
+					<td><p>서코드</p></td>
+					<td><p>납부연월</p></td>
+					<td><p>결정구분</p></td>
+					<td><p>세목</p></td>
+					<td><p>발행번호</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>납세고지서</p></th>
+					<td><p class="t_no">0126</p></td>
+					<td><p class="t_no"><%=resultVo.getSemok2()%></p></td>
+					<td><p class="t_no"><%=resultVo.getSemok3()%>.<%=resultVo.getSemok4()%></p></td>
+					<td><p class="t_no"><%=resultVo.getSemok5()%></p></td>
+					<td><p class="t_no"><%=resultVo.getSemok6()%></p></td>
+					<td><p class="t_no"><%=resultVo.getSemok7()%></p></td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<table class="dtable02 mt20" summary="성명 및 상호, 주민등록번호 및 사업자등록번호, 회계년도등의 내용을 확인할 수 있는 게시판입니다">
+			<caption>조건출력 내역 중 성명,상호,회계관련 정보</caption>
+			<colgroup><col width="18%" /><col width="30%" /><col width="14%" /><col width="19%" /><col width="19%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>성명 및 상호</p></th>
+					<td><p><%=resultVo.getUserName()%></p></td>
+					<th scope="row" colspan="2"><p>주민등록번호 및 사업자등록번호</p></th>
+					<td><p class="t_no"><%=juminNo %></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>회계년도</p></th>
+					<td><p>20<%=resultVo.getSemok3()%>년</p></td>
+					<td class="cell_bg riline"><p>일반회계</p></td>
+					<td class="cell_bg riline"><p>재정경제부소관</p></td>
+					<td class="cell_bg"><p>조세</p></td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<table class="dtable02 dtable_expand mt20" summary="연도, 기분, 납부기한등의 내용을 확인할 수 있는 게시판입니다">
+			<caption>조건출력 내역 중 연도,납부기한 정보</caption>
+			<colgroup><col width="18%" /><col width="30%" /><col width="18%" /><col width="34%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>연도, 기분</p></th>
+					<td><p>20<%=resultVo.getSemok3()%>년도 기분, 수시분</p></td>
+					<th scope="row"><p>납부기한</p></th>
+					<td><p><%=resultVo.getNabbuGihan1()%>월 <%=resultVo.getNabbuGihan2()%>일</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<table class="dtable02 mt20" summary="세목명,납부금액을 확인 할 수 있는 게시판입니다">
+			<caption>납부금액 정보</caption>
+			<colgroup><col width="18%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="6%" /></colgroup>
+			<tfoot>
+				<tr>
+					<td><p><strong class="t_black">합계</strong></p></td>
+								<%for (int i = totList.size() - 1; i > 0; i--) {%>
+									 
+									 <td><p class="t_no"><%= totList.get(i)%></p></td>
+						        	
+								<%}%>
+								<td><p class="t_no">0</p></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<th scope="row" rowspan="2"><p class="pt15">세목명</p></th>
+					<td colspan="13" class="cell_c "><p>납부금액</p></td>
+				</tr>
+				<tr>
+					<td><p>조</p></td>
+					<td><p>천</p></td>
+					<td><p>백</p></td>
+					<td><p>십</p></td>
+					<td><p>억</p></td>
+					<td><p>천</p></td>
+					<td><p>백</p></td>
+					<td><p>십</p></td>
+					<td><p>만</p></td>
+					<td><p>천</p></td>
+					<td><p>백</p></td>
+					<td><p>십</p></td>
+					<td><p>원</p></td>
+				</tr>
+							<tr>
+								<th scope="row"><p>본세</p></th>
+								 
+								<%for (int i = bonseList.size() - 1; i > 0; i--) {%>
+									 
+									 <td><p class="t_no"><%=bonseList.get(i)%></p></td>
+						        	
+								<%}%>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>교육세</p></th>
+								
+								<%for (int i = eduList.size() - 1; i > 0; i--) {%>
+									 
+									 <td><p class="t_no"><%= eduList.get(i)%></p></td>
+						        	
+								<%}%>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>농어촌특별세</p></th>
+								
+								<%for (int i = nongList.size() - 1; i > 0; i--) {%>
+									 
+									 <td><p class="t_no"><%=nongList.get(i)%></p></td>
+						        	
+								<%}%>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>가산금</p></th>
+								
+								<%for (int i = gasanList.size() - 1; i > 0; i--) {%>
+									 
+									 <td><p class="t_no"><%=gasanList.get(i)%></p></td>
+						        	
+								<%}%>
+								<td><p class="t_no">0</p></td>
+							</tr>
+
+			</tbody>
+			</table>
+
+			<table class="dtable02 mt20" summary="결정부분 및 세목 예시를 보여주는 게시판입니다">
+			<caption>결정부분 및 세목</caption>
+			<colgroup><col width="18%" /><col width="16%" /><col width="16%" /><col width="16%" /><col width="17%" /><col width="17%" /></colgroup>
+			<tbody>
+				<tr>
+					<td colspan="6" class="cell_c boline_c"><p>결정부분 및 세목 (예시)</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>결정구분</p></th>
+					<td><p>확정 : <span class="t_no">1</span></p></td>
+					<td><p>수시 : <span class="t_no">2</span></p></td>
+					<td><p>예정 : <span class="t_no">3</span></p></td>
+					<td><p>원천 : <span class="t_no">4</span></p></td>
+					<td><p>-</p></td>
+				</tr>
+				<tr>
+					<th scope="row" rowspan="3"><p>세목</p></th>
+					<td><p>중소 : <span class="t_no">10</span></p></td>
+					<td><p>이자 : <span class="t_no">11</span></p></td>
+					<td><p>배당 : <span class="t_no">12</span></p></td>
+					<td><p>사업 : <span class="t_no">13</span></p></td>
+					<td><p>갑근 : <span class="t_no">14</span></p></td>
+				</tr>
+				<tr>
+					<td><p>기타 : <span class="t_no">16</span></p></td>
+					<td><p>퇴직 : <span class="t_no">21</span></p></td>
+					<td><p>양도 : <span class="t_no">22</span></p></td>
+					<td><p>법인 : <span class="t_no">31</span></p></td>
+					<td><p>상속 : <span class="t_no">32</span></p></td>
+				</tr>
+				<tr>
+					<td><p>증여 : <span class="t_no">33</span></p></td>
+					<td><p>부가 : <span class="t_no">41</span></p></td>
+					<td><p>특소 : <span class="t_no">42</span></p></td>
+					<td><p>주세 : <span class="t_no">43</span></p></td>
+					<td><p>인지 : <span class="t_no">46</span></p></td>
+				</tr>
+			</tbody>
+			</table>
+			<div class="btnset">
+				<p class="btnl t_desc04">귀하가 세금으로 납부신청하신 금액은 위 내용과 같이 대출되어 귀하가 신청한 날짜에 국고수납은행에 납부됩니다.<br />이 화면은 출력하여 법정 영수증에 갈음하여 사용할 수 있습니다.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+
+</body>
+</html>

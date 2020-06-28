@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+<title>쇼룸 - 삼성카드</title>
+
+</head>
+<body>
+<div class="headerBox cate2">공통헤더</div>
+
+<div class="wrap">	
+<form name="certForm" method="post" autocomplete="off" action="">		
+	<div class="contentsBox_app">
+		<div class="appBox">
+			<ul class="stepBox">
+				<li><img src="/images/cd/shw/app/txt_step1_off.gif" width="259" height="51" alt="STEP1 실명인증 및 약관동의" /></li>
+				<li><img src="/images/cd/shw/app/txt_step2_off.gif" width="259" height="51" alt="STEP2 신청정보 입력" /></li>
+				<li class="last"><img src="/images/cd/shw/app/txt_step3_on.gif" width="259" height="51" alt="STEP3 신청완료" /></li>
+			</ul>
+
+			<div class="app">
+				<img src="/images/cd/shw/app/txt_card1.gif" width="740" height="165" alt="선택하신 카드신청이 완료 되었습니다. 영업일 기준 5일~7일 이내에 배송될 예정입니다." />
+				<p class="stit" style="margin-top:-4px;"><img src="/images/cd/shw/app/txt_step3_1.gif" width="247" height="14" alt="카드 신청내역을 다시 한번 확인해주세요." /></p>
+				<table summary="성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지로 구성된 카드내역 확인을 위한 표입니다." class="table_app2 marB20">
+					<caption>카드내역 확인</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><span class="padL14">성명</span></th>
+							<td><span class="padL10"><%=vo.getCustomerName() %></span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">주민등록번호</span></th>
+							<td><span class="padL10"><%=vo.getIdenNo1()%>-*******</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">신청카드명</span></th>
+							<td><span class="padL10"><%=vo.getCardName() %></span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">신청일시</span></th>
+							<td><span class="padL10">00년 00월 00일 00시 00분</span></td>
+						</tr>
+						<tr class="last">
+							<th scope="row"><span class="padL14">카드수령지</span></th>
+							<td><span class="padL10">[000-000] <%=vo.getAddrArea() %> <%=vo.getAddrDist() %></span></td>
+						</tr>
+					</tbody>
+				</table>
+                <p class="alignC marB39"><a href="javascript:backUrl();"><img src="/images/cd/shw/app/btn_ok.gif" width="54" height="28" alt="확인" /></a> 
+                <a href="/index.do?menuId=NHPIMCDCIM001" target="_blank" title="새창"><img src="/images/cd/shw/app/btn_card_search.gif" width="134" height="28" alt="카드발급 조회하기" /></a></p>
+				
+			</div>
+			<div class="tip">
+			<div class="cardBox">
+				<img src="${cardUrl}" width="110" height="69"  alt="카드" />
+			</div>
+			<p>신청하신 카드가 완성되었습니다.</p>
+			<!-- 2012.04.23 수정 -->
+			<img src="/images/cd/shw/app/layer_tip3.png" alt="TIP! 참고하세요! 신청내역이 맞는지 꼼꼼히 확인해주세요." class="png24" />
+			<!-- //2012.04.23 수정 -->
+		</div>
+		</div>
+	</div>
+</form>
+</div> 
+<div class="footerBox">공통풋터</div>

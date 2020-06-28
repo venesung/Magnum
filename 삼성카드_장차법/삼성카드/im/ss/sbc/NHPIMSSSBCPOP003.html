@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>현재 지도 URL 복사하기 - 삼성카드</title>
+
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+
+<style type="text/css">
+#pop_s_header {width:100%; height:60px; background:url('/images/ss/pop_bg_body_s.jpg') no-repeat left top;}
+#pop_s_footer {position:relative; height:30px; background:url('/images/common/pop_bg_body_s.jpg') no-repeat left bottom;}
+#pop_s_footer .btn_s_close{position:absolute; top:4px;width:24px;height:24px; right:13px;}
+#pop_s_contents{padding:30px;}
+input.txturl{width:350px;height:24px; border:1px solid #ccc;padding:0 5px; margin-right:10px;}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+	function copyUrl(){
+		var f = document.f1;
+		var copyUrlText = f.LINK_URL.createTextRange();
+		f.LINK_URL.select();
+		copyUrlText.execCommand('copy');
+		alert("URL 복사가 완료 되었습니다.");
+	}
+</script>
+</head>
+
+<body>
+<form name="f1">
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_urlcopy.png" alt="현재 지도 URL 복사하기" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_urlcopy.png" alt="현재 지도 URL 복사하기" /></h1>
+	</div>
+
+		<!-- content -->
+	<div id="pop_s_contents" style="margin-top:15px;">
+		<div class="url_copy">
+            <input type="text" name="LINK_URL" value="" class="txturl" title="현재페이지url" /><a href="javascript:copyUrl();" class="btn btn_blue"><span>복사</span></a>
+		</div>
+		<p class="t_desc03 mt20">[복사]를 누르신 후 메일, 메신저 등에 붙여넣기(Ctrl+V) 하세요<br />
+		-일부 정보는 포함되지 않을 수 있습니다.</p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> 
+	</div>
+</div>
+</form>
+
+</body>
+</html>

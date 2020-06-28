@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block 100126 -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li class="on"><a href="javascript:goMyAccountInfoMain()">결제일 변경</a></li>
+                                <li><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+ 
+					<div class="top_step_setcard step03_on">
+						<ol class="none">
+							<li>변경 결제일 선택</li>
+							<li>변경시 결제스케줄 확인</li>
+							<li><abbr>현재단계</abbr> <strong>결제일 변경 완료</strong></li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<!-- d_complete -->
+					<div class="d_alert noline clfix">
+						<p class="ico_alert"><img src="/images/common/img_pay_chan.jpg" alt="" /></p>
+						<div class="p_desc">
+						
+							<h2><img src="/images/mh/txt_changes_received.png" alt="결제일 변경이 접수되었습니다." /></h2>
+							<div class="mb20 t_desc03">결제일 변경 확정일에 연체 상태가 되시면 결제일 변경이 자동 취소되오니 유의하시기 바랍니다.</div>
+							<div class="p_txt">
+                                결제일 변경을 확인하시려면, <a href="javascript:goApplyResult();" class="a_point">처리결과 조회</a>를 이용하세요.<br />
+								결제일 변경 신청 후, 당일에 한해 취소(재변경)신청은 가능합니다.
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goApplyResult();"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+							</div>
+							
+							<div class="p_txt">결제일 변경이 접수되었으나 일부가 처리되지 않았습니다.[<%=RESP_CODE %> - <%=sCnt %>/<%=tCnt %>]</div>
+							<div class="mb20 t_desc03">결제일 변경 확정일에 연체 상태가 되시면 결제일 변경이 자동 취소되오니 유의하시기 바랍니다.</div>
+							<div class="p_txt">
+                                결제일 변경을 확인하시려면, <a href="javascript:goApplyResult();" class="a_point">처리결과 조회</a>를 이용하세요.<br />
+								결제일 변경 신청 후, 당일에 한해 취소신청은 가능합니다.
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goApplyResult();"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+							</div>
+							
+							<div class="p_txt">미납금액이 있거나 60일 이내 재변경 및 기타 오류로 인해 결제일 변경이 처리되지 않았습니다.
+  							<br/>궁금한 내역이 있으시면 1588-8700으로 상담원을 통해 확인하시기 바랍니다.</div>
+							<div class="p_txt">
+                                <a href="javascript:goMyAccountInfoMain();" class="a_point">결제일정보 조회</a>에서 결제일 정보를 다시 확인 하시기 바랍니다.
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goMyAccountInfoMain();"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

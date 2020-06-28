@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_s_trend.png" alt="삼성카드 2 / 2+ 이용내역 입니다" /></h1>
+</div>
+
+<form name="form1" method="post" action="">
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li class="on"><a href="javascript:goTabPage('NHPIMCDSTD001M001','false');">카드이용실적확인</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M002','false');">모바일기프트카드 SMS...</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M003','false');">프리미엄기프트 이용내역</a></li>
+		</ul>
+	</div>
+	<h2><img src="/images/mh/h2_s_trend_service.png" alt="조회하시고자 하는 서비스 및 카드를 선택하세요" /></h2>
+	<div class="content_block_inner">
+		<p class="t_point">조회하시고자 하는 서비스 및 카드를 선택하시면, 고객님의 월별 카드 이용실적을 조회하실 수 있습니다.</p>
+
+		<table class="dtable02 dtable_inputfield mt10" summary="서비스구분별로 카드선택을 해서 카드이용내역 조회를 하실 수 있습니다.">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+
+			<tr>
+				<th scope="row"><p>서비스구분</p></th>
+				<td><p>
+					<label for="label_region01" class="mr10"><input type="radio" class="rdo" id="label_region01" name="_sGubun" title="교통할인 이용내역" /> 교통할인 이용내역 </label>
+					<label for="label_region02"><input type="radio" class="rdo" id="label_region02" name="_sGubun" title="특별적립 이용내역" /> 특별적립 이용내역</label>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select name="sCard" title="카드종류 선택" style="width:370px">
+						<option></option>
+					</select>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+            <a href="javascript:srchUseList();" class="btn btn_blue"><span>조회</span></a>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_s_trend_service01.png" alt="교통통신할인 서비스 이용한도 및 월별 카드 이용실적입니다" /></h2>
+	
+	<div class="content_block_inner">
+		<p class="mt10 t_point">이번달 교통통신할인 서비스 이용한도 입니다.</p>
+		<div class="d_easy mt10 t_font">
+			<table class="dtable01 dtable01_bill" summary="이번달 서비스 이용한도표로 할인구분, 할인율, 이번달 할인가능한도로 구성되어 있습니다.">
+			<caption>이번달 서비스 이용한도</caption>
+			<colgroup><col width="30%" /><col width="35%" /><col width="35%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10 cell_bg t_12">할인구분</th>
+					<th scope="col" class="t_12">할인율</th>
+					<th scope="col" class="t_12">이번달 할인가능한도</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10 cell_bg t_12">교통</td>
+					<td rowspan="2" style="padding:20px 0 0 0;" class="t_12">0%</td>
+					<td rowspan="2" style="padding:20px 0 0 0;" class="t_12">0 원</td>
+				</tr>
+				<tr>
+					<td class="cell_l10 cell_bg t_12">이동통신 자동이체요금</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_s_trend_service02.png" alt="월별 카드 이용실적입니다." /></h2>
+	
+	<div class="content_block_inner">
+		
+		<div class="btnset">
+			<div class="btnl" style="float:left"><p class="pt10 t_point">삼성카드 2 / 2+ 월별 이용 실적입니다.</p></div>
+			<div class="btnl" style="float:right">
+				<select name="sYear" title="이용실적 조회 선택">
+				<option></option>
+				</select>
+                <a href="javascript:srchUseList();" class="btn btn_s_blue"><span>조회</span></a>
+
+
+			</div>
+		</div>
+
+		<div class="d_easy">
+			<table class="dtable01 dtable01_bill mt5" summary="영카드 이용실적 게시판으로 기준년월, 이용실적으로 구성되어 있습니다.">
+			<caption>영카드 이용실적</caption>
+			<colgroup><col width="50%" /><col width="50%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">기준년월</th>
+					<th scope="col" class="blNone">이용실적</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10">0</td>
+					<td class="blNone">0</td>
+				</tr>
+			</tbody>
+			</table>
+	
+			<div class="t_desc04 mt10 ml10">
+				* 일시불 및 할부 합산 이용금액 기준. 삼성카드 2 / 2+ 본인 및 가족카드 이용금액 합산됩니다.<br/>
+				* 상기 월별 이용금액은 삼성카드 2 / 2+ 교통/통신할인, 빅포인트 적립 제공기준에 해당하는 금액입니다.<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

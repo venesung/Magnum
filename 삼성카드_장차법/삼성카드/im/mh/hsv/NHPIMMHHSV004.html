@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- //100219 -->
+					<div class="tab02 w810">
+						<ul>
+						
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+							
+							
+                            <!--li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">약정금액변경</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV006','true');">캐시백/포인트/카드대금 선택하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV007','true');">환불하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV008','true');">환불결과조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_verify_yourinfo.png" alt="본인정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield mb20" summary="본인인증방식을 선택하는 게시판입니다">
+						<caption>본인인증방식 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>본인인증방식</p></th>
+								<td><p>
+									<label for="label_ch01"><input type="radio" id="label_ch01" name="cert_1" value="01" onclick="certification_card()" title="카드인증" checked="checked" /> 카드인증</label>
+									<span class="pl10"><label for="label_ch02"><input type="radio" id="label_ch02" name="cert_1" value="02" onclick="certification_doc()" title="공인인증서" /> 공인인증서</label></span>
+									&nbsp;&nbsp;
+									<a href="javascript:vidInfo(2);" class="btn btn_s_white" title="새창"><span>공인인증서사용방법</span></a>
+									<a href="javascript:vidInfo(1);" class="btn btn_s_white" title="새창"><span>사용가능한공인인증서</span></a>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- 카드인증 선택시 -->
+						<div id="id_card_select">
+						<table class="dtable02 dtable_inputfield" summary="카드인증 선택시 카드번호, 카드비밀번호, 카드 CVC번호를 입력할 수 있는 게시판입니다">
+						<caption>카드인증 선택시 정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card" style="width: 460px" name="CARD_SELECT">
+										<%
+											for (int i = 0; i < CardList.size(); i++) {
+										%>
+										<option value="<%=CardList.get(i).getCardindex() %>">
+										<%=CardList.get(i).getCardName()%>&nbsp;
+										<%=CardList.get(i).getCardNo16()%>
+										</option>
+										<%
+											}
+										%>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td><p class="input_2char">
+								<input class="txt" type="password" title="카드 비밀번호 앞 2자리" name="PASSWORD_NO2" value="" size="4" maxlength="2" id="STD_TEXT_FIELD2" style="width:80px;ime-mode:disabled;"
+									onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										enc="on"/>
+					**(비밀번호 앞 2자리) <span id="usafeon_PASSWORD_NO2"></span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td><p class="input_3char">
+								<input type="password" class="txt" title="카드 CVC번호" name="CVC_NO" value="" size="6" maxlength="3" id="STD_TEXT_FIELD3"
+								style="width:80px;ime-mode:disabled;"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								enc="on"
+								/>(카드뒷면 뒤 숫자 3자리) <span id="usafeon_CVC_NO"></span>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<dl class="cvc_view">
+							<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+						</div>
+						<!-- // 카드인증 선택시 -->
+						<!-- btn -->
+						<div class="btnr">
+							<a href="javascript:go_006();" class="btn btn_blue"><span>확인</span></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_not_living_ftech02.png" alt="신청 후 약정금액 변경시 유의사항입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li class="pb10"><p><span class="t_point">결제일-2 영업일까지 약정금액 변경 시</span><br />
+							그 달 결제일에 바뀐 변경약정금액으로 결제일충전(옮겨놓기)가 됩니다.<br />
+							<span class="t_desc03">예) 결제일이 20일인 회원이 18일에 약정금액을 50만원에서 30만원으로 변경하면, 그 달 결제일에 30만원으로 결제일충전 <br />
+							(옮겨놓기)가 됩니다.</span></p></li>
+							<li><p><span class="t_point">결제일-1 영업일까지 약정금액 변경 시</span><br />
+							그 달은 변경적용이 안되고 다음달 결제일에 바뀐 변경약정금액으로 결제일충전(옮겨놓기)가 됩니다.<br />
+							<span class="t_desc03">예) 결제일이 20일인 회원이 19일에 약정금액을 50만원에서 30만원으로 변경하면, 그 달 결제일에 50만원으로 결제일충전<br />
+							(옮겨놓기)가 되고, 다음달 결제일부터는 변경된 약정금액으로 결제일충전(옮겨놓기)가 됩니다.</span></p></li>
+						</ol>
+
+					</div>
+				</div>
+</form>
+<script type="text/javascript">
+safeonAddNumberField("form", "PASSWORD_NO2");
+safeonAddNumberField("form", "CVC_NO");
+
+TouchEnKey_ReScan();
+</script>
+
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

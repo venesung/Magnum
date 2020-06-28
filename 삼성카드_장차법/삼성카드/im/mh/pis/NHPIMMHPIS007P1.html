@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>맞춤형상환 입력 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_customrepayment.png" alt="맞춤형상환을 입력하세요" /></h1>		
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_customrepayment.png" alt="맞춤형상환을 입력하세요" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445">
+		<div class="content_block content_block_card clfix">
+			<p>고객님의 사용 금액에 따라 상환 시뮬레이션을 확인 하실 수 있습니다.<br />
+			2 가지 항목 중 하나를 선택 후 입력해 주세요.</p>
+			
+			<table class="dtable01 dtable_inputfield mt10" summary="월 청구 원금 또는 상환 개월 수등의 맞춤형상환 정보를 선택하여 입력하는 게시판입니다.">
+			<caption>맞춤형상환 입력</caption>
+			<colgroup><col width="8%" /><col width="14%" /><col width="36%" /><col width="42%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">선택</th>
+					<th scope="col">항목</th>
+					<th scope="col" class="cell_r10">금액/개월 입력</th>
+					<th scope="col" class="cell_l10">참고사항</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10"><input  name="type_radio" type="radio" checked="checked" onclick="changeType()" id="label_repay_ch01" class="rdo" title="선택" /></td>
+					<td><label for="label_repay_ch01">월 청구 원금</label></td>
+					<td class="cell_r10"><span class="input_point"><input name="MONTH_PAY_AMT"   size="8"  type="text" class="txt" value="" title="월 청구 원금 입력" />원</span></td>
+					<td class="cell_l10">* 입력 기준으로 상환기간이 2개월 이하일<br />&nbsp;&nbsp;경우 맞춤형 상환이 불가 합니다.</td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><input name="type_radio" onclick="changeType()" type="radio" class="rdo" value="" id="label_repay_ch02" title="선택" /></td>
+					<td><label for="label_repay_ch02">상환 개월 수</label></td>
+					<td class="cell_r10"><span class="input_point"><input name="TOT_MONTH"  type="text" class="txt" style="width:70px;" value="" title="상환 개월 수 입력"  size="3" maxlength="3" disabled="disabled" />개월</span></td>
+					<td class="cell_l10">* 상환 개월 수 조정은 3개월부터 가능 합니다.</td>
+				</tr>
+			</tbody>
+			</table>
+
+			<table class="dtable01 dtable_inputfield mt10" summary="주유, 통신, 일반 별로 금액을 입력하는 게시판입니다">
+			<caption>주유, 통신, 일반금액 입력</caption>
+			<colgroup><col width="40%" /><col width="60%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">구분</th>
+					<th scope="col" class="cell_r10">금액</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td class="cell_l10">합계</td>
+					<td class="cell_r10" id="MONTH_CARD_USE_TOT_OBJ"><em>0</em> 만원</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td class="cell_l10"><label for="label_moneytype01">주유</label></td>
+					<td class="cell_r10"><span class="input_point"><input name="OIL_USE_AMT" onKeyUp="sum()" size="6" type="text" class="txt" value="" id="label_moneytype01" title="주유 금액 입력" />만원</span></td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><label for="label_moneytype02">통신</label></td>
+					<td class="cell_r10"><span class="input_point"><input name="COMM_USE_AMT" onKeyUp="sum()" size="6" type="text" class="txt" value="" id="label_moneytype02" title="통신 금액 입력" />만원</span></td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><label for="label_moneytype03">일반</label></td>
+					<td class="cell_r10"><span class="input_point"><input name="ETC_USE_AMT" onKeyUp="sum()" size="6" type="text" class="txt" value="" id="label_moneytype03" title="일반 금액 입력" />만원</span></td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<p class="btnc mt30">
+                <a href="javascript:goCheck();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+                <a href="javascript:this.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+			
+
+		</div>
+		
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address><input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /></div>
+ 
+</div>
+ 
+</body>
+</html>

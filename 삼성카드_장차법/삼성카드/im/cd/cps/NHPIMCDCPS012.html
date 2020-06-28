@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<!-- card_compare -->
+<div id="id_cardcom">
+	<div class="d_cardcom"><div class="d_cardcom_top">&nbsp;</div>
+        <p class="btn_cardcom_close"><a href="javascript:closeLayerPopup();"><img src="/images/cd/btn_cardcom_close.png" alt="카드비교 레이어 닫기" /></a></p>
+		<h2><img src="/images/cd/h2_cardcom.png" alt="고객님께서 선택하신 카드를 비교해보세요" /></h2>
+		<table class="dtable02" summary="선택한 카드를 비교 할수 있는 표로 선택카드, 브랜드/연회비, 할인 및 적립, 카드사용형태, 선호도, 평점, 총참여자로 구성되어 있습니다.">
+        <caption>카드 비교</caption>
+		<colgroup><col width="12%" /><col width="*" /><col width="*" /><col width="*" /><!-- <col width="*" /> --></colgroup><!-- 100506 -->
+		<tbody>
+			<tr>
+				<th scope="row" rowspan="2"><p><img src="/images/cd/txt_cardcom01.png" alt="선택카드" /></p></th>
+					<td id="th_card01" class="boline_b0">
+						<div class="p_desc">
+							<p class="p_card"><img src="/cms_content/card/goods/3_34329_list.jpg" alt="${compareVo1.kindName}" /></p>
+							<p class="p_tit">${compareVo1.kindName}</p>
+							<p class="p_txt2">${compareVo1.cardDesc}</p>
+							<!-- <p class="al_center">
+                                <a href="javascript:goView('${compareVo1.kindCode}')"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기·신청" /></a>
+							</p>-->
+						</div>
+					</td>
+					<td id="th_card02" class="boline_b0">
+						<div class="p_desc">
+							<p class="p_card"><img src="${compareVo2.listImg03}" alt="${compareVo2.kindName}" /></p>
+							<p class="p_tit">${compareVo2.kindName}</p>
+							<p class="p_txt2">${compareVo2.cardDesc}</p>
+							<!-- <p class="al_center">
+                                <a href="javascript:goView('${compareVo2.kindCode}')"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기·신청" /></a>
+							</p>-->
+						</div>
+					</td>
+					<td id="th_card02" class="boline_b0">
+						<div class="p_desc">
+							<p class="p_card"><img src="${compareVo3.listImg03}" alt="${compareVo3.kindName}" /></p>
+							<p class="p_tit">${compareVo3.kindName}</p>
+							<p class="p_txt2">${compareVo3.cardDesc}</p>
+							<!-- <p class="al_center">
+                                <a href="javascript:goView('${compareVo3.kindCode}')"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기·신청" /></a>
+							</p>-->
+						</div>
+					</td>
+					<td id="th_card02" class="boline_b0">
+						<div class="p_desc">
+							<p class="p_card"><img src="${compareVo4.listImg03}" alt="${compareVo4.kindName}" /></p>
+							<p class="p_tit">${compareVo4.kindName}</p>
+							<p class="p_txt2">${compareVo4.cardDesc}</p>
+							<!-- <p class="al_center">
+                                <a href="javascript:goView('${compareVo4.kindCode}')"><img src="/images/common/btn_s_card_deatilview.png" alt="자세히보기·신청" /></a>
+							</p>-->
+						</div>
+					</td>
+			</tr>
+			
+							<tr>
+								<td class="cdbtn">
+								<p class="al_center">
+                                <a href="javascript:goView('${compareVo1.kindCode}')" class="btn btn_s_white"><span>상세보기</span></a><a href="javascript:goView('${compareVo1.kindCode}')" class="btn btn_s_blue"><span>카드신청</span></a>
+								</p></td>					
+								<td class="cdbtn"><p class="al_center">
+                                <a href="javascript:goView('${compareVo2.kindCode}')" class="btn btn_s_white"><span>상세보기</span></a><a href="javascript:goView('${compareVo2.kindCode}')" class="btn btn_s_blue"><span>카드신청</span></a>
+								</p></td>
+								<td class="cdbtn"><p class="al_center">
+                                <a href="javascript:goView('${compareVo3.kindCode}')" class="btn btn_s_white"><span>상세보기</span></a><a href="javascript:goView('${compareVo3.kindCode}')" class="btn btn_s_blue"><span>카드신청</span></a>
+								</p></td>
+								<td class="cdbtn"><p class="al_center">
+                                <a href="javascript:goView('${compareVo4.kindCode}')" class="btn btn_s_white"><span>상세보기</span></a><a href="javascript:goView('${compareVo4.kindCode}')" class="btn btn_s_blue" ><span>카드신청</span></a>
+								</p></td>
+							</tr>
+										
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom02.png" alt="브랜드/연회비" /></p></th>
+					<td headers="th_card01"><p>0</p></td>
+					<td headers="th_card02"><p>0</p></td>
+					<td headers="th_card03"><p>0</p></td>
+					<td headers="th_card04"><p>후불교통카드 선택할 수 있음
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom03.png" alt="할인 및 적립" /></p></th>
+					<td headers="th_card01"><p class="t_lgray">
+						${compareVo1.serviceNm}
+					</p></td>
+					<td headers="th_card02"><p class="t_lgray">
+						${compareVo2.serviceNm}
+					</p></td>
+					<td headers="th_card03"><p class="t_lgray">
+						${compareVo3.serviceNm}
+					</p></td>
+					<td headers="th_card04"><p class="t_lgray">
+						${compareVo4.serviceNm}
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom04.png" alt="카드사용형태" /></p></th>
+					<td headers="th_card01"><p>
+						${compareVo1.groupName}
+					</p></td>
+					<td headers="th_card02"><p>
+						${compareVo2.groupName}
+					</p></td>
+					<td headers="th_card03"><p>
+						${compareVo3.groupName}
+					</p></td>
+					<td headers="th_card04"><p>
+						${compareVo4.groupName}
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom05.png" alt="선호도" /></p></th>
+					<td headers="th_card01"><p>
+						남자 <span class="mr10 t_point_org">${compareVo1.menPro }%</span>여자 <span class="t_point_org">${compareVo1.womenPro }%</span><br />
+						 <div id ="graphLayer_1"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("1","${compareVo1.totalCnt }");</script></div>
+					</p></td>
+					<td headers="th_card02"><p>
+						남자 <span class="mr10 t_point_org">${compareVo2.menPro }%</span>여자 <span class="t_point_org">${compareVo2.womenPro }%</span><br />
+						 <div id ="graphLayer_2"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("2","${compareVo2.totalCnt }");</script></div>
+					</p></td>
+					<td headers="th_card03"><p>
+						 남자 <span class="mr10 t_point_org">${compareVo3.menPro }%</span>여자 <span class="t_point_org">${compareVo3.womenPro }%</span><br />
+						<div id ="graphLayer_3"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("3","${compareVo3.totalCnt }");</script></div>
+					</p></td>
+					<td headers="th_card04"><p>
+						 남자 <span class="mr10 t_point_org">${compareVo4.menPro }%</span>여자 <span class="t_point_org">${compareVo4.womenPro }%</span><br />
+						 <div id ="graphLayer_4"><script language="javascript" type="text/javascript">FFn_EmbedGraph_compare("4","${compareVo4.totalCnt }");</script></div>
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom06.png" alt="평점" /></p></th>
+					<td headers="th_card01"><p>
+						<span class="ico_star"><img src="/images/common/ico_star${compareVo1.grade}.png" alt="별점 ${compareVo1.grade}" /></span>
+					</p></td>
+					<td headers="th_card02"><p>
+						<span class="ico_star"><img src="/images/common/ico_star${compareVo2.grade}.png" alt="별점 ${compareVo2.grade}" /></span>
+					</p></td>
+					<td headers="th_card03"><p>
+						<span class="ico_star"><img src="/images/common/ico_star${compareVo3.grade}.png" alt="별점 ${compareVo3.grade}" /></span>
+					</p></td>
+					<td headers="th_card04"><p>
+						<span class="ico_star"><img src="/images/common/ico_star${compareVo4.grade}.png" alt="별점 ${compareVo4.grade}" /></span>
+					</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p><img src="/images/cd/txt_cardcom07.png" alt="총 참여자" /></p></th>
+					<td headers="th_card01"><p>
+						총 <span class="t_point_org">${compareVo1.attendNo}</span> 명 참여 / <span class="t_desc04">${compareVo1.attendPro}%</span>
+					</p></td>
+					<td headers="th_card02"><p>
+						총 <span class="t_point_org">${compareVo2.attendNo}</span> 명 참여 / <span class="t_desc04">${compareVo2.attendPro}%</span>
+					</p></td>
+					<td headers="th_card03"><p>
+						총 <span class="t_point_org">${compareVo3.attendNo}</span> 명 참여 / <span class="t_desc04">${compareVo3.attendPro}%</span>
+					</p></td>
+					<td headers="th_card04"><p>
+						총 <span class="t_point_org">${compareVo4.attendNo}</span> 명 참여 / <span class="t_desc04">${compareVo4.attendPro}%</span>
+					</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+	<div class="d_cardcom_btm">&nbsp;</div></div>
+</div>

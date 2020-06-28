@@ -1,0 +1,85 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCSUGDVIEW.jsp
+ * Author: sds 서준석 사원
+ * Created on 2010. 4. 1.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.scard.hp.im.ss.sbc.vo.NHPIMSSSBC002VO" %>
+<%@ page import="com.scard.hp.im.ss.sbc.vo.NHPIMSSSBC003VO" %>
+<%@ page import="com.scard.hp.im.ss.sbc.vos.NHPIMSSSBC001VOS" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@include file="/WEB-INF/jsp/common/header.jsp" %>
+<%
+	String size = (String)request.getAttribute("size");
+	String set_x = RequestUtil.getStringParameter(request, "set_x","-1");
+	String set_y = RequestUtil.getStringParameter(request, "set_y","-1");
+	if(set_x==null){
+		set_x="505797";
+	}
+	if(set_y==null){
+		set_y="1110155";
+	}
+	String sizeX="",sizeY="";
+	if(size.equals("max")){
+		sizeX="100%";
+		sizeY="1200px";
+	}else{
+		sizeX="520px";
+		sizeY="500px";
+	}
+%>
+
+<title>위치정보 업데이트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/json.js?ClientID=samsungcard" charSet="UTF-8"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapService.js?ClientID=samsungcard" charSet="UTF-8"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/itp-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/iaddress-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/iregioncode-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/isearch-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/itp-template.js?ClientID=samsungcard" ></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/ilistpage-manager.js?ClientID=samsungcard"></script>
+<script type="text/javascript">
+var CongnamulMap;	// 콩나물 맵 객체
+function setCongnamul() {
+	CongnamulMap = new TMap('samsungcard', 'CongDiv',
+		{
+			x:<%=set_x%>,
+			y:<%=set_y%>,
+			scrollWheelable:false,
+			contextMenu:false,
+			level:3,
+			proxy:'http://' + location.host + '/TMapClient/mapproxy.jsp'
+
+		}
+	);
+	drawSimpleMark();
+
+}
+
+/**
+* 지도 위에 간단한 심볼 마크 넣기
+* @return
+*/
+function drawSimpleMark() {
+
+	CongnamulMap.setIcon(100, "http://"+ location.host +"/images/ss/mapPoint.png", new TSize(31, 33), new TPoint(-15, -15));
+	CongnamulMap.drawClickableMark(1,1, 100, new TPoint(<%=set_x%>, <%=set_y%>),null, null,null,null);
+	CongnamulMap.redraw();
+}
+
+</script>
+</head>
+<% if(set_x.equals("-1") || set_y.equals("-1")){ %>
+<body>위치 정보를 업데이트 중입니다.
+<%}else{ %>
+<body onload="setCongnamul();">
+<div id="CongDiv" style="width: <%=sizeX %> height: <%=sizeY %>"></div>
+<% } %>
+</body>
+</html>

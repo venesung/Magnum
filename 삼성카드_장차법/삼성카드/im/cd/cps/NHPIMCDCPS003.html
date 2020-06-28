@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div class="d_card_list">
+
+		<!-- top_visual -->
+		<div class="top_visual">
+			<h1 class="none">Card Choice Tag</h1>
+			<p class="h1_desc"><img src="/images/cd/h1_card_choice_tag.png" alt="Card Choice Tag - 상품의 속성 및 혜택을 담은 카드를 바탕으로 조회수 대비 상위 20개의 태그를 추천합니다." /></p>
+            <p class="flag_additional"><a href="javascript:goTabPage('NHPIMCDCPS001',true);"><img src="/images/cd/btn_txt_viewall_sscard.png" class="flag_viewall_sscard" alt="삼성카드 전체보기" /></a></p>
+<!-- 2013.02.22 플래시교체 삭제 start -->
+<!-- 
+			<div id="choiceTagLayer" style="height:430px"></div>
+-->
+<!-- 2013.02.22 플래시교체 삭제 end -->
+<!-- 2013.02.22 플래시교체 추가 start -->
+			<div class="mvt_find2">
+				<ul class="tag_list">
+				</ul>
+			</div>
+<!-- 2013.02.22 플래시교체 추가  -->
+			<form name="form1">
+				<input type="hidden" name="cms_keyword"    value='${vos.cmsKeyword}'/>
+				<input type="hidden" name="srch_keyword"   value='Y'/>
+				<input type="hidden" name="view_type"      value='${vos.viewType}' />
+				<input type="hidden" name="theme"          value='${vos.theme}' />
+				<input type="hidden" name="year_fee"       value='${vos.yearFee}' />
+				<input type="hidden" name="year_fee_start" value='${vos.yearFeeStart}' />
+				<input type="hidden" name="year_fee_end"   value='${vos.yearFeeEnd}' />	
+				<input type="hidden" name="cPage"          value='${vos.cPage}' />		
+				<input type="hidden" name="card_class"     value='${vos.cardClass}' /> 
+			</form>			
+		</div>
+
+		<div id="div_list">
+		</div>
+		
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

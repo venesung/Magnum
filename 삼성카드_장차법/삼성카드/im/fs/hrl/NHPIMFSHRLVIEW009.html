@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<link href="/css/primeloan/prime_loan.css" rel="stylesheet" type="text/css" />
+<title>삼성카드 전세론 이용내역 조회 - 삼성카드</title>
+</head>
+<body>
+
+	<div id="container">
+
+			<div id="wrapper">
+				<div id="content">
+					<div class="box_s">
+						<h2 class="rtitle"style="background:url('/images/primeloan/h1_loan_02.png') no-repeat 0 20px">삼성카드 전세론 이용내역 조회 </h2>
+						<h3 class="step s01" style="background:url(/images/primeloan/sub_step_01_loan_list.png) no-repeat;">1단계 본인확인 및 공인인증</h3>
+						<table summary="성명, 주민등록번호, 개인(신용)정보 수집 및 이용에 대한 동의 및 입력하는 게시판입니다" class="form">
+							<caption>본인확인 및 공인인증</caption>
+							<tr>
+								<th scope="row">성명</th>
+								<td><input type="text" id="n" name="REAL_NAME" maxlength="15" value="" class="input_text" style="ime-mode:active" title="성명" /></td>
+							</tr>
+							<tr>
+								<th scope="row">주민등록번호</th>
+								<td>
+	                                <input type="text" id="sno1" name="IDENNO1" maxlength="6" class="input_text" style="ime-mode:disabled" title="주민등록번호 앞자리" enc="on" /><!-- onKeyUp="onlyNumber(this.value);" -->
+									-
+									<input type="password" id="sno2" name="IDENNO2" maxlength="7" class="input_text" style="ime-mode:disabled" title="주민등록번호 뒷자리" enc="on" /><!-- onKeyUp="onlyNumber(this.value);" -->
+									&nbsp;<a href="javascript:safeonStartOther('form1', 'IDENNO1|IDENNO2');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" align="middle" /></a>
+									&nbsp;<a href="javascript:realCheckName();" title="새창"><img id="check_identify" src="/images/primeloan/sub_step_btn_name.png" alt="실명확인" align="middle" /></a>
+									<span id="usafeon_IDENNO1|IDENNO2" style="display:none;"></span> 
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="tos">
+									<ul>
+										<li class="l">개인(신용)정보 수집 및 이용에 대한 동의</li>
+	                                    <li class="r"><a href="/hp/im/fs/hrl/hrl.do?method=getHrlAgreePop04" onclick="open('/hp/im/fs/hrl/hrl.do?method=getHrlAgreePop04','HrlPop04','width=710px,height=576px');return false;" title="새창">인쇄</a></li>
+									</ul>
+									<div id="_tos" style="height:120px;background:url(/images/primeloan/box_s.png) no-repeat 0px 0px">
+										<div class="wrap" style="height:110px;">
+											<div class="content" tabindex="0">
+												<p>
+													삼성카드 주식회사 귀중<br />
+													<br />
+													<!-- 120720 수정 -->
+													1. 개인(신용)정보를 제공받는 자<br />
+													   - 신용정보집중기관, 신용정보회사 <br /><br />
+		
+													2. 개인(신용)정보 제공목적 <br />
+													   - 실명확인 등 <br /><br />
+		
+													3. 제공대상 개인(신용)정보 <br />
+													   - 성명, 주민등록번호 <br /><br />
+		
+													4. 제공받는 자의 개인(신용)정보 보유 및 이용기간 <br />
+													   - 실명확인 등 업무목적 달성 시 까지<br /><br />
+													※ 본인은 귀사가 상기 수집 및 이용을 위하여 본인의 고유식별정보인 주민등록번호, 외국인 등록번호 등을 처리하는 것에 동의합니다.<br /><br />
+													<!-- //120720 수정 -->
+												</p>
+											</div>
+										</div>
+									</div>
+									<ul class="agree">
+										<li class="lt"><input type="radio" id="agree_n" name="AGREE" value="N" /> <label for="agree_n">동의하지 않음</label></li>
+										<li><input type="radio" id="agree_y" name="AGREE" value="Y" checked="checked" /> <label for="agree_y">동의함</label></li>
+									</ul>
+	                                <h4 id="certi"><a href="javascript:Go();">공인인증서확인</a></h4>
+								</td>
+							</tr>
+						</table>
+						
+						<p class="eprivacy">
+							samsungcard.com은 개인정보 우수사이트마크(ePRIVACY)를 획득한 사이트 입니다.<br />
+							삼성카드는 이용자께서 제공해 주신 개인정보를 안전하게 관리하기 위해 최선을 다하겠습니다.
+						</p>
+			
+						<!-- 실명인증이 확인되었습니다. 레이어 팝업 -->
+						<div id="layer_pop_s" class="layer_spop"  style="display:none;">
+							<div class="pop_l_wrap">
+								<p class="img_l_pop flag_tl">&nbsp;</p>
+								<p class="img_l_pop flag_tr">&nbsp;</p>
+								<p class="img_l_pop flag_bl">&nbsp;</p>
+								<p class="img_l_pop flag_br">&nbsp;</p>
+
+								<input type="button" title="실명인증 레이어 닫기" value="레이어닫기" onClick="disableLayerS();" class="img_l_pop btn_close btn_input" />
+
+								<div class="pop_l_content">
+									<p class="img_txt"><img src="/images/primeloan/h1_certification.png" alt="실명인증이 확인되었습니다." /></p>
+									<p class="btnc">
+	                                    <a onClick="disableLayerS();return false;" href="#"><img src="/images/primeloan/btn_s_confirm.png" alt="확인" /></a>
+									</p>
+								</div>
+							</div><!-- //pop_l_wrap -->
+							<iframe frameborder="0" style="width: 470px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="빈 컨텐츠"></iframe>
+						</div><!-- //layer_spop -->
+						<!-- //실명인증이 확인되었습니다. 레이어 팝업 -->
+	
+						<!-- 실명이 아니므로 상담신청이 불가합니다. 레이어 팝업 (인라인 스타일에서 style="display:none;" 삭제하면 보여집니다)-->
+						<div id="layer_pop_f" class="layer_spop"  style="display:none;">
+							<div class="pop_l_wrap">
+									<p class="img_l_pop flag_tl">&nbsp;</p>
+									<p class="img_l_pop flag_tr">&nbsp;</p>
+									<p class="img_l_pop flag_bl">&nbsp;</p>
+									<p class="img_l_pop flag_br">&nbsp;</p>
+									<input type="button" title="실명인증 레이어 닫기" value="레이어닫기" onClick="disableLayerF();" class="img_l_pop btn_close btn_input" />
+									<div class="pop_l_content">
+										<p class="img_txt01"><img src="/images/primeloan/h1_cancel.png" alt="실명이 아니므로 상담신청이 불가합니다." /></p>
+										<div id="errorMsg" class="txt_con"></div>
+										<p class="btnc">
+		                                    <a onClick="disableLayerF();return false;" href="#"><img src="/images/primeloan/btn_s_confirm.png" alt="확인" /></a>
+										</p>
+									</div>
+							</div><!-- //pop_l_wrap -->
+						</div><!-- //layer_spop -->
+						<!-- //실명이 아니므로 상담신청이 불가합니다. 레이어 팝업 -->
+	
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<!-- 실명확인용  iframe -->
+	<iframe name="realNameIframe" marginwidth="0" src="" frameborder="0" scrolling="no" width="0" height="0" title="빈 컨텐츠"></iframe>
+	<!-- 실명확인용  iframe -->
+</body>
+</html>

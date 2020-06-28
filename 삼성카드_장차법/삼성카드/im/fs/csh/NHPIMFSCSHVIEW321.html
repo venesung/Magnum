@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">현금서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3943_IMG_1.jpg" alt="24시간 생활 속 어디서나 현금서비스 - 밤늦게 갑자기 현금이 필요할 때도 통장에 카드결제대금이 부족할 때도 365일 24시간 바로바로 편리하게!" /></div>
+	<a href="#" onclick="goTab(1);return false;" class="mv_h1_btn"><img src="/images/fs/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+<!-- top_visual -->
+
+<form name="form1">
+	<input type="hidden" name="plain" value="" />
+	<input type="hidden" name="loadCnt" value="0" />
+	<input type="hidden" name="ssno" value="" />
+</form>
+
+
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+	<form name="form_main">
+		<!-- tab_area -->		
+	<div class="tab01 w810">
+<!-- 수정 13.01.18 VOC40 -->
+		<ul>
+			<li><a href="#" onclick="goTab(0);return false;">서비스 안내</a></li>
+			<li><a href="#" onclick="goTab(1);return false;">신청</a></li>
+			<li><a href="#" onclick="goTab(2);return false;">시뮬레이션</a></li>
+			<li class="on"><a href="#" onclick="return false;">이용내역 조회</a></li>
+		</ul>
+<!--// 수정 13.01.18 VOC40 -->
+	</div>
+		<input name="tabNo" type="hidden" />
+	</form>
+</div>
+<!-- 여기부터 시작 --> 
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cash_search01.png" alt="현금서비스 기간별 이용내역조회입니다" /></h2>
+	<div class="content_block_inner" >
+		<div>
+		<form name="f" id="f">
+		<input type="hidden" name="contentCd" value="${result.contentCd}" />
+		<table class="dtable02 dtable_inputfield" summary="현금서비스 기간별 이용내역조회를 위해 이용기간을 선택하실수 있습니다.">
+			<caption>현금서비스 기간별 이용내역조회</caption>
+			<colgroup>
+			<col width="70" />
+			<col width="" />
+			</colgroup>
+			<tbody>
+				<tr id="region_no9">
+					<th scope="row"><p>이용기간</p></th>
+					<td id="id_cal_wraps">
+						<p>
+							<a href="#" onclick="selectDate(7);return false;" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+							<a href="#" onclick="selectDate(30);return false;" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1개월</span></a>
+							<a href="#" onclick="selectDate(90);return false;" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">3개월</span></a>
+							<a href="#" onclick="selectDate(180);return false;" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">6개월</span></a>
+						</p>
+					</td>
+					<th scope="row"><p>날짜지정</p></th>
+					<td id="id_cal_wrap">
+						<p>
+							<span class="reset_date"><fileTag:calendarAddIf calendarId="hp_single_cal1" title="시작하는날짜 새창열림" inputClass="txt" inputName="stDt" inputValue="${stDt}" /></span>
+						</p>
+					</td>
+					<td id="id_cal_wrap">
+						<p>
+							<span class="reset_date">~&nbsp;&nbsp;<fileTag:calendarAddIf calendarId="hp_single_cal2" title="끝나는날짜 새창열림" inputClass="txt" inputName="edDt" inputValue="${edDt}" /></span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<div class="btnset">
+			<p class="btnr"> <a href="#" onclick="goSubmit();return false;" class="btn btn_blue"><span>조회</span></a> </p>
+		</div>
+		<br/>
+		<br/>
+		<div style="overflow-x:scroll;scrollbar-face-color:#fff;scrollbar-track-color:#fff;scrollbar-arrow-color:#666;scrollbar-highlight-color:#fff;scrollbar-3dlight-color:#cfcfcf;scrollbar-darkshadow-color:#cfcfcf;scrollbar-face-color:#fff;" tabindex="0">
+		<div style="width:1000px;">
+		<table class="dtable01" summary="접수번호, 이용일자, 금액, 상환방법, 입금은행/계좌번호, 처리결과, 입금일자, 거래종류, 이용카드  등 현금서비스 기간별 이용내역조회결과입니다" >
+			<caption>
+			현금서비스 기간별 이용내역조회결과
+			</caption>
+			<colgroup>
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">접수번호</th>
+					<th scope="col">이용일자</th>
+					<th scope="col" class="cell_r10">금액</th>
+					<th scope="col">상환방법</th>
+					<th scope="col">입급은행/계좌번호</th>
+					<th scope="col">처리결과</th>
+					<th scope="col">입금일자</th>
+					<th scope="col">거래종류</th>
+					<th scope="col">이용카드</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="t_no">123</td>
+					<td class="t_no">2012.02.03<br/>2013.06.07</td>
+					<td class="cell_r10"><span class="t_no">123,300</span>원</td>
+					<td>원금균등상환</td>
+					<td>SC제일은행<br/> <span class="t_no">111-1111-11111</span><br/>홍길동</td>
+					<td><a href="#" class="btn btn_s_white" title="접수번호 ${result.authSeqNo} 현금서비스 취소"><span>취소가능</span></a></td>
+					<td class="t_no">2012.02.03<br/>2013.06.07</td>
+					<td>${result.inqGubun1}<br/> ${result.inqGubun2}</td>
+					<td class="t_no">0000-0000-0000-0000</td>
+				</tr>
+				<tr class="nodata">
+					<td colspan="8">이용 내역이 없습니다.</td>
+				</tr>
+				<!--<tr>
+					<td class="cell_c">12.01.01<br/>09:10:10</td>
+					<td class="cell_r10">1,000,000원</td>
+					<td class="cell_c">일시상환</td>
+					<td class="cell_c">국민<br/> 123456XXXXXXX<br/>홍길동</td>
+					<td class="cell_c">이체완료</td>
+					<td class="cell_c">12.01.01<br/> 09:10:10</td>
+					<td class="cell_c">인터넷<br/> 은행이체</td>
+					<td class="cell_c">XXXX-XXXX-1234-1234</td>
+					<td class="cell_c">123456</td>
+				</tr>
+				<tr>
+					<td class="cell_c">12.01.01<br/>09:10:10</td>
+					<td class="cell_r10">1,000,000원</td>
+					<td class="cell_c">일시상환</td>
+					<td class="cell_c">국민<br/> 123456XXXXXXX<br/>홍길동</td>
+					<td class="cell_c"><a href="#" class="btn btn_white"><span>취소가능</span></a></td>
+					<td class="cell_c">12.01.01<br/> 09:10:10</td>
+					<td class="cell_c">인터넷<br/> 은행이체</td>
+					<td class="cell_c">XXXX-XXXX-1234-1234</td>
+					<td class="cell_c">123456</td>
+				</tr>
+				<tr>
+					<td colspan="8" class="cell_c">이용 내역이 없습니다.</td>
+				</tr>-->
+			</tbody>
+		</table>
+		</div>
+		</div>
+		
+		
+		<div class="line_lgray"></div>
+ 
+		<ol class="list_no01">
+			<li><p>신청하신 내용을 취소하시려면 처리결과란의 '취소가능'을 클릭하여 주시기 바랍니다.</p></li>
+			<li><p>이체완료 처리 된 건(은행처리/당사완료/이체완료로 표시된 건)은 취소하실 수 없습니다.</p></li>
+		</ol>
+		
+	</div>
+</div>
+
+<!-- 오류메세지 -->
+<div id="msgLayer" style="display:none;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;" id="cardNoErrLayer">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+<!-- 오류메세지 -->
+
+<script type="text/javascript">
+	 //시스템 시간 세팅
+    function getTimeStamp() {
+      var d = new Date();
+
+      var s = leadingZeros(d.getFullYear(), 4) + '' + leadingZeros(d.getMonth() + 1, 2) + '' + leadingZeros(d.getDate(), 2) + '';
+
+      return s;
+	}
+
+    //숫자의 자리수 를 0으로 채우기
+    function leadingZeros(n, digits) {
+      var zero = '';
+      n = n.toString();
+
+      if (n.length < digits) {
+        for (i = 0; i < digits - n.length; i++)
+          zero += '0';
+      }
+      return zero + n;
+    }
+
+    function getDiffDate(diff_day) {	
+    	var to_date = new Date();
+    	var diff_date = new Date(Date.parse(to_date)-(parseInt(diff_day)*1000*60*60*24));
+
+    	var dDay = leadingZeros(diff_date.getFullYear(), 4) + '' + leadingZeros(diff_date.getMonth() + 1, 2) + '' + leadingZeros(diff_date.getDate(), 2) + '';
+
+    	return dDay;
+    }
+
+    function selectDate(day){
+		setCalendarWithDate(getDiffDate(day).substring(0,4), getDiffDate(day).substring(4,6), getDiffDate(day).substring(6,8), "single", "hp_single_cal1");
+		setCalendarWithDate(getTimeStamp().substring(0,4), getTimeStamp().substring(4,6), getTimeStamp().substring(6,8), "single", "hp_single_cal2");
+    }
+</script>
+<script>
+$(document).ready(function(){
+	$('#id_cal_wraps').find("a").each(function(i) {
+		$(this).click(function(){
+			$("#id_cal_wraps").find("a").attr("class", "btn btn_s_white");
+			$(this).attr("class", "btn btn_s_gray");
+		});
+	});
+})
+</script>
+<!--cms_content끝-->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

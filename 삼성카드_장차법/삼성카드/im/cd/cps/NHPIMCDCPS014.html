@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1 class="none">삼성 선불 교통카드</h1>
+		<p class="h1_desc"><img src="/images/cd/h1_overview_pretraffic.jpg" alt="삼성 선불 교통카드-교통에서 인터넷까지 편리하게 사용하는 만능 선불카드 : IC칩이 내장된 카드 한장으로 생활 전분야에서 편리하게 사용하 수 있습니다" /></p>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<!--h2><img src="/images/cd/h2_overview_pretraffic01.png" alt="선불형 전자화폐카드를 아시나요?" /></h2>
+		<div class="content_block_inner">
+			<p class="p_desc">카드의 IC칩에 금액을 미리 보충하고 현금처럼 사용하는 선불식 선불카드로서<br />현금(잔돈)을 소지할 필요가 없고, 결제방식이 신속하고 간단합니다.<br />마이비 제휴 삼성선불카드는 전북, 울산, 경남 지역에서 서비스를 제공 중입니다.</p>
+		</div>
+	</div>
+
+	<div class="content_block clfix"--><!-- 정기일반영 13.04.29 -->
+		<h2><img src="/images/cd/h2_overview_pretraffic02.png" alt="소득공제 혜택 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<p class="p_desc">무기명 마이비 선불 교통카드는 연말 소득공제를 신청한 카드의 사용금액에대해 연말 소득공제가 적용됩니다.</p>
+
+			<blockquote class="mt20 mb20"><img src="/images/cd/txt_overview_pretraffic01.png" alt="소득공제 혜택 적용방법" /></blockquote>
+			
+			<ul class="list_no02 list_line list_step">
+				<li class="clfix">
+					<p class="ico_no ico_no_thingray01"><em>Step 1</em></p>
+					<strong class="p_tit">소득공제 신청</strong>
+					<p class="p_txt">공인인증서를 이용한 본인 인증</p>
+					<p><img src="/images/fs/txt_step.png" alt="Step" class="ico_step" /></p>
+				</li>
+				<li class="clfix">
+					<p class="ico_no ico_no_thingray02"><em>Step 2</em></p>
+					<strong class="p_tit">소득공제 신청 후 카드 사용</strong>
+					<p class="p_txt">단, 소득공제 등록 신청 이전의 사용내역에 대해서는 소득공제 혜택 불가</p>
+					<p><img src="/images/fs/txt_step.png" alt="Step" class="ico_step" /></p>
+				</li>
+				<li class="clfix">
+					<p class="ico_no ico_no_thingray03"><em>Step 3</em></p>
+					<strong class="p_tit">연말 소득공제 증명서 우편발송</strong>
+					<p class="p_txt">소득공제 증명서 홈페이지 출력 및 사용내역 조회는 향후 적용 예정<br />유의사항 : 카드를 양도받으신 경우, 양도받으신 분 역시 추가로 소득공제 등록을 하셔야만<br />사용내역에 대해 연말 소득공제 혜택을 받으실 수 있습니다.</p>
+					<p><img src="/images/fs/txt_step.png" alt="Step" class="ico_step" /></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/cd/h2_overview_pretraffic03.png" alt="소득공제 신청하세요" /></h2>
+		<div class="content_block_inner fill_joinin">
+			<form name="IncSubInfoForm" method="post">
+			<input type="hidden" name="ssn"  />
+			<input type="hidden" name="loadCnt" value="0" />
+			<input type="hidden" name="plain" />
+			<input type="hidden" name="signed_msg" value="" />
+			<input type="hidden" name="vidMsg" value="" />
+			<input type="hidden" name="signGubun" value="" />
+			<table class="dtable02" summary="선불카드번호, 주민등록번호, 이름, 주소, 자택번호, 휴대폰을 입력하는 소득공제 신청 게시판입니다">
+            <caption>소득공제 신청 게시판</caption>
+			<tbody>
+				<tr>
+					<th scope="row" class="cell_l"><p>선불카드</p></th>
+					<td colspan="3" class="cell_l">
+						<p class="input_phone">
+							<input type="text" class="txt" maxlength="4" name="cardNo1" title="선불카드 카드번호 첫번째 4자리"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, IncSubInfoForm.cardNo2);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                    />&nbsp;-
+							<input type="password" class="txt" maxlength="4" name="cardNo2" title="선불카드 카드번호 두번째 4자리"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, IncSubInfoForm.cardNo3);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                   />&nbsp;-
+							<input type="password" class="txt" maxlength="4" name="cardNo3" title="선불카드 카드번호 세번째 4자리"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, IncSubInfoForm.cardNo4);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                   />&nbsp;-
+							<input type="text" class="txt" maxlength="4" name="cardNo4" title="선불카드 카드번호 네번째 4자리"
+							       onkeypress="checkTypes(this, 'NUMB')"
+							       onkeydown="checkLenB(this, IncSubInfoForm.cardNo3);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                    />
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p for="label_id">주민등록번호</p></th>
+					<td colspan="3" class="cell_l">
+						<p class="input_id">
+							<input type="text" class="txt" maxlength="6" name="ssn1" title="주민등록번호 앞자리"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, IncSubInfoForm.ssn2);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                   />
+							&nbsp;-&nbsp;
+							<input type="password" class="txt" maxlength="7" name="ssn2" title="주민등록번호 뒷자리"
+							       onkeypress="checkTypes(this, 'NUMB')"
+							       onkeydown="checkLenB(this, IncSubInfoForm.ssn1);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+							       required="required" />
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><label for="label_name01">이름</label></th>
+					<td class="cell_l" colspan="3">
+						<p class="input_name">
+							<input type="text" class="txt" name="name" id="label_name01" maxlength="16" title="이름"
+							       onkeypress="checkTypes(this, 'HCHR'); checkLenN(this, 6, IncSubInfoForm.ssn2);" 
+                                   onblur="checkTypesOnBlur(this, 'HCHR');" />
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>주소</p></th>
+					<td colspan="3" class="cell_l">
+						<p class="input_address">
+							<input type="hidden" name="zipSeq" />
+							<input type="text" class="txt" name="zip1" title="우편번호 앞자리" required="required" readonly="readonly" />&nbsp;-&nbsp;
+							<input type="text" class="txt" name="zip2" title="우편번호 뒷자리" required="required" readonly="readonly" />
+							<a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+							<span class="detail">
+                            <input type="text" class="txt" name="address" title="자택주소"  readonly="readonly" />
+                            <input type="text" class="txt" name="address1" title="자택주소 상세"  readonly="readonly" />
+							</span>
+						</p>
+					</td>
+				</tr>							
+				<tr>
+					<th scope="row" class="cell_l"><p>자택번호</p></th>
+					<td colspan="3" class="cell_l">
+						<span class="input_phone">
+							<select title="자택번호 국번 선택" name="tel1">
+								<option value="">선택</option>
+								<option value="02">02</option><option value="031">031</option><option value="032">032</option><option value="033">033</option>
+                                <option value="041">041</option><option value="042">042</option><option value="043">043</option><option value="051">051</option>
+                                <option value="052">052</option><option value="053">053</option><option value="054">054</option><option value="055">055</option>
+                                <option value="061">061</option><option value="062">062</option><option value="063">063</option><option value="064">064</option>   
+                                <option value="010">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option>
+                                <option value="018">018</option><option value="019">019</option><option value="0130">0130</option>
+							</select>
+							<input type="text" class="txt" name="tel2" title="자택전화번호 앞자리" maxlength="4"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, IncSubInfoForm.tel3);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+							       required="required" />&nbsp;-&nbsp;
+							<input type="text" class="txt" name="tel3" title="자택전화번호 뒷자리" maxlength="4" 
+							       onkeypress="checkTypes(this, 'NUMB')"
+							       onkeydown="checkLenB(this, IncSubInfoForm.tel2);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                   />
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+					<td colspan="3" class="cell_l">
+						<span class="input_phone">
+							<select title="휴대전화번호 앞자리" name="mobile1">
+								<option value="">선택</option>
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+							</select>
+							<input type="text" class="txt" value="" title="휴대전화번호 가운데자리" name="mobile2"
+							       onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, IncSubInfoForm.mobile3);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+							       required="required" />&nbsp;-&nbsp;
+							<input type="text" class="txt" value="" title="휴대전화번호 뒷자리" name="mobile3"
+							       onkeypress="checkTypes(this, 'NUMB')"
+							       onkeydown="checkLenB(this, IncSubInfoForm.mobile2);" 
+							       onblur="checkTypesOnBlur(this, 'NUMB');" 
+                                   />
+						</span>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			</form>
+			<div class="btnset">
+				<p class="btnl t_desc04">A회원이 B회원에게 카드양도시, B회원의 소득공제 신청일자 전일까지 A회원에게 소득공제 혜택 적용</p>
+                <p class="btnr"><a href="javascript:submitIncSubInfo(IncSubInfoForm);" class="btn btn_blue"><span>등록</span></a></p>
+                <!-- <p class="btnr"><a href="javascript:setForm(IncSubInfoForm);" class="btn btn_blue"><span>setting</span></a></p> -->
+			</div>
+			<iframe name="IncSubInfoIf" width="0" height="0" frameborder="0" title="빈 프레임"></iframe>
+		</div>
+	</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>포인트백서비스 신청내역 확인 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common-hp-calendar.js"></script> 
+<script type="text/javascript" src="/js/common-hp.js"></script>
+</head>
+<body>
+<form name="form1" method="post">
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--div id="pop_s_header">
+		<h1><img src="/images/mh/pop_h1_pointback.png" alt="포인트백서비스 신청내역 확인" /></h1>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_pointback.png" alt="포인트백서비스 신청내역 확인" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content" style="margin-top:15px;">	
+		<table class="dtable02 dtable_inputfield" summary="포인트백서비스 신청내역 조회를 위한 신청기간 선택 화면입니다.">
+		<caption>포인트백서비스 신청내역 조회</caption>
+		<colgroup><col width="70" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>신청기간</p></th>
+				<td><p>
+					
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="btnset">
+			<p class="btnl t_desc04">최근 12개월간의 신청내역을 확인할 수 있습니다.</p>
+			<p class="btnr"><a href="javascript:pointBackSerch()" class="btn btn_blue"><span>조회</span></a></p>
+		</div>
+
+		<table class="dtable01 mt20" summary="신청일자, 시작일자, 종료일자로 구성된 포인트백서비스 신청내역">
+		<caption>포인트백서비스 신청내역</caption>
+		<colgroup><col width="65" /><col width="*" /><col width="65" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">신청일자</th>
+				<th scope="col">시작일자</th>
+				<th scope="col">종료일자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10 t_no">2012.02.03</td>
+				<td class="t_no">2012.02.02</td>
+				<td class="t_no">2012.03.03</td>
+			</tr>
+			<tr>
+				<td colspan="3">신청내역이 없습니다.</td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> <!-- SR내역 13.02.13 -->
+	</div>
+</div>
+</form>
+</body>
+</html>

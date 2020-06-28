@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cardloan_search01.png" alt="카드론이용내역조회를 알아보세요" /></h2>
+	<div class="content_block_inner">
+		
+		<table class="mv_dtable01" summary="대출번호, 대출상품, 대출금액, 대출일, 만기일, 대출개월, 이자율로 구성된 카드론이용내역을 확인할 수 있는 게시판입니다.">
+			<caption>
+			카드론이용내역
+			</caption>
+			<colgroup>
+			<col width="" />
+			<col width="" />
+			<col width="100" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			<col width="" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l1">대출번호</th>
+					<th scope="col" class="cell_l1">대출상품</th>
+					<th scope="col" class="cell_r10">대출금액</th>
+					<th scope="col">대출일</th>
+					<th scope="col">만기일</th>
+					<th scope="col" class="cell_r10">대출개월</th>
+					<th scope="col" class="cell_r10">이자율</th>
+				</tr>
+			</thead>
+			<tbody >
+					<tr>
+						<td class="cell_l1"><a href="#" title="상세내역 조회">-_-</a></td>
+						<td class="cell_l10">1</td>
+						<td class="cell_r10">1</td>
+						<td>1</td>
+						<td>1</td>
+						<td class="cell_r10">1</td>
+						<td class="cell_r10">1</td>
+					</tr>
+					<tr class="nodata">
+						<td colspan="7">이용 내역이 없습니다.</td>
+					</tr>
+			</tbody>
+		</table>
+		<div class="paginate">
+			<div class="paging">
+				<span class="btn btn_s_white" id="btnBeforeList" style="display:none;"><input type="button"  onclick="selectPrevNextList('P');" title="이전" value="이전" /></span>
+				<span class="btn btn_s_white" id="btnAfterList" style="display:none;"><input type="button"  onclick="selectPrevNextList('N');" title="다음" value="다음" /></span>
+			</div>
+		</div>
+		<p><span class="t_12">대출번호를 클릭 하시면 상세 내역을 조회 하실 수 있습니다</span></p>
+		<!-- btn --> 
+	</div>
+</div>
+
+<!-- 여기부터 시작 -->
+<div id="detailLayer" style="display:;">
+<div class="pop_l_wrap_alert">
+	<div class="pop_l_wrap" style="width:800px;height:600px;">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('detailLayer');" value="레이어닫기" title="카드론 상세 내역 레이어 닫기" />
+		<p class="pop_tit5"><img src="/images/fs/lpop_tit_cardloan01.gif" alt="카드론 상세 내역 조회입니다." /></p>
+		<div class="mv_loan01">
+			<dl>
+				<dt><img src="/images/fs/lpop_stit_cardloan01.gif" alt="카드론 상세 내역 조회" /></dt>
+				<dd id="vbDetailLoanInfo">
+					<table class="dtable02 dtable_inputfield" summary="대출상품, 신청금액, 대출일, 만기일, 대출기간, 이자율로 구성된 카드론상세내역을 확인할 수 있는 게시판입니다.">
+						<caption>카드론 상세 내역</caption>
+						<colgroup>
+						<col width="15%"/>
+						<col width="35%"/>
+						<col width="15%"/>
+						<col width="35%"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>대출상품</p></th>
+								<td id="GOODS_NAME"><p>거치후분할상</p></td>
+								<th scope="row"><p>신청금액</p></th>
+								<td id="P_LOAN_AMT"><p>3,000,000 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>대출일</p></th>
+								<td id="LOAN_DATE"><p>2012.06.22</p></td>
+								<th scope="row"><p>만기일</p></th>
+								<td id="EXPIR_DATE"><p>2013.06.22</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>대출기간</p></th>
+								<td id="P_LOAN_TERM"><p>12 개월</p></td>
+								<th scope="row"><p>이자율</p></th>
+								<td id="LOAN_RATE"><p>9.90 %</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+				<dt><img src="/images/fs/lpop_stit_cardloan02.gif" alt="결제 내역" /></dt>
+				<dd>
+					<table class="dtable01" summary="회차, 결제일, 원금, 이자, 연체금, 합계, 입금액, 입금부족액, 대출잔액, 최종입금일로 구성된 결제내역을 확인할 수 있는 게시판입니다.">
+						<caption>결제 내역</caption>
+						<colgroup>
+							<col width="30" />
+							<col width="70" />
+							<col width="80" />
+							<col width="80" />
+							<col width="80" />
+							<col width="100"/>
+							<col width="80"/>
+							<col width="80"/>
+							<col width="80"/>
+							<col width=""/>
+							<col width="20"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="align_center"><p>회차</p></th>
+								<th scope="col" class="align_center"><p>결제일</p></th>
+								<th scope="col" class="cell_c"><p>원금</p></th>
+								<th scope="col" class="cell_c"><p>이자</p></th>
+								<th scope="col" class="cell_c"><p>연체금</p></th>
+								<th scope="col" class="cell_c"><p>합계</p></th>
+								<th scope="col" class="cell_c"><p>입금액</p></th>
+								<th scope="col" class="cell_c"><p>입금부족액</p></th>
+								<th scope="col" class="cell_c"><p>대출잔액</p></th>
+								<th scope="col" class="cell_c"><p>최종입금일</p></th>
+								<th scope="col" class="cell_c"><p></p></th>
+							</tr>
+						</thead>
+					</table>
+					<div class="oflowy" tabindex="0">
+						<table class="dtable01" style="width:753px; table-layout:fixed;" summary="회차, 결제일, 원금, 이자, 연체금, 합계, 입금액, 입금부족액, 대출잔액, 최종입금일로 구성된 결제내역을 확인할 수 있는 게시판입니다.">
+							<caption>결제 내역 상세</caption>
+							<colgroup>
+							<col width="30" />
+							<col width="70" />
+							<col width="80" />
+							<col width="80" />
+							<col width="80" />
+							<col width="100"/>
+							<col width="80"/>
+							<col width="80"/>
+							<col width="80"/>
+							<col width=""/>
+							</colgroup>
+							<tbody id="dgBeforeGrid">
+								<tr>
+									<td class="align_center">1</td>
+									<td class="align_center">12.07.22</td>
+									<td class="cell_c">0원</td>
+									<td class="cell_c">22,783원</td>
+									<td class="cell_c">0원</td>
+									<td class="cell_c">22,783원</td>
+									<td class="cell_c">22,783원</td>
+									<td class="cell_c">0원</td>
+									<td class="cell_c">3,000,000원</td>
+									<td class="cell_c">12.07.20</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</dd>
+			</dl>
+			<p class="btn mt10"> <a href="#" class="btn btn_blue" onclick="closeLayer('detailLayer');"><span>확인</span></a> </p>
+		</div>
+	</div>
+</div>
+</div>
+<!--// 여기까지 끝 -->
+
+<div id="msgLayer" style="display:;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+<!--  신용회복지원 아닌 것 -->
+<div id="msgLayer2" style="display:none;" >
+<div class="pop_l_wrap" style="width:450px;height:185px;">
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">당사 대표전화 1588-8700번으로 확인하시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer2');goFirstTab();" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+
+<!--  신용회복지원 -->
+<div id="msgLayer3" style="display:none;" >
+<div class="pop_l_wrap" style="width:450px;height:185px;">
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">신용회복지원을 신청하셨습니다.<br/>
+결제금액 등에 대한 문의는 신용회복지원위원회<br/>
+(6362-2000)으로 하시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer3');goFirstTab();" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

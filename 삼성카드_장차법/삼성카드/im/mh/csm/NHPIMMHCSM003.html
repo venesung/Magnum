@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li class="on"><a href="javascript:goMyAccountInfoMain()">결제일 변경</a></li>
+                                <li><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="top_step_setcard step02_on">
+						<ol class="none">
+							<li>변경 결제일 선택</li>
+							<li><abbr>현재단계</abbr> 변경시 결제스케줄 확인</li>
+							<li>결제일 변경 완료</li>
+						</ol>
+					</div>
+
+					<h2><img src="/images/mh/h2_card_settlement_schedule01.png" alt="결제일 변경시의 결제스케쥴입니다" /></h2>
+					
+					<div class="content_block_inner">
+						<div class="settlement_info">
+							<img src="/images/mh/txt_alternative_setday.png" alt="기존 결제일" /><span class="ico_no ico_no_boldgray00"><em>0</em></span><span class="ico_no ico_no_boldgray02"><em>2</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+							<span class="arr"><img src="/images/mh/img_arrow_right.png" alt="→" /></span>
+							<img src="/images/mh/txt_change_setday.png" alt="변경 결제일" /><span class="ico_no ico_no_boldorg01"><em>1</em></span><span class="ico_no ico_no_boldorg03"><em>3</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+						</div>
+						
+						<table class="dtable02 mt15" summary="결제일 변경시의 결제스케줄(현금서비스, 신용판내 자유결제 구매, 카드론, 생활비 재테크 서비스)을 확인하실 수 있습니다.">
+						<caption>결제일 재테크 서비스 확인 게시판</caption>
+						<colgroup><col width="100" /><col width="100" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="rowgroup" rowspan="6" class="riline"><p>카드<br /><span class="t_desc03">카드론포함</span></p></th>
+								<th scope="row" rowspan="2" class="riline"><p>현금서비스</p></th>
+								<td><p>0일부터 0일까지 접수분은 0일 청구</p></td>
+							</tr>
+							<tr>
+								<td><p>0일부터 0일까지 접수분은 0일 청구</p></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2" class="riline"><p>신용판매<br />자유결제 구매</p></th>
+								<td><p>0일부터 0일까지 접수분은  0일 청구</p></td>
+							</tr>
+							<tr>
+								<td><p>0일부터 0일까지 접수분은  0일 청구</p></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2" class="riline"><p>카드론</p></th>
+								<td><p>0일부터 0일까지 접수분은  0일 청구</p></td>
+							</tr>
+							<tr>
+								<td><p>0일부터 0일까지 접수분은 0일 청구</p></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2" colspan="2" class="riline"><p>생활비 재테크 서비스</p></th>
+								<td><p>처음 결제일 충전(옮겨놓기) 일자는 0일 청구 </p></td>
+							</tr>
+							<tr>
+								<td><p>다음 결제일 충전(옮겨놓기) 일자는0일 청구</p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+							<div class="settlement_info mt30">
+							
+						<img src="/images/mh/txt_alternative_setday.png" alt="기존 결제일" /><span class="ico_no ico_no_boldgray01"><em>1</em></span><span class="ico_no ico_no_boldgray02"><em>2</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+								
+							<span class="arr"><img src="/images/mh/img_arrow_right.png" alt="→" /></span>
+						
+						<img src="/images/mh/txt_change_setday.png" alt="변경 결제일" /><span class="ico_no ico_no_boldorg03"><em>3</em></span><span class="ico_no ico_no_boldorg04"><em>4</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+							
+							
+							</div>
+
+							<table class="dtable02 mt15" summary="아하론패스의 결제일을 볼 수 있는 게시판입니다.">
+							<caption>0 결제일 확인</caption>
+							<colgroup><col width="200" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="riline"><p>0</p></th><!-- 100312 -->
+									<td><p>변경 결제일로 즉시 적용됩니다.</p></td>
+								</tr>
+							</tbody>
+							</table>
+							<div class="settlement_info mt30">
+							
+						<img src="/images/mh/txt_alternative_setday.png" alt="기존 결제일" /><span class="ico_no ico_no_boldgray00"><em>0</em></span><span class="ico_no ico_no_boldgray01"><em>1</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+								
+							<span class="arr"><img src="/images/mh/img_arrow_right.png" alt="→" /></span>
+						
+						<img src="/images/mh/txt_change_setday.png" alt="변경 결제일" /><span class="ico_no ico_no_boldorg05"><em>5</em></span><span class="ico_no ico_no_boldorg07"><em>7</em></span><span><img src="/images/mh/txt_set_day.png" alt="일" /></span>
+							
+							</div>
+
+							<table class="dtable02 mt15" summary="아하론패스의 결제일을 볼 수 있는 게시판입니다.">
+							<caption>0 결제일 확인</caption>
+							<colgroup><col width="200" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" rowspan="2" class="riline"><p>0</p></th>
+									<td><p>변경 결제일로 즉시 적용됩니다.</p></td>
+								</tr>
+								<tr>
+									<td><p>-</p></td>
+								</tr>
+							</tbody>
+							</table>
+							
+						<div class="btnset"><p class="btnl t_desc04"></p></div>
+					</div>
+				</div>
+				
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlement_schedule02.png" alt="기타할부금융 결제일 변경시 결제스케쥴입니다" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01" summary="대출번호,현재결제일,변경결제일로 구성된 기타할부금융 결제일 변경시 결제스케쥴을 확인할 수 있는 게시판입니다.">
+                        <caption>기타할부금융 결제일 변경시 결제스케쥴</caption>
+						<colgroup><col width="20%" /><col width="20%" /><col width="22%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">구분</th>
+								<th scope="col">대출번호</th>
+								<th scope="col">현재결제일</th>
+								<th scope="col">변경결제일</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span>일</td>
+								<td><span class="t_no">0</span>일</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+				</div>
+				<!-- btn -->
+					<div class="btnset">
+						<p class="btnr">
+							<a href="javascript:goNext();" class="btn btn_blue"><span>변경</span></a>
+							<a href="javascript:goGetSettledays();" class="btn btn_white"><span>취소</span></a>
+						</p>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

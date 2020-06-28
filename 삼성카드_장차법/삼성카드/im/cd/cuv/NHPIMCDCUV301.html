@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_uselist_history.png" alt="지난 카드이용내역을 조회하실 수 있습니다." /></h1>
+</div>
+<div class="top_visual" style="display:none">
+    <h1><img src="/images/mh/h1_uselist01.png" alt="승인 금액의 합계는" /><span class="ico_no ico_no_thingray03"><em>3</em></span><span class="ico_no ico_no_thingray_comma"><em>,</em></span><span class="ico_no ico_no_thingray05"><em>5</em></span><span class="ico_no ico_no_thingray04"><em>4</em></span><span class="ico_no ico_no_thingray01"><em>1</em></span><span class="ico_no ico_no_thingray_comma"><em>,</em></span><span class="ico_no ico_no_thingray00"><em>0</em></span><span class="ico_no ico_no_thingray00"><em>0</em></span><span class="ico_no ico_no_thingray00"><em>0</em></span><img src="/images/mh/h1_uselist02.png" alt="원입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div id="layerFrm" onpropertychange="selectbox_hidden('layerFrm');" class="content_block content_block_m0 clfix" >	<!-- 100126 -->
+	<h2><img src="/images/mh/h2_uselist01.png" alt="과거 카드이용내역조회을 조회하세요" /></h2>
+	<div class="content_block_inner">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+                <p><a href="javascript:set_Cd_dc('*');" class="default" onclick="return false;">전체</a></p>
+			<div class="childlayer">
+				<ul>
+                    <li><a href="javascript:set_Cd_dc('*');">전체</a></li>
+                    <li><a href="javascript:set_Cd_dc('1');">본인카드</a></li>
+                    <li><a href="javascript:set_Cd_dc('2');">가족카드</a></li>
+                    <li><a href="javascript:set_Cd_dc('3');">법인개별</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="selectbox_r_txt">(전체, 본인카드, 가족카드, 법인개별)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+
+		<div class="line_lgray">&nbsp;</div>
+		
+        <ol class="list_no01">
+	        <li><p>전월 포함 과거 2년이내 이용내역을 조회하실 수 있습니다.</p></li>
+	        <li><p>최근 6개월 이내 사용하신 승인내역은 <a href="javascript:goTabPage('NHPIMCDCUV101');" class="a_point">카드이용내역</a> 화면에서 조회하실수 있습니다.</p></li>
+	        <li><p>월별 이용내역은 매월 10일 경 업데이트 됩니다.</p></li>
+        </ol>
+     
+        <div class="line_lgray">&nbsp;</div>
+		<table class="dtable02 dtable_inputfield" summary="과거 카드이용내역조회를 위한 카드구분, 이용구분, 기간 선택하는 게시판입니다.">
+		<caption>과거 카드이용내역조회</caption>
+		<colgroup><col width="105" /><col width="*" /></colgroup>
+
+		<tbody>
+			<!-- loop -->
+			
+			<tr>
+				<th scope="row"><p>카드구분</p></th>
+				<td><p>				
+					<label for="lebel_type01" class="mr10"><input type="radio" id="lebel_type01" class="rdo" name="edw_cd_kndc"  value="*"  title="전체" /> 전체</label>
+					<label for="lebel_type02" class="mr10"><input type="radio" id="lebel_type02" class="rdo" name="edw_cd_kndc"  value="01" title="신용카드" /> 신용카드</label>
+					<label for="lebel_type03" class="mr10"><input type="radio" id="lebel_type03" class="rdo" name="edw_cd_kndc"  value="02" title="체크카드" /> 체크카드</label>
+					<label for="lebel_type04" class="mr10"><input type="radio" id="lebel_type04" class="rdo" name="edw_cd_kndc"  value="04" title="올앳카드" /> 올앳카드</label>
+					<label for="lebel_type05" class="mr10"><input type="radio" id="lebel_type05" class="rdo" name="edw_cd_kndc"  value="05" title="기명식기프트카드" /> 기명식기프트카드</label>
+					<label for="lebel_type06" class="mr10"><input type="radio" id="lebel_type06" class="rdo" name="edw_cd_kndc"  value="12" title="MSC카드" /> MSC카드</label>
+				</p></td>
+			</tr>			
+
+			<tr>
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="lebel_use01" class="mr10"><input type="radio" class="rdo" id="lebel_use01" name="edw_sl_pd_c"  value="*" title="전체" /> 전체</label>
+					<label for="lebel_use02" class="mr10"><input type="radio" class="rdo" id="lebel_use02" name="edw_sl_pd_c"  value="1" title="일시불"  /> 일시불</label>
+					<label for="lebel_use03" class="mr10"><input type="radio" class="rdo" id="lebel_use03" name="edw_sl_pd_c"  value="2" title="할부" /> 할부</label>
+					<label for="lebel_use04" class="mr10"><input type="radio" class="rdo" id="lebel_use04" name="edw_sl_pd_c"  value="3" title="현금서비스" /> 현금서비스</label>
+					<label for="lebel_use05" class="mr10"><input type="radio" class="rdo" id="lebel_use05" name="edw_sl_pd_c"  value="4" title="대출" /> 대출</label>
+				</p></td>
+			</tr> 
+
+			<tr>
+				<th scope="row"><p>이용기간</p></th>
+				<td id="id_cal_wrap"><p>
+                    <a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+                    <a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+                    <a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+                    <a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+                    <a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3" style="width:30px">3개월</span></a>
+                    <a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6" style="width:30px">6개월</span></a>
+                    <a href="javascript:srchDate(7);" class="btn btn_s_white" id="btnYear1"><span id="dateYear" style="width:20px">1년</span></a>
+
+					<span class="reset_date ml20">
+					<br />
+					<a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>
+					</span></p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+			<a href="javascript:before_cUse_search();" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+	</div>
+</div>	
+
+<!-- content_block 100426 -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_uselist_history02.png" alt="지난 카드이용내역입니다" /></h2>
+		<div class="d_easy">
+		<table class="dtable02 dtable_expand" summary="총 이용건수, 승인금액, 일시불, 할부, 현금서비스, 대출/마이너스론 합계를 확인할 수 있는 게시판입니다">
+		<caption>지난카드이용내역 합계</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>이용내역 합계</p></th>
+				<td class="sum">
+				<p>
+					<em class="first_none">총 이용건수<span class="t_no"> 0</span>건</em>
+					<em>합계금액 <span class="t_no">0</span>원</em>
+					<em>일시불 <span class="t_no">0</span>원</em>
+					<em>할부  <span class="t_no">0</span>원</em><br />
+					<em class="first_none">현금서비스  <span class="t_no">0</span>원</em>
+					<em>대출/마이너스론  <span class="t_no">0</span>원</em>
+				</p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+        <br />
+		<table class="dtable01 dtable01_bill mt20" summary="구분, 상품, 개월수, 매출일, 접수일, 금액, 카드번호, 카드구분, 가맹점명, 가맹점번호, 사업자번호로 구성된 지난카드이용내역을 보여주는 게시판입니다">
+		<caption>지난카드이용내역</caption>
+		<colgroup><col width="7%" /><col width="5%" /><col width="5%" /><col width="7%" /><col width="7%" /><col width="11%" /><col width="17%" /><col width="7%" /><col width="15%" /><col width="8%" /><col width="10%" /></colgroup>
+		<thead>	
+			<tr>
+	            <th scope='col' class="cell_l10a">구분</th>
+	            <th scope='col'>상품</th>
+	            <th scope='col'>개월수</th>
+	            <th scope='col'>매출일</th>
+	            <th scope='col'>접수일</th>
+	            <th scope='col' class="cell_r10">금액</th>
+	            <th scope='col'>카드번호</th>
+	            <th scope='col'>카드구분</th>
+	            <th scope='col' class="cell_l10">가맹점명</th>
+	            <th scope='col'>가맹점번호</th>
+	            <th scope='col'>사업자번호</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+		        <td class="cell_l10a">0</td>
+		        <td class="t_no">0</td>
+		        <td class="t_no">0</td>
+		        <td class="t_no">0</td>
+		        <td class="t_no">0</td>
+		        <td class="cell_r10"><span class="p_nowrap">0</span> 원</td>
+		        <td class="cell_r10"><span class="p_nowrap">0</span></td>
+		        <td>0</td>
+		        <td  class="cell_l10"><span class="nobreak_nolink w120">0</span></td>
+		        <td><span class="p_nowrap">0</span></td>
+		        <td><span class="p_nowrap">0</span></td>			
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- paginate -->
+		<div class="paginate">	${_page}  </div>
+		<!-- btn --> 
+		<div class="btnset">
+			<p class="btnr">
+				<a href="" name="excelATag" onClick="excelDown();return false;"  class="btn btn_white"><span>다운로드</span></a>
+				<a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+			</p>
+			<iframe name="ifrm" frameborder="0" width="0" height="0" title="빈 프레임"></iframe>
+		</div>
+
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+
+

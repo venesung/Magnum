@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="tabbrowse_content">
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usecard_cancellist01.png" alt="국내 이용카드의 승인취소 내역입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 "><!-- 100126 -->
+	<h2><img src="/images/mh/h2_usecard_cancellist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+			<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+			<div class="childlayer">
+				<ul>
+					<li><a href="#">개인카드</a></li>
+					<li><a href="#">법인카드</a></li>
+					<li><a href="#">가족카드</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="selectbox_r_txt">(개인카드, 법인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+
+		<div class="line_lgray">&nbsp;</div>
+
+		<ol class="list_no01">
+			<li><p>최근 2개월 간의 승인취소내역을 확인할 수 있습니다.(승인일자 기준)</p></li>
+			<li><p>해외승인금액, 현금서비스, 대출서비스는 제외되어 있습니다.</p></li>
+			<li><p>취소는 가맹점의 매출접수 여부에 따라 승인취소와 매출취소로 구분됩니다.</p></li>
+			<li><p>승인취소는 요청 후 즉시, 매출취소는 가맹점의 취소 접수 시에 조회 가능하며,<br />각각 승인취소와 매출취소 화면에서 조회하실 수 있습니다.</p></li>
+		</ol>
+        <p class="btnr"><a href="#" class="btn_link">승인취소 처리절차 안내</a></p>
+
+		<div class="line_lgray">&nbsp;</div>
+
+		<table class="dtable02 dtable_inputfield" summary="카드 이용내역을 지역, 구분(이용, 조회), 기간 별로 조회 하실 수 있는 게시판입니다.">
+		<caption>카드 이용내역 조회 게시판</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>이용지역</p></th>
+				<td><p>
+					<label for="label_region01" class="mr10"><input type="radio" class="rdo" id="label_region01" name="id_region" title="국내" /> 국내</label>
+					<label for="label_region02"><input type="radio" class="rdo" id="label_region02" name="id_region" title="해외" /> 해외</label>
+				</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="label_use01" class="mr10"><input type="radio" class="rdo" id="label_use01" name="id_use" title="일시불+할부" /> 일시불+할부</label>
+					<label for="label_use02" class="mr10"><input type="radio" class="rdo" id="label_use02" name="id_use" title="할부" /> 할부</label>
+					<label for="label_use03" class="mr10"><input type="radio" class="rdo" id="label_use03" name="id_use" title="현금서비스" /> 현금서비스</label>
+					<label for="label_use04" class="mr10"><input type="radio" class="rdo" id="label_use04" name="id_use" title="카드이용취소내역" /> 카드이용취소내역</label>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>조회구분</p></th>
+				<td><p>
+					<label for="label_cancel01" class="mr10"><input type="radio" class="rdo" id="label_cancel01" name="id_cancel" title="승인취소" /> 승인취소</label>
+					<label for="label_cancel02" class="mr10"><input type="radio" class="rdo" id="label_cancel02" name="id_cancel" title="매출취소" /> 매출취소</label>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사용자</p></th>
+				<td><p>
+					<select style="width:100px" title="사용자 선택">
+						<option>전체</option>
+					</select>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>이용기간</p></th>
+				<td><p>
+                    <a href="#" class="btn btn_s_white"><span>당일</span></a><a href="#" class="btn  btn_s_white"><span>1주일</span></a><a href="#" class="btn  btn_s_gray"><span>1개월</span></a><a href="#" class="btn  btn_s_white"><span>2개월</span></a><span class="reset_date ml20">날짜지정
+                    <input type="text" class="txt" value="2009.10.12" title="시작하는날짜" /> <a href="#" title="이용기간 시작일 달력"><img src="/images/common/ico_calendar.png" alt="달력" /></a>&nbsp;~&nbsp;<input type="text" class="txt" value="2009.11.12" title="끝나는날짜" /> <a href="#" title="이용기간 종료일 달력"><img src="/images/common/ico_calendar.png" alt="달력" /></a></span>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+			<a href="#" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_usecard_cancellist02.png" alt="국내 카드이용취소(승인취소)내역입니다." /></h2>
+	<div class="content_block_inner">
+
+		<table class="dtable01 dtable01_bill" summary="조회하신 국내 카드이용취소(승인취소) 내역을 확인할 수 있는 게시판입니다.">
+		<caption>국내 카드이용취소(승인취소)내역 게시판</caption>
+		<colgroup><col width="*" /><col width="62" /><col width="82" /><col width="92" /><col width="52" /><col width="62" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">카드명</th>
+				<th scope="col">이용자</th>
+				<th scope="col">이용가맹점</th>
+				<th scope="col" class="cell_r10">취소금액</th>
+				<th scope="col">승인일자</th>
+				<th scope="col">승인번호</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">CJ제엔미..</td>
+				<td>본인</td>
+				<td>다화</td>
+				<td class="cell_r10"><span class="t_no">12,700</span> 원</td>
+				<td class="t_no">09.07.22</td>
+				<td class="t_no">00000000</td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<td class="cell_l10">CJ제엔미..</td>
+				<td>본인</td>
+				<td>다화</td>
+				<td class="cell_r10"><span class="t_no">12,700</span> 원</td>
+				<td class="t_no">09.07.22</td>
+				<td class="t_no">00000000</td>
+			</tr>
+			<tr>
+				<td class="cell_l10">CJ제엔미..</td>
+				<td>본인</td>
+				<td>다화</td>
+				<td class="cell_r10"><span class="t_no">12,700</span> 원</td>
+				<td class="t_no">09.07.22</td>
+				<td class="t_no">00000000</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnset">
+			<p class="btnr">
+                <a href="#" class="btn btn_white"><span>다운로드</span></a>
+				<span class="btn btn_white"><input type="button" value="인쇄" title="인쇄" /></span>
+			</p>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

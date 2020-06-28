@@ -1,0 +1,107 @@
+<%@ page import="java.util.*" %>
+<%@ page import="com.scard.hp.common.util.HpCommonUtil" %>
+<%@ page import="com.scard.hpad.gd.cb.vo.NHPADGDCB0650VO" %>
+<%@ page import="com.scard.hp.im.ss.sbc.vo.NHPIMSSSBC008VO" %>
+<%@ page import="com.scard.hp.im.ss.sbc.vo.NHPIMSSSBC002VO" %>
+<%
+	String boardName	= "";
+	String telNo		= "";
+	String addressArea	= "";
+	String rate			= "";
+	String desc			= "";
+	
+	String bcYn = (String)request.getAttribute("bcYn");
+	
+	if(bcYn.equals("Y")){
+		NHPIMSSSBC002VO  bcVO = new  NHPIMSSSBC002VO();
+	
+		ArrayList<NHPIMSSSBC002VO> bcList = (ArrayList<NHPIMSSSBC002VO>)request.getAttribute("bcList");
+	
+		if(bcList.size()>0){
+			bcVO = bcList.get(0);
+			boardName	= bcVO.getChainName();
+			telNo		= bcVO.getTelno();
+			addressArea	= bcVO.getAddressArea();
+			rate		= bcVO.getRate();
+			desc		= bcVO.getRate();
+		}
+	}
+	else{
+		// 기본정보
+		NHPADGDCB0650VO chainInfo = (NHPADGDCB0650VO)request.getAttribute("chainInfo");
+		// 혜택정보
+		ArrayList<NHPIMSSSBC008VO> summaryList = (ArrayList<NHPIMSSSBC008VO>)request.getAttribute("summaryList");
+
+		boardName	= chainInfo.getBoardName();
+		if(!"".equals(chainInfo.getTelno())){
+			telNo	= HpCommonUtil.telNo(chainInfo.getTelno());
+		}
+		else{
+			telNo	= chainInfo.getTelno();
+		}
+		addressArea	= chainInfo.getAddressArea();
+
+		int i = 0;
+		if(summaryList.size() > 0){
+			for(NHPIMSSSBC008VO vo008 : summaryList){
+				rate = vo008.getApplyDescription();
+				desc = rate;
+				if(i < summaryList.size()-1){
+					rate += "\\n";
+					desc += "<br>";
+				}
+				i++;
+			}
+		}
+	}
+
+	String msg = "상호명:";
+	msg += ""+boardName+", ";
+	msg += "연락처:";
+	msg += ""+telNo+", ";
+	msg += "주소:";
+	msg += ""+addressArea+", ";
+	msg += "혜택:";
+	msg += ""+rate+"";
+%>
+<%
+	String linkChainNo = (String)request.getAttribute("LINK_CHAIN_NO");
+	String linkBcYn = (String)request.getAttribute("LINK_BC_YN");
+	String linkKeychaincode = (String)request.getAttribute("LINK_KEYCHAINCODE");
+	String linkUrl = "";
+
+	if(linkBcYn.equals("Y")){
+		linkUrl = "/index.do?menuId=NHPIMSSSBC001M009";
+	}
+	else{
+		if(linkChainNo == null || "".equals(linkChainNo)){
+			linkUrl = "/index.do";
+		}
+		else{
+			linkUrl = "/index.do?menuId=NHPIMSSSBC001M005";
+		}
+	}
+
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="삼성카드 우대혜택 가맹점" />
+<meta name="description" content="<%=msg %>" />
+<title>삼성카드 우대혜택 가맹점 - <%=boardName %></title>
+</head>
+
+	<frameset rows="*,0" frameborder="NO" border="0" framespacing="0"> 
+		<frame name="CHAIN_INFO_FRAME" src="<%=linkUrl %>" scrolling="YES" src="" frameborder="NO" title="본문 화면">
+		<frame src="UntitledFrame-1" marginwidth="0" marginheight="0" name="control" frameborder="NO" onload="" title="빈프레임">
+	<frame src="UntitledFrame-2"></frameset>
+
+<noframes> 
+
+<body bgcolor="#FFFFFF">
+</body>
+
+</noframes>
+</html>
+

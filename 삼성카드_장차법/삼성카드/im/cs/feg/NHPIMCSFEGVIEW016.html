@@ -1,0 +1,53 @@
+
+<%/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCSFEGVIEW001.jsp
+ * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+ * Created on 2010.03.31
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%
+String rootHistory = RequestUtil.getStringParameter(request, "rootHistory", "기타/사용중/");
+%>
+
+	<title>해외에서 사용 중 발생한 문제 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	
+		<!-- <script type="text/javascript" src="/js/common-hp-ajax.js"></script> -->
+	<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+</head>
+<body>
+	<div id="wrap">
+			<!-- content_block -->
+				
+								<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_foreign_faqtype02.png" alt="위 항목에 대한 구체적인 문제는 무엇입니까?" /></h2>
+					<div class="content_block_inner pos_rel">
+						<div class="tb_exp clfix">
+							<span class="fl_left"><img src="/images/cs/txt_qa_foreign_16131.png" alt="해외에서 사용 중 발생한 문제를 아래에서 선택해주세요" /></span>
+							
+						</div>
+						<div class="mt10"><img src="/images/cs/img_qa_foreign_16131.png" usemap="#foreignfaq_16131" alt="" />
+							<map name="foreignfaq_16131" id="foreignfaq_16131">
+								<area shape="rect" coords="428,6,547,26" id="<%=NHPIMCSAUQFLAGVO.REG_ETC_PAGE%>" onclick="goPage(this,1)" alt="<%=rootHistory %>실제 사용일보다 늦게 청구됨 - 영수증은 보관하고 있음" href="#"/>
+								<area shape="rect" coords="427,44,570,63" id="<%=NHPIMCSAUQFLAGVO.REG_ETC_PAGE%>" onclick="goPage(this,1)" alt="<%=rootHistory %>실제 사용일보다 늦게 청구됨 - 영수증은 보관하고 있지 않음" href="#"/>
+								<area shape="rect" coords="427,106,546,125" id="<%=NHPIMCSAUQFLAGVO.REG_ETC_PAGE%>" onclick="goPage(this,1)" alt="<%=rootHistory %>사용 금액과 다르게 청구됨 - 영수증은 보관하고 있음" href="#"/>
+								<area shape="rect" coords="429,145,570,162" id="<%=NHPIMCSAUQFLAGVO.REG_ETC_PAGE%>" onclick="goPage(this,1)" alt="<%=rootHistory %>사용 금액과 다르게 청구됨 - 영수증은 보관하고 있지 않음" href="#"/>
+							</map>
+					  </div>
+						<div class="line_lgray">&nbsp;</div>
+						
+					</div>
+				</div>
+	</div>
+</body>
+</html>			
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

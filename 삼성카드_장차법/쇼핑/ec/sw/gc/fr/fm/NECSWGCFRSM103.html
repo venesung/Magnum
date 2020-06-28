@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>서비스 신청 - 삼성카드 쇼핑</title>
+<base href="http://devgiftmall.samsungcard.com:10080" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />
+<script type="text/javascript" src="/js/ec/sw/gc/common.js"></script> 
+<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/quick.js"></script>
+<script type="text/javascript" src="/js/modal.js"></script>
+</head>
+<body>
+
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<link rel="stylesheet" type="text/css" href="/css/gp/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping_giftmall.css" />
+
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/search.js"></script>
+<script type="text/javascript" src="/js/ec/common/embedswf.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<h1 class="conts_hidden">삼성카드 LifeStyle Service 쇼핑</h1>
+    <div id="head">/WEB-INF/jsp/ec/sw/gc/fr/common/include/top.jsp</div>
+<!--// 공통 상단 끝 -->
+	
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+<!-- 공통 좌측 시작 -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<div id="conLeft">/WEB-INF/jsp/ec/sw/gc/fr/common/include/gcLnb.jsp</div>
+<!--// 공통 좌측 끝 -->
+
+			<div id="conRight" class="internet_user">
+
+				<!-- location -->
+				<div class="location">
+					<a href="http://sam.samsungcard.com/samIndex.do">HOME</a>
+					<span>&gt;</span>
+					<a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain">SHOPPING</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/gm/index.do?method=selectGMMain">기프트몰</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/sw/gc/fr/index.do?method=selectMainForm">Gift카드</a>
+					<span>&gt;</span>
+					잔액알림문자서비스
+					<span>&gt;</span>
+					<span class="end">서비스신청</span>
+				</div>
+				<!-- //location -->
+
+				<div class="h2_wrap">
+					<h2><img src="/images/sw/gc/h2_service_apply.png" alt="서비스 신청" /></h2>
+				</div>
+				
+				<!--content-->	
+				<div class="giftcard_cont">
+					<ul class="list_line mt50 mb40">
+						<li>삼성카드(신용/체크) 회원은 <span class="t_org">카드 등록을 통해 본인인증</span>을 하실 수 있으며 삼성카드(신용/체크) 회원이 아닌 경우<br/> 아래 실명인증 절차를 통해 인증을 받으셔야 이용하실 수 있습니다. </li>
+						<li>자세한 내용은 삼성카드 대표전화 <span class="t_org">1588-8700</span>로 확인하세요.</li>
+					</ul>
+
+					<iframe name = "hiddenframe" style="display:none" title="빈 아이프레임" frameborder="0"></iframe>
+
+					
+					<div class="overflow mb50">
+						<!-- 삼성카드 소지자 등록 -->
+
+						<div class="regi">
+							<h3><img src="/images/sw/gc/h3_regi_apply02.gif" alt="삼성카드(신용/체크) 소지자 등록" /></h3>
+	
+							<table cellpadding="0" cellspacing="0" summary="삼성카드(신용/체크) 소지자 등록테이블">
+								<colgroup>
+									<col width="85" /><col />
+								</colgroup>
+								<tr>
+									<th scope="row">카드번호입력</th>
+									<td>
+										<p class="mb5">
+											<span><label for="samsung_card"><input type="radio" id="samsung_card" name="cardGubun" value="C1" checked="checked" />삼성카드</label></span>
+											<span><label for="amex_card"><input type="radio" id="amex_card" name="cardGubun" value="C2" />아멕스카드</label></span>
+										</p>
+									<!--삼성카드 선택했을 경우-->
+                                        <span class="bg_input" id="SCARD"><input type="password" name="sCardNo1" title="카드번호 첫번째 4자리 입력" maxlength="4" class="card_num" /><em>&nbsp;</em></span>
+										<em id="SCARD">-</em>
+                                        <span class="bg_input" id="SCARD"><input type="password" name="sCardNo2" title="카드번호 두번째 4자리 입력" maxlength="4"  class="card_num" /><em>&nbsp;</em></span>
+										<em id="SCARD">-</em>
+                                        <span class="bg_input" id="SCARD"><input type="password" name="sCardNo3" title="카드번호 세번째 4자리 입력" maxlength="4"  class="card_num" /><em>&nbsp;</em></span>
+										<em id="SCARD">-</em>
+                                        <span class="bg_input" id="SCARD"><input type="password" name="sCardNo4" title="카드번호 네번째 4자리 입력" maxlength="4"  class="card_num" /><em>&nbsp;</em></span>
+									<!--//삼성카드 선택했을 경우-->
+									<!--아멕스카드 선택했을 경우-->
+                                        <span class="bg_input" style="display:none" id="ACARD"><input type="password" name="aCardNo1" title="카드번호 첫번째 4자리 입력" maxlength="4" class="card_num" /><em>&nbsp;</em></span>
+										<em style="display:none" id="ACARD">-</em>
+                                        <span class="bg_input" style="display:none" id="ACARD"><input type="password" name="aCardNo2" title="카드번호 첫번째 5자리 입력" maxlength="6"  class="card_num02" /><em>&nbsp;</em></span>
+										<em style="display:none" id="ACARD">-</em>
+                                        <span class="bg_input" style="display:none" id="ACARD"><input type="password" name="aCardNo3" title="카드번호 첫번째 6자리 입력" maxlength="5" class="card_num03" /><em>&nbsp;</em></span>
+									<!--//아멕스카드 선택했을 경우-->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">카드유효기간</th>
+									<td>
+										<select name="periodMonth" title="카드유효기간 월">
+											<option>12</option>
+										</select>&nbsp;월&nbsp;
+										<select name="periodYear" title="카드유효기간 년">
+											<option>2009</option>
+										</select>&nbsp; 년 &nbsp;
+									</td>
+								</tr>
+	
+								<tr>
+									<th scope="row">주민등록번호</th>
+									<td>
+                                        <span class="bg_input"><input type="password" name="cIdenNo1" title="주민등록번호 앞 6자리 입력" maxlength="6" class="cerfi_num" /><em>&nbsp;</em></span>
+										<em>-</em>
+                                        <span class="bg_input"><input type="password" name="cIdenNo2" title="주민등록번호 뒤 7자리 입력" maxlength="7" class="cerfi_num" /><em>&nbsp;</em></span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">비밀번호 </th>
+									<td>
+									<span class="bg_input"><input type="password" name="password" title="비밀번호 파 두자리입력" maxlength="2" style="width:51px;" /><em>&nbsp;</em></span>
+									<em>**</em>
+									<span class="t_gray">앞 두자리만 입력</span>
+									</td>
+								</tr>
+								
+								<!--  키보드 암호 시작 -->
+								<tr>
+									<th> </th>
+									<td align="right">
+										<span id="usafeon_sCardNo1|sCardNo2|sCardNo3|sCardNo4|cIdenNo1|cIdenNo2|password"></span><!-- 110331 키패드 수정// -->
+										<span id="usafeon_aCardNo1|aCardNo2|aCardNo3|cIdenNo1|cIdenNo2|password" style="display:none"></span><!-- 110331 키패드 수정// -->
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										
+									</td>
+								</tr>
+								<!--  키보드 암호 끝 -->
+							</table>
+	
+							<p class="t_gray">삼성카드 외에 타 신용카드로는 인증이 불가하며, 본인확인 절차이므로 비용이 발생하지 않습니다.</p>
+							<div class="al_center" id="cardBtn">
+                                <a href="javascript:cardSubmit();"><img src="/images/sp/common/btn_confirm02.gif" alt="확인" /></a>
+							</div>
+	
+						</div>				
+						<!-- 삼성카드 소지자 등록 끝 -->
+						<!-- 삼성카드 비소지자 등록시작 -->
+						
+						<div class="regi last">
+							<h3><img src="/images/sw/gc/h3_regi_apply03.gif" alt="삼성카드(신용/체크) 비소지자 등록" /></h3>
+							<table cellpadding="0" cellspacing="0" summary="이름,주민등록번호로 구성된 삼성카드(신용/체크) 비소지자 등록테이블">
+								<caption>삼성카드(신용/체크) 비소지자 등록</caption>
+								<colgroup>
+									<col width="85" /><col />
+								</colgroup>
+								<tr>
+									<th scope="row">이름</th>
+                                    <td><span class="bg_input"><input type="text" name="authName" title="이름입력" style="width:224px;" /><em>&nbsp;</em></span></td>
+								</tr>
+								<tr>
+									<th scope="row">주민등록번호 </th>
+									<td>
+                                    <span class="bg_input"><input type="password" name="authIdenNo1" title="주민등록번호 앞 6자리" maxlength="6" class="cerfi_num" /><em>&nbsp;</em></span>
+									<em>-</em>
+									<span class="bg_input"><input type="password" name="authIdenNo2" title="주민등록번호 뒤 7자리" maxlength="7" class="cerfi_num" /><em>&nbsp;</em></span>
+									</td>
+								</tr>
+							</table>
+	
+							<p class="t_gray">공인인증서를 통한 실명인증 후 이용이 가능합니다.</p>
+							<div class="al_center">
+                                <span class="btnS_white"><a href="javascript:goInfo1()" title="새창" >공인인증서 안내</a></span>
+                                <span class="btnS_white"><a href="javascript:goInfo2()" title="새창">사용가능 인증서 안내</a></span>
+							</div>
+							<div class="al_center mt15" id="authBtn">
+                                <a href="javascript:authSubmit(document.giftcardfrm2);"><img src="/images/sp/common/btn_name_certificate.gif" alt="공인인증을 통한 실명인증" /></a>
+							</div>
+	
+						</div>
+						<!-- 삼성카드 비소지자 등록 끝 -->
+					</div>
+				</div>
+					
+				<!--//contents-->
+			</div>
+		</div>
+<!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	    </div>
+	
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">Sel-D 클럽</h1>
+	<div class="h1_desc"><img src="/images/cd/h1_sel_d.jpg" alt="나만의 스타일로 직접 디자인하는 나만의 디자인카드 셀디클럽" /></div>	<!-- 100126 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- 100126 -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+            <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+  <c:choose>
+		<c:when test="${from == 'seldiMainView'}">
+		  <h2><img src="/images/cd/h2_seld_thisstory.png" alt="이달의 베스트 셀디 스토리" /></h2>
+		</c:when>
+		<c:otherwise>
+		  <h2><img src="/images/cd/h2_seld_laststory.png" alt="이달의 셀디 스토리" /></h2>
+		</c:otherwise>
+	</c:choose>
+	<div class="content_block_inner">
+	  <c:choose>
+		  <c:when test="${not empty seld_story_info}">
+				<div class="d_roidevin_detail seld_story">
+					<div class="p_photo"><img src="/sld.do?method=getSeldImage&IMAGE_NO=${seld_story_info.seld_image}&IMAGE_TYPE=T" alt="" style="width:225px;height:142px;" />
+                        <p class="mt5"><a href="javascript:openImagePopup('${seld_story_info.seld_image}', 'B');" class="btn btn_s_white"   title="새창"><span>사진확대</span></a></p>
+					</div>
+
+					<dl>
+						<dt>제목</dt><dd><strong><pre>${seld_story_info.title}</pre></strong></dd>
+						<dt>작성자</dt><dd>${seld_story_info.user_name} 회원님</dd>
+						<dt>등록일</dt><dd class="t_no"><fmt:parseDate var="dateFmt" value="${fn:substring(seld_story_info.reg_date, 0, 8)}" pattern="yyyyMMdd" /><fmt:formatDate value="${dateFmt}" pattern="yyyy-MM-dd" /></dd>
+						<dt class="line">추천수</dt><dd class="line  t_no">${seld_story_info.hit_count}</dd>
+						<dt></dt><dd class="t_no"><a href="javascript:recommandGo();" class="fl_right btn btn_blue" title="새창"><span>추천</span></a></dd>
+					</dl>
+
+					<!-- detail_contents -->
+					<div class="p_desc">
+            <%
+              pageContext.setAttribute("crlf1", "\r\n");
+              pageContext.setAttribute("crlf2", "\n");
+            %>
+            <p style="word-break:break-all">${fn:replace(fn:replace(fn:replace(seld_story_info.contents, crlf1, "<br/>"), crlf2, "<br/>"), " ", "&nbsp;")}</p>
+					</div>
+			  </div>
+	    </c:when>
+		  <c:otherwise>
+		    <div>&nbsp;&nbsp;&nbsp;검색 결과가 없습니다.</div>
+		  </c:otherwise>
+	  </c:choose>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <div class="btnset"><p class="btnr"><a href="javascript:goList();" class="btn btn_white"><span>목록</span></a></p></div>
+</div>
+
+<form name="mainForm" autocomplete="off">
+  <input type="hidden" name="method" value="bestView" />
+  <input type="hidden" name="imageFile" value="" />
+  <input type="hidden" name="imageType" value="" />
+</form>
+
+<form name="form1" method="post" autocomplete="off">
+  <input type="hidden" name="method" value="" />
+  <input type="hidden" name="orderByType" value="DESC" />
+  <input type="hidden" name="orderByColumn" value="${vos.orderByColumn}" />
+  <input type="hidden" name="searchWord1" value="${vos.searchWord1}" />
+  <input type="hidden" name="searchWord2" value="${vos.searchWord2}" />
+  <input type="hidden" name="seldStoryNo" value="${vos.seldStoryNo}" />
+  <input type="hidden" name="page" value="${vos.cPage}" />
+</form>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

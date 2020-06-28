@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>사은품신청 안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<!-- 130409 삭제,추가 -->
+<!--<link rel="stylesheet" type="text/css" href="/css/cr.css" />-->
+<style type="text/css">
+#pop_wrap {width:650px;}
+#pop_content2 .content_block {margin-left:0;}
+.pop_request_gift {width:602px;margin:0 auto;}
+#pop_content2 .pop_request_gift h2 {padding-left:3px;float:none;}
+.pop_request_gift .request_gift_info {margin-top:0;padding:20px 30px;height:157px;background:url(/images/cd/bg_request_gift.gif) no-repeat 0 0;}/* 120628 수정 height: 81px; */ 
+.pop_request_gift .request_gift_info strong {color:#333;} 
+.pop_request_gift .request_gift_info strong em {font-style:normal;color:#2e5fac;} 
+.pop_request_gift .request_gift_info p {margin-top:10px;font-size:11px;color:#666;line-height:16px;} 
+.pop_request_gift .request_gift_period {margin-top:0;padding:3px 0 3px 20px;background:url(/images/cd/icon_request_period.gif) no-repeat 0 5px;}/* 111122 수정 margin-top:10px; */ 
+.pop_request_gift .request_gift_period dt {display:inline;font-size:12px;font-family:Dotum;color:#000;font-weight:bold;} 
+.pop_request_gift .request_gift_period dd {display:inline;font-size:11px;font-family:Verdana;color:#666;} 
+.pop_request_gift .request_gift_form {border-top:1px solid #e5e5e5;} 
+.pop_request_gift .request_gift_form ul {margin:0 auto;padding:15px 0 20px;overflow:hidden;}/* 111122 수정 padding:20px 0; */ 
+.pop_request_gift .request_gift_form ul li {float:left;width:120px;height:140px;} 
+.pop_request_gift .request_gift_form ul li label {display:block;padding-top:0;height:125px;text-align:center;font-size:11px;font-family:Dotum;color:#666;line-height:14px;} 
+.pop_request_gift .request_gift_form ul li label span {display:block;} 
+.pop_request_gift .request_gift_form ul li label em {display:block;margin-top:7px;font-style:normal;} 
+.pop_request_gift .request_gift_form ul li input {display:block;margin:0 auto;} 
+.pop_request_gift .request_gift_form p {padding:10px 0 20px;}/* 120629 수정 */ 
+.pop_request_gift .request_gift_notice li {padding-left:10px;background:url(/images/cd/icon_gift_list.gif) no-repeat 0 7px;color:#999;font-family:Dotum;font-size:11px;letter-spacing:-1px;line-height:2em;} 
+</style> 
+<!-- //130409 삭제,추가 --><!-- SR반영 2013.04.11 -->
+
+</head>
+<body >
+<div id="pop_wrap" class="pop_request">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_request_gift.gif" alt="사은품신청 안내" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_request_gift.gif" alt="사은품신청 안내" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content2" class="h445 yscroll" tabindex="0">
+		<div class="content_block content_block_card clfix">
+			<div class="pop_request_gift">
+				<div class="request_gift_info">
+					<strong><em><%=cardEventVo.getKindName()%></em>를<br />  발급 받으시면 100% 당첨의 행운이 찾아갑니다!</strong>
+					<p>카드를 발급 받으신 회원님께 청구할인을 사은품으로 드립니다.</p><!-- 120726 수정 -->
+<!-- 120102 추가 -->
+					<p>※ 본 행사는 해외겸용 카드 기준이며, 국내전용카드 신청시에는 <br />&nbsp;&nbsp;&nbsp;&nbsp;별도로 국내전용카드 연회비의 10%에 해당하는 사은품이 제공됩니다.<br />
+※ 가족카드는 행사대상에서 제외됩니다.</p>
+<!-- //120102 추가  -->
+<p>※ 사은품제공 : 행사기간 내 1인 1회만 지급(중복신청인 경우 연회비순 지급)</p>
+				</div>
+				<dl class="request_gift_period">
+				<dt>행사기간 :</dt>
+				<dd>2012년 11월 22일(1) ~ 2012년 11월 22일(1)</dd>
+				</dl>
+					<ul style="width:600px;">
+						<li>
+							<label for="ChoiceYes1">
+								<span><img src="<%=eventGiftImg%>" border="0" /></span>
+								<em>선물이름<br />2,000원</em>
+							</label>
+							<input type="radio" id="ChoiceYes1" name="ChoiceYes"  title="선택" />
+						</li>
+					</ul>
+					<p align="center">
+						<input type="image" src="/images/cd/btn_request_gift2.gif" alt="사은품 신청" border="0" onclick="choice_Ok();" title="사은품 신청"/>
+					</p>
+				</form>
+				<ul  class="request_gift_notice">
+				<li>아하하..</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_650_footer"><!-- 20130105 -->
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="Pop_close();" title="창닫기" />
+	</div>
+
+</div>
+</body>
+</html>

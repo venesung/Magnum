@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_change_info.png" alt="회원님의 수신정보동의를 변경하실 수 있습니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<!-- tab_area -->
+				<div class="content_block content_block_tab first_none clfix">
+					<div class="tab02 w810">
+						<ul>
+							
+							<!-- 2013.01.21 depth level변경 -->
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHUFM008', true);">마케팅 수신정보 변경</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHUFM009', true);">제휴사 마케팅 동의여부변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM010', true);">출입국정보 동의여부변경</a></li>
+							
+						
+							<!-- li class="on">
+                                <a href="javascript:goTabPage('NHPIMMHUFM008', true);">마케팅 수신정보 변경</a>
+								<ul class="sub_tab">
+                                    <li id="mailTab"  name="mailTab" class="on"><a href="javascript:local_showTab('mail');">우편</a></li>
+                                    <li id="telTab"   name="telTab"><a href="javascript:local_showTab('tel');">전화마케팅</a></li>
+                                    <li id="emailTab" name="emailTab"><a href="javascript:local_showTab('email');">E-mail</a></li>
+                                    <li id="smsTab"   name="smsTab"><a href="javascript:local_showTab('sms');">SMS</a></li>
+								</ul>
+							</li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM009', true);">제휴사 마케팅 동의여부변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM010', true);">출입국정보 동의여부변경</a></li -->
+						</ul>
+					</div>
+				</div>
+					<!-- 2013.01.21 마케팅 메인 추가 Start -->
+					<div id="marketingImg" class="content_block content_block_card clfix" >
+						<h2><img src="/images/mh/h2_marketing_intro_01.png" alt="마케팅 수신정보 변경" /></h2>
+						<div class="content_block_inner">
+							<p>삼성카드에서 보내드리는 정보를 원하지 않으실 경우 수신정보를 변경하세요.</p>
+						</div>
+					</div>
+					
+					<!-- content_block  -->
+					<div  id="marketingContent" name="marketingContent"  class="content_block clfix" >
+						<h2><img src="/images/mh/h2_marketing_intro_02.png" alt="원하시는 항목을 선택하세요." /></h2>
+						<div class="content_block_inner">
+							<div class="mv_inner_sect"><img src="/images/mh/icon_4marketing_01.gif" alt="" class="img_icon" />
+								<strong>우편</strong>
+								<a href="javascript:local_showTab('mail');"  class="btn btn_blue"><span>변경하기</span></a>
+							</div>
+							<div class="mv_inner_sect"><img src="/images/mh/icon_4marketing_02.gif" alt="" class="img_icon" />
+								<strong>전화마케팅</strong>
+								<a href="javascript:local_showTab('tel');" class="btn btn_blue"><span>변경하기</span></a>
+							</div>
+							<div class="line_lgray_p0 mt20">&nbsp;</div><br/>
+							<div class="mv_inner_sect"><img src="/images/mh/icon_4marketing_03.gif" alt="" class="img_icon" />
+								<strong>E-mail</strong>
+								<a href="javascript:local_showTab('email');"  class="btn btn_blue"><span>변경하기</span></a>
+							</div>
+							<div class="mv_inner_sect"><img src="/images/mh/icon_4marketing_04.gif" alt="" class="img_icon" />
+								<strong>SMS</strong>
+								<a href="javascript:local_showTab('sms');" class="btn btn_blue"><span>변경하기</span></a>
+							</div>
+						</div>
+					</div>
+					<div  id="marketingNotice" name="marketingNotice"  >
+					</div>
+					<!-- 여기까지 끝// -->
+					
+					<div class="content_block content_block_card clfix" >
+					<!-- 2013.01.21 마케팅 메인 추가 End -->
+					<div id="mailImg"  style="display:none;" >
+						<h2><img src="/images/mh/h2_changezip_receivinginfo.png" alt="우편 수신정보를 변경해 보세요" /></h2>
+					</div>
+					<div id="telImg" style="display: none">
+						<h2><img src="/images/mh/h2_change_incoming_info.png"  alt="전화마케팅 수신정보를 변경해 보세요" /></h2>
+					</div>
+					<div id="emailImg" style="display: none">
+						<h2><img src="/images/mh/h2_changeemail_receivinginfo.png" alt="E-mail 수신정보를 변경해 보세요" /></h2>
+					</div>
+					<div id="smsImg" style="display: none">
+						<h2><img src="/images/mh/h2_changesms_receivinginfo.png"  alt="SMS 수신정보를 변경해 보세요" /></h2>
+					</div>
+
+					<div class="content_block_inner">
+
+						<ol class="list_no01" id="list_no01" style="display: none">
+							<li><p>회원님께 보내드리는 정보를 원하지 않으실 경우 아래의 항목을 선택하신 후 <strong class="t_black">확인버튼</strong>을 클릭해 주십시오.</p></li>
+							<li><p>수신거부여부는 언제든지 변경할 수 있으며, 체크항목을 해제하시면 삼성카드 정보를 다시 수신하실 수 있습니다.</p></li>
+						</ol>
+
+						<table id="mailContent" name="mailContent" class="dtable02 mt20" summary="우편 수신정보 항목을 선택하는 게시판입니다." style="display: none">
+						<caption>우편 수신정보 선택</caption>
+						<colgroup><col width="35" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR6_1_CB" id="STR6_1_CB" title="일반마케팅 및  서비스, 이벤트 안내" /></p></th>
+								<td><p><label for="STR6_1_CB">일반마케팅 및  서비스, 이벤트 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR6_2_CB" id="STR6_2_CB" title="보험상품 안내" /></p></th>
+								<td><p><label for="STR6_2_CB">보험상품 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR6_3_CB" id="STR6_3_CB" title="현금서비스, 카드론, 리볼빙 상품 안내" /></p></th>
+								<td><p><label for="STR6_3_CB">현금서비스, 카드론, 리볼빙 상품 안내</label></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<table id="telContent" name="telContent" class="dtable02 mt20" summary="전화 수신정보 항목을 선택하는 게시판입니다." style="display: none">
+						<caption>전화 수신정보 선택</caption>
+						<colgroup><col width="35" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_1_CB" id="STR11_1_CB" title="일반마케팅 및  서비스, 이벤트 안내" /></p></th>
+								<td><p><label for="STR11_1_CB">일반마케팅 및  서비스, 이벤트 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_2_CB" id="STR11_2_CB" title="보험상품 안내" /></p></th>
+								<td><p><label for="STR11_2_CB">보험상품 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_3_CB" id="STR11_3_CB" title="현금서비스, 카드론, 리볼빙 상품 안내" /></p></th>
+								<td><p><label for="STR11_3_CB">현금서비스, 카드론, 리볼빙 상품 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_5_CB" id="STR11_5_CB" title="자택전화" /></p></th>
+								<td><p><label for="STR11_5_CB">자택전화</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_6_CB" id="STR11_6_CB" title="직장전화" /></p></th>
+								<td><p><label for="STR11_6_CB">직장전화</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR11_7_CB" id="STR11_7_CB" title="휴대전화" /></p></th>
+								<td><p><label for="STR11_7_CB">휴대전화</label></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<table id="emailContent" name="emailContent" class="dtable02 mt20" summary="이메일 수신정보 항목을 선택하는 게시판입니다." style="display: none">
+						<caption>이메일 수신정보 선택</caption>
+						<colgroup><col width="35" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR16_1_CB" id="STR16_1_CB" title="쇼핑, 여행관련, 상품안내" /></p></th>
+								<td><p><label for="STR16_1_CB">쇼핑, 여행관련, 상품안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR16_2_CB" id="STR16_2_CB" title="가맹점 행사 안내 및 뉴스레터" /></p></th>
+								<td><p><label for="STR16_2_CB">가맹점 행사 안내 및 뉴스레터</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR16_3_CB" id="STR16_3_CB" title="카드상품, 서비스 및 이벤트안내" /></p></th>
+								<td><p><label for="STR16_3_CB">카드상품, 서비스 및 이벤트안내</label></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<table id="smsContent" name="smsContent" class="dtable02 mt20" summary="SMS 수신정보 항목을 선택하는 게시판입니다." style="display: none">
+						<caption>SMS 수신정보 선택</caption>
+						<colgroup><col width="35" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR21_1_CB" id="STR21_1_CB" title="마케팅 정보 안내" /></p></th>
+								<td><p><label for="STR21_1_CB">마케팅 정보 안내</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR21_2_CB" id="STR21_2_CB" title="S.infoCare 신용변동내역" /></p></th>
+								<td><p><label for="STR21_2_CB">S.infoCare 신용변동내역</label></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p><input type="checkbox" class="rdo" value="" name="STR21_3_CB" id="STR21_3_CB" title="프리 및 유료 SMS 안내 (자동해지)" /></p></th>
+								<td><p><label for="STR21_3_CB">프리 및 유료 SMS 안내 (자동해지)</label></p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<!-- 2013.01.21 변경 -->
+						<!-- btn -->
+						<div class="btnset"  id="btnset" style="display: none">
+							<p class="btnr">
+								<a href="javascript:local_sumit();" class="btn btn_blue" ><span>확인</span></a>
+								<a href="javascript:goTabPage('NHPIMMHUFM008', true);"  class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+						
+						<!-- btnset -->
+						<!-- div class="btnset">
+                            <p id="modifyBtn" name="modifyBtn" class="btnr" style="display:none;"><a href="javascript:local_sumit();" class="btn btn_blue"><span>변경</span></a></p>
+						</div-->
+
+						<!-- div class="line_lgray">&nbsp;</div-->
+
+						<div id="mailNotice" name="mailNotice" style="display:none;" >
+							<ol class="list_desc">
+								<li><p>법적공지 의무가있는 필수공지사항(약관, 서비스, 한도 등의 변경사항)의 경우에는 수신거부와 관계없이 발송될 수 있습니다.</p></li>
+								<li><p>우편 수신정보 변경은 약 3일 후 발송되는 우편물부터 적용됩니다.</p></li>
+							</ol>
+						</div>
+
+						<div id="telNotice" name="telNotice" style="display:none;" >
+							<ol class="list_desc">
+								<li><p>법적공지 의무가있는 필수공지사항(약관, 서비스, 한도 등의 변경사항)의 경우에는 수신거부와 관계없이 발송될 수 있습니다.</p></li>
+								<li><p>전화마케팅 수신정보 변경은 약 3일 후 진행되는 마케팅부터 적용됩니다.</p></li>
+							</ol>
+						</div>
+
+						<div id="emailNotice" name="emailNotice" style="display:none;" >
+							<ol class="list_desc">
+								<li><p>E-mail 수신정보 변경은 약 3일 후 발송되는 E-mail부터 적용됩니다.</p></li>
+								<li><p>법적공지 의무가 있는 필수공지사항 (약관, 서비스, 한도 등의 변경사항)의 경우에는 수신거부와 관계없이 발송될 수 있습니다. </p></li>
+							</ol>
+						</div>
+
+						<div id="smsNotice" name="smsNotice" style="display:none;">
+							<ol class="list_desc">
+								<li><p>프리 및 유료 SMS 안내 선택 시 유,무료 SMS 모두 자동해지 처리됩니다. SMS 서비스 재가입 희망시에는 SMS 신청화면에서<br />신청하시기 바랍니다.<br />
+									<span class="list_no_t11">프리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  결제예정금액 및 결제대금 잔액 부족 문자 안내, 상담 처리결과 안내</span><br />
+									<span class="list_no_t11">유료SMS  :  결제승인내역, 결제승인취소내역, 현금서비스이용내역, 카드론 이용내역</span></p></li>
+								<li><p>법적공지 의무가 있는 필수공지사항 (약관, 서비스, 한도 등의 변경사항)의 경우에는 수신거부와 관계없이 발송될 수 있습니다.</p></li>
+								<li><p>SMS 수신정보 변경은 약 3일 후발송되는 SMS부터 적용됩니다.</p></li>
+							</ol>
+						</div>
+					</div>
+					</div>
+				
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

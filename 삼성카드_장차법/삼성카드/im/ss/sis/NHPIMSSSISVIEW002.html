@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none">종합정보보호서비스 ID-Secure</h1>
+	<!-- 20130415 웹접근성(장차법)  수정  -->
+    <div class="h1_desc"><img src="/images/ss/h1_idSecure.jpg" alt="종합정보보호서비스 ID-Secure.실시간으로 사용내역을 전송해드리고, 신용정보변동내역과  명의도용차단내역을 SMS및 E-Mail로 알려드립니다." /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSIS001M001',true);">서비스소개</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMSSSIS001M002', true);">서비스신청/변경</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIS001M003',true);">고객문의</a></li>
+		</ul>
+	</div>
+</div>
+				
+
+
+<form name="form1" id="form">
+
+<!-- layer_popup 컨텐츠+메세지 -->
+	<!-- 자동결제 SMS 알림 선택 팝업 -->
+	<div id="id_layer02" class="pop_l_position pop_l_wrap_mix" style="position: absolute; top: 700px; left: 200px; z-index: 1000; display: ">
+		<div class="pop_l_wrap" style="height:335px;">
+			<p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+			<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="자동결제내역 SMS알림서비스 레이어 닫기" />
+			<p class="pop_tit"><strong>자동결제내역 SMS알림서비스는 보험료, 통신비, 교통비 등 <br />   매월 정기적인 자동결제요금의 내역을 SMS로 알려드리는<br /> 무료 옵션 서비스입니다.</strong></p>
+				<div class="pop_l_content">
+					<div class="pop_l_alert">
+					<p class="pop_sub_desc" style="letter-spacing:-1px">
+						-추가적으로 부과되는 수수료는 없습니다.<br />
+						-본 서비스는 개인신용카드 본인회원 중 유료SMS서비스 이용회원만 신청<br />&nbsp;&nbsp;가능합니다.<br />
+						-승인 다음 영업일에 결제내역이 발송됩니다.<br />
+						-교통비는 매월 사용금액 합계금액으로 월 1회 발송됩니다.<br />
+						-본인카드로 결제된 자동결제내역만 발송되며, 일부 내역은 발송 제외됩니다.
+					</p>
+
+					<p class="pop_sub_desc mt20">자동결제내역 SMS알림서비스의 내용을 충분히 확인하셨습니까?</p>
+				</div>
+				<p class="btnc"><img src="/images/common/btn_s_confirm02.png" alt="확인" onclick="close_layer('id_layer02');" style="cursor:hand;" /></p>
+			</div>
+		</div>
+	</div>
+	<!-- layer_popup w640 -->
+	<!-- 누적금액 SMS 알림 선택 팝업 -->
+	<div id="id_layer04" class="pop_l_position" style="position: absolute; top: 700px; left: 200px; z-index: 1000; display: ">
+		<div class="pop_l_wrap pop_l_wrap640" style="height:445px;">
+		<p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none';" value="레이어닫기" title="누적이용금액 SMS알림서비스 레이어 닫기" />
+			<p class="pop_tit al_center"><strong>누적이용금액 SMS알림서비스는 삼성카드 회원님의 합리적인 소비생활을 위하여<br />누적이용금액(신용카드 이용금액 중 미 청구된 총 금액)을 SMS로 알려드리는 <br /> 무료 옵션 서비스입니다.</strong></p>
+			<div class="pop_l_content">
+				<p class="pop_sub_desc">
+					- 추가적으로 부과되는 수수료는 없습니다.<br />
+					- 본 서비스는 개인신용카드 본인회원 중 유료SMS서비스 이용회원만 신청 가능합니다.<br />&nbsp;&nbsp;(체크만, 법인만, 가족카드만 소지한 회원 및 생활비재테크 이용회원 신청불가)<br />
+					- 누적이용금액 = 승인시점의 본인카드 + 가족카드 이용대금 중 미 청구된 총 금액<br />&nbsp;&nbsp;(결제예정금액과 상이)<br />
+					- 일시불, 할부, 현금서비스, 해외사용내역이 포함된 금액입니다.<br />&nbsp;&nbsp;(카드론, 체크/법인/기프트/올앳카드 이용금액 및 연회비, 할부수수료, 자동차구매와 같은 <br />&nbsp;&nbsp;비일상적인 카드승인 건 등은 미포함)<br />
+					- 매출취소, 포인트사용, 자동결제, 페이백, 캐시백, 선입금 등의 금액은 당사로 매입이 확정된 후 <br />&nbsp;&nbsp;누적금액에 포함됩니다.<br />
+					- 본 서비스를 신청하시면 승인내역정보와 누적금액 외 포인트정보 등의 <br />&nbsp;&nbsp;추가 정보는 제공받을 수 없습니다. (승인내역+누적금액 통합하여 SMS 1건으로 발송됩니다.)<br />
+					- 기타 자세한 사항은 당사 CRM센터(1588-8700)으로 연락주시기 바랍니다.
+				</p>
+				<p class="mt20">누적이용금액 SMS알림서비스의 내용을 충분히 확인하셨습니까?</p>
+				<p class="btnc pt25"><img src="/images/common/btn_s_confirm02.png" alt="확인" onclick="close_layer('id_layer04');" style="cursor:hand;"/></p>				</div>
+		</div>
+	</div>
+	<!-- S.Info 또는 바로알림 가입자가 S-IDSecure 신규 신청 시 기존 서비스 해지 동의 레이어 팝업 -->
+	<div id="layer_spop" class="pop_l_position" style="position: absolute; top: 700px; left: 200px; z-index: 1000; display: ">
+		<div class="pop_l_wrap">
+			<p class="img_l_pop flag_tl">&nbsp;</p>
+			<p class="img_l_pop flag_tr">&nbsp;</p>
+			<p class="img_l_pop flag_bl">&nbsp;</p>
+			<p class="img_l_pop flag_br">&nbsp;</p>
+			<input type="button" title="ID-Secure 가입 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();" class="img_l_pop btn_close btn_input" />
+			<div class="pop_l_content">
+				<p class="txt_error2 t_point mt50" style="line-height:20px;padding-bottom:15px;">
+				고객님께서는 현재 
+				<%= "B".equals(idsVo.getSms37Yn()) ? "바로알림":"" %>
+				<%= "S".equals(idsVo.getSms37Yn()) ? "S.InfoCare":"" %>
+				<%= "Y".equals(idsVo.getSmsSidYn()) ? "S.IDCare":"" %>
+				 서비스를 <br />이용하고 계십니다.</p>
+				<p class="txt_error2 " style="padding-bottom:25px;">  ID-Secure 가입 시 해당 서비스는 자동해지 처리됩니다. <br />  이에 동의하십니까?  </p>
+				<p class="btnc "><label for="label_mail" style="width:100px;display:inline-block;">
+					<input type="radio" class="chk" value="Y" title="동의함" id="label_mail" name="autoAgreeYn" checked="checked" /> 동의함</label>
+				<label for="label_mail2">
+					<input type="radio" class="chk" value="N" title="동의안함" id="label_mail2" name="autoAgreeYn" /> 동의안함</label></p>
+				<p class="btnc pt30">
+                    <a id="NHPIMSSSISVIEW002_L02" href="javascript:popupConfirm('NHPIMSSSISVIEW002_L02');"><img src="/images/common/btn_s_confirm.png" alt="확인" /></a>
+				</p>
+			</div>
+		</div><!-- //pop_l_wrap -->
+	</div><!-- //layer_spop -->
+
+
+	<!-- content_block 비가입자 타이틀 및 약관동의 -->
+	<div id="content_nonmember_title" style="display:">
+		<div class="content_block content_block_card clfix" >
+		<!--div class="flag_additional"><img src="/images/ss/flag_apply.png" class="flag_computeruse" alt=""/></div--><!-- 실사 삭제 13.03.18 -->
+			<h2><img src="/images/ss/h2_apply1.png" alt="ID-Secure 서비스안내입니다" /></h2>
+			<div class="content_block_inner">
+				<p class="mb20"><img src="/images/ss/txt_apply1.png" alt="아래 약관에 동의하시면 ID-Secure 서비스를 신청하실 수 있습니다."/></p>						
+			</div>
+		</div>
+
+		<div class="content_block  clfix">
+		<h2><img src="/images/ss/h2_apply2.png" alt="약관에 동의해 주세요" /></h2>
+		<div class="content_block_inner">
+			<fieldset class="fieldset_agree">						
+				<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+					<div id="agreeDiv" class="agree" tabindex="0"></div>
+				</div></div>
+				<div class="btnset">
+					<div class="btnl">
+					<label for="internet_private01"><input type="radio" class="chk" id="internet_private01" name="name_internet_private" value="Y" checked="checked" title="약관 동의" /> 동의</label>
+					<label for="internet_private02"><input type="radio" class="chk" id="internet_private02" name="name_internet_private" value="N" title="약관 동의안함" /> 동의안함</label>
+				</div>
+				<p class="btnr">
+                <a href="javascript:agree();" class="btn btn_blue" id="btn_sms_agree"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSSIS001M001', true);" class="btn btn_white"><span>취소</span></a>
+                <a href="javascript:agreePopup();" class="btn btn_white" title="새창"><span>인쇄</span></a></p>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	</div>
+
+	<!-- content_block 기가입자 타이틀 -->
+	<div id="content_member_title" style="display:">
+		<div class="content_block content_block_card clfix" style="margin-bottom:40px;">
+		<!--div class="flag_additional"><img src="/images/ss/flag_apply.png" class="flag_computeruse" alt=""/></div--><!-- 실사 삭제 13.03.18 -->
+			<h2><img src="/images/ss/h2_apply1.png" alt="ID-Secure 서비스안내입니다" /></h2>
+			<div class="content_block_inner">
+				<p class="mb20"><img src="/images/ss/txt_apply3.png" alt="고객님은 ID-Secure 서비스를 이용하고 계십니다."/></p>						
+			</div>
+		</div>
+	</div>
+
+	<!-- content_block 서비스 이용안내 -->
+	<div id="content_nonmember_use" style="display:none">
+		<div class="content_block clfix">
+			<!--div class="flag_additional"><img src="/images/ss/img_apply_benefit.png" class="flag_computeruse" alt=""/></div--><!-- 실사 삭제 13.03.18 -->
+			<h2><img src="/images/ss/h2_apply3.png" alt="ID-Secure 서비스이용요금 및 혜택을 확인하세요." /></h2>
+			<div class="content_block_inner">
+				<p class="mb20"><img src="/images/ss/txt_apply_benefit01.png" alt="신규 신청 시 신청월 3,000원 캐시백 제공" /></p>
+				<p class="mb20">신청하신 그 달부터 개인신용카드 결제금액으로 <strong class="t_point_org">월 3,300원의 이용요금</strong>이 청구되며,<br />신청하신 첫달에는 <span class="t_point_org">3,000원 캐시백 혜택</span>을 드립니다.</p>
+				<p class="t_desc04">-  캐시백은 1인 1회 제공되며, 결제금액에서 3,000원 청구할인됩니다. <br />
+				- 월 이용요금 3,300원은 매월 1일 ~ 말일 기준이며, 매월 말일 결제금액으로 적용되어 다음달 회원님의 결제일에 청구됩니다.</p>
+			</div>
+		</div>
+	
+		<!-- content_block 100802 -->
+		<div class="content_block clfix">
+			<h2><img src="/images/ss/h2_apply4.png" alt="ID-Secure 서비스 이용대상 안내입니다" /></h2>
+			<div class="content_block_inner">
+				<ol class="list_no01 ml_10">
+					<li><p>정상카드와 본인 휴대폰을 갖고 계신 삼성카드 회원은 서비스를 이용하실 수 있습니다.<br />
+						   - 정상 카드를 갖고 계시지 않거나, 정확한 휴대폰번호를 등록/변경하지 않으신 경우<br />
+						   &nbsp; 서비스가 자동 해지될 수 있습니다.</p></li>
+					<li><p>결제 카드 분실 등 기타 사유로 인해 서비스 이용요금 미결제 시,<br />
+						   갖고 계신 다른 정상 카드로 자동 변경되어 결제됩니다.</p></li>
+					<li><p>법인/체크/선불/올앳/기프트/가족카드는 제외됩니다.</p></li>
+				</ol>
+				<div class="line_lgray_p0 mt20">&nbsp;</div>
+				<p class="btnl t_desc04">※ 삼성카드는 통신판매중개자로서 ID-Secure서비스는 NICE신용평가정보(주)의 책임하에 운영되고 있습니다.</p>
+			</div>
+		</div>
+	</div>	
+
+	<!-- content_block 카드정보 입력-->
+	<div id="content_card" class="content_block clfix" style="display:;">
+		<h2><img src="/images/ss/h2_apply5.png" alt="카드정보를 확인해주세요" /></h2>
+		<div class="content_block_inner">
+			
+			<table class="dtable02 dtable_inputfield" summary="카드선택, 카드 비밀번호, 카드 CVC번호, 휴대폰 번호, 상품선택, 서비스선택, 이메일수신여부, 자동결제내역SMS알림, 누적이용금액SMS알림으로 구성된 종합정보보호서비스 신청 및 변경 정보를 입력하는 게시판입니다.">
+			<caption>종합정보보호서비스 신청,변경</caption>
+			<colgroup><col width="125" /><col width="*" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><p>카드번호</p></th>
+					<td><p>
+						<select style="width:370px" name="cardNo" id="label_cardNo" title="카드번호">
+							<option></option>
+						</select>
+					</p></td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<th scope="row"><p>카드 비밀번호</p></th>
+					<td><p class="input_2char"><input type="password" class="txt" value="" name="cardPassword" id="label_cardPassword" title="카드 비밀번호 앞 두자리" onkeypress="checkTypes(this, 'NUMB');" maxlength="2" style="ime-mode:false;" enc="on"/>
+					<em>**</em>(비밀번호 앞의 2자리)  <span id="usafeon_cardPassword"></span></p>
+					
+					<script type="text/javascript">
+						safeonAddNumberField("form1", "cardPassword");
+					</script>
+					</td>
+					
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 CVC번호</p></th>
+					<td><p class="input_3char"><input type="password" class="txt" value="" name="cvcNo" id="label_cvcNo" onkeypress="checkTypes(this, 'NUMB');" maxlength="3" style="ime-mode:false;" enc="on" title="카드 CVC번호" />
+					(카드 뒷면 19자리(아멕스카드의 경우 18자리) 숫자 중 뒤의 3자리)  <span id="usafeon_cvcNo"></span></p>
+					
+					<script type="text/javascript">
+						safeonAddNumberField("form1", "cvcNo");
+					</script>
+					</td>
+
+				</tr>
+				
+				<tr>
+					<th scope="row"><p>휴대폰 번호</p></th>
+					<td><p>
+						<span class="input_phone">
+							<select title="휴대폰 앞자리" name="phoneNo1_view" onchange="phonechange()" disabled="disabled">
+								<option></option>
+							</select>
+							&nbsp;-&nbsp;
+							<input type="text" name="phoneNo2_view" class="txt" value="" title="휴대폰 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, document.form1.phoneNo3);" onchange="phonechange()" style="ime-mode:false;" disabled="disabled"/>&nbsp;-&nbsp;
+							<input type="text" name="phoneNo3_view" class="txt" value="" title="휴대폰 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, document.form1.phoneNo2);" onchange="phonechange()" style="ime-mode:false;" disabled="disabled"/>
+							<a href="javascript:gocert()" class="btn btn_s_white" title="새창"><span>인증번호받기</span></a>
+						</span>
+					</p></td>
+					
+				</tr>
+				
+				<tr>
+					<th scope="row"><p>상품선택</p></th>
+					<td><p class="input_cardno"><label for="label_idsecure"><input type="radio" class="chk" value="ID-Secure(월 3,300원)" title="ID-Secure(월 3,300원)" id="label_idsecure" name="goodGubun" checked="checked" /> ID-Secure(월 3,300원)</label></p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>서비스선택</p></th>
+					<td><p class="input_cardno">
+					<label for="label_service">
+						<input type="radio" class="chk" value="신청" id="label_service" name="svcYn" checked="checked" title="서비스 신청" /> <%= "Y".equals(memberYn) ? "변경" : "신청" %>
+					</label>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>이메일수신여부</p></th>
+					<td><p class="input_cardno">
+					<label for="label_mail" style="width:70px">
+						<input type="radio" class="chk" value="Y" title="이메일수신 신청" id="label_mail" name="ml_rcv_ag_yn" /> 신청</label>
+					<label for="label_mail2">
+						<input type="radio" class="chk" value="N" title="이메일수신 미신청" id="label_mail2" name="ml_rcv_ag_yn" /> 미신청</label>
+					</p>
+					<p><span class="t_desc04">(삼성카드에 등록된 이메일로 월간리포트 및 변동내역을 보내드립니다)</span>  <a href="javascript:goTabPage('NHPIMMHUFM001M001', true);" class="btn_link">등록한 이메일 확인 및 변경 바로가기</a></p>
+					</td>
+				</tr>
+					<tr>
+					<th scope="row"><p>자동결제내역SMS알림</p></th>
+					<td><p class="input_cardno">
+						<label for="label_sms" style="width:70px">
+						<input type="radio" class="chk" value="Y" title="자동결제내역SMS알림 신청" id="label_sms" name="sms_x_yn" /> 신청</label>
+						<label for="label_sms2">
+						<input type="radio" class="chk" value="N" title="자동결제내역SMS알림 미신청" id="label_sms2" name="sms_x_yn" /> 미신청</label>
+					</p>
+					</td>
+				</tr>
+				<tr>
+				<th scope="row"><p>누적이용금액SMS알림</p></th>
+					<td><p class="input_cardno">
+					<label for="sms_y_yn_y" style="width:70px">
+					<input type="radio" class="chk" value="Y" title="누적이용금액SMS알림 신청" id="sms_y_yn_y" name="sms_y_yn" /> 신청</label>
+					<label for="sms_y_yn_n">
+					<input type="radio" class="chk" value="N" title="누적이용금액SMS알림 미신청" id="sms_y_yn_n" name="sms_y_yn" /> 미신청</label>
+					</p>
+					</td>
+				</tr>
+			</tbody>
+			</table> 
+			<!-- btn -->
+			<div class="btnset">
+				<div class="btnl">							
+				<ol class="list_desc ">
+					<li><p>결제 가능한 카드번호를 선택하세요.</p></li>
+					<li><p>보유중인 카드번호가 화면에 보이지 않을 경우는 정상카드가 없는 경우로써 <br />ID-Secure 서비스를 신청하실 수 없습니다.</p></li>
+				</ol>
+			</div>
+            <div class="btnr"><a id="NHPIMSSSISVIEW002_L01" href="javascript:goApply('NHPIMSSSISVIEW002_L01');" class="btn btn_blue" title="새창"><span>확인</span></a> <a href="javascript:goTabPage('NHPIMSSSIS001M001', true);" class="btn btn_white"><span>취소</span></a></div>
+		 </div>
+			<dl class="cvc_view">
+				<dt class="t_black"><strong>CVC보는방법</strong></dt>
+				<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+			</dl>
+		</div>
+	</div>
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

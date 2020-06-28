@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>카드발급상황조회 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_history_check.png" alt="카드발급상황조회" /></h1><!-- 100404 -->
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+<!-- 100404 -->
+					<div class="btnset">
+						<p class="btnr"><a href="" name="excelATag"  class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+					<h2><img src="/images/cm/h2_history_check01.png" alt="진행상황 안내" /></h2>
+					<div class="tb_exp clfix ">
+						<span class="clfix">최근 3개월 전까지 접수된 내역을 조회하실 수 있습니다.</span>
+					</div>
+
+					<table class="dtable02" summary="카드발급상황조회(신청일, 명의자)를 하실 수 있습니다. ">
+					<caption>카드발급상황조회</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>신청일</p></th><!-- 100406 -->
+							<td id="id_cal_wrap">
+								<p class="reset_date">
+								<a href="javascript:setDate(1)" id="date_period1" class="btn btn_s_gray"><span>당일</span></a><a href="javascript:setDate(2)" id="date_period2" class="btn btn_s_gray"><span>1주일</span></a><a href="javascript:setDate(3)" id="date_period3" class="btn btn_s_gray"><span>1개월</span></a><a href="javascript:setDate(4)" id="date_period4" class="btn btn_s_gray mr20"><span>2개월</span></a>
+								날짜지정 
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="group">명의자</label></th>
+							<td><p><input type="text" id="group" name="customer_name" class="txt" value="" /></p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="btnset">
+						<p class="btnr"><a href="javascript:search();" class="btn btn_blue"><span>조회</span></a></p>
+					</div>
+
+<!-- 100406 -->
+					<div class="dtable_over1000 d_easy mt20" id="printDiv" tabindex="0"><!-- 100519 -->
+						<table class="dtable01" summary="법인카드 발급상황(카드종류, 신청매수, 신청자, 주민번호, 신청일, 진행상황, 부적격사유, 구분) 정보 게시판입니다.">
+						<caption>법인카드 발급상황</caption>
+						<colgroup><col width="6%" /><col width="21%" /><col width="6%" /><col width="13%" /><col width="10%" /><col width="6%" /><col width="8%" /><col width="21%" /><col width="9%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a">번호</th>
+								<th scope="col" class="cell_l10">카드종류</th>
+								<th scope="col">신청매수</th>
+								<th scope="col" class="cell_l10">신청자</th>
+								<th scope="col">주민번호</th>
+								<th scope="col">신청일</th>
+								<th scope="col">진행상황</th>
+								<th scope="col" class="cell_l10">부적격사유</th>
+								<th scope="col">구분</th>
+							</tr>
+						</thead>
+					<tbody>
+						<tr>
+							<td  class="cell_l10a"></td>
+							<td class="cell_l10"><span class="nobreak_nolink w200"></span></td>
+							<td class="t_no"></td>
+							<td class="cell_l10"><span class="nobreak_nolink w110"></span></td>
+							<td ><span class="p_nowrap"></span></td>
+							<td class="t_no"></td>
+							<td></td>
+							<td class="cell_l10"><span class="nobreak_nolink w200">미공개</span>
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+<!-- //100406 -->
+					<!-- paginate -->
+					<div class="paginate">
+						1
+					</div>
+
+					<div class="line_lgray"></div>
+
+					<h2><img src="/images/cm/h2_history_check01.png" alt="진행상황 안내" /></h2>
+					<ol class="list_no01">
+						<li><p>심사중 : 현재 심사중이오니 금일 이후 다시 조회하시기 바랍니다.</p></li>
+						<li><p>발&nbsp;&nbsp;&nbsp;급 : 신청하신 법인카드가 발급되었으며 일주일 내로 수령이 가능합니다.</p></li>
+						<li><p>반&nbsp;&nbsp;&nbsp;송 : 신청하신 법인카드가 반송되었습니다. 삼성카드 담당자에게 문의하시기 바랍니다.</p></li>
+					</ol>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

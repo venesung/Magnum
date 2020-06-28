@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+        <!-- top_visual -->
+                <div class="top_visual">
+                    <h1 class="none">지방세 카드납부 서비스</h1>
+                    <p class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></p>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_tab2 clfix">
+                    <!-- tab_area -->
+                    <div class="tab01 w810 h60">
+                        <ul>
+                            <li class="on">
+                                <a href="#">지방세납부</a>
+                                <ul class="sub_tab">
+                                    <li><a href="javascript:goTabPage('NHPIMSSTAX001M001', true);">지방세 카드 납부안내</a></li> <!-- 091203 -->
+                                    <li class="on"><a href="javascript:goTabPage('NHPIMSSTAX001M002', true);">지방세 카드 납부하기</a></li>
+                                    <li><a href="javascript:goTabPage('NHPIMSSTAX001M003', true);">지방세 납부 결과조회</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:goTabPage('NHPIMSSTAX002M001', true);">세정담당자</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_card clfix">     <!-- //100126 -->
+
+                    <h2><img src="/images/ss/h2_countrytax07.png" alt="이용안내 입니다" /></h2>
+                    <div class="content_block_inner">
+                        <p>지방세 카드납부 수납, <strong class="t_black"><%=organ.getCitykornm() %></strong>입니다.</p>
+                        <ol class="list_no01 list_cvc">
+                            <li><p>납세정보를 잘못 입력하는 경우(납부금액, 납세번호, 납세자 주민번호 오류 입력 등)에는 정상적으로 카드승인이 이루어져도<br />후에 납부가 취소되어 체납될 수 있으니 정확하게 입력해주십시오.</p></li>
+                            <li><p>납세 정보 오류입력에 따른 승인취소시 해당 지자체로 확인하시기 바랍니다.</p></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="content_block clfix">
+
+                <form name="initform" method="post">
+
+                    <h2><img src="/images/ss/h2_countrytax08.png" alt="납부 신청 정보를 입력해 주세요" /></h2>
+                    <div class="content_block_inner">
+                        <div class="tb_exp clfix">
+                            <span class="t_black"><strong>납세번호 입력</strong><span class="t_desc04">고지서의 납세번호 부분을 입력란에 기입해주세요.</span></span>
+                        </div>
+                        <table class="dtable01 dtable_inputfield" summary="과세기관, 검, 회계, 과목, 세목, 년도, 월, 기본, 동, 과세번호, 검으로 구성된 납부 신청 정보를 입력하는 게시판입니다.">
+                        <caption>납부 신청 정보 입력</caption>
+                        <colgroup><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /><col width="56" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">과세기관</th>
+                                <th scope="col">검</th>
+                                <th scope="col">회계</th>
+                                <th scope="col">과목</th>
+                                <th scope="col">세목</th>
+                                <th scope="col">년도</th>
+                                <th scope="col">월</th>
+                                <th scope="col">기분</th>
+                                <th scope="col">동</th>
+                                <th scope="col">과세번호</th>
+                                <th scope="col" >검</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10"><span class="input_tax2"><input  name="tax_organ1"type="text" maxlength="3" onkeyup="lengthCheck11(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"  class="txt" value="" title="과세기관" /></span></td>
+                                <td><span class="input_tax1"><input type="text" name="tax_organ2" maxlength="1" onkeyup="lengthCheck12(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="검" /></span></td>
+                                <td><span class="input_tax2"><input type="text" name="tax_type1" maxlength="2" onkeyup="lengthCheck13(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"   class="txt" value="" title="회계" /></span></td>
+                                <td><span class="input_tax2"><input type="text" name="tax_type2" maxlength="3" onkeyup="lengthCheck14(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="과목" /></span></td>
+                                <td><span class="input_tax2"><input type="text" name="tax_type3" maxlength="3" onkeyup="lengthCheck15(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="세목" /></span></td>
+                                <td><span class="input_tax2"><input type="text" name="tax_period1" maxlength="4" onkeyup="lengthCheck16(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="년도" /></span></td>
+                                <td><span class="input_tax2"><input type="text" name="tax_period2" maxlength="2" onkeyup="lengthCheck17(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="월" /></span></td>
+                                <td><span class="input_tax1"><input type="text" name="tax_period3" maxlength="1" onkeyup="lengthCheck18(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="기분" /></span></td>
+                                <td><span class="input_tax1"><input type="text" name="district" maxlength="3" onkeyup="lengthCheck19(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="동" /></span></td>
+                                <td><span class="input_tax3"><input type="text" name="tax_no1" maxlength="6" onkeyup="lengthCheck20(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="과세번호" /></span></td>
+                                <td><span class="input_tax1"><input type="text" name="tax_no2" maxlength="1" onkeyup="lengthCheck21(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"    class="txt" value="" title="검" /></span></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <img src="/images/ss/ex_input.png" class="mt20" alt="입력예시 : 아래 테이블 각 입력필드에 해당 내용을 입력하시면 됩니다." />
+                        <div class="tb_exp clfix mt20">
+                            <span class="t_black"><strong>납부 상세 정보 입력</strong></span>
+                        </div>
+                        <table class="dtable02 dtable_inputfield" summary="결제금액, 카드번호, 카드유효기간, 카드비밀번호, 법인명, 사업자번호, 성명, 주민등록번호, 연락처, 결제방법, 인증선택으로 구성된 납부 상세 정보를 입력하는 게시판입니다">
+                        <caption>납부 상세 정보 입력</caption>
+                        <colgroup><col width="115" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="cell_bg"><p>결제금액</p></th>
+                                <td><p class="input_point"><input name="payment_amount_txt" maxlength="15" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" type="text" id="jikgub" class="txt" onkeyup="comma()" title="결제금액" />원</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg"><p>카드번호</p></th>
+                                <td><p class="input_cardno"><input name="card_no1"  type="text" id="card_no1" class="txt" value="" maxlength="4" title="카드번호 첫번째 네자리" onkeyup="lengthCheck6(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" />&nbsp;-&nbsp;<input name="card_no2" type="text" id="card_no2" maxlength="4" class="txt" value="" title="카드번호 두번째 네자리"  onkeyup="lengthCheck7(this.form, this.value);" onkeydown="getOnlyNumberKey()"  style="ime-mode:disabled" />&nbsp;-&nbsp;<input name="card_no3" type="password" id="card_no3" class="txt" maxlength="4" value="" title="카드번호 세번째 네자리"  onkeyup="lengthCheck8(this.form, this.value);" onkeydown="getOnlyNumberKey()"  style="ime-mode:disabled" />&nbsp;-&nbsp;<input name="card_no4" type="password" id="card_no4"  maxlength="4" class="txt" value="" title="카드번호 네번째 네자리"  onkeyup="lengthCheck9(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" /></p><p class="t_desc04">아멕스카드는 15자리만 입력해주세요. (예: 3779-1234-5678-901) </p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg"><p>카드유효기간</p></th>
+                                <td><p class="input_cardlimit"><input  name="validity_month" type="text" maxlength="2" id="validity_month"  onkeyup="lengthCheckA(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" class="txt" title="카드유효기간 월" />&nbsp;월&nbsp;&nbsp;&nbsp;<input name="validity_year" type="text" maxlength="2" id="validity_year" class="txt" title="카드유효기간 년도" onkeyup="lengthCheckB(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" />&nbsp;년</p><p class="t_desc04">카드 앞면에 기재된 유효기간을 순서대로 입력하세요 (예: 카드표기 11/14 -> 입력 11/14)</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg"><p>카드비밀번호</p></th>
+                                <td><p class="input_2char"><input name="card_pass" onkeyup="lengthCheckC(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" type="password" maxlength="2" id="card_pass" class="txt" value="" title="비밀번호 앞 두자리" /><em>**</em>(비밀번호 앞의 2자리)</p></td>
+                            </tr>
+                         <%if("04".equals(userGbn)){%>
+                                <tr>
+                                    <th class="cell_bg"><p>법인명</p></th>
+                                    <td><p class="input_name"><input type="text" class="txt" maxlength="30" name="carduser_nm" value="" title="법인명" /></p></td>
+                                </tr>
+                                <tr>
+                                    <th class="cell_bg"><p>사업자번호</p></th>
+                                    <td><p class="input_name"><input type="text" class="txt" name="ssn_no" value="" onkeyup="lengthCheckD(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" title="사업자번호"  maxlength="10" />(사업장 사업자 번호 입력 &quot;-&quot;제외)</p></td>
+                                </tr>
+                        <%}else{%>
+                                <tr>
+                                    <th class="cell_bg"><p>성명</p></th>
+                                    <td><p class="input_name"><input type="text"  type="text" name="carduser_nm" size="15" maxlength="30" class="txt" value="" title="성명" />카드 사용자의 성명을 입력해 주세요</p></td>
+                                </tr>
+                                <tr>
+                                    <th class="cell_bg"><p>주민등록번호</p></th>
+                                    <td><p class="input_idno"><input type="text" name="carduser_no1" onkeyup="lengthCheckD(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" size="6" maxlength="6" class="txt" value="" title="주민등록번호 앞자리" />&nbsp;-&nbsp;<input type="password" onkeyup="lengthCheckE(this.form, this.value);" onkeydown="getOnlyNumberKey()"style="ime-mode:disabled" name="carduser_no2" size="8" maxlength="7" class="txt pw" value="" title="주민등록번호 뒷자리" />카드 사용자의 주민등록번호를 입력해 주세요</p></td>
+                                </tr>
+                         <%}%>
+
+                            <tr>
+                                <th class="cell_bg"><p>연락처</p></th>
+                                <td>
+                                    <p class="input_phone">
+                                    	<!-- 20130411 웹접근성(장차법)  수정 -->
+                                    	<!-- <select name="tel1" id="tel1" title="휴대폰 앞자리" onchange="this.form.tel2.focus();"> -->
+                                        <select name="tel1" id="tel1" title="휴대폰 앞자리">
+                                            <option selected="selected" value= "010">010</option>
+                                            <option value= "011">011</option>
+                                            <option value= "016">016</option>
+                                            <option value= "017">017</option>
+                                            <option value= "018">018</option>
+                                            <option value= "019">019</option>
+                                        </select>&nbsp;-&nbsp;<input name="tel2" size="4" maxlength="4" class="txt" onkeyup="lengthCheckG(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" title="휴대폰 가운데자리" />&nbsp;-&nbsp;<input type="text" name="tel3"  onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" size="4" maxlength="4" class="txt" title="휴대폰 뒷자리" />
+                                    </p>
+                                    <p class="t_desc04">연락 가능한 휴대전화 번호를 남겨주세요. 납세정보 입력오류로 승인취소시 SMS 통보를 위해 연락처는 꼭 핸드폰으로 입력해주세요.</p><!-- 100504 -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg"><p>결제방법</p></th>
+                                <td><p>
+                                    <label for="card01"><input type="radio" class="rdo" value="1" id="card01" name="payment_type" checked="checked"  onclick="sel_type('1')" title="일시불" /> 일시불&nbsp;&nbsp;&nbsp;</label>
+                                    <label for="card02"><input type="radio" class="rdo" value="2" id="card02" name="payment_type" onclick="sel_type('2')" title="할부" /> 할부</label>
+                                    <select name="payment_month" onchange="sel_month()" id="payment_month" disabled="disabled" title="할부개월" class="ml10" style="width:70px;" >
+                                    <option  selected="selected" value='0'>선택</option>
+                                    <option value='2'>2개월</option>
+                                    <option value='3'>3개월</option>
+                                    <option value='4'>4개월</option>
+                                    <option value='5'>5개월</option>
+                                    <option value='6'>6개월</option>
+                                    <option value='7'>7개월</option>
+                                    <option value='8'>8개월</option>
+                                    <option value='9'>9개월</option>
+                                    <option value='10'>10개월</option>
+                                    <option value='11'>11개월</option>
+                                    <option value='12'>12개월</option>
+                                    <option value='13'>13개월</option>
+                                    <option value='14'>14개월</option>
+                                    <option value='15'>15개월</option>
+                                    <option value='16'>16개월</option>
+                                    <option value='17'>17개월</option>
+                                    <option value='18'>18개월</option>
+                                    <option value='19'>19개월</option>
+                                    <option value='20'>20개월</option>
+                                    <option value='21'>21개월</option>
+                                    <option value='22'>22개월</option>
+                                    <option value='23'>23개월</option>
+                                    <option value='24'>24개월</option>
+                                    </select>
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg"><p>인증선택</p></th>
+                                <td><p>
+                                    <label for="certificate01"><input name="validation_gubun" type="radio" class="rdo" value="1" checked="checked"  id="certificate01"  title="카드인증" /> 카드인증&nbsp;&nbsp;&nbsp;</label>
+                                    <label for="certificate02"><input name="validation_gubun" type="radio" class="rdo" value="2" id="certificate02" title="공인인증"  /> 공인인증</label>
+                                </p></td>
+                            </tr>
+
+                        </tbody>
+                        </table>
+
+                        <div class="btnset">
+                            <div class="btnl t_desc04">
+                                <ol class="list_no01 list_t11">
+									<li><p>결제금액을 잘못 입력할 경우 납부가 취소될 수 있습니다.</p></li>
+									<li><p>카드인증은 상기 입력하신 카드정보로 추가 입력 없이 인증됩니다.</p></li>
+								</ol>
+                            </div>
+                            <div id="btn_style" class="btnr">
+                            <a id="NHPIMSSTAXVIEW003_L01" href="javascript:goto('NHPIMSSTAXVIEW003_L01');" class="btn btn_blue"><span>결제</span></a>
+                            <a href="javascript:clear();" class="btn btn_white"><span>취소</span></a>
+                            </div>
+                            <div id="btn_style2" style="display:none;"  class="btnr">
+                            <a  class="btn btn_blue"><span>결제</span></a>
+                            <a  class="btn btn_white"><span>취소</span></a>
+                            </div>
+                        </div>
+
+                        <!-- btn -->
+
+                    </div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

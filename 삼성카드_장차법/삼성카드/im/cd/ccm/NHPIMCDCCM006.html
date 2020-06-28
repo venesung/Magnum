@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">삼성 THEAPT 카드를 신청합니다.</h1>
+	<div class="h1_desc"><img src="/images/mh/bg_cardapp_THEAPT.jpg" alt="4대 생활업종(대형마트, 학원, 병원/약국, 백화점) 5% 포인트 적립, 최대 18.3% 포인트 적립, 백화점, 할인점 무이자" /></div>	<!-- 100126 -->
+	<hr />
+	<div class="top_step top_step_theapt top_step_theapt01">
+		<ol class="none">
+			<li><abbr>현재단계</abbr> <strong>실명인증 및 약관동의 - 먼저 실명 여부를 확인하시고 약관을 꼼꼼히 읽어보신 후 동의해주세요</strong></li>
+			<li>신청정보 입력 - 카드 신청에  꼭 필요한 고객님의 소중한 정보를 알려주세요</li>
+			<li>신청완료 - 삼성카드의 가족이 되신걸 환영합니다 고객님의 소중한 정보는 안전하게 보호 하겠습니다</li>
+		</ol>
+	</div>
+</div>
+
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/mh/h2_name_check02.png" alt="본인주민번호로 실명인증합니다" /></h2>
+	<div class="content_block_inner fill_joinin">
+		<fieldset class="find_id">
+			<form name="certForm" method="post">
+			<input type="hidden" name="cardCode" value="<%=cardCode%>" />
+			<input type="hidden" name="isVerified" value="N" />
+			<input type="hidden" name="isSmsVerified" value="N" />
+			<input type="hidden" name="isCertVerified" value="N" />
+			<input type="hidden" name="sms_certchk" value="0" />
+			<input type="hidden" name="plain" value="카드신청공인인증" />
+			<input type="hidden" name="signed_msg" value="" />
+			<input type="hidden" name="vidMsg" value="" />
+			<input type="hidden" name="ssno" value="" />
+			<input type="hidden" name="loadCnt" value="0" />
+			<input type="hidden" name="signGubun" value="" />
+			<input type="hidden" name="idenNo1" value="" />
+			<input type="hidden" name="idenNo2" value="" />
+			
+			<legend>주민등록번호로 실명인증</legend>
+			<dl>
+				<dt><label for="label_name">성명</label></dt>
+				<dd>
+				<span class="bg_input">
+				<input type="text" name="name" title="성명" id="label_name" style="width:177px" onkeypress="checkTypes(this, 'HCHR');" onblur="checkTypesOnBlur(this, 'HCHR');" required="required" />
+				<em>&nbsp;</em>
+				</span>
+				</dd>
+				<dt><label for="label_idno">주민등록번호</label></dt>
+				<dd>
+					<span class="bg_input">
+					<input type="text" name="ssn1" title="주민등록번호 앞자리"  id="label_idno" style="width:177px" maxlength="6" minLength="6" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, certForm.ssn2);" onblur="checkTypesOnBlur(this, 'NUMB');" required="required" />
+					<em>&nbsp;</em></span>&nbsp;-&nbsp;<span class="bg_input mr10">
+					<input type="password" name="ssn2" title="주민등록번호 뒷자리" style="width:177px" maxlength="7" minlength="7" onkeydown="checkLenB(this, certForm.ssn1);" />
+					<em>&nbsp;</em></span>
+					<a href="javascript:verifyRealName(certForm)"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+					<p class="t_desc03">실명확인을 위하여 주민등록번호와 성명을 띄어쓰기 없이 입력하여 주십시오.</p>
+				</dd>
+				<div id="isCallYnDiv" style="display:inline-block"/>
+				<dt><label for="label_phone">연락처</label></dt>
+				<dd>
+					<input type="hidden" name="phone1"/>
+					<div class="input_phone">
+						<div id="phoneDiv1" class="selectbox selectbox_dim" onclick="javascript:showPhone1()" style="width:100px"><p class="btn"> </p>
+							<p><a href="#" class="default" id="phone1Div" onclick="return false;">선택</a></p>
+							<div class="childlayer">
+								<ul id="phone1_select_div">
+									<li><a href="javascript:selectPhone1('')">선택</a></li>
+									<li><a href="javascript:selectPhone1('010')">010</a></li>
+									<li><a href="javascript:selectPhone1('011')">011</a></li>
+									<li><a href="javascript:selectPhone1('016')">016</a></li>
+									<li><a href="javascript:selectPhone1('017')">017</a></li>
+									<li><a href="javascript:selectPhone1('018')">018</a></li>
+									<li><a href="javascript:selectPhone1('019')">019</a></li>
+								</ul>
+							</div>
+						</div>&nbsp;
+						
+						<span class="bg_input">
+							<input type="text" name="phone2" title="휴대전화번호 가운데자리" style="width:100px" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.phone3);" onblur="checkTypesOnBlur(this, 'NUMB');" />
+							<em>&nbsp;</em></span>&nbsp;-&nbsp;<span class="bg_input">
+							<input type="text" name="phone3" title="휴대전화번호 뒷자리" style="width:100px" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.phone2);" onblur="checkTypesOnBlur(this, 'NUMB');" />
+							<em>&nbsp;</em></span>&nbsp;&nbsp;&nbsp;
+						<label for="label_phone_yes"><input type="radio" class="rdo" value="" id="label_phone_yes" name="isCallYn" title="동의" /> 동의&nbsp;&nbsp;&nbsp;</label>
+						<label for="label_phone_no"><input type="radio" class="rdo" value="" id="label_phone_no" name="isCallYn" title="동의안함" /> 동의안함</label>
+					</div>
+				</dd>
+				</div>
+			</dl>
+			</form>
+		</fieldset>
+		
+		<div class="line_lgray">&nbsp;</div>		
+		<div class="t_desc04">
+			<ol class="list_desc">
+				<li><p>일시적 시스템 장애 또는 기타 사유로 카드 신청을 인터넷으로 완료하지 못하신 경우, 고객님의 편의를 위하여<br />당사에서 기재하신 연락처로 전화를 드릴 수 있으며, 이에 동의합니다.</p></li>
+				<li><p>기대하신 정보는 카드신청과 관련한 통화를 위한 목적 이외에 다른 용도로 사용되지 않으며, 일정 기간 이후에는<br />정보가 삭제되어집니다. </p></li>
+			</ol>
+		</div>
+
+		<div class="line_lgray">&nbsp;</div>
+		<p class="jumin_txt t_desc04">개정 "주민등록법"에 의해 타인의 주민등록번호를 부정사용하는 자는 3년 이하의 징역 또는 1천만원 이하의 벌금이<br />부과될 수 있습니다. 관련법률 : 주민등록법 제37조(벌칙) 제10호 (시행일 : 2009.04.01)<br />
+		만약, 타인의 주민번호를 도용하여 온라인 회원 가입을 하신 이용자들은 지금 즉시 명의 도용을 중단하시길 바랍니다.</p>
+	</div>
+    <iframe src="" name="verifyCertificationIframe" width="0" height="0"  frameborder="0" title="빈 프레임"></iframe>
+</div>	
+	
+<div class="content_block clfix"  id="id_infocare_step01">
+	<!-- 100211 -->
+	<script type="text/javascript">
+	//<![CDATA[
+	function open_url2(url) {
+		var link = false;
+	
+		if (window.ActiveXObject){
+			link = new ActiveXObject("Microsoft.XMLHTTP");
+		} else if (window.XMLHttpRequest) {
+			link = new XMLHttpRequest();
+		}
+		else
+			return false;
+		link.open('GET', url, false);
+		link.send(null);
+		response(link);
+	}
+	
+	function response(link){
+		if (link.readyState == 4) {document.write(link.responseText);}
+	}
+	//]]>
+	</script>		
+	<h2><img src="/images/ss/h2_sinfocare01.gif" alt="약관에 동의해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<!-- loop -->
+		<fieldset class="fieldset_agree">							
+			<div class="tb_exp clfix">
+				<h3 class="fl_left">개인회원 및 자동이체 약관 동의서</h3>
+				<span class="ab_tr "><a href="/agreement/html_cd_2112p.html" title="새창" class="btn_link">개인회원 및 자동이체 약관 동의서 상세보기</a></span>
+			</div> 
+			
+			<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" tabindex="0"><script type="text/javascript">open_url2("/agreement/html_cd_2112p.html")</script><noscript><a href="/agreement/html_cd_2112p.html" title="새창">개인회원 및 자동이체 약관 동의서</a></noscript></div>
+			</div></div>
+			
+			<div class="btnset">
+				<div class="btnl">
+					<label for="label_agr_private1"><input type="radio" class="rdo" value="" id="label_agree_private1" name="id_agr_private" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+					<label for="label_agr_private2"><input type="radio" class="rdo" value="" id="label_agree_private2" name="id_agr_private" title="동의안함" /> 동의안함</label>
+				</div>
+			</div>
+		</fieldset><div class="line_lgray">&nbsp;</div>
+		<!-- //loop -->
+		
+		<fieldset class="fieldset_agree">							
+			<div class="tb_exp clfix">
+				<h3 class="fl_left">GS칼텍스 보너스(GS&amp;POINT)카드 개인정보취급 방침</h3>
+				<span class="ab_tr "><a href="/agreement/html_cd_216p.html" title="새창" class="btn_link">GS칼텍스 보너스(GS&amp;POINT)카드 개인정보취급 방침 상세보기</a></span>
+			</div> 
+			
+			<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" tabindex="0"><script type="text/javascript">open_url2("/agreement/html_cd_216p.html")</script><noscript><a href="/agreement/html_cd_216p.html" title="새창">GS칼텍스 보너스(GS&amp;POINT)카드 개인정보취급 방침</a></noscript></div>
+			</div></div>
+			
+			<div class="btnset">
+				<div class="btnl">
+					<label for="label_agr_gs_bonus_card_1"><input type="radio" class="rdo" value="" id="label_agr_gs_bonus_card_1" name="name_agr_gs_bonus_card" checked="checked" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+					<label for="label_agr_gs_bonus_card_2"><input type="radio" class="rdo" value="" id="label_agr_gs_bonus_card_2" name="name_agr_gs_bonus_card" title="동의안함" /> 동의안함</label>
+				</div>
+			</div>
+		</fieldset><div class="line_lgray">&nbsp;</div>
+
+		<!-- //100211 -->						
+		<p class="t_desc03">약관 및 서비스 내용을 충분히 숙지하였으며, 모든 서비스는 제휴업체 및 카드사의 사정에 의해 변경, 폐지될 수 있으며 그 내용은<br />사전에 알려드립니다.</p>
+		
+		<p class="btnc mt40">
+			<a id="NHPIMCDCCM006_L01" href="javascript:showVeriyfyEtcDiv();fnSetReturnFocusId('NHPIMCDCCM006_L01','etcVerifyDiv');"><img id="imgDiv" src="/images/common/btn_next_step.png" alt="다음단계" /></a>
+			<a href="#"><img src="/images/common/btn_app_cancel.png" alt="신청취소" /></a>
+		</p>
+		
+		<div id="etcVerifyDiv" class="pop_l_position pop_l_wrap_mix" style="display:none">
+			<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; closeLayerPopup();" value="레이어닫기" title="인증방식 선택 레이어 닫기" />
+				<p class="pop_tit"><img src="/images/mh/layer_tit_card_app.png" alt="카드신청을 위해 인증방식을 선택하세요" /></p>
+				<div class="pop_l_content">
+					<div class="pop_l_alert">
+						<ul class="layer_card_app">
+							<li class="first"><strong class="t_black">공인인증서 인증</strong><p class="pop_sub_desc02">기존 회원정보를 입력하실 <br />필요없이 편리하게 <br />카드신청을 하실 수 있습니다.</p>
+                            <p class="btnl"><a href="javascript:checkEtcVerify('public')"><img src="/images/common/btn_white_certificate.png" alt="공인인증으로 인증하기" /></a></p>
+							</li>
+							<li><strong class="t_black">휴대폰 인증</strong><p class="pop_sub_desc02">휴대폰 인증으로 카드신청을<br />하실 수 있습니다.<br />(단, 신청자의 명의의 <br />휴대폰이어야만 합니다.)</p>
+                            <p class="btnl"><a href="javascript:checkEtcVerify('sms')"><img src="/images/common/btn_white_hp_certificate.png" alt="핸드폰으로 인증하기" /></a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

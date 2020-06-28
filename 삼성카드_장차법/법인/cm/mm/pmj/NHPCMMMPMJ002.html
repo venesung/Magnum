@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>웹멤버가입 - 삼성카드</title>
+	<script type="text/javascript" src="/js/common.js"></script>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+		<div class="con_wrap_left">
+			<%@ include file="/WEB-INF/jsp/hp/cm/cm_left.jsp"%>
+		</div>
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_joinin_online.png" alt="웹멤버가입" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_available_certificates.jpg" alt="" /></p>
+			</div>
+
+			<div class="top_step_join top_step_join02">
+				<ol class="none">
+					<li>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</li>
+					<li><abbr>현재단계</abbr> <strong>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</strong></li>
+					<li>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</li>
+					<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+				</ol>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block content_block_login">
+				<h2><img src="/images/cm/h2_cm_agreement01.png" alt="법인회원 약관정보" /></h2>
+				<p><img src="/images/cm/txt_cm_agreement01.png" alt="약관 동의는 가입 시 한번만 동의하여 주시면되며 신청하시기 전에 다음의 사항을 꼭 읽어주세요. 약관이 필요하실 경우, 인쇄하여 보관하시기 바랍니다." /></p>
+
+				<script type="text/javascript" language="javascript">
+				function open_url2(url) {
+					var link = false;
+
+					if (window.ActiveXObject){
+						link = new ActiveXObject("Microsoft.XMLHTTP");
+					} else if (window.XMLHttpRequest) {
+						link = new XMLHttpRequest();
+					}
+					else
+						return false;
+					link.open('GET', url, false);
+					link.send(null);
+					response(link);
+				}
+
+				function response(link){
+					if (link.readyState == 4) {document.write(link.responseText);}
+				}
+				</script>
+				<form name="formA" method="post" autocomplete="off">
+				<input type="hidden" name="applyName" value="${applyName}" />
+				<input type="hidden" name="idenNo1" value="<%=idenNo1 %>" />
+				<input type="hidden" name="idenNo2" value="<%=idenNo2 %>" />
+				<fieldset class="fieldset_agree mt30">
+					<div class="tb_exp clfix pos_rel">
+						<h3>삼성카드 인터넷 약관</h3>
+						<span class="ab_tr"><a href="javascript:view()" class="btn_link" title="새창">삼성카드 인터넷 약관 상세보기</a></span><!-- 100519 -->
+					</div>
+					<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+						<div class="agree" tabindex="0"><script type="text/javascript">open_url2("/agreement/html_internet_private.html")</script><noscript><a href="/agreement/html_internet_private.html" title="새창" target="_blank">인터넷 개인회원 가입약관</a></noscript> </div>
+					</div></div>
+					<div class="btnl">
+						<label for="private1_1"><input type="radio" class="chk"  name="private1" id="private1_1" value="Y" checked="checked" /> 동의함</label><label for="private1_2"><input type="radio" class="chk" name="private1" id="private1_2" value="N" /> 동의안함</label>
+					</div>
+				</fieldset>
+
+				<div class="line_lgray">&nbsp;</div>
+
+				<fieldset class="fieldset_agree">
+					<div class="tb_exp clfix pos_rel">
+						<h3>개인정보 수집, 이용 등에 대한 동의</h3>
+						<span class="ab_tr"><a href="javascript:info()" class="btn_link" title="새창">개인정보 취급방침 상세보기</a></span>
+					</div>
+					<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+						<div class="agree" tabindex="0"><script type="text/javascript">open_url2("/agreement/html_private.html")</script><noscript><a href="/agreement/html_private.html" title="새창">개인정보 수집, 이용 등에 대한 동의</a></noscript></div>
+					</div></div>
+					<div class="btnl">
+						<label for="label_private01"><input type="radio" class="chk" id="label_private01" name="private2" value="Y" checked="checked" /> 동의함</label><label for="label_private02"><input type="radio" class="chk" id="label_private02" name="private2" value="N" /> 동의안함</label>
+					</div>
+				</fieldset>
+
+				<div class="line_lgray">&nbsp;</div>
+
+<!-- 120327 수정 -->
+				<fieldset class="fieldset_agree">
+					<div class="box_white" style="height:50px;"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+						<p class="t_desc03">본인은 귀사가 본인의 개인정보를 수집·이용시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는 것에 동의합니다. (고유식별정보 : 주민등록번호)</p>
+						<div class="btnr01" style="position:absolute; bottom:3px;right:10px;">
+							<label for="label_agr_private_credit1"><input type="radio" class="rdo01" value="Y" id="label_agr_private_credit1" name="id_agr_private_credit" checked="checked" /><span class=" t_11">동의함</span></label>
+							<label for="label_agr_private_credit2"><input type="radio" class="rdo01" value="N" id="label_agr_private_credit2" name="id_agr_private_credit" /><span class="a t_11">동의안함</span></label>
+						</div>
+					</div>
+                   </div>
+				</fieldset>
+<!-- //120327 수정 -->
+
+				<div class="btnset mt20">
+					<p class="btnc"><a href="javascript:agree()"><img src="/images/common/btn_nextstep.jpg" alt="다음단계" /></a></p>
+				</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

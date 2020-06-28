@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_superS_signchange.png" alt="수퍼S / 시그니처 약정한도 서비스를 변경하세요." /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="tab02 w810 clfix">
+						<ul>
+                            <li><a href="javascript:goTabPage401();">카드 이용내역 </a></li>
+                            <li><a href="javascript:goTabPage403();">약정한도 차감내역</a></li>
+                            <li class="on"><a href="javascript:goTabPage406();">약정변경</a></li>
+                            <!-- <li><a href="javascript:goTabPage408();">약정한도 전환</a></li> -->    
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_contract_change2.png" alt="월 약정구간을 변경가능합니다." /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>사전 약정에 따라 부여받은 <strong class="t_black">약정한도 차감 가맹점</strong>에서 다양하게 할인 받을 수 있는 서비스입니다.</span>
+						</div>
+						<div class="line_lgray">&nbsp;</div>
+
+						<p class="t_duepay"><img src="/images/mh/txt_superS_apply.png" alt="고객님의 당월 신판 한도는" /> 123 <img src="/images/mh/txt_superS_won.png" alt="만원 입니다" /></p>
+						<p class="ml10 mb15">카드 신판한도가 월 약정구간 최소금액의 150%보다 낮을 경우 월 약정구간이 하향될 수 있습니다.<br />
+                                신판한도 상향을 원할 경우 한도상향을 신청해주세요.<span class="pl10"><a href="javascript:goTabPage('NHPIMCD030201');" class="btn_link">한도상향 바로가기</a></span></p>
+						<div class="tb_exp">
+							<span><strong class="t_black">월 약정구간 / 약정기간 변경</strong></span>
+						</div>
+
+						<table class="dtable01 dtable_inputfield" summary="월 약정구간별로 약정기간을 신청하는 게시판입니다.">
+						<caption>월 약정구간별 약정기간 변경</caption>
+						<colgroup><col width="*" /><col width="16%" /><col width="16%" /><col width="16%" /><col width="16%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class=" cell_l10 riline">월 약정구간</th>
+								<th scope="col" colspan="5" class="boline_b0">약정한도</th>
+							</tr>
+							<tr>
+								<th scope="col">약정기간 1년 시</th>
+								<th scope="col">약정기간 2년 시</th>
+								<th scope="col">약정기간 3년 시</th>
+								<th scope="col">약정기간 4년 시</th>
+								<th scope="col">약정기간 5년 시</th>
+							</tr>
+						</thead>
+						<tbody>						
+							<tr>
+								<td class="cell_l10 riline cell_bg">30만원 ~ 50만원</td>
+								
+								<td class="cell_l10"><input type="radio" class="rdo" title="4만원 이상"   name="rdo_amt" id="rdo_amt_1"  onclick="rad_superscard_amt('30','1','4')" /> <label for="rdo_amt_1">4만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="8만원 이상"   name="rdo_amt" id="rdo_amt_2"  onclick="rad_superscard_amt('30','2','8')" /> <label for="rdo_amt_2">8만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="12만원 이상"  name="rdo_amt" id="rdo_amt_3"  onclick="rad_superscard_amt('30','3','12')" /> <label for="rdo_amt_3">12만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="16만원 이상"  name="rdo_amt" id="rdo_amt_4"  onclick="rad_superscard_amt('30','4','16')" /> <label for="rdo_amt_4">16만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="20만원 이상"  name="rdo_amt" id="rdo_amt_5"  onclick="rad_superscard_amt('30','5','20')" /> <label for="rdo_amt_5">20만원</label></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline cell_bg">50만원 ~ 80만원</td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="6만원 이상" name="rdo_amt" id="rdo_amt_6" onclick="rad_superscard_amt('50','1','6')" /> <label for="rdo_amt_6">6만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="12만원 이상" name="rdo_amt" id="rdo_amt_7" onclick="rad_superscard_amt('50','2','12')" /> <label for="rdo_amt_7">12만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="18만원 이상" name="rdo_amt" id="rdo_amt_8" onclick="rad_superscard_amt('50','3','18')" /> <label for="rdo_amt_8">18만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="24만원 이상" name="rdo_amt" id="rdo_amt_9" onclick="rad_superscard_amt('50','4','24')" /> <label for="rdo_amt_9">24만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="30만원 이상" name="rdo_amt" id="rdo_amt_10" onclick="rad_superscard_amt('50','5','30')" /> <label for="rdo_amt_10">30만원</label></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline cell_bg">80만원 ~ 120만원</td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="15만원 이상" name="rdo_amt" id="rdo_amt_11" onclick="rad_superscard_amt('80','1','15')" /> <label for="rdo_amt_11">15만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="30만원 이상" name="rdo_amt" id="rdo_amt_12" onclick="rad_superscard_amt('80','2','30')" /> <label for="rdo_amt_12">30만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="45만원 이상" name="rdo_amt" id="rdo_amt_13" onclick="rad_superscard_amt('80','3','45')" /> <label for="rdo_amt_13">45만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="60만원 이상" name="rdo_amt" id="rdo_amt_14" onclick="rad_superscard_amt('80','4','60')" /> <label for="rdo_amt_14">60만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="75만원 이상" name="rdo_amt" id="rdo_amt_15" onclick="rad_superscard_amt('80','5','75')" /> <label for="rdo_amt_15">75만원</label></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline cell_bg">120만원 ~ 200만원</td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="20만원 이상" name="rdo_amt" id="rdo_amt_16" onclick="rad_superscard_amt('120','1','20')" /> <label for="rdo_amt_16">20만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="40만원 이상" name="rdo_amt" id="rdo_amt_17" onclick="rad_superscard_amt('120','2','40')" /> <label for="rdo_amt_17">40만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="60만원 이상" name="rdo_amt" id="rdo_amt_18" onclick="rad_superscard_amt('120','3','60')" /> <label for="rdo_amt_18">60만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="80만원 이상" name="rdo_amt" id="rdo_amt_19" onclick="rad_superscard_amt('120','4','80')" /> <label for="rdo_amt_19">80만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="100만원 이상" name="rdo_amt" id="rdo_amt_20" onclick="rad_superscard_amt('120','5','100')" /> <label for="rdo_amt_20">100만원</label></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline cell_bg">200만원 ~ 300만원</td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="48만원 이상" name="rdo_amt" id="rdo_amt_21" onclick="rad_superscard_amt('200','1','48')" /> <label for="rdo_amt_21">48만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="96만원 이상" name="rdo_amt" id="rdo_amt_22" onclick="rad_superscard_amt('200','2','96')" /> <label for="rdo_amt_22">96만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="144만원 이상" name="rdo_amt" id="rdo_amt_23" onclick="rad_superscard_amt('200','3','144')" /> <label for="rdo_amt_23">144만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="192만원 이상" name="rdo_amt" id="rdo_amt_24" onclick="rad_superscard_amt('200','4','192')" /> <label for="rdo_amt_24">192만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="240만원 이상" name="rdo_amt" id="rdo_amt_25" onclick="rad_superscard_amt('200','5','240')" /> <label for="rdo_amt_25">240만원</label></td>
+							</tr>
+							<tr>
+								<td class="cell_l10 riline cell_bg">300만원 ~ 400만원</td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="72만원 이상" name="rdo_amt" id="rdo_amt_26" onclick="rad_superscard_amt('300','1','72')" /> <label for="rdo_amt_26">72만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="144만원 이상" name="rdo_amt" id="rdo_amt_27" onclick="rad_superscard_amt('300','2','144')" /> <label for="rdo_amt_27">144만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="216만원 이상" name="rdo_amt" id="rdo_amt_28" onclick="rad_superscard_amt('300','3','216')" /> <label for="rdo_amt_28">216만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="288만원 이상" name="rdo_amt" id="rdo_amt_29" onclick="rad_superscard_amt('300','4','288')" /> <label for="rdo_amt_29">288만원</label></td>
+								<td class="cell_l10"><input type="radio" class="rdo" title="360만원 이상" name="rdo_amt" id="rdo_amt_30" onclick="rad_superscard_amt('300','5','360')" /> <label for="rdo_amt_30">360만원</label></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<ol class="list_desc">
+							<li><p>약정변경 시 기존에 이용한 금액은 이월되지 않고 기존 약정으로의 원복도 불가합니다.</p></li>
+							<li><p>약정변경 시에는  기존 약정은 해지되며, 변경 신청한 약정은   신청한 익월 1일부터 개시 됩니다.</p></li>
+							<li><p>약정 변경 전,  약정기간 미달사용에 따른 청구금액은 기존 잔여 약정한도와  신규로 부여받은 약정한도에서 차감 됩니다. <br />(단, 부족시 카드대금 청구).</p></li>
+						</ol>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="btnset mt30">
+                    <p class="btnc"><a href="javascript:setModify();" id="sendCp"><img src="/images/common/btn_contract_change.png" alt="약정 변경" /></a></p>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

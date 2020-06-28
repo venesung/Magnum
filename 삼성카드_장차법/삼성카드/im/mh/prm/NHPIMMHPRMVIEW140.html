@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+<script type="text/javascript" src="/js/premium_navi.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<!--script src="/js/embedswf.js" language="javascript" type="text/javascript"></script--><!-- 플래시 삭제 13.04.10 -->
+<script type="text/javascript">
+$(document).ready(function(){
+	premiumNavi.init({
+		depth1 : 0,
+		depth2 : 3
+	});
+});
+</script>
+
+<!-- 공통 헤더 시작 -->
+<script type="text/javascript">
+ function prmPageNavigate(key){
+	 if(key == "002") { //프리미엄S  
+		var url='/pms002.do?method=primiumS';
+		var state = "scrollbars=yes,resizable=yes,status=yes";
+		window.open(url, '', state);
+		return;
+	}else if(key == "003") { //매거진S응모
+		var url='/pms002.do?method=magazineSApply';
+		var state = "width=730,height=600,scrollbars=yes,resizable=no";
+		var newwin = window.open(url, '', state);
+		return;
+	}
+
+	var goUrl;
+	switch(key){
+		case "001" : goUrl = "/pms001.do?method=premiumLoungeMain"; break; //프리미엄회원이란
+		case "004" : goUrl = "/pms003.do?method=noInterest"; break; //무이자할부
+		case "005" : goUrl = "/pms002.do?method=primiumCouponBook"; break; //쿠폰북
+		case "006" : goUrl = "/pms003.do?method=pointBack"; break; //포인트백
+		case "007" : goUrl = "/pms002.do?method=travel"; break; //국내테마여행
+		case "008" : goUrl = "/pms001.do?method=TravelService"; break; //SAM 여행할인서비스
+		case "009" : goUrl = "/pms001.do?method=sinla"; break; //신라면세점
+		case "010" : goUrl = "/pms001.do?method=ingEvent"; break; //진행중인 이벤트
+		case "011" : goUrl = "/pms001.do?method=oldEvent"; break; //종료된 이벤트
+		case "012" : goUrl = "/pms001.do?method=winEventList"; break; //당첨자발표
+		case "013" : goUrl = "/pms002.do?method=shopping"; break; //쇼핑
+		case "014" : goUrl = "/pms003.do?method=myPage"; break; //myPage
+		case "015" : goUrl = "/pms003.do?method=getCouponMain"; break; //myPage
+		case "016" : goUrl = "/pms003.do?method=getPointAddSave"; break; //포인트추가적립
+		
+		
+	}
+	document.form1.method = "post";
+	document.form1.action=goUrl;
+	tabSubmit(document.form1.action);
+			
+ }
+ </script>
+ 
+ <!-- premium lounge title,navi -->
+ <div class="mvint_premium">
+     <div class="premium_tit">
+         <h1 style="padding-left:0"><img src="/images/premium/h1_premium.gif" alt="프리미엄 S를 마음껏 누려보세요! 프리미엄 S 라운지" /></h1>
+         <p><img src="/images/premium/h1_premium_txt.gif" alt="프리미엄 S는 삼성카드 프리미엄 회원님께만 추가로 제공해 드리는 우대 프로그램입니다." /></p>
+         <ul>
+             <li><a href="javascript:prmPageNavigate('001');"><img src="/images/premium/btn_premium01.gif" alt="프리미엄회원이란" /></a></li>
+             <li><a href="javascript:prmPageNavigate('002');" title="새창"><img src="/images/premium/btn_premium02.gif" alt="뉴스레터" /></a></li><!-- 정기일반영 13.03.29 -->
+             	<li><a href="javascript:prmPageNavigate('003')" title="새창"><img src="/images/premium/btn_premium03.gif" alt="매거진S응모" /></a></li>
+         </ul>
+     </div>
+
+     <ul class="premium_navi">
+         <li class="n1">
+             <div class="off" style="display:none;">
+                 <a href="#"><img src="/images/premium/premium_navi01_off.gif" alt="프리미엄서비스S" /></a>
+             </div>
+             <div class="on" style="display:block;">
+                 <p><img src="/images/premium/premium_navi01_on.gif" alt="프리미엄서비스S" /></p>
+                 <ul> <!-- 20121218 modify -->
+                     <li class="sm1"><a href="javascript:prmPageNavigate('004');"><img src="/images/premium/premium_navi01_01_off.gif" alt="무이자할부" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('015');"><img src="/images/premium/premium_navi01_04_off.gif" alt="쿠폰북" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('006');"><img src="/images/premium/premium_navi01_03_off.gif" alt="포인트백" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('007');"><img src="/images/premium/premium_navi01_08_off.gif" alt="국내테마여행" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('008');"><img src="/images/premium/premium_navi01_07_off.gif" alt="여행할인" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('009');"><img src="/images/premium/premium_navi01_06_off.gif" alt="신라면세점 할인" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('016');"><img src="/images/premium/premium_navi01_02_off.gif" alt="포인트추가적립" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n2">
+             <div class="off" style="display:block;">
+                 <a href="#"><img src="/images/premium/premium_navi02_off.gif" alt="프리미엄이벤트" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <p><img src="/images/premium/premium_navi02_on.gif" alt="프리미엄이벤트" /></p>
+                 <ul> 
+                     <li><a href="javascript:prmPageNavigate('010');"><img src="/images/premium/premium_navi02_01_off.gif" alt="진행 중인 이벤트" /></a></li>
+                     <li><a href="javascript:prmPageNavigate('011');"><img src="/images/premium/premium_navi02_02_off.gif" alt="종료된 이벤트" /></a></li>                        
+                     <li><a href="javascript:prmPageNavigate('012');"><img src="/images/premium/premium_navi02_03_off.gif" alt="당첨자 발표" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n3">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_off.gif" alt="프리미엄쇼핑몰" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_on.gif" alt="프리미엄쇼핑몰 - 프리미엄 회원만의 특별한 공간" /></a>
+             </div>
+         </li>
+         <li class="n4">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_off.gif" alt="마이 페이지" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_on.gif" alt="마이 페이지 - 프리미엄 회원님께서 받은 혜택을 확인하세요." /></a>
+             </div>
+         </li>
+     </ul>
+ </div>
+<!--// 공통 헤더 끝 -->
+<form name="form1" method="post">
+<!-- content_block 100516 -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/premium/h2_theme_travel01.png" alt="테마여행 안내입니다" /></h2>
+	<div class="content_block_inner d_theme_travel">	<!-- SR내역 13.04.15 -->
+		<blockquote><img src="/images/premium/txt_theme_travel01.png" alt="만원으로 떠나는 짜릿한 테마여행! 여행을 떠나보세요" /></blockquote>
+		<p class="mt15 mb10"><img src="/images/premium/txt_theme_travel02.png" alt="분기별 총 500명(동반 1인 포함)을 추첨하여 1인당 6만원 상당의 국내 테마여행을 1인당 1만원에 제공해드립니다." /></p>	<!-- SR내역 13.04.15 -->
+			<!-- SR내역 13.04.15 끝 -->
+ 			<div class="btnset"> 
+				<p class="btnl"> 
+					<span id="applistok" style="display:none;"><a href="#" onclick="go_start_l();return false;"><img src="/images/common/btn_chk_applist.png" alt="신청내역확인" /></a>  <a href="#" onclick="go_themepop();return false;"><img src="/images/common/btn_info_theme_travel.png" alt="테마여행 이용안내" /></a></span> 
+					<span id="applistno" style="display:none;"><a href="#" onclick="alert('응모하신 내역이 없습니다.');return false;"><img src="/images/common/btn_chk_applist.png" alt="신청내역확인" /></a>  <a href="#" onclick="go_themepop();return false;"  title="새창"><img src="/images/common/btn_info_theme_travel.png" alt="테마여행 이용안내" /></a></span> 
+				</p> 
+			</div>
+			<div class="line_lgray"> </div> 
+			<dl class="list_week_travel_detail"> 
+				<dt><img src="/images/mh/list_theme_travel10.png" alt="대상회원" /></dt><dd>테마여행 신청한 회원 중 추첨을 통해 당첨된 250명과 동반 1인</dd> 
+				<dt><img src="/images/mh/list_theme_travel01.png" alt="출발일" /></dt><dd>2013년 5월 25일 (토) 출발</dd> 
+				<dt><img src="/images/mh/list_theme_travel02.png" alt="신청기간" /></dt><dd>2013년 4월 16일 (월) ~ 5월 5일 (일)</dd> 
+				<dt><img src="/images/mh/list_theme_travel03.png" alt="당첨자발표" /></dt>
+				<dd> 2013년 5월 10일 (금) 당첨자발표란 및 개별 이메일 통보  
+					<ol class="list_no01" style="margin-left:-12px;letter-spacing:-1px;" > 
+						<li>당첨되신 회원께는 당첨안내 이메일이 발송되오니 회원정보를 확인해 주시기 바랍니다. <span class="ml10"><a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn_link">회원정보조회ㆍ변경</a></span></li> 
+						<li>당첨되신 회원께서는 결제정보를 입력하고 결제완료를 하셔야 출발이 확정 됩니다. </li> 
+					</ol> 
+					<p class="t_11 ls01 ml10">- 결제정보는 발송되는 당첨안내 이메일 및 [신청내역확인] 버튼 을 통한 별도의 결제 페이지에서 입력 가능합니다</p> 
+					<p class="t_11 ls01 ml10">- 결제 시 출발지 및 출발인원은 변경 불가합니다.</p> 
+				</dd> 
+			</dl> 
+			<div class="line_lgray"> </div> 
+ 			<h3><img src="/images/premium/txt_theme_travel1301.png" alt="2013년 첫번째, 테마여행 상품" /></h3><!-- 130319 수정 --><!-- 120522 수정 --> 
+			<ul class="list_week_travel"> 
+				<li> 
+					<p class="p_photo"><img src="/images/premium/img_theme_travel01_120820.jpg" alt="" /></p> 
+					<div class="p_desc pos_rel"> 
+						<p class="p_tit"><img src="/images/premium/txt_travel1301.png" alt="아빠와 함께 즐거운 여행 떠나보세요!갑사계곡 트래킹과 달콤한 딸기따기! "/> 
+							<a href="#" onclick="go_themepop2();" class="ml10 a_point t_11 " style="font-weight:normal" title="새창">여행일정보기</a>
+						</p><!-- 120522 수정 --> 
+						<p class="mt10"> 
+							<span id="applyu"><a href="#" onclick="go_start('u');return false;"><img src="/images/mh/btn_app_modify.png" alt="응모수정하기" /></a></span> 
+							<span id="applyn"><a href="#" onclick="go_start('n');return false;"><img src="/images/mh/btn_application.png" alt="응모하기" /></a></span> 
+						</p>
+					</div>
+				</li>
+			</ul>
+	</div>
+</div>
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_theme_travel04.png" alt="각 지역별 출발장소 안내입니다" /></h2>
+	<div class="content_block_inner d_theme_travel">
+		<ol class="list_no01 info_theme_travel">
+			<li><p>각지역별 출발장소 안내</p>
+				<dl class="pl20"><!-- 100608_일산/부산추가 -->
+					<dd><strong>시청</strong>시청역 8번 출구 50m 지점 삼성본관 앞</dd>
+					<dd><strong>대전</strong>대전시청역 2번 출구 앞</dd>
+					<dd><strong>강남</strong>강남역 7번 출구 50m 지점 하나은행 앞</dd>
+					<dd><strong>대구</strong>반월당역 17번 출구 동아쇼핑 앞</dd>
+					<dd><strong>일산</strong>마두역 5번 출구 앞</dd>
+					<dd><strong>부산</strong>서면역 9번 출구 앞</dd>
+					<dd><strong>분당</strong>야탑역 4번 출구 앞</dd>
+					<dd><strong>수원</strong>화서역 1번 출구 앞</dd>
+					<dd><strong>천안</strong>천안터미널 학화호두과자 앞</dd>
+					<dd><strong>광주</strong>광주역 관광안내소 앞</dd><!-- 120522 추가 -->
+				</dl>
+				<p style="margin-left:15px;">※ <span style="font-size:11px;">각 지역별 지정출발장소에서만 승하차가 가능하며 정시 출발합니다.</span></p>
+			</li>
+			<li style="margin-top:7px;">
+				<p>만 36개월 미만은 유아로 구분되어 별도 요금없이 참여 가능하나 차량 좌석은 배정되지 않으며, <br />만 36개월 이상은 성인과 동일한 요금이 부과되니 신청 시에 참고하시기 바랍니다.</p>
+			</li>
+			<li>
+				<p>본 서비스는 카드사의 사정에 따라 중단 변경될 수 있으며 사전에 그 내용을 알려 드립니다</p>
+			</li>
+		</ol>
+	</div>
+</div>
+<!-- SR내역 13.04.15 끝 -->
+</form>	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

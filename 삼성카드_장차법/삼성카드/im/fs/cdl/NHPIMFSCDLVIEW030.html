@@ -1,0 +1,17 @@
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMFSCDLVIEW030.jsp (Flex에서 서버 시간을 조회하기 위한 단순 Text Type의 JSP)
+ * Author: 인투데이타 시스템 이중건
+ * Created on 2010. 9. 2.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page import="com.scard.common.asis.util.DateUtil" %>
+<%
+	String serverDateTime = DateUtil.getToday("yyyy-MM-dd-HH-mm-ss");
+
+	System.out.println("\n\n\n============================================");
+	System.out.println("serverDateTime [" + serverDateTime + "]");
+	System.out.println("============================================\n\n\n");
+%>
+<%=serverDateTime%>

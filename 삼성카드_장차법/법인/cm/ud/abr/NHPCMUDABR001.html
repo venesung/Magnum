@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>해외 이용내역 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_foreign_uselist_detail.png" alt="해외 이용내역" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<div class="tb_exp clfix mt30">
+						<span>당일부터 <strong class="t_black">6개월 이내에</strong> 접수된 매출이 조회됩니다.</span>
+					</div>
+
+					<!-- calendar_position -->
+						<div class="searchgroup">
+					    	<h2><img src="/images/cm/h2_searchgroup.png" alt="SEARCH" /></h2>
+					    	<div class="groupname"><!-- search option 100118 -->
+									<select name="searchKey" title="검색조건 선택"  style="width:100px">
+											<option value="">전체</option>
+										</select>&nbsp;
+									<input class="txt" type="text" id="group" name ="searchValue"  value="" style="width:365px" title="검색어 입력" />
+									<a href="javascript:search();" class="btn btn_s_blue"><span>조회</span></a>
+							</div><!--end of searchgroup -->
+						</div>
+
+					<h2><img src="/images/cm/h2_plane_diversioncard_demandlist01.png" alt="이용 정보" /></h2>
+					<div id="printDiv"  class="dtable_over d_easy mt20"><!-- 100519 -->
+						<table class="dtable01" summary="해외사용내역(그룹명, 조직명, 카드종류, 카드번호, 명의자, 발급일, 유효기간, 카드상태) 정보를 볼 수 있는 게시판입니다.">
+						<caption>해외사용내역</caption>
+						<colgroup><col width="6%" /><col width="10%" /><col width="11%" /><col width="25%" /><col width="15%" /><col width="14%" /><col width="6%" /><col width="6%" /><col width="7%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a">번호</th>
+							<th scope="col" class="cell_l10">그룹명</th>
+								<th scope="col" class="cell_l10">조직명</th>
+								<th scope="col" class="cell_l10">카드종류</th>
+								<th scope="col">카드번호</th>
+								<th scope="col" class="cell_l10">명의자</th>
+								<th scope="col">발급일</th>
+								<th scope="col">유효기간</th>
+								<th scope="col">카드상태</th>
+							</tr>
+						</thead>
+					<tbody>
+						<tr>
+							<td class="cell_l10a">1</td>
+							<td  class="cell_l10"><span class="nobreak_nolink"></span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w90"></span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w200"></span></td>
+							<td><a href="#1" class="a_point p_nowrap" title="이용내역 상세보기">000</a></td>
+							<td class="cell_l10"><span class="nobreak_nolink w110"></span></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+					</table>
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+
+						${_page}
+					</div>
+					<p class="btnl"><a href="/mainPage.do?menuId=NHPIMSSCSDF" class="btn btn_white"  target="_blank" title="새창"><span>해외 안심 서비스 설정 &gt;</span></a></p>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+
+</body>
+</html>

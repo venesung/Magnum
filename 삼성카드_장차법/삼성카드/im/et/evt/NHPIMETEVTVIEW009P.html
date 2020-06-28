@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>이벤트 당첨자 목록 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+</head>
+<body onLoad="resize();">
+
+<div id="pop_wrap">
+	<div id="mvint_pheader">
+		<h1><img src="/images/et/pop_h1_event_winner.jpg" alt="이벤트 당첨자 목록입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="yscroll" tabindex="0">
+		
+		<div class="content_block content_block_card clfix">
+			
+			<table class="dtable02" summary="이벤트결과를 나타내는 표- 이벤트 제목, 상품명, 이벤트 당첨자가 있습니다"> 
+			<caption class="hidden">이벤트결과</caption>
+			<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>이벤트 제목</p></th>
+					<td colspan="3"><p><%=personData.getTitle() %></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>상품명</p></th>
+					<td><p><span class="t_no"><%=personData.getPrize() %></span></p></td>
+					<th scope="row"><p>이벤트 당첨자</p></th>
+					<td><p><span class="t_no"><%=personData.getCou() %></span> 명</p></td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<ol class="list_no01_left">
+							<li><p class="t_no"><%=i+1 %></p><p><%= vo.getUserName()%></p></li>
+						</ol>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>	
+	
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /><!--100311 -->
+	</div>
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/et/pop_h1_event_winner02.jpg" alt="당첨된 이벤트입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="yscroll">
+		
+		<div class="content_block content_block_card clfix">
+			<p class="mb5">당첨자조회는 전체조회가 가능하고, 이벤트 상세보기는 <strong class="t_point_org">'09.7월이후</strong> 이벤트부터 가능합니다.</p>
+			<table class="dtable01" summary="당첨된 이벤트의 제목, 상품명, 게시일자 등을 알 수 있는 게시판입니다"> 
+			<caption class="hidden">당첨된 이벤트</caption>
+			<colgroup><col width="8%" /><col width="*" /><col width="25%" /><col width="15%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">번호</th>
+					<th scope="col">제목</th>
+					<th scope="col">상품명</th>
+					<th scope="col">게시일자</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10 t_no">-_-</td>
+                    <td class="cell_l"><a href="#">-_-</a></td>
+					<td>-_-</td>
+					<td class="t_no">2012.02.03~2012.02.03</td>
+				</tr>
+			</tbody>
+			</table>
+			<div class="mt10 t_desc04">홈페이지에 등록된 이벤트인 경우 제목을 클릭하시면 상세 내용을 확인하실 수 있습니다.<br />단, 등록되어 있지 않은 이벤트의 경우에는 당사 고객만족센터 (1588-8700)으로<br/>문의하여 주십시요. </div>
+		</div>
+	</div>
+	
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /><!--100311 -->
+	</div>
+	
+	
+</div>
+
+</body>
+</html>

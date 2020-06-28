@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_payback_list.png" alt="청구할인 이용내역입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_payback_list01.png" alt="청구할인 내역을 조회하세요" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p><span class="t_point_org">조회대상카드 :</span> 온라인쇼핑카드, 삼성애니패스e포인트카드, 삼성지엔미e포인트카드, CJ 삼성지엔미카드,<br />CJ 삼성애니패스카드, CJ 삼성애니패스포인트카드, CJ삼성지엔미포인트카드, G마켓 삼성티클래스앤오일카드,<br />11번가 삼성티클래스앤오일카드, 신세계몰 삼성티클래스앤오일카드</p></li>
+			<li><p>가맹점에서 카드 결제 시 청구할인을 받으신 내역을 확인하실 수 있습니다.</p></li>
+		</ol>
+                     
+    <form method="post" name="frm1"   autocomplete="off">
+    	<input type="hidden" name="select_cardnm" />
+    	<input type="hidden" name="select_servicenm" />
+    	<input type="hidden" name="select_servicecn" />
+		<table class="dtable02 dtable_inputfield mt20" summary="청구할인 이용내역 조회를 위한 카드, 조회년월, 할인대상 서비스를 선택하는 게시판입니다.">
+		<caption>청구할인 이용내역 내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>보유카드</p></th>
+				<td><p>
+					<select name="select_card" title="보유카드 선택" style="width:380px">
+					</select>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>조회년월</p></th>
+				<td><p>
+					<select name="select_year" style="width:100px" title="조회년 선택">
+		             <option>00</option>
+					</select>
+					<select name="select_month" style="width:100px" title="조회월 선택">
+					</select>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할인대상 서비스</p></th>
+				<td><p>
+					<select name="select_service" style="width:380px" title="할인대상 서비스 선택">
+					</select>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>   
+
+		<!-- btn -->
+		<div class="btnr">
+			<a id="btn_search" href="#" class="btn btn_blue"><span>조회</span></a>
+		</div>      
+    </form>
+
+	</div>
+</div>
+
+<!-- content_block  -->
+<div id="result_area" class="content_block clfix" style="display:none;">
+	<h2 class="h2"><img src="/images/mh/h2_payback_list02.png" alt="청구할인 받으신 내역입니다" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable01 dtable01_bill" summary="카드명, 사용일자, 매출금액, 할인금액, 청구금액으로 구성된 청구할인 내역">
+		<caption>청구할인 받으신 내역</caption>
+		<colgroup><col width="*" /><col width="80" /><col width="100" /><col width="120" /><col width="100" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">카드명</th>
+				<th scope="col">사용일자</th>
+				<th scope="col" class="cell_r10">매출금액</th>
+				<th scope="col" class="cell_r10">할인금액 (할인율)</th>
+				<th scope="col" class="cell_r10">청구금액</th>
+			</tr>
+		</thead>
+		<tbody id="list_result">
+		</tbody>
+		</table>
+		<p id="service_desc" class="mt20"> </p>
+	</div>
+
+	<div class="clear">&nbsp;</div>
+	<div class="line_lgray">&nbsp;</div>
+	<p class="btnr">
+		<a id="btn_mon_list" href="#" class="btn btn_white"><span>청구할인 대상 실적 확인</span></a>
+	</p>
+
+
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/cs/h1_revocation_requestCase.png" alt="삼성카드 상품별 해지 신청입니다." /></h1>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<p class="mt30"><img src="/images/cs/step_cancel_cardCase01.png" alt="카드번호 입력" /></p>
+		<!--ol class="none">
+			<li><abbr>현재단계</abbr><strong>카드번호 입력</strong></li>
+			<li>카드보유내역조회</li>
+			<li>상품별해지신청확인</li>
+		</ol-->
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<h2><img src="/images/cs/h2_fillurcardinfo.png" alt="회원님의 카드번호를 입력하세요" /></h2>
+		<div class="content_block_inner pos_rel">
+			<table class="dtable02 dtable_inputfield" summary="카드 성명, 주민등록번호, 본인인증, 카드선택, 카드 비밀번호, 카드 CVC번호 등을 입력하는 게시판입니다.">
+			<caption>카드 정보 입력</caption>
+			<colgroup><col width="17%" /><col width="30%" /><col width="17%" /><col width="*" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><p>성명</p></th>
+					<td><p>${name}</p></td>
+					<th scope="row"><p>주민등록번호</p></th>
+					<td><p class="t_no">xxxxxx</p></td>
+				</tr>
+				<!-- //loop -->
+
+				<tr>
+					<th scope="row"><p>본인인증</p></th>
+					<td colspan="3">
+						<p>
+							<label for="label_cardno01"><input type="radio" class="chk" value="01" name="sign_gubun" id="label_cardno01" onclick="" checked="checked" title="카드인증" />카드인증</label>
+							<label for="label_cardno02"><input type="radio" class="chk" value="02" name="sign_gubun" id="label_cardno02" onclick="confirm();" title="공인인증" />공인인증</label>
+                            <a href="#" class="btn btn_s_white" onclick="goTabPageWithParam('NHPIMMSLGIVIEW009', 'gubun=1');return false;"><span>공인인증서사용방법</span></a><a href="#" class="btn btn_s_white" onclick="goTabPageWithParam('NHPIMMSLGIVIEW009', 'gubun=2');return false;"><span>사용가능한공인인증서</span></a>
+						</p>
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><p>카드선택</p></th>
+					<td colspan="3"><p>
+							<label for="id_visa_master"><input type="radio" class="chk" value="비자/마스터/UnionPay(은련)/자체카드" title="비자/마스터/UnionPay(은련)/자체카드" id="id_visa_master" name="name_cardtype" checked="checked" onclick="changeCardType('normal')" /> 비자/마스터/UnionPay(은련)/자체카드</label><!-- SR내역 12.12.20 -->
+							<label for="label_amex"><input type="radio" class="chk" value="아멕스카드" title="아멕스카드" id="label_amex" name="name_cardtype" onclick="changeCardType('amex')" /> 아멕스카드</label>
+						</p>
+						<p class="mt5">
+							<span class="input_cardno" id="cardno_input">
+							</span>
+							&nbsp;<span id="usafeon_cardNo1|cardNo2|cardNo3|cardNo4" style="display:none"></span>
+							&nbsp;<span id="usafeon_cardNo5|cardNo6|cardNo7" style="display:none"></span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 비밀번호</p></th>
+					<td colspan="3"><p class="input_2char"><input type="password" class="txt" name="cardPassword" value="" maxlength="2" title="비밀번호 앞 두자리" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('10');" onblur="checkTypesOnBlur(this,'SSN');" enc="on" /><em>**</em>카드 비밀번호 앞 2자리 &nbsp;<span id="usafeon_cardPassword"></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 CVC번호</p></th>
+					<td colspan="3"><p class="input_2char"><input type="password" class="txt" name="cvcNo" id="cvcNo" value="" maxlength="3" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');" enc="on" title="CVC번호" /> <span id="usafeon_cvcNo"></span></p></td>
+				</tr>
+<!--
+				<tr>
+					<td><p>공인인증서</p></td>
+					<td colspan="3"><p>공인인증서는 필수사용입니다. <a href="#" class="btn btn_s_white" onclick="goTabPageWithParam('NHPIMMSLGIVIEW009', 'gubun=1');"><span>공인인증서사용방법</span></a><a href="#" class="btn btn_s_white" onclick="goTabPageWithParam('NHPIMMSLGIVIEW009', 'gubun=2');"><span>사용가능한공인인증서</span></a></p></td>
+				</tr>
+-->
+			</tbody>
+			</table>
+
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnl t_desc04">회원님의 정보보안을위해 본인인증 절차를 거쳐야 카드회원 해지신청을 이용하실 수 있습니다.</p>
+                <p class="btnr"><a href="#" class="btn btn_blue" onclick="confirm();return false;"><span>상품별 해지 신청하기</span></a></p>
+			</div>
+
+			<dl class="cvc_view">
+				<dt class="t_black"><strong>CVC보는방법</strong></dt>
+				<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+				<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+			</dl>
+		</div>
+	</div>
+
+</form>
+
+	<div id="cardno_normal" style="display:none">
+		<input type="password" name="cardNo1" class="txt" style="width:61px;" id="label_cardno" title="카드번호 앞 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('3');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-
+		<input type="password" name="cardNo2" class="txt" style="width:61px;" id="label_cardno2" title="카드번호 두번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('4');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-
+		<input type="password" name="cardNo3" class="txt" style="width:61px;" id="label_cardno3" title="카드번호 세번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('5');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-
+		<input type="password" name="cardNo4" class="txt" style="width:62px;" id="label_cardno4" title="카드번호 네번째 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('6');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>
+	</div>
+
+	<div id="cardno_amex" style="display:none">
+		<input type="password" name="cardNo5" class="txt" style="width:81px;" id="label_cardno" title="카드번호 앞 4자리" value="" maxlength="4" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('7');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-
+		<input type="password" name="cardNo6" class="txt" style="width:101px;" id="label_cardno2" title="카드번호 두번째 6자리" value="" maxlength="6" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('8');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-
+		<input type="password" name="cardNo7" class="txt" style="width:86px;" id="label_cardno3" title="카드번호 세번째 5자리" value="" maxlength="5" onkeypress="checkTypes(this,'SSN');" onkeyup="changeFocus('9');" onblur="checkTypesOnBlur(this,'SSN');" enc="on"/>
+	</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

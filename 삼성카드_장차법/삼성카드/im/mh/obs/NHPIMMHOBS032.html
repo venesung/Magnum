@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">나만을 위한 특별한 혜택 Just for you</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_onlyforyou_favor.jpg" alt="나만을 위한 특별한 혜택 Just for you - 나만을 위한 맞춤형 혜택과 서비스를 이용해 보세요" /></div>
+				</div>
+
+				<div class="content_block content_block_tab2 clfix">
+					<div class="tab02 w810 h60">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS001M001','true');">나의맞춤혜택</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHMYS005','true');">사용혜택조회</a></li>
+							<li class="on">
+								<a href="#">최대혜택조회</a>
+								<ul class="sub_tab">
+								<% if ( "1".equals( vo.getOjCd() ) ) {  %>
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHOBS022','true');">보유카드</a></li>
+									<li><a href="javascript:go_tabSubmit('025')">추천카드1</a></li>
+									<li><a href="javascript:go_tabSubmit('026')">추천카드2</a></li>
+								<% }else if( "2".equals( vo.getOjCd() ) ) {  %>
+									<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">보유카드</a></li>
+									<li class="on"><a href="javascript:go_tabSubmit('025')">추천카드1</a></li>
+									<li><a href="javascript:go_tabSubmit('026')">추천카드2</a></li>
+								<% }else if( "3".equals( vo.getOjCd() ) ) {  %>
+									<li><a href="javascript:goTabPage('NHPIMMHOBS022','true');">보유카드</a></li>
+									<li><a href="javascript:go_tabSubmit('025')">추천카드1</a></li>
+									<li class="on"><a href="javascript:go_tabSubmit('026')">추천카드2</a></li>																	
+								<% }%>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMHJFYMAIL1','true');">나의상담내역</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHDAY001','true');">기념일알리미서비스</a></li>
+							<!--<li><a href="javascript:goTabPage('NHPIMMHKVP','true');"">왕대박 3 승인번호 등록</a></li>
+							--><li><a href="javascript:goTabPage('NHPIMMHPIT063','true');">보너스클럽 포인트 사후 사용등록</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<!-- 수정 110221 -->
+					<%	if("1".equals(vo.getOjCd())) {	%>
+							<h2><img src="/images/mh/h2_onlyforyou_consult20.png" alt="보유하신 카드의 최대혜택을 새로 확인하실 수 있습니다" /></h2>
+					<%	} else if("2".equals(vo.getOjCd()) || "3".equals(vo.getOjCd())) {	%>
+							<h2><img src="/images/mh/h2_onlyforyou_consult21.png" alt="추천해드린 카드의 최대혜택을 새로 확인하실 수 있습니다." /></h2>
+					<%	}	%>
+					<!-- // 수정 110221 -->
+					<div class="content_block_inner">
+
+<!-- 수정 101022 -->
+
+<!-- 수정 101108 -->
+						<blockquote class="mt20"><img src="/images/mh/txt_onlyforyou_consult23.png" alt="월" class="mt_5" /><span class="t_org t_tahoma18"><%=vo2.getString21()%></span><img src="/images/mh/txt_onlyforyou_consult24.png" alt="원 이용시" class="mt_5" /> <span class="t_org t_tahoma18"><%= vo2.getString15()%></span><img src="/images/mh/txt_onlyforyou_consult22.png" alt="원+α의혜택을 받으실 수 있습니다." class="mt_5" /></blockquote>
+<!-- // 수정 101108 -->
+						<table class="onlyforTable mt15" summary="할인/면제/캐시백, 포인트 적립, 마일리지 적립으로 구성된 최대혜택을 확인할 수 있는 게시판입니다.">
+						<caption>최대혜택안내</caption>
+						<colgroup><col width="18%" /><col width="22%" /><col width="14%" /><col width="16%" /><col width="14%" /><col width="16%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<%
+							if(vo2.getString15()!=null || vo2.getString16()!=null){
+							%>
+							<tr>
+								<th class="cell_l10" scope="row"><span class="t_desc04">할인/면제/캐시백</span></th>
+								<td><span class="t_black t_tahoma18"><%=vo2.getString15()%></span> 원</td>
+								<th class="cell_l10" scope="row"><span class="t_desc04">포인트 적립</span></th>
+								<td><span class="t_black t_tahoma18"><%=vo2.getString16()%></span> p</td>
+								<%
+								if( "Y".equals(vo2.getString22()) ){       
+								%>
+								<th class="cell_l10" scope="row"><span class="t_desc04">마일리지 적립</span></th>
+								<td><span class="t_black t_tahoma18"><%=vo2.getString23()%></span> <%= vo2.getString17()%></td>
+								<%
+								}
+								%>
+							</tr>
+							<%
+							}else{
+							 %>
+							 <tr class="nodata">
+								<td colspan="5">조회된 데이타가 없습니다.</td>
+							</tr>
+							 <%
+							}
+							 %>
+						</tbody>
+						</table>
+
+
+<!-- 수정 101101 -->
+						<table class="dtable01 mt10" summary="혜택구분,업종,이용구분,혜택/서비스,예상이용금액,예상혜택금액으로 구성된 최대혜택 상세내역을 보여주는 게시판입니다.">
+						<caption>최대혜택 상세내역</caption>
+						<!-- 수정 110221 -->
+						<colgroup>
+							<col width="17%" />
+							<col width="10%" />
+							<col width="20%" />
+							<col width="23%" />
+							<col width="15%" />
+							<col width="15%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 riline">혜택구분</th>
+								<th scope="col" class="cell_l10 riline">업종</th>
+								<th scope="col" class="cell_l10 riline">이용구분</th>
+								<th scope="col" class="cell_l10 riline">혜택/서비스</th>
+								<th scope="col" class="cell_r10 riline">예상이용금액</th>
+								<th scope="col" class="cell_r10">예상혜택금액</th>
+							</tr>
+							<!-- // 수정 110221 -->
+						</thead>
+						<tbody>
+						<!-- loop -->
+						<%
+						if(RESULT_LIST !=null && RESULT_LIST.length > 0){
+							//for(HOMEHMV5HPP00022INRecVO1 cardInfo : RESULT_LIST){
+							for(int i=0 ; i < RESULT_LIST.length ; i++ ){ 
+						%>
+						<tr>
+							 <% if(RESULT_LIST[i].getString1().equals("01"))
+							 	{
+									if( i>=1 && 	RESULT_LIST[i].getString1().equals (RESULT_LIST[i-1].getString1()) ){  
+							 %>
+							 <td class="cell_l10 riline t_black"></td>
+							 <%
+									}else{
+							 %> 		 
+							 		<td class="cell_l10 riline t_black">할인/면제/<br>캐시백</td> 															 
+							 <%
+							 		}
+							 	}
+							 	else if(RESULT_LIST[i].getString1().equals("02")){
+							 		if( i>=1 && 	RESULT_LIST[i].getString1().equals (RESULT_LIST[i-1].getString1()) ){ 							 	
+							 %>
+							 <td class="cell_l10 riline t_black"></td>
+							 <%
+									}else{
+							 %> 								
+							
+									<td class="cell_l10 riline t_black">포인트적립</td>	 	
+							 <% 
+									}
+							 	}
+							 	else if(RESULT_LIST[i].getString1().equals("03")){
+							 		if( i>=1 && 	RESULT_LIST[i].getString1().equals (RESULT_LIST[i-1].getString1()) ){ 	
+							 %>
+							 <td class="cell_l10 riline t_black" colspan="2"></td>
+							 <% 		
+							 		}else{
+							 %>							
+									<td class="cell_l10 riline t_black" colspan="2">카드이용에 따른 적립</td> 	
+							 <%
+							 		}
+							 	}
+							 %>
+
+							
+							<% 
+								if( !RESULT_LIST[i].getString1().equals("03") ){ 
+							%>
+							<td class="cell_l10 riline t_black"><a href="javascript:goPopup('<%=RESULT_LIST[i].getString2()%>','<%=vo.getOjCd() %>')" title="새창"><%=RESULT_LIST[i].getString3() %></a></td>
+							<% 
+								}
+							%>	
+							<td class="cell_l10 riline t_black"><%=RESULT_LIST[i].getString5() %></td>
+
+							<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건)  -->
+							<%
+							String tempString4 = RESULT_LIST[i].getString4().trim()  ;
+							String tempString7 = RESULT_LIST[i].getString7().trim() ;
+							if( "".equals( tempString4 ) )	//전사서비스일때
+							{
+								if( "A5526".equals(tempString7) ){		//생활비재테크서비스							
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMMHINFO');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4774".equals(tempString7) ){		//의료지원서비스
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMSSMSS001');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4776".equals(tempString7) ){		//부동산지원서비스
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMSSEMS001');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4718".equals(tempString7) ){		//마이패밀리서비스
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMSSFAM001M002');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4703".equals(tempString7) ){		//블루라인
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPageWithParam('NHPIMSSSBC001M026', 'menuIdx=3');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4701".equals(tempString7) ){		//페이백
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPageWithParam('NHPIMSSSBC001M016', 'menuIdx=2');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4721".equals(tempString7) ){		//프리미엄포인트백
+								%>
+                                <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMMHPMS001M002');"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%
+								}else if ( "A4933".equals(tempString7) || "A4934".equals(tempString7) || "A4936".equals(tempString7) ){		//SAM여행 관련
+								%>
+                                <td class="cell_l10 riline t_black"><a href="http://travel.samsungcard.com/ec/te/pk/fr/travelMain.do?method=selectTravelMain"><%=RESULT_LIST[i].getString8()%></a></td>
+								<%								
+								}else {
+								%>
+								<td class="cell_l10 riline t_black"><%=RESULT_LIST[i].getString8()%></td>
+								<%								
+								}	
+							}else{		//일반상품서비스
+							%>
+                            <td class="cell_l10 riline t_black"><a href="javascript:goView('<%=RESULT_LIST[i].getString4()%>')"><%=RESULT_LIST[i].getString8()%></a></td>
+							<%
+							}
+							%>
+							<!-- 20101221 테이블 혜택/서비스 컬럼에 서비스 화면 링크 추가(추가요건) 여기까지  -->
+							
+
+							<%
+							if(!RESULT_LIST[i].getString1().equals("03")){
+								
+								String tempString6 = RESULT_LIST[i].getString6().trim();
+							%>
+								<td class="cell_r10 riline"><input name="moneyArray[<%=i%>]" type="text" class="onlyforInput" align="right" title="금액" value="<%=tempString6%>" style="margin-left:2px;" />원</td>
+							<%
+							}else{	//카드이용에따른 적립/캐시백일때 텍스트박스 리드온리
+								
+								String tempString6 = RESULT_LIST[i].getString6().trim();
+							%>
+							
+								<td class="cell_r10 riline"><%=tempString6%>원</td>
+							<%
+							}
+							%>		
+							<%
+								String tempString10 = RESULT_LIST[i].getString10().trim();
+							%>			
+							<td class="cell_r10 riline t_black"><span class="t_no"><%=RESULT_LIST[i].getString9()%></span></td>
+						</tr>
+
+
+						 <!-- //loop  -->
+						 <%
+							}
+						}else{
+						 %>
+						 <tr class="nodata">
+							<td colspan="5">조회된 데이타가 없습니다.</td>
+						</tr>
+						 <%
+						}
+						 %>
+
+						<%
+						String a = vo2.getString10().trim()  ;	//값이 없어도 공백이 채워져 오므로
+						String b = vo2.getString13().trim()  ;	//값이 없어도 공백이 채워져 오므로
+									
+						if ( !"".equals(a) ||  !"".equals(b) )
+						{
+						%>
+						<!-- 삭제 110221 -->
+						<!--
+						<tr>
+							<td colspan="3" class="cell_l10 riline t_black">생활비재테크 서비스 (최대 200만원까지 이용가능)</td>
+                            <td class="cell_l10 riline t_black"><a href="javascript:goTabPage('NHPIMMHINFO');"><%=vo2.getString12()%></a></td>
+							<% String tempString10 = vo2.getString10().trim(); %>
+							<td class="cell_r10 riline"><input name="svcMoney" type="text" class="onlyforInput" align="right" value="<%=tempString10%>" />원</td>
+							<td class="cell_r10 riline"><span class="t_no"><%=vo2.getString13()%></span></td>
+						</tr>									
+						-->
+						<!-- // 삭제 110221 -->
+						<%
+						}
+						%>
+						
+						<tr class="cell_bg">
+							<td colspan="3" class="cell_l10"><strong class="t_point">월 평균 이용금액(직전 12개월)</strong></td>
+							<td colspan="4" class="cell_r10"><strong class="t_point_org"><span class="t_no t_point_org"><%=vo2.getString21()%></span> 원</strong></td>
+						</tr>
+
+
+						</tbody>
+						</table>
+<!-- // 수정 101101 -->
+<!-- 삭제 101022
+						<div class="btnset">
+							<p class="btnr"><a href="#" class="btn btn_blue"><span>최대 혜택금액 확인</span></a></p>
+						</div>
+						<table class="dtable02 mt30" summary="월 이용금액 합계와 최대혜택 합계로 최대 혜택금액을 확인할 수 있는 게시판입니다.">
+						<caption>최대 혜택금액 확인</caption>
+						<colgroup><col width="20%" /><col width="*%" /></colgroup>
+						<tbody>
+							<tr class="cell_bg">
+								<th class="cell_l10"><p><strong>월 이용금액 합계</strong></p></th>
+								<td class="cell_l10"><strong class="t_point_org"><span class="t_no t_point_org">1,569,520</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th class="cell_l10"><p><strong>최대혜택 합계</strong></p></th>
+								<td class="cell_l10 t_black">
+									할인/면제/캐시백
+									<span class="t_no">1,569,520</span>원
+									<span class="t_no">l</span>
+									포인트 적립
+									<span class="t_no">11,606</span> P
+								</td>
+							</tr>
+						</tbody>
+						</table>
+ -->
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl" style="margin-left:510px;">
+                                <a href="javascript:go_simulation('Y', '<%=vo2.getOjCd()%>')" class="btn btn_white"><span>최대혜택 확인하기&nbsp; &gt;</span></a>
+							</p>
+						</div>
+						<ol class="list_desc">
+							<li><p>위 혜택금액은 회원님의 실제 카드이용금액 및 이용처에 따라 차이가 있을 수 있습니다.</p></li>
+							<li><p>회원님의 <strong class="t_default">카드 이용한도 내</strong>에서 일시불 및 할부를 이용하실 수 있습니다. <a href="javascript:goTabPage('NHPIMCD030201');" class="btn_link ml10">카드이용한도 확인하기</a></p></li>
+							<li><p>"혜택/서비스"를 클릭하시면 해당 서비스의 상세 내용을, "업종"을 선택하시면 보유카드로 받으실 수 있는<br /> 해당 업종의 더 많은 혜택을 확인하실 수 있습니다.<br />
+        							(단, 조회할 수 없는 일부 상품 및 서비스의 경우 삼성카드(☎1588-8700)으로 문의해주시기 바랍니다.)
+							</p></li>
+						</ol>
+<!-- // 추가 101004 -->
+<!--// 수정 101022 -->
+						
+						
+					</div>
+				</div>
+
+
+</form>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

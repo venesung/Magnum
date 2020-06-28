@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>이벤트 - 삼성카드</title><base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="/css/sme.css" />
+</head>
+<body style="background:none">
+		<div class="board_view1">
+				<div class="top">
+					<h2><span class="label">제목</span> -_-</h2>
+					<div class="date"><span class="label">기간</span> 2012.03.03 ~ 2012.03.03</div>
+				</div>
+				<div class="article">
+									<iframe src="" width="99%" height="100%"  frameborder="0" marginwidth="0" name="iframe" scrolling="no" title="이벤트 내용" onLoad="autoResize(this);"></iframe>
+									<div class="cell_contents">
+										-_-
+									</div>
+								<div class="cell_contents">
+								<jsp:include page="${vo.path}/${vo.cmsSeq}_hp_evt4.html" flush="false"></jsp:include>
+								</div>
+					
+				</div>
+				<div class="bottom">
+					<div class="btn_area">
+					<a href="javascript:goList('<%=tab_index%>')"><img src="/images/sme/btn_board_list.png" alt="목록" /></a>
+					</div>
+					<div class="move">
+									<div class="prev"><span class="label">이전글</span> <a href="javascript:goDetail('<%=preSeq%>','<%=newPreSeq%>');"><%=preTitle%></a></div>
+									<div class="prev"><span class="label">이전글</span> 이전글이 없습니다.</div>
+									<div class="next"><span class="label">다음글</span> <a href="javascript:goDetail('<%=nextSeq%>','<%=newNextSeq%>');"><%=nextTitle%></a></div>
+									<div class="next"><span class="label">다음글</span> 다음글이 없습니다.</div>
+									
+					</div>
+				</div>
+			</div>
+
+							<!--<li class="<%="".equals(tab_index)||"001".equals(tab_index)?"on":""%>"><a href="javascript:goTabPage('NHPIMETEVT001', true)">진행중인 이벤트</a></li>
+							<li class="<%="004".equals(tab_index)?"on":""%>"><a href="javascript:goTabPage('NHPIMETEVT002', true)">종료된 이벤트</a></li>
+							<li class="<%="005".equals(tab_index) ? "on" : ""%>"><a href="javascript:goTabPage('NHPIMETEVT003', true)">당첨자발표</a></li>-->
+
+
+</body>
+</html>

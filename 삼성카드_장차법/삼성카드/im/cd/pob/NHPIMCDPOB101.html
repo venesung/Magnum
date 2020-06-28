@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<div id="printReqConfirmLayer" class="pop_l_position pop_l_wrap_alert" style="position:absolute; display:none; left:210px; top:730px;">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onClick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="이용내역 인쇄신청 레이어 닫기" />
+		<p class="pop_tit2"><img src="/images/mh/layer_tit_general_income_tax_card_01.png" alt="이용내역 인쇄를 신청하시겠습니까?" /></p>
+		<div class="pop_l_content">
+			<p class="pop_l_alert02">인쇄 다운로드는 신청하신 후 1~2시간 이후에<br />
+			<span class="t_point_org">‘인쇄신청내역결과 조회’ 화면에서 조회</span> 하실 수 있습니다.<br />
+			계속해서 서비스를 이용하시겠습니까?</p>
+			<p class="btnc">
+                <a href="javascript:regPrintReq();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+                <a href="javascript:closeConfirmLayer();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_general_income_tax_card.png" alt="종합소득세용 카드이용내역을 조회하실 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><a href="#">이용내역 조회</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDPOB102', 'true');">인쇄신청결과 조회</a></li>
+		</ul>
+	</div>
+
+	<h2><img src="/images/mh/h2_general_income_tax_card_01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">
+	
+	<form method="post" name="search_form" action="/hp/im/cd/pob.do" autocomplete="off">
+	
+		<div id="selectbox1" class="selectbox selectbox_dim" onClick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+			<p><a href="#" class="default" onClick="return false;">전체</a></p>
+			<div class="childlayer">
+				<ul>
+                    <li><a href="javascript:setParam1('9');">전체</a></li>
+                    <li><a href="javascript:setParam1('1');">본인카드</a></li>
+                    <li><a href="javascript:setParam1('2');">가족카드</a></li>
+                    <li><a href="javascript:setParam1('3');">법인개별</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="selectbox_r_txt">(전체, 본인카드, 가족카드, 법인개별)을 조회하시려면 카드구분을 변경하시기 바랍니다.</span>
+
+		<div class="line_lgray">&nbsp;</div>
+
+		<ol class="list_no01">
+			<li><p>카드이용내역 조회는 08:00~20:00까지 조회하실 수 있습니다.</p></li>
+			<li><p>최근 2년 이내의 이용내역을 조회하실 수 있습니다.</p></li>
+			<li><p>조회일 전일까지 접수된 이용내역을 조회하실 수 있습니다.</p></li>
+            <li><p>최근 6개월 이내 이용하신 승인내역은 <a href="javascript:goTabPage('NHPIMCDCUV101');" class="a_point">카드이용내역</a> 화면에서 조회하실 수 있습니다.</p></li>
+			<li><p>인쇄 신청 후 이용내역 데이터를 불러오는 데에는 약 2~3시간의 시간이 소요됩니다.<br />
+			이후 신청결과 조회 메뉴에서 신청하신 이용내역을 확인하실 수 있습니다.</p></li>
+		</ol>
+
+		<table class="dtable02 dtable_inputfield" summary="카드이용내역 조회를 위한 카드구분, 이용구분, 이용기간을 선택하는 게시판입니다.">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>카드구분</p></th>
+				<td><p>
+					<label for="lebel_ctype01" class="mr10"><input type="radio" class="rdo" id="lebel_ctype01" name="id_ctype" onClick="setParam2('99')" title="전체" /> 전체</label>
+					<label for="lebel_ctype02" class="mr10"><input type="radio" class="rdo" id="lebel_ctype02" name="id_ctype" onClick="setParam2('01')" title="신용카드"  /> 신용카드</label>
+					<label for="lebel_ctype03" class="mr10"><input type="radio" class="rdo" id="lebel_ctype03" name="id_ctype" onClick="setParam2('02')" title="체크카드"  /> 체크카드</label>
+					<label for="lebel_ctype04" class="mr10"><input type="radio" class="rdo" id="lebel_ctype04" name="id_ctype" onClick="setParam2('04')" title="올앳카드"  /> 올앳카드</label>
+					<label for="lebel_ctype05" class="mr10"><input type="radio" class="rdo" id="lebel_ctype05" name="id_ctype" onClick="setParam2('05')" title="기명식기프트카드"  /> 기명식기프트카드</label>
+					<label for="lebel_ctype06"><input type="radio" class="rdo" id="lebel_ctype06" name="id_ctype" onClick="setParam2('11')" title="MSC카드"  /> MSC카드</label>
+				</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="lebel_type01" class="mr10"><input type="radio" class="rdo" id="lebel_type01" name="id_type" onClick="setParam3('9')" title="전체"  /> 전체</label>
+					<label for="lebel_type02" class="mr10"><input type="radio" class="rdo" id="lebel_type02" name="id_type" onClick="setParam3('1')" title="일시불"  /> 일시불</label>
+					<label for="lebel_type03" class="mr10"><input type="radio" class="rdo" id="lebel_type03" name="id_type" onClick="setParam3('2')" title="할부"  /> 할부</label>
+					<label for="lebel_type04" class="mr10"><input type="radio" class="rdo" id="lebel_type04" name="id_type" onClick="setParam3('3')" title="현금서비스"  /> 현금서비스</label>
+					<label for="lebel_type05"><input type="radio" class="rdo" id="lebel_type05" name="id_type" onClick="setParam3('4')" title="대출"  /> 대출</label>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>이용기간</p></th>
+				<td id="id_cal_wrap"><p>
+                    <a href="javascript:srchDate(1);" style="display:none;" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+                    <a href="javascript:srchDate(2);" style="display:none;" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+                    <!-- <a href="javascript:srchDate(3);" class="btn btn_s_gray" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a> -->
+                    <a href="javascript:srchDate(3);" style="display:none;" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+                    <a href="javascript:srchDate(4);" style="display:none;" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+                    <a href="javascript:srchDate(5);" style="display:none;" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3" style="width:30px">3개월</span></a>
+                    <a href="javascript:srchDate(6);" style="display:none;" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6" style="width:30px">6개월</span></a>
+                    <a href="javascript:srchDate(7);" style="display:none;" class="btn btn_s_white" id="btnYear1"><span id="dateYear" style="width:20px">1년</span></a>
+					<a href="javascript:srchDate(2010);" class="btn btn_s_white" id="btnYear2010"><span id="dateYear" style="width:40px">2010년도</span></a>
+					<a href="javascript:srchDate(2011);" class="btn btn_s_white" id="btnYear2011"><span id="dateYear" style="width:40px">2011년도</span></a>
+					<a href="javascript:srchDate(2012);" class="btn btn_s_white" id="btnYear2012"><span id="dateYear" style="width:40px">2012년도</span></a><!-- SR내역 12.12.13 -->
+					<a href="javascript:srchDate(2013);" class="btn btn_s_white" id="btnYear2013"><span id="dateYear" style="width:40px">2013년도</span></a><!-- SR내역 13.02.08 -->
+					<br />
+					<span class="reset_date block mt5">
+                    <a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>
+					</span></p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnset">
+			<div class="btnl"><p class="t_desc04">원하시는 기간을 선택하신 후 조회버튼 클릭하시면 세부내역 조회됩니다.</p></div>
+            <div class="btnr"><a href="javascript:goSrch();" class="btn btn_blue"><span>조회</span></a></div>
+		</div>
+
+	</form>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_general_income_tax_card_02.png" alt="카드이용내역입니다" /></h2>
+	<div class="d_easy">
+		<table class="dtable02 dtable_expand" summary="총 건수, 총 이용금액, 일시불, 할부, 현금서비스, 대출 등 카드 이용내역 합계를 확인할 수 있습니다">
+		<caption>카드이용내역 합계</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>이용내역 합계</p></th>
+				<td class="sum cell_l10">
+					<em class="first_none"><strong class="t_black">총 건수</strong> <strong class="t_no t_point_org">0</strong><strong class="t_point_org">건</strong></em>
+					<em><strong class="t_black">총 이용금액</strong> <strong class="t_no t_point_org">0</strong><strong class="t_point_org">원</strong></em><br />
+
+					<em class="first_none">일시불 <span class="t_no">0</span>원</em>
+					<em>할부 <span class="t_no">0</span>원</em>
+					<em>현금서비스 <span class="t_no">0</span>원</em>
+					<em>대출 <span class="t_no">0</span>원</em>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<table class="dtable01 dtable01_bill mt20" summary="번호, 구분, 상품, 개월수, 이용일, 접수일, 이용금액, 카드번호, 이용자, 이용가맹점, 가맹점번호, 사업자번호 등 카드 이용내역을 확인하실 수 있습니다.">
+		<caption>카드이용내역</caption>
+		<colgroup><col width="4%" /><col width="6%" /><col width="5%" /><col width="5%" /><col width="7%" /><col width="7%" /><col width="11%" /><col width="17%" /><col width="6%" /><col width="15%" /><col width="8%" /><col width="9%" /></colgroup>
+		<thead>
+			<tr>								
+				<th scope="col" class="cell_l10">번호</th>
+				<th scope="col" class="cell_l10a">구분</th>
+				<th scope="col">상품</th>
+				<th scope="col">개월수</th>
+				<th scope="col">이용일</th>
+				<th scope="col">접수일</th>
+				<th scope="col" class="cell_r10">이용금액</th>
+				<th scope="col">카드번호</th>
+				<th scope="col">이용자</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+				<th scope="col">가맹점번호</th>
+				<th scope="col">사업자번호</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr class="nodata">
+				<td  colspan="12">조회를 실행하세요.</td>
+			</tr>
+			<tr class="nodata">
+				<td colspan="12">조회된 이용내역이 없습니다.</td>
+			</tr>
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="cell_l10a">0</td>
+				<td>0</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="cell_r10"><span class="p_nowrap">0</span> 원</td>
+				<td class="cell_r10"><span class="p_nowrap">0</span></td>
+				<td>0</td>
+				<td  class="cell_l10"><span class="nobreak_nolink w120">0</span></td>
+				<td><span class="p_nowrap">0</span></td>
+				<td><span class="p_nowrap">0</span></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- paginate -->
+		<div style="height:30px;">
+			<div id="DIV_POB_USE_LIST_PAGINATE_SECTION" class="paginate" style="display:;">
+				<div class="paging">
+                    <a href="javascript:goPage('prePage');" class="btn btn_s_white"><span>이전</span></a>
+                    <a href="javascript:goPage('nextPage');" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+		</div>
+		<div class="btnr">
+            <a id="NHPIMCDPOB101_L01" href="javascript:openConfirmLayer('NHPIMCDPOB101_L01');" id="btnPrintReqConfirm" class="btn btn_blue" style="display:none;"><span>인쇄 신청</span></a>
+		</div>
+	
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

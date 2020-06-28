@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_signature.png" alt="삼성카드1/시그니처 기프트 바우처 신청" /></h1>
+	</div>
+	<!-- content_block -->
+	<div class="content_block content_block_card">
+		<div class="tab01 w810 clfix">
+			<ul>
+				<li class="on"><a href="javascript:goTabPage('NHPIMCDCUV701', true);">안내 및 신청</a></li> 
+				<li><a href="javascript:goTabPage('NHPIMCDCUV704', true);">신청내역조회</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<div class="d_alert noline clfix">
+			<p class="ico_alert"><img src="/images/common/img_signature.jpg" alt="" style="width: 220px;height: 120px;" /></p>
+			<div class="p_desc">
+				<p  style="padding: 10px 0 0;">고객님은  신청하실 수 없습니다.</p>
+				<div class="p_txt">
+					<span>자세한 문의는 <strong class="t_black">고객센터(1588-8700)</strong>으로 문의주시길 바랍니다.</span>
+				</div>
+				<div class="btnl">
+                    <a href="javascript:goTabPage('NHPIMCDCUV701', true);"><img src="/images/ss/btn_confirmation.png" alt="확인" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //content_block -->
+	
+	<!-- content_block -->
+	<div class="content_block content_block_card clfix">
+		<!-- div class="flag_additional"><img src="/images/mh/img_signature.jpg" class="flag_health_support" alt="" /></div -->
+		<h2><img src="/images/mh/h2_sig_service02.png" alt="기프트 바우처 신청" /></h2>
+		<div class="content_block_inner">
+			<blockquote><img src="/images/mh/txt_signature02_1.png" alt="고객님은 전년도 실적이" /><strong class="numCor">0</strong><img src="/images/mh/txt_signature02_2.png" alt="원으로" /><span class="imgTxt"><img src="/images/mh/txt_signature02_3.png" alt="무료아이템 신청이 가능합니다." /></span>
+			</blockquote>
+			<p class="mt20 mb40">카드정보입력 및 신청하실 아이템을 선택해주세요.</p>
+			<div class="tb_exp clfix">
+				<strong class="fl_left t_point ml10">1. 카드정보 입력</strong>
+			</div>
+			<table class="dtable02 dtable_inputfield mb20" summary="카드번호, 카드비밀번호, 카드 CVC번호를 확인할 수 있는 게시판입니다">
+				<caption>카드정보 입력</caption>
+				<colgroup><col width="17%" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>카드번호</p></th>
+						<td><p><input type="text" class="txt" value="" style="width: 315px;" readonly="readonly" id="label_ch_card" title="카드번호" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드 비밀번호</p></th>
+						<td>
+							<p class="input_2char">
+								<input type="password" name="cardPassword" class="txt" style='IME-MODE:diabled' onKeyPress="onlyNumber();" maxLength="2" value="" id="label_ch_cardpass" title="카드 비밀번호 앞 두자리 입력" enc="on" /><em>**</em>(비밀번호 앞의 2자리)
+								<span id="usafeon_cardPassword"></span> 
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드 CVC번호</p></th>
+						<td>
+							<p class="input_3char">
+								<input type="password" name="cardCvcNo" class="txt" style='IME-MODE:diabled' onKeyPress="onlyNumber();" maxLength="3" value="" id="label_ch_cvcnum" title="카드 CVC번호 입력" enc="on" />(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+								<span id="usafeon_cardCvcNo"></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="tb_exp clfix">
+				<strong class="fl_left t_point ml10">2. 신청아이템 선택</strong>
+			</div>
+			<table class="dtable02" summary="무료제공아이템, 수령지주소를 선택하는 화면입니다.">
+				<caption>신청아이템 선택</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>무료제공아이템</p></th>
+						<td>
+							<p>
+								<select id="label_givecard" name="fvC" title="무료제공아이템" >
+									<option value="">선택하세요</option>
+								</select>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p>수령지주소</p></th>
+						<td>
+							<p>
+								<label for="caddc1"><input type="radio" class="rdo" name="caddc" id="caddc1" value="002" title="자택주소" />자택주소</label>
+								<label for="caddc2" class="ml20"><input type="radio" class="rdo" name="caddc" id="caddc2" value="001" title="직장주소" />직장주소</label>
+							</p>
+							<div class="input_address mt10">
+								<p class="input_zip">
+									<input type="text" id="psno1" class="txt" value="" title="우편번호앞자리" readonly="readonly" /> -
+									<input type="text" id="psno2" class="txt" value="" title="우편번호뒷자리" readonly="readonly" /><!-- a href="#" class="btn btn_s_white"><span>우편번호 검색</span></a-->
+								</p>
+								<p class="detail">
+									<input type="text" id="addr1" class="txt" value="" title="주소" readonly="readonly" />
+									<input type="text" id="addr2" class="txt" value="" title="주소상세" readonly="readonly" /><br />
+                                    <span class="t_desc04">수령지 주소를 변경하시려면 <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="a_point">회원정보 변경</a>을 이용하세요.</span>
+								</p>	
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br />
+			<span class="t_desc04">※ 삼성카드 1, 삼성시그니처카드TL의 국내선 항공권 신청은 <b>삼성카드 여행(1688-8200&gt;2번 국내선)</b>으로 문의하시기 바랍니다.<br />
+  			&nbsp;&nbsp;&nbsp;&nbsp;(월~금 오전 9시 ~ 오후6시 / 주말 및 공휴일은 휴무)<br />
+			※삼성카드 1 기프트 중 15만원 신세계상품권을 선택하시면, 고객정보에 입력된 회원님의 휴대폰 번호로 모바일교환권이 발송됩니다.<br /> 
+			&nbsp;&nbsp;&nbsp;&nbsp;따라서 휴대폰 번호를 반드시 확인해 주시고, <b>모바일교환권을 신청하신 후 3일 동안은 휴대폰 번호를 변경하지 마시기 바랍니다.</b></span>
+			<br />
+			
+			
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnr">
+                    <a href="javascript:goRequest();" class="btn btn_blue"><span>신청</span></a>
+                    <a href="javascript:goTabPage('NHPIMCDCUV701', true);" class="btn btn_white"><span>다시선택</span></a>
+				</p>
+			</div>
+		</div>
+	</div>	
+	<!-- //content_block -->
+
+</form>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

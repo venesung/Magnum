@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>셀디스토리 추천 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+
+<script type='text/javascript' src="/js/jquery-1.3.2.min.js"></script>
+<script type='text/javascript' src="/js/jquery-cookies.2.2.0.min.js"></script>
+<script type='text/javascript' src="/js/jquery-json-2.2.min.js"></script>
+<script type='text/javascript' src="/js/common-main.js"></script>
+<script type='text/javascript' src="/js/common.js"></script>
+<script type="text/javascript" language="javascript">
+<!--
+  function recommandDo() {
+    var param = "method=recommand_process" ;
+    param += "&amp;seldStoryNo=${vos.seldStoryNo}";
+    param += "&amp;orderByType=DESC";
+    param += "&amp;orderByColumn=${vos.orderByColumn}";
+    param += "&amp;searchWord1=${vos.searchWord1}";
+    param += "&amp;searchWord2=${vos.searchWord2}";
+    param += "&amp;page=${vos.cPage}";
+
+    callJsonNonXecure("recommandDo", "com.scard.hp.im.cd.sld.web.NHPIMCDSLD002Ctrl", "recommand_process", param, "jsonCallback", "jsonCallback", "", true);
+  }
+
+  function jsonCallback(callId, result) {
+    if(result) {
+      alert('셀디 스토리가 정상적으로 추천 완료 되었습니다.')
+      opener.reloadSeld();
+    } else if(result == "DUP") {
+    	alert("이미 추천하신 셀디 스토리입니다.");
+    } else {
+      alert("셀디 스토리 추천 실패 되었습니다.");
+    }
+
+    window.close();
+  }
+//-->
+</script>
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_seldi_helpful.png" alt="셀디스토리 추천입니다" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_seldi_helpful.png" alt="셀디스토리 추천입니다" /></h1>
+	</div>
+	
+
+	<!-- content -->
+	<div id="pop_content" class="h320">
+		<div class="content_block content_block_card clfix">
+			<div class="seldi_helpful">
+				<p class="p_photo"><img src="/images/cd/seld_card01.jpg" alt="" style="width:380px;height:240px;" /></p>
+				<dl>
+					<dt class="top_line">제목</dt><dd class="top_line"><strong><pre>00</pre></strong></dd>
+					<dt>작성자</dt><dd>${seld_story_info.user_name} 회원님</dd>
+					<dt class="line">날짜</dt><dd class="line"><span class="t_no">00</span></dd>
+					<dt class="line">내용<br /><br /><br /><br /><br /><br /><br /></dt>
+					<dd class="line">00</dd>
+				</dl>
+			</div>
+			<!-- btn -->
+			<div class="btnset">
+                <p class="btnc"><a href="javascript:recommandDo();"><img src="/images/common/btn_s_recommendation.png" alt="추천" /></a> <a href="javascript:self.close();" ><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address><input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /></div>
+</div>
+</body>
+</html>

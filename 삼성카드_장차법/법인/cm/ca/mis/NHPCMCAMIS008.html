@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>통합청구서 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+<!-- 수정 101001 -->
+				<h1><img src="/images/cm/h1_standard_data_quiry4.png" alt="통합청구서 " /></h1>
+<!-- // 수정 101001 -->
+				<p class="ab_br"><img src="/images/cm/img_misreport.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="결제일과 조건으로 카드 조회를 하실 수 있습니다.">
+					<caption>카드조회</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>결제일</p></th>
+							<td>
+								<p>
+									<select title="년도 선택" id="cboyyyy" name="cboyyyy">
+										<option value="">선택</option>
+									</select> 년
+									<select title="월 선택" id="cbomm" name="cbomm" class="ml10">
+										<option value="">선택</option>
+									</select> 월
+									<select title="일 선택" id="cbodd" name="cbodd" class="ml10">
+										<option value="">선택</option>
+									</select> 일
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="cboSearch">조건선택</label></th>
+							<td>
+								<p>
+									<select id="cboSearch" name="cboSearch" onChange="cardChange(this.form)">
+										<option></option>
+									</select>
+									<span><input type="text" class="txt" id="txtCont" name="txtCont" title="검색어 입력" value="" /><span id="card_view" >&nbsp;("-"없이 숫자 16자리 입력)</span></span>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+					<div class="btnset">
+						<p class="btnr">
+							<a href="javascript:search();" class="btn btn_blue"><span>조회</span></a>
+						</p>
+					</div>
+<div id="printDiv">
+					<div class="tb_exp mt30">
+						<h2 class="mt30"><img src="/images/cm/h2_standard_data_total.png" alt="합계정보" /></h2>
+						<span class="ab_tr t_desc03">(단위 : 원)</span>
+					</div>
+					<div style="clear:both;height:0;"></div>
+					<table class="dtable01" summary="당월청구액, 전월미입금액, 연체료, 청구총액으로 구성된 회원님의 합계정보를 볼 수 있는 게시판입니다.">
+                    <caption>합계정보</caption>
+					<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_r10">당월청구액</th>
+							<th scope="col" class="cell_r10">전월미입금액</th>
+							<th scope="col" class="cell_r10">연체료</th>
+							<th scope="col" class="cell_r10">청구총액</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td scope="col" class="cell_r10"><p class="t_no">123</p></td>
+							<td scope="col" class="cell_r10"><p class="t_no">123</p></td>
+							<td scope="col" class="cell_r10"><p class="t_no">123</p></td>
+							<td scope="col" class="cell_r10"><p class="t_no">123</p></td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="4">해당 데이터가 없습니다.</td>
+						</tr>
+					</tbody>
+					</table>
+<!-- 추가 101005 printPopup();	printDiv('printDiv'); -->
+					<div class="btnset">
+						<p class="btnr">
+							<a href="" name="excelATag" onClick="saveExcel();" class="btn btn_white"><span>엑셀다운로드</span></a>
+							<a href="javascript:printPopup();" class="btn btn_blue"><span>인쇄</span></a>
+						</p>
+					</div>
+<!-- // 추가 101005 -->
+					
+					<div class="dtable_over1000 mt30 d_easy" tabindex="0">
+						<table class="dtable01" summary="법인카드청구내역(카드번호, 성명, 부서명, 이용일자, 접수일자, 이용금액, 이용가맹점, 이용국가명, 해외이용금액 등) 정보 게시판입니다">
+						<caption>법인카드청구내역</caption>
+						<colgroup><col width="14%" /><col width="10%" /><col width="14%" /><col width="10%" /><col width="10%" /><col width="8%" /><col width="16%" /><col width="10%" /><col width="8%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">카드번호</th>
+								<th scope="col" class="cell_l10">성명</th>
+								<th scope="col" class="cell_l10">부서명</th>
+								<th scope="col">이용일자</th>	
+								<th scope="col">접수일자</th>
+								<th scope="col" class="cell_r10">이용금액</th>
+								<th scope="col" class="cell_l10">이용가맹점</th>
+								<th scope="col" class="cell_l10">이용국가명</th>
+								<th scope="col" class="cell_r10">해외이용금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10"><span class="p_nowrap">0000-0000-0000-0000</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w110">홍길동</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w150">음..</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w60">2011.02.03</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w60">2011.02.03</span></td>
+								<td class="cell_r10"><span class="p_nowrap">123</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w150">음..</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w80">한국</span></td>
+								<td class="cell_r10"><span class="p_nowrap">123</span></td>
+							</tr>
+							<tr>
+								<td class="cell_l10"><span class="p_nowrap">연체금액</span></td>
+								<td class="cell_r10"><span class="p_nowrap">123</span></td>
+								<td class="cell_l10"><span class="p_nowrap">연체료</span></td>
+								<td class="cell_r10"><span class="p_nowrap">123</span></td>
+								<td class="cell_l10"><span class="p_nowrap">선수금</span></td>
+								<td class="cell_r10"><span class="p_nowrap">123</span></td>
+								<td class="cell_l10"><span class="p_nowrap">청구금액</span></td>
+								<td class="cell_r10" colspan="2"><span class="p_nowrap">123</span></td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="9">해당 데이터가 없습니다.</td>
+							</tr>
+						<!-- //loop -->
+						</tbody>
+						</table>
+					</div>
+</div>
+				</div>
+			</div>
+			
+			<div class="paginate">
+				1
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

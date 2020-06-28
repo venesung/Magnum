@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>아이디찾기 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_forget_id.png" alt="아이디찾기" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_available_certificates.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block ">
+				<!-- 100129 div class="content_block_inner" 콘텐츠 내용을 한번더 감쌌습니다. -->
+				<div class="content_block_inner">
+					<h2><img src="/images/cm/h2_find_id01.png" alt="아이디 찾기" /></h2>
+					<h3 class="mt20"><img src="/images/cm/h3_find_id_cor01.png" alt="Samsungcard.co.kr은 개인정보보호 우수사이트 마크(ePRIVACY)를 획득한 사이트입니다. 회원님께서 제공해주신 개인정보 보호를 안전하게 관리하기 위해 최선을 다하겠습니다. 아이디를 찾기위해 다음사항을 입력해주세요" /></h3><!-- 100312 -->
+					<form name="form1" method="post" autocomplete="off">
+					<input type="hidden" name="businessNo" />
+					<fieldset class="find_id mt30">
+						<legend>아이디찾기</legend>
+						<dl>
+							<dt><label for="label_name">법인명</label></dt>
+							<dd><span class="bg_input"><input type="text" value="" title="법인명" name="companyName" id="label_name" style="width:177px" /><em>&nbsp;</em></span></dd>
+							<dt><label for="label_idno">사업자번호</label></dt>
+							<dd><span class="bg_input"><input type="text" value="" title="사업자번호 앞자리" style="width:108px" id="label_idno"  name="busi_no1" maxlength="3" onKeyUp="shiftFocus(this,busi_no2,3);chkNum(this);" /><em>&nbsp;</em></span>&nbsp;-&nbsp;<span class="bg_input"><input type="password" value="" title="사업자번호 가운데자리" style="width:108px" id="label_idno02"  name="busi_no2"  maxlength="2" onKeyUp="shiftFocus(this,busi_no3,2);chkNum(this);" /><em>&nbsp;</em></span>&nbsp;-&nbsp;<span class="bg_input mr10"><input type="password" value="" title="사업자번호 뒷자리" style="width:108px" id="label_idno03"  name="busi_no3"  maxlength="5" /><em>&nbsp;</em></span><a href="javascript:findId();"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+							</dd>	<!-- 100312 -->
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;							<!-- 가상키보드 적용-->
+						    <span id="usafeon_busi_no1|busi_no2|busi_no3"></span>
+						</dl>
+					</fieldset>
+					</form>
+					<div class="line_lgray">&nbsp;</div>
+					<!-- 100402 -->
+					<p class="jumin_txt t_desc04">개정 &quot;주민등록법&quot;에 의해 타인의 주민등록번호를 부정사용하는 자는 3년 이하의 징역 또는 1천만원 이하의 벌금이<br />부과될 수 있습니다. 관련법률 : 주민등록법 제37조(벌칙) 제10호 (시행일 : 2009.04.01)<br />
+					만약, 타인의 주민번호를 도용하여 온라인 회원 가입을 하신 이용자들은 지금 즉시 명의 도용을 중단하시길 바랍니다.</p>
+					<!-- //100402 -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

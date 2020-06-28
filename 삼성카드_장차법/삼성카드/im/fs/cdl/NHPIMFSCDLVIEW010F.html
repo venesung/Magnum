@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">미리혜택 예약하고 할인받는 혜택예약 서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/finance/svc/3958_IMG_1.jpg" alt="(구)예약할인서비스 미리 예약하고 할인 받는 혜택예약서비스 - 카드론 이용시기를 미리 등록하신 회원님께 이자율 할인 혜택을 드리는 서비스입니다." /></div>
+</div>
+	<!-- content_block -->
+	<div class="content_block content_block_tab2 clfix">
+<form name="form_main">
+		<!-- tab_area -->
+		<div class="tab01 w810">
+			<ul>
+                <li><a href="javascript:goTab(1);">서비스안내</a></li>
+                <li class="on"><a href="javascript:goTab(2);">신청 및 신청 결과 조회</a></li>
+			</ul>
+		</div>
+	<input name="tabNo" type="hidden" />
+</form>
+	</div>
+
+<form name="f">
+<input type="hidden" name="email" value="" />
+<input type="hidden" name="hpNo" value="" />
+<div class="content_block content_block_card clfix">
+<!-- section1 start-->
+<h2><img src="/images/fs/h2_benefit_search01.png" alt="혜택예약서비스 등록내역 조회입니다." /></h2>
+<div class="content_block_inner">
+	<table class="dtable01 dtable_inputfield" summary="조회시점, 필요시기, 이용예정금액, 혜택을 보여주는 표입니다">
+		<caption>현금서비스 이용한도 안내</caption>
+		<colgroup>
+			<col width="25%" span="4" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">조회시점</th>
+				<th scope="col">필요시기</th>
+				<th scope="col" class="cell_r10">이용예정금액</th>
+				<th scope="col">혜택</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>2012.03.03</td>
+				<td>등록된 내용이 없습니다.</td>
+				<td class="cell_r10"> - </td>
+				<td> - </td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td class="cell_r10">1원</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="t_desc03 mt10">가장 최근에 등록한 1건만 조회 가능합니다.</p>
+	<br/>
+</div>
+</div>
+
+
+
+
+
+<!-- section1 end--> 
+<!-- section2 start-->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_benefit_register01.png" alt="혜택예약서비스를 등록하세요" /></h2>
+	<div class="content_block_inner"><!-- class="fill_joinin" del. 130312 -->
+		<table class="dtable02" summary="필요시기, 이용예정금액, 혜택선택, 등록정보받기,  발송정보확을 보여주는 표입니다." style="table-layout:fixed;">
+			<caption>혜택예약서비스등록</caption>
+			<colgroup>
+			<col width="115" />
+			<col width="" />
+			<col width="115" />
+			<col width="" />
+			</colgroup>
+			<tbody>
+			<!--
+			<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			</tr>
+			-->
+				<tr>
+					<th scope="row"><p>필요시기</p></th>
+					<td><p>
+							<select name="afpYymm" title="필요시기 선택" id="label_afpYymm" style="width:120px;">
+								<option></option>
+							</select></p></td>
+					<th scope="row"><p>이용예정금액</p></th>
+					<td><span class="input_email"><input name="afpAmt" id="label_afpAmt" type="text" class="txt" value="" title="이용예정금액" maxlength="20" style="width:80px;align:right" /> 만원</span></td>
+				</tr>
+
+
+				<tr>
+					<th scope="row"><p>혜택선택</p></th>
+					<td colspan="3"><p><input name="afpMarkCode" id="label_afpMarkCode" type="radio" class="chk" value="1" checked="checked" /> <label for="label_afpMarkCode">이자율 할인</label></p>
+
+					</td>
+				</tr>
+
+
+
+				<!-- sns 받기 선택시 end -->
+				<tr>
+					<th scope="row"><p>등록정보받기</p></th>
+					<td colspan="3"><p>
+						<input type="radio" class="chk" id="gubun_1" name="gubun" value="0" title="E-Mail 받기" checked="checked" /> <label for="gubun_1">E-Mail 받기</label>
+						<input type="radio" class="chk" id="gubun_2" name="gubun" value="1" title="SMS 받기" /> <label for="gubun_2">SMS 받기</label>
+						<input type="radio" class="chk" id="gubun_3" name="gubun" value="2" title="받지 않음" /> <label for="gubun_3">받지 않음</label>
+					</p></td>
+				</tr>
+
+
+				<tr id="email_info"><!-- style="display:visible"-->
+					<th scope="row"><p>발송정보확인</p></th>
+					<td colspan="3">
+						<p><span class="input_email">
+						<input name="email1" type="text" class="txt" title="이메일 아이디" maxlength="30" style="width:200px" /></span>
+						@ <input name="email2" type="text" class="txt" title="이메일 공급자" maxlength="30" style="width:200px" /></p>
+					<p class="t_desc03 mt10">혜택예약서비스는 향후 3개월 이내만 등록이 가능합니다.</p>
+					<p class="t_desc03">위의 이메일 주소를 수정하시더라도 회원정보의 이메일 주소는 변경되지 않습니다.</p>
+					</td>
+				</tr>
+				<!-- sms 받기 선택시 start
+				<tr style="display:none">-->
+				<tr id="mobile_info">
+					<th scope="row"><p>발송정보확인</p></th>
+					<td colspan="3">
+						<p><span class="input_email"><select name="hpNo1" title="휴대폰번호 첫번째자리 선택" style="width:50px;">
+							<option value="010" selected="selected">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select> - </span>
+						<input name="hpNo2" type="text" class="txt" title="휴대폰번호 가운데자리" maxlength="4" style="width:50px" /> - 
+						<input name="hpNo3" type="text" class="txt" title="휴대폰번호 끝자리" maxlength="4" style="width:50px" /></p>	
+					<p class="t_desc03 mt10">혜택예약서비스는 향후 3개월 이내만 등록이 가능합니다.</p>
+					</td>
+				</tr>
+				<tr id="no_info">
+					<th scope="row"><p>발송정보확인</p></th>
+					<td colspan="3"><p class="t_desc03 mt10">혜택예약서비스는 향후 3개월 이내만 등록이 가능합니다.</p></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cash_srvc_06.gif" alt="이용안내입니다." /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>회원 제공시점에 할인 전 이자율이 9.9% 미만인 당사 최저 수준 이자율 적용회원의 경우,<br />할인 혜택이 제공되지 않습니다.</p></li>
+			<li><p>중복 등록 시에는 가장 최신 등록내용을 기준으로 혜택이 제공됩니다.</p></li>
+			<li><p>등록하시는 이용예정금액은 회원님께서 확정적으로 이용하실 수 있는 금액이 아니며,<br />카드론 이용 전에 가능금액을 반드시 확인해주시기 바랍니다.</p></li>
+			<li><p>할인혜택은 회원님께서 등록해주신 혜택 필요시기 월의 최초 5 영업일부터 말일까지 제공됩니다.</p></li>
+			<li><p>회원님께서 등록해주신 필요시기에 다른 카드론 할인행사가 이미 진행중인 경우,<br />추가로 혜택이 제공되지 않습니다.</p></li>
+			<li><p>대출 연장신청 및 조건변경 신청 시에는 본 할인혜택이 적용되지 않습니다.</p></li>
+			<li><p>예약시점과는 상관없이, 이용하고자 하는 시점에 회원님의 한도나 이자율이 변경될 수 있습니다.</p></li>
+		</ol>
+	</div>
+	<div class="btnset">
+		<p class="btnr"> <a href="javascript:goSubmit();" class="btn btn_blue"><span>혜택예약서비스 등록</span></a></p>
+	</div>
+</div>
+<div id="msgLayer" style="display:none;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;" id="cardNoErrLayer">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+</form>
+<!--////////////////////////////20121203 mv_강승희 ////////////////////////////////end--> 
+<!--// 여기까지 끝 -->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

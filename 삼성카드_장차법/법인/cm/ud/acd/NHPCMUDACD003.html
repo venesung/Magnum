@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<style type="text/css">
+.dtable_over	{width:650px !important; overflow:auto !important; overflow-y:hidden !important}
+.dtable_over.d_easy	table	{width:860px !important; margin-bottom:20px}
+</style>
+
+<title>"카드 번호 검색 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body>
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cm/pop_h1_cardnumber_search.png" alt="카드 번호 검색입니다" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/cm/pop_h1_cardnumber_search.png" alt="카드 번호 검색입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445">	<!-- 091203 -->
+		<div class="content_block content_block_card clfix">
+
+			<table class="dtable02 dtable_inputfield" summary="회사명을 확인, 검색을 할 카테고리 지정 및 검색어를 입력하는 카드 번호 검색 게시판입니다">
+			<caption>카드 번호 검색</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+
+			<tbody>
+
+				<tr>
+					<th scope="row"><p>회사명</p></th>
+					<td><p class="t_no"></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>검색</p></th>
+					<td><p>
+						<select name="searchKey"  style="width:100px" title="검색조건 선택">
+									<option value="">전체</option>
+								</select>&nbsp;
+								<select name="status" title="옵션"  style="width:100px">
+									<option value="">전체</option>
+								</select>&nbsp;
+						<input type="text" class="txt" id="group"  name="searchValue" value="" title="검색어 입력" /> <a href="javascript:search()" class="btn btn_s_white"><span>조회</span></a>
+					</p></td>
+				</tr>
+			</tbody>
+
+			</table>
+			<ol class="list_desc">
+				<li><p>검색조건을 입력한 뒤 ‘조회’ 버튼을 클릭하세요</p></li>
+				<li><p>조회를 원하시는 카드번호를 클릭하세요 </p></li>
+			</ol>
+
+			<div class="dtable_over d_easy mt20"><!-- 100520 -->
+				<table class="dtable01" summary="카드번호 검색 결과(그룹명, 조직명, 카드종류, 카드번호, 성명, 발급일, 유효기간, 결제일, 카드상태) 게시판입니다">
+				<caption>카드번호 검색 결과</caption>
+				<colgroup><col width="5%" /><col width="8%" /><col width="11%" /><col width="22%" /><col width="14%" /><col width="11%" /><col width="6%" /><col width="6%" /><col width="5%" /><col width="5%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10a">번호</th>
+						<th scope="col" class="cell_l10">그룹명</th>
+						<th scope="col" class="cell_l10">조직명</th>
+						<th scope="col" class="cell_l10">카드종류</th>
+						<th scope="col">카드번호</th>
+						<th scope="col" class="cell_l10">성명</th>
+						<th scope="col">발급일</th>
+						<th scope="col">유효기간</th>
+						<th scope="col">결제일</th>
+						<th scope="col">카드상태</th>
+					</tr>
+				</thead>
+			<tbody>
+				<tr>
+							<td class="cell_l10a">0</td>
+							<td class="cell_l10"><span class="nobreak_nolink w60">0</span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w90">0</span></td>
+							<td class="cell_l10"><span class="nobreak_nolink w200">0</span></td>
+							<td class="t_no"><a href="#1" class="a_point p_nowrap">000</a></td>
+							<td  class="cell_l10"><span class="nobreak_nolink w110"></span></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+			</tbody>
+			</table>
+		</div>
+			<!-- paginate -->
+			<div class="paginate">
+				${_page}
+			</div>
+
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+</body>
+</html>

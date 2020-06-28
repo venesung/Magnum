@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/premium_navi.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/common-hp-calendar.js"></script>
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<!--script src="/js/embedswf.js" language="javascript" type="text/javascript"></script--><!-- 플래시 삭제 13.04.10 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		premiumNavi.init({
+			depth1 : 0,
+			depth2 : 2
+		});
+	});
+</script>
+	
+	
+<!-- 공통 헤더 시작 -->
+<script type="text/javascript">
+ function prmPageNavigate(key){
+	 if(key == "002") { //프리미엄S  
+		var url='/pms002.do?method=primiumS';
+		var state = "scrollbars=yes,resizable=yes,status=yes";
+		window.open(url, '', state);
+		return;
+	}else if(key == "003") { //매거진S응모
+		var url='/pms002.do?method=magazineSApply';
+		var state = "width=730,height=600,scrollbars=yes,resizable=no";
+		var newwin = window.open(url, '', state);
+		return;
+	}
+
+	var goUrl;
+	switch(key){
+		case "001" : goUrl = "/pms001.do?method=premiumLoungeMain"; break; //프리미엄회원이란
+		case "004" : goUrl = "/pms003.do?method=noInterest"; break; //무이자할부
+		case "005" : goUrl = "/pms002.do?method=primiumCouponBook"; break; //쿠폰북
+		case "006" : goUrl = "/pms003.do?method=pointBack"; break; //포인트백
+		case "007" : goUrl = "/pms002.do?method=travel"; break; //국내테마여행
+		case "008" : goUrl = "/pms001.do?method=TravelService"; break; //SAM 여행할인서비스
+		case "009" : goUrl = "/pms001.do?method=sinla"; break; //신라면세점
+		case "010" : goUrl = "/pms001.do?method=ingEvent"; break; //진행중인 이벤트
+		case "011" : goUrl = "/pms001.do?method=oldEvent"; break; //종료된 이벤트
+		case "012" : goUrl = "/pms001.do?method=winEventList"; break; //당첨자발표
+		case "013" : goUrl = "/pms002.do?method=shopping"; break; //쇼핑
+		case "014" : goUrl = "/pms003.do?method=myPage"; break; //myPage
+		case "015" : goUrl = "/pms003.do?method=getCouponMain"; break; //myPage
+		case "016" : goUrl = "/pms003.do?method=getPointAddSave"; break; //포인트추가적립
+		
+		
+	}
+	document.form1.method = "post";
+	document.form1.action=goUrl;
+	tabSubmit(document.form1.action);
+			
+ }
+ </script>
+ 
+ <!-- premium lounge title,navi -->
+ <div class="mvint_premium">
+     <div class="premium_tit">
+         <h1 style="padding-left:0"><img src="/images/premium/h1_premium.gif" alt="프리미엄 S를 마음껏 누려보세요! 프리미엄 S 라운지" /></h1>
+         <p><img src="/images/premium/h1_premium_txt.gif" alt="프리미엄 S는 삼성카드 프리미엄 회원님께만 추가로 제공해 드리는 우대 프로그램입니다." /></p>
+         <ul>
+             <li><a href="javascript:prmPageNavigate('001');"><img src="/images/premium/btn_premium01.gif" alt="프리미엄회원이란" /></a></li>
+             <li><a href="javascript:prmPageNavigate('002');" title="새창"><img src="/images/premium/btn_premium02.gif" alt="뉴스레터" /></a></li><!-- 정기일반영 13.03.29 -->
+             	<li><a href="javascript:prmPageNavigate('003')" title="새창"><img src="/images/premium/btn_premium03.gif" alt="매거진S응모" /></a></li>
+         </ul>
+     </div>
+
+     <ul class="premium_navi">
+         <li class="n1">
+             <div class="off" style="display:none;">
+                 <a href="#"><img src="/images/premium/premium_navi01_off.gif" alt="프리미엄서비스S" /></a>
+             </div>
+             <div class="on" style="display:block;">
+                 <p><img src="/images/premium/premium_navi01_on.gif" alt="프리미엄서비스S" /></p>
+                 <ul> <!-- 20121218 modify -->
+                     <li class="sm1"><a href="javascript:prmPageNavigate('004');"><img src="/images/premium/premium_navi01_01_off.gif" alt="무이자할부" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('015');"><img src="/images/premium/premium_navi01_04_off.gif" alt="쿠폰북" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('006');"><img src="/images/premium/premium_navi01_03_off.gif" alt="포인트백" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('007');"><img src="/images/premium/premium_navi01_08_off.gif" alt="국내테마여행" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('008');"><img src="/images/premium/premium_navi01_07_off.gif" alt="여행할인" /></a></li>
+                     <li class="sm2"><a href="javascript:prmPageNavigate('009');"><img src="/images/premium/premium_navi01_06_off.gif" alt="신라면세점 할인" /></a></li>
+                     <li class="sm1"><a href="javascript:prmPageNavigate('016');"><img src="/images/premium/premium_navi01_02_off.gif" alt="포인트추가적립" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n2">
+             <div class="off" style="display:block;">
+                 <a href="#"><img src="/images/premium/premium_navi02_off.gif" alt="프리미엄이벤트" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <p><img src="/images/premium/premium_navi02_on.gif" alt="프리미엄이벤트" /></p>
+                 <ul> 
+                     <li><a href="javascript:prmPageNavigate('010');"><img src="/images/premium/premium_navi02_01_off.gif" alt="진행 중인 이벤트" /></a></li>
+                     <li><a href="javascript:prmPageNavigate('011');"><img src="/images/premium/premium_navi02_02_off.gif" alt="종료된 이벤트" /></a></li>                        
+                     <li><a href="javascript:prmPageNavigate('012');"><img src="/images/premium/premium_navi02_03_off.gif" alt="당첨자 발표" /></a></li>
+                 </ul>
+             </div>
+         </li>
+         <li class="n3">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_off.gif" alt="프리미엄쇼핑몰" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('013');"><img src="/images/premium/premium_navi03_on.gif" alt="프리미엄쇼핑몰 - 프리미엄 회원만의 특별한 공간" /></a>
+             </div>
+         </li>
+         <li class="n4">
+             <div class="off" style="display:block;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_off.gif" alt="마이 페이지" /></a>
+             </div>
+             <div class="on" style="display:none;">
+                 <a href="javascript:prmPageNavigate('014');"><img src="/images/premium/premium_navi04_on.gif" alt="마이 페이지 - 프리미엄 회원님께서 받은 혜택을 확인하세요." /></a>
+             </div>
+         </li>
+     </ul>
+ </div>
+<!--// 공통 헤더 끝 -->
+	<form name="form1" method="post">
+	
+	
+	
+	<div class="content_block content_block_card clfix">
+        <h2><img alt="포인트백 서비스를 신청합니다" src="/images/mh/h2_point_back01.png" /></h2>
+        <div class="content_block_inner">
+            <div class="pointback_box">
+                <blockquote><img alt="포인트백 서비스로 포인트 사용하시고 최대 10%를 재적립 받으세요." src="/images/mh/txt_pointback_10per.png" /></blockquote>
+                <p class="mt30">포인트백 서비스를 신청하신 후 적용기간 동안 보유하고계신<br />보너스포인트를 보너스클럽에서 사용하시면 사용하신<br />보너스포인트의 최대 10%를 재적립 받을 수 있는 서비스입니다.</p>
+                <ol class="list_desc">
+                    <li><p>적용기간 : 서비스신청일~30일 (서비스신청일, 휴일, 공휴일 포함)</p></li>
+                    <li><p>30일 경과 후에는 재신청 후 이용 가능합니다.(예 : 1월 1일 포인트백 서비스 신청시 1월 31일에 재신청 후 이용 가능)</p></li>
+					<li><p>적립한도 : 월 50,000 포인트 (매월 1일~말일 기준)</p></li><!-- SR내역 13.01.28 -->
+                </ol>
+                <p class="mt25"><a class="btn btn_blue" href="javascript:pointBackApply();"><span>포인트백 서비스 신청</span></a> <a class="btn btn_white" href="javascript:pointBackCheck();" title="포인트백서비스 신청내역확인 새창"><span>신청내역 확인하기</span></a></p>
+            </div>
+            <div class="line_lgray">&nbsp;</div>
+            <p class="t_desc03">※포인트백 서비스 신청 가능 시간은 09:00 ~ 20:00입니다.(토요일, 일요일 및 공휴일 포함) <br />※포인트백 서비스는 <b>ars 1688-0871</b> 에서도 신청 가능합니다. </p>
+        </div>
+    </div>
+              
+     <div class="content_block clfix">
+         <h2><img alt="회원등급별 적립율을 확인하세요" src="/images/mh/h2_point_back02.png" /></h2>
+         <div class="content_block_inner">
+             <div class="mem_saving">
+                 <dl>
+                     <dt><img alt="vip, 슈퍼프리미엄" src="/images/mh/txt_pointback_st01.png" /></dt>
+                     <dd class="per10"><img alt="10%" src="/images/mh/txt_pointback_per10.png" /></dd>
+                 </dl>
+                 <dl class="per5">
+                     <dt><img alt="vip, 프리미엄" src="/images/mh/txt_pointback_st02.png" /></dt>
+                     <dd><img alt="5%" src="/images/mh/txt_pointback_per5.png" /></dd>
+                 </dl>
+              </div>
+             <div class="line_lgr0y">&nbsp;</div>
+         </div>
+     </div>
+     <div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_07.png" alt="회원님이 받으실 혜택 안내입니다." /></h2>
+		<div class="content_block_inner"> <!-- 20121218 modify -->
+			<div class="pt20"><img src="/images/premium/img_pointback_graph_1.png" alt="" />
+				<div class="none"> 
+					<p>ex. 삼성카드로 10만원 결제시 5만 포인트를 사용했을 경우, 포인트백서비스로 돌려받는 포인트는?</p>
+					<ul>
+	                    <li>슈퍼프리미엄 - 5,000포인트</li>
+						<li>프리미엄 - 2,500포인트</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+                
+		<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/premium/h2_premium_08.png" alt="포인트 적립내역 안내입니다." /></h2>
+		<div class="content_block_inner">
+			<table class="dtable02 dtable_inputfield" summary="포인트 적립내역 조회를 위해 이용기간을 선택하는 화면입니다.">
+			<caption>포인트 적립내역 조회</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>이용기간</p></th>
+					<td>
+						<p>
+							<a href="javascript:getBeforeDate('1')" class="btn btn_s_white"><span>1개월</span></a><span class="reset_date ml20">날짜지정</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<div class="btnl t_desc04">최근 12개월 적립내역을 확인할 수 있습니다.</div>
+				<p class="btnr"><a href="javascript:pointBackSerch();" class="btn btn_blue"><span>조회</span></a></p>
+			</div>
+
+			<table class="dtable02 dtable_expand mt20" summary="포인트 적립률 , 적립 포인트  합계로 구성된 포인트 적립내역">
+			<caption>포인트 적립내역</caption>
+			<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>포인트 적립률</p></th>
+					<td><p class="t_no">${pointRate}</p></td>
+					<th scope="row"><p>적립 포인트  합계</p></th>
+					<td><p class="t_no">100</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<table class="dtable01 mt10" summary="포인트 적립일자, 가맹점명, 포인트사용, 포인트백으로 구성된 포인트 적립내역">
+			<caption>포인트 적립내역</caption>
+			<colgroup><col width="10%" /><col width="30%" /><col width="30%" /><col width="30%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">적립일자</th>
+					<th scope="col" class="cell_l10">가맹점명</th>
+					<th scope="col" class="cell_r10">포인트 사용</th>
+					<th scope="col" class="cell_r10">포인트백</th>
+				</tr>
+			</thead>
+				<tbody>
+				<!-- loop -->
+					<tr>
+						<td class="cell_10 t_no">2012.02.03</td>
+						<td class="cell_l10">-_-</td>
+						<td class="cell_r10 t_no">123</td>
+						<td class="cell_r10 t_no">123</td>
+					</tr>
+					<tr>
+						<td colspan="4">적립내역이 없습니다. </td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- paginate -->
+			<div class="paginate">
+				<div class="paging">
+					<a href="javascript:formPre()" class="btn btn_s_white"><span>이전</span></a>
+					<a href="javascript:formNext()" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div> 
+			<ol class="list_no01 mt10">
+				<li><p>포인트백서비스는 서비스 신청시점의 회원등급별 적립률이 적용됩니다.</p></li>
+				<li><p>적립된 포인트는 회원님의 포인트(보너스포인트/빅포인트/서비스포인트)를 합산하여 <br />전국 4만여 개 보너스클럽에서 사용하시거나, 3만 포인트 이상 보유 시 결제대금으로 납부하실 수 있습니다. <br />이외에도 포인트몰, 세이브ㆍ선포인트 상환, 마일리지 전환에도 사용하실 수 있습니다.</p></li><!-- SR내역 130226 -->
+				<li>
+                         	<p><strong class="t_black">포인트백서비스 제외 대상</strong></p>
+					<ul class="list_dashed">
+						<li>서비스 신청 전 이용건, 페이백서비스 이용건, 포인트 차감이 되지 않은 이용건</li>
+						<li>가맹점 승인 없이 포인트가 차감된 경우(선포인트ㆍ세이브 이용건, 포인트 마일리지 전환 서비스,  <br />삼성더아파트카드 관리비Info서비스 및 아파트관리비 포인트 자동납부서비스, 연회비 차감, 결제대금 차감) </li><!-- SR내역 130226 -->
+					</ul>
+				</li>
+			</ol>
+			<div class="line_lgray10" >&nbsp;</div>
+			<p class="t_desc04">카드사 및 제휴사 사정으로 변경·중단될 수 있으며, 그 내용을 사전에 알려 드립니다.</p>
+		</div>
+	</div>
+</form>	
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

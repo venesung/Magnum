@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_s_trend.png" alt="삼성카드 2 / 2+ 이용내역 입니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<form name="form1" method="post" action="">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M001','false');">카드이용실적확인</a></li>
+            <li class="on"><a href="javascript:goTabPage('NHPIMCDSTD001M002','false');" style="padding: 0 4px 0 5px;">모바일기프트카드 SMS...</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M003','false');">프리미엄기프트 이용내역</a></li>
+		</ul>
+	</div>
+
+	<h2><img src="/images/mh/h2_s_trend_mobile.png" alt="조회년도를 선택하세요" /></h2>
+	<div class="content_block_inner">
+		<p class="t_point ">조회년도를 선택하시면, 고객님의 모바일기프트카드 SMS 발송여부 및 상태를 확인하실 수 있습니다.</p>
+
+		<table class="dtable02 dtable_inputfield mt10" summary="카드이용내역 조회를 위해 조회년도 선택하실 수 있습니다.">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>조회년도</p></th>
+				<td><p>
+					<select name="sYear" title="조회년도 선택" >
+						<option></option>
+					</select>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+            <a href="javascript:srchUseList();" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+
+	</div>
+</form>
+</div>
+
+<!-- content_block 100426 -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_s_trend_mobile01.png" alt="모바일 기프트카드 SMS 발송내역 입니다" /></h2>
+			<table class="dtable01 dtable01_bill" summary="모바일 기프트카드(영화2인권) 발송내역표로 카드번호, 카드최초발급월, 최초승인내역, 모바일기프트상품, 모바일기프트번호, 발송일시, 수신핸드폰번호, 수신상태로 구성되어 있습니다.">
+			<caption>모바일 기프트카드(영화2인권) 발송내역</caption>
+			<colgroup><col width="12%" /><col width="12%" /><col width="18%" /><col width="13%" /><col width="15%" /><col width="9%" /><col width="13%" /><col width="8%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">카드번호</th>
+					<th scope="col" class="blNone">카드최초발급월</th>
+					<th scope="col" class="cell_l10 blNone">최초승인내역</th>
+					<th scope="col" class="blNone">모바일기프트상품</th>
+					<th scope="col" class="blNone">모바일기프트번호</th>
+					<th scope="col" class="blNone">발송일시</th>
+					<th scope="col" class="blNone">수신핸드폰번호</th>
+					<th scope="col" class="blNone">수신상태</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="nodata"><td colspan="8">조회된 정보가 없습니다.</td></tr>
+				<tr>
+					<td class="cell_l10">0</td>
+					<td class="blNone">0</td>
+					<td class="cell_l10 blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+				</tr>
+			</tbody>
+			</table>
+	
+			<div class="t_desc04 mt10 ml10">
+			1. 대중교통, 이통요금/보험료/관리비 등 RP, S-Infocare 등 무승인 매출은 제외됩니다.<br/>
+			2. 카드발급 후 최초 매출 승인시간이 매일 자정(0시) ~오전 8시인 경우 오전 9시~11시 사이에 모바일기프트카드 SMS가 발송됩니다. (0시~8시 사이에는 발송내역 조회 불가)<br/>
+			3. 통신사 사정에 따라 수신이 지연될 수 있습니다.
+			</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

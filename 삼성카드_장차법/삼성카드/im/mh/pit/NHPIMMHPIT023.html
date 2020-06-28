@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                        <table class="dtable01" summary="구분,마일리지,기준일로 구성된 ${mileageInfo.string2}에 대한 정보를 확인할 수 있는 게시판입니다.">
+                        <caption>${mileageInfo.string2} 정보 게시판</caption>
+                        <colgroup><col width="33%" /><col width="34%" /><col width="33%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">구분</th>
+                                <th scope="col" class="cell_r10">마일리지</th>
+                                <th scope="col" class="cell_r10">기준일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10">삼성카드 누적 마일리지</td>
+                                <td class="cell_r10"><span class="t_no">0</span> M</td>
+                                <td class="cell_r10 t_no">0</td>
+                            </tr>
+                            <tr>
+                                <td class="cell_l10">총 ${mileageInfo.string2}</td>
+                                <td class="cell_r10"><span class="t_no">0</span> M</td>
+                                <td class="cell_r10 t_no">0</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        
+                        <div class="btnset">
+                            <p class="btnl"><span class="t_desc04">총사용 포인트 = 사용포인트 누적 + 유효기간경과 포인트 누적</span></p>
+                        </div>
+                        
+                        <form method="post" name="form1" >
+                        <div class="tb_exp clfix mt30">
+                            <h3>적립 연도별 조회</h3>
+                            <span class="ab_tr">
+                                <select name="slt_year" title="적립 연도 선택" style="width:80px">
+                                 <option></option>
+                                </select>
+                                <a href="#" onclick="goSearch();" class="btn btn_s_blue"><span>조회</span></a>
+                            </span>
+                        </div>
+                        </form>
+                    <!-- 아시아나마일리지는 GO버튼 존재 -->    
+
+                        <table class="dtable01" summary="${mileageInfo.string2} 적립 연도별 기준년월,적립 마일리지,상세보기로 구성된 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>${mileageInfo.string2} 적립 연도별 조회결과</caption>
+                        <colgroup><col width="33%" /><col width="34%" /><col width="33%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">기준년월</th>
+                                <th scope="col" class="cell_r10">적립 마일리지</th>
+                                <th scope="col" class="cell_r10">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                         		<td class="cell_r10 t_no"><a class="btn btn_s_white" href="#" title="00월 적립마일리지 상세보기"><span>GO</span></a></td>
+                            </tr>
+                        </tbody>                        
+                        </table>
+                   
+                    <!-- 델타마일리지는 GO버튼 존재 -->  
+                        <table class="dtable01" summary="${mileageInfo.string2} 적립 연도별 기준년월,적립 마일리지,상세보기로 구성된 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>${mileageInfo.string2} 적립 연도별 조회결과</caption>
+                        <colgroup><col width="33%" /><col width="34%" /><col width="33%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">기준년월</th>
+                                <th scope="col" class="cell_r10">적립 마일리지</th>
+                                <th scope="col" class="cell_r10">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                         		<td class="cell_r10 t_no"><a class="btn btn_s_white" href="#" title="00월 적립마일리지 상세보기"><span>GO</span></a></td>
+                            </tr>
+                        </tbody>                        
+                        </table>
+                   
+                     <!-- 스카이패스마일리지는 GO버튼 없음(상세내역 없음) -->
+                      <table class="dtable01" summary="${mileageInfo.string2} 적립 연도별 기준년월,적립 마일리지로 구성된 조회결과를 확인할 수 있는 게시판입니다.">
+                        <caption>${mileageInfo.string2} 적립 연도별 조회결과</caption>
+                        <colgroup><col width="50%" /><col width="50%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l50">기준년월</th>
+                                <th scope="col" class="cell_r50">적립 마일리지</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l50 t_no">0</td>
+                                <td class="cell_r50 t_no">0</td>
+                            </tr>
+                        </tbody>
+                        </table><!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

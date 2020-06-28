@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_usebill_cor0910before.png" alt="법인개별카드 이용대금 명세서입니다" /></h1><!-- 100310 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+					<div class="content_block_inner">
+                        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);"  style="width:150px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">법인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="javascript:goTabPage('NHPIMMHCIB', 'true')">법인카드</a></li>
+                                    <li><a href="javascript:goTabPage('NHPIMMHPIB001', 'true')">개인카드</a></li>
+                                    <li><a href="javascript:goTabPage('NHPIMCKB', 'true');">체크카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt">개인카드, 법인카드, 체크카드를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:viewCiBillInfo();">주요정보</a></li>
+                            <li class="on"><span class="none">현재탭</span><a href="javascript:viewEmsInfo();">이용내역</a></li><!-- choose -->
+                            <li><a href="javascript:viewEmsStatus();">현황요약</a></li>
+						</ul>
+					</div>
+
+					<!-- btn -->
+					<div class="btnset" id="btnDiv0">
+						<p class="btnr">
+                            <a href="javascript:printEmailPopup('all')" class="btn btn_white" title="새창"><span>전체페이지 인쇄</span></a>
+						</p>
+					</div>
+				
+					<div class="content_block_bill">
+						<h2><img src="/images/mh/h2_carduselist_info01.png" alt="카드 이용내역 조회 안내입니다" /></h2>
+						<div class="content_block_inner">
+							<dl class="tb_period tb_period2">
+								<dt>카드이용기간</dt>
+								<dd>
+									<dl>
+										<dt>일시불/할부</dt>
+										<dd id="ilsiPeriodDd">00</dd>
+										<dt>현금서비스</dt>
+										<dd id="cashPeriodDd">00</dd>
+										<dt>마이너스론</dt>
+										<dd id="minusPeriodDd">00</dd>
+									</dl>
+								</dd>
+							</dl>
+							<div class="line_lgray">&nbsp;</div>
+							<ol class="list_no01" id="useInfoNoticeDiv">
+								<li><p>아래 이용내역은 당사에 <strong class="t_point_org">00월 00일</strong> 까지 접수된 매출전표 기준이며 이후 접수분은 다음달에 청구됩니다.</p></li>
+								<li><p>기타 안내사항 : 적립률란의 <strong class="t_black">S</strong>는 선포인트, <strong class="t_black">D</strong>는 세이브서비스, <strong class="t_black">A</strong>는 아파트적립, <strong class="t_black">M</strong>은 마이존적립, <strong class="t_black">B</strong>는 보너스클럽에서 적립된 포인트를 뜻합니다.<br />
+								<span class="t_desc04">주1) 세이브 서비스 이용회원은 월간 이동 통신요금 중 6만원까지는 5% (일부상품 3%)가 적립됩니다.</span>
+								<br /><span class="t_desc04">주2) 회원님께서 이용하시는 카드 또는 서비스의 적립기능한도 내에서 포인트가 적립됩니다.</span>
+								</p></li><!-- 100303 : 수정 -->
+								<li><p>이용가맹점을 클릭하시면, 해당 가맹점의 주소 전화번호 업종 정보를 확인하실 수 있습니다.</p></li>
+								<li><p>카드이용 내역 중 후불교통, 후불하이패스의 상세 이용내역은 삼성카드 홈페이지에서 확인가능 합니다.</p></li>
+							</ol>
+						</div>
+						<h2></h2>
+					</div>
+					<div class="btnset"  id="btnDiv1">
+						<p class="btnr">
+                            <a href="javascript:excel('useInfo');" class="btn btn_white" title="엑셀 다운로드"><span>다운로드</span></a>
+                            <a href="javascript:printEmailPopup('useInfo')" class="btn btn_white" title="인쇄 새창"><span>인쇄</span></a>
+						</p>
+					</div>
+				</div>
+				
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info02.png" alt="일시불/자유결제 이용내역 입니다" /></h2>
+					<div id="useInfoDiv1">
+					<table class="dtable01" summary="이용일, 이용 가맹점, 이용 금액, 이용 혜택, 혜택 금액, 생활비재테크이용금액, 이 달에 입금하실 금액(이용액,이자,수수료), 적립율(%), 입금후 남은금액으로 구성된 일시불/자유결제 이용내역을 확인할 수 있는 게시판입니다"><!-- 100413a_ style="table-layout:fixed"삭제이하상동 -->
+					<caption>일시불/자유결제 내역 확인 게시판</caption>
+					<colgroup><col width="7%" /><col width="6%" /><col width="11%" /><col width="10%" /><col width="10%" /><col width="8%" /><col width="8%" /><col width="10%" /><col width="6%" />  <col width="6%" /><col width="8%" /><col width="10%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+							<th scope="col" rowspan="2">이용자/카드번호</th>
+							<th scope="col" rowspan="2" class="cell_l10">이용 가맹점</th>								
+							<th scope="col" rowspan="2" class="cell_r10">이용 금액</th>
+							<th scope="col" rowspan="2" class="">이용 혜택</th>
+							<th scope="col" rowspan="2" class="cell_r10">혜택 금액</th>
+							<th scope="col" rowspan="2" class="cell_r10 riline">생활비<br />재테크S<br />이용금액</th><!-- 100413a -->
+							<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+							<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+							<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_r10">이용액</th>
+							<th scope="col" class="cell_r10">이자</th>
+							<th scope="col" class="cell_r10 riline">수수료</th>
+						</tr>
+					</thead>
+					<tbody>
+
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_l10"> <a href="#" class="nobreak btn_link" title="새창">00</a></td>
+								<td class="cell_r10 t_no">
+								<span class="p_nowrap t_no">0(0)</span>
+								</td>
+
+								<td class="t_no">
+									ⓦ0</td>
+								<td class="cell_r10">
+								<span class="p_nowrap t_no">0</span>
+								</td>
+								<td class="cell_r10 t_no riline">
+								<span class="p_nowrap t_no">0</span>
+								</td>
+								<td class="cell_r10"></td>
+								<td class="cell_r10"></td>
+								<td class="cell_r10 riline t_no"></td>
+								<td class="t_no"></td>
+								<td class="cell_r10"></td>
+							</tr>
+							
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				
+
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100303 : 추가 -->
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info03.png" alt="할부/금융상품 이용내역 입니다" /></h2>
+					<div id="useInfoDiv2">
+					<table class="dtable01" summary="이용일, 이용자, 이용가맹점, 이용금액, 이용혜택, 혜택금액, 개월, 회차, 이 달에 입금하실 금액(이용액,이자,수수료), 적립율(%), 입금후 잔액으로 구성된 할부/금융상품 이용내역을 확인하실 수 있는 게시판입니다.">
+					<caption>할부/ 금융상품 이용내역</caption>
+					<colgroup><col width="7%" /><col width="6%" /><col width="11%" /><col width="10%" /><col width="10%" /><col width="8%" /><col width="4%" /><col width="4%" /><col width="10%" /><col width="6%" />  <col width="6%" /><col width="8%" /><col width="10%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+							<th scope="col" rowspan="2">이용자/카드번호</th>
+							<th scope="col" rowspan="2" class="cell_l10">이용 가맹점</th>								
+							<th scope="col" rowspan="2" class="cell_r10">이용 금액</th>
+							<th scope="col" rowspan="2">이용 혜택</th>
+							<th scope="col" rowspan="2" class="cell_r10">혜택 금액</th>
+							<th scope="col" rowspan="2">개월</th>
+							<th scope="col" rowspan="2" class="riline">회차</th>
+							<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+							<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+							<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_r10">이용액</th>
+							<th scope="col" class="cell_r10">이자</th>
+							<th scope="col" class="cell_r10 riline">수수료</th>
+						</tr>
+					</thead>
+					<tbody>
+							<!-- loop -->
+							
+							<tr>
+							
+								<td class="cell_l10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_l10"><a href="#" class="nobreak btn_link" title="새창">0</a></td>
+								<td colspan="3" class="cell_l10">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="t_no">0</td>
+								<td class="cell_r10">
+								<span class="p_nowrap t_no">0</span>
+								</td>
+								<td class="t_no">0</td>
+								<td class="t_no riline">0</td>
+								<td class="cell_r10">0</td>
+								<td class="cell_r10">0</td>
+								<td class="cell_r10 riline t_no">0</td>
+								<td class="t_no">0</td>
+								<td class="cell_r10">0</td>
+							</tr>
+								</tbody>
+								</table>
+								<!-- btn -->
+
+							</div>
+				</div>		</div>
+							
+				<div class="content_block clfix"><!-- 100303 : 추가 -->
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info02.png" alt="일시불/자유결제 이용내역 입니다" /></h2>
+					<div id="useInfoDiv3">
+					<table class="dtable01" summary="이용일,이용자,카드번호,이용 가맹점,이용 금액,이용 혜택,혜택 금액,생활비 재테크S 이용금액,이달에 입금하실 금액(이용액,이자,수수료),적립률,입금 후 잔액등으로 구성된 일시불/자유결제 이용내역을 확인할 수 있는 게시판입니다.">
+					<caption>일시불/자유결제 이용내역 확인 게시판</caption>
+					<colgroup><col width="6%" /><col width="6%" /><col width="10%" /><col width="10%" /><col width="7%" /><col width="11%" /><col width="8%" /><col width="11%" /><col width="7%" /><col width="7%" /><col width="8%" /><col width="11%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+							<th scope="col" rowspan="2">이용자/카드번호</th>
+							<th scope="col" rowspan="2" class="cell_l10">이용 가맹점</th>
+							<th scope="col" rowspan="2" class="cell_r10">이용 금액</th>
+							<th scope="col" rowspan="2" class="">이용 혜택</th>
+							<th scope="col" rowspan="2" class="cell_r10">혜택 금액</th>
+							<th scope="col" rowspan="2" class="cell_r10 riline">생활비<br />재테크S<br />이용금액</th><!-- 100413a -->
+							<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+							<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+							<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_r10">이용액</th>
+							<th scope="col" class="cell_r10">이자</th>
+							<th scope="col" class="cell_r10 riline">수수료</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td class="cell_l10 t_no">0</td>
+							<td>0</td>
+							<td class="cell_l10"><a href="#" class="nobreak btn_link" title="새창">0</a></td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="t_no">0</td>
+							<td class="cell_r10">
+							<span class="p_nowrap t_no">0</span>
+							</td>
+							<td class="cell_r10 t_no riline"><span class="p_nowrap t_no">0</span>
+							</td>
+							<td class="cell_r10">0</td>
+							<td class="cell_r10">0</td>
+							<td class="cell_r10 riline t_no">0</td>
+							<td class="t_no">0</td>
+							<td class="cell_r10">0</td>
+						</tr>
+						<tr>
+							<td class="cell_l10 t_no">0</td>
+							<td>0</td>
+							<td class="cell_l10"><a href="#" class="nobreak btn_link" title="새창">00</a></td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="t_no">0</td>
+							<td class="cell_r10">
+							<span class="p_nowrap t_no">0</span>
+							</td>
+							<td class="cell_r10 t_no riline">
+							<span class="p_nowrap t_no">0</span>
+							</td>
+							<td class="cell_r10 ">0</td>
+							<td class="cell_r10 ">0</td>
+							<td class="cell_r10 riline t_no">0</td>
+							<td class="t_no">0</td>
+							<td class="cell_r10">0</td>
+						</tr>
+						<tr class="cell_l10 cell_bg">
+							<td class="cell_l10">이용금액 합계</td>
+							<td class="cell_r10">0</td>
+							<td class="cell_r10 ">0</td>
+							<td class="cell_r10 ">0</td>
+							<td></td>
+							<td class="cell_r10 ">0</td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100309 : 추가 -->
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info05.png" alt="이벤트, 특별혜택 안내입니다" /></h2>
+					<div id="eventDiv">
+						<table class="dtable01" summary="이용일, 행사명, 혜택금액으로 구성된 이벤트, 특별혜택에 대해 확인하실 수 있는 게시판입니다">
+						<caption>이벤트. 특별혜택 안내</caption>
+						<colgroup><col width="12%" /><col width="48%" /><col width="40%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col" class="cell_l10">행사명</th>
+								<th scope="col" class="cell_r10">혜택금액</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td colspan="2" class="cell_l10">0</td>
+								<td class="cell_r10"><em>0</em> 원</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td class="cell_l10">0</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<!-- //loop -->
+
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<div class="d_easy mt10">
+						<div id="favorDiv">
+							<div class="tb_exp clfix"><h3 class="t_black">이달의 혜택</h3></div>
+							<table class="dtable02" summary="포인트사용,할인/면제/캐시백,이벤트/특별혜택,할인/면제/캐시백으로 구성된 이달의 혜택 금액 안내입니다.">
+							<caption>이달의 혜택 금액</caption>
+							<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><p>ⓟ포인트사용</p></th>
+									<td><p class="t_no">0</p></td>
+									<th scope="row"><p>ⓦ할인/면제/캐시백</p></th>
+									<td><p class="t_no">0</p></td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100309 : 추가 -->
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info04.png" alt="해외이용상세 내역 안내입니다" /></h2>
+					<div id="frenDiv">
+					<table class="dtable01" summary="이용일, 상품명, 업종, 도시, 국가, 카드이용금액(이용금액,단위), 접수금액(US$), 환율(전신환매도율,환가료), 원화청구금액으로 구성된 해외 이용내역을 상세하게 확인하실 수 있는 게시판입니다">
+					<caption>해외이용 상세 내역 안내</caption>
+					<colgroup><col width="7%" /><col width="7%" /><col width="7%" /><col width="11%" /><col width="8%" /><col width="12%" /><col width="7%" /><col width="12%" /><col width="11%" /><col width="7%" /><col width="11%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+							<th scope="col" rowspan="2">상품명</th>
+							<th scope="col" rowspan="2">업종</th>								
+							<th scope="col" rowspan="2">도시</th>
+							<th scope="col" rowspan="2" class="riline">국가</th>
+							<th scope="col" colspan="2" class="riline boline_b0">카드이용금액</th>
+							<th scope="col" rowspan="2" class="cell_r10 riline">접수금액<br />(US$)</th>
+							<th scope="col" colspan="2" class="riline boline_b0">환율</th>
+							<th scope="col" rowspan="2" class="cell_r10">원화청구금액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_r10">이용금액</th>
+							<th scope="col" class="riline">단위</th>
+							<th scope="col" class="cell_r10">전신환매도율</th>
+							<th scope="col" class="cell_r10 riline">환가료</th>
+						</tr>
+					</thead>
+					<tbody>				
+						<tr>
+							<td class="cell_l10 t_no">0</td>
+							<td class="cell_l10">0</td>
+							<td>0</td>
+							<td>0</td>
+							<td class="riline">0</td>
+							<td class="cell_r10">
+							<span class="p_nowrap t_no">0</span>
+							</td>
+							<td class="riline">0</td>
+							<td class="cell_r10 t_no riline">0</td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="cell_r10 t_no riline">0</td>
+							<td class="cell_r10">
+							<span class="p_nowrap t_no">0</span>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+					</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100309 : 추가 -->
+					<div class="d_easy mt10">
+					<h2 class="h2_uselist"><img src="/images/mh/h2_carduselist_info06.png" alt="취소매출 접수 내역입니다" /></h2>
+					<div id="cancelDiv">
+						<table class="dtable01" summary="이용일,이용가맹점,상품명,취소금액으로 구성된 취소매출 접수 내역을 상세하게 확인할 수 있는 게시판입니다">
+						<caption>취소매출 접수 내역</caption>
+						<colgroup><col width="12%" /><col width="15%" /><col width="21%" /><col width="20%" /><col width="32%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col">이용자/카드번호</th>
+								<th scope="col" class="cell_l10">이용가맹점</th>
+								<th scope="col">상품명</th>
+								<th scope="col" class="cell_r10">취소금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td class="cell_l10">
+                                    <a href="#" class="btn_link" title="새창">0</a>
+								</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<!-- //loop -->
+							</tbody>
+						</table>
+						<div class="tb_exp">
+							<span>취소금액은 전월 결제금액출금시 차감, 자동이체 통장 환불, 당월 선수금 반영 등으로 처리 되었습니다.</span>
+						</div>
+					</div>
+					</div>
+					<div class="btnset" id="btnDiv2">
+						<form name="excel_frm" method="post">
+							<p class="btnr">
+                                <a href="javascript:excel('cancelInfo');" class="btn btn_white" title="엑셀 다운로드"><span>다운로드</span></a>
+                                <a href="javascript:printEmailPopup('cancelInfo')" class="btn btn_white" title="인쇄 새창"><span>인쇄</span></a>
+							</p>
+						</form>
+					</div>
+				</div>
+
+			
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

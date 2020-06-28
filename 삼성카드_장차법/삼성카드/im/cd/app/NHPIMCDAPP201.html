@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- Main Image & 혜택목록  -->
+<!-- top_visual -->
+<div class="top_visual">
+	<div class="top_visual">
+		<h1><img src="/images/cd/h1_cardapp_fam.png" alt="가족카드 신청 안내입니다" /></h1>
+	</div>
+	
+				<div class="top_visual">
+				<h1><img src="/images/cd/h1_cardapp.png" alt="삼성카드 신청 안내입니다" /></h1>
+				</div>
+				
+				<h1 class="none"><%=cardInfo.get("cardTitle") %></h1>
+				<p><img src="<%=cardInfo.get("mainImg01") %>" alt="<%=cardInfo.get("cardSummary") %>" /></p>
+				
+	<div id="step_img_block" style="text-align:center;"><a name="cardAppStep"></a>
+		<p class="step"><img src="/images/cd/step_cardapp01.png" alt="" /></p>
+		<ol class="none">
+			<li><abbr>현재단계</abbr><strong>실명인증 및 약관동의</strong></li>
+			<li>신청정보입력</li>
+			<li>신청완료</li>
+		</ol>
+		<ol class="none" style="display:none">
+			<li>실명인증 및 약관동의</li>
+			<li><abbr>현재단계</abbr><strong>신청정보입력</strong></li>
+			<li>신청완료</li>
+		</ol>
+		<ol class="none" style="display:none">
+			<li>실명인증 및 약관동의</li>
+			<li>신청정보입력</li>
+			<li><abbr>현재단계</abbr><strong>신청완료</strong></li>
+		</ol>
+	</div>
+</div>
+
+<div id="id_fill_app" class="outline_content_block">
+	<jsp:include page="/hp/im/cd/app.do?method=agreement" flush="true" />
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<div class="content_block_inner inner_top">
+	
+		<div class="list_card_overview">
+			<p class="p_no"><span class="ico_no ico_no_graymid0<%=subIdx%>"><em><%=subIdx%></em></span></p>
+			<p class="p_photo"><img src="<%=subImg %>" alt="<%=subTitle%>" /></p>
+			<div class="p_desc">
+				<p class="p_tit"><%=subTitle%></p>
+				<%=subText%>
+			</div>
+		</div>
+		
+				<div class="list_card_overview">
+					<p class="p_no"><span class="ico_no ico_no_graymid0<%=subIdx%>"><em><%=subIdx%></em></span></p>
+					<p class="p_photo"><img src="<%=subImg %>" alt="<%=subTitle%>" /></p>
+					<div class="p_desc">
+						<p class="p_tit"><%=subTitle%></p>
+						<%=subText%>
+					</div>
+				</div>
+
+		<!-- //card_overview1 -->
+	</div>
+</div>
+
+	<!-- 오른쪽 포틀렛 -->
+	<div class="content_right"><p class="img_tabbrowse flag_tl"></p><p class="img_tabbrowse flag_tr"></p><p class="img_tabbrowse flag_bl"></p><p class="img_tabbrowse flag_br"></p>
+
+			<div class="inner">
+				<h2><img src="/images/cd/h2_ssdetail_urclick.png" alt="고객님께서 클릭해보신 카드입니다" /></h2>
+				<div class="list_urclick">
+					<ul class="clfix">
+						<li><input type="checkbox" class="chk" name="chk_urclick" value="${lst.kindCode}" title="${lst.kindName } 선택" /><p><img src="${lst.thumnailImg04 }" alt="${lst.kindName }" /></p></li>
+					</ul>
+                    <p><a href="javascript:setAllClickedKindCode()" class="btn btn_s_white"><span>전체선택</span></a><a id="NHPIMCDAPP201_L01" href="javascript:getCardCompare('NHPIMCDAPP201_L01');" class="btn btn_s_white" title="새창" ><span>비교하기</span></a></p>
+				</div>
+
+			</form>
+
+		<h2 class="mt30"><img src="/images/cd/h2_ssdetail_usersgrade.png" alt="사용자평가" /></h2>
+		<div class="d_usersesti">
+			<img src="/images/common/ico_star${cardInfo.grade}.png" alt="별점${cardInfo.grade}" /> 총<em>${cardInfo.attendNo}</em>명 참여
+		</div>
+
+			<h2 class="mt30"><img src="/images/cd/h2_ssdetail_usersanaly.png" alt="사용자분석" /></h2>
+			<div class="d_usersesti">
+				<div id="graphLayer" ><script type="text/javascript">FFn_EmbedGraph("<%= HpCommonUtil.StringToLong(ansTotal+"")%>");</script></div>
+				<div id="contentLayer" class="mt5"><script type="text/javascript">IXFn_EmbedGraphStack();</script></div>
+			</div>
+
+			<h2 class="s_tit mt30"><img src="/images/cd/h2_ssdetail_faq.png" alt="관련FAQ" /><span class="fl_right_tit"><a href="#" class="btn_link">전체보기</a></span></h2>
+			<ul class="quick_ques">
+				<c:forEach items="<%=faqList%>" var="lst" varStatus="idx">
+					<li><a href="javascript:goFaq('${lst.kindCode}','${lst.seq}');">${lst.question}</a></li>
+				</c:forEach>
+			</ul>
+
+			<h2 class="mt30"><img src="/images/cd/h2_ssdetail_recservice.png" alt="추천서비스" /></h2>
+			<ul class="list_recservice">
+                <li><a href="javascript:goTabPage('NHPIMMSCRN001');"><img src="/images/cd/list_recoservice01.png" alt="삼성카드 웹멤버 : 로그인 만으로 한번에 조회 가능" /></a></li>
+                <li><a href="/hp/main.do?method=payment"><img src="/images/cd/list_recoservice02.png" alt="필수 생활비 자동결제 서비스 : 꼭 내야할 돈, 현명하게 내는 방법" /></a></li>
+                <li><a href="javascript:goTabPage('NHPIMSSSBC001M001');"><img src="/images/cd/list_recoservice03.png" alt="우대혜택 : 혜택가득 쿠폰서비스" /></a></li>
+                <li><a href="javascript:goTabPage('NHPIMFSACB001M001');"><img src="/images/cd/list_recoservice04.png" alt="스마트오토서비스 : 차값의 1%를 돌려받는 서비스" /></a></li>
+                <li><a href="javascript:goTabPage('NHPIMFSCDLM');"><img src="/images/cd/list_recoservice05.png" alt="삼성카드론 : 기치상환식탄생,부담없이 이용가능" /></a></li>
+                <li><a href="javascript:goTabPage('NHIMCDSINDEX');"><img src="/images/cd/list_recoservice06.png" alt="카드대금결제서비스 : 부족한 카드대금을 해결" /></a></li>
+							
+			</ul>
+
+		</div>
+	</div>
+
+	<!-- 기본 서비스 정보  -->
+	<div class="content_block content_block_card">
+		<div class="content_block_inner inner_top d_card_benefit">
+			<h2><img src="/images/cd/h2_overview_benefit.png" alt="기본 서비스 정보를 확인하세요" /></h2>
+			<!-- tab -->
+			<div class="box_white03"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+				<div class="category_benefit">
+					<ul>
+					<c:forEach items="<%=svcList%>" var="lst" varStatus="status">
+						<li id="li_title_${status.index}" class="" onclick="javascript:setClicked(this);"><p><a href="javascript:goService('${status.index}')"  title="${lst.serviceNm}" >${lst.serviceNm}<em>&nbsp;</em></a></p></li>
+					</c:forEach>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 기본 서비스 정보  상세정보  -->
+			<div class="content_block content_block_card" id="div_svc_<%=idx%>" style="display:none">
+				<div class="content_block_inner inner_top">
+					<!-- card_overview2_benefit -->
+					<h3 class="none"><%=serviceNm %></h3>
+					<cms:include page="<%=serviceUrl %>" />
+				</div>
+			</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

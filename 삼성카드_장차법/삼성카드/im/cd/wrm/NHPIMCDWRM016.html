@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				
+                <!-- top_visual_100327 -->
+                <div class="top_visual">
+                    <h1 class="none">특별한 분께 선사하는 Roi de Vin 클럽</h1>
+                    <div class="h1_desc"><img src="/images/cd/h1_roidevin.jpg" alt="와인에 문화와 감성을 더하다 특별한 분께 선사하는 Roi de Vin 클럽" /></div>
+                </div>
+
+                <div class="content_block content_block_tab2 clfix">
+                    <div class="tab02 w810">
+	                    <ul>
+                            <li><a href="javascript:goTabPage('NHPIMCDWRM001', true);">Roi de Vin 소개</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMCDWRM002', true);">Roi de Vin 서비스</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM004', true);">와인 바우처 Reward</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM005', true);">와인 악세서리 Reward</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMCDWRM008', true);">신청내역 조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM019', true);">포인트 조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDWRM010', true);">이용안내</a></li>
+                        </ul>
+	                </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_card clfix">
+                    <h2><img src="/images/cd/h2_wine_reward01.png" alt="와인 Reward 신청내역 조회입니다" /></h2>
+                    <div class="content_block_inner">
+                        <div class="tb_exp clfix">
+                            <span class="fl_left">당일신청건에 대해서만 주문신청 취소처리를 하실 수 있습니다.</span>
+                        </div>
+
+                        <table class="dtable01" summary="와인 신청번호, 신청일자, 상품명, 사용포인트, 주문정보를 확인할 수 있는 게시판입니다.">
+                        <caption>와인 Reward 신청내역</caption>
+                        <colgroup><col width="10%" /><col width="10%" /><col width="10%" /><col width="38%" /><col width="16%" /><col width="16%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">구분</th>
+                                <th scope="col">신청번호</th>
+                                <th scope="col">신청일자</th>
+                                <th scope="col">상품명</th>
+                                <th scope="col" class="cell_r10">사용포인트</th>
+                                <th scope="col">주문정보</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell_l10">와인 바우처</td>
+                                <td class="t_no">${order_info.order_no}</td>
+                                <td class="t_no">0</td>
+                                <td>${order_info.goods_name}</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td>주문접수</td>
+                            </tr>
+                            <!-- tr class="nodata">
+                                <td colspan="6">와인 Reward 신청 내역이 없습니다.</td>
+                            </tr -->
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <h2><img src="/images/cd/h2_wine_reward02.png" alt="주문하신 상품 신청내역입니다" /></h2>
+                    <div class="content_block_inner">
+                        <table class="dtable02" summary="주문하신 상품 내역(신청번호, 상품구분, 상품명, 신청일자, 사용포인트, 신청정보, 바우처 사용 여부 등)을 볼 수있는 게시판입니다">
+                        <caption>주문하신 상품</caption>
+                        <colgroup><col width="20%" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><p>신청번호</p></th>
+                                <td><p class="t_no">${order_info.order_no}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>상품구분</p></th>
+                                <td><p>${order_info.order_type=='V'?'와인 바우처':'와인 액세사리'}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>상품명</p></th>
+                                <td><p>${order_info.goods_name}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>신청일자</p></th>
+                                <td><p class="t_no">0</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>사용포인트</p></th>
+                                <td><p class="t_no">0</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>신청정보</p></th>
+                                <td>
+                                    <p>주문취소</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>바우처 사용 여부</p></th>
+                                <td><p class="t_no">0</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <div class="tb_exp mt30">
+                            <h3>배송지 정보</h3>
+                        </div>
+
+                        <table class="dtable02" summary="배송지 정보(이름, 주소, 전화번호, 핸드폰번호, 추가메모)를 작성하는 게시판입니다">
+                        <caption>배송지 정보</caption>
+                        <colgroup><col width="20%" /><col width="*" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><p>이름</p></th>
+                                <td><p>${order_info.receiver}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>주소</p></th>
+                                <td><p class="input_zip">${order_info.rec_addr1} ${order_info.rec_addr2}</p>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>전화번호</p></th>
+                                <td><p class="t_no">${order_info.rec_home_phone}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>핸드폰번호</p></th>
+                                <td><p class="t_no">${order_info.rec_hand_phone}</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><p>추가메모</p></th>
+                                <td><p>${order_info.rec_msg}</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <div class="btnset">
+                            <p class="btnr">
+							<a href="javascript:cancelGo();" class="btn btn_white"><span>주문취소</span></a>
+							<a href="javascript:cancelGo();" class="btn btn_white"><span>주문취소</span></a>
+							<a href="javascript:tabSubmit('/wrmOrder.do?method=orderList&cPage=${param.cPage}');" class="btn btn_white"><span>신청내역 보기</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

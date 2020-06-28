@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"pageEncoding="utf-8"%>
+<%
+/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDTCS001.jsp
+ * Author: 이공오 한은미 주임
+ * Created on 2010.02.05
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+ %>
+ 
+ <%
+	String isAlreadyPraise = (String)request.getAttribute("isAlreadyPraise");
+ 	String qKey1 = (String)request.getAttribute("qKey1");
+ %>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<div id="tab_title">메일상담 평가하기 </div>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+<script type="text/javascript">
+function $tabOnLoad() {
+	<%if("N".equals(isAlreadyPraise)){%>
+		goPop();
+	<%}else if("Y".equals(isAlreadyPraise)){%>
+		alert("이미 E-mail 만족도 평가를 완료하셨습니다. 감사합니다.");
+	<%}else if("P".equals(isAlreadyPraise)){%>
+		alert("고객님의 E-mail 만족도 평가가 완료되었습니다. 감사합니다.");
+	<%}%>
+	parent.window.close();
+	
+}
+function goPop()
+{
+    var url='/hp/im/cs/gsp001.do?method=goGSP&amp;qKey1='+frm.qKey1.value;
+	 var winl = (screen.width-730)/2;
+	 var wint = (screen.height-580)/2;
+	 var settings  ='height='+580+',';
+	     settings +='width='+730+',';
+	     settings +='top='+wint+',';
+	     settings +='left='+winl+',';
+	     settings +='scrollbars=no,';
+	     settings +='resizable=no';
+
+	     window.name = "pwin";
+
+	   win=window.open(url,'chart',settings);
+	   win.window.focus();
+}
+</script>
+</div>
+<form name="frm">
+<input type="hidden" name="qKey1" value="<%=qKey1%>" />
+</form>
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>	

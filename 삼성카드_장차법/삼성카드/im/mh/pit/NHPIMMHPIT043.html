@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+ 
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+
+                <!-- content_block 100212 -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <div class="content_block clfix">
+                    <!--div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 -->
+                    <h2><img src="/images/mh/h2_paybacks_usage02.png" alt="선택하신 포인트 내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3><img src="/images/mh/h3_payback.png" alt="페이백" /></h3>
+
+                        <form method="post" name="form1">
+                        <!-- paging e -->
+                        <table class="dtable02 mt20" summary="날짜별로 페이백을 조회하기 위한 사용기간 선택을 하는 게시판입니다">
+                        <caption>사용기간 선택</caption>
+                        <colgroup><col width="115" /><col width="*" /></colgroup>
+                        <tbody>
+                            <!-- loop -->
+                            <tr>
+                                <th scope="row"><p>사용기간</p></th>
+                                <td><p>
+                                    <a href="javascript:schGubun('DAY');" class="btn btn_s_gray"><span>당일</span></a>
+                                    <a href="javascript:schGubun('WEEK');" class="btn btn_s_gray"><span>1주일</span></a>
+                                    <a href="javascript:schGubun('MONTH1');" class="btn btn_s_gray"><span>1개월</span></a>
+                                    <a href="javascript:schGubun('MONTH2');" class="btn btn_s_white"><span>2개월</span></a>
+                                    <span class="reset_date ml20">날짜지정
+                                    
+                                    </span>
+                                </p></td>
+                            </tr>
+                            <!-- //loop -->
+                        </tbody>
+                        </table>
+                        </form>
+
+                        <div class="btnset">
+                            <div class="btnr"><a href="javascript:schUserGubun();" class="btn btn_blue"><span>조회</span></a></div><!-- 100316 -->
+                        </div>
+
+
+                        <table class="dtable01 mt30" summary="사용일자, 시간, 가맹점명, 할인대상금액, 포인트 사용액, 포인트 적립액, 취소여부로 구성된 페이백 조회 결과 게시판입니다.">
+                        <caption>페이백 조회 결과</caption>
+                        <colgroup><col width="12%" /><col width="10%" /><col width="*" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="10%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10">사용일자</th>
+                                <th scope="col">시간</th>
+                                <th scope="col">가맹점 명</th>
+                                <th scope="col" class="cell_r10">할인대상금액</th>
+                                <th scope="col" class="cell_r10">포인트 사용액</th>
+                                <th scope="col" class="cell_r10">포인트 적립액</th>
+                                <th scope="col">취소여부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="t_no cell_l10">0</td>
+                                <td class="t_no">0</td>
+                                <td>0</td>
+                                <td class="cell_r10"><span class="t_no">0</span> 원</td>
+                                <td class="cell_r10"><span class="t_no">0</span> P</td>
+                                <td class="cell_r10"><span class="t_no">0</span> P</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <!-- paginate -->
+                        <div class="paginate">
+                            <div class="paging">
+                                <a href="javascript:goPage('prePage');" class="btn btn_s_white"><span>이전</span></a>
+                                <span> </span><a href="javascript:goPage('nextPage');" class="btn btn_s_white"><span>다음</span></a>
+                            </div>
+                        </div>
+
+                        <div class="line_lgray">&nbsp;</div>
+
+                        <p class="mt_10">최근 2개월 간의 이용내역을 확인할 수 있습니다.</p>
+
+                    </div>
+                    <!-- 100216 -->
+                </div>
+                
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

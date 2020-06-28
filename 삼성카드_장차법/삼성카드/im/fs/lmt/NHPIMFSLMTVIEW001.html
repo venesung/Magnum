@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual" >
+
+	<h1><img src="/images/fs/h1_my_limit.png" alt="상품별 이용가능금액과 이자율 조회입니다."/></h1><!-- 100519 -->
+
+</div>
+
+<!-- content_block -->
+
+<!--
+<div class="content_block content_block_card clfix" >
+
+	<div id="flexObject"></div>
+
+</div>
+-->
+<!-- 여기부터 시작 --> 
+<!--////////////////////////////20121203 mv_강승희 ////////////////////////////////start--> 
+<!-- content_block -->
+<div id="hbNoOffer" style="display:">
+<div class="content_block content_block_m0 clfix">
+<!-- section1 start-->	
+	<h2><img src="/images/fs/h2_cash_srvc_07.gif" alt="이용가능금액안내입니다" /></h2>
+	<div class="content_block_inner">
+		<p class="mb10"><strong>2012년 1월 1일</strong> 현재  <span id="userName">-_-</span>님의 상품별 이용가능금액 및 이자율은 아래와 같습니다.</p>
+		
+		<table class="dtable01" summary="상품, 한도, 상향가능한도, 이용하신 금액, 이용가능 금액, 이자율, 상세이자율, 신청하기를 보여주는 표입니다" id="dgLoanStatus" style="display:">
+			<caption>상품별 이용가능 금액 및 이자율</caption>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">상품</th>
+					<th scope="col" class="cell_r10">한도</th>
+					<th scope="col" class="cell_r10"><span class="t_point_org">상향가능한도</span></th>
+					<th scope="col" class="cell_r10">이용하신 금액</th>
+					<th scope="col" class="cell_r10">이용가능 금액</th>
+					<th scope="col" class="cell_r10">이자율</th>
+					<th scope="col">상세이자율</th>
+					<th scope="col">신청하기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10">현금서비스(국내)</td>
+					<td class="cell_r10"><p id="cidCashKorTi001">0</p></td>
+					<td class="cell_r10"><p ><span id="cidCashKorTi002" class="t_point_org">0</span></p></td>
+					<td class="cell_r10"><p id="cidCashKorTi003">0</p></td>
+					<td class="cell_r10" id="cidCashKorTi004">0</td>
+					<td rowspan="2" class="cell_r10" id="cidCashKorTi005">0</td>
+					<td rowspan="2"><a href="#" class="btn btn_s_white" onclick="openPopup('CASH');return false;" title="현금서비스 국내 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td rowspan="2"><a href="#" class="btn btn_s_blue" onclick="goConrimSite('CASH'); return false;" title="현금서비스 국내 신청하기"><span>신청</span></a></td>
+				</tr>
+				<tr>
+					<td class="cell_l10">현금서비스(해외)</td>
+					<td class="cell_r10"><p id="cidCashAbrTi001">0</p></td>
+					<td class="cell_r10"><p><span id="cidCashAbrTi002" class="t_point_org">0</span></p></td>
+					<td class="cell_r10" id="cidCashAbrTi003">0</td>
+					<td class="cell_r10" id="cidCashAbrTi004">0</td>
+				</tr>
+
+				<tr id="cidGoodCashGr001" style="display:">
+					<td class="cell_l10"><p id="cidGoodCashTi001">0</p></td>
+					<td class="cell_r10" ><p id="cidGoodCashTi002">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi003" class="t_point_org">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi004">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi005">0</p></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br/>
+
+		<table id="dgLoanStatus2" class="dtable01" summary="상품, 예상가능금액, 상향가능금액, 이용하신 금액, 이용가능 금액, 이자율, 상세이자율, 신청하기를 보여주는 표입니다" style="display:">
+			<caption>상품별 이용가능 금액 및 이자율</caption>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">상품</th>
+					<th scope="col" class="cell_r10">한도</th>
+					<th scope="col" class="cell_r10"><span class="t_point_org">상향가능한도</span></th>
+					<th scope="col" class="cell_r10">이용하신 금액</th>
+					<th scope="col" class="cell_r10">이용가능 금액</th>
+					<th scope="col" class="cell_r10">이자율</th>
+					<th scope="col">상세이자율</th>
+					<th scope="col">신청하기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10"><p>삼성카드론</p></td>
+					<td class="cell_r10"><p id="cidCardTi001">0</p></td>
+					<td class="cell_r10"><p><span id="cidCardTi002" class="t_point_org">0</span></p></td>
+					<td class="cell_r10"><p id="cidCardTi003">0</p></td>
+					<td class="cell_r10"><p id="cidCardTi004">0</p></td>
+					<td class="cell_r10"><p id="cidCardTi005">0</p></td>
+					<td><a href="#" id="btnCdlSrch" class="btn btn_s_white" onclick="openPopup('CARD');return false;" title="삼성카드론 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td><a href="#" id="btnCdlApply" class="btn btn_s_blue" onclick="goConrimSite('CARD'); return false;" title="삼성카드론 신청하기"><span>신청</span></a></td>
+				</tr>
+
+				<!--tr style="display:">
+					<td class="cell_l10"><p>삼성마이너스론</p></td>
+					<td class="cell_r10"><p id="cidMnsTi001">0</p></td>
+					<td class="cell_r10"><p><span id="cidMnsTi002" class="t_point_org">0</span></p></td>
+					<td class="cell_r10"><p id="cidMnsTi003">0</p></td>
+					<td class="cell_r10"><p id="cidMnsTi004">0</p></td>
+					<td class="cell_r10"><p >0</p></td>
+					<td><a href="#" id="btnCdlSrch" class="btn btn_s_white" onclick="openPopup('MINUSLOAN');return false;" title="삼성마이너스론 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td><a href="#" id="btnCdlApply" class="btn btn_s_blue" onclick="goConrimSite('MINUSLOAN'); return false;" title="삼성마이너스론 신청하기"><span>신청</span></a></td>
+				</tr-->
+			</tbody>
+		</table>
+		
+		<br />
+
+		
+		<table id="dgLoanStatusOffer" class="dtable01" summary="상품, 한도, 상향가능한도, 이용하신 금액, 이용가능 금액, 이자율, 상세이자율, 신청하기를 보여주는 표입니다">
+			<caption>상품별 이용가능 금액 및 이자율</caption>
+			<thead>
+				<tr>
+					<th scope="col" rowspan="2" class="cell_l10">상품</th>
+					<th scope="col" rowspan="2" class="cell_r10">한도</th>
+					<th scope="col" rowspan="2" class="cell_r10"><span class="t_point_org">상향가능한도</span></th>
+					<th scope="col" rowspan="2" class="cell_r10">이용하신 금액</th>
+					<th scope="col" rowspan="2" class="cell_r10 riline">이용가능 금액</th>
+					<th scope="colgroup" class="cell_r10 boline_b0 riline" colspan="2">이자율</th>
+					<th scope="col" rowspan="2" class="cell_r10">상세이자율</th>
+					<th scope="col" rowspan="2">신청하기</th>
+				</tr>
+				<tr>
+					<th scope="col" class="riline">할인전</th>
+					<th scope="col" class="riline">할인후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10">현금서비스(국내)</td>
+					<td class="cell_r10"><p id="cidCashKorTi001Add">0</p></td>
+					<td class="cell_r10"><p id="cidCashKorTi002Add"  class="t_point_org" >0</p></td>
+					<td class="cell_r10"><p id="cidCashKorTi003Add">0</p></td>
+					<td class="cell_r10" id="cidCashKorTi004Add">0</td>
+					<td class="cell_r10" rowspan="2" id="cidCashKorTi005Add">0</td>
+					<td class="cell_r10" rowspan="2" id="cidCashKorTi006Add">0</td>
+					<td rowspan="2"><a href="#" class="btn btn_s_white" onclick="openPopup('CASH');return false;" title="현금서비스 국내 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td rowspan="2"><a href="#" class="btn btn_s_blue" onclick="goConrimSite('CASH'); return false;" title="현금서비스 국내 신청하기"><span>신청</span></a></td>
+				</tr>
+				<tr>
+					<td class="cell_l10">현금서비스(해외)</td>
+					<td class="cell_r10"><p id="cidCashAbrTi001Add">0</p></td>
+					<td class="cell_r10"><p id="cidCashAbrTi002Add" class="t_point_org">0</p></td>
+					<td class="cell_r10"><p id="cidCashAbrTi003Add">0</p></td>
+					<td class="cell_r10" id="cidCashAbrTi004Add">0</td>
+				</tr>
+				<tr id="cidGoodCashGr002" style="display:">
+					<td class="cell_l10"><p id="cidGoodCashTi001Add">굿캐쉬한도</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi002Add">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi003Add" class="t_point_org">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi004Add">0</p></td>
+					<td class="cell_r10"><p id="cidGoodCashTi005Add">0</p></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div class="pt10 t_desc04">현금서비스 할인후 이자율은 상환방식에 따라 달라질 수 있습니다.</div>
+
+		<br/>
+		<table id="dgLoanStatusOffer2" style="display:" class="dtable01 dtable_inputfield " summary="상품, 예상가능금액, 상향가능금액, 이용하신 금액, 이용가능 금액, 이자율, 상세이자율, 신청하기를 보여주는 표입니다">
+			<caption>상품별 이용가능 금액 및 이자율</caption>
+			<thead>
+				<tr>
+					<th scope="col" rowspan="2" class="cell_l10">상품</th>
+					<th scope="col" rowspan="2" class="cell_r10">한도</th>
+					<th scope="col" rowspan="2" class="cell_r10"><span class="t_point_org">상향가능한도</span></th>
+					<th scope="col" rowspan="2" class="cell_r10">이용하신 금액</th>
+					<th scope="col" rowspan="2" class="cell_r10 riline">이용가능 금액</th>
+					<th scope="colgroup" class="cell_r10 boline_b0 riline" colspan="2">이자율</th>
+					<th scope="col" rowspan="2" class="cell_r10">상세이자율</th>
+					<th scope="col" rowspan="2">신청하기</th>
+				</tr>
+				<tr>
+					<th scope="col" class="riline">할인전</th>
+					<th scope="col" class="riline">할인후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10"><p>삼성카드론</p></td>
+					<td class="cell_r10"><p id="cidCardTi001Add">0</p></td>
+					<td class="cell_r10"><p><span id="cidCardTi002Add" class="t_point_org">0</span></p></td>
+					<td class="cell_r10"><p id="cidCardTi003Add">0</p></td>
+					<td class="cell_r10"><p id="cidCardTi004Add">0</p></td>
+					<td class="cell_r10"><p id="cidCardTi005Add">0</p></td>
+					<td class="cell_r10"><p id="cidCardTi006Add">0</p></td>
+					<td><a href="#" id="btnCdlSrchAdd" class="btn btn_s_white" onclick="openPopup('CARD');return false;" title="삼성카드론 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td><a href="#" id="btnCdlApplyAdd" class="btn btn_s_blue" onclick="goConrimSite('CARD');return false;" title="삼성카드론 신청하기"><span>신청</span></a></td>
+				</tr>
+				<!--tr style="display:">
+					<td class="cell_l10"><p>삼성마이너스론</p></td>
+					<td class="cell_r10"><p id="cidMnsTi001Add">0</p></td>
+					<td class="cell_r10"><p><span id="cidMnsTi002Add" class="t_point_org">0</span></p></td>
+					<td class="cell_r10"><p id="cidMnsTi003Add">0</p></td>
+					<td class="cell_r10"><p id="cidMnsTi004Add">0</p></td>
+					<td class="cell_r10"><p id="cidMnsTi005Add">0</p></td>
+					<td></td>
+					<td><a href="#"  class="btn btn_s_white" onclick="openPopup('MINUSLOAN');return false;" title="삼성마이너스론 상세이자율 조회 새창"><span>조회</span></a></td>
+					<td><a href="#" class="btn btn_s_blue" onclick="goConrimSite('MINUSLOAN');return false;" title="삼성마이너스론 신청하기"><span>신청</span></a></td>
+				</tr-->
+			</tbody>
+		</table>
+		
+		
+		<div class="pt10 t_desc04">
+			<div id="txtServiceMsg" style="display:"></div>
+			- 삼성카드론 이자율은 원금균등상환 12개월 기준으로, 상환방식 및 대출기간에 따라 일부 달라질 수 있습니다.<br />
+			- 예상가능금액은 이용시점 고객님의 신용도에 따라 변동될 수 있습니다.<br />
+			<div id="cidTextView001" style="display:">
+				- 신용도의 변동에 따라 회원님의 할인전 이자율이 행사기간 중 적용되는 할인후 이자율보다 인하되는 경우가 있습니다.<br />
+				&nbsp;&nbsp; 이와 관련하여 고객상담센터(1588-8700)로 문의주시면 회원님께 보다 유리한 이자율을 적용하여 처리해 드리겠습니다.
+			</div>
+			<div id="cidGeneralTi" style="display:"></div>
+			<div class="t_point_org" id="cidHandoUpgrage001" style="display:"><strong id="cidHandoUpgrade001Ti">ddd</strong>&nbsp; <a href="#" class="btn btn_white" onclick="hadndoUpdateFunc();return false"><span>상향신청</span></a></div>
+		</div>
+	</div>
+</div>
+
+<!-- section1 end--> 
+<!-- section2 start-->
+
+
+
+</div>
+
+<!-- section2 end-->
+
+<!-- section3 start-->
+<div class="content_block clfix">
+	<h2 id="hbGoodCashInfoImg" style="display:"><img src="/images/fs/h2_cash_srvc_06.gif" alt="이용안내입니다" /></h2>
+
+	<div class="content_block_inner">
+		<ol class="list_no01" id="hbGoodCashInfo" style="display:">
+			<li><p>고객님은 굿캐쉬 한도에서 현금서비스 및 삼성카드론의 총 이용금액 합계 및 기타 대출 · 보증 잔액을 차감 후<br />
+				   산정된 이용가능금액 및 상환능력 범위 내에서 이용하실 수 있습니다.</p></li>
+			<li><p>현금서비스 한도 상향을 신청하시면 상향가능한도로 이용하실 수 있습니다.</p></li>
+			<li><p>국내현금서비스 한도 내에서 국내 및 해외현금서비스 이용액이 통합 관리됩니다.</p></li>
+			<li><p>개인회원약관에 의거 고객님의 편의를 위해 신용카드 이용한도(현금서비스 포함)의 일정금액 또는 비율을<br />
+				   삼성카드의 기준(신용도 등)에 따라 자동초과 승인할 수 있습니다.</p></li>
+			<li><p>향후 카드론을 이용할 의사가 없는 회원은 당사 홈페이지  <span><a href="javascript:goTabPage('NHPIMFSCDLM', false);" class="a_point">[카드론 서비스안내]</a></span>, 대표전화(1588-8700)를 통해<br />
+				   카드론을 이용하지 않겠다는 의사표시를 할 수 있습니다.<br />
+				   카드론을 이용하지 않겠다는 의사를 표시한 회원이 향후 카드론을 이용하려면 별도로 영업점 방문,<br /> 법정신분증 사본 제출 등의 절차를 거쳐 카드론 이용에 동의하여야 합니다.</p></li>
+		</ol>
+
+		<ol class="list_no01" id="hbGeneralInfo1" style="display:">
+			<li><p>현금서비스는 결제일별 이용기간에 따라 한도가 발생됩니다.</p></li>
+			<li><p>삼성카드론은 예상가능금액에서 이미 이용하신 금액, 기타 대출 · 보증 잔액을 차감 후<br />
+				   이용가능금액 및 상환능력 범위 내에서 이용하실 수 있습니다.</p></li>
+			<li><p>현금서비스 한도 상향을 신청하시면 상향가능한도로 이용하실 수 있습니다.</p></li>
+			<li><p>국내 현금서비스 한도 내에서 국내 및 해외 현금서비스 이용액이 통합 관리됩니다.</p></li>
+			<!--li><p>개인회원약관에 의거 고객님의 편의를 위해 신용카드 이용한도(현금서비스 포함)의 일정금액 또는 비율을<br />
+				   삼성카드의 기준(신용도 등)에 따라 자동초과 승인할 수 있습니다.</p></li--><!-- 정기일반영 13.04.11 -->
+			<li><p>향후 카드론을 이용할 의사가 없는 회원은 당사 홈페이지  <span><a href="javascript:goTabPage('NHPIMFSCDLM', false);" class="a_point">[카드론 서비스안내]</a></span>, 대표전화(1588-8700)를 통해<br />
+				   카드론을 이용하지 않겠다는 의사표시를 할 수 있습니다.<br />
+				   카드론을 이용하지 않겠다는 의사를 표시한 회원이 향후 카드론을 이용하려면 별도로 영업점 방문,<br /> 법정신분증 사본 제출 등의 절차를 거쳐 카드론 이용에 동의하여야 합니다.</p></li>
+		</ol>
+
+		<ol class="list_no01" id="hbGeneralInfo2" style="display:">
+			<li><p>현금서비스는 결제일별 이용기간에 따라 한도가 발생됩니다.</p></li>
+			<li><p>삼성카드론은 예상가능금액에서 이미 이용하신 금액, 기타 대출 · 보증 잔액을 차감 후<br />
+				   이용가능금액 및 상환능력 범위 내에서 이용하실 수 있습니다.</p></li>
+			<li><p>현금서비스 한도 상향을 신청하시면 상향가능한도로 이용하실 수 있습니다.</p></li>
+			<li><p>국내 현금서비스 한도 내에서 국내 및 해외 현금서비스 이용액이 통합 관리됩니다.</p></li>
+			<li><p>개인회원약관에 의거 고객님의 편의를 위해 신용카드 이용한도(현금서비스 포함)의 일정금액 또는 비율을<br />
+				   삼성카드의 기준(신용도 등)에 따라 자동초과 승인할 수 있습니다.</p></li>
+			<li><p>향후 카드론을 이용할 의사가 없는 회원은 당사 홈페이지  <span><a href="#"  onclick="goTabPage('NHPIMFSCDLM', false); return false;" class="a_point">[카드론 서비스안내]</a></span>, 대표전화(1588-8700)를 통해<br />
+				   카드론을 이용하지 않겠다는 의사표시를 할 수 있습니다.<br />
+				   카드론을 이용하지 않겠다는 의사를 표시한 회원이 향후 카드론을 이용하려면 별도로 영업점 방문,<br /> 법정신분증 사본 제출 등의 절차를 거쳐 카드론 이용에 동의하여야 합니다.</p></li>
+		</ol>
+	</div>
+</div>
+<!-- section3 end-->
+<!--// 여기까지 끝 -->
+
+<!-- 여기부터 시작 -->
+<div id="id_layer01" style="display:none">
+<div id="confirmAlert"  class="pop_l_position pop_l_wrap_alert" >
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">0</p><p class="img_l_pop flag_tr">0</p><p class="img_l_pop flag_bl">0</p><p class="img_l_pop flag_br">0</p><input type="button" class="img_l_pop btn_close btn_input" onclick="javascript:closeCSDLayerPop();" value="레이어닫기" title="알림 레이어 닫기" />
+		
+		<br/>
+		<p class="pop_tit3"><img src="/images/mh/lpop_tit_notice.gif" alt="알림" /></p>
+
+		<div class="pop_l_content">
+			<p class="btn mt25" id="confirmMsg"></p>			
+			<p class="btn mt25">
+				<a href="#" class="btn btn_blue" id="confirmBtn" onclick="return false"><span>확인</span></a>
+				<a href="#" class="btn btn_white" id="cancelBtn" onclick="return false"><span>취소</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+</div>
+
+<!--// 여기까지 끝 -->
+<div id="id_layer02" style="display:">
+<div class="pop_l_wrap" style="width:470px;height:230px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input"  value="레이어닫기" title="카드론 신청 레이어 닫기" onclick="closeLMTLayerPop('NHPIMFSCDLVIEW013P');return false"/>
+	<p class="pop_tit tc"><img src="/images/fs/lpop_tit_cardloan_none.gif" alt="회원님의 요청에 의하여 카드론 이용이 불가한 상태입니다." /></p>
+	<div class="pop_l_content mt30">
+		<div class="pop_l_alert03 mb30">
+			<p>카드론 이용을 원하실 경우 대표전화(1588-8700)로 요청하시면 당사가 정하는 소정의 절차를 거쳐 이용가능 여부를 회신해 드립니다.</p>
+		</div>
+		<p class="btnc"><a href="#" onclick="closeLMTLayerPop('NHPIMFSCDLVIEW013P');return false" ><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+	</div>
+</div>
+</div>
+
+<!--start-->
+<div id="cashLayer01" style="display: none;">
+	<div class="pop_l_wrap " style="height: auto;">
+	<div class="img_l_pop flag_tl">0</div>
+	<div class="img_l_pop flag_tr">0</div>
+	<div class="img_l_pop flag_bl">0</div>
+	<div class="img_l_pop flag_br">0</div>
+	<p class="pop_tit"><img src="/images/fs/lpop_tit_cash_detail_ratio.gif" alt="현금서비스 상세 이자율" /></p>
+	<div class="pop_l_content">
+		<div class="mv_loan01">
+			<dl>
+				<dt>현금서비스 이자율 및 취급수수료 안내</dt>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="이자율, 취급수수료">
+						<caption>
+						현금서비스 이자율 및 취급수수료 안내
+						</caption>
+						<colgroup>
+						<col width=""/>
+						<col width=""/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="mv_ct01"><p>이자율</p></th>
+								<th scope="col" class="mv_ct01"><p>취급수수료</p></th>
+							</tr>
+						</thead>
+						<tbody id="tableCashBody">
+							<tr>
+								<td class="mv_ct01">9.9%</td>
+								<td class="mv_ct01">0.0%</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="btnc">
+	<p class="btn mt25 mb40"><a href="#"
+		onclick="closeLayer('cashLayer01');return false;" class="btn btn_blue"><span>확인</span></a>
+	</p>
+	</div>
+	</div>
+</div>
+
+<div id="interestLayer01" style="display: ;">
+	<div class="pop_l_wrap " style="height: auto;">
+	<div class="img_l_pop flag_tl">0</div>
+	<div class="img_l_pop flag_tr">0</div>
+	<div class="img_l_pop flag_bl">0</div>
+	<div class="img_l_pop flag_br">0</div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayer('interestLayer01');return false;" value="레이어닫기" title="카드론 상세이자율 레이어 닫기" />
+	<p class="pop_tit"><img
+		src="/images/fs/lpop_tit_card_detail_ratio.gif" alt="카드론 상세이자율" /></p>
+	<div class="pop_l_content">
+	<div class="d_desc">
+	<div class="tab02">
+	<ul>
+		<li class="on" id="layer02_tab01"><a
+			href="javascript:getInterest('M');">원금균등분할 상환</a></li>
+		<li id="layer02_tab02"><a href="javascript:getInterest('H');">만기일시상환</a></li>
+		<!-- li id="layer02_tab03"><a href="javascript:getInterest('R');">거치후
+		원금균등분할 상환</a></li-->
+	</ul>
+	</div>
+	<table id="tableM" class="dtable01 mv_pop_tbl_list mt10"
+		summary="원금균등분할 상환의 개월수에 따른 이자율 및 취급수수료 안내">
+		<caption style="display: ">원금균등분할 상환</caption>
+		<colgroup>
+			<col width="33%" />
+			<col width="33%" />
+			<col width="33%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">개월수</th>
+				<th scope="col">이자율</th>
+				<th scope="col">취급수수료</th>
+			</tr>
+		</thead>
+		<tbody id="tableMBody">
+			<tr>
+				<td>02개월</td>
+				<td>8.70%</td>
+				<td>0.0%</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="tableH" class="dtable01 mv_pop_tbl_list mt10"
+		summary="만기일시상환의 개월수에 따른 이자율 및 취급수수료 안내" style="display: ;">
+		<caption style="display: none">만기일시상환</caption>
+		<colgroup>
+			<col width="33%" />
+			<col width="33%" />
+			<col width="33%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">개월수</th>
+				<th scope="col">이자율</th>
+				<th scope="col">취급수수료</th>
+			</tr>
+		</thead>
+		<tbody id="tableHBody">
+			<tr>
+				<td>02개월</td>
+				<td>8.70%</td>
+				<td>0.0%</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="tableR" class="dtable01 mv_pop_tbl_list mt10"
+		summary="거치후 원금균등분할의 개월수에 따른 이자율 및 취급수수료 안내" style="display: ;">
+		<caption style="display: none">거치후 원금균등분할 상환</caption>
+		<colgroup>
+			<col width="33%" />
+			<col width="33%" />
+			<col width="33%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">개월수</th>
+				<th scope="col">이자율</th>
+				<th scope="col">취급수수료</th>
+			</tr>
+		</thead>
+		<tbody id="tableRBody">
+			<tr>
+				<td>02개월</td>
+				<td>8.70%</td>
+				<td>0.0%</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<div class="btnc">
+	<p class="btn mt25 mb40"><a href="#"
+		onclick="closeLayer('interestLayer01');return false;" class="btn btn_blue"><span>확인</span></a>
+	</p>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

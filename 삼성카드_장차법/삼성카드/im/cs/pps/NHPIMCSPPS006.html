@@ -1,0 +1,14 @@
+<%/*
+ * Project Name	: 삼성카드 웹 이노베이션 프로젝트
+ * File Name	: NHPIMCSPPS006.jsp
+ * Author	: 삼성SDS 정주원 사원
+ * Created on 2010. 4. 16.
+ * xecureweb_file.js 파일 업로드 결과 리턴코드
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%
+	//주의! 본 JSP 파일은 xecure_upload.js 의  FileUpload 함수의 리턴 코드를 넘기는 부분 임. 수정을 금합니다.
+	String returnCode = (String)request.getAttribute("returnCode");
+%>
+<%= returnCode %>

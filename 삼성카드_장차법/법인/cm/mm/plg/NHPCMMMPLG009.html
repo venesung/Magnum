@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<title>휴대폰 번호 인증 이용 - 삼성카드</title>
+</head>
+
+<body>
+<div id="pop_s_wrap">
+<form name="form1" method="post" autocomplete="off">
+<input type="hidden" name="cmUrl" value="" />
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1 class="al_center"><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /></h1>
+	</div>
+	
+	
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<table class="dtable02 dtable_inputfield" summary="휴대폰번호, 인증번호로 구성된 휴대폰 번호 인증을 받을 수 있는 게시판입니다">
+			<caption>휴대폰 번호 인증</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>휴대폰번호</p></th>
+					<td><p>
+						<span class="input_phone">
+									<select title="휴대폰 앞자리" name="phoneNo1" onChange="phonechange()">
+										<option></option>
+									</select>&nbsp;-&nbsp;
+									<input type="text" class="txt" name="phoneNo2" value="" title="휴대폰 가운데자리" maxlength="4" />&nbsp;-&nbsp;
+									<input type="text" class="txt" name="phoneNo3" value="" title="휴대폰 뒷자리" maxlength="4" />
+									<a href="javascript:gocert()" class="btn btn_s_white" title="새창"><span>인증번호받기</span></a>
+									</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_num">인증번호</label></th>
+					<td><p><span class="input_3char"><input type="text" class="txt" id="label_num" value="" title="인증번호 입력" /></span></p></td>
+				</tr>
+			</tbody>
+			</table>
+			<p class="pop_sub_desc02">휴대폰번호를 정확히 입력하시고, 휴대폰으로 전송되어온 <br />인증번호를 입력 후 아래의 확인버튼을 눌러주세요.<br />본인 명의의 휴대폰이 아닌 경우 인증이 이루어지지 않습니다.</p>
+		</div>
+		<p class="btnc"><a href="#"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="javascript:self.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</form>
+</div>
+</body>
+</html>
+

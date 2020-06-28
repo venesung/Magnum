@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_mem_withdraw.png" alt="삼성카드 웹멤버를 탈퇴하시겠습니까?" /></h1>
+				</div>
+				<form name="frm1" method="post">
+				<input type="hidden" name="reason" value="0" />
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					
+					<!-- 130220 삭제 --> 
+					<!--<h2><img src="/images/mh/h2_mem_withdraw01.png" alt="주의사항을 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+					
+						<blockquote class="mb20"><img src="/images/mh/bq_mem_out01.png" alt="그동안 삼성카드 웹사이트를 이용해주신 회원님께 감사드립니다" /></blockquote>
+						<ol class="list_no01">
+							<% if(!"09".equals(grade)){ %>
+							<li><p>SMS서비스 이용회원인 경우 웹멤버 탈퇴 시에도 SMS서비스는 계속됩니다.</p></li>
+							<li><p>SMS서비스 이용을 원하지 않으시면 먼저 해지해 주십시오. <a href="javascript:goTabPage('NHPIMSSSIC001M004', true);" class="btn_link ml10">SMS 서비스 해지하기</a></p></li>
+							<%} %>
+							<li><p>SMS/MMS(문자서비스) 이용회원인 경우 충전잔액 환불에대한 문의는 1688-0003번으로 확인해주십시오.</p></li>
+						</ol>
+					</div>
+				</div>
+
+				<div class="content_block  clfix">
+				--><!-- 130220 삭제 --> 
+					<h2><img src="/images/mh/h2_mem_withdraw02.png" alt="웹멤버 탈퇴사유를 선택해 주세요" /></h2> <!-- SR내역 13.02.21 -->
+					<div class="content_block_inner">
+						<fieldset class="find_id withdraw mt30">
+							<legend>웹멤버 탈퇴정보 입력</legend>
+							<dl>
+								<!-- <dt class="h20">아이디</dt>
+								<dd class="h20"><span class="t_point"><%=(String) request.getAttribute("USER_ID") %></span></dd>--><!--
+								<dt><label for="label_idno">주민등록번호</label></dt>
+								<dd><span class="bg_input"><input name="idenNo1" type="text" value="" title="주민등록번호 앞자리" style="width:177px" id="label_idno" maxlength="6" onKeyPress="checkTypes(this,'SSN');" onKeyUp="changeFocus('1');" onBlur="checkTypesOnBlur(this,'SSN');"/><em>&nbsp;</em></span>&nbsp;-&nbsp;
+									<span class="bg_input mr10"><input name="idenNo2" type="password" value="" title="주민등록번호 뒷자리" style="width:177px" id="label_idno02" maxlength="7" onKeyPress="checkTypes(this,'SSN');" onKeyUp="changeFocus('2');" onBlur="checkTypesOnBlur(this,'SSN');" /><em>&nbsp;</em></span>
+								</dd>
+								--><!--
+								<dt><label for="label_pw">비밀번호</label></dt>
+								<dd><span class="bg_input"><input name="pw" type="password" value="" title="비밀번호" id="label_pw" style="width:177px" maxlength="12" onKeyPress="checkTypes(this,'ECNO');" onBlur="checkTypesOnBlur(this,'ECNO');"/><em>&nbsp;</em></span></dd>
+								--><dt><label>탈퇴사유</label></dt>
+								<dd>
+ 
+									<div id="selectbox1" class="selectbox" style="width:395px" onclick="openSelectBox()"><p class="btn">&nbsp;</p>
+										<p><a href="#" class="default" id="reasonText" onclick="return false;">사유를 선택해 주세요</a></p>
+										<div class="childlayer" >
+											<ul id="selectUI">
+												<li><a href="javascript:setReason('1', '삼성카드 이용 안함')"> 삼성카드 이용 안함 </a></li>
+												<li><a href="javascript:setReason('2', '개인신상정보유출 불안함')"> 개인신상정보유출 불안함 </a></li>
+												<li><a href="javascript:setReason('3', 'ID 변경')"> ID 변경 </a></li>
+												<li><a href="javascript:setReason('4', '인터넷 이용 안함')"> 인터넷 이용 안함 </a></li>
+												<li><a href="javascript:setReason('5', '기타')"> 기타 </a></li>
+											</ul>
+										</div>
+									</div>
+									<p class="mt5" style="clear:left">문의사항이 있으시면 삼성카드 고객센터 <strong class="t_black">1588-8700</strong> 으로 문의해 주시기 바랍니다.</p><!-- 130220 추가 -->
+								</dd>
+							</dl>
+						</fieldset>
+					</div>
+
+
+					<div class="line_lgray">&nbsp;</div>
+					<!-- btn -->
+					<div class="btnset">
+						<p class="btnr">
+							<a href="javascript:checkInput()" class="btn btn_blue"><span>확인</span></a>
+							<!-- <a href="#" class="btn btn_white"><span>취소</span></a>	-->
+						</p>
+					</div>
+				</div>
+				</form>
+				<!-- footer_layer -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

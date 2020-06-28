@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- 100126 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 웹멤버 가입</h1>
+					<div class="h1_desc"><img src="/images/ms/bg_joinin.jpg" alt="삼성카드 웹멤버 회원가입을 하시면 삼성카드의 편리하고 폭넓은 서비스를 활용하실 수 있습니다" /></div>
+				</div>
+
+				<div class="content_block content_block_card clfix">
+					<div class="top_step top_step_appcard top_step_appcard01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</strong></li>
+							<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+							<li>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</li>
+							<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<form name="kcbInForm" >
+				<input type="hidden" name="IDPCODE" value="" />
+				<input type="hidden" name="IDPURL" value="" />
+				<input type="hidden" name="CPCODE" value="" />
+				<input type="hidden" name="CPREQUESTNUM" value="" />
+				<input type="hidden" name="RETURNURL" value="" />
+				<input type="hidden" name="WEBPUBKEY" value="" />
+				<input type="hidden" name="WEBSIGNATURE" value="" />
+				</form>
+				<form name="kcbOutForm" onsubmit="return false;">
+				<input type="hidden" name="ipin_check" value="" />
+				</form>
+				<form action="" name="form1" onsubmit="return false;">
+				<input type="hidden" name="hostName" value="<%= hostName %>" />
+				<input type="hidden" name="ipin_flag" value="N" />
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ms/h2_confirm_realname_ipin.png" alt="웹멤버 회원가입을 위해 인증방식을 선택하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+
+					 <div class="flag_additional realnameImg" style="width:61px;"><img src="/images/ms/img_ms_realname.png" alt="ePRIVACY&#13;개인정보보호우수사이트" /></div>
+						<blockquote><img src="/images/ms/h3_confirm_realname.png" alt="samsungcard.com은 개인정보보호 우수사이트 마크(ePRIVACY)를 획득한 사이트입니다. 회원님께서 제공해주신 개인정보 보호를 안전하게 관리하기 위해 최선을 다하겠습니다." /></blockquote>
+						<!-- 2013.04.18 SR [긴급반영]홈페이지 웹회원 가입 첫페이지 추가 -->
+						<p class="mt30">정회원은 아래 본인인증 방식을 통해 웹회원 가입이 가능합니다.</p>
+ 
+						<table class="dtable02 dtable_inputfield mt30" summary="인증방식을 선택하는 게시판입니다.">
+						<caption>인증방식 선택</caption>
+						<colgroup><col width="125" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10"><p>인증방식</p></th>
+								<td><p>
+									<label for="label_cert"><input type="radio" class="rdo" id="label_cert" name="name_cert" value="name" checked="checked" onclick="changeCert('name');" title="실명확인" /> 실명확인</label>
+									<label for="label_cert2"><input type="radio" class="rdo" id="label_cert2" name="name_cert" value="ipin" onclick="changeCert('ipin');" title="아이핀(i-Pin)" /> 아이핀(i-Pin)</label>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<fieldset class="find_id mt30" id="realNameCheck" style="display:block" >
+							<legend>아이디찾기</legend>
+							<dl>
+								<dt><label for="label_name">성명</label></dt>
+								<dd><span class="bg_input"><input type="text" value="" title="성명" name="user_name" id="label_name" style="width:177px;ime-mode:active;" onkeypress="checkTypes(this,'ENKO');" onblur="checkTypesOnBlur(this,'ENKO');" /><em>&nbsp;</em></span></dd>
+								<dt><label for="label_idno">주민등록번호</label></dt>
+                                <dd>
+                                	<span class="bg_input">
+                                		<input type="text" value="" title="주민등록번호 앞자리" style="width:177px;ime-mode:disabled;" name="iden_no1" id="label_idno" maxlength="6" enc="on" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" />
+                                		<em>&nbsp;</em>
+                                	</span>
+                                	&nbsp;-&nbsp;
+                                	<span class="bg_input mr10">
+                                		<input type="password" value="" title="주민등록번호 뒷자리" style="width:177px;ime-mode:disabled;" name="iden_no2" maxlength="7" enc="on" onkeypress="checkTypes(this,'NUMB');" onkeydown="fn_enterSubmit(this);" onblur="checkTypesOnBlur(this,'NUMB');" />
+                                		<em>&nbsp;</em>
+                                	</span>
+                                	<a href="#" onclick="return fnSubmit();return false"><img src="/images/common/btn_confirm.png" alt="확인" /></a>
+									<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="usafeon_iden_no1|iden_no2"></span>
+								</dd>
+							</dl>
+						</fieldset>
+
+						<p class="btnc" id="IPinNameCheck" style="display:none"><input type="image" src="/images/common/btn_cert_ipin.png" alt="아이핀인증" value="아이핀인증" title="아이핀인증" onclick="IPinSubmit();" /></p>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<ol class="list_desc" id="cautionName" style="display:block" >
+							<li><p>코리아크레딧뷰로(KCB)의 데이터베이스를 이용하여 실명 여부를 확인합니다.</p></li>
+							<li><p>실명 정보가없는 주민등록번호는 실명확인이 되지 않을수도 있습니다.</p></li>
+						</ol>
+
+						<ol class="list_no01" id="cautionIPin" style="display:none" >
+							<li><p>아이핀이란 주민등록번호의 오남용을 방지하기 위해 방송통신위원회에서 추진하는 온라인상 주민등록번호 <br />대체 수단입니다.</p></li>
+							<li><p>아이핀·발급을 원하시는 고객님은 아이핀 인증 버튼을 눌러 서비스 창이 뜨면 아이핀을 신규 발급 받으실 수 <br />있습니다.</p></li>
+						</ol>
+						<!-- 091207-->
+						<div class="line_lgray">&nbsp;</div>
+						<p class="jumin_txt t_desc04">개정 “주민등록법”에 의해 타인의 주민등록번호를 부정사용하는 자는 3년 이하의 징역 또는 1천만원 이하의 벌금이<br />부과될 수 있습니다. 관련법률 : 주민등록법 제37조(벌칙) 제10호 (시행일 : 2009.04.01)<br />
+						만약, 타인의 주민번호를 도용하여 온라인 회원 가입을 하신 이용자들은 지금 즉시 명의 도용을 중단하시길 바랍니다.</p>
+						<!-- //091207 -->
+					</div>
+				</div>
+				</form>
+					<script type="text/javascript" language="javascript">
+						safeonAddNumberField("form1", "iden_no1|iden_no2","ec_ko");
+						SafeonInit();
+
+						TouchEnKey_ReScan();
+					</script>
+					<iframe id="weblogFrame" name="weblogFrame" src="" width="0" height="0" frameborder="0" title="빈프레임"></iframe>
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

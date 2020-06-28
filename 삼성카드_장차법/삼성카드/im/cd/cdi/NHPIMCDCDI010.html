@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<style type="text/css">
+.tabbrowse_content	{width:948px; padding:40px 0 0 0; *overflow:hidden}
+.tabbrowse_content	{padding-top:0}
+.top_visual	 {padding-top: 1px}
+.top_visual	 h1	{height:79px; padding-top:74px}
+.top_visual:nth-of-type(n)	{margin-left:-1px; border:0 none}
+.top_visual	 .h1_desc	{margin-left:70px}
+.top_step	 {margin-left: 70px; margin-top: 0; *margin-top: 0; _margin-top: 0}
+.ab_tr_sm	{position:absolute; right:69px; bottom: 0; z-index:0}
+.content_block_tab	{margin-top:0; padding-top:0; border-top:0 none}
+</style>
+				
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="${pageContext.request.contextPath}/images/cd/h1_card_serviceinfo_01.png" alt="삼성카드 이용안내입니다" /></h1>
+				</div>
+
+				<!-- top_visual -->
+				<!-- div class="top_visual">
+					<h1><img src="/images/cd/h1_checkcard_deposit_info.png" alt="체크카드 이용 안내입니다." /></h1>
+				</div-->
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+
+					<%
+					String tab_index = (request.getParameter("tab_index"));
+					//String tab_index = (request.getParameter("tab_index") == null ? "001" : request.getParameter("tab_index"));
+					//String kind_code = (request.getParameter("kind_code") == null ? "" : request.getParameter("kind_code"));
+
+					//if (!"".equals(kind_code)) tab_index = kind_code;
+					%>
+					<!-- tab_area -->
+					<!-- div class="tab01 w810 h60">
+					
+						<ul>
+							
+							<!-- li><a href="javascript:goTabPage('NHPIMCDCDI001',true);">카드발급 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI008',true);">입금방법 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI002',true);">국내 이용안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI003',true);">해외 이용안내</a></li>
+							<li class="on"><a href="javascript:tabSubmit('/hp/im/cd/cdi/checkcardDepositInfo.do');">체크카드 이용안내</a>
+								<ul class="sub_tab">
+									<li class="<%="001".equals(tab_index)?"on":"" %>"><a href="javascript:goView('001')">이용 및 신청안내</a></li>
+									<li class="<%="002".equals(tab_index)?"on":"" %>"><a href="javascript:goView('002')">이용 제한 시간</a></li>
+									<li class="<%="003".equals(tab_index)?"on":"" %>"><a href="javascript:goView('003')">해외 이용시 주의사항</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div-->
+				</div>
+
+				<!-- content_block -->
+
+				<!--cms_content시작-->
+				<%
+					String url = "";
+					if("020".equals(tab_index))			    url = "/cms_content/hp/im/cd/cdi/NHPIMCDCDI005C4.html";	    //이용 및 신청안내
+					else if("021".equals(tab_index))		url = "/cms_content/hp/im/cd/cdi/NHPIMCDCDI005C2.html";		//이용 제한 시간
+					else if("022".equals(tab_index))		url = "/cms_content/hp/im/cd/cdi/NHPIMCDCDI005C3.html";		//해외 이용시 주의사항
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+				<!--cms_content끝-->
+				
+				<!-- voc40 목록버튼추가 -->
+				<div class="btnr mr65"> 
+					<a class="btn btn_white" href="javascript:goTabPage('NHPIMCDCDI008',true);" ><span>목록</span></a>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>카드 찾기 2.0 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<script type="text/javascript" language="javascript">
+function notice_setCookie(name, value, expiredays){
+ var todayDate = new Date();
+ todayDate.setDate(todayDate.getDate() + expiredays);
+ document.cookie = name + "=" + escape( value ) + "; path=/; expires=" +
+ todayDate.toGMTString() + ";"
+}
+function notice_closeWin(){
+ if(document.forms[0].notice.checked )
+ notice_setCookie( "lpop20110504", "done" , 1);
+  // 1=하룻동안 열지 않음
+  self.close();
+}
+
+</script>
+</head>
+<body>
+<form action="">
+	<!-- layer_popup 810 -->
+	<div id="id_layer01" class="pop_l_position810">
+		<div class="pop_em_wrap810">
+			<input type="button" class="btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; closeLayerPopup();" value="레이어닫기" title="카드찾기 2.0 안내 레이어 닫기" />
+			
+			<div class="bg_top"><div class="bg_bottom">
+				<p class="emtxt"><img src="/images/mh/layer_txt_card_search_20.png" alt="카드 찾기 2.0" /></p>
+                <div class="conts_hidden">
+                	<h1>확~ 달라진 카드 찾기·비교 서비스가 5월 20일 새롭게 탄생합니다. 카드찾기 2.0</h1>
+                    <p>나에게 꼭 맞는 카드를 쉽고 빠르게 찾는 방법! 고객님의~ 고객님에 의한~ 고객님을 위한~ 진정한 카드검색 서비스.</p>
+                    <ul>
+                    	<li>원하는 혜택별로 추천해 주세요 - 혜택별 카드 찾기</li>
+                        <li>내게 맞는 카드 알아서 추천해 주세요 - 나만의 맞춤카드 추천</li>
+                        <li>나랑 비슷한 사람들은 어떤 카드를 쓰죠? - 내 스타일의 카드 찾기</li>
+                        <li>난 OOO에서 주로 사용할건데... - 제휴사로 찾기</li>
+                        <li>내가 아는 검색어로 찾아볼래요 - 키워드/태그로 찾기</li>
+                    </ul>
+                </div>
+                
+			</div></div>
+
+			<div class="layer_footer">
+				<label for="label_nottoday" class="nottoday_em">
+				<input type="checkbox" id="label_nottoday" class="chk" value="" name="notice" onclick="notice_closeWin();" title="오늘 하루 열지 않음" />오늘 하루 열지 않음</label>
+				<input type="button" class="btn_em_close btn_input" onclick="window.close();" title="창닫기" />
+			</div>
+		</div>
+
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

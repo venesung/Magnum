@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>MALL 정보변경 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">PG Mall 관리시스템&nbsp;&gt;&nbsp;MALL 정보변경</div>
+				<h1><img src="/images/al/h1_mall_status.png" alt="Mall 현황 조회" /></h1>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+			
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<div class="fill_joinin">
+						<div class="tb_exp">
+							<span class="t_black"><strong>MALL 정보를 수정해 주세요</strong></span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="사업자 번호, Sub mail 업체명, 업종, 대표자명, 대표자 주민번호, 주소, 전화번호, 도메인 등 MALL 정보를 수정할 수 있는 게시판입니다.">
+						<caption>MALL 정보 수정</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_txt"><p>사업자 번호</p></th>
+								<td colspan="3" class="cell_l t_no">
+									<% if(resultVO.getBusinessNo() != null) out.write(HpCommonUtil.convPatternString(1, resultVO.getBusinessNo(), "-")); %>
+									<input type="hidden" name="businessNo" value="<%=resultVO.getBusinessNo() %>" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_submall">Submall 업체명</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_submall"><input type="text" class="txt" name="mallName" value="<%=resultVO.getMallName() %>" title="Submall 업체명" id="label_submall" /></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_b_type">업종</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="label_b_type">
+										<fileTag:pgMallGubunSelect></fileTag:pgMallGubunSelect>
+										<input type="hidden" name="businessCode" value="" />
+										<input type="hidden" name="businessType" value="" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_txt"><p>대표자명</p></th>
+								<td colspan="3" class="cell_l">
+									<%=resultVO.getSpotName() %> 
+									<input type="hidden" name="spotName" value="<%= resultVO.getSpotName() %>" maxlength="20" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_txt"><p>대표자 주민번호</p></th>
+								<td colspan="3" class="cell_l t_no">
+									<%if(resultVO.getIdenNo() != null){ %>
+									<%=resultVO.getIdenNo().substring(0,6) %>-<%=resultVO.getIdenNo().substring(6,7) %>******<%} %> 
+									
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>주소</p></th>
+								<td colspan="3" class="cell_l">
+									<p class="input_address">
+										<input type="text" class="txt" name="zipCode1" value="<% if(resultVO.getZipCode() != null){ out.write(resultVO.getZipCode().substring(0,3));} %>" title="우편번호 앞자리" maxlength="3" readonly />&nbsp;-&nbsp;
+										<input type="text" class="txt" name="zipCode2" value="<% if(resultVO.getZipCode() != null){ out.write(resultVO.getZipCode().substring(3));} %>" title="우편번호 뒷자리" maxlength="3" readonly />
+										<a href="javascript:searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										  <input type="hidden" name="zipCode" value="" />
+										  <input type="hidden" name="zipSeq" value="" />
+										<span class="detail"><input type="text" class="txt" name="address" value="<% if(resultVO.getAddress() != null){ out.write(resultVO.getAddress());} %>" title="주소" readonly onClick="searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" />
+															<input type="text" class="txt" name="addressDistrict" value="<%=resultVO.getAddressDistrict() %>" title="주소 상세" readonly onClick="searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" /></span>  
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_phone">전화번호</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<fileTag:phoneSelect selectName="phoneNo1" selectValue="<%=resultVO.getPhoneNo1() %>" gubun="1" />
+                                        <input type="text" class="txt" name="phoneNo2" value="<%=resultVO.getPhoneNo2() %>" title="전화번호 가운데자리" maxlength="4" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+                                        <input type="text" class="txt" name="phoneNo3" value="<%=resultVO.getPhoneNo3() %>" title="전화번호 뒷자리" maxlength="4" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_txt"><p>도메인</p></th>
+								<td colspan="3" class="cell_l">
+									http://<%= resultVO.getDomain() %>
+									<input type="hidden" name="domain" value="<%= resultVO.getDomain() %>" maxlength="40" />
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<div class="btnset">
+						<div class="btnl">
+                            <a href="javascript:update();" class="btn btn_white" id="bt_update" disabled><span>수정</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>가맹점번호조회 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<div class="top_visual">
+				<div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;<a href="/scchainmember.do?method=selectFin110">내 가맹점관리</a>&nbsp;&gt;&nbsp;<a href="/scchainmember.do?method=selectFin110">가맹점정보관리</a>&nbsp;&gt;&nbsp;가맹점번호조회</div>
+				<h1><img src="/images/al/h1_merchant_num.png" class="png24" alt="가맹점번호조회" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_merchant_num.png" class="png24" alt="가맹점의 번호를 조회하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_affl_m.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_basicinfo.png" alt="가맹점번호를 확인 하실 수 있습니다" /></h2></div>
+					<div class="content_block_inner">
+						<ol class="list_no01 ml_10">
+							<li><p>사업자 번호를 입력하시면 가맹점 번호를 조회하실 수 있습니다.</p></li>
+							<li><p>본 조회서비스는 반영된 정보를 실시간으로 보여드립니다. (당일등록 가맹점 포함)</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt15" summary="사업자 등록번호 입력으로 가맹점번호를 조회 할 수 있습니다.">
+						<caption>가맹점번호조회</caption>
+						<colgroup><col width="20%" /><col width="80%" /></colgroup>
+						<!--thead>
+							<tr class="nowidth">
+								<th width="20%"></th>
+								<th width="80%"></th>
+							</tr>
+						</thead-->
+						<tbody>
+
+							<tr>
+								<th scope="row" class="cell_l"><p>사업자 등록번호</p></th>
+								<td class="cell_l"><p><span class="input_businessno">
+                                    <input type="text" class="txt"  name="businessNo1" maxlength="3"  value="${businessNo1 }" title="사업자 번호 첫번째 입력" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /> -
+                                    <input type="text" class="txt"  name="businessNo2" maxlength="2"  value="${businessNo2 }" title="사업자 번호 두번째 입력" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');"  /> -
+                                    <input type="text" class="txt"  name="businessNo3" maxlength="5"  value="${businessNo3 }" title="사업자 번호 세번째 입력" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" onKeyDown="checkEnter();" />
+								</span></p></td>
+							</tr>
+						</tbody>
+						</table>
+							<div class="btnset">
+								<p class="btnr"><a class="btn btn_blue" href="javascript:searchChainNo();"><span>조회</span></a></p>
+							</div>
+                            
+						<table class="dtable01 mt30" summary="가맹점 번호, 가맹점명, 계약일 등 가맹점번호 검색 결과입니다.">
+						<caption>가맹점번호 검색 결과</caption>
+						<colgroup><col width="25%" /><col width="45%" /><col width="30%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">가맹점 번호</th>
+								<th scope="col">가맹점명</th>
+								<th scope="col">계약일</th>
+							</tr>
+						</thead>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td class="cell_l10">123456</td>
+									<td>우리가맹점</td>
+									<td class="t_no">00.00.00</td>
+								</tr>
+								<!-- //loop -->
+								<tr class="nodata">
+									<td colspan="3">해당하는 사업자번호 데이타가 없습니다.
+										<br />다시 조회하십시오.
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<!-- paginate -->
+						<div class="paginate">
+							<div class="paging">
+						<div class="btnr">
+                            <a href="javascript:searchNextChainNo();" class="btn btn_white"><span>다음</span></a>
+						</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- content_block -->
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+
+</div>
+</body>
+</html>

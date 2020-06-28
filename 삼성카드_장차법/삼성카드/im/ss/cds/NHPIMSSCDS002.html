@@ -1,0 +1,55 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<div id="tab_title">아이지킴이 서비스</div>
+<%@page import="com.scard.hp.im.ss.pvl.vo.NHPIMSSPVL001VO"%>
+<%
+NHPIMSSPVL001VO result = (NHPIMSSPVL001VO)request.getAttribute("result"); 
+%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+
+<!--  tab_script -->
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript">
+//<![CDATA[
+function go_tabSubmit(pageNum){	
+	document.form1.callPage.value = pageNum;
+	document.form1.target="_self"
+	tabSubmit("/hp/im/ss/pvl/cds.do?method=openChildDepend",form1);
+}
+//]]>
+</script>
+</div>
+<!-- tab_script end  -->
+
+
+<form name="form1" method="post"   >
+<input type="hidden" name="input" />
+<input type="hidden" name="callPage" value= "" />
+				<!-- top_visual 상단변경 -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 아이지킴이 서비스</h1>
+					<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">	<!-- //100126 -->
+					<!-- tab_area -->
+					<div id="subtab" class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:go_tabSubmit('001')">서비스소개</a></li>
+                            <li class="on"><a href="javascript:go_tabSubmit('002')">서비스신청/변경</a></li>
+						</ul>
+					</div>
+				</div>
+		
+				
+				<!--cms_content시작-->
+				
+
+				<cms:include page="${result.targetPath}/${result.contentId}_hp_fb1800_2_view.html" flush="false"></cms:include>
+
+</form>						
+				<!--cms_content끝-->
+				<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>고객의 소리 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<style type="text/css">
+.box_white	 .flag_tr	 {position:absolute; _right:-1px; top:0; width:5px; height:5px; background-position:right top}
+.box_white	 .flag_bl	 {position:absolute; left:0; bottom:0; width:5px; height:5px; background-position:left bottom}
+</style>
+<script type="text/javascript">
+var firstClick = true;
+
+function fnClose(){
+	self.close();
+}
+
+function fnSubmit(){
+	document.form1.action="/hp/im/mh/mys001.do?method=addComment";
+	document.form1.submit();
+}
+
+function fnClearText(obj){
+	if(firstClick){
+		obj.value = "";
+		firstClick = false;
+	} 
+}
+
+function checkLength(content,max_length){
+	var i;
+	var string = content.value;
+	var one_char;
+	var str_byte = 0;
+	var str_length = 0;
+	for(i=0 ; i < string.length ; i++){
+		one_char = string.charAt(i);
+
+		if(escape(one_char).length > 4)
+		{
+			str_byte = str_byte +2;
+		}
+		else
+		{
+			str_byte++;
+		}
+
+		if(str_byte <= max_length){
+			str_length = i+1;
+		}
+	}
+	if(str_byte > max_length){
+		alert("2000Byte 까지만 입력됩니다.");
+		content.value = string.substr(0, str_length);
+	}
+}
+
+</script>
+
+
+</head>
+<body style="overflow:hidden">
+
+<div id="pop_s_wrap">	<!--  470 x 271 -->
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1><img src="/images/mh/layer_tit_voc.png" alt="고객의 소리" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/layer_tit_voc.png" alt="고객의 소리" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_s_content2" style="margin-top:15px;">
+		<form method="post" name="form1">
+		<div class="pop_l_wrap">
+			<div class="box_white w410"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+	<textarea cols="62" rows="5" style="width:395px; height:80px; overflow-y:scroll;" name="comment" id="comment" title="고객의 소리 의견 작성" onfocus="fnClearText(this);" onkeyup="checkLength(this,2000);">의견을 작성해 주세요. 입력은 1000자까지 허용됩니다.</textarea>
+	</div></div>
+			
+			<p class="pop_sub_desc02">비방, 광고성 글을 입력하시는 경우는 처리되지 않습니다.</p>
+		</div>
+        <p class="btnc"><a href="javascript:fnSubmit();"><img src="/images/common/btn_s_register.png" alt="등록" /></a> <a href="javascript:fnClose();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+		</form>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+</body>
+</html>
+

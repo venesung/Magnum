@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_uselist03.png" alt="국내 이용내역입니다" /></h2>
+
+		<div class="content_block_inner">
+			<ol class="list_no01">
+				<li><p>최근 2개월 간의 승인내역을 확인할 수 있으며 결제예정일은 가맹점에서 매출표가 접수된 이후에 표시됩니다.</p></li>
+				<li><p>해외승인금액, 현금 사용금액은 제외되어 있습니다. (해외승인내역 &lt;-&gt; 현금서비스 처리결과)</p></li>
+			</ol>
+
+
+			<table class="dtable02 dtable_inputfield mt30" summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다.">
+				<caption>카드 이용내역 조회</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>카드선택</p></th>
+						<td colspan="2"><p>
+							<select style="width:360px" name="srchCardNo" id="srchCardNo" title="카드선택" >
+								<option></option>
+							</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>이용기간</p></th>
+						<td width="230px">
+							<p>
+								<a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+								<a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+								<a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+								<a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+							</p>
+						</td>
+						<td class="reset_date">
+							<a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnr"><a href="javascript:before_goSubmit()" class="btn btn_blue"><span>조회</span></a></p>
+			</div>
+			
+			<table class="dtable02 dtable_expand mt20" summary="승인금액 합계, 일시불 합계, 할부 합계를 확인할 수 있는 게시판입니다">
+				<caption>국내이용금액 내역</caption>
+				<colgroup><col width="110" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th><p>이용내역 합계</p></th>
+						<td class="sum"><p>
+							<em class="first_none">승인금액합계 <span class="t_no">0</span>원</em>
+							<em>일시불 합계 <span class="t_no">0</span>원</em>
+							<em>할부 합계 <span class="t_no">0</span>원</em>
+						</p></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="tb_exp clfix mt20">
+				<span class="fl_left">&nbsp;</span>
+				<span class="ab_tr t_desc03"><img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" /> 삼성 보너스클럽&nbsp;&nbsp;
+				<img src="/images/common/ico_blueline.png" alt="블루라인" /> 블루라인</span>
+			</div>
+
+			<table class="dtable01 dtable01_bill" summary="국내(일시불,할부) 이용내역을 승인일과 결제예정일을 보여주는 게시판입니다">
+				<caption>국내(일시불,할부) 이용 상세내역</caption>
+				<colgroup>
+					<col width="114" />
+					<col width="54" />
+					<col width="55" />
+					<col width="114" />
+					<col width="*" />
+					<col width="33" />
+					<col width="44" />
+					<col width="45" />
+					<col width="45" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">카드명</th>
+						<th scope="col">승인일</th>
+						<th scope="col">승인시각</th>
+						<th scope="col">이용가맹점</th>
+						<th scope="col" class="cell_r10">승인금액</th>
+						<th scope="col">할부<br />개월</th>
+						<th scope="col">승인<br />번호</th>
+						<th scope="col">포인트<br />사용</th>
+						<th scope="col">결제<br />예정일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10">0</td>
+						<td class="t_no">0</td>
+						<td class="t_no">0</td>
+						<td>
+							<img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" />
+							<a href="#">000</a>
+						</td>
+						<td class="cell_r10"><span class="t_no">0</span> 원</td>
+						<td class="t_no">0</td>
+						<td class="t_no">0</td>
+						<td>0</td>
+						<td class="t_no">0</td>
+					</tr>
+					<tr class="nodata">
+						<td colspan="12">이용내역이 없습니다.</td>
+					</tr>
+					<!-- //loop -->
+				</tbody>
+			</table>
+
+			<!-- paginate -->
+			<div class="paginate"> ${_page} </div>
+		</div>
+	</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

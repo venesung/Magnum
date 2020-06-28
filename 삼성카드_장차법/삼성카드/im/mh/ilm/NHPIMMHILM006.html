@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_deposit_views.jpg" alt="입금내역을 조회해 보세요" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:goIndividual();">입금내역조회</a></li>
+                            <li class="on"><a href="javascript:goCmsInputList();">무통장입금내역조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_deposit_views02.png" alt="입금내역결과 조회입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>당일 입금하신 건에 대해서만 조회가 가능합니다.</p></li>
+                            <li><p>이전에 입금하신 내역확인은 <a href="javascript:goIndividual();" class="a_point">입금내역조회</a>를 이용하시기 바랍니다.</p></li>
+							<li><p>가상계좌 입금확인은 익일 입금내역조회 화면에서 조회 가능합니다</p></li>
+						</ol>
+						<div class="d_easy mt20">
+							<table class="dtable01" summary="카드번호, 카드명으로 구성된 입금내역결과를 보여주는 게시판입니다">
+							<caption>입금내역결과</caption>
+							<colgroup><col width="50%" /><col width="50%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="cell_l10a">카드번호</th>
+									<th scope="col" class="cell_l10">카드명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr class="nodata">
+									<td colspan="2"><%=ERROR_MSG %></td>
+								</tr>
+								<tr>
+                                    <td class="cell_l10a"><a href="javascript:frm1_submit(document.frm1,<%=card.getRownum() %>);" class="a_point">카드번호없음</a></td>
+									<td class="cell_l10"><%=card.getCardName() %></td>
+								</tr>
+								<!-- //loop -->
+							</tbody>
+							</table>
+						</div>
+				</div>
+				<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+ 

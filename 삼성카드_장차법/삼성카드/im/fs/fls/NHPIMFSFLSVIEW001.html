@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none">기업형 차량관리 시스템 Fleet리스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/fs/h1_fleet_lease.jpg" alt="비용절감에 효율적인 기업형 차량관리 시스템 Fleet리스 - 복잡한 차량관리는 삼성카드에 믿고 맡기십시오" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+<!-- 수정 13.01.21 VOC40 -->
+			<li><a href="javascript:goTabPage('NHPIMFSFLS001M001', true);">서비스안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMFSFLS001M002', true);">상품종류</a></li>
+			<li><a href="javascript:goTabPage('NHPIMFSFLS001M003', true);">제공서비스</a></li>
+			<li><a href="javascript:goTabPage('NHPIMFSFLS001M004', true);">정비제휴사</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMFSFLS001M005', true);">상담신청</a></li>
+			<!--li><a href="javascript:goTabPage('NHPIMFSFLS001M001', true);">서비스안내</a></li>
+            <li class="on"><a href="#">상담신청</a></li-->
+<!--// 수정 13.01.21 VOC40 -->
+		</ul>
+	</div>
+
+	<form name="form_main" id="form_main">
+
+		<h2><img src="/images/fs/h2_samsungcard_fleetwrite.png" alt="상담신청서를 작성하세요" /></h2>
+		<div class="content_block_inner fill_joinin mb20">
+
+			<div class="tb_exp clfix">
+				<p class="neccessary"><em><abbr>필수입력사항</abbr></em>는 필수 입력항목 입니다</p>
+			</div>
+				
+			<table class="dtable02" summary="상담신청서를 작성하기 위한 법인명, 사업자 번호, 담장자 이름, 부서명, 직위, 전화번호, 휴대전화번호, 이메일주소를 입력하는 게시판입니다.">
+			<caption>상담신청서서 작성</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><label for="label_corporatename" class="neccessary">법인명</label></th>
+					<td class="cell_l"><p><input type="text" name="companyName" id="label_corporatename" class="txt" value="" maxlength="50" required="required" /></p></td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<th scope="row"><p class="neccessary">사업자 번호</p></th>
+					<td class="cell_l"><p><span class="input_businessno">
+					<input name="companyId" type="hidden" class="txt" value="" /> 
+                    <input name="companyId1" type="text" class="txt" value="" title="사업자번호 앞 3자리 입력" maxlength="3" fromNum="3" required="required" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /> - 
+                    <input name="companyId2" type="text" class="txt" value="" title="사업자번호 가운데 2자리 입력" maxlength="2" required="required" onkeydown="checkLenB(this, form_main.label_businessnum01)" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /> - 
+					<input name="companyId3" type="text" class="txt" value="" title="사업자번호 마지막 5자리 입력" maxlength="5" fromNum="5" required="required" onkeydown="checkLenB(this, form_main.label_businessnum02)" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /></span></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_personincharge" class="neccessary">담당자 이름</label></th>
+					<td class="cell_l"><p><input type="text" name="name" id="label_personincharge" class="txt" value="" maxlength="50" required="required" /></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_department" class="neccessary">부서명</label></th>
+					<td class="cell_l"><p><input type="text" name="deptName" id="label_department" class="txt" value="" maxlength="50" required="required" /></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_position" class="neccessary">직위</label></th>
+					<td class="cell_l"><p><input type="text" name="jikgub" id="label_position" class="txt" value="" maxlength="50" required="required" /></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p class="neccessary">전화번호</p></th>
+					<td class="cell_l"><p>
+						<span class="input_phone">
+							<select name="officePhone1" title="전화번호 앞자리">
+								<option value="02" selected="selected">02</option>     
+								<option value="031">031</option>            
+								<option value="032">032</option>            
+								<option value="033">033</option>            
+								<option value="041">041</option>            
+								<option value="042">042</option>            
+								<option value="043">043</option>            
+								<option value="051">051</option>            
+								<option value="052">052</option>            
+								<option value="053">053</option>            
+								<option value="054">054</option>            
+								<option value="055">055</option>            
+								<option value="061">061</option>            
+								<option value="062">062</option>            
+								<option value="063">063</option>            
+								<option value="064">064</option>            
+
+							</select>&nbsp;-&nbsp;
+                            <input name="officePhone2" type="text" class="txt" value="" title="전화번호 가운데자리" required="required"  maxlength="4" fromNum="3" onkeypress="checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />&nbsp;-&nbsp;
+							<input name="officePhone3" type="text" class="txt" value="" title="전화번호 뒷자리" required="required"  maxlength="4" fromNum="4" onkeydown="checkLenB(this, form.officePhone2);" onkeypress="checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');"  style="ime-mode:disabled" />
+						</span>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p class="neccessary">휴대전화 번호</p></th>
+					<td class="cell_l"><p>
+						<span class="input_phone">
+							<select name="handPhone1" title="휴대전화 앞자리">
+								<option value="010" selected="selected">010</option>
+		                        <option value="011">011</option>
+		                        <option value="016">016</option>
+		                        <option value="017">017</option>
+		                        <option value="018">018</option>
+		                        <option value="019">019</option>
+							</select>&nbsp;-&nbsp;
+                            <input name="handPhone2" type="text" class="txt" value="" title="휴대전화 가운데자리" required="required"  maxlength="4" fromNum="3" onkeypress="checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />&nbsp;-&nbsp;
+							<input name="handPhone3" type="text" class="txt" value="" title="휴대전화 뒷자리" required="required"  maxlength="4" fromNum="4" onkeydown="checkLenB(this, form.handPhone2);" onkeypress="checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />
+						</span>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p class="neccessary">이메일주소</p></th>
+					<td class="cell_l"><p>
+						<span class="input_email">
+						<input name="eMail1" type="text" class="txt" value="" maxlength="20" title="이메일 아이디" onkeypress="checkTypes(this, 'URL');"  onblur="checkTypesOnBlur(this, 'URL');"  style="ime-mode:disabled" required="required" />&nbsp;@&nbsp;
+						<input name="eMail2" type="text" class="txt" value="" maxlength="40" title="이메일 공급자 직접입력" onkeypress="checkTypes(this, 'URL');"  onblur="checkTypesOnBlur(this, 'URL');"  style="ime-mode:disabled" required="required" />
+						<select name="emailDomain" onchange="onChangeEmailDomain()" title="이메일 공급자 선택">
+							<option selected="selected" value="">직접입력</option>
+                               <option value="hanmail.net">한메일(다음)</option>
+                               <!--option value="yahoo.co.kr">야후</option-->
+                               <option value="lycos.co.kr">라이코스</option>
+                               <option value="hotmail.com">hotmail</option>
+                               <option value="paran.com">파란</option>
+                               <option value="naver.com">네이버</option>
+                               <option value="korea.com">코리아</option>
+                               <option value="netian.com">네띠앙</option>
+                               <option value="dreamwiz.com">드림위즈</option>
+                               <option value="chollian.net">천리안</option>
+                               <option value="freechal.com">프리챌</option>
+                               <option value="empal.com">엠팔</option>
+                               <option value="kebi.com">깨비</option>
+                               <option value="unitel.co.kr">유니텔</option>
+                               <option value="weppy.com">웨피</option>
+						</select></span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		
+		</div>
+
+		<h2><img src="/images/fs/h2_samsungcard_fleetwrite02.png" alt="희망차량정보를 입력하세요" /></h2>
+		<div class="content_block_inner fill_joinin mb20">
+				
+			<table class="dtable02 "summary="희망차종, 보유관리차량, 교체시기 등 희망차량정보를 입력하는 게시판입니다.">
+			<caption>희망차량정보 입력</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><label for="label_wantedcar" class="neccessary">희망차종</label></th>
+					<td class="cell_l"><p><span class="input_body">
+					<textarea name="wantCar" class="txt" id="label_wantedcar" maxlength="1000" rows="10" cols="10" required="required"></textarea></span></p></td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<th scope="row" class="cell_l"><label for="label_havecarman" class="not_neccessary">보유관리차량</label></th>
+					<td class="cell_l"><p>
+					<input name="holdingCar" type="text" class="txt" value="" maxlength="100" id="label_havecarman" /></p></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><label for="label_carchange" class="not_neccessary">교체시기</label></th>
+					<td class="cell_l"><p>
+					 <!-- 20130409 웹접근성(장차법)  수정  -->
+					<!-- <input name="changeTime" type="text" class="txt" value="" title="교체시기 입력" id="label_carchange" /></p> -->
+					<fileTag:calendarAdd calendarId="label_carchange" title="교체시기 달력 새창열림" inputClass="txt" inputName="changeTime" inputValue="<%= date %>" /></p></td>
+				</tr>
+			</tbody>
+			</table>
+
+		</div>
+
+		<h2><img src="/images/fs/h2_samsungcard_fleetwrite03.png" alt="상담요청정보를 입력하세요" /></h2>
+		<div class="content_block_inner fill_joinin">
+				
+			<table class="dtable02 "summary="상담방법, 방문일자, 메모등의 상담요청정보를 입력하는 게시판입니다.">
+			<caption>상담요청정보 입력</caption>
+			<colgroup><col width="20%" /><col width="80%" /></colgroup>
+			<tbody>
+				<tr >
+					<th scope="row"><p class="neccessary">상담방법</p></th>
+					<td class="cell_l"><p>
+					<label for="label_consult_type01"><input name="counselMethod" type="radio" class="rdo" value="A" id="label_consult_type01" checked="checked" onclick="chgMethod('N')" /> 전화상담</label>
+					<label for="label_consult_type02"><input name="counselMethod" type="radio" class="rdo" value="B" id="label_consult_type02" onclick="chgMethod('N')" /> 이메일 상담</label>
+					<label for="label_consult_type03"><input name="counselMethod" type="radio" class="rdo" value="C" id="label_consult_type03" onclick="chgMethod('Y')" /> 방문상담</label></p></td>
+				</tr>
+				<tr id="sd" style="display: none">
+					<th scope="row"><p class="neccessary">방문일자</p></th>
+					<td class="cell_l">
+					<select name="leaNegoDay1" title="방문일자 중 년 선택" onchange="setDate();">
+					</select> 년
+					<select name="leaNegoDay2" title="방문일자 중 월 선택" onchange="setDate();"	class="ml10" >
+						<option value="">-월-</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+					</select> 월 
+					<select name="leaNegoDay3" title="방문일자 중 일 선택" class="ml10">
+						<option value="">-일-</option>
+					</select> 일
+					<input type="hidden" name="visitingDay" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_memo" class="not_neccessary">메모</label></th>
+					<td class="cell_l"><p><span class="input_body">
+					<textarea name="memo" class="txt" id="label_memo" rows="10" maxlength="1000" cols="10"></textarea></span></p></td>
+				</tr>
+			</tbody>
+			</table>
+
+		</div>					
+				
+	</form>			
+	<!-- content_block -->
+	<div class="content_block fill_joinin clfix">
+        <p class="btnc"><a href="javascript:onSubmit();"><img src="/images/common/btn_l_application.png" alt="신청하기" /></a></p>
+	</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

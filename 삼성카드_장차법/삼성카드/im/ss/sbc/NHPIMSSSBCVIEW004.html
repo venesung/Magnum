@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+					<!-- content -->
+					<div class="tab03 mt30 clfix">
+						<ul>
+							<li class="on"><a href="#">지도+목록보기</a></li>
+							<li><a href="#">목록보기</a></li>
+						</ul>
+					</div>
+
+					<p class="ico_p_desc"><img src="/images/common/ico_bonus_b.png" alt="보너스클럽" /> 보너스클럽<img src="/images/common/ico_payback.png" class="ml25" alt="페이백" /> 페이백<img src="/images/common/ico_blueline_b.png" class="ml25" alt="블루라인" /> 블루라인<img src="/images/common/ico_interest.png" class="ml25" alt="무이자할부" /> 무이자할부</p>
+
+					<div class="w810 clfix">
+						<div class="list_map">
+							<h3 class="bul_dot">검색 내 주요 보너스클럽<span class="fl_right_tit t_normal t_desc03">(총 72건)</span></h3>
+							<ul class="list_map_no clfix">
+								<li>
+									<p class="p_card"><span class="fram125x60">&nbsp;</span><img src="/images/sam/sam125.jpg" width="125" alt="보너스클럽" /></p>
+									<p class="p_tit"><span class="no_merc no_merc01">&nbsp;</span> 서울랜드</p>
+									<p class="p_txt">서울 노원구 연지동</p>
+									<p class="p_point">2% 적립</p>
+								</li>
+								<li>
+									<p class="p_card"><span class="fram125x60">&nbsp;</span><img src="/images/sam/sam125.jpg" width="125" alt="보너스클럽" /></p>
+									<p class="p_tit"><span class="no_merc no_merc02">&nbsp;</span> 서울랜드</p>
+									<p class="p_txt">서울 노원구 연지동</p>
+									<p class="p_point">2% 적립</p>
+								</li>
+								<li>
+									<p class="p_card"><span class="fram125x60">&nbsp;</span><img src="/images/sam/sam125.jpg" width="125" alt="보너스클럽" /></p>
+									<p class="p_tit"><span class="no_merc no_merc03">&nbsp;</span> 에버랜드</p>
+									<p class="p_txt">서울 노원구 연지동</p>
+									<p class="p_point">2% 적립</p>
+								</li>
+							</ul>
+							<!-- paginate -->
+							<div class="paginate">
+								<div class="paging">
+									<a href="#"><img src="/images/common/btn_prev_merc.png" alt="이전" /></a>
+									<span class="num">
+										<a href="#" class="first_none">1</a><a href="#">2</a><a href="#">3</a><a href="#"><strong>4</strong></a><a href="#">5</a></span>
+									<a href="#"><img src="/images/common/btn_next_merc.png" alt="다음" /></a>
+								</div>
+							</div>
+
+							<h3 class="bul_dot">검색 내 혜택보기<span class="fl_right_tit t_normal t_desc03">(총<%=vos.gettCnt() %> 건)</span></h3>
+							<ul class="list_benefit_merc clfix">
+								<li><a href="#">전체혜택</a></li>
+								<li><a href="#">보너스클럽</a></li>
+								<li><a href="#">페이백</a></li>
+								<li><a href="#">블루라인</a></li>
+								<li><a href="#">무이자할부</a></li>
+							</ul>
+							<table class="dtable02" summary="가맹점명, 주소등으로 구성된 검색 내 혜택 목록을 확인할 수 있습니다.">
+                            <caption>검색 내 혜택보기</caption>
+							<colgroup><col width="125" /><col width="67" /><col width="118" /><col width="*" /></colgroup>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td><span class="no_merc no_merc_a">&nbsp;</span> <a href="#">00000000</a></td>
+									<td class="t_gray">00</td>
+									<td class="t_gray">0</td>
+									<td><img src="/images/common/ico_bonus_b.png" alt="보너스클럽" /></td>
+								</tr>
+								<!-- //loop -->
+
+							</tbody>
+							</table>
+
+							<!-- paginate -->
+								<div class="paginate">
+									${_page}
+								</div>
+						</div>
+
+						<div class="map_landmark">
+							<img src="/images/sam/sam_map.jpg" alt="" />
+							<div class="fl_right mt10"><a href="#" class="btn_link">지도 이용안내</a></div>
+						</div>
+					</div>
+
+				</div>
+</div>
+</body>
+</html>

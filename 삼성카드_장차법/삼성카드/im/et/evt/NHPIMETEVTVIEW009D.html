@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+<div class="content_block content_block_card">
+	<!-- board_view -->
+<div class="board_view">
+	<div class="d_event_allim">
+		<p class="p_img"><img src="/images/et/icon_present_2ea.jpg" alt="" /></p>
+		<div class="p_desc">
+			<h3><img src="/images/et/h2_event_thnx.png" alt="이벤트에 참여해 주셔서 감사합니다." /></h3>
+			<p><img src="/images/et/txt_event_thnx.png" alt="앞으로도 고객과 함께하는 삼성카드가 되고자 더욱 노력하겠습니다. 회원님의 많은 관심과 참여를 부탁드립니다." /></p>
+		</div>
+	</div>
+
+	<table class="dtable01 mt30" summary="참여하신 이벤트의 상세내용입니다.">
+	<caption>이벤트 상세보기</caption>
+	<colgroup><col width="*" /><col width="190" /></colgroup>
+	<thead>
+		<tr>
+			<th scope="col"><strong class="t_point"><%=vo.getTitle()%></strong></th>
+			<th scope="col" class="cell_r10">기간&nbsp;&nbsp;<span class="t_no"><%=StringUtil.formatStrDate(vo.getSdate(),
+							"yyyy.mm.dd")%>~<%=StringUtil.formatStrDate(vo.getEdate(),
+							"yyyy.mm.dd")%></span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2">
+				<table class="dtable01_init fl_left <%if (i == rsList.size() / 2) {%>mr20<%}%>" summary="이벤트 결과를 나타내는 표 - 이벤트 상품명, 당첨자, 당첨자 보기가 있습니다.">
+				<caption class="hidden">이벤트 결과</caption>
+				<colgroup><col width="60%" /><col width="25%" /><col width="15%" /></colgroup>
+				
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">이벤트 상품</th>
+						<th scope="col">당첨자</th>
+						<th scope="col">당첨자 보기</th>
+					</tr>
+				</thead>	
+				<tbody>
+					<tr>
+						<td class="cell_l10"><%=vo.getPrize()%></td>
+						<td><%=vo.getCou()%>명</td>
+                        <td><a href="javascript:goPersonList('<%=vo.getNo()%>','<%=vo.getPrize()%>');" class="btn btn_s_white" title="당첨자보기 새창" ><span>당첨자 보기</span></a></td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+			</tbody>
+	</table>	
+				<p class="mt20 clfix">참여하신 이벤트는 현재 확인하실 수 없습니다.</p>
+				
+				<p class="mt20 clfix">
+                참여하신 이벤트의 상세 내용은 <strong class="t_point "><a href="#">‘<%=strEventTitle%>’</a></strong> 를 클릭하시면 확인 할 수 있습니다.
+                <a href="#" onclick="goEventDetail('<%=strEventNo%>');return false;" class="btn btn_s_blue"><span>상세 내용 보기</span></a>
+				</p>	
+
+
+	<!--btn -->
+	<div class="btnset">
+        <p class="btnr"><a href="javascript:goList();" class="btn btn_white"><span>목록</span></a></p>
+	</div>
+
+	<!-- pre_nex_article -->
+	<div class="prenext_article">
+		<table class="dtable01"  summary="이벤트의 이전글 다음글로 이동할 수 있습니다.">
+		<caption class="hidden">이전글 다음글</caption>
+		<colgroup><col width="55" /><col width="*" /><col width="125" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">이전글</th>
+                    <td class="cell_l"><a href="javascript:goDetail('<%=preSeq%>','<%=newPreSeq%>');"><%=preTitle%></a></td>
+					<td class="t_no"><%=preSdate%> ~ <%=preEdate%></td>
+				</tr>
+				<tr>
+					<th scope="row">다음글</th>
+                    <td class="cell_l"><a href="javascript:goDetail('<%=nextSeq%>','<%=newNextSeq%>');"><%=nextTitle%></a></td>
+					<td class="t_no"><%=nextSdate%> ~ <%=nextEdate%></td>
+				</tr>	
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</body>
+</html>

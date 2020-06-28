@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<div class="top_visual">
+					<h1><img src="/images/ss/h1_loan_app_service.png" alt="국세납부대출신청 서비스" /></h1>
+				</div>
+				<div class="content_block content_block_card clfix">
+					<div class="top_step_loan_app top_step_loan_app05">
+						<ol class="none">
+							<li>카드선택</li>
+							<li>한도조회</li>
+							<li>납세정보 및 세부코드입력</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 start ////////////////////////-->
+							<li><abbr>현재단계</abbr> <strong>신청정보확인</strong></li>
+							<li>약관동의</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 end ////////////////////////-->
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+	<form name="form1" autocomplete="off">
+					<h2><img src="/images/ss/h2_loan_app_service06.png" alt="신청 내역을 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+					
+						<div class="tb_exp clfix">
+							<span><strong class="t_black"><%=userName%></strong>고객님께서 신청하신 내용입니다.</span>
+						</div>
+
+						<table class="dtable02" summary="상환방법,신청금액,이자율/연체이자율,결제일,만기일등의 서비스 신청 내역을 확인하는 게시판입니다.">
+						<caption>서비스 신청내역 확인</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th class="cell_bg riline"><p>상환방법</p></th>
+								<td colspan="2"><p><%=dispRealmonth%>개월 / 원금균등상환방식</p></td>
+							</tr>
+							<tr>
+								<th class="cell_bg riline"><p>신청금액</p></th>
+								<td colspan="2"><p><span class="t_no"><%=dispLoanamt%></span> 원 
+								</p></td>
+							</tr>
+							<tr>
+								<th class="cell_bg riline"><p>이자율/연체이자율</p></th>
+								<td colspan="2"><p><span class="t_no"><%=FormatUtil.parseDouble(fixedRate)%></span> % / <span class="t_no"><%=Double.parseDouble(fixedRate) < 18 ?"24.9":"29.9" %></span> %</p></td>
+							</tr>
+							<tr>
+								<th class="cell_bg riline"><p>결제일</p></th>
+								<td colspan="2"><p>매월 <span class="t_no"><%=fixedRepDate%></span> 일</p></td>
+							</tr>
+							<tr>
+								<th class="cell_bg riline"><p>만기일</p></th>
+								<td colspan="2"><p><span class="t_no"><%=dispExpire%></span></p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<!-- btn -->
+						<div class="btnset">
+							<div class="btnl">&nbsp;</div>
+							<div id="goBtn" class="btnr">
+								<a href="javascript:go_submit();"  class="btn btn_blue"><span>확인</span></a>
+                                <a href="javascript:goTabPage('NHPIMSSPSM003',true);" class="btn btn_white"><span>취소</span></a>
+							</div>
+						</div>
+ 
+						<div class="line_lgray"></div>
+ 
+						<ol class="list_no01">
+							<li><p>신청을 누르시면 세금 납부 및 대출신청이 완료되오니 상기 내용에 이상 없는지 최종 확인하여 주시기 바랍니다.</p></li>
+							<li><p>신청내역에 동의하시면 신청버튼을 누르십시오.</p></li>
+						</ol>
+
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

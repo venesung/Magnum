@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_loss_reported_cancel_app.png" alt="카드분실신고를 해제합니다" /></h1><!-- 100428 -->
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/cs/h2_loss_reported_cancel_app02.png" alt="분실신고 해제 전 확인하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+					
+						<ol class="list_no01"><!-- 100428 -->
+							<li><p>분실신고 당시 카드 재발급을 신청하신 회원님은 처리가 안되오니 재발급을 기다려 주시기 바랍니다.<br />재발급 카드는 <strong class="t_black">신청하신 날부터 7-10일</strong> 후면 받아 보실 수 있습니다.</p></li>
+							<li><p>후불교통기능은 분실신고 해제 후 지하철 2~3일, 버스 4~5일 부후터 사용가능합니다.</p></li>
+							<li><p>분실신고 해제신청은 경우 1588-8700으로 <strong class="t_black">평일 09:00~18:00까지 가능</strong>합니다.(토/일/공휴일은 불가)<br />홈페이지를 이용하실 경우 <strong class="t_black">평일 08:00~21:00까지 가능</strong>합니다.(토/일/공휴일은 불가)<br />(전산시스템의 사정에 따라 약간의 변동이 있을 수 있습니다.) </p></li>
+						</ol>
+						
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100126 -->
+					<h2><img src="/images/cs/h2_loss_reported_cancel_app01.png" alt="고객님의 카드정보를 입력하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						
+						<ol class="list_no01">
+							<!-- <li><p>본인 카드만 분실해제 신청이 가능하니, <strong class="t_black">가족회원의 분실해제 신청은 1588-8700</strong> 으로 하시기 바랍니다.</p></li> -->
+							<li><p>본인 및 가족회원의 분실해제 신청이 가능합니다.</p></li>
+							<li><p>분실해제 할 카드번호를 카드뒷면 CVC 3자리를 포함하여 18자리 또는 19자리를 입력하여 주십시오.</p></li>
+						</ol>
+						
+						<table class="dtable02 dtable_inputfield mt20" summary="분실신고 해제 신청을 하기 위해 카드번호를 입력하는 게시판입니다.">
+						<caption>카드번호 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+										<label for="card_gubun"><input type="radio" class="chk" value="비자/마스터/UnionPay(은련)/자체카드" title="비자/마스터/UnionPay(은련)/자체카드"  id="card_gubun" name="card_gubun"  onclick="radioCheck();" checked="checked" /> 비자/마스터/UnionPay(은련)/자체카드</label>
+										<label for="card_gubun2" class="ml10"><input type="radio" class="chk" value="아멕스카드" title="아멕스카드"  id="card_gubun2" name="card_gubun"  onclick="radioCheck();" /> 아멕스카드</label>
+									</p>
+									<p class="mt5">
+										<div id="master" style="display:block">
+											<span class="input_cardno">
+											<!-- 마스터/비자/자체 선택 시 -->
+		                                        <input name="cardno1" type="text" class="txt" maxlength="4" onkeypress="checkTypes(this,'NUMB');" title="카드번호 첫번째 네자리" id="label_cardno" enc="on" />&nbsp;-&nbsp;<!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+		                                        <input name="cardno2" type="password" class="txt" maxlength="4" onkeypress="checkTypes(this,'NUMB');" title="카드번호 두번째 네자리" enc="on" />&nbsp;-&nbsp;<!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+		                                        <input name="cardno3" type="password" class="txt" maxlength="4" onkeypress="checkTypes(this,'NUMB');" title="카드번호 세번째 네자리" enc="on" />&nbsp;-&nbsp;<!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+		                                        <input name="cardno4" type="text" class="txt" maxlength="4" onkeypress="checkTypes(this,'NUMB');" title="카드번호 네번째 네자리" enc="on" />&nbsp;-&nbsp;<!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+												<input name="cardcvc" type="password" maxlength="3" class="txt" onkeydown="checkEnter(1)" onkeypress="checkTypes(this,'NUMB');" maxlength="3" title="CVC번호 세자리" enc="on" /><!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+												&nbsp;&nbsp;<span id="usafeon_cardno1|cardno2|cardno3|cardno4|cardcvc"></span>
+											</span>
+										</div>
+										<div id="amax" style="display:none">
+											<!-- 아멕스카드 선택 시 -->
+											<span class="input_cardno" >
+		                                        <input name="cardno21" type="password" class="txt" maxlength="4" title="카드번호 첫번째  네자리" id="label_cardno" enc="on" />&nbsp;-&nbsp;<!-- onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" -->
+		                                        <input name="cardno22" type="password" class="txt" maxlength="6" title="카드번호 두번째  여섯자리" enc="on" />&nbsp;-&nbsp;<!-- onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" -->
+		                                        <input name="cardno23" type="text" class="txt" maxlength="5" onkeypress="checkTypes(this,'NUMB');" title="카드번호 세번째  다섯자리" enc="on" />&nbsp;-&nbsp;<!-- onblur="checkTypesOnBlur(this,'NUMB');" -->
+												<input name="cardcvc2" type="password" maxlength="3" class="txt" onkeydown="checkEnter(2);" title="CVC번호 세자리" enc="on" /><!-- onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" -->
+												&nbsp;&nbsp;<span id="usafeon_cardno21|cardno22|cardno23|cardcvc2"></span>
+											</span>
+										</div>
+									</p>
+								</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl t_desc04" style="display:block" id="card_no_len1">카드 뒷면 CVC번호를 포함하여 19자리를 입력해주세요.</p>
+							<p class="btnl t_desc04" style="display:none" id="card_no_len2">카드 뒷면 CVC번호를 포함하여 18자리를 입력해주세요.</p>
+							<p class="btnr"><a href="javascript:move();" class="btn btn_blue"><span>확인</span></a></p>
+						</div>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				
+

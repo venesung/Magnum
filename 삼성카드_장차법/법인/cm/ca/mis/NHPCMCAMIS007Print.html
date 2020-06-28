@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>법인 청구 총괄 명세서 - 삼성카드</title>
+	<style type="text/css">
+	*, body {margin:0; padding:0;}
+	tr.nodata	td	{padding:7px 0 5px; background:#FAFAFA; color:#999; font:normal 10px "돋움"; letter-spacing:-1px; text-align:center}
+	body, li, dt, dd, input, select, textarea, p, span, th, td {color:#666; font-size:12px; font-family:"돋움", applegothic, sans-serif; line-height:20px}
+	a	{color:#666; text-decoration:none}
+	a:link, a:visited	{text-decoration:none}
+	a:hover, a:active	{text-decoration:underline}
+	a.a_point:link	{color:#245FB3; text-decoration:underline}
+	a.a_point:visited	{color:#7A5C99; text-decoration:underline}
+	a.a_point:hover, a.a_point:active	 {background-color:#E9F1FA; _background-color:0 none; color:#245FB3; text-decoration:underline}
+	img	{border:0 none; vertical-align:middle; font-size:0; line-height:0}
+	strong	{font-weight:bold}
+	ul, ol, li	{list-style:none; list-style-position:outside}
+	hr	{clear:both; width:100%; height:0; border:0 none; background:none; font-size:0; line-height:0; overflow:auto; overflow:hidden; text-indent:-5000em}
+	.none	{position:absolute; top:-5000px; left:-5000px; height:0; font-size:0; line-height:0; visibility:hidden; overflow:hidden}
+	.btn_input	{border:0; text-indent:-5000px; cursor:pointer; overflow:hidden}
+	#pop_wrap	{width:710px}
+	#pop_header	 {width:100%; height:60px; background:url('/images/common/pop_bg_body.jpg') no-repeat left top}
+	#pop_header	 h1	{padding:19px 0 0 25px; font-size:0; line-height:0; background:transparent}
+	#pop_footer	 .btn_close	{position:absolute; right:12px; top:4px; width:24px; height:24px; background:url('/images/common/pop_bg_body.jpg') no-repeat 663px 0}
+	#pop_content	 {position:relative; width:100%; height:292px; margin:20px 0; overflow:auto}
+	#pop_content.h445	 {height:445px}
+	#pop_content.h445	h2	 {margin-top:0}
+	#pop_footer	{position:relative; width:100%; height:30px; background:url('/images/common/pop_bg_body.jpg') no-repeat left bottom}
+	.content_block	{width:650px; _height:100%; margin:30px 0 0 30px; padding-top:30px; border-top:1px solid #E6E6E6}
+	.content_block_inner	{width:650px; _height:100%}
+	.content_block_card	{margin-top:0; padding-top:0; border-top:0 none}
+	.btn_print {text-align:right; border-bottom:1px solid #e6e6e6; margin:-30px 0 30px; padding-bottom:20px}
+	
+	.list_no01.pop_numlist	{padding-top:3px;}
+	.list_no01.pop_numlist	li	{padding-left:0; color:#333; font-size:11px;}
+	.list_no01.pop_numlist	li	p	{color:#999; font-size:11px; line-height:14px;}
+	
+	li	{word-break:keep-all}
+	ol.list_no01	li	{list-style:decimal; list-style-position:inside; margin-bottom:4px; padding-left:10px; color:#666; font:normal 11px Tahoma; vertical-align:top; *line-height:16px}
+	ol.list_no01	li	p	{display:inline-block; margin:0 0; margin-left:0; padding-left:0; font:normal 12px "돋움"; word-break:keep-all; line-height:16px; vertical-align:top}
+	ol.list_no01	li	p span	{line-height:16px}
+	.iframe_layout	{width:650px; overflow:auto; overflow-x:hidden}
+	
+	
+	*, body {margin:0; padding:0;}
+	body, li, dt, dd, input, select, textarea, p, span, th, td {color:#666; font-size:10px; font-family:"돋움", applegothic, sans-serif; line-height:20px}
+	a	{color:#666; text-decoration:none}
+	a:link, a:visited	{text-decoration:none}
+	a:hover, a:active	{text-decoration:underline}
+	a.a_point:link	{color:#245FB3; text-decoration:underline}
+	a.a_point:visited	{color:#7A5C99; text-decoration:underline}
+	a.a_point:hover, a.a_point:active	 {background-color:#E9F1FA; _background-color:0 none; color:#245FB3; text-decoration:underline}
+	img	{border:0 none; vertical-align:middle; font-size:0; line-height:0}
+	strong	{font-weight:bold}
+	ul, ol, li	{list-style:none; list-style-position:outside}
+	hr	{clear:both; width:100%; height:0; border:0 none; background:none; font-size:0; line-height:0; overflow:auto; overflow:hidden; text-indent:-5000em}
+	.none	{position:absolute; top:-5000px; left:-5000px; height:0; font-size:0; line-height:0; visibility:hidden; overflow:hidden}
+	.t_desc04	{color:#999; font-size:11px; font-family:"돋움"; line-height:16px}
+	.mt20	{margin-top:20px}
+	.mt5	{margin-top:5px}
+	.btn_input	{border:0; text-indent:-5000px; cursor:pointer; overflow:hidden}
+	.t_black	 {color:#333}
+	.t_no	 {font:normal 10px "돋움"}
+	
+	.print_content {margin:0 0 25px; width:650px; !important}
+	.print_content .logo {margin:0 0 20px 3px !important}
+	.print_content h2 {text-align:center; margin:0 0 35px 0; width:650px !important; float:none !important}
+	table	{width:100%; border-collapse:collapse; border-spacing:0}
+	table	caption	{position:absolute; height:0; font-size:0; line-height:0; text-indent:-5000em; visibility:hidden; overflow:hidden}
+	th, td	 {word-break: break-all}
+	.dtable01	{border-collapse:separate; *border-collapse:collapse}
+	.dtable01	th	{padding:6px 0 5px; border-top:1px solid #CCC; border-bottom:1px solid #CCC; color:#333; font-weight:normal; letter-spacing:-1px; line-height:14px}
+	.dtable01	th	p	{color:#333}
+	.dtable01	td	{padding:6px 0 5px; border-bottom:1px solid #F3F3F3; text-align:center; word-break:keep-all;}
+	.dtable01	tbody	th	{border-top:0 none; border-right:1px solid #E6E6E6; border-bottom:1px solid #F3F3F3}
+	.dtable01	tfoot	td	{padding-top:5px; padding-bottom:4px; color:#333; font:bold 12px "돋움"}
+	.dtable01	tfoot	td	em	{font:bold 11px "돋움"}
+	.dtable01	tfoot	td	em.t_normal, .dtable01	tfoot	td.t_normal	{font-weight:normal}
+	.dtable01	th.cell_r10, .dtable01	td.cell_r10	{padding-right:10px; text-align:right}
+	.dtable01	tfoot	td.cell_r, .dtable01	tbody	td.cell_r	{text-align:right}
+	.dtable01	td.noline	{ word-break:keep-all; border:none;}
+	.dtable01	th	.t_desc03	{color:#999}
+	.dtable02	{border-collapse:separate; *border-collapse:collapse; border-top:1px solid #CCC; border-bottom:1px solid #CCC}
+	.dtable02	th	{padding:6px 0 5px; border-bottom:1px solid #F3F3F3; background:#FAFAFA; color:#333; font-weight:normal; letter-spacing:-1px; text-align:left; vertical-align:top}
+	.dtable02	td	{padding:6px 0 5px; border-bottom:1px solid #F3F3F3; vertical-align:top; word-break:keep-all}
+	.dtable02	td.al_mid	{vertical-align:middle}
+	.dtable02	th	p, .dtable02	th	label	{color:#333; font-weight:normal; letter-spacing:-1px}
+	.dtable02	th	p,	.dtable02	td	p, .dtable02	td	ul, .dtable02	th	label	{padding-left:10px}
+	.dtable02	th.cell_r10, .dtable02	td.cell_r10	{text-align:right}
+	.dtable02	th.cell_r10	p, .dtable02	td.cell_r10	p	{padding-right:10px; padding-left:0}
+	.dtable02	th	label	{display:inline-block; padding-left:10px}
+	th.cell_l20, td.cell_l20	 {padding-left:20px; text-align:left}
+	th.cell_l10, td.cell_l10	 {padding-left:10px; text-align:left}
+	th.cell_r10, td.cell_r10	{padding-right:10px; text-align:right}
+	td.cell_img	 {padding:8px 0 9px !important}
+	th.riline, td.riline	{border-right:1px solid #E6E6E6} /* 추가 101202 */
+	th.boline_b0, td.boline_b0	{border-bottom:0 !important} /* 추가 101202 */
+	.dtable_inputfield	tr	td	{padding-top:5px; padding-bottom:4px}
+	.dtable01_bill	th, .dtable01_bill	td	{padding-left:0}
+	.dtable_expand	th,	.dtable_expand	td	{padding-top:10px; padding-bottom:7px}
+	.dtable_english	th, .dtable_english	th	p	{font:normal 11px Tahoma; letter-spacing:0}
+	.btnl	{margin-top:11px}
+	.btnset	{width:100%; overflow:auto; overflow:hidden}
+	.btnset	.btnl	{display:inline; float:left}
+	.btnset	.t_desc04	{padding-left:10px}
+	.al_right	 {text-align:right}
+	
+	td	.nobreak	{display:block; width:70px; word-break:break-all; _line-height:13px}
+	td	.nobreak_nolink	{line-height:11px; line-height:13px; word-break:break-all}/*6*/
+	td	.w60	{width:60px}/*5*/
+	td	.w80	{width:80px}
+	td	.w90	{width:90px}/*8*/
+	td	.w100	{width:100px}
+	td	.w110	{width:110px}/*10*/
+	td	.w120	{width:120px}
+	td	.w130	{width:130px}
+	td	.w150	{width:150px}
+	td	.w160	{width:160px}/*14*/
+	td	.w180	{width:180px}/*16*/
+	td	.w200	{width:200px}/*18*/
+	td	.w220	{width:220px}
+	td	.w240	{width:240px}
+	.p_nowrap	{white-space:nowrap}
+	
+	dl.purpose {margin:15px 0 15px 10px}
+	dl.purpose dt {font:bold 11px/20px 돋움; color:#333; float:left; padding-right:3px; line-height:16px}
+	dl.purpose dd {font:11px/20px 돋움; line-height:16px}
+	.applicant {margin-bottom:15px; padding:8px 12px; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; background-color:#fafafa}
+	.applicant p.desc {font:11px/20px 돋움;}
+	.applicant p.date {font:11px/20px 돋움; text-align:right;}
+	.applicant p.use {font:11px/20px 돋움; text-align:right;}
+	.applicant p.use strong {padding-right:140px;}
+	.identifier p.desc {color:#333; margin-bottom:10px; text-align:center;}
+	.identifier p.date {color:#333; text-align:right;}
+	.identifier p.use {text-align:right; margin-top:65px;}
+	
+	</style>
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cm/pop_h1_standard_data_quiry3.png" alt="법인 청구 총괄 명세서입니다" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/cm/pop_h1_standard_data_quiry3.png" alt="법인 청구 총괄 명세서입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll" tabindex="0">
+
+		<div class="content_block content_block_card clfix">
+			<ol class="list_no01 pop_numlist">
+				<li><p>동일한 창을 이용하여 여러 번 출력 시 처음에 출력된 프린터로만 출력 가능합니다.</p></li>
+				<li><p>출력 후 다른 프린터로 출력을 원하시면 창을 닫은 후 다시 열어서 사용하십시오.</p></li>
+				<li><p>출력버튼을 누른 다음 스크립트/DLL 오류가 발생하면 수동설치 하십시오.</p></li>
+				<li><p>프린터의 [절약모드] 사용 시 정상적인 문서가 출력되지 않습니다.</p></li>
+				<li><p>절약모드 기능을 해제하고 출력하시기 바랍니다.</p></li>
+			</ol>
+			<p class="btn_print"><a href="javascript:printDiv('printDiv');"><img src="/images/common/btn_s_print.png" alt="인쇄" /></a></p>
+			<div class="content_block_inner">
+<div id="printDiv" >
+				<div class="print_content">
+
+					<div style="margin:0 0 20px 3px !important"><img src="/images/common/img_logo2.png" alt="삼성카드" /></div>
+					<h2 style="text-align:center; margin:0 0 35px 0; width:650px !important; float:none"><img src="/images/cm/pop_h2_standard_data_quiry3.png" alt="법인 청구 총괄 명세서" /></h2>
+
+					<p class="t_desc04"><strong class="t_black">법인명</strong> : 삼성카드</p>
+					<p class="t_desc04"><strong class="t_black">결제일자</strong> : 05일</p>
+					<p class="t_desc04 al_right">(단위 : 원)</p>
+
+					<table class="dtable01 mt5" summary="당월청구합계, 전월미입금합계, 연체료합계, 선수금합계, 청구금액합계로 구성된 법인 청구 총괄 명세 합계입니다">
+					<caption>법인 청구 총괄 명세 합계</caption>
+					<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_r10">당월청구합계</th>
+								<th scope="col" class="cell_r10">전월미입금합계</th>
+								<th scope="col" class="cell_r10">연체료합계</th>
+								<th scope="col" class="cell_r10">선수금합계</th>
+								<th scope="col" class="cell_r10">청구금액합계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td scope="col" class="cell_r10"><p style="font:normal 10px '돋움'">123</p></td>
+								<td scope="col" class="cell_r10"><p style="font:normal 10px '돋움'">123</p></td>
+								<td scope="col" class="cell_r10"><p style="font:normal 10px '돋움'">123</p></td>
+								<td scope="col" class="cell_r10"><p style="font:normal 10px '돋움'">123</p></td>
+								<td scope="col" class="cell_r10"><p style="font:normal 10px '돋움'">123</p></td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="5">해당 데이터가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+			
+					<table class="dtable01 mt20" summary="부서명, 성명, 은행, 당월청구액, 전월미입금, 선수금, 청구금액으로 구성된 신용카드 사용금액 확인 내역 게시판입니다">
+					<caption>신용카드 사용금액 확인서 내역</caption>
+					<colgroup><col width="17%" /><col width="17%" /><col width="14%" /><col width="13%" /><col width="13%" /><col width="13%" /><col width="13%" /></colgroup>
+					<thead>
+						<tr>
+							<th rowspan="2" scope="col" class="cell_l10 riline">부서명</th>
+							<th scope="col" class="cell_l10 boline_b0 riline">성명</th>
+							<th scope="col" class="cell_l10 boline_b0 riline">은행</th>
+							<th rowspan="2" scope="col" class="cell_r10 riline">당월청구액</th>
+							<th scope="col" class="cell_r10 boline_b0 riline">전월미입금</th>
+							<th rowspan="2" scope="col" class="cell_r10 riline">선수금</th>
+							<th rowspan="2" scope="col" class="cell_r10">청구금액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_l10 riline">카드번호</th>
+							<th scope="col" class="cell_l10 riline">계좌번호</th>
+							<th scope="col" class="cell_r10 riline">연체료</th>
+						</tr>
+					</thead>
+					<tbody >
+						<!-- loop -->
+								<tr>
+									<td class="cell_l10 riline"><span style="display:block; font:normal 10px '돋움' " class="nobreak_nolink w120">음...</span></td>
+									<td class="cell_l10 riline">
+										<p><span style="display:block; font:normal 10px '돋움' " class="nobreak_nolink w110">홍길동</span></p>
+										<p><span style="display:block; font:normal 9px '돋움' " class="nobreak_nolink w110">0000-0000-0000-0000</span></p></td>
+									<td class="cell_l10 riline">
+										<p><span style="display:block; font:normal 10px '돋움' " class="nobreak_nolink w110">신한은행</span></p>
+										<p><span style="display:block; font:normal 10px '돋움' " class="nobreak_nolink w110">000-00-000000</span></p></td>
+									<td class="cell_r10 riline"><span style="display:block; font:normal 10px '돋움' " class="p_nowrap">123</span></td>
+									<td class="cell_r10 riline">
+										<p><span style="display:block; font:normal 10px '돋움' " class="p_nowrap">123</span></p>
+										<p><span style="display:block; font:normal 10px '돋움' " class="p_nowrap">123</span></p></td>
+									<td class="cell_r10 riline"><span style="display:block; font:normal 10px '돋움' "  class="p_nowrap">123</span></td>
+									<td class="cell_r10"><span style="display:block; font:normal 10px '돋움' "  class="p_nowrap">123</span></td>
+								</tr>
+								<tr class="nodata">
+									<td colspan="10">해당 데이터가 없습니다.</td>
+								</tr>
+					</tbody>
+					</table>
+				</div>
+</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /><!--100406 -->
+	</div>
+
+</div>
+
+</body>
+</html>

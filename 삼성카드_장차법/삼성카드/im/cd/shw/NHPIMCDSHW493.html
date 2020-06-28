@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+<!-- 김대리 이야기 페이스북 연동 시작-->
+<div id="fb-root"></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style type="text/css">
+button {border:0 none;padding:0;margin:0;background:transparent;*overflow:visible;cursor:pointer;}
+button::-moz-focus-inner {border:0;padding:0;}  
+.sface {width:17px;height:17px;background:url('/images/cd/shw/card/icon_fs.gif') no-repeat;}
+.bface {width:21px;height:21px;background:url('/images/cd/shw/common/icon_f.gif') no-repeat;}
+</style>
+<!-- 김대리 이야기 페이스북 연동 끝-->
+
+<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW101.jsp"%>
+
+<!-- 네비 영역 -->
+<div class="naviBox">
+<div class="navi">
+<p class="con" style="width: 600px;">
+	<a href="shw.do?method=getIntro"><img src="/images/cd/shw/common/navi_home.gif" width="12" height="11" alt="home" /></a>	
+	
+		<img src="/images/cd/shw/common/bg_navi.gif" width="5" height="11" alt="&gt;" class="marL9" />
+		
+			<a href="shw.do?method=getList&category=D">외식/여가</a>
+		
+	
+	<img src="/images/cd/shw/common/bg_navi.gif" width="5" height="11" alt="&gt;" class="marL9" />
+	삼성카드 7
+</p>
+
+<div class="sns">
+<a href="javascript:cFacebook();" title="새창"><img src="/images/cd/shw/common/icon_f.gif" width="21" height="21" alt="페이스북" /></a>
+
+<a href="javascript:cTweet();" title="새창"><img    src="/images/cd/shw/common/icon_t.gif" width="21" height="21" alt="트위터" /></a>
+<a href="javascript:plusEmailCnt();" class="layer popupUrl"><img src="/images/cd/shw/common/btn_url.gif" width="45" height="21" alt="url 복사하기" /></a>
+</div>
+</div>
+</div>
+<!-- 네비 영역 -->
+
+<!-- 비주얼 영역 -->
+<div class="visualBox_sub"><img src="/cms_content/hp/im/cd/shw/12831_TIMG.jpg" width="940" height="150" alt="삼성카드 7
+- 가족과 함께할 때도 실속이 필요한 당신을 위한 일곱 가지 혜택! 가족을 위한 맞춤 혜택" /></div>
+<!-- 비주얼 영역 --><div class="wrap">
+<div class="contentsBox_sub padB50">
+<div class="cardviewBox"><img
+	src="/cms_content/hp/im/cd/shw/12831_VKIMG.jpg"
+	width="430" height="280" alt="주말 2배 적립 - 모든 가맹점 주중 0.5%, 주말 1% 적립 / 
+2배 적립처 - 외식, 주유, 지정 백화점 2배 적립 / 
+3배 적립처 - 교통, 제과, 편의점 3배 적립 / 
+무이자할부 - 모든 가맹점 주말 2~3개월 무이자할부 / 
+에버랜드 - 자유이용권 50% 할인 (동반 소인 1인 포함) / 
+CGV - 온라인예매 및 현장결제 3,000원 할인" class="illust" />
+
+<!-- 카드 신청 -->
+<form name="form2" method="post">
+
+<input type="hidden" name="cardCode" value="" />
+<input type="hidden" name="brand" value="" /> 
+<input type="hidden" name="SITE" value="" />
+<input type="hidden" name="INFO" value="" />
+<input type="hidden" name="MEM_CODE" value="" />
+<input type="hidden" name="url" value="home.htm" />
+<input type="hidden" name="eventGiftNo"  value ="" />
+<input type="hidden" name="eventNo" value="" />
+<input type="hidden" name="kindCode" value="P1268" />
+<input type="hidden" name="category" value="D" />
+<input type="hidden" name="giftNo" value="" />
+
+ 
+<div class="columnA"><img src="/cms_content/hp/im/cd/shw/12831_LIMG.png" width="206" height="130" alt="삼성카드 7" class="imgCard" />
+<dl>
+	<!-- 후불교통 -->
+	<dt id="applyCardTrafficId1" style="display: none;"><img src="/images/cd/shw/card/txt_info1.gif" width="40" height="11" alt="후불교통" /></dt>
+	<dd id="applyCardTrafficId2" style="display: none;">
+		<label for="label_trf1"><input type="radio" name="cardOptTraffic" id="label_trf1" value="Y" onClick="cardOptClick( 'traffic', 'Y' );" title="선택" />선택</label> 
+		<label for="label_trf2"><input type="radio" name="cardOptTraffic" id="label_trf2" value="N" onClick="cardOptClick( 'traffic', 'N' );" title="선택안함" />선택안함</label>
+	</dd>
+	<!-- 바로할인 -->
+	<dt id="applyCardBaroId1" style="display: none;">
+		<div class="poRelative" style=" z-index:99;">
+			<img src="/images/cd/shw/card/txt_info2.gif" width="40" height="11" alt="바로할인" /> 
+			<img src="/images/cd/shw/card/icon_q.gif" width="12" height="13" alt="?" class="icon_q" />
+			<div class="txt_baro">
+				<p><em>바로할인 카드란?</em></p>
+				<p>1. 바로할인카드는 카드 신청 후 <em>1시간 이내에</em><br />&nbsp;&nbsp;&nbsp;<em>카드정보만을 미리 제공</em>해드립니다.</p>
+				<p>2. 실물카드 발급 이전에 바로 사용할 수 있는<br />&nbsp;&nbsp;&nbsp;카드입니다.</p>
+				<p>3. 신청은 <em>평일 09:00 ~ 21:00</em> 사이에 가능하며,<br />&nbsp;&nbsp;&nbsp;실물카드는 <em>1~2주일 내로 배송</em>해드립니다.</p>
+			</div>
+		</div>
+	</dt>
+	<dd id="applyCardBaroId2" style="display: none;">
+		<label for="label_baro1"><input type="radio" name="cardOptBaro" id="label_baro1" value="Y" title="선택" onClick="cardOptClick( 'baro', 'Y' );" />선택</label> 
+		<label for="label_baro2"><input type="radio" name="cardOptBaro" id="label_baro2" value="N" title="선택안함" onClick="cardOptClick( 'baro', 'N' );" />선택안함</label>
+	</dd>
+	<!-- 브랜드 -->
+	<dt id="cardOptBrandId1" style="display: none;"><img src="/images/cd/shw/card/txt_info3.gif" width="30" height="11" alt="브랜드" /></dt>
+	<dd id="cardOptBrandId2" style="display: none;"></dd>
+
+</dl>
+<!-- 정기일반영 13.04.01 -->
+
+<!-- // 정기일반영 13.04.01 -->
+<p style="position:absolute; left:0; bottom:5px;"><a href="javascript:goApplyCheckGift( 'P1268' );"><img src="/images/cd/shw/card/btn_card.gif" alt="카드신청"
+	class="marB5" /></a> <a href="#popupDues" class="layer popupDues"><img id="yearFeeId"
+	src="/images/cd/shw/card/btn_fee.gif" alt="연회비 정보확인" /></a> <a
+	href="javascript:cardCompare( 'add', '', 'P1268', '삼성카드 7', '/cms_content/hp/im/cd/shw/12831_SIMG.jpg', '/cms_content/hp/im/cd/shw/12831_LIMG.png', '/cms_content/hp/im/cd/shw/12831_NIMG.jpg', '/cms_content/hp/im/cd/shw/12831_HKIMG.jpg', '20000', '18000', 'D', 'N', '주말 2배 적립 - 모든 가맹점 주중 0.5%, 주말 1% 적립 / 
+2배 적립처 - 외식, 주유, 지정 백화점 2배 적립 / 
+3배 적립처 - 교통, 제과, 편의점 3배 적립 / 
+무이자할부 - 모든 가맹점 주말 2~3개월 무이자할부 / 
+에버랜드 - 자유이용권 50% 할인 (동반 소인 1인 포함) / 
+CGV - 온라인예매 및 현장결제 3,000원 할인', '', '' );"><img
+	src="/images/cd/shw/card/btn_vsCart2.gif" alt="비교함 담기" /></a></p></div>
+</form>
+<!-- 카드 신청 -->
+	
+<ul class="bannerBox">
+	<script type="text/javascript">existGift = 'Y'; cardEventNo = '477';</script><li><a href='javascript:eventPopUpClick="N";goCardEvent_PopUp( "477", "P1268" );' title='새창'><img alt='100% 당첨의 행운! 지금보고 있는 삼성카드의 사은품 신청은 하셨나요? 사은품 신청' src='/images/cd/shw/card/banner6.jpg' width='160' height='140' /></a></li>
+	<li><a href='#' class='layer popupBaro' title='새창'><img alt='빠르고 편리하게 카드 신청하시고, 놀라운 혜택을 경험하세요. 자세히 보기' src='/images/cd/shw/card/banner4.gif' width='160' height='140' /></a></li>
+	<!-- <li><a href="#" class="layer popupCGV"><img src="/images/cd/shw/card/cgv_banner.jpg" width="160" height="140" alt="CGV에서 더 커진 할인혜택을 확인하세요!" /></a></li> -->
+	
+
+</ul>
+</div>
+<!-- 2012.04.16 추가 및 수정 -->
+<p class="txt_i2"><img src="/images/cd/shw/card/icon_i.gif" alt="!"
+	class="marR6" />모든 서비스는 제휴업체 또는 카드사 사정에 의해 추가, 변경, 중단될 수 있으며, 그 내용을 사전에 알려드립니다.</p>
+<!-- //2012.04.16 추가 및 수정 -->
+
+<div class="simulBox">
+<ul class="tab">
+	<li class="on"><a href="#"><img src="/images/cd/shw/card/tab_simul1_on.gif" alt="혜택시뮬레이션" /></a></li>
+	<li><a href="#"><img src="/images/cd/shw/card/tab_simul2_off.gif" alt="상세서비스" /></a></li>
+</ul>
+
+<div class="simul marB40">
+<!-- 2012.04.16 추가 및 수정 --> <!-- 혜택시뮬레이션 -->
+<% 
+	String Pcode = request.getParameter("prodCode"); 
+	if(Pcode.equals("P0505")){
+%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW409.jsp"%>
+<%	}else if(Pcode.equals("P1216")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW401.jsp"%>
+<%	}else if(Pcode.equals("P1217")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW402.jsp"%>
+<%	}else if(Pcode.equals("P1229")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW403.jsp"%>
+<%	}else if(Pcode.equals("P1230")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW404.jsp"%>
+<%	}else if(Pcode.equals("P1248")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW405.jsp"%>
+<%	}else if(Pcode.equals("P1249")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW406.jsp"%>
+<%	}else if(Pcode.equals("P1257")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW407.jsp"%>
+<%	}else if(Pcode.equals("P1259")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW408.jsp"%>
+<%	}else if(Pcode.equals("P0544")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW410.jsp"%>
+<%	}else if(Pcode.equals("P0379")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW411.jsp"%>
+<%	}else if(Pcode.equals("P0516")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW412.jsp"%>
+<%	}else if(Pcode.equals("P0344")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW413.jsp"%>
+<%	}else if(Pcode.equals("P0428")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW414.jsp"%>
+<%	}else if(Pcode.equals("P0292")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW415.jsp"%>
+<%	}else if(Pcode.equals("P0520")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW416.jsp"%>
+<%	}else if(Pcode.equals("P0483")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW417.jsp"%>
+<%	}else if(Pcode.equals("P0347")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW418.jsp"%>
+<%	}else if(Pcode.equals("P0608")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW419.jsp"%>
+<%	}else if(Pcode.equals("P0610")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW420.jsp"%>
+<%	}else if(Pcode.equals("P0161")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW421.jsp"%>
+<%	}else if(Pcode.equals("P1200")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW422.jsp"%>
+<%	}else if(Pcode.equals("P1179")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW423.jsp"%>
+<%	}else if(Pcode.equals("P0178")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW424.jsp"%>
+<%	}else if(Pcode.equals("P0320")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW425.jsp"%>
+<%	}else if(Pcode.equals("P0319")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW426.jsp"%>
+<%	}else if(Pcode.equals("P1198")){%>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/shw/NHPIMCDSHW427.jsp"%>
+<%}%>
+</div>
+<!-- 혜택시뮬레이션 --> 
+
+<!-- 상세 서비스 -->
+<div id="detailCMSServiceId" class="simul marB40" style="padding:15px 0; border:1px solid #e2e2e2; border-top:none; display:none;">
+
+<div id="popupCGV" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_cgv.png" width="585" height="45" alt="CGV에서 더 커진 할인혜택을 확인하세요" class="png24" /></h3>
+	<div class="contentBox" style="padding-bottom:0;">
+		<img src="/images/cd/shw/popup/txt_cgv1.gif" alt="영화 볼 땐, 삼성카드! CGV에서, 무비존에서, 더 커진 삼성카드 영화 할인 서비스를 만나보세요." class="marB40" />
+		<img src="/images/cd/shw/popup/stit_cgv1.gif" alt="1. CGV 현장 예매 시 기본 영화 할인 혜택에, 최대 2000원 추가 할인까지!" class="marB8" />
+		<ul class="txtCGV">
+			<li>삼성카드 전 회원 1,000원(동반 1인 포함 최대 2,000원) 추가 현장할인
+				<ul>
+					<li>- 행사기간 : 2012년 12월 31일 까지 </li>
+					<li>- 삼성카드로 5,000원 이상 이용시 할인이 제공됩니다.(일 1회, 월 5회) </li>
+					<li>- 법인/올앳/선불/체크/기프트카드는 제외됩니다. </li>
+					<li>- CJ ONE 삼성카드는 추가 할인이 제외됩니다. </li>
+					<li>- 청소년, 조조할인, 4D 및 특화관, 인터넷 예매건 및 CGV 제휴할인 이용건은 제외입니다.</li>
+				</ul>
+			</li>
+			<li>삼성카드 전 회원 1,000원(동반 1인 포함 최대 2,000원) 추가 현장할인</li>
+		</ul>
+		<table summary="변경전,변경후 할인 정보를 확인하실 수 있습니다." class="table_cgv marB10" style="width:529px;">
+			<caption>할인 정보</caption>
+			<colgroup>
+				<col width="264" />
+				<col width="264" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">변경전</th>
+					<th scope="col" class="noBorder">변경후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="last">
+					<td>청구할인</td>
+					<td class="noBorder"><b>현장할인</b></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="txt_i marB20"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />CJ 제휴 및 멤버십카드, 수퍼S 카드는 제외됩니다.</p>
+
+		<img src="/images/cd/shw/popup/stit_cgv2.gif" alt="2. 이제, 삼성카드 무비존에서 예매수수료 부담이 사라집니다!" class="marB8" />
+		<table summary="변경전, 변경후 수수료 정보를 확인하실 수 있습니다." class="table_cgv marB10" style="width:529px;">
+			<caption>수수료 정보</caption>
+			<colgroup>
+				<col width="264" />
+				<col width="264" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">변경전</th>
+					<th scope="col" class="noBorder">변경후</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="last">
+					<td>예매수수료 : 건당 500원<br />좌석선택 불가</td>
+					<td class="noBorder"><b>예매수수료 : 없음<br />좌석 선택 가능<br />(CGV는 좌석 선택할 수 없음)</b></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<img src="/images/cd/shw/popup/stit_cgv3.gif" alt="3. 갖고 계신 삼성카드의 영화 할인 혜택을 확인해 보세요!" class="marB5" />
+		<p class="c999 marB5">예시)</p>
+		<table summary="서비스카드, 기본 영화 할인, 추가할인, 최대할인으로 구성된 할인 혜택 정보를 확인하실 수 있습니다." class="table_cgv marB10" style="width:529px;">
+			<caption>할인 혜택</caption>
+			<colgroup>
+				<col width="144" />
+				<col width="144" />
+				<col width="119" />
+				<col width="119" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">서비스카드</th>
+					<th scope="col">기본 영화 할인</th>
+					<th scope="col">추가할인</th>
+					<th scope="col" class="noBorder">최대할인</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>삼성카드3<br />삼성빅앤빅카드</td>
+					<td>주중 : CGV 동반자 무료<br />(9,000원 할인) <br />주말 : CGV 50% 할인<br /> (4,500원 할인)</td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 11,000원 할인</span></td>
+				</tr>
+				<tr>
+					<td>삼성아멕스블루카드<br />삼성애니스타일카드</td>
+					<td>동반자 CGV 50% 할인<br />(4,500원 할인) </td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 6,500원 할인</span></td>
+				</tr>
+				<tr class="last">
+					<td>삼성애니패스포인트카드 <br />삼성지엔미포인트카드 <br />삼성더아파트카드</td>
+					<td>CGV 1,500원 할인</td>
+					<td><span class="c555">2,000원<br />(동반 1인 포함)</span></td>
+					<td class="noBorder"><span class="c555">최대 3,500원 할인</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />회원님의 삼성카드에 기본 영화 할인 서비스가 없더라도, CGV에서 1,000원(동반 1인 포함 최대 2,000원) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현장할인 혜택을 받으실 수 있습니다. </p>
+
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot585.png" width="585" height="20" alt="" class="png24" />
+</div>
+<%-- CGV --%>
+
+<!-- 레이어 영역 -->
+
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/shw_footer.jsp"%>
+
+<iframe id="innerIFrame" width="0" height="0" frameborder="0" title="아이프레임"></iframe>
+
+<iframe src="" name="ifrm" width="0" height="0"  frameborder="0" title="아이프레임"></iframe>
+<form name="emailForm" method="post" autocomplete="off" action="">
+<input type="hidden" name="cardCode" value="<%=((ITCKCARDDETTTVO)cardDetail.get(0)).getCardCode()%>"/>
+<input type="hidden" name="cardName" value="<%=cardInfo.getProdName()%>"/>
+<input type="hidden" name="cardUrl" value="" />
+<input type="hidden" name="idenNo" value="" />
+<input type="hidden" name="email1" value="" />
+<input type="hidden" name="email2" value="" />
+<input type="hidden" name="email3" value="" />
+<input type="hidden" name="email4" value="" />
+</form>
+</body>
+</html>

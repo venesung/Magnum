@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">채무면제&middot;유예상품 S.CreditCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1000/4371_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSCC001M006', true);" class="mv_h1_btn depth5"><img src="/images/common/btn_apply_01.gif" alt="상품 신청하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M001', true);">상품소개</a></li><!-- 정기일반영 13.03.06 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M006', true);">상품 신청/조회</a></li><!-- 정기일반영 13.03.06 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M002', true);">보상상담안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M003', true);">보상상담신청</a></li>
+			<li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMSSSCC001M004', true);">보상진행사항</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M005', true);">고객지원</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<form name="form">
+<input type="hidden" name="idenNo" value="" />
+
+<div id="id_screditcare_step01" class="content_block first_none clfix">
+	<h2><img src="/images/ss/h2_member_infoenter.png" alt="회원님의 정보를 입력해 주세요" /></h2>
+	<div class="content_block_inner">
+		<div class="tb_exp">
+			<p>회원님의 보상 진행내역 확인을 위해 <strong class="t_balck">주민등록번호</strong>를 입력하세요.</p>
+		</div>
+		<table class="dtable02 dtable_expand" summary="고객님의 주민등록번호를 입력하는 게시판입니다">
+		<caption>주민등록번호 입력 게시판</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+		<!-- loop -->
+			<tr>
+				<th scope="row"><p>주민등록번호</p></th>
+				<td><p>
+				<span class="input_idno"><input type="text" name="idenNo1" class="txt" maxlength="6" id="label_memberidno01" value="" title="주민등록번호 앞자리" onkeypress="checkLenN(this, 6, form.label_memberidno02);checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" onclick="form.idenNo1.value = '';" />
+				&nbsp;-&nbsp;
+				<input type="password" name="idenNo2" maxlength="7" class="txt" id="label_memberidno02" value="" title="주민등록번호 뒷자리" onkeydown="checkLenB(this, form.label_memberidno01);" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" onclick="form.idenNo2.value = '';" /></span>
+				</p></td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+		<div class="btnset">
+            <p class="btnr"><a href="javascript:go_url();" class="btn btn_blue"><span>확인</span></a></p>
+		</div>
+	</div>
+</div>
+
+
+<!-- content_block -->
+<div id="id_screditcare_step02" class="content_block clfix" style="display:">
+	<h2><img src="/images/ss/h2_compensation_step01.png" alt="보상 진행사항을 안내해 드립니다." /></h2>							
+	<div class="content_block_inner pos_rel">
+		<div class="tb_exp clfix">
+			<span>회원님의 보상 진행 사항은 현재 <strong class="t_black">0</strong> 입니다.</span>
+		</div>
+		
+		<!-- 
+			[진행상황에 따른 class 변경]
+			* 활성화 사항 : class="step2_on"
+			* 비활성화 사항 : class="step2"
+		-->
+		<ol class="scc_join_progress">
+			<li class="step1_on">
+				<strong>신청접수 진행중</strong>
+				<p class="t_no on">-_-</p>
+			</li>
+			<li class="step2">
+				<strong>신청접수 완료</strong>
+				<p class="t_no">-_-</p>
+			</li>
+			<li class="step3">
+				<strong>서류접수 진행중</strong>
+				<p class="t_no">-_-</p>
+			</li>
+			<li class="step4">
+				<strong>보상 심사완료</strong>
+				<p class="t_no">-_-</p>
+			</li>
+		</ol>
+		
+		<ol class="list_no01 no_line">
+			<li><p>신청접수 진행 중 : 홈페이지(유선)에서 등록하신 보상건에 대하여 담당자가 확인 중.</p></li>
+			<li><p>신청접수 완료 : 상품 보상 신청접수가 완료되었습니다.</p></li><!-- SR내역 13.03.06 -->
+			<li><p>신청접수 완료 : 접수 후 2일 안에 상담원이 전화 드릴 예정입니다.</p></li>
+			<li><p>서류접수 완료 : 상담원의 안내에 따라 회원님께서 보내주신 서류가 접수 완료되었습니다.</p></li>
+			<li><p>서류접수 완료 : (심사기간 채무면제 신청은 3~4일 소요, 채무유예신청은 1~2일 소요)</p></li>
+			<li><p>심사완료 : 확정된 보상금액에 대한 안내가 1~2일 내에 유선으로 통보될 예정입니다.</p></li>
+		</ol>
+	</div>
+</div>
+</form>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_international_card_holder.png" alt="For Foreign Card Holder" /></h1>
+</div>
+<form method="post" name="search_form">
+<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHIAC001M001','true');">Local Transactions</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHIAC003','true');">Overseas Transactions</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHIAC005','true');">Credit Limit Inquiries</a></li>
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_local_transactions.png" alt="Local Transactions" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>6 months of most recent transactions are available for search. </p></li>
+                            <li><p>For previous transactions, please click on <a href="javascript:goTabPage('NHPIMMHPIB001');" class="a_point">명세서조회 (Past Statements)</a> and search past statements. </p></li>
+							<li><p>Expected Statement Date for each transaction will be shown after Samsung Card Co has <br />received the transaction.</p> </li>
+							<li><p>Overseas transactions, cash advances, and card loans will not be shown.</p></li>
+						</ol>
+						<p class="t_point" style="letter-spacing:0; padding-left:8px;">※ <span class="t_point_org ">Foreign Customer Center</span> : [Weekdays AM 9:00 ~ PM 6:00] 1688-8751,
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Oversea 82-2-6344-3437</p><!-- 정기일반영 13.02.28 -->
+					</div>
+				</div>
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_search_criteria.png" alt="Search Criteria" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="Search Criteria is composed of Usage Period, User, Card Type">
+						<caption>Search Criteria</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>Usage Period</p></th>
+								<td>
+									<table border="0">
+									<tr>
+
+										<td>
+											<span class="reset_date "></span>
+										</td>
+
+									</tr>
+									<tr>
+										<td>
+                                            <a href="javascript:search5()" name="gubun" class="btn btn_s_gray"><span>Select</span></a>
+                                            <a href="javascript:search1()" name="gubun" class="btn btn_s_gray"><span>Today</span></a>
+                                            <a href="javascript:search2()" name="gubun" class="btn btn_s_gray"><span>1week</span></a>
+                                            <a href="javascript:search3()" name="gubun" class="btn btn_s_gray"><span>1Month</span></a>
+                                            <a href="javascript:search4()" name="gubun" class="btn btn_s_gray"><span>2Months</span></a>
+                                            <a href="javascript:search6()" name="gubun" class="btn btn_s_gray"><span>6Months</span></a>
+										</td>
+
+									</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>User</p></th>
+								<td><p>
+										<label for="label_user1">
+										<input name="user_flag" value="ALL" type="radio" title="ALL" class="rdo" id="label_user1"
+										onclick="onUserOnOff()"
+										/>
+										All
+										</label>
+										<label for="label_user2" class="ml10">
+										<input name="user_flag" value="NAME" type="radio" title="Select" class="rdo" id="label_user2"
+										onclick="onUserOnOff()" />
+										 Select</label>
+										<select name="family_self" class="ml10" style="width:390px;" title="Select User">
+												<option></option>
+										</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>Card Type</p></th>
+								<td><p>
+										<label for="label_card1">
+										<input type="radio" class="rdo" value="ALL" id="label_card1" title="ALL" name="card_type" onclick="search();" /> All</label>
+										<label for="label_card2" class="ml10">
+										<input type="radio" class="rdo" value="CREDIT" id="label_card2" title="Credit Card" name="card_type" onclick="search();" /> Credit Card</label>
+										<label for="label_card3" class="ml10">
+										<input type="radio" class="rdo" value="CHECK" id="label_card3" title="Check Card" name="card_type" onclick="search();" /> Check Card</label>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnr">
+                            <a href="javascript:search();" class="btn btn_blue"><span>show</span></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_recent_acrivity.png" alt="Recent Activity" /></h2>
+
+						<table class="dtable01" summary="Recent Activity is composed of Total Transaction Amount, Card Transaction Amount, Installment Transaction Amount">
+						<caption>Recent Activity</caption>
+						<colgroup><col width="33%" /><col width="33%" /><col width="34%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_r10">Total Transaction Amount</th>
+								<th scope="col" class="cell_r10">Card Transaction Amount</th>
+								<th scope="col" class="cell_r10">Installment Transaction Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_r10">\ <span class="t_no">0</span></td>
+								<td class="cell_r10">\ <span class="t_no">0</span></td>
+								<td class="cell_r10">\ <span class="t_no">0</span></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+						<div id="printTranjaction">
+						<table class="dtable01 mt20" summary="Recent Activity is composed of Card, User, Date, Time, Merchant, Amount, Installment month, Authorization Number, Cancellation, Points Used, Expected Statement Date">
+						<caption>Recent Activity</caption>
+						<colgroup><col width="15%" /><col width="7%" /><col width="10%" /><col width="7%" /><col width="9%" /><col width="13%" /><col width="7%" /><col width="7%" /><col width="7%" /><col width="7%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">Card</th>
+								<th scope="col">User</th>
+								<th scope="col">Date</th>
+								<th scope="col">Time</th>
+								<th scope="col">Merchant</th>
+								<th scope="col" class="cell_r10">Amount</th>
+								<th scope="col">Install-<br />ment<br />month</th>
+								<th scope="col">Authori-<br />zation<br />Number</th>
+								<th scope="col">Cancell<br />ation</th>
+								<th scope="col">Points<br />Used</th>
+								<th scope="col">Expected<br />Statement<br />Date</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr class="nodata"><td colspan="11">No Data.</td></tr>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td>
+								My transactions</td>
+								<td class="t_no">0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10">\ <span class="t_no">0</span></td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+							</tr>
+							<!-- //loop -->
+
+						</tbody>
+						</table>
+						</div>
+						<div class="btnset">
+							<p class="btnl">
+                            <a href="javascript:goTabPage('NHPIMMHIAC002');" class="btn btn_white"><span>Overseas Transaction Summary &gt;</span></a>
+                            <a href="javascript:goTabPage('NHPIMFSCSH001M001');" class="btn btn_white"><span>Cash Advance Transaction Summary &gt;</span></a>
+                            <a href="javascript:goTabPage('NHPIMFSCDLM');" class="btn btn_white"><span>Card Loan Transaction Summary &gt;</span></a>
+							</p>
+							<p class="btnr">
+                                <a href="javascript:printDiv('printTranjaction')" class="btn btn_white"><span>Print</span></a>
+							</p>
+						</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

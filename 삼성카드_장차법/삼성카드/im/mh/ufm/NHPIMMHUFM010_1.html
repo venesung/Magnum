@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_change_info.png" alt="회원님의 수신정보동의를 변경하실 수 있습니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="tab02 w810">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM008', true);">마케팅 수신정보 변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM009', true);">제휴사 마케팅 동의여부변경</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHUFM010', true);">출입국정보 동의여부변경</a></li>
+						</ul>
+					</div>
+					<h2><img src="/images/mh/h2_check_card_info.png" alt="고객님의 카드정보를 확인 하세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>회원님의 정보 보안을 위해 <strong class="t_point">카드정보</strong>를 확인해 주십시오.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="카드정보 확인을 위한 카드번호, 카드비밀번호, 주민등록번호 뒷자리를 입력하는 게시판입니다.">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+									<select name="CARD_INDEX" title="카드번호 선택" style="width:360px">
+										<option>======선택가능한 카드가 존재하지 않습니다.</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+									<p class="input_2char">
+									<input type="password" name="PASSWORD_NO2" maxlength="2" class="txt" id="label_ch_cardpass" onkeypress="checkTypes(this,'NUMB');" onkeyup="checkPassword(this.value)" onblur="checkTypesOnBlur(this,'NUMB');"  value="" title="카드 비밀번호 앞 두자리 입력" enc="on"/><em>**</em>(비밀번호 앞의 2자리)
+									<span id="usafeon_PASSWORD_NO2"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td>
+									<p class="input_3char">
+									<input type="password" name="IDEN_NO2" size="7" maxlength="7" class="txt" value="" id="label_social_snum" title="주민등록번호 뒷자리" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');" onkeydown="if (window.event.keyCode == 13) {goApply();}" enc="on"/>(주민번호 13자리 숫자 중 뒷7자리)
+									<span id="usafeon_IDEN_NO2"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:goApply();" class="btn btn_blue"><span>확인</span></a>
+                                <a href="javascript:goFirstPage();" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+	</form>
+				<!-- footer_layer -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

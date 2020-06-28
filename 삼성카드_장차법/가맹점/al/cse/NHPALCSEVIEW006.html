@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>매출반송 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">거래내역&nbsp;&gt;&nbsp;매출반송</div>
+				<h1><img src="/images/al/h1_sell_sendingback_confirm.png" alt="매출반송조회" /></h1>
+				<p class="ab_br"><img src="/images/al/img_cardlist.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+			
+
+				<table class="dtable02" summary="사업자번호, 가맹점번호, 가맹점명, 삼성카드접수일로  매출반송 내역 을 조회할 수 있는 게시판입니다 ">
+				<caption>매출반송 내역 조회</caption>
+				<colgroup><col width="115" /><col width="200" /><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p>사업자 번호</p></th>
+						<td><p class="t_no"><% if(cmem.getBusiNO() != null){ out.write(HpCommonUtil.convPatternString(1, cmem.getBusiNO(), "-"));} %></p></td>
+						<th scope="row"><p>가맹점 번호</p></th>
+						<td><p class="t_no"><%=mem.getIdenNo() %></p></td>
+					</tr>
+					<!-- //loop -->
+					<tr>
+						<th scope="row"><p>가맹점 명</p></th>
+						<td colspan="3"><p><%=cmem.getBoardName() %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>삼성카드 접수일</p></th>
+						<td colspan="2" id="id_cal_wrap"><div class="reset_date">
+							<fileTag:dblCalendarAddIfNoVal calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate() %>' 
+                                                                                                endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>'/>							
+						</div></td>
+						<td>
+                        <a href="javascript:fncGetSendBackList('search');" class="btn btn_s_blue"><span>조회</span></a>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+
+				<!-- btn -->
+				<div class="btnset">
+					<p class="btnl t_desc04">접수기간을 입력하신 후 조회버튼을 클릭하여 주십시오. (접수일 입력 예 : 2000.08.07)</p><!-- 100421 -->
+				</div>
+
+
+				<div class="tb_exp clfix mt30">
+					<span class="t_black"><strong>가맹점 매출전표 반송내역</strong></span>
+				</div>
+
+<!-- 100121 -->
+				<table class="dtable01" summary="가맹점 매출전표 반송내역(매출일, 접수일, 카드번호, 금액, 할부개월, 반송확정일, 반송사유, 우편 발송일, 발송방법,  회송일, 회송사유, 회송 처리일)을 확인하실 수 있는 게시판입니다.">
+				<caption>가맹점 매출전표 반송내역 게시판</caption>
+				<colgroup><col width="10%" /><col width="20%" /><col width="14%" /><col width="14%" /><col width="14%" /><col width="14%" /><col width="14%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10 boline_b0 riline">매출일</th>
+						<th scope="col" rowspan="2" class="riline">카드번호</th>
+						<th scope="col" class="boline_b0">금액</th>
+						<th scope="col" class="boline_b0">반송확정일</th>
+						<th scope="col" class="boline_b0">우편 발송일</th>
+						<th scope="col" class="boline_b0 riline">회송일</th>
+						<th scope="col" rowspan="2">회송 처리일</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_l10 riline">접수일</th>
+						<th scope="col">할부개월</th>
+						<th scope="col">반송사유</th>
+						<th scope="col">발송방법</th>
+						<th scope="col" class="riline">회송사유</th>
+					</tr>
+				</thead>
+				<tbody>
+<%
+	if(resultList.size()>0){
+		for(int i=0; i<resultList.size(); i++){
+			cvo = (ITCHREJECTLISTTTCVO)resultList.get(i);
+%>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10 t_no riline"><%=cvo.getUsedDate() %></td>
+						<td class="t_no riline" rowspan="2"><%=cvo.getCardNo() %></td>
+						<td class="t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getUsedAmount())) %></td>
+						<td class="t_no"><%=cvo.getReturnDate() %></td>
+						<td class="t_no"><%=cvo.getPostSendDate() %></td>
+						<td class="t_no riline">
+							<%if((cvo.getResponseDate() == null) || (cvo.getResponseDate().equals(""))){ %> 
+							<%}else{ %>	<%=cvo.getResponseDate() %>
+							<%}%>
+						</td>
+						<td class="t_no" rowspan="2">
+							<%if((cvo.getResponseTreat() == null) || (cvo.getResponseTreat().equals(""))){ %> 
+							<%}else{ %>	<%=cvo.getResponseTreat() %>
+							<%}%>
+						</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 t_no riline"><%=cvo.getReceiveDate() %></td>
+						<td class="t_no"><script>cnvInsMonth(<%=cvo.getInstallmentMon()%>)</script></td>
+						<td><%=cvo.getReturnReason() %></td>
+						<td><%if (cvo.getPostGubun()=="1"){%> 등기 
+							<%}else if(cvo.getPostGubun()=="2"){ %> 일반우편
+							<%} %>
+						</td>
+						<td class="riline"><script>cnvReasonCode(<%= cvo.getResponseReasonCode()%>)</script> </td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline cell_bg">회원성명</td>
+						<td colspan="4" class="cell_l10 riline"><%= cvo.getMemberName() %></td>
+						<td class="riline cell_bg">전화번호</td>
+						<td class="t_no"><%=cvo.getPhoneNo1() %>-<%=cvo.getPhoneNo2() %>-<%=cvo.getPhoneNo3() %></td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline cell_bg">반송사유</td>
+						<td colspan="4" class="cell_l10 riline"><%=cvo.getReturnDetail() %></td>
+						<td class="riline cell_bg">처리상태</td>
+						<td class="t_no"><%if("1".equals(cvo.getTreatSatus())){ %> 반송
+										<%}else if("2".equals(cvo.getTreatSatus())){ %> 당사처리
+										<%} %>
+						</td>
+					</tr>
+					<tr>
+						<td class="cell_l10 riline cell_bg">처리방법</td>
+						<td colspan="6" class="cell_l10"><%=cvo.getTreatMethod() %></td>
+					</tr>
+					<!-- //loop -->
+<%
+		}
+	}else{
+%>
+					<!-- 데이타가 없을 경우 -->
+					<tr class="nodata">
+						<td colspan="7">기간에 해당하는 데이타가 없습니다.<br />조회하고자 하는 년월일을 입력하시고 다시 조회하십시오</td>
+					</tr>
+<%
+	}	
+%>
+					
+				</tbody>
+				</table>
+	<%
+	if(resultList.size() >0){
+	%>
+					
+				<!-- paginate -->
+				<!-- 페이징 -->
+				<div class="paginate">
+					${_page}
+					</div>
+				</div>
+				<!-- //페이징 -->
+	<%} %>			
+			</div>
+
+		</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+
+
+</body>
+</html>

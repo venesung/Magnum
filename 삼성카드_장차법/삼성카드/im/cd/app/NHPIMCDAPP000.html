@@ -1,0 +1,457 @@
+<%
+/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDAPP001.jsp
+ * Description : 카드신청 약관동의
+ * Author: 삼성SDS 유재연 선임
+ * Created on 2010. 03. 24.
+ *
+ * COPYRIGHT 2010 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">카드신청 테스트</div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<div id="tab_script">
+
+<script type="text/javascript">
+
+function directApply() {
+	var cardCode = document.frmDirectApply.cardCode.value;
+
+	if (cardCode == "") {
+		alert("카드코드를 입력하세요");
+		document.frmDirectApply.cardCode.focus();
+		return;
+	} else if (!document.frmDirectApply.brand[0].checked
+			&& !document.frmDirectApply.brand[1].checked
+			&& !document.frmDirectApply.brand[2].checked
+			&& !document.frmDirectApply.brand[3].checked) {
+		alert("브랜드를 선택하세요");
+		return;
+	}
+
+	var localYn = "N";
+	var masterYn = "N";
+	var visaYn = "N";
+	var amexYn = "N";
+
+	if (document.frmDirectApply.brand[0].checked) localYn = "Y";
+	if (document.frmDirectApply.brand[1].checked) masterYn = "Y";
+	if (document.frmDirectApply.brand[2].checked) visaYn = "Y";
+	if (document.frmDirectApply.brand[3].checked) amexYn = "Y";
+
+	goCardApp(cardCode, localYn, masterYn, visaYn, amexYn, "N")
+}
+
+function goCardApp(cardCode, localYn, masterYn, visaYn, amexYn, familyYn) {
+	if(familyYn == "Y") {
+		goFamilyOnlyApp();
+	} else {
+
+		var param = "cardCode=" + cardCode;
+
+		if(localYn=="Y") {
+			param += "&brand=01";
+		} else if(masterYn=="Y") {
+			param += "&brand=02";
+		} else if(visaYn=="Y") {
+			param += "&brand=03";
+		} else if(amexYn=="Y") {
+			param += "&brand=04";
+		}
+
+		if(document.getElementById("inviteNo").value) {
+			param += "&inviteNo=" + inviteNo;
+		}
+
+		if (confirm("퉵?")) {
+			goTabPageWithParam('NHPIMCDAPP201M001', param);
+		} else {
+			var uri = "/hp/im/cd/cardApp.do?method=popupStyle&" + param;
+			window.open (uri, "POP_CARD_APPLY", "width=970,height=900, scrollbars=yes, toolbar=no, status=yes, resize=no, menubar=no");
+		}
+	}
+}
+
+function goFamilyOnlyApp() {
+	goTabPageWithParam('NHPIMCDAPP201M001', "familyOnlyYn=Y");
+}
+
+function goAnystyleApp() {
+	window.open("/anystyle/aniStyleCard.html", "AnyStyleCardApply", "toolbar=no, status=yes, width=1024, height=768, menubar=no");
+	//goTabPageWithParam('NHPIMCDAPP201M001', "anyStyleYn=Y");
+}
+
+function goSpouseCardApp() {
+	tabSubmit("/hp/im/cd/app101.do?method=moveSpouseCardApplyInsertForm", document.frmDirectApply);
+}
+
+
+
+</script>
+</div>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">카드신청 테스트 링크 List</h1>
+</div>
+
+<!-- content_block -->
+
+<div class="content_block content_block_card clfix">
+	<div class="content_block_inner">
+		<div class="content_block_inner fill_joinin">
+			<center>
+			<form name="frmDirectApply">
+			카드코드 : <input type="text" name="cardCode" maxlength="5" size="5"/> /
+			브랜드 : <input type="radio" name="brand" value="00"/> 국내
+			<input type="radio" name="brand" value="01"/> 마스터
+			<input type="radio" name="brand" value="02"/> 비자
+			<input type="radio" name="brand" value="03"/> 아멕스
+			<input type="button" value="카드신청" onClick="directApply()"/>
+			<br/><br/>
+			INVITE NO : <input type="text" name="inviteNo" id="inviteNo"/>
+			&nbsp;&nbsp;&nbsp;
+			<a href="javascript:goAnystyleApp();"><font color="blue"><b>☞애니스타일신청</b></font></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="javascript:goFamilyOnlyApp();"><font color="blue"><b>☞가족카드신청</b></font></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="javascript:goSpouseCardApp();"><font color="blue"><b>☞배우자카드신청</b></font></a>
+			</form>
+			</center>
+			<br/>
+
+<table class="dtable01" summary="카드코드/명, 국내전용, 마스터, 비자, 아맥스, 가족카드, 교통기능, SFC, 셀디, 체크, 체크은행 코드/명, 무이자, 바로할인, 플래티늄, 체크구분 등의 카드정보 리스트입니다." style="width:850px">
+<caption>카드정보</caption>
+<colgroup><col width="50" /><col width="150" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="65" /><col width="*" /></colgroup>
+<thead>
+<TR>
+	<TH scope="col" colspan="2" rowspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" rowspan="2" class="riline">국내<br/>전용</TH>
+	<TH scope="col" rowspan="2" class="riline">마스터</TH>
+	<TH scope="col" rowspan="2" class="riline">비자</TH>
+	<TH scope="col" rowspan="2" class="riline">아맥스</TH>
+	<TH scope="col" rowspan="2" class="riline">가족<br/>카드</TH>
+	<TH scope="col" rowspan="2" class="riline">교통<br/>기능</TH>
+	<TH scope="col" rowspan="2" class="riline">SFC</TH>
+	<TH scope="col" rowspan="2" class="riline">셀디</TH>
+	<TH scope="col" rowspan="2" class="riline">체크</TH>
+	<TH scope="col" colspan="2" rowspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" rowspan="2" class="riline">무이자</TH>
+	<TH scope="col" rowspan="2" class="riline">바로<br/>할인</TH>
+	<TH scope="col" rowspan="2" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" rowspan="2" class="riline">체크<br/>구분</TH>
+</TR>
+</thead>
+<tbody>
+<TR><TD>11108</TD><TD>삼성카드 애니패스</TD><TD><a href="javascript:goCardApp('11108','Y','','','','');">Y</a></TD><TD><a href="javascript:goCardApp('11108','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('11108','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('11108','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>12049</TD><TD>아시아나 지엔미 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('12049','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('12049','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('12049','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>12337</TD><TD>르노삼성자동차 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('12337','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('12337','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('12337','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>12453</TD><TD>이마트 빅보너스 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('12453','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('12453','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('12453','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13003</TD><TD>삼성 아메리칸엑스프레스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13003','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('13003','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13438</TD><TD>삼성카드 플래티늄 라이프</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13438','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13438','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13453</TD><TD>삼성클래식플래티늄카드 </TD><TD>N</TD><TD><a href="javascript:goCardApp('13453','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('13453','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13453','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13595</TD><TD>삼성카드 체크카드 - 우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13595','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13602</TD><TD>삼성카드 에스마일</TD><TD>N</TD><TD><a href="javascript:goCardApp('13602','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('13602','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13602','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13654</TD><TD>S-Oil 보너스 티클래스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13654','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13656</TD><TD>S-Oil 보너스 애니패스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13656','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13658</TD><TD>S-Oil 보너스 지엔미 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13658','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13692</TD><TD>삼성카드 마이키즈 플러스</TD><TD>N</TD><TD><a href="javascript:goCardApp('13692','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('13692','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13692','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13747</TD><TD>KORAIL 멤버십 에스마일 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13747','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13748</TD><TD>KORAIL멤버십 티클래스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13748','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13749</TD><TD>KORAIL멤버십 마이키즈 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13749','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13750</TD><TD>KORAIL멤버십 빅보너스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13750','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13751</TD><TD>KORAIL멤버십 애니패스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13751','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13752</TD><TD>KORAIL멤버십 플래티늄 에스마일 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13752','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13753</TD><TD>KORAIL멤버십 플래티늄 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13753','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13754</TD><TD>KORAIL멤버십 체크카드 - 우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13754','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>13755</TD><TD>삼성카드 로즈 비자 플래티늄</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13755','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13755','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13769</TD><TD>삼성카드 체크카드 - 제일은행</TD><TD><a href="javascript:goCardApp('13769','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD></TD><TD>N</TD><TD>N</TD><TD>3</TD></TR>
+<TR><TD>13797</TD><TD>KORAIL멤버십 체크카드 - 제일은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13797','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>13866</TD><TD>삼성카드 로즈 마스타 플래티늄</TD><TD>N</TD><TD><a href="javascript:goCardApp('13866','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13866','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13935</TD><TD>삼성패밀리 빅보너스</TD><TD><a href="javascript:goCardApp('13935','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13935','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13936</TD><TD>삼성패밀리 애니패스</TD><TD><a href="javascript:goCardApp('13936','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13936','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13937</TD><TD>삼성패밀리 지엔미</TD><TD><a href="javascript:goCardApp('13937','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13937','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13939</TD><TD>삼성패밀리 아메리칸엑스프레스</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13939','','','','Y','');">Y</a></TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13940</TD><TD>KORAIL멤버십 삼성패밀리 빅보너스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13940','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>13941</TD><TD>KORAIL멤버십 삼성패밀리 애니패스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13941','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13942</TD><TD>KORAIL멤버십 삼성패밀리 지엔미카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13942','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13943</TD><TD>KORAIL멤버십 삼성패밀리 티클래스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13943','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13944</TD><TD>KORAIL멤버십 삼성패밀리 에스마일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13944','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13945</TD><TD>KORAIL멤버십 삼성패밀리 마이키즈카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13945','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13946</TD><TD>이마트 KORAIL멤버십 티클래스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('13946','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13992</TD><TD>삼성패밀리 플래티늄 스카이패스</TD><TD>N</TD><TD><a href="javascript:goCardApp('13992','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>13996</TD><TD>삼성패밀리 스카이패스</TD><TD>N</TD><TD><a href="javascript:goCardApp('13996','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13999</TD><TD>삼성패밀리 플래티늄 에스마일</TD><TD>N</TD><TD><a href="javascript:goCardApp('13999','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>14014</TD><TD>삼성셀디카드 애니패스</TD><TD><a href="javascript:goCardApp('14014','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14014','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14015</TD><TD>삼성셀디카드 지엔미</TD><TD><a href="javascript:goCardApp('14015','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14015','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14017</TD><TD>삼성셀디카드 빅보너스</TD><TD><a href="javascript:goCardApp('14017','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14017','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14018</TD><TD>삼성셀디카드 마이키즈플러스</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14018','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14088</TD><TD>삼성셀디카드 티클래스</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14088','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14191</TD><TD>지엠대우 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14191','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14191','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14205</TD><TD>야우리백화점 체크카드-제일은행</TD><TD><a href="javascript:goCardApp('14205','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD></TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>14206</TD><TD>야우리백화점 체크카드-우리은행</TD><TD><a href="javascript:goCardApp('14206','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD></TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>14207</TD><TD>야우리백화점 티클래스 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14207','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14207','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14208</TD><TD>삼성패밀리 야우리백화점 티클래스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14208','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14323</TD><TD>삼성셀디카드 지엔미 포인트</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14323','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14325</TD><TD>삼성셀디카드 애니패스 포인트</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14325','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14327</TD><TD>삼성셀디카드 에스마일</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14327','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD></TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14328</TD><TD>이마트 지엔미포인트 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14328','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14328','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14331</TD><TD>이마트 애니패스포인트 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14331','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14331','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14321</TD><TD>KORAIL멤버십 애니패스포인트 후불교통카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14321','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14322</TD><TD>KORAIL멤버십 지엔미포인트 후불교통카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14322','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14415</TD><TD>스카이패스 삼성아멕스</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14415','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14415','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14280</TD><TD>삼성패밀리 애니패스 포인트</TD><TD>N</TD><TD><a href="javascript:goCardApp('14280','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14282</TD><TD>삼성패밀리 지엔미 포인트</TD><TD>N</TD><TD><a href="javascript:goCardApp('14282','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14303</TD><TD>크리스챤 애니패스포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14303','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14303','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>14305</TD><TD>크리스챤 지엔미포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14305','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14305','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14312</TD><TD>CJ 애니패스포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14312','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14312','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14311</TD><TD>CJ 애니패스포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14311','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14311','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14314</TD><TD>CJ 지엔미포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14314','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14314','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14313</TD><TD>CJ 지엔미포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14313','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14313','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14350</TD><TD>이마트 KORAIL멤버십 애니패스포인트</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14350','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14351</TD><TD>이마트 KORAIL멤버십 지엔미포인트</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14351','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14421</TD><TD>삼성패밀리 스카이패스 아멕스</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14421','','','','Y','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14483</TD><TD>지엠대우슬림 삼성카드</TD><TD><a href="javascript:goCardApp('14483','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14483','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14482</TD><TD>제주항공 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14482','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14482','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14202</TD><TD>아이포도리 해양경찰성 애니패스 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14202','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14202','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14425</TD><TD>골프스카이 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14425','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14425','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14437</TD><TD>삼성패밀리 야우리백화점 지엔미포인트 카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14437','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14439</TD><TD>삼성패밀리 야우리백화점 애니패스포인트 카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14439','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14557</TD><TD>ＧＳ홈쇼핑 지엔미포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14557','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14557','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14560</TD><TD>ＧＳ홈쇼핑 애니패스포인트 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14560','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14560','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14562</TD><TD>ＧＳ홈쇼핑 티클래스 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14562','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14562','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14577</TD><TD>리브로 삼성지엔미 포인트카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14577','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14577','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14579</TD><TD>리브로 삼성애니패스 포인트카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14579','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14579','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14535</TD><TD>삼성체크 셀디카드 - 우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14535','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>1</TD></TR>
+<TR><TD>14536</TD><TD>삼성체크 셀디카드 - 제일은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14536','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14649</TD><TD>삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14649','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14649','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14652</TD><TD>에버리치 삼성체크카드 - 우체국</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14652','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1004</TD><TD>우체국</TD><TD></TD><TD>N</TD><TD>N</TD><TD>3</TD></TR>
+<TR><TD>14669</TD><TD>에버리치 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14669','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14669','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14671</TD><TD>SFC 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14671','','','','Y','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14643</TD><TD>디앤라이프 삼성 애니패스포인트 카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14643','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14643','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14639</TD><TD>디앤스타일 삼성 지엔미포인트 카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14639','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14639','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14738</TD><TD>삼성빅앤빅아멕스카드（복지몰전용）</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14738','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14738','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14742</TD><TD>삼성패밀리 삼성체크카드-새마을금고</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14742','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>Y</TD><TD>1003</TD><TD>새마을금고</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>14740</TD><TD>삼성패밀리 삼성체크카드-우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14740','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14741</TD><TD>삼성패밀리 삼성체크카드-제일은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14741','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14694</TD><TD>삼성애니패스 e포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14694','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14696</TD><TD>삼성지엔미 e포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14696','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14698</TD><TD>삼성애니패스ｅ포인트 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14698','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14700</TD><TD>삼성지엔미ｅ포인트 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14700','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14774</TD><TD>한화리조트 삼성티클래스카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14774','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('14774','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14774','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14682</TD><TD>삼성멀티카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14682','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14787</TD><TD>웅진코웨이 삼성빅앤빅 아멕스 카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14787','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14787','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14780</TD><TD>야우리백화점 삼성빅앤빅카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14780','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14780','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>13450</TD><TD>스카이패스삼성플래티늄카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('13450','','Y','','','');">Y</a></TD><TD><a href="javascript:goCardApp('13450','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('13450','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>14809</TD><TD>메가티즌 삼성지엔미  포인트 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14809','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14811</TD><TD>메가티즌 삼성애니패스 포인트 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14811','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14869</TD><TD>ＧＳ홈쇼핑 애니패스포인트 삼성 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14869','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14871</TD><TD>ＧＳ홈쇼핑 지엔미포인트 삼성 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14871','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14873</TD><TD>ＧＳ홈쇼핑 티클래스 삼성 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14873','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14901</TD><TD>삼성호남애카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14901','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14901','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14905</TD><TD>티켓링크 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14905','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14905','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14917</TD><TD>GM대우 삼성체크카드_우리은행</TD><TD><a href="javascript:goCardApp('14917','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>14929</TD><TD>삼성애니패스 포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14929','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14929','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14927</TD><TD>삼성지엔미 포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14927','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14927','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14940</TD><TD>티클래스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14940','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14940','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14918</TD><TD>GM대우 삼성체크카드_제일은행</TD><TD><a href="javascript:goCardApp('14918','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14959</TD><TD>삼성아메리칸엑스프레스골드카드(후불)</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14959','','','','Y','');">Y</a></TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14960</TD><TD>삼성아메리칸엑스프레스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14960','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14960','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14971</TD><TD>삼성디지탈프라자티클래스카드 (후불) 셀디용</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14971','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14976','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14976</TD><TD>삼성티클래스앤오일카드(S-OIL)</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14976','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('14971','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14956</TD><TD>신도림테크노마트 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14956','','','','Y','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14962</TD><TD>디앤샵 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('14962','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('14962','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15035</TD><TD>아시아나삼성패밀리플래티늄카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15035','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>15030</TD><TD>삼성부산경남애카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15030','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14896</TD><TD>야우리백화점 삼성오일앤세이브카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14896','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15039</TD><TD>SK와이번스 삼성빅앤빅 아멕스카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15039','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('15039','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15063</TD><TD>아이포도리 티클래스앤오일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15063','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15065</TD><TD>아이포도리 해양경찰 티클래스앤오일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15065','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15012</TD><TD>삼성쇼핑플래티늄카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15012','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15012','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>15057</TD><TD>LIG 티클래스앤오일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15057','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15086</TD><TD>오라클  삼성티클래스카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15086','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15086','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15088</TD><TD>오라클 삼성지엔미 포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15088','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15088','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15129</TD><TD>신세계몰 삼성티클래스앤오일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15129','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15134</TD><TD>프리머스 삼성지엔미 포인트카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15134','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15136</TD><TD>프리머스 삼성애니패스 포인트카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15136','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15132</TD><TD>프리머스 삼성티클래스앤오일카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15132','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15151</TD><TD>삼성충청애카드-GS칼텍스(일반)</TD><TD>N</TD><TD><a href="javascript:goCardApp('15151','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15153</TD><TD>삼성충청애카드-S-OIL(일반)</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15153','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15153','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15161</TD><TD>삼성대구경북애카드-GS칼텍스(일반)</TD><TD>N</TD><TD><a href="javascript:goCardApp('15161','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15163</TD><TD>삼성대구경북애카드-S-OIL(일반)</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15163','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15163','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15105</TD><TD>직능연합삼성체크카드＿우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15105','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15106</TD><TD>직능연합삼성체크카드＿제일은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15106','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15107</TD><TD>직능연합삼성체크카드＿새마을금고</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15107','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1003</TD><TD>새마을금고</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15108</TD><TD>직능연합삼성체크카드＿우체국</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15108','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1004</TD><TD>우체국</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>14972</TD><TD>삼성 오일앤세이브플러스 카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('14972','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15226</TD><TD>신라면세점  삼성빅앤빅 아멕스카드 </TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15226','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('15226','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15228</TD><TD>신라면세점 아시아나 삼성지엔미 플래티늄카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15228','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15228','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15230</TD><TD>신라면세점 아시아나 삼성애니패스 플래티늄카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15230','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15230','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15188</TD><TD>지플러스 삼성티클래스앤오일카드 </TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15188','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15232</TD><TD>삼성메디클럽카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15232','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('15232','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15259</TD><TD>삼성온라인쇼핑카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15259','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15259','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15261</TD><TD>셀디 삼성온라인쇼핑카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15261','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15302</TD><TD>삼성 티클래스앤오일 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15302','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15275</TD><TD>서울시승용차요일제삼성카드(GS칼텍스)</TD><TD>N</TD><TD><a href="javascript:goCardApp('15275','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>15273</TD><TD>서울시승용차요일제삼성카드(S-OIL)</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15273','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15290</TD><TD>서울시승용차요일제 삼성체크카드_새마을금고</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15290','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1003</TD><TD>새마을금고</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>15288</TD><TD>서울시승용차요일제 삼성체크카드_우리은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15288','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>15289</TD><TD>서울시승용차요일제 삼성체크카드_제일은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15289','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>15286</TD><TD>씨너스 삼성오일앤세이브플러스카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15286','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15311</TD><TD>삼성 아메리칸엑스프레스 블루캐시카드</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15311','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('15311','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15316</TD><TD>수원삼성블루윙즈 삼성애니패스포인트 셀디카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15316','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15318</TD><TD>삼성루와드뱅카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15318','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15336</TD><TD>대구시승용차요일제 GS칼텍스 삼성카드</TD><TD>N</TD><TD><a href="javascript:goCardApp('15336','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15337</TD><TD>대구시승용차요일제 S-OIL 삼성카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15337','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15340</TD><TD>대구시승용차요일제＿새마을금고체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15340','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1003</TD><TD>새마을금고</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15338</TD><TD>대구시승용차요일제＿우리은행체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15338','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1001</TD><TD>우리은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15339</TD><TD>대구시승용차요일제＿제일은행체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15339','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1002</TD><TD>제일은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>2</TD></TR>
+<TR><TD>15376</TD><TD>캐시백체크카드-쇼핑</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15376','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15377</TD><TD>캐시백체크카드-다이닝</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15377','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15378</TD><TD>캐시백체크카드-오토</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15378','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15379</TD><TD>삼성플래티늄체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15379','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15380</TD><TD>삼성포인트체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15380','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15382</TD><TD>신세계  애니패스포인트(일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15382','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15382','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15384</TD><TD>신세계  지엔미포인트형(일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15384','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15384','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15390</TD><TD>신세계체크카드＿애니패스포인트형</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15390','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15391</TD><TD>신세계체크카드＿지앤미포인트형</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15391','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15441</TD><TD>신세계삼성쇼핑플래티늄카드（일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15441','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15441','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>15443</TD><TD>신세계삼성에듀플래티늄카드（일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15443','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15443','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD></TD></TR>
+<TR><TD>15439</TD><TD>신세계삼성카드（일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15439','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15439','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15499</TD><TD>삼성 후불하이패스 카드</TD><TD><a href="javascript:goCardApp('15499','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15598</TD><TD>ENVY백화점 삼성지엔미포인트카드_후불</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15598','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15598','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15596</TD><TD>ENVY백화점 삼성애니패스포인트카드_후불</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15596','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15596','','','','','Y');">Y</a></TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15595</TD><TD>ENVY백화점 삼성포인트체크카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15595','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15576</TD><TD>１１번가  삼성 티클래스앤오일 카드（후불）</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15576','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR>
+	<TH scope="col" colspan="2" class="riline">카드코드/명</TH>
+	<TH scope="col" class="riline">국내<br/>전용</TH>
+	<TH scope="col" class="riline">마스터</TH>
+	<TH scope="col" class="riline">비자</TH>
+	<TH scope="col" class="riline">아맥스</TH>
+	<TH scope="col" class="riline">가족<br/>카드</TH>
+	<TH scope="col" class="riline">교통<br/>기능</TH>
+	<TH scope="col" class="riline">SFC</TH>
+	<TH scope="col" class="riline">셀디</TH>
+	<TH scope="col" class="riline">체크</TH>
+	<TH scope="col" colspan="2" class="riline">체크은행<br/>코드/명</TH>
+	<TH scope="col" class="riline">무이자</TH>
+	<TH scope="col" class="riline">바로<br/>할인</TH>
+	<TH scope="col" class="riline">플래<br/>티늄</TH>
+	<TH scope="col" class="riline">체크<br/>구분</TH>
+</TR>
+<TR><TD>15707</TD><TD>삼성ＴｈｅＡＰＴ카드  Ａ일반</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15707','','','','Y','');">Y</a></TD><TD><a href="javascript:goCardApp('15707','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15709</TD><TD>삼성ＴｈｅＡＰＴ카드  Ｌ일반</TD><TD><a href="javascript:goCardApp('15709','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15709','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15680</TD><TD>신세계ＳＦＣ티클래스</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15680','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15684</TD><TD>신세계ＳＦＣ애니패스포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15684','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15688</TD><TD>신세계ＳＦＣ지엔미포인트카드</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15688','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15705</TD><TD>하우머치  삼성티클래스앤오일</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15705','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15696</TD><TD>한화ＳｍａｒｔＣＭＡ  ＯＩＬ＆ＳＡＶＥ플러스（일반）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15696','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15721</TD><TD>삼성디지털멤버십Ｕ－ＰＯＩＮＴ카드（일반）</TD><TD><a href="javascript:goCardApp('15721','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15721','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15726</TD><TD>삼성디지털멤버십Ｕ－ＰＯＩＮＴ카드 VISA(일반)</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15726','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15726','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15728</TD><TD>삼성디지털멤버십Ｕ－ＰＯＩＮＴ카드 Master(일반)</TD><TD>N</TD><TD><a href="javascript:goCardApp('15728','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15728','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15740</TD><TD>대교 에듀아이업 삼성카드</TD><TD><a href="javascript:goCardApp('15740','Y','','','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15740','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15740','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15735</TD><TD>삼성체크카드＿경남은행</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15735','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>1005</TD><TD>경남은행</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15839</TD><TD>（국내용）삼성라이프앤패스（일반）</TD><TD><a href="javascript:goCardApp('15839','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15839','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15845</TD><TD>（비자용）삼성라이프앤패스（일반）</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15845','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15845','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15849</TD><TD>（기본）춘천  후불하이패스  카드</TD><TD><a href="javascript:goCardApp('15849','Y','','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15736</TD><TD>삼성애니카플러스  티클래스앤오일</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15736','','','Y','','');">Y</a></TD><TD>N</TD><TD><a href="javascript:goCardApp('15736','','','','','Y');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15837</TD><TD>１１번가  티클래스앤오일카드 후불（바로할인）</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15837','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15862</TD><TD>온라인쇼핑카드 후불（바로할인）</TD><TD>N</TD><TD><a href="javascript:goCardApp('15862','','Y','','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD></TR>
+<TR><TD>15863</TD><TD>신세계몰  티클래스앤오일카드（바로할인）</TD><TD>N</TD><TD>N</TD><TD><a href="javascript:goCardApp('15863','','','Y','','');">Y</a></TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD>N</TD><TD></TD><TD>N</TD><TD>N</TD><TD>Y</TD><TD>N</TD><TD></TD></TR>
+</tbody>
+</table>
+	</div>
+	</div>
+</div>
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

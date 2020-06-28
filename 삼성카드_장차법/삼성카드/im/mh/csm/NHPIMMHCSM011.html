@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li><a href="javascript:goMyAccountInfoMain()">결제일 변경</a></li>
+                                <li><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li class="on"><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_card_settlementday_modify04_01.png" alt="카드결제일 처리결과 조회 내역입니다" /></h2>
+					<div class="content_block_inner">
+						<form name="frm" method="post">
+						<table class="dtable01 dtable_inputfield" summary="신청일,구분,카드/대출번호,변경 결제일,처리결과,기능으로 구성된 카드결제일 처리결과를 확인할 수 있는 게시판입니다.">
+						<caption>카드결제일 처리결과 조회 내역</caption>
+						<colgroup><col width="16%" /><col width="18%" /><col width="20%" /><col width="18%" /><col width="18%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">신청일</th>
+								<th scope="col">구분</th>
+								<th scope="col">카드/대출번호</th>
+								<th scope="col">변경 결제일</th>
+								<th scope="col">처리결과</th>
+								<th scope="col">기능</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+						<tr>
+
+								<td class="cell_l10"><span class="t_no">0</span></td>
+								<td>개인신용카드(카드론포함)</td>
+								<td><span class="t_no">보유카드 전체</span></td>
+								<td><strong class="t_black t_no">0</strong> 일</td>
+								<td>처리중</td>
+								<td><a href="javascript:goCancelDate()" class="btn btn_white"><span>취소후 재변경 &gt;</span></a></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								
+								<td class="cell_l10">0</td>
+								<td>아하론 패스</td>
+								<td><span class="t_no">0</span></td>
+								<td><strong class="t_black t_no">0</strong> 일</td>
+								<td>완료</td>
+                                <td><a href="javascript:goReApply()" class="btn btn_white"><span>재변경 &gt;</span></a></td>
+							</tr>
+							<tr>
+								
+								<td class="cell_l10">0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span></td>
+								<td><strong class="t_black t_no">0</strong> 일</td>
+								<td>완료</td>
+                                <td><a href="javascript:goReApply()" class="btn btn_white"><span>재변경 &gt;</span></a></td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="6">변경 내역이 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+ 						</form>
+						<!-- btn -->
+
+ 						<div class="content_block_inner">
+						<p>
+						&nbsp;&nbsp;※ 결제일 변경 처리결과가 익일 반영되오니 아래 안내사항을 참조하시기 바랍니다.
+						</p>
+						
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlementday_modify04_02.png" alt="결제계좌변경 처리결과 조회 내역입니다" /></h2>
+					<div class="content_block_inner">
+						
+						<table class="dtable01 dtable_inputfield" summary="신청일,구분,카드/대출번호,변경 은행,변경 계좌번호를 포함하여 결제계좌변경 처리결과를 확인할 수 있는 게시판입니다.">
+						<caption>결제계좌변경 처리결과 조회 내역</caption>
+						<colgroup><col width="10%" /><col width="20%" /><col width="19%" /><col width="16%" /><col width="22%" /><col width="14%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">신청일</th>
+								<th scope="col">구분</th>
+								<th scope="col">카드/대출번호</th>
+								<th scope="col">변경 은행</th>
+								<th scope="col">변경 계좌번호</th>
+								<th scope="col">처리결과</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>개인카드</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>주민(사업자)등록번호불일치</td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td>법인개별</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td>오류건취소</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="6">변경 내역이 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="content_block_inner">
+						<p>
+						&nbsp;&nbsp;※ 결제계좌 변경 처리결과가 익일 반영되오니 아래 안내사항을 참조하시기 바랍니다.
+						</p>
+						
+						</div>						
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlementday_modify04_03.png" alt="결제일 변경이 불가능한 경우 안내입니다" /></h2>
+					<div class="content_block_inner">
+						
+					<ol class="list_no01">
+						<li><p>현재 연체 중이시거나, 최근 60일 이내 결제일 변경하신 경우</p></li>
+						<li><p>현금서비스 매출내역이 존재하는 회원님께서 결제일 변경 시에는 잔액 한도제 적용을 받게됩니다.<br />
+							   기존 월 한도 적용받고 있는 회원님께서는 이 점 꼭 확인하시기 바랍니다.</p></li>
+						<li><p>결제대금 완납 또는 잔액한도제 변경 후 결제일 변경이 가능합니다.</p></li>
+						<li><p>법인개별 카드의 결제일 변경을 원하시는 회원님께서는 <strong class="t_black">고객상담센터(1588-8700)</strong>으로<br />결제일 변경을 요청하시기 바랍니다.</p></li>
+					</ol>
+ 
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlementday_modify04_04.png" alt="결제계좌변경 안내입니다" /></h2>
+					<div class="content_block_inner">
+						
+						<ol class="list_no01">
+							<li><p>변경 신청 하신 다음날부터 변경된 계좌에서 출금 됩니다. <br />
+								   ※ 단, 수협, 상호저축, HSBC은행, 제이피모간체이스은행, 산림조합중앙회, 도이치뱅크 및 동양·삼성증권을<br />
+								   <span class="pl15"> 제외한   타 증권사 계좌는 2~3일 정도 후부터 출금 됩니다. </span><br />
+								   <span class="pl15"> 상기 은행 및 증권사 계좌로 변경 시 계좌번호 오류, 주민번호 오류 등 계좌상태를 확인하여 불일치 시</span><br />
+								   <span class="pl15"> 익일 자동이체가 해지될 수 있으니 이점 유의하시기 바랍니다.</span></p></li>
+							<li><p>자동이체 처리 오류건은 회원님의 E-mail 주소로 익일 오류 사유를 안내해 드리오니,<br />E-mail 주소를 확인하여 주시기 바랍니다.</p></li>
+						</ol>
+ 
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

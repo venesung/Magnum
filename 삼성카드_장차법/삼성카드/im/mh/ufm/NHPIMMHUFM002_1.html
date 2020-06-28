@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_info_viewchange.png" alt="회원님의 신상정보를 조회, 변경하실 수 있습니다" /></h1>
+				</div>
+
+				<!-- tab_area -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="tab02 w810">
+						<ul>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHUFM001M001', true);">회원정보조회ㆍ변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUOM001', true);">부가정보조회ㆍ변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHUFM006', true);">웹회원비밀번호변경</a></li>
+						</ul>
+					</div>
+				<!-- 100219 : 콘텐츠 레이아웃 및 내용 변경 (table 변경사항 없음) -->
+
+					<div class="top_step_change_profile top_step_change_profile02">
+						<ol class="none">
+							<li>본인확인</li>
+							<li><abbr>현재단계</abbr> <strong>정보변경</strong></li>
+							<li>변경완료</li>
+						</ol>
+					</div>
+
+					<h2><img src="/images/mh/h2_info_viewchange01.png" alt="고객님의 기본정보를 변경 하세요" /></h2>
+					<div class="content_block_inner">
+
+						<div class="tb_exp">
+							<span>회원님이 보유하신 모든 카드 및 할부금융의 기본 및 주소정보가 동시에 변경됩니다.</span>
+						</div>
+
+						<table class="dtable02 dtable_inputfield" summary="이름 (한글), 이름 (영문), 주민등록번호, 실제생일, 휴대폰번호, 이메일주소, 기혼/미혼 여부, 결혼기념일, 배우자생일, 자녀유무, 자녀생일등의 기본정보를 확인하고 변경하는 게시판 입니다.">
+						<caption>기본정보 변경</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+
+							<tr>
+								<th scope="row"><p>이름 (한글)</p></th>
+								<td><p></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>이름 (영문)</p></th>
+								<td><p class="input_name"><input name="yname" type="text" class="txt" value="" title="이름 (영문)" maxlength="20" style="ime-mode:disabled" id="label_eng_name" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p class="t_no"></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>실제생일</p></th>
+								<td>
+									<p class="input_birth">
+
+										<input type="text" name="birth_yyyy" class="txt" value="" title="태어난 년도 입력" maxlength="4" style="ime-mode:disabled" />&nbsp;년&nbsp;
+										<select name="birth_mm" title="태어난 달 선택">
+											<option value=""></option>
+										</select>&nbsp;월&nbsp;
+										<select name="birth_dd" title="태어난 일 선택">
+											<option>00</option>
+										</select>&nbsp;일
+										<span class="detail">
+											<label for="id_birth_sun2"><input type="radio" class="chk" value="1" title="양력" id="id_birth_sun2" name="birth_gubun2" />&nbsp;양력</label>
+											<label for="id_birth_moon2" class="ml10"><input type="radio" class="chk" value="2" title="음력" id="id_birth_moon2" name="birth_gubun2" />&nbsp;음력</label>
+										</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>휴대폰번호</p></th>
+								<td>
+									<p class="input_phone">
+										<select name="hand_phone1" size = "1" title="휴대폰 앞자리">
+											<option>00</option>
+										</select>-
+										<input type="text" name="hand_phone2" size="4" maxlength="4" value="" class="txt" title="휴대폰 가운데자리" style="ime-mode:disabled" />-
+										<input type="text" name="hand_phone3" size="4" maxlength="4" value="" class="txt" title="휴대폰 뒷자리" style="ime-mode:disabled" />
+										<!-- SR내역 13.03.29 시작 -->
+										<p class="mt10">휴대폰 변경: <a href="javascript:certifyPhoneNo(change_content, 'H')" class="btn btn_s_white"><span>휴대폰인증으로 변경</span></a><a href="javascript:certifyPhoneNo(change_content,'C')" class="btn btn_s_white"><span>공인인증으로 변경</span></a></p>
+                                        <p class="t_desc03 mt5">휴대폰번호 변경은 본인 명의 휴대폰이나 공인인증을 통해서 가능합니다. <br />본인 명의 휴대폰이나 공인인증이 없을 경우 고객센터(1588-8700)를 통해 문의해주세요.</p>
+										<!-- SR내역 13.03.29 끝 -->
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>이메일주소</p></th>
+								<td>
+									<p class="input_email">
+										<input name="emailid" type="text" size="10"  maxlength="48" class="txt" value="" title="이메일 아이디 입력" id="label_email" style="ime-mode:disabled" />&nbsp;@&nbsp;
+										<input name="emailaddr" size="18" maxlength="40" type="text" class="txt" value="" title="이메일 공급자 직접입력" style="ime-mode:disabled" />
+										<select name="selemail" title="이메일 공급자 선택">
+                    						<option value="" selected="selected">직접입력</option>
+										</select>
+										<a href="javascript:searchEmail()" class="btn btn_s_white" title="새창"><span>중복조회</span></a>
+									</p>
+									<p class="t_desc03 mt10">핫메일(Hotmail을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>기혼/미혼 여부</p></th>
+								<td><p>
+									<label for="label_marry01"><input type="radio" class="chk" id="label_marry01" name="marry" title="기혼"  value="Y" />&nbsp;기혼</label>
+									<label for="label_marry02" class="ml10"><input type="radio" class="chk" id="label_marry02" name="marry" title="미혼" value="N" />&nbsp;미혼</label>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>결혼기념일</p></th>
+								<td>
+									<p class="input_birth">
+											<input type="text" name="marryday1" class="txt" maxlength="4" value="" style="ime-mode:disabled" title="결혼기념일 년도 입력" />&nbsp;년&nbsp;
+											<select name="marryday2" title="결혼기념일 달 선택">
+											<option value="">00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="marryday3" title="결혼기념일 일 선택">
+											<option value="">00</option>
+										</select>&nbsp;일
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>배우자생일</p></th>
+								<td>
+									<p class="input_birth">
+
+										<input name="youthday1" type="text" class="txt" value="" title="배우자생일 년도 입력" maxlength="4" style="ime-mode:disabled" />&nbsp;년&nbsp;
+										<select name="youthday2" title="배우자생일 달 선택">
+											<option value="">00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="youthday3" title="배우자생일 일 선택">
+											<option >00</option>
+										</select>&nbsp;일
+										<span class="detail">
+											<label for="id_birth_sun"><input type="radio" class="chk" value="1"   title="양력" id="id_birth_sun" name="youthdayGbn" />&nbsp;양력</label>
+											<label for="id_birth_moon" class="ml10"><input type="radio" class="chk" value="2"  title="음력" id="id_birth_moon" name="youthdayGbn" />&nbsp;음력</label>
+										</span>
+									</p>
+								</td>
+							</tr>
+							
+<!-- 추가 110428 -->
+							<tr>
+								<th scope="row"><p>자녀유무</p></th>
+								<td>
+									<p>
+										<label for="label_children01"><input type="radio" class="chk" onclick="childYnClick('1');" id="label_children01" value="Y" name="CHILD_YN" title="자녀 있음" />&nbsp;유</label>
+										<label for="label_children02" class="ml10"><input type="radio" class="chk" onclick="childYnClick('2');" id="label_children02" value="N" name="CHILD_YN" title="자녀 없음" checked="checked" />&nbsp;무</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>자녀생일</p></th>
+								<td>
+									<p class="input_birth">
+
+										<input  name="children_birth_day1" type="text" class="txt" value="" title="자녀생일 년도 입력" maxlength="4" style="ime-mode:disabled" onkeypress="checkLenN(this, 4, change_content.children_birth_day2 );checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" />&nbsp;년&nbsp;
+										<select name="children_birth_day2" title="자녀생일 달 선택">
+											<option value="">00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="children_birth_day3" title="자녀생일 일 선택">
+											<option value="">00</option>
+										</select>&nbsp;일
+										<span class="detail">
+											<label for="id_children_birth_sun"><input  type="radio" class="chk" value="1"   title="양력" id="id_children_birth_sun" name="children_birth_dayGbn" />&nbsp;양력</label>
+											<label for="id_children_birth_moon" class="ml10"><input  type="radio" class="chk" value="2"  title="음력" id="id_children_birth_moon" name="children_birth_dayGbn" />&nbsp;음력</label>
+										</span>
+									</p>
+								</td>
+							</tr>
+<!--// 추가 110428 -->
+							
+						</tbody>
+						</table>
+						<ol class="list_desc">
+							<li><p>SMS문자도우미를 이용하시는 회원님께서는 휴대전화번호 수정 후, 인증번호 버튼을 클릭하신 후<br />인증번호를 입력해 주십시오. 오전 06시~07시 30분 사이 휴대폰번호 변경 시 다음날 오전8시부터 <br />적용되며 06시~07시 30분 이외의 시간에 변경해주시면 실시간으로 서비스 적용됩니다.</p></li>
+							<li><p>법인카드 이메일주소는 별도로 청구지 정보화면에서 변경하실 수 있습니다.</p></li>
+						</ol>
+					</div>
+
+				<h2><img src="/images/mh/h2_info_viewchange02.png" alt="자택/직장 정보를 변경 하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="자택주소, 자택전화번호, 직장주소, 직장전화번호, 직장명(기업형태/직장군/업종/직군), 부서명, 직위, 예외전화번호등의 자택/직장 정보를 확인하고 변경하는 게시판 입니다.">
+						<caption>자택/직장 정보 변경</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>자택주소</p></th>
+								<td><p>
+									<span class="input_zip">
+										<input name="home_zip_1" type="text" class="txt" value="" maxlength="3" title="우편번호 앞자리" />&nbsp;-&nbsp;
+										<input name="home_zip_2" type="text" class="txt" value="" maxlength="3" title="우편번호 뒷자리" />
+										   <a href="#" class="btn btn_s_white" title="새창" id="label_home_address"><span>우편번호조회</span></a></span>
+									<span class="input_address">
+										<input name="home_addr_area" type="text" class="txt" value="" title="주소" readonly="readonly" />
+										<input name="home_addr_dist" type="text" class="txt" value="" maxlength="50"  title="상세주소" readonly="readonly" />
+									</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>자택전화번호</p></th>
+								<td>
+									<p class="input_phone">
+
+										<select name="home_phone1" title="자택전화번호 앞자리">
+											<option value="">없음</option>
+
+										</select>&nbsp;-&nbsp;
+										<input name="home_phone2" type="text" class="txt" value="" title="자택전화번호 가운데자리" maxlength="4" style="ime-mode:disabled" />&nbsp;-&nbsp;
+										<input name="home_phone3" type="text" class="txt" value="" title="자택전화번호 뒷자리" maxlength="4" style="ime-mode:disabled" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직장주소</p></th>
+								<td><p>
+									<span class="input_zip">
+										<input name="office_zip_1" type="text" class="txt" value="" title="우편번호 앞자리" />&nbsp;-&nbsp;
+										<input name="office_zip_2" type="text" class="txt" value="" title="우편번호 뒷자리" />
+										<a href="#" class="btn btn_s_white" title="새창" id="label_work_address"><span>우편번호조회</span></a></span>
+									<span class="input_address">
+										<input name="office_addr_area" type="text" class="txt" value="" title="주소" readonly="readonly" />
+										<input name="office_addr_dist" type="text" class="txt" value="" maxlength="50" title="상세주소" readonly="readonly" />
+									</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직장전화번호</p></th>
+								<td>
+									<p class="input_phone">
+										<select name="office_phone1" title="직장전화번호 앞자리">
+											<option value="">없음</option>
+										</select>&nbsp;-&nbsp;
+                                        <input name="office_phone2" type="text" maxlength="4" class="txt" value="" title="직장전화번호 가운데자리" />&nbsp;-&nbsp;
+                                        <input name="office_phone3" type="text" maxlength="4" class="txt" value="" title="직장전화번호 뒷자리" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직장명<br />기업형태/직장군<br />업종/직군</p></th>
+								<td><p class="mt0">
+
+									<span class="input_work_name"><input name="company_name" type="text" class="txt" value="" maxlength="30" onkeyup="checkEnter();" title="직장명" />
+									<a href="/hp/im/mh/cns001.do?method=moveForm001&amp;company=" onclick="popSize_no('/hp/im/mh/cns001.do?method=moveForm001&amp;company=','470','490');return false;" class="btn btn_s_white" title="새창"><span>직장명조회</span></a></span>
+									<span class="input_work_type">
+										<select name="etc_fdc" title="기업형태">
+											<option value="">----선택하세요----</option>
+										</select>&nbsp;
+										<input type="hidden" name="etc_fdc_name" value="" maxlength="30" />
+										<select name="offg_c" title="직장군">
+											<option value="">----선택하세요----</option>
+										</select>&nbsp;
+										<input type="hidden" name="offg_c_name" value="" maxlength="30" />
+									</span>
+									<span class="input_work_type">
+										<select name="btc" title="업종">
+											<option value="">----선택하세요----</option>
+										</select>&nbsp;
+										<input type="hidden" name="btc_name" value="" maxlength="30" />
+										<select name="occg_c" title="직군">
+											<option value="">----선택하세요----</option>
+										</select>
+										<input type="hidden" name="occg_c_name" value="" maxlength="30" />
+									</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>부서명</p></th>
+								<td><p class="input_name"><input name="dept_name" type="text" class="txt" value="" maxlength="20" title="부서명" id="label_department_name" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직위</p></th>
+								<td><p>
+									<select name="psit_c" onchange='changeToType2(1)' title="직위" id="label_position">
+										<option value="" >----선택하세요----</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>예외전화번호</p></th>
+								<td><p>
+									<select name="frontDDD" title="예외전화번호 국번선택">
+											<option>000</option>
+										</select>&nbsp;-&nbsp;
+										<input type="text" maxlength="4" class="txt" name="frontExno" value="" onblur="checkTypesOnBlur(this, 'TELNO')" title="예외전화번호 중간자리 입력"  />&nbsp;-&nbsp;
+										<input type="text" maxlength="4" class="txt" name="frontTlno" value="" onblur="checkTypesOnBlur(this, 'TELNO')" title="예외전화번호 마지막자리 입력" />&nbsp;&nbsp;
+										<!-- //'00':본인,'01':가족,'02':친구,'03':친척,'04':미확인,'99':기타 -->
+										<select name="frontRel" title="전화번호 소유주 선택">
+										<option>000</option>
+										</select>
+								</p></td>
+							</tr>
+							<tr>
+								<td colspan="2">※ 기존 전화번호 외 본인과 연락 가능한 가족/친구/친척 등의 대체 전화번호 (초기 등록: 고객센터 1588-8700)</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+
+					<h2><img src="/images/mh/h2_info_viewchange03.png" alt="기타 청구지 주소를 변경 하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="기타 청구지 주소와 전화번호를 확인하고 변경하는 게시판 입니다.">
+						<caption>기타 청구지 주소 정보 변경</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>전화번호</p></th>
+								<td>
+									<p class="input_phone">
+										<select name="bill_phone1" title="전화번호 앞자리" onchange="clearField('bill_phone1','bill_phone2','bill_phone3');">
+											<option value="">없음</option>
+										</select>&nbsp;-&nbsp;
+										<input type="text" name="bill_phone2" class="txt"  value="" title="전화번호 가운데자리" maxlength="4" onkeypress="checkLenN(this, 4, change_content.bill_phone3);" onblur="checkTypesOnBlur(this, 'TELNO');" />&nbsp;-&nbsp;
+										<input type="text" name="bill_phone3" class="txt" value="" title="전화번호 뒷자리" maxlength="4" onkeydown="checkLenB(this, change_content.bill_phone2 )" onblur="checkTypesOnBlur(this, 'TELNO');"  />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주소</p></th>
+								<td><p>
+									<span class="input_zip"><input type="text" name="bill_zip_1" class="txt" value="" title="우편번호 앞자리" />&nbsp;-&nbsp;
+									<input type="text" name="bill_zip_2" class="txt" value="" title="우편번호 뒷자리" />
+									  <a href="#" class="btn btn_s_white" title="새창" id="label_payhome_address"><span>우편번호조회</span></a></span>
+									<span class="input_address">
+									<input name="bill_addr_area" type="text" class="txt" value="" title="주소" readonly="readonly"  />
+									<input name="bill_addr_dist" type="text" class="txt" value="" maxlength="50" title="상세주소" readonly="readonly" /></span>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+
+					</div>
+			</div>
+					
+			<div class="content_block clfix pt30">
+				<!-- btnset -->
+				<div class="btnset">
+					<p class="btnc">
+                        <a href="javascript:update_user_info();"><img src="/images/sp/btn_confirm.png" border="0" alt="확인" /></a>
+                        <a href="javascript:goMemberInfo();"><img src="https://www.samsungcard.com/images/sp/btn_cancel.png" border="0" alt="취소" /></a>
+					</p>
+				</div>
+			</div>
+				<!-- //100219 -->
+				<!-- footer_layer -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

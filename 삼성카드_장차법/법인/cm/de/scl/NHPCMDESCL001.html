@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>매출 취소내역 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<fileTag:pagingParameter cPage="<%= vos.getcPage() %>" pageSize="<%= vos.getPageSize() %>" srchFg="N" />
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_selling_cancel_list.png" alt="매출 취소내역" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<div class="btnset">
+						<p class="btnl mt18">페이지 내 정보를 엑셀다운로드 받거나 인쇄하실 수 있습니다.<br />인쇄 時 페이지설정은 "가로"로 설정 후 출력하세요.</p>
+						<p class="btnr"><a href="" name="excelATag" onClick="saveExcel(this);" class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+
+					<ol class="list_no01 mt30">
+						<li><p>최근 6개월의 매출취소내역을 조회하실 수 있습니다.</p></li>
+						<li><p>매출취소내역의 검색기간은 <strong class="t_black">최대 2개월</strong>입니다.</p></li>
+					</ol>
+
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="이용기간을 통해 카드 검색을 하실 수 있습니다.">
+					<caption>카드 검색</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>이용기간</p></th>
+							<td><p>
+							<span class="reset_date">
+								<fileTag:dblCalendarAddIf calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate() %>'
+                                                                                                   endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>' />
+                               </span>
+							</p></td>
+						</tr>
+
+					</tbody>
+					</table>
+
+					<div class="btnr"><a href="javascript:search()" class="btn btn_blue"><span>조회</span></a></div>
+
+					<h2><img src="/images/cm/h2_payment_info.png" alt="결제정보" /></h2>
+
+				<div id="printDiv">
+					<table class="dtable02 mt10" summary="결제정보(카드명, 카드번호, 회원명)를 확인할수 있는 게시판입니다">
+					<caption>결제정보</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드명</p></th>
+							<td><p>삼성카드</p></td>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p class="t_no">0000-0000-0000-0000</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>회원명</p></th>
+							<td colspan="3"><p>홍길동</p></td>
+						</tr>
+					</tbody>
+					</table>
+					<!-- board_list 100629 -->
+					<div class="d_easy mt20" tabindex="0">
+						<table class="dtable01" summary="매출취소내역(승일인자, 승인시각, 가맹점명, 가맹점사업자번호, 결제일, 승인번호, 사용금액 등) 정보를 볼 수 있는 게시판입니다.">
+						<caption>매출취소내역</caption>
+						<colgroup><col width="9%" /><col width="8%" /><col width="8%" /><col width="27%" /><col width="14%" /><col width="10%" /><col width="9%" /><col width="15%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a">번호</th>
+								<th scope="col">승인일자</th>
+								<th scope="col">승인시각</th>
+								<th scope="col" class="cell_l10">가맹점명</th>
+								<th scope="col">가맹점사업자번호</th>
+								<th scope="col">결제일</th>
+								<th scope="col">승인번호</th>
+								<th scope="col" class="cell_r10">사용금액(원)</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td class="cell_l10a">1</td>
+							<td></td>
+							<td></td>
+							<td class="cell_l10"><span class="nobreak_nolink w150"></span></td>
+							<td></td>
+							<td></td>
+							<!-- <td class="t_no"><//%=HpCommonUtil.convertYYMMDDComma(vo.getSale_cancel_date()) %></td> -->
+							<td></td>
+							<td class="cell_r10"><span class="p_nowrap">123</span></td>
+						</tr>
+						<!-- //loop -->
+					</tbody>
+					</table>
+					</div>
+					<p class="btnr"><a href="javascript:goMenu('/scl.do?method=selectCardInfoList');" class="btn btn_white"><span>목록</span></a></p>
+
+					<!-- paginate -->
+					<div class="paginate">
+						1
+					</div>
+				</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+<form method="post" name="frm">
+</form>
+</body>
+
+
+</html>

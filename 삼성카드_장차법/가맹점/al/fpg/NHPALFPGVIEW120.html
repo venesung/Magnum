@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>신규Mall등록 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;<a href="/scchainquickmenu.do?method=selectFpg110">PG MALL 관리</a>&nbsp;&gt;&nbsp;신규Mall등록</div>
+				<h1><img src="/images/al/h1_pgmall_new_mall.png" class="png24" alt="신규Mall등록" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_pgmall_new_mall.png" class="png24" alt="신규 Mall을 등록하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p>				
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+
+
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_pgmall_new_mall.png" alt="신규 가맹점 정보를 입력해 주세요" /></h2></div>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02 dtable_inputfield" summary="사업자 번호, Submall 업체명, 업종, 대표자명, 대표자 주민번호, 주소, 전화번호, 도메인 등 신규 가맹점 정보를 입력 할 수 있습니다.">
+						<caption>신규 가맹점 정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<!--thead><tr class="nowidth"><th width="115"></th><th width="*"></th></tr></thead-->
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">사업자 번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_com_num">
+                                        <input type="text" class="txt" value="" title="사업자 번호 앞자리" name="businessNo1" maxlength="3" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" onkeyup="lengthCheck1(this.value)" />&nbsp;-&nbsp;
+                                        <input type="text" class="txt" value="" title="사업자 번호 가운데자리" name="businessNo2" maxlength="2" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" onkeyup="lengthCheck2(this.value)" />&nbsp;-&nbsp;
+                                        <input type="text" class="txt" value="" title="사업자 번호 뒷자리" name="businessNo3" maxlength="5" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" />
+										<input type="hidden" name="businessNo" value="" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_submall">Submall 업체명</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_submall"><input type="text" class="txt" value="" id="label_submall" name="mallName" maxlength="40" /></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_b_type">업종</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="label_b_type">
+										<fileTag:pgMallGubunSelect></fileTag:pgMallGubunSelect>
+										<input type="hidden" name="businessType" />
+										<input type="hidden" name="businessCode" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_name">대표자명</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_name"><input type="text" class="txt" value="" id="label_name" name="spotName" maxlength="20" /></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">대표자 주민번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_idno">
+                                        <input type="text" class="txt" value="" title="대표자 주민번호 앞자리" name="idenNo1" maxlength="6" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />&nbsp;-&nbsp;
+                                        <input type="password" class="txt" value="" title="대표자 주민번호 뒷자리" name="idenNo2" maxlength="7" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" />
+									</span>
+										<input type="hidden" name="idenNo" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">주소</p></th>
+								<td colspan="3" class="cell_l">
+									<p class="input_address">
+										<input type="text" class="txt" value="" title="우편번호 앞자리" name="zipCode1" maxlength="3" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="우편번호 뒷자리" name="zipCode2" maxlength="4" readonly="readonly" />
+										<a href="javascript:searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										<input type="hidden" name="zipCode" />
+										<input type="hidden" name="zipSeq" value="" />
+										<span class="detail"><input type="text" class="txt" value="" title="주소 상세입력" name="address" readonly="readonly" onclick="searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" />
+															<input type="text" class="txt" value="" title="주소 상세입력2" name="addressDistrict" readonly="readonly" onclick="searchZipMain(frm.zipCode1, frm.zipCode2, frm.zipSeq, frm.address, frm.addressDistrict, '<%=newjusoYn %>')" /></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p style="padding-left:10px;">전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+									<fileTag:phoneSelect selectName="phoneNo1" selectValue="" gubun="1" />
+                                        <input type="text" class="txt" value="" title="전화번호 가운데자리" maxlength="4" name="phoneNo2" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+                                        <input type="text" class="txt" value="" title="전화번호 뒷자리" maxlength="4" name="phoneNo3" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_domain">도메인</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_domain">Http:// <input type="text" class="txt" value="" id="label_domain" name="domain" maxlength="50" style="ime-mode:disabled" /></span>
+								</td>
+							</tr>
+
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<div class="btnr">
+                                <a href="javascript:update();" class="btn btn_blue"><span>등록</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- content_block -->
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

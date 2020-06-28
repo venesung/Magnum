@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/cs/h1_praise.png" alt="고객제안이나 만족스러운 서비스를 적어주세요" /></h1>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/cs/h2_faq_overseas01.png" alt="고객님의 이야기를 작성해주세요" /></h2>
+		<div class="content_block_inner pos_rel fill_joinin">
+			<div class="tb_exp clfix">
+				<span class="ls01">평소 삼성카드를 이용하시면서 느낀 점, 바라는 점 및 만족스러운 서비스로 칭찬하고 싶은 이야기를 적어주세요.</span>
+			</div>
+			
+			<table class="dtable02" summary="해외 이용시 궁금한 사항을 작성하는 게시판입니다.">
+			<caption>해외 이용시 궁금한 사항 작성</caption>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row" class="cell_l"><p>답변채널</p></th>
+					<td class="cell_l">
+						<input type="radio" class="chk" id="label_type1" name="chkgubun" value="고객제안" title="고객제안 선택" checked="checked" /> 고객제안
+						<input type="radio" class="chk" id="label_type2" name="chkgubun" value="칭찬합니다" title="칭찬합니다 선택" /> 칭찬합니다
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>성명</p></th>
+					<td class="cell_l"><p>-_-</p></td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<th scope="row" class="cell_l"><p>전화번호</p></th>
+					<td class="cell_l"><p><span class="input_phone">
+							<select title="전화번호 앞자리 선택" id="label_tel" name="Option03_1">
+						<option value="">선택</option>
+						<option value="02">02</option>
+						<option value="031">031</option>
+						<option value="032">032</option>
+						<option value="033">033</option>
+						<option value="041">041</option>
+						<option value="042">042</option>
+						<option value="043">043</option>
+						<option value="051">051</option>
+						<option value="052">052</option>
+						<option value="053">053</option>
+						<option value="054">054</option>
+						<option value="055">055</option>
+						<option value="061">061</option>
+						<option value="062">062</option>
+						<option value="063">063</option>
+						<option value="064">064</option>
+						<option value="070">070</option>
+						</select>-&nbsp;
+							<input type="text" name="Option03_2" class="txt" value="" maxlength="4" onkeydown="handlerNum(this)" title="전화번호 가운데자리" />&nbsp;-&nbsp;
+							<input type="text" name="Option03_3" class="txt" value="" maxlength="4" onkeydown="handlerNum(this)" title="전화번호 뒷자리" />
+						</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+					<td class="cell_l"><p><span class="input_phone">
+					<select title="휴대전화번호 앞자리 선택" id="label_handphone" name="Option04_1">
+						<option value="">선택</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+					</select>-&nbsp;
+							<input type="text" name="Option04_2" class="txt" value="" maxlength="4" onkeydown="handlerNum(this)" title="휴대전화번호 가운데자리" />&nbsp;-&nbsp;
+							<input type="text" name="Option04_3" class="txt" value="" maxlength="4" onkeydown="handlerNum(this)" title="휴대전화번호 뒷자리" />
+						</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>E-mail 주소</p></th>
+					<td class="cell_l"><p><span class="t_no">
+					<input type="text" class="txt" size="15" maxlength="20" name="email1" value="" style="width:100px" title="이메일 아이디" /> @
+					<!-- input type="text" class="txt" size="15" maxlength="20" name="email2" value="" onkeyup="emailChk('email1','email2', 'emailSelect')" style="width:100px;ime-mode:disabled;" /-->
+					<input type="text"   readonly="readonly" class="txt" size="15" maxlength="20" name="email2" value="" onkeyup="emailChk('email1','email2', 'emailSelect')" style="width:100px;ime-mode:disabled;" title="이메일 공급자 직접입력" />
+					<select name="emailSelect" size="1" onchange="emailSel('email1','email2', 'emailSelect')"  style="width:90px" title="이메일 공급자 선택">
+						<option value="" selected="selected">선택</option>
+					</select>
+					</span></p></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>제목</p></th>
+					<td class="cell_l"><span class="input_subject"><input type="text" name="Title" class="txt" id="label_subject" value="" title="제목" /></span></td>
+				</tr>
+				<tr>
+					<th scope="row" class="cell_l"><p>내용</p></th>
+					<td class="cell_l"><span class="input_body"><textarea class="txt" name="Content" id="label_body" rows="80" cols="5" title="내용" ></textarea></span></td>
+				</tr>
+			</tbody>
+			</table>
+			</form>
+
+<!-- 100126 --> 
+			<p class="btnc"><a href="javascript:sendmit()" title="보내기"><img src="/images/common/btn_send.png" alt="보내기" /></a><a href="javascript:resetPage();" title="다시쓰기"><img src="/images/common/btn_rewrite.png" alt="다시쓰기" /></a></p>
+<!-- //100126 -->
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/cs/h2_praise02.png" alt="CCM처리 원칙 및 유의사항입니다" /></h2>
+		<div class="content_block_inner pos_rel">
+		
+			<ol class="list_no01">
+				<li><p>단순문의 및 불편사항은 <a href="javascript:goTabPage('NHPIMCSMAIL1')" class="a_point">E-mail상담</a> 및 <a href="javascript:goTabPage('NHPIMCSMAIL2')" class="a_point">전자민원접수</a>를 이용하시기 바랍니다.</p></li>
+				<li><p>제안을 보내주시면 접수확인 메일을 보내드립니다.</p></li>
+				<li><p>30분 이내에 접수확인 메일이 오지 않으면 질문이 전송되지 않은 것일 수 있으니, 다시 내용을<br />보내주시면 감사하겠습니다.</p></li>
+				<li><p>보안관계로 상담접속 후 10분이상 시간이 경과되면 자동 로그아웃 됩니다.</p></li>
+				<li><p>주소, 전화번호가 변경되신 경우 ‘회원정보수정’에서 변경해 주시기 바랍니다.</p></li>
+				<li><p>이곳에서 입력하신 내용은 상담 시에만 활용됩니다.</p></li>
+				<li><p>칭찬 글의 경우 ‘칭찬합니다‘를 클릭하신 후 글을 남겨주세요.</p></li>
+				<li><p>답변내용은 <a href="javascript:goTabPage('NHPIMMHJFYMAIL1')" class="a_point">나의상담내역</a>에서도 확인가능합니다.</p></li>
+			</ol>
+			
+		</div>
+	</div>			
+	
+	
+	
+	<!-- 제안 완료 레이어 -->
+	<div id="SUGGEST" style="position:relative; left:300px; top:-950px; z-index:1; display:none">
+  	<div id="id_layer03" class="pop_l_position pop_l_wrap_mix">
+  		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.parentNode.style.display='none'; show_select(); noView(); javascript:goTabPage('NHPIMCSMAIL3','true');" value="레이어닫기" title="레이어 닫기" />
+  			<p class="pop_tit04"><img src="/images/cs/layer_tit_compliments_completed.png" alt="고객제안·칭찬 접수가 완료되었습니다" /></p>
+  			<div class="pop_l_content">
+  				<div class="al_center">
+  					<span class="t_point">30분 이내</span> <span class="t_black">에 접수번호가 적힌 확인메일을 보내드립니다</span><br />
+  				</div>
+  				<div class="al_center mt5">
+  					<span class="t_desc03">접수메일을 받지 못한 경우에는 정상 접수되지<br />않은 것일 수 있으니 다시한번 메일을 접수해주시기 바랍니다.</span>
+  				</div>
+  				<ol class="list_no_t11">
+  					<li><p>상담원의 답변메일은 입력해주신 회원님의 E-mail 주소나 전화로 안내됩니다.</p></li>
+  					<li><p>삼성카드 웹사이트의 <a href="javascript:goTabPage('NHPIMMHJFYMAIL1');" class="a_point">나의상담내역</a> 에서도 문의와 답변을 확인하실 수 있습니다.</p></li>
+  				</ol>
+  			</div>
+  			<p class="btnc mt20"><a href="javascript:goTabPage('NHPIMCSMAIL3','true');" onclick="hide_con('SUGGEST'); show_select(); noView();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+  		</div>
+  	</div>
+	</div>
+	
+	<!-- 가맹점 회원일 경우 제한하는 레이어 -->
+	<div id="AGENT" style="position:relative; left:300px; top:-1250px; z-index:1; display:none">
+  	<div id="id_layer03" class="pop_l_position pop_l_wrap_mix">
+  		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.parentNode.style.display='none'; show_select(); noView(); javascript:goTabPage('NHPIMCSMAIL1','true');" value="레이어닫기" title="레이어 닫기" />
+  			<p class="pop_tit03"><img src="/images/cs/layer_tit_srvforpersonal.gif" alt="개인회원을 위한 서비스입니다" /></p>
+  			<div class="pop_l_content mb40">
+  				<p class="al_center">죄송합니다.<br />회원님은 가맹점 회원이므로 조회 및 확인이 불가능 합니다.</p>
+  			</div>
+  			<p class="btnc mt20"><a href="javascript:goTabPage('NHPIMCSMAIL1','true');" onclick="hide_con('AGENT'); show_select(); noView();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+  		</div>
+  	</div>
+	</div>
+	
+	<iframe src="about:blank" name="connectFrame" width="0" height="0" frameborder="0" title="빈 프레임"></iframe>
+	<div id="viewLayer" style="z-index:0;position:relative; top:-1500px; height:100px; display:none">
+<iframe src="about:blank" width="100%" height="1500" frameborder="0" style="filter:Alpha(Opacity=0);" title="빈 프레임"></iframe>	
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

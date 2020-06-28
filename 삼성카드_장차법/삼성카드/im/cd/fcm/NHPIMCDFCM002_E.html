@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <h2><img src="/images/mh/h2_inqury_fam_eng01.png" alt="Authorization Inquiry" /></h2>
+    <div class="content_block_inner">
+
+		<p>
+            You will search authorization inquiry in oversea transaction.<br />But, this transaction does not match to billing amount.<br />Because the merchant may only request authorization of credit card to our company,<br />final billing amount will be different.<br />If you want to inquiry received oversea transaction, please <a href="javascript:goSubmit('4');" class="a_point">click here</a>
+		</p>
+
+        <table class="dtable02 dtable_inputfield mt30" summary="to select used card">
+        <caption>select used card</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>Used Card</p></th>
+                <td><p>
+                    <select title="to select used card" style="width:360px" name="srchCardNo">
+                        <option></option>
+                    </select>
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnr"><a href="javascript:goSubmit('3');" class="btn btn_blue"><span>GO</span></a></p>
+        </div>
+		
+       	<div class="btnset mt20" style="margin-bottom: 10px;">
+            <p class="btnr">
+                <a href="javascript:goSubmit('2');" class="btn btn_s_white"><span>Korean</span></a><a href="javascript:goSubmit('3');" class="btn btn_s_gray"><span>English</span></a>
+            </p>
+        </div>
+		
+        <table class="dtable01 dtable01_bill" summary="board to check your transaction date, transaction time, business code, country, authorized amount, respond code.">
+        <caption>Overseas Approval List Board</caption>
+        <colgroup><col width="70" /><col width="70" /><col width="84" /><col width="*" /><col width="64" /><col width="70" /><col width="65" /></colgroup>
+        <thead>
+            <tr>
+              	<th scope="col" class="cell_l10">Transaction<br />Date</th>
+				<th scope="col">Transaction<br />Time</th>
+				<th scope="col">Business<br />Code</th>
+				<th scope="col">Merchant</th>
+				<th scope="col" class="cell_l10">Country</th>
+				<th scope="col" class="cell_r10">Authorized<br />Amount<br />(US$)</th>
+				<th scope="col" class="cell_r10">Respond<br />Code</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="t_no">0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td>
+                        <a href="javascript:alert('Approval Number:<%=list.getTranNo()%>');"><font color="blue">Approval</font></a>
+                        <a href="javascript:gomsg(<%=list.getDenyCode()%>);"><font color="red">Reject</font></a>
+				</td>
+			</tr>
+			<tr class="nodata">
+				<td colspan="7">Your credit cards don't have used record of oversea transaction. </td>
+			</tr>
+        </tbody>
+        </table>
+
+		<!-- btn -->
+		<div class="btnset">
+
+			<p class="btnr">
+                <a href="javascript:goPpage();" class="btn btn_s_white"><span>PREV</span></a>
+                <a href="javascript:goNpage();" class="btn btn_s_white"><span>NEXT</span></a>
+			</p>
+<!--
+			<p class="btnr">
+				<a href="#" class="btn btn_white"><span>다운로드</span></a>
+				<a href="#" class="btn btn_white"><span>인쇄</span></a>
+			</p>
+-->
+		</div>
+
+    </div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

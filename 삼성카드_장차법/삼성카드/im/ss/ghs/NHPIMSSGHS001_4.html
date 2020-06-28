@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">대리운전도 카드로 안심귀가서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_samsungcard_safeturn.jpg" alt="대리운전도 카드로 안심귀가서비스 - 믿을 수 있는 대리업체로 안전하게 귀가하세요" /></div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+				<!-- tab_area -->
+					<div class="tab02 w810">
+						<UL>
+							<li><a href="javascript:goTabPage('NHPIMSSGHS001M002', true);">서비스 소개</a></li>
+                            <!--li><a href="javascript:goTabPage('NHPIMSSGHS001M003', true);">신청하기</a></li--><!-- SR내역 13.01.14 -->
+                            <li class="on"><a href="javascript:goTabPage('NHPIMSSGHS001M004', true);">이용내역조회 및 영수증 출력</a></li>
+						</UL>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img alt="회원님의 정보를 확인해 주세요" src="/images/ss/h2_checkcard02.gif" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="회원 정보 확인을 위해 카드선택, 카드번호, 사용일자 정보를 입력하는 게시판입니다">
+							<caption>회원정보 확인</caption>
+							<colgroup>
+								<col width="115" />
+								<col width="*" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><p>카드선택</p></th>
+									<td>
+										<p><label class="mr10" for="label_card1"><input class="rdo" id="label_card1" type="radio" onclick="rdoClick('1');" title="개인" /> 개인</label>
+										<label for="label_card2"><input class="rdo" id="label_card2" type="radio" checked="checked" onclick="rdoClick('2');" title="법인" /> 법인</label> </p>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><p>카드번호</p></th>
+									<td>
+										<p>
+											<span id="cardListIndiv" style="display:block">
+												<select id="selectIndiv" title="카드번호 선택" style="WIDTH: 360px">
+													<option value="00">전 체</option>
+												</select>
+											</span>
+											
+											<span id="cardListJurid" style="display:block">
+												<select id="selectJurid" title="카드번호 선택" style="WIDTH: 360px">
+													<option value="00">전 체</option>
+												</select>
+											</span>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><p>사용일자</p></th>
+									<td>
+										<p class="reset_date">날짜지정
+										<input type="hidden" name="startDate" value="<%=vos.getStartDate()%>" id="hp_double_cal_start_value" />
+				                        <input id="hp_double_cal_start_value_display" type="text" class="txt" value="<%=vos.getStartDate()%>" title="시작하는날짜" maxlength="8" /> <a href="javascript:local_showStartCalendar();" title="사용일자 시작일 달력"><img id="startDateCalendarIcon" src="/images/common/ico_calendar.png" alt="달력" /></a>&nbsp;~&nbsp;
+				                        <input type="hidden" name="endDate" value="<%=vos.getEndDate()%>" id="hp_double_cal_end_value" />
+				                        <input id="hp_double_cal_end_value_display" type="text" class="txt" value="<%=vos.getEndDate()%>" title="끝나는날짜" maxlength="8" /> <a href="javascript:local_showEndCalendar();" title="사용일자 종료일 달력"><img id="endDateCalendarIcon" src="/images/common/ico_calendar.png" alt="달력" /></a></span>
+				                        <div id="hp_double_cal" class='pos_rel_cal'></div>
+									</td>
+								</tr>
+							</tbody>
+						</TABLE>
+						<!-- btn -->
+						<div class=btnset>
+                            <p class="btnr"><a class="btn btn_white" href="javascript:search();"><span>조회</span></a></p>
+						</div>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img alt="승인내역을 확인하세요." src="/images/ss/h2_proxydriving02.png" /></h2>
+					<div class=content_block_inner>
+						<div class="tb_exp clfix"><span>승인내역 조회는 <strong class="t_point">최대 2개월 단위</strong>로 조회됩니다.</span></div>
+						<table class="dtable01 dtable01_bill" summary="거래일자, 가맹점 번호, 가맹점 명, 카드번호, 승인번호, 거래금액, 최소구분, 비고로 구성된 승인내역을 보여주는 게시판입니다.">
+							<caption>승인내역 조회</caption>
+							<colgroup>
+								<col width="76" />
+								<col width="70" />
+								<col width="*" />
+								<col width="120" />
+								<col width="50" />
+								<col width="70" />
+								<col width="60" />
+								<col width="60" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="cell_l10" scope="col">거래일자</th>
+									<th scope="col">가맹점 번호</th>
+									<th scope="col">가맹점 명 </th>
+									<th scope="col">카드번호</th>
+									<th scope="col">승인번호</th>
+									<th class="cell_r10" scope="col">거래금액</th>
+									<th scope="col">최소구분</th>
+									<th scope="col">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td class="cell_l10 t_no">0</td>
+										<td class="t_no">0</td>
+										<td>0</td>
+										<td class="t_no">0</td>
+										<td class="t_no">0</td>
+										<td class="cell_r10 t_no">0</td>
+												<td>정상</td>
+										<td><a class="btn btn_s_white" href="#" title="새창"><span>인쇄</span></a></td>
+									</tr>
+							</tbody>
+						</TABLE>
+						<!-- paginate -->
+						<div class="paginate">
+							${_page}
+						</div>
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

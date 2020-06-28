@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual 100407 -->
+				<div class="top_visual">
+					<h1 class="none">카드대금결제서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3955_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+                            <li><a href="javascript:move1();">카드대금결제서비스안내</a></li>
+                            <li class="on"><a href="javascript:move2();">카드대금결제서비스신청</a></li>
+						</ul>
+					</div>
+
+
+					<div class="top_step_settlement top_step_settlement02">
+						<ol class="none">
+							<li>이용가능금액 확인 및 카드선택</li>
+							<li><abbr>현재단계</abbr> <strong>신청내용입력</strong></li>
+							<li>약관동의</li>
+							<li>확인 후 서비스신청</li>
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_app_breakdown.png" alt="신청내용을 입력해 주세요" /></h2>
+					<div class="content_block_inner">
+						<dl class="to_appm">
+							<dt><img src="/images/mh/txt_thatmonth_settlement.png" alt="당월 결제대금" /></dt>
+							<dd>
+							<span class="t_0" title="123">
+								<span class="ico_no ico_no_boldorg01"><em>1</em></span>
+							</span>
+								<img src="/images/mh/txt_won.png" alt="원" />
+							</dd>
+						</dl>
+
+						<table class="dtable02 dtable_inputfield" summary="현금서비스와 카드론으로 나누어 이용가능금액, 신청방식, 신청금액, 상환방식, 월상환원금, 대출기간, 카드번호, 카드비밀번호, 긴급연락처등의 카드대금 결제서비스 신청내역을 입력하는 게시판입니다.">
+						<caption>신청내용 입력</caption>
+						<!--colgroup><col width="100" /><col width="100" /><col width="*" /></colgroup-->
+						<colgroup><col width="16%" /><col width="25%" /><col width="25%" /><col width="*" /></colgroup><!-- SR내역 12.12.28 -->
+						<thead>
+							<tr>
+								<th scope="col" class="cell_bg riline cell_c">&nbsp;</th>
+								<th scope="col" class="cell_bg riline cell_c">현금서비스</th>
+								<th scope="col" class="cell_bg riline cell_c">카드론</th>
+								<th scope="col" class="cell_bg cell_c">현금서비스+카드론</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="riline"><p>이용가능금액 </p></th>
+								<td class="cell_c riline"><p>
+									<span class="t_desc03 mr10"> ${CASH_LIMIT_AMT}만원</span>
+								</p></td>
+								<td class="cell_c riline"><p>
+								<span class="t_desc03"> 0만원</span>
+								<span class="t_desc03">(0만원부터 가능)</span>
+								</p></td>
+								<td class="cell_c "><p>	- </p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="riline"><p>신청방식 </p></th>
+								<td class="cell_c riline"><p>
+									<input type="radio" name="cType" value="1" onclick="selType(this.value)" title="현금서비스 신청방식" />
+								</p></td>
+								<td class="cell_c riline"><p>
+									<input type="radio" name="cType" value="2" onclick="selType(this.value)" title="카드론 신청방식" />
+								</p></td>
+								<td class="cell_c"><p>
+									<input type="radio" name="cType" value="3" onclick="selType(this.value)" title="현금서비스+카드론 신청방식" />
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="riline"><p>신청금액 </p></th>
+								<td class="cell_c riline"><p>
+									<span class="input_point">
+									<input name="CASHAMTREAL" type="text" id="label_cash" class="txt" title="현금서비스 신청금액"
+									onchange="totalSum();"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled"
+									disabled="disabled"
+									value="0"
+									maxlength="10"
+									/><strong>원</strong></span>
+								</p></td>
+								
+								<td class="cell_c riline"><p>
+									<span class="input_point">
+									<input name="LOANAMTREAL" type="text" id="label_card_loan" class="txt" title="카드론 신청금액"
+									onchange="totalSum();"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled"
+									disabled="disabled"
+									value="0"
+									maxlength="10"
+									/><strong>원</strong></span>
+								</p></td>
+								<td class="cell_c"><p>
+									<span class="input_point">
+									현금서비스
+									<input name="TOTALAMT1" type="text" id="label_amount" class="txt" title="현금서비스 신청금액"
+									onkeyup="chkTotalAmt(this.value)"
+									onKeyPress="javascript:checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									onfocus="removeCardloanAmt();"
+									style="ime-mode:disabled"
+									value="0"
+									maxlength="16" disabled="disabled"
+									/><strong>원</strong></span><br /><!-- SR내역 12.12.28 -->
+									<span class="input_point">
+									카드론&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input name="TOTALAMT2" type="text" id="label_amount2" class="txt" title="카드론 신청금액"
+									onkeyup="chkTotalAmt2(this.value)"
+									onKeyPress="javascript:checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									onfocus="removeCardloanAmt();"
+									style="ime-mode:disabled"
+									value="0"
+									maxlength="16" disabled="disabled"
+									/><strong>원</strong></span>
+								</p></td>
+							</tr>
+							
+							<tr>
+								<th scope="row" class="riline"><p>상환방식</p></th>
+								<td class="cell_c riline"><p>-
+								</p></td>
+								<td class="cell_l riline"><p>
+									<label for="label_repayment1B" class="ml10">
+									<input type="radio" class="rdo" id="label_repayment1B"
+									name="GOODSCHECKB" value="J" disabled="disabled" onclick="selected_change('J','2');" title="원금균등분할상환" /> 원금균등분할상환</label>
+								</p></td>
+								<td class="t_no"><p><!-- SR내역 12.12.28 -->
+									<label for="label_repayment1C" class="ml10">
+									<input type="radio" class="rdo" id="label_repayment1C"
+									name="GOODSCHECKC" value="J" disabled="disabled" onclick="selected_change('J','3');" title="원금균등분할상환" /> 원금균등분할상환</label>
+									<a href="javascript:selectLoanMonth();" class="btn btn_s_blue"><span>대출기간확인</span></a><!-- SR내역 12.12.28 -->
+								</p></td>
+							</tr>
+
+							<tr class="StdTable-RowOdd" id="COMBOMONTH" style="display:">
+			                      <th class="StdTable-Label1 riline" scope="row"><p>월상환원금</p></th>
+			                      <td colspan="4" class="StdTable-Col1-Form" style="padding-left:10px "><p>
+			                      <input type="text" name="COMBOMONTH_AMT" size="10" maxlength="4" title="월상환원금" />&nbsp;만원
+			                      </p></td>
+		                    </tr>
+
+							<tr>
+								<th class="riline" scope="row"><p>대출기간</p></th>
+								<td class="cell_c riline"><p>-
+								</p></td>
+								<td class="cell_c riline"><p>
+									<select name="MAXLOANMONB" title="대출기간" id="label_loan_period" style="width:100px" disabled="disabled">
+												<option></option>
+									</select>
+								</p></td>
+								<td class="cell_c "><p>
+									<select name="MAXLOANMONC" title="대출기간" id="label_loan_period" style="width:100px" disabled="disabled">
+												<option></option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th class="riline" scope="row"><p>카드번호</p></th>
+								<td colspan="3"><p class="t_no">${P_CARD_NO}</p></td>
+							</tr>
+							<tr>
+								<th class="riline" scope="row"><p>카드비밀번호</p></th>
+								<td colspan="3"><p class="input_2char">
+
+								<input name="PASSWD" type="password" id="label_pw"
+								maxlength="2" class="txt" value="" title="비밀번호 앞 두자리"
+								onfocus="javascript:goComboChk(self.document.frm)"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled"
+								/><em>**</em>(비밀번호 앞의 2자리)</p></td>
+							</tr>
+							<tr>
+								<th class="riline" scope="row"><p>긴급연락처</p></th>
+								<td colspan="3"><p class="input_phone">
+									<input name="PNO1" type="text" class="txt" maxlength="4" value="" title="긴급연락처 휴대폰 앞자리" id="label_tel"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled; width:40px;" />
+									&nbsp;-&nbsp;
+									<input name="PNO2" type="text" class="txt" maxlength="4" value="" title="긴급연락처 휴대폰 가운데자리"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled"
+									/>&nbsp;-&nbsp;
+									<input name="PNO3" type="text" class="txt" maxlength="4" value="" title="긴급연락처 휴대폰 뒷자리"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled"
+									/>
+								</p></td>
+							</tr>
+							<!-- tr>
+								<th class="riline"><p>공인인증서</p></th>
+								<td colspan="2"><p>
+									<label for="label_certificate1">
+									<input name="SIGN_GUBUN" type="radio" class="rdo" value="NO" id="label_certificate1" checked="checked" /> 사용안함</label>
+									<label for="label_certificate2" class="ml10">
+									<input name="SIGN_GUBUN" type="radio" class="rdo" value="YES" id="label_certificate2" onclick="javascirpt:check_cert(this.document.frm);" /> 사용함</label>
+                                    <span class="ml20"><a href="javascript:goTabPage('NHPIMMSLGIVIEW009');" class="btn_link">공인인증서 사용안내</a> </span></p>
+									<p class="t_desc03">공인인증서가 있는 분만 이용하세요. 공인인증서가 없어도 서비스 이용이 가능합니다.</p>
+								</td>
+							</tr-->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<div class="btnl">&nbsp;</div>
+							<div class="btnr">
+                                <a href="javascript:validation(self.document.frm);" class="btn btn_blue"><span>확인</span></a>
+							</div>
+						</div>
+
+						<div class="line_lgray"></div>
+
+						<ol class="list_no01">
+							<li><p>카드대금 결제서비스는 원금균등분할상환 방식만 이용가능합니다.</p></li><!-- 100508 -->
+							<li><p>당일 22시부터 익일 08시 30분 사이 신상정보를 변경한 고객은 08시 30분 이후 부터 이용이 가능합니다.</p></li>
+				<!-- 정기일반영 12.12.17 -->
+							<li><p>당월결제대금이 현금서비스 또는 카드론 이용가능금액을 초과하는 경우<br />카드대금결제서비스를 이용하실 수 없습니다. 보유하고 계신 이용가능금액만큼<br />카드대금결제서비스 이용을 원하실 경우 삼성카드 대표전화 1588-8700으로 문의주시기 바랍니다.</p></li>
+							<li><p>자유결제서비스를 이용 중인 회원의 경우 최소결제대금을 카드대금결제서비스로 이용하실 수 있습니다.</p></li>
+				<!--// 정기일반영 12.12.17 -->
+							<li><p>카드론을 신청하시는 경우 신청금액에 따라 이용가능한 대출기간이 달라집니다.</p></li><!-- SR내역 12.12.28 -->
+						</ol>
+
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+
+<!-- 혜택시뮬레이션 -->
+	<div class="bgSimulBot">
+		<div class="bgSimulMid">
+			<table summary="혜택시뮬레이션(모든 가맹점 할인, 모든 영화관 할인, 모든 가맹점 무이자 할부)을 확인하실 수 있습니다." class="table_simul">
+				<caption>혜택시뮬레이션</caption>
+				<colgroup>
+					<col width="143" />
+					<col width="104" />
+					<col width="690" />
+				</colgroup>
+				<tbody>
+					<tr class="first">
+						<th scope="row" rowspan="2"><img src="/images/cd/shw/card/txt_simul9.gif" width="96" height="15" alt="모든 가맹점 할인" /></th>
+						<td class="bold">10만원 미만</td>
+						<td class="padB5">
+							월<input type="text" title="모든 가맹점 할인 비용" value="400,000" class="c94afc6" id="point1" onkeyup="comma(this);" maxlength="11" />원 이용 시 <span class="year">연 <em>33,600원</em> 할인</span>
+			<span class="etc">(0.7% 할인)</span><!-- 정기일반영 12.11.07 -->
+		</td>
+	</tr>
+	<tr>
+		<td class="last bold">10만원 이상</td>
+		<td class="last">
+			월<input type="text" title="모든 가맹점 할인 비용" value="400,000" class="c94afc6" id="point2" onkeyup="comma(this);" maxlength="11" />원 이용 시 <span class="year">연 <em>48,000원</em> 할인</span>
+							<span class="etc">(1% 할인)</span><!-- 정기일반영 12.11.07 -->
+						</td>
+					</tr>
+					<tr class="line">
+						<th scope="row"><img src="/images/cd/shw/card/txt_simul10.gif" width="96" height="15" alt="모든 영화관 할인" /></th>
+						<td class="last bold">&nbsp;</td>
+						<td class="last padT13">
+							연 <span class="c5a96c8">30,000원</span> <span class="c999">(2,500원 할인, 연 12회)</span>
+						</td>
+					</tr>
+					<tr class="noLine">
+						<th scope="row" colspan="2"><img src="/images/cd/shw/card/txt_simul11.gif" width="139" height="15" alt="모든 가맹점 무이자 할부" /></th>
+						<td>5만원 이상 결제시 2~3개월 무이자할부</td><!-- 정기일반영 12.11.08 -->
+					</tr>
+					<tr class="h" style="height:180px;">
+						<td colspan="3">
+							<span class="txt_i">※ 위의 혜택 금액은 고객의 이해를 돕기 위한 시뮬레이션으로 이용금액, 이용처, 이용조건 등에 따라 실제 혜택과 달라질 수 있습니다.</span><!-- 정기일반영 12.11.08 -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="receiptBox">
+				<p class="receipt1">
+					<img src="/images/cd/shw/card/txt_receipt1.gif" width="140" height="35" alt="연간 총 혜택" />
+				</p>
+				<p class="receipt2">
+					<img src="/images/cd/shw/card/txt_receipt2.gif" width="69" height="12" alt="연간 혜택금액" class="floatL" />
+					<span class="floatR">111,600<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+				</p>
+<!-- 정기일반영 12.10.29 -->				
+				<p class="receipt2">
+					<img src="/images/cd/shw/card/txt_receipt3.gif" width="56" height="27" alt="연회비(-) 해외겸용카드 기준" class="floatL" />
+					<span class="floatR">-10,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+				</p>
+				<p class="receipt3">= 101,600<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" /></p>
+<!--// 정기일반영 12.10.29 -->
+			</div>
+		</div>
+	</div>
+<!-- 혜택시뮬레이션 -->
+<script type="text/javascript" src="/js/im/cd/cps/jquery.alphanumeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".c94afc6").numeric(); 
+	$(".c94afc6").css("ime-mode", "disabled"); //한글 입력 방지
+});	
+$("#point1").keyup(function() {
+	
+	var point = replace($("#point1").val(),",","");			
+	var sum = Math.round(point * 0.007 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"원");
+	
+	var point2 = null;
+	
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	
+	var yearSum = sum + point2 + 30000;
+	var sumTot = yearSum - 10000; // 정기일반영 12.10.29
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point2").keyup(function() {				
+	var point = replace($("#point2").val(),",","");			
+	var sum = Math.round(point * 0.01 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"원");
+	var point2 = "";
+
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	var yearSum = sum + point2 + 30000;
+	var sumTot = yearSum - 10000; // 정기일반영 12.10.29
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+
+</script>
+
+

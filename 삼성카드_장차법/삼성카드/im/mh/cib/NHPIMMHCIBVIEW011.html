@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>Insert title here</title>
+<style type="text/css">
+	table { font-family: "돋움", "Seoul", "Arial", "Helvetica"; font-size: 9pt; color: #333333}
+</style>
+<script type="text/javascript">
+
+	function window::onload(){
+
+		var form = excelForm;
+
+		form.excelTag.value = document.getElementById("excelDiv").innerHTML;
+		
+		form.submit();
+		
+
+	}
+
+</script>
+</head>
+<body>
+<form name="excelForm" method="post" action="/hp/com/com.do?method=insertExcelTag">
+	<input type="hidden" name="excelTag" />
+	<input type="hidden" name="fileName" value="<%=(String)request.getAttribute("fileName")%>" />
+</form>
+<div id="excelDiv">
+	<table border="1" cellpadding="3" cellspacing="0">
+					<tr align="center"><td colspan="2" >청구서조회</td></tr>
+					<tr align="center"><td>회원명</td><td align="center">${useName}</td></tr>
+					<tr align="center"><td>결제일</td><td align="center"><%=HpCommonUtil.formatStrDate(paydatevalue,"yy.mm.dd")%></td></tr>
+	</table>
+
+	<br/>
+	<br/>
+	<br/>
+
+
+	<table border="1"  cellpadding="3" cellspacing="0">
+	<colgroup><col width="60%" /><col width="40%" /></colgroup>
+	<tbody>
+		<tr>
+			<th scope="col" colspan="2" class="cell_l10"><strong>전월 청구금액</strong></th>
+		</tr>
+		<%if("Y".equals(billSum.getDelayYn())){ %>
+		<tr>
+			<td scope="row" class="cell_l10">미결제 금액</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getDelayAmt()) %></td>
+		</tr>
+		<%}else{ %>
+		<tr>
+			<td scope="row" class="cell_l10 boline_b0">미리 입금하신 금액</td>
+			<td class="cell_r10 boline_b0  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getPreAmt()) %></td>
+		</tr>
+		<%
+		}
+		%>
+		<tr>
+			<td scope="row" class="cell_l10 boline_b0">연체료</td>
+			<td class="cell_r10 boline_b0  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getDelayCommission()) %></td>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10 boline_b0">소계</td>
+			<td class="cell_r10 boline_b0  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getLastTot()) %></td>
+		</tr>
+		<tr>
+			<th scope="col" colspan="2" class="cell_l10"><strong>당월 청구금액</strong></th>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10">할부</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getHalbuAmt()) %></td>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10">카드론</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getLoanAmt()) %></td>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10">일시불</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getIlsiAmt()) %></td>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10">현금서비스</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getCashserviceAmt()) %></td>
+		</tr>
+		<tr>
+			<td scope="row" class="cell_l10">연회비</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getYearAmt()) %></td>
+		</tr>
+		<%if("C".equals(billSum.getRevolvingGubun())){ %>
+		<tr>
+			<td scope="row" class="cell_l10">연회비</td>
+			<td class="cell_r10  t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getPrevRevolvAmt()) %></td>
+		</tr>
+		<%} %>
+		<tr>
+			<td scope="row" class="cell_l10 boline_b0">소계</td>
+			<td class="cell_r10 boline_b0 t_no"><%=HpCommonUtil.getCommaStringForMoney(billSum.getMonthTot())%></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td class="cell_l10">합계</td>
+			<td class="cell_r10"><em class="t_point_org"><%=HpCommonUtil.getCommaStringForMoney(billSum.getTotalAmt())%></em></td>
+		</tr>
+	</tfoot>
+	</table>
+
+	<br/>
+	<br/>
+
+	<table  border="1" cellpadding="3" cellspacing="0">
+		<tr><td colspan="2">카드이용기간</td></tr>
+		<tr align="center">
+			<td width="90" >일시불/할부</td>
+			<td><%=useDate.getIlsiDate() %></td>
+		</tr>
+		<tr align="center">
+			<td width="90" >현금서비스</td>
+			<td><%=useDate.getCashDate() %></td>
+		</tr>
+	</table>
+
+	<br/>
+	<br/>
+
+
+
+							<h3 class="t_black">카드이용상세내역</h3>
+
+
+						<table  border="1"  cellpadding="3" cellspacing="0">
+
+						<colgroup><col width="8%" /><col width="9%" /><col width="9%" /><col width="12%" /><col width="8%" /><col width="9%" /><col width="6%" /><col width="6%" /><col width="9%" /><col width="6%" /><col width="6%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+								<th scope="col" rowspan="2">이용자</th>
+								<th scope="col" rowspan="2">우대<br />가맹점</th>
+								<th scope="col" rowspan="2" class="cell_l">이용<br />가맹점</th>
+								<th scope="col" rowspan="2" class="cell_r10">적립률</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용하신<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10 riline">할부개월</th>
+								<th scope="col" colspan="4" class="cell_c riline boline_b0">입금금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">면제/할인<br />반영금액</th>
+							</tr>
+							<tr>
+								<th scope="col">회차</th>
+								<th scope="col" class="cell_r10">청구금액</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10 riline">수수료</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+								for(NHPIMMHCIB006VO lst : billList){
+							%>
+							<tr>
+								<td class="cell_l10 t_no"><%=lst.getUseddate() %></td>
+								<td><%=lst.getUsedName()%></td>
+								<td><%=lst.getBonusName()%></td>
+								<td class="cell_l">
+								<% if("보너스".equals(lst.getBonusName())){ %>
+									<%=!"".equals(lst.getChainHname())?lst.getChainHname():lst.getChainEname()%>
+								<%}else{ %>
+									<%if("01ICHE".equals(lst.getChainno())){ %>
+										<%=!"".equals(lst.getChainHname())?lst.getChainHname():lst.getChainEname()%>
+									<%}else if("99999".equals(lst.getGoodsCode())){ %>
+										<%=!"".equals(lst.getChainHname())?lst.getChainHname():lst.getChainEname()%>
+									<%}else{ %>
+									<%=!"".equals(lst.getChainHname())?lst.getChainHname():lst.getChainEname()%>
+									<%} %>
+								<% }%>
+
+								</td>
+								<td class="cell_r10">
+								<% if(!"S".equals(lst.getChainno())){ %>
+								<span class="t_no"><%=lst.getBonusRate() %></span>
+								<%}else{ %><%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<% if("2".equals(lst.getForeignGubun())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(lst.getUsedUsAmt()) %>
+								<%}else{ %>
+									<%if("10000".equals(lst.getGoodsCode()) || "40000".equals(lst.getGoodsCode()) || "80000".equals(lst.getGoodsCode())
+											||"84000".equals(lst.getGoodsCode())||"99999".equals(lst.getGoodsCode())){
+									%>
+									 
+									<%}else{ %>
+									<%=HpCommonUtil.getCommaStringForMoney(lst.getHalbuAmt()) %>
+									<%} %>
+								<%} %>
+								</td>
+								<td class="t_no riline"><% if("S".equals(lst.getChainno())){ %><%}else{ %> <%=lst.getHalbuTerm()%> <%} %> </td>
+								<td class="t_no"><% if("S".equals(lst.getChainno())){ %><%}else{ %><%=lst.getHalbuSeq()%><%} %></td>
+								<td class="cell_r10 t_no">
+								<% if( "8".equals(lst.getGoodsCode().substring(0,1)) && ("".equals(lst.getUsedKoreaAmt())
+										|| "0".equals(lst.getUsedKoreaAmt())) && !"".equals(lst.getHalinInt()) && !"0".equals(lst.getHalinInt())){
+								%>면제
+								<%}else{ %>
+										<%if(!"".equals(lst.getUsedKoreaAmt())){ %>
+											<%=HpCommonUtil.getCommaStringForMoney(lst.getUsedKoreaAmt()) %>
+										<%}else{ %>
+											
+										<%} %>
+								<% }%>
+								</td>
+								<td class="cell_r10">
+								<% if( !"".equals(lst.getUsedKoreaAmt()) && !"0".equals(lst.getUsedKoreaAmt())
+										&& !"".equals(lst.getHalinInt()) && !"0".equals(lst.getHalinInt())){
+
+										if(!"99999".equals(lst.getGoodsCode()) && !"00000".equals(lst.getGoodsCode()) ){
+								%>
+										면제
+										<%}else{ %>
+											<%= !"".equals(lst.getCommission())?HpCommonUtil.getCommaStringForMoney(lst.getCommission()):"" %>
+										<%} %>
+								<%}else{ %>
+
+										<%= !"".equals(lst.getCommission())?HpCommonUtil.getCommaStringForMoney(lst.getCommission()):"" %>
+								<% }%>
+								</td>
+								<td class="cell_r10 riline t_no"><%= HpCommonUtil.getCommaStringForMoney(lst.getEctCommission()) %></td>
+								<td class="cell_r10 t_no"><%= "0".equals(lst.getHalinInt())?"":HpCommonUtil.getCommaStringForMoney(lst.getHalinInt()) %></td>
+							</tr>
+							<%
+							}
+							%>
+
+
+							<tr class="cell_l10 cell_bg">
+								<td colspan="8" class="cell_l10 riline" align="center"><strong class="t_black">이용금액합계(<%=TDSLIST3.getCount() %>건)</strong></td>
+								<td class="cell_r10 t_no"><strong class="t_black"><%=HpCommonUtil.getCommaStringForMoney(TDSLIST3.getSumuse()) %></strong></td>
+								<td class="t_no"><%=HpCommonUtil.getCommaStringForMoney(TDSLIST3.getSumfee()) %></td>
+								<td class="cell_r10 riline t_no"><%=HpCommonUtil.getCommaStringForMoney(TDSLIST3.getEctCommission()) %></td>
+								<td class="cell_r10 t_no"><%=HpCommonUtil.getCommaStringForMoney(TDSLIST3.getHalinIntTot()) %></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<%
+							if(!"0".equals(cnt_cancel)){
+						%>
+						<br/>
+						<br/>
+
+						<h3 class="t_black">취소매출 접수내역 (전월 청구서 발송 이후)</h3>
+
+
+						<table class="dtable01" summary="전월 청구서 발송 이후 이용일,이용자,이용가맹점,상품명,취소금액으로 구성된 취소매출 접수내역을 알 수 있는 게시판입니다">
+						<caption>취소매출 접수내역</caption>
+						<colgroup><col width="20%" /><col width="10%" /><col width="*" /><col width="20%" /><col width="20%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col">이용자</th>
+								<th scope="col">이용가맹점</th>
+								<th scope="col" class="cell_r10">상품명</th>
+								<th scope="col" class="cell_r10">취소금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+							for(NHPIMMHCIB009VO cInfo : rsCancel){
+							%>
+							<tr>
+								<td class="cell_l10 t_no"><%=StringUtil.formatStrDate(cInfo.getUsedDate(),"yy.mm.dd") %></td>
+								<td><%=cInfo.getUsedName() %></td>
+								<td><%= !"".equals(cInfo.getChainHname())?cInfo.getChainHname():cInfo.getChainEname() %></td>
+								<td class="cell_r10"><span class="t_no">
+								<%
+									if("P".equals(cInfo.getGoodGubun())){
+										out.write("일시불");
+									}
+									if("I".equals(cInfo.getGoodGubun())){
+										out.write("할부");
+									}
+									if("C".equals(cInfo.getGoodGubun())){
+										out.write("현금S");
+									}
+									if("L".equals(cInfo.getGoodGubun())){
+										out.write("카드론");
+									}
+									if("F".equals(cInfo.getGoodGubun())){
+										out.write("수수료");
+									}
+									if("R".equals(cInfo.getGoodGubun())){
+										out.write("리볼빙");
+									}
+								%>
+								</span></td>
+								<td class="cell_r10 t_no">
+								<% if("0".equals(cInfo.getHalbuAmt())){ %>
+									<%if(!"".equals(cInfo.getUsedKoreaAmt()) && !"0".equals(cInfo.getUsedKoreaAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(cInfo.getUsedKoreaAmt()) %>
+									<%} %>
+								<%}else{ %>
+									<%if(!"".equals(cInfo.getHalbuAmt()) && !"0".equals(cInfo.getHalbuAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(cInfo.getHalbuAmt()) %>
+									<%} %>
+								<%} %>
+								</td>
+							</tr>
+							<%
+							}
+							%>
+						</tbody>
+						</table>
+
+						<%} %>
+
+
+</div>
+</body>
+</html>

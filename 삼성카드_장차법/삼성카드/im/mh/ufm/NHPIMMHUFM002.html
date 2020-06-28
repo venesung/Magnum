@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_info_viewchange.png" alt="회원님의 신상정보를 조회, 변경하실 수 있습니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<!-- tab_area -->
+				<div class="content_block content_block_card clfix">
+					<div class="tab02 w810">
+						<ul>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHUFM001M001', true);">회원정보조회ㆍ변경</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHUOM001', true);">부가정보조회ㆍ변경</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHUFM006', true);">웹회원비밀번호변경</a></li>
+						</ul>
+					</div>
+					
+					<div class="top_step_change_profile top_step_change_profile01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>본인확인</strong></li>
+							<li>정보변경</li>
+							<li>변경완료</li>
+						</ol>
+					</div>
+					
+					<h2><img src="/images/mh/h2_check_card_info.png" alt="고객님의 카드정보를 확인 하세요" /></h2>
+					
+
+					<div class="content_block_inner">
+						
+						
+
+						<div class="tb_exp">
+							<p>회원님의 정보 보안을 위해 <span class="t_point">카드정보</span>를 확인해 주십시오.</p>
+						</div>
+						
+						<table class="dtable02 dtable_inputfield" summary="카드정보 확인을 위한 카드번호, 카드비밀번호, 주민등록번호 뒷자리를 입력하는 게시판입니다.">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+									<select name="CARD_INDEX" title="카드번호 선택" style="width:360px">
+										<option>======선택가능한 카드가 존재하지 않습니다.</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+								<p class="input_2char">
+								<input type="password" id="PASSWORD_NO2" name="PASSWORD_NO2" maxlength="2" size="4"  class="txt" onkeypress="checkTypes(this,'NUMB');" onkeyup="changeFocus();" onblur="checkTypesOnBlur(this,'NUMB');" title="카드 비밀번호 앞 두자리" enc="on"/><em>**</em>(비밀번호 앞의 2자리)
+								<span id="usafeon_PASSWORD_NO2"></span>
+								</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td>
+								<p class="input_3char">
+								<input type="password" id="IDEN_NO2" name="IDEN_NO2" size="7" maxlength="7" class="txt" title="주민등록번호 뒷자리" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');" onkeydown="if (window.event.keyCode == 13) {javascript:goStage2();}" enc="on"/>(주민번호 13자리 숫자 중 뒷7자리)
+								<span id="usafeon_IDEN_NO2"></span>
+								</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</form>
+
+						<!-- btn -->
+						<div class="btnset mt30">
+							<p class="btnc">
+                            <a href="javascript:goStage2();"><img src="/images/sp/btn_confirm.png" alt="확인" /></a>
+                            <a href="javascript:goMemberInfo();"><img src="/images/sp/btn_cancel.png" alt="취소" /></a>
+							</p>
+						</div>
+
+						<div class="line_lgray_p0 mt20 mb5"></div>
+		
+						<div class="btnset">
+							<p class="btnl t_desc03 pl10">카드미소지 정회원의 경우, 공인인증서 본인확인을 통해서 웹멤버 ID찾기 및 비밀번호변경 메뉴를 이용하실 수 있습니다.</p>
+							<p class="btnl mt5 pl10">
+                                <a href="javascript:credit_pop();" class="btn btn_white"   title="새창"><span>공인인증서로 신상정보변경 &gt;</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+   <script type="text/javascript">
+  	safeonAddNumberField("frm1","PASSWORD_NO2");
+  	safeonAddNumberField("frm1","IDEN_NO2");
+	SafeonInit();
+	TouchEnKey_ReScan();
+   </script>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

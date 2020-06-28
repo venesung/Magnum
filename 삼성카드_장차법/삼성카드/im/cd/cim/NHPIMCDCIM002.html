@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<div class="top_visual">
+					<h1><img src="/images/cd/h1_card_register.png" alt="회원님께서 발급받으신 카드를 사용등록하여주세요" /></h1><!-- 100428 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">	<!-- 100126 -->
+					<h2><img src="/images/mh/h2_card_register01.png" alt="카드사용 등록을 하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+					<ol class="list_no01">
+						<li><p>안전한 카드 사용을 위해 반드시 본인이 직접 카드사용등록 후 카드를 사용하시기 바랍니다.</p></li>
+						<li><p>가족카드의 경우 가족명의 주민번호로 사용등록 하셔야 합니다.</p></li>
+						<li><p>비밀번호 미등록 회원은 <strong class="t_black">고객상담센터(1588-8700)</strong>나 홈페이지를 통해<br /> 비밀번호 등록 후 이용해 주시기 바랍니다.</p></li>
+						<li><p>교체 또는 갱신 발급의 경우 새로 발급 받은 카드의 사용등록 완료 익일에 기존 카드가 자동 해지 됩니다.</p></li>
+						<li><p>기타 문의사항은 <strong class="t_point">고객상담센터 1588-8700</strong>으로 연락주시기 바랍니다.<br />
+						<span class="t_desc04">ARS 사용등록: 1588-8700 &gt; 8번 &gt; 4번 &gt; 주민번호 &gt; 카드번호 &gt; 비밀번호 입력</span>
+						</p></li>
+						<li><p>후불하이패스카드의 사용등록은 아래에서 "카드번호"를 「마스타/비자/국내/체크」로 선택하신 후<br /> 진행하시면 됩니다.<br />
+							<span class="t_desc04"><span class="t_default">※</span> 단, 후불하이패스카드는 사용등록시점으로부터 12시간 후 고속도로 톨게이트에서 정상이용 가능합니다.</span></p></li>
+					</ol>
+
+<!-- 100428 -->
+						<!-- <p class="mt10 ml10 t_desc04">후불하이패스카드는 카드사용등록 시점으로부터 12시간 후 고속도로 톨게이트에서 정상 이용가능합니다.</p>-->
+
+						<div class="tb_exp mt10 clfix">
+							<span>&nbsp;</span>
+							<span class="ab_tr"><a href="javascript:goTabPage('NHPIMCDCIM004', true);" class="a_point">ENGLISH</a></span>
+						</div>
+
+						<table class="dtable02 dtable_inputfield" summary="카드사용 등록을 하기 위해 주민등록번호, 카드번호, CVC번호, 카드 비밀번호를 입력하는 게시판입니다.">
+<!-- //100428 -->
+						<caption>사용 카드 등록</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p>
+								<span class="input_idno">
+								<input name="IDEN_NO1" type="text" maxlength="6" class="txt" value="" title="주민등록번호 앞자리" onkeyup="lengthCheck01(this.value)" enc="on"/>
+								&nbsp;-&nbsp;
+								<input name="IDEN_NO2" type="password" maxlength="7" class="txt" value="" title="주민등록번호 뒷자리" enc="on"/></span>
+								<span id="usafeon_IDEN_NO1|IDEN_NO2"></span>
+								
+								<script type="text/javascript">
+//safeonAddCharField("cancel_form", "IDEN_NO1");	 
+safeonAddNumberField("cancel_form", "IDEN_NO1|IDEN_NO2");
+</script>
+								</p>
+								 
+								</td>
+							</tr>
+							
+							
+							<!-- //loop -->
+							<tr>
+								<th rowspan="3"><p>카드번호</p></th>
+								<td colspan="2" style="border-bottom:none;">
+									<label for="label_cardno01"><input type="radio" class="chk" title="비자/마스터/UnionPay(은련)/자체카드" id="label_cardno01" value="visa" name="card_type"  onclick="clickVisa()" /> 
+									비자/마스터/UnionPay(은련)/자체카드</label>
+									<p><span class="input_cardno"><input name="CARD_NO1" type="password" maxlength="4" class="txt" value="" title="카드번호 첫번째 네자리" onkeyup="lengthCheck1(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input name="CARD_NO2" type="password" maxlength="4" class="txt" value="" title="카드번호 두번째 네자리" onkeyup="lengthCheck2(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input  name="CARD_NO3" type="text" maxlength="4" class="txt" value="" title="카드번호 세번째 네자리" onkeyup="lengthCheck3(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input  name="CARD_NO4" type="text" maxlength="4" class="txt" value="" title="카드번호 네번째 네자리" onkeyup="lengthCheck4(this.value)" enc="on"/>
+									</span></p>
+								</td>
+							</tr>
+							<tr>
+								<td  colspan="2" style="border-top:none;">
+									<label for="label_cardno02">
+									<input type="radio" class="chk" title="아멕스카드" id="label_cardno02" value="amex"  name="card_type"  onclick="clickAmex()" /> 
+									아멕스카드</label>
+									<p><span class="input_cardno"><input name="CARD_NO21" type="password" maxlength="4" class="txt" value="" title="카드번호 첫번째 네자리" onkeyup="lengthCheck21(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input name="CARD_NO22" type="password" maxlength="6" class="txt" value="" title="카드번호 두번째 네자리" onkeyup="lengthCheck22(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input name="CARD_NO23" type="text" maxlength="5" class="txt" value="" title="카드번호 세번째 네자리" onkeyup="lengthCheck23(this.value)" enc="on"/>
+									</span></p>
+								</td>
+                            </tr>
+                            <tr>
+								<td  colspan="2" style="border-top:none;">
+									<label for="label_cardno03">
+									<input type="radio" class="chk" title="마이너스론카드" id="label_cardno03" value="minus"  name="card_type"  onclick="clickMinus()" /> 
+									마이너스론카드</label>
+									<p><span class="input_cardno"><input name="CARD_NO31" type="password" maxlength="4" class="txt" value="" title="카드번호 첫번째 네자리" onkeyup="lengthCheck31(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input name="CARD_NO32" type="password" maxlength="4" class="txt" value="" title="카드번호 두번째 네자리" onkeyup="lengthCheck32(this.value)" enc="on"/>
+									&nbsp;-&nbsp;
+									<input name="CARD_NO33" type="text" maxlength="4" class="txt" value="" title="카드번호 세번째 네자리" onkeyup="lengthCheck33(this.value)"enc="on" />
+									&nbsp;-&nbsp;
+									<input name="CARD_NO34" type="text" maxlength="4" class="txt" value="" title="카드번호 네번째 네자리" onkeyup="lengthCheck34(this.value)" enc="on"/>
+									</span>
+									&nbsp;
+									<span id="usafeon_CARD_NO1|CARD_NO2|CARD_NO3|CARD_NO4" style="display:inline"></span>
+									<span id="usafeon_CARD_NO21|CARD_NO22|CARD_NO23" style="display:none"></span>
+									<span id="usafeon_CARD_NO31|CARD_NO32|CARD_NO33|CARD_NO34" style="display:none"></span>
+									<script type="text/javascript">
+										safeonAddNumberField("cancel_form", "CARD_NO1|CARD_NO2|CARD_NO3|CARD_NO4");
+										safeonAddNumberField("cancel_form", "CARD_NO21|CARD_NO22|CARD_NO23");
+										safeonAddNumberField("cancel_form", "CARD_NO31|CARD_NO32|CARD_NO33|CARD_NO34");
+									</script>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>CVC 번호</p></th>
+								<td><p><span class="input_3char">
+								<input name="CVCNO" type="password" maxlength="3" class="txt" value="" title="CVC번호" id="label_cvc"  onkeyup="lengthCheck01(this.value)" enc="on"/>
+								<span id="usafeon_CVCNO"></span>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								카드 뒷면 서명란에 있는 숫자 중 마지막 3자
+								</span>
+								
+								<script type="text/javascript">
+										safeonAddNumberField("cancel_form", "CVCNO");
+								</script>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td><p><span class="input_2char">
+								<input name="PASSWD" type="password" maxlength="2" class="txt" value="" title="비밀번호 앞의 숫자 2자리" id="label_passno"  onkeyup="lengthCheck01(this.value)" enc="on"/>
+								&nbsp;<span id="usafeon_PASSWD"></span>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 앞 2자리
+								</span>
+								
+								<script type="text/javascript">
+										safeonAddNumberField("cancel_form", "PASSWD");
+								</script>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+ 
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+							<a href="javascript:" class="btn btn_blue" onclick="Validation()"><span>등록</span></a>
+							<!-- //100126 -->
+						</div>
+
+						<dl class="cvc_view">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC란 회원님의 안전한 거래를 위한 확인번호로 카드 뒷면 서명란에 있는 숫자 중 마지막 3자리 숫자입니다</dd>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>				
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

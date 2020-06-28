@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>삼성카드</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+<body>
+
+						<!-- find_country_event -->
+						<div class="find_county_event">
+							<div id="flash_find_event">
+								<jsp:include page="NHPIMETEVTVIEW004D.jsp"   flush="false">
+									<jsp:param value="<%=srchGubun5%>" name="srchGubun5" />
+								</jsp:include>
+								
+							</div>
+
+							<div class="list_event_ing">
+								<ul>
+									<!-- loop -->
+									<li>
+                                        <p class="p_photo"><a href="javascript:goDetail('<%=vo.getCmsSeq() %>','<%=vo.getNewSeq() %>');" ><span class="frame116">&nbsp;</span><img src="<%=vo.getThumImg() %>" alt="<%=vo.getDescription() %>"  width="116"  height="82" /></a></p>
+										<div class="p_desc">
+                                            <p class="p_tit"><a href="javascript:goDetail('<%=vo.getCmsSeq() %>','<%=vo.getNewSeq() %>');" title="<%=vo.getTitle().length()>30?vo.getTitle().substring(0,30)+"...":vo.getTitle() %>" ><%=vo.getTitle().length()>30?vo.getTitle().substring(0,30)+"...":vo.getTitle() %></a></p>
+											<p class="p_txt"><%=vo.getDescription().length()>80?vo.getDescription().substring(0,80)+"...":vo.getDescription() %></p>
+											<p class="p_date"><%=HpCommonUtil.convertYYMMDD(vo.getSdate()) %> ~ <%=HpCommonUtil.convertYYMMDD(vo.getEdate()) %></p>
+										</div>
+									</li>
+									<!-- //loop -->
+								<%	
+					   					}	
+									}else{ 
+								 %>	
+								 <li>
+								 	조회된 결과가 없습니다.
+								 </li>	
+								<%} %>
+								</ul>
+								<%
+								if(resultList != null && resultList.size() >0){
+							%>
+											<!-- paginate -->
+											<!-- 페이징 -->											
+											<div class="paginate">
+												${_page}
+											</div>
+											<!-- //페이징 -->
+							<%}%>	
+							</div>
+						</div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- control_button -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_loss_reported_app.png" alt="카드를 분실신고 합니다." /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					<h2><img src="/images/cs/h2_loss_reported_app01.png" alt="신고 전 유의사항을 확인하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						<ol class="list_no01">
+							<li><p>카드 분실 신고 후 승인내역을 확인하시어 본인이 사용하지 않은 카드 승인 건 발생시<br /><strong class="t_point_org">1588-8900으로 문의</strong>해 주시기 바랍니다.</p></li>
+							<li><p>가족카드 재발급의 경우 삼성카드 고객상담센타 1588-8700로 문의바랍니다.</p></li>
+                            <li><p>신상정보에 변경사항이 있으신 경우<a href="javascript:goTabPage('NHPIMMHUFM001M001');"><strong class="t_point_blue"> 회원정보조회변경</strong></a>에서 회원정보를 확인, 변경해 주시기 바랍니다.</p></li>
+							<li><p>연체 등의 사유로 카드 발급이 중단될 수 있으니 이 점 양해 부탁 드립니다.</p></li>
+							<li><p>휴대폰(전화), 인터넷, 아파트 관리비, 보험료, 전기요금 등의 이용요금을 매월 삼성카드로 <br/>자동이체하고 계신 회원님은 카드번호로 변경으로 미납이 될 수 있으니, 해당 업체 고객센터로<br />연락하셔서 새로운 카드번호를 변경신청 해주시기 바랍니다.</p></li>
+							<li><p>평일 22:00 ~ 08:00 및 공휴일에 분실신고를 하실 경우 카드상태 반영은 익일(영업일기준) <br />오전 9시 이후에 반영됩니다.</p></li>
+<!--  SR반영 2013.02.18 -->	<li><p><strong class="t_point">KDB산업은행 삼성카드 4 재발급의 경우 삼성카드 고객상담센터 1588-8700으로 문의바랍니다.</strong></p></li>
+						</ol>
+
+						<div class="btnset">
+							<p class="btnr">
+                                <a href="javascript:goApproveList();" class="btn btn_white"><span>국내승인내역 &gt;</span></a>
+                                <a href="javascript:goOvApproveList();" class="btn btn_white"><span>해외승인내역 &gt;</span></a>
+                                <a href="javascript:goCashLoanResult();" class="btn btn_white"><span>현금서비스처리결과 &gt;</span></a>
+                                <a href="javascript:goLoanResult();" class="btn btn_white"><span>대출처리결과 &gt;</span></a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_loss_reported_app02.png" alt="고객님의 분실카드를 선택하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+
+						<div class="tb_exp clfix">
+							<span>분실카드를 선택하세요.</span>
+						</div>
+						<table class="dtable01" summary="분실카드를 선택(카드선택, 카드종류, 결제일, 상태, 재발급여부, 카드수령지 등)하실 수 있는 게시판 입니다.">
+						<caption>분실카드 선택</caption>
+						<colgroup><col width="10%" /><col width="36%" /><col width="12%" /><col width="9%" /><col width="11%" /><col width="11%" /><col width="11%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 cell_bg riline">구분</th>
+								<th scope="col" class="cell_l10">카드선택</th>
+								<th scope="col">카드종류</th>
+								<th scope="col">결제일</th>
+								<th scope="col">상태</th>
+								<th scope="col">재발급여부</th>
+								<th scope="col">카드수령지</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg" rowspan="${recCnt}">분실카드</th>
+								<td class="cell_l10">
+
+									<!-- 20130411 웹접근성(장차법)  onFocus="this.blur()"  제거 -->
+									<input type="checkbox" class="rdo" value="${CardList.cardIndex}" id="label_card1" name="WS_OCC_CARD_NUM" title="00카드 선택" />
+									카드이름(본인)<br /><span class="cardnum t_no">0000-0000-0000-0000</span>
+								</td>
+								<td>
+										개인카드
+								</td>
+								<td><span class="t_no">05</span> 일</td>
+								<td>정상</td>
+ 
+								<td>
+									<!-- 20130411 웹접근성(장차법)  onFocus="this.blur()"  제거 -->
+									<label><input type="radio" class="rdo" value="Y" id="label_replace${CardList.cardIndex-1}" name="WS_CARD_REGIVE${CardList.cardIndex-1}" disabled="disabled" title="00카드 재발급 신청" /> 신청</label><br />
+									<label><input type="radio" checked class="rdo" value="N" id="label_replace${CardList.cardIndex-1}" name="WS_CARD_REGIVE${CardList.cardIndex-1}" disabled="disabled"  title="00카드 재발급 거부" /> 거부</label>
+
+								</td>
+								<td>
+									<!-- 20130411 웹접근성(장차법)  onFocus="this.blur()"  제거 -->
+									<label for="label_addr1"><input type="radio" class="rdo" value="0" id="label_addr1" name="WS_CARD_RECV${CardList.cardIndex-1}" disabled="disabled" title="00카드 수령지 직장" /> 직장</label><br />
+									<label for="label_addr2"><input type="radio" class="rdo" value="1" id="label_addr2" name="WS_CARD_RECV${CardList.cardIndex-1}" disabled="disabled" title="00카드 수령지 자택" /> 자택</label>
+								</td>
+
+							</tr>
+							<!-- //loop -->
+						</tbody>
+
+						</table>
+
+						<div class="tb_exp clfix mt20">
+							<span>분실내용을 체크해주세요.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="분실내용 체크을 위한 분실신고자, 분실일시, 분실경위, 연락처를 입력하는 게시판입니다.">
+						<caption>분실내용 체크</caption>
+						<colgroup><col width="115" /><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>분실신고자</p></th>
+								<td colspan="2"><p class="input_email">
+									<select id="label_name" name="WS_REQ_RELATE" title="분실신고자 선택" >
+										<option value="본인      " selected="selected">본인</option>
+				                        <option value="배우자    ">배우자</option>
+				                        <option value="가족      ">가족</option>
+				                        <option value="친인척    ">친인척</option>
+				                        <option value="직장동료  ">직장동료</option>
+				                        <option value="지인      ">지인</option>
+				                        <option value="기타      ">기타</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>분실일시</p></th>
+								<td>
+								            <!-- 20130415 웹접근성(장차법)  수정  -->
+									<span class="reset_date mr5">&nbsp;&nbsp;</span>
+								</td>
+								<td><span class="reset_date mr5">
+									<select id="label_startday01" name="lostTime" title="시간 선택">
+										<option></option>
+									</select> 시</span>
+							</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>분실경위</p></th>
+								<td colspan="2"><p class="input_email">
+									<select id="label_reason" name="WS_REQ_MEMO" title="분실경위" >
+										<option selected="selected">지갑채분실</option>
+										<option>도난/소매치기</option>
+										<option>타인대여후분실</option>
+										<option>해외분실</option>
+										<option>기타</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>연락처</p></th>
+								<td colspan="2"><p class="input_phone">
+									<select title="휴대폰 앞자리" name="phone1">
+										<option value = "010" selected="selected">010</option>
+			                            <option value = "011">011</option>
+			                            <option value = "016">016</option>
+			                            <option value = "017">017</option>
+			                            <option value = "018">018</option>
+			                            <option value = "019">019</option>
+			                            <option value = "0130">0130</option>
+			                            <option value = "02">02</option>
+			                            <option value = "031">031</option>
+			                            <option value = "032">032</option>
+			                            <option value = "033">033</option>
+			                            <option value = "041">041</option>
+			                            <option value = "042">042</option>
+			                            <option value = "043">043</option>
+			                            <option value = "051">051</option>
+			                            <option value = "052">052</option>
+			                            <option value = "053">053</option>
+			                            <option value = "054">054</option>
+			                            <option value = "055">055</option>
+			                            <option value = "0502">0502</option>
+			                            <option value = "0505">0505</option>
+			                            <option value = "0506">0506</option>
+			                            <option value = "061">061</option>
+			                            <option value = "062">062</option>
+			                            <option value = "063">063</option>
+			                            <option value = "064">064</option>
+			                            <option value = "070">070</option>
+                                    </select>&nbsp;-&nbsp;<input type="text" class="txt" name="phone2" value="" title="휴대폰 가운데자리" style="ime-mode:disabled" maxlength="4" onkeypress="checkTypes(this,'TELNO');" onblur="checkTypesOnBlur(this,'TELNO');" />
+									&nbsp;-&nbsp;<input type="text" name="phone3" class="txt" value="" title="휴대폰 뒷자리" maxlength="4"  style="ime-mode:disabled" onkeypress="checkTypes(this,'TELNO');" onkeydown="checkLenB( this, document.InsForm.phone2)" onblur="checkTypesOnBlur(this,'TELNO');" />
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+						<br/>
+						<br/>
+						<div class="tb_exp clfix mt20" id="meminfo" style="display:none;">
+							<span>회원정보안내</span>
+						</div>
+						<table id="memberinfo" style="display:none;" class="dtable02 dtable_inputfield" summary="등록하신 회원정보 안내(성명, 주민등록번호, 직장or자택or기타, Email ID, 청구지, 자택우편번호, 자택전화, 자택주소, 직장우편번호, 직장전화, 직장주소, 직장명, 부서명, 직위, 휴대폰 등)입니다.">
+						<caption>회원정보안내</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>성명</p></th>
+								<td><p>0</p></td>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p class="t_no">0 - ******* </p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>Email ID</p></th>
+								<td><p class="t_no">0</p></td>
+								</tr>
+							<tr>
+								<th scope="row"><p>청구지</p></th>
+								<td><p class="t_no">0</p></td>								
+								
+							</tr>
+							
+							<tr>
+								<th scope="row"><p>자택우편번호</p></th>
+								<td><p class="t_no">0 – 0</p></td>
+								<th scope="row"><p>자택전화</p></th>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>자택주소</p></th>
+								<td  colspan="3"><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직장우편번호</p></th>
+								<td><p class="t_no">0</p></td>
+								<th scope="row"><p>직장전화</p></th>
+								<td><p class="t_no">0</p></td>
+							</tr>
+							
+							<tr>
+								<th scope="row"><p>직장주소</p></th>
+								<td colspan="3"><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>직장명</p></th>
+								<td><p>0</p></td>
+								<th scope="row"><p>부서명</p></th>
+								<td><p>0</p></td>
+								
+							</tr>
+							<tr>
+								<th scope="row"><p>직위</p></th>
+								<td><p>0</p></td>
+								<th scope="row"><p>휴대폰</p></th>
+								<td><p>0</p></td>
+							</tr>
+							<tr>
+		                        <td colspan="4">회원님에 해당하는 신상정보가  없습니다</td>
+		                      </tr>
+							
+						</tbody>
+						</table>
+						
+						
+						<!-- btn -->
+						<div class="btnset" id="info" >
+							<p class="btnr">								
+                                <a href="javascript:move();" class="btn btn_blue"><span>신청하기</span></a>                                
+                                <a href="javascript:goResultSch();" class="btn btn_white"><span>처리결과조회</span></a>
+							</p>
+						</div>
+						
+						<div class="btnset" id="info2" style="display:none;">
+							<p class="btnr">								
+                                <a href="javascript:move();" class="btn btn_blue"><span>신청하기</span></a>
+                                <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_white"><span>정보수정</span></a>
+                                <a href="javascript:goResultSch();" class="btn btn_white"><span>처리결과조회</span></a>
+							</p>
+						</div>
+				<div class="tb_exp clfix" style="text-align:center;">
+							<span>사용가능한 카드가 없습니다.</span>
+						<div class="btnset">
+							<p class="btnr">
+								<a onclick="location.href='/hp/main.do?method=myhome';" class="btn btn_blue"><span>확인</span></a>
+								
+							</p>
+						</div>
+				
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

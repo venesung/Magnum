@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+                <!-- top_visual 100327 -->
+                <div class="top_visual">
+                <!-- 20130412 웹접근성(장차법)  수정  -->
+                    <div class="h1_desc"><img src="/images/cd/h1_entertain310.jpg" alt="여행, 레저, 엔터테인먼트의 고품격 맞춤카드 티클래스클럽" /></div>
+                    <h1 class="none">티클래스 클럽</h1>
+                    <div class="flag_tclass_top">
+                        <img src="/images/cd/btn_tclass_top02.png" alt="" usemap="#map_tclass_top" />
+                        <map name="map_tclass_top" id="map_tclass_top">
+                            <area shape="rect" alt="티클래스클럽소개" coords="0,0,81,100" href="javascript:goTabPage('NHPIMCDTCS003', true);" />
+                            <area shape="rect" alt="티클래스카드서비스" coords="81,0,160,100" href="javascript:goTabPage('NHPIMCDTCSVIEW101', true);" />
+                            <area shape="rect" alt="우수회원서비스" coords="161,0,230,100" href="javascript:goTabPage('tcsLinkCLUB051', true);" />
+                            <area shape="rect" alt="가맹점포인트조회" coords="231,0,310,100" href="javascript:goTabPage('NHPIMCDTCS001', true);" />
+                            <area shape="rect" alt="우수회원서비스이용내역조회" coords="311,0,400,100" href="javascript:goTabPage('NHPIMCDTCS006', true);" />
+                        </map>
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_tab2 clfix">
+                    <!-- tab_area -->
+                    <div class="tab02 w810">
+                        <ul>
+							<li><a href="javascript:goTabPage('tcsLinkCLUB051', true);">국내숙박지원서비스</a></li>
+							<li><a href="javascript:goTabPage('tcsLinkCLUB057', true);">웹 투어테마여행</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDTCS004', true);">닥터카서비스</a></li>
+							<li><a href="javascript:goTabPage('tcsLinkCLUB055', true);">월간지구독 할인</a></li>
+							<li><a href="javascript:goTabPage('tcsLinkCLUB056', true);">무료영화 관람서비스</a></li>
+                        </ul> 
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_card clfix">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td>
+                                <div id="iframe">
+                                  <iframe src="" width="810" height="800" scrolling="no" id="cp_page" frameborder="0" name="cp_frame" title="티클래스 서비스 상세"></iframe>
+                                </div>
+                            </td>
+                          </tr>
+                        </table>
+                        
+                        <form name="cp_form" autocomplete="off" >
+                          ${HiddenValue}
+                          <input type="hidden" name="SCP1" value="${User_Name}" />
+                          <input type="hidden" name="SCP2" value="${User_Email}" />
+                          <input type="hidden" name="SCP3" value="${User_Id}" />
+                          <input type="hidden" name="SCP4" value="" />
+                          <input type="hidden" name="LOGIN_YN" value="${LOGIN_YN}" />
+                        </form>
+                        
+                        <script type="text/javascript" language="javascript">
+                                cp_size('${cpcode}');
+                        
+                                var frmCP   = document.getElementById("cp_page");
+                                document.cp_form.SCP4.value = location.hostname;
+                        
+                                if(frmCP != null) {
+                                    document.cp_form.action = '${URL}';
+                                    //document.cp_form.action = 'http://card.vogue.co.kr';
+                                    document.cp_form.target = 'cp_frame';
+                                    document.cp_form.method = 'POST';
+                                    document.cp_form.submit();
+                                }
+                                //frames["cp_frame"].window.location.href = "${URL}" ;
+                        </script>
+                </div>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

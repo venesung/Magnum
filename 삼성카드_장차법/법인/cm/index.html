@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="/js/cm/common-hp-cm.js"></script>
+	<script type="text/javascript" src="/js/common-hp.js"></script>
+	<script type="text/javascript" src="/js/common-main.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script><!-- 파일다운로드(Xecure미사용) -->
+	<script type="text/javascript" src="/js/samsungcardUIComponent.js"></script>
+	<title>법인 메인 - 삼성카드</title>
+	</head>
+
+<body>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">
+		<div class="left_util" id="id_left_util">
+			<h1><a href="http://www.samsungcard.com/"><img src="/images/ci/ci_samsungcard.png" alt="SAMSUNGCARD" /></a></h1>
+			<h2 class="none">대메뉴</h2>
+			<ul id="gnb">
+		
+				<li ><a href="javascript:goTop('','14');" onmouseover="view_gnb(1);" id="gnb1"><img src="/images/cm/gnb_inqury_off.png" alt="카드조회" /></a>
+					<div class="gnb_sub" id="gnb_sub1" onmouseover="view_gnb(1);" onmouseout="hide_gnb(1);">
+					
+						<div class="sub"><p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+					
+							<ul id="gnb_sub_list1">
+								<li><a href="javascript:goMenu('/rec.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_01_off.png" alt="명세서조회" /></a></li>
+								<li><a href="javascript:goMenu('/apr.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_02_off.png" alt="결제예정금액조회" /></a></li>
+								<li><a href="javascript:goMenu('/use.do?method=selectUseList');"><img src="/images/cm/gnb_snb1_03_off.png" alt="이용내역" /></a></li>
+								<li><a href="javascript:goMenu('/rul.do?method=selectRealList');"><img src="/images/cm/gnb_snb1_04_off.png" alt="실시간국내이용내역" /></a></li>
+								<li><a href="javascript:goMenu('/abr.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_05_off.png" alt="해외이용내역" /></a></li>
+								<li><a href="javascript:goMenu('/dep.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_09_off.png" alt="입금내역" /></a></li>
+								<li><a href="javascript:goMenu('/scl.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_10_off.png" alt="매출취소내역" /></a></li>
+								<li><a href="javascript:goMenu('/dly.do?method=dlyDetail');"><img src="/images/cm/gnb_snb1_11_off.png" alt="연체내역" /></a></li>
+								<li><a href="javascript:goMenu('/rsp.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_12_off.png" alt="매출표재발행서비스" /></a></li>
+								<li><a href="javascript:goMenu('/own.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb1_13_off.png" alt="카드보유내역" /></a></li>
+								<li><a href="javascript:goMenu('/ocd.do?method=getOilCardUseList');"><img src="/images/cm/gnb_snb1_06_off.png" alt="주유전용카드" /></a></li>
+								<li><a href="javascript:goMenu('/acd.do?method=getAirCardUseList');"><img src="/images/cm/gnb_snb1_07_off.png" alt="항공권전용카드" /></a></li>
+								<li><a href="javascript:goMenu('/hcd.do?method=getHipassCardUseList');"><img src="/images/cm/gnb_snb1_08_off.png" alt="후불하이패스카드" /></a></li>
+								<li><a href="javascript:goMenu('/cash.do?method=getResultHPB00009');"><img src="/images/cm/gnb_snb1_14_off.png" alt="캐시백조회" /></a></li>
+							</ul>
+				
+						</div>
+				
+					</div>
+				</li>
+		
+				<li ><a href="javascript:goTop('/cpd.do?method=getCardSrchIntro','3');" onmouseover="view_gnb(2);" id="gnb2"><img src="/images/cm/gnb_cardinfo_off.png" alt="카드상품안내" /></a>
+					<div class="gnb_sub" id="gnb_sub2" onmouseover="view_gnb(2);" onmouseout="hide_gnb(2);">
+					
+						<div class="sub"><p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+					
+							<ul id="gnb_sub_list2">
+								<li><a href="javascript:goMenu('/cpd002.do?method=getCardList&amp;card_type=01');"><img src="/images/cm/gnb_snb2_02_off.png" alt="일반법인카드" /></a></li>
+								<li><a href="javascript:goMenu('/cpd001.do?method=getCardList&amp;card_type=02');"><img src="/images/cm/gnb_snb2_01_off.png" alt="특화법인카드" /></a></li>
+								<li><a href="javascript:goMenu('/cpd004.do?method=getCardList&amp;card_type=03');"><img src="/images/cm/gnb_snb2_05_off.png" alt="법인체크/올앳/Gift카드" /></a></li>
+							</ul>
+				
+						</div>
+				
+					</div>
+				</li>
+		
+				<li ><a href="javascript:goTop('','6');" onmouseover="view_gnb(3);" id="gnb3"><img src="/images/cm/gnb_meminfo_off.png" alt="회원안내" /></a>
+					<div class="gnb_sub" id="gnb_sub3" onmouseover="view_gnb(3);" onmouseout="hide_gnb(3);">
+					
+						<div class="sub"><p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+					
+							<ul id="gnb_sub_list3">
+								<li><a href="javascript:goMenu('/NHPCMMMPCD001.do');"><img src="/images/cm/gnb_snb3_01_off.png" alt="법인카드안내" /></a></li>
+								<li><a href="javascript:goMenu('/NHPCMMMPCD002.do');"><img src="/images/cm/gnb_snb3_01a_off.png" alt="법인카드신청안내" /></a></li>
+								<li><a href="javascript:goMenu('/NHPCMMMPCD006.do');"><img src="/images/cm/gnb_snb3_01e_off.png" alt="법인회원약관" /></a></li>
+								<li><a href="javascript:goMenu('/NHPCMMMPCD004.do');"><img src="/images/cm/gnb_snb3_01c_off.png" alt="법인회원우대혜택" /></a></li>
+								<li><a href="javascript:goMenu('/NHPCMMMPCD005.do');"><img src="/images/cm/gnb_snb3_01d_off.png" alt="장애인고용부담금납부" /></a></li>
+								<li><a href="javascript:goMenu('/NHPCMMMPCD003.do');"><img src="/images/cm/gnb_snb3_01b_off.png" alt="법인카드양식다운로드" /></a></li>
+							</ul>
+				
+						</div>
+				
+					</div>
+				</li>
+		
+				<li ><a href="javascript:goTop('','13');" onmouseover="view_gnb(4);" id="gnb4"><img src="/images/cm/gnb_cardmanage_off.png" alt="카드관리" /></a>
+					<div class="gnb_sub" id="gnb_sub4" onmouseover="view_gnb(4);" onmouseout="hide_gnb(4);">
+					
+						<div class="sub"><p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+					
+							<ul id="gnb_sub_list4">
+						
+								<li><a href="javascript:goMenu('/cma.do?method=selectMenuList');"><img src="/images/cm/gnb_snb4_01_off.png" alt="메뉴설정" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/mca.do?method=viewAgreement');"><img src="/images/cm/gnb_snb3_02_off.png" alt="개별카드신청" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/mcl.do?method=selectPubLimit');"><img src="/images/cm/gnb_snb3_03_off.png" alt="개별카드한도관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/pca.do?method=viewAgreement');"><img src="/images/cm/gnb_snb4_02_off.png" alt="공용카드신청" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/oca.do?method=viewAgreement');"><img src="/images/cm/gnb_snb4_03_off.png" alt="주유카드신청" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/acm.do?method=selectConfCardList');"><img src="/images/cm/gnb_snb4_04_off.png" alt="카드신청관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/iss.do?method=getNewProgressList');"><img src="/images/cm/gnb_snb4_06_off.png" alt="카드발급상황" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/isl.do?method=selectCardInfoList');"><img src="/images/cm/gnb_snb4_05_off.png" alt="카드발급내역" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/org.do?method=selectOmgList');"><img src="/images/cm/gnb_snb4_07_off.png" alt="조직관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/group.do?method=selectGroupMng');"><img src="/images/cm/gnb_snb4_08_off.png" alt="그룹관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/lim.do?method=selectLimitList');"><img src="/images/cm/gnb_snb4_09_off.png" alt="한도관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/lia.do?method=selectLimitChangeList');"><img src="/images/cm/gnb_snb4_10_off.png" alt="한도수정신청관리" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/lis.do?method=selectLimitIBMList');"><img src="/images/cm/gnb_snb4_11_off.png" alt="한도수정상황" /></a></li>
+
+						
+							</ul>
+				
+						</div>
+				
+					</div>
+				</li>
+		
+				<li class="alt"><a href="javascript:goTop('','4');" onmouseover="view_gnb(5);" id="gnb5"><img src="/images/cm/gnb_misreport_off.png" alt="데이터지원서비스" /></a>
+					<div class="gnb_sub" id="gnb_sub5" onmouseover="view_gnb(5);" onmouseout="hide_gnb(5);">
+					
+						<div class="sub"><p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+					
+							<ul id="gnb_sub_list5">
+						
+								<li><a href="javascript:goMenu('/mis.do?method=selectMisList');"><img src="/images/cm/gnb_snb5_01_off.png" alt="표준데이터" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/mia.do?method=selectMisSelect');"><img src="/images/cm/gnb_snb5_02_off.png" alt="선택데이터" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/mib.do?method=viewMisClaim');"><img src="/images/cm/gnb_snb5_03_off.png" alt="청구총괄명세" /></a></li>
+
+						
+								<li><a href="javascript:goMenu('/mic.do?method=viewMisCombine');"><img src="/images/cm/gnb_snb5_04_off.png" alt="통합청구서" /></a></li>
+
+						
+							</ul>
+				
+						</div>
+				
+					</div>
+				</li>
+		
+			</ul>
+		</div>
+
+		<div class="right_util">
+			<h2 class="none">퀵링크</h2>
+			<ul>
+				<li><a href="http://www.samsungcard.com" onclick="window.open('http://www.samsungcard.com','SCARD');return false;" title="새창"><img src="/images/ci/mnb_private.png" alt="개인" /></a></li>
+				<li><a href="http://partnet.samsungcard.com/chain.do" onclick="window.open('http://partnet.samsungcard.com/chain.do','SCARDCORP');return false;" title="새창"><img src="/images/ci/mnb_affliate.png" alt="가맹점주" /></a></li>
+				<li><a href="http://biz.samsungcard.com" onclick="window.open('http://biz.samsungcard.com','BIZ');return false;" title="새창"><img src="/images/ci/mnb_biz.png" alt="BIZ" /></a></li>
+				
+								<li class="alt">
+								<div class="mnb_life">
+									<a href="#" style="display:block"><img src="/images/ci/mnb_life.gif" alt="라이프스타일 서비스" /></a><!-- 마우스오버시 아래 ul메뉴로 바뀜 -->
+									<ul style="display:none;">
+										<li><a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain"><img src="/images/ci/mnb_shopping.gif" alt="쇼핑" /></a></li>
+										<li><a href="http://travel.samsungcard.com/ec/te/pk/fr/travelMain.do?method=selectTravelMain"><img src="/images/ci/mnb_travel.gif" alt="여행" /></a></li>
+										<li><a href="http://wedding.samsungcard.com/ec/wd/fr/wdMain100.do"><img src="/images/ci/mnb_wedding.gif" alt="웨딩" /></a></li>
+										<li><a href="http://insurance.samsungcard.com/ec/ns/nsMain100.do"><img src="/images/ci/mnb_insurance.gif" alt="보험" /></a></li>
+									</ul>
+								</div>
+								
+				</li>
+			</ul>
+		</div>
+	
+		<p class="language"><a href="/publicLogin.do"><img src="/images/ci/mnb_login.png" alt="로그인" /></a><a href="/NHPCMMMPMJ009.do"><strong><img src="/images/cm/mnb_findid_off.png" alt="ID찾기" /></strong></a><a href="/NHPCMMMPMJS001.do"><img src="/images/cm/mnb_joinin_off.png" alt="법인 회원가입" /></a><a href="http://www.samsungcard.com/index.do?method=custPlaza" target="_blank" title="새창"><img src="/images/cm/mnb_cs_off.png" alt="고객플라자" /></a></p>
+		
+	</div>
+<!--// 공통 Header 끝 -->
+
+<div id="con_wrap" class="clfix">
+		<div class="con_wrap_left">
+			<div class="d_panel_blue">
+				<blockquote><a href="/cmIndex.do"><img src="/images/cm/bq_corperation.jpg" alt="Corporation 삼성카드 법인" /></a></blockquote>
+			</div>
+
+			<!-- jump_service 100608전체 -->
+			<div class="module_left">
+				<h2><img src="/images/main/h2_jump_service.png" alt="서비스바로가기" /></h2>
+				<div class="jump_service">
+					<ul>
+						<li id="id_list_2"><a href="javascript:goMenu('/rec.do?method=selectCardInfoList');"><strong><img src="/images/cm/list_main_service01.png" alt="명세서조회" /></strong></a></li>
+						<li><a href="javascript:goMenu('/use.do?method=selectUseList');"><strong><img src="/images/cm/list_main_service02.png" alt="이용내역" /></strong></a></li>
+						<li><a href="javascript:goMenu('/apr.do?method=selectCardInfoList');"><strong><img src="/images/cm/list_main_service03.png" alt="결제예정금액조회" /></strong></a></li>
+						<li><a href="javascript:goMenu('/rul.do?method=selectRealList');"><strong><img src="/images/cm/list_main_service04.png" alt="실시간이용내역" /></strong></a></li>
+						<li><a href="javascript:goMenu('/scl.do?method=selectCardInfoList');"><img src="/images/cm/list_main_service05.png" alt="매출취소내역" /></a></li>
+						<li><a href="javascript:goMenu('/abr.do?method=selectCardInfoList');"><img src="/images/cm/list_main_service06.png" alt="해외이용내역" /></a></li>
+						<li><a href="javascript:goMenu('/rsp.do?method=selectCardInfoList');"><img src="/images/cm/list_main_service07.png" alt="매출표지재발행서비스" /></a></li>
+						<li><a href="javascript:goMenu('/own.do?method=selectCardInfoList');"><img src="/images/cm/list_main_service08.png" alt="카드보유내역" /></a></li>
+					</ul>				
+				</div>
+			</div>
+
+			<!-- event230xX -->
+			<div class="module_event">
+				<a href="javascript:goMenu('/ezmain.do?method=go');"><img src="/images/cm/ez/banner.jpg" alt="EZ(easy)-Work 법인데이터지원시스템 GO" /></a>
+			</div>
+
+		</div>
+
+		<!-- module 100608_아래맵있음 -->
+		<div id="content_module">
+			<div id="area_0"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_00_off.jpg" alt="카드관리 서비스 - 귀사에서 사용중인 카드정보를 확인하세요" usemap="#map_area00" /></p></div>
+			<!-- <div id="area_1"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_01_off.jpg" alt="" /></p></div> -->
+			<div id="area_2"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_02_off.jpg" usemap="#map_area02" alt="법인회원 안내" /></p></div>
+			<!-- <div id="area_3"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_03_off.jpg" alt="" /></p></div> -->
+			<!-- <div id="area_4"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_04_off.jpg" alt="" /></p></div> -->
+			<div id="area_5"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_05_off.jpg" usemap="#map_area05" alt="카드상품 안내" /></p></div>
+			<div id="area_6"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_06_off.jpg" usemap="#map_area06" alt="법인카드 신청" /></p></div>
+			<div id="area_7"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_07_off.jpg" usemap="#map_area07" alt="법인카드 한도관리" /></p></div>
+			<div id="area_8"><a href="javascript:goMenu('/cma.do?method=selectMenuList');"  onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_08_off.jpg" alt="메뉴관리 - 원하는 메뉴만, 나만의 맞춤 메뉴를 제공해드립니다." /></a></div>
+			<div id="area_9"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_09_off.jpg" usemap="#map_area09" alt="납부서비스" /></p></div>
+			<div id="area_10"><a href="javascript:goMenu('/NHPCMMMPCD003.do');" onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_10_off.jpg" alt="법인카드 양식 다운로드 - 법인카드 관련 각종 양식을 다운로드 받으실 수 있습니다." /></a></div>
+<!-- 수정 100701 -->
+			<div id="area_11"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_11_off.jpg" usemap="#map_area11" alt="공지사항/이벤트" /></p></div>
+<!-- // 수정 100701 -->
+			<!-- <div id="area_11"><p onmouseover="img_over(this);" onmouseout="img_out(this);"><img src="/images/cm/area_11_off.jpg" alt="" /></p></div> -->
+		</div>
+
+<map name="map_area00" id="map_area00"><!-- 100625 -->
+<area shape="rect" alt="카드신청 관리" coords="15,122,117,141" href="javascript:goMenu('/acm.do?method=selectConfCardList');" />
+<area shape="rect" alt="카드발급 상황" coords="15,141,117,158" href="javascript:goMenu('/iss.do?method=getNewProgressList');" />
+<area shape="rect" alt="한도관리" coords="15,158,117,176" href="javascript:goMenu('/lim.do?method=selectLimitList');" />
+<area shape="rect" alt="한도수정 신청관리" coords="15,176,117,195" href="javascript:goMenu('/lia.do?method=selectLimitChangeList');" />
+<area shape="rect" alt="한도수정 상황" coords="15,195,117,213" href="javascript:goMenu('/lis.do?method=selectLimitIBMList');" />
+</map>
+<map name="map_area02" id="map_area02">
+<area shape="rect" alt="법인회원 안내" coords="15,58,118,79" href="javascript:goMenu('/NHPCMMMPCD001.do');" />
+<area shape="rect" alt="법인카드 신청안내" coords="15,79,118,97" href="javascript:goMenu('/NHPCMMMPCD002.do');" />
+</map>
+<map name="map_area05" id="map_area05">
+<area shape="rect" alt="일반 법인카드" coords="15,60,126,80" href="javascript:goMenu('/cpd002.do?method=getCardList&amp;card_type=01');" />
+<area shape="rect" alt="특화 법인카드" coords="15,80,126,97" href="javascript:goMenu('/cpd001.do?method=getCardList&amp;card_type=02');" />
+<area shape="rect" alt="체크/올앳/Gift카드" coords="15,97,126,115" href="javascript:goMenu('/cpd004.do?method=getCardList&amp;card_type=03');" /><!-- 100716 -->
+</map>
+<map name="map_area06" id="map_area06">
+<area shape="rect" alt="공용카드 신청" coords="15,61,91,77" href="javascript:goMenu('/pca.do?method=viewAgreement');" />
+<area shape="rect" alt="개별카드 신청" coords="15,79,91,95" href="javascript:goMenu('/mca.do?method=viewAgreement');" />
+<area shape="rect" alt="주유카드 신청" coords="15,97,91,113" href="javascript:goMenu('/oca.do?method=viewAgreement');" />
+</map>
+<map name="map_area07" id="map_area07">
+<area shape="rect" alt="공용카드 한도관리" coords="15,60,119,79" href="javascript:goMenu('/lim.do?method=selectLimitList');" />
+<area shape="rect" alt="개별카드 한도관리" coords="15,79,119,98" href="javascript:goMenu('/mcl.do?method=selectPubLimit');" />
+</map>
+<map name="map_area08" id="map_area08">
+<area shape="rect" alt="GO &gt;" coords="13,111,44,132" href="javascript:goMenu('/NHPCMMMPCD003.do');" />
+</map>
+<!-- 수정 100701 -->
+<map name="map_area09" id="map_area09">
+<area shape="rect" alt="지방세 카드납부" coords="17,61,101,77" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMSSTAX001M001" target="_balnk" title="새창" />
+<area shape="rect" alt="고용산재보험료 납부" coords="16,79,121,95" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMSSIPM001" target="_balnk" title="새창" />
+<area shape="rect" alt="장애인고용부담금 납부" coords="16,97,129,113" href="javascript:goMenu('/NHPCMMMPCD005.do');"/>
+</map>
+<!-- // 수정 100701 -->
+<map name="map_area10" id="map_area10">
+<area shape="rect" alt="GO &gt;" coords="13,111,44,132" href="javascript:goMenu('/cma.do?method=selectMenuList');" />
+</map>
+<!-- 수정 100701 -->
+<map name="map_area11" id="map_area11">
+<area shape="rect" alt="공지사항 조회" coords="14,59,104,79" href="http://www.samsungcard.com/link/index.jsp?url=NEWS_LIST" target="_balnk" title="새창" />
+<area shape="rect" alt="이벤트 전체보기" coords="14,79,104,97" href="http://www.samsungcard.com/link/index.jsp?url=EVENT_LIST" target="_balnk" title="새창" />
+</map>
+<!-- // 수정 100701 -->
+
+	</div>
+	<div id="footer">
+		<address><img src="/images/cm/footer_address.png" alt="대표전화 1588-8700, 문자상담 #8700, 분실신고&middot;한도승인:국내 1588-8900/해외 82-2-2000-8100, 800-1588-8700, 서울 중구 세종대로 67 (100-742), 대표이사 최치훈, 사업자등록번호 202-81-45602, 통신판매업 신고번호 제2009-서울중구-1449호, COPYRIGHTⓒ2013 SAMSUNGCARD CO., LTD. RIGHTS RESERVED." usemap="#map_address" /></address>
+		<map name="map_address" id="map_address">
+		<area shape="rect" alt="지점안내" coords="0,0,43,12" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUGD000" title="새창" target="_blank" />
+		<area shape="rect" alt="E-Mail상담" coords="47,0,116,12" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSMAIL1"  title="새창" target="_blank" />
+		<area shape="rect" alt="회사소개" coords="0,27,40,39" href="http://www.samsungcard.com/hp/ci/idx/companyInfoIndex.do" title="새창" target="_blank" />
+		<area shape="rect" alt="IR" coords="42,27,65,39" href="http://www.samsungcard.com/hp/ci/ir/mgi/manageinfo1.do" title="새창" target="_blank" />
+		<area shape="rect" alt="사회공헌" coords="67,27,115,39" href="http://www.samsungcard.com/hp/ci/ps/lfd/loveFund.do?method=viewLfdMain" title="새창" target="_blank" />
+		<area shape="rect" alt="사랑의펀드기부" coords="117,27,192,39" href="http://www.samsungcard.com/hp/ci/ps/lfd/loveFund.do?method=viewLoveFundMain" title="새창" target="_blank" />
+		<area shape="rect" alt="수상내역" coords="194,27,242,39" href="http://www.samsungcard.com/hp/ci/ad/adi/awardedList.do" title="새창" target="_blank" />
+		<area shape="rect" alt="윤리경영" coords="244,27,291,39" href="/hp/ci/ehc/main/ehcmain.do" title="새창" target="_blank" />
+		<area shape="rect" alt="블로그" coords="293,27,341,39" href="http://blog.samsungcard.com/" title="새창" target="_blank" />
+		<area shape="rect" alt="이메일주소무단수집거부" coords="343,27,455,39" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUFCVIEW004" title="새창" target="_blank" />
+		<area shape="rect" alt="이용약관" coords="457,27,505,39" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUFCVIEW009" title="새창" target="_blank" />
+		<!-- <area shape="rect" alt="자율준수안내" coords="507,27,574,39" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUFCVIEW003" title="새창" target="_blank" /> -->
+		<area shape="rect" alt="고객권리 안내" coords="507,27,574,39" href="http://www.samsungcard.com/mainPage.do?menuId=NHPIMCSUFCVIEW011" title="새창" target="_blank" />
+		<area shape="rect" alt="개인정보 처리방침" coords="580,27,655,39" href="http://samsungcard.com/index.do?menuId=NHPIMCSUFCVIEW0017" title="새창" target="_blank" />
+		<area shape="rect" alt="개인정보 취급방침" coords="670,27,740,39" href="http://samsungcard.com/index.do?menuId=NHPIMCSUFCVIEW001" title="새창" target="_blank" />
+		</map>
+		<!-- 20121228 s2p script -->
+		<div class="family_site">
+			<h3><a href="#none"><img alt="Family Site" src="/images/common/h3_family_title_off.png" /></a></h3>
+			<div class="list">
+				<div class="scroll-pane">
+					<ul>
+						<li><a target="_blank" title="새창" href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain"><img alt="쇼핑" src="/images/common/familly_site01_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://travel.samsungcard.com"><img alt="여행" src="/images/common/familly_site02_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://wedding.samsungcard.com"><img alt="웨딩" src="/images/common/familly_site03_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://insurance.samsungcard.com"><img alt="보험" src="/images/common/familly_site04_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.americanexpress-samsung.co.kr/amex_main.htm"><img alt="American Express Card" src="/images/common/familly_site06_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.theaptcard.com/"><img alt="삼성 The APT카드" src="/images/common/familly_site07_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.allat.co.kr/"><img alt="올앳카드" src="/images/common/familly_site08_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.u-point.co.kr/"><img alt="U-point" src="/images/common/familly_site10_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.umoneymembers.co.kr/"><img alt="U-money" src="/images/common/familly_site11_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://twitter.com/withsamsungcard"><img alt="삼성카드트위터" src="/images/common/familly_site12_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.facebook.com/withSamsungCard"><img alt="삼성카드페이스북" src="/images/common/familly_site13_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://www.bizbridge.co.kr/"><img alt="비즈브릿지" src="/images/common/familly_site14_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://efamily.samsungcard.co.kr/"><img alt="이패밀리" src="/images/common/familly_site16_off.png" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<!--<div id="hpfooterFamilySiteLayer" style="position:relative;"><script language="javascript" type="text/javascript">FFn_EmbedHpFooterFamilySite();</script></div>--> 
+		</div>
+		<!-- //20121228 s2p script -->
+		<!--100408 -->
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript">var gnb_length = 5;</script>
+<script type="text/javascript" src="/js/gnb.js"></script>
+<script type="text/javascript">
+/* S2P : 2012-12-28 Footer Family 추가 */
+ var FamliySiteNew = function() {
+   var $this;
+   var $selectBTN;
+   var $list;
+   var flag = false;
+   return {
+	   init : function() {
+		   
+		   $this = $('div.family_site');
+		   $selectBTN =  $this.find('>h3>a');
+		   $list =  $this.find('.list');
+		   
+			// 스크롤 Plug 활성화
+			$('.scroll-pane').jScrollPane({
+				verticalDragMinHeight: 63,
+				verticalDragMaxHeight: 63
+			});
+			
+			FamliySiteNew.hide();
+			
+			$selectBTN.click(function() {
+				FamliySiteNew.toggle();
+				return false;
+			});
+			
+			$list.find('a:last').blur(function() {
+				FamliySiteNew.toggle();
+			});
+	   },
+	   show : function() {
+		   flag = true;
+		   var src = $selectBTN.find('img').attr('src').replace('_off.png','_on.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideDown();
+	   },
+	   hide : function() {
+		   flag = false;
+		   var src = $selectBTN.find('img').attr('src').replace('_on.png','_off.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideUp();
+	   },
+	   toggle : function() {
+		   if (flag == false) {
+			   FamliySiteNew.show();
+		   }
+		   else {
+			   FamliySiteNew.hide();
+		   }
+	   }
+   }
+}();
+</script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript">
+window.onload = initPage;
+function initPage() {
+	FamliySiteNew.init();
+}
+</script>
+
+	</div>
+</div>
+</body>
+</html>

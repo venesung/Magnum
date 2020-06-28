@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>법인카드신청관리 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+	
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">
+				<div class="d_panel_blue">
+				<blockquote><a href="/cmIndex.do"><img src="/images/cm/bq_corperation.jpg" alt="Corporation 삼성카드 법인" /></a></blockquote>
+			</div>
+			<div id="snb">
+					<p class="util_flag_tl">&nbsp;</p><p class="util_flag_tr">&nbsp;</p><p class="util_flag_bl">&nbsp;</p><p class="util_flag_br">&nbsp;</p>
+						<h2><img src="/images/cm/snb_cardinfo.png" alt="카드상품안내" /></h2>
+						<ul id="snb_list">
+							<li class="on"><a href="/cpd002.do?method=getCardList&amp;card_type=01"><img src="/images/cm/snb2_02_on.png" alt="일반법인카드" /></a></li>
+							<li ><a href="/cpd001.do?method=getCardList&amp;card_type=02"><img src="/images/cm/snb2_01_off.png" alt="특화법인카드" /></a></li>
+							<li ><a href="/cpd004.do?method=getCardList&amp;card_type=03"><img src="/images/cm/snb2_05_off.png" alt="법인체크/올앳/Gift카드" /></a></li>
+					
+					</ul>
+			</div>
+		</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_real_uselist.png" alt="법인카드신청관리" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/cm/img_menusetting.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="법인카드신청를 위한 이용기간, 조건선택을 해서 조회를 하실 수 있습니다.">
+					<caption>법인카드신청 조회</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>이용기간</p></th>
+							<td><p>
+								<input type="radio" class="rdo" value="1" id="label_area1" name="date_type" /> <label for="label_area1" class="mr10">당일</label>
+								<input type="radio" class="rdo" value="2" id="label_area2" name="date_type" /> <label for="label_area2">선택</label>
+							</p></td>
+						</tr>
+						<tr id="cal" style="display:none">
+							<th scope="row"></th>
+							<td><p>
+								<span class="reset_date ml10"></span>
+							</p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><label for="searchKey">조건선택</label></th>
+							<td><p>
+								<select name="searchKey" id="searchKey" style="width:100px">
+									<option value="">전체</option>
+								</select>&nbsp;
+
+								<input class="txt" type="text" id="group" name ="searchValue"  value="" style="width:260px" title="검색어 입력" />
+							</p></td>
+						</tr>
+
+					</tbody>
+					</table>
+
+					<!-- btn -->
+					<div class="btnr">
+						<!-- 100126 -->
+						<a href="javascript:search();" class="btn btn_blue"><span>조회</span></a>
+						<!-- //100126 -->
+					</div>
+
+					<h2 class="mt30"><img src="/images/cm/h2_uselist2.png" alt="신청내역" /></h2><!-- 100404 -->
+
+					<!-- tab -->
+					<div class="tab01 w680">
+						<ul>
+							<li class="on"><a href="javascript:moveConf('');">대기 </a></li>
+							<li><a href="javascript:moveConf('S');">승인대기 </a></li>
+							<li><a href="javascript:moveConf('Y');">승인 </a></li>
+							<li><a href="javascript:moveConf('N');">반려</a></li>
+						</ul>
+					</div>
+
+					<div class="dtable_over1000 d_easy"><!-- 100519 -->
+						<table class="dtable01" summary="법인카드신청내역(조직명, 신청자, 주민등록번호, 신청일, 카드종류, 한도금액, 브랜드, 반려사유) 정보 게시판입니다">
+						<caption>법인카드신청내역</caption>
+						<colgroup>
+									<col width="6%" /> <!-- 선택 -->
+									<col width="4%" /> <!-- 번호-->
+									<col width="10%" /> <!-- 조직명-->
+									<col width="10%" /> <!-- 신청자-->
+									<col width="10%" /> <!-- 주민번호-->
+									<col width="5%" /> <!-- 신청일-->
+									<col width="19%" /> <!-- 카드종류-->
+									<col width="8%" /> <!-- 한도금액-->
+									<col width="6%" /> <!-- 브랜드-->
+									<col width="19%" /> <!-- 반려사유-->									
+									<col width="7%" /> <!-- 저장일-->
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a"><label for="label_all"><input type="checkbox" class="rdo" name="checkAll" onClick="doAllKla();" id="label_all" />선택</label></th>
+								<th scope="col">번호</th>
+								<th scope="col">조직명</th>
+								<th scope="col">신청자</th>
+								<th scope="col">주민번호</th>
+								<th scope="col">신청일</th>
+								<th scope="col">카드종류</th>
+								<th scope="col">한도금액 (만원)</th>
+								<th scope="col">브랜드</th>
+								<th scope="col">반려사유</th>
+								<th scope="col">반려일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10a"><input type="checkbox" class="rdo" value="" id="label_select1" name="apply_no"  title="선택"  /></td>
+								<td>0</td>
+								<td class="cell_l10"><span class="nobreak_nolink w90">dma...</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w110">dma...</span></td>
+								<td><span class="p_nowrap">124578-xxxxxxx</span></td>
+								<td>2012.01.02</td>
+								<td class="cell_l10"><span class="nobreak_nolink w200">SFC</span></td>
+								<td class="cell_r10"><span class="p_nowrap">1,234</span></td>
+								<td>ddd</td>
+								<td class="cell_l10">
+								<span class="nobreak_nolink w200">
+											<input type="text" maxlength="15" class="txt" value="" name="deny_reason" style="width:170px" title="승인대기" />	
+								</span>
+								</td>
+								<td>2012.03.05</td>
+							</tr>
+						</tbody>
+						</table>
+				</div>
+					<!-- paginate -->
+					<div class="paginate">
+						1
+						<p class="btnr">
+							<a href="javascript:updateConfCard('Y');" class="btn btn_white"><span>승인</span></a>
+							<a href="javascript:updateConfCard('N');" class="btn btn_white"><span>반려</span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

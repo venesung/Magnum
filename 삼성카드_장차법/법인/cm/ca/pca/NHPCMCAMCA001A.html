@@ -1,0 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/layer_pop_header.jsp"%>
+<c:if test="${ not empty corpInfo.CORP_NO }">
+									<input type="text" class="txt" id="corp_no" name="corp_no" onchange="changeCorpNo()" value="${ corpInfo.CORP_NO }" maxlength="7" style="ime-mode:disabled" title="사번 7자리" />
+									<span class="mt5 t_desc04">(7자리)</span>
+									<input type="text" class="txt" name="corp_name" id="corp_name" value="${ corpInfo.CORP_NAME }" readonly="readonly" />
+									<input type="hidden" class="txt" name="adt_gubun" id="adt_gubun" value="${ corpInfo.ADT_GUBUN }" readonly="readonly" />
+									<input type="hidden" class="txt" name="adt_gubun1" id="adt_gubun1" value="${ adt_gubun }" readonly="readonly" />
+</c:if>

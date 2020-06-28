@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_reviewed_carduse.png" alt="사용내역 확인서를 발급 받으실 수 있습니다." /></h1>
+	</div>
+	
+	
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix">
+		<h2><img src="/images/mh/h2_reviewed_carduse01.png" alt="카드 사용내역을 조회하세요" /></h2>
+		<div class="content_block_inner">
+			<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+                <p><a href="#" class="default" onclick="return false;">체크카드</a></p>
+				<div class="childlayer">
+					<ul>
+						<li><a href="#">개인카드</a></li>
+						<li><a href="#">법인카드</a></li>
+						<li><a href="#">체크카드</a></li>
+					</ul>
+				</div>
+			</div>
+			<span class="selectbox_r_txt">(개인카드, 법인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+	
+			<div class="line_lgray">&nbsp;</div>
+	
+			<ol id="region_info01" class="list_no01">
+				<li><p>최근 6개월 간의 이용내역을 확인할 수 있습니다.</p></li>
+				<li><p>해외승인내역은 제외 되어 있습니다.</p></li>
+			</ol>
+	
+				
+				<table class="dtable02 dtable_inputfield" summary="카드이용내역 조회를 위한 상태/카드선택, 이용기간을 선택하는 게시판입니다.">
+				<caption>카드 이용내역 조회</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>상태/카드선택</p></th>
+						<td><p>
+							<select name="cardState" style="width:100px" title="카드상태 선택">
+								<option value="0">전체</option>
+								<option value="1">사용가능 카드</option>
+								<option value="2">사용불가능 카드</option>
+							</select>	                
+		                    <select name="cardNo" style="width:360px" title="카드 선택">
+		                    </select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>이용기간</p></th>
+						<td id="id_cal_wrap"><p>
+							<a href="#" class="btn btn_s_white"><span>당일</span></a>
+							<a href="#" class="btn btn_s_white"><span>1주일</span></a>
+							<a href="#" class="btn btn_s_white"><span>1개월</span></a>
+							<a href="#" class="btn btn_s_white"><span>2개월</span></a>
+							<a href="#" class="btn btn_s_white"><span>3개월</span></a>
+							<a href="#" class="btn btn_s_white"><span>6개월</span></a>
+							<br/>
+							<span class="reset_date block mt5">
+							  <a href="#" class="btn btn_s_white"><span>날짜지정</span></a>
+							  
+							</span>
+						</p></td>
+					</tr>
+				</tbody>
+				</table>
+	
+			<!-- btn -->
+			<div class="btnr">
+                <a id="btn_cardUseListSearch" href="#" class="btn btn_blue"><span>조회</span></a>
+			</div>
+	
+		</div>
+	</div>
+	
+	
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2 class="h2_uselist"><img src="/images/mh/h2_reviewed_carduse02.png" alt="회원님이 조회하신 사용내역입니다." /></h2>
+		<div class="d_easy">
+			<table class="dtable01 dtable01_bill" summary="카드번호, 구분, 사용일자, 가맹점명, 승인번호, 이용금액, 사업자번호 등 조회하신 사용내역을 보여주는 게시판입니다">
+			<caption>사용내역 리스트</caption>
+			<colgroup><col width="17%" /><col width="7%" /><col width="10%" /><col width="*%" /><col width="12%" /><col width="14%" /><col width="14%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10a">카드번호</th>
+					<th scope="col">구분</th>
+					<th scope="col">사용일자</th>
+					<th scope="col" class="cell_l10">가맹점명</th>
+					<th scope="col">승인번호</th>
+					<th scope="col" class="cell_r10">이용금액</th>
+					<th scope="col" class="cell_l10">사업자번호</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10a"><span class="p_nowrap">0</span></td>
+					<td>0</td>
+					<td class="t_no">0</td>
+					<td class="cell_l10">0</td>
+					<td class="t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_l10 t_no">0</td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+			<!-- paginate -->
+			<div class="paginate">	${_page}  </div>
+	
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnr">
+                    <a id="btn_cardUseListPrt" href="#" class="btn btn_blue"><span>인쇄</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

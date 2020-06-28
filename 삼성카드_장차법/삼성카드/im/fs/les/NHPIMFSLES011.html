@@ -1,0 +1,198 @@
+
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: file_name
+ * Author: "SDS 강성동 사원"
+ * Created on 2009. 12. 17.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<!-- FS4.2.4_Fleet리스_상담신청.html -->
+
+<title>삼성카드만의 Fleet 리스 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fs.css" />
+</head>
+<body>
+<div id="wrap">
+	
+	<jsp:include page="/WEB-INF/jsp/common/menu.jsp" flush="false">
+        <jsp:param value="가족카드조회" name="mTitle" />
+        <jsp:param value="승인내역" name="sTitle" />
+	</jsp:include>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<ul class="clfix">
+                    <li>국문최대일곱자...<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+                    <li class="on"><a href="#">가맹점정보 가맹점정...</a> <input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+					<li>이달의 명세서<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+					<li>이달의 명세서<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+					<li>이달의 명세서<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+					<li>이달의 명세서<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+					<li>이달의 명세서<input type="button" value="닫기" class="btn_input img_tabbrowse btn_tab" onMouseOver="this.className='btn_input img_tabbrowse btn_tab_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_tab';" onFocus="this.className='btn_input img_tabbrowse btn_tab_on';" onBlur="this.className='btn_input img_tabbrowse btn_tab';" title="닫기" /></li>
+				</ul>
+			</div>
+			<!-- control_button -->
+			<input type="button" class="btn_input img_tabbrowse btn_previous" onMouseOver="this.className='btn_input img_tabbrowse btn_previous_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_previous';" title="이전" />
+			<input type="button" class="btn_input img_tabbrowse btn_next" onMouseOver="this.className='btn_input img_tabbrowse btn_next_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_next';" title="다음" />
+			<input type="button" class="btn_input img_tabbrowse btn_close" onMouseOver="this.className='btn_input img_tabbrowse btn_close_on';" onMouseOut="this.className='btn_input img_tabbrowse btn_close';" title="탭 브라우저 레이어 닫기" />
+
+			<div class="tabbrowse_content">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="${pageContext.request.contextPath}/hp/images/fs/h1_samsungcard_fleetget.png" alt="삼성카드만의 Fleet 리스를 받으세요" /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_tab first_none clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="#">서비스안내</a></li>
+                            <li><a href="#">상품안내</a></li>
+                            <li><a href="#">정비제휴사</a></li>
+                            <li class="on"><a href="#">상담신청</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="${pageContext.request.contextPath}/hp/images/fs/h2_samsungcard_fleetwrite.png" alt="상담신청서를 작성하세요" /></h2>
+					<div class="content_block_inner fill_joinin mb20">
+
+						<div class="tb_exp clfix">
+							<p class="neccessary"><em><abbr>필수입력사항</abbr></em>는 필수 입력항목 입니다</p>
+						</div>
+							
+						<table class="dtable02 "summary="법인명, 사업자 번호, 담당자 이름, 부서명, 직위, 전화번호, 휴대전화번호, 이메일 주소등의 상담신청서 정보를 입력하는 게시판입니다.">
+						<caption>상담신청서 작성</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p class="neccessary">법인명</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="법인명 입력" id="label_corporatename" /></p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p class="neccessary">사업자 번호</p></th>
+								<td class="cell_l"><p><span class="input_businessno"><input type="text" class="txt" value="" title="사업자 번호 첫번째 입력" id="label_businessnum01" /> - <input type="text" class="txt" value="" title="사업자 번호 두번째 입력" id="label_businessnum02" /> - <input type="text" class="txt" value="" title="사업자 번호 세번째 입력" id="label_businessnum03" /></span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">담당자 이름</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="담당자 이름 입력" id="label_personincharge" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">부서명</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="부서명 입력" id="label_department" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">직위</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="직위 입력" id="label_position" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">전화번호</p></th>
+								<td class="cell_l"><p>
+									<span class="input_phone">
+										<select title="전화번호 앞자리" id="label_companytel01">
+											<option>02</option>
+										</select>&nbsp;-&nbsp;<input type="text" class="txt" value="" id="label_companytel02" title="전화번호 가운데자리" />&nbsp;-&nbsp;<input type="text" class="txt" value="" id="label_companytel03" title="전화번호 뒷자리" />
+									</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">휴대전화 번호</p></th>
+								<td class="cell_l"><p>
+									<span class="input_phone">
+										<select title="휴대전화 앞자리" id="label_handphone01">
+											<option>010</option>
+										</select>&nbsp;-&nbsp;<input type="text" class="txt" value="" id="label_handphone02" title="휴대전화 가운데자리" />&nbsp;-&nbsp;<input type="text" class="txt" value="" id="label_handphone03" title="휴대전화 뒷자리" />
+									</span>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary">이메일주소</p></th>
+								<td class="cell_l"><p>
+									<span class="input_email"><input type="text" class="txt" value="" title="email" id="label_email01" />&nbsp;@&nbsp;<input type="text" class="txt" value="" title="email 공급자 직접입력" id="label_email02" />
+									<select title="email 공급자 선택" id="label_email03">
+										<option>직접입력</option>
+									</select></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					
+					</div>
+
+					<h2><img src="${pageContext.request.contextPath}/hp/images/fs/h2_samsungcard_fleetwrite02.png" alt="희망차량정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin mb20">
+							
+						<table class="dtable02 "summary="희망차종, 보유관리차량, 교체시기등의 희망차량정보를 입력하는 게시판입니다.">
+						<caption>희망차량 정보 입력</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p class="neccessary">희망차종</p></th>
+								<td class="cell_l"><p><span class="input_body"><textarea class="txt" id="label_wantedcar" rows="10" cols="10" title="희망차종 입력" ></textarea></span></p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p class="not_neccessary">보유관리차량</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="보유관리차량 입력" id="label_havecarman" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="not_neccessary">교체시기</p></th>
+								<td class="cell_l"><p><input type="text" class="txt" value="" title="교체시기 입력" id="label_carchange" /></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+					</div>
+
+					<h2><img src="${pageContext.request.contextPath}/hp/images/fs/h2_samsungcard_fleetwrite03.png" alt="상담요청정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+							
+						<table class="dtable02 "summary="상담방법을 선택하고 메모를 입력하는 게시판입니다.">
+						<caption>상담요청정보 입력</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p class="neccessary">상담방법</p></th>
+								<td class="cell_l"><p><label for="label_consult_type01"><input type="radio" class="rdo" value="" id="label_consult_type01" name="label_consult_type" title="전화상담" /> 전화상담</label><label for="label_consult_type02"><input type="radio" class="rdo" value="" id="label_consult_type02" name="label_consult_type" title="이메일 상담" /> 이메일 상담</label><label for="label_consult_type03"><input type="radio" class="rdo" value="" id="label_consult_type03" name="label_consult_type" title="방문상담" /> 방문상담</label></p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p class="not_neccessary">메모</p></th>
+								<td class="cell_l"><p><span class="input_body"><textarea class="txt" id="label_memo" rows="10" cols="10" title="메모 입력" ></textarea></span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+					</div>					
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block fill_joinin clfix">
+					<p class="btnc"><a href="#"><img src="${pageContext.request.contextPath}/hp/images/common/btn_l_application.png" alt="신청하기" /></a></p>
+				</div>
+
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="${pageContext.request.contextPath}/hp/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+			</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
+</body>
+</html>

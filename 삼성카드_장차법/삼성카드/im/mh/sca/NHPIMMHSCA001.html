@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">해외매출 할부전환 서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_cha_oversea_install.jpg" alt="이번 달 결제금액이 부담되신다면 원하시는 기간으로 분할하여 납부하실 수 있습니다." /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100126 -->
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<form name="tabForm" method="post">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHSCA005','true');">해외매출할부전환안내</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHSCA001','true');">신청하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHSCC001','true');">당일신청건 취소</a></li>							
+						</ul>
+						</form>
+					</div>					
+					<div class="top_step_paymentmonth top_step_paymentmonth01">
+						<ol class="none">
+							<li><abbr>현재단계</abbr> <strong>카드선택 및 본인확인</strong></li>
+							<li>할부전환 개월수 선택</li><!-- 120322 수정 -->
+							<li>신청내역 확인</li>
+							<li>할부전환 신청완료</li><!-- 120322 수정 -->
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+				<form name = "frm" method="post">
+<input type="hidden" name="mb_gubun" />
+<input type="hidden" name="signed_msg" value="" />
+<input type="hidden" name="plain" value="" />
+<input type="hidden" name="vid_msg" value="" />
+<input type="hidden" name="ssno" value="" />
+<input type="hidden" name="signGubun" value="YES" />
+				<input type="hidden" name="index" value="" />
+					<h2><img src="/images/mh/h2_verify_your_info01.png" alt="본인정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>5만원이상 이용금액에 대해 2개월에서 최대 12개월 까지 분할납부 신청 가능 <span class="t_desc04">단, 현금서비스 이용금액은 제외됨</span></p><!-- 120322 수정 -->
+								<dl class="info">
+									<dt>신청기간</dt>
+									<dd><span class="t_point_org"> 결제일 2일전</span>(영업일수 기준)까지 신청가능</dd>
+									<dt>신청시간</dt>
+									<dd>08:30~20:00, 토요일 및 법정 공휴일 제외</dd>									
+								</dl></li>
+							<li><p>일시불 매출을 분할납부로 전환하시면 해당 매출금액의 원래 결제일에 1회차 대금이 청구됩니다.</p></li>
+							<li><p>분할납부 수수료는 회원님의 일반할부와 동일한 수수료가 적용됩니다.<br />
+								<span class="t_desc04">회원님의 신용도 변경 등의 사유로 인해 청구확정시 이자율의 변동이 있을 수 있습니다.</span></p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt20" summary="본인확인방법을 선택(카드인증,공인인증서 등)하는 게시판입니다.">
+						<caption>본인확인방법 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>본인확인방법</p></th>
+								<td>
+									<p class="fl_left"><input type="radio" class="rdo" value="N" id="label_authentication1" name="SIGN_GUBUN" checked="checked" onclick="selNGubun(this.value);" /> <label for="label_authentication1">카드인증</label></p>
+									<p class="fl_left"><input type="radio" class="rdo" value="Y" id="label_authentication2" name="SIGN_GUBUN" onclick="selNGubun(this.value);check_cert(this.document.form);" /> <label for="label_authentication2">공인인증서</label></p>
+									<p class="fl_right mr10"><a href="/hp/im/mh/csm/certInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="새창">공인인증서 이용방법</a> <a href="/hp/im/mh/csm/possibleCertInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link" title="새창">사용가능한 공인인증서</a></p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div id="divNo" style="display:inline;">
+						<table class="dtable02 dtable_inputfield mt10" summary="카드선택, 카드비밀번호, 카드 CVC번호를 확인할 수 있는 게시판입니다" id="tdCard">
+						<caption>본인 카드정보 확인</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><label for="label_ch_card">카드선택</label></th>
+								<td><p>
+									<select style="width: 360px;" id="label_ch_card" name="cardIndex">
+										<option></option>
+									</select>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+									<p class="input_2char">
+									<input type="password" title="카드 비밀번호 앞 두자리 입력" name="label_ch_cardpass" value="" class="txt" maxlength="2" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" enc="on" /><em>**</em>(비밀번호 앞의 2자리)
+									<span id="usafeon_label_ch_cardpass"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="label_ch_cvcnum">카드 CVC번호</label></th>
+								<td>
+									<p class="input_3char">
+									<input type="password" name="label_ch_cvcnum" id="label_ch_cvcnum" value="" class="txt" maxlength="3" onkeypress="checkTypes(this,'NUMB');" style="ime-mode:disabled;" enc="on" />(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+									<span id="usafeon_label_ch_cvcnum"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+
+						<div id="divNo" style="display:none;">
+						<table class="dtable02 dtable_inputfield mt10" summary="주민등록번호을 확인할 수 있는 게시판입니다" id="tdIden">
+						<caption>본인 정보 확인</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td>
+									<div id="divNo" style="display:inline;">
+									<p class="input_idno">
+									<!-- 20130411 웹접근성(장차법)  수정 -->
+									<!-- <input type="text" class="txt" maxlength="6" value="" title="주민등록번호 앞자리" name="idenNo1" id="label_idno" onkeyup="if(this.value.length == 6) form.idenNo2.focus();" onkeypress="checkTypes(this,'SSN');" onBlur="checkTypesOnBlur(this,'SSN');" enc="on"/>&nbsp;-&nbsp; -->
+									<input type="text" class="txt" maxlength="6" value="" title="주민등록번호 앞자리" name="idenNo1" onkeypress="checkTypes(this,'SSN');" onblur="checkTypesOnBlur(this,'SSN');" enc="on" />&nbsp;-&nbsp;
+									<input type="password" class="txt" maxlength="7" value="" title="주민등록번호 뒷자리" name="idenNo2" enc="on" />
+									<span id="usafeon_idenNo1|idenNo2"></span>
+									</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+
+						<div class="btnset">
+							<p class="btnr">
+								<a class="btn btn_blue" href="javascript:conf();"><span>확인</span></a>
+							</p>
+						</div>
+
+<!--						<div class="line_lgray"></div>-->
+<!--						<dl class="cvc_view cvc_view_noborder">-->
+<!--							<dt class="t_black"><strong>CVC보는방법</strong></dt>-->
+<!--							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>-->
+<!--							<dd><img alt="CVC보는방법 이미지" src="/images/ss/img_cvc.jpg" /></dd>-->
+<!--						</dl>-->
+						<dl class="cvc_view">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div> 
+					</form>
+				</div>
+
+<!-- 120322 삭제 -->
+				<!-- content_block -->
+				<!-- 
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_verify_your_info02.png" alt="주의사항을 알려드립니다" /></h2> 
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>자유결제 이용회원(약정률 100% 포함)의 경우 분할납부 서비스를 이용하실 수 없습니다.</p></li>
+							<li><p>분할납부 서비스를 이용하시면 <strong class="t_black">이용수수료가 부과</strong>부과됩니다.이용수수료는 신청개월수에 따라 회원님의 <br />일반할부 수수료와 동일하게 부과되며,<strong class="t_black">회원님이 보유하신 카드의 무이자 혜택여부나 해당 가맹점의 <br />무이자 행사여부와 관계없이 발생</strong>됩니다.</p></li>
+							<li><p>일시불 매출이 분할납부로 전환되면 기존 매출이 취소되고 분할납부가 새롭게 등록됨에 따라<strong class="t_black"> 기존 매출에 따라<br />제공된 청구할인, 포인트 적립 등의 혜택도 함께 취소</strong>됩니다.</p></li>
+							<li><p>분할납부 전환된 매출은 할부매출이 아니며, 회원님과 가맹점간에는 일시불 거래였으므로 회원님의 철회권이나<br /> 항변권의 대상이 되지 않습니다.</p></li>
+							<li><p>분할납부 전환된 매출건에 대한 중도상환시 1회차 결제일 전일 경우에는 수수료가 부과되지 않으며, 2회차 이후일<br />경우에는 입금일에서 결제일 사이의 일할 수수료가 청구됩니다.</p></li>
+							<li><p>미리 입금하신 금액이 있으실 경우 분할납부를 신청하시면 해당 금액은 환불처리 됩니다.</p></li>
+						</ol>
+					</div> 
+				</div>
+				-->
+<!-- //120322 삭제 -->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

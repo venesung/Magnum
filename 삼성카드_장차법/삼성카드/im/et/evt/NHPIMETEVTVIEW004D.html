@@ -1,0 +1,113 @@
+<% 
+	//플래시 지도선택
+	String srchGubun5 = request.getParameter("srchGubun5");		
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>이벤트 지도 - 삼성카드</title>
+<script src="/js/expressinstall.js" language="javascript" type="text/javascript"></script>
+<script src="/js/embedswf.js" language="javascript" type="text/javascript"></script>
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+</head>
+<body bgcolor="#ffffff">
+
+<script language="javascript" type="text/javascript">
+<!--//
+
+	function IXFn_EmbedEventMap()
+	{
+		var flashVars = {};
+		flashVars.fontName		= "Yoon 윤고딕 550_TT";
+		flashVars.fontClass		= "YGO550";
+		flashVars.fontURL		= "/flash/font/YGO550.swf";
+		flashVars.indexCode	= "<%=srchGubun5%>";//서울default
+		//flashVars.eventXML	= "/flash/eventmap/jspl/eventxml.xml";
+		flashVars.eventXML	= "/flash/eventmap/xml/event.xml";
+		flashVars.funcSearch	= "IXFn_Search";
+		embedSWF( "contentLayer", "/flash/eventmap/eventmap.swf", "240", "380", { id:"FL_EventMap" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars );
+	}
+	
+	function IXFn_Search( code )
+	{
+		// Debug Start
+		//var temp = document.frmDebug.result.value;
+		//document.frmDebug.result.value = "code:" + code + "\r" + temp;
+		// Debug End
+		if(code != <%=srchGubun5%>){
+			parent.document.frm.srchGubun5.value = code;
+			parent.goSubView1('01');
+		}
+	}
+//-->
+</script>
+
+<div id="contentLayer"><script language="javascript" type="text/javascript">IXFn_EmbedEventMap();</script></div>
+
+<!-- Debug Area
+<div id="debugLayer">
+	<form name="frmDebug" >
+		<textarea name="result" cols="80" rows="5" ></textarea>
+	</form>
+
+<pre>
+# XML DTD
+	&lt;xml&gt;
+		&lt;item code="0"&gt;
+			<FONT COLOR="red"><U>&lt;index&gt;1&lt;/index&gt;</U></FONT>
+			&lt;name&gt;경기도&lt;/name&gt; //지역명
+			&lt;event&gt;0&lt;/event&gt; //이벤트 수
+		&lt;/item&gt;
+		&lt;item code="0"&gt;
+			&lt;index&gt;2&lt;/index&gt;
+			&lt;name&gt;서울&lt;/name&gt;
+			&lt;event&gt;0&lt;/event&gt;
+		&lt;/item&gt;
+		.
+		.
+		.
+
+	&lt;/xml&gt;
+
+	XML 의 item -> index 값은 아래와 같습니다
+
+	const GYEONGGI:uint   = 1; //경기도
+	const INCHEON:uint    = 2; //인천
+	const SEOUL:uint      = 3; //서울
+	const GANGWON:uint    = 4; //강원도
+	const CHUNGNAM:uint   = 5; //충청남도
+	const DAEJEON:uint    = 6; //대전
+	const CHUNGBUK:uint   = 7; //충청북도
+	const GYEONGBUK:uint  = 8; //경상북도
+	const DAEGU:uint      = 9; //대구
+	const JEONBUK:uint    = 10; //전라북도
+	const ULSAN:uint      = 11; //울산
+	const PUSAN:uint      = 12; //부산
+	const GYEONGNAM:uint  = 13; //경상남도
+	const JEONNAM:uint    = 14; //전라남도
+	const GWANGJU:uint    = 15; //광주
+	const JEJU:uint       = 16; //제주도
+
+
+	xml 의 index 값은 플래쉬 영역 개체의 ID 와 연결되어 있으며 변경되면 안됩니다.
+
+# Change Log
+
+	* ver 1.0.2 (2010-04-03)
+		- 지점코드 수정 
+	* ver 1.0.1 (2010-03-10)
+		- 경기도/인천을 나눔
+		- 인천 지역 추가 ( index 값 16 )
+	* ver 1.0.0 (2010-03-04)
+		- 데이타가 로드되지 않은 경우 Alpha 값이 0.35 가 되며 버튼기능이 모두 상실됨
+		- Event Map UI 작업 완료
+		- XML DTD 설명
+
+			
+</pre>
+</div>
+<!-- Debug Area End -->
+
+</body>
+</html>

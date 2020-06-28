@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/layer_pop_header.jsp"%>
+	<option value="">발급을 원하시는 카드를 선택하세요</option>
+<c:forEach var="item" items="${ goodsList }" varStatus="status">
+	<option value="${ item.card_code }" card_local="${ item.card_local }" card_master="${ item.card_master }" card_visa="${ item.card_visa }" card_amex="${ item.card_amex }" settlement_day="${ item.settlement_day }">${ item.card_name }</option>
+</c:forEach>

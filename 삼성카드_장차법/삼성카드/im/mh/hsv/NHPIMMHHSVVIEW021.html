@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100219 -->
+					<div class="tab02 w810">
+						<ul>
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+						
+						
+							<!--li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTabPage('NHPIMMH009','true');">이용내역 및 남은금액조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMH010','true');">캐시백 정산내역조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div id="print_content" class="content_block content_block_card clfix"><!-- 100219 -->
+					<h2><img src="/images/mh/h2_living_ftech_inqury02.png" alt="이용내역 및 남은금액 확인입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>최근 12개월까지 2개월 단위로 조회됩니다.</span>
+						</div>
+						<div class="pos_rel_cal">캘린더 위치</div>
+						<table class="dtable02 dtable_inputfield" summary="이용내역 및 남은금액 확인을 위해 조회기간을 선택하는 게시판입니다">
+							<caption>조회기간 선택</caption>
+							<colgroup><col width="100" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th class="cell_bg" scope="row"><p>조회기간</p></th>
+									<td id="id_cal_wrap2" colspan="3">
+										<p class="reset_date fl_left"><!-- 날짜지정 -->
+										
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnr"><a class="btn btn_blue" href="javascript:clear_next();"><span>조회</span></a></p>
+						</div>
+
+						<table summary="고객님의 현재 남은금액, 사용금액, 충전금액, 환불/대체금 합계를 확인하실 수 있는 게시판입니다." class="dtable01 mt20">
+						<caption>금액 충전 및 사용금액 확인</caption>
+						<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">현재 남은금액</th>
+								<th scope="col" class="cell_r10">사용금액</th>
+								<th scope="col" class="cell_r10">충전금액</th>
+								<th scope="col" class="cell_r10">환불/대체금 합계</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="d_easy"><!-- 100506 -->
+							<table summary="구분, 일자, 이용카드, 승인번호, 가맹점(경로), 사용(환불/대체)금액, 충전금액, 접수일자, 유형, 남은금액을 확인할 수 있는 게시판입니다" class="dtable01 mt20">
+							<caption>즉시충전 조회 결과</caption>
+							<colgroup><col width="7%" /><col width="7%" /><col width="18%" /><col width="8%" /><col width="15%" /><col width="10%" /><col width="9%" /><col width="7%" /><col width="10%" /><col width="9%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="cell_l10a">구분</th>
+									<th scope="col">일자</th>
+									<th scope="col">이용카드</th><!-- SR내역 12.12.10 -->
+									<th scope="col">승인번호</th>
+									<th scope="col">가맹점 (경로)</th>
+									<th scope="col">사용<br /><span class="t_no">(환불/대체)</span><br />금액</th>
+									<th scope="col">충전금액</th>
+									<th scope="col">접수<br />일자</th>
+									<th scope="col">유형</th>
+									<th scope="col">남은금액</th>
+								</tr>
+							</thead>
+							<tbody>
+							<!-- loop -->
+								<tr>
+									<td class="cell_l10a">0</td>
+									<td class="t_no">0</td>
+									<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+									<td>0</td>
+									<td class="cell_l10"><span class="nobreak_nolink w90">0</span></td>
+									<td class="cell_r10"><span class="p_nowrap">0</span></td>
+									<td>0</td>
+									<td>0></td>
+									<td class="cell_r10"><span class="p_nowrap">0</span></td>
+								</tr>
+								<!-- //loop -->
+								<tr class="nodata">
+									<td colspan="10">데이터가 존재하지 않습니다</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">※ 생활비재테크서비스 해지 후, 남은 금액(충전잔고)는 다음날(영업일 기준) 회원님 자동이체계좌로 입금됩니다.</p>
+							<p class="btnr">
+                                <a href="javascript:excelDown();" class="btn btn_white" title="엑셀 다운로드"><span>다운로드</span></a>
+								<!-- 파라미터 전달용 더미 A TAG -->
+                                <a href="/hp/im/mh/hsv2.do?method=makeExcelUseList" name="excelATag"></a>
+                                <a href="javascript:print_content('serviceaddress');" class="btn btn_white"><span>인쇄</span></a>
+							</p>
+						</div>
+						
+					</div>
+				</div>
+</form>
+
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+				<div class="content_block content_block_card clfix">
+					<div class="btnr">
+						<a class="btn btn_blue" href="javascript:goTabPage('NHPIMMHINFO2','true');"><span>확인</span></a>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

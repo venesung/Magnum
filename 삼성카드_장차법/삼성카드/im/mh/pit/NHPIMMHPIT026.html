@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+
+                <!-- content_block 100212 -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block clfix">
+                    <h2><img src="/images/mh/h2_urpointinfo.png" alt="선택하신 포인트내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3 class="h3_point"><img src="/images/mh/h3_prepoint.png" alt="선포인트" /></h3>
+                        <div class="tab02 w640">
+                            <ul>
+                                <li><a href="javascript:goTabPage('NHPIMMHPIT025', true);">한도조회</a></li>
+                                <li class="on"><a href="javascript:goTabPage('NHPIMMHPIT026', true);">이용내역조회</a></li>
+                                <li><a href="javascript:goTabPage('NHPIMMHPIT027', true);">포인트상환내역조회</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="tb_exp mt30 clfix">
+                            <span class="fl_left t_desc03">(단위 : 1P = 1원)</span>
+                            <span class="ab_tr "><a href="javascript:goTabPage('NHPIMSSCMS004');" class="btn_link">서비스 안내</a></span>
+                        </div>
+
+                        <table class="dtable02" summary="선포인트서비스 이용일자, 선포인트 이용현황으로 구성된 선포인트 이용내역을 확인할 수 있는 게시판입니다.">
+                        <caption>선포인트 이용내역</caption>
+                        <colgroup><col width="33%" /><col width="34%" /><col width="33%" /></colgroup>
+                        <tbody>
+                            <tr>
+                                <td scope="row" rowspan="2" class="riline"><p>선포인트서비스 이용일자</p></td>
+                                <th class="cell_bg riline" scope="row"><p>시작일</p></th>
+                                <td><p class="t_no">0</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg riline" scope="row"><p>종료일</p></th>
+                                <td><p class="t_no">0</p></td>
+                            </tr>
+                            <tr>
+                                <td scope="row" rowspan="6" class="riline"><p>선포인트 이용현황</p></td>
+                                <th class="cell_bg riline" scope="row"><p>한도 포인트</p></th>
+                                <td><p><span class="t_no">0</span> P</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg riline" scope="row"><p>이용 포인트</p></th>
+                                <td><p><span class="t_no">0</span> P</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg riline" scope="row"><p>이용가능 포인트</p></th>
+                                <td><p><span class="t_no">0</span> P</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg riline" scope="row"><p>상환 포인트</p></th>
+                                <td><p><span class="t_no">0</span> P</p></td>
+                            </tr>
+                            <tr>
+                                <th class="cell_bg riline" scope="row"><p>미상환 포인트</p></th>
+                                <td><p><span class="t_no">0</span> P</p></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <!-- btn -->
+                        <div class="btnset">
+                            <p class="btnl t_desc04">상세한 사용내역은 삼성카드 선포인트 센터(지역번호없이) 1588-8750로 문의해주시기 바랍니다.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

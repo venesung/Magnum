@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_memberinfo_modify.png" alt="고객님의 신상정보를 조회, 변경해보세요" /></h1>
+				</div>
+
+				<!-- content_block -->
+				
+				<form name="frm1" method="post" >
+				<input type = "hidden" name="homeZipSeq" value="<%=homeZipSeq%>" />
+				<input type = "hidden" name="officeZipSeq" value="<%=officeZipSeq%>" />
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_memberinfo_modify01.png" alt="개인 필수 정보입니다" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div class="tb_exp clfix">
+							<p><strong class="t_black"><%=wam001Vo.getUserName() %></strong> 고객님의 기본신상정보입니다.<br />
+							신상정보 변경을 원하시는 경우 아래의 변경버튼을 클릭하여 주시기 바랍니다.</p>
+						</div>
+
+						<table class="dtable02" summary="회원님의 성명(한글), 주민등록번호를 확인하고 자택전화번호, 휴대전화번호, E-mail 주소, E-mail 수신여부, 자택주소, 본인확인질문, 실제생일, 결혼여부, 결혼기념일, 배우자생일 등 개인 필수 정보를 확인하고 변경할 수 있는 게시판입니다">
+						<caption>개인 필수 정보</caption>
+						<colgroup><col width="20%" /><col width="80%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							
+							
+							<tr>
+								<th scope="row" class="cell_l"><p>성명(한글)</p></th>
+								<td class="cell_l02"><%=wam001Vo.getUserName() %></td>
+							</tr>
+							
+							<%if(!"1".equals(vIdenNoYn)){ %>
+							<tr>
+								<th scope="row" class="cell_l"><p>주민등록번호</p></th>
+								<td class="cell_l02"><%= idenNo.substring(0,6) %>-xxxxxxx</td>
+							</tr>
+							<%} %>
+
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_phone">자택전화번호</label></th>
+								<td class="cell_l">
+									<span class="input_phone">
+										<select name="homePhone1" title="자택번호 국번 선택" id="label_phone" onchange="" >
+											<option value="">없음</option>
+											<option value = "02"   <% if(homePhone1.equals("02"  )) {%>  selected="selected" <% } %> >02</option>
+											<option value = "031"  <% if(homePhone1.equals("031" )) {%>  selected="selected" <% } %> >031</option>
+											<option value = "032"  <% if(homePhone1.equals("032" )) {%>  selected="selected" <% } %> >032</option>
+											<option value = "033"  <% if(homePhone1.equals("033" )) {%>  selected="selected" <% } %> >033</option>
+											<option value = "041"  <% if(homePhone1.equals("041" )) {%>  selected="selected" <% } %> >041</option>
+											<option value = "042"  <% if(homePhone1.equals("042" )) {%>  selected="selected" <% } %> >042</option>
+											<option value = "043"  <% if(homePhone1.equals("043" )) {%>  selected="selected" <% } %> >043</option>
+											<option value = "0303" <% if(homePhone1.equals("0303")) {%>  selected="selected" <% } %> >0303</option>
+											<option value = "0502" <% if(homePhone1.equals("0502")) {%>  selected="selected" <% } %> >0502</option>
+											<option value = "0503" <% if(homePhone1.equals("0503")) {%>  selected="selected" <% } %> >0503</option>
+											<option value = "0504" <% if(homePhone1.equals("0504")) {%>  selected="selected" <% } %> >0504</option>
+											<option value = "0505" <% if(homePhone1.equals("0505")) {%>  selected="selected" <% } %> >0505</option>
+											<option value = "0506" <% if(homePhone1.equals("0506")) {%>  selected="selected" <% } %> >0506</option>
+											<option value = "051"  <% if(homePhone1.equals("051" )) {%>  selected="selected" <% } %> >051</option>
+											<option value = "052"  <% if(homePhone1.equals("052" )) {%>  selected="selected" <% } %> >052</option>
+											<option value = "053"  <% if(homePhone1.equals("053" )) {%>  selected="selected" <% } %> >053</option>
+											<option value = "054"  <% if(homePhone1.equals("054" )) {%>  selected="selected" <% } %> >054</option>
+											<option value = "055"  <% if(homePhone1.equals("055" )) {%>  selected="selected" <% } %> >055</option>
+											<option value = "061"  <% if(homePhone1.equals("061" )) {%>  selected="selected" <% } %> >061</option>
+											<option value = "062"  <% if(homePhone1.equals("062" )) {%>  selected="selected" <% } %> >062</option>
+											<option value = "063"  <% if(homePhone1.equals("063" )) {%>  selected="selected" <% } %> >063</option>
+											<option value = "064"  <% if(homePhone1.equals("064" )) {%>  selected="selected" <% } %> >064</option>
+											<option value = "070"  <% if(homePhone1.equals("070" )) {%>  selected="selected" <% } %> >070</option>
+
+										</select><input name="homePhone2" type="text" class="txt" value="<%=homePhone2%>" title="자택전화번호 앞자리" maxlength="4" onkeypress="checkTypes(this, 'TELNO');checkLenN(this, 4, frm1.homePhone3);" onBlur="checkTypesOnBlur(this, 'TELNO')" />&nbsp;-&nbsp;
+                                        <input name="homePhone3" type="text" class="txt" value="<%=homePhone3%>" title="자택전화번호 뒷자리" maxlength="4" onkeydown="checkLenB(this, frm1.homePhone2 )"  />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_handphone">휴대전화번호</label></th>
+								<td class="cell_l">
+									<span class="input_phone">
+										<select name="handPhone1" title="휴대전화번호 앞자리" id="label_handphone">
+											<option value = ""  <%if(handPhone1.equals("" )){%> selected="selected" <%}%> >없음</option>
+											<option value = "010"  <%if(handPhone1.equals("010" )){%> selected="selected" <%}%> >010</option>
+											<option value = "011"  <%if(handPhone1.equals("011" )){%> selected="selected" <%}%> >011</option>
+											<option value = "016"  <%if(handPhone1.equals("016" )){%> selected="selected" <%}%> >016</option>
+											<option value = "017"  <%if(handPhone1.equals("017" )){%> selected="selected" <%}%> >017</option>
+											<option value = "018"  <%if(handPhone1.equals("018" )){%> selected="selected" <%}%> >018</option>
+											<option value = "019"  <%if(handPhone1.equals("019" )){%> selected="selected" <%}%> >019</option>
+                                        </select><input name="handPhone2" type="text" class="txt" value="<%=handPhone2 %>" title="휴대전화번호 가운데자리" maxlength="4" />&nbsp;-&nbsp;
+                                        <input name="handPhone3" type="text" class="txt" value="<%=handPhone3 %>" title="휴대전화번호 뒷자리" maxlength="4" onkeydown="checkLenB(this, frm1.handPhone2 )"  />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_email">E-mail 주소</label></th>
+								<td class="cell_l">
+									<span class="input_email">
+										<input type="hidden" name="email"  maxlength="50" value="<%=email %>" onchange="mailcheck='N'" />
+										<input name="emailId" type="text" class="txt" id="label_email" value="<%=emailId %>" title="이메일명" onchange="mailcheck='N'"  />&nbsp;@&nbsp;
+										<input name="emailAddr" type="text" class="txt" value="<%=emailAddr %>" title="이메일공급자 직접입력" onchange="mailcheck='N'" />
+										<select name="selemail" title="이메일공급자선택" onchange="sel(this);" >
+											<option selected value="">선택하세요</option>
+											<option value="dreamwiz.com">드림위즈</option>
+											<option value="empal.com">엠팔</option>
+											<option value="hanmail.net">한메일(다음)</option>
+											<option value="hotmail.com">hotmail</option>
+											<option value="korea.com">코리아</option>
+											<option value="lycos.co.kr">라이코스</option>
+											<option value="nate.com">네이트</option>
+											<option value="naver.com">네이버</option>
+											<option value="netian.com">네띠앙</option>
+											<option value="orgio.net">오르지오</option>
+											<option value="paran.com">파란</option>
+											<!--option value="yahoo.co.kr">야후</option-->
+											<option value="chollian.net">천리안</option>
+											<option value="freechal.com">프리챌</option>
+											<option value="kebi.com">깨비</option>
+											<option value="unitel.co.kr">유니텔</option>
+											<option value="weppy.com">웨피</option>
+                    						<option value="">직접입력</option>
+                                        </select><a href="javascript:searchEmail();" class="btn btn_white" title="새창"><span>중복조회</span></a>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>E-mail 수신여부</p></th>
+								<td class="cell_l">
+									<label for="label_email_sand01"><input name="blueEmaildeny" type="radio" class="chk" id="label_email_sand01" title="수신" value="1" <%if( blueEmaildeny.equals("1") || blueEmaildeny.equals("")){   %> checked="checked" <%} %> /> 수신</label>
+									<label for="label_email_sand02"><input name="blueEmaildeny" type="radio" class="chk" id="label_email_sand02" title="미수신" value="0" <%if( blueEmaildeny.equals("0")){   %> checked="checked" <%} %> /> 미수신</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>자택주소</p></th>
+								<td class="cell_l">
+									<p class="input_address">
+
+										<%if(!homeZipCode.equals("      ")){ %>
+                                        <input name="homeZip1" type="text" class="txt" value="<%= homeZipCode.substring(0,3) %>" title="우편번호 앞자리"   />&nbsp;-&nbsp;
+                                        <input name="homeZip2" type="text" class="txt" value="<%= homeZipCode.substring(3,6) %>" title="우편번호 뒷자리"  />
+										<%}else{ %>
+                                        <input name="homeZip1" type="text" class="txt" value="" title="우편번호 앞자리"  />&nbsp;-&nbsp;
+                                        <input name="homeZip2" type="text" class="txt" value="" title="우편번호 뒷자리" />
+										<%} %>
+										<a href="javascript:searchZipMain(frm1.homeZip1, frm1.homeZip2, frm1.homeZipSeq, frm1.homeAddrArea, frm1.homeAddrDist, '<%=newjusoYn %>');" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input name="homeAddrArea"  type="text" class="txt" value="<%=homeAddrArea %>" title="자택주소 상세입력" onclick="searchZipMain(frm1.homeZip1, frm1.homeZip2, frm1.homeZipSeq, frm1.homeAddrArea, frm1.homeAddrDist, '<%=newjusoYn %>')" readonly="readonly" />
+										<input name="homeAddrDist" type="text" class="txt" value="<%=homeAddrDist %>" title="자택주소 상세입력2" onkeyup="CheckMsgLen(40,this);" onkeypress="CheckMsgLen(40,this);" maxlength="40" onclick="searchZipMain(frm1.homeZip1, frm1.homeZip2, frm1.homeZipSeq, frm1.homeAddrArea, frm1.homeAddrDist, '<%=newjusoYn %>');" readonly="readonly" /></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>본인확인질문</p></th>
+								<td colspan="3" class="cell_l">
+									<p class="input_selfqa">
+										<select name="blueQuestion" title="본인확인질문 선택" id="label_question">
+          									<option value="" <% if( blueQuestion.equals("")){ %> selected="selected" <%} %>  >선택하세요</option>
+          									<option value="1" <% if( blueQuestion.equals("1")){ %> selected="selected" <%} %> >내가 태어난 고향</option>
+          									<option value="2" <% if( blueQuestion.equals("2")){ %> selected="selected" <%} %> >내가 가장 가고 싶은 곳</option>
+          									<option value="3" <% if( blueQuestion.equals("3")){ %> selected="selected" <%} %> >내 여자친구의 이름</option>
+          									<option value="4" <% if( blueQuestion.equals("4")){ %> selected="selected" <%} %> >내 아버지의 이름</option>
+          									<option value="5" <% if( blueQuestion.equals("5")){ %> selected="selected" <%} %> >내 어머니의 이름</option>
+          									<option value="6" <% if( blueQuestion.equals("6")){ %> selected="selected" <%} %> >내가 가장 존경하는 인물</option>
+          									<option value="7" <% if( blueQuestion.equals("7")){ %> selected="selected" <%} %> >우리집 강아지의 이름</option>
+          									<option value="8" <% if( blueQuestion.equals("8")){ %> selected="selected" <%} %> >내가 가장 좋아하는 색깔</option>
+          									<option value="9" <% if( blueQuestion.equals("9")){ %> selected="selected" <%} %> >내 여자친구의 생일</option>
+										</select> 은 무엇입니까?
+										<span class="answer"><input name="blueAnswer" type="text" class="txt" value="<%= blueAnswer %>" title="본인확인답변 입력" /> 입니다.</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>실제생일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="birthdayYear" type="text" class="txt" value="<%=birthday.substring(0,4).trim() %>" title="실제생일 년" id="label_birthday01" maxlength="4" />&nbsp;년&nbsp;
+										<select name="birthdayMonth" title="실제생일 달 선택">
+											<option value="" <% if ( birthday.substring(4,6).equals("  ")){%>selected="selected"<%} %> ></option>
+											<option value="01" <% if ( birthday.substring(4,6).equals("01")){%>selected="selected"<%} %> >01</option>
+                                        	<option value="02" <% if ( birthday.substring(4,6).equals("02")){%>selected="selected"<%} %> >02</option>
+											<option value="03" <% if ( birthday.substring(4,6).equals("03")){%>selected="selected"<%} %> >03</option>
+											<option value="04" <% if ( birthday.substring(4,6).equals("04")){%>selected="selected"<%} %> >04</option>
+											<option value="05" <% if ( birthday.substring(4,6).equals("05")){%>selected="selected"<%} %> >05</option>
+											<option value="06" <% if ( birthday.substring(4,6).equals("06")){%>selected="selected"<%} %> >06</option>
+											<option value="07" <% if ( birthday.substring(4,6).equals("07")){%>selected="selected"<%} %> >07</option>
+											<option value="08" <% if ( birthday.substring(4,6).equals("08")){%>selected="selected"<%} %> >08</option>
+											<option value="09" <% if ( birthday.substring(4,6).equals("09")){%>selected="selected"<%} %> >09</option>
+											<option value="10" <% if ( birthday.substring(4,6).equals("10")){%>selected="selected"<%} %> >10</option>
+											<option value="11" <% if ( birthday.substring(4,6).equals("11")){%>selected="selected"<%} %> >11</option>
+											<option value="12" <% if ( birthday.substring(4,6).equals("12")){%>selected="selected"<%} %> >12</option>
+										</select>&nbsp;월&nbsp;
+										<select name="birthdayDay" title="실제생일 일 선택">
+											<option value=""   <% if ( birthday.substring(6,8).equals("  ")){%>selected="selected"<%} %>></option>
+											<option value="01" <% if ( birthday.substring(6,8).equals("01")){%>selected="selected"<%} %>>01</option>
+											<option value="02" <% if ( birthday.substring(6,8).equals("02")){%>selected="selected"<%} %>>02</option>
+											<option value="03" <% if ( birthday.substring(6,8).equals("03")){%>selected="selected"<%} %>>03</option>
+											<option value="04" <% if ( birthday.substring(6,8).equals("04")){%>selected="selected"<%} %>>04</option>
+											<option value="05" <% if ( birthday.substring(6,8).equals("05")){%>selected="selected"<%} %>>05</option>
+											<option value="06" <% if ( birthday.substring(6,8).equals("06")){%>selected="selected"<%} %>>06</option>
+											<option value="07" <% if ( birthday.substring(6,8).equals("07")){%>selected="selected"<%} %>>07</option>
+											<option value="08" <% if ( birthday.substring(6,8).equals("08")){%>selected="selected"<%} %>>08</option>
+											<option value="09" <% if ( birthday.substring(6,8).equals("09")){%>selected="selected"<%} %>>09</option>
+											<option value="10" <% if ( birthday.substring(6,8).equals("10")){%>selected="selected"<%} %>>10</option>
+											<option value="11" <% if ( birthday.substring(6,8).equals("11")){%>selected="selected"<%} %>>11</option>
+											<option value="12" <% if ( birthday.substring(6,8).equals("12")){%>selected="selected"<%} %>>12</option>
+											<option value="13" <% if ( birthday.substring(6,8).equals("13")){%>selected="selected"<%} %>>13</option>
+											<option value="14" <% if ( birthday.substring(6,8).equals("14")){%>selected="selected"<%} %>>14</option>
+											<option value="15" <% if ( birthday.substring(6,8).equals("15")){%>selected="selected"<%} %>>15</option>
+											<option value="16" <% if ( birthday.substring(6,8).equals("16")){%>selected="selected"<%} %>>16</option>
+											<option value="17" <% if ( birthday.substring(6,8).equals("17")){%>selected="selected"<%} %>>17</option>
+											<option value="18" <% if ( birthday.substring(6,8).equals("18")){%>selected="selected"<%} %>>18</option>
+											<option value="19" <% if ( birthday.substring(6,8).equals("19")){%>selected="selected"<%} %>>19</option>
+											<option value="20" <% if ( birthday.substring(6,8).equals("20")){%>selected="selected"<%} %>>20</option>
+											<option value="21" <% if ( birthday.substring(6,8).equals("21")){%>selected="selected"<%} %>>21</option>
+											<option value="22" <% if ( birthday.substring(6,8).equals("22")){%>selected="selected"<%} %>>22</option>
+											<option value="23" <% if ( birthday.substring(6,8).equals("23")){%>selected="selected"<%} %>>23</option>
+											<option value="24" <% if ( birthday.substring(6,8).equals("24")){%>selected="selected"<%} %>>24</option>
+											<option value="25" <% if ( birthday.substring(6,8).equals("25")){%>selected="selected"<%} %>>25</option>
+											<option value="26" <% if ( birthday.substring(6,8).equals("26")){%>selected="selected"<%} %>>26</option>
+											<option value="27" <% if ( birthday.substring(6,8).equals("27")){%>selected="selected"<%} %>>27</option>
+											<option value="28" <% if ( birthday.substring(6,8).equals("28")){%>selected="selected"<%} %>>28</option>
+											<option value="29" <% if ( birthday.substring(6,8).equals("29")){%>selected="selected"<%} %>>29</option>
+											<option value="30" <% if ( birthday.substring(6,8).equals("30")){%>selected="selected"<%} %>>30</option>
+											<option value="31" <% if ( birthday.substring(6,8).equals("31")){%>selected="selected"<%} %>>31</option>
+										</select>&nbsp;일
+										<label for="label_birthday_type01"><input name="lunarSolar" title="양력" type="radio" class="chk" value="1" id="label_birthday_type01" <%if( lunarSolar.equals("1") || lunarSolar.equals("")){  %> checked="checked" <% } %> /> 양력</label>
+										<label for="label_birthday_type02"><input name="lunarSolar" title="음력" type="radio" class="chk" value="2" id="label_birthday_type02" <%if( lunarSolar.equals("2")){%> checked="checked" <% } %> /> 음력</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>결혼여부</p></th>
+								<td class="cell_l">
+									<label for="label_marrytype01"><input type="radio" class="chk" title="미혼" name="marriedYn" value="N" id="label_marrytype01" onclick="clickMar('1')" <% if( marriedYn.equals("N") || marriedYn.equals("")){ %> checked="checked" <%} %> /> 미혼</label>
+									<label for="label_marrytype02"><input type="radio" class="chk" title="기혼" name="marriedYn" value="Y" id="label_marrytype02" onclick="clickMar('1')" <% if( marriedYn.equals("Y") ){ %> checked="checked" <%} %>/> 기혼</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>결혼기념일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="weddingAnniversaryYear" type="text" class="txt" value="<%= weddingAnniversary.substring(0,4).trim() %>" onchange="clickMar();" maxlenght="4" title="결혼기념일 년" id="label_marryday01" />&nbsp;년&nbsp;
+										<select name="weddingAnniversaryMonth" title="결혼기념일 달 선택" onchange="clickMar();" >
+											<option value=""   <%if(weddingAnniversary.substring(4,6).equals("  ")  ){%>selected="selected"<%}%> ></option>
+											<option value="01" <%if(weddingAnniversary.substring(4,6).equals("01")){%>selected="selected"<%}%> >01</option>
+											<option value="02" <%if(weddingAnniversary.substring(4,6).equals("02")){%>selected="selected"<%}%> >02</option>
+											<option value="03" <%if(weddingAnniversary.substring(4,6).equals("03")){%>selected="selected"<%}%> >03</option>
+											<option value="04" <%if(weddingAnniversary.substring(4,6).equals("04")){%>selected="selected"<%}%> >04</option>
+											<option value="05" <%if(weddingAnniversary.substring(4,6).equals("05")){%>selected="selected"<%}%> >05</option>
+											<option value="06" <%if(weddingAnniversary.substring(4,6).equals("06")){%>selected="selected"<%}%> >06</option>
+											<option value="07" <%if(weddingAnniversary.substring(4,6).equals("07")){%>selected="selected"<%}%> >07</option>
+											<option value="08" <%if(weddingAnniversary.substring(4,6).equals("08")){%>selected="selected"<%}%> >08</option>
+											<option value="09" <%if(weddingAnniversary.substring(4,6).equals("09")){%>selected="selected"<%}%> >09</option>
+											<option value="10" <%if(weddingAnniversary.substring(4,6).equals("10")){%>selected="selected"<%}%> >10</option>
+											<option value="11" <%if(weddingAnniversary.substring(4,6).equals("11")){%>selected="selected"<%}%> >11</option>
+											<option value="12" <%if(weddingAnniversary.substring(4,6).equals("12")){%>selected="selected"<%}%> >12</option>
+										</select>&nbsp;월&nbsp;
+										<select name="weddingAnniversaryDay" title="결혼기념일 일 선택" onchange="clickMar();">
+											<option value=""   <%if(weddingAnniversary.substring(6,8).equals("  ")  ){%>selected="selected"<%}%> ></option>
+											<option value="01" <%if(weddingAnniversary.substring(6,8).equals("01")){%>selected="selected"<%}%> >01</option>
+											<option value="02" <%if(weddingAnniversary.substring(6,8).equals("02")){%>selected="selected"<%}%> >02</option>
+											<option value="03" <%if(weddingAnniversary.substring(6,8).equals("03")){%>selected="selected"<%}%> >03</option>
+											<option value="04" <%if(weddingAnniversary.substring(6,8).equals("04")){%>selected="selected"<%}%> >04</option>
+											<option value="05" <%if(weddingAnniversary.substring(6,8).equals("05")){%>selected="selected"<%}%> >05</option>
+											<option value="06" <%if(weddingAnniversary.substring(6,8).equals("06")){%>selected="selected"<%}%> >06</option>
+											<option value="07" <%if(weddingAnniversary.substring(6,8).equals("07")){%>selected="selected"<%}%> >07</option>
+											<option value="08" <%if(weddingAnniversary.substring(6,8).equals("08")){%>selected="selected"<%}%> >08</option>
+											<option value="09" <%if(weddingAnniversary.substring(6,8).equals("09")){%>selected="selected"<%}%> >09</option>
+											<option value="10" <%if(weddingAnniversary.substring(6,8).equals("10")){%>selected="selected"<%}%> >10</option>
+											<option value="11" <%if(weddingAnniversary.substring(6,8).equals("11")){%>selected="selected"<%}%> >11</option>
+											<option value="12" <%if(weddingAnniversary.substring(6,8).equals("12")){%>selected="selected"<%}%> >12</option>
+											<option value="13" <%if(weddingAnniversary.substring(6,8).equals("13")){%>selected="selected"<%}%> >13</option>
+											<option value="14" <%if(weddingAnniversary.substring(6,8).equals("14")){%>selected="selected"<%}%> >14</option>
+											<option value="15" <%if(weddingAnniversary.substring(6,8).equals("15")){%>selected="selected"<%}%> >15</option>
+											<option value="16" <%if(weddingAnniversary.substring(6,8).equals("16")){%>selected="selected"<%}%> >16</option>
+											<option value="17" <%if(weddingAnniversary.substring(6,8).equals("17")){%>selected="selected"<%}%> >17</option>
+											<option value="18" <%if(weddingAnniversary.substring(6,8).equals("18")){%>selected="selected"<%}%> >18</option>
+											<option value="19" <%if(weddingAnniversary.substring(6,8).equals("19")){%>selected="selected"<%}%> >19</option>
+											<option value="20" <%if(weddingAnniversary.substring(6,8).equals("20")){%>selected="selected"<%}%> >20</option>
+											<option value="21" <%if(weddingAnniversary.substring(6,8).equals("21")){%>selected="selected"<%}%> >21</option>
+											<option value="22" <%if(weddingAnniversary.substring(6,8).equals("22")){%>selected="selected"<%}%> >22</option>
+											<option value="23" <%if(weddingAnniversary.substring(6,8).equals("23")){%>selected="selected"<%}%> >23</option>
+											<option value="24" <%if(weddingAnniversary.substring(6,8).equals("24")){%>selected="selected"<%}%> >24</option>
+											<option value="25" <%if(weddingAnniversary.substring(6,8).equals("25")){%>selected="selected"<%}%> >25</option>
+											<option value="26" <%if(weddingAnniversary.substring(6,8).equals("26")){%>selected="selected"<%}%> >26</option>
+											<option value="27" <%if(weddingAnniversary.substring(6,8).equals("27")){%>selected="selected"<%}%> >27</option>
+											<option value="28" <%if(weddingAnniversary.substring(6,8).equals("28")){%>selected="selected"<%}%> >28</option>
+											<option value="29" <%if(weddingAnniversary.substring(6,8).equals("29")){%>selected="selected"<%}%> >29</option>
+											<option value="30" <%if(weddingAnniversary.substring(6,8).equals("30")){%>selected="selected"<%}%> >30</option>
+											<option value="31" <%if(weddingAnniversary.substring(6,8).equals("31")){%>selected="selected"<%}%> >31</option>
+										</select>&nbsp;일
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>배우자생일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="mateBirthdayYear" type="text" class="txt" value="<%= mateBirthday.substring(0,4).trim() %>" maxlength="4" onchange="clickMar();" title="배우자생일 년" id="label_matchbirthday01" />&nbsp;년&nbsp;
+										<select name="mateBirthdayMonth" title="배우자생일 달 선택" onchange="clickMar();">
+											<option value=""   <%if(mateBirthday.substring(4,6).equals("  ")  ){%>selected="selected"<%}%> ></option>
+											<option value="01" <%if(mateBirthday.substring(4,6).equals("01")){%>selected="selected"<%}%> >01</option>
+											<option value="02" <%if(mateBirthday.substring(4,6).equals("02")){%>selected="selected"<%}%> >02</option>
+											<option value="03" <%if(mateBirthday.substring(4,6).equals("03")){%>selected="selected"<%}%> >03</option>
+											<option value="04" <%if(mateBirthday.substring(4,6).equals("04")){%>selected="selected"<%}%> >04</option>
+											<option value="05" <%if(mateBirthday.substring(4,6).equals("05")){%>selected="selected"<%}%> >05</option>
+											<option value="06" <%if(mateBirthday.substring(4,6).equals("06")){%>selected="selected"<%}%> >06</option>
+											<option value="07" <%if(mateBirthday.substring(4,6).equals("07")){%>selected="selected"<%}%> >07</option>
+											<option value="08" <%if(mateBirthday.substring(4,6).equals("08")){%>selected="selected"<%}%> >08</option>
+											<option value="09" <%if(mateBirthday.substring(4,6).equals("09")){%>selected="selected"<%}%> >09</option>
+											<option value="10" <%if(mateBirthday.substring(4,6).equals("10")){%>selected="selected"<%}%> >10</option>
+											<option value="11" <%if(mateBirthday.substring(4,6).equals("11")){%>selected="selected"<%}%> >11</option>
+											<option value="12" <%if(mateBirthday.substring(4,6).equals("12")){%>selected="selected"<%}%> >12</option>
+										</select>&nbsp;월&nbsp;
+										<select name="mateBirthdayDay" title="배우자생일 일 선택" onchange="clickMar();">
+											<option value=""   <%if(mateBirthday.substring(6,8).equals("  ")  ){%>selected="selected"<%}%> ></option>
+											<option value="01" <%if(mateBirthday.substring(6,8).equals("01")){%>selected="selected"<%}%> >01</option>
+											<option value="02" <%if(mateBirthday.substring(6,8).equals("02")){%>selected="selected"<%}%> >02</option>
+											<option value="03" <%if(mateBirthday.substring(6,8).equals("03")){%>selected="selected"<%}%> >03</option>
+											<option value="04" <%if(mateBirthday.substring(6,8).equals("04")){%>selected="selected"<%}%> >04</option>
+											<option value="05" <%if(mateBirthday.substring(6,8).equals("05")){%>selected="selected"<%}%> >05</option>
+											<option value="06" <%if(mateBirthday.substring(6,8).equals("06")){%>selected="selected"<%}%> >06</option>
+											<option value="07" <%if(mateBirthday.substring(6,8).equals("07")){%>selected="selected"<%}%> >07</option>
+											<option value="08" <%if(mateBirthday.substring(6,8).equals("08")){%>selected="selected"<%}%> >08</option>
+											<option value="09" <%if(mateBirthday.substring(6,8).equals("09")){%>selected="selected"<%}%> >09</option>
+											<option value="10" <%if(mateBirthday.substring(6,8).equals("10")){%>selected="selected"<%}%> >10</option>
+											<option value="11" <%if(mateBirthday.substring(6,8).equals("11")){%>selected="selected"<%}%> >11</option>
+											<option value="12" <%if(mateBirthday.substring(6,8).equals("12")){%>selected="selected"<%}%> >12</option>
+											<option value="13" <%if(mateBirthday.substring(6,8).equals("13")){%>selected="selected"<%}%> >13</option>
+											<option value="14" <%if(mateBirthday.substring(6,8).equals("14")){%>selected="selected"<%}%> >14</option>
+											<option value="15" <%if(mateBirthday.substring(6,8).equals("15")){%>selected="selected"<%}%> >15</option>
+											<option value="16" <%if(mateBirthday.substring(6,8).equals("16")){%>selected="selected"<%}%> >16</option>
+											<option value="17" <%if(mateBirthday.substring(6,8).equals("17")){%>selected="selected"<%}%> >17</option>
+											<option value="18" <%if(mateBirthday.substring(6,8).equals("18")){%>selected="selected"<%}%> >18</option>
+											<option value="19" <%if(mateBirthday.substring(6,8).equals("19")){%>selected="selected"<%}%> >19</option>
+											<option value="20" <%if(mateBirthday.substring(6,8).equals("20")){%>selected="selected"<%}%> >20</option>
+											<option value="21" <%if(mateBirthday.substring(6,8).equals("21")){%>selected="selected"<%}%> >21</option>
+											<option value="22" <%if(mateBirthday.substring(6,8).equals("22")){%>selected="selected"<%}%> >22</option>
+											<option value="23" <%if(mateBirthday.substring(6,8).equals("23")){%>selected="selected"<%}%> >23</option>
+											<option value="24" <%if(mateBirthday.substring(6,8).equals("24")){%>selected="selected"<%}%> >24</option>
+											<option value="25" <%if(mateBirthday.substring(6,8).equals("25")){%>selected="selected"<%}%> >25</option>
+											<option value="26" <%if(mateBirthday.substring(6,8).equals("26")){%>selected="selected"<%}%> >26</option>
+											<option value="27" <%if(mateBirthday.substring(6,8).equals("27")){%>selected="selected"<%}%> >27</option>
+											<option value="28" <%if(mateBirthday.substring(6,8).equals("28")){%>selected="selected"<%}%> >28</option>
+											<option value="29" <%if(mateBirthday.substring(6,8).equals("29")){%>selected="selected"<%}%> >29</option>
+											<option value="30" <%if(mateBirthday.substring(6,8).equals("30")){%>selected="selected"<%}%> >30</option>
+											<option value="31" <%if(mateBirthday.substring(6,8).equals("31")){%>selected="selected"<%}%> >31</option>
+										</select>&nbsp;일
+										<label for="label_matchbirthday_type01"><input type="radio" class="chk" title="양력" onchange="clickMar();" name="mateLunarSolar" value="1" id="label_matchbirthday_type01" onchange="clickMar()" <% if( mateLunarSolar.equals("1") || mateLunarSolar.equals("")){ %> checked="checked" <%} %> /> 양력</label>
+										<label for="label_matchbirthday_type02"><input type="radio" title="음력" class="chk" onchange="clickMar();" name="mateLunarSolar" value="2" id="label_matchbirthday_type02" onchange="clickMar()" <% if( mateLunarSolar.equals("2") ){ %> checked="checked" <%} %> /> 음력</label>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_memberinfo_modify02.png" alt="개인 선택 정보입니다" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02" summary="직장주소, 직장전화번호, 직업, 차량보유, 연소득, 부동산보유액, 주거형태, 주거소유형태, 주 이용업소, 취미로 구성된 개인 선택 정보를 확인하고 변경할 수 있는 게시판입니다">
+						<caption>개인 선택 정보</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장주소</p></th>
+								<td colspan="3" class="cell_l">
+								<!-- 20130411 웹접근성(장차법)  onfocus="this.blur()" 제거-->
+									<p class="input_address">
+									<%if(!homeZipCode.equals("      ")){ %>
+										<input name="officeZip1" type="text" class="txt" value="<%= officeZipCode.substring(0,3) %>" title="우편번호 앞자리" />&nbsp;-&nbsp;
+                                        <input name="officeZip2" type="text" class="txt" value="<%= officeZipCode.substring(3,6) %>" title="우편번호 뒷자리"  />
+									<%}else{ %>	
+                                        <input name="officeZip1" type="text" class="txt" value="" title="우편번호 앞자리"  />&nbsp;-&nbsp;
+                                        <input name="officeZip2" type="text" class="txt" value="" title="우편번호 뒷자리"  />
+									<%} %>	
+										
+										<a href="javascript:searchZipMain(frm1.officeZip1, frm1.officeZip2, frm1.officeZipSeq, frm1.officeAddrArea, frm1.officeAddrDist, '<%=newjusoYn %>')" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input name="officeAddrArea" type="text" class="txt" title="직장주소 상세입력" value="<%= officeAddrArea %>" onclick="searchZipMain(frm1.officeZip1, frm1.officeZip2, frm1.officeZipSeq, frm1.officeAddrArea, frm1.officeAddrDist, '<%=newjusoYn %>')" readonly="readonly" />
+                                        <input name="officeAddrDist" type="text" class="txt" value="<%= officeAddrDist %>" title="직장주소 상세입력2" onkeyup="CheckMsgLen(40,this);" onclick="searchZipMain(frm1.officeZip1, frm1.officeZip2, frm1.officeZipSeq, frm1.officeAddrArea, frm1.officeAddrDist, '<%=newjusoYn %>')" readonly="readonly" /></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_wpphone">직장전화번호</label></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select name="officePhone1" title="직장전화번호 국번 선택" id="label_wpphone">
+											<option value=" " <% if( officePhone1.equals(""  )) {%>  selected="selected" <% } %>>선택</option>
+											<option value = "02"   <% if(officePhone1.equals("02"  )) {%>  selected="selected" <% } %> >02</option>
+											<option value = "031"  <% if(officePhone1.equals("031" )) {%>  selected="selected" <% } %> >031</option>
+											<option value = "032"  <% if(officePhone1.equals("032" )) {%>  selected="selected" <% } %> >032</option>
+											<option value = "033"  <% if(officePhone1.equals("033" )) {%>  selected="selected" <% } %> >033</option>
+											<option value = "041"  <% if(officePhone1.equals("041" )) {%>  selected="selected" <% } %> >041</option>
+											<option value = "042"  <% if(officePhone1.equals("042" )) {%>  selected="selected" <% } %> >042</option>
+											<option value = "043"  <% if(officePhone1.equals("043" )) {%>  selected="selected" <% } %> >043</option>
+											<option value = "0303" <% if(officePhone1.equals("0303")) {%>  selected="selected" <% } %> >0303</option>
+											<option value = "0502" <% if(officePhone1.equals("0502")) {%>  selected="selected" <% } %> >0502</option>
+											<option value = "0503" <% if(officePhone1.equals("0503")) {%>  selected="selected" <% } %> >0503</option>
+											<option value = "0504" <% if(officePhone1.equals("0504")) {%>  selected="selected" <% } %> >0504</option>
+											<option value = "0505" <% if(officePhone1.equals("0505")) {%>  selected="selected" <% } %> >0505</option>
+											<option value = "0506" <% if(officePhone1.equals("0506")) {%>  selected="selected" <% } %> >0506</option>
+											<option value = "051"  <% if(officePhone1.equals("051" )) {%>  selected="selected" <% } %> >051</option>
+											<option value = "052"  <% if(officePhone1.equals("052" )) {%>  selected="selected" <% } %> >052</option>
+											<option value = "053"  <% if(officePhone1.equals("053" )) {%>  selected="selected" <% } %> >053</option>
+											<option value = "054"  <% if(officePhone1.equals("054" )) {%>  selected="selected" <% } %> >054</option>
+											<option value = "055"  <% if(officePhone1.equals("055" )) {%>  selected="selected" <% } %> >055</option>
+											<option value = "061"  <% if(officePhone1.equals("061" )) {%>  selected="selected" <% } %> >061</option>
+											<option value = "062"  <% if(officePhone1.equals("062" )) {%>  selected="selected" <% } %> >062</option>
+											<option value = "063"  <% if(officePhone1.equals("063" )) {%>  selected="selected" <% } %> >063</option>
+											<option value = "064"  <% if(officePhone1.equals("064" )) {%>  selected="selected" <% } %> >064</option>
+											<option value = "070"  <% if(officePhone1.equals("070" )) {%>  selected="selected" <% } %> >070</option>
+                                        </select><input name="officePhone2" type="text" class="txt"  title="직장전화번호 가운데자리" value="<%= officePhone2 %>" maxlength="4" onblur="checkTypesOnBlur(this, 'TELNO')" />&nbsp;-&nbsp;
+                                        <input name="officePhone3" type="text" class="txt"  title="직장전화번호 뒷자리" value="<%= officePhone3 %>"  maxlength="4" onkeydown="checkLenB(this, frm1.officePhone2 )"  onblur="checkTypesOnBlur(this, 'TELNO')" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_job">직업</label></th>
+								<td colspan="3" class="cell_l">
+									<select name="blueJob" title="직업 선택" id="label_job">
+											<option value="" <% if(blueJob.equals("") ){%> selected="selected" <%} %> >선택하세요</option>
+											<option value="학생" <% if(blueJob.equals("학생") ){%> selected="selected" <%} %> >학생</option>
+											<option value="공무원" <% if(blueJob.equals("공무원") ){%> selected="selected" <%} %> >공무원</option>
+											<option value="자영업" <% if(blueJob.equals("자영업") ){%> selected="selected" <%} %> >자영업</option>
+											<option value="주부" <% if(blueJob.equals("주부") ){%> selected="selected" <%} %> >주부</option>	
+											<option value="컴퓨터/인터넷" <% if(blueJob.equals("컴퓨터/인터넷") ){%> selected="selected" <%} %> >컴퓨터/인터넷</option>
+											<option value="금융/증권/보험" <% if(blueJob.equals("금융/증권/보험") ){%> selected="selected" <%} %> >금융/증권/보험</option>
+											<option value="마케팅/영업/무역" <% if(blueJob.equals("마케팅/영업/무역") ){%> selected="selected" <%} %> >마케팅/영업/무역</option>
+											<option value="언론/출판" <% if(blueJob.equals("언론/출판") ){%> selected="selected" <%} %> >언론/출판</option>
+											<option value="광고" <% if(blueJob.equals("광고") ){%> selected="selected" <%} %> >광고</option>
+											<option value="디자인" <% if(blueJob.equals("디자인") ){%> selected="selected" <%} %> >디자인</option>
+											<option value="CG" <% if(blueJob.equals("CG") ){%> selected="selected" <%} %> >디자인</option>
+											<option value="운송" <% if(blueJob.equals("운송") ){%> selected="selected" <%} %> >운송</option>
+											<option value="건설" <% if(blueJob.equals("건설") ){%> selected="selected" <%} %> >건설</option>
+											<option value="전기/전자" <% if(blueJob.equals("전기/전자") ){%> selected="selected" <%} %> >전기/전자</option>
+											<option value="통신" <% if(blueJob.equals("통신") ){%> selected="selected" <%} %> >전기/전자</option>
+											<option value="유통" <% if(blueJob.equals("유통") ){%> selected="selected" <%} %> >유통</option>
+											<option value="제조업" <% if(blueJob.equals("제조업") ){%> selected="selected" <%} %> >제조업</option>
+											<option value="교직자" <% if(blueJob.equals("교직자") ){%> selected="selected" <%} %> >교직자</option>
+											<option value="의료인" <% if(blueJob.equals("의료인") ){%> selected="selected" <%} %> >의료인</option>
+											<option value="법조인" <% if(blueJob.equals("법조인") ){%> selected="selected" <%} %> >법조인</option>
+											<option value="종교인" <% if(blueJob.equals("종교인") ){%> selected="selected" <%} %> >종교인</option>
+											<option value="예술인" <% if(blueJob.equals("예술인") ){%> selected="selected" <%} %> >예술인</option>
+											<option value="연예인" <% if(blueJob.equals("연예인") ){%> selected="selected" <%} %> >연예인</option>
+											<option value="스포츠" <% if(blueJob.equals("스포츠") ){%> selected="selected" <%} %> >스포츠</option>
+											<option value="군인" <% if(blueJob.equals("군인") ){%> selected="selected" <%} %> >군인</option>
+											<option value="농/축/수/임산업" <% if(blueJob.equals("농/축/수/임산업") ){%> selected="selected" <%} %> >농/축/수/임산업</option>
+											<option value="기타" <% if(blueJob.equals("기타") ){%> selected="selected" <%} %> >기타</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>차량보유</p></th>
+								<td colspan="3" class="cell_l">
+									<label for="label_mycar01"><input type="radio" class="chk" name="carStatus" id="label_mycar01" value="Y" title="보유" <% if(carStatus.equals("Y")){ %> checked="checked" <%} %> /> 보유</label>
+									<label for="label_mycar02"><input type="radio" class="chk" name="carStatus" id="label_mycar02" value="N" title="미보유" <% if(carStatus.equals("N")){ %> checked="checked" <%} %> /> 미보유</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_income_year">연소득</label></th>
+								<td class="cell_l02">
+									<select name="yearlyIncome" title="연소득 선택" id="label_income_year">
+										<option value="000" <% if( yearlyIncome.equals("000")|| yearlyIncome.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+										<option value="010" <% if( yearlyIncome.equals("010")){ %> selected="selected" <%} %> >480만원미만</option>
+										<option value="020" <% if( yearlyIncome.equals("020")){ %> selected="selected" <%} %> >480~840만원 미만</option>
+										<option value="030" <% if( yearlyIncome.equals("030")){ %> selected="selected" <%} %> >840~1200만원 미만</option>
+										<option value="040" <% if( yearlyIncome.equals("040")){ %> selected="selected" <%} %> >1200~1800만원 미만</option>
+										<option value="050" <% if( yearlyIncome.equals("050")){ %> selected="selected" <%} %> >1800~3600만원 미만</option>
+										<option value="060" <% if( yearlyIncome.equals("060")){ %> selected="selected" <%} %>>3600만원 이상</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><label for="label_income_property">부동산보유액</label></th>
+								<td class="cell_l02">
+									<select name="realEstate" title="부동산 보유액" id="label_income_property">
+											<option value="000" <% if( realEstate.equals("000")|| realEstate.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+											<option value="010" <% if( realEstate.equals("010")){ %> selected="selected" <%} %> >5천만원 미만</option>
+											<option value="020" <% if( realEstate.equals("020")){ %> selected="selected" <%} %> >1 ~ 2억</option>
+											<option value="030" <% if( realEstate.equals("030")){ %> selected="selected" <%} %> >2 ~ 3억</option>
+											<option value="040" <% if( realEstate.equals("040")){ %> selected="selected" <%} %> >3 ~ 5억</option>
+											<option value="050" <% if( realEstate.equals("050")){ %> selected="selected" <%} %> >5 ~ 7억</option>
+											<option value="060" <% if( realEstate.equals("060")){ %> selected="selected" <%} %> >7 ~ 10억</option>
+											<option value="070" <% if( realEstate.equals("070")){ %> selected="selected" <%} %> >10억이상</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_living_type">주거형태</label></th>
+								<td class="cell_l02">
+									<select name="residentType" title="주거형태 선택" id="label_living_type">
+										<option value="000" <% if(residentType.equals("000") || residentType.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+											<option value="010" <% if( residentType.equals("010")){ %> selected="selected" <%} %> >아파트</option>
+											<option value="020" <% if( residentType.equals("020")){ %> selected="selected" <%} %> >다세대</option>
+											<option value="030" <% if( residentType.equals("030")){ %> selected="selected" <%} %> >빌라</option>
+											<option value="040" <% if( residentType.equals("040")){ %> selected="selected" <%} %> >연립</option>
+											<option value="050" <% if( residentType.equals("050")){ %> selected="selected" <%} %> >주택</option>
+											<option value="060" <% if( residentType.equals("060")){ %> selected="selected" <%} %> >관사</option>
+											<option value="070" <% if( residentType.equals("070")){ %> selected="selected" <%} %> >기숙사</option>
+											<option value="080" <% if( residentType.equals("080")){ %> selected="selected" <%} %> >오피스텔</option>
+											<option value="090" <% if( residentType.equals("090")){ %> selected="selected" <%} %> >기타</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><label for="label_incomeliving_type">주거소유형태</label></th>
+								<td class="cell_l02">
+									<select name="abodeCode" title="주거소유형태 선택" id="label_incomeliving_type">
+										<option value="000" <% if(abodeCode.equals("000") || abodeCode.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+											<option value="010" <% if( abodeCode.equals("010")){ %> selected="selected" <%} %> >본인소유</option>
+											<option value="050" <% if( abodeCode.equals("050")){ %> selected="selected" <%} %> >가족소유</option>
+											<option value="020" <% if( abodeCode.equals("020")){ %> selected="selected" <%} %> >전세</option>
+											<option value="030" <% if( abodeCode.equals("030")){ %> selected="selected" <%} %> >월세</option>
+											<option value="060" <% if( abodeCode.equals("060")){ %> selected="selected" <%} %> >친인척소유</option>
+											<option value="040" <% if( abodeCode.equals("040")){ %> selected="selected" <%} %> >기타</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><label for="label_use_business">주 이용업소</label></th>
+								<td class="cell_l02">
+									<select name="customChainCode" title="주 이용업소 선택" id="label_use_business">
+										<option value="000" <% if(abodeCode.equals("000") || abodeCode.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+											<option value="010" <% if( customChainCode.equals("010")){ %> selected="selected" <%} %> >숙박</option>
+											<option value="020" <% if( customChainCode.equals("020")){ %> selected="selected" <%} %> >유통</option>
+											<option value="030" <% if( customChainCode.equals("030")){ %> selected="selected" <%} %> >요식</option>
+											<option value="040" <% if( customChainCode.equals("040")){ %> selected="selected" <%} %> >의류</option>
+											<option value="050" <% if( customChainCode.equals("050")){ %> selected="selected" <%} %> >관광</option>
+											<option value="060" <% if( customChainCode.equals("060")){ %> selected="selected" <%} %> >문화</option>
+											<option value="070" <% if( customChainCode.equals("070")){ %> selected="selected" <%} %> >보건</option>
+											<option value="080" <% if( customChainCode.equals("080")){ %> selected="selected" <%} %> >서비스</option>
+											<option value="090" <% if( customChainCode.equals("090")){ %> selected="selected" <%} %> >기타</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><label for="label_hobbytype">취미</label></th>
+								<td class="cell_l02">
+									<select name="hobbyCode" title="취미 선택" id="label_hobbytype">
+											<option value="000" <% if(hobbyCode.equals("000") || hobbyCode.trim().equals("")){ %> selected="selected" <%} %> > 선택 </option>
+											<option value="010" <% if( hobbyCode.equals("010")){ %> selected="selected" <%} %> >독서</option>
+											<option value="015" <% if( hobbyCode.equals("015")){ %> selected="selected" <%} %> >등산/낚시</option>
+											<option value="025" <% if( hobbyCode.equals("025")){ %> selected="selected" <%} %> >사진촬영</option>
+											<option value="050" <% if( hobbyCode.equals("050")){ %> selected="selected" <%} %> >쇼핑</option>
+											<option value="045" <% if( hobbyCode.equals("045")){ %> selected="selected" <%} %> >수집</option>
+											<option value="060" <% if( hobbyCode.equals("060")){ %> selected="selected" <%} %> >스포츠</option>
+											<option value="065" <% if( hobbyCode.equals("065")){ %> selected="selected" <%} %> >스포츠관람</option>
+											<option value="040" <% if( hobbyCode.equals("040")){ %> selected="selected" <%} %> >여행</option>
+											<option value="030" <% if( hobbyCode.equals("030")){ %> selected="selected" <%} %> >연극/콘서트</option>
+											<option value="035" <% if( hobbyCode.equals("035")){ %> selected="selected" <%} %> >영화</option>
+											<option value="055" <% if( hobbyCode.equals("055")){ %> selected="selected" <%} %> >요리</option>
+											<option value="020" <% if( hobbyCode.equals("020")){ %> selected="selected" <%} %> >음악</option>
+											<option value="070" <% if( hobbyCode.equals("070")){ %> selected="selected" <%} %> >컴퓨터게임</option>
+											<option value="090" <% if( hobbyCode.equals("090")){ %> selected="selected" <%} %> >기타</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnc"><a href="javascript:validation();"><img src="/images/common/btn_change.png" alt="변경" /></a></p>
+						</div>
+					</div>
+				</div>
+				</form>
+				<!-- footer_layer -->
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

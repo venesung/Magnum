@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>S선포인트 매출별 상환내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type='text/javascript' src="/js/jquery-1.3.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+
+
+$(function() {
+	var pIdx = "<%=pIdx%>";
+
+	if(pIdx != "")
+	{
+		for(var i=1; i<=10; i++)
+		{
+			if(i != 10) {
+				$("#HPJ00097INRecVO_" + i).text($("#HPJ00097INRecVO_" + pIdx + "_" + i, opener.document).text());
+				$("#HPJ00097INRecVO_" + i + "H").val($("#HPJ00097INRecVO_" + pIdx + "_" + i, opener.document).text());
+			} else {
+				$("#HPJ00097INRecVO_" + i).text($("#HPJ00097INRecVO_" + pIdx + "_" + i, opener.document).val());
+				$("#HPJ00097INRecVO_" + i + "H").val($("#HPJ00097INRecVO_" + pIdx + "_" + i, opener.document).val());
+			}
+		}
+	}
+	else
+	{
+		$("#HPJ00097INRecVO_1H").val("${HPJ00097INRecVO_1H}");
+		$("#HPJ00097INRecVO_2H").val("${HPJ00097INRecVO_2H}");
+		$("#HPJ00097INRecVO_3H").val("${HPJ00097INRecVO_3H}");
+		$("#HPJ00097INRecVO_4H").val("${HPJ00097INRecVO_4H}");
+		$("#HPJ00097INRecVO_5H").val("${HPJ00097INRecVO_5H}");
+		$("#HPJ00097INRecVO_6H").val("${HPJ00097INRecVO_6H}");
+		$("#HPJ00097INRecVO_7H").val("${HPJ00097INRecVO_7H}");
+		$("#HPJ00097INRecVO_8H").val("${HPJ00097INRecVO_8H}");
+		$("#HPJ00097INRecVO_9H").val("${HPJ00097INRecVO_9H}");
+		$("#HPJ00097INRecVO_10H").val("${HPJ00097INRecVO_10H}");
+
+		for(var i=1; i<=10; i++)
+		{
+			$("#HPJ00097INRecVO_" + i).text($("#HPJ00097INRecVO_" + i + "H").val());
+		}
+	}
+});
+
+function goPage(goPage)
+{
+	var frm = document.form_next;
+
+	frm.goPage.value = goPage;
+	frm.submit();
+}
+
+</script>
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_month_point_spoint.png" alt="S선포인트 매출별 상환내역" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_month_point_spoint.png" alt="S선포인트 매출별 상환내역" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445">
+
+		<div class="content_block content_block_card clfix">
+			<div class="tb_exp clfix">
+				<h3>매출건</h3>
+			</div>
+
+			<table class="dtable01" summary="매출일, 매출접수일, 가맹점명, 매출금액, 서비스이용액, 상환금액, 잔여금액, 상환만기일, 취소일, 종료일등으로 구성된 S선포인트 매출 내역을 확인할 수 있는 게시판입니다.">
+			<caption>S선포인트 매출 내역</caption>
+			<colgroup><col width="8%" /><col width="8%" /><col width="18%" /><col width="12%" /><col width="10%" /><col width="10%" /><col width="10%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">매출일</th>
+					<th scope="col" class="cell_l10">매출<br />접수일</th>
+					<th scope="col" class="cell_l10">가맹점명</th>
+					<th scope="col" class="cell_r10">매출금액</th>
+					<th scope="col" class="cell_r10">서비스<br />이용액</th>
+					<th scope="col" class="cell_r10">상환금액</th>
+					<th scope="col" class="cell_r10">잔여금액</th>
+					<th scope="col" class="cell_l10">상환<br />만기일</th>
+					<th scope="col" class="cell_l10">취소일</th>
+					<th scope="col" class="cell_l10">종료일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10 t_no" id="HPJ00097INRecVO_1"></td>
+					<td class="t_no" id="HPJ00097INRecVO_2"></td>
+					<td class="cell_l10" id="HPJ00097INRecVO_3"></td>
+					<td class="cell_r10 t_no" id="HPJ00097INRecVO_4"></td>
+					<td class="cell_r10 t_no" id="HPJ00097INRecVO_5"></td>
+					<td class="cell_r10 t_no" id="HPJ00097INRecVO_6"></td>
+					<td class="cell_r10 t_no" id="HPJ00097INRecVO_10"></td>
+					<td class="t_no" id="HPJ00097INRecVO_7"></td>
+					<td class="t_no" id="HPJ00097INRecVO_8"></td>
+					<td class="t_no" id="HPJ00097INRecVO_9"></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<div class="tb_exp mt40 clfix">
+				<h3>상환내역</h3>
+			</div>
+
+			<table class="dtable01" summary="번호, 상환구분, 매출일, 매출접수일, 가맹점명, 매출금액, 적립포인트, 차감포인트, 취소여부등으로 구성된 S선포인트 상환 내역을 확인할 수 있는 게시판입니다.">
+			<caption>S선포인트 상환 내역</caption>
+			<colgroup><col width="6%" /><col width="14%" /><col width="9%" /><col width="9%" /><col width="20%" /><col width="12%" /><col width="10%" /><col width="10%" /><col width="10%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">번호</th>
+					<th scope="col" class="cell_l10">상환구분</th>
+					<th scope="col">매출일</th>
+					<th scope="col" class="cell_l10">매출<br />접수일</th>
+					<th scope="col" class="cell_l10">가맹점명</th>
+					<th scope="col" class="cell_r10">매출금액</th>
+					<th scope="col" class="cell_r10">적립<br />포인트</th>
+					<th scope="col" class="cell_r10">차감<br />포인트</th>
+					<th scope="col" class="cell_l10">취소여부</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr class="nodata"><td colspan="9">조회된 이용내역이 없습니다.</td></tr>
+				<tr>
+					<td class="cell_l10">0</td>
+					<td class="cell_l10">0</td>
+					<td class="t_no">0</td>
+					<td class="t_no">0</td>
+					<td class="cell_l10">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_l10">0</td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+            
+			<!-- paginate -->
+			<div class="paginate">
+				<div class="paging">
+					<a href="javascript:goPage('prePage');" class="btn btn_s_white"><span>이전</span></a>
+					<a href="javascript:goPage('nextPage');" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+
+</body>
+</html>

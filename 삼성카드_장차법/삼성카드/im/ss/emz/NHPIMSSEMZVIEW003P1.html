@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>지난 배송지 목록 선택 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<form  name="frm">
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header3">
+		<h1 class="al_center"><img src="/images/ss/layer_tit_distance_send_list.png" alt="지난 배송지 목록에서 선택해 주세요" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_distance_send_list.png" alt="지난 배송지 목록에서 선택해 주세요" /></h1>
+	</div>
+		
+	<!-- content -->
+	<div id="pop_s_content3" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+<!-- 091203데이터테이블수정 -->
+			<table class="dtable01" summary="선택, 배송지로 구성된 지난 배송지를 선택할 수 있는 게시판입니다">
+			<caption>지난 배송지 선택</caption>
+			<colgroup><col width="8%" /><col width="92%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10"><p>선택</p></th>
+					<th scope="col" class="cell_l10"><p>배송지</p></th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10"><input type="radio" class="rdo" value="<%=i+1 %>" id="label_send<%=i+1 %>" name="id_send" title="선택" /></td>
+					<td class="cell_l10"><label for="label_send<%=i+1 %>">-_-?</label></td>
+
+				</tr>
+
+			</tbody>
+			</table>
+		</div>
+        <p class="btnc"><a href="javascript:confirmAddress();window.close();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+	</div>
+	
+
+ </div>
+</form>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+	<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>당첨된 이벤트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<script type="text/javascript">
+function confirm(){
+	window.close();
+}
+function showContent(eventNo){
+	opener.showContent(eventNo);
+	window.close();
+}
+</script>
+<form name="form1" method="post">
+<div id="pop_wrap">
+	<!-- header -->
+	<!--div id="pop_header">
+		<h1><img src="${pageContext.request.contextPath}/images/mh/pop_h1_event_winner.png" alt="당첨된 이벤트" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_event_winner.png" alt="당첨된 이벤트" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_content">
+		<div class="content_block content_block_card clfix">
+			
+			<p class="mt20 mb10"><strong class="t_point">고객님의 당첨내역은 아래와 같습니다.</strong></p>
+			<p class="mb20">홈페이지에 등록된 이벤트인 경우 아래 제목을 클릭하시면 상세 내용을 확인 하실 수 있지만<br />홈페이지에 등록되어 있지 않은 이벤트인 경우 행사 담당자에게 문의바랍니다. </p>
+ 
+			<div class="board_list">
+				<table class="dtable01" summary="당첨된 이벤트에 대한 번호, 제목, 상품명, 게시일자를 확인하는 게시판입니다.">
+				<caption>당첨된 이벤트 리스트</caption>
+				<colgroup><col width="7%" /><col width="*" /><col width="30%" /><col width="10%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">번호</th>
+						<th scope="col">제목</th>
+						<th scope="col">항목</th>
+						<th scope="col">게시일자</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+						<tr>
+							<td class="t_no cell_l10">1</td>						
+							<td class="cell_l"><a href="#">-_-..</a></td>
+							<td>-_-</td>
+							<td class="t_no">2012.02.03
+												~
+												2012.03.03</td>
+						</tr>
+					<tr>
+						<td colspan="4">당첨내역이 없습니다.</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+			<p class="btnc_30">
+				<a href="javascript:confirm()"><img src="${pageContext.request.contextPath}/images/common/btn_confirm.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

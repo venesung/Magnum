@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/fs/h1_monthly_installment_plan_list.png" alt="고객님의 할부금융 내역입니다" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMFSIFA001M001', true);">이용내역 조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMFSIFA001M002', true);">당월결제금액</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMFSIFA001M003', true);">즉시결제금액조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/fs/h2_monthly_installment_plan_list01.png" alt="즉시결제 금액을 조회하세요" /></h2>
+					<div class="content_block_inner">
+
+						<div class="tb_exp clfix">
+							<span>결제일까지 기다리지 않고 남은 잔액을 일시불로 결제하실 수 있습니다.</span>
+						</div>
+				 <form name="search_form" method="post" >
+						<table class="dtable01" summary="구분, 대출번호, 결제일, 비고로 구성된 할부금융 내역을 확인할 수 있는 게시판입니다.">
+						<caption>할부금융 내역</caption>
+						<colgroup><col width="70" /><col width="70" /><col width="200" /><col width="150" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">선택</th>
+								<th scope="col">구분</th>
+								<th scope="col">대출번호</th>
+								<th scope="col">결제일</th>
+								<th scope="col">비고</th>
+							</tr>
+
+						</thead>
+
+
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no"><input type="radio" class="rdo" value="" name="choice" title="대출번호 00 선택" /></td>
+								<td>1</td>
+								<td>1</td>
+								<td class="t_no">1</td>
+                                <td><a href="#" title="대출번호 00 자세히보기" class="btn btn_s_white"><span>자세히보기</span></a></td>
+							</tr>
+							<!-- 데이터없을 경우 -->
+							<tr class="nodata">
+								<td colspan="5">데이터가 존재하지 않습니다</td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl t_desc03">&nbsp;&nbsp;&nbsp;<strong class="t_black">주의!</strong>&nbsp;&nbsp;&nbsp;장기미납으로 인해 기타비용이 발생한 경우에는(법비용 등) 위 금액에 포함되지 않으므로 해당되시는 회원께서는 실제 납입금액을<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;확인하신 후 입금하시기 바랍니다.
+							</p>
+						</div>
+
+						<div class="tb_exp clfix mt30">
+							<span>입금하실 예정일을 입력하고 조회하면 입금예정일에 상환하실 금액을 확인하실 수 있습니다.</span>
+						</div>
+
+						<table class="dtable02 dtable_inputfield" summary="조회일자를 입력하는 게시판입니다">
+						<caption>조회일자 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+
+
+						<tbody>
+							<tr>
+								<th scope="row"><p>조회일자</p></th>
+                                <td><p class="input_point"><input type="text" name="search_date" maxlength="8" onkeydown="getOnlyNumberKey()" class="txt" value="" id="label_searchdate" title="조회일자 입력" /> <span class="t_desc04 mr10">날짜입력 예 : 20050102</span> <a href="javascript:clickSubmit();" class="btn btn_s_white" title="새창"><span>조회</span></a></p></td>
+							</tr>
+						</tbody>
+						</table>
+				  </form>
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

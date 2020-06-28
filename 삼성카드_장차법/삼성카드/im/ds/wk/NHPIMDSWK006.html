@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">위클리보너스 서비스</h1>
+					<!-- 20130412 웹접근성(장차법)  수정  -->
+					<div class="h1_desc"><img src="/images/mh/h1_weeklybonus.jpg" alt="위클리보너스 서비스.주단위의 계획적인 소비 최대 2%의 U-POINT가 보입니다." /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab02 w810">
+						<ul>
+							<!-- 2013.01.03 depth level 수정 -->
+							<li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK008',true);return false;">서비스안내</a></li>
+			                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK001',true);return false;">서비스 신청하기</a></li>
+			                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK002',true);return false;">신청내역</a></li>
+			                <li class="on"><a href="#" onclick="javascript:goTabPage('NHPIMDSWK020',true);return false;">조회하기</a></li>
+			                <!-- 
+			                	<ul class="sub_tab">
+			                        <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK003',true);return false;">주단위 입금내역</a></li>
+			                        <li class="on"><a href="#" onclick="javascript:goTabPage('NHPIMDSWK006',true);return false;">월명세서별 입금내역</a></li>
+			                        <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK013',true);return false;">U-Point 적립내역</a></li>
+								</ul>                
+			                </li>
+			                -->
+			                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK0011',true);return false;">해지하기</a></li>
+			                <li><a href="#" onclick="javascript:goTabPage('NHPIMDSWK0010',true);return false;">FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_weekly07.png" alt="월명세서별 입금내역을 조회하세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>위클리보너스로 입금한 금액을 월명세서 단위로 조회하실 수 있습니다.(위클리 입금월이 아닙니다.)</p></li>
+							<li><p>월결제일이 휴일인 경우 다음 영업일이 결제일입니다.</p></li>
+							<li><p>위클리보너스입금 이후 발생한 매출취소 및 입금취소는 반영되어 있지 않습니다.</p></li>
+						</ol>
+
+						<div class="btnset mt20">
+							<p class="t_desc04 mb10">이용대금명세서 선택</p>
+							<div id="selectbox1" class="selectbox ml10" onclick="select.action(this,1);" style="width:100px"><p class="btn">&nbsp;</p>
+                                <p><a href="#" class="default" onclick="return false;" onKeyDown="select.focus(this,1);">2012 년</a></p>
+								<div class="childlayer">
+									<ul>
+                                        <li><a href="#">2012 년</a></li>
+									</ul>
+								</div>
+							</div>
+							<div id="selectbox2" class="selectbox ml10" onclick="select.action(this,1);" style="width:100px"><p class="btn">&nbsp;</p>
+                                <p><a href="#" class="default" onclick="return false;" onKeyDown="select.focus(this,1);">12 월</a></p>
+								<div class="childlayer">
+									<ul>							
+										<li><a href="#">1 월</a></li>
+									</ul>
+								</div>
+							</div>
+                            <span class="selectbox_r_txt02"><a href="#onclick" onclick="fnSearch();return false;"><img src="/images/common/btn_inqury.png" alt="조회" /></a></span>
+						</div>
+							
+ 						<div class="line_lgray">&nbsp;</div>
+ 						<p class="p_txt">회원님의 삼성카드(개인) 매월 결제일은 <span class="t_tahoma18 t_point_org">1</span>일 입니다.</p>
+ 						<div class="line_lgray">&nbsp;</div>
+							
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2></h2>
+					<div class="content_block_inner">
+						<table class="dtable02" summary="위클리보너스 총입금액을 보여주는 게시판입니다">
+						<caption>매달위클리보너스로 입금한금액</caption>
+						<colgroup><col width="150" /><col width="100" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>위클리보너스 총입금액</p></th>
+								<td><p class="t_no t_point_org"><strong>1</strong></p></td>
+                                <td><p><a href="#onclick" class="btn btn_s_white" onclick="goView('');return false;"><span>상세내역보기</span></a></p></td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnr">
+							<a href="#onclick" class="btn btn_blue" onclick="javascript:goTabPage('NHPIMDSWK020',true);return false;"><span>확인</span></a> 
+						</div>
+					</div>					
+					
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

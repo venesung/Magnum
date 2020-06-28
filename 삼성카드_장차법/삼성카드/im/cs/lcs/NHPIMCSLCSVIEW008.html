@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_loss_reported_cancel_app.png" alt="카드분실신고를 해제합니다" /></h1>
+				</div>
+
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					<h2><img src="/images/cs/h2_loss_reported_cancel_app01.png" alt="고객님의 카드정보를 입력하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						
+						<ol class="list_no01">
+							<li><p>회원님께서 조회하신 카드 <strong class="t_black t_no">${disp_cardno}</strong> 은 정상적으로 분실신고 된 카드입니다.</p></li>
+							<li><p>재발급을 원하시면 아래의 사항을 정확히 입력하시고 신청해주세요.</p></li>
+						</ol>
+						
+						<!-- calendar_position -->
+						<div class="pos_rel_cal mt20">캘린더위치</div>
+						<table class="dtable02 dtable_inputfield" summary="재발급 신청을 하기 위해 카드비밀번호, 주민등록번호, 분실접수번호, 분신신고일자를 입력하는 게시판입니다.">
+						<caption>재발급 신청</caption>
+						<colgroup><col width="15%" /><col width="85%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드비밀번호</p></th>
+								<td><p class="input_2char"><input type="password" maxlength="2" class="txt" value="" title="카드비밀번호 앞 두자리" name="password" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" /><em>**</em>(비밀번호 앞의 2자리)&nbsp;&nbsp;&nbsp;<span id="usafeon_password"></span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>주민등록번호</p></th>
+								<td><p class="input_idno">
+                                    <input type="text" class="txt" maxlength="6" value="" title="주민등록번호 앞자리" name="jumin1" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" enc="on"/>&nbsp;-&nbsp;
+									<input type="password" maxlength="7" class="txt" value="" title="주민등록번호 뒷자리" name="jumin2" onkeydown="checkLenB( this, document.form1.jumin1)" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" enc="on"/>&nbsp;&nbsp;&nbsp;<span id="usafeon_jumin1|jumin2"></span></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>분실신고일자</p></th>
+								<td><p>
+									<input type="text" id="bunsilDate" title="분실신고일자 입력" name="bunsilDate" class="txt" maxlength="8" /> (ex)20101010
+								</p></td>
+							</tr>
+							<tr>	
+								<th scope="row"><p>분실접수번호</p></th>
+								<td><p>
+									<input id="label_reception_no" name="jubsuno" type="text" class="txt" title="분실신고접수번호" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" />
+									<input type="radio" class="chk" value="sign" name="certGubunRadio" id="certGubunRadio_1" title="공인인증으로 인증하기" checked="checked" onclick="fnRadioChange(this);" /> <label for="certGubunRadio_1">공인인증으로 인증하기</label>
+									<input type="radio" class="chk" value="hp" name="certGubunRadio" id="certGubunRadio_2" title="핸드폰으로 인증하기" onclick="fnRadioChange(this);" /><label for="certGubunRadio_2">핸드폰으로 인증하기</label></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnr"><a href="javascript:save();" class="btn btn_blue"><span>신청하기</span></a></p>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_loss_reported_cancel_app02.png" alt="분실신고 해제 전 확인하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+					
+						<ol class="list_no01">
+							<li><p>분실신고 당시 카드 재발급을 신청하신 회원님은 처리가 안되오니 재발급을 기다려 주시기 바랍니다.</p></li>
+							<li><p>재발급 카드는 <strong class="t_black">신청하신 날부터 7-10일</strong> 후면 받아 보실 수 있습니다.</p></li>
+						</ol>
+						
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+                
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_chk_point.png" alt="사용가능한 포인트를 확인하세요" /></h1>
+                    <p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1');" class="btn btn_s_white"><span>포인트 적립 기준/세부 내용</span></a></p>
+                </div>				
+
+				<!-- content_block 100212 -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false">
+							<jsp:param value="savePointParam" name="viewLayerParam" />
+						</jsp:include>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block clfix">	<!-- 100316 -->
+					<div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div>	<!-- 100316 -->
+					<h2><img src="/images/mh/h2_urpointinfo.png" alt="선택하신 포인트내용입니다" /></h2>	<!-- 100316 -->
+					<div class="content_block_inner">	<!-- 100316 -->
+						<h3 class="h3_point"><img src="/images/mh/h3_saveservice.png" alt="세이브서비스" /></h3>
+						<!-- tab -->
+						<div class="box_white02 mt_10"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+							<div class="category_tag">
+								<ul>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS001', true)">한도조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS002', true)">이용내역조회<em>&nbsp;</em></a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS003', true)">페이백세이브이용내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS004', true)">파워세이브이용내역조회</a></li>
+									<li><p><a href="javascript:goTabPage('NHPIMMHPIS005', true)">포인트내역조회<em>&nbsp;</em></a></p></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS006', true)">맞춤형상환신청</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS008', true)">맞춤형상환신청결과</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="tb_exp mt20 clfix">	<!-- 100316 -->
+							<span class="fl_left">&nbsp;</span>
+                            <span class="ab_tr"><a href="javascript:goTabPage('NHPIMSSCMS006');" class="btn_link">서비스 안내</a></span>
+						</div>
+						<table class="dtable02" summary="이용금액,적립시작일자,총적립포인트,적립종료일자,총사용포인트,사용가능포인트로 구성된 보너스포인트 내역을 확인할 수 있는 게시판입니다.">
+						<caption>보너스포인트 내역</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>이용 금액</p></th>							
+								<td><p><span class="t_no">${pointInfo.string3}</span> 원</p></td>
+								<th scope="row"><p>적립 시작일자</p></th>
+								<td class="t_no"><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>총 적립 포인트</p></th>
+								<td><p><span class="t_no">${pointInfo.string6}</span> P</p></td>
+								<th scope="row"><p>적립종료일자</p></th>
+								<td class="t_no"><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>총 사용 포인트</p></th>
+								<td><p><span class="t_no">${pointInfo.string7}</span> P</p></td>
+								<th scope="row"><p>사용 가능 포인트</p></th>
+								<td><p><span class="t_no">${pointInfo.string8}</span> P</p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<form method="post" name="form1" autocomplete="off">
+						<div class="tb_exp clfix mt30">
+							<span>&nbsp;</span>
+							<span class="ab_tr">
+                                <select name="s_year" title="년도 선택" style="width:80px">
+									<option>00</option>
+                                </select>
+                                <a href="javascript:tabSubmit('/pointSave.do?method=viewPIS005');" class="btn btn_s_blue"><span>조회</span></a>
+							</span>
+						</div>
+						</form>
+
+						<table class="dtable01 dtable01_bill" summary="기준연월,적립포인트,사용포인트,캐쉬백,상세보기로 구성된 적립 연월 별 보너스포인트 내역을 확인할 수 있는 게시판입니다.">
+						<caption>적립 연월 별 보너스포인트 내역</caption>
+						<colgroup><col width="22%" /><col width="22%" /><col width="22%" /><col width="22%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">기준연월</th>
+								<th scope="col" class="cell_r10">적립 포인트</th>
+								<th scope="col" class="cell_r10">사용 포인트</th>
+								<th scope="col" class="cell_r10">캐쉬백</th>
+								<th scope="col">상세보기</th>
+							</tr>
+						</thead>
+						<tbody>
+                            <tr>
+                                <td class="cell_l10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10 t_no">0</td>
+                                <td class="cell_r10"><a class="btn btn_s_white" href="#" title="00일자 적립/사용 상세내역"><span>GO</span></a></td>
+                            </tr>
+                            <tr class="nodata"><td colspan="5">조회 결과가 없습니다.</td></tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">기준 년월을 누르시면 해당 월의 적립/사용 상세 내역을 조회하실 수 있습니다.<br />적립/사용 상세내역은 조회 월을 기준으로 직전 1년까지 조회하실 수 있습니다.</p>
+						</div>
+					</div>
+				</div>
+                
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

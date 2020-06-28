@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_address_info_modify.png" alt="청구지 정보조회 및 변경을 하실 수 있습니다" /></h1><!-- 100126 -->
+				</div>
+
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="top_step_change_profile top_step_change_profile02">
+						<ol class="none">
+							<li>본인확인</li>
+							<li><abbr>현재단계</abbr> <strong>정보변경</strong></li>
+							<li>변경완료</li>
+						</ol>
+					</div>
+				</div>
+				<div class="content_block content_block_m0 first_none clfix">
+					<h2><img src="/images/mh/h2_address_info_modify01.png" alt="회원님의 청구지 정보를 변경해 주세요" /></h2>
+					<div class="content_block_inner">
+						<p class="mb10">이메일 및 주소정보가 정확히 기재되어 있는지 다시 한번 확인해주시기 바랍니다. 
+						<a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_s_white" >
+						<span>회원정보조회/변경 &gt;</span></a></p>
+						<table class="dtable02 dtable_inputfield" summary="청구지 정보를 변경하기 위해 명세서 수령방법,명세서/우편물 수령지 정보를 입력하는 게시판입니다.">
+						<caption>청구지 정보 변경</caption>
+						<colgroup><col width="130" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>명세서 수령방법</p></th>
+								<td>
+									<p>
+									<input name="bill_gubun" type="radio" class="rdo" value="2" id="label_statement1"
+									onclick="clickInit(document.form.string15_new,'2');" title="이메일" /> <label for="label_statement1" class="mr10">이메일</label>
+									<input name="bill_gubun" type="radio" class="rdo" value="1" id="label_statement2"
+									onclick="clickInit(document.form.string15_new,'1');" title="우편" /> <label for="label_statement2">우편</label>
+									</p>
+								</td>
+							</tr>
+							<tr id="appr_locat" name="appr_locat">  
+								<th scope="row"><p>명세서/우편물 수령지</p></th>
+								<td>
+									<p>
+									<input name="bill_method" type="radio" class="rdo" value="001" id="label_addr2"
+									onclick="clickInit(document.form.string16_new,'001')" title="직장" /> <label for="label_addr2" class="mr10">직장</label>
+									<input name="bill_method" type="radio" class="rdo" value="002" id="label_addr1"
+									onclick="clickInit(document.form.string16_new,'002')" title="자택" /> <label for="label_addr1">자택</label>
+									</p>
+								</td>
+							</tr>							
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04"><strong class="t_org">주의하세요!</strong>  회원님이 보유하신 개인신용카드 및 할부금융의 청구지, <br />청구서수령방법, 이메일주소가 동시에 변경됩니다.</p>
+							<p class="btnr">
+                                <a href="javascript:updateChangeMember();" class="btn btn_blue"><span>변경</span></a>
+                                <a href="javascript:run();" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+						<!--<div class="mt30"><a href="javascript:goTabPage('NHPIMSSEMZ001M001');"><img src="/images/mh/ban_chnbyemail.jpg" alt="" /></a></div> 100327 -->
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

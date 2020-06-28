@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<title>휴대폰 번호 인증 - 삼성카드</title>
+</head>
+
+<body>	
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header3" class="al_center">
+		<h1><%if("mobile".equals(gubun)){ %><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /><%}else{ %><img src="/images/cm/pop_h1_cert_login.png" alt="공인 인증서 로그인 입니다." /><%} %></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_authentication_using_cellphones.png" alt="휴대폰 번호 인증을 이용해 주세요." /><img src="/images/cm/pop_h1_cert_login.png" alt="공인 인증서 로그인 입니다." /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_s_content3" style="margin-top:15px;">
+		<div class="pop_l_wrap">
+			<div class="tb_exp clfix">
+				<span>휴대폰 인증 이용을 위해 주민등록 번호를 입력해 주세요</span>
+			</div>
+			<table class="dtable02 dtable_expand" summary="공인 인증을 위해 주민등록번호를 입력하실 수 있습니다.">
+			<caption>공인 인증</caption>
+			<colgroup><col width="25%" /><col width="75%" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><p>주민등록번호</p></th>
+					<td><p><span class="input_idno"><input type="text" name="idenNo1" class="txt" maxlength="6" onKeyUp="shiftFocus(this,idenNo2,6);" title="주민등록번호 앞자리" /> - <input type="password" name="idenNo2" id="idenNo2" maxlength="7" class="txt"  title="주민등록번호 뒷자리" /></span></p></td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+			<div class="btnset">
+				<div class="btnc">
+					<a href="javascript:idenNoLogin();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+					<a href="javascript:self.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+	
+</body>
+</html>
+

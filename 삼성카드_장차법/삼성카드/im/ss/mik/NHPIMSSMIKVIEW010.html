@@ -1,0 +1,19 @@
+<%
+	String resp_code2 = (String)request.getAttribute("resp_code2");
+	String agreeGubun = (String)request.getAttribute("agreeGubun");
+%>
+<script type="text/javascript">
+//<![CDATA[
+	<%
+		if("00".equals(resp_code2)){
+	%>
+			parent.agreeCheck("<%=agreeGubun%>");
+	<%
+		}else{
+	%>
+		    parent.showErr("<%=resp_code2%>");
+	<%
+		}
+	%>
+//]]>
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<style type="text/css">
+.tabbrowse_content	{width:948px; padding:40px 0 0 0; *overflow:hidden}
+.tabbrowse_content	{padding-top:0}
+.top_visual	 {padding-top: 1px}
+.top_visual	 h1	{height:79px; padding-top:74px}
+.top_visual:nth-of-type(n)	{margin-left:-1px; border:0 none}
+.top_visual	 .h1_desc	{margin-left:70px}
+.top_step	 {margin-left: 70px; margin-top: 0; *margin-top: 0; _margin-top: 0}
+.ab_tr_sm	{position:absolute; right:69px; bottom: 0; z-index:0}
+.content_block_tab	{margin-top:0; padding-top:0; border-top:0 none}
+</style>
+</div>
+				
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cd/h1_card_serviceinfo_01.png" alt="삼성카드 이용안내입니다" /></h1>
+				</div>
+				
+				<!-- top_visual -->
+				<!-- div class="top_visual">
+					<h1><img src="${pageContext.request.contextPath}/images/cd/h1_limit_use.png" alt="이용한도 안내입니다." /></h1>
+				</div-->
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+
+					<!-- tab_area -->
+					<!-- div class="tab01 w810 h60">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI001',true);">카드발급 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI008',true);">입금방법 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDCDI002',true);">국내 이용안내</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMCDCDI003',true);">해외 이용안내</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMCDCDI003',true);">이용안내</a></li>
+									<li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMCDCDI004',true);">이용한도</a></li>
+									<li><a href="javascript:goTabPage('NHPIMCDCDI005',true);">카드해외이용관련법규정</a></li>
+									<li><a href="javascript:goTabPage('NHPIMCDCDI006',true);">유의사항</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:tabSubmit('/hp/im/cd/cdi/checkcardDepositInfo.do')">체크카드 이용안내</a></li>
+						</ul>
+					</div-->
+				</div>
+
+				<!-- content_block -->
+
+				<!--cms_content시작-->
+				<cms:include page="/cms_content/hp/im/cd/cdi/NHPIMCDCDI004C1.html" flush="false"></cms:include>
+				<!--cms_content끝-->
+				
+				<!-- voc40 목록버튼추가 -->
+				<div class="btnr mr65"> 
+					<a class="btn btn_white" href="javascript:goTabPage('NHPIMCDCDI008',true);"><span>목록</span></a>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				

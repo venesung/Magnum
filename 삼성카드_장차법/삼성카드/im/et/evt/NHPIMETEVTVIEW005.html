@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>삼성카드 이벤트 - 삼성카드</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+</head>
+<body>
+	<div class="list_tab_category">
+		<a href="#" class="bul_desc">이벤트시작일</a> <a href="#" class="bul_asc">마감일 순</a>	 <!-- 내림차순_class name -> bul_desc / 오름차순 -> bul_asc -->
+	</div>						
+	
+	<div class="list_event_ing">
+		<form id="iframeFrm" name="iframeFrm" method="post" action="">
+		<div class="tb_exp clfix">
+			<span>&nbsp;</span>
+			<span class="ab_tr">
+				<select title="제휴사 선택" name="srchGubun4" id="srchGubun4">
+					<option>제휴사 선택</option>
+				</select>
+                <a href="javascript:goSearch();" class="btn btn_s_blue" ><span>조회</span></a>
+			</span>
+		</div>
+		</form>
+	
+		<div class="line_lgray_p0">&nbsp;</div>
+		<div class="list_event_ing">
+		<ul>
+			<!-- loop -->
+			<li>
+                <p class="p_photo"><a href="#"><span class="frame116">&nbsp;</span><img src="<%= vo.getThumImg()%>" alt="<%=vo.getTitle()%>" width="116"  height="82" /></a></p>
+				<div class="p_desc">
+<!--					<p class="p_tit"><a href="javascript:goDetail('<= vo.getCmsSeq()%>','<=vo.getNewSeq() %>');"><=mall.length()>18?mall.substring(0,18)+"...":mall.substring(0,mall.length()-1) %></a></p>-->
+                    <p class="p_tit"><a href="#">-_-</a></p>
+					<p class="p_txt">-_-</p>
+					<p class="p_date">0000.00.00 ~ 0000.00.00</p>
+				</div>
+			</li>
+			<!-- //loop -->
+			 <li>
+			 	조회된 결과가 없습니다.
+			 </li>	
+		</ul>
+		</div>
+			<!-- paginate -->
+			<!-- 페이징 -->
+			<div class="paginate">
+				${_page}
+			</div>
+			<!-- //페이징 -->
+	</div>
+</body>
+</html>

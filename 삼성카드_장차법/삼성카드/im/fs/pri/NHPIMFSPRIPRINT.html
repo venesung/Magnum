@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>약관 상세보기 - 삼성카드</title>
+<link href="/css/primeloan/prime_loan.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript">
+
+	function open_url2(url) {
+		var link = false;
+
+		if (window.ActiveXObject){
+			link = new ActiveXObject("Microsoft.XMLHTTP");
+		} else if (window.XMLHttpRequest) {
+			link = new XMLHttpRequest();
+		}
+		else
+			return false;
+		link.open('GET', url, false);
+		link.send(null);
+		response(link);
+	}
+
+	function response(link){
+		if (link.readyState == 4) {document.write(link.responseText);}
+	}
+
+</script>
+</head>
+<body>
+ 
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/fs/pop_h1_fs_agree.png" alt="약관 상세보기" /></h1>
+	</div>
+ 
+	<!-- content -->
+	<div id="pop_content">		
+		<div class="content_block">			
+			<div class="box_white_btm">
+				<div  class="agree" id="online_mall" tabindex="0">
+					<script type="text/javascript">open_url2("/agreement/flex/NHPIMFSPRIAGREE001.html")</script>
+					<br />
+					<br />
+					<script type="text/javascript">open_url2("/agreement/flex/NHPIMFSPRIAGREE002.html")</script>
+					<br />
+					<br />
+					<script type="text/javascript">open_url2("/agreement/flex/NHPIMFSPRIAGREE003.html")</script>
+				</div>
+			</div>
+			<p class="btn_print" ><a href="javascript:printDiv('online_mall');"><img src="/images/primeloan/btn_print.png" alt="인쇄하기" /></a></p>
+		</div> 
+
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+	<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	</div>
+ 
+</div>
+ 
+</body>
+</html>

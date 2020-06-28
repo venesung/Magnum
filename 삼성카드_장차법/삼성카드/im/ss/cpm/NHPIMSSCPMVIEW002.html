@@ -1,0 +1,64 @@
+<%/* 문화예술공연
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMSSSBCVIEW001.jsp
+ * Author: 윤석범 대리
+ * Created on 2009. 12. 29.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<div id="tab_title"></div>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript" src="/js/common-hp-ajax.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function $tabOnLoad() {
+
+	  var frmCP   = document.getElementById("cp_page");
+      if(frmCP != null) {
+    	  document.charset="euc-kr";
+          document.cp_form.SCP1.value = '${customerNo}';
+          document.cp_form.SCP2.value = '${userName}';
+          document.cp_form.SCP3.value = location.host;
+          document.cp_form.SCP4.value ='/hp/im/ss/cpm/cpm.do?method=cp&amp;cpCode=SS_002';
+          document.cp_form.SCP5.value = '${menuIdx}';
+          document.cp_form.SCP6.value = '${gradeYn}';
+          document.cp_form.LOGIN_YN.value='${loginYN}';
+          document.cp_form.action = '${url}';
+          document.cp_form.target = 'cp_frame';
+          document.cp_form.submit();
+      }
+
+
+}
+
+//]]>
+
+</script>
+</div>
+				<!-- top_visual 100430 -->
+				<div class="top_visual">
+					<h1 class="none">함께보면 더욱 좋은 문화공연할인 서비스</h1>
+					<div class="h1_desc"><img src="/images/ss/h1_play.jpg" alt="뮤지컬, 연극 등 여가의 기쁨 함께보면 더욱 좋은 문화공연할인 서비스 - 뮤지컬, 연극 할인예매와 이벤트를 놓치지 마세요" /></div>
+				</div>
+
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 pos_rel clfix">
+
+				<iframe src="" width="100%" height="800" scrolling="no" id="cp_page" frameborder="0" name="cp_frame" title="좋은 문화공연할인 서비스 컨텐츠"></iframe>
+				</div>
+
+                <%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>
+
+<form name="cp_form" method="post" autocomplete="off">
+	<input type="hidden" name="SCP1" value="" />
+	<input type="hidden" name="SCP2" value="" />
+	<input type="hidden" name="SCP3" value="" />
+	<input type="hidden" name="SCP4" value="" />
+	<input type="hidden" name="SCP5" value="" />
+	<input type="hidden" name="SCP6" value="" />
+	<input type="hidden" name="LOGIN_YN" value="" />
+</form>

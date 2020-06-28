@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>조회서비스 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/sme.css" />
+
+
+<base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="/css/sme.css" />
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/gnb_sme.js"></script>
+<script type="text/javascript" src="/js/common-sme.js"></script>
+<script type="text/javascript" src="/js/embedswf.js"></script>
+<script type="text/javascript" src="/js/siteoverlay2.js"></script>
+<script type="text/javascript" src="/js/common-cps.js"></script>
+<script type="text/javascript" src="/js/samsungcardUIComponent.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+function noticeChainLink()
+{
+	var ret = false;
+	if(ret = confirm('가맹점주 전용 홈페이지는 가맹점 웹회원으로 로그인후\r\n이용가능하시며, 삼성카드BIZ에서는  자동 로그아웃 됩니다.\r\n\r\n계속 진행하시겠습니까?'))
+	{
+		smeLogout();
+	}
+	return ret;
+}
+//]]>
+</script>
+</head>
+<body>
+
+	<%@ include file="/WEB-INF/jsp/hp/sme/common/NHPSMETOP.jsp"%>
+	
+	<div id="wrap" class="main">
+
+		<jsp:include page="/WEB-INF/jsp/hp/sme/common/NHPSMELEFT.jsp" flush="false" />
+
+		<div id="content">
+		
+			<div id="breadthumb">
+				<a href="/">개인사업자</a>
+				&gt;
+				조회서비스
+			</div><!-- //breadthumb -->
+		
+			<div id="top_visual">
+				<h1>조회서비스</h1>
+				<div id="h1_desc"><img src="/cms_content/hp/sme/topImages/h1_inq0.png" alt="조회서비스 원하는 정보를 간편하게 검색" /></div>
+			</div><!-- top_visual -->
+			
+			<!-- WCMS -->
+			<jsp:include page="/cms_content/hp/sme/inq/NHPSMEINQVIEW000.html" flush="false"></jsp:include>
+			<!-- WCMS -->
+			
+	      <div class="inq_main inq_affliate">
+	         <h2><img alt="가맹점주 내역 조회" src="/images/sme/content/inq_tit2.png" /></h2>
+	         <ul>
+	            <li><a href="http://www.samsungcard.com/scchainmember.do?method=selectFin230" target="_blank" onclick="return noticeChainLink()" title="새창"><img alt="대금입금조회" src="/images/sme/content/inq_list21.png" /></a></li>
+	            <li><a href="http://www.samsungcard.com/scchainmember.do?method=selectFin210" target="_blank" onclick="return noticeChainLink()" title="새창"><img alt="매출내역조회" src="/images/sme/content/inq_list22.png" /></a></li>
+	            <li><a href="http://www.samsungcard.com/scchainmember.do?method=selectFin220" target="_blank" onclick="return noticeChainLink()" title="새창"><img alt="승인내역조회" src="/images/sme/content/inq_list23.png" /></a></li>
+	         </ul>
+			 <p><a href="http://www.samsungcard.com/chain.do" target="_blank" title="새창"><img src="/images/sme/content/inq_para21.png" alt="※ 가맹점주 내역조회는 가맹점주 전용 홈페이지 (http://www.samsungcard.com/chain.do)에서 로그인 후 이용하실 수 있습니다." /></a></p>
+	      </div>
+
+		</div><!-- //content -->
+	</div><!-- //wrap -->
+	
+<!-- 공통 풋터 시작 -->
+<div id="footer" style="position:relative;">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+	
+</body>
+</html>

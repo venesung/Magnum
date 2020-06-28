@@ -1,0 +1,40 @@
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.scard.common.asis.util.DateUtil"%>
+<%@ page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00042INVO"%>
+<%
+	String hrlSeq		= (String)request.getAttribute("HRL_SEQ");
+	String hrlRefererUrl	= (String)request.getAttribute("HRL_REFERER_URL");
+	String realNameEnd	= (String)request.getAttribute("REAL_NAME_END");	// 실명확인결과
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+
+<title>성카드 전세론 가능여부 조회 - 삼성카드</title>
+<!-- 크레센도 스크립트 start -->
+<%@ include file="/WEB-INF/jsp/hp/im/fs/hrl/echoScriptHrl.jsp" %>
+<!-- 크레센도 스크립트 end -->
+<script language="javascript" type="text/javascript">
+<!--
+function Go(){
+	var f = document.form1;
+
+	<% if("00".equals(realNameEnd)){ %>
+		parent.setRealNameSucess();
+	<% }else{ %>
+		parent.setRealNameFail('<%=realNameEnd%>');
+	<% } %>
+}
+-->
+</script>
+</head>
+
+<body onLoad="Go();">
+<form name="form1" method="post" target="_parent">
+<input type="hidden" name="HRL_SEQ"				value="<%=hrlSeq %>" />
+<input type="hidden" name="HRL_REFERER_URL"		value="<%=hrlRefererUrl %>" />
+</form>
+<!---END_ENC--->
+<form name="xecure"><input type="hidden" name="p" /></form>
+
+</body>
+</html>

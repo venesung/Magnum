@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>셀디카드 - 삼성카드</title>
+
+
+</head>
+
+<body style="margin:0;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,32,18" width="800" height="600" id="sdc" align="middle">
+  <param name="allowScriptAccess" value="sameDomain" />
+  <param name="movie"   value="${host_url}/seldi/swf/newSelD.swf" />
+  <param name="menu"    value="false" />
+  <param name="quality" value="high" />
+  <param name="bgcolor" value="#ffffff" />
+  <embed src="${host_url}/seldi/swf/newSelD.swf" quality="high" bgcolor="#ffffff" width="800" height="600" name="sdc" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<div style="left:-1000px; top:-1000px; position:absolute;">
+  <form action="" method="post" name="request_form">
+    <input type="hidden" name="SKEY0"  value="${host_url}/" />
+    <input type="hidden" name="SKEY1"  value="${skey1}" />
+    <input type="hidden" name="SKEY2"  value="V${skey2}" />
+    <input type="hidden" name="SKEY3"  value="${skey3}" />
+    <!-- 01:Local, 02:Master, 03:Vias, 04:Amex -->
+    <input type="hidden" name="SKEY4"  value="${skey4}" />
+    <input type="hidden" name="SKEY5"  value="${skey5}" />
+    <!-- 리뉴얼 추가 -->
+    <input type="hidden" name="SKEY6"  value="CreditSeld" />
+    <input type="hidden" name="SKEY7"  value="${host_url}/seldi/xml/config.xml" />
+    <input type="hidden" name="SKEY8"  value="${skey8}" />
+    <!-- 리뉴얼 추가 -->
+  </form>
+
+  <form action="" method="post" name="response_form">
+    <input type="hidden" name="RKEY1" />
+    <input type="hidden" name="RKEY2" />
+    <input type="hidden" name="RKEY3" />
+  </form>
+
+  <form method="post" name="apply_seld_form" action="${host_url}/seldi/swf/apply_seld.html"></form>
+</div>
+
+</body>
+</html>

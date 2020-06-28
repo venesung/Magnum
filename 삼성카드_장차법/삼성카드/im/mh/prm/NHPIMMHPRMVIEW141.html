@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<base href="https://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>테마여행 응모하기 - 삼성카드</title>
+</head>
+<body>
+<form name="form1" method="post">
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_premium_themetravel_application.png" alt="테마여행 응모하기" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_content" class="h445">	
+		<div class="content_block content_block_card clfix">
+
+			<div class="tb_exp clfix">
+				<h3>테마여행 정보 입력</h3>
+			</div>
+			<table class="dtable02 dtable_inputfield" summary="테마여행 정보입력표로 상품명, 출발지, 여행자, 예상금액으로 구성되어 있습니다.">
+			<caption>테마여행 정보입력</caption>
+			<colgroup><col width="110" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>상품명</p></th>
+					<td><p>[프리미엄] 2013년 프리미엄 국내테마여행 [갑사편]</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_startday01">출발지</label></th>
+					<td><p>
+						<select name="startpoint" id="label_startday01" onchange="cal_amount();">
+							<option selected="selected" value="">선택하세요</option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_traveler01">여행자</label></th>
+					<td><p>
+						성인 <select name="adult" id="label_traveler01" class="mr10" onchange="cal_amount();">
+							<option selected="selected" value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+						</select>명 /
+						아동 <select name="kids" id="label_traveler02" onchange="cal_amount();">
+							<option selected="selected" value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+						</select> 명
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_amount">예상금액</label></th>
+					<td><p><input type="text" name="amount" id="label_amount" class="txt" readonly="readonly" /> 원</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<div class="tb_exp clfix mt30">
+				<h3>약관 동의</h3>
+			</div>
+			<table class="dtable02 dtable_inputfield" summary="약관동의 표입니다">
+			<caption>약관동의 표</caption>
+			<colgroup><col width="180" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>이용약관</p></th>
+					<td><p class="fl_left">
+					<input type="radio" class="rdo" value="" id="label_use_agree01" name="label_use_agree" /> <label for="label_use_agree01" class="mr10">동의함</label>
+					<input type="radio" class="rdo" value="" id="label_use_agree02" name="label_use_agree" /> <label for="label_use_agree02">동의안함</label></p> 
+					<p class="fl_right mt5"><a href="http://travel.samsungcard.com/html/tema/popup_ya01.html" onclick="window.open('http://travel.samsungcard.com/html/tema/popup_ya01.html', 'popup', 'width=710px, height=580px, menubar=no, toolbar=no, location=no, status=no, scrollbars=no');return false;" class="btn_link" title="새창">이용약관 자세히 보기</a></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>국내여행 이용약관</p></th>
+					<td><p class="fl_left"><input type="radio" class="rdo" value="" id="label_wic_agree01" name="label_wic_agree" /> <label for="label_wic_agree01" class="mr10">동의함</label>
+					<input type="radio" class="rdo" value="" id="label_wic_agree02" name="label_wic_agree" /> <label for="label_wic_agree02">동의안함</label></p> 
+					<p class="fl_right mt5"><a href="http://travel.samsungcard.com/html/tema/popup_ya02.html" onclick="window.open('http://travel.samsungcard.com/html/tema/popup_ya02.html', 'popup', 'width=710px, height=580px, menubar=no, toolbar=no, location=no, status=no, scrollbars=no');return false;"  class="btn_link" title="새창">국내여행 이용약관 자세히 보기</a></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>소비자피해보상기준 약관</p></th>
+					<td><p class="fl_left"><input type="radio" class="rdo" value="" id="label_buy_agree01" name="label_buy_agree" /> <label for="label_buy_agree01" class="mr10">동의함</label>
+					<input type="radio" class="rdo" value="" id="label_buy_agree02" name="label_buy_agree" /> <label for="label_buy_agree02">동의안함</label></p> 
+					<p class="fl_right mt5"><a href="http://travel.samsungcard.com/html/tema/popup_ya03.html" onclick="window.open('http://travel.samsungcard.com/html/tema/popup_ya03.html', 'popup', 'width=710px, height=580px, menubar=no, toolbar=no, location=no, status=no, scrollbars=no');return false;"  class="btn_link" title="새창">소비자 피해보상 기준 확인하기</a></p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<p class="ico_rice t_desc04 mt10">당첨자발표 2013년 5월 10일 (금) 당첨자발표란 및 개별 이메일 통보</p><!-- 120820 수정 -->
+			<p class="ico_rice t_desc04">당첨되신 회원께서는 결제정보를 입력하고 결제완료를 하셔야 출발이 확정 됩니다. </p>
+			<p class="ico_rice t_desc04">결제정보는 발송되는 당첨안내 이메일 및 [신청내역확인]버튼을 통한 별도의 결제 페이지에서 입력 가능합니다. </p>
+
+			<p class="btnc_30">
+				<a href="#" onclick="goToApply();"><img src="/images/mh/btn_application01.png" alt="응모 하기" /></a>
+			</p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_premium_themetravel_application_modify.png" alt="테마여행 응모 수정하기" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_content" style="height:300px;">	
+		<div class="content_block content_block_card clfix">
+
+			<div class="tb_exp clfix">
+				<h3>테마여행 정보 확인</h3>
+			</div>
+			<table class="dtable02 dtable_inputfield" summary="테마여행 정보 수정표로 상품명, 출발지, 여행자, 예상금액으로 구성되어 있습니다.">
+			<caption>테마여행 정보입력</caption>
+			<colgroup><col width="110" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>상품명</p></th>
+					<td><p>[프리미엄] 2013년 프리미엄 국내테마여행 [갑사편]</p></td><!-- 120820 수정 -->
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_startday01">출발지</label></th>
+					<td><p>
+						<select name="startpoint" id="label_startday01" onchange="cal_amount();">
+							<option selected="selected" value="">선택하세요</option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>여행자</p></th>
+					<td><p>
+						성인 <select name="adult" class="mr10" onchange="cal_amount();" title="여행자 성인수">
+							<option></option>
+						</select>명 /
+						아동 <select name="kids" onchange="cal_amount();" title="여행자 아동수">
+							<option></option>
+						</select> 명
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label_amount">예상금액</label></th>
+					<td><p><input type="text" name="amount" id="label_amount" class="txt" value="<%=amount %>"  readonly="readonly" /> 원</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<ol class="list_rice ml10 mt5">
+				<li>당첨자발표: 2013년 5월 10일 (금) 당첨자발표란 및 개별 이메일 통보</li><!-- 120820 수정 -->
+				<li>당첨되신 회원께서는 결제정보를 입력하고 결제완료를 하셔야 출발이 확정 됩니다. </li>
+				<li>결제정보는 발송되는 당첨안내 이메일 및 [신청내역확인] 버튼을 통한 별도의 결제 페이지에서 입력 가능합니다</li>
+			</ol>
+
+			<p class="btnc_30">
+				<a href="#" onclick="goToApplyU();"><img src="/images/mh/btn_app_modify01.png" alt="응모 수정" /></a>
+			</p>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+
+<!-- 팝업사이즈 710*440 -->
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_themetravel_confirm.png" alt="테마여행 신청내역확인" /></h1>
+	</div>
+ 
+	<!-- content --><!-- 120503 전체수정되었습니다. -->
+	<div id="pop_content" style="height:310px;">	
+		<div class="content_block content_block_card clfix">
+
+			<div class="tb_exp clfix">
+				<h3>테마여행 정보 확인</h3>
+			</div>
+			<table class="dtable02 dtable_inputfield" summary="테마여행 정보 확인표로 상품명, 출발지, 여행자, 예상금액으로 구성되어 있습니다.">
+			<caption>테마여행 정보입력</caption>
+			<colgroup><col width="110" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>상품명</p></th>
+					<td><p>[프리미엄] 2013년 프리미엄 국내테마여행 [갑사편]</p></td><!-- 120820 수정 -->
+				</tr>
+				<tr>
+					<th scope="row"><p>출발지</p></th>
+					<td><p></p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>여행자</p></th>
+					<td><p>
+						성인 1 명 / 아동 1 명
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>예상금액</p></th>
+					<td><p>1 원</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+			<ol class="list_rice ml10 mt5">
+				<li>당첨자발표: 2013년 5월 10일 (금) 당첨자발표란 및 개별 이메일 통보</li><!-- 130319 수정 --><!-- 120820 수정 -->
+				<li>당첨되신 회원께서는 결제정보를 입력하고 결제완료를 하셔야 출발이 확정 됩니다.</li>
+				<li>결제정보는 발송되는 당첨안내 이메일 및 [신청내역확인]버튼을 통한 별도의 결제 페이지에서 입력 가능합니다.</li>
+			</ol>
+
+			<p class="btnc_30">
+					<a href="#" onclick="opener.winGiftList();self.close();"><img src="/images/mh/btn_travel01.png" alt="당첨 확인하러 가기" /></a>
+				
+					<a href="http://travel.samsungcard.com/ec/te/pk/fr/tma02.do?method=TPITFB210&amp;EVENT_NO=TEMA201209&amp;EVENTNO=3281" target="_blank" title="새창"><img src="/images/mh/btn_travel02.png" alt="예약/예약 확인하러 가기" /></a>	
+			</p>
+		</div>
+	</div><!-- //120503 전체수정되었습니다. -->
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div> 
+</div> 
+
+</form>
+<iframe width="0" height="0" id="formhidden" name="formhidden" frameborder="0" marginwidth="0" scrolling="no" title="빈프레임"></iframe>
+
+</body>
+</html>

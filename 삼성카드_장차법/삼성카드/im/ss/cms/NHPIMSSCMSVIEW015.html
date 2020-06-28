@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 보너스 포인트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript" src="/js/common-hp-ajax.js"></script>
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<img src="/guide/guide_header.png" alt="상단 유틸 영역" />
+	</div>
+	<div id="con_wrap" class="clfix">
+		<div id="gnb">
+			<img src="/guide/guide_gnb.png" alt="GNB 및 좌측 모듈 영역" />
+		</div>
+		<div id="content_module">
+			<img src="/guide/guide_content_module.png" alt="메인 모듈 영역" />
+		</div>
+	</div>
+	<div id="footer">
+		<img src="/guide/guide_footer.png" alt="Copytright 영역" />
+	</div>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class="clfix" id="id_tablist">
+						<li>국문최대일곱자...<input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" /></li>
+						<li class="on" onmouseover="t_layer_show(this);" onmouseout="t_layer_hide(this);">
+							<a href="#">카드이용내역</a> <input type="button" value="닫기" class="btn_tab" onmouseover="t_over(this,'btn_tab');" onmouseout="t_out(this,'btn_tab');" title="닫기" />
+							<div class="tabbrowse_sub">
+								<div><a href="#">국내이용내역</a><a href="#">청구내역 및 할부전환</a><a href="#">승인취소내역조회</a><a href="#">지역특화카드이용내역</a></div>
+								<div class="tabbrowse_sub_btm">&nbsp;</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id="id_ctr_btn">
+			<input type="button" class="btn_previous" onmouseover="t_over(this,'btn_previous');" onmouseout="t_out(this,'btn_previous');" id="id_ctr_prev" title="이전" />
+			<input type="button" class="btn_next" onmouseover="t_over(this,'btn_next');" onmouseout="t_out(this,'btn_next');" id="id_ctr_next" title="다음" />
+			<input type="button" class="btn_close" onmouseover="t_over(this,'btn_close');" onmouseout="t_out(this,'btn_close');" onclick="hide_con('tabbrowse_position');" title="탭 브라우저 레이어 닫기" />
+			</div>
+
+			<div class="tabbrowse_content tabbrowse_content_pt0">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 보너스 포인트</h1>
+					<div class="h1_desc"><img src="/images/ss/h1_bonus_point.jpg" alt="삼성카드 보너스 포인트 : 모든 회원이 보너스클럽에서 카드사용 시  이용금액의 최고 5%까지 적립되는 포인트 입니다." /></div>
+					<a href="#" class="btn_findbenefit"><img src="/images/common/btn_limit_inquiry.jpg" alt="한도조회" /></a>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="/hp/im/ss/cms/cms.do?method=cmsContent&cmsNum=001">보너스 클럽</a></li>
+                            <li class="on"><a href="/hp/im/ss/cms/cms.do?method=cmsContent&cmsNum=015">포인트 사용방법</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- cms_layer -->
+				<div id="cma_content">
+				<script type="text/javascript">
+				//<![CDATA[
+				callCmsContentHtmlAjax('/cms_content/hp/im/ss/cms/NHPIMSSCMSVIEW015C1.html','cma_content')
+				//]]>
+				</script>
+				</div>
+				<!-- cms_layer -->
+
+
+
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+			</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

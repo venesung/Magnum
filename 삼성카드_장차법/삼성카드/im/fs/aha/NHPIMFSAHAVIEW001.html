@@ -1,0 +1,47 @@
+<%/*
+* Project Name: 삼성카드 웹 이노베이션 프로젝트
+* File Name : file_name
+* Author : "삼성SDS 강성동"
+* Created on 2010. 4. 20.
+*
+* COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.*
+*/%>
+  <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<div id="tab_title"></div>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+
+<!-- tab_script -->
+<div id="tab_script">
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</div>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></h1><!-- 100519 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix"><!-- 100404 -->
+<form name="form1"><input id="dummy" type="hidden" value="dummy" /></form>
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li class="on"><a href="javascript:tabSubmit('/hp/im/fs/aha/aha001.do?method=selectTab&tabNo=0');">서비스안내</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/aha/aha001.do?method=selectTab&tabNo=1');">이용가능금액</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/aha/aha001.do?method=selectTab&tabNo=2');">신청</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/aha/aha001.do?method=selectTab&tabNo=3');">조회</a></li>
+            <li><a href="javascript:tabSubmit('/hp/im/fs/aha/aha001.do?method=selectTab&tabNo=4');">카드분실신고</a></li>
+		</ul>
+	</div>
+</div>
+
+<!--cms_content시작-->
+<div id="cma_content" >
+	<cms:include page="${result.targetPath}/${result.contentId}_hp_fi_view.html" flush="false" />
+</div>
+<!--cms_content끝-->
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

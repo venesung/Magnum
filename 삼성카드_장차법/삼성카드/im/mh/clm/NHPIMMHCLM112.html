@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_confirm_urlimit.png" alt="입력하신 내용을 확인하세요." /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="top_step_use_limit top_step_use_limit02">
+						<ol class="none">
+							<li>하향신청 한도입력</li>
+							<li><abbr>현재단계</abbr>입력내용 확인</li>
+							<li><strong>완료</strong></li>
+						</ol>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block clfix content_block_card">
+				
+					<h2><img src="/images/mh/h2_confirm_urlimit01.png" alt="입력하신 이용한도를 확인하세요" /></h2>
+					<div class="content_block_inner">					
+
+						<ol class="list_no01">
+							<li><p>하향 신청하실 이용한도를 확인하시고, 이상이 없으면 [확인] 버튼을 클릭해 주십시오.</p></li>
+							<li><p>한도하향 신청 후 복원은 홈페이지에서 불가능하오니, 고객상담센터(지역번호없이 1588-8700)으로 요청하시기<br />바랍니다.</p></li>
+						</ol>
+						
+						<table class="dtable01 dtable01_bill mt30" summary="구분별 한도금액, 이용하신금액, 이용가능금액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="10%" /><col width="15%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">카드이용한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">${P_CHG_CARD_HANDO}</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">${P_USED_CARD_HANDO}</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_ILSI_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_ILSI_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">할부</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_HALBU_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_HALBU_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">굿캐시</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_FINANCE_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">카드론</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_CARDLOAN_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr style="display:none">
+								<th scope="row" rowspan="2" class="cell_l10 cell_bg">해외</th>
+								<th class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10 t_no">US$ <%=m_over_ilsi_lmt %></td>
+								<td class="cell_r10 t_no">US$ ${P_USED_OVER_ILSI_HANDO}</td>
+								<td class="cell_r10 t_no">US$ 0</td>
+							</tr>
+						</tbody>
+						</table>
+						
+				<table class="dtable01 dtable01_bill mt30" summary="본인카드 이용한도금액, 이용하신금액, 이용가능금액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="10%" /><col width="15%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">카드이용한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">${P_CHG_CARD_HANDO}</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">${P_USED_CARD_HANDO}</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_ILSI_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_ILSI_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">할부</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_HALBU_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_HALBU_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_CASH_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10 cell_bg">카드론</th>
+								<td class="cell_r10"><span class="t_no">${P_CHG_RAIN_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">${P_USED_RAIN_HANDO}</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr style='display:none'>
+								<th scope="rowgroup" rowspan="2" class="cell_l10 cell_bg">해외</th>
+								<th class="cell_l10 cell_bg" scope="row">일시불</th>
+								<td class="cell_r10 t_no">US$ ${P_CHG_OVER_ILSI_HANDO}</td>
+								<td class="cell_r10 t_no">US$ ${P_USED_OVER_ILSI_HANDO}</td>
+								<td class="cell_r10 t_no">US$ 0</td>
+							</tr>
+							<tr style='display:none'>
+								<th class="cell_l10 cell_bg" scope="row">현금서비스</th>
+								<td class="cell_r10 t_no">US$ ${P_CHG_OVER_CASH_HANDO}</td>
+								<td class="cell_r10 t_no">US$ ${P_USED_OVER_CASH_HANDO}</td>
+								<td class="cell_r10 t_no">US$ 0</td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<!-- <p class="btnl t_desc04">1$ = 1,000원으로 계산되어 있습니다.</p> -->
+							<p class="btnr">
+                                <a href="javascript:go_next(this.document.conf);" class="btn btn_blue"><span>확인</span></a>
+                                <a href="javascript:go_before(this.document.conf);" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

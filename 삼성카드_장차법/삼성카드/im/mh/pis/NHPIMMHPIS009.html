@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+                
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_chk_point.png" alt="사용가능한 포인트를 확인하세요" /></h1>
+                    <p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1');" class="btn btn_s_white"><span>포인트 적립 기준/세부 내용</span></a></p>
+                </div>				
+
+				<!-- content_block 100212 -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+					<div class="content_block_inner">
+						<jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false">
+							<jsp:param value="savePointParam" name="viewLayerParam"/>
+						</jsp:include>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block clfix">	<!-- 100316 -->
+					<div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div>	<!-- 100316 -->
+					<h2><img src="/images/mh/h2_urpointinfo.png" alt="선택하신 포인트내용입니다" /></h2>	<!-- 100316 -->
+					<div class="content_block_inner">	<!-- 100316 -->
+						<h3 class="h3_point"><img src="/images/mh/h3_saveservice.png" alt="세이브서비스" /></h3>
+						<!-- tab -->
+						<div class="box_white02 mt_10"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+							<div class="category_tag">
+								<ul>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS001', true)">한도조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS002', true)">이용내역조회<em>&nbsp;</em></a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS003', true)">페이백세이브이용내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS004', true)">파워세이브이용내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS005', true)">포인트내역조회</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIS006', true)">맞춤형상환신청</a></li>
+									<li><p><a href="javascript:goTabPage('NHPIMMHPIS008', true)">맞춤형상환신청결과<em>&nbsp;</em></a></p></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="tb_exp mt20 clfix">	<!-- 100316 -->
+							<span class="fl_left">세이브서비스의 <strong class="t_black">상환기간과 월 청구금액</strong>을 원하시는 대로 조정이 가능함으로<br />더욱 편리하게 스케쥴링 하실 수 있습니다.</span>
+						</div>
+
+						<div class="tb_exp mt30 clfix">	<!-- 100316 -->
+							<span class="fl_left"><strong class="t_black">맞춤형 상환 신청결과</strong></span>
+							<span class="ab_tr t_desc04">조회일 : ${CURRENT_DATE} 현재기준</span>
+						</div>
+						<table class="dtable02" summary="미상환금액,매월청구원금,상환개월수,상환종료일자(당월부터적용시)로 구성된 맞춤형 상환 신쳥결과를 확인할 수 있는 게시판입니다">
+						<caption>맞춤형 상환 신청결과</caption>
+						<colgroup><col width="30%" /><col width="20%" /><col width="30%" /><col width="20%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>미 상환 금액</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td> <!-- 100312 -->
+								<th scope="row"><p>매월 청구 원금</p></th>
+								<td><p><span class="t_no">0</span> 원</p></td> <!-- 100312 -->
+							</tr>
+							<tr>
+								<th scope="row"><p>상환 개월 수</p></th>
+								<td><p><span class="t_no">${STRING5}</span> 개월</p></td> <!-- 100312 -->
+								<th scope="row"><p>상환 종료일자 (당월부터 적용 시)</p></th>
+								<td><p><span class="t_no">${STRING6}</span></p></td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="4"><%=errMsg%></td> 
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnl"><a href="javascript:goTabPage('NHPIMSSCMS006');" class="btn btn_white"><span>서비스 소개</span></a></p>
+							<p class="btnr">
+                                <a href="javascript:goCancel();" class="btn btn_white"><span>당일 취소</span></a>
+							</p>
+						</div>
+
+						<div class="line_lgray"></div>
+
+						<ol class="list_no01">	
+							<li><p>상기 청구원금은 이자가 포함되어 있지 않은 원금 기준의 금액입니다.</p></li>
+							<li><p>당일 취소는 당일 <strong class="t_black">20시</strong>까지만 신청 가능합니다.</p></li>
+							<li><p>상기 상환 스케줄은 1개월 내에는 변경이 불가합니다.</p></li>
+						</ol>
+					</div>
+				</div>
+                
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

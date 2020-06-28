@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+	<div class="content_block_inner">
+		<jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+	<div class="content_block_inner">
+		
+		<h3 class="h3_point"><img src="/images/mh/h3_pla_shopping.png" alt="쇼핑플래티늄카드" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_shopping_voucher.png" alt="신세계 쇼핑 상품권" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_giftcard_shinsegyeedu.png" alt="신세계에듀 상품권" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_giftcard_sscmaplus.png" alt="삼성CMA+S 상품권" /></h3>
+		<!-- tab -->
+		<div class="tab02 w640">
+			<ul>
+                <li class="on"><a href="javascript:goSearch('getPlatCardUseView');">년도별 적립/사용</a></li>
+                <li>           <a href="javascript:goSearch('getPlatCardUseList');">포인트 사용</a></li>
+                <li>           <a href="javascript:goSearch('getPlatCardParkPoint');">10days적립내역</a></li>
+                <li>           <a href="javascript:goSearch('getPlatCardYearPoint');">연간적립내역</a></li>
+			</ul>
+		</div>
+
+
+		<table class="dtable02 mt30" summary="총 발생포인트, 총 사용 포인트, 사용 가능 포인트, 기준일 등 금융 마일리지를 확인하실 수 있습니다.">
+		<caption>금융 마일리지 확인 게시판</caption>
+		<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>총 발생포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+				<th scope="row"><p>총 사용 포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>사용 가능 포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+				<th scope="row"><p>기준일</p></th>
+				<td><p class="t_no">0</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="btnset">
+			<div class="btnl">
+				<ol class="list_desc">
+					<li><p>사용가능금액 = 총적립금액 - 총사용금액 - 유효기간경과금액</p></li>
+					<li><p>기준연월을 누르시면 해당 월의 적립/사용 상세 내역을 조회하실 수 있습니다.</p></li>
+					<li><p>적립/사용 상세 내역은 조회월을 기준으로 직전 1년까지 조회하실 수 있습니다.</p></li>
+				</ol>
+			</div>
+		</div>
+
+
+		<div class="content_block_inner">
+			<div class="tb_exp clfix">
+				<span class="t_black"><strong>적립 연도별 조회</strong></span>
+				<span class="ab_tr">
+					<select name="start_year" title="년도 선택" style="width:80px">
+		                <option></option>
+					</select>
+                    <a href="javascript:goSearch('getPlatCardUseView');" class="btn btn_s_blue"><span>조회</span></a>
+				</span>
+			</div>
+				
+			<table class="dtable01" summary="기준연월, 적립 포인트, 사용 포인트, 유효기간경과 등 적립 연도별 조회결과를 확인하실 수 있습니다.">
+			<caption>적립 연도별 조회결과</caption>
+			<colgroup><col width="20%" /><col width="25%" /><col width="30%" /><col width="*" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">기준연월</th>
+					<th scope="col" class="cell_r10">적립 포인트</th>
+					<th scope="col" class="cell_r10">사용 포인트</th>
+					<th scope="col">유효기간경과</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="t_no">0</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<% if("092".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV001C1.html" />
+	
+<%}else if("097".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV001C2.html" />
+
+<%}else if("098".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV001C3.html" />
+
+<%}else if("099".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV001C4.html" />
+
+<%} %>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

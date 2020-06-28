@@ -1,0 +1,524 @@
+@charset "utf-8";
+/************************************************************************
+ * filename     : al.css
+ * description  : partnership class
+ * date           : 2009.11.23
+************************************************************************/
+
+/* 상단 비쥬얼 */
+.top_visual	 .ab_find_idpw	{position:absolute; right:-82px; bottom:0}
+.top_visual_join	 {position:relative; width:728px; height:290px}
+.top_visual_join .ab_join {position:absolute; top:60px; left:0;}
+h2.h2_print	 {margin-bottom:0 !important; padding-bottom:45px; text-align:center}
+
+.dtable_over	{width:600px; overflow:auto; overflow-y:hidden}
+.dtable_over	table	{width:860px; margin-left:-1px; margin-bottom:20px}
+.dtable_over	th, .dtable_over	td	{border-left:1px solid #E6E6E6}
+
+.fill_joinin	.btnc	{margin-top:30px}
+.fill_joinin	th	p, .fill_joinin	td	p	{padding-left:0}
+.fill_joinin	td	{vertical-align:middle}
+.fill_joinin	th.cell_l	{width:150px; padding:12px 0 10px 0}
+.fill_joinin	td.cell_l02	{width:130px; padding:9px 0 8px 10px}
+.fill_joinin	td.cell_l	{width:450px; padding:9px 0 8px 10px}
+.fill_joinin	th	p.not_neccessary	{width:100%; margin-right:0}
+.fill_joinin	.neccessary	{display:inline-block; padding:7px 0 7px 20px; background:url('/images/common/ico_check_org.gif') no-repeat 6px 9px; line-height:16px}
+.fill_joinin	.tb_exp	.neccessary	{margin:5px 0 0; padding-top:0; padding-bottom:0; background-position:6px 0; color:#767676; font:normal 11px "돋움";  line-height:16px; letter-spacing:-1px;}
+.fill_joinin	.neccessary	em, .fill_joinin	.not_neccessary	em	{position:absolute; left:-500px; top:-5000px; height:0; line-height:0; overflow:hidden; text-indent:-5000px}
+.fill_joinin	.not_neccessary	{padding-left:20px}
+.fill_joinin	.btn_white	{margin:0 12px 0 7px}
+.fill_joinin	.btn_white	 span	 {font:normal 11px "돋움"; letter-spacing:-1px; line-height:24px}
+.fill_joinin	.al_top	.txt	{vertical-align:top}
+.fill_joinin	input.txt	 {padding:4px 0 3px 8px; font:normal 12px "돋움"}
+.fill_joinin	.input_card_type input.name,
+.fill_joinin	.input_card_no	 input,
+.fill_joinin	.input_id	 input	{width:193px; padding-top:4px; padding-bottom:3px}
+.fill_joinin	.input_pass	{color:#767676; font:normal 11px "돋움"}
+.fill_joinin	.input_pass	input	{width:298px; margin-right:7px}
+.fill_joinin	.input_position select,
+.fill_joinin	.input_phone	select	{width:87px; margin-right:10px}
+.fill_joinin	.input_phone	input	{width:88px}
+.fill_joinin	.input_phone	input.rdo	{width:14px;}
+.fill_joinin	.input_position input,
+.fill_joinin	.input_email	input	{width:77px}
+.fill_joinin	.input_email	select	{width:105px; margin-left:10px}
+.fill_joinin	.input_address	{color:#767676}
+.fill_joinin	.input_code 	input,
+.fill_joinin	.input_branch	input,
+.fill_joinin	.input_idno	input,
+.fill_joinin	.input_address	input	{width:87px}
+.fill_joinin	.input_address	.btn_white	{margin:0 0 0 7px}
+.fill_joinin	.input_address	.detail	input	{width:198px; margin:3px 7px 0 0}
+.fill_joinin	.input_question	select	{margin:0 7px 0 0}
+.fill_joinin	.input_question	.detail	{display:block; margin-top:5px}
+.fill_joinin	.input_question	.detail	input	{width:198px; margin:0 7px 0 0}
+.fill_joinin	.input_code	input.no,
+.fill_joinin	.input_place_no	input,
+.fill_joinin	.input_branch	input.code,
+.fill_joinin	.input_birth	input.txt	{width:48px}
+.fill_joinin	.input_manage	input {width:94px;}
+.fill_joinin	.input_card_type input {width:55px;}
+.fill_joinin	.input_birth	select	{width:58px}
+.fill_joinin	span.input_place_no02,
+.fill_joinin	.input_birth	label	{margin:0 0 0 20px;}
+.fill_joinin	.input_job	{width:307px}
+.fill_joinin	.input_additional	{width:135px}
+.fill_joinin	.p_break	{display:inline-block; color:#767676; font-size:11px; line-height:12px; vertical-align:top}
+.fill_joinin	.input_com_num	input,
+.fill_joinin	.input_jumin	input	{width:81px}
+.fill_joinin	.input_submall	input,
+.fill_joinin	.input_name	input	{width:186px}
+.fill_joinin	.label_b_type	select	{width:93px; margin-right:6px}
+.fill_joinin	.input_domain	input	{width:256px}
+.fill_joinin	th.cell_txt	{width:160px; padding:12px 0 10px 10px;}
+.fill_joinin	.input_title input {width:450px;}
+.fill_joinin	.input_body textarea {width:450px; height:120px; padding:4px 4px 0; border:1px solid #CCC; color:#333; font:normal 11px "돋움"}
+
+/* 서비스등록 */
+.sevice_write	{margin-left:10px; width:590px; overflow:hidden;}
+.sevice_write	div	{float:left; margin-right:10px}
+.sevice_write	div	div	{margin-right:0}
+.sevice_write	div	span	{margin-right:0}
+.sevice_write	div	span.t_gray	{padding:0 2px; color:#c0c0c0; line-height:30px}
+.sevice_write	div	label	{display:block; padding-bottom:5px}
+.sevice_write	div.btn	{margin-top:24px}
+
+/* 비밀번호 변경 테이블 추가부분*/
+.dtable_service	th	{background:#fff url('/images/common/line_tbl_th.png') no-repeat right 10px;}
+.dtable_service	th	p	{padding-left:0;}
+
+/* 로그인 */
+.login_wrap {width:600px; margin-bottom:16px;}
+.login_wrap .line_lgray {border-bottom:1px solid #f5f5f5}
+.login_wrap .login	{position:relative; width:458px; margin-top:30px}
+.login_wrap .login	dl	{width:100%; overflow:auto; overflow:hidden}
+.login_wrap .login	dt	{float:left; width:80px; padding:0 0 5px 10px}
+.login_wrap .login	dt	label	{display:inline-block; padding-top:9px; color:#767676; font:normal 11px "돋움"}
+.login_wrap .login	dd	{float:left; width:358px; padding:0 0 5px 10px}
+.login_wrap .login	dd.keypad	a	{vertical-align:-2px;} /* 110331 키패드 수정// */
+.login_wrap .login	dd	 p	{padding-top:8px; color:#333; font:bold 12px "돋움"}
+.login_wrap .login	.btn_login	{position:absolute; right:0; top:0}
+.login_wrap .btn {margin:15px 0 0 100px;}
+
+.change_line	{background:url('/images/common/line_ver_lgray.png') no-repeat 63px 5px}
+.change_line	.btn_link	 {margin-right:17px;}
+
+.notice {padding:29px 0 0 102px; border-top:1px solid #e6e6e6; background:url('/images/al/bg_notice.jpg') no-repeat 16px 30px;}
+
+.pg_pass	input	{width:200px;}
+.pg_pass2	input	{width:349px;}
+.input_businessno input {width:80px;}
+
+/* 회원 확인 */
+.user_verify	{margin-top:30px}
+.user_verify	dl	{width:630px; overflow:auto; overflow:hidden}
+.user_verify	dt	{float:left; width:90px; margin-top:3px; padding:0 0 5px 10px; color:#545454; letter-spacing:-1px;}
+.user_verify	dt	label	{display:inline-block; padding-top:9px;}
+.user_verify	dd	{float:left; width:520px; margin-top:3px; padding:0 0 5px 10px}
+.user_verify	dd	 p	{padding-top:8px; color:#333; font:bold 12px "돋움"}
+.user_verify	dd	 span	{color:#767676; font:normal 11px "돋움"}
+
+
+.find_id	dl	{width:600px; overflow:auto; overflow:hidden}
+.find_id	dt	{float:left; width:90px; padding:0 0 5px 0; letter-spacing:-1px}
+.find_id	dt	label	{display:inline-block; padding-top:9px; font:normal 12px "돋움"; letter-spacing:-1px}
+.find_id	dd	{float:left; width:500px; padding:0 0 5px 10px}
+.find_id	dd.pos_rel	{position:relative}
+.find_id	dd	 p	{padding-top:8px; color:#333; font:bold 12px "돋움"}
+.find_id	dd	 img	{vertical-align:top}
+.find_id_login	dd	{width:170px}
+.find_idfind_id_logindd	 img	{vertical-align:top}
+.find_id_login	dt.pw	{width:70px}
+.find_id_login	dd.pw	{width:256px}
+.find_id_login	dt.newpw	{width:80px}
+.find_id_login	dd.newpw	{width:135px}
+.find_id_login	dt.newpw2	{width:114px}
+.find_id_login	dd.newpw2	{width:243px}
+.find_id_login	dt.newpw3	{width:640px; font-size:12px}
+.find_id_login	dd.newpw3	{width:640px}
+
+/* 회원가입 */
+#content_tab	{float:left; width:680px; height:100%; margin-left:30px} /* * width:680px; padding:40px 0 0 1px; *overflow:hidden * */
+#content_tab .top_visual2	{position:relative; width:680px; height:410px; padding-top:35px;}
+#content_tab .top_visual2 .ab_tr {position:relative; width:680px; height:230px}
+#content_tab	h2	 { height:40px;}
+
+.top_step_join	 {position:relative; width:728px; height:125px; background:url('/images/al/step_join.jpg') no-repeat}
+.top_step_join01	 {background-position:0 0}
+.top_step_join02	 {background-position:0 -130px}
+.top_step_join03	 {background-position:0 -260px}
+
+.btnset.txt_pw	{margin-top:20px; border-top:1px solid #ebebeb;}
+
+.paginate	.day	 {overflow:hidden}
+.paginate	.day	 a:first-child	{background:0 none}
+.paginate	.day	 a	{display:inline-block; width:77px; height:20px; background:url('/images/common/page_bar.png') no-repeat 0 center; font:normal 11px "돋움"; line-height:20px; text-align:center}
+.paginate	.day	 strong	{height:20px; color:#333; font:bold 11px "돋움"; line-height:20px}
+
+/* 가맹점소개 */
+.list_support_merc	{width:100%; margin-bottom:20px !important; overflow:auto; overflow:hidden}
+.list_support_merc	li	{float:left; width:50%; margin-top:20px !important}
+.list_support_merc	li	p	{width:90%; margin-top:5px !important; word-break:break-all}
+
+/* 가입안내 */
+.merchant_app	{width:100%; margin-bottom:5px !important; overflow:auto; overflow:hidden}
+.merchant_app	li	{float:left; position:relative; width:50%; height:20px; margin-top:1px !important}
+.merchant_app	li	p	{height:20px; margin-top:1px !important; word-break:break-all}
+.merchant_app	li	span {position:absolute; top:4px; right:10px}
+.merchant_app	li	span.pr20 {position:absolute; top:4px; right:30px;}
+.merchant_app	li	span.pr0 {position:absolute; top:4px; right:0px;}
+
+/* list styles */
+.al_type01 {width: 680px; overflow: hidden}
+.al_type01 li {float: left; margin: 0 20px 20px 0}
+.al_type01 .p_tit {margin: 0 0 5px 0;}
+
+.list_line	 {margin-bottom:-15px}
+.list_line	 li	{margin:0 0 20px 0; padding-top:0; padding-bottom:15px; border-bottom:1px solid #F2F2F2; background:white; *border-top:1px solid white}
+.list_line	 li	.ico_no	{top:0}
+.list_line	 li.no_line {border-bottom:0; margin-bottom:0;}
+
+/* ARS_counsel */
+.bg_phone	{position:relative; float:left; width:270px; height:410px;}
+.d_phone_ars	 {width:600px; height:420px; margin: 30px 0 0 0}
+.d_phone_ars	 .bg_phone	{margin-top:-5px}
+.d_phone_ars	 .t_desc03	{float:right; width:308px; table-layout:fixed}
+.d_phone_ars	 .dtable02	{float:right; width:308px; table-layout:fixed}
+.d_phone_ars	 .dtable02	.sub_treetable	 td	{font-size:11px}
+.d_phone_ars	 .dtable02	.sub_treetable	 td	 img	{margin-left:7px}
+.d_phone_ars	 .dtable02	tr.ph_sub	{display:none; width:399px}
+.d_phone_ars	 .dtable02	tr.ph_sub	td	{border:0 none}
+.d_phone_ars	 .dtable02	tr.ph_sub_on	{display:block; width:367px}
+.d_phone_ars	 .dtable02	tr	th	{width:84px}
+.d_phone_ars	 .dtable02	td	{padding-left:0; background:white}
+.d_phone_ars	 .dtable02	.ph_sub_on	td	em	{display:block; padding:7px 0 7px 10px; border-bottom:1px solid #F2F2F2; font-style:normal}
+.d_phone_ars	 .dtable02	td	em.alt	{border-bottom:0 none}
+.d_phone_ars	 .dtable02	td.al_mid	{vertical-align:middle}
+
+/* 가맹점 팝업 */
+.family_owner	 {width:100%; overflow:auto; overflow:hidden}
+.family_owner	 dt	 {float:left; padding-right:3px; _padding-right:0}
+.family_owner	 dt	 strong	 {color:#333}
+
+.list_no01	.list_rice	 li	{list-style:none}
+.list_no01	.list_rice	 li	p	{font-size:11px; color:#767676}
+
+.family_sign	{width:100%; height:54px; position:relative; overflow:hidden; overflow:auto; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; background:#fafafa; margin-top:20px}
+.family_sign	.corp	{position:absolute; left:248px; top:29px}
+.family_sign	.corp	 strong	{font-size:11px; color:#333}
+.family_sign	.name	{position:absolute; left:424px; top:29px}
+.family_sign	.name	 strong	{font-size:11px; color:#333}
+.family_sign	.date	{position:absolute; left:559px; top:8px; font-size:11px}
+.family_sign	.date span	{font-size:11px; margin-right:20px}
+.family_sign	.date span.last	{margin-right:0}
+
+.family_minorsign	{width:100%; text-align:right; position:relative; overflow:auto; overflow:hidden; margin-top:40px}
+.family_minorsign	p.date	{position:absolute; right:12px; top:0}
+.family_minorsign	p.date	span	{margin-left:29px}
+.family_minorsign	div.sign	{margin:38px 12px 0 0}
+.family_minorsign	div.sign	p	{margin-bottom:12px}
+.family_minorsign	div.sign	p span	{padding-right:136px}
+.family_minorsign	div.sign	p span	strong	{color:#333}
+
+.family_entrust	{width:100%; text-align:center; margin-top:40px}
+.family_entrust	p	{line-height:22px}
+.family_entrust	p span	{color:#333; margin-left:29px}
+
+/* 불법부당 가맹점신고 완료 */
+.com_scr	{width:100%; height:90px; position:relative; overflow:auto; overflow:hidden}
+.com_scr	p	{position:absolute; top:10px; left:85px}
+.com_scr	dl	{margin:10px 0 0 200px}
+.com_scr	dl	dt	{padding-bottom:15px}
+.com_scr	dl	dd	{font-size:11px; color:#767676; line-height:18px}
+
+/* flg images */
+.flag_additional	{position:relative; width:100%; height:0; font-size:0; line-height:0; *z-index:-1}
+.flag_additional	img	{position:absolute}
+.flag_banklist_pop	{right:32px; top:32px}
+.flag_support_affli	{right:32px; top:32px}
+
+
+/* popup 100714 */
+div.thn_urapp	 {width:410px; margin:20px 0 0; padding:20px 0; border-top:1px solid #F5F5F5; border-bottom:1px solid #F5F5F5; overflow:auto; overflow:hidden}
+div.thn_urapp	 .p_photo	{float:left; width:170px}
+div.thn_urapp	 .p_desc	{float:left; width:240px; line-height:16px}
+div.thn_urapp	 div.inputfield	 {width:410px; margin-top:20px; overflow:auto; overflow:hidden}
+div.thn_urapp	 div.inputfield	 span	{float:left; display:block; margin-right:5px}
+div.thn_urapp	 div.inputfield	 a	{float:left; display:block; margin-left:5px}
+
+
+.tb_exp	.report_search	{position:static; float:right}
+.report_search	input.txt	 {font-size:11px; letter-spacing:-1px; vertical-align:top; z-index:10}
+.guide_list	{width:100%; overflow:hidden;}
+.guide_list ul	{float:left; width:100%;}
+.guide_list li	{float:left; width:100%; border-bottom:1px solid #ebebeb;}  /* 리뉴얼수정 110321 */
+.guide_list li .img	{float:left; width:130px;}
+.guide_list li .txtwrap	{float:left; width:465px; margin-bottom:10px; letter-spacing:-1px;}
+.guide_list li .txtwrap p	{margin-bottom:4px; line-height:16px;}
+.guide_list li .txtwrap p.stit	{margin-top:18px; font-weight:bold; color:#333;}
+.guide_list li .txtwrap p .btn	{margin-left:6px;}
+
+
+
+.dtable_service	{border-top:1px solid #f2f2f2; border-bottom:1px solid #f2f2f2}
+.dtable_service	th	{padding:6px 0 5px 10px; border-bottom:0; color:#545454;}
+.dtable_service	td	{border-bottom:0;}
+.d_phone_ars	 .bg_phone	.ab_r	{position:absolute; left:540px; bottom:0;}
+.fill_joinin	.input_address	.btn_blue	{margin:0 0 0 7px}
+
+
+
+ul.merchant_summary	{width:100%; overflow:hidden;}
+ul.merchant_summary li	{float:left; width:200px; height:225px;}
+ul.merchant_summary li .img	{width:160px; height:94px; padding-left:40px;}
+ul.merchant_summary li p	{width:160px; font-size:11px; letter-spacing:-1px; line-height:14px;}
+ul.merchant_summary li p.stit	{margin-bottom:9px; font-weight:bold; font-size:12px; color:#333;}
+ul.merchant_summary li p.golink	{margin-top:5px;}
+ul.merchant_summary li.hw p	{width:200px;}
+
+h3.p_tit	{font-size:12px; color:#333;}
+
+.guide_txt	{position:relative; z-index:1; margin:-30px 0 -18px; padding:0 0 0 0; line-height:18px;}	/* 110610 */
+
+.guide_pd	{padding:27px 0 0 0;} /* 110601 */
+.n_ico_1	{background:url('/images/al/img_merchant_guide_01.png') no-repeat 477px 19px;} /* 보너스클럽 */
+.n_ico_2	{background:url('/images/al/img_merchant_guide_02.png') no-repeat 477px 19px;} /* 페이백 */
+.n_ico_3	{background:url('/images/al/img_merchant_guide_03.png') no-repeat 477px 19px;} /* 블루라인 */
+.n_ico_4	{background:url('/images/al/img_merchant_guide_04.png') no-repeat 477px 19px;} /* 멤버스 주유소 */
+.n_ico_5	{background:url('/images/al/img_merchant_guide_05.png') no-repeat 477px 19px;} /* 의료비지원 */
+
+ul.list_benefit	{width:100%; overflow:hidden;}
+ul.list_benefit li	{float:left; width:100%; min-height:84px; _height:84px; border-bottom:1px solid #ebebeb;}
+ul.list_benefit li .img	{float:left; width:126px;}
+ul.list_benefit li .txtwrap	{float:left; width:469px;}
+ul.list_benefit li p	{letter-spacing:-1px; line-height:18px;}
+ul.list_benefit li .stit	{margin-top:20px; font-weight:bold; font-size:12px; color:#333;}
+ul.list_benefit li .stit	span	{font:normal 11px Tahoma; color:#545454;}
+ul.list_benefit li .txt	{margin-top:4px; padding-left:15px;}
+
+.list_add	{width:100%; overflow:hidden; margin-top:18px;}
+.list_add ul	{float:left; width:625px;}
+.list_add li	{float:left; width:310px;}
+.list_add li p	{line-height:16px; letter-spacing:-1px;}
+.list_add li.hw	{width:100%;}
+
+.list_bonus	{width:100%; overflow:hidden;}
+.list_bonus	 li	{float:left; margin-right:15px; margin-bottom:10px;}
+.p_card	{position:relative; margin-bottom:5px; z-index:10}
+.list_bonus	 li	.p_card	{width:125px; height:60px; background:url('/images/al/noimg_120_60.png') no-repeat}
+.list_bonus	 li	.p_txt	{line-height:16px; font-weight:bold; color:#333;}
+.list_bonus	 li	.p_txt span	{line-height:16px; font-weight:normal;}
+
+.menu_support	{position:relative; z-index:1; width:600px; height:560px; margin-top:30px; background:url('/images/al/bg_menu_support_merchants.jpg') no-repeat}
+.menu_support	.g_top	{position:absolute; z-index:2; left:242px; top:295px;}
+.menu_support	.g_pr	{position:absolute; z-index:2; left:215px; top:20px;}
+.menu_support	.g_marketing	{position:absolute; z-index:2; left:20px; top:346px;}
+.menu_support	.g_business	{position:absolute; z-index:2; left:417px; top:346px;}
+.menu_support	h3	{margin-bottom:14px;}
+.menu_support	.g_pr	ul	{position:absolute; z-index:2; left:0; top:93px;}
+.menu_support	.g_marketing	ul	{position:absolute; z-index:2; left:0; top:93px;}
+.menu_support	.g_business	ul	{position:absolute; z-index:2; left:0; top:93px;}
+.menu_support	ul	{width:90px;}
+.menu_support	li	a	{display:block; *zoom:1; padding:3px 0; font-size:11px; color:#245fb3; line-height:14px; letter-spacing:-1px;}
+.menu_support	li	a:link, .menu_support	li	a:visited	{color:#245fb3; text-decoration:underline}
+.menu_support	li	a:hover, .menu_support	li	a:active	{color:#245fb3; text-decoration:underline}
+
+.n_ico_pr_1	{height:72px; background:url('/images/al/img_support_pr_001.jpg') no-repeat right 0;} /* 온라인홍보 */
+.n_ico_pr_2	{height:72px; background:url('/images/al/img_support_pr_002.jpg') no-repeat right 0; letter-spacing:-1px;} /* Mobile홍보 */
+.n_ico_pr_3	{height:67px; background:url('/images/al/img_support_pr_003.jpg') no-repeat right 0; letter-spacing:-1px;} /* 인쇄불홍보 */
+
+.n_ico_mk_1	{background:url('/images/al/img_support_marketing_001.jpg') no-repeat right 0;} /* 쿠폰 마케팅 */
+.n_ico_mk_2	{background:url('/images/al/img_support_marketing_002.jpg') no-repeat right 0;} /* SMS 타겟 마케팅 */
+.n_ico_mk_3	{background:url('/images/al/img_support_marketing_003.jpg') no-repeat right 0;} /* 이벤트 마케팅 */
+
+.menu_guide	{width:100%; overflow:hidden; margin-top:30px; border-top:1px solid #f2f2f2;}
+.menu_guide li	{float:left; width:100%; padding:20px 0 10px; border-bottom:1px solid #f2f2f2;}
+.menu_guide li h3	{float:left; width:100%;}
+.menu_guide li .list_menu	{float:left; width:181px; min-height:89px; _height:89px; margin:8px 0 0; padding-left:119px;}
+.menu_guide li .list_menu_2	{float:left; width:480px; min-height:89px; _height:89px; margin:8px 0 0; padding-left:119px;}
+.bs_menu_guide li .list_menu_2	{width:470px; padding-left:130px;}
+.menu_guide li p	{letter-spacing:-1px;}
+.menu_guide li .stit	{margin-top:5px; margin-bottom:3px; font-weight:bold; font-size:12px; color:#333;}
+.menu_guide li .txt	{line-height:18px;}
+.menu_guide li .fl_right	{width:100%; text-align:right;}
+.menu_guide li .n_ico_pr_1	{background:url('/images/al/img_support_pr_01.jpg') no-repeat 0 0;} /* 온라인홍보 : 홈페이지 */
+.menu_guide li .n_ico_pr_2	{background:url('/images/al/img_support_pr_02.jpg') no-repeat 0 0;} /* 온라인홍보 : Google */
+.menu_guide li .n_ico_pr_3	{background:url('/images/al/img_support_pr_03.jpg') no-repeat 0 0;} /* Mobile홍보 : T-map */
+.menu_guide li .n_ico_pr_4	{background:url('/images/al/img_support_pr_04.jpg') no-repeat 0 0;} /* Mobile홍보 : Shop Finder */
+.menu_guide li .n_ico_pr_5	{background:url('/images/al/img_support_pr_05.jpg') no-repeat 0 0;} /* Mobile홍보 : 승인 SMS */
+.menu_guide li .n_ico_pr_6	{background:url('/images/al/img_support_pr_06.jpg') no-repeat 0 0;} /* Mobile홍보 : 지역 가이드북 */
+.menu_guide li .n_ico_pr_7	{background:url('/images/al/img_support_pr_07.jpg') no-repeat 0 0;} /* 인쇄불홍보 : 청구서 */
+.menu_guide li .n_ico_mk_1	{min-height:80px; _height:80px; background:url('/images/al/img_support_marketing_01.jpg') no-repeat 0 0;} /* 쿠폰 마케팅 : 우대혜택 쿠폰 */
+.menu_guide li .n_ico_mk_2	{min-height:84px; _height:84px; background:url('/images/al/img_support_marketing_02.jpg') no-repeat 0 0;} /* SMS 타겟 마케팅 : 유애드 */
+.menu_guide li .n_ico_mk_3	{background:url('/images/al/img_support_marketing_03.jpg') no-repeat 0 0;} /* 이벤트 마케팅 : 왕대박 3을 찾아라 */
+.menu_guide li .n_ico_mk_4	{min-height:105px; _height:105px; background:url('/images/al/img_support_marketing_04.jpg') no-repeat 0 0;} /* 포인트 마케팅 : 더블 포인트 Week */
+.menu_guide li .n_ico_mk_5	{min-height:105px; _height:105px; background:url('/images/al/img_support_marketing_05.jpg') no-repeat 0 0;} /* 포인트 마케팅 : 포인트 DM 발송 */
+.menu_guide li .n_ico_mk_6	{background:url('/images/al/img_support_marketing_06.jpg') no-repeat 0 0;} /* 무이자 할부 : 무이자 할부 */
+.menu_guide li .n_ico_bs_1	{min-height:75px; _height:75px; background:url('/images/al/img_support_business_01.jpg') no-repeat 0 0;} /* 방문고객 분석 : 방문고객 분석 */
+.menu_guide li .n_ico_bs_2	{min-height:80px; _height:80px; background:url('/images/al/img_support_business_02.jpg') no-repeat 0 0;} /* 지역상권 분석 : 지역상권 분석 */
+.menu_guide li .n_ico_bs_3	{min-height:80px; _height:80px; background:url('/images/al/img_support_business_03.jpg') no-repeat 0 0;} /* 전자상거래중개 : 비즈브릿지 */
+.menu_guide li .n_ico_bs_4	{min-height:80px; _height:80px; background:url('/images/al/img_support_business_04.jpg') no-repeat 0 0;} /* 문화생활 지원 : 문화생활 지원 */
+.menu_guide li .n_ico_bs_5	{background:url('/images/al/img_support_business_05.jpg') no-repeat 0 0;} /* 대금 지급주기 단축 : 대금 지급주기 단축 */
+
+ol.list_guide	{}
+ol.list_guide .num_1	{margin-top:0 !important; background:url('/images/al/img_num_1.jpg') no-repeat 0 0;}
+ol.list_guide .num_2	{background:url('/images/al/img_num_2.jpg') no-repeat 0 0;}
+ol.list_guide .num_3	{background:url('/images/al/img_num_3.png') no-repeat 0 0;}
+ol.list_guide .guide_li	{margin-top:30px; padding:0 0 35px 37px; border-bottom:1px solid #ebebeb; letter-spacing:-1px;}
+ol.list_guide .li_end	{padding:0 0 0 37px; border-bottom:0;}
+ol.list_guide .guide_li h3	{margin-bottom:16px;}
+ol.list_guide .guide_li .gtxt	{margin-bottom:13px;}
+ol.list_guide .guide_li h4	{font-size:12px; color:#333;}
+ol.list_guide .guide_li h4 span	{font-weight:normal; color:#333;}
+ol.list_guide .guide_li p	{line-height:18px;}
+ol.list_guide .guide_li	.ml	{margin-left:14px;}
+.list_ex	{width:100%; overflow:hidden;}
+.list_ex ul	{width:620px;}
+.list_ex ul,	.list_ex li	{float:left;}
+.list_ex li .img	{margin-bottom:5px;}
+.list_ex li p	{color:#333;}
+.w_2 li	{width:310px;}
+.w_3 li	{width:200px;}
+.w_all li	{width:100%;}
+
+ol.list_guide .guide_li .list_ex	{margin-top:5px;}
+ol.list_guide .guide_li .list_ex ul	{width:600px; margin-left:14px;}
+ol.list_guide .guide_li	.w_3 li	{width:189px;}
+ol.list_guide .guide_li	.w_5 li	{width:110px;}
+ol.list_guide .guide_li	.w_4 li	{width:130px;}
+ol.list_guide .guide_li	.w_2 li	{width:260px;}
+ol.list_guide .guide_li ol.list_no01	{margin-left:14px;}
+ol.list_guide .guide_li ol.list_no01	li	{margin:0 0 2px 0;}
+
+ol.list_guide .guide_li	ul.list_benefit li .txtwrap	{float:left; width:400px;}
+
+ol.card_financ .guide_li .gtxt	{position:relative; z-index:1; height:47px; margin:-22px 0 0; padding:22px 135px 0 0; border-bottom:1px solid #ebebeb; line-height:18px;}
+ol.card_financ .guide_li .bg_card_1	{height:42px; background:url('/images/al/bg_card_financ_1.jpg') no-repeat right 0;}
+ol.card_financ .guide_li .bg_card_2	{background:url('/images/al/bg_card_financ_2.jpg') no-repeat right 6px;}
+ol.card_financ .guide_li .bg_lease_1	{background:url('/images/al/bg_lease_1.jpg') no-repeat right 0;}
+ol.card_financ .guide_li .bg_lease_2	{background:url('/images/al/bg_rentalcar_1.jpg') no-repeat right 0;}
+
+ol.card_financ .guide_li ol.list_no01	{margin-left:0;}
+
+ol.card_financ .guide_li ol.list_no02	{width:100%; overflow:hidden; margin-top:5px;}
+ol.card_financ .guide_li ol.list_no02 li	{float:left; width:278px;}
+ol.card_financ .guide_li ol.list_no02 li span.no	{display:inline-block; width:14px; font-size:11px; font-family:Tahoma; color:#545454;}
+
+ol.card_financ .guide_li .line_lgray	{border-bottom:1px solid #eaeaea;}
+
+ol.card_financ .guide_li ul.list_benefit	{width:100%; overflow:hidden;}
+ol.card_financ .guide_li ul.list_benefit li	{float:left; width:279px; min-height:95px; _height:95px; border-bottom:0;}
+ol.card_financ .guide_li ul.list_benefit li.h_1	{min-height:105px; _height:105px;}
+ol.card_financ .guide_li ul.list_benefit li .img	{width:105px;}
+ol.card_financ .guide_li ul.list_benefit li .txtwrap	{width:174px;}
+ol.card_financ .guide_li ul.list_benefit li p	{line-height:14px;}
+ol.card_financ .guide_li ul.list_benefit li .stit	{margin-top:11px;}
+ol.card_financ .guide_li ul.list_benefit li .txt	{margin-top:4px; padding-left:15px; font-size:11px; color:#767676; letter-spacing:-1;}
+
+ol.card_financ .guide_li .list_app_benefit	{width:100%; overflow:hidden;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit	{width:575px;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li	{width:285px; min-height:111px; _height:111px;  border-bottom:0;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li .img	{width:126px;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li .txtwrap	{width:159px;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li p	{line-height:18px;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li .stit	{margin-top:6px;}
+ol.card_financ .guide_li .list_app_benefit	ul.list_benefit li .txt	{margin-top:4px; padding-left:0; font-size:12px; color:#545454;}
+
+/* 약관 110607 */
+ol.list_agree	li	{list-style:none; margin:0 0 4px 0; color:#545454; font:normal 11px Tahoma; vertical-align:top}
+ol.list_agree	li	p	{display:inline-block; margin:0; margin-left:0; padding-left:20px; text-indent:-18px; font:normal 12px "돋움"; word-break:keep-all; line-height:16px; vertical-align:top}
+ol.list_agree	li	.list_korean	li	{position:relative; list-style:none; list-style-position:outside; margin:0 0 0 0; padding-left:35px !important; color:#767676; font:normal 11px "돋움"; letter-spacing:-1px; line-height:17px; word-break:keep-all}
+ol.list_agree	li	.list_korean	li	p	{position:absolute !important; left:0; _left:-35px; top:0; width:16px; margin:0; color:#767676; text-indent:0; font:normal 11px "돋움"; line-height:18px; *line-height:10px; word-break:keep-all}
+
+/* 신용정보의조회_제공활용동의서 111026 */
+.family_sign .name1	{position:absolute !important; left:384px; top:32px;}
+.family_sign .name1	 strong	{font-size:11px; color:#333}
+.family_sign .name2	{position:absolute !important; left:384px; top:62px;}
+.family_sign .name2	 strong	{font-size:11px; color:#333}
+.family_sign .name3	{position:absolute !important; left:384px; top:92px;}
+.family_sign .name3	 strong	{font-size:11px; color:#333}
+.inquiry_t_border {border-top: 1px solid #E6E6E6 !important;}
+
+/* 웹회원정보변경_삼성카드 가맹점 가입 확인서 111205 */
+.content_wrap{ width: 650px; padding: 0 0 0 30px; overflow: hidden;}
+.content_wrap h2{ padding: 15px 0 0 0 ;}
+.content_wrap .h2_text{ padding: 18px 0 0 0 ; color: #545454; line-height: 1.5em;}
+/*.dtable01 {border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}*/
+.dtable01 {border-bottom: 1px solid #ccc;} /* Modify 13.04.23 상단 보더 삭제 multi browsing */
+.dtable01 .month{width: 500px;}
+.dtable01 .commission{padding: 0 0 0 50px;}
+.outputDate{padding: 20px 20px 0 0; color: #333; width: 100%; text-align: right;} /* 111222 수정*/
+.arsBanner{width: 100%; overflow: hidden; padding: 28px 0 30px 0; border-bottom: 1px solid #e6e6e6;}
+.arsBanner .arslBanner{width: 298px; overflow: hidden; float: left; height: 176px; border-right: 1px solid #e6e6e6; margin: 0 20px 0 0;}
+.arsBanner .arsrBanner{width: 320px; overflow: hidden; float: left; height: 176px; }
+.arslBanner .arslBannertext{color: #6e6e70; letter-spacing: -0.1em; padding: 0 0 5px 0;}
+.arsrBanner .arsrBannertext{color: #6e6e70; letter-spacing: -0.1em; padding: 0 0 3px 0;}
+.text_list{float: right; width: 143px; padding: 0 12px 0 0; color: #6e6e70; letter-spacing: -0.08em;}
+.text_list li{line-height: 1.5em;}
+.text_list01{float: right; width: 195px; color: #6e6e70; letter-spacing: -0.08em;}
+.text_list01 li{line-height: 1.2em;  padding: 0 0 7px 0;}
+.text_Lcon {width: 298px; overflow: hidden; background:url('/images/al/confirmation_l_img.png') no-repeat 38px 20px;}
+.text_Rcon {width: 320px; overflow: hidden; background:url('/images/al/confirmation_r_img.png') no-repeat 22px 15px;}
+.introText {width: 640px; overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 18px 0 43px 0;}
+.introText h3{padding: 0 0 15px 0;}
+.introCon{ color: #6e6e70; letter-spacing: -0.08em;}
+.introList{ color: #6e6e70; letter-spacing: -0.08em; line-height: 1.2em;}
+.confirmationStemp {text-align: right; padding: 37px 31px 0 0;}
+.copyright{ width: 640px; overflow: hidden; padding: 15px 0 0 0; color: #767676; letter-spacing: -0.08em;}
+.td_tble{ width: 221px; height: 77px;}
+.td_tble td{height: 37px; text-align: right; padding: 0 43px 0 0;}
+.border-r{border-right: 1px solid #e6e6e6; padding: 18px 0 43px 0;}
+.border-b{border-bottom: 1px solid #e6e6e6; padding: 18px 0 43px 0;}
+
+
+
+
+/************************************************************************
+ * description  : accessibility improvements style - magnumvint
+ * date           : 2012.11.13
+************************************************************************/
+
+/* 서브메인 LNB배너 */
+.mvt_al_bnr { position:relative; width:182px; height:400px; overflow:hidden; z-index:1}
+
+.mvt_abb { margin:364px 0 0 15px; overflow:hidden;}
+.mvt_abb li { float:left; margin-right:6px;}
+.mvt_abb li > span { position:relative; z-index:10;}
+.mvt_abb li > span a { display:block; width:21px; height:21px; background:url(../images/al/btn_rtype_c.png) no-repeat;}
+.mvt_abb li > span span { width:0; height:0; font-size:0; line-height:0; text-indent:-9999px;}
+.mvt_abb li > a { position:absolute; top:0; left:0; z-index:2}
+.mvt_abb .pg1 a { background-position:left top;}
+.mvt_abb .pg1 a:hover { background-position:left -26px;}
+.mvt_abb .pg1 a.on { background-position:left -26px;}
+
+.mvt_abb .pg2 a { background-position:-26px top;}
+.mvt_abb .pg2 a:hover { background-position:-26px -26px;}
+.mvt_abb .pg2 a.on { background-position:-26px -26px;}
+
+.mvt_abb .pg3 a { background-position:-52px top;}
+.mvt_abb .pg3 a:hover { background-position:-52px -26px;}
+.mvt_abb .pg3 a.on { background-position:-52px -26px;}
+
+.mvt_al_bnr > a { position:absolute; bottom:15px; right:15px; z-index:10}
+
+.mvt_al_bnr .ui-Slider-Nav-List {display:block; position: absolute; top: auto; bottom: 15px; width:21px; height:21px; background:url(../images/al/btn_rtype_c.png) no-repeat;}
+.mvt_al_bnr .ui-Slider-Nav-List span {position: absolute; left: -9999em; text-indent: -9999em; overflow: hidden;}
+.mvt_al_bnr .ui-Slider-Nav-List-1 {left: 15px; background-position: 0 0;}
+.mvt_al_bnr .ui-Slider-Nav-List-1:hover,
+.mvt_al_bnr .ui-Slider-Nav-List-1.ui-on {background-position: 0 -26px;}
+.mvt_al_bnr .ui-Slider-Nav-List-2 {left: 42px; background-position: -26px 0;}
+.mvt_al_bnr .ui-Slider-Nav-List-2:hover,
+.mvt_al_bnr .ui-Slider-Nav-List-2.ui-on {background-position: -26px -26px;}
+.mvt_al_bnr .ui-Slider-Nav-List-3 {left: 69px; background-position: -52px 0;}
+.mvt_al_bnr .ui-Slider-Nav-List-3:hover,
+.mvt_al_bnr .ui-Slider-Nav-List-3.ui-on {background-position: -52px -26px;}
+.mvt_al_bnr .ui-Slider-Nav-List-4 {left: 96px; background-position: -78px 0;}
+.mvt_al_bnr .ui-Slider-Nav-List-4:hover,
+.mvt_al_bnr .ui-Slider-Nav-List-4.ui-on {background-position: -78px -26px;}
+.mvt_al_bnr .ui-Slider-Nav-List-5 {left: 123px; background-position: -104px 0;}
+.mvt_al_bnr .ui-Slider-Nav-List-5:hover,
+.mvt_al_bnr .ui-Slider-Nav-List-5.ui-on {background-position: -104px -26px;}
+.mvt_al_bnr .ui-slider-stop {display: block; width: 12px; height: 12px; background: url('../images/al/btn_stop_a.png') no-repeat 0 0;}
+.mvt_al_bnr .ui-slider-play {display: block; width: 12px; height: 12px; background: url('../images/al/btn_play_a.png') no-repeat 0 0;}
+.mvt_al_bnr .ui-slider-stop span,
+.mvt_al_bnr .ui-slider-play span {position: absolute; left: -9999em; text-indent: -9999em; overflow: hidden;}

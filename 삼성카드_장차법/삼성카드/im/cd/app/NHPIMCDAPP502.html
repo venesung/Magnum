@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+		
+<div id="wrap">
+		<p id="title">
+		<% if("M2".equals(SiteGubun)) { %>
+            <a href="javascript:movePage();"><img src="/images/cd/microSite/tit_samsung.png" alt="삼성카드 2" /></a>
+		<%}else{%>
+            <a href="javascript:movePage();"><img src="/images/cd/showroom_title.jpg" alt="삼성카드 갤러리" /></a>
+		<%}%>
+		</p>
+		<div  class="card-app-box">
+			<h1>${cardDetailMap.cardName}카드 신청하기</h1>
+			<div id="content-box" > 
+				<div id="content" > 
+					<ul id="flow-2" class="flow">
+						<li>실명인증 및 약관동의</li>
+						<li><strong>신청정보 입력</strong></li>
+						<li> 신청완료</li>
+					</ul>
+					 
+<!-- (GROUP)카드선택정보 START -->					
+					<div class="card-info">
+					<c:if test="${resultVo.needF01}">
+					<input type="hidden" id="f01" value="check" />
+						<h2 class="check-title"><img src="/images/cd/h2_card_2_1.gif" alt="카드 선택정보를 확인하세요" /></h2>
+						<div class="info"> 
+							<p class="txt-info check">표시는 필수입력사항입니다.
+							<c:if test="${resultVo.issueValid != 'Y'}">
+								<c:if test="${infoSaveYn == 'Y'}">
+									<!-- 고개유치개선 임시저장 정보 불러오기 버튼 -->
+                                    <a href="javascript:getTempInfo();"><img src="/images/cd/btn_save_temp.gif" border="0" alt="나의 임시저장정보 불러오기" /></a>
+									<!-- //고개유치개선 임시저장 정보 불러오기 버튼 -->
+								</c:if>
+							</c:if></p>
+							<div  class="table">
+								<table summary="카드이름과 회원구분으로 구성된 카드 선택정보 테이블입니다.">
+									<caption>카드이름과 회원구분</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="83%" /> 
+									</colgroup>
+									<tr>
+										<th><p class="check">카드이름</p></th>
+										<td>${cardDetailMap.cardName}</td>
+									</tr>
+									<tr>
+										<th><p class="check">회원구분</p></th>
+										<td>
+											<c:if test="${resultVo.issueValid == 'Y' && resultVo.webmember == 'Y'}">웹멤버</c:if>
+											<c:if test="${resultVo.issueValid == 'Y' && resultVo.webmember != 'Y'}">비웹멤버</c:if>
+											<c:if test="${resultVo.issueValid != 'Y'}">신규회원</c:if>
+											<input type="hidden" id="issueValid" name="issueValid" value="${resultVo.issueValid}" />
+											<input type="hidden" id="idenNo1" name="idenNo1" value="${resultVo.idenNo1}" />
+											<input type="hidden" id="idenNo2" name="idenNo2" value="${resultVo.idenNo2}" />
+										</td>
+									</tr> 
+								</table>
+							  </div>
+						</div>
+					</c:if>
+					</div> 
+<!-- (GROUP)카드선택정보 END -->	
+
+<!-- (GROUP)무이자가맹점 START -->
+					<!-- ######################################  -->
+					<!-- ######################################  -->
+					<!-- SELECT /* com.scard.hp.im.cd.app.NHPIMCDAPP001.selectIsNIChain */
+                            NI_CHAIN_YN
+                       FROM ITCKCARDDETTT WHERE CARD_CODE = :cardCode  -->
+                       <!-- ######################################  -->
+					<!-- ######################################  -->
+<!-- (GROUP)무이자가맹점 END -->	
+			
+
+<!-- (GROUP)브랜드 START -->			
+					<c:if test="${resultVo.needF04}">
+					<input type="hidden" id="f04" value="check" />
+					 <div class="card-info">
+						<h2><img src="/images/cd/h2_card_2_2.gif" alt="브랜드를 확인하세요" /></h2>
+						<div class="info"> 
+							<div  class="table">
+								<table summary="카드별 브랜드에 따른 정보 확인">
+									<caption>카드 브랜드선택</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="83%" /> 
+									</colgroup>
+									<tbody>
+								<c:if test="${resultVo.needCardLogo != 0}">
+									<tr>
+										<th><p class="check">브랜드 </p></th>
+										<td>
+											 <c:choose>
+												<c:when test="${resultVo.brand == '01'}">
+										    		국내<input type="hidden" name="cardLogo" id="cardLogo01" value="01" />
+										    	</c:when>
+										    	<c:when test="${resultVo.brand == '02'}">
+										    		마스터<input type="hidden" name="cardLogo" id="cardLogo01" value="02" />
+										    	</c:when>
+										    	<c:when test="${resultVo.brand == '03'}">
+										    		비자<input type="hidden" name="cardLogo" id="cardLogo01" value="03" />
+										    	</c:when>
+										    	<c:when test="${resultVo.brand == '04'}">
+										    		아멕스<input type="hidden" name="cardLogo" id="cardLogo01" value="04" />
+										    	</c:when>
+										    	<c:otherwise>
+										    		<c:if test="${empty cardDetailMap.cardLocal && cardDetailMap.cardLocal != 'N'}">
+										    			<input type="radio" name="cardLogo" id="cardLogo01" value="01" title="국내 선택" /> <label for="cardLogo01">국내</label>&nbsp;&nbsp;</c:if>
+													<c:if test="${empty cardDetailMap.cardMaster && cardDetailMap.cardMaster != 'N'}">
+														<input type="radio" name="cardLogo" id="cardLogo02" value="02" title="마스터 선택" /> <label for="cardLogo02">마스터</label>&nbsp;&nbsp;</c:if>
+													<c:if test="${empty cardDetailMap.cardVisa && cardDetailMap.cardVisa != 'N'}">
+														<input type="radio" name="cardLogo" id="cardLogo03" value="03" title="비자 선택" /> <label for="cardLogo03">>비자</label>&nbsp;&nbsp;</c:if>
+													<c:if test="${empty cardDetailMap.cardAmex && cardDetailMap.cardAmex != 'N'}">
+														<input type="radio" name="cardLogo" id="cardLogo04" value="04" title="아멕스 선택" /> <label for="cardLogo04">아멕스</label>&nbsp;&nbsp;</c:if>
+										    	</c:otherwise>
+											 </c:choose>
+										 </td>
+									</tr> 
+								</c:if>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div> 
+					</c:if>			
+<!-- (GROUP)브랜드 END -->	
+
+<!-- (GROUP)협회코드 START -->
+					<!-- ######################################  -->
+					<!-- ######### 직능연합삼성체크카드로 삭제처리 -->
+					<!-- SELECT /* com.scard.hp.im.cd.app.NHPIMCDAPP001.selectCardDetailByCardCode002 */
+                           CARD_APPINFO_CODE, CARD_APPINFO_VALUE, card_code
+                      FROM ITCKCARDAPPINFOTT
+                      where CARD_APPINFO_CODE = 'frsYn';  -->
+                       <!-- ######################################  -->
+					<!-- ######################################  -->
+
+<!-- (GROUP)협회코드 END -->				   
+	  
+<!-- (GROUP)개인기본정보 START -->					
+					<div class="card-info">
+					<c:if test="${resultVo.needF09}">
+					<input type="hidden" id="f09" value="check" />
+						<h2><img src="/images/cd/h2_card_2_6.gif" alt="개인 기본정보를 입력하세요" /></h2>
+						<div class="info"> 
+							
+							<div class="table table-input">
+								<table summary="성명(한글), 주민등록번호, 성명(영문), 본인확인방법, 발행일자, 이메일주소, 자택주소, 자택번호, 휴대전화번호, 공인인증확인 등 기본정보를 입력하는 게시판입니다" >
+								<caption>개인 기본정보 입력</caption>
+								 <colgroup>
+									<col width="17%" />
+									<col width="33%" /> 
+									<col width="17%" />
+									<col width="33%" />  
+								</colgroup> 
+								<tbody>
+									<c:if test="${resultVo.needCustomerName != 0 || resultVo.needIdenNo != 0}">
+									<tr>
+										<th scope="row">성명(한글)</th>
+										<td><strong class="bold">${resultVo.customerName}</strong></td>
+										<input type="hidden" name="customerName" title="성명" id="customerName" value="${resultVo.customerName}" />
+										<th scope="row">주민등록번호</th>
+										<td><strong class="bold">${resultVo.idenNo1}-*******</strong></td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needEnglishName != 0}">
+									<tr>
+										<th scope="row"><p class="check"><em>필수입력사항</em>성명(영문)</p></th>
+										<td colspan="3" >
+											<p class="fl">
+												<c:if test="${not empty resultVo.englishName1}">
+													<input type="text" title="Family Name" style="width:80px;ime-mode:inactive;text-align:left;" class="in-text" value="${resultVo.englishName1}"  id="englishName1" title="이름(영문)" name="englishName1" maxlength="17" onkeypress="if(!( (event.keyCode >= 0x61 && event.keyCode <= 0x7A) || (event.keyCode >= 0x41 && event.keyCode <= 0x5A) || event.keyCode == 0x20)) event.returnValue=false;" />
+												</c:if>
+												<c:if test="${empty resultVo.englishName1}">
+													<input type="text" title="Family Name" style="width:80px;ime-mode:inactive;text-align:left;" onfocus="input_mode(this);"  class="in-text" value="성(영문)" title="이름(영문)" id="englishName1" name="englishName1" maxlength="17" onkeypress="if(!( (event.keyCode >= 0x61 && event.keyCode <= 0x7A) || (event.keyCode >= 0x41 && event.keyCode <= 0x5A) || event.keyCode == 0x20)) event.returnValue=false;" />
+												</c:if>
+												<c:if test="${not empty resultVo.englishName2}">
+													<input type="text"  id="englishName2" name="englishName2" maxlength="13" title="Given Name" style="width:120px;ime-mode:inactive;text-align: left;" class="in-text" title="이름(영문)"  value="${resultVo.englishName2}"  onkeypress="if(!( (event.keyCode >= 0x61 && event.keyCode <= 0x7A) || (event.keyCode >= 0x41 && event.keyCode <= 0x5A) || event.keyCode == 0x20)) event.returnValue=false;" />
+												</c:if>
+												<c:if test="${empty resultVo.englishName2}">
+													<input type="text"  id="englishName2" name="englishName2" maxlength="13" title="Given Name" style="width:120px;ime-mode:inactive;text-align: left;" class="in-text" title="이름(영문)"  value="이름(영문)" onfocus="input_mode(this);"  onkeypress="if(!( (event.keyCode >= 0x61 && event.keyCode <= 0x7A) || (event.keyCode >= 0x41 && event.keyCode <= 0x5A) || event.keyCode == 0x20)) event.returnValue=false;" />
+												</c:if>
+										    </p>
+											<span class="eng-msg fl f11" >예) KIM SHINYOUNG <br />(기호 및 특수문자 등록 불가)</span>
+										</td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needCertificateGubun != 0}">
+										<c:if test="${resultVo.certificateYn != 'Y'}">
+										<tr>
+											<th scope="row"><p class="check"><em>필수입력사항</em>본인확인방법</p></th>
+											<td colspan="2">
+												 <label for="certificateGubun01"><input type="radio" title="주민등록번호" id="certificateGubun01" name="certificateGubun" onclick="changeCertificateGubun_502();" value="01" class="in-check" checked="checked" />&nbsp;주민등록번호</label>
+												 <label for="certificateGubun02"><input type="radio" title="운전면허증"  id="certificateGubun02" name="certificateGubun" onclick="changeCertificateGubun_502();" value="02" class="in-check" />&nbsp;운전면허증</label>
+											</td>
+											<td rowspan="2">
+												<img id="certificateGubun01Img" name="certificateGubun01Img" src="/images/cd/ex_photo_jumin.gif" alt="주민등록증 이미지 샘플" /><img src="/images/cd/ex_photo_car.gif" id="certificateGubun02Img" name="certificateGubun02Img" alt="운전면허증 이미지 샘플" style="display:none;" />
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><p class="check">&nbsp;발행일자</p></th>
+											<td colspan="2">
+												<span id="certificateDistView"><input type="text" class="in-text" align="left" value="${resultVo.certificateDate}" title="발행일자 입력" maxlength="8" id="certificateDate" name="certificateDate" onkeypress="checkTypes(this, 'NUMB');" /><br /><br /></span>
+											</td>
+										</tr>
+										</c:if>
+										<c:if test="${resultVo.certificateYn == 'Y'}">
+											<input type="hidden" name="certificateGubun" value="01" />
+											<input type="hidden" name="certificateDate" value="20110101" />
+										</c:if>
+									</c:if>
+									<c:if test="${resultVo.needEmail != 0}">
+									<tr>
+										<th scope="row"><p class="check"><em>필수입력사항</em>이메일주소</p></th>
+										<td colspan="3">
+											<span class="input_email">
+												<input type="text" title="이메일명" value="${resultVo.email}"  maxlength="30" id="email" name="email"  style="width:100px;" class="in-text" />&nbsp;@&nbsp;<input type="text" title="이메일공급자 직접입력"  name="email2" maxlength="19"  style="width:100px;"class="in-text" value="${resultVo.email2}" readonly="readonly" />
+												<select title="이메일공급자선택" onchange="changeEmailSelect(this);">
+													<c:if test="${not empty resultVo.email2}">
+														<option value="">직접입력</option>
+														</c:if>
+														<c:if test="${empty resultVo.email2}">
+														<option value="00">선택하세요</option>
+														</c:if>
+														<c:forEach var="result" items="${emailDomain}" varStatus="status">
+															<option value="${result.value}" <c:if test="${result.value == resultVo.email2}">selected="selected"</c:if>>${result.text}</option>
+														</c:forEach>
+														<c:if test="${empty resultVo.email2}">
+														<option value="">직접입력</option>
+													</c:if>
+												</select>
+											</span> 
+										</td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needHomeZipCode != 0}">
+									<tr>
+										<th scope="row"><p class="check"><em>필수입력사항</em>자택주소</p></th>
+										<td colspan="3">
+											<p class="input-address">
+												<input type="text" class="in-text ac"   style="width:80px;" value="${resultVo.homeZipCode1}" id="homeZipCode1" name="homeZipCode1" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="in-text ac"   style="width:80px;" value="${resultVo.homeZipCode2}" title="우편번호 뒷자리" id="homeZipCode2" name="homeZipCode2" readonly="readonly" />
+										    	<a href="javascript:openZipSearch( 'homeZipCode', 'homeZipSeq', 'homeAddrArea', 'homeAddrDist', '<%=newjusoYn %>');" class="btn btn_white" title="새창" id="label_person_zip"><span><img src="/images/cd/btn_post.gif" alt="우편번호 검색" /></span></a>
+											</p>											    	
+												<span class="detail"><input type="text" style="width:180px"  class="in-text" value="${resultVo.homeAddrArea}" title="자택주소 상세입력" id="homeAddrArea" name="homeAddrArea" readonly="readonly" />&nbsp;<input type="text" style="width:250px"class="in-text" value="${resultVo.homeAddrDist}" id="homeAddrDist" name="homeAddrDist" title="자택주소 상세입력2" readonly="readonly" /></span>
+												<input type="hidden" name="homeZipSeq" id="homeZipSeq" value="${resultVo.homeZipSeq}" />
+											
+										</td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needHomePhone != 0}">
+									<tr>
+										<th scope="row"><p class="check" for="homePhone1"><em>필수입력사항</em>자택번호</p></th>
+										<td colspan="3">
+											<span class="input_phone">
+												<select title="자택번호 국번 선택" id="homePhone1" name="homePhone1">
+													<option value="00">선택</option>
+													<c:forEach var="result" items="${telephoneAreaNumber}" varStatus="status">
+														<option value="${result.value}" <c:if test="${result.value == resultVo.homePhone1}">selected="selected"</c:if>>${result.text}</option>
+													</c:forEach>
+												</select>
+												<input type="text"  style="width:96px" class="in-text"  value="${resultVo.homePhone2}" title="자택전화번호 앞자리" id="homePhone2" name="homePhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.homePhone3);" />&nbsp;-&nbsp;<input type="text"  style="width:96px"  class="in-text"  value="${resultVo.homePhone3}" title="자택전화번호 뒷자리" id="homePhone3" name="homePhone3" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.homePhone2);" />
+											</span>
+										</td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needHandPhone != 0}">
+									<tr>
+										<th scope="row"><p class="check"><em>필수입력사항</em>휴대전화번호</p></th>
+										<td colspan="3">
+											<span class="input_phone">
+												<c:if test="${resultVo.needIsSmsVerified == 0}">
+												<select title="휴대전화번호 앞자리" id="handPhone1" name="handPhone1">
+													<option value="00">선택</option>
+													<c:forEach var="result" items="${cellphoneHeadNumber}" varStatus="status">
+														<option value="${result.value}" <c:if test="${result.value == resultVo.handPhone1}">selected="selected"</c:if>>${result.text}</option>
+													</c:forEach>
+												</select>
+												<input type="text"  style="width:96px" class="in-text" value="${resultVo.handPhone2}" title="휴대전화번호 가운데자리" id="handPhone2" name="handPhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.handPhone3);" />&nbsp;-&nbsp;<input type="text"  style="width:96px" class="in-text" value="${resultVo.handPhone3}" title="휴대전화번호 뒷자리" id="handPhone3" name="handPhone3" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.handPhone2);" maxlength="4" />
+												</c:if>
+												<c:if test="${resultVo.needIsSmsVerified != 0}">
+												<input type="hidden" name="isVerified" value="N" />
+												<input type="hidden" name="sms_certchk" value="0" />
+												<input type="text" style="width:96px" class="in-text"  value="" title="휴대전화번호 앞자리" id="handPhone1" name="handPhone1" maxlength="3" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+												<input type="text" style="width:96px" class="in-text" value="" title="휴대전화번호 가운데자리" id="handPhone2" name="handPhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.handPhone1);" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+												<input type="text" style="width:96px" class="in-text" value="" title="휴대전화번호 뒷자리" id="handPhone3" name="handPhone3" maxlength="4" onkeydown="checkLenB(this, certForm.handPhone2);" onkeypress="if(event.keyCode == 13) showMobileVerify();" onblur="checkTypesOnBlur(this, 'NUMB');" />
+												<a href="javascript:showMobileVerify();" id="showMobileVerifyBtn" class="btn btn_white" title="새창"><span>인증하기</span></a>
+												</c:if>
+											</span>
+										</td>
+									</tr>
+									</c:if>
+									<c:if test="${resultVo.needIsCertVerified != 0}">
+									<tr>
+										<th scope="row" ><p class="check" ><em>필수체크사항</em>공인인증확인</p></th>
+										<td colspan="3">
+											<span class="input_phone">
+                                                <a id="btnCertVerify" href="javascript:makeSign();"><img src="/images/cd/btn_paper_accreditation.gif" alt="공인인증으로 인증하기" /></a>
+												<iframe src="" name="verifyCertificationIframe" width="0" height="0"  frameborder="0" title="빈 프레임"></iframe>
+												<input type="hidden" id="isCertVerified" name="isCertVerified" value="${resultVo.isCertVerified}" />
+												<input type="hidden" name="plain" value="카드신청공인인증" />
+												<input type="hidden" name="signed_msg" value="" />
+												<input type="hidden" name="vidMsg" value="" />
+												<input type="hidden" name="ssno" value="" />
+												<input type="hidden" name="loadCnt" value="0" />
+												<input type="hidden" name="signGubun" value="" />
+											</span>
+										</td>
+									</tr>
+									</c:if>
+								</tbody>
+								</table>
+							</div>
+						</div>  
+					</c:if>								
+					</div>
+<!-- (GROUP)개인기본정보 END -->		
+
+<!-- (GROUP)AnyStyle START -->
+					<!-- ######################################  -->
+					<!-- ######### AnyStyle 카드 로직은 기존 홈페이지로  -->
+					<!-- ######################################  -->
+<!-- (GROUP)AnyStyle END -->			
+	
+<!-- (GROUP)직장정보(소득정보) START -->
+					<c:if test="${resultVo.needF10}">
+					<input type="hidden" id="f10" value="check" />
+					 <div class="card-info">
+						<h2><img src="/images/cd/h2_card_2_12.gif" alt="고객님의 소득정보를 입력하세요" /></h2>
+						<div class="info">  
+							
+							<p class="txt-info">소득이 있는 본인 또는 배우자 직장정보를 기재해 주시길 바랍니다.</p>
+							<div class="table table-input">
+								<table id="table-info" summary="고객님의 소득정보(구분, 연소득, 직장명, 직장주소, 부서, 직위, 전화번호)를 작성하실 수 있는 게시판입니다."  >
+									<caption>소득정보 입력 게시판</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="83%" />  
+									</colgroup> 
+									<tbody>
+									<c:if test="${resultVo.needIncomeInfoGubun != 0}">
+										<tr>
+											<th  scope="row"><p class="check">소득정보 구분</p></th>
+											<td >
+												<label for="incomeInfoGubun01">
+												<input type="radio" class="in-check" id="incomeInfoGubun01" name="incomeInfoGubun" title="소득정보 구분 본인" value="1" checked="checked" onclick="document.getElementById('spouseNameInfo').style.display = 'none'; $('#table-info tr:last-child').addClass('end');" /> 본인</label><label for="incomeInfoGubun02"><input type="radio" class="in-check" id="incomeInfoGubun02" name="incomeInfoGubun" title="소득정보 구분 배우자"  value="2" onclick="document.getElementById('spouseNameInfo').style.display = 'block';$('#table-info tr:last-child').removeClass('end');" /> 배우자</label>
+												<span class="opt-msg">(배우자 선택시 배우자 직장정보를 기재해 주십시오.)</span>
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needYearIncome != 0}">
+										<tr>
+											<th  scope="row"><p class="check">연소득</p></th>
+											<td >
+												<input type="text" class="in-text" value="" id="yearIncome" name="yearIncome" maxlength="6" title="연소득 직접입력" onkeypress="checkTypes(this, 'NUMB');" /> 만원
+												<span class="opt-msg">기재하신 연소득 및 요청한도 이내에서 한도가 부여됩니다.</span>
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needCompanyName != 0}">
+										<tr>
+											<th  scope="row"><p class="check">직장명</p></th>
+											<td >
+												<input type="text" class="in-text" id="companyName" name="companyName" title="직장명 입력" maxlength="15" value="${resultVo.companyName}" />
+												<span class="fc-3 f11">배우자 선택시 배우자 직장정보를 기재해 주십시오.</span>
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needCompanyZipCode != 0}">
+										<tr>
+											<th  scope="row"><p class="check">직장주소</p></th>
+											<td >
+												<p class="input-address">
+													<!--label for="label_wp_zip"-->
+													<input type="text" class="in-text"  title="우편번호 앞자리"  style="width:80px;" id="companyZipCode1" name="companyZipCode1" readonly="readonly"  value="${resultVo.companyZipCode1}" />&nbsp;-&nbsp;<input type="text" class="in-text"  style="width:80px;" title="우편번호 뒷자리" id="companyZipCode2" name="companyZipCode2" readonly="readonly"  value="${resultVo.companyZipCode2}" />
+													<a href="javascript:openZipSearch( 'companyZipCode', 'companyZipSeq', 'companyAddrArea', 'companyAddrDist', '<%=newjusoYn %>');" title="새창" id="label_wp_zip">
+													<img alt="우편번호 검색" src="/images/cd/btn_post.gif" /></a><!--/label-->
+												 </p>
+												 <input type="text"  class="in-text" style="width:180px;"title="직장주소 상세입력" id="companyAddrArea" name="companyAddrArea" readonly="readonly"  value="${resultVo.companyAddrArea}" />
+												 <input type="text"  class="in-text" style="width:250px;" id="companyAddrDist" name="companyAddrDist" title="직장주소 상세입력2" readonly="readonly"  value="${resultVo.companyAddrDist}" />
+											   	 <input type="hidden" name="companyZipSeq" id="companyZipSeq" value="${resultVo.companyZipSeq}" />
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needDeptName != 0}">
+										<tr>
+											<th  scope="row"><p class="check">부서</p></th>
+											<td >
+												<input type="text" class="in-text" id="deptName"  name="deptName"  value="${resultVo.deptName}" maxlength="15" title="부서명 입력" />
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needGrade != 0}">
+										<tr>
+											<th  scope="row"><p class="check">직위</p></th>
+											<td >
+												<input type="text" class="in-text" id="grade" name="grade"  value="${resultVo.grade}" maxlength="10" title="직위 입력" />
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needCompanyPhone != 0}">
+										<tr class="end">
+											<th  scope="row"><p class="check">전화번호</p></th>
+											<td  colspan="3">
+												<select id="label_wpphone" title="전화번호 국번 선택" id="companyPhone1" name="companyPhone1">
+												<span class="input_phone">
+													<option value="00">선택</option>
+													<c:forEach var="result" items="${telephoneAreaNumber}" varStatus="status">
+														<option value="${result.value}" <c:if test="${result.value == resultVo.companyPhone1}">selected="selected"</c:if> >${result.text}</option>
+													</c:forEach>
+												</select>
+													<input type="text" class="in-text" style="width:96px" title="전화번호 가운데자리" id="companyPhone2" name="companyPhone2" value="${resultVo.companyPhone2}" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.companyPhone3);" />&nbsp;-&nbsp;
+													<input type="text" class="in-text" style="width:96px"  title="전화번호 뒷자리" id="companyPhone3" name="companyPhone3" maxlength="4"  value="${resultVo.companyPhone3}" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.companyPhone2);" />
+												</span>
+											</td>
+										</tr>
+									</c:if>
+									</tbody>
+								</table>  
+								
+								 
+								<div id="spouseNameInfo" style="display:none;">   
+									<table summary="배우자 정보(배우자 성명, 배우자 주민등록번호) 입력 게시판입니다."  >
+										<caption>배우자 정보 입력 게시판</caption>
+										<colgroup>
+											<col width="17%" />
+											<col width="83%" />  
+										</colgroup> 
+										<tbody>
+										<c:if test="${resultVo.needSpouseName != 0}">
+											<tr>
+												<th  scope="row"><p class="check">배우자 성명</p></th>
+												<td class="cell_l">
+													<input type="text" class="in-text" id="spouseName" name="spouseName" maxlength="8" onkeypress="checkTypes(this, 'HCHR');"  title="배우자 성명" />
+													<span class="opt-msg">※ 카드심사시 배우자분께 확인연락을 드립니다.</span>
+												</td>
+											</tr>
+										</c:if>
+										<c:if test="${resultVo.needSpouseIdenNo != 0}">
+											<tr>
+												<th  scope="row"><p class="check">배우자<br />주민등록번호</p></th>
+												<td class="cell_l">
+													<input type="text" class="in-text" value="" maxlength="6" title="주민등록번호 앞자리" id="spouseIdenNo1" name="spouseIdenNo1" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, certForm.spouseIdenNo2);" />&nbsp;-&nbsp;<input type="password" class="in-text" value="" maxlength="7" title="주민등록번호 뒷자리" id="spouseIdenNo2" name="spouseIdenNo2" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.spouseIdenNo1);" />
+												</td>
+											</tr>
+										</c:if>
+										</tbody>
+									</table>
+								</div>   
+								                
+							</div>
+							<p class="f11 fc-3 mt-10">당사 심사기준에 따라 일부 회원님께 필요 서류를 요청드릴 수 있습니다.</p>
+						</div>
+					 </div>  
+					 </c:if> 
+<!-- (GROUP)직장정보(소득정보) END -->						
+		<c:if test="${resultVo.needF06}">
+					<input type="hidden" id="f06" value="check" />	
+					 <div class="card-info">
+						<h2><img src="/images/cd/h2_card_2_7.gif" alt="카드 발급정보를 입력하세요" /></h2>
+						<div class="info"> 
+							 
+							<div class="table table-input">
+								<table summary="카드 발급정보(희망한도, 신청구분, 결제일, 카드수령지, 우편물 수령지, 이용대금명세서)를 입력하는 게시판입니다." class="dtable02">
+									<caption>카드 발급정보 입력 게시판</caption>
+									<tbody>
+								<c:if test="${resultVo.needRequestLimit != 0}">										
+									<tr>
+										<th  scope="row"><p class="check">희망한도</p></th>
+										<td >
+											<span class="income_year">
+											<label for="radio_requestLimit1"><input type="radio" class="in-check" id="radio_requestLimit1" name="radio_requestLimit" onclick="changeRequestLimit(); document.getElementById('requestLimit').value = this.value;" title="300만원" <c:if test="${resultVo.requestLimit == 300  || empty resultVo.requestLimit}">checked="checked"</c:if>  value="300" /> 300만원</label>
+											<label for="radio_requestLimit2"><input type="radio" class="in-check" id="radio_requestLimit2" name="radio_requestLimit" onclick="changeRequestLimit(); document.getElementById('requestLimit').value = this.value;" title="500만원"  <c:if test="${resultVo.requestLimit == 500}">checked="checked"</c:if> value="500" /> 500만원</label>
+											<label for="radio_requestLimit3"><input type="radio" class="in-check" id="radio_requestLimit3" name="radio_requestLimit" onclick="changeRequestLimit(); document.getElementById('requestLimit').value = this.value;" title="1,000만원" <c:if test="${resultVo.requestLimit == 1000}">checked="checked"</c:if> value="1000" /> 1,000만원</label>
+											<label for="radio_requestLimit4"><input type="radio" class="in-check" id="radio_requestLimit4" name="radio_requestLimit" onclick="changeRequestLimit(); document.getElementById('requestLimit').value = this.value;" title="2,000만원" <c:if test="${resultVo.requestLimit == 2000}">checked="checked"</c:if> value="2000" /> 2,000만원</label>
+											<label for="radio_requestLimit5" class="last_label"><input type="radio" class="chk" id="radio_requestLimit5" name="radio_requestLimit" onclick="changeRequestLimit(); document.getElementById('requestLimit').value = document.getElementById('text_requestLimit').value;" title="연소득 직접입력" /> 직접입력</label>
+											<input type="text" class="in-text" style="width:60px" id="text_requestLimit" name="text_requestLimit" readonly="readonly" value="" onkeyup="javascript:document.getElementById('requestLimit').value = this.value;" maxlength="6" title="직접입력" /> 만원</span>
+											<input type="hidden" id="requestLimit" name="requestLimit" value="300" />
+										</td>
+									</tr>
+								</c:if>
+								
+								<c:if test="${resultVo.needNewGubun1 != 0}">
+	
+	
+									<tr>
+										<th  scope="row"><p class="check">신청구분</p></th>
+										<td>
+											<c:if test="${resultVo.issueValid != 'Y'}">신규신청
+												<span class="ml10 t_desc03">삼성카드를 처음 신청합니다.</span>
+												<input type="radio" class="chk" value="01" id="newGubun11" name="newGubun1" style="visibility:hidden" title="신규추가" checked="checked" />
+											</c:if>
+											<c:if test="${resultVo.issueValid == 'Y'}">
+												<c:if test="${resultVo.cardSelectGubun == '1'}">
+													<label for="newGubun11"><input type="radio" class="chk" value="02" id="newGubun11" name="newGubun1" title="추가" checked="checked" onclick="pop_save_card();" /> 추가</label>
+													<br /><span class="opt-msg">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다.</span>
+												</c:if>
+												<c:if test="${resultVo.cardSelectGubun == '3' || resultVo.cardSelectGubun == '4' }">
+													<c:if test="${resultVo.anystyleCardChange != 'Y'}" >
+														<label for="newGubun11"><input type="radio" class="chk" value="02" id="newGubun11" name="newGubun1" title="추가" onclick="if(document.getElementById('newGubun12') != null) document.getElementById('changedCard').disabled = true;pop_save_card()" /> 추가</label>
+														</c:if>
+														<c:if test="${resultVo.hipassYn != 'Y'}">
+															<c:if test="${resultVo.anystyleCardChange != 'Y'}" >
+															<label for="newGubun12"><input type="radio" class="chk" value="03" id="newGubun12" name="newGubun1" title="교체" onclick="document.getElementById('changedCard').disabled = false;pop_save_card()" /> 교체</label>
+												    			<select title="교체대상카드선택" name="changedCard" id="changedCard" disabled="disabled"  onchange="document.getElementById('selectedCard').value = this.value;">
+																	<option value="00">교체대상카드선택</option>
+																	<c:forEach var="result" items="${changeCardList}" varStatus="status">
+																	<option value="${result.cardNo}">${result.decCardName}&nbsp;${result.cardName}</option>
+																	</c:forEach>
+																</select>
+														</c:if>
+														<c:if test="${resultVo.anystyleCardChange == 'Y'}" >
+															<label for="newGubun12"><input type="radio" class="chk" value="03" id="newGubun12" name="newGubun1" title="교체" onclick="pop_save_card()"  checked="checked" /> 교체</label>
+											    				<select title="교체대상카드선택" name="changedCard" id="changedCard"  onchange="document.getElementById('selectedCard').value = this.value;">
+																	<c:forEach var="result" items="${changeCardList}" varStatus="status">
+																	<c:if test="${result.cardCode == resultVo.anystyleCardChangeCode}">
+																		<option value="${result.cardNo}">${result.decCardName}&nbsp;${result.cardName}</option>
+																		<script type="text/javascript">
+																			document.certForm.selectedCard.value = "${result.cardNo}" ;
+																		</script>
+																	</c:if>
+																	</c:forEach>
+																</select>
+																
+														</c:if>	
+													</c:if>
+									    			<br /><span class="opt-msg">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다.</span>
+												</c:if>
+												<c:if test="${resultVo.cardSelectGubun == '2'}">
+													<label for="newGubun11"><input type="radio" class="chk" value="02" id="newGubun11" name="newGubun1" title="추가"  onclick="if(document.getElementById('newGubun12') != null) document.getElementById('changedCard').disabled = true;pop_save_card()" /> 추가</label>
+													<label for="newGubun12"><input type="radio" class="chk" value="03" id="newGubun12" name="newGubun1" title="교체"  onclick="document.getElementById('changedCard').disabled = false;pop_save_card()" /> 교체</label>
+										    			<select title="교체대상카드선택" name="changedCard" id="changedCard" disabled="disabled" onchange="document.getElementById('selectedCard').value = this.value;">
+															<option value="00">교체대상카드선택</option>
+															<c:forEach var="result" items="${hubulChangeCardList}" varStatus="status">
+															<option value="${result.cardNo}">${result.decCardName}&nbsp;${result.cardName}</option>
+															</c:forEach>
+														</select>
+										    			<br /><span class="opt-msg">카드 추가 발급 시에도, 한도는 기존 카드한도 내에서 함께 이용 가능합니다.</span>
+												</c:if>
+												<input type="hidden" name="selectedCard" id="selectedCard" value="00" />
+											</c:if>
+										</td>
+									</tr>
+	 							</c:if>
+	 
+	 
+	 
+	 							<c:if test="${resultVo.needSettlementDay != 0}">
+									<tr>
+										<th  scope="row"><p class="check">결제일</p></th>
+										<td >
+											<c:choose>
+										    	<c:when test="${not empty cardDetailMap.checkYn && cardDetailMap.checkYn == 'Y'}">
+										    		25일<input type="hidden" id="settlementDay" name="settlementDay" value="25" />
+										    	</c:when>
+										    	<c:otherwise>
+										    	<c:if test="${not empty resultVo.settlementDay}">
+										    		<c:if test="${resultVo.issueValid == 'Y'}">
+														${resultVo.settlementDay}일<input type="hidden" id="settlementDay" name="settlementDay" value="${resultVo.settlementDay}" />
+													</c:if>
+													<c:if test="${resultVo.issueValid != 'Y'}">
+													<select title="결제일 선택" id="settlementDay" name="settlementDay">
+														<option value="00">선택</option>
+														<option value="01" <c:if test="${resultVo.settlementDay == 01}">selected="selected"</c:if>>1 일</option>
+														<option value="05" <c:if test="${resultVo.settlementDay == 05}">selected="selected"</c:if>>5 일</option>
+														<option value="10" <c:if test="${resultVo.settlementDay == 10}">selected="selected"</c:if>>10일</option>
+														<option value="11" <c:if test="${resultVo.settlementDay == 11}">selected="selected"</c:if>>11일</option>
+														<option value="12" <c:if test="${resultVo.settlementDay == 12}">selected="selected"</c:if>>12일</option>
+														<option value="14" <c:if test="${resultVo.settlementDay == 14}">selected="selected"</c:if>>14일</option>
+														<option value="15" <c:if test="${resultVo.settlementDay == 15}">selected="selected"</c:if>>15일</option>
+														<option value="18" <c:if test="${resultVo.settlementDay == 18}">selected="selected"</c:if>>18일</option>
+														<option value="21" <c:if test="${resultVo.settlementDay == 21}">selected="selected"</c:if>>21일</option>
+														<option value="22" <c:if test="${resultVo.settlementDay == 22}">selected="selected"</c:if>>22일</option>
+														<option value="24" <c:if test="${resultVo.settlementDay == 24}">selected="selected"</c:if>>24일</option>
+														<option value="25" <c:if test="${resultVo.settlementDay == 25}">selected="selected"</c:if>>25일</option>
+														<option value="26" <c:if test="${resultVo.settlementDay == 26}">selected="selected"</c:if>>26일</option>
+													</select>
+													</c:if>
+												</c:if>
+												<c:if test="${empty resultVo.settlementDay}">										
+													<select title="결제일 선택" id="settlementDay" name="settlementDay">
+														<option value="00">선택</option>
+														<option value="01" <c:if test="${resultVo.settlementDay == 01}">selected="selected"</c:if>>1 일</option>
+														<option value="05" <c:if test="${resultVo.settlementDay == 05}">selected="selected"</c:if>>5 일</option>
+														<option value="10" <c:if test="${resultVo.settlementDay == 10}">selected="selected"</c:if>>10일</option>
+														<option value="11" <c:if test="${resultVo.settlementDay == 11}">selected="selected"</c:if>>11일</option>
+														<option value="12" <c:if test="${resultVo.settlementDay == 12}">selected="selected"</c:if>>12일</option>
+														<option value="14" <c:if test="${resultVo.settlementDay == 14}">selected="selected"</c:if>>14일</option>
+														<option value="15" <c:if test="${resultVo.settlementDay == 15}">selected="selected"</c:if>>15일</option>
+														<option value="18" <c:if test="${resultVo.settlementDay == 18}">selected="selected"</c:if>>18일</option>
+														<option value="21" <c:if test="${resultVo.settlementDay == 21}">selected="selected"</c:if>>21일</option>
+														<option value="22" <c:if test="${resultVo.settlementDay == 22}">selected="selected"</c:if>>22일</option>
+														<option value="24" <c:if test="${resultVo.settlementDay == 24}">selected="selected"</c:if>>24일</option>
+														<option value="25" <c:if test="${resultVo.settlementDay == 25}">selected="selected"</c:if>>25일</option>
+														<option value="26" <c:if test="${resultVo.settlementDay == 26}">selected="selected"</c:if>>26일</option>
+													</select>
+												</c:if>
+											  	</c:otherwise>
+										    </c:choose>
+							    			<span class="opt-msg">보유카드수와 상관없이 결제일과 결제계좌는 본인카드 및 가족카드 통합 적용됩니다.</span><!-- 100415 -->
+										</td>
+									</tr>
+								</c:if>
+								<c:if test="${resultVo.needCardGetGubun != 0}">
+									<tr>
+										<th  scope="row"><p class="check">카드수령지</p></th>
+										<td >
+											<label for="cardGetGubun01"><input type="radio" class="in-check" id="cardGetGubun01" name="cardGetGubun" title="카드수령지 직장" <c:if test="${resultVo.cardGetGubun == 001}">checked="checked"</c:if> value="001" /> 직장</label>
+											<label for="cardGetGubun02"><input type="radio" class="in-check" id="cardGetGubun02" name="cardGetGubun" title="카드수령지 자택" <c:if test="${resultVo.cardGetGubun != 001}">checked="checked"</c:if> value="002" /> 자택</label><span class="opt-msg">본인이 직접 수령 가능하신 수령지를 선택해 주십시오.</span>
+										</td>
+									</tr>
+									<tr>
+										<th  scope="row" ><p class="check">우편물 수령지</p></th>
+										<td >
+											<label for="billGetGubun01"><input type="radio"  class="in-check"  title="우편물 수령지 직장"  id="billGetGubun01" name="billGetGubun" <c:if test="${resultVo.billGetGubun == 001}">checked="checked"</c:if>  value="001" /> 직장</label>
+											<label for="billGetGubun02"><input type="radio" title="우편물 수령지 자택"  id="billGetGubun02" name="billGetGubun"  class="in-check"  <c:if test="${resultVo.billGetGubun != 001}">checked="checked"</c:if> checked="checked" value="002" /> 자택</label>
+										</td>
+									</tr>
+								</c:if>
+								<c:if test="${resultVo.needBillGetGubun != 0}">
+									<tr>
+										<th  scope="row" ><p  class="check" style="display:block">이용대금<br />명세서</p></th>
+										<td >
+											<c:if test="${resultVo.needEmailBillGubun != 0}">
+											<label for="emailBillGubun01"><input type="radio" class="in-check" id="emailBillGubun01" name="emailBillGubun" title="이용대금 명세서 이메일 수령" <c:if test="${resultVo.emailBillGubun != 1}">checked="checked"</c:if>  value="2" /> 이메일 수령</label>
+											<label for="emailBillGubun02"><input type="radio" class="in-check" id="emailBillGubun02" name="emailBillGubun" title="이용대금 명세서 우편 수령"   <c:if test="${resultVo.emailBillGubun == 1}">checked="checked"</c:if>  value="1" /> 우편 수령</label><span class="opt-msg">이메일 선택시 매월 푸짐한 경품의 행운이 있습니다.</span>
+											</c:if>
+										</td>
+									</tr>
+								</c:if>	
+								<c:if test="${resultVo.needEasyJoinYn != 0}">
+									<!--
+									<tr>
+										<th  scope="row"><label    >웹멤버 간편 <br />등록신청</label></th>
+										<td >
+											<label for="label_webcheck"><input type="checkbox" class="in-check" id="easyJoinYn" name="easyJoinYn" value="Y" title="웹멤버 간편 등록신청" /> 웹간편등록</label>
+											<p class="mt-5 opt-msg">추후 삼성카드 웹멤버 가입 시 보다 간편한 등록공지를 이용하실 수 있으며, 추가 혜택도 제공됩니다.</p>
+										</td>
+									</tr>
+									-->
+								</c:if>	
+									</tbody>
+								</table>    
+							</div>
+						</div>
+					</div>   
+				</c:if>  
+				<!-- (GROUP)자동이체정보 START -->					  
+				<c:if test="${resultVo.needF08}">
+					<input type="hidden" id="f08" value="check" />	 
+					<div class="card-info">
+						<h2><img src="/images/cd/h2_card_2_20.gif" alt="자동이체 정보를 입력하세요" /></h2>
+						<div class="info">
+							
+							<div class="table table-input">
+								<table summary="자동이체 정보(은행, 계좌번호)를 입력할 수 있는 게시판입니다." class="dtable02">
+									<caption>자동이체 정보 입력</caption>
+									<colgroup>
+										<col width="17%" />
+										<col width="83%" />  
+									</colgroup>                                  
+									<tbody>
+									<c:if test="${resultVo.needBankCode != 0}">
+										<tr>
+											<th scope="row"><p class="check">은행</p></th>
+											<td>
+												<c:if test="${not empty cardDetailMap.checkBankCode && not empty cardDetailMap.checkBankName}">
+													${cardDetailMap.checkBankName}
+													<input type="hidden" id="bankCode" name="bankCode" value="${cardDetailMap.checkBankCode}" />
+													<input type="hidden" id="bankName" name="bankName" value="${cardDetailMap.checkBankName}" />
+												</c:if>
+												<c:if test="${empty cardDetailMap.checkBankCode || empty cardDetailMap.checkBankName}">
+													<p class="fl">
+														<select id="bankCode" name="bankCode" style="width:200px;"  onchange="changeBankCode(this);" title="자동이체 시킬 은행 선택">
+															<option value="00">선택</option>
+															<c:forEach var="result" items="${bankList}" varStatus="status">
+																<option value="${result.bankCode}" <c:if test="${result.bankCode == resultVo.bankCode}">selected="selected"</c:if>>${result.bankName}</option>
+															</c:forEach>
+														</select>
+													</p>
+													<input type="hidden" id="bankName" name="bankName" value="" />
+													<span class="eng-msg fl f11">보유 카드수와 상관없이 결제일과<br />결제계좌는 단일 적용됩니다.</span>
+													<c:if test="${not empty cardDetailMap.checkYn && cardDetailMap.checkYn == 'Y'}">
+													<br /><span class="eng-msg fl f11">단, 해당 결제은행에 한해서 발급가능합니다(가상계좌 신청 불가).</span>
+													</c:if>
+												</c:if>
+											</td>
+										</tr>
+									</c:if>
+									<c:if test="${resultVo.needAccountNo != 0}">
+										<tr>
+											<th scope="row"><p class="check">계좌번호</p></th>
+											<td>
+												<p class="fl">
+													<c:if test="${not empty cardDetailMap.checkBankCode && not empty cardDetailMap.checkBankName}">
+														<input type="text" class="in-text" id="accountNo" name="accountNo" maxlength="32" style="width:193px;" onkeypress="checkTypes(this, 'SSN');" value="<c:if test="${cardDetailMap.checkBankCode == resultVo.bankCode}">${resultVo.accountNo}</c:if>" title="계좌번호" />
+													</c:if>
+													<c:if test="${empty cardDetailMap.checkBankCode || empty cardDetailMap.checkBankName}">
+														<input type="text" class="in-text" id="accountNo" name="accountNo" maxlength="32" style="width:193px;" onkeypress="checkTypes(this, 'SSN');" value="${resultVo.accountNo}" title="계좌번호" />
+													</c:if>
+												</p>
+												<p class="eng-msg fl f11">반드시 실명인증된 본인 통장계좌번호를<br /> 정확히 기입해주세요. </p>
+												<input type="hidden" id="depositRelation" name="depositRelation" value="01" /> 
+											</td>
+										</tr>
+									</c:if>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>                 
+				</c:if> 
+				<!-- (GROUP)S포인트 카드 START -->
+					<c:if test="${cardDetailMap.sTotalPointYn =='Y'}">
+						<div class="card-info"> 
+						<h2><img src="/images/cd/h2_card_agree.gif" alt="세이브서비스 해지에 동의하세요" /></h2>
+						<div class="info">  
+							<div class="agree-box" id="save-info">
+								 <strong>세이브 자동해지 동의 안내</strong>
+								 <p>
+									"S class" 카드신청시, 기존에 세이브서비스(세이브,굿포인트,선포인트, <br />
+									수퍼 S 약정 등)을 이용하고 계시다면, 미상환포인트는 일괄 청구됩니다.
+								 </p>
+								 <div class="agree">
+									<label for="label_agr_private1"><input type="radio" class="in-check" id="label_agr_private1" name="sTotalPoint_Agree"  onclick="rad_sTotalPoint_aggYn('Y')" title="동의 선택" /><strong>동의</strong></label>
+									<label for="label_agr_private2"><input type="radio" class="in-check" id="label_agr_private2"  name="sTotalPoint_Agree" onclick="rad_sTotalPoint_aggYn('N')" title="동의안함 선택" />동의안함</label>
+								</div>
+							</div>  
+						</div>	 
+						<input type="hidden" name="sTotalPointUseYn" value="" />
+					</div>   
+					</c:if>
+				<!-- (GROUP)S포인트 카드 End -->
+					<c:if test="${resultVo.issueValid != 'Y' && cardDetailMap.checkYn != 'Y' }">
+						<div class="card-info">
+		                	<h2><img src="/images/cd/h2_card_2_21.gif" alt="카드론 이용동의를 확인하세요" /></h2>
+		                    <div class="info"> 
+		                        <div class="table table-input">
+									<table summary="카드론 이용여부에 관해 동의하실 수 있습니다." class="dtable02">
+		                                <caption>카드론 이용동의</caption>
+										<colgroup>
+		                                    <col width="17%" />
+		                                    <col width="83%" />  
+		                                </colgroup> 
+		                                <tbody>
+		                                <tr>
+		                                    <th  scope="row">카드론<br />이용여부</th>
+		                                    <td bgcolor="white">
+		                                       <P class="opt-msg">카드론 이용에 미리 동의한 회원에 한하여 당사가 정하는 금액 범위 내에서<br />카드론을 신청·이용할 수 있습니다.</P>
+											   <P style="PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 10px" class=opt-msg>카드론 이용에 동의하지 않은 회원이 <span>향후 카드론을 이용하려면 별도로<br />영업점 방문, 법정신분증 사본 제출등의 절차를 거쳐</span> 카드론 이용에 동의하여야 합니다.</P>	
+											   <label for="cardLoanYn"><input type="checkbox" class="chk" id="cardLoanYn" name="cardLoanYn" title="동의"  value="Y" /> 동의합니다.</label>
+		                                    </td>
+		                                </tr>
+		                                </tbody>
+		                        	</table>    
+		                        </div>
+		                    </div>
+		                </div>               
+					</c:if>	
+								
+<!-- (GROUP)자동이체정보 END -->
+<!-- (GROUP)기타안내 START -->
+	<!-- ##################################  -->
+	<!-- 고객님 자녀를 무료보험 삭제  -->
+	<!-- 가족카드추가 삭제  -->
+	<!-- 승용차요일제 삭제  -->
+	<!-- 유류세 환급정보 삭제  -->
+	<!-- 후불하이패스 삭제  -->
+	<!-- 코레일멤버쉽 삭제  -->
+	<!-- 슈퍼S카드 삭제  -->
+	<!-- 추천인정보 삭제  -->
+	<!-- ##################################  -->
+
+<!-- (GROUP)기타안내 END -->
+	
+					<div id="btn-bottom">
+						<a href="javascript:apply_total_validation()"><img src="/images/cd/btn_ok.gif"   alt="확인" /></a>
+						<a href="javascript:movePage();" class="cancel"><img src="/images/cd/btn_cancel.gif"   alt="취소" /></a>
+					</div>
+				</div>
+				<!-- e: content -->  
+			</div>
+			
+		</div>
+		<p id="footer">
+		<% if("M2".equals(SiteGubun)) {      %>
+			<img src="/images/cd/microSite/txt_copyright.png"  alt="Copyright ⓒ 2013 SAMSUNGCARD CO.,Ltd. All Rights Reserved." />
+			<img src="/images/cd/microSite/logo_samsungCard.png" class="png24" style="margin:3px 9px 0 0;" alt="삼성카드" /><img src="/images/cd/microSite/logo_samsung.png" class="png24" alt="samsung" />
+		<%}else{%>
+			<img src="/images/cd/showroom_footer.jpg"  alt="Copyright (c) 2013 SAMSUNGCARD Corp. All Rights Reserved." />
+		<%}%>
+		</p>
+	</div>
+			
+</form>
+<iframe src="" name="ifrm" width="0" height="0"  frameborder="0" title="빈 프레임"></iframe>    	
+	<form name="xecure"><input type="hidden" name="p" /></form>
+    <!--nProtect 키보드보안 적용여부 시작--><!-- URL 감시 기능 없음.매 페이지에 들어가야 함. -->
+    <script type="text/javascript" src="http://www.samsungcard.com/keycrypt/npkcx.js"></script>
+    <!--nProtect 키보드보안 적용여부 끝-->
+
+<%@ include file="/WEB-INF/jsp/common/cardapp_footer.jsp" %>

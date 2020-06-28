@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/cs/h1_question_contact.png" alt="해외 이용 시 궁금한 사항을 문의 하세요 " /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/cs/h2_faq_foreign_01.png" alt="문의하시기 전에 확인해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<ol class="list_no01">
+			<li><p>영수증, 주문서 및 신청서 등의 자료는 FAX로 보내주시기 바랍니다.</p></li>
+			<li><p>해외 매출담당 FAX : 02-2172-7188 </p></li>
+		</ol>
+	</div>
+</div>
+
+
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/cs/h2_faq_foreign_02.png" alt="해외 이용문의 내용을 작성하세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<div class="fill_joinin">
+	<div class="tb_exp clfix"><span class="fl_left">&nbsp;</span> </div>
+	<form id="registForm" name="registForm">
+
+<table class="dtable02 mt10" summary="이름, 전화번호, 휴대전화, 이메일주소, 체류국가, 체류기간, 제목, 내용 등 해외 이용문의를 작성하실 수 있습니다.">
+	<caption>해외 이용문의 내용 작성</caption>
+	<colgroup>
+		<col width="17%" />
+		<col width="83%" />
+	</colgroup>
+	<tbody>
+	   	<tr>
+			<th scope="row"><p>이름</p></th>
+			<td class="cell_app"><!-- 20130411 웹접근성(장차법)  onFocus="this.blur()"  제거 -->
+				<span class="input_id"><input type="text" class="txt" name="name" value="" title="이름" id="name" /></span>
+			</td>
+		</tr>
+        <tr>
+			<th scope="row" class="cell_app02"><p>전화번호</p></th>
+			<td class="cell_app">
+				<span class="input_phone">
+				<select	title="전화번호 앞자리 선택" id="tel01" name="tel01">
+					<option value="">선택</option>
+				</select>
+				<input type="text" id="tel02" name="tel02" class="txt" value="" title="전화번호 가운데자리" maxlength="4" onkeypress='onlyNumber();' style='ime-mode:disabled' />&nbsp;-&nbsp;
+				<input type="text" id="tel03" name="tel03" class="txt" value="" title="전화번호 뒷자리" maxlength="4" onkeypress='onlyNumber();' style='ime-mode:disabled' />
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>휴대전화</p></th>
+			<td class="cell_app">
+				<span class="input_phone">
+					<select	title="휴대전화번호 앞자리 선택" id="phone01" name="phone01">
+						<option value="">선택</option>
+					</select>
+					<input type="text" id="phone02" name="phone02" class="txt" value="" title="휴대전화 가운데자리" maxlength="4" onkeypress='onlyNumber();' style='ime-mode:disabled' />&nbsp;-&nbsp;
+					<input type="text" id="phone03" name="phone03" class="txt" value="" title="휴대전화 뒷자리" maxlength="4" onkeypress='onlyNumber();' style='ime-mode:disabled' />
+				</span>
+			</td>
+		</tr>
+        <tr>
+			<th scope="row" class="cell_app02"><p class="">이메일주소</p></th>
+			<td class="cell_app">
+				<span class="input_email">
+					<input type="text" class="txt" value="" title="이메일명" id="email01" name="email01" />&nbsp;@&nbsp;
+					<input type="text" class="txt" value="" title="이메일공급자 직접입력" id="email02" name="email02" style="ime-mode:disabled;" />
+					<select	title="이메일공급자선택" id="email03" name="email03" onChange="sel('email',this);">
+						<option value="">선택</option>
+					</select>
+				</span>
+			</td>
+		</tr>
+        <tr>
+			<th scope="row"><p>체류국가</p></th>
+			<td class="cell_l">
+				<span class="input_pass"><input type="text" class="txt" id="nation" name="nation" value="" title="체류국가" style="width:475px;" maxlength="20" /></span>
+			</td>
+		</tr>
+        <tr>
+			<th scope="row"><p>체류기간</p></th>
+			<td class="cell_l">
+				<span class="input_id">
+					<input type="text" class="txt" id="fromDate" name="fromDate" value="" title="체류기간 시작" style="width:132px;" maxlength="12" /> ~ 
+					<input type="text" class="txt" id="toDate" name="toDate" value="" title="체류기간 끝" style="width:132px;" maxlength="12" /></span>
+			</td>
+		</tr>
+        <tr>
+			<th scope="row"><p>제목</p></th>
+			<td class="cell_l">
+				<span class="input_pass"><input type="text" id="title" name="title" class="txt" value="" title="제목" style="width:475px;" /></span>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" class="cell_app02"><p>내용</p></th>
+			<td class="cell_app">
+				<span class="input_body"><textarea class="txt" id="body" name="body" rows="80" cols="5" title="내용" ></textarea></span>
+			</td>
+		</tr>
+	</tbody>	
+</table>
+</form>
+</div>
+<!-- btn -->
+<div class="btnset">
+<p class="btnr"><a href="javascript:saveEtcRequest();" class="btn btn_blue"><span>보내기</span></a>
+<a href="javascript:clear(); reloadName();" class="btn btn_white"><span>다시쓰기</span></a>
+<a href="javascript:goFirst();" class="btn btn_white"><span>이전</span></a></p>
+</div>
+</div>
+</div>
+
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">대학등록금 납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_registrationFee_service.jpg" alt="대학등록금, 이젠 삼성카드로 편리하게 납부하세요!" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/ss/h2_registrationFee_inquiry02.png" alt="대학등록금 납부결과&#13;내역입니다." /></h2>
+	<div class="content_block_inner">
+	
+		<div id="printArea">
+		<table class="dtable02" summary="학교, 학번, 학과, 학생명, 카드번호, 할부여부, 등록학기 구분, 할부개월, 납부일자로 구성된 대학등록금 납부결과를 확인할 수 있는 게시판입니다">
+		<caption>대학등록금 납부결과 조회</caption>
+		<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="200" /></colgroup>
+		<tbody><!-- 100728 -->
+			<tr>
+				<th scope="row"><p>학교</p></th>
+				<td><p><%=univName %></p></td>
+				<th scope="row"><p>학번</p></th>
+				<td><p class="t_no"><%=hakBun %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학과</p></th>
+				<td><p><%=jojikName2 %></p></td>
+				<th scope="row"><p>학생명</p></th>
+				<td><p><%=korName %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td><p class="t_no"><%=cardNo %></p></td>
+				<th scope="row"><p>등록금액</p></th><!-- 100730 -->
+				<td><p class="t_black"><strong><span class="t_no">0</span> 원</strong></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부여부</p></th>
+				<td><p><%=paymentType %></p></td>
+				<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+				<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+			</tr>
+			<tr><!-- 100728 -->
+				<th scope="row"><p>할부개월</p></th>
+				<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+				<th scope="row"><p>납부일자</p></th>
+				<td><p class="t_no">0</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학교</p></th>
+				<td><p><%=univName %></p></td>
+				<th scope="row"><p>학번</p></th>
+				<td><p class="t_no"><%=hakBun %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>학생명</p></th>
+				<td colspan="3"><p><%=korName %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td><p class="t_no"><%=cardNo %></p></td>
+				<th scope="row"><p>기숙사비</p></th><!-- 100730 -->
+				<td><p class="t_black"><strong><span class="t_no">0</span> 원</strong></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부여부</p></th>
+				<td><p><%=paymentType %></p></td>
+				<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+				<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+			</tr>
+			<tr><!-- 100728 -->
+				<th scope="row"><p>할부개월</p></th>
+				<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+				<th scope="row"><p>납부일자</p></th>
+				<td><p class="t_no">0</p></td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+		<div class="btnset">
+			<p class="btnr">
+                <a href="javascript:goTabPage('NHPIMSSTUI012','false');" class="btn btn_blue"><span>확인</span></a>
+			</p>
+		</div>
+		<div class="btnset">
+			<p class="btnr">
+                <a href="javascript:goTabPage('NHPIMSSTUI012','false');" class="btn btn_blue"><span>확인</span></a>
+			</p>
+			<div id="btn_cancel">
+			<p class="btnr">
+                <a href="javascript:cancel();" class="btn btn_blue"><span>납부취소</span></a>
+			</p>
+			</div>
+		</div>
+		</form>
+		<div class="line_lgray"></div>
+
+		<p>※ 등록금 납부취소는 불가합니다. (단, 당일 납부건에 한해 취소가능)</p>
+		<p>※ 우송대/우송정보대학 납부취소의 경우 반드시 필수금액, 선택금액을 각각 취소하시길 바랍니다.</p>
+		<p>※ 카톨릭상지대학교 납부취소의 경우 반드시 필수금액, 선택금액을 각각 취소하시길 바랍니다.</p>
+	</div>
+</div>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

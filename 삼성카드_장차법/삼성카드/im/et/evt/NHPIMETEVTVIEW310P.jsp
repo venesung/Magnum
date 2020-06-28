@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>포인트 적립 이벤트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<script type="text/javascript">
+function postponePop() {
+	setCookie("EVTFP1","Y",1);
+	window.close();
+}
+
+function setCookie(name, value, expiredays){
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+</script>
+<style type="text/css">
+.p_photo	{float:left; width:165px}
+.p_desc	{float:left; width:225px; padding-top:5px}
+.p_desc	.t_desc04, .p_desc	.t_desc04	span	{line-height:14px}
+dl	{width:420px; margin-top:-10px; overflow:auto; overflow:hidden}
+dt	{float:left; width:60px; margin-top:5px; padding-left:10px; color:#666; font:bold 11px "돋움"; line-height:14px}
+dd	{float:left; width:345px; margin-top:5px; color:#999; font:normal 11px "돋움"; line-height:14px}
+</style>
+<script language="javascript" type="text/javascript">
+ 	function fsEventGo(){
+		opener.location="/link/index.jsp?url=EVENT?eventNo=9835";
+		opener.focus();
+ 	}
+</script>
+</head>
+<body>
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<div id="pop_s_header">
+		<h1><img src="/images/fs/pop_h1_event_renewal.png" alt="용어사전" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_s_content">
+		<div class="clfix">
+			<p class="p_photo"><img src="/images/fs/pop_img_event_renewal.png" alt="" /></p>
+			<div class="p_desc">
+				<img src="/images/fs/pop_txt_event_renewal.png" alt="이용가능금액과 이자율 조회하고 포인트 받자!" />
+				<p class="mt10 t_desc04">현금서비스/삼성카드론의 이용가능금액과<br />이자율을 확인하고 이벤트에 응모하시면 사은<br />포인트 최대 <span class="t_point_org t_no">50,000점의 적립</span> 기회를 드립니다.</p>
+			</div>
+		</div>
+		<div class="line_lgray">&nbsp;</div>
+
+		<dl>
+			<dt>응모기간</dt><dd>10.07.01 ~ 10.07.31</dd>
+			<dt>응모대상</dt><dd>삼성카드 전 회원</dd>
+			<dt>응모방법</dt>
+			<dd>
+				STEP1 &gt; [가능금액/이자율조회] 에서 이용가능금액과 이자율 확인<br />
+				STEP2 &gt; 응모하기 클릭하여 응모페이지로 이동<br />
+				STEP3 &gt; 응모페이지에서 이용가능금액과 이자율 입력
+			</dd>
+		</dl>
+
+		<div class="line_lgray">&nbsp;</div>
+		<p class="btnc">
+            <a href="javascript:opener.goTabPageWithParam('NHPIMETEVTDTL','cmsSeq=9835');"><img src="/images/common/btn_s_event.png" alt="이벤트 응모하기" /></a>
+            <a href="javascript:opener.goTabPageWithParam('NHPIMETEVTDTL','cmsSeq=9859');"><img src="/images/common/btn_s_event_view.png" alt="이벤트 자세히보기" /></a>
+		</p>
+
+	</div>
+
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+<!--<label for="label_nottoday" class="nottoday2"><input type="checkbox" id="label_nottoday" value="" name="" class="chk" onclick="postponePop();"/>오늘 하루 이창을 열지 않음</label> //이벤트 담당자 요청으로 변경 20100630-->
+	</div>
+</div>
+</body>
+</html>

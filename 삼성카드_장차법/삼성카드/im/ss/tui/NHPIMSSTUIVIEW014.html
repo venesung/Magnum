@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>대학등록금 납부영수증 - 삼성카드</title>
+
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+<!--
+function Print(){
+	window.print();
+	window.close();
+}
+-->
+</script>
+</head>
+<body>
+ <!-- popup size: 710 * 530 -->
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/ss/pop_h1_registrationFee_receipt.png" alt="대학등록금 납부영수증" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_registrationFee_receipt.png" alt="대학등록금 납부영수증" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h400 yscroll" tabindex="0">
+		<div class="content_block content_block_card clfix">
+<!-- 추가 101214 -->
+			<table class="dtable02 mt20" summary="대학명, 학번, 학과, 성명, 납부월로 구성된 대학등록금 납부결과를 확인할 수 있는 게시판입니다.">
+				<caption>대학등록금 납부영수증 중 학생 정보</caption>
+				<colgroup><col width="115" /><col width="205" /><col width="115" /><col width="205" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>대학명</p></th>
+						<td><p><%=univName %></p></td>
+						<th scope="row"><p>학번</p></th>
+						<td><p><%=hakbun %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>학과</p></th>
+						<td colspan="3"><p><%=jojikName2 %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>납부월</p></th>
+						<td colspan="3"><p><%=drYear %>년 <%=drTerm %>학기</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>성명</p></th>
+						<td><p><%=korName %></p></td>
+						<th scope="row"><p>납부월</p></th>
+						<td><p><%=drYear %>년 <%=drTerm %>학기</p></td>
+					</tr>
+				</tbody>
+			</table>
+<!-- // 추가 101214 -->
+
+			<table class="dtable02 mt15" summary="카드번호, 등록금액, 할부여부, 등록학기 구분, 할부개월, 납부일자, 카드번호로 구성된 대학등록금 납부결과를 확인할 수 있는 게시판입니다">
+				<caption>대학등록금 납부영수증 중 등록금 납부 정보</caption>
+				<colgroup><col width="120" /><col width="200" /><col width="120" /><col width="200" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>카드번호</p></th>
+						<td><p class="t_no"><%=cardNo %></p></td>
+						<th scope="row"><p>등록금액</p></th><!-- 100730 -->
+						<td><p class="t_black"><strong><span class="t_no"><%=StringUtil.amountToString(Integer.parseInt(paymentAmount)) %></span> 원</strong></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>할부여부</p></th>
+						<td><p><%=paymentType %></p></td>
+						<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+						<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+					</tr>
+					<tr><!-- 100728 -->
+						<th scope="row"><p>할부개월</p></th>
+						<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+						<th scope="row"><p>납부일자</p></th>
+						<td><p class="t_no"><%=StringUtil.formatStrDate(approvalDate,"yyyy/mm/dd") %></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드번호</p></th>
+						<td><p class="t_no"><%=cardNo %></p></td>
+						<th scope="row"><p><%=infoStr %></p></th><!-- 100730 -->
+						<td><p class="t_black"><strong><span class="t_no"><%=StringUtil.amountToString(Integer.parseInt(paymentAmount)) %></span> 원</strong></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>할부여부</p></th>
+						<td><p><%=paymentType %></p></td>
+						<th scope="row"><p>등록학기 구분</p></th><!-- 100730 -->
+						<td><p><span class="t_no"><%=drTerm %></span> 학기</p></td>
+					</tr>
+					<tr><!-- 100728 -->
+						<th scope="row"><p>할부개월</p></th>
+						<td><p><span class="t_no"><%=installmentMonth %></span> </p></td>
+						<th scope="row"><p>납부일자</p></th>
+						<td><p class="t_no"><%=StringUtil.formatStrDate(approvalDate,"yyyy/mm/dd") %></p></td>
+					</tr>
+				</tbody>
+				</table>
+<!-- 추가 101214 -->
+				<p class="mt10 t_desc04">페이지를 출력하셔도 납부증빙으로 대체되지 않으니 <br />
+					총장직인이 찍힌 납부증빙은 해당대학으로 직접 방문하여 요청하시기 바랍니다. </p>
+<!-- // 추가 101214 -->
+<!-- 수정 110705 -->
+                <div class="btnset"><p class="btnc"><a href="javascript:Print();"><img src="/images/common/btn_s_print.png" alt="인쇄" /></a> <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p></div>
+<!--// 수정 110705 -->
+
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+
+</body>
+</html>

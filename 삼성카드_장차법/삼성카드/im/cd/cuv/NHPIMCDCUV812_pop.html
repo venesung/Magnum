@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>월별 청구할인 상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body onload="OnLoad()">
+<div id="pop_wrap"> <!-- 710 x 575 -->
+<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_card5.png" alt="월별 청구할인 상세내역 입니다" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_card5.png" alt="월별 청구할인 상세내역 입니다" /></h1>
+	</div>
+
+<form name="form1" action="" method="post">
+	<input type="hidden" name="cardNo" 	id="cardNo" />
+	<input type="hidden" name="yyyymm" 	id="yyyymm" />
+	
+	<!-- paging s -->
+	<input type="hidden"	id="goPage812Pop"	name="goPage812Pop"  />
+	<input type="hidden" 	id="PAGE812Pop"	    name="PAGE812Pop"    />
+	<input type="hidden" 	id="PREKEY812Pop"	name="PREKEY812Pop"  />
+	<input type="hidden" 	id="keyList812Pop"	name="keyList812Pop" />
+	<!-- content -->
+	<div id="pop_content" >
+		<div class="content_block content_block_card clfix">
+			 <table summary="이용일자, 가맹점명, 할인금액, 이용금액으로 구성된 월별 청구할인 상세내역" class="dtable01">
+             	<caption>월별 청구할인 상세내역 </caption>
+                <colgroup>
+                	<col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" />
+                </colgroup>
+                <thead>
+                   <tr>
+                       <th class="cell_l10"  scope="col">이용일자</th>
+                       <th class="cell_l10"  scope="col">가맹점명</th>
+                       <th class="cell_r10"  scope="col">할인금액</th>
+                       <th class="cell_r10"  scope="col">이용금액</th>
+                   </tr>
+               </thead>
+               <tbody id="list_result">
+			   </tbody>
+			</table>
+          	<div class="paginate">
+				<div class="paging">
+					<a id="pre" href="javascript:getMoreList('prePage812Pop');" 	class="btn btn_s_white"><span>이전</span></a>
+					<a id="next" href="javascript:getMoreList('nextPage812Pop');" 	class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>	
+</div>
+
+<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+</div> 
+</body>
+</html>

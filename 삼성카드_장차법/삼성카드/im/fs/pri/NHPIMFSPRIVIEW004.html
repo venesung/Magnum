@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	
+	<link rel="stylesheet" type="text/css" href="/css/primeloan/prime_loan_hp.css" />
+<title>삼성프라임론 인터넷신청 - 삼성카드</title>
+</head>
+<body>
+
+	<div id="container">
+
+			<div id="wrapper">
+				<div id="content">
+					<div class="box_s" style="position:relative;">
+						<h2 class="rtitle">삼성프라임론 인터넷신청</h2>
+						<br />
+						<h3 class="step s01">1단계 본인확인</h3>
+
+						<p class="info">
+							대출신청 가능여부 확인을 위한 신용조회는 고객님의 신용등급에 영향을 주지 않습니다.
+							시스템 장애	또는 기타 사유로 대출신청 정차가 완료되지 못한 경우, 상담원이 전화드릴 수 있습니다.
+						</p>
+
+						<table summary="삼성프라임론 인터넷신청을 위한 성명, 주민등록번호, 휴대전화번호, 개인정보 수집 및 이용에 대한 안내 및 정보를 입력하는 게시판입니다" class="form">
+		                    <caption>본인정보 확인 및 입력</caption>
+							<tr>
+								<th scope="row">성명</th>
+								<td>
+									<input type="text" name="REAL_NAME" maxlength="15" value="" class="input_text" style="ime-mode:active" title="성명" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">주민등록번호</th>
+								<td>
+	                                <input type="text" id="sno1" name="IDENNO1" maxlength="6" class="input_text" style="ime-mode:disabled" title="주민등록 앞자리" enc="on" /><!-- onKeyUp="onlyNumber(this.value);"  -->
+									-
+	                                <input type="password" id="sno2" name="IDENNO2" maxlength="7" class="input_text" style="ime-mode:disabled" title="주민등록 뒷자리" enc="on" /><!-- onKeyUp="onlyNumber(this.value);" -->
+									<span id="usafeon_IDENNO1|IDENNO2"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">휴대전화번호</th>
+								<td>
+	                                <select name="MOBILE_NO1" title="휴대전화번호 앞자리">
+										<option value="010">010</option>
+										<option value="011">011</option>
+										<option value="016">016</option>
+										<option value="017">017</option>
+										<option value="018">018</option>
+										<option value="019">019</option>
+									</select>
+									&nbsp;
+	                                <input type="text" name="MOBILE_NO2" maxlength="4" class="input_text" style="ime-mode:disabled;width:60px;" title="휴대전화번호 가운데자리" onKeyUp="onlyNumber(this.value);" />
+									-
+									<input type="text" name="MOBILE_NO3" maxlength="4" class="input_text" style="ime-mode:disabled;width:60px;" title="휴대전화번호 뒷자리" onKeyUp="onlyNumber(this.value);" />
+									&nbsp;&nbsp;
+									<a href="javascript:realCheckName();"><img id="check_identify" src="/images/primeloan/sub_step_btn_name.png" alt="실명확인" align="absmiddle" /></a>
+								</td>
+							</tr>
+							<tr>
+								<td scope="row" colspan="2" class="tos">
+									<ul>
+										<li class="l">개인정보 수집 및 이용에 대한 안내</li>
+	                                    <li class="r"><a href="/hp/im/fs/pri001.do?method=getPriPop00" onclick="open('/hp/im/fs/pri001.do?method=getPriPop00','Pop','width=710px,height=576px');return false;">인쇄</a></li>
+									</ul>
+									<div id="_tos">
+										<div class="wrap">
+											<div class="content" tabindex="0">
+												<h4>개인정보 수집 및 이용에 대한 안내</h4>
+												<ol>
+												    <li>
+														1. 개인정보 수집 및 이용 목적<br />
+														- 대출 신청, 심사, 실행, 중단 시 상담원의 확인<br /><br />
+													</li>
+													<li>
+														2. 수집하는 개인정보 항목<br />
+														- 성명, 주민번호, 전화번호, 핸드폰번호, 직장정보, 주소, e-mail 주소 등<br />
+														  (수집하는 내용 추가 가능)<br /><br />
+													</li>
+													<li>
+														3. 보유 및 이용기간<br />
+														- 청약한 경우 계약 거절된 날로부터 5년<br />
+														- 계약 체결한 경우 계약 종료한 날로부터 5년<br /><br />
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+									<ul class="agree">
+										<li class="lt"><input type="radio" id="agree_n" name="CLAUSE0" value="N" /> <label for="agree_n">동의하지 않음</label></li>
+										<li><input type="radio" id="agree_y" name="CLAUSE0" value="Y" checked="checked" /> <label for="agree_y">동의함</label></li>
+									</ul>
+	                                <h4 id="certi"><a href="javascript:Go();">공인인증서확인</a></h4>
+								</td>
+							</tr>
+						</table>
+
+						<p class="eprivacy">
+							samsungcard.com은 개인정보 우수사이트마크(ePRIVACY)를 획득한 사이트 입니다.<br />
+							삼성카드는 이용자께서 제공해 주신 개인정보를 안전하게 관리하기 위해 최선을 다하겠습니다.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- 추가111122 -->
+			<!-- 실명인증이 확인되었습니다. 레이어 팝업 -->
+			<div id="layer_pop_s" class="layer_spop" style="display:none;">
+				<div class="pop_l_wrap">
+						<p class="img_l_pop flag_tl">&nbsp;</p>
+						<p class="img_l_pop flag_tr">&nbsp;</p>
+						<p class="img_l_pop flag_bl">&nbsp;</p>
+						<p class="img_l_pop flag_br">&nbsp;</p>
+
+						<input type="button" title="실명인증 레이어 닫기" value="레이어닫기" onClick="disableLayerS();" class="img_l_pop btn_close btn_input" />
+
+						<div class="pop_l_content">
+							<p class="img_txt"><img src="/images/primeloan/h1_certification.png" alt="실명인증이 확인되었습니다." /></p>
+							<p class="btnc">
+								<a onClick="disableLayerS();" href="#"><img src="/images/primeloan/btn_s_confirm.png" alt="확인" /></a>
+							</p>
+						</div>
+				</div><!-- //pop_l_wrap -->
+			</div><!-- //layer_spop -->
+			<!-- //실명인증이 확인되었습니다. 레이어 팝업 -->
+
+			<!-- 실명이 아니므로 상담신청이 불가합니다. 레이어 팝업 (인라인 스타일에서 style="display:none;" 삭제하면 보여집니다)-->
+			<div id="layer_pop_f" class="layer_spop" style="display:none;">
+				<div class="pop_l_wrap">
+						<p class="img_l_pop flag_tl">&nbsp;</p>
+						<p class="img_l_pop flag_tr">&nbsp;</p>
+						<p class="img_l_pop flag_bl">&nbsp;</p>
+						<p class="img_l_pop flag_br">&nbsp;</p>
+						<input type="button" title="실명인증 레이어 닫기" value="레이어닫기" onClick="disableLayerF();" class="img_l_pop btn_close btn_input" />
+						<div class="pop_l_content">
+							<p class="img_txt01"><img src="/images/primeloan/h1_cancel.png" alt="실명이 아니므로 상담신청이 불가합니다." /></p>
+							<div id="errorMsg" class="txt_con"></div>
+							<p class="btnc">
+								<a onClick="disableLayerF();" href="#"><img src="/images/primeloan/btn_s_confirm.png" alt="확인" /></a>
+							</p>
+						</div>
+				</div><!-- //pop_l_wrap -->
+			</div><!-- //layer_spop -->
+			<!-- //실명이 아니므로 상담신청이 불가합니다. 레이어 팝업 -->
+			<!-- //추가111122 -->
+
+			<!-- 실명확인용  iframe -->
+			<iframe name="realNameIframe" marginwidth="0" src="" frameborder="0" scrolling="no" width="0" height="0" title="빈 컨텐츠"></iframe>
+			<!-- 실명확인용  iframe -->
+	</div>
+</body>
+</html>

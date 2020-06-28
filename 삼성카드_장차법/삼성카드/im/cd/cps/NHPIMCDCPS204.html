@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>CARD_CODE 확인 - 삼성카드</title>
+</head>
+<body>
+<form name="frmApp" method="post">
+	<input type="hidden" name="cardCode" />
+	<input type="hidden" name="brand" />
+</form>
+
+<script type="text/javascript" language="javascript">
+	var cardCd = '${cardCode}';
+	var param  = '${existCardCodeParam}';
+	//alert("값확인 cardCd="+cardCd+", param="+param);
+	if(cardCd != ""){
+		if(param == ""){
+			alert("입력하신 CARD_CODE를 확인하세요. 제휴사 카드목록에 존재하지 않는 CARD_CODE 입니다. ");
+		    window.close();
+		}else{
+            var strAction = "/hp/im/cd/cardApp.do?method=popupStyle" + "&amp;"+param;
+		    				
+			/* 카드신청 호출 */
+	        frmApp.cardCode.value = '${cardCode}';
+	        frmApp.brand.value    = '${strBrand}';
+	
+	        //window.open ("about:blank", "POP_CARD_APPLY2", "width=970,height=900, scrollbars=yes, toolbar=no, status=yes, resize=no, menubar=no");
+	
+	        frmApp.action = strAction;
+	        //frmApp.target = "POP_CARD_APPLY2";
+	        frmApp.submit();
+	
+		}
+	}
+</script>
+</body>
+</html>

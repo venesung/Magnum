@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+<div id="wrap">
+		<p id="title">
+		<% if("M2".equals(SiteGubun)) { %>
+            <a href="javascript:movePage();"><img src="/images/cd/microSite/tit_samsung.png" alt="삼성카드 2" /></a>
+		<%}else{%>
+            <a href="javascript:movePage();"><img src="/images/cd/showroom_title.jpg" alt="삼성카드 갤러리" /></a>
+		<%}%>
+		</p>
+		<div  class="card-app-box">
+			<h1>${cardDetailMap.cardName}카드 신청하기</h1>
+			<div id="content-box" > 
+				<div id="content" > 
+					<ul id="flow-1" class="flow">
+						<li><strong>실명인증 및 약관동의</strong></li>
+						<li>신청정보 입력</li>
+						<li>신청완료</li>
+					</ul> 
+					
+					<div class="card-info clear">
+						<h2><img src="/images/cd/h2_card_1_1.gif" alt="주민등록번호로 실명인증입니다" /></h2>
+						<div class="info"> 
+							<dl class="jumin-input clear">
+								<dt><label for="customerName">성명</label></dt>
+								<dd><span class="bg-input">	<input type="text" name="customerName" title="성명" class="in-text" id="customerName"  class="in-text"  style="ime-mode:active;" />
+                                </span></dd>
+								<dt><label for="idenNo1">주민등록번호</label></dt>
+								<dd>
+										<span class="bg-input"><input type="text" name="idenNo1" title="주민등록번호 앞자리"  id="idenNo1" class="in-text"   maxlength="6" minLength="6" enc="on"/></span>&nbsp;-&nbsp;<span class="bg-input">
+							    		<input type="password" name="idenNo2" id="idenNo2" class="in-text"  title="주민등록번호 뒷자리"  maxlength="7" minLength="7" enc="on"/>
+										</span>&nbsp;&nbsp;<!-- <a href="javascript:verifyRealName(certForm)"><img alt="확인" src="/images/cd/btn_ok_2.gif"></a>-->
+										<span id="usafeon_idenNo1|idenNo2" class="btn btn_white"></span><br />										<p class="mt-10 f11 fc-3">실명확인을 위하여 주민등록번호와 성명을 띄어쓰기 없이 입력하여 주십시오.</p>
+								</dd>
+								<!-- <div id="isCallYnDiv" style="display:inline-block" /></div> -->
+								<dt><label>연락처</label></dt>
+								<dd> 
+										<div class="select" style="width:100px;">
+											<span class="ctrl"><span class="arrow"></span></span>
+											<div class="myValue"></div>
+											<ul class="iList">
+												<input type="hidden" name="phoneNo1" />
+												<li><input name="c" id="c0" class="option" type="radio" checked="checked"  onclick="selectPhone1('');" title="연락처 선택" /><label for="c0">선택</label>
+												<c:forEach var="result" items="${cellphoneHeadNumber}" varStatus="status">
+                                                    <li><a href="javascript:selectPhone1('${result.value}')">${result.text}</a></li>
+												</c:forEach>
+												<c:forEach var="result" items="${telephoneAreaNumber}" varStatus="status">
+                                                    <li><a href="javascript:selectPhone1('${result.value}')">${result.text}</a></li>
+												</c:forEach>
+											</ul>
+										</div>&nbsp;-&nbsp;
+										<span class="bg-input-2"><input type="text" name="phoneNo2" title="휴대전화번호 가운데자리" class="in-text" maxlength="4" />
+										</span>&nbsp;-&nbsp;<span class="bg-input-2"><input type="text" name="phoneNo3" title="휴대전화번호 뒷자리" class="in-text"  maxlength="4" /></span> 
+										<label for="label_phone_yes" style="margin-left:20px;"><input type="radio" class="rdo" value="" id="label_phone_yes" name="isCallYn" title="동의" /> <strong>동의</strong></label>
+                                		<label for="label_phone_no"><input type="radio" class="rdo" value="" id="label_phone_no" name="isCallYn" title="동의안함" /> 동의안함</label>
+                                </dd>
+                               
+							</dl>
+				
+
+							<ol class="decimal top-line">
+								<li class="clear"><span class="num">1.</span><span class="txt">일시적 시스템 장애 또는 기타 사유로 카드 신청을 인터넷으로 완료하지 못하신 경우, 고객님의 편의를 위하여 당사에서 기재하신 
+									연락처로 전화를 드릴 수 있으며, 이에 동의합니다.</span></li>
+								<li class="clear"><span class="num">2.</span><span class="txt">기대하신 정보는 카드신청과 관련한 통화를 위한 목적 이외에 다른 용도로 사용되지 않으며, 일정 기간 이후에는 정보가 삭제되어집니다.</span></li>
+							</ol>
+							<p class="no-hlep top-line">개정 “주민등록법”에 의해 타인의 주민등록번호를 부정사용하는 자는 3년 이하의 징역 또는 1천만원 이하의 벌금이 부과될 수 
+								있습니다. 관련법률 : 주민등록법 제37조(벌칙) 제10호 (시행일 : 2009.04.01)
+								만약, 타인의 주민번호를 도용하여 온라인 회원 가입을 하신 이용자들은 지금 즉시 명의 도용을 중단하시길 바랍니다.
+							</p>
+						</div>
+					</div>
+    			   
+					 <div class="card-info">
+						<h2><img src="/images/cd/h2_card_1_2.gif" alt="약관에 동의해 주세요" /></h2>
+						<div class="info">
+						<c:forEach var="result" items="${agreeList}" varStatus="status">								
+							<div class="agree-title clear">
+								<h3 class="fl">${result.title}</h3>
+								<p class="fr">
+									<a href="#" onclick="#" title="새창">${result.title} 상세보기</a>
+								</p>
+							</div>
+							<div class="agree-box">
+								<div class="scroll">
+									<div id="AgreeContent${status.count}" agreePath="/agreement/${result.fileName}.html" class="agree" tabindex="0"></div>
+								</div>
+							</div>
+							
+							 	<div class="reserch-box">
+									본인은 귀사가 본인의 개인(신용)정보를 조회시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는  것에 동의합니다.(고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호) 
+									<div class="agree1">
+										<input type="radio" id="AgreePrivateYes1" name="AgreePrivate1" checked="checked" title="처리 동의" /><label for="AgreePrivateYes1">동의</label>&nbsp;
+										<input type="radio" id="AgreePrivateNo1" name="AgreePrivate1" title="처리 동의안함" /><label for="AgreePrivateNo1">동의안함</label>
+									</div>
+								</div>
+								
+							 	<div class="reserch-box">
+									본인은 귀사가 본인의 개인(신용)정보를 조회시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는  것에 동의합니다.(고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호) 
+									<div class="agree1">
+										<input type="radio" id="AgreePrivateYes2" name="AgreePrivate2" checked="checked" title="처리 동의" /><label for="AgreePrivateYes2">동의</label>&nbsp;
+										<input type="radio" id="AgreePrivateNo2" name="AgreePrivate2" title="처리 동의안함" /><label for="AgreePrivateNo2">동의안함</label>
+									</div>
+								</div>
+								
+							 	<div class="reserch-box">
+									본인은 귀사가 본인의 개인(신용)정보를 조회시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는  것에 동의합니다.(고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호) 
+									<div class="agree1">
+										<input type="radio" id="AgreePrivateYes3" name="AgreePrivate3" checked="checked" title="처리 동의" /><label for="AgreePrivateYes3">동의</label>&nbsp;
+										<input type="radio" id="AgreePrivateNo3" name="AgreePrivate3" title="처리 동의안함" /><label for="AgreePrivateNo3">동의안함</label>
+									</div>
+								</div>
+								
+							 	<div class="reserch-box">
+									본인은 귀사가 본인의 개인(신용)정보를 조회시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는  것에 동의합니다.(고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호) 
+									<div class="agree1">
+										<input type="radio" id="AgreePrivateYes4" name="AgreePrivate4" checked="checked" title="처리 동의" /><label for="AgreePrivateYes4">동의</label>&nbsp;
+										<input type="radio" id="AgreePrivateNo4" name="AgreePrivate4" title="처리 동의안함" /><label for="AgreePrivateNo4">동의안함</label>
+									</div>
+								</div>
+								
+							 	<div class="reserch-box">
+									본인은 귀사가 본인의 개인(신용)정보를 조회시 본인이 동의한 목적에 따라 개인정보보호법 제24조에 의거 본인의 고유식별정보를 처리하는  것에 동의합니다.(고유식별정보 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호) 
+									<div class="agree1">
+										<input type="radio" id="AgreePrivateYes5" name="AgreePrivate5" checked="checked" title="처리 동의"/><label for="AgreePrivateYes5">동의</label>&nbsp;
+										<input type="radio" id="AgreePrivateNo5" name="AgreePrivate5" title="처리 동의안함" /><label for="AgreePrivateNo5">동의안함</label>
+									</div>
+								</div>
+								
+						
+							<div class="agree-check">
+								<label for="AgreeClauseYes${status.count}"><input type="radio" class="rdo" title="약관동의" value="" id="AgreeClauseYes${status.count}" name="AgreeClause${status.count}" <c:if test="${result.agreeDefaultYn == 'Y'}">checked="checked"</c:if> /> <strong class="t_point">약관동의</strong>&nbsp;&nbsp;&nbsp;</label>
+								<label for="AgreeClauseNo${status.count}"><input type="radio" class="rdo" title="동의안함"  value="" id="AgreeClauseNo${status.count}" name="AgreeClause${status.count}" <c:if test="${result.agreeDefaultYn == 'N'}">checked="checked"</c:if>/> 동의안함</label>
+							</div>
+							
+							<p class="f11 fc-3">
+								  모든 서비스는 제휴업체 및 카드사의 사정에 의해 변경, 폐지될 수 있으며 그 내용은 사전에 알려드립니다. 
+							</p>
+						</div>
+					</div>         
+				 
+				 
+					<div id="btn-bottom">
+						<a href="javascript:showVeriyfyEtcDiv();"><img src="/images/cd/btn_next.gif" alt="다음단계" /></a>
+						<a href="javascript:movePage();" class="cancel"><img src="/images/cd/btn_app_cancel.gif" alt="신청취소" /></a>
+					</div>
+				</div> 
+				<!-- e: content -->  
+			</div>
+		</div>
+		<p id="footer">
+		
+		<% if("M2".equals(SiteGubun)) {      %>
+			<img src="/images/cd/microSite/txt_copyright.png"  alt="Copyright ⓒ 2013 SAMSUNGCARD CO.,Ltd. All Rights Reserved." />
+			<img src="/images/cd/microSite/logo_samsungCard.png" class="png24" style="margin:3px 9px 0 0;" alt="삼성카드" /><img src="/images/cd/microSite/logo_samsung.png" class="png24" alt="samsung" />
+		<%}else{%>
+			<img src="/images/cd/showroom_footer.jpg" alt="Copyright (c) 2013 SAMSUNGCARD Corp. All Rights Reserved." />
+		<%}%>
+				
+		</p>
+	</div> 
+ <div id="select-accreditation" class="popup">
+		<h1><img src="/images/cd/tit_ccreditation.gif" alt="카드신청을 위해 인증방식을 선택하세요" /></h1>
+		<ul class="clear">
+			<li class="fl">
+				<strong class="title">공인인증서 인증</strong>
+				<p>기존 회원정보를 입력하실 <br /> 필요없이편리하게 카드신청을<br /> 하실 수 있습니다.</p>
+                <a href="javascript:checkEtcVerify('public')"><img src="/images/cd/btn_accre_paper.gif" alt="공인인증으로 인증하기" /></a>
+			</li>
+			<li>
+				<strong class="title">휴대폰 인증</strong>
+				<p>휴대폰 인증으로 카드신청을 <br />하실 수 있습니다. <br />(단, 신청자의 명의의 휴대폰이어야만 합니다.)</p>
+                <a href="javascript:checkEtcVerify('sms')"><img src="/images/cd/btn_accre_phone.gif" alt="핸드폰으로 인증하기" /></a>
+			</li>
+		</ul>
+        <a href="javascript:selectAccreditation()" title="인증방식선택 레이어 닫기" > <span class="close"></span></a>
+	</div>
+	
+    <!--nProtect 키보드보안 적용여부 끝-->
+<%@ include file="/WEB-INF/jsp/common/cardapp_footer.jsp" %>
+

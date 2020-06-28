@@ -1,0 +1,10 @@
+<%
+	int resultCnt = (Integer)request.getAttribute("resultCnt");
+%>
+<script type="text/javascript">
+	var resultCnt = "<%=resultCnt%>";
+	alert(resultCnt);
+	if(resultCnt == 1){
+		openLayerPopup("/hp/im/cs/csp/viewNHPIMCSCSP005_2P.do","");
+	}
+</script>

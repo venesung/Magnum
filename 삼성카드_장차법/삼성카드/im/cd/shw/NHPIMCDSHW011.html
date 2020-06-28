@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 쇼룸 - 삼성카드</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="description" content="신용카드,신용카드추천,신용카드발급,코스트코카드,카드,주유카드,카드신청,아메리칸익스프레스카드,카드발급,신용카드신청,신용카드만들기" />
+<meta name="keywords" content="신용카드,신용카드추천,신용카드발급,코스트코카드,카드,주유카드,카드신청,아메리칸익스프레스카드,카드발급,신용카드신청,신용카드만들기" />
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.75, target-densitydpi=device-dpi" />
+<style type="text/css">
+html,body{width:100%; height:100%;}
+html{overflow-y:scroll;}
+* {margin:0; padding:0;}
+body {position:relative; font-family:"Dotum"; font-size:12px; color:#000; line-height:14px; background-color:#fcfbf6; z-index:1; -webkit-text-size-adjust:none;}
+img, fieldset, hr {border:0; margin:0; padding:0;}
+img {vertical-align:top;}
+em {font-style:normal; font-weight:normal;}
+ul, ol {list-style-type:none;}
+h1, h2, h3, h4, h5, h6 {font-size:12px; font-weight:normal;}
+select, input, textarea {font-size:12px; vertical-align:middle;}
+table {border-collapse:collapse;}
+table th {font-weight:normal;}
+address {font-style:normal;}
+hr {clear:both; display:none;}
+legend, caption {width:0; height:0; font-size:0; line-height:0; visibility:hidden; overflow:hidden;}
+a:link, a:visited {color:#666; text-decoration:none;}
+a:hover, a:active,a:focus {color:#666; text-decoration:underline;}
+
+
+#popupTV {position:relative; width:661px; height:662px; padding:24px 26px;}
+#popupTV h1 {margin-bottom:18px;}
+#popupTV .tvBox {width:100%; height:492px; margin-bottom:8px; background:url("/images/cd/shw/popup/bg_tv.gif") 0 0 no-repeat;}
+#popupTV .btnX {position:absolute; right:26px; top:0;}
+.txt_i3 {margin-bottom:18px; font-size:11px; color:#999;}
+</style>
+</head>
+
+<body>
+
+<div id="popupTV">
+	<h1><img src="/images/cd/shw/popup/txt_tv1.gif" alt="꼭 기억해야 할 혜택의 숫자, 카드의 이름이 되다 - 꼭 기억해야 할 혜택의 숫자, 그 혜택의 숫자가 카드의 이름이 되었습니다. 이름과 혜택, 이제 쉽게 기억하세요. 당신에게 참 실용적인, 삼성카드." /></h1>
+	
+	<div class="tvBox">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="100%" id="index" align="middle">
+			<param name="movie" value="<%=url%>"/>
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#fafaf3" />
+			<param name="play" value="true" />
+			<param name="loop" value="true" />
+			<param name="wmode" value="transparent" />
+			<param name="scale" value="showall" />
+			<param name="menu" value="true" />
+			<param name="devicefont" value="false" />
+			<param name="salign" value="" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<!--[if !IE]>-->
+			<object type="application/x-shockwave-flash" data="<%=url%>" width="100%" height="100%">
+				<param name="movie" value="<%=url%>"/>
+				<param name="quality" value="high" />
+				<param name="bgcolor" value="#fafaf3" />
+				<param name="play" value="true" />
+				<param name="loop" value="true" />
+				<param name="wmode" value="opaque" />
+				<param name="scale" value="showall" />
+				<param name="menu" value="true" />
+				<param name="devicefont" value="false" />
+				<param name="salign" value="" />
+				<param name="allowScriptAccess" value="sameDomain" />
+			<!--<![endif]-->
+				<a href="http://www.adobe.com/go/getflash">
+					<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+				</a>
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+		</object>
+	</div>
+	<p class="txt_i3"><img src="/images/cd/shw/card/icon_i.gif" alt="!" /> 고객님의 PC환경에 따라 CF 영상이 늦게 재생되거나 재생되지 않을 수 있습니다.</p>
+	<p style="text-align:center;"><img src="/images/cd/shw/popup/btn_flash.gif" alt="Adobe Flash Player 설치" /></p>
+
+	<a href="#" onClick="self.close();" class="btnX"><img src="/images/cd/shw/popup/btn_tv_x.gif" alt="창닫기" /></a>
+</div>
+
+<%-- 
+<div id="popupTV">
+	<h3><img src="/images/cd/shw/popup/tit_tv.png" width="711" height="45" alt="TV CF" class="png24" /></h3>
+	<div class="contentBox">
+		<div class="tv" style="background-color:#000;">
+		<OBJECT ID="Player"
+		  CLASSID="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6" width="655" height="486">
+		  <PARAM name="autoStart" value="True">
+		  <!-- <PARAM name="URL" value="http://samsungcard.com/ci/ad/2012/sc5.wmv"> -->
+		  <PARAM name="URL" value="<%=url%>">
+		</OBJECT>
+		</div>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot711.png" width="711" height="20" alt="" class="png24" />
+</div>
+--%>
+
+</body>
+</html>

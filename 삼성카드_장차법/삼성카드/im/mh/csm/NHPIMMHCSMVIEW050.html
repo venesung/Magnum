@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_confirm_account.jpg" alt="결제 예정 금액을 확인하세요" /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_inquiry_receipt01.png" alt="조회하실 카드를 구분해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">법인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="javascript:goIndividual()">개인카드</a></li>
+                                    <li><a href="javascript:goCorporate()">법인카드</a></li>
+								</ul>
+							</div>							
+						</div>
+						<span class="selectbox_r_txt ">(개인카드, 법인카드)를 조회하시려면 카드구분을 변경하시기 바랍니다.</span>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<div class="tb_exp clfix">
+							<span class="fl_left">사용하신 거래 금액 중 가맹점으로부터 <span class="t_point_org">0</span>까지 접수된 매출(취소매출포함)을 기준으로<br />작성된 금액이므로 청구서 금액과 다를수 있습니다.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="최근 입금내역을 확인하실 카드를 선택 할 수 있는 게시판입니다">
+						<caption> 카드선택</caption>
+						<colgroup><col width="17%" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select id="label_ch_card" style="width:360px" name="card" onchange="changeCard()" title="카드선택">
+										<option></option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+<!-- 100126 --> 
+						<div class="btnset">
+                            <p class="btnr"><a class="btn btn_blue" href="javascript:changeCard();"><span>조회</span></a></p>
+						</div>
+<!-- //100126 -->
+
+					</div>
+				</div>
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_confirm_account01.png" alt="결제 예정 금액 및 미결제 금액 내역입니다" /></h2>
+					<div class="content_block_inner">
+						<blockquote class="t_duepay"><img src="/images/mh/txt_urallpayment.png" alt="입금하실 총 금액은" />0<img src="/images/mh/txt_suffix_won.png" alt="입니다" /></blockquote>
+						
+						<div class="d_easy"><!-- 100421 -->
+							<table class="dtable01" summary="미결제금액(원금,수수료,연체료), 이번달 결제 예정금액(원금,수수료)을 상세하게 확인할 수 있는 게시판입니다.">
+                            <caption>결제 예정 금액 및 미결제 금액 내역</caption>
+							<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="colgroup" colspan="3" class="boline_b0">미결제금액</th><!-- 100511 boline_b0추가 -->
+									<th scope="colgroup" colspan="2" class="boline_b0">이번달 결제 예정금액</th><!-- 100511 boline_b0추가 -->
+								</tr>
+								<tr>
+									<th scope="col" class="cell_r10">원금</th>
+									<th scope="col" class="cell_r10">수수료</th>
+									<th scope="col" class="cell_r10">연체료</th>
+									<th scope="col" class="cell_r10">원금</th>
+									<th scope="col" class="cell_r10">수수료</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="cell_r10">0</td>
+									<td class="cell_r10">0</td>
+									<td class="cell_r10">0</td>
+									<td class="cell_r10">0</td>
+									<td class="cell_r10">0</td>
+								</tr>
+							</tbody>
+							</table>						
+						</div>
+
+<!-- 추가 110525 -->
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goAutoPay()" class="btn btn_white"><span>자동이체 예약출금 신청/조회 &gt;</span></a>
+							</p>
+						</div>
+<!--// 추가 110525 -->
+
+					</div>
+				</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

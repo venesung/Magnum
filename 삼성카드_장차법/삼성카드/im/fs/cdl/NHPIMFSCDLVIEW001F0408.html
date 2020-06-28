@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+
+<!-- 입력확인레이어팝업 -->
+<div class="pop_l_wrap" style="width:600px;height:430px;">
+	<div class="img_l_pop flag_tl"> </div>
+	<div class="img_l_pop flag_tr"> </div>
+	<div class="img_l_pop flag_bl"> </div>
+	<div class="img_l_pop flag_br"> </div>
+	<input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopupCdl04();" value="레이어닫기" title="신청정보 확인 레이어 닫기" /><!-- this.parentNode.parentNode.style.display='none'; show_select(); -->
+	<p class="pop_tit tc"><img src="/images/fs/layer_tit_fs03.png" alt="작성하신 신청정보를 확인하세요" /></p>
+	<div class="pop_l_content">
+		<div class="mv_loan01">
+			<p class="lt mt10 mb10">&nbsp;&nbsp;&nbsp;&nbsp;만기일인 1에 1원이 해당월 카드 결제대금과 함께<br/>&nbsp;&nbsp;&nbsp;&nbsp;자동이체계좌(-_-)로 청구됩니다.</p>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="연장신청금액, 대출기간, 이자율, 연체이자율, 결제일, 만기일을 보여주는 표입니다.">
+						<caption>신청정보 확인 화면</caption>
+						<colgroup>
+							<col width=""/>
+							<col width="33%"/>
+							<col width="33%"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col" class="al_center"><p>상환신청금액</p></th>
+								<th scope="col" class="al_center"><p>만기이자</p></th>
+								<th scope="col" class="al_center"><p>합계</p></th>
+							</tr>
+							<tr>
+								<td class="cell_r10">1원</td>
+								<td class="cell_r10">1원</td>
+								<td class="cell_r10">1원</td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl><br/>
+			<p class="lt mt10 mb10">&nbsp;&nbsp;&nbsp;&nbsp;연장신청한 내역입니다.</p>
+			<dl>
+				<dd>
+					<table class="dtable02 dtable_inputfield" summary="연장신청금액, 대출기간, 이자율, 연체이자율, 결제일, 만기일을 보여주는 표입니다.">
+						<caption>신청정보 확인 화면</caption>
+						<colgroup>
+							<col width="20%"/>
+							<col width="28%"/>
+							<col width="20%"/>
+							<col width="32%"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10"><p>연장신청금액</p></th>
+								<td class="cell_r10">1원</td>
+								<th scope="row" class="cell_l10"><p>대출기간</p></th>
+								<td class="cell_r10">1 개월(원금균등분할)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>이자율</p></th>
+								<td class="cell_r10">${fn:trim(result.loItR)}%</td>
+								<th scope="row" class="cell_l10"><p>연체이자율</p></th>
+								<td class="cell_r10">${cdlext.LO_DELAY_RATE_4}%</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10"><p>결제일</p></th>
+								<td class="cell_r10">${result.sttD}일</td>
+								<th scope="row" class="cell_l10"><p>만기일</p></th>
+								<td class="cell_r10"></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+			<p class="lt mt10">상기 이자율은 회사의 정책 또는 고객님의 신용도에 따라 변동될 수 있습니다.</p>
+			
+		</div>
+	</div>
+	<p class="btnc mt20">
+		<a href="#" onclick="cardLoanAccCtrl002('2');closeLayerPopupCdl04();return false;"><img src="/images/common/btn_prev_info01.png" alt="이전" /></a>
+		<a href="#" onclick="cardLoanAccCtrl002('3');closeLayerPopupCdl04();return false;"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+	</p>
+</div>
+
+<!--// 여기까지 끝 -->
+</body>
+</html>

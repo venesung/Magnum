@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>탈퇴신청 - 삼성카드</title>
+	<base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+<link rel="stylesheet" type="text/css" href="/css/al.css" />
+
+<script type="text/javascript">
+	function deleteChain(){
+		var frame = document.frm;
+		if(validation()){
+			if(!confirm("탈퇴하시겠습니까?")){
+				return;
+			}
+			else{
+				frame.action="/chaininfo.do?method=deleteChainMember";
+                frame.onSubmit='this.submit();';
+				//frame.submit();
+                frm.submit();
+			}
+		}
+	}
+
+	function validation(){
+		var frame = document.frm;
+		
+		if (frame.password.value == "")
+		{
+			alert("비밀번호를 입력해 주세요.");
+			frame.password.focus();
+			return false;
+		}
+
+		if (frame.reason.selectedIndex == 0)
+		{
+			alert("탈회사유를 선택해주세요.");
+			frame.reason.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+
+</head>
+<body>
+<form name="xecure"><input type="hidden" name="p" /></form>
+<form name="frm" method="post" autocomplete="off">
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	<!-- header -->
+	<fileTag:alTopMenuView topMenuGubun="2"/>
+
+	<div id="con_wrap" class="clfix">
+		<!-- left -->
+		<fileTag:alLeftMenuView leftMenuGubun="2" leftOrderGubun="3" />
+			<!-- top_visual -->
+			<div id="content">
+			
+			<div class="top_visual">
+				<div id="location">가맹점 정보&nbsp;&gt;&nbsp;탈퇴신청</div>
+				<h1><img src="/images/al/h1_withdrawal.png" alt="가맹점 탈퇴신청" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/al/img_affl_m.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<h2 class="pb10"><img src="/images/al/h2_withdrawal.png" alt="웹회원 탈퇴를 신청 하실 수 있습니다" /></h2>
+					<ol class="list_no01">
+						<li><p>그 동안 삼성카드 홈페이지를 이용해주신 회원님께 감사 드립니다.</p></li>
+						<li><p>탈퇴 처리는 신청하신 다음 영업일에 처리됩니다.</p></li>
+						<li><p>탈퇴 처리 후 다음날부터 웹멤버 재가입이 가능합니다.</p></li>
+						<li><p>문자도우미 회원인 경우 웹멤버 탈퇴시 문자도우미 서비스는 계속됩니다.</p></li>
+						<li><p>문자도우미 서비스를 원하지 않으시면 먼저 해지해주세요.</p></li>
+					</ol>
+					
+					<table class="dtable02 dtable_inputfield mt20" summary="아이디,비밀번호,탈퇴사유 등 탈퇴신청 정보를 입력 할 수 있습니다.">
+					<caption>탈퇴신청 정보입력</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>아이디</p></th>
+							<td><p class="t_point">${userId }</p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><label for="label_pw">비밀번호</label></th>
+							<td><p class="input_2char"><input type="password" name="password" class="txt" value="" title="비밀번호" id="label_pw" maxlength="12" /></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="label_reason">탈퇴사유</label></th>
+							<td><p>
+								<select title="탈퇴사유" name="reason" id="label_reason" style="width:365px">
+									<option value="0" selected="selected" >사유를 선택해주세요.</option>
+			                        <option value="1">삼성카드 이용 안함</option>
+			                        <option value="2">개인신상정보유출 불안함</option>
+			                        <option value="3">ID 변경</option>
+			                        <option value="4">인터넷 이용 안함</option>
+			                        <option value="5">기타</option>
+								</select>
+							</p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<!-- btn -->
+					<div class="btnr">
+                        <a href="javascript:deleteChain();" class="btn btn_blue"><span>확인</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<jsp:include page="/WEB-INF/jsp/hp/al/NHPALFOOTER.jsp" flush="false"></jsp:include>
+
+</div>
+</form>
+</body>
+</html>

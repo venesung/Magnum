@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <h2><img src="/images/mh/h2_familycard_uselist02.png" alt="개인 해외이용내역을 조회하세요" /></h2>
+    <div class="content_block_inner">
+        <table class="dtable02 dtable_inputfield mt30" summary="개인 해외 이용내역(카드선택, 이용기간)을 조회하실 수 있는 게시판입니다.">
+        <caption>개인 해외이용내역 조회 게시판</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <th scope="row"><p>카드선택</p></th>
+                <td colspan="2"><p>
+                    <select style="width:360px" name="srchCardNo" id="srchCardNo" title="카드선택" >
+                        <!--<option value="">전체</option>-->
+                        <option>00</option>
+                    </select>
+                </p>
+
+                </td>
+            </tr>
+            <!-- //loop -->
+            <tr>
+                <th scope="row"><p>이용기간</p></th>
+                <td width="230px"><p>
+                    <a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a>
+                    <a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+                    <a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a>
+                    <a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a>
+                </p>
+                </td>
+                <td class="reset_date">
+                    <a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a>
+                    
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <!-- btn -->
+        <div class="btnr">
+            <a href="javascript:before_goSubmit();" class="btn btn_blue"><span>조회</span></a>
+        </div>
+
+       	<div class="btnset mt20">
+            <p class="btnr">
+                <a href="javascript:goSubmit('2');" class="btn btn_s_gray"><span>국문보기</span></a><a href="javascript:goSubmit('3');" class="btn btn_s_white"><span>ENGLISH</span></a>
+            </p>
+        </div>
+
+
+        <table class="dtable01 dtable01_bill mt10" summary="이용일자, 사용지역, 이용가맹점, 이용금액 접수금액, 청구금액, 할부등록, 할부여부, 결제 예정일 등 개인 해외이용내역 조회 결과를 확인하실 수 있습니다.">
+        <caption>개인 해외이용내역 조회 결과</caption>
+        <colgroup><col width="76" /><col width="72" /><col width="72" /><col width="*" /><col width="*" /><col width="54" /><col width="54" /><col width="70" /></colgroup>
+        <thead>
+            <tr>
+                <th scope="col" rowspan="2" class="cell_l10">이용일자<br />(접수일자)</th>
+                <th scope="col" rowspan="2">사용지역</th>
+                <th scope="col" rowspan="2" class="riline">이용가맹점<br />(업종)</th>
+                <th scope="col" class="boline_b0 cell_r10">이용금액<br />접수금액(USD)</th>
+                <th scope="col" class="riline boline_b0 cell_r10">청구금액</th>
+                <th scope="col" rowspan="2" class="cell_l10">할부<br />등록</th>
+                <th scope="col" rowspan="2">할부<br />여부</th>
+                <th scope="col" rowspan="2" class="cell_r10">결제 예정일</th>
+            </tr>
+            <tr>
+                <th scope="col" class="cell_r10">접수금액-USD</th>
+                <th scope="col" class="riline cell_r10">환율(/USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--
+            <tr class="nodata">
+                <td colspan="8">현재 이용 중이신 세이브 이용내역이 없습니다.</td>
+            </tr>
+            -->
+            <!-- loop -->
+            <tr>
+                <td rowspan="2" class="cell_l10 t_no">0(0)</td>
+                <td rowspan="2">0<br />0</td>
+                <td rowspan="2" class="riline">0(0)</td>
+                <td class="t_no cell_r10">0(0)<br />0(USD)</td>
+                <td class="riline t_no cell_r10">0</td>
+                <td rowspan="2" class="cell_l10">
+                <a id="NHPIMCDFCM003_L01" href="#" class="btn btn_s_white" title="새창"><span>선택</span></a><!-- 100512 -->
+                </td>
+                <td rowspan="2">0</td>
+                <td rowspan="2" class="cell_l10 t_no">0</td>
+            </tr>
+            <tr>
+                <td class="cell_r10">0</td>
+                <td class="riline cell_r10">
+                <a href="#" class="a_point" title="새창">0000000</a>
+			</td>
+            </tr>
+			<tr class="nodata"><td colspan="8">이용내역이 없습니다.</td></tr>
+            <!-- //loop -->
+        </tbody>
+        </table>
+            <!-- paginate -->
+         <div class="paginate">	${_page}  </div>
+    </div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+ 
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_outback_plus.png" alt="아웃백 현장할인 이용내역 입니다." /></h1>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+
+	<h2><img src="/images/mh/h2_3_3plus01.png" alt="조회하실 카드 및 서비스를 선택하세요" /></h2>
+	<div class="content_block_inner">
+			<table class="dtable02 dtable_inputfield mt10" summary="서비스 이용내역을 조회하세요">
+			<caption>카드 이용내역 조회</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select name="cardNo" title="카드종류 선택" style="width:370px">
+			<option>00</option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>서비스선택</p></th>
+					<td><p><label><input type="radio" name="serviceGubun" value="O" checked="checked" title="아웃백 현장할인 서비스 선택" /> 아웃백 현장할인 서비스</label></p></td>
+				</tr>
+			</tbody>
+			</table>
+			<div class="btnr">
+				<a id="btn_search" href="#" class="btn btn_blue"><span>조회</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- 조회버튼 클릭시 기프트내역조회 출력 -->
+	<!-- content_block -->
+	<div id="result_area" style="display:" class="content_block content_block clfix">
+		<h2><img src="/images/mh/h2_3_3plus02.png" alt="현장할인 이용내역 입니다" /></h2>	
+		<div class="content_block_inner">	
+			<p class="t_point">삼성카드 3, 삼성카드 +(플러스) 카드 계열의 아웃백현장할인 이용내역을 확인하실 수 있습니다.</p>
+			<table class="dtable01 dtable01_bill mt10" summary="업종, 서비스종류, 이용횟수로 구성된 아웃백현장할인 이용내역">
+			<caption>현장할인 이용내역</caption>
+			<colgroup><col width="40%" /><col width="40%" /><col width="20%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">업종</th>
+					<th scope="col">서비스종류</th>
+					<th scope="col">이용횟수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10 t_no">아웃백</td>
+					<td>현장할인</td>
+					<td class="t_no"><span id="outbackCnt">03/06</span> 회</td>
+				</tr>
+				<!--// loop -->
+			</tbody>
+			</table>
+<!-- SR내역 13.03.12 -->
+			<ul class="mt10">
+				<li><p>※ 직전 3개월 월평균 일시불 및 할부 이용금액 30만원 이상 시 제공됩니다.</p></li><!-- 120702 수정 -->
+				<li><p>※ 월 1회, 연 6회, 회당 이용금액 20만원까지 적용됩니다.</p></li>
+				<li><p>※ 일부 상품의 경우 직전 3개월 월평균 일시불 및 할부 이용금액 20만원 이상 시 제공됩니다.<br /><span style="margin-left: 16px;">서비스 이용기준은 카드상품 페이지 내 상세안내를 참조하세요.</span></p></li>
+			</ul>
+<!--// SR내역 13.03.12 -->
+
+			<div class="line_lgray">&nbsp;</div>
+			
+			<div class="tb_exp pos_rel mt30">
+				<span class="t_point" style="padding-left:0;">아웃백현장할인 상세내역입니다.</span>
+				<!-- span class="ab_tr t_11">
+					<span>
+						<select>
+							<option>2012년</option>
+						</select>
+						</span>
+				</span -->
+			</div>
+
+			<table class="dtable01 dtable01_bill mt10" summary="이용일자, 이용장소, 이용여부로 구성된 현장할인 상세내역">
+			<caption>현장할인 상세내역</caption>
+			<colgroup><col width="20%" /><col width="60%" /><col width="20%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col">이용일자</th>
+					<th scope="col">이용장소</th>
+					<th scope="col" class="cell_r10">이용여부</th>
+				</tr>
+			</thead>
+			<tbody id="result_list">
+				<!-- loop -->
+				<!--  tr>
+					<td class="t_no">2012-05-08</td>
+					<td class="cell_l10">서울시 태평로</td>
+					<td class="cell_r10">승인</td>
+				</tr -->
+				<!--// loop -->
+			</tbody>
+			</table>
+
+	    	<!-- btn -->
+			<div class="paginate">
+				<div class="paging">
+					<a id="pre" href="javascript:getMoreList('P');" 	class="btn btn_s_white"><span>이전</span></a>
+					<a id="next" href="javascript:getMoreList('N');" 	class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>	
+			
+		</div>
+	</div>
+	<!-- //조회버튼 클릭시 기프트내역조회 출력 -->
+
+</form>	
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

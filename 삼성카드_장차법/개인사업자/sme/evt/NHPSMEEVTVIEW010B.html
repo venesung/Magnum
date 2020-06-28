@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+	//목록으로 돌아갈때 필요한 이벤트명
+	String srchGubun1 = request.getParameter("srchGubun1");
+%>
+<div id="tab_script">
+
+<script type="text/javascript">
+//<![CDATA[
+//Main Body Resizing
+function autoResize(i)
+{
+    var iframeHeight=
+    (i).contentWindow.document.body.scrollHeight;
+    (i).height=iframeHeight+50;
+}	
+//]]>
+</script>
+</div>
+<iframe height="100%" width="99%" name="iframe"  onload="autoResize(this);" frameborder="0" marginwidth="0" scrolling="no" title="종료된 이벤트 검색 및 게시판 목록"></iframe>
+<form name = "frm1" method = "post">
+	<input type="hidden" name = "srchGubun1" value ="<%=srchGubun1 %>" />
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+   frm1.action = "/smeevent.do?method=getEndEventList";
+   frm1.target = "iframe";
+   frm1.submit();
+   //]]>
+</script>
+ 

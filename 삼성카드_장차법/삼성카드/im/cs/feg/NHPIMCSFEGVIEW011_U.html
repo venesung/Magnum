@@ -1,0 +1,60 @@
+
+<%/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCSFEGVIEW001.jsp
+ * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+ * Created on 2010.03.31
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%
+String rootHistory = RequestUtil.getStringParameter(request, "rootHistory", "항공권/사용안함/");
+%>
+
+	<title>항공권을 사용하지 않았음에도 문제가 생겼을 경우 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+	
+		<!-- <script type="text/javascript" src="/js/common-hp-ajax.js"></script> -->
+	<script type="text/javascript" src="/js/im/cs/feg.js"></script>
+</head>
+<body>
+	<div id="wrap">
+			<!-- content_block -->
+		
+		<div class="content_block clfix">
+			<h2><img src="/images/cs/h2_foreign_faqtype02.png" alt="위 항목에 대한 구체적인 문제는 무엇입니까?" /></h2>
+			<div class="content_block_inner pos_rel">
+				<div class="tb_exp clfix">
+					<span class="fl_left"><img src="/images/cs/txt_qa_foreign_16135.png" alt="항공권을 사용하지 않았음에도 문제가 생겼을 경우" /></span>
+					
+				</div>
+				<div class="mt10"><img src="/images/cs/img_qa_foreign_16135.png" usemap="#foreignfaq_16135" alt="" />
+					<map name="foreignfaq_16135" id="foreignfaq_16135">
+						<area shape="rect" coords="54,21,147,69" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,2)" alt="<%=rootHistory %>동일(유사)한 금액이 반복 청구 됨" href="#"/>
+						<area shape="rect" coords="428,133,566,154" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,4)" alt="<%=rootHistory %>현금으로결제함 - 영수증은 보관하고 있음" href="#"/>
+						<area shape="rect" coords="428,168,566,193" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,4)" alt="<%=rootHistory %>현금으로결제함 - 영수증은 보관하고 있지 않음" href="#"/>
+						<area shape="rect" coords="428,227,566,256" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,4)" alt="<%=rootHistory %>타 카드로 결제함 - 영수증은 보관하고 있음" href="#"/>
+						<area shape="rect" coords="428,267,566,292" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,4)" alt="<%=rootHistory %>타 카드로 결제함 - 영수증은 보관하고 있지 않음" href="#"/>
+						<area shape="rect" coords="428,328,566,356" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,2)" alt="<%=rootHistory %>사용한 내용 이외 추가청구 - 영수증은 보관하고 있음" href="#"/>
+						<area shape="rect" coords="428,366,566,395" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,2)" alt="<%=rootHistory %>사용한 내용 이외 추가청구 - 영수증은 보관하고 있지 않음" href="#"/>
+						<area shape="rect" coords="436,492,557,509" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,0)" alt="<%=rootHistory %>전혀 알 수 없는 금액 - 해외여행 사실 있음. 영수증은 보관하고 있음" href="#"/>
+						<area shape="rect" coords="436,512,582,532" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,5)" alt="<%=rootHistory %>전혀 알 수 없는 금액 - 해외여행 사실 있음. 영수증은 보관하고 있지 않음" href="#"/>
+						<area shape="rect" coords="428,551,529,572" id="<%=NHPIMCSAUQFLAGVO.REG_AIR_PAGE%>" onclick="goPage(this,0)" alt="<%=rootHistory %>전혀 알 수 없는 금액 - 해외여행 사실 없음" href="#"/>
+					</map>
+			  </div>
+				<div class="line_lgray">&nbsp;</div>
+				
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>			
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp"%>

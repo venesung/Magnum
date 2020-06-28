@@ -1,0 +1,19 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">테스트 페이지 입니다.</div>
+
+<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+<title>삼성대표카드 통합 쇼룸 - 삼성카드</title>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.scard.hp.im.cd.shw.vo.ITSHCMSSTRABANNERMAPTTVO"%>
+<%
+	ArrayList<ITSHCMSSTRABANNERMAPTTVO> clist = (ArrayList<ITSHCMSSTRABANNERMAPTTVO>)request.getAttribute("clist");
+%>
+
+<%
+	for(int i=0 ;i <clist.size();i++){
+		ITSHCMSSTRABANNERMAPTTVO vo = (ITSHCMSSTRABANNERMAPTTVO)clist.get(i);
+		out.print( "<br/> vo = " + vo.getContentId() + " / " + vo.getContentIdMap() );
+	}
+%>
+<%@ include file="/WEB-INF/jsp/common/footer_new.jsp" %>

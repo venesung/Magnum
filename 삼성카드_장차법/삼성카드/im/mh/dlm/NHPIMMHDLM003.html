@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_reduct_income.png" alt="소득공제 내역입니다" /></h1>
+				</div>
+
+				<!-- content_block 100304 -->
+				<div class="content_block content_block_card">
+					<div class="tab02 clfix">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM000', true)">소득공제안내</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHDLM001', true)">소득공제 내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM004', true)">올앳카드 소득공제 내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM005', true)">소득공제 내역 발송신청</a></li>            
+						</ul>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- //100304 -->
+					<h2><img src="/images/mh/h2_reduct_income06.png" alt="일별 소득공제 내역입니다" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02 dtable_expand" summary="성명,주민등록번호를 확인할 수 있는 게시판입니다">
+						<caption>성명,주민등록번호 정보</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<tr>
+								<th class="al_center"><p>성명</p></th>
+								<td class="al_center"><p>${owner_name}</p></td>
+								<th class="al_center"><p>주민등록번호</p></th>								
+								<td class="al_center"><p class="t_no">000000-*******</p></td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<table class="dtable01 reduct_income_dtable01 mt30" summary="사용일,매출,사용가맹점,사용금액,공제적용여부,카드 사용내용,가족카드사용현황으로 구성된 신용카드 일별 소득공제 내역을 확인할 수 있는 게시판입니다">
+						<caption>신용카드 일별 소득공제 내역</caption>
+						<colgroup><col width="42" /><col width="52" /><col width="*" /><col width="92" /><col width="42" /><col width="52" /><col width="52" /><col width="62" /><col width="110" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="riline">사용일</th>
+								<th scope="col" rowspan="2" class="riline">매출</th>
+								<th scope="col" rowspan="2" class="riline">사용가맹점</th>
+								<th scope="col" rowspan="2" class="riline">사용금액</th>
+								<th scope="col" rowspan="2" class="riline">공제<br />적용<br />여부</th>
+								<th scope="col" colspan="2" class="cell_c boline_b0 riline">카드 사용내용</th>
+								<th scope="col" colspan="2" class="cell_c boline_b0">가족카드사용현황</th>
+							</tr>
+							<tr>
+								<th scope="col" class="riline">종류</th>
+								<th scope="col" class="riline">사용<br />구분</th>
+								<th scope="col" class="riline">발급자</th>
+								<th scope="col">카드번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="riline cell_l10 t_no">0</td>
+								<td class="riline" >0</td>
+								<td class="riline cell_l10">0</td>
+								<td class="riline cell_r10 t_no">0</td>
+								<td class="riline">0</td>
+								<td class="riline">0</td>
+								<td class="riline">0</td>
+								<td class="riline cell_l10">0</td>
+								<td class="t_no">0</td>
+							</tr>					
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">도난, 분실 또는 불법현금대출 등 비정상적인 사용금액 및 보험료, 교육비, 국세, 지방세, 기타 재정경제부령이 정하는  카드사용<br /> 공제제외금액은 적용 되지 않습니다.</p>
+						</div>
+							
+
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_t0 clfix">
+					<!-- btn -->
+					<p class="btnr">
+						<a href="javascript:go981()" class="btn btn_white"><span>이전화면</span></a>
+					</p>
+				</div>				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

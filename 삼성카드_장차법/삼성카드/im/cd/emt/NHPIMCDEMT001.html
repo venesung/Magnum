@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_emart_uselist01.png" alt="이마트쇼핑앤모아 서비스 이용내역입니다." /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_emart01.png" alt="월간 서비스내역을 조회하세요" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>회원님이 이마트 삼성쇼핑앤모아카드를 통해 <br />할인 받으신 내역을 <strong class="t_point">일단위, 월단위</strong>로 선택하여 조회하실 수 있습니다.</p></li>
+                            <li><p>할인서비스에 대한 자세한 내용은 카드정보를 확인하시기 바랍니다. <a href="javascript:goTabPageWithParam('NHPIMCDCPS011','kind_code=P0428');" class="btn_link">이마트 삼성쇼핑앤모아카드 보기</a></p></li>
+						</ol>
+
+						<table class="dtable02 mt10" summary="조회방식, 월간이용내역을 조회하는 게시판입니다">
+						<caption>월간 서비스내역을 조회</caption>
+						<colgroup><col width="18%" /><col width="" /></colgroup>
+						<tbody>
+							<tr>
+								<th><p>조회방식</p></th>
+								<td><p>
+									<label for="label_emart01" class="mr10"><input type="radio" class="rdo" id="label_emart01" name="label_emart" checked="checked" title="월간 이용내역" /> 월간 이용내역</label>
+									<label for="label_emart02" class="mr10"><input type="radio" class="rdo" id="label_emart02" name="label_emart" onclick="goTabPage('NHPIMCDEMT001',true)" title="연간 이용내역" /> 연간 이용내역</label>
+								</p></td>
+							</tr>
+							<tr>
+								<th><p>카드선택</p></th>
+								<td><p>
+											
+												<select title="카드선택" style="width:360px" name="card_number">
+													<option>00</option>
+												</select>
+												
+												
+								</p></td>
+							</tr>							
+							<tr>
+								<th><p>월간이용내역</p></th>
+								<td><p>
+									<select style="width: 125px;" title="월 선택" onchange="fnSelect(this);">0
+										<option>00</option>							
+									</select>																
+								</p></td>
+							</tr>
+
+						</tbody>
+						</table>
+						<div class="btnset">
+                            <p class="btnr"><a href="#" class="btn btn_blue" onclick="fnSearch();return false;"><span>조회</span></a></p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_emart02.png" alt="한달간의 쇼핑앤모아 이용내역입니다" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02" summary="전월, 연간 이마트 금액, 이마트 외 금액을 조회하는 게시판입니다">
+						<caption>이마트 금액 조회</caption>
+						<colgroup><col width="18%" /><col width="16%" /><col width="16%" /><col width="17%" /><col width="16%" /><col width="17%" /></colgroup>
+						<tbody>
+							<tr>
+								<th><p>전월 이마트 외 금액</p></th>
+								<td><p><strong class="t_point_org">0</strong></p></td>
+								<th><p>전월 이마트 금액</p></th>
+								<td><p><strong class="t_point_org">0</strong></p></td>
+								<th><p>연간 이마트 금액</p></th>
+								<td><p><strong class="t_point_org">0</strong></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<table id="emartHistoryRtnList" class="dtable01 mt20" summary="매출일자, 매출접수일자, 카드번호, 가맹점명, 이용금액, 할인여부, 할인금액 등  한달간 쇼핑앤모아 이용내역을 보여주는 게시판입니다">
+						<caption>쇼핑앤모아 이용내역</caption>
+						<colgroup><col width="11%" /><col width="15%" /><col width="21%" /><col width="19%" /><col width="12%" /><col width="10%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col">매출일자</th>
+								<th scope="col">매출접수일자</th>
+								<th scope="col" class="cell_l10">카드번호</th>
+								<th scope="col" class="cell_l10">가맹점명</th>
+								<th scope="col" class="cell_r10">이용금액</th>
+								<th scope="col">할인여부</th>
+								<th scope="col" class="cell_r10">할인금액</th>
+							</tr>
+						</thead>
+						<tbody>						
+							<!-- loop -->
+								<tr>
+									<td scope="col" class="t_no">0</td>
+									<td scope="col" class="t_no">0</td>
+									<td scope="col" class="cell_l10 t_no">0</td>
+									<td scope="col" class="cell_l10">0</td>
+									<td scope="col" class="cell_r10 t_no">0</td>
+									<td scope="col" class="t_no">0</td>
+									<td scope="col" class="cell_r10 t_no">0</td>
+								</tr>
+							<!-- //loop -->	
+							<tr class="nodata"><td colspan="7">조회 결과가 없습니다.</td></tr>
+						</tbody>
+						</table>
+					</div>
+						<!-- paginate -->
+						<div class="paginate">
+							<div class="paging">
+								<a id="btnMore" href="javascript:getMoreList()" class="btn btn_s_white" style="display:none;"><span>다음</span></a>
+							</div>
+						</div>						
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

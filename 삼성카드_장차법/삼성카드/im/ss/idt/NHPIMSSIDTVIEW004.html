@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">금융안전 서비스 ID-Doctor</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_safe_iddoctor.jpg" alt="금융안전 서비스 ID-Doctor - 고객님의 소중한 개인정보 유출 예방 및 정보 유출시 보상 해 드립니다" /></div>
+</div>
+				
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M007', true);">이용안내</a></li>
+<% if (vIdenNoYn == "1") { %>		
+			<li class="on"><a href="javascript:openIpinPopup('NHPIMSSIDT001M002');" title="새창" >등록하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M003');" title="새창">변경하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M004');" title="새창">해지하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M005');" title="새창">프로그램다운로드</a></li>
+			<!--li><a href="javascript:openIpinPopup('NHPIMSSIDT001M006');">주민등록번호도용방지서비스</a></li-->
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M008');" title="새창">명의도용차단설정</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M009');" title="새창">명의도용차단내역</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M010');" title="새창">실명확인내역</a></li>
+<% } else { %>			
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSIDT001M002', true);">등록하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M005', true);">프로그램다운로드</a></li>
+			<!--li><a href="javascript:goTabPage('NHPIMSSIDT001M006', true);">주민등록번호도용방지서비스</a></li-->
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M008', true);">명의도용차단설정</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M009', true);">명의도용차단내역</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M010', true);">실명확인내역</a></li>
+<% } %>
+		</ul>
+	</div>
+</div>
+
+
+<!-- content_block -->
+<form name="form" id="form" method="post">
+	
+	<input type="hidden" name="applyNo" value="<%= applyNo %>" /> 		<!-- 신청번호 -->
+	<input type="hidden" name="applyType" value="<%= applyType %>" /> 	<!-- 신청타입 -->
+	<input type="hidden" name="applyPhone1" value="" /> 				<!-- 서비스 등록 휴대폰 번호 앞자리-->
+	<input type="hidden" name="applyPhone" value="" /> 					<!-- 서비스 등록 휴대폰 번호-->
+	<input type="hidden" name="applyEmailYn" value="" />				<!-- 이메일 수신여부 -->
+	<input type="hidden" name="applyEmail" value="" /> 					<!-- 이메일 주소 -->
+	<input type="hidden" name="paymentType" value="" /> 				<!-- 결제타입 (포인트결제 : "P", 카드결제: "C") -->
+	<input type="hidden" name="paymentAmount" value="<%= payAmount %>" /> 	<!-- 결제금액 -->
+	<input type="hidden" name="cardNo16" value="" />					<!-- 결제카드번호 -->
+	<input type="hidden" name="point" value="<%= point %>" /> 			<!-- 사용가능 포인트 -->
+	
+	<!-- USB 배송정보 -->
+	<input type="hidden" name="usbTel" value="" />
+	<input type="hidden" name="usbPhone" value="" />
+	<input type="hidden" name="usbZip" value="" />
+	<input type="hidden" name="usbZipSeq" value="" />
+	<input type="hidden" name="usbEmail" value="" />
+	<input type="hidden" name="newjusoYn" value="<%=newjusoYn %>" />
+	
+	
+	<!-- [올앳승인] -->
+	<input type="hidden" name="allat_shop_id" value="feebiz" />
+	<input type="hidden" name="allat_card_no" value="" /> 		<!-- 카드번호 -->
+	<input type="hidden" name="allat_order_no" value=""  /> 	<!-- 주문번호 -->
+	<input type="hidden" name="allat_amt" value="<%= payAmountYearly %>" /> 			<!-- 승인금액 -->
+	<input type="hidden" name="allat_pmember_id" value="guest" /> 		<!-- 회원ID -->
+	<input type="hidden" name="allat_product_cd" value="iddoctor" /> 	<!-- 상품코드 -->
+	<input type="hidden" name="allat_product_nm" value="iddoctor" /> 	<!-- 상품명 -->
+	<input type="hidden" name="allat_buyer_nm" value="<%= memberVo.getUserName() %>" /> <!-- 결제자성명 -->
+	<input type="hidden" name="allat_enc_data" value="" /> 		<!-- 주문정보암호화필드 -->
+	<input type="hidden" name="allat_opt_pin" value="VIEW" /> 	<!-- 올앳참조필드 -->
+	<input type="hidden" name="allat_opt_mod" value="WEB" />
+	<input type="hidden" name="allat_opt_mod" value="WEB" />
+	
+	<input type="hidden" name="allat_test_yn" value="<%= allatTestYn %>" />
+	
+	<!-- [올앳승인] 카드 결제시 필수 필드, 계좌 이체시에는 사용하지 않음 -->
+	<input type="hidden" name="allat_recp_nm" value="<%= memberVo.getUserName() %>" />	<!-- 수취인성명 -->
+	<input type="hidden" name="allat_recp_addr" value="0" /> 		<!-- 수취인주소 -->
+	<input type="hidden" name="allat_zerofee_yn" value="N" /> 		<!-- 일반/무이자 할부 사용여부 -->
+	<input type="hidden" name="KVP_QUOTA" value="" /> 				<!-- 할부개월값 -->
+	<input type="hidden" name="allat_sell_mm" value="1" /> 			<!-- 할부개월수 -->
+	<input type="hidden" name="allat_bonus_yn" /> 					<!-- 보너스포인트 사용 여부 -->
+	<input type="hidden" name="allat_cardcert_yn"  value="Y" /> 	<!-- 카드 인증 여부 -->
+	<!-- [올앳승인] 일반결제   결제 필수 항목  -->
+	<input type="hidden" name="allat_cardvalid_ym" value="" /> 		<!-- 카드 유효기간 -->
+	<input type="hidden" name="allat_passwd_no" value="" /> 		<!-- 카드 비밀번호 -->
+	<input type="hidden" name="allat_business_type" value="0" /> 	<!-- 결제자 카드종류 -->
+	<input type="hidden" name="allat_registry_no" value="" /> 		<!-- 주민번호 -->
+	<input type="hidden" name="allat_biz_no" value="" /> 			<!-- 사업자번호 -->
+	<input type="hidden" name="allat_pay_type" value="NOR" /> 		<!-- 결제방법선택 -->
+	
+	<!-- Setting Value -->
+	<input type="hidden" name="orderInt" value="0" />
+	<input type="hidden" name="ShopId" value="feebiz" />
+
+
+
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_sinfocare08.gif" alt="정액제를 선택해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+
+		<table class="dtable01" summary="정액제 상품구분, 이용료, 이용방법을 선택하고 확인할 수 있는 게시판입니다">
+		<caption>정액제 선택</caption>
+			<colgroup><col width="6%" /><col width="13%" /><col width="23%" /><col width="*" /></colgroup><!-- 091203 -->
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">선택</th>
+					<th scope="col" class="cell_l10">상품구분</th>
+					<th scope="col" class="cell_l10">이용료</th>
+					<th scope="col" class="cell_l10">이용방법</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10"><input type="radio" name="type" id="label_airport01" disabled="disabled" <% if("2".equals(applyType)){ %> checked="checked" <% } %> title="월간정액제" /></td>
+					<td class="cell_l10"><label for="label_airport01">월간정액제</label></td>
+					<td class="cell_l10">월<span class="t_no"><%=StringUtil.amountToString(payAmountMonthly)%></span> 원 (VAT포함)</td>
+					<td class="cell_l10">삼성카드 홈페이지에서 보안 프로그램 다운로드 설치 이용</td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<td class="cell_l10"><input type="radio" name="type" id="label_airport02" disabled="disabled" <% if("3".equals(applyType)){ %> checked="checked" <% } %> title="연간정액제" /></td>
+					<td class="cell_l10"><label for="label_airport02">연간정액제</label></td>
+					<td class="cell_l10">년<span class="t_no"><%=StringUtil.amountToString(payAmountYearly)%></span> 원 (VAT포함)</td>
+					<td class="cell_l10">발송되는 USB장착시 자동설치 (설치 후 일반 USB처럼 이용가능)</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- content_block -->
+<div id="id_apply_form01" class="content_block clfix">
+	<h2><img src="/images/ss/h2_sinfocare01.gif" alt="약관에 동의해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">	
+	<h3><span class="t_point">ID Doctor 이용약관</span></h3>
+	<div class="d_desc mt10">
+		<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+			<div id="id_terms_Iddoctor" class="agree" tabindex="0">
+			
+			</div>
+		</div></div>
+	</div>
+
+	<div class="btnl">
+		<label for="label_agree1"><input type="radio" class="rdo" value="Y" id="label_agree1" name="id_agree" checked="checked" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+		<label for="label_agree2"><input type="radio" class="rdo" value="N" id="label_agree2" name="id_agree" title="동의안함" /> 동의안함</label>
+	</div>
+
+	<div class="cvc_view"></div>
+	<h3><span class="t_point">크레딧 뱅크 약관</span></h3>
+	<div class="d_desc mt10">
+		<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+			<div id="id_terms_credit" class="agree" tabindex="0">	
+					
+			</div>
+		</div></div>
+	</div>
+
+	<div class="btnl">
+		<label for="label_creditbank_agree1"><input type="radio" class="rdo" value="Y" id="label_creditbank_agree1" name="id_creditbank_agree" checked="checked" title="동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+		<label for="label_creditbank_agree2"><input type="radio" class="rdo" value="N" id="label_creditbank_agree2" name="id_creditbank_agree" title="동의안함" /> 동의안함</label>
+	</div>
+
+	<div class="cvc_view"></div>
+		<!-- btn -->
+		<div id="id_submit_form01" class="btnset">
+			<p class="btnr">
+                <a href="#id_submit_form02" class="btn btn_blue" onclick="nextStep1();"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSIDT001M002', true);" class="btn btn_white"><span>취소</span></a>
+                <a href="javascript:printTerms();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="id_apply_form02" class="content_block clfix" style="display:none">
+	<h2><img src="/images/ss/h2_service_regicertificate.png" alt="서비스 등록 인증을 받아주세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_inputfield" summary="서비스 등록 인증을 위한 휴대폰번호, 이메일주소를 입력하는 게시판입니다.">
+		<caption>서비스 등록 인증</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>휴대폰 번호</p></th>
+				<td><p>
+					<span class="input_phone">
+					<%
+						String handPhone1 = memberVo.getHandPhone1().trim();
+					%>
+						<select name="tempApplyPhone1" title="휴대폰 앞자리" onchange="comparePhoneNo();" >
+							<option value="">선택</option>
+                   			<option value="010" <%if(handPhone1.equals("010")){%>selected="selected"<%}%>>010</option>
+                          	<option value="011" <%if(handPhone1.equals("011")){%>selected="selected"<%}%>>011</option>
+                          	<option value="016" <%if(handPhone1.equals("016")){%>selected="selected"<%}%>>016</option>
+                          	<option value="017" <%if(handPhone1.equals("017")){%>selected="selected"<%}%>>017</option>
+                          	<option value="018" <%if(handPhone1.equals("018")){%>selected="selected"<%}%>>018</option>
+                         	<option value="019" <%if(handPhone1.equals("019")){%>selected="selected"<%}%>>019</option>
+						</select>
+						&nbsp;-&nbsp;<input type="text" name="applyPhone2" class="txt" value="<%= memberVo.getHandPhone2().trim() %>" title="휴대폰 가운데자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');checkLenN(this, 4, applyPhone3);" onchange="comparePhoneNo();"  onclick="form.applyPhone2.value = '';" />&nbsp;-&nbsp;
+						<input type="text" name="applyPhone3" class="txt" value="<%=memberVo.getHandPhone3().trim() %>" title="휴대폰 뒷자리"  maxlength="4" onkeypress="checkTypes(this, 'NUMB');checkLenB(this, applyPhone3);" onchange="comparePhoneNo();"  onclick="form.applyPhone3.value = '';" />
+                    <a href="javascript:getCertificationNo();" class="btn btn_s_white"  title="새창"><span>인증번호받기</span></a>
+					</span>									
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>이메일주소</p></th>
+				<td><p>
+					<span class="input_email"><input type="text" name="emailId" class="txt" value="<%= email[0].trim() %>" title="이메일 아이디" maxlength="20" />&nbsp;@&nbsp;<input type="text" name="emailDomain" class="txt" value="<%= email[1].trim() %>" title="email 공급자 직접입력"  maxlength="20" /></span>&nbsp;&nbsp;&nbsp;
+					<label for="email1"><input type="radio" name="tempEmailRecvYn" class="rdo" value="Y" id="email1" checked="checked" title="수신" /> <strong>수신</strong>&nbsp;&nbsp;</label>
+					<label for="email2"><input type="radio" name="tempEmailRecvYn" class="rdo" value="N" id="email2" title="미수신" /> 미수신</label>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div id="id_submit_form02" class="btnset" style="display: block;">
+			<p class="btnl t_desc04">안정적인 서비스 제공을 위해 휴대폰 번호를 인증 해 주세요.</p>
+			<p class="btnr">
+                <a href="#id_apply_form03" class="btn btn_blue" onclick="nextStep2();"><span>확인</span></a>
+                <a href="#id_apply_form01" class="btn btn_white" onclick="backStep1();"><span>취소</span></a>
+                <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_white"><span>정보수정</span></a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="id_apply_form03" class="content_block clfix" style="display:none">
+	<h2><img src="/images/ss/h2_sinfocare02.gif" alt="카드정보를 작성해주세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_inputfield" summary="카드정보 작성을 위한 결제금액, 결제방법, 카드종류, 카드번호, 유효기간, 카드 비밀번호를 입력하는 게시판입니다.">
+		<caption>카드정보 작성</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+				<tr>
+				<th scope="row"><p>결제금액</p></th>
+				<td><p><span class="t_desc02"><%=StringUtil.amountToString(payAmountYearly)%></span> 원 <span class="t_desc02">(부가세포함)</span></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>결제방법</p></th>
+				<td><p>
+					<label for="label_card1" class="mr10"><input type="radio" class="rdo" id="label_card1" name="tempPaymentType" value="C" checked="checked" title="카드결제" /> <strong>카드결제</strong></label>
+					<label for="label_card2"><input type="radio" class="rdo" id="label_card2" name="tempPaymentType" value="P" <%if(point < 5000){%> disabled="disabled" <%}%> title="포인트결제" /> 포인트결제(보유포인트:<span class="t_desc02"><%=StringUtil.amountToString(point)%>P</span>) <span class="t_desc02">*5,000P</span> 이상만 사용 가능합니다.</label>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드종류</p></th>
+				<td><p>
+					<select title="카드종류 선택" name="cardType" style="width:360px">
+						<option>삼성카드</option>
+					</select>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드번호</p></th>
+				<td>
+					<p class="input_phone">
+						<input type="text" class="txt" name="cardNo1" value="" title="카드번호 첫째 네자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, cardNo2);" onclick="form.cardNo1.value = '';" /> -
+						<input type="text" class="txt" name="cardNo2" value="" title="카드번호 두번째 네자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, cardNo1); checkLenN(this, 4, cardNo3);" onclick="form.cardNo2.value = '';" /> -
+						<input type="password" class="txt" name="cardNo3" value="" title="카드번호 세번째 네자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, cardNo2); checkLenN(this, 4, cardNo4);" onclick="form.cardNo3.value = '';" /> -
+						<input type="password" class="txt" name="cardNo4" value="" title="카드번호 네번째 네자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, cardNo3);" onclick="form.cardNo4.value = '';" />
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>유효기간</p></th>
+				<td><p>
+						<select title="유효기간 년도 선택" name="cardvalidYear">
+						<%
+							Date today = new Date();
+							int year = Integer.parseInt(DateUtil.getCurrentTime("yy"));
+							
+							for(int i = year; i <= year+9; i++){
+						%>
+							<option value='<%= i %>'><%= i %></option>
+						<%
+							}
+						%>										
+						</select> 년 &nbsp;
+						<select title="유효기간 월 선택" name="cardvalidMonth" style="width:60px">
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select> 월
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드 비밀번호</p></th>
+				<td><p class="input_2char"><input type="password" class="txt" name="password" value="" title="비밀번호 앞 두자리" maxlength="2" onkeypress="checkTypes(this, 'NUMB');" /><em>**</em>(비밀번호 앞의 2자리)</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div id="id_submit_form03"  class="btnset">
+			<p class="btnr">
+                <a href="#id_apply_form04" class="btn btn_blue" onclick="nextStep3();"><span>확인</span></a>
+                <a href="#id_apply_form02" class="btn btn_white" onclick="backStep2();"><span>취소</span></a>
+			</p>
+		</div>
+		
+	</div>
+</div>
+
+
+<div id="id_apply_form04" class="content_block clfix" style="display:none">
+	<h2><img src="/images/ss/h2_sinfocare09.gif" alt="USB 선물 신청 수령 지 확인해주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+						
+		<ol class="list_no01">
+			<li><p>연간 이용자만 이용이 가능하며, 받은 후 컴퓨터에 장착하면 자동 설치 이용이 가능 합니다.</p></li>
+			<li><p>설치 이후 일반USB로 이용 가능 합니다. 회원님의 기본 정보가 다를 경우 수정 이용 하세요.</p></li>
+		</ol>
+	
+		<div class="tb_exp">
+			<p class="ab_tr"><label for="label_same1"><input type="checkbox" name="copyInfo" class="rdo" value="" id="label_same1" onclick="copyUsbInfo();" title="정보 동일" /> 정보 동일</label></p>
+		</div>
+
+		<table class="dtable02 dtable_inputfield mt25" summary="USB 선물 신청 수령을 위해 이름, 휴대폰번호, 주소, 이메일주소로 구성된 회원님의 기본 정보와 받으시는 분 정보를 입력하는 게시판입니다.">
+		<caption>USB 선물 신청 수령지 입력</caption>
+		<colgroup><col width="17%" /><col width="17%" /><col width="*" /></colgroup>
+		<tbody>	
+			<tr>
+				<td rowspan="5" class="riline"><p>회원님의 <br />기본 정보</p></td>
+				<th class="cell_bg riline"><p>이름</p></th>
+				<td><p class="input_name"><input type="text" name="memberName" class="txt" value="<%= memberVo.getUserName().trim() %>" title="성명" disabled="disabled" /></p></td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>전화번호</p></th>
+				<td>
+					<p class="input_phone">
+						<input type="text" name="memberTel1" class="txt" value="<%= memberVo.getHomePhone1().trim() %>" title="전화번호 앞자리" disabled="disabled" />
+						&nbsp;-&nbsp;
+						<input type="text" name="memberTel2" class="txt" value="<%= memberVo.getHomePhone2().trim() %>" title="전화번호 가운데자리" disabled="disabled" />
+						&nbsp;-&nbsp;
+						<input type="text" name="memberTel3" class="txt" value="<%= memberVo.getHomePhone3().trim() %>" title="전화번호 뒷자리" disabled="disabled" />
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>휴대폰번호</p></th>
+				<td>
+					<p class="input_phone">
+						<select name="memberPhone1" title="휴대폰 앞자리" disabled="disabled" >
+							<option value="">선택</option>
+                         	<option value="010" <%if(handPhone1.equals("010")){%>selected="selected"<%}%>>010</option>
+                          	<option value="011" <%if(handPhone1.equals("011")){%>selected="selected"<%}%>>011</option>
+                          	<option value="016" <%if(handPhone1.equals("016")){%>selected="selected"<%}%>>016</option>
+                          	<option value="017" <%if(handPhone1.equals("017")){%>selected="selected"<%}%>>017</option>
+                          	<option value="018" <%if(handPhone1.equals("018")){%>selected="selected"<%}%>>018</option>
+                         	<option value="019" <%if(handPhone1.equals("019")){%>selected="selected"<%}%>>019</option>
+						</select>&nbsp;-&nbsp;<input type="text" name="memberPhone2" class="txt" value="<%= memberVo.getHandPhone2().trim() %>" title="휴대폰번호 가운데자리" disabled="disabled" />&nbsp;-&nbsp;<input type="text" name="memberPhone3" class="txt" value="<%= memberVo.getHandPhone3().trim() %>" title="휴대폰번호 뒷자리" disabled="disabled" />
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>주소</p></th>
+				<td><p>
+					<span class="input_zip"><input type="text" name="memberZip1" class="txt" value="<%= memberVo.getHomeZipCode().substring(0,3) %>" title="우편번호 앞자리" disabled="disabled" />
+						&nbsp;-&nbsp;
+					<input type="text" name="memberZip2" class="txt" value="<%= memberVo.getHomeZipCode().substring(3,6) %>" title="우편번호 뒷자리" disabled="disabled" />
+					<input type="hidden" name="memberZipSeq" value="<%= memberVo.getHomeZipSeq() %>" />
+					</span>
+					<!-- <span class="input_address"><input type="text" class="txt" value="" title="주소" /></span>  -->
+					<span class="input_address">
+						<%
+							String homeAddrDist = memberVo.getHomeAddrDist();
+							if(homeAddrDist == null) homeAddrDist = "";
+						%>
+						<input type="text" name="memberHomeAddrArea" class="txt" value="<%= memberVo.getHomeAddrArea() %>" title="주소" disabled="disabled" /> 
+						<input type="text" name="memberHomeAddrDist" class="txt" value="<%= homeAddrDist %>" title="상세주소" disabled="disabled" />
+					</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>이메일주소</p></th>
+				<td><p><span class="input_email"><input type="text" name="memberEmailId" class="txt" value="<%= email[0].trim() %>" title="이메일 아이디" disabled="disabled" />&nbsp;@&nbsp;<input type="text" name="memberEmailDomain" class="txt" value="<%= email[1].trim() %>" title="email 공급자 직접입력" disabled="disabled" /></span></p></td>
+			</tr>
+	
+			<tr>
+				<td rowspan="5" class="riline"><p>받으시는 분 <br />정보</p></td>
+				<th class="cell_bg riline"><p>이름</p></th>
+				<td><p class="input_name"><input type="text" name="usbName" class="txt" value="" title="성명" onkeypress="checkTypes(this, 'HCHR');" maxlength="10" /></p></td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>전화번호</p></th>
+				<td>
+					<p class="input_phone">
+						<input type="text" name="usbTel1" class="txt" value="" title="전화번호 가운데자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, usbTel2);"  onclick="form.usbTel1.value = '';" />
+						&nbsp;-&nbsp;
+						<input type="text" name="usbTel2" class="txt" value="" title="전화번호 가운데자리" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, usbTel1); checkLenN(this, 4, usbTel3);"  onclick="form.usbTel2.value = '';" />
+						&nbsp;-&nbsp;
+						<input type="text" name="usbTel3" class="txt" value="" title="전화번호 뒷자리" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, usbTel1);"  onclick="form.usbTel3.value = '';" />
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>휴대폰번호</p></th>
+				<td>
+					<p class="input_phone">
+						<select name="usbPhone1" title="휴대폰번호 앞자리">
+							<option value="">선택</option>
+                         	<option value="010">010</option>
+                          	<option value="011">011</option>
+                          	<option value="016">016</option>
+                          	<option value="017">017</option>
+                          	<option value="018">018</option>
+                          	<option value="019">019</option>
+                        </select>&nbsp;-&nbsp;<input type="text" name="usbPhone2" class="txt" value="" title="휴대폰번호 가운데자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, usbPhone3);" onclick="form.usbPhone2.value = '';" />&nbsp;-&nbsp;<input type="text" name="usbPhone3" class="txt" value="" title="휴대폰번호 뒷자리" onkeypress="checkTypes(this, 'NUMB'); checkLenB(this, usbPhone2);" onclick="form.usbPhone3.value = '';" />
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>주소</p></th>
+				<td><p>
+					<span class="input_zip"><input type="text" name="usbZip1" class="txt" value="" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;<input type="text" name="usbZip2" class="txt" value="" title="우편번호 뒷자리" readonly="readonly" /><a href="javascript:searchZipCode();" class="btn btn_s_white" title="새창"><span>우편번호조회</span></a></span>
+					<span class="input_address">
+						<input type="text" name="usbAddr1" class="txt" value="" title="주소" readonly="readonly" /> 
+						<input type="text" name="usbAddr2" class="txt" value="" title="상세주소" maxlength="30" />
+					</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th class="cell_bg riline"><p>이메일주소</p></th>
+				<td><p><span class="input_email"><input type="text" name="usbEmailId" class="txt" value="" title="이메일 아이디" maxlength="20" />&nbsp;@&nbsp;<input type="text"  name="usbEmailDomain" class="txt" value="" title="email 공급자 직접입력" maxlength="20"  /></span></p></td>
+			</tr>
+		</tbody>
+		</table>
+		
+		<!-- btn -->
+		<div id="id_submit_form04" class="btnr">				
+            <a id="NHPIMSSIDTVIEW004_L01" href="javascript:applyService('NHPIMSSIDTVIEW004_L01');" class="btn btn_blue" title="새창"><span>확인</span></a>
+            <a href="#id_apply_form03" class="btn btn_white" onclick="backStep3();"><span>취소</span></a>
+            <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_white"><span>정보수정</span></a>
+		</div>
+
+	</div>
+	<!-- Allat -->
+	<div id="allat_support"></div>
+</div>
+
+<div class="content_block clfix">
+	<br />
+</div>
+
+
+
+</form>
+
+<form name="ipinfrm">
+    <input type="hidden" name="menu" value="" />
+</form> 
+<form name="form1" id="form1" method="post">
+    <input type="hidden" name="certYn" value="" />
+</form> 
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

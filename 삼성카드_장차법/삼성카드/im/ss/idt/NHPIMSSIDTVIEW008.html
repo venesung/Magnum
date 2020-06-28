@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">금융안전 서비스 ID-Doctor</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_safe_iddoctor.jpg" alt="금융안전 서비스 ID-Doctor - 고객님의 소중한 개인정보 유출 예방 및 정보 유출시 보상 해 드립니다" /></div>
+</div>
+				
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M007', true);">이용안내</a></li>
+<% if (vIdenNoYn == "1") { %>		
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M002');" title="새창">등록하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M003');" title="새창">변경하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M004');" title="새창">해지하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M005');" title="새창">프로그램다운로드</a></li>
+			<li class="on"><a href="javascript:openIpinPopup('NHPIMSSIDT001M006');" title="새창">주민등록번호도용방지서비스</a></li>
+<% } else { %>			
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M002', true);">등록하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M005', true);">프로그램다운로드</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSIDT001M006', true);">주민등록번호도용방지서비스</a></li>
+<% } %>	
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div id="id_sample" class="content_block content_block_card clfix">
+	<br />
+    <%
+        //enc = "o9nwcwC4myu6vghgnX1nKQ=="; // Test Enc Data
+        String url = "http://join4.creditbank.co.kr/SamsungcardIDSaferWeb/protect.cb?" 
+                    + "m=protectStateByCCare&socidEncText=" + enc;
+    %>
+	<iframe id="id_creditbank_link" src="<%= url %>" frameborder="0" width="100%"  height="520"  id="cp_page" marginwidth="0" marginheight="0"  onload="resizeHeight('id_creditbank_link');" title="ID-Doctor 고객센터 안내 컨텐츠"></iframe>
+</div>
+<form name="ipinfrm">
+    <input type="hidden" name="menu" value="" />
+</form> 
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

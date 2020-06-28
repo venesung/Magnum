@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%/*
+* Project Name: 삼성카드 웹 이노베이션 프로젝트
+* File Name : 가능금액 이자율 OPEN EVENT NHPIMETEVTVIEW310
+* Author : "삼성SDS 강성동"
+* Created on 2010. 6. 18.
+*
+* COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.*
+*/%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>대출가능 금액 이자율 조회 포인트 지급 이벤트 - 삼성카드</title>
+<meta name="gENERATOR" content="eDITpLUS" />
+<meta name="aUTHOR" content="" />
+<meta name="kEYWORDS" content="" />
+<meta name="dESCRIPTION" content="" />
+</head>
+
+<body>
+<div><img src="/event/fsopenevent/event_1.gif" alt="대출가능 금액과 이자율 조회하고 포인트 받자!" /></div>
+<div><img src="/event/fsopenevent/event_2.gif" alt="현금서비스/삼성카드론의 이용가능금액과 이자율을 확인하고 이벤트에 응모하시면 사은 포인트 적립 기회를 드립니다." /></div>
+<div><img src="/event/fsopenevent/event_3.gif" alt="응모기간 : 2010.7.1 ~ 201.7.31" usemap="#Map1" border="0" /></div>
+<div><img src="/event/fsopenevent/event_4.gif" alt="본 행사는 카드사 및 제휴사의 사정에 의해 변경, 중단될 수 있으며 이를 사전에 안내해 드립니다. 적립되는 서비스포인트의 유효기간은 적립일로부터 1년이며, 기존에 적립하신 포인트와 합산하여 사용 가능합니다. 행사 당첨안내는 홈페이지 게시 및 이메일, SMS, 유/무선 전화로 개별 통보해 드립니다.(개별통보시 당첨안내 관련 내용을 포함하며, 수신거절여부와 관계없이 통보해 드립니다.)" /></div>
+<map name="Map1" id="Map1">
+<area shape="rect" coords="265,351,378,385" href="javascript:parent.goTabPage('NHPIMETFSEVT311',true)" alt="이벤트 응모하기" />
+<area shape="rect" coords="383,351,497,385" href="javascript:parent.goTabPage('NHPIMFSCDLM',false)" alt="카드론 바로가기" />
+<area shape="rect" coords="501,351,632,385" href="javascript:parent.goTabPage('NHPIMFSCSH001M000',false)" alt="현금서비스 바로가기" />
+</map>
+</body>
+</html>

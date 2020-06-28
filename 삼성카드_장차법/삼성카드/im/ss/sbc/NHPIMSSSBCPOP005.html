@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>지도 인쇄 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<style type="text/css"> 
+.t_14bold{font-size:14px; font-weight:bold; color:#333;}
+.al_info{margin-top:10px; width:600px;}
+.al_info th{text-align:left;font-weight:bold;color:#333;padding-bottom:4px;}
+.al_info td{padding-bottom:4px;}
+.map_img{border:1px solid #ccc;padding:1px;width:646px; height:376px; overflow:hidden;}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<!-- API 사용을 위한 기본 라이브러리  -->
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapAPI.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapConfig.js?ClientID=samsungcard"></script>
+<script type="text/javascript">
+var x = '<%=mapX%>';
+var y = '<%=mapY%>';
+var map = null;
+var mark = null;
+// 지도 초기화
+function setMap(){
+	var level = 3;
+	var point = new TPoint(x, y);
+	map = new TMap("mapDiv", {	point:point,
+								level:level,
+								contextMenu:false,
+								autosize:false
+								});
+	map.addControl(new TZoomControl());
+}
+// 마크 그리기
+function drawMark(){
+	var iconUrl = "http://www.samsungcard.com/images/ss/<%=icon%>.png";
+	var point = new TPoint(x, y);
+	mark = new TMark(point,{
+		clickable:false,
+		mark:new TIcon(iconUrl, new TSize(30, 31), new TPoint(-15, -15)),
+		infowindow_mouseover:false,
+		draggable:false		
+	});
+	
+	map.addOverlay(mark);
+}
+
+window.onload = function(){
+	setMap();
+	drawMark();
+}
+
+function resizeBody(win) {
+	var winBody = win.document.body;
+	var wid = winBody.scrollWidth + 10;
+	var hei = winBody.scrollHeight + 36;
+	win.resizeTo(wid, hei);
+    setMap();
+    drawMark();
+}
+
+</script>
+</head>
+<!-- 팝업 사이즈 : 710*630 -->
+<body onLoad="resizeBody(this);">
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/ss/pop_h1_mapprint.png" alt="현재 지도 인쇄하기" /></h1>		
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_mapprint.png" alt="현재 지도 인쇄하기" /></h1>
+	</div>
+	
+	<!-- content -->
+		<div id="pop_map_content">
+				<p class="t_14bold">000</p>
+				<table class="al_info" summary="연락처, 주소, 혜택으로 구성된 지도 정보를 확인할 수 있는 화면입니다.">
+				<caption>지도 정보</caption>
+				<colgroup><col width="50" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">연락처</th>
+							<td class="t_no">00</td>
+						</tr>
+						<tr>
+							<th scope="row">주소</th>
+							<td>00</td>
+						</tr>
+						<tr>
+							<th scope="row">혜택</th>
+							<td>
+							<img src="<%=imgSrc%>" alt="<%=imgDesc %>" /> 00</td>
+						</tr>
+					</tbody>
+				</table>
+					
+					
+					
+					
+					
+				</dl>
+				<p class="btnr" style="margin-top:-25px;">
+                    <a href="javascript:print();" class="btn btn_blue"><span>인쇄</span></a>
+				</p>
+				<div id="mapDiv" style="width:646px;height:376px;" class="map_img mt10"></div>
+		</div>
+		
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> 
+	</div>
+	
+ 
+</div>
+ 
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_account_myedu.png" alt="마이키즈카드 이용내역입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_account_myedu01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">
+		<table summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다." class="dtable02 dtable_inputfield">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select id="select1" style="width: 370px;" title="카드종류 선택" onchange="changeCard(this.options[this.selectedIndex].value)">
+						<option value="">카드를 선택해 주세요</option>
+					</select>
+				</p></td>
+			</tr>
+			<!-- //loop -->
+			<tr>
+
+				<th scope="row"><p>가입기간</p></th>
+				<td><p>
+
+					<select name="year_no" style="width: 95px;" title="가입기간 선택" onchange="goSearch()">
+						<option>00</option>
+					</select>
+					<span class="t_desc03 ml10">(매년 마이키즈 카드 가입 월 기준 12월 동안의 기간)</span>
+				</p></td>
+
+				</form>
+			</tr>
+		</tbody>
+		</table>
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+            <a href="javascript:goSearch();" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_account_myedu02.png" alt="일시불/할부 사용금액입니다" /></h2>
+	<div class="content_block_inner">
+	    <p class="mb10"><strong><span style="color:#A68C4C;">${userNm}</span></strong> 회원님은 카드 사용실적 <strong class="t_black">총 ( 0 ) 원으로 
+		( 0 )원의 교육비를 지원</strong>받으실 수 있습니다.<br />
+		단, 교육비지급 시점 현재 마이 키즈 카드 사용 정상회원에 한해 교육비 지원이 가능합니다.
+		</p>
+		<table summary="사용년월에 따른 일시부, 할부의 사용건별 합계입니다" class="dtable01 mb30">
+		<caption>사용건별 조회</caption>
+		<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+		<thead>
+			<tr>
+				<th class="cell_l10" scope="col">사용년월</th>
+				<th class="cell_r10" scope="col">일시불</th>
+				<th class="cell_r10" scope="col">할부</th>
+				<th class="cell_r10" scope="col">합계</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10 t_no">이월 금액</td>
+				<td class="cell_r10"><span class="t_no">0</span> 원</td>
+				<td class="cell_r10"><span class="t_no">0</span> 원</td>
+				<td class="cell_r10"><span class="t_no">0</span> 원</td>
+			</tr>
+			<!-- //loop -->
+                  <tr>
+                    <td colspan="4" class="cell_l10 t_no" style="padding-top:5px;padding-bottom:5px">
+                      <center>
+				                          일시불 및 할부 실적이 없습니다.<br />
+				                          자세한 내용은 삼성카드 고객센타 <span style="color:#F77856;">(☎ 1588-8700)</span>로 문의 바랍니다. 
+                      </center>
+                    </td>
+                  </tr>
+		
+		</tbody>
+		<thead>
+			<tr>
+				<th class="cell_l10">계</th>
+				<th class="cell_r10"><span class="t_no"> 0</span> 원</th>
+				<th class="cell_r10"><span class="t_no"> 0</span> 원</th>
+				<th class="cell_r10"><span class="t_no"> 0</span> 원</th>
+			</tr>
+		</thead>
+		</table>
+
+		<ol class="list_no01">
+			<li>
+				<p>
+					본 화면의 월별 사용 금액은 <strong class="t_black">매월 7일</strong> 업데이트 되어, 매월 7일이 지나야 전월 실적 확인이 가능합니다. <br />
+					당월 사용금액에 대해서는 <strong class="t_black">'마이홈' 내 카드이용내역</strong>을 참조해 주세요. <br />
+					예시) 매월 7일 전월 실적을 합산 및 반영 작업이 이루어지므로,  <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010년 3월 8일 본 화면 조회시, 2010년 2월 실적까지 조회 가능하십니다.  <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010년 3월 실적은, 2010년 4월 7일 이후 가능합니다.  <br />
+				</p>
+			</li>
+			<li>
+				<p>
+					상기 금액은 회원님이 My Kids(Plus) 카드 입회하신 후 사용하신 일시불/할부 매출(승인)금액이며, <br />
+					 매출표 접수 지연, 매출 취소 등으로 실제 사용내역과 다를 수 있습니다.
+				</p>
+			</li>
+			<li>
+				<p>
+					배우자 개별카드 일시불, 할부 사용실적 합산을 신청하신 회원님은 <br />
+					삼성카드 고객센타(지역번호없이)1588-8700를 통해 합산된 실적을 확인 하실 수 있습니다.
+				</p>
+			</li>
+		</ol>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

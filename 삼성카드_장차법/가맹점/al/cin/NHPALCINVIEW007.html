@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>가맹점 승인서 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="http://devwww.samsungcard.com/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="http://devwww.samsungcard.com/css/al.css" />
+	<link rel="stylesheet" type="text/css" href="http://devwww.samsungcard.com/css/mvint_pop.css" />
+	<base href="http://www.samsungcard.com" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/al/pop_h1_family_approval.png" alt="가맹점 승인서입니다" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/al/pop_h1_family_approval.png" alt="가맹점 승인서입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll" tabindex="0">
+
+		<div class="content_block content_block_card clfix">
+
+			<dl class="family_owner">
+				<dt><strong>상 호</strong> :</dt>
+				<dd><%=resultVO.getChainName() %></dd>
+				<dt><strong>동의인</strong> :</dt>
+				<dd><%=resultVO.getHeaderName() %> 귀하</dd>
+				<dt><strong>사업자등록 번호</strong> :</dt>
+				<dd><span class="t_no"><%=resultVO.getBusinessNo().substring(0,3)%>-<%=resultVO.getBusinessNo().substring(3,5)%>-<%=resultVO.getBusinessNo().substring(5) %></span></dd>
+			</dl>
+
+			<div class="line_lgray">&nbsp;</div>
+
+			<div class="tb_exp clfix">
+				<p>삼성카드 가맹점으로 가입하여 주신데 대하여 감사 드리며 귀사(점)의 가맹점 등록 내역을 다음과 같이 알려 드립니다.</p>
+			</div>
+			<table class="dtable01" summary="등록하신 가맹점 번호, 결제계좌, 가맹점 수수료 등 가맹점 정보를 확인하실 수 있는 게시판입니다">
+			<caption>가맹점 정보 안내</caption>
+			<colgroup><col width="14%" /><col width="26%" /><col width="13%" /><col width="13%" /><col width="20%" /><col width="14%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10 riline" rowspan="2">가맹점 번호</th>
+					<th scope="col" class="cell_l10 riline" rowspan="2">결제계좌</th>
+					<th scope="col" colspan="4" class="boline_b0">가맹점 수수료</th>
+				</tr>
+				<tr>
+					<th scope="col" class="cell_r10 riline">기본(국내)</th>
+					<th scope="col" class="cell_r10 riline">체크(국내)</th>
+					<th scope="col" class="cell_r10 riline">비자/마스터(해외)</th>
+					<th scope="col" class="cell_r10">아멕스(해외)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10 riline t_no">-0-</td>
+					<td class="cell_l10 riline">-0- <span class="t_no">10</span></td>
+					<td class="cell_r10 riline"><span class="t_no">10</span> %</td>
+					<td class="cell_r10 riline"><span class="t_no">10</span> %</td>
+					<td class="cell_r10 riline"><span class="t_no">10</span> %</td>
+					<td class="cell_r10"><span class="t_no">10</span> %</td>
+				</tr>
+				<!-- //loop -->
+			</tbody>
+			</table>
+
+			<p class="mt40"><img src="/images/al/pop_h2_family_approval01.png" alt="안내 사항입니다" /></p>
+			<div class="flag_additional"><img src="/images/al/img_banksample.png" class="flag_banklist_pop" alt="" /></div>
+			
+			<ol class="list_no01 mt25 ml_10">
+				<li><p><strong class="t_black">삼성카드 매출표 접수는 아래의 접수처를 이용하십시오.</strong></p>
+					<ul class="list_dashed pt5">
+						<li><p>삼성카드 지점 및 영업소 창구</p></li>
+						<li><p>기업은행, 외환은행, 하나은행, 광주은행, 제주은행, 전국 우체국</p></li>
+					</ul>
+					<ul class="list_rice pt10">
+						<li><p>삼성카드 또는 은행의 사정으로 제휴은행은 변경될 수 있습니다.</p></li>
+					</ul>
+				</li>
+				<li class="mt30"><p><strong class="t_black">신용판매 방법</strong><br />
+					당해 신용카드가 본인에 의하여 정당하게 이용되고 있는지의 여부를 확인하셔야 합니다</p>
+					<ul class="list_dashed pt5">
+						<li><p>신용카드 상의 서명과 매출표상의 서명의 일치여부를 확인하셔야 합니다.</p></li>
+						<li><p>사진이 부착된 신용카드의 경우 부착된 사진과 신용카드 이용자와의 일치여부를 확인하셔야 합니다.</p></li>
+						<li><p>신용카드에 의한 거래금액이 50만원을 초과하는 경우 반드시 신용카드 회원의 신분증을 확인하셔야 합니다.</p></li>
+						<li><p>단, 전자상거래 비대면거래의 경우에는 카드사와 별도 합의한 방법에 따릅니다.</p></li>
+					</ul>
+				</li>
+				<li class="mt30"><p><strong class="t_black">다음 사항을 준수하여 주십시오</strong></p>
+					<ul class="list_dashed pt5">
+						<li><p>가맹점은 카드거래를 이유로 카드회원에게 불리한 대우를 하지 못합니다. (여신 전문금융업법 제 19조 1항)</p></li>
+						<li><p>상품권 발행자 또는 상품권 발행자와 위탁판매계약을 체결한 업체로서 카드사와 상품권판매 계약을 체결한 가맹점 <br />이외에는 상품권을 신용판매 하여서는 안됩니다. (여신 전문금융업법 시행규칙 제 2조)</p></li>
+					</ul>
+				</li>
+				<li class="mt30"><p><strong class="t_black">삼성카드 홈페이지(www.samsungcard.co.kr)의 가맹점 웹멤버에 가입하시면, 매출내역을 정확하고 <br />편리하게 조회하실 수 있습니다.</strong></p>
+					<ul class="list_dashed pt5">
+						<li><p>건별 매출내역, 일별 매출내역, 월별 매출내역</p></li>
+						<li><p>매출전표 반송내역, 대금 미지급 내역, 연체 상계내역</p></li>
+						<li><p>가맹점 대금입금 내역, 세무서 신고용 대금입금 내역</p></li>
+					</ul>
+				</li>
+				<li class="mt30"><p>가맹점 규약을 다시 한 번 확인하여 주시기 바라며, 기타 삼성카드 취급에 관한 자세한 사항은 아래에 기재되어 있는 <br />문의처로 연락하여 주시기 바랍니다. 저희 삼성카드와 함께 하시게 된 귀 가맹점의 무궁한 발전을 기원합니다. </p></li>
+			</ol>
+
+			<div class="line_lgray mt20">&nbsp;</div>
+			<p class="t_desc03">삼성카드 대표전화 : (지역번호없이)1588-8700  /  전화한도 승인 : (지역번호없이)1588-8900 </p>
+
+		</div>
+
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+
+</body>
+</html>

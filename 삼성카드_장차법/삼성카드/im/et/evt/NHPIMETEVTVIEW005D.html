@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div class="tabbrowse_content">
+
+		<!-- top_visual -->
+		<div class="top_visual">
+			<h1><img src="/images/et/h1_event.png" alt="삼성카드와 다양한 이벤트를 즐기세요" /></h1>
+		</div>
+		
+		<!-- content_block -->
+		<div class="content_block content_block_card">	
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li class="<%="".equals(tab_index)||"001".equals(tab_index)?"on":""%>"><a href="javascript:goTab('001');">진행중인 이벤트</a></li>
+                            <li class="<%="004".equals(tab_index)?"on":""%>"><a href="javascript:goTab('004');">종료된 이벤트</a></li>
+                            <li class="<%="005".equals(tab_index) ? "on" : ""%>"><a href="javascript:goTabPage('NHPIMETEVT003', true);">당첨자발표</a></li>
+                            <!--<li class=""><a href="javascript:goTabPage('NHPIMETEVT101', true);">생활영수증복권제도</a></li>
+                            --><li class=""><a href="javascript:goTabPage('NHPIMETEVT103', true);">럭투유카드</a></li>
+						</ul>
+					</div>
+
+					<div id="cs">
+						<div class="board_event_view">
+							<!-- board_view -->
+							<table class="dtable01" summary="진행중인 행사에 대한 행사제목, 행사기간, 행사내용을 확인하는 게시판입니다.">
+							<caption style="display:none">진행중인 행사 상세보기</caption>
+							<colgroup><col width="70px" /><col width="570" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="row"><strong class="t_point">제목</strong></th>
+									<td><%=vo.getTitle() %></td>
+								</tr>
+								<tr>
+									<th scope="row"><strong class="t_point">기간</strong></th>
+									<td class="t_no"><%=StringUtil.formatStrDate(vo.getSdate(),"yy.mm.dd") %> ~ <%=StringUtil.formatStrDate(vo.getEdate(),"yy.mm.dd")  %></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="2">
+										<div class="cell_contents">
+											<div id="div_html"><%=vo.getHtml() %></div>
+											
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							</table>
+							
+							<!--btn -->
+							<div class="btnset">
+								<p class="btnr"><a href="javascript:goList('')" class="btn btn_white"><span>목록</span></a></p>
+							</div>
+
+							<!-- pre_nex_article -->
+							<div class="prenext_article">
+								<table class="dtable01" summary="이벤트의 이전글 다음글로 이동할 수 있습니다.">
+								<caption style="display:none">이전글 다음글</caption>
+								<colgroup><col width="55" /><col width="*" /><col width="115" /></colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">이전글</th>
+                                            <td class="cell_l"><a href="javascript:goDetail('<%= preSeq%>','<%= newPreSeq%>');" title="<%=preTitle %>" ><%=preTitle %></a></td>
+											<td class="t_no"><%=StringUtil.formatStrDate(preSdate,"yy.mm.dd")  %> ~ <%=StringUtil.formatStrDate(preEdate,"yy.mm.dd") %></td>
+										</tr>
+										<tr>
+											<th scope="row">다음글</th>
+                                            <td class="cell_l"><a href="javascript:goDetail('<%= nextSeq %>','<%=newNextSeq %>');" title="<%=nextTitle %>" ><%=nextTitle %></a></td>
+											<td class="t_no"><%=StringUtil.formatStrDate(nextSdate,"yy.mm.dd")  %> ~ <%=StringUtil.formatStrDate(nextEdate,"yy.mm.dd") %></td>
+										</tr>	
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+		</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

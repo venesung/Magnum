@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+<!-- 2012.12.24 VOC 삭제 추가 시작 start -->
+<!-- 					<h1><img src="/images/et/h1_event.png" alt="삼성카드와 다양한 이벤트를 즐기세요" /></h1> -->
+					<%if("004".equals(tab_index)) { %>
+					<h1><img src="/images/et/h1_event_2.gif" alt="종료된 이벤트" /></h1>
+					<%}else if ("005".equals(tab_index)) { %>
+					<h1><img src="/images/et/h1_event_3.gif" alt="당첨자발표" /></h1>
+					<%}else{%>
+					<h1><img src="/images/et/h1_event_1.gif" alt="진행중인 이벤트" /></h1>
+					<%}%>
+<!-- 2012.12.24 VOC 삭제 추가 시작 end -->
+				</div>
+				
+				<!-- content_block -->
+				<%if("004".equals(tab_index)){ 		//종료된이벤트%>
+				<jsp:include page="NHPIMETEVTVIEW006.jsp" >
+					<jsp:param value="<%=srchGubun1 %>" name="srchGubun1" /> 
+					<jsp:param value="<%=srchGubun2 %>" name="srchGubun2" /> 
+					<jsp:param value="<%=srchGubun3 %>" name="srchGubun3" /> 
+					<jsp:param value="<%=srchGubun4 %>" name="srchGubun4" /> 
+					<jsp:param value="<%=srchGubun5 %>" name="srchGubun5" /> 
+					<jsp:param value="<%=tab_index %>"  name="tab_index" /> 
+				</jsp:include>
+				<%}else if("005".equals(tab_index)){ //당첨자발표%>
+ 				<jsp:include  page="NHPIMETEVTVIEW008.jsp" />
+				<%}else{ 							//진행중이벤트%>
+				<jsp:include page="NHPIMETEVTVIEW002.jsp">				
+					<jsp:param value="<%=srchGubun1 %>" name="srchGubun1" /> 
+					<jsp:param value="<%=srchGubun2 %>" name="srchGubun2" /> 
+					<jsp:param value="<%=srchGubun3 %>" name="srchGubun3" /> 
+					<jsp:param value="<%=srchGubun4 %>" name="srchGubun4" /> 
+					<jsp:param value="<%=srchGubun5 %>" name="srchGubun5" /> 
+					<jsp:param value="<%=tab_index %>"  name="tab_index" /> 
+					<jsp:param value="<%=srchGubun7 %>" name="srchGubun7" />
+					<jsp:param value="<%=cPage %>" name="cPage" /> 
+					<!-- 2012.12.27 VOC 추가 start -->
+					<jsp:param value="<%=srchGubun8 %>" name="srchGubun8" />
+					<jsp:param value="<%=srchGubun9 %>" name="srchGubun9" />
+					<jsp:param value="<%=srchGubun10 %>" name="srchGubun10" />
+					<jsp:param value="<%=pageSize %>" name="pageSize" />
+					<!-- 2012.12.27 VOC 추가 end -->
+				</jsp:include>
+				<%} %>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

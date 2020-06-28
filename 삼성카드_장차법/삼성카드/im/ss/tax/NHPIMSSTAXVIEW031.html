@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: 
+ * Author: "SDS 여상석 사원"
+ * Created on 2010. 02. 08.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <%if("null".equals(request.getAttribute("msg"))) {%>
+ 	<script type="text/javascript">
+ 		parent.log_out();
+	</script>
+ <%}else{%>
+ 	<script type="text/javascript">
+ 		try{
+			parent.bundlereq();
+ 		}catch(err){
+ 			parent.log_out();
+ 		}
+ 	</script>
+ <%}%>
+</body>
+</html>

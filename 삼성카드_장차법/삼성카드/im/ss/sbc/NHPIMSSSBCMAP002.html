@@ -1,0 +1,1178 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+String str_icon = request.getParameter("icon");	// 길찾기 실행시 출발지 근거를 찾기 위한 값 마크의 값
+str_icon = str_icon == null ? "" : str_icon;
+String str_name = request.getParameter("name");	// 길찾기 실행시 출발지명
+str_name = str_name == null ? "" : str_name;
+str_name = java.net.URLDecoder.decode(str_name, "UTF-8");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /-->
+<title>길찾기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<!-- API 사용을 위한 기본 라이브러리  -->
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapAPI.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/TMapConfig.js?ClientID=samsungcard"></script>
+
+<!-- test script 아래 원래 스크립트는 테스트시 봉인 -->
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iaddress-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iregioncode-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/isearch-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-template.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/ilistpage-manager.js?ClientID=samsungcard"></script>
+
+<!-- 검색을 위한 스크립트 라이브러리 -->
+<!--
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iaddress-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iregioncode-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/isearch-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/itp-template.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/ilistpage-manager.js?ClientID=samsungcard"></script>
+-->
+
+<!-- 길찾기를 위한 스크립트 라이브러리 -->
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iroute-service.js?ClientID=samsungcard"></script>
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/iroute-list-viewer.js?ClientID=samsungcard"></script>
+
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/mapApp.js?ClientID=samsungcard"></script>
+<script type="text/javascript" src="http://biz.talkyple.com/API/tpInterface/DRouteService.js?ClientID=samsungcard"></script>
+
+<!-- 대중교통을 위한 스크립트 라이브러리 -->
+<script type="text/javascript" language="javascript" src="http://biz.talkyple.com/API/tpInterface/ipublic-route-service.js?ClientID=samsungcard"></script>
+
+<script type="text/javascript"> 
+
+//페이지 번호 처리
+var listmng = new ListPageManager();
+var cpage;
+var maxPage;
+function initPageNumber(val) {
+	var pagelistId = "pagelist_"+val;
+	listmng.listdiv = document.getElementById(pagelistId);
+	listmng.getMaxPage = getMaxPage;
+	listmng.getCurPage = getCurPage;
+	listmng.onSelectedPage = onChangeListPage;
+	
+	listmng.listheader = '<div class="paginate pb15"><div class="paging">';
+	listmng.listfooter = '</div></div>';
+	listmng.styleInfo =
+				[10,
+					["PP","IMG","/images/common/btn_prev_merc.png","/images/common/btn_prev_merc.png","thm8orange"],
+				 	["N","congBold","congNormal","[]",["TEXT"," "]],
+					["FF","IMG","/images/common/btn_next_merc.png","/images/common/btn_next_merc.png","thm8orange"]
+				];
+    
+	setPageList(getCurPage());
+}
+
+function setPageList(p){
+	listmng.setPageList("listmng", p);
+}
+ 
+function getCurPage() {
+	return cpage;
+}
+ 
+function setCurPage(page) {
+	cpage = page;
+}
+ 
+function getMaxPage() {
+	return maxPage;
+}
+ 
+function setMaxPage(page) {
+	maxPage = page;
+}
+ 
+function onChangeListPage(page) {
+	var queryForm = "";
+	var frm = "";
+	if(_div == "route") {
+		if(_type == "sMark"){
+			queryForm = document.getElementById("sRouteForm");
+			frm = "sRouteForm";
+		}else if(_type == "eMark"){
+			queryForm = document.getElementById("eRouteForm");
+			frm = "eRouteForm";
+		}else{
+			queryForm = document.getElementById("pRouteForm");
+			frm = "pRouteForm";
+		}
+	}else {
+		if(_type == "sMark"){
+			queryForm = document.getElementById("sPublicRouteForm");
+			frm = "sPublicRouteForm";
+		}else{
+			queryForm = document.getElementById("ePublicRouteForm");
+			frm = "ePublicRouteForm";
+		}
+	}
+	queryForm.page.value=page;
+	
+	if(currSearchType=='initial')
+		ajaxInitialSoundOfNameSearch(frm);
+	else
+		ajaxNameSearchTemplate(frm);
+}
+ 
+//명칭검색 결과를 처리해주는 스크립트
+var isIconSet = false;
+var markIdx = 1000;
+var _tm = null;
+function searchMoveResult(point, label, tooltip) {
+	if(_tm != null){
+		parent.mapFrm.map.removeOverlay(_tm);
+	}
+	var _tinfo = new TInfoWindow(tooltip, {
+		removable:true,
+		show:true,
+		//width:200,
+		//height:200,
+		//point:new TPoint(mapX, mapY),
+		type:"tag"
+	});
+ 
+	_tm = new TMark(point,{
+		infowindow : _tinfo,
+		mark: new TIcon("http://biz.talkyple.com/TMap/symbols/401.gif", new TSize(15, 25), new TPoint(-15,-25)),
+		clickable:false,
+		infowindow_mouseover:true,
+		label:"<b>"+label+"</b>",
+		draggable:true
+	});
+	parent.mapFrm.map.addOverlay(_tm);
+	parent.mapFrm.map.setCenter(point, 3);	// 마크가 찍힌 곳을 중심으로 이동
+ 
+}
+
+
+
+
+//############################## 명칭검색#####################################//
+
+//명칭검색 초기화
+var searchRcodeSvc  = new CongRegionCodeService("CONG");
+
+//고객사 서버에 적용 setproxy 를 적용하셔야 합니다.
+searchRcodeSvc.setProxy("/talkyple/mapproxy.jsp", "http://biz.talkyple.com");
+//searchRcodeSvc.setProxy("../mapproxy.jsp", "http://112.175.242.190");
+ 
+//명칭 검색을 위한 서비스 지정
+var currSearchType = "name";
+var page = 0;
+var _type = "";		// 출발지, 경유지, 도착지 구분
+var _div = "";		// 대중교통, 길찾기 구분
+var svc = new CongSearchService();
+
+//고객사 서버에 적용 setproxy 를 적용하셔야 합니다.
+svc.setProxy("/talkyple/mapproxy.jsp", "http://biz.talkyple.com");
+//searchRcodeSvc.setProxy("../mapproxy.jsp", "http://112.175.242.190");
+
+// 명칭검색(길찾기 출발지,경유지,도착지검색 포함)
+function ajaxNameSearchTemplate(frm) {
+	var f = document.getElementById(frm);
+	if(f.sname.value == ""){
+		alert("원하는 지역을 입력해 주십시오.");
+		f.sname.focus();
+	}else{
+		currSearchType = "name";
+		var hcode1 = f.hcode1.value;
+		var hcode2 = f.hcode2.value;
+		var hcode3 = f.hcode3.value;
+		var name = encodeURI(f.sname.value);
+		var lang = f.lang.value;
+		var output = f.output.value;
+		var inputCoordSystem = f.inputCoordSystem.value;
+		var outputCoordSystem = f.outputCoordSystem.value;
+		var pagesize = f.pagesize.value;
+		
+		page = f.page.value;
+		
+		if(f.name == "sRouteForm" || f.name == "sPublicRouteForm"){ _type = "sMark";}
+		else if(f.name == "eRouteForm" || f.name == "ePublicRouteForm"){ _type = "eMark";}
+		else if(f.name == "pRouteForm"){ _type = "pMark";}
+		
+		//_div = "public";	명칭검색은 1가지로 통일해서 사용
+		//document.getElementById("publicRouteNameSearch").style.display = "";
+		_div = "route";
+		document.getElementById("searchPublicRouteList-div").style.display = "none";	// 대중교통
+		document.getElementById("routeNameSearch").style.display = "";					// 길찾기
+		document.getElementById("searchRouteList-div").style.display = "none";	
+		document.getElementById("info_text").style.display = "none";	
+
+		// clientID를 처음에 입력함.
+		resultSet = svc.nameSearch(hcode1, hcode2, hcode3, name, pagesize, page, lang, output, outputCoordSystem, "samsungcard", false);
+		routeResultViewSet(resultSet);
+	}
+}
+
+//길찾기명칭 검색 결과 (resultViewSet와 동일함_div구분을 위해 분리)
+function routeResultViewSet(resultSet) {
+	var totalDataCount = resultSet.totalDataCount;
+	var totalPageCount = resultSet.totalPageCount;
+	var datas = resultSet.searchDatas;
+
+	var listDivId = "listDiv_"+_div;
+	var listDiv = document.getElementById(listDivId);
+	//검색결과 처리
+	var tempDivId = "listTemplateDiv_"+_div;
+	var tempDiv = document.getElementById(tempDivId);
+	var templateEngine = new CongTemplateEngine(tempDiv.innerHTML);
+
+	svc.setListTemplateEngine(templateEngine);
+	svc.setListDiv(listDiv);
+	svc.renderList(datas);
+	
+	//페이지번호 처리
+	setCurPage(parseInt(page));
+	setMaxPage(totalPageCount);
+	initPageNumber(_div);
+	
+	document.getElementById("totalcount").innerHTML = totalDataCount;
+	if(totalDataCount == 0){	
+		var _html = "<p><span><b>검색 결과가 없습니다.</b></span></p>";
+		listDiv.innerHTML = _html;
+	}
+}
+
+
+
+// 경유지추가 뷰/삭제
+var passview = false;
+function passViewOnOff(str) {
+	if(str == "on"){	// 경유지추가
+		//document.getElementById("passInfoDiv").style.visibility = "hidden";
+		document.getElementById("onpassInfoDiv").style.display = "none";
+		document.getElementById("offpassInfoDiv").style.display = "";
+		document.getElementById("passInfo1").style.display = "";
+		passview = true;
+	}else{				// 경유지 삭제
+		passview = false;
+		//document.getElementById("passInfoDiv").style.visibility = "visible";
+		document.getElementById("onpassInfoDiv").style.display = "";
+		document.getElementById("offpassInfoDiv").style.display = "none";
+		document.getElementById("passInfo1").style.display = "none";
+		if(pMark != null) parent.mapFrm.map.removeOverlay(pMark);
+		var fm = document.getElementById("pRouteForm");
+		fm.sname.value = "";
+		document.getElementById("pX").value = "";
+		document.getElementById("pY").value = "";
+		document.getElementById("pAddr").value = "";
+		document.getElementById("p_span").style.display = "";
+		document.getElementById("pAddr").style.display = "none";
+		document.getElementById("pResearch").style.display = "none";
+		
+	}
+}
+
+// 출발지, 경유지, 도착지 mark찍기
+var sMark = null;		// 출발지 Mark
+var pMark = null;		// 경유지 Mark
+var eMark = null;		// 도착지 Mark
+function searchSaveResult(point, label, tooltip) {
+	var	sXid = ""; var sYid = "";
+	var eXid = ""; var eYid = "";
+	var sAddr = ""; var eAddr = "";
+	
+	if(_div == "route"){
+		sXid = document.getElementById("sX");
+		sYid = document.getElementById("sY");
+		eXid = document.getElementById("eX");
+		eYid = document.getElementById("eY");
+		sAddr = document.getElementById("sAddr");
+		eAddr = document.getElementById("eAddr");
+	}else{
+		sXid = document.getElementById("p_sX");
+		sYid = document.getElementById("p_sY");
+		eXid = document.getElementById("p_eX");
+		eYid = document.getElementById("p_eY");
+		//sAddr = document.getElementById("p_sAddr");
+		//eAddr = document.getElementById("p_eAddr");
+	}
+	
+	if(_type == "sMark"){		// 출발지
+		if(sMark != null) parent.mapFrm.map.removeOverlay(sMark);
+		congPubRoutegSvc.setAddrName("startAddr", label);
+		sMark = new TMark(point,{
+			mark: new TIcon("http://biz.lifelime.co.kr/m/img/icon/n_local_flag_start.png", new TSize(38, 36), new TPoint(-4, -36)),
+			clickable:false,
+			infowindow_mouseover:true,
+			//label:"<b>"+label+"</b>",
+			draggable:false
+		});
+		parent.mapFrm.map.addOverlay(sMark);
+		// 선택한 마크가 화면안에 있을경우 지도를 이동하지 않음
+		var bound = parent.mapFrm.map.getBound();
+		if(bound.left > point.x || bound.right < point.x ||
+			bound.bottom > point.y || bound.top < point.y){
+			parent.mapFrm.map.setCenter(point);	// 마크가 찍힌 곳을 중심으로 이동
+		}
+		sXid.value = point.x;
+		sYid.value = point.y;
+		sAddr.value = label;
+		
+		document.getElementById("s_span").style.display = "none";
+		document.getElementById("sAddr").style.display = "";
+		document.getElementById("sResearch").style.display = "";
+	}else if(_type == "eMark"){		// 도착지
+		if(eMark != null) parent.mapFrm.map.removeOverlay(eMark);
+		congPubRoutegSvc.setAddrName("endAddr", label);
+		eMark = new TMark(point,{
+			mark: new TIcon("http://biz.lifelime.co.kr/m/img/icon/n_local_flag_arrive.png", new TSize(38, 36), new TPoint(-4, -36)),
+			clickable:false,
+			infowindow_mouseover:true,
+			//label:"<b>"+label+"</b>",
+			draggable:false
+		});
+		parent.mapFrm.map.addOverlay(eMark);
+			// 선택한 마크가 화면안에 있을경우 지도를 이동하지 않음
+		var bound = parent.mapFrm.map.getBound();
+		if(bound.left > point.x || bound.right < point.x ||
+			bound.bottom > point.y || bound.top < point.y){
+			parent.mapFrm.map.setCenter(point);	// 마크가 찍힌 곳을 중심으로 이동
+		}
+		eXid.value = point.x;
+		eYid.value = point.y;
+		eAddr.value = label;
+		
+		document.getElementById("e_span").style.display = "none";
+		document.getElementById("eAddr").style.display = "";
+		document.getElementById("eResearch").style.display = "";
+	}else{						// 경유지
+		if(pMark != null) parent.mapFrm.map.removeOverlay(pMark);
+		pMark = new TMark(point,{
+			mark: new TIcon("http://biz.lifelime.co.kr/m/img/icon/n_local_flag_pass.png", new TSize(38, 36), new TPoint(-4, -36)),
+			clickable:false,
+			infowindow_mouseover:true,
+			//label:"<b>"+label+"</b>",
+			draggable:false
+		});
+		parent.mapFrm.map.addOverlay(pMark);
+		// 선택한 마크가 화면안에 있을경우 지도를 이동하지 않음
+		var bound = parent.mapFrm.map.getBound();
+		if(bound.left > point.x || bound.right < point.x ||
+			bound.bottom > point.y || bound.top < point.y){
+			parent.mapFrm.map.setCenter(point);	// 마크가 찍힌 곳을 중심으로 이동
+		}
+		document.getElementById("pX").value = point.x;
+		document.getElementById("pY").value = point.y;
+		document.getElementById("pAddr").value = label;
+		
+		document.getElementById("p_span").style.display = "none";
+		document.getElementById("pAddr").style.display = "";
+		document.getElementById("pResearch").style.display = "";
+	} 
+}
+
+// 재검색
+function reSearch(type){
+	if(type == "s"){		// 출발지 초기화
+		parent.mapFrm.map.removeOverlay(sMark);
+		sRouteForm.sname.value="";
+		document.getElementById("sX").value = "";
+		document.getElementById("sY").value = "";
+		document.getElementById("sAddr").value = "";
+		document.getElementById("sAddr").style.display = "none";
+		document.getElementById("s_span").style.display = "";
+		document.getElementById("sResearch").style.display = "none";
+	}else if(type == "e"){	// 도착지 초기화
+		parent.mapFrm.map.removeOverlay(eMark);
+		eRouteForm.sname.value="";
+		document.getElementById("eX").value = "";
+		document.getElementById("eY").value = "";
+		document.getElementById("eAddr").value = "";
+		document.getElementById("eAddr").style.display = "none";
+		document.getElementById("e_span").style.display = "";
+		document.getElementById("eResearch").style.display = "none";
+	}else if(type == "p"){	// 경유지 초기화
+		parent.mapFrm.map.removeOverlay(pMark);
+		pRouteForm.sname.value="";
+		document.getElementById("pX").value = "";
+		document.getElementById("pY").value = "";
+		document.getElementById("pAddr").value = "";
+		document.getElementById("pAddr").style.display = "none";
+		document.getElementById("p_span").style.display = "";
+		document.getElementById("pResearch").style.display = "none";
+	}
+}
+
+
+// 길찾기
+var congRouteSvc = new CongRouteService();
+congRouteSvc.setProxy("/talkyple/mapproxy.jsp", "http://road.talkyple.com");
+var _course = 'realtime';
+var pathdata = null;
+var listViewer;
+function routeInit() {
+	var isRouteInit = true;
+	if(document.getElementById("sX").value == "" && document.getElementById("sY").value == ""){ 
+		alert("출발지를 선택하세요."); 
+		isRouteInit = false;
+	}else if(document.getElementById("eX").value == "" && document.getElementById("eY").value == ""){
+		alert("도착지를 선택하세요."); 
+		isRouteInit = false;
+	}else if(passview){
+		if(document.getElementById("pX").value == "" && document.getElementById("pY").value == ""){
+			alert("경유지를 선택하세요."); 
+			isRouteInit = false;
+		}
+	}
+	if(isRouteInit){
+		listViewer = new CongRouteListViewer();
+		//Default가 WCONGNAMUL임, 지정하지 않으면 WCONGNAMUL로 처리
+		congRouteSvc.inputCoordSystem = "WCONGNAMUL";	// 출발지, 경유지, 도착지 좌표계
+		congRouteSvc.outputCoordSystem = "WCONGNAMUL";	// 결과 좌표계
+		document.getElementById("routeNameSearch").style.display = "none";	
+		document.getElementById("searchRouteList-div").style.display = "inline";	
+		// listViewer의 방향표시 이미지 변경예
+		//listViewer.setRotaionImage0("http://localimg.daum-img.net/localimages/07/2008/map/new/n_local_flag_arrive.png");
+		
+		// 대중교통경로 지우기
+		if(!publicTrafficRouteController){
+			setPublicTrafficRouteController();
+		}
+		publicTrafficRouteController.clearMap();
+		
+		// 경유지 추가 / 삭제가 표시가 안된경우
+		if(onpassInfoDiv.style.display == "none" && offpassInfoDiv.style.display == "none" && !passview){
+			onpassInfoDiv.style.display = "";
+		}
+	}
+	return isRouteInit;
+}
+
+// 길찾기
+function getSearchResult(course, md) {
+	if(routeInit()){
+		// 선택한 버튼 css 적용
+		document.getElementById("routeBtn").className="on";
+		document.getElementById("publicRouteBtn").className="";
+		
+		var frm = document.routeForm;
+		//var rOptionFrm = frm.routeoption;
+		//var mode = md ? md : rOptionFrm.options[rOptionFrm.selectedIndex].value;
+		var mode = md;
+	 
+		if (course=='hold')
+			course = _course;
+		else
+			_course = course;
+	 
+		//document.getElementById("course").value = course;
+	 
+		setSearchPoint("startPoint", frm.sX.value, frm.sY.value);
+		setSearchPoint("endPoint", frm.eX.value, frm.eY.value);
+	 
+		congRouteSvc.clearPoint("passPoint");
+		if(frm.pX.value != "" && frm.pY.value != "") {
+			setSearchPoint("passPoint", frm.pX.value, frm.pY.value);
+		} 
+		
+		pathdata = congRouteSvc.getPathData(course, mode);
+		
+		if(pathdata.success) {
+			
+			var tmp = document.getElementById('searchRouteListTemplate').value;
+			var templateEngine = null;
+
+			if(!carRouteController) {
+				setRouteController();
+			}
+			carRouteController.pathdata = pathdata;
+			carRouteController.clear();
+			carRouteController._updateMap(true);
+	 
+			templateEngine = listViewer.getTemplateEngine(mode, pathdata, tmp);
+			templateEngine.modifier = searchRouteListModifier;
+			var routeListDiv = document.getElementById("searchRouteList-div");
+
+			routeListDiv.innerHTML = templateEngine.getResult();
+			
+			if(passview) {
+				document.getElementById("route_result").style.height="180px";
+			} else {
+				document.getElementById("route_result").style.height="265px";
+			}
+			
+			document.getElementById("searchPublicRouteList-div").style.display = "none";	// 대중교통
+			document.getElementById("info_text").style.display="none";	// 기본 텍스트
+			
+			var r_type = document.getElementsByName("r_type");
+			if(mode == "realtime") {
+				r_type[0].checked = true;
+			} else {
+				r_type[1].checked = true;
+			}
+			
+		} else {
+			alert("경로 탐색 실패");
+			var routeListDiv = document.getElementById("searchRouteList-div");
+			routeListDiv.innerHTML = "";
+			// 길찾기 경로삭제
+			if(!carRouteController) {
+				setRouteController();
+			}
+			carRouteController.clear();
+		}
+	}else{
+		//alert("경로 탐색 실패");
+	}
+}
+ 
+var carRouteController;
+function setRouteController() {
+	var opt = {
+		dmap:parent.mapFrm.map
+	};
+	try {
+		carRouteController = new CarRouteController(opt);
+	} catch(ex) {}
+}
+ 
+var publicTrafficRouteController;
+function setPublicTrafficRouteController() {
+	var opt = {
+		dmap:parent.mapFrm.map
+	};
+	try {
+		publicTrafficRouteController = new PublicTrafficRouteController(opt);
+	} catch(ex) {
+		alert("setPublicTrafficRouteController : " + ex);
+	}
+}
+ 
+function searchRouteListModifier(n,key,propname,data) {
+	return data;
+}
+ 
+function SetPosit(section_id, node_id) {
+	parent.mapFrm.map.setCenter(new TPoint(pathdata.sections[section_id].nodes[node_id].x, pathdata.sections[section_id].nodes[node_id].y));
+}
+ 
+function setSearchPoint(type, x, y) {
+	congRouteSvc.setPoint(type, x,y);
+}
+ 
+// 지도위에서 선택
+var currentTarget = "n";
+function setPosition(targetPoint, targetDiv) {
+	if(targetPoint == "s") {
+		if(sMark != null) parent.mapFrm.map.removeOverlay(sMark);
+	}else if(targetPoint == "p"){
+		if(pMark != null) parent.mapFrm.map.removeOverlay(pMark);
+	}else if(targetPoint == "e"){
+		if(eMark != null) parent.mapFrm.map.removeOverlay(eMark);
+	}
+	currentTarget = targetPoint;
+	_div = targetDiv;
+	parent.mapFrm.map.setMode(2);
+}
+
+
+
+
+//대중 교통 시작
+var congPubRoutegSvc = new CongRoutingService();
+congPubRoutegSvc.setReturnUrl("/talkyple/mapproxy.jsp","http://bus.talkyple.com");
+var _pcourse = 'realtime';
+var publicPathdata = null;
+
+function publicRouteInit() {
+	if(document.getElementById("sX").value == "" && document.getElementById("sY").value == ""){ 
+		alert("출발지를 선택하세요."); 
+		return false;
+	}else if(document.getElementById("eX").value == "" && document.getElementById("eY").value == ""){
+		alert("도착지를 선택하세요."); 
+		return false;
+	}else{
+	
+		listViewer = new CongRouteListViewer();
+		if(document.getElementById("sX").value != ""){
+			//Default가 WCONGNAMUL임, 지정하지 않으면 WCONGNAMUL로 처리
+			congPubRoutegSvc.inputCoordSystem = "WCONGNAMUL";	// 출발지, 경유지, 도착지 좌표계
+			congPubRoutegSvc.outputCoordSystem = "WCONGNAMUL";	// 결과 좌표계
+			document.getElementById("routeNameSearch").style.display = "none";	
+			document.getElementById("searchPublicRouteList-div").style.display = "";	
+		}
+		// 길찾기 경로삭제
+		if(!carRouteController) {
+			setRouteController();
+		}
+		carRouteController.clear();
+		
+		document.getElementById("routeNameSearch").style.display = "none";
+		document.getElementById("searchRouteList-div").style.display = "none";
+		document.getElementById("info_text").style.display="none";				// 기본 텍스트
+		
+		passViewOnOff("off");
+		// 경유지 추가 / 삭제버튼 표시하지 않음
+		onpassInfoDiv.style.display = "none";
+		offpassInfoDiv.style.display = "none";
+		passview = false;
+		return true;
+	}
+}
+
+// 대중교통경로탐색
+function getPublicSearchResult(course) {
+	if(publicRouteInit()){
+		// 선택한 버튼 css 적용
+		document.getElementById("routeBtn").className="";
+		document.getElementById("publicRouteBtn").className="on";
+		
+		
+		var frm = document.routeForm;
+		
+		congPubRoutegSvc.setPoint("startPoint", frm.sX.value, frm.sY.value);
+		congPubRoutegSvc.setPoint("endPoint", frm.eX.value, frm.eY.value);
+		congPubRoutegSvc.setClientid("samsungcard");
+		congPubRoutegSvc.setMapframe("samsungcard");
+		
+		var publicType;
+		var publicIndex = 0;
+		
+		publicPathdata = congPubRoutegSvc.getPublicRouteData(course);
+	 
+		if (publicPathdata != null && publicPathdata.length > 0) {
+			var isWalk = true;
+			for (i = 0; i < publicPathdata.length ; i++) {
+				if (isWalk && publicPathdata[i].vehicleType != null && publicPathdata[i].vehicleType != 'null') {
+					isWalk = false;
+				}
+			}
+			if (isWalk) {
+				alert ('도보로 이동 가능한 경로입니다');
+				return;
+			}
+			publicType = publicPathdata[0].vehicleType;
+		
+			var tmp = document.getElementById('searchPublicRouteListTemplate').value;
+			var templateEngine = null;
+		
+			if(!publicTrafficRouteController){
+				setPublicTrafficRouteController();
+			}
+			publicTrafficRouteController.routedata = publicPathdata;
+			publicTrafficRouteController.drawPublicRoute(publicType, publicIndex);
+		
+			templateEngine = listViewer.getTemplateEngine('publictraffic', publicPathdata, tmp, publicType);
+			templateEngine.modifier = searchPublicRouteListModifier;
+			var routeListDiv = document.getElementById("searchPublicRouteList-div");
+			routeListDiv.innerHTML = templateEngine.getResult();
+		
+			var pathimg = document.pathImgInfo.pathimg;
+			if (pathimg.length == undefined || pathimg.length <= 1 ) {
+				var linkinfo ="";
+				var pathListDiv = document.getElementById("pathlink_0");
+				var linkarr = pathimg.value.split('|');
+				for (j = 0 ; j < linkarr.length; j++) {
+					var pathinfo = linkarr[j].split(',');
+					if (j == 0) linkinfo = linkinfo + "<img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+					else  linkinfo = linkinfo + "  → <img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+				}
+				pathListDiv.innerHTML = linkinfo;
+		
+				linkinfo = "";
+		
+			} else {
+				for(i = 0; i < pathimg.length ; i++) {
+					var linkinfo ="";
+					var pathListDiv = document.getElementById("pathlink_" + i);
+					var linkarr = pathimg[i].value.split('|');
+					for (j = 0 ; j < linkarr.length; j++) {
+						var pathinfo = linkarr[j].split(',');
+						if (j == 0) linkinfo = linkinfo + "<img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+						else  linkinfo = linkinfo + "  → <img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+					}
+					pathListDiv.innerHTML = linkinfo;
+		
+					linkinfo = "";
+				}
+		
+			}
+			if (publicType == '02') {
+				document.getElementById("id_category17").checked = true;
+			} else if  (publicType == '06') {
+				document.getElementById("id_category18").checked = true;
+			} else if  (publicType == '11') {
+				document.getElementById("id_category16").checked = true;
+			}
+		} else {
+			alert("경로 탐색 실패");
+			var routeListDiv = document.getElementById("searchPublicRouteList-div");
+			routeListDiv.innerHTML = "";
+			// 대중교통경로 지우기
+			if(!publicTrafficRouteController){
+				setPublicTrafficRouteController();
+			}
+			publicTrafficRouteController.clearMap();
+		}
+	} 
+}
+ 
+// 대중교통수단변경시(radio button 선택)
+function getPublicTrafficeChange(publicType, publicIndex, refreshtype) {
+	var cnt = 0;
+	if (publicType == '02') {
+		document.getElementById("id_category17").checked = true;		
+		cnt = document.getElementById("buscnt").value;
+	} else if  (publicType == '06') {
+		document.getElementById("id_category18").checked = true;
+		cnt = document.getElementById("subwaycnt").value;
+	} else if  (publicType == '11') {
+		document.getElementById("id_category16").checked = true;
+		cnt = document.getElementById("mixedcnt").value;
+	}
+	
+	if(cnt > 0) {
+		if (publicPathdata != null && publicPathdata.length > 0) {
+			var isWalk = true;
+			for (i = 0; i < publicPathdata.length ; i++) {
+				if (isWalk && publicPathdata[i].vehicleType != null && publicPathdata[i].vehicleType != 'null') {
+					isWalk = false;
+				}
+			}
+			if (isWalk) {
+				alert ('도보로 이동 가능한 경로입니다');
+				return;
+			}
+			if(!publicTrafficRouteController){
+				setPublicTrafficRouteController();
+			}
+			publicTrafficRouteController.routedata = publicPathdata;
+			publicTrafficRouteController.drawPublicRoute(publicType, publicIndex);
+		
+			if (refreshtype) { 
+				var tmp = document.getElementById('searchPublicRouteListTemplate').value;
+				var templateEngine = null;
+				templateEngine = listViewer.getTemplateEngine('publictraffic', publicPathdata, tmp, publicType);
+				templateEngine.modifier = searchPublicRouteListModifier;			
+				var routeListDiv = document.getElementById("searchPublicRouteList-div");
+				routeListDiv.innerHTML = templateEngine.getResult();
+				
+				var pathimg = document.pathImgInfo.pathimg;
+				if (pathimg.length == undefined || pathimg.length <= 1 ) {
+					var linkinfo ="";
+					var pathListDiv = document.getElementById("pathlink_0");
+					var linkarr = pathimg.value.split('|');
+					for (j = 0 ; j < linkarr.length; j++) {
+						var pathinfo = linkarr[j].split(',');
+						if (j == 0) linkinfo = linkinfo + "<img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+						else  linkinfo = linkinfo + "  → <img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+					}
+					pathListDiv.innerHTML = linkinfo;
+	 
+					linkinfo = "";
+	 
+				} else {
+					for(i = 0; i < pathimg.length ; i++) {
+						var linkinfo ="";
+						var pathListDiv = document.getElementById("pathlink_" + i);
+						var linkarr = pathimg[i].value.split('|');
+						for (j = 0 ; j < linkarr.length; j++) {
+							var pathinfo = linkarr[j].split(',');
+							if (j == 0) linkinfo = linkinfo + "<img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+							else  linkinfo = linkinfo + "  → <img src='http://biz.lifelime.co.kr/m/img/route/"+pathinfo[1]+".gif' border='0'> " + pathinfo[0];
+						}
+						pathListDiv.innerHTML = linkinfo;
+	 
+						linkinfo = "";
+					}
+	 
+				}
+				
+				
+				if (publicType == '02') {
+					document.getElementById("id_category17").checked = true;
+				} else if  (publicType == '06') {
+					document.getElementById("id_category18").checked = true;
+				} else if  (publicType == '11') {
+					document.getElementById("id_category16").checked = true;
+				}
+				
+			}
+		} else {
+			if (publicPathdata != false){
+				alert("경로 탐색 실패");
+				var routeListDiv = document.getElementById("searchPublicRouteList-div");
+				routeListDiv.innerHTML = "";
+				// 대중교통경로 지우기
+				if(!publicTrafficRouteController){
+					setPublicTrafficRouteController();
+				}
+				publicTrafficRouteController.clearMap();
+			}
+		}
+	}
+
+}
+ 
+// 대중교통 자세히 보기
+function getPathDetailInfo(idx) {
+    if(publicPathdata != null && publicPathdata.length > 0 && publicPathdata[idx] != null) {
+    	var tmp = document.getElementById('searchPathInfoListTemplate').value;
+	    var templateEngine = null;
+ 
+	    var detaildata = publicPathdata[idx];
+		
+		templateEngine = listViewer.getTemplateEngine('pathdetail', detaildata, tmp);
+		templateEngine.modifier = searchPublicRouteListModifier;
+		var routeListDiv = document.getElementById("pathdetail_" + idx);
+		routeListDiv.innerHTML = templateEngine.getResult();
+		if (document.getElementById("pathdetail_" + idx).style.display == "none") {
+			document.getElementById("pathdetail_" + idx).style.display = "";
+			
+    	} else {
+			document.getElementById("pathdetail_" + idx).style.display = "none";
+    	}
+	} else {
+		alert("경로 탐색 실패");
+    }
+}
+ 
+function searchPublicRouteListModifier(n,key,propname,data) {
+	return data;
+}
+ 
+function getNodeMove(x,y) {
+	parent.mapFrm.map.setCenter(new TPoint(x, y));
+}
+
+
+//출발지, 경유지 , 도착지 초기화
+function reload() {
+	// 길찾기 초기화
+	if(!carRouteController){
+		setRouteController();
+	}
+	carRouteController.clear();
+	// 대중교통 초기화
+	if(!publicTrafficRouteController){
+		setPublicTrafficRouteController();
+	}
+	publicTrafficRouteController.clearMap();
+	// 지도 마크 초기화
+	parent.mapFrm.map.clearOverlay();
+	
+	location.reload();
+}
+
+//출발지 도착지 전환
+function reverse() {
+	var sx = document.getElementById("sX").value;
+	var sy = document.getElementById("sY").value;
+	var ex = document.getElementById("eX").value;
+	var ey = document.getElementById("eY").value;
+	var saddr = document.getElementById("sAddr").value;
+	var eaddr = document.getElementById("eAddr").value;
+	if(sx != "" && ex != "") {
+		document.getElementById("sX").value = ex;
+		document.getElementById("sY").value = ey;
+		document.getElementById("eX").value = sx;
+		document.getElementById("eX").value = sx;
+		document.getElementById("sAddr").value = eaddr;
+		document.getElementById("eAddr").value = saddr;
+		_type = "sMark"; 
+		searchSaveResult(new TPoint(parseInt(ex), parseInt(ey)), eaddr, eaddr);		//출발지 설정
+		_type = "eMark";
+		searchSaveResult(new TPoint(parseInt(sx), parseInt(sy)), saddr, saddr);		//도착지 설정
+	} else {
+		alert("출발지와 도착지를 설정 하세요.");
+	}
+}
+
+function init() {
+	// 기존에 그려진 가맹점 마크 초기화
+	if(parent.mapFrm.mark.length > 0) {
+		parent.mapFrm.map.clearOverlay();
+	}
+
+	// 선택한 마크에 대한 정보를 가져와 도착지로 적용
+	var icon = "<%=str_icon%>";
+	var mark = parent.mapFrm.mark;
+	for(var i = 0 ; i < mark.length ; i++){
+		var _iconUrl = mark[i].icon.src;
+		var _icon = _iconUrl.replace("http://www.samsungcard.com/images/ss/", "").replace(".png","");
+		if(icon == _icon){
+			var x = mark[i].getPoint().x;
+			var y = mark[i].getPoint().y;
+			var gname = "<%=str_name%>";
+			_div = "route";
+			_type = "eMark";
+			searchSaveResult(new TPoint(parseInt(x), parseInt(y)), gname, gname);		//도착지 설정
+		}
+	}
+}
+
+</script>
+</head>
+<body onload="init()">
+	<div class="list_map_wrap">
+		<div class="list_map_detail pb5">
+			<!-- 출발 시작 -->
+			<form id="sRouteForm" name="sRouteForm">
+				<p> 
+					<img src="/images/ss/txt_start.png" alt="출발" /> &nbsp;
+					<span class="input_cardno" id="s_span">
+						<input type="text" id="sname" name="sname" class="txt" title="출발" style="width:170px" onkeypress="if(event.keyCode==13) { ajaxNameSearchTemplate('sRouteForm');return false; }" /> 
+                        <a href="javascript:ajaxNameSearchTemplate('sRouteForm');" class="btn btn_s_white"><span>검색</span></a>
+					</span><input id="sAddr" style="width:174px;height:20px;padding:0px 2px 0px 4px;border:0px;vertical-align:top;display:none;" title="검색" readonly="readonly" /><a href="javascript:reSearch('s');" id="sResearch" class="btn btn_s_white" style="margin:0px 10px 0px 4px;display:none;"><span>수정</span></a><a href="javascript:setPosition('s', 'route');" class="btn btn_s_white"><span>지도선택</span></a>
+				</p>
+				<input type="hidden" name="hcode1" id="hcode1" value="0" />
+				<input type="hidden" name="hcode2" id="hcode2" value="0" />
+				<input type="hidden" name="hcode3" id="hcode3" value="0" />
+				<input type="hidden" name="lang" id="lang" value="0" />
+				<input type="hidden" name="output" id="output" value="XML" />
+				<input type="hidden" name="inputCoordSystem" id="inputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="outputCoordSystem" id="outputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="pagesize" id="pagesize" value="10" />
+				<input type="hidden" name="page" id="page" value="1" />
+			</form>
+			<!-- 출발 끝 -->
+				
+			<!-- 경유지 시작 -->
+			<form id="pRouteForm" name="pRouteForm" style="margin:0 0 0 0;">
+				<p id="passInfo1" style="display:none;"> 
+					<img src="/images/ss/txt_via.png" alt="경유" /> &nbsp;
+					<span class="input_cardno" id="p_span">
+						<input type="text" id="sname" name="sname" class="txt" title="경유" style="width:170px" onkeypress="if(event.keyCode==13) { ajaxNameSearchTemplate('pRouteForm');return false;}" /> 
+                        <a href="javascript:ajaxNameSearchTemplate('pRouteForm');" class="btn btn_s_white"><span>검색</span></a>
+                    </span><input id="pAddr" style="width:174px;height:20px;padding:0px 2px 0px 4px;border:0px;vertical-align:top;display:none;" title="검색" readonly="readonly" /><a href="javascript:reSearch('p');" id="pResearch" class="btn btn_s_white" style="margin:0px 10px 0px 4px;display:none;"><span>수정</span></a><a href="javascript:setPosition('p', 'route');" class="btn btn_s_white"><span>지도선택</span></a>
+				</p>
+				<input type="hidden" name="hcode1" id="hcode1" value="0" />
+				<input type="hidden" name="hcode2" id="hcode2" value="0" />
+				<input type="hidden" name="hcode3" id="hcode3" value="0" />
+				<input type="hidden" name="lang" id="lang" value="0" />
+				<input type="hidden" name="output" id="output" value="XML" />
+				<input type="hidden" name="inputCoordSystem" id="inputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="outputCoordSystem" id="outputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="pagesize" id="pagesize" value="10" />
+				<input type="hidden" name="page" id="page" value="1" />
+			</form>
+			<!-- 경유지 끝 -->
+
+			<!-- 도착지 시작 -->
+			<form id="eRouteForm" name="eRouteForm" style="margin:0;">
+				<p> 
+					<img src="/images/ss/txt_end.png" alt="도착" /> &nbsp;
+					<span class="input_cardno"  id="e_span">
+						<input type="text" id="sname" name="sname" class="txt" title="도착" style="width:170px" onkeypress="if(event.keyCode==13) { ajaxNameSearchTemplate('eRouteForm');return false;}" /> 
+                        <a href="javascript:ajaxNameSearchTemplate('eRouteForm');" class="btn btn_s_white"><span>검색</span></a>
+                    </span><input id="eAddr" style="width:174px;height:20px;padding:0px 2px 0px 4px;border:0px;vertical-align:top;display:none;" title="검색" readonly="readonly" /><a href="javascript:reSearch('e');" id="eResearch" class="btn btn_s_white" style="margin:0px 10px 0px 4px;display:none;"><span>수정</span></a><a href="javascript:setPosition('e', 'route');" class="btn btn_s_white"><span>지도선택</span></a>
+				</p>
+				<input type="hidden" name="hcode1" id="hcode1" value="0" />
+				<input type="hidden" name="hcode2" id="hcode2" value="0" />
+				<input type="hidden" name="hcode3" id="hcode3" value="0" />
+				<input type="hidden" name="lang" id="lang" value="0" />
+				<input type="hidden" name="output" id="output" value="XML" />
+				<input type="hidden" name="inputCoordSystem" id="inputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="outputCoordSystem" id="outputCoordSystem" value="WCONGNAMUL" />
+				<input type="hidden" name="pagesize" id="pagesize" value="10" />
+				<input type="hidden" name="page" id="page" value="1" />
+			</form>
+			<!-- 도착지 끝 -->
+			
+			<p class="ml30  mb20">  
+				<span id="onpassInfoDiv">
+					<img src="/images/ss/icon_add.png" alt="+" /> 
+                    <a href="javascript:passViewOnOff('on');" class="btn_link2">경유지추가</a>
+				</span>
+				<span id="offpassInfoDiv" style="display:none;">
+					<img src="/images/ss/icon_add.png" alt="+" /> 
+                    <a href="javascript:passViewOnOff('off');" class="btn_link2">경유지삭제</a>
+				</span>
+                <span style="padding:0 5px;"><a href="javascript:reverse();" class="btn_link2">출발도착전환</a></span>
+                <span><a href="javascript:reload()" class="btn_link2">초기화</a></span>
+			</p>
+		</div> 
+		
+		
+		<form name="routeForm" style="margin:0 0 0 0;">
+			<input type="hidden" name="sX" id="sX" value="" />
+			<input type="hidden" name="sY" id="sY" value="" />
+			<input type="hidden" name="pX" id="pX" value="" />
+			<input type="hidden" name="pY" id="pY" value="" />
+			<input type="hidden" name="eX" id="eX" value="" />
+			<input type="hidden" name="eY" id="eY" value="" />
+			<ul class="select_way clfix">
+                <li id="routeBtn"><a href="javascript:getSearchResult('go','realtime');">내차로가기</a></li>
+                <li id="publicRouteBtn"><a href="javascript:getPublicSearchResult('go');">대중교통으로가기</a></li> 
+			</ul>
+		</form>
+		
+		
+		<!-- 안내 문구 시작 -->
+		<div id="info_text" class="list_map_detail pt10 ">
+			<p class="pl20"><img src="/images/ss/img_car.png" alt="" /></p>
+			<h3 class="mg0" style="padding:30px 0 5px 20px"><img src="/images/ss/txt_guide.png" alt="길찾기 이용 안내" /></h3>
+		 
+			<ol class="list_desc ml20">
+				<li><p>출발지와 도착지를 입력하신 후 검색하여 선택하세요. </p></li>
+				<li><p>경유를 원하시면 <a href="#" class="btn_link">[+경유지 추가]</a>를 클릭하셔서 <br />경유 지역을 입력하세요.</p></li>
+				<li><p>원하시는 교통수단에 따라<a href="#" class="btn_link"> [내 차로 가기] </a><br /><a href="#" class="btn_link">[대중교통으로가기]</a>를 안내 받으실 수 있습니다. </p></li>
+			</ol>
+		</div>
+		<!-- 안내 문구 끝 -->
+		
+		<!-- (출발지,경유지,도착지)명칭검색 결과리스트 -->
+		<div id="routeNameSearch" style="display:none;" class="list_map_detail pt10 ">
+			<div id="listDiv_route"></div>
+			<div id="listTemplateDiv_route" style="display:none">
+				<div class="benefit_search_result">                               
+					<p class="t_desc04">검색결과 <span id="totalcount" class="t_point"></span> 건</p>
+					<ul class="mt10">
+						<!-- startloop="datas" -->
+                        <li><a href="javascript:searchSaveResult(new TPoint(parseInt($datas#.x$), parseInt($datas#.y$)), '$datas#.gname$', '$datas#.gname$');"  title="$datas#.gname$" >$datas#.gname$</a></li>
+						<!-- endloop="datas" -->
+					 </ul>  
+				</div>
+			</div>
+			<div id="pagelist_route"></div>
+		</div>
+		<!-- (출발지,경유지,도착지)명칭검색 결과리스트 -->
+		
+		
+		<!-- 경로 탐색 결과 표시 영역 -->
+		<div id="searchRouteList-div" class="list_map_wrap" style="display:none;"></div>
+		
+		<!-- 경로 탐색 리스트 시작 --> 
+		<textarea id="searchRouteListTemplate" style="display:none" title="경로 탐색 리스트" >
+			<div class="trans_table" style="width:330px">
+				<label><input type="radio" name="r_type" id="t_type" onclick="getSearchResult('go','realtime');" title="최적경로 입력" />최적경로</label>
+				<label><input type="radio" name="r_type" id="t_type" onclick="getSearchResult('go','dist');" title="최단경로 입력" />최단경로</label>
+			</div>
+			<table class="trans_table" style="width:330px" summary="입력한 경로별 총거리와 예상시간을 확인할 수 있는 화면입니다.">
+			<caption>경로탐색결과</caption>
+				<colgroup>
+					<col width="25%" />
+					<col width="25%" />
+					<col width="25%" />
+					<col width="25%" />
+				</colgroup>
+				<tbody>
+				<tr>
+					<th scope="row">총거리</th>
+					<td><strong>$TotalDist$</strong></td>
+					<th scope="row">예상시간</th>
+					<td><strong>$TotalTime$</strong></td>
+			   </tr>
+			   <!--
+			   <tr> 
+					<th>예상 통행료</th>
+					<td>6,500원</td>
+					<th>예상택시비</th>
+					<td>26,500원</td>
+			   </tr>
+			   -->
+			   </tbody>
+			</table>
+			
+			<div id="passdiv" style="display:$PassCount$">
+			<table class="trans_table" style="width:330px;">
+				<!--  startloop="PassInfo" -->
+				<tr>
+					<td height="23">
+						ㆍ$PassInfo#.start_name$ → $PassInfo#.end_name$ : <strong>$PassInfo#.road_dist$, $PassInfo#.road_time$</strong>
+					</td>
+				</tr>
+				<!--  endloop="PassInfo" -->
+			</table>
+			</div>
+			
+			<div class="list_map_detail pt10 ">
+				<div class="trans_wrap pos_rel" id="route_result"> 
+					<ul>
+						<!--  startloop="LinkInfo" -->
+						<li>
+							<dl class="clfix trans_way">
+								<dt><img src="$LinkInfo#.rotation$" alt="" /></dt>
+								<dd>
+									<p>
+										<img src="http://biz.lifelime.co.kr/m/img/route/num$LinkInfo#.start_node_num$.gif" alt="1" />
+                                        <a href="javascript:SetPosit('$LinkInfo#.section_id$','$LinkInfo#.start_node_id$');">$LinkInfo#.start_node_name$<font class='$LinkInfo#.start_class$'>$LinkInfo#.start_node_length$</font></a> →
+										<img src="http://biz.lifelime.co.kr/m/img/route/num$LinkInfo#.end_node_num$.gif" alt="" /> 
+                                        <a href="javascript:SetPosit('$LinkInfo#.section_id$','$LinkInfo#.end_node_id$');">$LinkInfo#.end_node_name$<font class='$LinkInfo#.end_class$'>$LinkInfo#.end_node_length$</font></a>
+									</p>
+									<p class="t_desc04">$LinkInfo#.road_name$  $LinkInfo#.road_dist$</p>
+								</dd>
+						  </dl> 
+						</li> 
+						<!--  endloop="LinkInfo" -->
+					</ul>
+				</div>
+			</div>
+		</textarea> 
+		<!-- 경로 탐색 리스트 끝 -->
+   </div>
+   
+   
+   
+   
+   
+   
+      
+	<!-- 대중교통검색결과 -->
+	<div id="searchPublicRouteList-div" class="list_map_wrap" style="display:none;"></div>
+
+	<!-- 대중교통 자세히 template start -->
+	<textarea id="searchPathInfoListTemplate" style="display:none;" title="대중교통 검색결과 자세히" ><dl class="clfix"><!--  startloop="PathDetailInfo" -->
+		<dt><img src="http://biz.lifelime.co.kr/m/img/route/i_route_$PathDetailInfo#.routetype$.gif"></dt>
+		<dd>
+            <p><a href="javascript:getNodeMove('$PathDetailInfo#.x$','$PathDetailInfo#.y$')">$PathDetailInfo#.stopinfoname$</a></p>
+			<p class="t_desc04">$PathDetailInfo#.pathinfo$</p>
+		</dd>
+	<!--  endloop="PathDetailInfo" --></dl></textarea>
+	<!-- 대중교통 자세히 template end -->
+
+	<!-- 대중교통 시작 -->
+	<textarea id="searchPublicRouteListTemplate" style="display:none" title="대중교통 검색 시작" ></textarea>
+	<form name="nPubType">
+		<p class="al_center select_transfer"> 
+			<label for="id_category16"><input type="radio" id="id_category16" name="publictraffictype" value="11" onclick="getPublicTrafficeChange('11',0, true);" title="버스+지하철" /><img src="/images/ss/txt_trans01.png" alt="버스+지하철" />($resultInfo.mixedcnt$)</label>
+			<label for="id_category17" style="padding:0 20px"><input type="radio" id="id_category17" name="publictraffictype" value="02" onclick="getPublicTrafficeChange('02',0, true);" title="버스" /><img src="/images/ss/txt_trans02.png" alt="버스" />($resultInfo.buscnt$)</label>
+			<label for="id_category18"><input type="radio" value="" id="id_category18" name="publictraffictype" value="06" onclick="getPublicTrafficeChange('06',0, true);" title="지하철" /><img src="/images/ss/txt_trans03.png" alt="지하철" />($resultInfo.subwaycnt$)</label>
+		</p>
+		<input type="hidden" name="buscnt" value="$resultInfo.buscnt$" />
+		<input type="hidden" name="subwaycnt" value="$resultInfo.subwaycnt$" />
+		<input type="hidden" name="mixedcnt" value="$resultInfo.mixedcnt$" />
+	</form>
+	
+	<div class="list_map_detail pt10 ">
+		<div class="trans_wrap pos_rel"> 
+			<ul id="busscroll">
+				<form name="pathImgInfo">
+				<!--  startloop="LinkInfo" -->
+					<li>
+						<p onclick="getPublicTrafficeChange('$LinkInfo#.pubinfo.pubtype$',$LinkInfo#.pubinfo.idx$)">
+							<div id="pathlink_$LinkInfo#.pubinfo.idx$">$LinkInfo#.pubinfo.path$</div>
+						</p>		
+						<p class="t_desc04">
+							<!--$LinkInfo#.pubinfo.payamt$ | -->평균 $LinkInfo#.pubinfo.tottime$ | 총 $LinkInfo#.pubinfo.totdist$ | 도보 $LinkInfo#.pubinfo.walkdist$ | $LinkInfo#.pubinfo.stopinfo$
+						</p>
+						<p class="al_right">
+                            <a href="javascript:getPathDetailInfo($LinkInfo#.pubinfo.pathidx$)"><img src="/images/ss/btn_detail.png" alt="자세히" /></a>
+                            <a href="javascript:getPublicTrafficeChange('$LinkInfo#.pubinfo.pubtype$',$LinkInfo#.pubinfo.idx$)"><img src="/images/ss/btn_way.png" alt="경로보기" /></a>
+						</p>
+						<!-- 자세히 보기 영역 -->
+						<div id="pathdetail_$LinkInfo#.pubinfo.pathidx$" style="display:none;"></div>
+						<input type="hidden" id="pathimg" value="$LinkInfo#.pubinfo.pathimg$" />
+					</li>
+				<!--  endloop="LinkInfo" -->
+				</form>
+			</ul>
+		</div>
+	</div>
+	</textarea>
+	<!-- 대중교통 끝 -->
+</div>
+</body>
+</html>

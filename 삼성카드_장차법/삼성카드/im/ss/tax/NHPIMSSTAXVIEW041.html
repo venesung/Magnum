@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>개인카드 결제서비스 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body onLoad="setCurDate();">
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_payservice.png" alt="개인카드결제 서비스" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_payservice.png" alt="개인카드 결제서비스" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content5" style="margin:25px 0 20px 35px;">
+	<!---BEGIN_ENC--->
+<form name="initform" method="post"  autocomplete="off">
+<div id="allat_support"></div>
+<input type="hidden" name="input" />
+<!-- 올앳승인 -->
+<input type="hidden" name="allat_shop_id" value="" />
+<input type="hidden" name="allat_card_no" value="" /> <!--카드번호 -->
+<input type="hidden" name="allat_order_no" value="" /><!--주문번호  -->
+<input type="hidden" name="allat_amt" value="" /><!--승인금액       -->
+<input type="hidden" name="allat_pmember_id" value="guest" /> <!--회원ID   -->
+<input type="hidden" name="allat_product_cd" value="" /> <!--상품코드 -->
+<input type="hidden" name="allat_product_nm" value="" /> <!--상품명  -->
+<input type="hidden" name="allat_buyer_nm" value="" /><!--결제자성명 -->
+<input type="hidden" name="allat_enc_data" value="" />        <!--주문정보암호화필드  -->
+<input type="hidden" name="allat_opt_pin" value="VIEW" /> <!--올앳참조필드-->
+<input type="hidden" name="allat_opt_mod" value="WEB" />
+    <!--//----- 카드 결제시 필수 필드, 계좌 이체시에는 사용하지 않음 --------//-->
+<input type="hidden" name="allat_recp_nm" value="" /><!--수취인성명   -->
+<input type="hidden" name="allat_recp_addr" value="0" /><!--수취인주소  -->
+<input type="hidden" name="allat_zerofee_yn" value="N" /> <!--일반/무이자 할부 사용여부   -->
+<input type="hidden" name="KVP_QUOTA" value="" />  <!--할부개월값-->
+<input type="hidden" name="allat_sell_mm" value="" />  <!--할부개월수-->
+<input type="hidden" name="allat_bonus_yn" value="N" /><!--보너스포인트 사용 여부  -->
+<input type="hidden" name="allat_cardcert_yn"  value="Y" /> <!--카드 인증 여부 -->
+    <!--//-----------------------------일반결제   결제 필수 항목--------------------------------------//-->
+<input type="hidden" name="allat_cardvalid_ym" value="" /> <!--카드 유효기간 -->
+<input type="hidden" name="allat_passwd_no" value="" /> <!--카드 비밀번호 -->
+<input type="hidden" name="allat_business_type" value="0" /><!--결제자 카드종류 -->
+<input type="hidden" name="allat_registry_no" value="" /> <!--주민번호 -->
+<input type="hidden" name="allat_biz_no" value="" /> <!--사업자번호 -->
+
+<!------------------------------ 세팅값  ---------------------------------------------->
+<input type="hidden" name="tran_no" value="<%=tran_no%>" />
+<input type="hidden" name="epayno" value="<%=epayno%>" />
+<input type="hidden" name="ocr_band_code" value="<%=ocr_band_code%>" />
+<input type="hidden" name="district" value="<%=district%>" />
+<input type="hidden" name="ShopId" value="<%=ShopId%>" />
+<input type="hidden" name="sCrossKey" value="<%=sCrossKey%>" />
+<input type="hidden" name="chain_no" value="<%=chain_no%>" />
+<input type="hidden" name="installment_month" />
+<input type="hidden" name="organ" value="<%=organ%>" />
+<input type="hidden" name="payer_no" value="<%=payer_no%>" />
+<input type="hidden" name="payer_name"  value="<%=payer_name%>" />
+<input type="hidden" name="payment_no" value="<%=order_no%>" />
+<input type="hidden" name="payer_type" value="1" />
+<input type="hidden" name="orderInt" value="0" />
+<input type="hidden" name="card_regident" value="0" />
+<input type="hidden" name="errorCnt" value="0" />
+<input type="hidden" name="tax_no" value="<%=tax_no%>" />
+<input type="hidden" name="ocr_band" value="<%=ocr_band%>" />
+<input type="hidden" name="payment_amount" />
+<input type="hidden" name="payment_type" />
+<input type="hidden" name="validation_gubun" value="1" />
+<input type="hidden" name="spayment_amount" value="<%=spayment_amount%>" />
+<input type="hidden" name="CO_AGNUM" value="<%=CO_AGNUM%>" />
+<input type="hidden" name="EPAY_NO" value="<%=EPAY_NO%>" />
+<input type="hidden" name="CO_GUBUN" value="<%=CO_GUBUN%>" />
+<input type="hidden" name="CO_AMT" value="<%=CO_AMT%>" />
+<input type="hidden" name="button_click" value="" />
+<input type="hidden" name="payment_count" value="<%=payment_count%>"/>	<!-- 12.11.05 SR -->
+<input type="hidden" name="allat_test_yn" value="Y" /> <!--테스트YN -->
+		<p class="tb_exp al_left"><span><span class="t_desc04">문의</span> | 삼성카드 <strong class="t_black">1588-8700</strong></span></p>
+		<table class="dtable02 dtable_inputfield" summary="거래번호, 결제요청금액, 신용카드번호, 카드유효기간, 할부기간, 성명, 주민등록번호, 카드비밀번호로 구성된 법인카드 결제정보를 입력하는 게시판입니다.">
+        <caption>법인카드 결제정보 입력</caption>
+		<colgroup><col width="90" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>거래번호</p></th>
+				<td><p class="t_no"><%=tran_no %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>결제요청금액</p></th>
+				<td><p class="input_name">
+				<input type="text" name="payment_amount_txt"  style="text-align:right;" maxlength="15" class="txt" value="<%=payment_amount_text%>" readonly title="결제요청금액" /><a href="javascript:go_Btax();" class="ml10 btn_link">법인카드로결제하기</a>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>신용카드번호</p></th>
+				<td><p class="input_cardno">
+					<input name="card_no1" type="text" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyup="lengthCheck6(this.form, this.value);" title="카드번호 첫째 네자리" /> -
+					<input name="card_no2" type="text" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck7(this.form, this.value);" title="카드번호 두번째 네자리" /> -
+					<input name="card_no3" type="password" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck8(this.form, this.value);" title="카드번호 세번째 네자리" /> -
+					<input name="card_no4" type="password" size="8" maxlength="4"  class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck9(this.form, this.value);" title="카드번호 네번째 네자리" />
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드유효기간</p></th>
+				<td><p>
+					<select  name="sel_year" size="1"  title="년 선택">
+							<option value="12">2012</option>
+							<option value="13">2013</option>
+							<option value="14">2014</option>
+							<option value="15">2015</option>
+							<option value="16">2016</option>	<!-- 12.11.05 SR -->
+							<option value="17">2017</option>
+							<option value="18">2018</option>
+							<option value="19">2019</option>
+					</select> 년
+					<select name="sel_month" size="1"  title="월 선택">							
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option></select> 월
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부기간</p></th>
+				<td><p>
+					<select name="payment_month" id="payment_month"  title="할부기간 선택">							
+							<option selected value='0'>일시불</option>
+							<option value='2'>2개월</option>
+							<option value='3'>3개월</option>
+							<option value='4'>4개월</option>
+							<option value='5'>5개월</option>
+							<option value='6'>6개월</option>
+							<option value='7'>7개월</option>
+							<option value='8'>8개월</option>
+							<option value='9'>9개월</option>
+							<option value='10'>10개월</option>
+							<option value='11'>11개월</option>
+							<option value='12'>12개월</option>
+							<option value='13'>13개월</option>
+							<option value='14'>14개월</option>
+							<option value='15'>15개월</option>
+							<option value='16'>16개월</option>
+							<option value='17'>17개월</option>
+							<option value='18'>18개월</option>
+							<option value='19'>19개월</option>
+							<option value='20'>20개월</option>
+							<option value='21'>21개월</option>
+							<option value='22'>22개월</option>
+							<option value='23'>23개월</option>
+							<option value='24'>24개월</option>
+				</select>
+				<span class="ml10 t_desc04">5만원이상 결제시 할부 가능</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>성명</p></th>
+				<td><p class="input_name"><input name="carduser_nm" type="text" size="10"  maxlength="30" class="txt" value="" title="성명 입력" />
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>주민등록번호</p></th>
+				<td><p class="input_idno"><input name="carduser_no1" size="10" maxlength="6"  type="text" class="txt" maxlength="6" onkeyup="lengthCheck1(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" value="" title="주민등록번호 앞자리" />&nbsp;-&nbsp;<input type="password"  name="carduser_no2" size="10" maxlength="7" class="txt" onKeyUp="lengthCheck2(this.form, this.value);" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" value="" title="주민등록번호 뒷자리" />
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드비밀번호</p></th>
+				<td><p class="input_2char"><input name="card_pass" type="password" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" size="5" maxlength="2" class="txt" value="" title="비밀번호 앞 두자리" /><em>**</em>(비밀번호 앞의 2자리)
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="btnset"><p class="btnl t_desc04">취소가 불가능하오니 할부기간들을 잘 고려하여 결제하여 주십시오.</p></div>
+
+        <div class="btnc"><a href="javascript:go_ok();"><img src="/images/common/btn_s_pay.png" alt="결제하기" /></a>
+        <a href="#" onClick="window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></div>
+		
+		
+		
+		</form>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+		<iframe name="ifrm" frameborder="0" width="0" height="0"  align="center" title="빈프레임"></iframe>
+    <%@ include file="/WEB-INF/jsp/hpsub/common/footer.jsp"%> 	<!-- 12.11.05 SR -->
+</body>
+</html>

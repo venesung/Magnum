@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 법인카드 명세서 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_corporatecard_statement.png" alt="삼성카드 법인카드 명세서 조회입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445">
+
+		<div class="content_block content_block_card clfix">
+
+			<ol class="list_no01" id="billInfoUpdateOl">
+
+			</ol>
+
+			<div class="line_lgray">&nbsp;</div>
+
+			<!-- duepay-->
+			<div class="d_duepay d_duepay_past">
+				<p class="p_tit">결제예정금액 요약내역</p>
+				<!-- d_duepay_l -->
+				<div class="d_duepay_l" id="billInfoDiv">
+				</div>
+
+				<!-- d_duepay_r -->
+				<div class="d_duepay_r">
+
+					<table class="dtable02" summary="카드번호와 결제일을 확인하실 수 있는 게시판입니다.">
+					<caption>카드번호와 결제일 확인 게시판</caption>
+					<colgroup><col width="20%" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p><span class="t_no">${cardNo}</span> </p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>결제일</p></th>
+							<td><p class="t_no">${billDate}</p></td>
+						</tr>
+					</tbody>
+					</table>
+
+
+					<!-- tab_content -->
+					<div class="tab_con02" id="noticeDiv" tabindex="0">
+
+					</div>
+				</div>
+			</div>
+			<!-- //d_duepay -->
+
+			<div class="line_lgray">&nbsp;</div>
+
+			<div class="content_block_inner" id="card_use_periodDiv"></div>
+
+
+			<p class="btnr">
+				<a href="javascript:window.print();"><img src="/images/common/btn_s_print.png" alt="인쇄" /></a>
+				<a href="javascript:window.close()"><img src="/images/common/btn_s_close.png" alt="닫기" /></a>
+			</p>
+
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+
+</div>
+
+</body>
+</html>

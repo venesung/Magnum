@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>SNS 공유하기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+
+<style type="text/css">
+#pop_s_contents{padding:30px;}
+.sns_round{width:410px;background:url('/images/ss/bg_round_top_s.png') no-repeat left top;padding-top:9px;}
+.sns_cont{width:410px;background:url('/images/ss/bg_round_bottom_s.png') no-repeat left bottom; padding:10px 20px 20px 20px;}
+.sns_cont .sns_alinfo th {text-align:left;font-weight:normal;color:#333;padding-bottom:4px;}
+.sns_cont .sns_alinfo td {padding:0 30px 4px 0;word-wrap:break-word; word-break:break-all}
+ul.sns{margin-top:10px; width:100%; text-align:center;}
+ul.sns li{float:left;margin-left:5px;}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+// SNS 연동
+function openSNS(gubunName){ // SNS종류 트위터(twitter) / 페이스북 (facebook) / 미투데이 (me2day) / 요즘 (yozm) | 카드코드
+	var href = "";
+	var name = "";
+	var msg = "<%=msg%>";
+	var url = "<%=linkUrl%>";
+	var url1 = "<%=linkUrl%>";
+	url = encodeURIComponent(url);
+
+	if(gubunName == "twitter"){
+		var chkMsg = msg;
+		if(chkMsg.length > 119){
+			alert("140자까지만 전송됩니다.");
+			chkMsg = chkMsg.substring(0,119);
+			msg = chkMsg;
+		}
+        href = "http://twitter.com/share?text="+encodeURI(msg)+"&amp;url="+url;
+		name = "twitter";
+	}else if(gubunName == "facebook"){
+        href = "http://www.facebook.com/sharer.php?t="+encodeURI(msg)+"&amp;src=sp&amp;u="+url;
+		name = "facebook";
+	}else if(gubunName == "me2day"){
+		msg = msg.replace("\n","");
+		var chkMsg = msg;
+		if(chkMsg.length > 150){
+			alert("150자까지만 전송됩니다.");
+			chkMsg = chkMsg.substring(0,150);
+			msg = chkMsg;
+		}
+        href = "http://me2day.net/posts/new?new_post[body]="+encodeURI(msg)+"&amp;new_post[tags]="+url;
+		name = "me2day";
+	}else if(gubunName == "yozm"){
+        href = "http://yozm.daum.net/api/popup/prePost?prefix="+encodeURI(msg)+"&amp;link="+url;
+		name = "yozm";
+	}
+	
+	window.open(href, name);
+}
+
+function resizeBody(win) {
+	var winBody = win.document.body;
+	var wid = winBody.scrollWidth + 10;
+	var hei = winBody.scrollHeight + 36;
+	win.resizeTo(wid, hei);
+}
+</script>
+</head>
+
+<body onLoad="resizeBody(this);">
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_snsshare.png" alt="SNS 공유하기" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_snsshare.png" alt="SNS 공유하기" /></h1>
+	</div>
+
+		<!-- content -->
+	<div id="pop_s_contents" style="margin-top:15px;">
+		<div class="sns_round">
+			<div class="sns_cont">
+				<table class="sns_alinfo" summary="상호명, 연락처, 주소, 혜택으로 구성된 지도 정보를 확인할 수 있는 화면입니다.">
+				<caption>지도 정보</caption>
+				<colgroup><col width="60" /><col width="*" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">상호명</th>
+							<td><%=boardName %></td>
+						</tr>
+						<tr>
+							<th scope="row">연락처</th>
+							<td class="t_no"><%=telNo %></td>
+						</tr>
+						<tr>
+							<th scope="row">주소</th>
+							<td><%=addressArea %></td>
+						</tr>
+						<tr>
+							<th scope="row">혜택</th>
+							<td><%=desc %></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- //sns_round -->
+
+		<ul class="sns ml20">
+            <li><a href="javascript:openSNS('facebook');" title="새창"><img src="/images/ss/btn_facebook_off.png" alt="페이스북" /></a></li>
+            <li><a href="javascript:openSNS('twitter');" title="새창"><img src="/images/ss/btn_twitter_off.png" alt="트위터" /></a></li>
+            <li><a href="javascript:openSNS('me2day');" title="새창"><img src="/images/ss/btn_metoday_off.png" alt="미투데이" /></a></li>
+            <li><a href="javascript:openSNS('yozm');" title="새창"><img src="/images/ss/btn_yozm_off.png" alt="요즘" /></a></li>
+		</ul>
+
+		<p class="t_desc03 mt40">해당 지도 정보를 본인이 등록한 SNS 사이트로 보낼 수 있습니다.<br />
+		-일부 정보는 포함되지 않을 수 있습니다.</p>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> 
+	</div>
+</div>
+</body>
+</html>

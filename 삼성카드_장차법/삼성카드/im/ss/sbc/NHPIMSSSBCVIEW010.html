@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>활동지역 변경 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_activity.png" alt="활동지역을 변경해 주세요" /></h1>
+		<input type="button" class="btn_s_close btn_input" onclick="win_close();" title="닫기" />
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_activity.png" alt="활동지역을 변경해 주세요" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content">
+		<table class="dtable02" summary="활동지역을 변경할수 있는 게시판입니다">
+		<caption>활동지역 변경 게시판</caption>
+		<colgroup><col width="20%" /><col width="80%" /></colgroup>
+		<tbody>
+			<!-- loop -->
+			<!-- tr>
+				<th scope="row"><p>청구지</p></th>
+				<td><p class="fl_left"><%=myAddrVO.getBillSido()%> <%=myAddrVO.getBillGugun()%> <%=myAddrVO.getBilleDong()%></p><span class="fl_right"><a href="javascript:memberInfo();" class="btn btn_s_white"><span>변경</span></a></span></td>
+			</tr -->
+			<!-- //loop -->
+			<tr>
+				<th scope="row"><p>직장</p></th>
+				<td><p class="fl_left"><%=myAddrVO.getOfficeSido()%> <%=myAddrVO.getOfficeGugun()%> <%=myAddrVO.getOfficeDong()%></p><span class="fl_right"><a href="javascript:memberInfo();" class="btn btn_s_white"><span>변경</span></a></span></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>자택</p></th>
+				<td><p class="fl_left"><%=myAddrVO.getHomeSido()%> <%=myAddrVO.getHomeGugun()%> <%=myAddrVO.getHomeDong()%></p><span class="fl_right"><a href="javascript:memberInfo();" class="btn btn_s_white"><span>변경</span></a></span></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>관심<%=i+1 %></p></th>
+				<td><p class="fl_left"><%=vo.getAddr1() %> <%=vo.getAddr2() %> <%=vo.getAddr3() %>
+				<a href="javascript:del('<%=vo.getSeqNo() %>');"><img src="/images/common/btn_x.png" class="al_mid" alt="삭제" /></a>
+				</p><span class="fl_right"><a href="javascript:goPostList('<%=vo.getSeqNo() %>','U');" class="btn btn_s_white"><span>변경</span></a></span></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>관심<%=rowNum+i+1 %></p></th>
+				<td><p class="fl_left">등록지역이 없습니다.</p><span class="fl_right"><a href="javascript:goPostList('','I');" class="btn btn_s_white"><span>추가</span></a></span></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<p class="t_desc03 mt10">관심지역은 최대 3개까지 등록 가능 합니다.<br />
+		직장과 자택은 <a href="javascript:memberInfo();" class="btn_link">신상정보조회, 변경 서비스</a>를 이용해 변경해 주세요.</p>
+
+		<div id="view01" style="display:none">
+		<a name="#postList"></a>
+		<p class="tb_exp mt30"><span>등록할 주소를 입력하세요</span></p>
+		<form name="searchFrm" method="post" action="/hp/im/ss/sbc/sbc.do?method=myActiveAreaListP" autocomplete="off">
+		<table class="dtable02 dtable_inputfield" summary="등록을 원하시는 주소를 입력하는 게시판입니다">
+		<caption>등록 주소 입력 게시판</caption>
+		<colgroup><col width="90" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>동(읍/면)</p></th>
+				<td><p class="input_dong"><input type="text" class="txt" value="" name="searchDong" title="동(읍/면) 입력" /> <a href="javascript:search();" class="btn btn_s_white"><span>확인</span></a></p>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		 <input type="hidden" name="type" value="<%=vos.getType() %>" />
+    	 <input type="hidden" name="seqNo" value="<%=vos.getSeqNo() %>" />
+		</form>
+		</div>
+		<div id="postList" style="display:none">
+		<p class="tb_exp mt25"><span>다음의 주소중 해당 주소의 <strong class="t_black">동이름을 클릭</strong> 하세요.</span></p>
+		<div class="post_list">
+			<table class="dtable01 post_scroll" style="width:390px" summary="번호, 주소, 우편번호를 보여주는 게시판입니다">
+			<caption>주소 검색</caption>
+			<colgroup><col width="45" /><col width="*" /><col width="65" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">번호</th>
+					<th scope="col" class="cell_l10">주소</th>
+					<th scope="col">우편번호</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_l10"><a href="#">0</a></td>
+					<td class="t_no">0</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<div class="paginate">
+		 ${_page}
+		</div>
+		</div>
+		<a name="#postList1"></a>
+
+	</div>
+		<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+</body>
+</html>

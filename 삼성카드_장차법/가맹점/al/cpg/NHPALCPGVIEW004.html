@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>Mall 현황조회 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">PG Mall 관리시스템&nbsp;&gt;&nbsp;Mall 현황조회</div>
+				<h1><img src="/images/al/h1_mall_status.png" alt="Mall 현황 조회" /></h1>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+<!--		xecure 적용 부분  >-->
+
+			<!-- content_block -->
+			<div class="content_block">				
+				<div class="tb_exp clfix">
+					<span class="t_black"><strong>가맹점 정보를 입력하세요</strong></span>
+				</div>
+				
+				<!-- calendar_position -->
+				<div class="pos_rel_cal">캘린더레이어위치</div>
+				<table class="dtable02 dtable_inputfield" summary="심사진행별 조회, Submall 사업자 번호, 업체명, 접수일 등의 가맹점 정보를 입력할 수 있습니다.">
+				<caption>가맹점 정보 입력</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p>심사진행별 조회</p></th>
+						<td><p><select style="width:150px" name="srchProcessCode" title="심사진행별 조회">
+									<option value="10">접수</option>
+									<option value="20">반송</option>
+									<option value="30">정상(승인)</option>
+									<option value="60">PG사 해지</option>
+									<option value="60C">카드사 해지</option>
+									<option value="99">전체</option>
+								</select></p></td>
+					</tr>
+					<!-- //loop -->
+					<tr>
+						<th scope="row"><p>Submall 사업자 번호</p></th>
+                        <td><p><input type="text" class="txt" value="<% if(vos.getSrchBusinessNo() != null && vos.getSrchBusinessNo().length() ==10) out.write(vos.getSrchBusinessNo().substring(0,3));%>" title="사업자번호 첫번째자리" style="width:55px" name="businessNo1" maxlength="3" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+                               <input type="text" class="txt" value="<% if(vos.getSrchBusinessNo() != null && vos.getSrchBusinessNo().length() ==10) out.write(vos.getSrchBusinessNo().substring(3,5));%>" title="사업자번호 가운데자리" style="width:40px" name="businessNo2" maxlength="2" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;
+                               <input type="text" class="txt" value="<% if(vos.getSrchBusinessNo() != null && vos.getSrchBusinessNo().length() ==10) out.write(vos.getSrchBusinessNo().substring(5,10));%>" title="사업자번호 끝자리" style="width:55px" name="businessNo3" maxlength="5" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB'); " />
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>업체명</p></th>
+						<td><p><input type="text" class="txt" style="width:200px" value="<%= vos.getSrchMallName().replace("\"", "") %>" title="업체명" name="srchMallName" maxlength="40" /></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>접수일</p></th>
+						<td><p>
+							<span class="reset_date">
+							<fileTag:dblCalendarAddIfNoVal calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate() %>' 
+                                                                                                   endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>' />
+
+							</span>
+						</p></td>
+					</tr>
+				</tbody>
+				</table>
+				
+
+				<!-- btn -->
+				<div class="btnset">
+					<p class="btnr">
+                        <a href="javascript:fncGetSubMallList('search');" class="btn btn_blue"><span>조회</span></a>
+					</p>
+				</div>
+
+				<table class="dtable01 mt30" summary="순번, 사업자번호, 업체명, 업종, 연락처, 상태, 접수일 등을 볼 수 있는 게시판입니다.">
+				<caption>가맹점 정보 확인</caption>
+				<colgroup><col width="60" /><col width="110" /><col width="170" /><col width="90" /><col width="100" /><col width="55" /><col width="*" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">순번</th>
+						<th scope="col">사업자번호</th>
+						<th scope="col">업체명</th>
+						<th scope="col">업종</th>
+						<th scope="col">연락처</th>
+						<th scope="col">상태</th>
+						<th scope="col">접수일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<%	int i =0;
+						for(i=0; i<vos.getListPage().size(); i++){ 
+						ITCHPGMALLSUBTTVO vo =(ITCHPGMALLSUBTTVO)vos.getListPage().get(i);%>
+						<tr>
+							<td class="cell_l10 t_no"><%=(i+1)+((vos.getcPage()-1)*vos.getPageSize())%></td>
+                            <td class="t_no"><a href="/chainpgmall.do?method=selectSubMallInfo&businessNo=<%=vo.getBusinessNo() %>"  title="<%=SecurityUtil.clearXSS(vo.getMallName()) %> 사업자번호" ><%=vo.getBusinessNo() %></a></td>
+							<td><%=SecurityUtil.clearXSS(vo.getMallName()) %></td>
+							<td><%=vo.getBusinessType() %></td>
+							<td class="t_no"><%=vo.getPhoneNo1() %>-<%=vo.getPhoneNo2() %>-<%=vo.getPhoneNo3() %></td>
+							<td class="t_no"><%=vo.getProcessCode() %></td>
+							<td><%=vo.getRegistDate() %></td>
+						</tr>
+					<%} %>
+				</tbody>
+				</table>
+
+				<!-- paginate -->
+				<div class="paginate">
+					<div class="paging">
+						${_page}
+						<div class="btnr">
+                            <a href="/chainpgmall.do?method=insertSubMallForm" class="btn btn_blue"><span>등록</span></a>
+							<a href="/chainExcel.do?method=makeExcelSubMallList" name="excelATag"></a>
+                            <a href="javascript:excelDown();" class="btn btn_white"><span>저장</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+<!--	xecure 뒷부분 -->
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

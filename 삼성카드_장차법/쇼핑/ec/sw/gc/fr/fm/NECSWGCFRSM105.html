@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>잔액알림문자서비스 - 삼성카드 쇼핑</title>
+<base href="http://devgiftmall.samsungcard.com:10080" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/quick.js"></script>
+<script type="text/javascript" src="/js/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sw/gc/common.js"></script> 
+<script type="text/javascript" src="/js/ec/common/jquery.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/common-util.js"></script>
+
+</head>
+<body>
+
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap">
+<!-- 공통 상단 시작 -->
+<link rel="stylesheet" type="text/css" href="/css/gp/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping_giftmall.css" />
+
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/search.js"></script>
+<script src="/js/ec/common/embedswf.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<h1 class="conts_hidden">삼성카드 LifeStyle Service 쇼핑</h1>
+    <div id="head">/WEB-INF/jsp/ec/sw/gc/fr/common/include/top.jsp</div>
+<!--// 공통 상단 끝 -->
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+<!-- 공통 좌측 시작 -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<div id="conLeft">/WEB-INF/jsp/ec/sw/gc/fr/common/include/gcLnb.jsp</div>
+<!--// 공통 좌측 끝 -->
+			
+			<div id="conRight" class="gift_inquiry">
+				<!-- location -->
+				<div class="location">
+					<a href="http://sam.samsungcard.com/samIndex.do">HOME</a>
+					<span>&gt;</span>
+					<a href="http://shopping.samsungcard.com/ec/sp/spMain.do?method=selectSPMain">SHOPPING</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/gm/index.do?method=selectGMMain">기프트몰</a>
+					<span>&gt;</span>
+					<a href="http://giftmall.samsungcard.com/ec/sw/gc/fr/index.do?method=selectMainForm">Gift카드</a>
+					<span>&gt;</span>
+					<span class="end">잔액알림문자서비스</span>
+					<span>&gt;</span>
+					<span class="end">신청내역 조회/변경/해지 </span>
+					<span class="end">서비스신청</span>
+				</div>
+				<!-- //location -->			
+
+				<div class="h2_wrap">
+					<h2><img src="/images/sw/gc/h2_applylist_complete.png" alt="신청내역 조회/변경/해지" /></h2>
+				</div>
+
+				<!--content-->
+				<form name="frm" method="post" action="">	
+				
+				<div class="giftcard_cont pb185" style="min-height:400px;"><!-- 120412 수정-->
+					<h3><img src="/images/sw/gc/h3_modifyinfo_insert.png" alt="변경 정보 입력" /></h3><!-- 120418 수정 -->
+					
+					<div class="board_input">
+						<table border="0" width="100%" summary="삼성Gift카드 번호, 신청자 주민등록번호, 휴대폰 번호, 인증번호로 구성된 신청 정보 입력">	
+							<caption>신청 정보 입력</caption>				
+							<colgroup><col width="160" /><col width="568" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">삼성Gift카드 번호</th>
+									<td>000</td>
+								</tr>
+								<tr>
+									<th scope="row">신청자 주민등록번호</th>
+									<td>000-*******</td>
+								</tr>
+								<tr>
+									<th scope="row">휴대폰 번호</th>
+									<td>
+										<select name="phone1" title="휴대폰 앞자리">
+											<option value="010" >010</option>
+											<option value="011" >011</option>
+											<option value="016" >016</option>
+											<option value="017" >017</option>
+											<option value="018" >018</option>
+											<option value="019" >019</option>
+										</select>&nbsp;
+										<em>-</em>
+                                        <input type="text" name="phone2" title="휴대폰 가운데자리" maxlength="4" class="txt" value='' style="width:65px;" id="phone2" />&nbsp;
+										<em>-</em>
+                                        <input type="text" name="phone3" title="휴대폰 마지막자리" maxlength="4" class="txt" value='' style="width:65px;" id="phone3" />&nbsp;
+                                        <span class="btnS_white"><a href="javascript:factnumber();" title="인증번호 받기" >인증번호 받기</a></span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" style="border-bottom:0;">인증번호</th>
+									<td style="border-bottom:0;">
+										<input type="password" name="userPw" class="txt" title="인증번호" value='' style="width:80px;" />&nbsp;
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+					<!--btn-->
+					<div class="btm_txt">
+						<span class="t_11gray ls1"> 서비스를 제공 받을 휴대폰 번호를 정확히 입력하시고, 휴대폰으로 전송된 인증번호 입력 후 아래의 확인 버튼을 눌러 주세요. </span>
+						<p class="fl_right mt20">
+							<span class="btnS_white" id="submit1"><a href="javascript:goappy();">확인</a></span>
+						</p>
+					</div>
+					<!--//btn-->
+				</div>
+				</form>
+				<iframe name="hiddenFrm" style="display:none" title="빈 프레임" frameborder="0"></iframe>
+
+				<!--//contents-->
+<!-- 120412 레이어띄우기 -->
+				<!-- layer popup -->
+				<div class="layPop_470" id="pop1" style="display:none;position:absolute; top:220px;left:300px;">
+					<div class="layPop_top"><img src="/images/sp/common/layPop_470_top.gif" alt="" /></div>
+					<div class="layPop_con" style="width:410x; background:url('/images/sp/common/layPop_470_mid.gif') repeat-y; padding:20px 30px; overflow:hidden; line-height:16px;" >
+                        <div class="btn_close"><a href="javascript:layerClose();"><img src="/images/sw/mg/btn_layPop_close.gif" alt="close" /></a></div>
+						<div class="layPop_tit2 al_center" >
+						<span id="mobNo">
+						</span>
+						<span><img src="/images/sw/gc/txt_applylist_complete.png" alt="번호로" /></span>
+						<p class="mt5">
+					<img src="/images/sw/gc/pop_txt_sns_02.png" alt="잔액알림문자서비스를 변경하시겠습니까?" />
+					<img src="/images/sw/gc/txt_sns_apply03.png" alt="잔액알림문자서비스를 신청하시겠습니까?" />
+					
+						</p></div>
+						
+						<div class="pop_btn mt50 mb30">
+                            <a href="javascript:factnumberCheck();"><img src="/images/sw/mg/btn_pop_confirm.gif" alt="확인" class="hand" /> </a>
+                            <a href="javascript:layerClose();"><img src="/images/sw/mg/btn_pop_cancel.gif" alt="취소" class="hand" /></a>
+						</div>
+					</div>
+					<div class="layPop_btm"><img src="/images/sp/common/layPop_470_btm.gif" alt="" /></div>
+				</div>
+				<!-- //layer popup -->
+<!-- //120412 레이어띄우기 -->
+
+			</div>
+		</div>
+<!-- 공통 퀵메뉴 시작 -->
+<div id="quick" class="quick_bar">퀵메뉴</div>
+<!--// 공통 퀵메뉴 끝 -->
+	    </div>
+	
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+</body>
+</html>

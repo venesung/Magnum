@@ -1,0 +1,164 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title">중도상환신청</div>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<%@ page import="com.scard.common.security.util.DesManager" %>
+<%
+	DesManager des = new DesManager("des.key.db");
+
+	String decIdenNo = "";
+	if( request.getAttribute("iden_no") != null )
+		decIdenNo = des.decryptNumber( (String) request.getAttribute("iden_no"));
+
+%>
+
+<!-- tab_script -->
+<div id="tab_script">
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+	<script type="text/javascript">
+	window.onerror = ErrorSetting
+	var e_msg="";
+	var e_file="";
+	var e_line="";
+	function ErrorSetting(msg, file_loc, line_no) {
+		e_msg=msg;
+		e_file=file_loc;
+		e_line=line_no;
+		return true;
+	}
+	function moveTa0(){
+		goTabPage('NHPIMMHEMSINFO','true');
+	}
+	function moveTa1(){
+		goTabPage('NHPIMMHEMSS1Old','true');
+	}
+	function moveTa2(){
+		goTabPage('NHPIMMHEMS021','true');
+	}
+	function moveTa3(){
+		goTabPage('NHPIMMHEMS022','true');
+	}
+
+	//가상계좌 조회 및 신청하기 이동
+	function moveTa4(){
+		goTabPage('NHPIMMHCSM004','true');
+	}
+	//상품별 화면
+	function moveTa5(){
+		goTabPage('NHPIMMHEMSS2','true');
+	}
+
+	//금액별 화면
+	function moveTa6(){
+		goTabPage('NHPIMMHEMSS1Old','true');
+	}
+	//이용대금명세서
+	function moveTa7(){
+		goTabPage('NHPIMMHPIB001');
+	}
+	//카드이용내역
+	function moveTa10(){
+		goTabPage('NHPIMCDCUV101');
+	}
+
+	function $tabOnLoad() {
+		var arr  = new Array();
+		arr[0] = ${tabNo};	
+		
+		var params = "{movie:'/flex-resource/NHPIMMHEMSVIEW001Old.swf', flashVars:'arr="+arr+"',wmode:'transparent'}";
+		embedFlexOnTab("NHPIMMHEMSVIEW001", "D27CDB6E-AE6D-11cf-96B8-444553540000", "100%", "1000", params);
+	}
+
+	function credit_pop(){
+	    var idenNo = document.frm1.iden_no.value;
+	    var cnt = document.frm1.loadcnt.value;
+	    var sign="";
+
+	    document.frm1.plain.value="공인인증서 인증"; //아무 값이나 넣어도 됩니다.
+	    //sign = Sign_with_vid_web(0, document.frm1.plain.value, s, idenNo);
+	    Sign_with_vid_web(0, document.frm1.plain.value, idenNo, s, signCallBack);
+	    
+	}
+
+	function signCallBack(sign){
+		if ( sign == "" || sign == null ) {
+			//alert("공인인증서 제출을 취소하셨습니다.");
+			return;
+	    }
+
+	    var idenNo = document.frm1.iden_no.value;
+	    var params = "";
+			params="ssno="+idenNo;
+			params +="&signedMsg="+sign;
+			params +="&vidMsg="+send_vid_info();
+			callJson("signCheckRequest","com.scard.hp.im.mh.ems.web.NHPIMMHEMS011Ctrl","signCheckRequest",params,"jsonCallback");
+	}
+
+	function jsonCallback(callId,result){
+		if(result.ERR_MESSAGE == ""){
+			NHPIMMHEMSVIEW001.setActionScript("true");	//javascript -> actionscript 호출
+		}else{
+			alert(result.ERR_MESSAGE);
+		}
+	}
+
+	</script>
+</div>
+<script type="text/javascript" src="/xwuni/xecureweb_up.js"></script>
+<script language='Javascript' type="text/javascript">
+var s = '';
+s += '-----BEGIN CERTIFICATE-----\n';
+s += 'MIIDGTCCAoKgAwIBAgIEBo53lTANBgkqhkiG9w0BAQQFADBhMQswCQYDVQQGEwJL\n';
+s += 'UjELMAkGA1UECBMCYWExCzAJBgNVBAcTAmFhMQswCQYDVQQKEwJhYTELMAkGA1UE\n';
+s += 'CxMCYWExCzAJBgNVBAMTAmFhMREwDwYJKoZIhvcNAQkBFgJhYTAeFw0wMTA3MTgw\n';
+s += 'MDAwMDBaFw0wNjA3MTcwNDE4MDBaMGcxCzAJBgNVBAYTAktSMQwwCgYDVQQIEwNp\n';
+s += 'aWkxDDAKBgNVBAcTA2lpaTEMMAoGA1UEChMDaWlpMQwwCgYDVQQLEwNpaWkxDDAK\n';
+s += 'BgNVBAMTA2lpaTESMBAGCSqGSIb3DQEJARYDaWlpMIGfMA0GCSqGSIb3DQEBAQUA\n';
+s += 'A4GNADCBiQKBgQCzSWuMplCOF2v/RGL6xENjTH5SFMXKlcJbnebTm1ZuENjc5KHo\n';
+s += 'fW6t89qkHznyHlllWwVSv8bNm5u6TK5fNFY4RC95cU8jqAVK0oFRLRjkDAfoMVV1\n';
+s += 'fD5eoXmN6fyZWtLgiHXQ9evISBP62UkT5KjQ86dDKo2Dg53XFVyKI+ksAwIDAQAB\n';
+s += 'o4HXMIHUMGoGCWCGSAGG+EIBDQRdFltZb3VyIENlcnRpZmljYXRlIGlzIGR1ZSB1\n';
+s += 'cHRvIDEgeWVhci4gWW91IGhhdmUgdG8gcmVpc3N1ZSB5b3VyIGNlcnRpZmljYXRl\n';
+s += 'IGJlZm9yZSBpdCBleHBpcmVzMCIGCWCGSAGG+EIBAgQVFhN3d3cuc29mdGZvcnVt\n';
+s += 'LmNvLmtyMBEGCWCGSAGG+EIBAQQEAwIAgDAvBglghkgBhvhCAgUEIhYgZDQxZDhj\n';
+s += 'ZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2UwDQYJKoZIhvcNAQEEBQADgYEAPeWZ\n';
+s += 'SPTLWtdsNNrztq//3agTQImdn2Yrds5Rhf1Y2FZ+sXdZvPLBy3+p1eh4zy0IVyjm\n';
+s += 'AioAO9U//TuZfeHlOs6ffsBc87D3BaBH0CUdQxaPy99AtUrVnGxNjJ3QjSesiPxf\n';
+s += 'kcIPWgTrDozCmSKh0lr8MKzB0PpML7gpLkE6ZNQ=\n';
+s += '-----END CERTIFICATE-----\n';
+s += '';
+ PrintObjectTag (null,document.getElementById('xecure_obj'));
+ var useTranskey = false;
+</script>
+<div id="xecure_obj" ></div>
+<form name="frm1" method="post" >
+<input type="hidden" name="plain" 		value="" />
+<input type="hidden" name="signedMsg" 	value="" />
+<input type="hidden" name="vidMsg" 		value="" />
+<input type="hidden" name="loadcnt" 	value="0" />
+<input type="hidden" name="ssno" 		value="" />
+<input type="hidden" name="SignGubun" />
+<input type="hidden" name="iden_no" 	value="<%=decIdenNo %>" />
+</form>
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">즉시결제서비스</h1>
+	<div class="h1_desc"><img src="/images/mh/h1_repay.jpg" alt="이번달 결제금액이 부담스러우신가요? 결제일 이전에 원하는 금액만 미리 결제하는 즉시결제 서비스를 이용해보세요" /></div>
+</div>
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMMHEMSINFO','true');">즉시결제 서비스 안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHEMSS1Old','true');">카드회원 즉시결제 신청</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMMHEMSS1Old','true');">카드회원 즉시결제 신청(as-is)</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHEMS021','true');">할부금융회원 즉시결제 신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMMHEMS022','true');">처리결과 조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="flexObject" style="width: 99%"></div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

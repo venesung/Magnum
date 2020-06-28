@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+<title>이벤트 - 삼성카드</title>
+<base href="http://www.samsungcard.com" />
+<link rel="stylesheet" type="text/css" href="/css/base_sme.css" />
+<link rel="stylesheet" type="text/css" href="/css/sme.css" />
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/gnb_sme.js"></script>
+<script type="text/javascript" src="/js/common-sme.js"></script>
+<script type="text/javascript" src="/js/embedswf.js"></script>
+<script type="text/javascript" src="/js/siteoverlay2.js"></script>
+<script type="text/javascript" src="/js/common-cps.js"></script>
+<script type="text/javascript" src="/js/samsungcardUIComponent.js"></script>
+</head>
+<body>
+<div id="tab_script">
+<script type="text/javascript">
+//<![CDATA[
+	function goTab(str){
+		tabSubmit("/hp/im/et/evt/viewNHPIMETEVT001.do?tab_index="+str,"");
+	}
+//]]>
+</script>
+</div>
+<!-- 공통 상단 메뉴 시작 -->
+<div id="skip_navi" class="none">
+	<a href="#content">주요내용 바로가기</a>
+</div>
+<div id="header_wrap"><div id="header">공통 상단 메뉴</div></div>
+<!-- 공통 상단 메뉴 끝 -->
+	<div id="wrap">
+
+<!-- 공통 좌측 메뉴 시작 -->
+<div id="aside">공통 좌측 메뉴</div>
+<!-- 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			
+				<div id="breadthumb">
+					<a href="/biz.do">개인사업자</a>
+					&gt;
+					이벤트
+				</div><!-- //breadthumb -->
+					
+				<!-- content_block -->
+				<div id="top_visual">
+					<h1>이벤트</h1>
+					<div id="h1_desc"><img src="/cms_content/hp/sme/topImages/h1_evt0.png" alt="사업에도, 생활에도 도움이 되는 다양한 실속 이벤트" /></div>
+				</div><!-- top_visual -->	
+				
+				<div class="tab01">
+					<ul>
+						<li class="on"><a href="/hp/sme/evt/web/viewNHPSMEEVT001.do?tab_index=001">진행중인 이벤트</a></li>
+						<li><a href="/hp/sme/evt/web/viewNHPSMEEVT001.do?tab_index=004">종료된 이벤트</a></li>
+						<li><a href="/index.do?menuId=NHPIMETEVT003" target="_blank" title="새창">당첨자 발표</a></li>
+					</ul>
+				</div>
+			
+				<!-- content_block -->
+				<%if("004".equals(tab_index)){ 		//종료된이벤트%>
+				<jsp:include page="NHPSMEEVTVIEW010B.jsp" >
+					<jsp:param value="<%=srchGubun1 %>" name="srchGubun1" /> 
+					<jsp:param value="<%=srchGubun2 %>" name="srchGubun2" /> 
+					<jsp:param value="<%=srchGubun3 %>" name="srchGubun3" /> 
+					<jsp:param value="<%=srchGubun4 %>" name="srchGubun4" /> 
+					<jsp:param value="<%=srchGubun5 %>" name="srchGubun5" /> 
+					<jsp:param value="<%=tab_index %>"  name="tab_index" /> 
+				</jsp:include>
+				<%}else if("005".equals(tab_index)){ //당첨자발표%>
+				<jsp:include  page="NHPSMEEVTVIEW011.jsp" />
+				<%}else{ 							//진행중이벤트%>
+				<jsp:include page="NHPSMEEVTVIEW007.jsp">				
+					<jsp:param value="<%=srchGubun1 %>" name="srchGubun1" /> 
+					<jsp:param value="<%=srchGubun2 %>" name="srchGubun2" /> 
+					<jsp:param value="<%=srchGubun3 %>" name="srchGubun3" /> 
+					<jsp:param value="<%=srchGubun4 %>" name="srchGubun4" /> 
+					<jsp:param value="<%=srchGubun5 %>" name="srchGubun5" /> 
+					<jsp:param value="<%=tab_index %>"  name="tab_index" /> 
+					<jsp:param value="<%=srchGubun7 %>" name="srchGubun7" />
+					<jsp:param value="<%=cPage %>" name="cPage" /> 
+					<jsp:param value="<%=detailNo %>" name="detailNo" /> 
+				</jsp:include>
+				<%} %> 
+				
+				<!-- content_right -->
+				</div><!-- //content -->
+	</div><!-- //wrap -->
+
+<!-- 공통 풋터 시작 -->
+<div id="footer" style="position:relative;">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+	
+</body>
+</html>
+				

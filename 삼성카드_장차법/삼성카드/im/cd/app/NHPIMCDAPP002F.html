@@ -1,0 +1,812 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+
+
+					<!-- (GROUP)카드선택정보 START -->
+					<h2><img src="/images/cd/h2_choose_cardinfo.png" alt="카드 선택정보를 확인하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02" summary="카드이름, 회원구분, 성명, 주민등록번호 입력을 통해 카드 선택정보를 확인하실 수 있습니다.">
+						<caption>카드 선택정보를 확인</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>회원구분</p></th>
+								<td class="cell_l" colspan="3">웹멤버
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)카드선택정보 END -->
+
+					<!-- (GROUP)개인기본정보 START -->
+					<h2><img src="/images/mh/h2_cardapp_info01.png" alt="개인 기본정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<table class="dtable02" summary="성명(한글), 주민등록번호, 본인확인방법, 발행일자, 이메일주소, 자택주소, 자택번호, 휴대전화번호, 공인인증확인 등에 개인 기본정보를 입력하실 수 있습니다.">
+						<caption>개인 기본정보 입력</caption>
+						<colgroup><col width="17%" /><col width="33%" /><col width="17%" /><col width="33%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>성명(한글)</p></th>
+								<td class="cell_l02"><strong class="t_black">홍길동</strong></td>
+								<th scope="row" class="cell_l"><p>주민등록번호</p></th>
+								<td  class="cell_l02"><strong class="t_black">000000-*******</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>본인확인방법</p></th>
+								<td class="cell_l02 riline">
+									<label for="certificateGubun01"><input type="radio" class="chk" id="certificateGubun01" name="certificateGubun" onclick="changeCertificateGubun();" title="본인확인방법 주민등록번호" checked="checked" value="01" /> 주민등록번호</label><label for="certificateGubun02"><input type="radio" class="chk" id="certificateGubun02" name="certificateGubun" onclick="changeCertificateGubun();" title="본인확인방법 운전면허증" value="02" /> 운전면허증</label>
+								</td>
+								<td rowspan="2" colspan="2" class="cell_l02"><img id="certificateGubun01Img" name="certificateGubun01Img" src="/images/cd/img_ex_idcard.jpg" alt="주민등록증 샘플 이미지" /><img src="/images/cd/img_ex_driverlicense.jpg" id="certificateGubun02Img" name="certificateGubun02Img" alt="운전면허증 샘플 이미지" style="display:none;" /></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p id="certificateGubunLabel" class="neccessary"><em>필수입력사항</em>발행일자</p></th>
+								<td class="cell_l riline">
+									<span id="certificateDistView"><input type="text" class="txt" align="left" value="" title="발행일자 입력" maxlength="8" id="certificateDate" name="certificateDate" onkeypress="checkTypes(this, 'NUMB');" /><br /><br /></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>이메일주소</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_email">
+										<input type="text" class="txt" maxlength="30" id="email" name="email" value="${resultVo.email}" title="이메일명" />&nbsp;@&nbsp;<input type="text" id="email2" name="email2" maxlength="19" class="txt" value="${resultVo.email2}" readonly="readonly" title="이메일공급자 직접입력" />
+										<select title="이메일공급자선택" onchange="changeEmailSelect(this);">
+											<option value="">직접입력</option>
+										</select><!-- a href="#" class="btn btn_white"><span>이메일 중복확인</span></a-->
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>자택주소</p></th>
+								<td colspan="3" class="cell_l">
+									<p class="input_address">
+										<input type="text" class="txt" value="${resultVo.homeZipCode1}" id="homeZipCode1" name="homeZipCode1" title="우편번호 앞자리" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="${resultVo.homeZipCode2}" title="우편번호 뒷자리" id="homeZipCode2" name="homeZipCode2" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input type="text" class="txt" value="${resultVo.homeAddrArea}" title="자택주소 상세입력" id="homeAddrArea" name="homeAddrArea" readonly="readonly" /><input type="text" class="txt" value="${resultVo.homeAddrDist}" id="homeAddrDist" name="homeAddrDist" title="자택주소 상세입력2" readonly="readonly" /></span>
+										<input type="hidden" name="homeZipSeq" id="homeZipSeq" value="${resultVo.homeZipSeq}" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>자택번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="자택번호 국번 선택" id="homePhone1" name="homePhone1">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="${resultVo.homePhone2}" title="자택전화번호 앞자리" id="homePhone2" name="homePhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="${resultVo.homePhone3}" title="자택전화번호 뒷자리" id="homePhone3" name="homePhone3" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>휴대전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="휴대전화번호 앞자리" id="handPhone1" name="handPhone1">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="${resultVo.handPhone2}" title="휴대전화번호 가운데자리" id="handPhone2" name="handPhone2" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="${resultVo.handPhone3}" title="휴대전화번호 뒷자리" id="handPhone3" name="handPhone3" onkeypress="checkTypes(this, 'NUMB');" maxlength="4" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수체크사항</em>공인인증확인</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+                                        <a href="javascript:alert('공인인증을 생략합니다.'); document.getElementById('isCertVerified').value = 'Y';" class="btn btn_s_white"><span>공인인증</span></a>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)개인기본정보 END -->
+
+					<!-- (GROUP)직장정보(소득정보) START -->
+					<input type="hidden" id="f10" value="check" />
+					<h2><img src="/images/mh/h2_cardapp_info02.png" alt="고객님의 소득정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<div class="tb_exp clfix">
+							<span>소득이 있는 본인 또는 배우자 직장정보를 기재해 주시길 바랍니다.</span>
+						</div>
+						<table class="dtable02" summary="고객님의 소득정보(직장명, 직장주소, 부서명, 직위, 전화번호)를 작성하실 수 있는 게시판입니다.">
+						<caption>소득정보 입력 게시판</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직장명</p></th>
+								<td class="cell_l">
+									<input type="text" class="txt" id="companyName" name="companyName" title="직장명 입력" value="${resultVo.companyName}" maxlength="15" /><span class="ml10 t_desc03">배우자 선택시 배우자 직장정보를 기재해 주십시오.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직장주소</p></th>
+								<td class="cell_l">
+									<p class="input_address">
+										<input type="text" class="txt" title="우편번호 앞자리" id="companyZipCode1" name="companyZipCode1"  value="${resultVo.companyZipCode1}" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" title="우편번호 뒷자리" id="companyZipCode2" name="companyZipCode2"  value="${resultVo.companyZipCode2}" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input type="text" class="txt" title="직장주소 상세입력" id="companyAddrArea" name="companyAddrArea"   value="${resultVo.companyAddrArea}" readonly="readonly" /><input type="text" class="txt" id="companyAddrDist" name="companyAddrDist" title="직장주소 상세입력2"  value="${resultVo.companyAddrDist}" readonly="readonly" /></span>	
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>부서</p></th>
+								<td class="cell_l">
+									<input type="text" class="txt" id="deptName" name="deptName"  value="${resultVo.deptName}" title="부서명 입력" maxlength="15" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직위</p></th>
+								<td class="cell_l">
+									<input type="text" class="txt" id="grade" name="grade"  value="${resultVo.grade}" title="직위 입력" maxlength="10" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="전화번호 국번 선택" id="companyPhone1" name="companyPhone1">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" title="전화번호 가운데자리" id="companyPhone2" name="companyPhone2" value="${resultVo.companyPhone2}" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" title="전화번호 뒷자리" id="companyPhone3" name="companyPhone3" maxlength="4"  value="${resultVo.companyPhone3}" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						<div id="spouseNameInfo" name="spouseNameInfo" style="display:;">
+						<table class="dtable02" summary="배우자의 성명과 주민등록번호 등을 입력하실 수 있습니다.">
+						<caption>배우자 정보 입력 게시판</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>배우자 성명</p></th>
+								<td class="cell_l">
+									<input type="text" class="txt" id="spouseName" name="spouseName" maxlength="8" onkeypress="checkTypes(this, 'HCHR');" title="배우자 성명" />
+									<span class="t_desc04">※ 카드심사시 배우자분께 확인연락을 드립니다.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>배우자 주민등록번호</p></th>
+								<td class="cell_l input_debit" colspan="3">
+									<span class="input_id">
+										<input type="text" class="txt" value="" maxlength="6" title="주민등록번호 앞자리" id="spouseIdenNo1" name="spouseIdenNo1" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="주민등록번호 뒷자리" id="spouseIdenNo2" name="spouseIdenNo2" enc="on" />
+									</span>
+									<a href="javascript:safeonStartOther('formBasicInfo', 'spouseIdenNo1|spouseIdenNo2');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_spouseIdenNo1|spouseIdenNo2" style="display:none;"></span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl t_desc04">당사 심사기준에 따라 일부 회원님께 필요 서류를 요청드릴 수 있습니다.</p>
+						</div>
+					</div>
+					<hr />
+					<!-- (GROUP)직장정보(소득정보) END -->
+
+					<!-- (GROUP)발급카드선택 START -->
+					<h2><img src="/images/cd/h2_card_experting.png" alt="발급카드선택" /></h2>
+					<div class="content_block_inner fill_joinin">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<table class="dtable02" summary="발급카드를 선택하실 수 있습니다.">
+						<caption>카드 선택</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>발급카드선택</p></th>
+								<td class="cell_l">
+									<select style="width:350px" class="w0904" id="famliyCardList" name="famliyCardList" onchange="document.getElementById('selectedCard').value = this.value;" title="발급카드선택" >
+								  		<option value="00">가족카드 발급대상카드 선택</option>
+									</select><input type="hidden" name="selectedCard" id="selectedCard" value="00" />
+									<p class="mt10 ls01">가족카드 신청시 유의사항</p>
+									<ul class="list_dashed_t11 mt10">
+										<li>현재 보유하신 카드중 가족카드발급이 불가한 카드는 대상카드 리스트에 표시되지 않습니다.</li>
+										<li>만약 선택할 대상카드가 없거나 다른 종류의 카드로 가족카드발급을 원하실 경우에는  고객상담센터(지역번호없이)1588-8700으로 문의하여 주십시오.</li>
+										<li>가족카드의 경우 바로할인서비스는 적용되지 않습니다.</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)발급카드선택 END -->
+
+					<!-- (GROUP)카드발급정보 START -->
+					<h2><img src="/images/cd/h2_card_experting.png" alt="카드 발급정보를 입력하세요" /></h2><!-- //100211 -->
+					<div class="content_block_inner fill_joinin">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<table class="dtable02" summary="카드 발급정보(희망한도, 신청구분, 결제일, 카드수령지, 우편물 수령지, 이용대금 명세서, 웹멤버 간편 등록신청)를 입력하는 게시판입니다.">
+						<caption>카드 발급정보 입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>희망한도</p></th>
+								<td class="cell_l">
+									<span class="income_year">
+											<label for="radio_requestLimit1"><input type="radio" class="chk" id="radio_requestLimit1" name="radio_requestLimit" title="300만원" checked="checked" value="300" /> 300만원</label>
+											<label for="radio_requestLimit2"><input type="radio" class="chk" id="radio_requestLimit2" name="radio_requestLimit" title="500만원" value="500" /> 500만원</label>
+											<label for="radio_requestLimit3"><input type="radio" class="chk" id="radio_requestLimit3" name="radio_requestLimit" title="1,000만원" value="1000" /> 1,000만원</label>
+											<label for="radio_requestLimit4"><input type="radio" class="chk" id="radio_requestLimit4" name="radio_requestLimit" title="2,000만원" value="2000" /> 2,000만원</label>
+											<label for="radio_requestLimit5" class="last_label"><input type="radio" class="chk" id="radio_requestLimit5" name="radio_requestLimit" title="연소득 직접입력" /> 직접입력</label>
+											<input type="text" class="txt" id="text_requestLimit" name="text_requestLimit" readonly="readonly" value="" maxlength="6" title="직접입력" /> 만원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>신청구분</p></th>
+								<td class="cell_l">
+										<label for="newGubun12"><input type="radio" class="chk" value="03" id="newGubun12" name="newGubun1" title="카드교체"  checked="checked" /> 교체</label>
+							    			<select title="교체대상카드선택" name="changedCard" id="changedCard">
+												<option value="00">교체대상카드선택</option>
+											</select>
+							    			<span class="t_desc03">기존 후불교통카드를 신청 하였으며, 교체신청만 가능합니다.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>결제일</p></th>
+								<td class="cell_l">
+									<select title="결제일 선택" id="settlementDay" name="settlementDay">
+										<option value="00">선택</option>
+										<option value="01">1 일</option>
+										<option value="05">5 일</option>
+										<option value="10">10일</option>
+										<option value="11">11일</option>
+										<option value="12">12일</option>
+										<option value="15">15일</option>
+										<option value="18">18일</option>
+										<option value="21">21일</option>
+										<option value="22">22일</option>
+										<option value="24">24일</option>
+										<option value="25">25일</option>
+										<option value="26">26일</option>
+									</select>
+									<span class="ml10 t_desc03">보유카드수와 상관없이 결제일과 결제 계좌는 본인카드 및 가족카드 통합적용됩니다</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>카드수령지</p></th>
+								<td class="cell_l">
+									<label for="cardGetGubun01"><input type="radio" class="chk" id="cardGetGubun01" name="cardGetGubun" title="카드수령지 직장" value="001" /> 직장</label>
+									<label for="cardGetGubun02"><input type="radio" class="chk" id="cardGetGubun02" name="cardGetGubun" title="카드수령지 자택" checked="checked" value="002" /> 자택</label><span class="t_desc03">본인이 직접 수령 가능하신 수령지를 선택해 주십시오.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>우편물 수령지</p></th>
+								<td class="cell_l">
+									<label for="billGetGubun01"><input type="radio" class="chk" id="billGetGubun01" name="billGetGubun" title="우편물 수령지 직장" value="001" /> 직장</label>
+									<label for="billGetGubun02"><input type="radio" class="chk" id="billGetGubun02" name="billGetGubun" title="우편물 수령지 자택" checked="checked" value="002" /> 자택</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>이용대금 명세서</p></th>
+								<td class="cell_l">
+									<label for="emailBillGubun01"><input type="radio" class="chk" id="emailBillGubun01" name="emailBillGubun" title="이용대금 명세서 이메일 수령" checked="checked" value="2" /> 이메일 수령</label>
+									<label for="emailBillGubun02"><input type="radio" class="chk" id="emailBillGubun02" name="emailBillGubun" title="이용대금 명세서 우편 수령" value="1" /> 우편 수령</label><span class="t_desc03">이메일 선택시 매월 푸짐한 경품의 행운이 있습니다.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>웹멤버 간편<br />등록신청</p></th>
+								<td class="cell_l">
+                                    <label for="easyJoinYn"><input type="checkbox" class="chk" id="easyJoinYn" name="easyJoinYn" value="Y" title="웹멤버 간편 등록신청" /> 웹간편등록</label> <span><a href="#" class="btn_link">웹멤버 가입혜택보기</a></span>
+									<p class="t_desc04 mt5">추후 삼성카드 웹멤버 가입 시 보다 간편한 등록절차를 이용하실 수 있으며, 추가 혜택도 제공됩니다.</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)카드발급정보 END -->
+
+					<!-- (GROUP)브랜드 START -->
+					<h2><img src="/images/cd/h2_fill_app02.png" alt="브랜드 확인하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02" summary="브랜드 확인을 하실 수 있습니다.">
+						<caption>브랜드 확인</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>브랜드확인</p></th>
+								<td class="cell_l">
+							    		국내
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)브랜드 END -->
+
+					<!-- (GROUP)자동이체정보 START -->
+					<h2><img src="/images/cd/h2_fill_directdebit.png" alt="자동이체 정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<table class="dtable02" summary="은행, 계좌번호, 예금주, 카드수령지, 우편물수령지, 결제일 등등을 입력하는 게시판입니다.">
+						<caption>자동이체 정보 입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>은행</p></th>
+								<td class="cell_l input_debit">
+									<select id="bankCode" name="bankCode" onchange="changeBankCode(this);" title="자동이체 시킬 은행 선택">
+										<option value="00">선택</option>
+									</select>
+									<input type="hidden" id="bankName" name="bankName" value="" />
+									<span class="t_desc04">보유 카드수와 상관없이 결제일과<br />결제계좌는 단일 적용됩니다.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>계좌번호</p></th>
+								<td class="cell_l input_debit">
+									<input type="text" class="txt" style="width:214px;" id="accountNo" name="accountNo" maxlength="32" onkeypress="checkTypes(this, 'SSN');" value="${resultVo.accountNo}" enc="on" title="계좌번호" />
+									<a href="javascript:safeonStartOther('formBasicInfo', 'accountNo');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" style="vertical-align:top;" /></a>
+									<span id="usafeon_accountNo" style="display:none;"></span>
+									<span class="t_desc04">반드시 실명인증된 본인 통장계좌번호를<br />정확히 기입해주세요.</span>
+									<!-- span class="t_desc04">삼성증권은 삼성 CMA+S 계좌로만<br />자동이체 신청 및 변경이 가능합니다.</span -->
+								</td>
+							</tr>
+							
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>예금주</p></th>
+								<td class="cell_l">
+									<input type="text" class="txt" id="depositOwner" name="depositOwner" readonly="readonly" onkeypress="checkTypes(this, 'HCHR');" title="예금주명 입력" />
+									<select id="depositRelation" name="depositRelation" onchange="changedepositRelation();" title="예금주관계 선택">
+										<option value="00">예금주관계 선택</option>
+										<option value="01" selected="selected">본인</option>
+										<option value="02">배우자</option>
+										<option value="03">부</option>
+										<option value="04">모</option>
+										<option value="05">자녀</option>
+										<option value="06">사업자</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div id="depositOwnerInfo" style="display:">
+						<table class="dtable02" summary="주민등록번호, 연락처 등의 예금주의 정보를 입력하는 게시판입니다.">
+						<caption>예금주 정보입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>주민등록번호</p></th>
+								<td class="cell_l input_debit" colspan="3">
+									<span class="input_id">
+										<input type="text" class="txt" style="width:126px;" value="" maxlength="6" title="주민등록번호 앞자리" id="depositIdenNo1" name="depositIdenNo1" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" style="width:126px;" value="" maxlength="7" title="주민등록번호 뒷자리" id="depositIdenNo2" name="depositIdenNo2" enc="on" />
+									</span>
+									<a href="javascript:safeonStartOther('formBasicInfo', 'depositIdenNo1|depositIdenNo2');"><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" style="vertical-align:top;" /></a>
+									<span id="usafeon_depositIdenNo1|depositIdenNo2" style="display:none;"></span>
+									<span class="t_desc04">본인 신청여부확인을 위해<br />반드시 필요합니다.</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>연락처</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_phone">
+									<select id="depositPhone1" name="depositPhone1" title="전화번호 앞자리 선택">
+											<option value="00">선택</option>
+									</select>
+									<input type="text" class="txt" value="" title="전화번호 가운데자리" id="depositPhone2" maxlength="4" name="depositPhone2" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="전화번호 뒷자리" maxlength="4" id="depositPhone3" name="depositPhone3"  onkeypress="checkTypes(this, 'NUMB');" />
+									</span><span class="ml10 t_desc04">본인 계좌가 아닌 경우에만 입력하세요.</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+					</div>
+					<hr />
+					<!-- (GROUP)자동이체정보 END -->
+
+					<!-- (GROUP)가족카드추가 START -->
+					<h2><img src="/images/mh/h2_cardapp_info05.png" alt="가족카드를 추가 신청하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+					<p class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 정보입니다</p>
+						<div id="locationFamilyCardIs" class="tb_exp clfix">
+							<!-- 100211 -->
+							<span>가족카드 추가를 원하시면 가족추가신청 버튼을 눌러주세요. <a href="javascript:familyCardInfo();" class="btn_link" title="새창">가족카드란?</a></span>
+							<!-- //100211 -->
+							<span class="ab_tr">
+								<a href="javascript:addFamilyCardApplyCount();" class="btn btn_s_white"><span>가족추가 신청</span></a>
+								<a href="javascript:removeFamilyCardApplyCount();" class="btn btn_s_white"><span>가족추가 취소</span></a>
+							</span>
+						</div>
+
+						<div id="familyInfo1" style="display:blank;">
+						<table class="dtable02" summary="가족카드 추가 신청시 필요한 정보(가족성명(한글, 영문), 가족 주민등록번호, 관계, 카드 수령지 주소, 직장전화, 자택전화, 휴대전화번호)를 작성하는 게시판입니다.">
+						<caption>가족카드 추가 신청 게시판</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>가족성명(한글)</p></th>
+								<td class="cell_l" colspan="3"><input type="text" class="txt" id="familyName1" name="familyName1" maxlength="8" value="" title="가족성명(한글) 입력" onkeypress="checkTypes(this, 'HCHR');" /></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>가족성명(영문)</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_name_eng"><input type="text" class="txt" value="" title="가족성명(성)" maxlength="17" id="familyEngName11" name="familyEngName11" /><input type="text" class="txt" value="" maxlength="13" title="가족성명(이름)" id="familyEngName12" name="familyEngName12" /><span class="t_desc04">예) KIM SHINYOUNG <br />(기호 및 특수문자 등록 불가)</span></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>가족주민등록번호</p></th>
+								<td class="cell_l" colspan="3">
+									<input type="text" class="txt" value="" maxlength="6" title="가족 주민등록번호 앞자리" id="familyIdenNo11" name="familyIdenNo11" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="가족 주민등록번호 뒷자리" id="familyIdenNo12" name="familyIdenNo12" enc="on" />
+									<a href="javascript:safeonStartOther('formBasicInfo', 'familyIdenNo11|familyIdenNo12');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_familyIdenNo11|familyIdenNo12" style="display:none;"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>관계</p></th>
+								<td class="cell_l02">
+									<select title="관계 선택" id="familyRelation1" name="familyRelation1">
+										<option value="00">선택</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>한도</p></th>
+								<td  class="cell_l02">
+									<select title="한도 선택" id="familyRequestLimit1" name="familyRequestLimit1">
+										<option value="00">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>카드 수령지</p></th>
+								<td colspan="3" class="cell_l">
+									<p><label for="familyReceipt11"><input type="radio" class="chk" id="familyReceipt11" name="familyCardGetGubun1" title="카드 수령지 직장" checked="checked" value="001" /> 직장</label><label for="familyReceipt12"><input type="radio" class="chk" id="familyReceipt12" name="familyCardGetGubun1" title="카드 수령지 자택" value="002" /> 자택</label></p>
+									<p class="input_address">
+										<input type="text" class="txt" value="" title="우편번호 앞자리" id="familyZipCode11" name="familyZipCode11" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="우편번호 뒷자리" id="familyZipCode12" name="familyZipCode12" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a>
+										<span class="detail"><input type="text" class="txt" id="familyAddrArea1" name="familyAddrArea1" value="" title="카드수령지 주소 상세입력" readonly="readonly" /><input type="text" class="txt" value="" id="familyAddrDist1" name="familyAddrDist1" title="카드 수령지 주소 상세입력2" readonly="readonly" /></span>
+										<input type="hidden" name="familyZipSeq1" id="familyZipSeq1" value="" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>직장전화</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="직장전화 앞자리 번호 선택" id="familyCompanyPhone11" name="familyCompanyPhone11">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="직장전화 가운데자리" maxlength="4" id="familyCompanyPhone12" name="familyCompanyPhone12" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" maxlength="4" id="familyCompanyPhone13" name="familyCompanyPhone13" title="직장전화 뒷자리" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>자택번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="자택번호 앞자리 번호 선택" id="familyHomePhone11" name="familyHomePhone11">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="자택번호 가운데자리" maxlength="4" id="familyHomePhone12" name="familyHomePhone12" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" maxlength="4" title="자택번호 뒷자리" id="familyHomePhone13" name="familyHomePhone13" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="neccessary"><em>필수입력사항</em>휴대전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="휴대전화 앞자리 번호 선택" id="familyHandPhone11" name="familyHandPhone11">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="휴대전화 가운데자리" maxlength="4" id="familyHandPhone12" name="familyHandPhone12" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" maxlength="4" title="휴대전화 뒷자리" id="familyHandPhone13" name="familyHandPhone13" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+
+						<div id="familyInfo2" style="display:">
+						<table class="dtable02" summary="가족카드 추가 신청시 필요한 정보(가족성명(한글, 영문), 가족 주민등록번호, 관계, 카드 수령지 주소, 직장전화, 자택전화, 휴대전화번호)를 작성하는 게시판입니다.">
+						<caption>가족카드 추가 신청 게시판</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p>가족성명(한글)</p></th>
+								<td class="cell_l" colspan="3"><input type="text" class="txt" id="familyName2" name="familyName2" value="" maxlength="8" title="가족성명(한글) 입력" onkeypress="checkTypes(this, 'HCHR');" /></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p>가족성명(영문)</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_name_eng"><input type="text" class="txt" value="" title="가족성명(성)" id="familyEngName21" maxlength="17" name="familyEngName21" /><input type="text" class="txt" value="" title="가족성명(이름)" id="familyEngName22" name="familyEngName22" maxlength="13" /><span class="t_desc04">예) KIM SHINYOUNG <br />(기호 및 특수문자 등록 불가)</span></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>가족주민등록번호</p></th>
+								<td class="cell_l" colspan="3">
+									<input type="text" class="txt" value="" maxlength="6" title="가족 주민등록번호 앞자리" id="familyIdenNo21" name="familyIdenNo21" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="가족 주민등록번호 뒷자리" id="familyIdenNo22" name="familyIdenNo22" enc="on" />
+									<a href="javascript:safeonStartOther('formBasicInfo', 'familyIdenNo21|familyIdenNo22');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_familyIdenNo21|familyIdenNo22" style="display:none;"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>관계</p></th>
+								<td class="cell_l02">
+									<select title="관계 선택" id="familyRelation2" name="familyRelation2">
+										<option value="00">선택</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p>한도</p></th>
+								<td  class="cell_l02">
+									<select title="한도 선택" id="familyRequestLimit2" name="familyRequestLimit2">
+										<option value="00">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>카드 수령지</p></th>
+								<td colspan="3" class="cell_l">
+									<p><label for="familyReceipt21"><input type="radio" class="chk" id="familyReceipt21" name="familyCardGetGubun2" title="카드 수령지 직장" checked="checked" value="001" /> 직장</label><label for="familyReceipt22"><input type="radio" class="chk" id="familyReceipt22" name="familyCardGetGubun2" title="카드 수령지 자택" value="002" /> 자택</label></p>
+									<p class="input_address">
+										<input type="text" class="txt" value="" title="우편번호 앞자리" id="familyZipCode21" name="familyZipCode21" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="우편번호 뒷자리" id="familyZipCode22" name="familyZipCode22" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a>
+										<span class="detail"><input type="text" class="txt" id="familyAddrArea2" name="familyAddrArea2" value="" title="카드수령지 주소 상세입력" readonly="readonly" /><input type="text" class="txt" value="" id="familyAddrDist2" name="familyAddrDist2" title="카드 수령지 주소 상세입력2" readonly="readonly" /></span>
+										<input type="hidden" name="familyZipSeq2" id="familyZipSeq2" value="" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장전화</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="직장전화 앞자리 번호 선택" id="familyCompanyPhone21" name="familyCompanyPhone21">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="직장전화 가운데자리" id="familyCompanyPhone22" maxlength="4" name="familyCompanyPhone22" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" id="familyCompanyPhone23" maxlength="4" name="familyCompanyPhone23" title="직장전화 뒷자리" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>자택번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="자택번호 앞자리 번호 선택" id="familyHomePhone21" name="familyHomePhone21">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="자택번호 가운데자리" maxlength="4" id="familyHomePhone22" name="familyHomePhone22" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" maxlength="4" title="자택번호 뒷자리" id="familyHomePhone23" name="familyHomePhone23" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="휴대전화 앞자리 번호 선택" id="familyHandPhone21" name="familyHandPhone21">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="휴대전화 가운데자리" maxlength="4" id="familyHandPhone22" name="familyHandPhone22" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" maxlength="4" title="휴대전화 뒷자리" id="familyHandPhone23" name="familyHandPhone23" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+
+						<div id="familyInfo3" style="display:">
+						<table class="dtable02" summary="가족카드 추가 신청시 필요한 정보(가족성명(한글, 영문), 가족 주민등록번호, 관계, 카드 수령지 주소, 직장전화, 자택전화, 휴대전화번호)를 작성하는 게시판입니다.">
+						<caption>가족카드 추가 신청 게시판</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p>가족성명(한글)</p></th>
+								<td class="cell_l" colspan="3"><input type="text" class="txt" id="familyName3" name="familyName3" value="" maxlength="8" title="가족성명(한글) 입력" onkeypress="checkTypes(this, 'HCHR');" /></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p>가족성명(영문)</p></th>
+								<td class="cell_l" colspan="3">
+									<span class="input_name_eng"><input type="text" class="txt" value="" title="가족성명(성)" id="familyEngName31" name="familyEngName31" maxlength="17" /><input type="text" class="txt" value="" title="가족성명(이름)" id="familyEngName32" name="familyEngName32" maxlength="13" /><span class="t_desc04">예) KIM SHINYOUNG <br />(기호 및 특수문자 등록 불가)</span></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>가족주민등록번호</p></th>
+								<td class="cell_l" colspan="3">
+									<input type="text" class="txt" value="" maxlength="6" title="가족 주민등록번호 앞자리" id="familyIdenNo31" name="familyIdenNo31" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="가족 주민등록번호 뒷자리" id="familyIdenNo32" name="familyIdenNo32" enc="on" />
+									<a href="javascript:safeonStartOther('formBasicInfo', 'familyIdenNo31|familyIdenNo32');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_familyIdenNo31|familyIdenNo32" style="display:none;"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>관계</p></th>
+								<td class="cell_l02">
+									<select title="관계 선택" id="familyRelation3" name="familyRelation3">
+										<option value="00">선택</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p>한도</p></th>
+								<td  class="cell_l02">
+									<select title="한도 선택" id="familyRequestLimit3" name="familyRequestLimit3">
+										<option value="00">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>카드 수령지</p></th>
+								<td colspan="3" class="cell_l">
+									<p><label for="familyReceipt31"><input type="radio" class="chk" id="familyReceipt31" name="familyCardGetGubun3" title="카드 수령지 직장" checked="checked" value="001" /> 직장</label><label for="familyReceipt32"><input type="radio" class="chk" id="familyReceipt32" name="familyCardGetGubun3" title="카드 수령지 자택" value="002" /> 자택</label></p>
+									<p class="input_address">
+										<input type="text" class="txt" value="" title="우편번호 앞자리" id="familyZipCode31" name="familyZipCode31" readonly="readonly" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="우편번호 뒷자리" id="familyZipCode32" name="familyZipCode32" readonly="readonly" /><a href="#" class="btn btn_white" title="새창"><span>우편번호 검색</span></a>
+										<span class="detail"><input type="text" class="txt" id="familyAddrArea3" name="familyAddrArea3" value="" title="카드수령지 주소 상세입력" readonly="readonly" /><input type="text" class="txt" value="" id="familyAddrDist3" name="familyAddrDist3" title="카드 수령지 주소 상세입력2" readonly="readonly" /></span>
+										<input type="hidden" name="familyZipSeq3" id="familyZipSeq3" value="" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장전화</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="직장전화 앞자리 번호 선택" id="familyCompanyPhone31" name="familyCompanyPhone31">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="직장전화 가운데자리" maxlength="4" id="familyCompanyPhone32" name="familyCompanyPhone32" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" id="familyCompanyPhone33" name="familyCompanyPhone33" title="직장전화 뒷자리" maxlength="4" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>자택번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="자택번호 앞자리 번호 선택" id="familyHomePhone31" name="familyHomePhone31">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="자택번호 가운데자리" maxlength="4" id="familyHomePhone32" name="familyHomePhone32" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="자택번호 뒷자리" maxlength="4" id="familyHomePhone33" name="familyHomePhone33" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select title="휴대전화 앞자리 번호 선택" id="familyHandPhone31" name="familyHandPhone31">
+											<option value="00">선택</option>
+										</select><input type="text" class="txt" value="" title="휴대전화 가운데자리" maxlength="4" id="familyHandPhone32" name="familyHandPhone32" onkeypress="checkTypes(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" class="txt" value="" title="휴대전화 뒷자리" maxlength="4" id="familyHandPhone33" name="familyHandPhone33" onkeypress="checkTypes(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+					</div>
+					<!-- (GROUP)가족카드추가 END -->
+
+					<!-- (GROUP)추천인정보 START -->
+					<input type="hidden" id="f07" value="check" />
+					<h2><img src="/images/cd/h2_fill_recommander.png" alt="추천인이 있으시면 추가사항을 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02" summary="추천인 번호를 입력하는 게시판입니다">
+						<caption>추천인번호 입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>추천인번호</p></th>
+								<td class="cell_l input_name_eng">
+									<input type="text" class="txt" id="inviteNo" name="inviteNo" maxlength="7" onkeypress="checkTypes(this, 'ECNO');" title="추천인번호" />
+									<span class="t_desc03">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					<!-- (GROUP)추천인정보 END -->
+
+					<!-- (GROUP)기타안내 START -->
+					<h2><img src="/images/cd/h2_fill_app09.png" alt="기타안내 신청하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div id="memberKTXInfo">
+						<input type="hidden" id="f15" value="check" />
+						<table class="dtable02" summary="코레일멤버쉽 안내를 받을 수 있는 게시판입니다.">
+						<caption>코레일멤버쉽</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>코레일멤버쉽</p></th>
+								<td class="cell_l">
+									<p>가입비 : 10,000원<br /></p>
+									<p class="mt10">철도 포인트 적립, 라운지 이용 등 코레일멤버십 서비스를 이용하기 위해서는, 카드 발급 후 코레일멤버십 서비스 사용등록 및 신용카드 연회비 외 코레일멤버십 회비를 납부하셔야 합니다.<br />코레일멤버십 서비스 사용등록 및 가입비결제는 철도예약홈페이지 <a href="http://www.korail.com" target="_blank" class="a_point" title="새창">www.korail.com</a>에서 가능합니다.<br /><span class="t_desc03">- 이미 코레일멤버십에 정상등록 되어 있으신 회원은 본 카드 발급으로 인한 추가 멤버십 가입비가 발생되지 않습니다.</span><br />코레일멤버십 가입비는 코레일멤버십 삼성카드 해지시에도 환불받으실 수 없습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+						<div id="platinumMagazineInfo">
+						<table class="dtable02" summary="플래티늄라이프 월간지를 선택할 수 있는 게시판입니다.">
+						<caption>플래티늄라이프 월간지선택</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>플래티늄 라이프<br />월간지 선택</p></th>
+								<td class="cell_l">
+									<label for="platinumMagazine1"><input type="radio" class="chk" value ="0" id="platinumMagazine1" name="platinumMagazine" title="미선택"  checked="checked" /> 미선택</label>
+									<label for="platinumMagazine2"><input type="radio" class="chk" value ="1" id="platinumMagazine2" name="platinumMagazine" title="객석" /> 객석</label>
+									<label for="platinumMagazine3"><input type="radio" class="chk" value ="2" id="platinumMagazine3" name="platinumMagazine" title="포브스" /> 포브스</label>
+									<label for="platinumMagazine4"><input type="radio" class="chk" value ="3" id="platinumMagazine4" name="platinumMagazine" title="GQ" /> GQ</label>
+									<label for="platinumMagazine5"><input type="radio" class="chk" value ="4" id="platinumMagazine5" name="platinumMagazine" title="골프매거진" /> 골프매거진</label>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						</div>
+						
+					</div>
+					<hr />
+					
+					
+					
+					<h2><img src="/images/cd/h2_family_cardapp06.png" alt="고객님 자녀를 무료보험가입 해드립니다" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div class="tb_exp clfix">
+							<span class="fl_left">회원님 자녀의 소아3대암 보험 무료가입을 위해 가입하셔야 하며, 출산예정이거나 추가출산의 경우 <br />
+							삼성카드 고객센터 <span class="t_point_org">1588-8700</span> 또는 삼성카드 홈페이지 內 마이키즈클럽을 통해 추가입력이 가능합니다.<br />
+							만 13세 미만 회원자녀에 한하여 보험가입이 가능합니다.</span>
+						</div>
+						<table class="dtable02" summary="자녀의 이름과 주민등록번호 등 고객님 자녀의 무료보험가입 입력 게시판입니다">
+						<caption>고객님 자녀 무료보험가입 입력</caption>
+						<tbody>
+						
+							<tr>
+								<th scope="row" class="cell_l"><p>자녀1</p></th>
+								<td class="cell_l input_spouse" colspan="3">
+									<div>
+										<p><label for="childrenName1">이름</label><input type="text" class="txt" value="" maxlength="8" title="자녀1 이름" id="childrenName1" name="childrenName1" onkeypress="checkTypes(this, 'HCHR');" /></p>
+										<p class="input_id">
+											<label for="childrenIdenNo11">주민등록번호</label><input type="text" class="txt" value="" maxlength="6" title="자녀1 주민등록번호 앞자리" id="childrenIdenNo11" name="childrenIdenNo11" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="자녀1 주민등록번호 뒷자리" id="childrenIdenNo12" name="childrenIdenNo12" enc="on" />
+											<a href="javascript:safeonStartOther('formBasicInfo', 'childrenIdenNo11|childrenIdenNo12');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+											<span id="usafeon_childrenIdenNo11|childrenIdenNo12" style="display:none;"></span>
+										</p>
+									</div>
+								</td>
+							</tr>
+							
+							<tr>
+								<th scope="row" class="cell_l"><p>자녀2</p></th>
+								<td class="cell_l input_spouse" colspan="3">
+									<div>
+										<p><label for="childrenName2">이름</label><input type="text" class="txt" value="" maxlength="8" title="자녀2 이름" id="childrenName2" name="childrenName2" onkeypress="checkTypes(this, 'HCHR');" /></p>
+										<p class="input_id">
+											<label for="childrenIdenNo21">주민등록번호</label><input type="text" class="txt" value="" maxlength="6" title="자녀2 주민등록번호 앞자리" id="childrenIdenNo21" name="childrenIdenNo21" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="자녀2 주민등록번호 뒷자리" id="childrenIdenNo22" name="childrenIdenNo22" enc="on" />
+											<a href="javascript:safeonStartOther('formBasicInfo', 'childrenIdenNo21|childrenIdenNo22');"><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+											<span id="usafeon_childrenIdenNo21|childrenIdenNo22" style="display:none;"></span>
+										</p>
+									</div>
+								</td>
+							</tr>
+							
+							<tr>
+								<th scope="row" class="cell_l"><p>자녀3</p></th>
+								<td class="cell_l input_spouse" colspan="3">
+									<div>
+										<p><label for="childrenName3">이름</label><input type="text" class="txt" value="" maxlength="8" title="자녀3 이름" id="childrenName3" name="childrenName3" onkeypress="checkTypes(this, 'HCHR');" /></p>
+										<p class="input_id">
+											<label for="childrenIdenNo31">주민등록번호</label><input type="text" class="txt" value="" maxlength="6" title="자녀3 주민등록번호 앞자리" id="childrenIdenNo31" name="childrenIdenNo31" onkeypress="checkTypes(this, 'NUMB');" enc="on" />&nbsp;-&nbsp;<input type="password" class="txt" value="" maxlength="7" title="자녀3 주민등록번호 뒷자리" id="childrenIdenNo32" name="childrenIdenNo32" enc="on" />
+											<a href="javascript:safeonStartOther('formBasicInfo', 'childrenIdenNo31|childrenIdenNo32');"><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+											<span id="usafeon_childrenIdenNo31|childrenIdenNo32" style="display:none;"></span>
+										</p>
+									</div>
+								</td>
+							</tr>
+							
+						</tbody>
+						</table>
+					</div>
+					<hr />
+					
+					<!-- (GROUP)기타안내 END -->
+
+			<!-- btn -->
+			<div class="btnset">
+				<p class="btnc"><a href="javascript:apply_total_validation();"><img src="/images/common/btn_l_confirm.png" alt="확인" /></a><a href="#" onclick="cancelCardApply()"><img src="/images/common/btn_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

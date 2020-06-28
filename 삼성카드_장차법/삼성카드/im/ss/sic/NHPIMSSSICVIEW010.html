@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript">
+function emailApply(){
+	alert("제휴사(NICE신용평가정보) 시스템 업그레이드 중입니다.\n이용에 불편을 드려 죄송합니다. ");
+	//document.form1.method = "post";
+	//document.form1.action="/sic.do?method=creditApply";
+	//tabSubmit(document.form1.action, document.form1);
+}
+
+function emailMod(){
+	alert("제휴사(NICE신용평가정보) 시스템 업그레이드 중입니다.\n이용에 불편을 드려 죄송합니다. ");
+	//document.form1.method = "post";
+	//document.form1.action="/sic.do?method=creditMod";
+	//tabSubmit(document.form1.action, document.form1);
+}
+</script>
+
+
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">실시간 휴대폰 문자서비스 S.InfoCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1200/3965_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSIC001M002', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M002', true);">신청/변경/해지</a></li>
+			<!-- li><a href="javascript:goTabPage('NHPIMSSSIC001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M004', true);">해지하기</a></li -->
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M005', true);">가입정보보기</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSIC001M006', true);">신용정보내역E-Mail신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMSSSIC001M007', true);">신용정보조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<form name="form1" method="post" >
+
+<!-- content_block -->
+<!--cms_content시작-->
+<!--  KCB 구분에 따라 cms 분기 -->
+<% if (kcbGb.equals("K")) { %>
+	<cms:include page="/cms_content/hp/im/ss/sic/NHPIMSSSICVIEW010C2.html" flush="false"></cms:include>
+<% } else { %>
+	<cms:include page="/cms_content/hp/im/ss/sic/NHPIMSSSICVIEW010C1.html" flush="false"></cms:include>
+<% } %>
+<!--cms_content끝-->
+</form>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

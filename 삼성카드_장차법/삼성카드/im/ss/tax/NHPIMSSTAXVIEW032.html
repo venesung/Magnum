@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	    
+    <!-- top_visual -->
+    <div class="top_visual">
+   	<h1 class="none">지방세 카드납부 서비스</h1>
+   	<div class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></div>
+    </div>
+    
+    <!-- content_block -->
+	<div class="content_block content_block_tab2 clfix">
+		<div class="tab01 w810 h60">
+			<ul>
+				<li>
+					<a href="javascript:goTabPage('NHPIMSSTAX001M001', true);">지방세납부</a>
+					<ul class="sub_tab">
+						<li><a href="#">지방세 납부안내</a></li>
+						<li><a href="#">지방세 납부하기</a></li>
+						<li><a href="#">지방세 납부 결과조회</a></li>
+					</ul>
+				</li>
+				<li class="on">
+                    <a href="javascript:goTabPage('NHPIMSSTAX002M005', true);">세정담당자</a>
+					<ul class="sub_tab">
+						<li class="on"><a href="javascript:goTabPage('NHPIMSSTAX002M005', true);">대사처리</a></li>
+                        <li><a href="javascript:goTabPage('NHPIMSSTAX002M005', true);">대사 결과조회</a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSTAX002M003', true);">단말기 승인내역 조회</a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSTAX002M004', true);">단말기 매입내역 조회</a></li> 
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<iframe name="sform" width="0" height="0" frameborder="0" title="빈프레임"></iframe>
+		<iframe name="actionIfrm" src="" height="0" width="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" title="빈프레임"></iframe>
+		<form name="searchForm" action="" method="post">
+			<input type="hidden" name="flag" />
+			<input type="hidden" name="progress" value="" />
+			<input type="hidden" name="dongCode" />
+			<input type="hidden" name="search_gubun" />
+			<input type="hidden" name="srchText" value="" />
+			<input type="hidden" name="srchDateFrom" />
+			<input type="hidden" name="srchDateEnd" />
+			<input type="hidden" name="srchDateGubun" />
+			<input type="hidden" name="srchType" />
+			<input type="hidden" name="srchStatus" />
+			<input type="hidden" name="OCRBandCode" />
+			<input type="hidden" name="scardSystemId" value="tab" />
+			<input type="hidden" name="page" value="${page}" />
+		</form>
+		<form name="form1" method="post">
+		
+		<input type="hidden" name="flag" />
+		<input type="hidden" name="progress" />
+		<input type="hidden" name="search_gubun" />
+		<input type="hidden" name="srchText" value="" />
+		<input type="hidden" name="srchDateFrom" />
+		<input type="hidden" name="srchDateEnd" />
+		<input type="hidden" name="srchDateGubun" />
+		
+		<input type="hidden" name="scardSystemId" value="tab" />
+			
+		<input type="hidden" name="tax_organ" />
+		<input type="hidden" name="tax_type" />
+		<input type="hidden" name="tax_period" />
+		<input type="hidden" name="district" />
+		<input type="hidden" name="tax_no" />
+		
+		<input type="hidden" name="allat_shop_id" value="" />
+		<input type="hidden" name="allat_order_no" value="" />
+		<input type="hidden" name="allat_amt" value="" />
+		<input type="hidden" name="allat_pay_type" value="CARD" />
+		<input type="hidden" name="allat_enc_data" />
+		<input type="hidden" name="allat_opt_pin" value="NOVIEW" />
+		<input type="hidden" name="allat_opt_mod" value="WEB" />
+		<input type="hidden" name="allat_test_yn" value="N" /> <!--테스트YN -->
+		
+		<input type="hidden" name="page" value="${page}" />
+		<input type="hidden" name="listcount" />
+		<input type="hidden" name="typeGubun" />
+		<input type="hidden" name="typeGubun1" />
+		<input type="hidden" name="list_cnt" value="${taxPaymentCnt}" />
+		<input type="hidden" name="dongCode" /> 
+
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">
+			<h2><img src="/images/ss/h2_important_transact01.png" alt="처리할 대사를 조회해 주세요" /></h2>
+			<div class="content_block_inner">
+				<div class="tb_exp clfix">
+                    <span class="t_black">지방세 카드납부 수납, <strong>${StrOrgan}</strong>입니다. <a href="javascript:changePassword();" class="btn btn_s_white"><span>비밀번호변경</span></a><a href="javascript:log_out();" class="btn btn_s_white"><span>로그아웃</span></a></span>
+				</div>
+				<!-- calendar_position -->
+				<div class="pos_rel_cal mt30">캘린더위치</div>
+				<table class="dtable02 dtable_inputfield" summary="처리할 대사 조회를 위하여 이용기간, 진행상태, 조회조건을 입력하는 게시판입니다.">
+				<caption>처리할 대사 조회 입력</caption>
+				<colgroup><col width="20%" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>이용기간</p></th>
+						<td><p>
+							<a id="date" href="javascript:SearchDate('date');" class="btn btn_s_gray"><span>당일</span></a>
+							<a id="week" href="javascript:SearchDate('week');" class="btn btn_s_white"><span>1주일</span></a>
+							<a id="month" href="javascript:SearchDate('month');" class="btn btn_s_white"><span>1개월</span></a>
+							<span class="reset_date ml20">날짜지정
+							<input type="hidden" name=	"" value="n" id="call_check" />
+							<input type="hidden" name=	"srchStartDate" value="<%=new SimpleDateFormat("yyyyMMdd").format(new Date()) %>" id="hp_double_cal_start_value" />
+							<input type="text" id="hp_double_cal_start_value_display" name="srchStartDate_display" class="txt" value="<%=new SimpleDateFormat("yyyy.MM.dd").format(new Date()) %>" title="시작하는날짜" readonly="readonly" 
+								onclick="generate_cal(document.getElementById('hp_double_cal_start_value').value, 'srchStartDate_layer', 'start', 'srchStartDate', 'hp_double_cal', 'hp_double_cal_start_pos');
+ 								show_cal('srchStartDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_start_pos');SearchDate('user','');" />
+							<a href="javascript:generate_cal(document.getElementById('hp_double_cal_start_value').value, 'srchStartDate_layer', 'start', 'srchStartDate', 'hp_double_cal', 'hp_double_cal_start_pos');
+ 								javascript:show_cal('srchStartDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_start_pos'); javascript:SearchDate('user','');" title="이용기간 시작일 달력">
+							<img src="/images/common/ico_calendar.png" id="hp_double_cal_start_pos" alt="달력" /></a>
+							&nbsp;~&nbsp;
+							<input type="hidden" name="srchEndDate" value="<%=new SimpleDateFormat("yyyyMMdd").format(new Date()) %>" id="hp_double_cal_end_value" />
+							<input type="text" id="hp_double_cal_end_value_display" name="srchEndDate_display" class="txt" value="<%=new SimpleDateFormat("yyyy.MM.dd").format(new Date()) %>" title="끝나는날짜" readonly="readonly"
+								onclick= "generate_cal(document.getElementById('hp_double_cal_end_value').value, 'srchEndDate_layer', 'end', 'srchEndDate', 'hp_double_cal', 'hp_double_cal_end_pos');
+ 								show_cal('srchEndDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_end_pos');SearchDate('user','');" />
+							<a href="javascript:generate_cal(document.getElementById('hp_double_cal_end_value').value, 'srchEndDate_layer', 'end', 'srchEndDate', 'hp_double_cal', 'hp_double_cal_end_pos');
+ 								javascript:show_cal('srchEndDate_layer', 'start', 'hp_double_cal', 'hp_double_cal_end_pos'); javascript:SearchDate('user','');" title="이용기간 종료일 달력">
+							<img src="/images/common/ico_calendar.png" id="hp_double_cal_end_pos" alt="달력" /></a>
+							<div id='hp_double_cal' class='pos_rel_cal'></div></span>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>진행상태</p></th>
+						<td><p>
+							<select id="srchStatus" name="srchStatus" title="진행상태" style="width:120px" >
+							   	<option value="" >전체</option>
+                            	<option value="B" <%if(vos.getSrchStatus().equals("B")){%>selected='selected'<%}%> >승인</option>
+                            	<option value="R" <%if(vos.getSrchStatus().equals("R")){%>selected='selected'<%}%> >매입</option>
+                            	<option value="X" <%if(vos.getSrchStatus().equals("X")){%>selected='selected'<%}%> >취소</option>
+							</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>행정동</p></th>
+						<td><p>
+							<select id="search_dong" name="search_dong" title="행정동" style="width:120px" >
+							   	<option value="" >전체</option>
+							<%Map dongList = (Map)request.getAttribute("dongList");
+							  String dongCode = (String)request.getAttribute("dongCode");
+							for(Object key:dongList.keySet()){%>
+                            	<option value="<%=key.toString()%>" <%if(dongCode.equals(key)){%>selected='selected'<%}%>><%=dongList.get(key)%></option>
+                            <%}%>	
+							</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>세구분</p></th>
+						<td bgcolor="#FFFFFF"> &nbsp;
+							<label><input type="radio" name="OCRBandCode" value="0" <%if(StringUtil.isEmpty(vos.getOCRBandCode()) || "0".equals(vos.getOCRBandCode())){%>checked="checked"<%}%> title="전체" />전체&nbsp;&nbsp;</label>
+							<label><input type="radio" name="OCRBandCode" value="1" <%if("1".equals(vos.getOCRBandCode())){%>checked="checked"<%}%> title="지방세" />지방세&nbsp;&nbsp;</label>
+							<label><input type="radio" name="OCRBandCode" value="2" <%if("2".equals(vos.getOCRBandCode())){%>checked="checked"<%}%> title="세외수입" />세외수입</label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><p>조회조건</p></th>
+						<td><p>
+							<select id="srchType" name="srchType" title="조회조건" style="width:120px" onchange="chgSelBox(this); setField(this.value);" onkeypress="checkTypes(this);">
+								<option value="0">전체</option>
+                                   <option value="E" <%if(vos.getSrchType().equals("E")){%>selected='selected'<%}%> >전자납부번호</option>
+                                   <option value="T" <%if(vos.getSrchType().equals("T")){%>selected='selected'<%}%> >과세번호</option>
+                                   <option value="I" <%if(vos.getSrchType().equals("I")){%>selected='selected'<%}%> >주민번호</option>
+                                   <option value="N" <%if(vos.getSrchType().equals("N")){%>selected='selected'<%}%> >사용자이름</option>
+                                   <option value="C" <%if(vos.getSrchType().equals("C")){%>selected='selected'<%}%> >카드번호</option>
+							</select>
+							<span name="divENum" id="divENum" style="display:none;">
+								<input id="eNum" name="eNum" type="text" class="txt" onkeypress="checkKey(this);" maxlength="29"  value="" title="전자납부번호 직접입력" style="width:180px;" />
+ 							</span>
+ 							<span name="divTaxNum" id="divTaxNum" style="display:none;">
+								<input id="taxNum" name="taxNum" type="text" class="txt" onkeypress="checkKey(this);"  value="" title="과세번호 직접입력" style="width:180px;" />
+ 							</span>
+ 							<span name="divRegNum" id="divRegNum" style="display:none;">
+								<input id="regNum" name="regNum" type="text" class="txt" onkeypress="checkKey(this);" maxlength="13"  value="" title="주민번호 직접입력" />
+ 							</span>
+ 							<span name="divUser" id="divUser" style="display:none;">
+								<input id="user" name="user" type="text" class="txt" onkeypress="checkKey(this);" maxlength=""  value="" title="사용자이름 직접입력" />
+ 							</span>
+ 							<span name="divCard" id="divCard" style="display:none;">
+								<input id="card" name="card" type="text" class="txt" onkeypress="checkKey(this);" maxlength="16"  value="" title="카드번호 직접입력" />
+ 							</span>
+ 							<span name="divAll" id="divAll" style="display:none;">
+								<input id="all" name="all" type="text" class="txt" onkeypress="checkKey(this);"  value="" title="조회조건 직접입력" />
+ 							</span>
+						</p></td>
+					</tr>
+					</tbody>
+					</table>
+					<div class="btnset">
+						<p class="btnl t_desc04">승인 취소 코드(01)가 6개로 확대되었으니, 해당사유에 맞는 코드를 입력하여 승인취소 하십시오.<br/>
+												 &nbsp;&nbsp;(단, 99는 시스템 에러코드로 입력하실 수 없습니다)<br/>
+											             승인취소는 진행상태를 [승인]으로 선택 후 조회하시면 대사결과실행 버튼이 출력됩니다.</p>
+                        <p class="btnr"><a class="btn btn_blue" href="#" onclick="searchData();"><span>조회</span></a></p>
+					</div>
+					<div class="btnr">
+						<c:if test="${taxPaymentCnt > 0}">
+						<a href="/hp/im/ss/tax/tax002.do?method=makeDaeguExcel" name="excelATag" title="엑셀다운로드"></a>
+                        <a href="javascript:makeExcel();" class="btn btn_white">
+						<span>대사 실행용 다운로드</span></a>
+						</c:if>
+						<c:if test="${vos.srchStatus == 'B'}">
+                        <a href="javascript:process();" class="btn btn_white"><span>대사결과실행</span></a>
+						</c:if>
+					</div>
+			</div>
+		</div>
+				
+		<div class="content_block clfix">
+			<h2><img src="/images/ss/h2_important_transact02.png" alt="대사와 사유를 입력해 주세요" /></h2>
+			<div class="content_block_inner pos_rel">
+				<table class="dtable02 dtable_expand" summary="대사결과 상세내역 중 해당기간 총 납부건수와 해당기간 총 납부금액을 확인하는 게시판입니다.">
+				<caption>대사결과 상세내역</caption>
+				<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>해당기간 총 납부건수</p></th>
+						<td><p><span class="t_no">${taxPaymentCnt}</span> 건</p></td>
+						<th scope="row"><p>해당기간 총 납부금액</p></th>
+						<td><p><span class="t_no">${taxPaymentTotalAmt}</span> 원</p></td>
+					</tr>
+				</tbody>
+				</table>
+
+				<table class="dtable01 dtable_inputfield mt20" summary="전자납부번호, 과세번호(OCR고지번호), 세구분, 주민번호, 사용자, 납부일자, 납부금액, 진행상태, 취소, 사유로 구성된 대사와 사유를 입력하실 수 있는 게시판입니다.">
+				<caption>대사와 사유 입력 게시판</caption>
+				<colgroup><col width="100" /><col width="130" /><col width="80" /><col width="120" /><col width="80" /><col width="80" /><col width="80" /><col width="60" /><col width="30" /><col width="30" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col">전자납부번호</th>
+						<th scope="col" class="cell_l10">과세번호<br />(OCR고지번호)</th>
+						<th scope="col">세구분</th>
+						<th scope="col" class="cell_l10">주민번호</th>
+						<th scope="col">사용자</th>
+						<th scope="col">납부일자</th>
+						<th scope="col" class="cell_r10">납부금액</th>
+						<th scope="col">진행상태</th>
+						<th scope="col">취소</th>
+						<th scope="col">사유</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						NHPIMSSTAX001VO vo = new NHPIMSSTAX001VO();
+
+						if(rsList.size()<=0){
+					%>
+					<tr class="nodata"><td colspan="9">조회된 내용이 없습니다.</td></tr>
+					<% }else{
+						for(int i=1; i<=rsList.size(); i++){
+							vo = rsList.get(i-1);
+						%>
+						<tr>
+							<td class="t_no cell_l10"><%=vo.getEpayNo()%></td>	
+							<td class="t_no cell_l10"><%=vo.getAllatOrderNo()%>
+								<input type="hidden" name="order_no<%=i%>" value="<%=vo.getAllatOrderNo()%>" /></td>	
+							<td class="t_no cell_l10"><%if("1".equals(vo.getOCRBandCode())){%>지방세<%}else{%>세외<%}%></td>	
+							<td class="t_no cell_l10"><%=vo.getPayerNo6()%><br>*******</br></td>
+							<td><%=vo.getPayerName()%>
+								<input type="hidden" name="payment_no<%=i %>" value="<%=vo.getPaymentNo().replace(",","")%>" /></td>
+							<td class="t_no"><%=vo.getApprovalDate().substring(0,4)+"."+vo.getApprovalDate().substring(4,6)+"."+vo.getApprovalDate().substring(6,8)%></td>
+							<td class="t_no cell_r10"><%=new DecimalFormat("#,###").format(Integer.valueOf(vo.getPaymentAmount()))%></td>
+							<td width="60" bgcolor="#FFFFFF" height="22"  align="center"><%=vo.getStatusText() %>
+								<input type="hidden" name="batch_status<%=i %>" value="<%=vo.getBatchStatus()%>" /></td>
+							<td width="30" bgcolor="#FFFFFF" align="center">
+								<input type="checkbox" onclick="chk_check('<%=i %>')" name="chk_del_<%=i %>" <%if("X0000".equals(vo.getStatus())){%> checked="checked" <%}%> title="취소 선택" />
+								<input type="hidden" name="origin_status<%=i %>" value="<%=vo.getStatus()%>" />
+								<input type="hidden" name="status<%=i %>"  style="width:22px" value="<%=vo.getStatus()%>" />
+							</td>
+						    <td width="30" bgcolor="#FFFFFF" height="22" align="center">
+								<input name="reasons<%=i %>" type="text" class="txt" style="width:20px" maxlength="2" value="<%=vo.getCancelReason() %>" title="취소사유 입력" />
+								<input type="hidden" name="allat_enc_data<%=i %>" />
+								<input type="hidden" name="payment_amt<%=i %>" value= "<%=vo.getPaymentAmount().replaceAll(",","")%>" />
+								<input type="hidden" name="reason<%=i %>" value="<%=vo.getCancelReason() %>" />
+								<input type="hidden" name="shopid<%=i %>" value="<%=vo.getShopId() %>" />
+								<input type="hidden" name="cancelDataYn<%=i %>" />
+								<input type="hidden" name="cresskey<%=i %>" value="<%=vo.getCrossKey() %>" />
+								<input type="hidden" name="tran_no<%=i %>" value="<%=vo.getTranNo() %>" />
+								<input type="hidden" name="epayno<%=i %>" value="<%=vo.getEpayNo() %>" />
+								<input type="hidden" name="ocr_band_code<%=i %>" value="<%=vo.getOCRBandCode()%>" />
+								<input type="hidden" name="approval_date<%=i %>" value="<%=vo.getApprovalDate() %>" />
+							</td>
+						</tr>
+					<%}
+					} %>
+				</tbody>
+				</table>
+				<%
+				if(rsList.size() >0){
+				%>
+					<!-- paginate -->
+					<!-- 페이징 -->
+					<div class="paginate">
+						${_page}
+					</div>
+					<!-- //페이징 -->
+				<%}%>
+				<table class="dtable01 mt20" summary="각 구분별 취소사유예시를 확인할 수 있는 게시판입니다.">
+				<caption>구분별 취소사유예시</caption>
+				<colgroup><col width="10%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>	<!-- 091203 -->
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10 riline">구분</th>
+						<th scope="col">01</th>
+						<th scope="col">02</th>
+						<th scope="col">03</th>
+						<th scope="col">04</th>
+						<th scope="col">05</th>
+						<th scope="col">99</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10 riline">취소사유</td>
+						<td>과납</td>
+						<td>오납</td>
+						<td>과세자료 없음<br /><span class="t_desc03">(과세번호 없음)</span></td>
+						<td>납세자 번호 오류<br /><span class="t_desc03">(주민등록번호 오류)</span></td>
+						<td>기타</td>
+						<td>에러취소</td>
+					</tr>
+					<!-- //loop -->
+				</tbody>
+				</table>
+
+				<!-- btn -->
+				<div class="btnset">
+					<p class="btnl t_desc04">일괄매입요청 하시기 전에 조회 조건별로 검색을 하여 승인 취소할 건을 먼저 선택하여 취소하신 후,<br />다시 조회하여일괄매입요청을 하십시오. 승인취소 전에 일괄매입요청을 하시면 승인취소 건도 매입 처리되오니 이점 주의하여 처리해 주십시오.</p>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

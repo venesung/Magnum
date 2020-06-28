@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<div class="top_visual">
+					<h1 class="none">중도상환서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_prep_srv.jpg" alt="중도상환서비스. 이번 달 결제금액이 부담스러우신가요?  결제일 이전에 원하는 내역만 미리결제하는 중도상환 서비스를 이용해보세요." /></div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100126 -->
+					<div class="tab01 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHEMSINFO','true');">중도상환신청</a></li><!-- choose -->
+                            <li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMMHEMS021','true');">론패스 중도상환 조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHEMS022','true');">중도상환 처리내역 조회</a></li>
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_moderate_payments02.png" alt="중도상환 금액을 안내해 드립니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<p>결제일까지 기다리지 않고 남은 상환금은<span class="t_point_org">일시불로 결제</span>하실 수 있습니다.</p>
+						</div>
+
+						<table class="dtable01 dtable01_bill" summary="중도상환종류, 구분, 대출/패스번호, 결제일, 비고 등 중도상환 정보를 확인하고 선택할 수 있는 게시판입니다.">
+						<caption>중도상환 확인</caption>
+						<colgroup><col width="*" /><col width="17%" /><col width="22%" /><col width="15%" /><col width="15%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">중도상환종류</th>
+								<th scope="col">구분</th>
+								<th scope="col" class="cell_l10">대출/패스번호</th>
+								<th scope="col" class="cell_l10">결제일</th>
+								<th scope="col" class="cell_l10">비고</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+
+							if((AHA_LoanList != null && AHA_LoanList.size() > 0 )|| (visitLoanList != null && visitLoanList.size() > 0)){
+								if(AHA_Size>0){
+									for(int i = 0 ; i < AHA_Size; i ++){
+										NHPIMMHEMS021VO vo1 = new NHPIMMHEMS021VO();
+										vo1 = AHA_LoanList.get(i);
+							%>
+							<tr>
+								<td class="cell_l10"><input type="radio" name="loanName" class="rdo" id="label_select01" value="1" /> <label for="label_select01">아하론패스 중도상환</label></td>
+								<td><%=vo1.getProdNo()  %></td>
+								<td class="cell_l10 t_no"><%=vo1.getInvoiceNm() %></td>
+								<td class="cell_l10"><span class="t_no"><%=vo1.getPayDdCode() %></span>일 </td>
+								<td class="cell_l10">-</td>
+							</tr>
+							<%}
+								}else{%>
+								<tr>
+									<input type="hidden" name="loanName" value="1" />
+									<td colspan="5">아하론패스 중도상환  대상건이 존재하지 않습니다.</td>
+								</tr>
+
+								<%}
+								if(visitSize>0){
+									for(int j = 0 ; j < visitSize; j ++){
+										if(j == 0){
+							%>
+				                   			<input type="hidden" name="end_plan_ymd" value="<%=endPlanYmd %>" />
+				                   			<input type="hidden" name="gijun_to_time" value="<%=gijunToTime %>" />
+				                   			<input type="hidden" name="gijun_from_time" value="<%=gijunFromTime %>" />
+							<%
+										}
+											NHPIMMHEMS021VO vo1 = new NHPIMMHEMS021VO();
+											vo1 = visitLoanList.get(j);
+							%>
+
+
+							<tr>
+								<td class="cell_l10"><input type="radio" name="loanName" class="rdo" id="label_select02" value="2" /> <label for="label_select02">개인 신용 대출 중도상환</label></td>
+								<td><%=vo1.getProdNo()  %></td>
+								<td class="cell_l10 t_no"><%=vo1.getInvoiceNm() %></td>
+								<td class="cell_l10"><span class="t_no"><%=vo1.getPayDdCode() %></span>일 </td>
+								<td class="cell_l10">-</td>
+							</tr>
+							<%		}
+								}else{%>
+								<tr>
+									<input type="hidden" name="loanName" value="2" />
+									<td colspan="5">개인신용대출 중도상환 중도상환  대상건이 존재하지 않습니다.</td>
+								</tr>
+								<%}
+							}else{ %>
+							<tr>
+								<td colspan="5">대상 조회내역이 존재하지 않습니다.</td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+						<div class="btnset"><p class="btnl t_desc04">장기미납으로 인해 기타비용이 발생한 경우에는 (법비용 등) 위 금액에 포함되지 않으므로 해당되시는 고객께서는 실제 납입금액을확인하신 후 입금하시기 바랍니다.</p></div>
+
+
+						<div class="line_lgray"> </div>
+
+						<div class="tb_exp clfix">
+							<span>입금하실 예정일을 입력하고 조회하면 입금예정일에 상환하실 금액을 확인하실  수 있습니다.</span>
+						</div>
+						<div class="pos_rel_cal">캘린더 위치</div>
+						<table summary="입금예정일을 입력하는 게시판입니다" class="dtable02 dtable_inputfield">
+							<caption>입금예정일 입력</caption>
+							<colgroup><col width="20%" /><col width="*" /></colgroup>
+							<tbody>
+								<tr>
+									<th class="cell_bg" scope="row"><p>입금예정일</p></th>
+									<td id="id_cal_wrap">
+											<p class="reset_date fl_left"><fileTag:calendarAdd calendarId="hp_single_cal" title="입급 예정일 달력 새창열림" inputClass="txt" inputName="searchDate" inputValue="<%=searchDate %>" /></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+<!-- 100126 -->
+						<div class="btnset">
+							<p class="btnr"><a class="btn btn_blue" href="javascript:searchLoan()"><span>조회</span></a></p>
+						</div>
+<!-- //100126 -->
+
+						<div class="line_lgray"> </div>
+
+						<div class="tb_exp clfix">
+							<span class="t_point">가상계좌 입금(인터넷 뱅킹 가능)</span>
+						</div>
+						<ol class="list_no01">
+							<li><p>가상계좌를 이용한 일시불 상환은 패스 앞면에 기재되어 있는 우리은행 또는 신한은행 또는 농협계좌로 일시불 금액을 입금하시는 것입니다.</p></li>
+							<li><p>가상계좌로 입금 즉시 처리해 드립니다.</p></li>
+						</ol>
+						<div class="tb_exp clfix mt20">
+							<span class="t_point">무통장입금</span>
+						</div>
+						<ol class="list_no01">
+							<li><p>삼성아하론패스 회원이 무통장 입금을 이용하여 삼성카드의 계좌로 직접 입금하는 방법입니다.</p></li>
+							<li><p>무통장 입금 시 해당은행 무통장 입금 수수료 부과기준에 따라 수수료가 부과됩니다.</p></li>
+						</ol>
+					</div>
+				</div>
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

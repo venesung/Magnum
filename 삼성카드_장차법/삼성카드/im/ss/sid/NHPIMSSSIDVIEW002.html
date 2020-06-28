@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">명의도용차단을위한 S.IDCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1700/4179_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSID001M002', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_reg.png" alt="서비스 등록하기" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+		<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M001', true);">서비스소개</a></li>
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSSID001M008', true);">이용안내</a></li>-->
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSID001M002', true);">등록하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M005', true);">명의도용차단설정</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M006', true);">명의도용차단내역</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSID001M007', true);">실명확인내역</a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<!-- content_block -->
+<div id="id_idcare_step01">
+
+
+	<div class="content_block first_none clfix">
+		<h2><img src="/images/ss/h2_sidcare02.gif" alt="개인정보를 입력해주세요" /></h2>
+		<div class="content_block_inner pos_rel">
+			<!-- 100324 -->
+				<div class="tb_exp clfix">
+					<span class="fl_left">회원님은 <span class="t_point_org">00년 00월 00일</span>에 해지내역이 있습니다.</span>
+				</div>
+			<table class="dtable02 dtable_inputfield" summary="성명, 주민등록번호, 휴대폰번호, 이메일주소 정보를 확인할 수 있는 게시판입니다">
+			<caption>개인정보 작성</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>성명</p></th>
+					<td><p>0</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>주민등록번호</p></th>
+					<td class="t_no"><p>-******</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>휴대폰번호</p></th>
+					<td>
+						<p class="input_phone">
+							<select name="tempHandPhone1" title="휴대폰 앞자리">
+								<option value="">선택</option>
+							</select>&nbsp;-&nbsp;<input type="text" name="handPhone2" class="txt" title="휴대폰 가운데자리" maxlength="4" onkeypress="checkLenN(this, 4, form.handPhone3);checkTypes(this, 'NUMB');" onclick="form.handPhone2.value = '';" style="ime-mode:disabled" />&nbsp;-&nbsp;<input type="text" name="handPhone3" class="txt" title="휴대폰 뒷자리" maxlength="4" onkeydown="checkLenB(this, form.handPhone2);" onkeypress="checkTypes(this, 'NUMB');" onclick="form.handPhone3.value = '';" style="ime-mode:disabled" />
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>이메일주소</p></th>
+					<td><p>
+						<span class="input_email"><input type="text" name="emailId" class="txt" value="" title="이메일 아이디 입력" maxlength="20" />&nbsp;@&nbsp;<input type="text" name="emailDomain" class="txt" value="" title="이메일 공급자 직접입력" maxlength="20" /></span>&nbsp;&nbsp;&nbsp;
+						<label for="email1"><input type="radio" class="rdo" value="Y" id="email1" name="tempEmailRecvYn" checked="checked" title="이메일 수신" /> <strong>수신</strong>&nbsp;&nbsp;</label>
+						<label for="email2"><input type="radio" class="rdo" value="N" id="email2" name="tempEmailRecvYn" title="이메일 미수신" /> 미수신</label>
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<!-- btn -->
+			<div id="id_submit_form01" class="btnr">
+                <a href="#id_idcare_step02" class="btn btn_blue" onclick="open_step2();"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSSID001M001', 'false');" class="btn btn_white"><span>취소</span></a>
+                <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="btn btn_white"><span>정보변경</span></a>
+				<!-- /hp/im/mh/ufm001.do?method=getMemberInfo -->
+			</div>
+			
+			<ol class="list_no01 list_cvc">
+				<li><p>S.IDCare는 본 서비스를 신청한 회원에 대해서만 제공되는 유료서비스입니다.</p></li>
+				<li><p>오늘 웹 멤버에 가입하신 회원님은 영업일 기준 익일에 가입하실 수 있습니다.</p></li>
+				<li><p>지금 즉시 가입을 원하시면 <strong class="t_black">고객상담센터(1588-8700)</strong>으로 연락 주시기 바랍니다.</p></li><!-- 100517 -->
+				<li><p>회원님께서 서비스 받으실 핸드폰번호와 이 메일 주소를 확인하세요. 이 메일 수신은 선택하실 수 있습니다.</p></li>
+				<!-- <li><p>S.IDCare를 신청하시면 신청 월로부터 <strong class="t_black">첫 2개월 무료이용혜택</strong>을 드립니다. <br />무료기간 중에라도 원하지 않으시면 언제든지 해지 가능하며, 해지신청이 없으시면 3개 월차부터 월 900원의<br /> 이용료가 청구됩니다. <br />
+				(※ 단, 무료이용혜택은 <strong class="t_black">1인 1회만 적용</strong>됩니다.)</p></li>-->
+				<li><p>회원님께서 서비스 받으실 핸드폰번호와 이메일주소를 확인하세요. 이메일수신은 선택하실 수 있습니다.</p></li>
+				<li><p>이용대상
+						 <br />- 정상카드와 휴대폰을 소지한 당사 회원
+						 <br />- 법인카드, 가족카드, 체크카드 및 비신용카드로는 신청이 불가합니다.
+						 <br />- 정상카드 미소지 또는 정확한 휴대폰번호를 등록/변경하지 않을 경우 자동으로 해지될 수 있습니다.</p></li>
+				<li><p>자세한 서비스 제공내역과 이용방법은 상단 [이용안내] 페이지를 참조하시기 바랍니다.</p></li>
+			</ol>
+			
+		</div>
+	</div>
+</div>
+
+<div id="id_idcare_step02" style="display:">
+	<div class="content_block clfix">
+		<h2><img src="/images/ss/h2_sinfocare04.gif" alt="카드정보를 확인해주세요" /></h2>
+		<div class="content_block_inner pos_rel">
+			<table class="dtable02 dtable_inputfield" summary="카드선택, 카드 비밀번호, 카드 CVC번호, 포인트결제여부를 선택할 수 있는 게시판입니다.">
+			<caption>카드정보 작성</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드번호</p></th>
+					<td class="t_no"><p>
+						<select name="tempCardIndex" title="카드선택" style="width:360px">
+									<option></option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 비밀번호</p></th>
+					<td><p class="input_2char"><input type="password" name="cardPassword" class="txt" value="" title="비밀번호 앞 두자리" maxlength="2" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" /><em>**</em>(비밀번호 앞의 2자리)</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 CVC번호</p></th>
+					<td><p class="input_3char"><input type="password" name="cardCvc" class="txt" value="" title="CVC번호" maxlength="3" onkeypress="checkTypes(this, 'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');" style="me-mode:disabled" />(뒤의 3자리)</p></td><!-- 100513 -->
+				</tr>
+				<tr>
+					<th scope="row"><p>포인트결제여부</p></th>
+					<td><p><label><input type="radio" class="rdo" name="pointYN" id="pointYN" title="포인트로 결제" />Yes</label> <label><input type="radio" class="rdo" name="pointYN" id="pointYN" checked="checked" title="포인트로 결제하지 않음" />No</label></p>
+					&nbsp;※ 포인트 결제를 선택하시면 포인트 보유시  매월 포인트로 우선 결제 되며, 포인트가 부족할 시 <br />&nbsp;부족분은 일반 카드 결제로 진행됩니다.
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<!-- btn -->
+			<div id="id_submit_form02" class="btnr">
+                <a href="#id_idcare_step03" class="btn btn_blue" onclick="open_step3();"><span>확인</span></a>
+                <a href="#id_idcare_step01" class="btn btn_white" onclick="close_step2();"><span>취소</span></a>
+			</div>
+
+			<dl class="cvc_view">
+				<dt class="t_black"><strong>CVC보는방법</strong></dt>
+				<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+				<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+			</dl>
+			
+		</div>
+	</div>
+</div>
+
+<div id="id_idcare_step03" style="display:none">
+	<div class="content_block clfix">					
+	<h2><img src="/images/ss/h2_sinfocare01.gif" alt="약관에 동의해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<h3><span class="t_point">S.IDCare 이용약관</span></h3>
+		<div class="d_desc mt10">
+			<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div id="id_terms_sidcare" class="agree" tabindex="0">
+					<!-- cms_content시작 -->
+					<cms:include page="/html/agreement/html_sidcare.html" flush="false" />
+					<!-- cms_content끝 -->
+				</div>
+			</div></div>
+		</div>
+
+		<div class="btnl">
+            <label for="label_agree1"><input type="radio" class="rdo" value="" id="label_agree1" name="id_agree" checked="checked" title="약관 동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+			<label for="label_agree2"><input type="radio" class="rdo" value="" id="label_agree2" name="id_agree" title="약관 동의안함" /> 동의안함</label>
+		</div>
+	
+		<div class="cvc_view"></div>
+			<h3><span class="t_point">크레딧 뱅크 약관</span></h3>
+
+			<div class="d_desc mt10">
+				<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+					<div id="id_terms_credit" class="agree" tabindex="0">
+						<!-- cms_content시작 -->
+						<cms:include page="/html/agreement/html_sidcare_creditbank.html" flush="false" />
+						<!-- cms_content끝 -->
+					</div>
+				</div></div>
+			</div>
+
+			<div class="btnl">
+				<label for="label_creditbank_agree1"><input type="radio" class="rdo" value="" id="label_creditbank_agree1" name="id_creditbank_agree" checked="checked" title="약관 동의" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+				<label for="label_creditbank_agree2"><input type="radio" class="rdo" value="" id="label_creditbank_agree2" name="id_creditbank_agree" title="약관 동의안함" /> 동의안함</label>
+			</div>
+
+			<div class="cvc_view"></div>
+	
+			<!-- btn -->
+			<div id="id_service_apply" class="btnr mt_1" style="display: block;">
+                <a href="javascript:go_url()" class="btn btn_blue"><span>확인</span></a>
+                <a href="#id_idcare_step01" class="btn btn_white" onclick="close_step3();"><span>취소</span></a>
+                <a href="javascript:print_terms();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+			</div>
+		</div>
+		
+	</div>
+</div><!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

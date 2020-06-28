@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 웹멤버 가입</h1>
+					<div class="h1_desc"><img src="/images/ms/bg_joinin.jpg" alt="삼성카드 웹멤버 회원가입을 하시면 삼성카드의 편리하고 폭넓은 서비스를 활용하실 수 있습니다" /></div>
+				</div>
+				<form name="form" method="post">
+				<div class="content_block content_block_card clfix">
+					<div class="top_step top_step_appcard top_step_appcard04">
+						<ol class="none">
+							<li>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</li>
+							<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+							<li>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</li>
+							<li><abbr>현재단계</abbr> <strong>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</strong></li>
+						</ol>
+					</div>
+				</div>
+<!-- //100126 -->
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<!-- d_complete 100126 -->
+					<div class="d_alert clfix">
+						<p class="ico_alert"><img src="/images/common/img_in_com.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/ms/h2_congraturation_joinin.png" alt="삼성카드 홈페이지 정회원가입을 환영합니다." /></h2>
+							<div class="p_txt">
+								고객님의 아이디는 <strong class="t_point"><%=webId %></strong> <%if( !maiala.equals("0902") && !maiala.equals("0908")){%>이며 비밀번호는 <strong class="t_point"><%=pass %></strong><%} %> 입니다.
+								<%if(maiala.equals("0902") || maiala.equals("0908")){ %>
+								<p class="t_desc04">정회원으로 전환되었습니다. 아래 확인버튼을 클릭하신후 다시 로그인 해주십시오.</p>
+								<%}else{ %>
+								<p class="t_desc04">삼성카드를 소지하신 고객님께서는 카드를 등록하시면 더 편리하게 이용하실 수 있습니다.</p>
+								<%} %>
+							</div>
+							<div class="btnl">
+								<a href="javascript:goLogin();"><img src="/images/common/btn_b_login.gif" alt="로그인" /></a>
+							</div>
+						</div>
+					</div>
+					<!-- //d_complete 100126 -->
+					<p style="line-height:16px;padding-left:140px;" class="mt30">※ 웹멤버에 가입하신 당일에는 “카드이용내역(본인,가족카드)” 관련 메뉴의 확인이 불가합니다. <br />&nbsp;&nbsp;&nbsp;&nbsp;해당 메뉴는 웹멤버 가입 다음날(영업일 기준)부터 조회가 가능하오니 양해 부탁드립니다.</p><!-- 121016 추가 -->
+				</div>				
+				</form>
+				<!-- footer_layer -->
+								
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

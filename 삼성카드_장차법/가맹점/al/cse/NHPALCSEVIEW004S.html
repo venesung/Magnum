@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>승인내역조회 - 삼성카드</title>
+</head>
+<body>
+				<div class="tb_exp clfix mt30">
+					<span class="t_black"><strong>가맹점 승인 상세내역</strong></span>
+				</div>
+
+                <table summary="승인일자, 승인번호, 이용카드, 할부기간, 승인금액, 접수일자, 취소여부로 구성된 승인내역 조회 리스트입니다.">
+                  <caption class="conts_hidden">승인내역 조회 리스트</caption>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">번호</th>
+						<th scope="col">승인일자</th>
+						<th scope="col">승인번호</th>
+						<th scope="col">이용카드</th>
+						<th scope="col">할부 기간</th>
+						<th scope="col" class="cell_r10">승인금액</th>
+						<th scope="col">접수일자</th>
+						<th scope="col">취소여부</th><!-- 100205 -->
+					</tr>
+				</thead>
+			
+					<%
+					for(int i=0; i<resultList.size(); i++){
+						vo = (HOMEHMV5HPF00005INRecVO1)resultList.get(i);	
+					%>																		
+					<tr>
+						<td class="cell_l10 t_no"><%= i+1 %></td>
+						<td><%=HpCommonUtil.getPatternDateString(vo.getApproveDate(),"yy.MM.dd") %><br></br><%=vo.getApproveTime().substring(0,2) %>:<%=vo.getApproveTime().substring(2,4) %>:<%=vo.getApproveTime().substring(4) %></td>
+						<td class="t_no"><%=vo.getOutApproveNo() %></td>
+						<td class="t_no"><%=HpCommonUtil.convCardNo(dm.decryptNumber(vo.getCardNo16())) %></td>
+						<td class="t_no"><% if("000".equals(vo.getInstallmentMon())){ %>일시불<%}else{ out.write(Integer.toString(Integer.parseInt(vo.getInstallmentMon())));%>개월<%} %></td>
+						<td class="cell_r10 t_no"><%=HpCommonUtil.getCommaStringForMoney(vo.getApproveAmount()) %></td>
+						<td class="t_no"><% if("00010101".equals(vo.getAcceptDate())){ %>-<%}else{HpCommonUtil.getPatternDateString(vo.getAcceptDate(),"yy.MM.dd");} %></td> <!--00010101 일경우 접수일이 없는 경우  -->
+						<td class="t_no"><% if("Y".equals(vo.getCancelGubun())){ %>취소<%}else{ %>정상<%} %> </td><!-- 100205 -->
+					</tr>
+					<% }%>
+					
+				</table>
+</body>
+</html>

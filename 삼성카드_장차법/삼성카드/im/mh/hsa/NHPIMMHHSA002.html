@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>생활비재테크서비스 이용 예시 - 삼성카드</title>
+<style type="text/css">
+<!--
+.style9 {
+	color: #cf3f00;
+	background-color: #ffffff;
+	border:1px solid #ffffff;
+}
+.style10 {
+	color: #0066CC;
+	background-color: #ffffff;
+	border:1px solid #ffffff;
+}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<form name="form">
+</form>
+<div id="pop_wrap">
+	<!-- header -->
+	<!--<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_living_service_example.png" alt="생활비재테크서비스 이용 예시" /></h1>
+	</div>-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_living_service_example.png" alt="생활비재테크서비스 이용 예시" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445">
+
+		<div class="content_block content_block_card clfix">
+			<p class="lh14">매월 사용하는 생활비를 삼성카드에 옮겨 놓고 쓰시면, 보통예금으로 신용카드 대금을 결제하는것 보다 <br />더 큰 혜택을 드립니다. <span class="t_point_org">회원님의 생활비를 아래 금액에서 선택</span>하시면 생활비재테크 서비스 이용 시 <br />삼성카드에서 제공하는 큰 혜택(캐시백 적립)을 한 눈에 확인하실 수 있습니다.</p>
+			<p class="tit_living"><img src="/images/mh/pop_txt_use_living.png" alt="매월 사용하는 생활비" /></p>
+
+				<div class="living_cont">
+				<span class="selectbox_r_txt04 t_desc04">
+				<select title="금액 선택" name="money" onchange="this.style.color='#fa3500';money(this.value);" onmousedown="this.style.color='#000000'" id="select">
+	                <option>- 선택 -</option>
+					<option value="100">10 만원</option>
+					<option value="200">20 만원</option>
+					<option value="300">30 만원</option>
+					<option value="400">40 만원</option>
+					<option value="500">50 만원</option>
+					<option value="600">60 만원</option>
+					<option value="700">70 만원</option>
+					<option value="800">80 만원</option>
+					<option value="900">90 만원</option>
+					<option value="1000">100 만원</option>
+					<option value="1100">110 만원</option>
+					<option value="1200">120 만원</option>
+					<option value="1300">130 만원</option>
+					<option value="1400">140 만원</option>
+					<option value="1500">150 만원</option>
+					<option value="1600">160 만원</option>
+					<option value="1700">170 만원</option>
+					<option value="1800">180 만원</option>
+					<option value="1900">190 만원</option>
+					<option value="2000">200 만원</option>
+					<!--
+					<option value="2500">250 만원</option>
+					<option value="3000">300 만원</option>
+					<option value="3500">350 만원</option>
+					<option value="4000">400 만원</option>
+					<option value="4500">450 만원</option>
+					<option value="5000">500 만원</option>
+					-->
+	            </select>
+
+				10만원에서 200만원까지 <span class="t_black t_11">10만원 단위</span>로 선택가능합니다.</span>
+
+				<div class="line_lgray10">&nbsp;</div>
+				<div class="txt_living">
+					<span><img src="/images/mh/pop_txt_living_iservice.png" alt="생활비재테크 서비스" /></span>
+					<span><img src="/images/mh/pop_txt_saving.png" alt="보통예금" /></span>
+				</div>
+			</div>
+<!-- 100222 -->
+			<div class="d_graph_life_ftech">
+				<dl>
+					<dt>1년사용</dt>
+					<dd>
+						<div class="graph y1_o"><span class="none">생활비재테크</span>
+						<div id="chart0" class="graph_org" style="height:30px"><p class="graph_btm">
+						<em id="innerT">0원
+
+						</em>
+						</p><p class="graph_top"></p></div></div>
+						<div class="graph y1_b"><span class="none">보통예금</span>
+						<div id="chart1" class="graph_blue" style="height:30px"><p class="graph_btm">
+						<em id="innerT2">0원
+						</em>
+						</p><p class="graph_top"></p></div></div>
+						<!-- 0 : 30px ~ Full : 165px 입니다. 백분율로 높이 구하셔서 height:값에 변수처리해서 넣으시면 됩니다. -->
+					</dd>
+					<dt>3년사용</dt>
+					<dd>
+						<div class="graph y3_o"><span class="none">생활비재테크</span>
+						<div id="chart2" class="graph_org" style="height:30px"><p class="graph_btm">
+						<em id="innerT3">0원
+						</em>
+						</p><p class="graph_top"></p></div></div>
+						<div class="graph y3_b"><span class="none">보통예금</span>
+						<div id="chart3" class="graph_blue" style="height:30px"><p class="graph_btm">
+						<em id="innerT4">0원
+						</em>
+						</p><p class="graph_top"></p></div></div>
+					</dd>
+					<dt>5년사용</dt>
+					<dd>
+						<div class="graph y5_o"><span class="none">생활비재테크</span>
+						<div id="chart4" class="graph_org" style="height:30px"><p class="graph_btm">
+						<em id="innerT5">0원
+						</em>
+						</p><p class="graph_top"></p></div></div>
+						<div class="graph y5_b"><span class="none">보통예금</span>
+						<div id="chart5" class="graph_blue" style="height:30px"><p class="graph_btm">
+						<em id="innerT6">0원
+						</em>
+						</p><p class="graph_top"></p></div></div>
+					</dd>
+				</dl>
+			</div>
+ <!-- //100222 -->
+			<p class="mt10 clfix"><strong class="t_black">연환산 6.0% 캐시백 적용</strong> (삼성카드 생활비재테크서비스로 전액 사용시 기준)</p>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+
+</div>
+ <script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

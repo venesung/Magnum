@@ -1,0 +1,1013 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function window::onload(){
+		
+		var form = excelForm;
+
+		form.excelTag.value = document.getElementById("excelDiv").innerHTML;
+		
+		form.submit();
+		
+
+	}
+
+</script>
+</head>
+<body>
+<form name="excelForm" method="post" action="/hp/com/com.do?method=insertExcelTag">
+	<input type="hidden" name="excelTag" />
+	<input type="hidden" name="fileName" value="<%=(String)request.getAttribute("fileName")%>" />
+</form>
+<div id="excelDiv">
+<h2>카드 이용내역</h2>
+			<%if(infoType.equals("useInfo")){ %>
+				<%if(detailList1.size() > 0){
+					titleGubun ="Y";
+				%>
+
+						<table  border="1" cellpadding="3" cellspacing="0">
+						<caption>카드 일시불 내역 확인 게시판</caption>
+						<colgroup><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="12%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+								<th scope="col" rowspan="2">이용자</th>
+								<th scope="col" rowspan="2" class="cell_l10">이용<br />가맹점</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />혜택</th>
+								<th scope="col" rowspan="2" class="cell_r10">혜택<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10 riline">생활비<br />재테크S<br />이용금액</th>
+								<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+								<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10">이용액</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10 riline">수수료</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%for(NHPIMMHCIB011VO vo : detailList1){ %>
+							<tr>
+								<%if(!"99999".equals(vo.getSlPdC())){ %>
+								<%if(!"".equals(vo.getUseDate())){ %>
+								<td class="cell_l10 t_no"><%=HpCommonUtil.formatStrDate(vo.getUseDate(),"yy.mm.dd") %></td>
+								<%} %>
+								<td><%=vo.getUseName() %></td>
+								<td class="cell_l10"><%if("1".equals(vo.getFiller())){ %>◆
+													<%}else if("2".equals(vo.getFiller())){ %>◇
+													<%} %><%=HpCommonUtil.convAscii(vo.getMvpCustName()) %></td>
+
+								<%}else{ %>
+								<td colspan="3" class="cell_l10"><%=vo.getMvpCustName().trim() %></td>
+								<%} %>
+
+
+								<td class="cell_r10 t_no">
+								<% if(!"".equals(vo.getDivTot()) && !"0".equals(vo.getDivTot())){ %>
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC()) 
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC()) 
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+								(<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>)
+								<%}else{ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>
+								<%} %>
+								<%}else{ %>
+									
+								<%} %>
+								</td>
+
+								<td class="cell_r10 t_no">
+								<% if(!"".equals(vo.getMcAddr())){ %>
+									<% if("B".equals(vo.getFiller().substring(1,1))){ %>
+									ⓦ
+									<%}else if("A".equals(vo.getFiller().substring(1,1))){%>
+									ⓟ
+									<%} %>
+									<%=vo.getMcAddr() %>
+								<%}else{ %>
+								
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+									<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									(<%if("-".equals(vo.getHalinIntB())){out.write("-");} %><%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>)
+									<%}else{ %>
+									
+									<%} %>
+								<%}else{ %>
+									<%if("-".equals(vo.getHalinIntB())){out.write("-");} %>
+									<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>
+									<%} %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no riline">
+
+								<%
+								if(!"".equals(vo.getSangIpkm())){
+									if(Integer.parseInt(vo.getSangIpkm()) > 0 ){ %>
+									<%
+									 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+									    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+									    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+									    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+									%>
+									(-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>)
+									<%}else{ %>
+									-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>
+									<%} %>
+									<%}else{ %>
+										&nbps;
+									<%}
+								}%>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if(!"".equals(vo.getUseWonAmt()) && !"0".equals(vo.getUseWonAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt()) %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if("99999".equals(vo.getSlPdC())){ %>
+									<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+										<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+									<%} %>
+								<%}else{ %>
+									<%if("60".equals(vo.getPrtOrd())){ %>
+										
+									<%}else{ %>
+										<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+											<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+										<%} %>
+									<%} %>
+								<%} %>
+								</td>
+								<td class="cell_r10 riline t_no">
+								<%if(!"".equals(vo.getBilFee()) && !"0".equals(vo.getBilFee())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee()) %>
+								<%} %>
+								</td>
+								<td class="cell_r10">
+								<%if(!"".equals(vo.getBonusRateNew())){ %>
+									<%=vo.getBonusRateNew() %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if(!"".equals(vo.getDivBalAmt()) && !"0".equals(vo.getDivBalAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt()) %>
+								<%} %>
+								</td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+
+				<%} %>
+				<%
+				if(detailList2.size() > 0){
+				titleGubun ="Y";
+				%>
+
+						<table border="1" cellpadding="3" cellspacing="0">
+						<caption>할부/ 금융상품 이용내역</caption>
+						<colgroup><col width="6%" /><col width="7%" /><col width="10%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="6%" /><col width="6%" /><col width="9%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+								<th scope="col" rowspan="2">이용자</th>
+								<th scope="col" rowspan="2" class="cell_l10">이용<br />가맹점</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />혜택</th>
+								<th scope="col" rowspan="2" class="cell_r10">혜택<br />금액</th>
+								<th scope="col" rowspan="2">개월</th>
+								<th scope="col" rowspan="2" class="riline">회차</th>
+								<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+								<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10">이용액</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10 riline">수수료</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%for(NHPIMMHCIB011VO vo : detailList2){ %>
+							<tr>
+								<%if(!"99999".equals(vo.getSlPdC())){ %>
+								<%if(!"".equals(vo.getUseDate())){ %>
+								<td class="cell_l10 t_no"><%=HpCommonUtil.formatStrDate(vo.getUseDate(),"yy.mm.dd") %></td>
+								<%} %>
+								<td><%=vo.getUseName() %></td>
+								<td class="cell_l10"><%if("1".equals(vo.getFiller())){ %>◆
+													<%}else if("2".equals(vo.getFiller())){ %>◇
+													<%} %><%=HpCommonUtil.convAscii(vo.getMvpCustName()) %></td>
+
+								<%}else{ %>
+								<td colspan="3" class="cell_l10"><%=vo.getMvpCustName().trim() %></td>
+								<%} %>
+								<td class="cell_r10 t_no">
+								<% if(!"".equals(vo.getDivTot()) && !"0".equals(vo.getDivTot())){ %>
+									<%
+									 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+									    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+									    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+									    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+									%>
+										(<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>)
+									<%}else{ %>
+										<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>
+									<%} %>
+								<%}else{ %>
+									
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<% if(!"".equals(vo.getMcAddr())){ %>
+									<% if("B".equals(vo.getFiller().substring(1,1))){ %>
+									ⓦ
+									<%}else if("A".equals(vo.getFiller().substring(1,1))){%>
+									ⓟ
+									<%} %>
+									<%=vo.getMcAddr() %>
+								<%}else{ %>
+								
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+									<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									(<%if("-".equals(vo.getHalinIntB())){out.write("-");} %><%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>)
+									<%}else{ %>
+									
+									<%} %>
+								<%}else{ %>
+									<%if("-".equals(vo.getHalinIntB())){out.write("-");} %>
+									<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>
+									<%} %>
+								<%} %>
+								</td>
+								<td class="t_no">
+								<%if(!"".equals(vo.getDivBalDur()) && !"0".equals(vo.getDivBalDur())){ %>
+									<%=vo.getDivBalDur() %>
+								<%} %>
+								</td>
+								<td class="t_no riline">
+								<%if(!"".equals(vo.getDivDur()) && !"0".equals(vo.getDivDur())){ %>
+									<%=vo.getDivDur() %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if(!"".equals(vo.getUseWonAmt()) && !"0".equals(vo.getUseWonAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt()) %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if("99999".equals(vo.getSlPdC())){ %>
+									<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+										<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+									<%} %>
+								<%}else{ %>
+									<%if("60".equals(vo.getPrtOrd())){ %>
+										
+									<%}else{ %>
+										<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+											<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+										<%} %>
+									<%} %>
+								<%} %>
+								</td>
+								<td class="cell_r10 riline t_no">
+								<%if(!"".equals(vo.getBilFee()) && !"0".equals(vo.getBilFee())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee()) %>
+								<%} %>
+								</td>
+								<td class="cell_r10">
+								<%if(!"".equals(vo.getBonusRateNew())){ %>
+									<%=vo.getBonusRateNew() %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if(!"".equals(vo.getDivBalAmt()) && !"0".equals(vo.getDivBalAmt())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt()) %>
+								<%} %>
+								</td>
+							</tr>
+							<%} %>
+						</tbody>
+						</table>
+
+				<%} %>
+
+
+				<%if(detailList3.size() > 0  || detailList4.size() >0){ %>
+
+					<table  border="1" cellpadding="3" cellspacing="0">
+						<colgroup><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="12%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /><col width="8%" /></colgroup>
+				<%
+					if("N".equals(titleGubun)){
+				%>
+
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="cell_l10">이용일</th>
+								<th scope="col" rowspan="2">이용자</th>
+								<th scope="col" rowspan="2" class="cell_l10">가맹점</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">이용<br />혜택</th>
+								<th scope="col" rowspan="2" class="cell_r10">혜택<br />금액</th>
+								<th scope="col" rowspan="2" class="cell_r10 riline">생활비<br />재테크S<br />이용금액</th>
+								<th scope="col" colspan="3" class="cell_c riline boline_b0">이달에 입금하실 금액</th>
+								<th scope="col" rowspan="2" class="cell_r10">적립률<br />%</th>
+								<th scope="col" rowspan="2" class="cell_r10">입금 후<br />잔액</th>
+							</tr>
+							<tr>
+								<th scope="col" class="cell_r10">이용액</th>
+								<th scope="col" class="cell_r10">이자</th>
+								<th scope="col" class="cell_r10 riline">수수료</th>
+							</tr>
+						</thead>
+
+				<%
+					}
+				%>
+
+
+				<tbody>
+
+					<%for(NHPIMMHCIB011VO vo : detailList3){ %>
+						<tr>
+							<%if(!"99999".equals(vo.getSlPdC())){ %>
+
+							<td class="cell_l10 t_no">
+							<%if(!"".equals(vo.getUseDate())){ %>
+							<%=HpCommonUtil.formatStrDate(vo.getUseDate(),"yy.mm.dd") %>
+							<%}else{ %>
+								
+							<%} %>
+							</td>
+
+							<td><%=vo.getUseName() %></td>
+							<td class="cell_l10"><%if("1".equals(vo.getFiller())){ %>◆
+												<%}else if("2".equals(vo.getFiller())){ %>◇
+												<%} %><%=HpCommonUtil.convAscii(vo.getMvpCustName()) %></td>
+
+							<%}else{ %>
+							<td colspan="3" class="cell_l10"><%=vo.getMvpCustName().trim() %></td>
+							<%} %>
+
+
+							<td class="cell_r10 t_no">
+							<% if(!"".equals(vo.getDivTot()) && !"0".equals(vo.getDivTot())){ %>
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+								(<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>)
+								<%}else{ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>
+								<%} %>
+							<%}else{ %>
+								
+							<%} %>
+							</td>
+
+
+							<td class="cell_r10 t_no">
+							<% if(!"".equals(vo.getMcAddr())){ %>
+								<% if("B".equals(vo.getFiller().substring(1,1))){ %>
+								ⓦ
+								<%}else if("A".equals(vo.getFiller().substring(1,1))){%>
+								ⓟ
+								<%} %>
+								<%=vo.getMcAddr() %>
+							<%}else{ %>
+							
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%
+							 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+							    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+							    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+							    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+							%>
+								<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									(<%if("-".equals(vo.getHalinIntB())){out.write("-");} %><%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>)
+								<%}else{ %>
+								
+								<%} %>
+							<%}else{ %>
+								<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									<%if("-".equals(vo.getHalinIntB())){out.write("-");} %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>
+								<%}else{ %>
+									
+								<%} %>
+							<%} %>
+							</td>
+							<td colspan="<%=etcColspan%>" class="cell_r10 t_no riline">
+							<%
+							if(!"".equals(vo.getSangIpkm())){
+								if(Integer.parseInt(vo.getSangIpkm()) > 0 ){ %>
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+								(-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>)
+								<%}else{ %>
+								-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>
+								<%} %>
+								<%}else{ %>
+									&nbps;
+								<%}
+							}%>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if(!"".equals(vo.getUseWonAmt()) && !"0".equals(vo.getUseWonAmt())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt()) %>
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if("99999".equals(vo.getSlPdC())){ %>
+								<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+								<%} %>
+							<%}else{ %>
+								<%if("60".equals(vo.getPrtOrd())){ %>
+									
+								<%}else{ %>
+									<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+										<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+									<%} %>
+								<%} %>
+							<%} %>
+							</td>
+							<td class="cell_r10 riline t_no">
+							<%if(!"".equals(vo.getBilFee()) && !"0".equals(vo.getBilFee())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee()) %>
+							<%} %>
+							</td>
+							<td class="cell_r10">
+							<%if(!"".equals(vo.getBonusRateNew())){ %>
+								<%=vo.getBonusRateNew() %>
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if(!"".equals(vo.getDivBalAmt()) && !"0".equals(vo.getDivBalAmt())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt()) %>
+							<%} %>
+							</td>
+						</tr>
+					<%} %>
+
+					<%for(NHPIMMHCIB011VO vo : detailList4){ %>
+						<tr>
+							<%if(!"99999".equals(vo.getSlPdC())){ %>
+
+							<td class="cell_l10 t_no">
+							<%if(!"".equals(vo.getUseDate())){ %>
+							<%=HpCommonUtil.formatStrDate(vo.getUseDate(),"yy.mm.dd") %>
+							<%}else{ %>
+								
+							<%} %>
+							</td>
+
+							<td><%=vo.getUseName() %></td>
+							<td class="cell_l10"><%if("1".equals(vo.getFiller())){ %>◆
+												<%}else if("2".equals(vo.getFiller())){ %>◇
+												<%} %><%=HpCommonUtil.convAscii(vo.getMvpCustName()) %></td>
+
+							<%}else{ %>
+							<td colspan="3" class="cell_l10"><%=vo.getMvpCustName().trim() %></td>
+							<%} %>
+
+
+							<td class="cell_r10 t_no">
+							<% if(!"".equals(vo.getDivTot()) && !"0".equals(vo.getDivTot())){ %>
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+								    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+								(<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>)
+								<%}else{ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>
+								<%} %>
+							<%}else{ %>
+								
+							<%} %>
+							</td>
+
+
+							<td class="cell_r10 t_no">
+							<% if(!"".equals(vo.getMcAddr())){ %>
+								<% if("B".equals(vo.getFiller().substring(1,1))){ %>
+								ⓦ
+								<%}else if("A".equals(vo.getFiller().substring(1,1))){%>
+								ⓟ
+								<%} %>
+								<%=vo.getMcAddr() %>
+							<%}else{ %>
+							
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%
+							 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+							    && !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+							    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+							    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+							%>
+								<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									(<%if("-".equals(vo.getHalinIntB())){out.write("-");} %><%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>)
+								<%}else{ %>
+								
+								<%} %>
+							<%}else{ %>
+								<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+									<%if("-".equals(vo.getHalinIntB())){out.write("-");} %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getHalinInt()) %>
+								<%}else{ %>
+									
+								<%} %>
+							<%} %>
+							</td>
+							<td colspan="<%=etcColspan%>" class="cell_r10 t_no riline">
+							<%
+							if(!"".equals(vo.getSangIpkm())){
+								if(Integer.parseInt(vo.getSangIpkm()) > 0 ){ %>
+								<%
+								 if(!"20900".equals(vo.getSlPdC()) && !"50900".equals(vo.getSlPdC())
+									&& !"10400".equals(vo.getSlPdC()) && !"10500".equals(vo.getSlPdC()) && !"10600".equals(vo.getSlPdC()) && !"10300".equals(vo.getSlPdC())
+								    && Integer.parseInt(vo.getBillDate()) > 20090131 && ("40".equals(vo.getPrtOrd()) || "50".equals(vo.getPrtOrd()))
+								    && ("1".equals(emsMain.getRivoContGubun()) || "2".equals(emsMain.getRivoContGubun()))){
+								%>
+								(-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>)
+								<%}else{ %>
+								-<%=HpCommonUtil.getCommaStringForMoney(vo.getSangIpkm()) %>
+								<%} %>
+								<%}else{ %>
+									&nbps;
+								<%}
+							}%>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if(!"".equals(vo.getUseWonAmt()) && !"0".equals(vo.getUseWonAmt())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt()) %>
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if("99999".equals(vo.getSlPdC())){ %>
+								<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+								<%} %>
+							<%}else{ %>
+								<%if("60".equals(vo.getPrtOrd())){ %>
+									
+								<%}else{ %>
+									<%if(!"".equals(vo.getDivFee()) && !"0".equals(vo.getDivFee())){ %>
+										<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee()) %>
+									<%} %>
+								<%} %>
+							<%} %>
+							</td>
+							<td class="cell_r10 riline t_no">
+							<%if(!"".equals(vo.getBilFee()) && !"0".equals(vo.getBilFee())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee()) %>
+							<%} %>
+							</td>
+							<td class="cell_r10">
+							<%if(!"".equals(vo.getBonusRateNew())){ %>
+								<%=vo.getBonusRateNew() %>
+							<%} %>
+							</td>
+							<td class="cell_r10 t_no">
+							<%if(!"".equals(vo.getDivBalAmt()) && !"0".equals(vo.getDivBalAmt())){ %>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt()) %>
+							<%} %>
+							</td>
+						</tr>
+					<%} %>
+					</tbody>
+					</table>
+					
+					<%} %>
+
+						<table border="1" cellpadding="3" cellspacing="0">
+						<tfoot>
+						<%
+						for(NHPIMMHCIB011VO vo : detailList5){
+						%>
+							<tr>
+								<td colspan="<%=sumColspan%>" class="cell_l10">이용금액 합계</td>
+								<td class="cell_r10 t_no">
+								<em>
+								<%
+									if(!"0".equals(vo.getUseWonAmt())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</em>
+								</td>
+								<td  class="cell_r10 t_no">
+								<%
+									if(!"0".equals(vo.getDivFee())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee())%>
+							<%
+									}else{
+								%>
+									
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<em>
+								<%
+									if(!"0".equals(vo.getBilFee())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</em>
+								</td>
+								<td></td>
+								<td class="cell_r10 t_no">
+								<%
+									if(!"0".equals(vo.getDivBalAmt())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</td>
+							</tr>
+							<%} %>
+								<%for(NHPIMMHCIB011VO vo : detailSumList){%>
+							<tr>
+								<td colspan="<%=sumColspan%>" class="cell_l10">
+								<%if(!"".equals(vo.getUseName())){ %>
+									<%=vo.getUseName() %><%=vo.getMvpCustName() %>
+								<%}else{ %>
+								    <%=vo.getMvpCustName() %>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<em>
+								<%
+									if(!"0".equals(vo.getUseWonAmt())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</em>
+								</td>
+								<td class="cell_r10 t_no">
+								<%
+									if(!"0".equals(vo.getDivFee())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivFee())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<em>
+								<%
+									if(!"0".equals(vo.getBilFee())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getBilFee())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</em>
+								</td>
+								<td class="cell_r10 t_no">
+								<%if(Integer.parseInt(vo.getHalinInt()) > 0){ %>
+								<%=vo.getHalinIntB() %><%=vo.getHalinInt() %>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no">
+								<%
+									if(!"0".equals(vo.getDivBalAmt())){
+								%>
+								<%=HpCommonUtil.getCommaStringForMoney(vo.getDivBalAmt())%>
+								<%
+									}else{
+								%>
+									
+								<%} %>
+								</td>
+							</tr>
+							<%} %>
+							</tfoot>
+					</table>
+
+<br/>
+				<br/>
+				<%if(favorList.size() >0){ %>
+
+						<table border="1" cellpadding="3" cellspacing="0">
+						<caption>이벤트. 특별혜택 안내 게시판</caption>
+						<colgroup><col width="12%" /><col width="48%" /><col width="40%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col" class="cell_l10">행사명</th>
+								<th scope="col" class="cell_r10">혜택금액</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+						<%for(NHPIMMHCIB013VO vo :favorList){ %>
+							<%if("1".equals(vo.getHyetHapCd())){ %>
+							<tr>
+								<td class="cell_l10"><%=HpCommonUtil.formatStrDate(vo.getHyetSlDt().replace("-",""),"yy.mm.dd") %></td>
+								<td class="cell_l10"><%=vo.getHyetMktNm() %></td>
+								<td class="cell_r10"><span class="t_no"><%=HpCommonUtil.getCommaStringForMoney(vo.getHyetPrtAmt()) %></span> 원</td>
+							</tr>
+							<%} %>
+						<%} %>
+
+						</tbody>
+						<tfoot>
+						<%for(NHPIMMHCIB013VO vo :favorList){ %>
+							<%if("3".equals(vo.getHyetHapCd())){ %>
+							<tr>
+								<td colspan="2" class="cell_l10"><%=vo.getHyetMktNm() %></td>
+								<td class="cell_r10"><em><%=HpCommonUtil.getCommaStringForMoney(vo.getHyetPrtAmt()) %></em> 원</td>
+							</tr>
+							<%} %>
+					     <%} %>
+						</tfoot>
+						</table>
+
+				<%} %>
+				
+				
+				<%
+				if(!"0".equals(emsMain.getHyePntUse()) ||
+				   !"0".equals(emsMain.getHyeHalin()) ||
+				   !"0".equals(emsMain.getHyeGift())){
+				%>	
+				
+				<tr>
+					<td>
+						<table border="2" cellpadding="3" cellspacing="0">
+							<tr>
+								<td colspan="11">◆ 이달의 혜택</td>
+							</tr>
+							<tr>
+								<td>포인트</td>
+								<td><%=StringUtil.amountToString(Integer.parseInt(emsMain.getHyePntUse()))%></td>
+								<td>할인/면제/캐시백</td>
+								<td><%=StringUtil.amountToString(Integer.parseInt(emsMain.getHyeHalin()))%></td>
+								<td>이벤트/특별혜택</td>
+								<td><%=StringUtil.amountToString(Integer.parseInt(emsMain.getHyeGift()))%></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+						
+				
+				
+				<%
+				}
+				%>
+				
+				
+				<%
+					if(frenList.size() > 0){
+				%>
+						<table border="2" cellpadding="3" cellspacing="0">
+							<tr>
+								<td colspan="11">◆ 해외 이용내역</td>
+							</tr>
+							<tr bgcolor="#B4C3FF">
+								<td rowspan="2">이용일</td>
+								<td rowspan="2">상품명</td>
+								<td rowspan="2">업종</td>								
+								<td rowspan="2">국가</td>
+								<td rowspan="2">도시</td>
+								<td colspan="2">카드이용금액</td>
+								<td rowspan="2">접수금액<br />(US$)</td>
+								<td colspan="2">환율</td>
+								<td rowspan="2">원화청구금액</td>
+							</tr>
+							<tr bgcolor="#B4C3FF">
+								<td>이용금액</td>
+								<td>단위</td>
+								<td>전신환매도율</td>
+								<td>환가료</td>
+							</tr>
+					<%
+						for(int i = 0; i < frenList.size(); i++){
+							
+							NHPIMMHPIB011VO frenVO = (NHPIMMHPIB011VO)frenList.get(i);
+					%>						
+							<tr>
+								<td><%=frenVO.getUseDate().substring(2, 4)%>.<%=frenVO.getUseDate().substring(4, 6)%>.<%=frenVO.getUseDate().substring(6, 8)%></td>
+								<td><%=frenVO.getFrGoodName()%></td>
+								<td><%=frenVO.getFrCataBig()%></td>
+								<td><%=frenVO.getFrCity()%></td>
+								<td><%=frenVO.getFrCountry()%></td>
+								<td>
+								<%
+									if(!"0".equals(frenVO.getFrTrnAmt()) &&
+									   !"".equals(frenVO.getFrTrnAmt())){
+								%>
+									<%=StringUtil.amountToString(Double.parseDouble(frenVO.getFrTrnAmt()))%>
+								<%
+									}else {
+								%>
+									
+								<%
+									}
+								%>
+								</td>
+								<td>
+								<%=frenVO.getFiller()%>
+								</td>
+								<td>
+								
+								<%
+									if(!"0".equals(frenVO.getFrSetAmt()) &&
+									   !"".equals(frenVO.getFrSetAmt())){
+								%>
+									<%=StringUtil.amountToString(Double.parseDouble(frenVO.getFrSetAmt()))%>
+								<%
+									}else {
+								%>
+									
+								<%
+								
+									}
+								%>
+								
+								
+								</td>
+								<td>
+								
+								<%
+									if(!"0".equals(frenVO.getFrHwanRate()) &&
+									   !"".equals(frenVO.getFrHwanRate())){
+								%>
+									<%=StringUtil.amountToString(Double.parseDouble(frenVO.getFrHwanRate()))%>
+								<%
+									}else {
+								%>
+									
+								<%
+									}
+								%>
+								
+								
+								</td>
+								<td>
+								<%
+									if(!"0".equals(frenVO.getFrHwangaryo()) &&
+									   !"".equals(frenVO.getFrHwangaryo())){
+								%>
+									<%=StringUtil.amountToString(Double.parseDouble(frenVO.getFrHwangaryo()))%>
+								<%
+									}else {
+								%>
+									
+								<%
+									}
+								%>
+				
+								</td>
+								<td>
+								<%
+									if(!"0".equals(frenVO.getBilWan()) &&
+									   !"".equals(frenVO.getBilWan())){
+								%>
+									<%=StringUtil.amountToString(Integer.parseInt(frenVO.getBilWan()))%>
+								<%
+									}else {
+								%>
+									
+								<%
+									}
+								%>
+								</td>
+							</tr>
+					<%
+						}
+					%>
+						</table>
+						</td>
+					</tr>
+				<%
+				}
+				%>
+				
+				
+			<%} %>				
+				<br/>
+				<br/>
+			<%if(infoType.equals("cancelInfo")){ %>
+				<%if(cancelList.size() > 0){ %>
+
+						<table border="1" cellpadding="3" cellspacing="0">
+						<caption>취소 매출 내역 </caption>
+						<colgroup><col width="12%" /><col width="15%" /><col width="21%" /><col width="20%" /><col width="32%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">이용일</th>
+								<th scope="col">이용자</th>
+								<th scope="col" class="cell_l10">이용가맹점</th>
+								<th scope="col">상품명</th>
+								<th scope="col" class="cell_r10">취소금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+							for(NHPIMMHCIB011VO vo : cancelList){
+							%>
+							<tr>
+								<td class="cell_l10"><%=HpCommonUtil.formatStrDate(vo.getUseDate(),"yy.mm.dd") %></td>
+								<td><%=vo.getUseName() %></td>
+								<td class="cell_l10"><%=vo.getMvpCustName() %></td>
+								<td>
+								<%
+								if("10".equals(vo.getPrtOrd()) || "01".equals(vo.getPrtOrd())){
+									out.write("할부");
+								}else if("40".equals(vo.getPrtOrd()) || "03".equals(vo.getPrtOrd()) || "80".equals(vo.getPrtOrd())){
+									out.write("일시불");
+								}else if("50".equals(vo.getPrtOrd()) || "04".equals(vo.getPrtOrd())){
+									out.write("현금서비스 ");
+								}
+								%></td>
+								<td class="cell_r10 t_no">
+								<% if(!"".equals(vo.getUseWonAmt()) && !"0".equals(vo.getUseWonAmt())){
+								%>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getUseWonAmt()) %>
+								<%
+								}else if(!"".equals(vo.getDivTot()) && !"0".equals(vo.getDivTot())){
+								%>
+									<%=HpCommonUtil.getCommaStringForMoney(vo.getDivTot()) %>
+								<%
+								}else{
+								%>
+									
+								<%} %>
+								</td>
+							</tr>
+							<%} %>
+							</tbody>
+						</table>
+
+				<%} %>
+			<%} %>
+</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+
+	<div class="bgSimulBot">
+		<div class="bgSimulMid">
+		<table summary="혜택시뮬레이션(할인, 카앤모아 포인트, 할인/무료서비스)을 확인하실 수 있습니다." class="table_simul">
+		<caption>혜택시뮬레이션</caption>
+		<colgroup>
+		<col width="143" />
+		<col width="104" />
+		<col width="690" />
+		</colgroup>
+		<tbody>
+		<tr class="first">
+			<th scope="row"><img src="/images/cd/shw/card/txt_simul3.gif" width="24" height="15" alt="할인" /></th>
+			<td class="last bold">주유할인</td>
+			<td class="last padT21">
+			월<input type="text" title="주유 비용" value="300,000" class="c94afc6" id="point1" onkeyup="comma(this);" maxlength="11"/>원 이용시 <span class="year">연 <em>108,000원</em> 적립</span>
+			<p class="etc">(L당 2,000원 기준, L당 60P 적립, 월 4회(1회 주유금액 10만원 이하)</p></td>
+		</tr>
+		<tr class="line">
+			<th scope="row" rowspan="2"><img src="/images/cd/shw/card/txt_simul20.gif" width="92" height="14" alt="카앤모아 포인트" /></th>
+			<td class="bold">주유 외 평일<br />적립</td>
+			<td>
+				월<input type="text" title="주유 외 평일 비용" value="200,000" class="c94afc6" id="point2" onkeyup="comma(this);" maxlength="11"/>원 이용시 <span class="year">연 <em>48,000P</em> 적립</span>
+				<span class="etc">(2% 적립)</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="last bold">신주말 적립</td>
+			<td class="last">
+				월<input type="text" title="신주말 비용" value="300,000" class="c94afc6" id="point3" onkeyup="comma(this);" maxlength="11"/>원 이용시 <span class="year">연 <em>144,000P</em> 적립</span>
+				<span class="etc">(4% 적립)</span>
+			</td>
+		</tr>
+		<tr class="noLine">
+			<th scope="row"><img src="/images/cd/shw/card/txt_simul4.gif" width="98" height="15" alt="할인/무료서비스" /></th>
+			<td class="bold">
+				<p class="marB4">주차안심서비스</p>
+				<p class="line18 marB4">영화 할인</p>
+				<p class="line18">엔진오일 할인</p>
+			</td>
+			<td>
+				<p class="marB4">연 <span class="c5a96c8">8,400원</span> <span class="c999">(월 700원)</span></p>
+				<p class="line18 marB4">연 <span class="c5a96c8">54,000원</span> <span class="c999">(9,000원 이용, 동반 1인 50%할인, 연 12회)</span></p>
+				<p class="line18 marB4">연 <span class="c5a96c8">15,000원</span> <span class="c999">(15,000원 할인,  연 1회 )</span></p>
+			</td>
+		</tr>
+		<tr class="h" style="height:100px;">
+			<td colspan="3">
+				<span class="txt_i"><img src="/images/cd/shw/card/icon_i.gif" alt="!" class="marR6" />상기 혜택금액은 고객의 이해를 돕기 위한 시뮬레이션으로, 사용금액/사용처/제한조건 등에 따라 실제 혜택과 상이할 수 있습니다.</span>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+
+		<div class="receiptBox">
+			<p class="receipt1">
+				<img src="/images/cd/shw/card/txt_receipt1.gif" width="140" height="35" alt="연간 총 혜택" />
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt2.gif" width="69" height="12" alt="연간 혜택금액" class="floatL" />
+				<span class="floatR">377,400<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt2">
+				<img src="/images/cd/shw/card/txt_receipt3.gif" width="56" height="27" alt="연회비(-) 해외겸용카드 기준" class="floatL" />
+				<span class="floatR">10,000<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" /></span>
+			</p>
+			<p class="receipt3">= 367,400<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" /></p>
+		</div>
+	</div>
+	</div>
+<!-- 혜택시뮬레이션 -->
+<script type="text/javascript" src="/js/im/cd/cps/jquery.alphanumeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".c94afc6").numeric(); 
+	$(".c94afc6").css("ime-mode", "disabled"); //한글 입력 방지
+});	
+$("#point1").keyup(function() {
+	
+	var point = replace($("#point1").val(),",","");		
+	if(point > 400000){
+	alert("월 결제금액 40만원 이상 할인되지 않습니다.");
+	point = 400000;
+	}
+	var sum = Math.round(point / 2000 * 60 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"원");
+	
+	var point2 = null;
+	var point3 = null;
+	
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point2").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	var yearSum = sum + point2 +  point3 + 77400;
+	var sumTot = yearSum - 10000;
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point2").keyup(function() {				
+	var point = replace($("#point2").val(),",","");			
+	var sum = Math.round(point * 0.02 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");
+	var point2 = "";
+	var point3 = "";
+	
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point3").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point3").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point3").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	var yearSum = sum + point2 +  point3 + 77400;
+	var sumTot = yearSum - 10000;
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+$("#point3").keyup(function() {
+	
+	var point = replace($("#point3").val(),",","");			
+	var sum = Math.round(point * 0.04 * 12);
+	$(this).siblings(".year").find("em").text(setComma(sum)+"P");				
+	var point2 = null;
+	var point3 = null;
+	
+	if($("#point1").siblings(".year").find("em").text().indexOf("P") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("P");
+		point2 = Number(replace(point2,",",""));
+	}else if($("#point1").siblings(".year").find("em").text().indexOf("원") > 0){
+		point2 = $("#point1").siblings(".year").find("em").text().split("원");
+		point2 = Number(replace(point2,",",""));
+	}
+	if($("#point2").siblings(".year").find("em").text().indexOf("P") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("P");
+		point3 = Number(replace(point3,",",""));
+	}else if($("#point2").siblings(".year").find("em").text().indexOf("원") > 0){
+		point3 = $("#point2").siblings(".year").find("em").text().split("원");
+		point3 = Number(replace(point3,",",""));
+	}
+	var yearSum = sum + point2 +  point3 + 77400;
+	var sumTot = yearSum - 10000;
+				
+	$(".receipt2").eq(0).find("span").html(setComma(yearSum) + '<img src="/images/cd/shw/card/txt_won1.gif" alt="원" width="10" height="11" class="vAlignB" />');
+	$(".receipt3").html("= "+setComma(sumTot) + '<img src="/images/cd/shw/card/txt_won2.gif" alt="원" width="12" height="13" class="vAlignB" />');
+});
+</script>

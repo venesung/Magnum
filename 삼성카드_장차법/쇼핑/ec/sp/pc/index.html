@@ -1,0 +1,954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>LifeStyle Service 쇼핑 - 삼성카드 쇼핑</title>
+	<base href="http://devshopping.samsungcard.com:10080" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/shopping.css" />
+	<link rel="stylesheet" type="text/css" href="http://samsungcard-ec.vi-nyl.com/css/shopping_point.css" />
+	<script type="text/javascript" src="/js/ec/common/common.js"></script>
+	<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+	<!--script type="text/javascript" src="http://samsungcard.bb.co.kr/js/main_flash.js"></script>
+	<script src="/js/ec/common/embedswf.js" type="text/javascript"></script--><!-- 플래시 삭제 13.04.17 -->
+<!-- 2013.02.20 플래시교체 추가 start -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<!-- 2013.03.05 메인플래시교체 추가 start -->
+<script type="text/javascript" src="http://samsungcard.bb.co.kr/images/swf/main_left_banner.json"></script>
+<!-- 2013.03.05 메인플래시교체 추가 end -->
+<script type="text/javascript">
+$(document).ready(function() {
+// 2013.03.05 메인플래시교체 삭제 start
+//	samsungcardUIComponent.fnSlider({
+//		slider : '.mvt_sb1',
+//		time : 3000, // 자동 롤링 시간 : 기본값 2초
+//		vartical : 'top'
+//	});
+// 2013.03.05 메인플래시교체 삭제 end
+// 2013.03.05 메인플래시교체 추가 start
+	mvt.init({
+		dataList : mlbData.info
+	});
+	
+	samsungcardUIComponent.fnSlider({
+		slider : '.mvt_sb1',
+		time : 3000, // 자동 롤링 시간 : 기본값 2초
+		vartical : 'top'
+	});
+	
+	mvt.bindThumbnailImage();
+// 2013.03.05 메인플래시교체 추가 end
+	samsungcardUIComponent.fnSlider({
+		slider : '.mvt_sb2',
+		time : 5000, // 자동 롤링 시간 : 기본값 2초
+		menu : false
+	});
+});
+// 2013.03.05 메인플래시교체 추가 start
+var mvt = {
+	_container : null,
+	_bindArea : null,
+	_template : null,
+	
+	_option : {
+		container : '.mvt_sp_bnr1',
+		bindArea : '.mvt_sb1',
+		template : '.ui-Slider-List',
+		dataList : []
+	},
+	
+	init : function(o){
+		var _self = this;
+		$.extend(_self._option, o);
+		_self._container = $(_self._option.container); 
+		_self._bindArea = $(_self._option.bindArea);
+		_self._template = $(_self._option.bindArea + ' ' + _self._option.template).remove();
+
+		_self.bindData();
+	},
+	
+	bindThumbnailImage : function(){
+		var _self = this;
+		var dataList = _self._option.dataList;
+		for(var i=0, len=dataList.length; i < len; i+=1 ){
+			_self._bindArea.find('.ui-Slider-Nav-List-' + (i+1)).css('background-image', 'url("'+ dataList[i].thumbURL +'")');
+		}
+		
+		//.mvt_sb1 .ui-Slider-Nav-List-1 {background: url('images/sp/ssbnr1.gif') no-repeat 0 0;}		
+	},
+	
+	bindData : function(){
+		var _self = this;
+		var dataList = _self._option.dataList;
+		var tempDom = $(document.createElement('div'));
+		for(var i=0, len=dataList.length; i < len; i+=1 ){
+			tempDom.append(_self.makeTemplate(dataList[i]));
+		}
+		_self._bindArea.html(tempDom.html());
+	},
+	
+	makeTemplate : function(dataRow){
+		var _self = this;
+		var tpl = _self._template.clone();
+		// 상품 개수
+		tpl.find('.mvs1 > span').text(dataRow.shopCnt ? dataRow.shopCnt : '0');
+		
+		// 평점(별)
+		var starImg = tpl.find('.mvs2 > img');
+		starImg.attr('src', starImg.attr('src').replace(/star[0-9]/, 'star' + dataRow.itemPoint));
+		
+		// 평점(점수)
+		tpl.find('.mvs2 > strong').text(dataRow.itemPoint + '점');
+		
+		// 가격
+		var priceHtml = '';
+		for(var i=0, len=dataRow.itemPrice.length; i<len; i+=1 ){
+//			var num = dataRow.itemPrice[i];
+			var num = dataRow.itemPrice.charAt(i);
+			var numImgName = num == ','? 'comma' : 'num' + num;
+			priceHtml += '<img src="/images/sp/'+ numImgName +'.png" alt="'+ num +'" />';
+		}
+		priceHtml += '<img src="/images/sp/won.png" alt="원" />';
+		tpl.find('.mvs3').html(priceHtml);
+		
+		// 이미지
+		tpl.find('.img_mvs').attr('src', dataRow.oriURL);
+		
+		// 링크
+		tpl.find('.link_mvs').attr({
+			href : dataRow.link,
+			target : dataRow.frame
+		});
+		
+		return tpl;
+	}
+};
+// 2013.03.05 메인플래시교체 추가 end
+</script>
+<!-- 2013.02.20 플래시교체 추가 end -->
+<script type="text/javascript">
+	function goMall(id, yn, mallnm, url){		
+        window.open("/ec/sp/pc/cooper.do?goUrl="+url+"&amp;yn="+yn+"&amp;id="+id);    
+	}
+	function goMallwithGoods(url){
+		window.open("/ec/sp/pc/cooper.do?goUrl="+url);
+	}
+	function chkJoin(){
+		window.open("/ec/sp/ss/om/order101.do?method=selectEscrow&amp;ZONE=LIGB07", "escrow_pop", "toolbar=no scrollbars=no resizable=no width=480 height=229");	
+	}
+	function setMall(id, yn, mallnm,url){
+		document.getElementById("mallId").value = id;
+		document.getElementById("mallYn").value = yn;
+		document.getElementById("mallnm").value = mallnm;
+		if(url != ''){
+			document.getElementById("mallUrl").value=url;	
+		}else{
+			document.getElementById("mallUrl").value="http://samsungcard.bb.co.kr/cate/";
+		}
+	}	
+	function goSearch(){		
+		if(document.getElementById("srchwd").value == ""){
+			alert("검색어를 입력해 주세요");
+			return false;
+		}
+		if(document.getElementById("mallId").value != '00'){		
+            window.open("/ec/sp/pc/cooper.do?goUrl="+document.getElementById("mallUrl").value+"&amp;keyword="+encodeURIComponent(document.getElementById("srchwd").value)+"&amp;yn="+document.getElementById("mallYn").value+"&amp;id="+document.getElementById("mallId").value);
+		}else{
+            location.href = "/ec/sp/pc/pricevs.do?goUrl="+document.getElementById("mallUrl").value+"&amp;keyword="+encodeURIComponent(document.getElementById("srchwd").value);
+			
+		}
+	}
+
+
+	function goMall2(id, yn, mallnm, url){		
+        window.open("/ec/sp/pc/cooper.do?goUrl="+url+"&amp;yn="+yn+"&amp;id="+id +"&amp;ZONE=LISP04&amp;MENU="+"LISP04_1_"+id);        
+	}
+	
+	function goMall3(id, yn, mallnm, url,zone){		
+        window.open("/ec/sp/pc/cooper.do?goUrl="+url+"&amp;yn="+yn+"&amp;id="+id +"&amp;ZONE="+zone);        
+	}
+</script>
+</head>
+<body>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<form name="linkform" method="post" action="">
+	<input type="hidden" name="contnetsId" />
+</form>
+<input type="hidden" name="mallId" id="mallId" value="00" />
+<input type="hidden" name="mallUrl" id="mallUrl" value="http://samsungcard.bb.co.kr/main/search/search.php!qry=" />
+<input type="hidden" name="mallYn" id="mallYn" value="N" />
+<input type="hidden" name="mallnm" id="mallnm" value="00" />
+<div id="wrap">
+
+<!-- 공통 상단 메뉴 시작 -->
+<script type="text/javascript" language="javascript" src="/js/ec/common/common.js"></script>   
+<script type="text/javascript" language="javascript" src="/js/ec/sp/common/search.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	navigation.menuOver({
+		ElementObjectName : '.util_menu,.mv_srvc_mnu'
+	});
+	// topGnb
+	navigation.GNB({
+		ElementObjectName : '.mv_ls_global',
+		Depth1: 0,
+		Depth2: 0
+	});
+	navigation.LNB2({
+		ElementObjectName : '#pointmallCategoryLayer',
+		Depth1: -1//선택된 메뉴가 없을경우 -1 //이후 0번부터 첫번째 메뉴
+	});
+});
+</script>
+	<!-- head -->
+	<div id="head">
+		<div id="gnb">
+			<div class="lifestyle_gnb" style="line-height:100%; font-size:12px;">
+				<script language="javascript" type="text/javascript">
+					function FFn_Link(linkUrl){
+						location.href = linkUrl;
+					}
+
+					function addfavorites(){
+						 
+						var favoriteurl="/ec/sp/pc/index.do?method=selectPCMain";
+						var favoritetitle="삼성카드 쇼핑";
+					 
+						if (document.all)
+						window.external.AddFavorite(favoriteurl,favoritetitle);
+						return;
+					}
+
+					function openShortCutForm(){
+						window.open('/ec/sp/pc/index.do?method=selectShortCutForm','popupShortCut', 'toolbar=no scrollbars=auto resizable=yes width=480 height=305');
+					}
+
+				     function makeAbsPath(domain, url) {
+				         var sUrl;
+				         var sPort = window.location.port;
+				         switch (domain) {
+				             case "www.samsungcard.com" :
+				                 sPort = "";
+				                 break;
+				             case "travel.samsungcard.com" :
+				                 sPort = "";
+				                 break;
+				             case "social.samsungcard.com":
+					             sPort = ":28080";
+					             break;
+				             default :
+				                 sPort = ':10080';
+				                 break;
+				         }
+				         if (window.location.protocol == "https:") {
+				             sUrl = 'https://'+domain+sPort+url;
+				         } else {
+				        	 sUrl = 'http://'+domain+sPort+url;
+				         }
+
+				         location.href = sUrl;
+				     }					 
+				</script>
+							
+				<a href="javascript:makeAbsPath('shopping.samsungcard.com','/ec/sp/spMain.do?method=selectSPMain&amp;ZONE=LIGB01');" class="mv_logo"><img src="/images/gr/common/ls_logo_shopping.gif" alt="SAMSUNGCARD SHOPPING" /></a>
+				<ul class="mv_ls_global">
+					<li><a href="javascript:makeAbsPath('shopping.samsungcard.com','/ec/sp/spMain.do?method=selectSPMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_off.gif" alt="쇼핑" /></a>				
+						<ol class="mv_sh_inner_mnu">
+							<li><a href="/ec/sp/pc/index.do?method=selectPCMain&amp;ZONE=LIGB01')"><img src="/images/gr/common/ls_gnb_shopping_inner01_on.gif" alt="포인트적립" /></a></li>
+							<li><a href="javascript:makeAbsPath('pointmall.samsungcard.com','/ec/sp/ss/index.do?method=selectSSMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner02_off.gif" alt="포인트몰" /></a></li>
+							<li><a href="javascript:makeAbsPath('social.samsungcard.com','/social/shop/main/main?ref=shopmenu');"><img src="/images/gr/common/ls_gnb_shopping_inner03_off.gif" alt="TheSocial" /></a></li>
+							<li><a href="/ec/mc/ma/Main.do?method=selectMCMain"><img src="/images/gr/common/ls_gnb_shopping_inner04_off.gif" alt="모바일쿠폰몰" /></a></li>
+							<li><a href="javascript:makeAbsPath('giftmall.samsungcard.com','/ec/gm/index.do?method=selectGMMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_shopping_inner05_off.gif" alt="기프트몰" /></a></li>
+						</ol>
+					</li>
+					<li><a href="javascript:makeAbsPath('travel.samsungcard.com','/ec/te/pk/fr/travelMain.do?method=selectTravelMain&amp;ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_travel_off.gif" alt="여행" /></a></li>
+					<li><a href="javascript:makeAbsPath('wedding.samsungcard.com','/ec/wd/fr/wdMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_wedding_off.gif" alt="웨딩" /></a></li>
+					<li><a href="javascript:makeAbsPath('insurance.samsungcard.com','/ec/ns/nsMain100.do?ZONE=LIGB01');"><img src="/images/gr/common/ls_gnb_insurance_off.gif" alt="보험" /></a></li>
+				</ul>
+				<ul class="mv_srvc_mnu">
+					<li><a href="/ec/sp/pc/gr/gr110.do?method=newsLetterForm&amp;ZONE=LIGB02"><img src="/images/gr/common/ls_service_mnu04_on.gif" alt="뉴스레터신청" /></a> </li>
+					<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/pvi/samService.do?tabGb=SP&amp;ZONE=LIGB02');"><img src="/images/gr/common/ls_service_mnu03_off.gif" alt="LifeStyle Service" /></a> </li>
+				</ul>
+			</div>		
+
+			<!-- 타이틀 및 검색 -->
+            <div class="menu_tit_wrap">
+                <div class="menu_con">
+	                <a href="/ec/sp/pc/index.do?method=selectPCMain"><img src="/images/sp/pc/tit_point_save.png" class="png24" alt="SHOPPING MALL 포인트적립" /></a>
+	                <div class="bg_search">
+	                    <p class="fl_left"><input type="text" name="kwd" id="kwd" value="" onfocus="this.value='';" title="통합검색 입력" onkeydown="if(event.keyCode==13){goKonanSearch();}" /></p>
+	                    <p class="fl_right"><a href="javascript:goKonanSearch();"><img src="/images/gr/common/btn_search.gif" alt="검색" class="al_middle" /></a></p>
+	                </div>
+                </div>
+            </div>
+            <!-- //타이틀 및 검색 -->
+
+			<!-- 바탕화면 저장 / 즐겨찾기 -->
+			<div class="gnb_btn">
+				<a href="javascript:openShortCutForm();"><img src="/images/gr/common/btn_go_save.gif" alt="바탕화면에 바로가기 저장" /></a>
+				<a href="javascript:addfavorites();"><img src="/images/gr/common/btn_bookmark.gif" alt="즐겨찾기 추가" /></a>
+				<a href="http://www.samsungcard.com"  target="_blank"><img src="/images/gr/common/btn_samsung_card.gif" alt="삼성카드 홈페이지" /></a>
+			</div>
+			<!-- 유틸메뉴 로그인 전 -->
+			<ul class="util_menu">
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList');" class="rollover"><img src="/images/gr/common/util_home_off.gif" alt="Home" /><img src="/images/gr/common/util_home_on.gif" alt="Home" class="over" /></a></li>
+				<li><a href="/loginForm.do?ZONE=LIGB02" class="rollover"><img src="/images/gr/common/util_login_off.gif" alt="로그인" /><img src="/images/gr/common/util_login_on.gif" alt="로그인" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('www.samsungcard.com','/mainPage.do?menuId=NHPIMMSCRN001&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_join_off.gif" alt="회원가입" /><img src="/images/gr/common/util_join_on.gif" alt="회원가입" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/evt/nechbfrevt011.do?method=getIngSpEventList&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_event_off.gif" alt="이벤트" /><img src="/images/gr/common/util_event_on.gif" alt="이벤트" class="over" /></a></li>
+				<li><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=761&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_service_off.gif" alt="고객서비스" /><img src="/images/gr/common/util_service_on.gif" alt="고객서비스" class="over" /></a></li>
+				<li class="end"><a href="javascript:makeAbsPath('lifestyleservice.samsungcard.com','/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb011&amp;ZONE=LIGB02');" class="rollover"><img src="/images/gr/common/util_sitemap_off.gif" alt="사이트맵" /><img src="/images/gr/common/util_sitemap_on.gif" alt="사이트맵" class="over" /></a></li>
+			</ul>
+			<!-- //유틸메뉴 로그인 전 -->
+		</div>
+	</div>
+	<!-- //head -->	
+<!--// 공통 상단 메뉴 끝 -->
+	
+	<div id="contentWrap">
+		<div id="contentBody">
+			<!-- 검색 -->
+			 <div class="search_wrap clfix">
+				<!-- 셀렉트 박스 -->
+				<div id="selectbox1" class="selectbox" onclick="select.action(this,1);" style="width:126px;"><p class="btn"></p>
+                    <p><a href="#" class="default" onclick="return false;">가격비교</a></p>
+					<div class="childlayer">
+
+						<ul>
+                            <li><a href="javascript:setMall('00','N','00','');">가격비교</a></li>
+                            <li><a href="#">위메프</a></li>						
+						</ul>
+					</div>
+
+				</div>
+				<!-- //셀렉트 박스 -->
+
+				<div class="search_wrtie box_search_orange">
+					<p><input type="text" name="srchwd" id="srchwd" onfocus="this.value='';" value="" title="검색어입력" onkeydown="if (event.keyCode == 13) goSearch();" style="ime-mode:active;" /></p>
+                    <p class="btn_search"><a href="javascript:goSearch();"><img src="/images/gr/common/btn_search.gif" alt="검색" /></a></p>
+				</div>
+			 </div>
+			 <!-- //검색 -->
+
+			 <div class="pointsave_main">
+				<!-- 상단 content -->
+ 				<div class="top_con clfix">
+ 					<div class="category_menu_pt">
+						<script type="text/javascript">
+							function FFn_pointmallCategoryLink( id ){
+								location.href = "/ec/sp/pc/pricevs.do?goUrl=http://samsungcard.bb.co.kr/cate/" + id  + "&amp;ZONE=LISP01";
+							}
+						</script>
+						<ul id="pointmallCategoryLayer">
+							<li><span class="txt_01"><a href="#" onclick="return false;">가전/디지털</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_01on.gif" alt="가전/디지털" /></a-->
+								<div class="">
+								<div class="mv_lnb_sub_wrap_pt">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('126')">TV</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('128')">이어폰/헤드폰/블루투스셋</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('129')">스마트폰/휴대폰</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('131')">생활가전</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('132')">미용가전</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11052')">MP3</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11061')">PMP/동영상강의</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11069')">전자사전/어학학습용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11919')">냉장고</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11931')">영상가전</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11954')">카메라</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13778')">스마트폰 액세서리</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15194')">주방용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15309')">욕실가전</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15412')">전기밥솥/레인지/오븐</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15456')">정수기/전기포트</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15498')">믹서기/쥬서기/빙수기</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('19045')">커피메이커</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">컴퓨터/게임</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_02off.gif" alt="컴퓨터/게임" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap mv_lnb_sub_sml">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('114')">게임/PC소프트웨어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('117')">스피커/헤드셋/웹캠</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('118')">마우스/키보드/타블렛</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('121')">데스크탑/넷탑/베어본</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('122')">모니터</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('123')">복합기/프린터/스캐너</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('124')">공유기/랜카드/허브</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11281')">노트북/넷북/타블렛PC</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11606')">외장하드/USB메모리</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14992')">블루투스</a></li>																																		
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">유아/완구/출산</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_03off.gif" alt="유아/완구/출산" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('220')">유아가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('222')">분유</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('223')">기저귀/물티슈</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('226')">유아간식/두유/영양제</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('227')">수유/이유용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('228')">목욕/세면용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('230')">유아화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('232')">유모차/카시트/아기띠</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('233')">임산부용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('235')">유치원교구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('456')">이유식</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('470')">도서/음반/비디오</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11394')">도서</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13483')">신생아용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13523')">유아동의류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13536')">유아신발/가방/잡화</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14046')">신생아/교육완구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14066')">놀이/작동완구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14093')">승용/대형완구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15084')">유아전용세제</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15120')">안전/위생/건강용품</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">패션/의류</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_04off.gif" alt="패션/의류" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap mv_lnb_sub_sml">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('215')">여성의류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('216')">캐주얼의류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('217')">남성의류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('12509')">한복/테마의류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13243')">언더웨어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15674')">여성 브랜드</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15675')">남성 브랜드</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15676')">캐주얼 브랜드</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15677')">언더웨어 브랜드</a></li>																															
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">패션잡화/화장품</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_05off.gif" alt="패션잡화/화장품" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('204')">시계</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('205')">명품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('206')">쥬얼리/액세서리</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('209')">선글라스/안경테</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14246')">가방</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14261')">신발</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14278')">지갑/벨트</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('137')">기초</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('138')">클렌징</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('139')">색조메이크업</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('140')">기능성</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('141')">베이스메이크업</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('142')">선케어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('143')">바디케어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('144')">헤어/탈모케어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('145')">남성화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('146')">메이크업소품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('148')">향수</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14671')">유아/임삼부화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14696')">유기농화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15680')">명품화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15694')">로드샵화장품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15695')">국내화장품</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">레저/스포츠/자동차</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_06off.gif" alt="레저/스포츠/자동차" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('151')">자전거</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('152')">인라인/X-GAME기구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('154')">골프</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('156')">스키/보드</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('157')">수영</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('158')">등산용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('159')">낚시</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('161')">스포츠의류/잡화</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('162')">구기스포츠</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11520')">라켓스포츠</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('12036')">오토캠핑/야영용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13635')">헬스/다이어트</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('163')">시트/매트/쿠션</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('165')">오일/필터/관리용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('166')">카오디오/카팩/AV용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('169')">튜닝/DIY용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('171')">안전/편의용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('172')">스쿠터/바이크/ATV</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11613')">내비게이션</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11625')">블랙박스/하이패스</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15017')">세차/광택/방향제</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15041')">실내장식/수납용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15073')">후방카메라/시동경보기</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">가구/주방/생활</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_07off.gif" alt="가구/주방/생활" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('237')">침실가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('238')">거실가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('239')">주방가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('240')">책상/책장</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('241')">유아동가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('243')">홈데코/커튼/카페트</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('245')">침구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('246')">인테리어</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('510')">수납가구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15273')">침대/매트리스</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15554')">소파</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15563')">서랍장/화장대</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('18607')">의자</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('267')">주방수납/소품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('268')">세면/구강/욕실용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('271')">DIY/공구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11760')">세제/세정제</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11986')">홈세트/식기/수저</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('12003')">밀폐/보온용기</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('12014')">찻잔/컵/주전자</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('12132')">화장지/키친타올</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13915')">냄비/솥/후라이팬</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('13990')">칼/도마/조리기구</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14113')">세탁/청소용픔</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('19125')">디자인주방용품</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">오피스/문구</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_08off.gif" alt="오피스/문구" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap mv_lnb_sub_sml">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('194')">필기용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('195')">다이어리/앨범</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('197')">복사용지/지류</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('199')">미술/제도용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('11661')">쌀/일반사무용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14126')">디자인팬시</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14134')">파일/수납용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14545')">사무기기</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('15690')">다이어리브랜드</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+							<li><span class="txt_01"><a href="#" onclick="return false;">취미/악기/애완</a></span><!--a href="#" onclick="return false;"><img src="/images/gr/common/ls_lnb_pt_09off.gif" alt="취미/악기/애완" /></a-->
+								<div class="none">
+								<div class="mv_lnb_sub_wrap mv_lnb_sub_sml">
+									<div class="mv_lnb_sub_tp"></div>
+									<div class="mv_lnb_sub_rpt">
+										<ul class="mv_lyr_on">
+											<li><a href="javascript:FFn_pointmallCategoryLink('258')">악기</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14424')">프라모델/서바이벌</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14430')">유/무선조종(RC)</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14435')">보드게임/퍼즐</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14438')">관측기기</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14442')">애완용품</a></li>
+											<li><a href="javascript:FFn_pointmallCategoryLink('14477')">D.I.Y</a></li>
+										</ul>
+									</div>
+									<div class="mv_lnb_sub_btm"></div>
+								</div>
+								<div class="mv_spot"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+<!-- 100312 수정 -->
+<!-- 2013.02.20 플래시교체 추가 start -->
+				<div class="mvt_sp_pbnr price_vs">
+					<div class="mvt_sp_pbnr1">
+<!-- 2013.03.05 메인플래시교체 삭제 추가 start -->
+						<ul class="mvt_sb1">
+							<li class="ui-Slider-List">
+				                <div class="ui-Slider-Contents">
+				                    <a href="#" class="link_mvs">
+				                        <div>
+				                            <p class="mvs1">총 <span></span>개의 상품</p>
+				                            <p class="mvs2"><img src="/images/sp/star0.png" alt="" /> <strong>0점</strong>/5점</p><!-- star0.png부터 star5.png까지 있음 -->
+				                            <p class="mvs3">
+				                            </p>
+				                        </div>
+				                        <img src="" alt="" class="img_mvs" />
+				                    </a>
+				                </div>
+							</li>
+						</ul>
+<!-- 2013.03.05 메인플래시교체 삭제 추가 end -->
+					</div>
+<!-- 2013.02.20 플래시교체 추가 end -->
+<!-- //100312 수정 -->
+<!-- 2013.02.20 플래시교체 추가 start -->
+					<div class="mvt_sp_bnr2" style="background:red;">
+						롤링배너 WCMS 배포 영역
+					</div><!-- //mvt_sp_pbnr2 메인우측롤링 -->
+				</div><!-- //mvt_sp_pbnr -->	
+<!-- 2013.02.20 플래시교체 추가 end -->
+				</div> 
+				<!-- //상단 content -->
+				
+				<div class="shopping_event">
+					<!-- 쇼핑몰 이벤트 -->
+					<div class="event_banner">
+						<h1>
+							<img src="/images/sp/pc/h1_shopping_event.gif" alt="쇼핑몰 이벤트" />
+							<img src="/images/sp/pc/txt_shopping_event.gif" alt="쇼핑몰에서 준비한 다양한 이벤트를 만나보세요." class="ml10" />
+						</h1>
+						이벤트 WCMS 배포영역
+					</div>
+					
+					<!-- 쇼핑몰 이벤트 -->
+					<div class="shopping_coupong">
+						<h1><img src="/images/sp/pc/h1_shopping_coupon.gif" alt="쇼핑몰 이벤트" /></h1>
+						<div class="shopping_coupong_con" style="background:red;">
+						 	이벤트 WCMS 배포영역		
+						</div>			
+					</div>
+					<!-- //쇼핑몰 이벤트 -->
+				</div>
+
+				<h1>
+					<img src="/images/sp/pc/h1_recom_shoppingmall.gif" alt="추천 쇼핑몰 바로가기" />
+					<img src="/images/sp/pc/txt_recom_shoppingmall.gif" alt="홈쇼핑, 오픈마켓, 백화점, 종합몰, 전문몰 등에서  보너스포인트를 추가 적립 받으세요." class="ml10" />
+				</h1>
+<!-- CMS 등록영역 -->
+				<div class="box_w950_mid"><div class="box_w950_top"><div class="box_w950_btm">
+					<!-- 추천 쇼핑몰 리스트 -->
+					<div class="recom_shoppingmall">
+<!-- 100309 수정 -->
+
+										
+								<dl>	
+									<dd>
+										<ul>
+											<li>
+												<a href="#">
+												<img src="/cms_content/ec/sp/pc/13860_wemakeprice_1.jpg" alt="위메프" />
+												<p id="over_0" class="over">
+													기본<span class="t_point"><strong>1</strong>%</span>+<span class="t_point"><strong>2</strong>%</span>=<span class="t_org">총<strong>3</strong>%</span>		
+												</p>
+												</a>
+											</li>
+										</ul>
+									</dd>
+								</dl>	
+<!-- //100309 수정 -->
+					</div>
+					<!-- //추천 쇼핑몰 리스트 -->
+				</div></div></div>
+
+<!-- //CMS 등록영역 -->
+				<div class="mt30">
+					<img src="/images/sp/pc/img_point_mall.gif" alt="삼성카드 쇼핑을 통해서 쇼핑몰을 이용하면 혜택이 플러스! 1. 보너스포인트 최고 4%적립(기본 적립에 추가적립 혜택까지!) 2. 보너스포인트를 현금처러 사용(보유한 포인트로 쇼핑몰 상품 구매)" />
+				</div>
+				
+				
+				
+				<div class="recomm_new">
+					<div class="shopping_recomm">
+
+						<h1>
+							<img src="/images/sp/pc/h1_shopping_recomm.gif" alt="쇼핑몰 추천상품" />
+							<img src="/images/sp/pc/txt_shopping_recomm.gif" alt="쇼핑몰에서 추천하는 트렌디한 상품입니다." class="ml10" />
+						</h1>
+<!-- CMS 등록영역 -->
+						<div class="shopping_recomm_wrap">
+							<!-- 쇼핑몰 추천상품 리스트 -->
+							<ul class="product_list">
+								<!-- loop -->
+									<li>
+										<div class="product">
+                                            <p class="photo"><a href="#"><img src="/cms_content/ec/sp/pc/617_2.jpg" alt="음.." width="110" height="133" /></a></p>
+											<p class="tit">
+                                                <a href="#">음..</a>
+											</p>
+											<span class="t_line">1원</span>
+											<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+											<strong class="t_point">2원</strong><br />
+											<span class="t_11">
+												<strong class="t_blue">3</strong>
+												<img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" />
+												적립
+											</span>
+										</div>
+									</li>
+							</ul>
+							<!-- //쇼핑몰 추천상품 리스트 -->
+						</div>
+<!-- //CMS 등록영역 -->
+					</div>
+					
+					<div class="new_review">
+						<!-- 신제품 리뷰 -->
+
+						<h1><img src="/images/sp/pc/h1_new_review.gif" alt="신제품 리뷰" /></h1>
+						<ul class="number_btn" id="tabID">
+                                    <li class="on"><a href="#" class="rollover"><img src="/images/sp/pc/num_01_off.gif" alt="1" /><img src="/images/sp/pc/num_01_on.gif" alt="1" class="over" /><img src="/images/sp/pc/num_01_on.gif" alt="1" class="on" /></a></li>
+                                    <li><a href="#" class="rollover"><img src="/images/sp/pc/num_02_off.gif" alt="2" /><img src="/images/sp/pc/num_02_on.gif" alt="2" class="over" /><img src="/images/sp/pc/num_02_on.gif" alt="2" class="on" /></a></li>
+                                    <li><a href="#" class="rollover"><img src="/images/sp/pc/num_03_off.gif" alt="3" /><img src="/images/sp/pc/num_02_on.gif" alt="3" class="over" /><img src="/images/sp/pc/num_03_on.gif" alt="3" class="on" /></a></li>
+						</ul>
+
+						<div class="box_white182_mid"><div class="box_white182_top"><div class="box_white182_btm">
+									<div class="product" id="tabID_con1" style="display:block;">
+                                <p class="photo"><a href="#"><img src="/cms_content/ec/sp/pc/952_1.jpg" alt="음.." width="110" /></a></p>
+								<p class="tit">
+                                    <a href="#">음..</a>
+								</p>
+								<span class="t_line">1원</span>
+								<img src="/images/sp/common/ico_exp_arw.gif" alt="→" class="al_middle" /><br />
+								<strong class="t_point">2원</strong><br />
+								<span class="t_11">
+									<strong class="t_blue">3</strong>
+									<img src="/images/sp/common/ico_p_blue.gif" alt="포인트" class="al_middle" />
+									적립
+								</span>
+							</div>
+						</div></div></div>
+						<!-- //신제품 리뷰 -->
+					</div>
+				</div>
+				<h1>
+					<img src="/images/sp/pc/h1_category_best.gif" alt="쇼핑몰 베스트셀러" />
+<!-- 100309 수정 -->
+					<img src="/images/sp/pc/txt_category_best.gif" alt="쇼핑몰에서 가장 많이 판매되는 상품입니다." class="ml10" />
+<!-- //100309 수정 -->
+				</h1>
+				<div class="category_best best_m_shopping">
+
+<!-- 100312 수정 -->
+					<div class="box_w950_mid"><div class="box_w950_top"><div class="box_w950_btm">
+
+						<div id="best_con1" style="background:red;">쇼핑몰 베스트셀러 WCMS 등록</div>
+
+					</div></div></div>
+<!-- //100312 수정 -->
+				</div>
+<!-- 100309 수정 -->
+				<div class="util_wrap">
+					<div class="notice">
+						<form name="srchForm" method="post" action="" onsubmit="return false;">
+							<input type="hidden" name="seqNo" value="" />
+							<input type="hidden" name="seqNoParam" value="" />
+							<h1><img src="/images/sp/pc/h1_notice.gif" alt="공지사항" /></h1>
+                            <span class="more t_org"><a title="공지사항 더보기" href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectNotiSpList&amp;branch_id=44&amp;ZONE=LIGB04">더보기</a></span>
+							<ul class="bul_dot t_12" style="background:red;">공지사항 WCMS 등록</ul>
+						</form>
+					</div>
+					<div class="call_center">
+						<h1><img src="/images/sp/pc/h1_callcenter.gif" alt="고객상담" /></h1>
+						<img src="/images/sp/pc/number_callcenter.gif" alt="1688-0003" class="mb5" /><br />
+						<span class="t_11gray ls0">
+						평일 오전 9시 ~ 오후 5시<br />(주말/공휴일 제외)
+						</span>
+
+						<p class="mt10">
+                            <span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=getInquiry&amp;ZONE=LIGB05">온라인문의</a></span>
+                            <span class="btnS_white"><a href="/ec/hb/fr/cs/nechbfrcs011.do?method=selectFaqList&amp;upperId=761&amp;ZONE=LIGB05">FAQ</a></span>
+						</p>
+					</div>
+					<div class="info">
+						<!-- 120710 수정 -->
+						<h1><img src="/images/sp/pc/h1_pointMall_info.gif" alt="포인트몰" /></h1>
+						<span class="t_11gray ls0">차곡차곡 모아놓은 보너스포인트! <br />포인트몰에서 <br />현금처럼 사용하세요.</span>
+						<p class="mt10">
+							<span class="btnS_white"><a title="포인트몰 더보기" href="http://pointmall.samsungcard.com/ec/sp/ss/index.do?method=selectSSMain">바로가기</a></span>
+						</p>
+						<!-- //120710 수정 -->
+					</div>
+					<div class="service">
+					<h1><img src="/images/sp/pc/h1_thesocial.gif" alt="더 소셜" /></h1>
+						<p class="t_11gray" style="margin-bottom:25px;">
+							당신에게 참 실용적인 가격제안! <br />더 소셜에서 만나보세요.
+						</p>
+
+						<span class="btnS_white"><a href="http://social.samsungcard.com" title="더 소셜 바로가기">바로가기</a></span>
+					</div>
+				</div>
+<!-- //100309 수정 -->
+
+<!-- 100212 추가 -->				
+
+			 </div>
+		</div>
+	</div>
+
+<!-- 공통 풋터 시작 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/ec/common/jquery.js"></script>
+<script type="text/javascript">
+/* S2P : 2012-12-28 Footer Family 추가 */
+ var FamliySiteNew = function() {
+   var $this;
+   var $selectBTN;
+   var $list;
+   var flag = false;
+   return {
+	   init : function() {
+		   
+		   $this = $('div.family_site');
+		   $selectBTN =  $this.find('>h3>a');
+		   $list =  $this.find('.list');
+		   
+			// 스크롤 Plug 활성화
+			$('.scroll-pane').jScrollPane({
+				verticalDragMinHeight: 63,
+				verticalDragMaxHeight: 63
+			});
+			
+			FamliySiteNew.hide();
+			
+			$selectBTN.click(function() {
+				FamliySiteNew.toggle();
+				return false;
+			});
+			
+			$list.find('a:last').blur(function() {
+				FamliySiteNew.toggle();
+			});
+	   },
+	   show : function() {
+		   flag = true;
+		   var src = $selectBTN.find('img').attr('src').replace('_off.png','_on.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideDown();
+	   },
+	   hide : function() {
+		   flag = false;
+		   var src = $selectBTN.find('img').attr('src').replace('_on.png','_off.png');
+		   $selectBTN.find('img').attr('src',src);
+		   $list.slideUp();
+	   },
+	   toggle : function() {
+		   if (flag == false) {
+			   FamliySiteNew.show();
+		   }
+		   else {
+			   FamliySiteNew.hide();
+		   }
+	   }
+   }
+}();
+</script>
+<script src="/js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="/js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//window.onload = initPage;
+//function initPage() {
+//	FamliySiteNew.init();
+//}
+
+$(document).ready(function() {
+	//footer family site
+	FamliySiteNew.init();	
+});
+</script>
+
+ <!-- footer -->
+	<div id="footer">
+		<div class="footer_logo"><a href="#"  target="_blank" title="새창"><img src="/images/gr/common/footer_logo.gif" alt="삼성카드" /></a></div>
+		<div class="footer_info">
+			<div class="menu">
+				<ul>
+					<li><a href="/mainPage.do?menuId=NHPIMCSUFCVIEW003&amp;ZONE=LIGB08"  target="_blank" title="새창"><img src="/images/gr/common/footer_menu_01.gif" alt="자율준수프로그램" /></a></li>
+					<li><a href="/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb071&amp;ZONE=LIGB08"><img src="/images/gr/common/footer_menu_06.gif" alt="개인정보처리방침" /></a></li>
+					<li><a href="/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb021&amp;ZONE=LIGB08"><img src="/images/gr/common/footer_menu_02.gif" alt="개인정보취급방침" /></a></li>
+					<li><a href="/ec/hb/fr/hb/nechbfrhb011.do?method=getNechbfrhb031&amp;gubun=1&amp;ZONE=LIGB08"><img src="/images/gr/common/footer_menu_03.gif" alt="이용약관" /></a></li>
+					<li><a href="/mainPage.do?menuId=NHPIMCSPCX001&amp;ZONE=LIGB08" target="_blank" title="새창"><img src="/images/gr/common/footer_menu_04.gif" alt="보안프로그램설치" /></a></li>
+					<li><a href="#"><img src="/images/gr/common/footer_menu_05.gif" alt="이메일주소 무단수집 거부" /></a></li>
+					<li><a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank" title="새창"><img src="/images/gr/common/footer_menu_07.gif" alt="공정위 사업자정보확인" /></a></li><!-- 120820 추가 -->
+				</ul>
+				<div class="family_site">
+			<h3><a href="#none"><img alt="Family Site" src="/images/sp/pc/h3_family_title_off.png" /></a></h3>
+			<div class="list">
+				<div class="scroll-pane">
+					<ul>  
+						<li><a target="_blank" title="새창" href="http://www.samsungcard.com"><img alt="삼성카드" src="/images/sp/pc/familly_site17_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://travel.samsungcard.com"><img alt="여행" src="/images/sp/pc/familly_site02_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://wedding.samsungcard.com"><img alt="웨딩" src="/images/sp/pc/familly_site03_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://insurance.samsungcard.com"><img alt="보험" src="/images/sp/pc/familly_site04_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.americanexpress-samsung.co.kr/amex_main.htm"><img alt="American Express Card" src="/images/sp/pc/familly_site06_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.theaptcard.com/"><img alt="삼성 The APT카드" src="/images/sp/pc/familly_site07_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.allat.co.kr/"><img alt="올앳카드" src="/images/sp/pc/familly_site08_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.u-point.co.kr/"><img alt="U-point" src="/images/sp/pc/familly_site10_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.umoneymembers.co.kr/"><img alt="U-money" src="/images/sp/pc/familly_site11_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://twitter.com/withsamsungcard"><img alt="삼성카드트위터" src="/images/sp/pc/familly_site12_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.facebook.com/withSamsungCard"><img alt="삼성카드페이스북" src="/images/sp/pc/familly_site13_off.png" /></a></li>
+						<li class="line"><a target="_blank" title="새창" href="http://corp.samsungcard.com/cmIndex.do"><img alt="법인" src="/images/sp/pc/familly_site18_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://partnet.samsungcard.com/chain.do"><img alt="가맹점" src="/images/sp/pc/familly_site19_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://www.bizbridge.co.kr/"><img alt="비즈브릿지" src="/images/sp/pc/familly_site14_off.png" /></a></li>
+						<li><a target="_blank" title="새창" href="http://efamily.samsungcard.co.kr/"><img alt="이패밀리" src="/images/sp/pc/familly_site16_off.png" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			</div>
+			<address>
+				<img src="/images/gr/common/footer_txt_information.gif" alt="서울시 중구 세종대로 67 (100-742)/대표이사 최치훈/사업자등록번호 202-81-45602/통신판매업 신고번호 제2009-서울중구-1449호/분실신고&middot;한도승인 1588-8900/고객상담 1588-8700/해외 82-2-2000-8100, 800-1588-8700/삼성카드쇼핑 고객센터 포인트 적립 1688-0003/포인트몰 1688-6315" />
+				<img src="/images/gr/common/footer_txt_copyright.gif" alt="COPYRIGHTⓒ 2013 SAMSUNGCARD CO., LTD. ALL RIGHTS RESERVED." class="img_margin" />
+			</address>
+		</div>
+	</div>
+	<!-- //footer -->
+<!-- //공통 풋터 끝 -->
+</div>
+<iframe name="popupFrm" title="빈 프레임" src="/cms/popup/PopupMain.jsp?popup_id=12" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" width="0" height="0"></iframe> 
+<!-- STANDARD FOOTER BLOCK -->
+
+
+
+</body>
+</html>

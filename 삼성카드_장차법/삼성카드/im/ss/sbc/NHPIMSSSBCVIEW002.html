@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>지도보기 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript">
+function setPng24(obj){ 
+}
+function open(){
+	rsltList.style.display ="none";
+	openMap.style.display ="none";
+	rsltMap.style.width = "900px";
+	var fName  = document.all("mapFrm");
+	fName.style.width = "900px";
+	closeMap.style.display ="";
+}
+function close(){
+	rsltList.style.display ="";
+	openMap.style.display ="";
+	closeMap.style.display ="none";
+
+	rsltMap.style.width = "450px";
+	var fName  = document.all("mapFrm");
+	fName.style.width = "450px";
+}
+</script>
+</head>
+<body onLoad="resize();">
+
+					<!-- content -->
+					<span  style="margin-left:0;">
+					<div class="w810 clfix pos_rel bordergrey mt10 h489" style="margin-left:0;">
+
+					<!-- 좌측 검색 결과 Start -->
+					<div class="list_map_wrap" id="rsltList" style="display:">
+					<iframe name="listFrm" id="listFrm" src="/hp/im/ss/sbc/sbc.do?method=getViewList001<%=sendParam %>" frameborder="0" style="width:450px;height:489px;" title="좌측 검색 결과 화면"></iframe>
+					</div>
+					<!-- 좌측 검색 결과 End -->
+
+					<!-- 우측 지도 결과 End -->
+					<div class="mapwrap" id="rsltMap" style="display:">
+					<iframe name="mapFrm" id="mapFrm" src="/hp/im/ss/sbc/sbc.do?method=getViewMap001" frameborder="0"  scrolling="no" style="width:450px;height:489px;left:0;" title="우측 지도 결과 화면"></iframe>
+					<!-- iframe name="mapFrm" id="mapFrm" src="http://www.daum.net" frameborder="yes"  scrolling="yes" style="width:450px;height:460px;left=0;"></iframe -->
+					</div>
+					<!-- 우측 지도 결과 End -->
+					<p id="openMap" class="tab png24"><img src="/images/ss/tab_open.png" alt="지도 펼쳐보기"  usemap="#open" /></p>
+					<p id="closeMap" class="tab_close png24" style="display:none"><img src="/images/ss/tab_close.png" alt="지도 접기" useMap="#close" /></p>
+					</div>
+					</span>
+					<div class="fl_right mt10"><a href="javascript:parent.mapInfo();" class="btn_link">지도 이용안내</a></div>
+
+	<map name="open" id="open">
+		<area shape="rect" coords="0,223,12,268" alt="지도 펼쳐보기" href="javascript:open();" />
+	</map>
+	<map name="close" id="close">
+		<area shape="rect" coords="0,223,12,268" alt="지도 접기" href="javascript:close();" />
+	</map>
+
+</body>
+</html>

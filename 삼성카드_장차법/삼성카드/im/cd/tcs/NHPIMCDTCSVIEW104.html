@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1 class="none">티클래스 클럽</h1>
+                    <!-- 20130412 웹접근성(장차법)  수정  -->
+                    <div class="h1_desc"><img src="/images/cd/h1_entertain310.jpg" alt="여행, 레저, 엔터테인먼트의 고품격 맞춤카드 티클래스클럽" /></div>
+                    <jsp:include page="topmenu.jsp" flush="false">
+                        <jsp:param name="m" value="2" />
+                    </jsp:include>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_tab2 clfix">    <!-- 100126 -->
+                    <!-- tab_area -->
+                    <div class="tab02 w810">
+                        <ul>
+                            <li><a href="javascript:goTabPage('NHPIMCDTCSVIEW101', true);">엔터테인먼트</a></li>
+                            <li><a href="javascript:goTabPage('tcsLinkCLUB001', true);">숙박예약 할인</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMCDTCSVIEW104', true);">포인트적립</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMCDTCSVIEW105', true);">기타할인</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <cms:include page="/cms_content/hp/im/cd/tcs/NHPIMCDTCSVIEW104C1.html" flush="false" />
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

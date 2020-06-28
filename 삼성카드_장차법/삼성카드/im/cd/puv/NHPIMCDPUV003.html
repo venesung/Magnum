@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+	<h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+	<div class="content_block_inner">
+		<jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+	<div class="content_block_inner">
+
+		<h3 class="h3_point"><img src="/images/mh/h3_pla_shopping.png" alt="쇼핑플래티늄카드" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_shopping_voucher.png" alt="신세계 쇼핑 상품권" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_giftcard_shinsegyeedu.png" alt="신세계에듀 상품권" /></h3>
+		<h3 class="h3_point"><img src="/images/mh/h3_giftcard_sscmaplus.png" alt="삼성CMA+S 상품권" /></h3>
+
+
+		<!-- tab -->
+		<div class="tab02 w640">
+			<ul>
+                <li>           <a href="javascript:goSearch('getPlatCardUseView');">년도별 적립/사용</a></li>
+                <li>           <a href="javascript:goSearch('getPlatCardUseList');">포인트 사용</a></li>
+                <li class="on"><a href="javascript:goSearch('getPlatCardParkPoint');">10days적립내역</a></li>
+                <li>           <a href="javascript:goSearch('getPlatCardYearPoint');">연간적립내역</a></li>
+			</ul>
+		</div>
+
+		<table summary="총 발생포인트, 총 사용 포인트, 사용 가능 포인트, 기준일 등 주차별적립된 포인트 정보입니다. " class="dtable02 dtable_inputfield mt30">
+		<caption>10days 조회</caption>
+		<colgroup><col width="20%"/><col width="30%"/><col width="20%"/><col width="30%"/></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>총 발생포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+				<th scope="row"><p>총 사용 포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사용 가능 포인트</p></th>
+				<td><p><span class="t_no">0</span> 원</p></td>
+				<th scope="row"><p>기준일</p></th>
+				<td><p><span class="t_no">0</span></p></td>
+			</tr>
+
+		</tbody>
+		</table>
+
+		<ol class="list_desc mt15">
+			<li><p>사용가능금액 = 총적립금액 - 총사용금액 - 유효기간경과금액</p></li>
+			<li><p>기준연월을 누르시면 해당 월의 적립/사용 상세 내역을 조회하실 수 있습니다.</p></li>
+			<li><p>적립/사용 상세 내역은 조회월을 기준으로 직전 1년까지 조회하실 수 있습니다. </p></li>
+		</ol>
+
+		<div class="tb_exp clfix mt30">
+			<span><strong>10days 조회</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>전월실적  매출액:0원</span>
+			<span class="ab_tr">
+
+				<select name="start_year" style="width: 80px;" title="년도 선택">
+	                <option></option>
+				</select>
+				<select name="start_month" style="width: 80px;" title="월 선택">
+	                <option></option>
+				</select>
+                <a class="btn btn_s_blue" href="javascript:goSearch('getPlatCardParkPoint');"><span>조회</span></a>
+			</span>
+		</div>
+				
+		<table summary="기준년 월, 시작일자, 종료일자, 전월 실적건매출, 매출합산, 매출적립액, 강제적립액, 총적립액, 구분, 상세보기 등 조회된 포인트의 주차별적립내역입니다.  " class="dtable01">
+		<caption>주차별적립내역</caption>
+		<colgroup><col width="9%" /><col width="9%" /><col width="9%" /><col width="12%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="11%" /><col width="7%" /><col width="10%" /></colgroup>
+				<thead>
+					<tr>
+						<th  class="cell_l10" scope="col">기준년 월</th>
+						<th  scope="col">시작일자</th>
+						<th scope="col">종료일자</th>
+						<th class="cell_r10" scope="col">전월 실적건매출</th>
+						<th class="cell_r10" scope="col">매출합산</th>
+						<th class="cell_r10" scope="col">매출적립액</th>
+						<th class="cell_r10" scope="col">강제적립액</th>
+						<th class="cell_r10" scope="col">총적립액</th>
+						<th scope="col">구분</th>
+						<th scope="col">상세보기</th>
+					</tr>
+				</thead>
+		<tbody>
+
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="cell_r10"><span class="t_no">0</span></td>
+				<td class="cell_r10"><span class="t_no">0</span></td>
+				<td class="cell_r10"><span class="t_no">0</span></td>
+				<td class="cell_r10"><span class="t_no">0</span></td>
+				<td class="cell_r10"><span class="t_no">0</span></td>
+				<td>0</td>				
+                <td><a href="#" class="btn btn_s_white" title="00 보유포인트 새창"><span>GO</span></a></td>
+			</tr>
+			<tr class="nodata"><td colspan="10">조회 결과가 없습니다.</td></tr>
+		</tbody>
+		</table>
+
+		<ol class="list_desc mt15">
+			<li><p>시작일자/종료일자 : 매월 1일(시작일자)~10일(종료일자), 11일(시작일자)~20일(종료일자), 21일(시작일자)~말일(종료일자)</p></li><!-- 121009 수정 -->
+			<li><p>전월 실적조건 매출 : 해당주차의 전월 1일~말일까지 이용실적 (매출접수 기준)</p></li>
+			<li><p>구분 : 10days 상품권·적립 / 연간상품권 적립 / 조정(매출취소 등 반영)</p></li><!-- 121009 수정 -->
+			<li><p>본 서비스는 카드사 또는 제휴사의 사정에 의해 추가, 변경, 중단될 수 있으며 그 내용을 사전에 알려드립니다.</p></li>
+		</ol>
+
+
+	</div>
+</div>
+
+
+
+<% if("092".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV003C1.html" />
+	
+<%}else if("097".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV003C2.html" />
+
+<%}else if("098".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV003C3.html" />
+
+<%}else if("099".equals(pointType)){ %>
+
+	<cms:include page="/cms_content/hp/im/cd/puv/NHPIMCDPUV003C4.html" />
+
+<%} %>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

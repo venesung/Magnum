@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_deposit_views.jpg" alt="입금내역을 조회해 보세요" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:goIndividual();">입금내역조회</a></li>
+                            <li class="on"><a href="javascript:goCmsInputList();">무통장입금내역조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_deposit_views02.png" alt="입금내역결과 조회입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="fl_left"><strong class="t_black"><%=USER_NAME %></strong> 회원님께서 무통장으로 입금하신 내역입니다.</span>
+						</div>
+						
+						<table class="dtable01" summary="입금일자, 입금은행, 입금액으로 구성된 입금내역결과를 보여주는 게시판입니다">
+						<caption>입금내역결과</caption>
+						<colgroup><col width="30%" /><col width="30%" /><col width="40%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">입금시간</th>
+								<th scope="col" class="cell_l10">입금은행</th>
+								<th scope="col" class="cell_r10">입금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">2012.02.03:11:22:00</td>
+								<td class="cell_l10">신한은행</td>
+								<td class="cell_r10"><span class="t_no">123</span>원</td>
+							</tr>
+							<!-- //loop -->
+							<tr class="nodata">
+								<td colspan="3">오늘일자로 입금하신 내역이 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnl t_desc04">입금시간은 당사와 은행간의 입금내역 송·수신 시간에 따라 실제 입금시간과 다소 차이가 발생될 수 있습니다.</p>
+							<p class="btnr"><a href="javascript:goCmsInputList();" class="btn btn_blue"><span>이전</span></a></p>
+						</div>
+					</div>
+				</div>
+ 				<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

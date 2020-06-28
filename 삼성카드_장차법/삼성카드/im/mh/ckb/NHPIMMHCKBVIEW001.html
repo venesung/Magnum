@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usebill_chk0910before.png" alt="체크카드 이용대금 명세서입니다" /></h1><!-- 100310 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+	<div class="content_block_inner">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:goTabPage('NHPIMCKB');" class="default" onclick="return false;">체크카드</a></p>
+			<div class="childlayer">
+				<ul>
+					<li><a href="javascript:goTabPage('NHPIMCKB', true);">체크카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHCIB');">법인카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHPIB001');">개인카드</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="line_lgray">&nbsp;</div>
+		<ol class="list_no01" id="billInfoUpdateOl">
+			<li><p>
+				회원님의 다음 명세서조회는 <strong class="t_black t_no">0</strong> 일 사이에 업데이트 됩니다.
+			</p></li>
+			<li><p>이 화면에서 보시는 내용은 명세서 작성일 기준으로, 그 이후 취소매출, 입금 등의 내용은 반영되어 있지 않습니다.</p></li><!-- //100223 -->
+		
+		</ol>
+		
+		<div id="cardList">
+			<table class="dtable02 dtable_inputfield mt20" summary="카드선택, 결제월, 이메일을 확인할 수 있는 게시판입니다">
+			<caption>체크카드 조회</caption>
+			<colgroup><col width="17%" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>카드선택</p></th>
+					<td><p>
+						<select title="카드번호 선택" name="cardList" id="label_ch_card" style="width:360px" onchange="getChkBillDateByJQuery(this.value);">
+							<option>00</option>
+						</select>
+					</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><p>결제월</p></th>
+					<td><p>
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+
+		<div class="btnset">
+			<div class="btnr"><a href="javascript:search();"><img src="/images/common/btn_s_b_inqury.png" alt="조회" /></a></div>
+		</div>
+		
+		<iframe frameborder="0" src="" width="0" height="0" id ="excel" name="excelDown" style="width:0px;height:0px;display:none;" title="빈 프레임" />		
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix" >
+	<h2><img src="/images/mh/h2_duepay01.png" alt="입금하실 금액을 확인하세요" /></h2>
+	<div class="content_block_inner">
+		<!-- duepay-->
+		<div class="d_duepay d_duepay_past">
+			<!-- d_duepay_l -->
+			<div class="d_duepay_l" id="billInfoDiv">
+				<table class="dtable01" summary="전월 미결제금액, 당월 청구금액, 자유결제 최소결제 금액을 알 수 있는 게시판입니다"><!-- 100224 테이블 콘텐츠 수정 -->
+				<caption>결제예정금액</caption>
+				<colgroup><col width="60%" /><col width="40%" /></colgroup>
+				<tfoot>
+					<tr>
+						<td class="cell_l10">합계</td>
+						<td class="cell_r10"><em class="t_point_org">0원</em></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<!-- last_month -->
+						<tr>
+						<th scope="col" colspan="2" class="cell_l10"><strong>미리 입금하신금액</strong></th>
+					</tr>
+
+					<tr>
+						<td scope="row" class="cell_l10">미리 입금하신금액</td>
+						<td class="cell_r10  t_no">0원</td>
+					</tr>
+					<tr>
+					<td scope="row" class="cell_l10 boline_b0">소계</td>
+						<td class="cell_r10 boline_b0  t_no">0원</td>
+					</tr>
+					<!-- last_month -->
+					<tr>
+						<td scope="row" class="cell_l10">일시불</td>
+						<td class="cell_r10  t_no">원</td>
+					</tr>
+					<tr>
+						<td scope="row" class="cell_l10">현금서비스</td>
+						<td class="cell_r10  t_no">원</td>
+					</tr>
+					<tr>
+						<td scope="row" class="cell_l10 boline_b0">소계</td>
+						<td class="cell_r10 boline_b0 t_no">원</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<!-- d_duepay_r -->
+			<div class="d_duepay_r">
+
+				<div id="noticeDiv">
+					<!-- tab_content -->
+					<div class="tab_con02">
+						<p class="mb20"><img src="/images/mh/txt_thx_for_mems.png" alt="회원님께 드리는 안내말씀" /></p>
+						<p class="mt20">0000</p>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- btnset -->
+			<div class="btnset">
+				<p class="btnl">
+					<a href="javascript:goTabPage('NHPIMMHPIT001');" class="btn btn_white"><span>포인트 상세조회 &gt;</span></a>
+					<a href="javascript:goTabPage('NHPIMCD030203');" class="btn btn_white"><span>카드 사용한도 &gt;</span></a>
+					<a href="javascript:goTabPage('NHPIMMHEPP006');" class="btn btn_white"><span>이메일 명세서 신청 &gt;</span></a>
+				</p>
+			</div>
+
+		</div>
+		<!-- //d_duepay -->
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+
+	<div class="content_block_bill" id="card_use_periodDiv">
+
+		<h2><img src="/images/mh/h2_carduselist_info01.png" alt="카드 이용내역 조회 안내입니다" /></h2>
+		<div class="content_block_inner">
+			<dl class="tb_period tb_period2" id="card_use_periodDl">
+				<dt></dt>
+				<dd>
+					<dl>
+						<dt>카드이용기간</dt>
+						<dd>00</dd>
+					</dl>
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="line_lgray">&nbsp;</div>
+		
+		<div class="d_easy mt10">
+			
+			<table class="dtable01" summary="카드내역에대해 이용일, 이용자, 이용가맹점, 이용금액, 인출일자, 계좌인출금액, 금월결제하실 금액을 알 수 있는 게시판입니다">
+			<caption>카드 이용내역</caption>
+			<colgroup><col width="14%" /><col width="*" /><col width="14%" /><col width="14%" /><col width="16%" /><col width="16%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">이용일</th>
+					<th scope="col" class="cell_l">이용 가맹점</th>
+					<th scope="col" class="cell_r10">이용금액</th>
+					<th scope="col">인출일자</th>
+					<th scope="col" class="cell_r10">계좌인출금액</th>
+					<th scope="col" class="cell_r10">금월결제하실금액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10 t_no">0</td>
+					<td class="cell_l">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+					<td class="cell_r10 t_no">0</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		
+		<div class="btnl">
+			<ol class="list_desc">
+				<li><p class="ls01">&quot;면제/할인 반영금액&quot;은 당사에서 제공한 서비스 금액으로 청구금액에 반영완료된 혜택내용입니다.</p></li>
+				<li><p>은행마감시간 이후 결제계좌에 입금된 금액은 출금되지 않을 수 있습니다.</p></li>
+			</ol>
+		</div>
+		
+	</div>
+	
+	<div class="btnset"><!-- 100224 내용 수정 -->
+		<p class="btnr">
+			<a href="javascript:down();" class="btn btn_white" title="엑셀 다운로드"><span>다운로드</span></a>
+			<a href="javascript:printPopup();" class="btn btn_white" title="인쇄 새창"><span>인쇄</span></a>
+		</p>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

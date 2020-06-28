@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual 100317 -->
+                <div class="top_visual">
+                    <h1 class="none">티클래스 클럽</h1>
+                    <!-- 20130412 웹접근성(장차법)  수정  -->
+                    <div class="h1_desc h268"><img src="/images/cd/h1_entertain310.jpg" alt="여행, 레저, 엔터테인먼트의 고품격 맞춤카드 티클래스클럽" /></div>
+                    <div class="flag_tclass_top">
+                        <img src="/images/cd/btn_tclass_top05.png" alt="" usemap="#map_tclass_top" />
+                        <map name="map_tclass_top" id="map_tclass_top">
+                            <area shape="rect" alt="티클래스클럽소개" coords="0,0,81,100" href="javascript:goTabPage('NHPIMCDTCS003', true);" />
+                            <area shape="rect" alt="티클래스카드서비스" coords="81,0,160,100" href="javascript:goTabPage('NHPIMCDTCSVIEW101', true);" />
+                            <area shape="rect" alt="우수회원서비스" coords="161,0,230,100" href="javascript:goTabPage('tcsLinkCLUB051', true);" />
+                            <area shape="rect" alt="가맹점포인트조회" coords="231,0,310,100" href="javascript:goTabPage('NHPIMCDTCS001', true);" />
+                            <area shape="rect" alt="우수회원서비스이용내역조회" coords="311,0,400,100" href="javascript:goTabPage('NHPIMCDTCS006', true);" />
+                        </map>
+                    </div>
+                </div>
+               <!-- content_block -->
+               
+                <!-- content_block -->
+                	<div class="content_block content_block_card clfix">
+					<h2><img src="/images/cd/h1_tclass_vip01.png" alt="우수회원 서비스 조회입니다" /></h2>						
+					<div class="content_block_inner">
+						<blockquote><img src="/images/cd/txt_tclass_vip01.png" alt="티클래스 우수회원 서비스 이용내역을 확인하실 수 있습니다." /></blockquote>						
+						<ol class="list_no01 mt20">
+							<li><p>우수회원서비스는 카드상품 계열별 직전 3개월(1일~말일) 카드이용금액(일시불+할부)이 150만원 이상인<br />회원에 한해 제공됩니다.</p></li>
+							<li><p>우수회원서비스 중 1가지 서비스에 대해 년 1회 제공됩니다.<br /><span class="t_desc04">단, 닥터카서비스 년 2회 이용가능, 영화서비스는 월 2회 년 3회 이용가능, 월간지 구독 서비스는 년 1회 2가지 중 택 1하여 이용가능</span></p></li>
+						</ol>
+						
+						<div class="line_lgray">&nbsp;</div>
+
+						<div class="tb_exp clfix">	
+							<span class="fl_left">이용내역 확인을 원하시는 <span class="t_point_org">카드번호 16자리</span>를 입력해 주십시오.</span>
+						</div>
+
+                        <table class="dtable02 dtable_expand" summary="이용내역 확인을 위해 카드번호를 입력하실 수 있습니다.">
+						<caption>카드번호 조회</caption>
+						<colgroup><col width="20%" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드번호</p></th>
+								<td><p>
+									<span class="input_cardno">
+                                        <input name= "card_no1" type="text" maxlength="4" class="txt" id="card_no1" value="" title="카드번호 첫째 네자리" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" enc="on" /> -
+                                        <input name= "card_no2" type="text" maxlength="4" class="txt" id="card_no2" value="" title="카드번호 두번째 네자리" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this,'NUMB');" enc="on" /> -
+                                        <input name= "card_no3" type="password" maxlength="4" class="txt" id="card_no3" value="" title="카드번호 세번째 네자리" enc="on" /> -
+										<input name= "card_no4" type="password" maxlength="4"  class="txt" id="card_no4" value="" title="카드번호 네번째 네자리" enc="on" onkeydown="checkEnterx()" />
+									</span>
+									
+									&nbsp;&nbsp;<span id="usafeon_card_no1|card_no2|card_no3|card_no4"></span>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <div class="btnr"><a href="javascript:validation();" class="btn btn_blue"><span>조회</span></a></div>
+						</div>
+
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

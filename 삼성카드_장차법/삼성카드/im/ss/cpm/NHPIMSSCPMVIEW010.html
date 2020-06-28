@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<!-- layer_popup 메세지(카드미보유자) Start -->
+		<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="position: absolute; top: 300px; left: 200px; z-index: 1000; display: none">
+			<div class="pop_l_wrap">
+				<p class="img_l_pop flag_tl">&nbsp;</p>
+				<p class="img_l_pop flag_tr">&nbsp;</p>
+				<p class="img_l_pop flag_bl">&nbsp;</p>
+				<p class="img_l_pop flag_br">&nbsp;</p>
+				<input type="button" class="img_l_pop btn_close btn_input" 	onclick="this.parentNode.parentNode.style.display='none'; show_select();"
+					value="레이어닫기" title="삼성카드 골프 서비스 신청 레이어 닫기" />
+				<p class="pop_tit3"><img src="/images/ss/layer_tit_golfmania_none.png" alt="대상 카드 보유회원이 아닙니다." /></p>
+				<div class="pop_l_content">
+				<p class="pop_l_alert04">The Platinum Card/삼성시그니처카드/삼성마이골프카드 <br />회원에 한하여 본 서비스 이용이 가능합니다. </p>
+				<p class="pop_l_alert">회원님께서는 무료 부킹, 그린피 면제 서비스 등<br /> 삼성카드 골프 서비스 혜택을 받으실 수 있습니다. </p>
+				<p class="btnc ">
+				<a href="javascript:goTabPageWithParam('NHPIMCDCPS001','kind_code=P1090')" onclick="hide_con('id_layer03'); show_select();">
+				<img src="/images/common/btn_app_card3.png" alt="발급신청" /></a>
+				&nbsp;<a href="/index.do?menuId=NHPIMSSSBC001M011" target="_blank" title="새창"><img src="/images/common/btn_golfcard_detailview.png" alt="삼성카드 골프 서비스 자세히 보기" /></a>
+				</p>
+			</div>
+		</div>
+      </div>
+      
+      
+	<!-- layer_popup 메세지(카드미보유자) End-->
+
+	<div class="top_visual">
+		<h1 class="none">premium 골프 예약서비스</h1>
+		<!-- 20130415 웹접근성(장차법)  수정  -->
+		<div class="h1_desc"><img src="/images/ss/h1_premium_golf.jpg" alt="GOLFER FRIENDLY Premium 골프 예약서비스.The Platinum Card/시그니처/마이골프 회원을 위한 프리미엄 골프 예약서비스를 더욱 편리하게 누리세요!" /></div>
+		</div>
+			
+	<cms:include page="/cms_content/hp/im/ss/gfs/120221GFSP01.html" flush="false"></cms:include>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

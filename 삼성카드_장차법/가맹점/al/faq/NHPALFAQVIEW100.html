@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>공지사항 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;<a href="/scchainfaq.do?method=selectFaq100">공지사항·서식자료실</a>&nbsp;&gt;&nbsp;공지사항</div>
+				<h1><img src="/images/al/h1_notice.png" class="png24" alt="공지사항" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_notice.png" class="png24" alt="가맹점 공지사항을 확인하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_notice.jpg" alt="" /></p>				
+			</div>
+				<!-- content_block -->
+				<div class="content_block">
+					<div class="content_n_wrap">
+						<div class="content_l_tit"><h2><img src="/images/al/h2_notice.png" alt="공지사항을 확인하실 수 있습니다" /></h2></div>
+						<div class="content_r_conts">
+							<%
+				            String communityKey = "B0135";
+							String act = request.getParameter("act");
+				            String boardID = request.getParameter("search_boardId");
+				            
+							%>
+							
+							    <jsp:include page="/cms/board/board2/Board.jsp">
+							               <jsp:param name="communityKey" value="<%=communityKey%>" />
+							               <jsp:param name="act" value="<%=act%>" />
+							               <jsp:param name="search_boardId" value="<%=boardID%>" />
+							 </jsp:include>	
+			 			</div>
+					</div>
+				</div>
+ 		<!-- content_block -->
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

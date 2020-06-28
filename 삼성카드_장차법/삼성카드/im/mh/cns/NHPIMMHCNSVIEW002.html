@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>직장명 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+<form name ="change_content" autocomplete="off" >
+<div id="pop_s_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_companyname_search.png" alt="직장명 조회" /></h1>
+		
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content">
+		<p class="tb_exp al_left"><span>찾고자 하는 <strong class="t_black">직장명</strong>을 입력해 주세요.</span></p>
+		<table class="dtable02 dtable_inputfield" summary="찾고자 하는 직장명 조회하는 게시판입니다.">
+			<caption>직장명 조회</caption>
+			<colgroup><col width="90" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>직장명</p></th>
+					<td><p class="input_dong">
+					<input name="company" type="text" class="txt" value="" title="직장명" />
+					<a href="javascript:search_com()" class="btn btn_s_white"><span>조회</span></a>
+					</p></td>
+				</tr>
+			</tbody>
+			</table>
+
+		<p class="tb_exp mt25"><span>다음의 직장명 중 해당 <strong class="t_black">직장명을 클릭</strong> 하세요.</span></p>
+		<div class="post_list">
+			<table class="dtable01 post_scroll" summary="업체명, 직장주소를 보여주는 게시판입니다">
+			<caption>주소 검색</caption>
+			<colgroup><col width="130" /><col width="*" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">업체명</th>
+					<th scope="col">직장주소</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<td class="cell_l10"><a href="javascript:click_job()">삼성카드</a></td>
+					<td>서울 종로구 연지동 삼성카드</td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<td class="cell_l10"><a href="javascript:click_job()">중앙일보</a></td>
+					<td>서울 종로구 연지동 삼성카드</td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><a href="javascript:click_job()">삼성카드의카드</a></td>
+					<td>서울 종로구 연지동 삼성카드</td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><a href="javascript:click_job()">삼성화재</a></td>
+					<td>서울 종로구 연지동 삼성카드</td>
+				</tr>
+				<tr>
+					<td class="cell_l10"><a href="javascript:click_job()">바이널</a></td>
+					<td>서울 종로구 연지동 삼성카드</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">한국전력 전기요금 지동납부서비스</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_auto_payment.jpg" alt="전화요금 카드납부 한국전력 전기요금 자동납부서비스 - 금융기관이나 한전지점 방문 없이 전기요금을 삼성카드로 자동 납부해드리는 서비스 입니다" /></div>
+</div>
+
+<div class="content_block content_block_tab2 clfix mt0"> 
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSELE001M002',true);">전기요금 납부신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSELE001M005',true);">납부내역조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="tab_script">
+	<!-- 페이지 로드시 Param value Set -->
+	<script type="text/javascript" language="javascript">
+	<!--
+		function $tabOnLoad() {
+			//document.form1.CUSTOMER_NO.blur();		// 20130411 웹접근성(장차법)  수정
+			document.form1.CUSTOMER_NO.focus();
+		}
+	-->
+	</script>
+</div>
+
+<!-- content_block -->
+<form name="form1" method="post">
+<input type="hidden" name="input" />
+<input type="hidden" name="expire_check" value="0" />
+
+	<div class="content_block content_block_tab clfix">
+		<div class="bg_step_autopay step_autopay02">
+			<ol class="none">
+				<li>약관동의</li>
+				<li><abbr>현재단계</abbr>신청정보 입력</li>
+				<li>신청정보 확인</li>
+				<li>신청완료</li>
+			</ol>
+		</div>
+	</div>	
+
+	<div class="content_block clfix bor_tnone">
+		<h2><img src="/images/ss/h2_autopay02.png" alt="납부하실 한전 고객번호와 카드정보를 입력해주세요" /></h2>
+		<div class="content_block_inner pos_rel">
+			<p class="t_desc04 mb20">고객번호 문의 및 서비스 변경, 해지는 한국전력 사이버 지점에서 신청 가능합니다. <a href="http://cyber.kepco.co.kr/" target="_blank" title="새창" class="a_point">한전사이버지점 바로가기</a></p>
+			<h3>가입자 정보</h3>
+			<table summary="한전 고객번호를 입력하는 게시판입니다." class="dtable02 dtable_expand mb30">
+				<caption>고객번호 입력</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p class="th_txt">고객번호</p></th>
+						<td>
+							<p><span class="bg_input">   
+								<input type="text" name="CUSTOMER_NO" value="" size="10" maxlength="10" title="고객번호" id="label_cardidno" style="width: 173px;" maxlength="6" 
+								onkeyup="lengthCheck(this.form, this.value, this.name)"
+								onkeypress="checkTypes(this, 'NUMB');"
+								onblur="checkTypesOnBlur(this, 'NUMB');"
+								style="ime-mode:disabled" />
+							<em>&nbsp;</em></span><span class="step02_txtnum">전기요금 고지서에 명시된 전자납부번호 10자리</span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>결제자 정보</h3>
+			<table summary="카드선택, 비밀번호, 유효기간, 카드 CVC번호, 연락처 번호를 입력하는 게시판입니다" class="dtable02 dtable_inputfield">
+				<caption>결제자 정보 입력</caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><p>카드선택</p></th>
+						<td><p>
+							<select style="width:360px" name="CARD_SELECT" id="CARD_SELECT" title="카드선택">
+									<option></option>
+							</select>
+						</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>비밀번호</p></th>
+						<td><p class="input_2char">
+							<input type="password" name="PASSWORD_NO2" title="비밀번호 앞 두자리" class="txt"  value="" size="4" maxlength="2"  id="STD_TEXT_FIELD2"
+										onkeyup="lengthCheck(this.form, this.value, this.name)"
+										onkeypress="checkTypes(this, 'NUMB');"
+										onblur="checkTypesOnBlur(this, 'NUMB');"
+										style="ime-mode:disabled" enc="on"/>
+							<em>**</em>(비밀번호 앞의 2자리) &nbsp;<span id="usafeon_PASSWORD_NO2"></span></p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>유효기간</p></th>
+						<td><p class="expiry_date">
+						<input type="password" name="EXPIRE_YYYY" title="유효기간 년도" class="txt" size="4" maxlength="4"
+						            onkeyup="lengthCheck(this.form, this.value, this.name)"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled" /> &nbsp;년&nbsp;&nbsp;
+						 <input type="password" name="EXPIRE_MM" title="유효기간 월" class="txt"  size="2" maxlength="2"
+						            onkeyup="lengthCheck(this.form, this.value, this.name)"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled" /> 월</p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>카드 CVC번호</p></th>
+						<td><p class="input_3char">
+						<input type="password" name="CVC_NO" title="카드 CVC번호" class="txt" value="" size="6" maxlength="3" id="STD_TEXT_FIELD3"
+						            onkeyup="lengthCheck(this.form, this.value, this.name)"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled" enc="on"/>
+							 (카드 서명란에 기재되어 있는 숫자 중 뒷 3자리)<span id="usafeon_CVC_NO"></span> </p></td>
+					</tr>
+					<tr>
+						<th scope="row"><p>연락처 번호 입력</p></th>
+						<td><p>
+							<span class="input_phone">
+								<select name="HAND_PHONE1"  title="연락처 앞자리" >
+									<option value="010">010</option>
+									<option value="011">011</option>
+									<option value="0130">0130</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+									<option value="02">02</option>
+									<option value="0303">0303</option>
+									<option value="031">031</option>
+									<option value="032">032</option>
+									<option value="033">033</option>
+									<option value="041">041</option>
+									<option value="042">042</option>
+									<option value="043">043</option>
+									<option value="0502">0502</option>
+									<option value="0503">0503</option>
+									<option value="0504">0504</option>
+									<option value="0505">0505</option>
+									<option value="0506">0506</option>
+									<option value="051">051</option>
+									<option value="052">052</option>
+									<option value="053">053</option>
+									<option value="054">054</option>
+									<option value="055">055</option>
+									<option value="061">061</option>
+									<option value="062">062</option>
+									<option value="063">063</option>
+									<option value="064">064</option>
+									<option value="070">070</option>
+									<option value="080">080</option>
+								</select>&nbsp;-&nbsp;
+								<input type="text" name="HAND_PHONE2" value="" size="4" maxlength="4" title="연락처  가운데자리" class="txt"
+								    onKeyUp="lengthCheck(this.form, this.value, this.name)"
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled" /> &nbsp;-&nbsp;
+								<input type="text" name="HAND_PHONE3" value="" size="4" maxlength="4" title="연락처  뒷자리" class="txt" 
+									onkeypress="checkTypes(this, 'NUMB');"
+									onblur="checkTypesOnBlur(this, 'NUMB');"
+									style="ime-mode:disabled" /> (납부신청시에 이상이 있을 경우 연락 받으실 전화번호)
+							</span>
+						</p></td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="step02_tiptxt01">법인(공용)카드, 체크카드, 올앳카드, 가족카드, 기프트카드는 <span class="txt_org">신청불가!</span></p>
+			<p class="step02_tiptxt02">전기요금 납부서비스는 신청 후 정기적으로 발생하는 전기요금에 대해서 한전 전국지점 또는 한전사이버지점을 통하여 <br />변경 또는 해지를 하지 않으면 계속해서 자동납부가 됨을 인지하시기 바랍니다.</p>
+			<div class="line_lgray_p0">&nbsp;</div>
+			 <!-- btn 100508 -->
+			<div class="btnset"> 							
+				<div class="btnr">
+					<a href="javascript:valid();" class="btn btn_blue"><span>확인</span></a>
+					<a href="javascript:goCancel();" class="btn btn_white"><span>취소</span></a>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

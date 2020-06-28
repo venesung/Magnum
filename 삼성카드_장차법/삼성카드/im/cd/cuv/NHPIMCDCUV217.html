@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>닥터카서비스 대상 확인 - 삼성카드</title>
+<link href="/css/everland.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+	#input {padding-left:10px; height:20px; border:1px #E7E7E7 solid; width:320px;}
+</style>
+</head>
+<body style="margin:0px;" onload="init();">
+<table cellpadding="0" cellspacing="0" border="0">
+<form name="form1" method="post" onsubmit="return false;">
+	<tr>
+		<td><img src="/images/drcar/coweb/top_01.gif" alt="닥터카서비스 대상 확인" /></td>
+	</tr>
+	<tr>
+		<td align="center" style="background:url(/images/drcar/coweb/070821_reserve_joinpop_01_02.gif) no-repeat top; width:400px; height:87px;">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td align="left"><p style="color:#000000;">닥터카서비스 요청 고객 카드번호를 입력해주세요</p></td>
+				</tr>
+				<tr>
+				  <td align="center">
+				   	<input name="CARD_NO1" maxlength="4" type="text" style="width:70px; height:20px; text-align:left;" onKeyUp="next_focus(document.form1.CARD_NO1,document.form1.CARD_NO2);" onKeyPress="num_only();" title="카드번호 첫번째 자리" />
+				   	-
+				   	<input name="CARD_NO2" maxlength="4" type="password" style="width:70px; height:20px; text-align:left;" onKeyUp="next_focus(document.form1.CARD_NO2,document.form1.CARD_NO3);" onKeyPress="num_only();" title="카드번호 두번째 자리" />
+				   	-
+				   	<input name="CARD_NO3" maxlength="4" type="password" style="width:70px; height:20px; text-align:left;" onKeyUp="next_focus(document.form1.CARD_NO3,document.form1.CARD_NO4);" onKeyPress="num_only();" title="카드번호 세번째 자리" />
+				   	-
+				   	<input name="CARD_NO4" maxlength="4" type="text" style="width:70px; height:20px; text-align:left;" onKeyPress="javascript:Enter();" title="카드번호 네번째 자리" />
+				   </td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" style="background:url(/images/drcar/coweb/070821_reserve_joinpop_01_03.gif) no-repeat top; width:400px; height:100px;">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td style="list-style: none; padding-left: 28px;"><img src="/images/drcar/reserve/etc/icD01.gif" alt="" /></td>
+					<td style="padding-left: 11px;	line-height: 1.6em;	letter-spacing: -1px;">본 확인 서비스는 삼성카드에서 제공합니다.</td>
+				</tr>
+				<tr>
+					<td style="list-style: none; padding-left: 28px;"><img src="/images/drcar/reserve/etc/icD01.gif" alt="" /></td>
+					<td style="padding-left: 11px;	line-height: 1.6em;	letter-spacing: -1px;">소지하신 카드번호를 정확히 입력해 주십시오</td>
+				</tr>
+				<tr>
+					<td style="list-style: none; padding-left: 28px;"></td>
+					<td style="padding-left: 11px;	line-height: 1.6em;	letter-spacing: -1px;">카드번호를 잘못 입력하실 경우, 대상 여부가 정확히 안내 되지 않습니다.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td><img src="/images/drcar/coweb/070821_reserve_joinpop_02.gif" alt="" /></td>
+					<td><a href="javascript:Go();"><img src="/images/drcar/coweb/btn_search.gif" alt="조회하기" /></a></td>
+					<td><img src="/images/drcar/coweb/070821_reserve_joinpop_03.gif" alt="" /></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="/images/drcar/coweb/070821_reserve_joinpop_04.gif" alt="삼성카드 고객센터 1588-8700" /></td>
+	</tr>
+</form>
+</table>
+</body>
+</html>

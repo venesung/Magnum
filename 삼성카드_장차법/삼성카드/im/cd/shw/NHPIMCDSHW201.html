@@ -1,0 +1,746 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.scard.hp.im.cd.shw.vo.*"%>
+<%
+ //GNB에 필요한 배너 셋팅용 변수
+ ArrayList<ITSHCMSSTRABANNERMAPTTVO>  straBannerMap  = (ArrayList<ITSHCMSSTRABANNERMAPTTVO>)request.getAttribute(  "straBannerMap"  );
+ ArrayList<ITSHCMSSTRABANNERINFOTTVO> straBannerList  = (ArrayList<ITSHCMSSTRABANNERINFOTTVO>)request.getAttribute(  "straBannerList"  );
+ ArrayList<ITSHCMSSEASBANNERMAPTTVO>  seasonBannerMap  = (ArrayList<ITSHCMSSEASBANNERMAPTTVO>)request.getAttribute(  "seasonBannerMap"  );
+ ArrayList<ITSHCMSSEASBANNERINFOTTVO> seasonBannerList = (ArrayList<ITSHCMSSEASBANNERINFOTTVO>)request.getAttribute(  "seasonBannerList" );
+ ArrayList<ITSHCMSNUMCARDMAPTTVO>        numMap              = (ArrayList<ITSHCMSNUMCARDMAPTTVO>)request.getAttribute(   "numMap"   );
+ ArrayList<ITSHCMSCARDINFOTTVO>       cardList       = (ArrayList<ITSHCMSCARDINFOTTVO>)request.getAttribute(   "cardList"   );
+    ArrayList<ITCKCARDDETTTVO>              cardDetail          = (ArrayList<ITCKCARDDETTTVO>)request.getAttribute(    "cardDetail"  );
+    
+    ITSHCMSCARDINFOTTVO      card1    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card1Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card1A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card1B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card1C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card2    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card2Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card2A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card2B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card2C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card3    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card3Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card3A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card3B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card3C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card4    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card4Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card4A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card4B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card4C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card5    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card5Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card5A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card5B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card5C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card6    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card6Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card6A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card6B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card6C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card7    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card7Plus   = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    ITSHCMSCARDINFOTTVO      card7A    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card7B    = new ITSHCMSCARDINFOTTVO();
+    ITSHCMSCARDINFOTTVO      card7C    = new ITSHCMSCARDINFOTTVO();
+    /*2012.07.19 신규 코드값 추가*/
+    
+    for( ITSHCMSCARDINFOTTVO temp : cardList ) {
+     if( temp.getProdId() != null && temp.getProdId().equals( "1" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card1Plus  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card1A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card1B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card1C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card1  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card1   = ( ITSHCMSCARDINFOTTVO )temp;
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "2" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card2Plus  = ( ITSHCMSCARDINFOTTVO )temp;     
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card2A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card2B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card2C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card2  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card2   = ( ITSHCMSCARDINFOTTVO )temp;
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "3" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card3Plus  = ( ITSHCMSCARDINFOTTVO )temp;      
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card3A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card3B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card3C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card3  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card3   = ( ITSHCMSCARDINFOTTVO )temp; 
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "4" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card4Plus  = ( ITSHCMSCARDINFOTTVO )temp;      
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card4A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card4B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card4C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card4  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card4   = ( ITSHCMSCARDINFOTTVO )temp;
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "5" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card5Plus  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card5A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card5B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card5C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card5  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card5   = ( ITSHCMSCARDINFOTTVO )temp;
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "6" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card6Plus  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card6A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card6B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card6C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card6  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card6   = ( ITSHCMSCARDINFOTTVO )temp;
+     }else if( temp.getProdId() != null && temp.getProdId().equals( "7" ) ) {
+      if( temp.getPlusYn().equals( "Y" ) ) card7Plus  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "A" ) ) card7A  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "B" ) ) card7B  = ( ITSHCMSCARDINFOTTVO )temp;
+      if( temp.getPlusYn().equals( "C" ) ) card7C  = ( ITSHCMSCARDINFOTTVO )temp;
+      /*2012.07.19 신규 코드값 추가*/
+      if( temp.getPlusYn().equals( "N" ) ) card7  = ( ITSHCMSCARDINFOTTVO )temp;//2012.07.19 수정
+      //else         card7   = ( ITSHCMSCARDINFOTTVO )temp;
+     }
+    }
+%>
+<?xml version="1.0" encoding="utf-8"?>
+<%
+/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDSHW201.jsp
+ * Author: 브릭스리퍼블릭 이재성 과장
+ * Created on 2012. 04. 15.
+ *
+ * COPYRIGHT 2010 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+%>
+<root>
+ <setting pagewidth="451" pageheight="457" />
+ <menu>
+ 
+ <!-- 20121126 버튼 노드 변경 - 정기일반영 12.11.29 -->
+ <view1 funcName="view1Func" />
+ <view2 funcName="view2Func" />
+ <!-- //20121126 버튼노드 변경 - 정기일반영 12.11.29 -->
+ 
+  <tvcf funcName="tvcfUrl" />
+  <%if( card1.getProdCode() != null && !card1.getProdCode().equals( "" ) && !card1.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card1.getTargetPath() + "/" + card1.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card2.getProdCode() != null && !card2.getProdCode().equals( "" ) && !card2.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card2.getTargetPath() + "/" + card2.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card3.getProdCode() != null && !card3.getProdCode().equals( "" ) && !card3.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card3.getTargetPath() + "/" + card3.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card4.getProdCode() != null && !card4.getProdCode().equals( "" ) && !card4.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card4.getTargetPath() + "/" + card4.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card5.getProdCode() != null && !card5.getProdCode().equals( "" ) && !card5.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card5.getTargetPath() + "/" + card5.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card6.getProdCode() != null && !card6.getProdCode().equals( "" ) && !card6.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card6.getTargetPath() + "/" + card6.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+
+  <%if( card7.getProdCode() != null && !card7.getProdCode().equals( "" ) && !card7.getProdCode().equals( "null" ) ) {%>
+   <item visible="1" src="<%=card7.getTargetPath() + "/" + card7.getProdLImg()%>" />
+  <%}else{%>
+   <item visible="0" src="" />
+  <%}%>
+  
+ </menu>
+<!--page-->
+ <page flipDrag="true" >
+ <!-- 
+ 2012.07.19 해당카드별 tab 추가 변경.
+ 숫자카드1인 경우만 기본형, 스카이패스(A type), 아시아나(B type), (C type), 1+ 순으로 정렬
+ 탭메뉴링크 정렬기준이 됨.  
+ -->
+ <%if( card1.getProdCode() != null && !card1.getProdCode().equals( "" ) && !card1.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드1(포인트)" src="<%=card1.getTargetPath() + "/" + card1.getProdTOImg()%>">
+   <image src="<%=card1.getTargetPath() + "/" + card1.getProdItImg()%>" />
+   <%
+    if( card1.getTvcfUrl() != null && !card1.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card1.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card1.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card1.getProdCode()%>|<%=card1.getProdName()%>|<%=card1.getTargetPath()+"/"+card1.getProdSImg()%>|<%=card1.getTargetPath()+"/"+card1.getProdLImg()%>|<%=card1.getTargetPath()+"/"+card1.getProdNImg()%>|<%=card1.getTargetPath()+"/"+card1.getProdHKImg()%>|<%=card1.getFeeOvalComm()%>|<%=card1.getFeeLocalComm()%>|A|<%=card1.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card1.getProdCode()%>|<%=card1.getProdName()%>|A')" param="<%=card1.getProdCode()%>|<%=card1.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card1A.getProdCode() != null && !card1A.getProdCode().equals( "" ) && !card1A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드1(스카이패스)" src="<%=card1A.getTargetPath() + "/" + card1A.getProdTOImg()%>">
+   <image src="<%=card1A.getTargetPath() + "/" + card1A.getProdItImg()%>" />
+   <%
+    if( card1A.getTvcfUrl() != null && !card1A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card1A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card1A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card1A.getProdCode()%>|<%=card1A.getProdName()%>|<%=card1A.getTargetPath()+"/"+card1A.getProdSImg()%>|<%=card1A.getTargetPath()+"/"+card1A.getProdLImg()%>|<%=card1A.getTargetPath()+"/"+card1A.getProdNImg()%>|<%=card1A.getTargetPath()+"/"+card1A.getProdHKImg()%>|<%=card1A.getFeeOvalComm()%>|<%=card1A.getFeeLocalComm()%>|A|<%=card1A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card1A.getProdCode()%>|<%=card1A.getProdName()%>|A')" param="<%=card1A.getProdCode()%>|<%=card1A.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card1B.getProdCode() != null && !card1B.getProdCode().equals( "" ) && !card1B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드1(아시아나)" src="<%=card1B.getTargetPath() + "/" + card1B.getProdTOImg()%>">
+   <image src="<%=card1B.getTargetPath() + "/" + card1B.getProdItImg()%>" />
+   <%
+    if( card1B.getTvcfUrl() != null && !card1B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card1B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card1B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card1B.getProdCode()%>|<%=card1B.getProdName()%>|<%=card1B.getTargetPath()+"/"+card1B.getProdSImg()%>|<%=card1B.getTargetPath()+"/"+card1B.getProdLImg()%>|<%=card1B.getTargetPath()+"/"+card1B.getProdNImg()%>|<%=card1B.getTargetPath()+"/"+card1B.getProdHKImg()%>|<%=card1B.getFeeOvalComm()%>|<%=card1B.getFeeLocalComm()%>|A|<%=card1B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card1B.getProdCode()%>|<%=card1B.getProdName()%>|A')" param="<%=card1B.getProdCode()%>|<%=card1B.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card1C.getProdCode() != null && !card1C.getProdCode().equals( "" ) && !card1C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드1C" src="<%=card1C.getTargetPath() + "/" + card1C.getProdTOImg()%>">
+   <image src="<%=card1C.getTargetPath() + "/" + card1C.getProdItImg()%>" />
+   <%
+    if( card1C.getTvcfUrl() != null && !card1C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card1C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card1C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card1C.getProdCode()%>|<%=card1C.getProdName()%>|<%=card1C.getTargetPath()+"/"+card1C.getProdSImg()%>|<%=card1C.getTargetPath()+"/"+card1C.getProdLImg()%>|<%=card1C.getTargetPath()+"/"+card1C.getProdNImg()%>|<%=card1C.getTargetPath()+"/"+card1C.getProdHKImg()%>|<%=card1C.getFeeOvalComm()%>|<%=card1C.getFeeLocalComm()%>|A|<%=card1C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card1C.getProdCode()%>|<%=card1C.getProdName()%>|A')" param="<%=card1C.getProdCode()%>|<%=card1C.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card1Plus.getProdCode() != null && !card1Plus.getProdCode().equals( "" ) && !card1Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드1+" src="<%=card1Plus.getTargetPath() + "/" + card1Plus.getProdTOImg()%>">
+   <image src="<%=card1Plus.getTargetPath() + "/" + card1Plus.getProdItImg()%>" />
+   <%
+    if( card1Plus.getTvcfUrl() != null && !card1Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card1Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card1Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card1Plus.getProdCode()%>|<%=card1Plus.getProdName()%>|<%=card1Plus.getTargetPath()+"/"+card1Plus.getProdSImg()%>|<%=card1Plus.getTargetPath()+"/"+card1Plus.getProdLImg()%>|<%=card1Plus.getTargetPath()+"/"+card1Plus.getProdNImg()%>|<%=card1Plus.getTargetPath()+"/"+card1Plus.getProdHKImg()%>|<%=card1Plus.getFeeOvalComm()%>|<%=card1Plus.getFeeLocalComm()%>|A|<%=card1Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card1Plus.getProdCode()%>|<%=card1Plus.getProdName()%>|A')" param="<%=card1Plus.getProdCode()%>|<%=card1Plus.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ </page>
+ 
+ <page flipDrag="true" >
+ <%if( card2.getProdCode() != null && !card2.getProdCode().equals( "" ) && !card2.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드2" src="<%=card2.getTargetPath() + "/" + card2.getProdTOImg()%>">
+   <image src="<%=card2.getTargetPath() + "/" + card2.getProdItImg()%>" />
+   <%
+    if( card2.getTvcfUrl() != null && !card2.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card2.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card2.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card2.getProdCode()%>|<%=card2.getProdName()%>|<%=card2.getTargetPath()+"/"+card2.getProdSImg()%>|<%=card2.getTargetPath()+"/"+card2.getProdLImg()%>|<%=card2.getTargetPath()+"/"+card2.getProdNImg()%>|<%=card2.getTargetPath()+"/"+card2.getProdHKImg()%>|<%=card2.getFeeOvalComm()%>|<%=card2.getFeeLocalComm()%>|A|<%=card2.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card2.getProdCode()%>|<%=card2.getProdName()%>|A')" param="<%=card2.getProdCode()%>|<%=card2.getProdName()%>|A" />
+  </tab>
+ <%}%>
+ 
+ <%if( card2Plus.getProdCode() != null && !card2Plus.getProdCode().equals( "" ) && !card2Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드2+" src="<%=card2Plus.getTargetPath() + "/" + card2Plus.getProdTOImg()%>">
+   <image src="<%=card2Plus.getTargetPath() + "/" + card2Plus.getProdItImg()%>" />
+   <%
+    if( card2Plus.getTvcfUrl() != null && !card2Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card2Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card2Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card2Plus.getProdCode()%>|<%=card2Plus.getProdName()%>|<%=card2Plus.getTargetPath()+"/"+card2Plus.getProdSImg()%>|<%=card2Plus.getTargetPath()+"/"+card2Plus.getProdLImg()%>|<%=card2Plus.getTargetPath()+"/"+card2Plus.getProdNImg()%>|<%=card2Plus.getTargetPath()+"/"+card2Plus.getProdHKImg()%>|<%=card2Plus.getFeeOvalComm()%>|<%=card2Plus.getFeeLocalComm()%>|A|<%=card2Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card2Plus.getProdCode()%>|<%=card2Plus.getProdName()%>|A')" param="<%=card2Plus.getProdCode()%>|<%=card2Plus.getProdName()%>|A" />
+  </tab>
+  <%}%>
+ 
+ <%if( card2A.getProdCode() != null && !card2A.getProdCode().equals( "" ) && !card2A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드2A" src="<%=card2A.getTargetPath() + "/" + card2A.getProdTOImg()%>">
+   <image src="<%=card2A.getTargetPath() + "/" + card2A.getProdItImg()%>" />
+   <%
+    if( card2A.getTvcfUrl() != null && !card2A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card2A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card2A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card2A.getProdCode()%>|<%=card2A.getProdName()%>|<%=card2A.getTargetPath()+"/"+card2A.getProdSImg()%>|<%=card2A.getTargetPath()+"/"+card2A.getProdLImg()%>|<%=card2A.getTargetPath()+"/"+card2A.getProdNImg()%>|<%=card2A.getTargetPath()+"/"+card2A.getProdHKImg()%>|<%=card2A.getFeeOvalComm()%>|<%=card2A.getFeeLocalComm()%>|A|<%=card2A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card2A.getProdCode()%>|<%=card2A.getProdName()%>|A')" param="<%=card2A.getProdCode()%>|<%=card2A.getProdName()%>|A" />
+  </tab>
+  <%}%>
+ 
+ <%if( card2B.getProdCode() != null && !card2B.getProdCode().equals( "" ) && !card2B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드2B" src="<%=card2B.getTargetPath() + "/" + card2B.getProdTOImg()%>">
+   <image src="<%=card2B.getTargetPath() + "/" + card2B.getProdItImg()%>" />
+   <%
+    if( card2B.getTvcfUrl() != null && !card2B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card2B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card2B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card2B.getProdCode()%>|<%=card2B.getProdName()%>|<%=card2B.getTargetPath()+"/"+card2B.getProdSImg()%>|<%=card2B.getTargetPath()+"/"+card2B.getProdLImg()%>|<%=card2B.getTargetPath()+"/"+card2B.getProdNImg()%>|<%=card2B.getTargetPath()+"/"+card2B.getProdHKImg()%>|<%=card2B.getFeeOvalComm()%>|<%=card2B.getFeeLocalComm()%>|A|<%=card2B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card2B.getProdCode()%>|<%=card2B.getProdName()%>|A')" param="<%=card2B.getProdCode()%>|<%=card2B.getProdName()%>|A" />
+  </tab>
+  <%}%>
+ <%if( card2C.getProdCode() != null && !card2C.getProdCode().equals( "" ) && !card2C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드2C" src="<%=card2C.getTargetPath() + "/" + card2C.getProdTOImg()%>">
+   <image src="<%=card2C.getTargetPath() + "/" + card2C.getProdItImg()%>" />
+   <%
+    if( card2C.getTvcfUrl() != null && !card2C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card2C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card2C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card2C.getProdCode()%>|<%=card2C.getProdName()%>|<%=card2C.getTargetPath()+"/"+card2C.getProdSImg()%>|<%=card2C.getTargetPath()+"/"+card2C.getProdLImg()%>|<%=card2C.getTargetPath()+"/"+card2C.getProdNImg()%>|<%=card2C.getTargetPath()+"/"+card2C.getProdHKImg()%>|<%=card2C.getFeeOvalComm()%>|<%=card2C.getFeeLocalComm()%>|A|<%=card2C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card2C.getProdCode()%>|<%=card2C.getProdName()%>|A')" param="<%=card2C.getProdCode()%>|<%=card2C.getProdName()%>|A" />
+  </tab>
+  <%}%>
+ </page>
+ <page flipDrag="true" >
+ <%if( card3.getProdCode() != null && !card3.getProdCode().equals( "" ) && !card3.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드3" src="<%=card3.getTargetPath() + "/" + card3.getProdTOImg()%>">
+   <image src="<%=card3.getTargetPath() + "/" + card3.getProdItImg()%>" />
+   <%
+    if( card3.getTvcfUrl() != null && !card3.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card3.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card3.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card3.getProdCode()%>|<%=card3.getProdName()%>|<%=card3.getTargetPath()+"/"+card3.getProdSImg()%>|<%=card3.getTargetPath()+"/"+card3.getProdLImg()%>|<%=card3.getTargetPath()+"/"+card3.getProdNImg()%>|<%=card3.getTargetPath()+"/"+card3.getProdHKImg()%>|<%=card3.getFeeOvalComm()%>|<%=card3.getFeeLocalComm()%>|A|<%=card3.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card3.getProdCode()%>|<%=card3.getProdName()%>|A')" param="<%=card3.getProdCode()%>|<%=card3.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card3Plus.getProdCode() != null && !card3Plus.getProdCode().equals( "" ) && !card3Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드3+" src="<%=card3Plus.getTargetPath() + "/" + card3Plus.getProdTOImg()%>">
+   <image src="<%=card3Plus.getTargetPath() + "/" + card3Plus.getProdItImg()%>" />
+   <%
+    if( card3Plus.getTvcfUrl() != null && !card3Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card3Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card3Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card3Plus.getProdCode()%>|<%=card3Plus.getProdName()%>|<%=card3Plus.getTargetPath()+"/"+card3Plus.getProdSImg()%>|<%=card3Plus.getTargetPath()+"/"+card3Plus.getProdLImg()%>|<%=card3Plus.getTargetPath()+"/"+card3Plus.getProdNImg()%>|<%=card3Plus.getTargetPath()+"/"+card3Plus.getProdHKImg()%>|<%=card3Plus.getFeeOvalComm()%>|<%=card3Plus.getFeeLocalComm()%>|A|<%=card3Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card3Plus.getProdCode()%>|<%=card3Plus.getProdName()%>|A')" param="<%=card3Plus.getProdCode()%>|<%=card3Plus.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card3A.getProdCode() != null && !card3A.getProdCode().equals( "" ) && !card3A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드3A" src="<%=card3A.getTargetPath() + "/" + card3A.getProdTOImg()%>">
+   <image src="<%=card3A.getTargetPath() + "/" + card3A.getProdItImg()%>" />
+   <%
+    if( card3A.getTvcfUrl() != null && !card3A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card3A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card3A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card3A.getProdCode()%>|<%=card3A.getProdName()%>|<%=card3A.getTargetPath()+"/"+card3A.getProdSImg()%>|<%=card3A.getTargetPath()+"/"+card3A.getProdLImg()%>|<%=card3A.getTargetPath()+"/"+card3A.getProdNImg()%>|<%=card3A.getTargetPath()+"/"+card3A.getProdHKImg()%>|<%=card3A.getFeeOvalComm()%>|<%=card3A.getFeeLocalComm()%>|A|<%=card3A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card3A.getProdCode()%>|<%=card3A.getProdName()%>|A')" param="<%=card3A.getProdCode()%>|<%=card3A.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card3B.getProdCode() != null && !card3B.getProdCode().equals( "" ) && !card3B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드3B" src="<%=card3B.getTargetPath() + "/" + card3B.getProdTOImg()%>">
+   <image src="<%=card3B.getTargetPath() + "/" + card3B.getProdItImg()%>" />
+   <%
+    if( card3B.getTvcfUrl() != null && !card3B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card3B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card3B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card3B.getProdCode()%>|<%=card3B.getProdName()%>|<%=card3B.getTargetPath()+"/"+card3B.getProdSImg()%>|<%=card3B.getTargetPath()+"/"+card3B.getProdLImg()%>|<%=card3B.getTargetPath()+"/"+card3B.getProdNImg()%>|<%=card3B.getTargetPath()+"/"+card3B.getProdHKImg()%>|<%=card3B.getFeeOvalComm()%>|<%=card3B.getFeeLocalComm()%>|A|<%=card3B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card3B.getProdCode()%>|<%=card3B.getProdName()%>|A')" param="<%=card3B.getProdCode()%>|<%=card3B.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card3C.getProdCode() != null && !card3C.getProdCode().equals( "" ) && !card3C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드3C" src="<%=card3C.getTargetPath() + "/" + card3C.getProdTOImg()%>">
+   <image src="<%=card3C.getTargetPath() + "/" + card3C.getProdItImg()%>" />
+   <%
+    if( card3C.getTvcfUrl() != null && !card3C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card3C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card3C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card3C.getProdCode()%>|<%=card3C.getProdName()%>|<%=card3C.getTargetPath()+"/"+card3C.getProdSImg()%>|<%=card3C.getTargetPath()+"/"+card3C.getProdLImg()%>|<%=card3C.getTargetPath()+"/"+card3C.getProdNImg()%>|<%=card3C.getTargetPath()+"/"+card3C.getProdHKImg()%>|<%=card3C.getFeeOvalComm()%>|<%=card3C.getFeeLocalComm()%>|A|<%=card3C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card3C.getProdCode()%>|<%=card3C.getProdName()%>|A')" param="<%=card3C.getProdCode()%>|<%=card3C.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ </page>
+ <page flipDrag="true" >
+ <%if( card4.getProdCode() != null && !card4.getProdCode().equals( "" ) && !card4.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드4" src="<%=card4.getTargetPath() + "/" + card4.getProdTOImg()%>">
+   <image src="<%=card4.getTargetPath() + "/" + card4.getProdItImg()%>" />
+   <%
+    if( card4.getTvcfUrl() != null && !card4.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card4.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card4.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card4.getProdCode()%>|<%=card4.getProdName()%>|<%=card4.getTargetPath()+"/"+card4.getProdSImg()%>|<%=card4.getTargetPath()+"/"+card4.getProdLImg()%>|<%=card4.getTargetPath()+"/"+card4.getProdNImg()%>|<%=card4.getTargetPath()+"/"+card4.getProdHKImg()%>|<%=card4.getFeeOvalComm()%>|<%=card4.getFeeLocalComm()%>|A|<%=card4.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card4.getProdCode()%>|<%=card4.getProdName()%>|A')" param="<%=card4.getProdCode()%>|<%=card4.getProdName()%>|A" />
+  </tab> 
+ <%} %>
+ <%if( card4Plus.getProdCode() != null && !card4Plus.getProdCode().equals( "" ) && !card4Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드4+" src="<%=card4Plus.getTargetPath() + "/" + card4Plus.getProdTOImg()%>">
+   <image src="<%=card4Plus.getTargetPath() + "/" + card4Plus.getProdItImg()%>" />
+   <%
+    if( card4Plus.getTvcfUrl() != null && !card4Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card4Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card4Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card4Plus.getProdCode()%>|<%=card4Plus.getProdName()%>|<%=card4Plus.getTargetPath()+"/"+card4Plus.getProdSImg()%>|<%=card4Plus.getTargetPath()+"/"+card4Plus.getProdLImg()%>|<%=card4Plus.getTargetPath()+"/"+card4Plus.getProdNImg()%>|<%=card4Plus.getTargetPath()+"/"+card4Plus.getProdHKImg()%>|<%=card4Plus.getFeeOvalComm()%>|<%=card4Plus.getFeeLocalComm()%>|A|<%=card4Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card4Plus.getProdCode()%>|<%=card4Plus.getProdName()%>|A')" param="<%=card4Plus.getProdCode()%>|<%=card4Plus.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card4A.getProdCode() != null && !card4A.getProdCode().equals( "" ) && !card4A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드4A" src="<%=card4A.getTargetPath() + "/" + card4A.getProdTOImg()%>">
+   <image src="<%=card4A.getTargetPath() + "/" + card4A.getProdItImg()%>" />
+   <%
+    if( card4A.getTvcfUrl() != null && !card4A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card4A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card4A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card4A.getProdCode()%>|<%=card4A.getProdName()%>|<%=card4A.getTargetPath()+"/"+card4A.getProdSImg()%>|<%=card4A.getTargetPath()+"/"+card4A.getProdLImg()%>|<%=card4A.getTargetPath()+"/"+card4A.getProdNImg()%>|<%=card4A.getTargetPath()+"/"+card4A.getProdHKImg()%>|<%=card4A.getFeeOvalComm()%>|<%=card4A.getFeeLocalComm()%>|A|<%=card4A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card4A.getProdCode()%>|<%=card4A.getProdName()%>|A')" param="<%=card4A.getProdCode()%>|<%=card4A.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card4B.getProdCode() != null && !card4B.getProdCode().equals( "" ) && !card4B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드4B" src="<%=card4B.getTargetPath() + "/" + card4B.getProdTOImg()%>">
+   <image src="<%=card4B.getTargetPath() + "/" + card4B.getProdItImg()%>" />
+   <%
+    if( card4B.getTvcfUrl() != null && !card4B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card4B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card4B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card4B.getProdCode()%>|<%=card4B.getProdName()%>|<%=card4B.getTargetPath()+"/"+card4B.getProdSImg()%>|<%=card4B.getTargetPath()+"/"+card4B.getProdLImg()%>|<%=card4B.getTargetPath()+"/"+card4B.getProdNImg()%>|<%=card4B.getTargetPath()+"/"+card4B.getProdHKImg()%>|<%=card4B.getFeeOvalComm()%>|<%=card4B.getFeeLocalComm()%>|A|<%=card4B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card4B.getProdCode()%>|<%=card4B.getProdName()%>|A')" param="<%=card4B.getProdCode()%>|<%=card4B.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card4C.getProdCode() != null && !card4C.getProdCode().equals( "" ) && !card4C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드4C" src="<%=card4C.getTargetPath() + "/" + card4C.getProdTOImg()%>">
+   <image src="<%=card4C.getTargetPath() + "/" + card4C.getProdItImg()%>" />
+   <%
+    if( card4C.getTvcfUrl() != null && !card4C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card4C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card4C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card4C.getProdCode()%>|<%=card4C.getProdName()%>|<%=card4C.getTargetPath()+"/"+card4C.getProdSImg()%>|<%=card4C.getTargetPath()+"/"+card4C.getProdLImg()%>|<%=card4C.getTargetPath()+"/"+card4C.getProdNImg()%>|<%=card4C.getTargetPath()+"/"+card4C.getProdHKImg()%>|<%=card4C.getFeeOvalComm()%>|<%=card4C.getFeeLocalComm()%>|A|<%=card4C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card4C.getProdCode()%>|<%=card4C.getProdName()%>|A')" param="<%=card4C.getProdCode()%>|<%=card4C.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ </page>
+ <page flipDrag="true" >
+ <%if( card5.getProdCode() != null && !card5.getProdCode().equals( "" ) && !card5.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드5" src="<%=card5.getTargetPath() + "/" + card5.getProdTOImg()%>">
+   <image src="<%=card5.getTargetPath() + "/" + card5.getProdItImg()%>" />
+   <%
+    if( card5.getTvcfUrl() != null && !card5.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card5.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card5.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card5.getProdCode()%>|<%=card5.getProdName()%>|<%=card5.getTargetPath()+"/"+card5.getProdSImg()%>|<%=card5.getTargetPath()+"/"+card5.getProdLImg()%>|<%=card5.getTargetPath()+"/"+card5.getProdNImg()%>|<%=card5.getTargetPath()+"/"+card5.getProdHKImg()%>|<%=card5.getFeeOvalComm()%>|<%=card5.getFeeLocalComm()%>|A|<%=card5.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card5.getProdCode()%>|<%=card5.getProdName()%>|A')" param="<%=card5.getProdCode()%>|<%=card5.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card5Plus.getProdCode() != null && !card5Plus.getProdCode().equals( "" ) && !card5Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드5+" src="<%=card5Plus.getTargetPath() + "/" + card5Plus.getProdTOImg()%>">
+   <image src="<%=card5Plus.getTargetPath() + "/" + card5Plus.getProdItImg()%>" />
+   <%
+    if( card5Plus.getTvcfUrl() != null && !card5Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card5Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card5Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card5Plus.getProdCode()%>|<%=card5Plus.getProdName()%>|<%=card5Plus.getTargetPath()+"/"+card5Plus.getProdSImg()%>|<%=card5Plus.getTargetPath()+"/"+card5Plus.getProdLImg()%>|<%=card5Plus.getTargetPath()+"/"+card5Plus.getProdNImg()%>|<%=card5Plus.getTargetPath()+"/"+card5Plus.getProdHKImg()%>|<%=card5Plus.getFeeOvalComm()%>|<%=card5Plus.getFeeLocalComm()%>|A|<%=card5Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card5Plus.getProdCode()%>|<%=card5Plus.getProdName()%>|A')" param="<%=card5Plus.getProdCode()%>|<%=card5Plus.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card5A.getProdCode() != null && !card5A.getProdCode().equals( "" ) && !card5A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드5A" src="<%=card5A.getTargetPath() + "/" + card5A.getProdTOImg()%>">
+   <image src="<%=card5A.getTargetPath() + "/" + card5A.getProdItImg()%>" />
+   <%
+    if( card5A.getTvcfUrl() != null && !card5A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card5A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card5A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card5A.getProdCode()%>|<%=card5A.getProdName()%>|<%=card5A.getTargetPath()+"/"+card5A.getProdSImg()%>|<%=card5A.getTargetPath()+"/"+card5A.getProdLImg()%>|<%=card5A.getTargetPath()+"/"+card5A.getProdNImg()%>|<%=card5A.getTargetPath()+"/"+card5A.getProdHKImg()%>|<%=card5A.getFeeOvalComm()%>|<%=card5A.getFeeLocalComm()%>|A|<%=card5A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card5A.getProdCode()%>|<%=card5A.getProdName()%>|A')" param="<%=card5A.getProdCode()%>|<%=card5A.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card5B.getProdCode() != null && !card5B.getProdCode().equals( "" ) && !card5B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드5B" src="<%=card5B.getTargetPath() + "/" + card5B.getProdTOImg()%>">
+   <image src="<%=card5B.getTargetPath() + "/" + card5B.getProdItImg()%>" />
+   <%
+    if( card5B.getTvcfUrl() != null && !card5B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card5B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card5B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card5B.getProdCode()%>|<%=card5B.getProdName()%>|<%=card5B.getTargetPath()+"/"+card5B.getProdSImg()%>|<%=card5B.getTargetPath()+"/"+card5B.getProdLImg()%>|<%=card5B.getTargetPath()+"/"+card5B.getProdNImg()%>|<%=card5B.getTargetPath()+"/"+card5B.getProdHKImg()%>|<%=card5B.getFeeOvalComm()%>|<%=card5B.getFeeLocalComm()%>|A|<%=card5B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card5B.getProdCode()%>|<%=card5B.getProdName()%>|A')" param="<%=card5B.getProdCode()%>|<%=card5B.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card5C.getProdCode() != null && !card5C.getProdCode().equals( "" ) && !card5C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드5C" src="<%=card5C.getTargetPath() + "/" + card5C.getProdTOImg()%>">
+   <image src="<%=card5C.getTargetPath() + "/" + card5C.getProdItImg()%>" />
+   <%
+    if( card5C.getTvcfUrl() != null && !card5C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card5C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card5C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card5C.getProdCode()%>|<%=card5C.getProdName()%>|<%=card5C.getTargetPath()+"/"+card5C.getProdSImg()%>|<%=card5C.getTargetPath()+"/"+card5C.getProdLImg()%>|<%=card5C.getTargetPath()+"/"+card5C.getProdNImg()%>|<%=card5C.getTargetPath()+"/"+card5C.getProdHKImg()%>|<%=card5C.getFeeOvalComm()%>|<%=card5C.getFeeLocalComm()%>|A|<%=card5C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card5C.getProdCode()%>|<%=card5C.getProdName()%>|A')" param="<%=card5C.getProdCode()%>|<%=card5C.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ </page>
+ <page flipDrag="true" >
+ <%if( card6.getProdCode() != null && !card6.getProdCode().equals( "" ) && !card6.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드6" src="<%=card6.getTargetPath() + "/" + card6.getProdTOImg()%>">
+   <image src="<%=card6.getTargetPath() + "/" + card6.getProdItImg()%>" />
+   <%
+    if( card6.getTvcfUrl() != null && !card6.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card6.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card6.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card6.getProdCode()%>|<%=card6.getProdName()%>|<%=card6.getTargetPath()+"/"+card6.getProdSImg()%>|<%=card6.getTargetPath()+"/"+card6.getProdLImg()%>|<%=card6.getTargetPath()+"/"+card6.getProdNImg()%>|<%=card6.getTargetPath()+"/"+card6.getProdHKImg()%>|<%=card6.getFeeOvalComm()%>|<%=card6.getFeeLocalComm()%>|A|<%=card6.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card6.getProdCode()%>|<%=card6.getProdName()%>|A')" param="<%=card6.getProdCode()%>|<%=card6.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card6Plus.getProdCode() != null && !card6Plus.getProdCode().equals( "" ) && !card6Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드6+" src="<%=card6Plus.getTargetPath() + "/" + card6Plus.getProdTOImg()%>">
+   <image src="<%=card6Plus.getTargetPath() + "/" + card6Plus.getProdItImg()%>" />
+   <%
+    if( card6Plus.getTvcfUrl() != null && !card6Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card6Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card6Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card6Plus.getProdCode()%>|<%=card6Plus.getProdName()%>|<%=card6Plus.getTargetPath()+"/"+card6Plus.getProdSImg()%>|<%=card6Plus.getTargetPath()+"/"+card6Plus.getProdLImg()%>|<%=card6Plus.getTargetPath()+"/"+card6Plus.getProdNImg()%>|<%=card6Plus.getTargetPath()+"/"+card6Plus.getProdHKImg()%>|<%=card6Plus.getFeeOvalComm()%>|<%=card6Plus.getFeeLocalComm()%>|A|<%=card6Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card6Plus.getProdCode()%>|<%=card6Plus.getProdName()%>|A')" param="<%=card6Plus.getProdCode()%>|<%=card6Plus.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card6A.getProdCode() != null && !card6A.getProdCode().equals( "" ) && !card6A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드6A" src="<%=card6A.getTargetPath() + "/" + card6A.getProdTOImg()%>">
+   <image src="<%=card6A.getTargetPath() + "/" + card6A.getProdItImg()%>" />
+   <%
+    if( card6A.getTvcfUrl() != null && !card6A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card6A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card6A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card6A.getProdCode()%>|<%=card6A.getProdName()%>|<%=card6A.getTargetPath()+"/"+card6A.getProdSImg()%>|<%=card6A.getTargetPath()+"/"+card6A.getProdLImg()%>|<%=card6A.getTargetPath()+"/"+card6A.getProdNImg()%>|<%=card6A.getTargetPath()+"/"+card6A.getProdHKImg()%>|<%=card6A.getFeeOvalComm()%>|<%=card6A.getFeeLocalComm()%>|A|<%=card6A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card6A.getProdCode()%>|<%=card6A.getProdName()%>|A')" param="<%=card6A.getProdCode()%>|<%=card6A.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card6B.getProdCode() != null && !card6B.getProdCode().equals( "" ) && !card6B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드6B" src="<%=card6B.getTargetPath() + "/" + card6B.getProdTOImg()%>">
+   <image src="<%=card6B.getTargetPath() + "/" + card6B.getProdItImg()%>" />
+   <%
+    if( card6B.getTvcfUrl() != null && !card6B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card6B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card6B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card6B.getProdCode()%>|<%=card6B.getProdName()%>|<%=card6B.getTargetPath()+"/"+card6B.getProdSImg()%>|<%=card6B.getTargetPath()+"/"+card6B.getProdLImg()%>|<%=card6B.getTargetPath()+"/"+card6B.getProdNImg()%>|<%=card6B.getTargetPath()+"/"+card6B.getProdHKImg()%>|<%=card6B.getFeeOvalComm()%>|<%=card6B.getFeeLocalComm()%>|A|<%=card6B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card6B.getProdCode()%>|<%=card6B.getProdName()%>|A')" param="<%=card6B.getProdCode()%>|<%=card6B.getProdName()%>|A" />
+  </tab>  
+ <%}%>
+ <%if( card6C.getProdCode() != null && !card6C.getProdCode().equals( "" ) && !card6C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드6C" src="<%=card6C.getTargetPath() + "/" + card6C.getProdTOImg()%>">
+   <image src="<%=card6C.getTargetPath() + "/" + card6C.getProdItImg()%>" />
+   <%
+    if( card6C.getTvcfUrl() != null && !card6C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card6C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card6C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card6C.getProdCode()%>|<%=card6C.getProdName()%>|<%=card6C.getTargetPath()+"/"+card6C.getProdSImg()%>|<%=card6C.getTargetPath()+"/"+card6C.getProdLImg()%>|<%=card6C.getTargetPath()+"/"+card6C.getProdNImg()%>|<%=card6C.getTargetPath()+"/"+card6C.getProdHKImg()%>|<%=card6C.getFeeOvalComm()%>|<%=card6C.getFeeLocalComm()%>|A|<%=card6C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card6C.getProdCode()%>|<%=card6C.getProdName()%>|A')" param="<%=card6C.getProdCode()%>|<%=card6C.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ </page>
+ <page flipDrag="true" >
+ <%if( card7.getProdCode() != null && !card7.getProdCode().equals( "" ) && !card7.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드7" src="<%=card7.getTargetPath() + "/" + card7.getProdTOImg()%>">
+   <image src="<%=card7.getTargetPath() + "/" + card7.getProdItImg()%>" />
+   <%
+    if( card7.getTvcfUrl() != null && !card7.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card7.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card7.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card7.getProdCode()%>|<%=card7.getProdName()%>|<%=card7.getTargetPath()+"/"+card7.getProdSImg()%>|<%=card7.getTargetPath()+"/"+card7.getProdLImg()%>|<%=card7.getTargetPath()+"/"+card7.getProdNImg()%>|<%=card7.getTargetPath()+"/"+card7.getProdHKImg()%>|<%=card7.getFeeOvalComm()%>|<%=card7.getFeeLocalComm()%>|A|<%=card7.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card7.getProdCode()%>|<%=card7.getProdName()%>|A')" param="<%=card7.getProdCode()%>|<%=card7.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card7Plus.getProdCode() != null && !card7Plus.getProdCode().equals( "" ) && !card7Plus.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드7+" src="<%=card7Plus.getTargetPath() + "/" + card7Plus.getProdTOImg()%>">
+   <image src="<%=card7Plus.getTargetPath() + "/" + card7Plus.getProdItImg()%>" />
+   <%
+    if( card7Plus.getTvcfUrl() != null && !card7Plus.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card7Plus.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card7Plus.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card7Plus.getProdCode()%>|<%=card7Plus.getProdName()%>|<%=card7Plus.getTargetPath()+"/"+card7Plus.getProdSImg()%>|<%=card7Plus.getTargetPath()+"/"+card7Plus.getProdLImg()%>|<%=card7Plus.getTargetPath()+"/"+card7Plus.getProdNImg()%>|<%=card7Plus.getTargetPath()+"/"+card7Plus.getProdHKImg()%>|<%=card7Plus.getFeeOvalComm()%>|<%=card7Plus.getFeeLocalComm()%>|A|<%=card7Plus.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card7Plus.getProdCode()%>|<%=card7Plus.getProdName()%>|A')" param="<%=card7Plus.getProdCode()%>|<%=card7Plus.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card7A.getProdCode() != null && !card7A.getProdCode().equals( "" ) && !card7A.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드7A" src="<%=card7A.getTargetPath() + "/" + card7A.getProdTOImg()%>">
+   <image src="<%=card7A.getTargetPath() + "/" + card7A.getProdItImg()%>" />
+   <%
+    if( card7A.getTvcfUrl() != null && !card7A.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card7A.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card7A.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card7A.getProdCode()%>|<%=card7A.getProdName()%>|<%=card7A.getTargetPath()+"/"+card7A.getProdSImg()%>|<%=card7A.getTargetPath()+"/"+card7A.getProdLImg()%>|<%=card7A.getTargetPath()+"/"+card7A.getProdNImg()%>|<%=card7A.getTargetPath()+"/"+card7A.getProdHKImg()%>|<%=card7A.getFeeOvalComm()%>|<%=card7A.getFeeLocalComm()%>|A|<%=card7A.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card7A.getProdCode()%>|<%=card7A.getProdName()%>|A')" param="<%=card7A.getProdCode()%>|<%=card7A.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card7B.getProdCode() != null && !card7B.getProdCode().equals( "" ) && !card7B.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드7B" src="<%=card7B.getTargetPath() + "/" + card7B.getProdTOImg()%>">
+   <image src="<%=card7B.getTargetPath() + "/" + card7B.getProdItImg()%>" />
+   <%
+    if( card7B.getTvcfUrl() != null && !card7B.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card7B.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card7B.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card7B.getProdCode()%>|<%=card7B.getProdName()%>|<%=card7B.getTargetPath()+"/"+card7B.getProdSImg()%>|<%=card7B.getTargetPath()+"/"+card7B.getProdLImg()%>|<%=card7B.getTargetPath()+"/"+card7B.getProdNImg()%>|<%=card7B.getTargetPath()+"/"+card7B.getProdHKImg()%>|<%=card7B.getFeeOvalComm()%>|<%=card7B.getFeeLocalComm()%>|A|<%=card7B.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card7B.getProdCode()%>|<%=card7B.getProdName()%>|A')" param="<%=card7B.getProdCode()%>|<%=card7B.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ <%if( card7C.getProdCode() != null && !card7C.getProdCode().equals( "" ) && !card7C.getProdCode().equals( "null" ) ) {%>
+  <tab name="삼성카드7C" src="<%=card7C.getTargetPath() + "/" + card7C.getProdTOImg()%>">
+   <image src="<%=card7C.getTargetPath() + "/" + card7C.getProdItImg()%>" />
+   <%
+    if( card7C.getTvcfUrl() != null && !card7C.getTvcfUrl().equals( "" ) ) {
+   %>
+   <tvcf src="/images/cd/shw/flash/tvcf_0.png" funcName="tvcfNumber" param="<%=card7C.getTvcfUrl().replaceAll("&","&amp;")%>" />
+   <%
+    }
+   %>
+   <button name="상세보기" title="상세보기" src="/images/cd/shw/flash/detail_0.png" funcName="goDetail" param="<%=card7C.getProdCode()%>" />
+   <button name="비교함담기" title="비교함담기" src="/images/cd/shw/flash/putButton_0.png" funcName="cardCompareNumber" param="add|abc|<%=card7C.getProdCode()%>|<%=card7C.getProdName()%>|<%=card7C.getTargetPath()+"/"+card7C.getProdSImg()%>|<%=card7C.getTargetPath()+"/"+card7C.getProdLImg()%>|<%=card7C.getTargetPath()+"/"+card7C.getProdNImg()%>|<%=card7C.getTargetPath()+"/"+card7C.getProdHKImg()%>|<%=card7C.getFeeOvalComm()%>|<%=card7C.getFeeLocalComm()%>|A|<%=card7C.getBaroYn()%>" />
+   <button name="바로신청" title="바로신청" src="/images/cd/shw/flash/request_0.png" funcName="applyCardNowLayerNumber('popupApp1','<%=card7C.getProdCode()%>|<%=card7C.getProdName()%>|A')" param="<%=card7C.getProdCode()%>|<%=card7C.getProdName()%>|A" />
+  </tab>  
+ <%} %>
+ 
+ </page>
+<!--//page-->
+</root>

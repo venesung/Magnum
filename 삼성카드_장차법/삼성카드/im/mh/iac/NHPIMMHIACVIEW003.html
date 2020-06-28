@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_international_card_holder.png" alt="For Foreign Card Holder" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+
+					<div class="tab01 w810 h60">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMMHIAC001M001','true');">Local Transactions</a></li>
+							<li class="on">
+                                <a href="javascript:goTabPage('NHPIMMHIAC003','true');">Overseas Transactions</a>
+								<ul class="sub_tab">
+                                    <li><a href="javascript:goTabPage('NHPIMMHIAC002','true');">Transaction Summary</a></li>
+                                    <li class="on"><a href="javascript:goTabPage('NHPIMMHIAC003','true');">Billing Summary</a></li>
+                                    <li><a href="javascript:goTabPage('NHPIMMHIAC004','true');">Overseas Transaction Protection Service</a></li>
+								</ul>
+							</li>
+                            <li><a href="javascript:goTabPage('NHPIMMHIAC005','true');">Credit Limit Inquiries</a></li>
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_Guidance_of_using.png" alt="Guidance of using" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p>You want to search authorization inquiries about overseas transactions</p></li>
+							<li><p>But, this transaction does not match the billing amount </p></li>
+							<li><p>Because the merchant may only request authorization of credit card from our company, <br />
+							the final billing amount will be different </p></li>
+                            <li><p>If you want to inquire about received overseas transactions, please <a href="javascript:goTabPage('NHPIMMHIAC003','true')" class="a_point">click here</a></p></li>
+						</ol>
+						<p class="t_point"  style="letter-spacing:0; padding-left:8px;">※  <span class="t_point_org ">Foreign Customer Center</span> : [Weekdays AM 9:00 ~ PM 6:00] 1688-8751,
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Oversea 82-2-6344-3437</p><!-- 정기일반영 13.02.28 -->
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_search_criteria.png" alt="Search Criteria" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02 dtable_expand" summary="Search Criteria is composed of Please Select the credit card number you are inquiring about">
+						<caption>Search Criteria</caption>
+						<colgroup><col width="365" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>Please Select the credit card number you are inquiring about</p></th>
+								<td><p>
+									<select name="CARD_NO16" id="label_criteria" onchange="goSubmit()" title="Select card number">
+										<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnr"><a href="javascript:goSubmit();" class="btn btn_blue"><span>show</span></a></p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_recent_acrivity.png" alt="Recent Acrivity" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable01" summary="Recent Acrivity is composed of Transaction Date, Transaction Time, Business Code, Country, Actual Amount, Unit, Authorized Amount(US＄), Respond Code">
+						<caption>Recent Acrivity</caption>
+						<colgroup><col width="90" /><col width="90" /><col width="90" /><col width="60" /><col width="80" /><col width="60" /><col width="80" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">Transaction <br />Date</th>
+								<th scope="col">Transaction <br />Time</th>
+								<th scope="col">Business <br />Code</th>
+								<th scope="col">Country</th>
+								<th scope="col" class="cell_r10">Actual <br />Amount</th>
+								<th scope="col">Unit</th>
+								<th scope="col" class="cell_r10">Authorized <br />Amount(US＄)</th>
+								<th scope="col">Respond <br />Code</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td>0</td>
+								<td class="cell_r10 t_no">0</td>
+								<td><span>
+                                <a href="javascript:alert('Approval Number:<%=resutList.get(j).getTranNo().trim()%>')">Approval</a>
+                                <a href="javascript:gomsg(<%=resutList.get(j).getDenyCode().trim()%>);">Reject</a>
+								</span></td>
+							</tr>
+							<tr>
+							<td colspan="8">
+                            <a href="javascript:goPpage();" class="btn btn_s_white">
+							<span>PREV</span>
+							</a>
+                            <a href="javascript:goNpage();" class="btn btn_s_white">
+							<span>NEXT</span>
+							</a>
+							</td>
+							</tr>
+						<tr class="nodata">
+							<td colspan="8">You will search authorization inquiry in oversea transaction.</td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="8">But, this transaction does not match to billing amount.</td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="8">Because the merchant may only request authorization of credit card to our company,<br>
+							final billing amount will be different.
+							</td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="8">Because the merchant may only request authorization of credit card to our company,<br>
+							final billing amount will be different.
+							</td>
+						</tr>
+						<tr class="nodata">
+							<td colspan="8">If you want to inquiry received oversea transaction,
+                            please <a href="javascript:cardHolderTab22();">
+							<font color="#D6964A"><strong>[click here]</strong></font></a>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+</form>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

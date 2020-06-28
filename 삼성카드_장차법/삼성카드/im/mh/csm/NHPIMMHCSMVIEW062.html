@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>일시불 (국내) 결제 예정 금액 상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+<form name="frm" method="post">
+	<table summary="일시불, 할부를 선택하는 게시판입니다" class="dtable02 dtable_inputfield">
+		<caption>일시불, 할부 선택</caption>
+		<colgroup><col width="100" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th class="cell_bg" scope="row"><p>조회구분</p></th>
+				<td id="id_cal_wrap" colspan="3"><p>
+					<label for="label_duepay1"><input type="radio" class="rdo" id="label_duepay1" name="name_duepay" value="1" checked="checked" onclick="redioCheck(this.value)" title="일시불 (국내)" /> 일시불 (국내)</label>
+					<label for="label_duepay2" class="ml10"><input type="radio" class="rdo" id="label_duepay2" name="name_duepay" value="V" onclick="redioCheck(this.value)" title="일시불 (해외)" /> 일시불 (해외)</label>
+					<label for="label_duepay3" class="ml10"><input type="radio" class="rdo" id="label_duepay3" name="name_duepay" value="3" onclick="redioCheck(this.value)" title="할부" /> 할부</label>
+				</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="d_easy mt20"><!-- 100509 -->
+		<table class="dtable01" summary="결제예정 금액에 대해 결제월, 이용일, 이용카드, 우대가맹점, 이용가맹점, 이용금액, 혜택금액 생활비재테크, 결제예정금액을 확인할 수 있는 게시판입니다">
+		<caption>결제예정내역</caption>
+		<colgroup><col width="8%" /><col width="8%" /><col width="8%" /><col width="10%" /><col width="21%" /><col width="15%" /><col width="15%" /><col width="15%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">결제월</th>
+				<th scope="col">이용일</th>
+				<th scope="col">이용카드</th>
+				<th scope="col">우대가맹점</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>
+                <th scope="col" class="cell_r10"><img src="/images/common/ico_alpha.png" alt="A" /> 이용금액</th>
+				<th scope="col" class="cell_r10"><img src="/images/common/ico_beta.png" alt="B" /> 혜택금액/<br />생활비재테크</th>
+				<th scope="col" class="cell_r10"><img src="/images/common/ico_alpha.png" alt="A" />- <img src="/images/common/ico_beta.png" alt="B" /> <br/>결제예정금액</th>			
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="7"  class="cell_l10" scope="row">미리 입금하신 금액</td>
+				<td class="cell_r10"><span class="p_nowrap">1</span></td>
+			</tr>
+			<tr>
+				<td colspan="5" class="cell_l10a" scope="row">합계</td>
+				<td class="cell_r10"><em>1</em></td>
+				<td class="cell_r10"><em>1</em></td>
+				<td class="cell_r10"><em>1</em></td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">1</td>
+				<td>1</td>
+				<td>1</td>
+				<td><img src="/images/common/ico_bonus_b.png" alt="삼성보너스클럽" /></td>
+				<td class="cell_l10"><span class="nobreak_nolink w200">1</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1</span></td>
+				<td class="cell_r10 cell_bg"><span class="p_nowrap">1</span></td>
+			</tr>
+			<!-- //loop -->
+			<tr class="nodata">
+				<td colspan="8">조회내역이 없습니다.</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<!-- paginate -->
+	<div class="paginate">
+		<div class="paging">
+            <a href="javascript:goPpage()" class="btn btn_s_white"><span>이전</span></a>
+            <a href="javascript:goNpage()" class="btn btn_s_white"><span>다음</span></a>
+		</div>
+	</div>
+	<div class="line_lgray">&nbsp;</div>
+
+	<div class="btnset mt_15">
+		<p class="btnl t_desc04"><img src="/images/common/ico_beta.png" alt="B" /> 항목은 보너스포인트 결제, 생활비재테크, 삼성카드로 제공 혜택금액의 합계입니다.</p>
+	</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</form>
+</body>
+</html>

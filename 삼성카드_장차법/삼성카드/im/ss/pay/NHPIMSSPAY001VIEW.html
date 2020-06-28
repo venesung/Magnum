@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">전화요금 납부서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/images/ss/h1_phone_payment.jpg" alt="편리한 공과금 카드납부 전화요금도 삼성카드로 전화요금 납부서비스 - LG U+ 전화요금 자동납부 신청하세요" /></div><!-- 정기일반영 13.04.25 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- // 100126 -->
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSTEL001M002',true);">전화요금 납부신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSTEL001M003',true);">납부내역조회</a></li><!-- 접근성 TF 메뉴명 변경 VOC 12.11.27 -->
+			<!-- <li><a href="javascript:goTabPage('NHPIMSSTEL001M004',true);">SHOW 요금제 안내 및 신청</a></li>-->
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<!--div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_phonecharge01.png" alt="전화요금 납부신청에  대해 알아보세요" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>LG U+의 전화요금을 삼성카드로 자동납부 하실수 있습니다.</p></li>
+			<li><p>서비스 가능시간은 08:30 ~ 22:00 까지 입니다.</p></li>
+			<li><p>수정, 추가 및 해지는 전화요금 <a href="javascript:goTabPage('NHPIMSSTEL001M003',true);" class="a_point">자동납부 현황 조회</a>를 클릭 하십시오.</p></li>
+		</ol>
+	</div>
+</div--><!-- 접근성 TF 삭제 VOC 12.11.27 -->
+
+<div class="content_block content_block_tab clfix">
+	<div class="bg_step_phonebill bg_step_phonebill01">
+		<ol class="none">
+			<li><abbr>현재단계</abbr>카드선택</li>
+			<li>전화번호입력</li>
+			<li>신청내용확인</li>
+			<li>신청완료</li>
+		</ol>
+	</div>
+</div><!-- 접근성 TF Step 위치 변경 VOC 12.11.27 -->
+
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_phonecharge04.png" alt="현금서비스 신청정보를  입력하세요" /></h2>
+	<div class="content_block_inner">
+		<!-- 20100126 -->
+		<!--div class="bg_step_phonebill bg_step_phonebill01">
+			<ol class="none">
+				<li><abbr>현재단계</abbr>카드선택</li>
+				<li>전화번호입력</li>
+				<li>신청내용확인</li>
+				<li>신청완료</li>
+			</ol>
+		</div-->
+		<!-- //20100126 -->
+
+		<div class="tb_exp clfix">
+			<span><strong class="t_black">홍길동 회원님께서 가지고 계신 삼성카드 중 전화요금 자동납부 신청이 가능한 카드는 아래와 같습니다</strong></span><br />
+			<span class="t_desc03">전화요금 자동납부 서비스에 사용하실 카드를 선택하여 주십시오 </span>
+		</div>
+
+		
+		<table class="dtable01 dtable_inputfield" summary="전화요금납부 신청에 사용하실 카드명, 카드번호, CVC번호를 입력하고 납부신청할 수 있는 게시판입니다.">
+		<caption>전화요금납부 신청에 사용하실 카드 선택</caption>
+		<colgroup><col width="*" /><col width="160" /><col width="206" /><col width="50" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">카드명</th>
+				<th scope="col">카드번호</th>
+				<th scope="col">CVC번호</th>
+				<th scope="col">신청</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10">삼성카드</td>
+				<td><span class="t_no">0000-0000-0000-0000</span></td>
+				<td><span class="input_3char"><input type="password" name="cvcNo" maxlength="3" class="txt" value="" title="CVC번호" onkeypress="checkTypes(this, 'NUMB')" style="ime-mode:disabled;" /></span>
+					<a href="#;" class="btn btn_s_white ml_10" ><span>마우스 입력</span></a>
+				</td>   
+ 				<td><a href="#" class="btn btn_s_blue"><span>신청</span></a></td> 
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+		
+		<ol class="list_desc">
+			<li><p>회원님의 개인정보보호를 위하여 카드번호는 XXX로 표시하였습니다.</p></li>
+			<li><p>카드뒷면의 서명란 카드번호 중 맨 뒤의 3자리를 입력합니다.</p></li>
+		</ol>
+
+		<dl class="cvc_view">
+			<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+			<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+			<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+		</dl>
+
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

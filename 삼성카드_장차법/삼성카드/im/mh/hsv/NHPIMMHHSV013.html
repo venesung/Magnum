@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>생활비재테크서비스 즉시충전 결과 - 삼성카드</title>
+</head>
+
+<body>
+<table width="1000" border="0" cellpadding="10" cellspacing="0" summary="생활비재테크서비스 즉시충전(바로옮겨놓기) 결과조회">
+<caption>생활비재테크서비스 즉시충전(바로옮겨놓기) 결과조회</caption>
+	<tr>
+		<td>
+		<!-- 개인 신상 정보 출력 부분 -->
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr><td colspan="3" style="text-align:left;"> 생활비재테크서비스|즉시충전(바로옮겨놓기) 결과조회</td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="1" cellpadding="0" cellspacing="0" summary="조회기간을 확인할 수 있습니다.">
+            <caption>조회기간 확인</caption>
+				<tr bgcolor="#FFFF80">
+					<td style="text-align:center;" scope="col">조회기간</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;" ><%=temp_start_date%>~<%=temp_end_date%></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr><td style="height:20px;"></td></tr>
+
+	<tr>
+	  <td>
+	    <table width="100%" border="1" cellpadding="0" cellspacing="0" summary="요청일,요청시간,충전일,충전시간,요청금액,충전금액,출금은행,출금계좌,처리경로,충전결과로 구성된  즉시충전(바로옮겨놓기) 결과조회를 상세하게 확인할 수 있습니다.">
+        <caption>생활비재테크서비스|즉시충전(바로옮겨놓기) 결과조회</caption>
+		  <tr style="text-align:center; background-color:#FFFF80">
+		    <td scope="col">요청일</td>
+			<td scope="col">요청시간</td>
+			<td scope="col">충전일</td>
+			<td scope="col">충전시간</td>
+			<td scope="col">요청금액</td>
+			<td scope="col">충전금액</td>
+			<td scope="col">출금은행</td>
+			<td scope="col">출금계좌</td>
+			<td scope="col">처리경로</td>
+			<td scope="col">충전결과</td>
+		  </tr>
+
+<%if( ERRORMESSAGE.equals("") ){%>
+
+<%for (int i =0 ; i<realList.size() ; i++){ %>
+							<tr>
+								<td class="cell_l10 t_no">
+								<%if( !realList.get(i).getString7().equals("") ){%>
+								<%=realList.get(i).getString7().substring(0,4)%>/
+								<%=realList.get(i).getString7().substring(4,6)%>/
+								<%=realList.get(i).getString7().substring(6,8)%>
+								<%}else{%>
+								&nbsp;
+								<%} %>
+								</td>
+								<td class="t_no">
+								<%if( !realList.get(i).getString8().equals("") ){%>
+								<%=realList.get(i).getString8().substring(0,2)%>/
+								<%=realList.get(i).getString8().substring(2,4)%>/
+								<%=realList.get(i).getString8().substring(4,6)%>
+								<%}else{%>
+								&nbsp;
+								<%} %>
+								</td>
+								<td class="t_no">
+								<%if( realList.get(i).getString9().equals("") || realList.get(i).getString9().equals("00010101")){%>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<%}else{%>
+								<%=realList.get(i).getString9().substring(0,4)%>/
+								<%=realList.get(i).getString9().substring(4,6)%>/
+								<%=realList.get(i).getString9().substring(6,8)%>
+								<%} %>
+								</td>
+								<td class="t_no">
+								<%if( realList.get(i).getString10().equals("") || realList.get(i).getString10().equals("000000")){%>
+								&nbsp;&nbsp;&nbsp;&nbsp;- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<%}else{%>
+								<%=realList.get(i).getString10().substring(0,2)%>:
+								<%=realList.get(i).getString10().substring(2,4)%>:
+								<%=realList.get(i).getString10().substring(4,6)%>
+								<%} %>
+								</td>
+								<td class="cell_r10 t_no"><%=realList.get(i).getString11()%></td>
+								<td class="cell_r10 t_no"><%=realList.get(i).getString12()%></td>
+								<td class="cell_l10"><%=realList.get(i).getString13()%></td>
+								<td class="t_no">
+								<%if( !realList.get(i).getString14().equals("") ){%>
+								<%=realList.get(i).getString14().replace(" ","").substring(0,8)%>
+								XXXXXXX
+								<%}else{%>
+								&nbsp;
+								<%}%>
+								</td>
+								<td><%=realList.get(i).getString15()%></td>
+								<td><%=realList.get(i).getString17()%></td>
+							</tr>
+							<%} %>
+
+<%}else{ %>
+<tr>
+<td><%=ERRORMESSAGE%></td>
+</tr>
+<%}%>
+
+        </table>
+	   </td>
+	</tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/et.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="mv_EventBanner">
+<!-- 2012.12.24 VOC 삭제 추가 end -->
+	<h2 class="none">이벤트</h2>	
+	<ul id="id_ban_top">
+		<%
+			if(al!=null&&al.size()>0 ){
+				int cnt = 4;
+				if (al.size() < 4) cnt = al.size();
+				for(int i=0;i<cnt;i++){
+					ITCMEVENTTTVO vo = (ITCMEVENTTTVO)al.get(i);
+		%>
+            <li idx="<%=i%>" cmsSeq="<%=vo.getCmsSeq() %>"><a href="javascript:parent.goDetail('<%=vo.getCmsSeq() %>');return false;" onclick="sendWeblog('both','EVMA01','EVMA01_1_<%=vo.getCmsSeq() %>');">
+				<%if("".equals(vo.getPath())){ %>
+				<!-- 2012.12.24 VOC 삭제 추가 start -->
+<!-- 					<img src="< %=vo.getBannerimage2() %>" width="550px" height="178px" alt="< %=vo.getTitle() %>" /> -->
+					<img src="<%=vo.getBannerimage2() %>" width="605px" height="300px" alt="<%=vo.getTitle() %>" />
+				<!-- 2012.12.24 VOC 삭제 추가 end -->
+				<%}else{ %>
+				<!-- 2012.12.24 VOC 삭제 추가 start -->
+<!-- 					<img src="< %=vo.getPath() %>/< %=vo.getBannerimage2() %>" width="550px" height="178px" alt="< %=vo.getTitle() %>" /> -->
+					<img src="<%=vo.getPath() %>/<%=vo.getBannerimage2() %>" width="605px" height="300px" alt="<%=vo.getTitle() %>" />
+				<!-- 2012.12.24 VOC 삭제 추가 end -->
+				<%} %>
+				</a>
+			</li>
+		<%		}
+			} 
+		%>
+	</ul>
+	<!-- 2012.12.24 VOC 추가 start -->
+	<div class="btnType1">
+		<a id="evtBnPlayId" href="javascript:funEvtBnPlay()"><img src="/images/et/btn_play_1.gif" alt="배너 재생" /></a>
+		<a id="evtBnStopId" href="javascript:funEvtBnStop()"><img src="/images/et/btn_stop_1.gif" alt="배너 재생 멈춤" /></a>
+	</div>
+	<!-- 2012.12.24 VOC 추가 end -->
+	<!-- 2012.12.24 VOC 삭제 추가 start -->
+	<!-- <p class="p_no" id="number"> -->
+	<div class="btnType2">
+	<!-- 2012.12.24 VOC 삭제 추가 end -->
+		<%
+			if(al!=null&&al.size()>0 ){
+				int cnt = 4;
+				if (al.size() < 4) cnt = al.size();
+				for(int j=0;j<cnt;j++){
+		%>
+		<!-- 2012.12.24 VOC 삭제 추가 start -->
+		<!-- <a href="javascript:clickNo(< %=j%>)"><img id="off< %=j%>" name="off< %=j%>" src="/images/main/ico_no_event< %=j+1%>_off.png" alt="< %=j+1%>" /><img id="on< %=j%>" name="on< %=j%>" src="/images/main/ico_no_event< %=j+1%>_on.png" alt="< %=j+1%>" style="display:none"/></a> -->
+		<a href="javascript:clickNo(<%=j%>)"><img id="off<%=j%>" name="off<%=j%>" src="/images/et/btn_<%=j+1%>.png" alt="<%=j+1%>" /><img id="on<%=j%>" name="on<%=j%>" src="/images/et/btn_<%=j+1%>_on.png" alt="<%=j+1%>" style="display:none"/></a>
+		<!-- 2012.12.24 VOC 삭제 추가 end -->
+		<%		}
+			} 
+		%>
+	<!-- 2012.12.24 VOC 삭제 추가 start -->
+	<!-- </p> -->
+	</div>
+	<!-- 2012.12.24 VOC 삭제 추가 end -->
+</div>

@@ -1,0 +1,25 @@
+	<%
+	String user_key_check = (String) request.getAttribute("user_key_check");
+	%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>삼성카드</title>
+    <script type="text/javascript">
+	function checkMgm(){
+		<%if(user_key_check.equals("Y")){%>
+			alert('추천인번호가 정상 입니다');
+			parent.document.frm1.user_key_check.value =  'Y';
+		<%}else{%>
+			alert('오류사번입니다. 확인후, 다시 입력 해주시기 바랍니다');
+			parent.document.frm1.user_key_check.value =  'N';
+			parent.document.form.user_key.focus();
+		<%}%>
+    }
+    </script>
+</head>
+<body onload="checkMgm()">
+</body>
+</html>
+

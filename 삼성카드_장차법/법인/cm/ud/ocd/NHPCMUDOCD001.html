@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>주유카드이용내역 - 삼성카드</title>
+</head>
+
+<body>
+	
+	<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+	
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_uselist_oil.png" alt="주유카드이용내역" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<div class="btnset">
+						<p class="btnl mt18">페이지 내 정보를 엑셀다운로드 받거나 인쇄하실 수 있습니다.<br />인쇄 時 페이지설정은 "가로"로 설정 후 출력하세요.</p>
+						<p class="btnr"><a href="javascript:saveExcel(this);" name="excelATag"  class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+
+					<ol class="list_no01 mt30">
+						<li><p><strong class="t_black">12.03.03</strong> 이후 거래승인내역들이 조회됩니다.</p></li>
+						<li><p>검색기간 설정은 <strong class="t_black">최대 1개월</strong>까지 가능합니다. </p></li>
+					</ol>
+
+					<!-- calendar_position -->
+					<div class="pos_rel_cal mt30">캘린더위치</div>
+					<table class="dtable02 dtable_inputfield" summary="카드번호와 이용기간, 조건선택 등을 통해 카드를 조회하실 수 있습니다.">
+					<caption>카드 조회</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p><a href="javascript:cardList('chart','720','580');" class="btn btn_s_white" title="새창"><span>카드번호 찾기</span></a> 0000-0000-0000-0000</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>이용기간</p></th>
+							<td><p>
+								<span class="reset_date">
+								<fileTag:dblCalendarAddIf calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="srchStartDate" startInputValue='<%=vos.getSrchStartDate() %>'
+                                                                                                   endTitle ="종료일" endInputName ="srchEndDate" endInputValue ='<%=vos.getSrchEndDate() %>' />
+								</span>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="label_type01">조건선택</label></th>
+							<td><p>
+								<select name="searchKey" id="label_type01"  style="width:100px">
+									<option value="">전체</option>
+								</select>&nbsp;
+								<input type="text" id="group"  class="txt" name="searchValue" value="" title="검색어 입력" />
+							</p></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="btnr"><a href="javascript:search();" class="btn btn_blue"><span>조회</span></a></div>
+
+				<div id="printDiv">
+					<div class="tb_exp mt30 clfix"><!-- 100622 -->
+						<h2><img src="/images/cm/h2_uselist01.png" alt="합계 정보" /></h2>
+						<p class="fl_right t_desc04">(단위 : 원)</p>
+					</div>
+
+					<table class="dtable01" summary="조회하신 카드의 이용금액, 주유량, 할인금액, 청구예정금액을 확인하실 수 있는 게시판입니다. (하이페스는 주유량, 할인금액 제외)">
+					<caption>조회 카드의 합계정보</caption>
+					<colgroup><col width="100" /><col width="100" /><col width="140" /><col width="140" /><col width="*" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="cell_l10">구분</th>
+							<th scope="col" class="cell_r10">이용금액</th>
+							<th scope="col" class="cell_r10">주유량</th>
+							<th scope="col" class="cell_r10">할인금액</th>
+							<th scope="col" class="cell_r10">청구예정금액 </th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td  scope="row" class="cell_l10 cell_bg"><em>합계</em></td>
+							<td class="cell_r10 cell_bg"><em>0</em></td>
+							<td class="cell_r10 cell_bg"><em>0</em> ℓ</td>
+							<td class="cell_r10 cell_bg"><em>0</em></td>
+							<td class="cell_r10 cell_bg"><em>0</em></td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<td  scope="row" class="cell_l10">주유카드</td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="cell_r10"><span class="t_no">0</span> ℓ</td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="cell_r10 t_no">0</td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<td scope="row" class="cell_l10">하이패스 카드</td>
+							<td class="cell_r10 t_no">0</td>
+							<td class="cell_r10">-</td>
+							<td class="cell_r10">-</td>
+							<td class="cell_r10 t_no">0</td>
+						</tr>
+					</tbody>
+					</table>
+
+					<h2><img src="/images/cm/h2_uselist02.png" alt="상세내역" /></h2>
+					<div class="dtable_over1200 d_easy"><!-- 100519 -->
+						<table class="dtable01" summary="조회하신 카드의 상세(조직명, 카드명, 카드번호, 주유소명, 소재지, 유종, 주유량, 할인금액, 차량번호, 이용일자, 이용시간, 이용금액, 단가, 할인율, 청구금액) 이용 내역입니다.">
+						<caption>조회카드 상세 이용 내역</caption>
+						<colgroup><col width="4%" /><col width="5%" /><col width="8%" /><col width="8%" /><col width="9%" /><col width="9%" /><col width="4%" /><col width="6%" /><col width="6%" /><col width="6%" /><col width="5%" /><col width="4%" /><col width="7%" /><col width="5%" /><col width="4%" /><col width="7%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10a">번호</th>
+								<th scope="col" class="cell_l10">조직명</th><!--
+								<th scope="col" class="cell_l10">부서명</th> 100520 -->
+								<th scope="col" class="cell_l10">카드명</th>
+								<th scope="col">카드번호</th>
+								<th scope="col" class="cell_l10">주유소명</th>
+								<th scope="col" class="cell_l10">소재지</th>
+								<th scope="col">유종</th>
+								<th scope="col" class="cell_r10">주유량</th>
+								<th scope="col" class="cell_r10">할인금액 (원)</th>
+								<th scope="col">차량번호</th>
+								<th scope="col">이용일자</th>
+								<th scope="col">이용시간</th>
+								<th scope="col" class="cell_r10">이용금액 (원)</th>
+								<th scope="col">단가</th>
+								<th scope="col">할인율</th>
+								<th scope="col" class="cell_r10">청구금액 (원)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10a">0</td>
+								<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w110">0</span></td>
+								<td>0</td>
+								<td class="cell_l10"><span class="nobreak_nolink w110">
+								<a href="#1" class="a_point p_nowrap">00</a>
+								</span></td>
+								<td class="cell_l10"><span class="nobreak_nolink w120">0</span></td>
+								<td>0</td>
+								<td class="cell_r10"> ℓ</td>
+								<td class="cell_r10"><span class="p_nowrap">원</span></td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="cell_r10"><span class="p_nowrap">0</span></td>
+								<td></td>
+								<td> 원/L</td>
+								<td class="cell_r10"><span class="p_nowrap">0</span></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+
+					<!-- paginate -->
+					<div class="paginate">
+							${_page}
+							<p class="btnl"><a href="javascript:goReq();" class="btn btn_white"><span>청구내역 &gt;</span></a></p>
+					</div>
+					<br /><br />
+					<!-- 100627 -->
+					<div class="line_lgray_p0 mt20">&nbsp;</div>
+					<div class="btnset"><p class="btnl t_desc04">할인금액은 실제 청구내역의 할인금액과 상이할 수 있습니다.</p></div>
+					<!-- //100627 -->
+				</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="footer">
+		<%@ include file="/WEB-INF/jsp/hp/cm/footer.jsp"%>
+	</div>
+</div>
+
+</body>
+</html>

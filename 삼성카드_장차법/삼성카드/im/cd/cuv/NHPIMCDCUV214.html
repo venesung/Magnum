@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>연간 이용 상세내역 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" language="javascript">
+function goPage(selDiv,selUsedDate,selUsedTime,pageNo){
+	var parm = "";
+	parm  = "&amp;card_no16=<%=cardNo16%>";
+	parm += "&amp;service_gubun=<%=serviceGubun%>";
+	parm += "&amp;goods_divi=<%=goodsDivi%>";
+	parm += "&amp;sel_div="+selDiv;
+	parm += "&amp;sel_used_date="+selUsedDate;
+	parm += "&amp;sel_used_time="+selUsedTime;
+		
+	document.location.href="/cuv2.do?method=getPlayParkCardUseView"+parm;
+}
+</script>
+</head>
+<body>
+ 
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<% if("P".equals(serviceGubun) || "F".equals(serviceGubun)) { %>
+				<h1><img src="/images/mh/pop_h1_playpark_uselist.png" alt="놀이공원서비스 연간 이용 상세내역입니다" /></h1>
+		<% }else if("M".equals(serviceGubun)) {%>
+				<h1><img src="/images/mh/pop_h1_movie_uselist.png"    alt="영화서비스 연간 이용 상세내역입니다" /></h1>
+		<% }else if("S".equals(serviceGubun)) {%>
+				<h1><img src="/images/mh/pop_h1_sport_uselist.png"    alt="프로스포츠서비스 연간 이용 상세내역입니다" /></h1>
+		<% }else if("H".equals(serviceGubun)) {%>
+				<h1><img src="/images/mh/pop_h1_hanhwa_uselist.png"   alt="한화리조트 서비스 연간 이용 상세내역입니다" /></h1>
+		<% }else if("Z".equals(serviceGubun)) {%>
+				<h1><img src="/images/mh/pop_h1_starbucks.png"        alt="스타벅스 서비스 연간 이용 상세내역입니다" /></h1>
+		<% }else{%>
+				<h1><img src="/images/mh/pop_h1_doccar_uselist.png"   alt="닥터카서비스 연간 이용 상세내역입니다" /></h1>
+		<% }%>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+				<h1><img src="/images/mh/pop_h1_playpark_uselist.png" alt="놀이공원서비스 연간 이용 상세내역입니다" /></h1>
+				<!--h1><img src="/images/mh/pop_h1_movie_uselist.png"    alt="영화서비스 연간 이용 상세내역입니다" /></h1>
+				<h1><img src="/images/mh/pop_h1_sport_uselist.png"    alt="프로스포츠서비스 연간 이용 상세내역입니다" /></h1>
+				<h1><img src="/images/mh/pop_h1_hanhwa_uselist.png"   alt="한화리조트 서비스 연간 이용 상세내역입니다" /></h1>
+				<h1><img src="/images/mh/pop_h1_starbucks.png"        alt="스타벅스 서비스 연간 이용 상세내역입니다" /></h1>
+				<h1><img src="/images/mh/pop_h1_doccar_uselist.png"   alt="닥터카서비스 연간 이용 상세내역입니다" /></h1-->
+	</div>
+
+
+	<!-- content -->
+	<div id="pop_content" tabindex="0">	
+		
+		<div class="content_block content_block_card clfix">
+			<table class="dtable01" summary="서비스별 연간 이용 상세내역을 확인하실 수 있는 게시판입니다.">
+				<!--caption>놀이공원서비스 연간 이용 상세내역</caption>
+				<caption>영화서비스 연간 이용 상세내역</caption>
+				<caption>프로스포츠서비스 연간 이용 상세내역</caption>
+				<caption>한화리조트 서비스 연간 이용 상세 내역</caption>
+				<caption>스타벅스 서비스 연간 이용 상세 내역</caption>
+				<caption>닥터카서비스 연간 이용 상세내역</caption-->
+			
+			<colgroup><col width="155" /><col width="145" /><col width="*" /><col width="60" /><col width="60" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">서비스 내용</th>
+					<th scope="col">이용일자</th>
+					<th scope="col">이용장소</th>
+					<th scope="col">이용여부</th>
+					<th scope="col">이용매수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10">엔진오일 할인교환</td>
+					<td class="t_no">0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+				</tr>
+			</tbody>
+			</table>
+		</div> 
+		
+	</div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+ 
+</div>
+ 
+</body>
+</html>

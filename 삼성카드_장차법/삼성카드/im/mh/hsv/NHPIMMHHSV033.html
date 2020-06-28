@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<div class="content_block content_block_tab2 clfix"><!-- //100219 -->
+					<div class="tab02 w810">
+						<ul>
+						
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+						
+						
+							<!-- li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">약정금액변경</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV006','true');">캐시백/포인트/카드대금 선택하기</a></li>
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV007','true');">환불하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV008','true');">환불결과조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+				<form name="frm1" method="post">
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_life_ftech_refund01.png" alt="환불하실 내용을 확인해주세요" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p>환불하기는 신청하시면 즉시처리가 됩니다.</p></li>
+							<li><p>환불하기는 홈페이지나 상담전화 (지역번호없이) <span class="t_no">1588-8700</span>으로 가능합니다.</p></li>
+						</ol>
+
+						<table class="dtable02 mt10" summary="현재 약정금액, 현재 남은 금액을 확인하고 환불요청금액을 입력하는 게시판입니다.">
+						<caption>환불요청금액 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>현재 약정금액</p></th>
+								<td><p><span class="t_no">1</span> 원
+							</tr>
+							<tr>
+								<th scope="row"><p>현재 남은 금액</p></th>
+								<td><p><span class="t_no">1</span> 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>환불요청금액</p></th>
+								<td><p><span class="input_point">
+								<input name="parm_STRING8" maxlength="8" value="(원 이상 직접 입력)" type="text" class="txt" id="label_reqmoney" 
+								onfocus="input_mode(this);" 
+								onclick="input_mode(this);" 
+								onkeypress="checkTypes(this, 'NUMB');"
+								onkeyup="this.value=NumberFormat(this.value)" title="환불요청금액" />원</span>
+								<span class="ml10 t_desc03">(최대 <%= str4 %>원까지 가능)</span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<div class="btnl">
+								<ol class="list_desc">
+									<li><p>환불가능금액은 현재 남은금액 범위내에서 원단위로 입력해주세요.</p></li>
+									<li><p>환불은 <strong class="t_black">1일 3회까지</strong> 가능합니다.</p></li>
+								</ol>
+							</div>
+                            <p class="btnr"><a href="javascript:goStep2()" class="btn btn_blue"><span>환불하기</span></a></p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_life_ftech_refund02.png" alt="자동이체 계좌정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02" summary="자동이체계좌은행, 자동이체계좌번호를 확인하고 환불 가능 계좌,환불 가능시간을 안내해주는 게시판입니다.">
+						<caption>자동이체 계좌정보 확인</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+							<th scope="row" class="riline"><p>자동이체계좌은행</p></th>
+								<td><p></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="riline"><p>자동이체계좌번호</p></th>
+								<td><p class="t_no"></p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="riline"><p>환불 가능 계좌</p></th>
+								<td><p>
+									<ul class="list_circle mt10">
+										<li><strong class="t_black">전자금융거래법에 의해 고객님의 자동이체계좌로만 처리가 가능합니다.</strong></li>
+                                        <li>다른 계좌로 신청하길 원하시면 회원님의 자동이체계좌를 변경해야 합니다.<br /><span><a href="javascript:goTabPage('NHPIMMHCSM003')" class="btn_link">자동이체계좌변경</a></span></li>
+									</ul>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="riline"><p>환불 가능시간</p></th>
+								<td><p>평일 09:00 ~ 21:30 (토/일요일/공휴일 제외)</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnl t_desc04">자동이체계좌 변경 시 (지역번호없이) 1588-8700 상담전화로 확인 바랍니다.</p>
+						</div>
+
+					</div>
+				</div>
+				
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+				<!-- footer_layer -->
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

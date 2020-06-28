@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual start-->
+	<div class="top_visual">
+		<h1 class="none">삼성카드 FAQ</h1>
+		<div class="h1_desc"><img src="/images/cs/h1_faq.jpg" alt="삼성카드 FAQ. 회원님들께서 자주 이용하시는 질문과 답변을 모았습니다 찾으시는 질문이 없으신 경우 E-mail상담을 이용하세요" /></div>
+		<a href="javascript:goTabPage('NHPIMCSMAIL1');"><img src="/images/common/btn_email_app.png" class="btn_email_app" alt="E-Mail 상담" /></a>
+	</div>
+	
+<!-- include 삽입(검색) -->
+	<jsp:include page="NHPENNOMXFAQ002.jsp" />
+<!-- Script Insert End -->
+
+<!-- BEGIN: 상위 1, 2단계 카테고리별 메뉴-->
+  <jsp:include page="NHPENNOMXFAQ003.jsp" >
+    <jsp:param name="category_id" value="<%=strCategoryId%>" />      
+    <jsp:param name="submain" value="FAQS" />      
+  </jsp:include>         
+  <!-- END -->
+
+<!-- 카테고리 선택시 노출 -->
+<!-- content_block -->
+  <div class="content_block clfix"> 
+	<h2 class="bestfaq"><img src="/images/cs/h2_faq02.png" alt="FAQ 검색 결과입니다" /></h2>
+	<div class="content_block_inner cs_faq">
+		<h3><em>-_-</em> <img src="/images/cs/h3_faq02.png" alt="에 대한 질문 검색결과입니다." /></h3>
+		<dl id="id_faq01">
+						<!-- <dt><a href="javascript:show_Answer('<%=nav.getTotalCount()%>','<%=i %>','<%=StringEscapeUtil(rsFaqList.getString("faq_id"))%>')"><%=StringEscapeUtil(rsFaqList.getString("question"))%></a></dt>-->	 <!-- dt와 dd를 개행하시면 스크립트가 동작하지않습니다 -->
+						<dt><a href="#">-_-</a></dt><dd>	 <!-- dt와 dd를 개행하시면 스크립트가 동작하지않습니다 -->
+						<div id="div_answer1" style="display:">
+							<div class="poll_request">
+								<strong class="t_black">만족스러운 답변이 되셨나요? 아래 만족도를 체크해주시기 바랍니다</strong><br />
+								<form method="post">
+								<label><input type="radio" name="feedB" value="100" checked="checked" title="매우만족" />매우 만족</label>
+								<label><input type="radio" name="feedB" value="75" title="만족" />만족</label>
+								<label><input type="radio" name="feedB" value="50" title="불만족" />불만족</label>
+								<label><input type="radio" name="feedB" value="25" title="매우불만족" />매우 불만족</label>
+								<input type="hidden" name="feedLog_id" value="" />
+								<a href="#" class="btn btn_s_white"><span>확인</span></a>
+								</form>
+							</div>
+						</div>
+						</dd>
+	
+			<!-- //loop -->
+			
+		</dl>
+
+		<!-- paginate -->
+		<div class="paginate">
+			<div class="paging">
+				<span class="num">
+					<% out.println(nav.getLinkHtml()); %>
+				</span>
+			</div>
+		</div>
+<!-- //100204 -->
+	</div>
+</div>
+	
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+				
+
+
+<div id="score_low"  class="pop_l_position pop_l_wrap_mix">
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_mix">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="레이어 닫기" />
+			<p class="pop_tit03"><img src="/images/cs/layer_tit_sorry_unsatisfactory_response.png" alt="답변 만족도를 평가해주셔서 감사합니다" /></p>
+			<div class="pop_l_content">
+				<p class="al_center">향후에는 보다 나은 답변을 준비하도록 노력하겠습니다.<br />답변 만족도를 평가해주셔서 감사합니다.</p>
+				<p class="line_weithline al_center t_desc03 mt15">자세한 상담을 받으시려면 <a href="javascript:goTabPage('NHPIMCSMAIL1');" class="a_point">E-mail 상담실</a>을 이용하세요</p>
+			</div>
+			<p class="btnc mt20"><a href="javascript:closeLayer('score_low');"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+		</div>
+	</div> 
+</div>
+<div id="score_high"  class="pop_l_position pop_l_wrap_mix">
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_mix">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="레이어 닫기" />
+			<p class="pop_tit03"><img src="/images/cs/layer_tit_sorry_unsatisfactory_response.png" alt="답변 만족도를 평가해주셔서 감사합니다" /></p>
+			<div class="pop_l_content">
+				<p class="al_center">회원님의 평가는 보다 나은 답변을 위해 자료로 활용됩니다.</p>
+				<p class="line_weithline al_center t_desc03 mt15">자세한 상담을 받으시려면 <a href="javascript:goTabPage('NHPIMCSMAIL1');" class="a_point">E-mail 상담실</a>을 이용하세요</p>
+			</div>
+			<p class="btnc mt20"><a href="javascript:closeLayer('score_high');"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+		</div>
+	</div>
+</div>

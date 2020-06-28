@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block clfix">
+    <h2><img src="/images/mh/h2_applist_foreign.png" alt="해외승인내역을 조회하세요" /></h2>
+    <div class="content_block_inner">
+
+        <ol class="list_no01">
+            <li><p>최근 3개월 간의 승인내역을 확인할 수 있으며 거래일, 시각은 한국시간 기준입니다.</p></li>
+            <li><p>승인내역의 거래일이 3개월 이전인 경우는 해외카드 사용의 승인이 늦게난 경우입니다.</p></li>
+            <li><p>해외 가맹점은 예치금 명목으로 실제 사용금액보다 많은 금액을 승인 요청할 수 있으므로 해외승인내역은<br /> 고객님께서 실제 이용하신 금액과 차이가 발생할 수 있습니다. </p></li>
+            <li><p>실제 결제하실 금액 <a href="javascript:goSubmit('4')" class="a_point">해외이용내역</a>을 확인해 주시기 바랍니다.</p></li>
+        </ol>
+
+        <table class="dtable02 dtable_inputfield mt30" summary="해외승인내역을 위한 카드선택하는 게시판입니다.">
+        <caption>해외승인내역 조회</caption>
+        <colgroup><col width="115" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><p>카드선택</p></th>
+                <td><p>
+                    <select title="카드종류 선택" style="width:360px" name="srchCardNo">
+                        <option></option>
+                    </select>
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnr"><a href="javascript:goSubmit('2')" class="btn btn_blue"><span>조회</span></a></p>
+        </div>
+		
+      	<div class="btnset mt20" style="margin-bottom: 10px;">
+            <p class="btnr">
+                <a href="javascript:goSubmit('2')" class="btn btn_s_gray"><span>국문보기</span></a><a href="javascript:goSubmit('3')" class="btn btn_s_white"><span>ENGLISH</span></a>
+            </p>
+        </div>
+		
+        <table class="dtable01 dtable01_bill" summary="해외승인내역을 위한  거래일, 거래시간, 업종, 가맹점명, 이용국가, 요청금액, 결과를 보여주는 게시판입니다">
+        <caption>해외승인내역</caption>
+        <colgroup><col width="64" /><col width="64" /><col width="84" /><col width="*" /><col width="64" /><col width="64" /><col width="34" /></colgroup>
+        <thead>
+            <tr>
+                <th scope="col" class="cell_l10">거래일<br />(한국시간)</th>
+                <th scope="col">거래시간<br />(한국시간)</th>
+                <th scope="col">업종</th>
+                <th scope="col">가맹점명</th>
+                <th scope="col">이용국가</th>
+                <th scope="col" class="cell_r10">요청금액<br />(USD/US$)</th>
+                <th scope="col">결과</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="t_no">0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td>
+					<a href="#"><font color="blue">승인</font></a>
+					<a href="#"><font color="red">거절</font></a>
+				</td>
+			</tr>
+			<tr class="nodata">
+				<td colspan="7"> 최근 3개월 간의 해외거래승인이 없습니다.</td>
+			</tr>
+        </tbody>
+        </table>
+
+		<!-- btn -->
+		<div class="btnset">
+
+			<p class="btnr">
+                <a href="javascript:goPpage();" class="btn btn_s_white" ><span>이전</span></a>
+                <a href="javascript:goNpage();" class="btn btn_s_white" ><span>다음</span></a>
+			</p>
+<!--
+			<p class="btnr">
+				<a href="#" class="btn btn_white"><span>다운로드</span></a>
+				<a href="#" class="btn btn_white"><span>인쇄</span></a>
+			</p>
+-->
+		</div>
+
+    </div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

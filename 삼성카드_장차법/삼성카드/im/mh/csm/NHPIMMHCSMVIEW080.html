@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_chk_duepay.png" alt="결제 예정 금액을 확인하세요." /></h1>
+</div>
+				
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+	<div class="content_block_inner">
+        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);"  style="width:130px"><p class="btn">&nbsp;</p>
+			<p><a href="#" class="default" onclick="return false;">법인카드</a></p>
+			<div class="childlayer">
+				<ul>
+                    <li><a href="javascript:goIndividual()">개인카드</a></li>
+                    <li><a href="javascript:goCorporate()">법인카드</a></li>
+				</ul>
+			</div>							
+		</div>
+		<span class="selectbox_r_txt ">개인카드, 법인카드 중 조회하실 카드를 선택하세요</span>
+		<div class="line_lgray">&nbsp;</div>
+		<table class="dtable02 dtable_inputfield" summary="최근 입금내역을 확인하실 카드를 선택 할 수 있는 게시판입니다">
+		<caption> 카드선택</caption>
+		<colgroup><col width="17%" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select id="label_ch_card" style="width:360px" name="card" onchange="changeCard()" title="카드선택">
+						<option></option>
+					</select>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+<!-- SR내역 13.02.04 -->
+		<ol class="list_no01 mt20">
+			<li><p>결제예정금액은 2012.03.02까지 삼성카드로 접수된 이용금액 기준으로 작성되어 결제대금과 다를 수<br /> 있습니다.</p></li>
+			<li><p>전월 청구서 발송 이후 취소매출이 접수된 경우 해당 금액은 전월 결제대금 반영 또는 환불처리됩니다.<br />
+				   이 경우 취소거래 안내를 위해 부득이 익월 거래내역에 취소매출을 표기함으로 결제예정금액과<br /> 카드이용내역이 상이할 수 있습니다.</p></li>
+		</ol>
+<!--// SR내역 13.02.04 -->
+		<div class="btnset">
+            <p class="btnr"><a class="btn btn_blue" href="javascript:changeCard();"><span>조회</span></a></p>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_chk_duepay02.png" alt="결제 예정 금액 요약내역입니다" /></h2>
+	<div class="content_block_inner">
+		<div class="table_style01">
+			<p class="txt_unit">[단위 : 원]</p>
+            <table class="dtable01" summary="이용상품, 당월 결제예정금액(A),당월 결제 후 잔여금액(B),총 결제예정 금액(A)+(B)을 상세히 확인할 수 있는 게시판입니다.">
+				<caption>결제 예정 금액 요약내역</caption>
+				<colgroup>
+					<col width="13%" />
+					<col width="13%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="10%" />
+					<col width="14%" />
+					<col width="14%" />
+					<col width="14%" />
+				</colgroup>
+				<thead>
+				<tr>
+					<th class="cell_l10 riline" rowspan="3" scope="col">이용상품</th>
+					<th class="cell_c riline boline_b0" colspan="5" scope="colgroup"><b>당월 결제예정금액(1) (A)</b></th>
+					<th class="cell_l10 riline" rowspan="3" scope="col"><b>당월 결제 후 <br />잔여금액(B)</b></th>
+					<th class="cell_r10" rowspan="3" scope="col"><b>총 결제예정 <br />금액(A)+(B)</b></th>
+				</tr>
+				<tr>
+					<th rowspan="2" scope="col" class="cell_r10 riline">원금</th>
+					<th colspan="2" scope="colgroup" class="boline_b0 riline">이자/수수료</th>
+					<th rowspan="2" scope="col" class="cell_r10 riline">연체금액</th>
+					<th rowspan="2" scope="col" class="cell_r10 riline">소계</th>
+				</tr>
+				<tr>
+					<th class="riline cell_r10" scope="col">결제일</th>
+					<th class="riline cell_r10" scope="col">당일</th>
+				</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td class="cell_l10 riline cell_bg" colspan="5">총 결제예정금액</td>
+						<td class="cell_r10 riline"></td>
+						<td class="cell_r10 riline"></td>
+						<td class="cell_r10 cell_bg">1</td>
+					</tr>
+				</tfoot>
+				<tbody>
+				<tr>
+					<td class="cell_l10 riline">1</td>
+					<td class="cell_r10 riline t_no">1</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10">1</td>
+				</tr>			
+				<tr>
+					<td class="cell_l10 riline" colspan="5" scope="row">미리 입금하신 금액</td>
+					<td class="cell_r10 riline">1</td>
+					<td class="cell_r10 riline">0</td>
+					<td class="cell_r10">1</td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="t_org">당월 약정결제 금액(1%)</strong></td>
+					<td class="cell_r10 riline cell_bg"><strong class="t_org">1</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline" colspan="5" scope="row">(당월 최소결제 금액 1%)</td>
+					<td class="cell_r10 riline">(1)</td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="t_org">당월 결제예정금액</strong></td>
+					<td class="cell_r10 riline cell_bg"><strong class="t_org">1</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10"></td>
+				</tr>
+				<tr>
+					<td class="cell_l10 riline cell_bg" colspan="5" scope="row"><strong class="bold_txt1">당월 결제 후 잔여금액</strong></td>
+					<td class="cell_r10 riline"></td>
+					<td class="cell_r10 riline cell_bg"><strong class="bold_txt1">1</strong></td>
+					<td class="cell_r10"></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="btnset">
+			<p class="btnl">
+                <a href="javascript:goInputList()" class="btn btn_white"><span>입금내역 조회 &gt;</span></a>
+                <a href="javascript:goYejung1()" class="btn btn_white"><span>미결제금액 조회 &gt;</span></a>
+                <a href="javascript:goEmsApply()" class="btn btn_white"><span>즉시결제 신청 &gt;</span></a>
+                <a href="javascript:goCardUse()" class="btn btn_white"><span>카드이용내역 조회 &gt;</span></a>
+                <!--<a href="javascript:goAutoPay()" class="btn btn_white"><span>결제일 직전영업일 출금신청  &gt</span></a>
+			--></p>
+		</div>
+		<div>
+			<p class="mt20">
+			<!-- 120920  추가 -->※결제일이 휴일인 경우 익영업일에 출금됩니다. 결제일 이전에  결제를 원하시는 경우, 상단의  "즉시결제 신청" <br /> &nbsp;&nbsp;&nbsp;&nbsp;을 이용해주시기 바랍니다.<br /><!-- //120920  추가 -->
+			※ 선택하신 법인카드번호에 해당하는 결제예정금액입니다.<br />
+			※ 할부금융, 론패스, 리스 등 이용금액은 제외 된 금액입니다.</p>
+			<p class="p_tit mt10">※ 채무변제순서</p>
+			<p>결제금액 전액을 입금하지 못하신 경우에는 연회비, 제반비용, 지연배상금, 상품별 수수료, 이자 등이 원금에 <br/>우선 변제되며, 상품별 이자율이 높은 순으로 연체원금 변제 후 정상원금이 변제처리 됩니다.</p>
+		</div>
+	</div>
+</div>
+</form>
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_chk_duepay02a.png" alt="결제 예정 금액 상세내역입니다" /></h2>
+		<div class="tb_exp clfix">
+			<span>익월에 결제하실 상세내역이 포함되어 있습니다.<!-- SR내역 13.02.04 -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[단위 : 원]</span>
+		</div>
+		<form name="tabform">
+		<!-- 암호화를 위한 dummy object--> 
+		<!-- tab -->
+		<div class="tab02 w810 mb30">
+			<ul id="subtab">
+                <li class="on"><a href="javascript:tabChange('tab1','1');">일시불 &middot; 할부</a></li><!-- choose -->
+                <li><a href="javascript:tabChange('tab2','2');">현금서비스 &middot; 대출 &middot; 마이너스론</a></li>
+                <li><a href="javascript:tabChange('tab3','3');">연회비 &middot; 신용보호</a></li>
+                <li><a href="javascript:tabChange('tab4','4');">자유결제/리볼빙 일시불 &middot; 현금서비스</a></li>
+			</ul>
+		</div>
+		</form>
+		<form name="tempXecureForm"><input type="hidden" name="p" /></form>
+		<!-- 상세내역 iframe 영역 -->
+		<iframe id="subtabIframe" name="iframe" height="813" width="100%" frameborder="0" scrolling="no" title="결제 예정 금액 상세내역"></iframe>
+</div>	
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

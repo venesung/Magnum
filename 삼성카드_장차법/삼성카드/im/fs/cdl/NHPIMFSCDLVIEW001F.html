@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none"><%=result.getContentNm() %></h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3941_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<!-- //voc add btn -->
+	<a href="javascript:goTabPage('NHPIMFSCDLM002',true);" class="mv_h1_btn depth4"><img src="/images/fs/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+	<!-- voc add btn// -->
+</div>
+
+<!-- content_block -->
+<div name="divContent" class="content_block content_block_card clfix">
+<form name="form1">
+<input type="hidden" name="plain" value="" />
+<input type="hidden" name="loadCnt" value="0" /> 
+<input type="hidden" name="ssno" value="" /></form>
+<div id="flexObject"></div>
+</div>
+<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+	<form name="form_main">
+		<!-- tab_area -->
+		<div class="tab02 w810">
+			<ul id="tabs">
+				<li id="tabLi0"><a href="javascript:setTabNo('0');goTabPage('NHPIMFSCDLM',true);">서비스안내</a></li>
+				<li id="tabLi2" <% if("2".equals(tabNo)){out.print("class='on'");} %> ><a href="javascript:setTabNo('2');goTabPage('NHPIMFSCDLM002',true);">신청</a></li>
+				<li id="tabLi1" <% if("1".equals(tabNo)){out.print("class='on'");} %> ><a href="javascript:setTabNo('1');goTabPage('NHPIMFSCDLM001',true);">시뮬레이션</a></li>
+				<li id="tabLi3" <% if("3".equals(tabNo)){out.print("class='on'");} %> ><a href="javascript:setTabNo('3');goTabPage('NHPIMFSCDLM003',true);">신청결과 조회</a></li>
+				<li id="tabLi5" <% if("5".equals(tabNo)){out.print("class='on'");} %> ><a href="javascript:setTabNo('5');goTabPage('NHPIMFSCDLM005',true);">이용내역조회</a></li>
+				<li id="tabLi4" <% if("4".equals(tabNo)){out.print("class='on'");} %> ><a href="javascript:setTabNo('4');goTabPage('NHPIMFSCDLM004',true);">만기연장 &middot; 상환신청</a></li>
+			</ul>
+		</div>
+		<input name="tabNo" type="hidden"/>
+	</form>
+</div>
+<jsp:include page="NHPIMFSCDLVIEW001F0${tabNo}.jsp" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

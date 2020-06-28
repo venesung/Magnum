@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_card_settlementday_change.png" alt="결제 관련 정보를 조회/변경하실 수 있습니다" /></h1><!-- 100422 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+					<div class="d_desc">
+						<div class="tab01 w810">
+							<ul>
+                                <li><a href="javascript:goMyAccountInfoMain()">카드 결제일 변경</a></li>
+                                <li><a href="javascript:goMyAccountInfo()">결제계좌변경</a></li>
+                                <li class="on"><a href="javascript:goVirtualAccount()">가상계좌 조회 및 신청</a></li>
+                                <li><a href="javascript:goApplyResult()">처리결과조회</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<h2><img src="/images/mh/h2_card_settlement_modify01.png" alt="가상계좌 정보입니다." /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable01" summary="가상계좌의 정보(입금구분, 카드/할부금융/론패스번호, 은행명, 가상계좌번호, 계좌부여일)를 확인할 수 있는 게시판입니다.">
+						<caption>가상계좌 정보 게시판</caption>
+						<colgroup><col width="100" /><col width="170" /><col width="100" /><col width="170" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">입금구분</th>
+								<th scope="col">카드/할부금융/론패스번호</th>
+								<th scope="col">은행명</th>
+								<th scope="col">가상계좌번호</th>
+								<th scope="col">계좌부여일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr class="nodata">
+								<td colspan="5">신청하신 내용이 없습니다. 신청버튼을 클릭하여주시기 바랍니다.</td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td class="t_no">0</td>
+								<td class="t_no">0</td>
+							</tr>
+						</tbody>
+						</table>
+						<!-- paginate -->
+						<div class="paginate">
+							<div class="paging">
+                                <a href="javascript:goPpage();" class="btn btn_s_white"><span>이전</span></a>
+								|
+                                <a href="javascript:goNpage();" class="btn btn_s_white"><span>다음</span></a>
+							</div>
+						</div>
+						
+						<!-- btn -->
+						<div class="btnset mt10">
+							<div class="btnl">
+								<ol class="list_desc">
+									<li><p>가상계좌로 입금 시에는 입금구분 항목과 일치하는 가상계좌로 입금을 하셔야 합니다.</p></li>
+									<li><p>즉, 카드대금 입금 시에는 카드로 부여된 가상계좌, 할부금융대금 입금 시에는 <br />
+									해당 할부 번호 가상계좌로 입금하셔야 합니다.</p></li>
+									<li><p>당사로 통합 정산을 요청하신 회원께서는 어느 계좌로 입금하시든 결제금액으로 정산 처리됩니다.</p></li>
+								</ol>
+							</div>
+							<div class="btnr">
+                                <a href="javascript:pre_goApplyVirtualAccount()" class="btn btn_blue"><span>신청</span></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_card_settlement_modify02.png" alt="가상계좌 이용안내입니다" /></h2>
+					<div class="content_block_inner">
+
+						<p class="t_point">가상 계좌란?</p>
+						<ol class="list_no01 mt10">
+							<li><p>회원님의 입금편의를 위해 삼성카드에서 부여해 드리는 회원님 고유의 입금전용 계좌번호입니다.</p></li>
+							<li><p>부여 받으신 가상계좌 번호로 삼성카드 결제대금을 입금하실 수 있습니다.</p></li>
+						</ol>
+
+						<div class="line_lgray">&nbsp;</div>
+
+<!-- 정기일반영 13.03.19 -->
+						<!--p class="t_point">가상계좌 신청하기</p>
+						<ol class="list_no01 mt10">
+							<li><p>가상 계좌입금은 타행, CD기입금, PC뱅킹, 텔레뱅킹, 무통장입금 등 모든 방법으로 입금이 가능합니다.</p></li>
+							<li><p>홈페이지를 통해 부여받는 가상계좌는 당사 카드대금 입금용 계좌입니다.</p></li>
+							<li><p>할부금융이나 아하론패스 입금을 위한 가상계좌 신청은 <strong class="t_black">고객상담센터(1588-8700)</strong>로 신청하시기 바랍니다.</p></li>
+							<li><p>법인카드는 상담원을 통해 가상계좌 신청이 가능합니다.</p></li>
+						</ol-->
+						<p class="t_point">가상계좌 신청하기</p>
+						<ol class="list_no01 mt10">
+							<li><p>가상계좌는 타행, CD기입금, PC뱅킹, 텔레뱅킹, 무통장입금 등 모든 방법으로 입금이 가능하며,<br />해당 은행의 송금 수수료가 부과됩니다.</p></li>
+							<li><p>할부금융, 아하론패스, 법인카드 입금을 위한 가상계좌 신청은 <strong class="t_black">고객상담센터(1588-8700)</strong>로 신청하시기<br />바랍니다.</p></li>
+							<li><p>가상계좌는 24시간 입금이 가능합니다.(단, 삼성증권은 23시40분까지 가능)</p></li>
+							<li><p>계좌번호를 잘못 기재하는 경우 타인에게 입금처리 되어, 재회수가 어려울 수 있으니<br />계좌번호를 반드시 확인하여 주십시오.</p></li>
+						</ol>
+<!--// 정기일반영 13.03.19 -->
+
+					</div>
+				</div>
+
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer01" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:250px;top:0; height:0; font-size:0; line-height:0; z-index:900;">
+        <div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer01'); show_select();"  value="레이어닫기" title="가상계좌 신청 은행 선택 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/mh/layer_tit_virtual_account.png" alt="가상계좌 신청 은행을 선택하시기 바랍니다." /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert">
+					<table summary="가상계좌 신청 은행을 선택하는 게시판입니다." class="dtable02">
+						<caption>가상계좌 신청 은행 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>은행 선택</p></th>
+								<td class="cell_l10">
+									<label for="certificate01"><input type="radio" name="parm_string3" class="rdo" id="certificate01" value="78" title="삼성증권" />삼성증권</label>
+									<label for="certificate02" class="ml30"><input name="parm_string3" type="radio" class="rdo" id="certificate02" title="스탠다드차타드" />스탠다드차타드</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="btnc">
+                    <a href="javascript:goApplyVirtualAccount();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+                    <a href="#" onclick="hide_con('id_layer01'); show_select();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+ 				</p>
+			</div>
+		</div>
+	</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

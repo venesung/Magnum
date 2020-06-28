@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title><% if("M2".equals(SiteGubun)) { %>삼성카드 2<%}else{%>삼성카드 갤러리<%}%></title>
+<link rel="stylesheet" type="text/css" href="/css/base_micro.css" /> 
+<!--link rel="stylesheet" type="text/css" href="/css/base_showroom.css" /-->
+<style type="text/css" media="screen">
+		html, body { height:100%; background-color: #ffffff;}
+		body { margin:0; padding:0; overflow:hidden; }
+		#flashContent { width:100%; height:100%; text-align:center;}
+		#flashContent span{vertical-align:middle; overflow:hidden; display:inline-block; width:0; height:100%;}
+		</style>
+</head> 
+<body>
+<div id="block_event_layer" style="position:absolute;top:0px;left:0px;width:100%;background-color:white;filter:alpha(opacity=1);opacity:1/100;display:none;z-index:1000;">
+	<p id="block_event_layer_back"></p>
+</div>
+<div id="layer_popup" align="center" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:none;z-index:1001;">
+	<div id="layer_popup_content"></div>
+</div>
+
+<div id="id_fill_app">
+			<jsp:include page="/hp/im/cd/app501.do?method=showRoomAgreement&cardLog=${cardCode}&cardCode=${cardCode}&brand=${brand}&SiteGubun=${SiteGubun}&eventNo=${cardAppVO.eventNo}&giftNo=${cardAppVO.giftNo}&kindCode=${cardAppVO.kindCode}" flush="true" />
+</div>
+
+</body>
+</html>

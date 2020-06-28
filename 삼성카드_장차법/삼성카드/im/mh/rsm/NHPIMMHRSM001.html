@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">자유결제 서비스입니다</h1>
+					<div class="h1_desc"><img src="/cms_content/finance/svc/3961_IMG_1.jpg" alt="<%=cresult.getDescription() %>" /></div>
+				</div>
+
+				<div class="content_block content_block_card clfix">
+					<div class="tab02 w810">
+						<ul>
+							<li><a href="javascript:goTabPage('NHPIMMHRSM001M001', true);">자유결제서비스 안내</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHRSM001M002', true);">신청하기</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M003', true);">결제비율변경</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M004', true);">해지/당일신청내용 취소</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHRSM001M005', true);">결제예정금액조회</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_freepayment_app01.png" alt="자유결제서비스 가입안내입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>결제비율은 10~100%내에서 10% 단위로 회원님께서 원하시는대로 변경 하실 수 있습니다.</p></li>
+							<li><p>자유결제서비스를 신청하는 경우 결제일 3일전까지 신청하셔야 당월 결제일부터 바로 적용됩니다.<br /><span class="t_desc04">(토, 일요일 및 공휴일을 제외한 영업일수 기준)</span></p></li>
+							<li><p>신청가능시간은 08:00 ~ 21:00 입니다. <span class="t_desc04">공휴일 포함</span></p></li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_app02.png" alt="고객님의 정보를 확인해주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="고객정보 확인을 위해 카드선택, 카드비밀번호, 카드 CVC번호를 입력하는 게시판입니다">
+						<caption>카드정보 입력</caption>
+						<colgroup><col width="17%" /><col width="*" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card" style="width:360px">
+										<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p>카드 비밀번호</p></th>
+								<td>
+									<p class="input_2char">
+									<input type="password" name="label_ch_cardpass" class="txt" value="" onkeyup="changeFocus();" id="label_ch_cardpass" title="카드 비밀번호 앞 두자리 입력" maxlength="2" /><em>**</em>(비밀번호 앞의 2자리)
+				                	<span id="usafeon_label_ch_cardpass"></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>카드 CVC번호</p></th>
+								<td>
+									<p class="input_3char">
+									<input type="password" name="label_ch_cvcnum" class="txt" value="" id="label_ch_cvcnum" title="카드 CVC번호 입력" maxlength="3" />(카드 뒷면 19자리 숫자 중 뒤의 3자리)
+				                	<span id="usafeon_label_ch_cvcnum"></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<dl class="cvc_view cvc_view_noborder">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_app03.png" alt="결제비율을 변경해 주세요" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix">
+							<span class="fl_left">최소10%에서 100%까지 10%단위로 선택하실 수 있습니다.</span>
+                            <span class="ab_tr "><a id="NHPIMMHRSM001_L01" href="javascript:rate();fnSetReturnFocusId('NHPIMMHRSM001_L01','id_layer03');" class="btn_link">결제비율이란?</a></span>
+						</div>
+
+						<table class="dtable02 dtable_inputfield" summary="결제비율을 변경하는 게시판입니다.">
+						<caption>결제비율 변경</caption>
+						<colgroup><col width="17%" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>결제비율 변경</p></th>
+								<td><p>
+									<select title="비율 선택" id="label_billing_rates" class="mr10">
+										<option>00</option>
+									</select> %
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_app04.png" alt="자유결제서비스 약관에 동의해 주세요" /></h2>
+					<div class="content_block_inner">
+						<fieldset class="fieldset_agree">
+							<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+								<div id="agreeDiv" name="agreeDiv" class="agree" tabindex="0"></div>
+							</div></div>
+							<div class="btnset">
+								<div class="btnl">
+									<label for="label_living_ftechagree01"><input type="radio" class="chk" id="label_living_ftechagree01" name="label_living_ftechagree" checked="checked" title="자유결제 서비스 약관에 동의합니다." /> 동의</label><label for="label_living_ftechagree02"><input type="radio" class="chk" id="label_living_ftechagree02" name="label_living_ftechagree" title="자유결제 서비스 약관에 동의하지 않습니다." /> 동의안함</label>
+								</div>
+								<div class="btnr">
+                                    <a href="javascript:printAgree()" class="btn btn_white" title="새창"><span>인쇄</span></a>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_freepayment_app05.png" alt="자유결제 서비스 이용시 주의사항 입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<!-- <li><p>신청가능시간 - 오전 08:00 ~ 오후 21:00 <span class="t_desc04">공휴일 포함</span></p></li> 100625 -->
+							<li><p>일부 회원님의 경우 자유결제서비스 이용이 제한 될 수 있습니다.</p></li>
+							<li><p>자유결제서비스는 보유하신 본인회원 및 가족회원 카드에 의한 국내외 일시불 신용판매 및 현금서비스 이용대금에<br />대해 적용됩니다. <span class="t_desc04">카드론 및 할부, 연회비 및 기타 수수료 등의 결제에는 적용되지 않습니다.</span></p></li>
+							<li><p>자유결제서비스를 신청하시면, 도래하는 첫 결제일부터 변경 전, 후의 모든 카드 이용대금에 대하여<br />자유결제서비스가 적용됩니다.</p></li>
+							<li><p>현금서비스 사용건은 자유결제서비스 신청 다음 날부터 잔액 한도제가 적용됩니다.<br /><span class="t_desc04">잔액한도제란, 회원님께서 입금하신 금액만큼만 한도가 부여되는 제도로 자유결제서비스를 해지하더라도 잔액한도제는 계속 유지됩니다.</span></p></li>
+							<li><p>무통장입금 회원님의 경우에는 최소결제비율(10%)만 청구되며 그이상을 입금을 원하실 경우,<br />고객상담센터(1588-8700)에서 상담원에게 요청 후 이용하시면 됩니다.</p></li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block fill_joinin clfix">
+					<p class="btnc"><a href="javascript:conf();"><img src="/images/common/btn_n_application.png" alt="신청" /></a></p>
+				</div>
+
+
+</form>
+
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:140px;top:-820; height:0; font-size:0; line-height:0; z-index:900;display:none">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" value="레이어닫기" title="결제비율 안내 레이어 닫기" />
+			<p class="pop_tit3"><img src="/images/mh/layer_tit_billing_rates.png" alt="결제비율에 대해서 알아보세요" /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert03">
+					<p>결제금액 중 회원님께서 매월 결제하시고자 하는 결제금액의 비율로<br />10~100%내에서 10% 단위로 선택하여 이용할 수 있으며, 카드이용대금<br />결제일 2일전까지 결제비율을 변경 또는 신청하시면 그달의<br />결제일부터 적용가능합니다. (영업일기준)</p>
+					<div class="line_lgray">&nbsp;</div>
+					<p class="t_desc04">무통장 입금 회원님의 경우에는 최소 결제비율인 10% 만 적용됩니다.</p>
+ 				</div>
+                <p class="btnc"><a href="#1" onclick="hide_con('id_layer03'); show_select();closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="kr.co.spectra.base.*"%>
+<%@page import="kr.co.spectra.sql.*"%>
+<%@page import="kr.co.spectra.util.*"%>
+<%@page import="kr.co.spectra.log.*"%>
+<%@page import="kr.co.spectra.web.*"%>
+<%@page import="kr.co.spectra.web.servlet.*"%>
+<%@page import="kr.co.spectra.web.template.*"%>
+<%@page import="kr.co.spectra.enomix.web.common.def.Const"%>
+<%@page import="kr.co.spectra.enomix.web.common.util.*"%>
+<%@page import="kr.co.spectra.enomix.js.util.commonpublic.*"%>
+
+
+<%!
+public static String blockSQLHack(String szOrg)
+{
+  String szTarget = null;
+  if (szOrg == null) { return null ; }
+  try 
+  {
+    szTarget = szOrg;
+    szTarget = szTarget.replaceAll("'","''");
+    szTarget = szTarget.replaceAll(";","");
+    szTarget = szTarget.replaceAll("--","");
+    szTarget = szTarget.replaceAll("<","&lt;");
+    szTarget = szTarget.replaceAll(">","&gt;");
+  }
+  catch(Exception e){}
+  return szTarget;
+}
+
+%>
+
+<%@ page import="kr.co.spectra.enomix.web.sqls.exMailSqls" %>
+
+<jsp:useBean id="exMail" class="kr.co.spectra.enomix.web.beans.exMailMng" />
+
+<%
+
+	request.setCharacterEncoding("UTF-8");
+
+	String strTicketId = "";
+	String strReqSerial = "";
+	String strResSerial = "";
+	int result = 0;
+
+	strTicketId = Util.nvl(blockSQLHack(request.getParameter("tid")), "");
+	strReqSerial = Util.nvl(blockSQLHack(request.getParameter("reqser")), "");
+	strResSerial = Util.nvl(blockSQLHack(request.getParameter("resser")), "");
+
+	try
+	{
+		if (!strTicketId.equals("") && !strReqSerial.equals("") && !strResSerial.equals("")) {
+		    result = exMail.insertTicketResponseRead(strTicketId, strReqSerial, strResSerial);
+		} 
+		
+		out.println("result : " + result);
+	}
+	catch(Exception e)	 
+	{
+	   	out.println(e.getMessage());
+	}
+
+%>
+
+
+

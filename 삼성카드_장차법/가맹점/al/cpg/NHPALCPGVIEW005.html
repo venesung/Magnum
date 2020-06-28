@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>MALL 현황조회 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">PG Mall 관리시스템&nbsp;&gt;&nbsp;MALL 현황조회</div>
+				<h1><img src="/images/al/h1_mall_status.png" alt="Mall 현황 조회" /></h1>
+				<p class="ab_br"><img src="/images/al/img_pgmall.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<div class="tb_exp clfix">
+						<span class="t_black"><strong>MALL 상세 내역입니다</strong></span>
+					</div>
+					<table class="dtable02" summary="사업자 번호, Sub mail 업체명, 업종, 대표자명, 대표자 주민번호, 주소, 전화번호, 도메인, 진행상태, 반송사유, 처리일자 등 MALL 상세 내역을 볼 수 있는 게시판입니다.">
+					<caption>MALL 상세 내역</caption>
+					<colgroup><col width="20%" /><col width="80%" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>사업자 번호</p></th>
+							<td><p class="t_no"><% if(resultVO.getBusinessNo() != null) out.write(HpCommonUtil.convPatternString(1, resultVO.getBusinessNo(), "-")); %></p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><p>Sub mail 업체명</p></th>
+							<td><p><%=resultVO.getMallName().replace("\"", "") %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>업종</p></th>
+							<td><p><%=resultVO.getBusinessType() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>대표자명</p></th>
+							<td><p><%=resultVO.getSpotName() %> </p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>대표자 주민번호</p></th>
+							<%if(resultVO.getIdenNo() == null || resultVO.getIdenNo()==""){ %><td><p class="t_no"> - </p></td>
+							<%}else{ %>
+							<td><p class="t_no"><%=resultVO.getIdenNo().substring(0,6) %>-<%=resultVO.getIdenNo().substring(6,7) %>******</p></td>
+							<%} %>
+						</tr>
+						<tr>
+							<th scope="row"><p>주소</p></th>
+							<td><p><span class="t_no"><% if(resultVO.getZipCode() != null){ out.write(HpCommonUtil.convPatternString(2, resultVO.getZipCode(), "-"));} %>
+							</span> <%=resultVO.getAddress() %> <%=resultVO.getAddressDistrict() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>전화번호</p></th>
+							<td><p class="t_no"><%=resultVO.getPhoneNo1() %>-<%=resultVO.getPhoneNo2() %>-<%=resultVO.getPhoneNo3() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>도메인</p></th>
+							<td><p>http://<%=resultVO.getDomain() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>진행상태</p></th>
+							<td><p><strong class="t_black">
+							<% if(resultVO.getProcessCode().equals("10")){ %>접수<%}	
+							else if(resultVO.getProcessCode().equals("20")){ %>반송<%}	
+							else if(resultVO.getProcessCode().equals("30")){ %>정상(승인)<%}		
+							else if(resultVO.getProcessCode().equals("60")){ %>PG사 해지<%}		
+							else if(resultVO.getProcessCode().equals("60C")){ %>카드사 해지<%}%>		
+							</strong></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>반송사유</p></th>
+							<td><p><%=resultVO.getApproveDesc() %></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>처리일자</p></th>
+							<td><p class="t_no">
+								<% if(resultVO.getProcessDate() != null){
+								   out.write(HpCommonUtil.getPatternDateString(resultVO.getProcessDate(), "yyyy.MM.dd"));}%>
+							</p></td>
+						</tr>
+					
+						
+					</tbody>
+					</table>
+
+					<div class="btnset">
+						<div class="btnl">
+                            <a href="javascript:cmdedit();" class="btn btn_white"><span>수정</span></a>
+                            <a href="javascript:cmddelete();" class="btn btn_white"><span>삭제</span></a>
+						</div>
+						<div class="btnr">
+							<%if(resultVO.getProcessCode().equals("60") || resultVO.getProcessCode().equals("20")){%> <a href="javascript:cmdapprove_ok();" class="btn btn_white"><span>관리카드등록</span></a> <%} %>
+                            <a href="javascript:cmdapprove();" class="btn btn_white" id="lockTarget"><span>관리카드제외</span></a>
+                            <a href="javascript:cmdclose();" class="btn btn_white"><span>목록</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+<input type="hidden" name="businessNo" value="<%=resultVO.getBusinessNo() %>" />
+
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

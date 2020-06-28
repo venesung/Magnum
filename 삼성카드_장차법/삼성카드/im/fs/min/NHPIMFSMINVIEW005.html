@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+
+<%@page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00079INVO"%>
+<%@page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00079INRecVO1"%>
+<%@page import="com.scard.common.util.StringUtil"%>
+
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+HOMEHMV5HPR00079INVO dataList = (HOMEHMV5HPR00079INVO)request.getAttribute("datalist");
+%>
+
+<div id='tab_title'>미니결제 이용내역</div>
+<div id='tab_script'>
+<script type="text/javascript" languge="javascript">
+function cancle_ok(no) {
+	form1 = document.form_main;
+	
+	var check_value = confirm('선택하신 미니결제를 취소하시겠습니까?');
+	
+	if(check_value) {
+		
+		form1.hid_STRING3.value = eval("form1.hid_string3_"+no+".value");
+		form1.hid_STRING4.value = eval("form1.hid_string4_"+no+".value");
+		form1.hid_STRING5.value = eval("form1.hid_string5_"+no+".value");
+		form1.hid_STRING6.value = eval("form1.hid_string6_"+no+".value");
+
+		//form1.action = "/hp/im/fs/min001.do?method=cencalMini";
+		//form1.submit() ;
+		tabSubmit("/hp/im/fs/min001.do?method=cencalMini", form1);
+	}
+	
+}
+
+function call_result() {
+	form = document.form_main;
+	if( form.CANCEL_RESULT.value == "CANCEL_OK" ){
+		alert( "취소완료되었습니다.\n결제일에 예정대로 청구되오니 결제금액을 입금해 놓으시기 바랍니다");
+		//alert( "test") ;
+	}
+}
+
+</script>
+</div>
+	
+			
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">원금 10%만, 부담없고 간편한 현금서비스 미니결제</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMFSMIN001M001', true );">서비스안내</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSMIN001M002', true );">미니결제신청</a></li>
+            <li class="on"><span class="none">현재단계</span><a href="#">신청결과조회</a></li>                            
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<!-- 2012.11.23 일반영 - 미니결제서비스 종료 --> 
+	<p class="t_point mt20">죄송합니다. </p>
+	<p class=" mb10 mt10">현금서비스 미니결제는 2012년 11월 27일부터 서비스가 중단되었습니다.</p>
+	<p>문의: 삼성카드 대표전화 1588-8700</p>
+	<!-- // 2012.11.23 일반영 - 미니결제서비스 종료 -->
+</div>
+
+
+
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>				

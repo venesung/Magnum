@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>정회원 전환 안내 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<style type="text/css">
+	#pop_wrap{width: 460px; padding: 39px 0 54px 0; text-align: center; overflow: hidden; margin: 0 0 0 5px; background: url("/images/pop/pop_membershipbg.png") no-repeat 165px 159px;}
+	#pop_wrap h2{padding: 0 0 20px 0;}
+	#pop_wrap .membershipText{padding: 0 0 142px 0;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+	<script type="text/javascript" language="javascript">
+	function setFocus(){
+		window.focus();
+	}
+	function openCheck(){
+	<%if("Y".equals(closeYn)){%>
+		window.close();
+	<%}else{%>
+		setTimeout("setFocus()", 2000);
+	<%}%>
+	}
+	function Go(){
+		opener.goTabPage('NHPIMMSCRN001M001');
+		window.close();
+	}
+	</script>
+</head>
+<body onload="openCheck();">
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/pop/h1_pop_membership.png" alt="정회원 전환 안내" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/pop/h1_pop_membership.png" alt="정회원 전환 안내" /></h1>
+	</div>
+	
+	<!-- content -->
+	<div id="pop_wrap">
+		<h2><img src="/images/pop/pop_membershiptitle.png" alt="삼성카드 홈페이지 정회원이 되어 주세요!" /></h2>
+		<p class="membershipText">안녕하세요. 회원님을 <span class="t_point_org">정회원</span>으로 모시고 싶습니다.<br />홈페이지 정회원이 되시면 카드 이용내역, 이용대금 명세서 조회를<br />비롯하여 웹회원만을 위한 다양한 이벤트에 참여하실 수 있습니다.</p>
+        <p><a href="javascript:Go();"><img src="/images/pop/pop_membershipbt.png" alt="정회원 전환하기" /></a></p>        
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="CLOSE" />
+	</div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+
+<div class="headerBox cate2">공통헤더</div>
+
+<div class="wrap">	
+
+	<div class="contentsBox_app">
+		<div class="appBox" style="padding-bottom:30px;">
+			<ul class="stepBox">
+				<li><img src="/images/cd/shw/app/txt_step1_off.gif" width="259" height="51" alt="STEP1 실명인증 및 약관동의" /></li>
+				<li><img src="/images/cd/shw/app/txt_step2_off.gif" width="259" height="51" alt="STEP2 신청정보 입력" /></li>
+				<li class="last"><img src="/images/cd/shw/app/txt_step3_on.gif" width="259" height="51" alt="STEP3 신청완료" /></li>
+			</ul>
+			<div class="app">
+				<img src="/images/cd/shw/app/txt_card1.gif" width="740" height="165" alt="선택하신 카드신청이 완료 되었습니다. 영업일 기준 5일~7일 이내에 배송될 예정입니다." />
+				<p class="stit" style="margin-top:-4px;"><img src="/images/cd/shw/app/txt_step3_1.gif" width="247" height="14" alt="카드 신청내역을 다시 한번 확인해주세요." /></p>
+				<table summary="성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지로 구성된 카드 신청내역을 확인하는 게시판입니다." class="table_app2 marB20">
+					<caption>카드 신청내역 확인</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><span class="padL14">성명</span></th>
+							<td><span class="padL10"><%=vo.getCustomerName() %></span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">주민등록번호</span></th>
+							<td><span class="padL10"><%=vo.getIdenNo1()%>-*******</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">신청카드명</span></th>
+							<td><span class="padL10"><%=vo.getCardName() %></span></td>
+						</tr>
+						<tr>
+							<th scope="row"><span class="padL14">신청일시</span></th>
+							<td><span class="padL10">00년 00월 00일 00시 00분</span></td>
+						</tr>
+						<tr class="last">
+							<th scope="row"><span class="padL14">카드수령지</span></th>
+							<td><span class="padL10">[000-000] <%=vo.getAddrArea() %> <%=vo.getAddrDist() %></span></td>
+						</tr>
+					</tbody>
+				</table>
+                <p class="alignC marB39"><a href="javascript:backUrl();"><img src="/images/cd/shw/app/btn_ok.gif" width="54" height="28" alt="확인" /></a></p>
+				
+				
+				<p class="stit"><img src="/images/cd/shw/app/txt_step3_2.gif" width="166" height="14" alt="부가정보를 입력해 주세요." /></p>
+				
+				<table summary="생일, 결혼여부, 결혼기념일, 자녀유무, 자녀생일, 배우자생일로 구성된 부가정보를 입력하기 위한 게시판입니다." class="table_app2 marB10 dtable02">
+					<caption>부가정보 입력</caption>
+					<colgroup>
+						<col width="125" />
+						<col width="615" />
+					</colgroup>
+					<tbody>				
+						<tr>
+							<th scope="row"><span class="padL14">생일</span></th>
+							<td>
+								<div class="poRelative">
+									<select class="marL10" id="label_urbirth" onchange="setDay('label_urbirth');" title="태어난 년도 선택">
+										<option>선택</option>
+									</select> 년
+									<select class="marL10" id="label_urbirth2" onchange="setDay('label_urbirth');" title="태어난 달 선택">
+										<option>선택</option>
+									</select> 월
+									<select class="marL10" id="label_urbirth3" title="태어난 날 선택">
+										<option>선택</option>
+									</select> 일
+									<span class="radioSpan">
+										<label class="marR10" for="label_birth_moon"><input type="radio" id="label_birth_moon" name="selfLunarSolar" value="2" title="음력" />음력</label>
+										<label class="marR10" for="label_birth_sun"><input type="radio" id="label_birth_sun" name="selfLunarSolar"  value="1" title="양력" />양력</label>
+									</span>
+									<span class="alram"><label for="label_birth_chk"><input type="checkbox" id="label_birth_chk" name="chkMemo2" title="알리미 등록" /> 알리미 등록</label></span>
+								</div>
+							</td>
+						</tr>
+						<tr >
+							<th scope="row"><span class="padL14">결혼여부</span></th>
+							<td>
+								<span class="radioSpan">
+									<label class="marR10" for="label_marry_or_not"><input type="radio"  id="label_marry_or_not" name="marriedYn"  value="N"  class="single" checked="checked" title="미혼" />미혼</label>
+									<label class="marR10" for="label_marry_or_not2"><input type="radio"  id="label_marry_or_not2" name="marriedYn" value="Y" class="married" title="기혼" />기혼</label>
+								</span>
+							</td>
+						</tr>
+						<tr class="ex4_off">
+							<th scope="row"><span class="padL14">결혼기념일</span></th>
+							<td>
+								<div class="poRelative">
+									<select class="marL10" id="label_marry_date" onchange="setDay('label_marry_date');" title="결혼기념일 년도 선택">
+										<option>선택</option>
+									</select> 년
+									<select class="marL10" id="label_marry_date2" onchange="setDay('label_marry_date');" title="결혼기념일 달 선택">
+										<option>선택</option>
+									</select> 월
+									<select class="marL10" id="label_marry_date3" title="결혼기념일 일 선택">
+										<option>선택</option>
+									</select> 일
+									<span class="alram"><label for="label_marry_date_chk"><input type="checkbox" id="label_marry_date_chk" name="chkMemo1" title="알리미 등록" > 알리미 등록</label></span>
+								</div>
+							</td>
+						</tr>
+						<tr class="ex4_off">
+							<th scope="row"><span class="padL14">자녀유무</span></th>
+							<td colspan="2">
+								<label class="marR10" for="label_baby_or_not"><input type="radio"  id="label_baby_or_not"   name="childrenYn"  class="child" value="Y"  title="있음" /> &nbsp;있음</label>
+								<label class="marR10" for="label_baby_or_not2"><input type="radio"  id="label_baby_or_not2" name="childrenYn"  class="noChild"  value="N" checked="checked" title="없음" />&nbsp;없음</label>
+							</td>
+						</tr>
+						<tr class="ex4_off">
+							<th scope="row"><span class="padL14">자녀생일</span></th>
+							<td >
+								<div class="poRelative">
+									<select class="marL10"  id="label_baby_birth" onchange="setDay('label_baby_birth');" title="자녀 태어난 년도 선택">
+										<option>선택</option>
+									</select> 년
+									<select class="marL10"  id="label_baby_birth2" onchange="setDay('label_baby_birth');" title="자녀 태어난 달 선택">
+										<option>선택</option>
+									</select> 월
+									<select class="marL10"  id="label_baby_birth3" title="자녀 태어난 일 선택">
+										<option>선택</option>
+									</select> 일&nbsp;
+									<label class="marR10" for="label_childLunarsolar_moon"><input type="radio"  id="label_childLunarsolar_moon" name="childLunarsolar" value="2" title="음력" /> 음력</label>
+									<label class="marR10" for="label_childLunarsolar_sun"><input type="radio"  id="label_childLunarsolar_sun" name="childLunarsolar" checked="checked" value="1" title="양력" /> 양력</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="ex4_off">
+							<th scope="row"><span class="padL14">배우자생일</span></th>
+							<td >
+								<div class="poRelative">
+									<select class="marL10" id="label_spousebirth" onchange="setDay('label_spousebirth');" title="배우자 태어난 년도 선택">
+										<option>선택</option>
+									</select> 년
+									<select class="marL10" id="label_spousebirth2" onchange="setDay('label_spousebirth');" title="배우자 태어난 달 선택">
+										<option>선택</option>
+									</select> 월
+									<select class="marL10" id="label_spousebirth3" title="배우자 태어난 일 선택">
+										<option>선택</option>
+									</select> 일&nbsp;
+									<span class="radioSpan">
+										<label class="marR10" for="label_spousebirth_moon"><input type="radio"  id="label_spousebirth_moon" name="mateLunarSolar" value="2" title="음력" />&nbsp;음력</label>
+										<label class="marR10" for="label_spousebirth_sun"><input type="radio"  id="label_spousebirth_sun" name="mateLunarSolar" checked="checked" value="1" title="양력" />&nbsp;양력</label>
+									</span>
+									<span class="alram"><label for="label_spousebirth_chk"><input type="checkbox" id="label_spousebirth_chk" name="chkMemo3" title="알리미 등록" /> 알리미 등록</label></span>
+								</div>
+							</td>
+						</tr>
+                       <tr class="last">
+	                        <th scope="row"><span class="padL14">추천인정보</span></th>
+	                        <td>
+								<input type="text" class="text108_c333 marL10" id="inviteNo" name="inviteNo" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인 정보 입력" />
+								<span class="ex">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+	                        </td>
+                        </tr>
+                                <!--script>alert('임직원 추천을 통한 카드신청 시 추천인ID 확인 후\n\n『저장』버튼을 누르셔야 추천인ID 처리가 완료됩니다. ')</script-->
+						<tr class="last">
+                        	<th scope="row"><span class="padL14">추천인정보</span></th>
+                            	<td>
+                                	<input class="text108_c333 marL10" class="txt" id="inviteNo" name="inviteNo" value="<%=vo.getInviteNo().substring(3) %>" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인 정보 입력" />
+                                    <span class="ex">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+                                </td>
+                        </tr>
+                        <tr class="last">
+        	                <th scope="row"><span class="padL14">추천인정보</span></th>
+                            <td>
+            	                <input class="text108_c333 marL10"class="txt" id="inviteNo" name="inviteNo" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인 정보 입력" />
+                	            <span class="ex">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+                            </td>
+                        </tr>
+				</tbody>
+				</table>
+				<ul class="info_more" style="margin-bottom:18px;">
+					<li>알리미 등록 : 등록한 기념일에 맞추어 D-3일에 E-mail과 SMS로 알려드리는 서비스입니다.</li>
+				</ul>
+                <p class="alignC marB39"><a href="javascript:doComplete();"><img src="/images/cd/shw/app/btn_register.gif" width="54" height="28" alt="등록" /></a></p>
+			</div>
+			<input type="hidden" name="mateBirthday" />
+            <input type="hidden" name="memo3" value="N" />
+		</div>
+		<div class="tip">
+			<div class="cardBox">
+				<img src="${cardUrl}" width="110" height="69"  alt="카드" />
+			</div>
+			<p>신청하신 카드가 완성되었습니다.</p>
+			<img src="/images/cd/shw/app/layer_tip2.png" alt="TIP! 참고하세요! 신청내역이 맞는지 꼼꼼히 확인해주세요. 추천인이 있을 경우 추천인 코드를 입력해주세요." class="png24" />
+		</div>
+	</div>
+</form>
+</div> 
+<div class="footerBox">공통풋터</div>
+

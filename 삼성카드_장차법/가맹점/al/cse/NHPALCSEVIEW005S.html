@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>대금입금 - 삼성카드</title>
+</head>
+<body>
+
+                <table summary="접수일, 접수금액, 반송금액, 정상접수금액, 수수료, 입금예정일, 입금금액으로 구성된 입금대금 목록입니다.">
+                <caption class="conts_hidden">입금대금 목록</caption>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">&nbsp;접수일</th>
+						<th scope="col" class="cell_r10">&nbsp;접수금액</th>
+						<th scope="col" class="cell_r10">&nbsp;반송금액</th>
+						<th scope="col" class="cell_r10">&nbsp;정상접수금액</th>
+						<th scope="col" class="cell_r10">&nbsp;수수료</th>
+						<th scope="col">&nbsp;입금예정일</th>
+						<th scope="col" class="cell_r10">&nbsp;입금금액</th>
+					</tr>
+				</thead>
+				
+<%
+int size = resultList.size();
+	if(size == 0)
+	{
+	%>
+		<tr>
+			<td colspan="13" align="center" class="cell_l10 t_no">대금 입금내역이 없습니다.</td>
+		</tr>		
+	<%
+	}else{
+	%>					
+					
+				<tbody>
+					<!-- loop -->
+<%
+		for(int i=0; i<size; i++){
+			cvo = resultList.get(i);
+%>
+					<tr>
+						<td class="cell_l10 t_no"><%=cvo.getReceiveDate() %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getReceiveAmount())) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getSendbackAmount())) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getNormalAmount())) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getFeeAmount())) %></td>
+						<td class="t_no"><%=cvo.getPaymentDate() %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(Integer.toString(cvo.getPaymentAmount())) %></td>
+					</tr>
+<%
+		}
+	}
+
+%>
+				</tbody>
+				</table>
+</body>
+</html>

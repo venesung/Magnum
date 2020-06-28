@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_cardlimit.png" alt="카드이용한도는" />
+						<span class="ico_no ico_no_thingray09"><em>9</em></span>
+					<img src="/images/mh/h1_uselist02.png" alt="원입니다." /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+					<h2><img src="/images/mh/h2_cardlimit01.png" alt="카드 이용한도를 조회하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">개인카드</a></p>
+							<div class="childlayer">
+								<ul>
+									<li><a href="#">개인카드</a></li>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030202');"><a href="#">법인카드</a></li>
+                                    <li onclick="javascript:goTabPage('NHPIMCD030203');"><a href="#">체크카드</a></li>
+								</ul>
+							</div>							
+						</div>
+						<span class="selectbox_r_txt">(개인카드, 법인카드, 체크카드)를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+						
+						<div class="line_lgray">&nbsp;</div>
+						
+						<table class="dtable02 dtable_inputfield" summary="이용한도 조회를 위해 사용자를 선택하는 게시판입니다.">
+						<caption>사용자 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>사용자</p></th>
+								<td><p>
+									<select style="width:360px" id="s_selectUser" name="s_selectUser" onchange="onChangeUser(this.value);" title="사용자" >
+										<option value="self">본인</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+							<!-- 100126 -->
+                            <a href="javascript:viewHando();" class="btn btn_blue"><span>조회</span></a>
+							<!-- //100126 -->
+						</div>
+
+					</div>
+				</div>
+				
+				
+<div id="viewHando" style="display:block;">
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita01.png" alt="한도상향 및 한도운영방식 변경 안내입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p>현재 <strong class="t_black">${name}</strong> 회원님께 적용하고 있는 한도운영방식을 아래와같이 변경해 드리고자 합니다.</p></li>
+                            <li><p><strong class="t_black">${name}</strong> 회원님께서 한도 및 한도운영방식의 변경을 원하시면 아래 <a href="javascript:goAgreeUpgrade();" class="a_point">한도상향 신청</a> 버튼을 클릭해주십시오.</p></li>
+						</ol>
+
+						<table class="dtable01 mt10" summary="구분별 현재 한도금액과 변경 한도금액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="30%" /><col width="35%" /><col width="35%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">현재</th>
+								<th scope="col" class="cell_r10">변경</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">카드이용한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">할부</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">카드론</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goAgreeUpgrade();" class="btn btn_white"><span>한도상향 신청 &gt;</span></a>
+							</p>
+						</div>
+						<!-- SR반영 2013.04.11 -->
+                        <ul class="list_rice_t12 mt10">
+                        	<li>상향된 한도는 본인카드의 이용한도에 한해 상향되며, 가족카드 한도도 상향을 원하시면 별도로 가족카드 선택 후 상향 가능합니다.</li>
+                        </ul>
+                        <!-- //SR반영 2013.04.11 -->
+						<div class="line_lgray">&nbsp;</div>
+						<div class="tb_exp clfix"><h3>한도운영방식 변경</h3></div>
+						<ol class="list_no01">
+							<li><p>현재 회원님께서는 일시불 한도 내에서만 카드론을 이용하실 수 있습니다. 그러므로 카드론 이용시에는 한도가<br />충분히 남아있더라도 일시불, 할부 및  현금서비스 기존 이용액만큼은 카드론 이용이 불가능한 상태입니다.<br />이번 한도운영방식 변경에 동의하시면 일시불 한도와 카드론 한도가 분리되게 되어 각각의 한도로 금융서비스<br />이용이 가능하십니다.</p></li>
+							<li><p>이용예시<br />- (동의前) 일시불한도가 300만원이고, 카드론 한도가 300만원인 경우 :<br />일시불이용금액이 100만원 있다면, 실제 카드론 이용가능금액은 200만원<br />- (동의後) 일시불한도가 300만원이고, 카드론 한도가 300만원인 경우 :<br />일시불이용금액이 100만원 있다고 하더라도 카드론 이용가능 금액은 300만원 </p></li>
+							<li><p>한도상향 및 한도운영방식 변경 동의는 평일 및 주말, 공휴일 오전 9시부터 오후 9시까지만<br />가능하며, 동의 즉시 상향된 한도와 변경된 한도운영방식으로 카드 이용이 가능합니다.</p></li>
+							<li><p>회원님께서 한도 상향 및 한도운영방식에 대해 동의하지 않으실 경우에는 기존의 회원님의<br />한도 및 한도운영방식이 그대로 적용됩니다.</p></li>
+						</ol>
+					</div>
+				</div>
+				
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita03.png" alt="한도상향 관련 안내입니다" /></h2>
+					<div class="content_block_inner">					
+
+						<ol class="list_no01">
+							<li><p><strong class="t_black">${name}</strong> 회원님께서는 <strong class="t_black">한도상향 가능 대상자</strong> 입니다.</p></li>
+							<li><p>한도상향을 원하실 경우, 아래 요청 상향 요청금액을 입력하신 후 ‘한도상향 신청’ 버튼을 클릭해주세요.</p></li><!-- 정기일반영 13.04.02 -->
+							<li><p>상향 요청금액은 상향 가능금액 범위 내에서 <strong class="t_point_org">최저 10만원 이상, 10만원 단위</strong>로 입력하셔야 합니다.</p></li>
+							<li><p>할부한도는 일시불한도 내에서만 입력하실 수 있습니다.</p></li>
+							<li><p>현금서비스한도 상향시는 카드이용한도의 40%이내로만 입력하실 수 있습니다.</p></li>
+							<li><p>한도상향 가능기간 : <strong class="t_point_org">12.02.03</strong>까지</p></li>
+						</ol>
+
+						<table class="dtable01 mt10" summary="구분별 현재 이용금액, 상향 가능금액을 확인하고 상향 요청금액을 입력하는 게시판입니다.">
+						<caption>본인 카드이용한도 입력</caption>
+						<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">현재 이용금액</th>
+								<th scope="col" class="cell_r10">상향 가능금액</th>
+								<th scope="col" class="cell_r10">상향 요청금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">카드이용한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_rcRemainTot" maxlength="8" title="카드이용한도 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">일시불</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_rcRemainAmt" maxlength="8"  title="일시불 상향 요청금액"
+										   disabled="disabled"  />만원</strong>
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">할부</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_rcConAmt" maxlength="8" title="할부 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">현금서비스</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_rcRemain" maxlength="8" title="현금서비스 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">카드론</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_string3" maxlength="8" title="카드론 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">굿캐시한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_string1" maxlength="8" title="굿캐시한도 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">굿캐시한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 만원</strong></td>
+								<td class="cell_r10"><strong class="t_black">
+									<input type="text" class="txt w70 al_right" name="p_string1" maxlength="8" title="굿캐시한도 상향 요청금액"
+ 										   onfocus="this.select"
+ 										   onkeyup="addComma(this)"
+ 										   onkeypress="checkTypes(this, 'NUMB');"
+ 										   onblur="checkTypesOnBlur(this, 'NUMB2');"
+										   style="ime-mode:disabled;"  />만원</strong>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goAgreeUpgrade();" class="btn btn_white"><span>한도상향 신청 &gt;</span></a>
+							</p>
+						</div>
+						<!-- SR반영 2013.04.11 -->
+                        <ul class="list_rice_t12 mt10">
+                        	<li>상향된 한도는 본인카드의 이용한도에 한해 상향되며, 가족카드 한도도 상향을 원하시면 별도로 가족카드 선택 후 상향 가능합니다.</li>
+                        </ul>
+                        <!-- //130402 추가 SR반영 2013.04.11 -->
+						<div class="line_lgray">&nbsp;</div>
+						<div class="tb_exp clfix"><h3>한도운영방식 변경</h3></div>
+						<ol class="list_no01">
+							<li><p>한도상향 동의는 평일 및 주말, 공휴일 오전 9:00부터 오후 9:00까지만 가능하며,<br />상향신청과 동시에 상향된 한도로 카드이용이 가능합니다.</p></li><!-- 130411 수정 -->
+							<li><p>한도상향 신청은 평일 및 주말, 공휴일 오전 09:00부터 오후 09:00까지만 가능하며,<br />상향신청과 동시에 상향된 한도로 카드이용이 가능합니다.</p></li>
+							<li><p>회원님께서 한도상향에 대해 의사표시를 하지 않으시면 한도상향 가능기간 경과 후 자동으로 한도상향이<br />됩니다.<br /></p></li>
+							<li><p>회원님께서 한도상향에 대해 의사표시를 하지 않으시면 한도상향 가능기간 경과 후<br />자동으로 한도상향이 되지 않습니다.</p></li>
+							<li><p><strong class="t_black">9410</strong>으로 시작되는 국내용 카드만을 보유하신 회원께서는 해외 한도 금액 존재 여부와<br />상관없이 해외에서 카드를 이용하실 수 없습니다.</p></li>
+							<li><p>해외에서 카드를 이용하시기 위해서는 비자, 마스타, 아멕스 등 해외에서<br />이용 가능한 카드를 보유하셔야 합니다.</p></li>
+							<li><p>국내 현금서비스 내에서 국내 및 해외 현금서비스 이용액이 통합 관리됩니다. 상세한 내용은<br />고객상담센터(1588-8700)로 문의하시기 바랍니다. </p></li>
+						</ol>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita03.png" alt="한도상향 동의대상 안내입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p>회원님께서는 현재 <strong class="t_black">한도상향 조정을 동의</strong>하셨습니다.</p></li>
+						</ol>
+
+						<table class="dtable01 mt10" summary="구분별 카드이용한도를 서비스(일시불,할부,현금서비스,카드론,굿캐시한도)별로 확인할 수 있는 게시판입니다.">
+						<caption>한도상향금액</caption>
+						<colgroup><col width="13%" /><col width="14%" /><col width="14%" /><col width="14%" /><col width="13%" /><col width="13%" /><col width="13%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 riline">구분</th>
+								<th scope="col" class="cell_r10">카드이용한도</th>
+								<th scope="col" class="cell_r10">일시불</th>
+								<th scope="col" class="cell_r10">할부</th>
+								<th scope="col" class="cell_r10">현금서비스</th>
+								<th scope="col" class="cell_r10">카드론</th>
+								<th scope="col" class="cell_r10">굿캐시한도</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l10">상향예정한도</th>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10">이용한도</th>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 만원</td>
+							</tr>
+						</tbody>
+						</table>
+						
+						<div class="line_lgray">&nbsp;</div>
+						<ol class="list_no01">
+							 <li><p>한도상향 동의는 평일 및 주말, 공휴일 오전 9:00부터 오후 9:00까지만 가능하며,<br />상향신청과 동시에 상향된 한도로 카드이용이 가능합니다.</p></li><!-- 130411 수정 -->
+							<li><p>한도상향에 동의하시면 현금서비스와 카드론 한도가 합쳐져 상향된 굿캐시 한도로 더욱 편리하고 자유롭게<br />이용하실 수 있습니다. 굿캐시 한도는 이용금액만큼 차감되고 결제하신 금액만큼 다시 이용할 수 있는<br />잔액한도로 운영됩니다.</p></li>
+							<li><p>한도상향 및 굿캐시 한도와 관련된 자세한 문의는 고객상담센터(1588-8700)로 연락바랍니다.</p></li>
+						</ol>
+					</div>
+				</div>		
+				
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita02.png" alt="본인카드 이용한도 안내입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p><strong class="t_black">${name}</strong> 님의 <!-- 대출서비스를 포함한 총한도는 <strong class="t_point_org t_no"><%=LIMITS.getCardLimitAmt() %></strong>원이며 --> 현재 이용하신 총액은 <strong class="t_point_org t_no">00</strong>원 입니다. </p></li>
+							<li><p>해외이용이 있는 경우 US$ vs 원화 환율변동에 따라 <strong class="t_black">이용하신 금액</strong>이 매일 다르게 보여지므로<br />실제 결제하실 금액은 해외이용내역을 참조하시길 바랍니다.</p></li>
+							<li><p>현금서비스로 카드대금을 입금하실 경우에는 00만원까지 이용이 가능합니다.</p></li>
+							<li><p>아래의 현금서비스 이용액은 이달 이용하신 금액이고 현재 현금서비스 이용액은 총 <strong class="t_point_org t_no">000</strong>원 입니다.</p></li>
+							<li><p><strong class="t_black">${name}</strong> 님은 개인/법인개별 카드한도 통합 대상 이십니다.</p></li>
+						</ol>
+
+						<div class="tb_exp clfix mt20">
+							<span>&nbsp;</span>
+                            <span class="ab_tr t_desc03"><a href="javascript:goTabPage('NHPIMMHIAC005');" class="btn btn_s_white"><span>English</span></a></span>
+						</div>
+
+						<table class="dtable01 " summary="구분별 한도금액, 이용하신금액, 이용액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="8%" /><col width="12%" /><col width="10%" /><col width="20%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="3" class="cell_l10 riline cell_bg">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 riline" colspan="3" scope="row"><strong class="t_black">통합한도</strong></td>
+								<td class="cell_r10" rowspan="2"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10" rowspan="2"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr class="btm">
+								<td class="cell_l10 riline" colspan="3" scope="row">개인카드이용한도</td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>							
+							<tr>
+								<th scope="rowgroup" rowspan="2" colspan="2" class="cell_l10 cell_bg">일시불</th>
+								<th scope="row" class="cell_l10 cell_bg">통합</th>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">개인</th>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<tr>
+								<th scope="rowgroup" rowspan="2" colspan="2" class="cell_l10 cell_bg">할부</th>
+								<th scope="row" class="cell_l10 cell_bg">통합</th>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">개인</th>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<tr>
+								<th scope="rowgroup" colspan="2" class="cell_l10 cell_bg">현금서비스</th>
+								<th scope="row" class="cell_l10 cell_bg">개인</th>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림 -->
+							<tr>
+								<th scope="row" rowspan="4" class="cell_l10 cell_bg">해외</th>
+								<th class="cell_l10 cell_bg" rowspan="2" >일시불</th>
+								<th scope="row" class="cell_l10 cell_bg">통합</th>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no" rowspan="2">0 원(USD 0)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">개인</th>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<tr>
+								<th scope="rowgroup" class="cell_l10 cell_bg" rowspan="2">현금서비스</th>
+								<th scope="row" class="cell_l10 cell_bg">통합</th>
+								<td class="cell_r10 t_no" rowspan="2">0 원</td>
+								<td class="cell_r10 t_no">0 원</td>
+								<td class="cell_r10 t_no" rowspan="2">0 원(USD 0)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10 cell_bg">개인</th>
+								<td class="cell_r10 t_no">0 원</td>
+							</tr>
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림 -->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goTabPage('NHPIMCD030202');" class="btn btn_white"><span>법인개별한도 &gt;</span></a>
+                                <a href="javascript:goTabPage('NHPIMFSLMT');" class="btn btn_white"><span>대출 가능금액조회 &gt;</span></a>
+							</p>
+						</div>
+					</div>
+							
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita02.png" alt="본인카드 이용한도 안내입니다" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p><strong class="t_black">${name}</strong> 님의 <!-- 굿캐시 한도를 포함한 총한도는 <strong class="t_point_org t_no"><%=LIMITS.getCardLimitAmt() %></strong>원이며 --> 현재 이용하신 총액은 <strong class="t_point_org t_no">00</strong>원 입니다. (카드론 포함)</p></li>
+							<li><p>현금서비스 또는 카드론으로 카드대금을 입금하실 경우에는 00만원까지 이용이 가능합니다</p></li>
+						</ol>
+
+						<div class="tb_exp clfix mt20">
+							<span>&nbsp;</span>
+							<span class="ab_tr t_desc03"><a href="javascript:goTabPage('NHPIMMHIAC005');" class="btn btn_s_white"><span>English</span></a></span>
+						</div>
+
+						<table class="dtable01 " summary="구분별 한도금액, 이용하신금액, 이용가능금액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="10%" /><col width="15%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">카드이용한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">일시불</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">할부</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">굿캐시한도</th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">현금서비스</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">카드론</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="rowgroup" rowspan="2" class="cell_l10">해외</th>
+								<th scope="row" class="cell_l10">일시불</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원(USD 0)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10">현금서비스</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원(USD 0)</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goTabPage('NHPIMMHCLM002M001');" class="btn btn_white"><span>이용 한도조정 &gt;</span></a>
+                                <a href="javascript:goTabPage('NHPIMFSLMT');" class="btn btn_white"><span>대출 가능금액조회 &gt;</span></a>
+							</p>
+						</div>
+                        <!-- 130402 추가 -->
+                         <ul class="list_rice_t12 mt10">
+                         	<li>상향된 한도는 본인카드의 이용한도에 한해 상향되며, 가족카드 한도도 상향을 원하시면 별도로 가족카드 선택 후 상향 가능합니다.</li>
+						</ul>
+					</div>
+				</div>
+						
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cardlimita02.png" alt="본인카드 이용한도 안내입니다" /></h2>
+					<div class="content_block_inner">		
+						<ol class="list_no01">
+							<li><p><strong class="t_black">${name}</strong> 님의 <!-- 대출서비스를 포함한 총한도는 <strong class="t_point_org t_no"><%=LIMITS.getCardLimitAmt() %></strong>원이며 --> 현재 이용하신 총액은 <strong class="t_point_org t_no">0</strong>원 입니다. (카드론 포함)</p></li>
+							<li><p>해외이용이 있는 경우 US$ vs 원화 환율변동에 따라 <strong class="t_black">이용하신 금액</strong>이 매일 다르게 보여지므로<br />실제 결제하실 금액은 해외이용내역을 참조하시길 바랍니다.</p></li>
+							<li><p>현금서비스로 카드대금을 입금하실 경우에는 0만원까지 이용이 가능합니다.</p></li>
+							<li><p>현재 현금서비스 이용액은 총 <strong class="t_point_org t_no">0</strong>원 입니다.</p></li>
+<!-- 정기일반영 12.11.21 -->
+							<li><p>본 이용가능 금액에는 당일 입금하신 금액은 반영이 되지 않으니 이용에 참조하시기 바랍니다.</p></li>
+<!--// 정기일반영 12.11.21 -->
+						</ol>
+
+						<div class="tb_exp clfix mt20">
+							<span>&nbsp;</span>
+                            <span class="ab_tr t_desc03"><a href="javascript:goTabPage('NHPIMMHIAC005');" class="btn btn_s_white"><span>English</span></a></span>
+						</div>
+
+						<table class="dtable01 " summary="구분별드 한도금액, 이용하신금액, 이용가능금액을 확인할 수 있는 게시판입니다.">
+						<caption>본인 카드이용한도</caption>
+						<colgroup><col width="12%" /><col width="13%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2" class="cell_l10 riline">구분</th>
+								<th scope="col" class="cell_r10">한도금액</th>
+								<th scope="col" class="cell_r10">이용하신금액</th>
+								<th scope="col" class="cell_r10">이용가능금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10"><span class="t_black t_no">카드이용한도</span></th>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+
+								<td class="cell_r10"><strong class="t_black"><span class="t_black t_no">0</span> 원</strong></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">일시불</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="cell_l10">할부</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2" class="cell_l10">현금서비스</th>
+								<th class="cell_l10">당월</th>
+								<td class="cell_r10 riline" rowspan="2"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10 riline"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10 riline" rowspan="2"><span class="t_no">0</span> 원</td>
+							</tr>
+							<tr>
+								<th class="cell_l10">총</th>
+								<td class="cell_r10 riline"><span class="t_no">0</span> 원</td>
+							</tr>							
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림 -->
+							<tr>
+								<th scope="rowgroup" rowspan="2" class="cell_l10">해외</th>
+								<th scope="row" class="cell_l10">일시불</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원(USD 0)</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l10">현금서비스</th>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원</td>
+								<td class="cell_r10"><span class="t_no">0</span> 원(USD 0)</td>
+							</tr>
+							<!-- 2011.07.26 달러에서  원화로 변경됨. 일반한도, 금융통합한도 로직 타지않고 텐덤에서 보내주는 값 그대로 뿌림 -->
+						</tbody>
+						</table>
+
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl">
+                                <a href="javascript:goTabPage('NHPIMMHCLM002M001');" class="btn btn_white"><span>이용 한도조정 &gt;</span></a>
+                                <a href="javascript:goTabPage('NHPIMFSLMT');" class="btn btn_white"><span>대출 가능금액조회 &gt;</span></a>
+							</p>
+						</div>
+						
+						<div class="line_lgray">&nbsp;</div>
+						<div class="tb_exp clfix"><h3>이용안내</h3></div>
+						<ol class="list_no01">
+							<li><p>카드이용한도(해외이용포함)내에서 일시불,할부를 이용 할 수 있습니다.</p></li>
+							<li><p>카드이용한도(해외이용포함)내에서 일시불,할부,현금서비스를 이용 할 수 있습니다.</p></li>
+							<li><p>굿캐시 한도(해외이용포함)내에서 현금서비스와 카드론을 자유롭게 이용할 수 있으며 잔액한도로 운영됩니다.</p></li>
+							<li><p>현금서비스 한도는 현금서비스 이용금액을 차감한 잔여한도내에서만 이용가능합니다.</p></li>
+							<li><p>현금서비스 한도는 월한도로 이용가능하나 카드이용한도 내에서만 이용가능합니다.</p></li>
+							<li><p>현금서비스 한도는 월한도로 이용가능하나 카드이용한도 내에서만 이용가능합니다.</p></li>
+							<li><p><strong class="t_black">9410</strong>으로 시작되는 국내용 카드만을 보유하신 회원께서는 해외 한도 금액 존재 여부와<br />상관없이 해외에서 카드를 이용하실 수 없습니다.</p></li>
+							<li><p>해외에서 카드를 이용하시기 위해서는 비자, 마스타, 아멕스 등 해외에서<br />이용 가능한 카드를 보유하셔야 합니다.</p></li>
+							<li><p>국내 현금서비스 내에서 국내 및 해외 현금서비스 이용액이 통합 관리됩니다. </p></li>
+							<li><p>상세한 내용은 삼성카드 고객상담센터(1588-8700)로 문의하시기 바랍니다. </p></li>
+						</ol>
+	<!-- ************************************************** 이용안내 메세지  end***********************************************-->
+				</div>
+			</div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>	
+

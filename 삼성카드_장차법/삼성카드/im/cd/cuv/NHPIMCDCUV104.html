@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_installment_uselist01.png" alt="선택하신 건의 할부이용금액은" />
+	<span class='ico_no ico_no_thingray03'><em>3</em></span>
+	<span class='ico_no ico_no_thingray04'><em>4</em></span>
+	<span class='ico_no ico_no_thingray05'><em>5</em></span>
+	<img src="/images/mh/h1_installment_uselist02.png" alt="원 입니다." /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+	<h2><img src="/images/mh/h2_installment_uselist01.png" alt="국내(할부) 이용상세내역입니다." /></h2>
+	<div class="content_block_inner">
+		<!-- 100604 -->
+		<div class="tb_exp clfix">
+			<h3 class="flnone">현재 입금처리 중입니다.</h3>
+			<span class="fl_left mt10">자동이체 출금액이 현재 입금처리 중입니다. 자동이체 계좌에서 정상적으로 출금되신 경우, 입금처리는<br />출금일로부터 1~2일정도 소요되어 익일부터 금액조회가 가능합니다.</span>
+		</div>
+		
+		<div class="line_lgray">&nbsp;</div>
+		<!-- //100604 -->
+
+		<ol class="list_no01">
+			<li><p>최근 30개월 동안 사용하신 카드할부 이용건에 대해서 조회가 됩니다.</p></li>
+			<li><p>카드사용 후 매출전표가 당사로 접수될 때까지 다소 시간이 소요됨에 따라 일부 사용내역이 조회되지 않을 수도 있습니다.</p></li>
+			<li><p>할부이용금액을 개월수로 분할 시 100원 이하 금액은 일관 1회차 금액에 포함되어 청구 됩니다.</p></li>
+		</ol>
+
+		<table class="dtable02 mt30" summary="사용일자, 이용가맹점, 할부기간, 사용금액으로 구성된 국내(할부) 총 이용내역을 확인할 수 있는 게시판입니다.">
+		<caption>국내(할부) 총 이용상세내역 게시판</caption>
+		<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>사용일자</p></th>
+				<td><p class="t_no">${reqHash.P_STRING9}</p></td>
+				<th scope="row"><p>이용가맹점</p></th>
+                <td><p class="t_no"><a href="javascript:window_open1(${reqHash.P_STRING13})" class="a_point" title="새창" >${reqHash.P_STRING10}</a></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부기간</p></th>
+				<td><p class="t_no">${reqHash.P_STRING12}</p></td>
+				<th scope="row"><p>사용금액</p></th>
+				<td><p><span class="t_no"> ${reqHash.P_STRING11}</span> 원</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<table class="dtable01 dtable01_bill mt30" summary="회차, 결제일, 청구금액, 청구원금, 이자, 연체료, 청구원금잔액, 입금액, 입금일자로 구성된 국내(할부) 이용상세 내역을 순서대로 확인하실 수 있는 게시판입니다.">
+		<caption>국내(할부) 이용상세내역 리스트 게시판</caption>
+		<colgroup><col width="30" /><col width="80" /><col width="80" /><col width="80" /><col width="80" /><col width="80" /><col width="85" /><col width="80" /><col width="80" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">회차</th>
+				<th scope="col">결제일</th>
+				<th scope="col" class="cell_r10">청구금액</th>
+				<th scope="col" class="cell_r10">청구원금</th>
+				<th scope="col" class="cell_r10">이자</th>
+				<th scope="col" class="cell_r10">연체료</th>
+				<th scope="col" class="cell_r10">청구원금잔액</th>
+				<th scope="col" class="cell_r10">입금액</th>
+				<th scope="col">입금일자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop -->
+			<tr>
+				<td class="cell_l10 t_no">0</td>
+				<td class="t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="cell_r10 t_no">0</td>
+				<td class="t_no">0</td>
+			</tr>
+			<!-- //loop -->
+		</tbody>
+		</table>
+		
+      	<div class="btnset">
+            <p class="btnr">
+			
+                <a href="javascript:goPpage();" class="btn btn_s_white"><span>PREV</span></a>
+                <a href="javascript:goNpage();" class="btn btn_s_white"><span>NEXT</span></a>
+            </p>
+        </div>
+		<!-- btn -->
+		<div class="btnset">
+            <p class="btnr"><a href="javascript:before_cUse_search();" class="btn btn_white"><span>이전화면</span></a></p>
+		</div>
+	</div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+	/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+	 * File Name: NHPIMCSFEGVIEW001.jsp
+	 * Author: 삼성SDS 김진아 선임, 서준석 사원(ACUBE)
+	 * Created on 2010.03.31
+	 * 해외사용문의 입력 // 접수하기 선택시 조건 분기 로직 페이지
+	 * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+	 */
+%>
+<%@ page language="java" contentType="text/html; charset=utf-8"pageEncoding="utf-8"%>
+<%@ page import="com.scard.hp.im.cs.auq.vo.NHPIMCSAUQFLAGVO" %>
+<%
+	String mode = (String)request.getAttribute("category");
+	String subMode = (String)request.getAttribute("subCategory");
+	if(mode == null)
+		mode = "0007";
+	if(subMode == null)
+		subMode = "";
+	if(mode.equals(NHPIMCSAUQFLAGVO.CODE_001)){ //항공
+		out.println("			<div id='divSelect' style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='foreign_faq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_AIR + "' title='항공권/사용함/' id='foreign_faq01' name='foreign_faq' />&nbsp;항공권 사용후 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='foreign_faq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_AIR + NHPIMCSAUQFLAGVO.UNUSED + "' title='항공권/사용안함/' id='foreign_faq02' name='foreign_faq' />&nbsp;항공권을 사용하지 않았음에도 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='foreign_faq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_AIR + NHPIMCSAUQFLAGVO.CANCEL + "' title='항공권/취소함/' id='foreign_faq03' name='foreign_faq' />&nbsp;항공권 사용후 취소하였을 경우</label></li>");
+		out.println("					<li><label for='foreign_faq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_AIR_PAGE + "' title='항공권/기타/' id='foreign_faq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>");
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_002)){ //렌트				
+		out.println("			<div id='divSelect' style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_RENT + "' title='렌트카/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 렌트카 사용후 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_RENT + NHPIMCSAUQFLAGVO.UNUSED + "' title='렌트카/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 렌트카 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_RENT + NHPIMCSAUQFLAGVO.CANCEL + "' title='렌트카/취소함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;취소한 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_RENT_PAGE + "' title='렌트카/기타/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>"); 
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_003)){ //호텔			
+		out.println("			<div id='divSelect' style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_HOTEL + "' title='호텔/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 호텔 사용후 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_HOTEL + NHPIMCSAUQFLAGVO.UNUSED + "' title='호텔/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 호텔 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_HOTEL + NHPIMCSAUQFLAGVO.CANCEL + "' title='호텔/취소함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;취소한 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_HOTEL_PAGE + "' title='호텔/기타/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>");
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_004)){
+		if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_001) || subMode.equals("")){ //물품
+			
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ORDER + "' title='비대면서비스/물품주문/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 물품주문 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ORDER + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/물품주문/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 물품주문 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ORDER + NHPIMCSAUQFLAGVO.CANCEL + "' title='비대면서비스/물품주문/취소함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;취소한 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/물품주문/기타/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");
+		}
+		else if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_002)){ // 유료사이트
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SITE + "' title='비대면서비스/유료사이트/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 유료 사이트 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SITE + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/유료사이트/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 유료 사이트 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SITE + NHPIMCSAUQFLAGVO.CANCEL + "' title='비대면서비스/유료사이트/취소함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;취소한 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/유료사이트/기타/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");
+		}
+		else if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_003)){ // 국제전화
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_CALL + "' title='비대면서비스/국제전화/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 국제전화 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_CALL + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/국제전화/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 국제전화 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/국제전화/기타/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");		
+		}
+		else if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_004)){ // 세미나
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SEMINAR + "' title='비대면서비스/세미나/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 세미나참석 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SEMINAR + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/세미나/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 세미나참석 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/세미나/기타/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");		
+		}
+		else if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_005)){ // 학비
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_TUITION + "' title='비대면서비스/학비/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 학비 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_TUITION + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/학비/사용함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 학비 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/학비/사용함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");		
+		}
+		else if(subMode.equals(NHPIMCSAUQFLAGVO.CODE_SUB_006)){ // 정기간행물
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_WRITE + "' title='비대면서비스/정기간행물/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 정기간행물 사용후 문제가 생겼을 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_WRITE + NHPIMCSAUQFLAGVO.UNUSED + "' title='비대면서비스/정기간행물/사용함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 정기간행물을 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_WRITE + NHPIMCSAUQFLAGVO.CANCEL + "' title='비대면서비스/정기간행물/사용함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;정기간행물을 취소한 경우</label></li>");
+			out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ORDER_PAGE + "' title='비대면서비스/정기간행물/사용함/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");		
+		}
+		else { // 기타
+			out.println("			<div id='divSelect' style='display:;'>");
+			out.println("				<ul>");
+			out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_SUBETC + "' title='비대면서비스/기타/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;서비스 중 기타 상황인 경우</label></li>");
+			out.println("				</ul>");
+			out.println("			</div>");	
+		}
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_005)){ //현금서비스		
+		out.println("			<div id='divSelect'  style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_CASH + "' title='현금서비스/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;해외에서 현금서비스 사용후 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_CASH + NHPIMCSAUQFLAGVO.UNUSED + "' title='현금서비스/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;해외에서 현금서비스 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_CASH_PAGE + "' title='현금서비스/기타/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>");
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_006)){ //기타				
+		out.println("			<div id='divSelect'  style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ETC + "' title='기타/사용함/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;기타 사용후 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ETC + NHPIMCSAUQFLAGVO.UNUSED + "' title='기타/사용안함/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;기타 사용한 적이 없는데 문제가 생긴 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_ETC + NHPIMCSAUQFLAGVO.CANCEL + "' title='기타/취소함/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 취소한 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq04'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_ETC_PAGE + "' title='기타/기타/' id='label_foreignfaq04' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>");
+	}
+	else if(mode.equals(NHPIMCSAUQFLAGVO.CODE_007)){ //컴플레인		
+		out.println("			<div id='divSelect'  style='display:;'>");
+		out.println("				<ul>");
+		out.println("					<li><label for='label_foreignfaq01'><input type='radio' class='chk' checked='checked' value='" + NHPIMCSAUQFLAGVO.CATEGORY_COMPLAIN + "' title='불편사항접수/가맹점/' id='label_foreignfaq01' name='foreign_faq' />&nbsp;일반가맹점 이용시 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq02'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.CATEGORY_COMPLAIN + NHPIMCSAUQFLAGVO.UNUSED + "' title='불편사항접수/현금지급기/' id='label_foreignfaq02' name='foreign_faq' />&nbsp;현금지급기 이용시 문제가 생겼을 경우</label></li>");
+		out.println("					<li><label for='label_foreignfaq03'><input type='radio' class='chk' value='" + NHPIMCSAUQFLAGVO.REG_COMPLAIN_PAGE + "' title='불편사항접수/기타/' id='label_foreignfaq03' name='foreign_faq' />&nbsp;기타 이용 문의</label></li>");
+		out.println("				</ul>");
+		out.println("			</div>");
+	}
+
+%>

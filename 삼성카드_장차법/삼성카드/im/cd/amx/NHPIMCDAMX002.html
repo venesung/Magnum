@@ -1,0 +1,65 @@
+
+<%/* * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMCDAMX001.jsp
+ * Author: 이공오디자인 최영남 대리
+ * Created on 2010. 02. 12.
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>  
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.util.Collection"%>
+<%@page import="com.scard.hp.im.cd.amx.vo.ITCMEVENTCHAININFOTTVO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+ 
+<script type="text/javascript">
+    window.parent.document.${formName}.${selectBoxName}.length=0;
+    window.parent.document.${formName}.${selectBoxName}.length=${fn:length(rsList)+1};
+
+    var obj;
+    var arrOption = [];
+    arrOption.push(new Option("전 체",""));
+   
+    <%
+    //결과리스트에서 Option 만들기
+    String selectBoxName = (String) request.getAttribute("selectBoxName");
+    Collection<ITCMEVENTCHAININFOTTVO> rsList = (Collection<ITCMEVENTCHAININFOTTVO>) request.getAttribute("data");
+    if(rsList!=null && !rsList.isEmpty()) {
+	    for(ITCMEVENTCHAININFOTTVO vo : rsList) {
+	        if("sWord4".equals(selectBoxName)) {
+	            %> arrOption.push(new Option("<%=vo.getADDRESS_KU()%>", "<%=vo.getADDRESS_KU()%>")); <%     
+	        } else if("sWord5".equals(selectBoxName)) {
+	            %> arrOption.push(new Option("<%=vo.getADDRESS_DONG()%>", "<%=vo.getADDRESS_DONG()%>")); <%
+	        }
+	    }
+    }
+    %>
+
+    // option 생성
+    for(var i=0; i<arrOption.length; i++) {
+        window.parent.document.${formName}.${selectBoxName}.options[i] = arrOption[i];
+    }
+</script>
+
+
+    <!-- #if area1 != "">
+        var code = "${area1}";
+
+        for (var i = 0; i<window.parent.document.searchForm.sWord4.length;i++) {
+            if (window.parent.document.searchForm.sWord4.options[i].value == code) {
+                window.parent.document.searchForm.sWord4.options[i].selected=true;
+            }
+        }
+        //parent.area2Select();
+    </#if>
+
+    <#if area2 != "">
+        var code = "${area2}";
+
+        for (var i = 0; i<window.parent.document.searchForm.sWord5.length;i++) {
+            if (window.parent.document.searchForm.sWord5.options[i].value == code) {
+                window.parent.document.searchForm.sWord5.options[i].selected=true;
+            }
+        }
+    </#if -->

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">상환방식변경 서비스</h1>
+					<div class="h1_desc"><img src="<%=cresult.getTargetPath()%>/<%=cresult.getTopImg()%>" alt="<%=cresult.getDescription() %>" /></div>					
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+							<!--li><a href="javascript:goTabPage('NHIMCDSINDEX',true)">대체결제 서비스안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMCDS001',true)">카드대금결제서비스 신청</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHWSV001',true)">상환방식변경서비스 신청</a></li-->
+							<li><a href="javascript:move1();">상환방식변경서비스안내</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHWSV001',true)">상환방식변경서비스 신청</a></li>
+						</ul>
+					</div>
+
+					<div class="top_step_settlement_chn top_step_settlement03">
+						<ol class="none">
+							<li>이용가능금액 확인 및 카드선택</li>
+							<li>약관 동의</li>
+							<li><abbr>현재단계</abbr><strong>신청내용 입력</strong></li>
+							<li>입력확인, 서비스신청</li>
+							<li>신청완료</li>
+						</ol>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_app_breakdown.png" alt="신청내용을 입력해 주세요" /></h2>
+					<div class="content_block_inner">
+                        <table class="dtable02" summary="이용가능금액, 대상금액 및 선택, 신청금액, 상환방식, 월상환원금, 대출기간, 은행명, 은행계좌, 카드번호, 카드비밀번호로 구성된 상환방식변경 서비스 신청내용을 입력하는 게시판입니다.">
+						<caption>신청내용 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>이용가능금액</p></th>
+								<td colspan="2"><p><span class="t_no">${STRING5}</span> 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>대상금액 및 선택</p></th>
+								<td><p>
+								<label for="label_sel1"><input type="radio" class="rdo"	value="1" id="label_sel1" name="REDEM_GUBUN" onclick="redem_change('1');" title="현금서비스 잔액" /> 현금서비스 잔액 : <span class="t_no">${STRING11}</span>	원</label><br />
+								<label for="label_sel2"><input type="radio" class="rdo"	value="2" id="label_sel2" name="REDEM_GUBUN" onclick="redem_change('2')" title="카드론 잔액" /> 카드론 잔액 : <span class="t_no">${STRING12}</span> 원</label><br />
+								<label for="label_sel3"><input type="radio" class="rdo"	value="3" id="label_sel3" name="REDEM_GUBUN" onclick="redem_change('3')"  title="현금서비스 + 카드론 잔액" /> 현금서비스 + 카드론 잔액 <span class="t_no">${SUM_MISU}</span> 원</label>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>신청금액</p></th>
+								<td><p><span class="input_point"><input type="text" class="txt" id="label_app" title="신청금액" name="REQ_AMT" maxlength="9" readonly="readonly" /></span>원</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>상환방식</p></th>
+								<td colspan="2"><p>
+									<label for="label_way1"><input type="radio" class="rdo"	value="M" id="label_way1" name="GOODSCHECK"	value="M" onclick="selected_change('M');" checked="checked" title="원금균등분할상환" /> 원금균등분할상환</label>
+									<label for="label_way2" class="ml10"><input type="radio" class="rdo" value="H" id="label_way2" name="GOODSCHECK" value="H" onclick="selected_change('H');" title="만기일시상환" /> 만기일시상환</label> 
+									<br /><span class="t_desc04">보다나은 서비스를 위해 상품을 개선중으로 당분간 원금균등상환방식만 이용 가능합니다.</span><!-- 100510 -->
+								</p></td>
+							</tr>
+							<tr id="COMBOMONTH" style="display:none">
+								<th scope="row" class="cell_bg riline"><p>월상환원금</p></th>
+								<td>
+								<p><span class="input_point"><input type="text"	name="COMBOMONTH_AMT" size="10" maxlength="4" title="월상환원금" id="label_app" /></span>&nbsp;만원</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>대출기간</p></th>
+								<td colspan="2"><p>
+									<select name="SMALLLOANMON" size="1" style="width:100px" title="대출기간 선택" id="label_day">
+										<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>은행명</p></th>
+								<td colspan="2"><p>0</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>은행계좌</p></th>
+								<td colspan="2"><p class="t_no">0********</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>카드번호</p></th>
+								<td colspan="2"><p class="t_no">0</p></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_bg riline"><p>카드비밀번호</p></th>
+								<td colspan="2">
+									<p class="input_2char">
+									<input type="password" class="txt" name="PASSWD" value="" id="label_cardpw" title="카드 비밀번호 앞 두자리" maxlength="2" style="ime-mode:disabled" onkeypress="checkTypes(this,'NUMB');" onblur="checkTypesOnBlur(this, 'NUMB');"/><em>**</em>(비밀번호 앞의 2자리)
+									<span id="usafeon_PASSWD"></span>
+									</p>
+								</td>
+							</tr>							
+<!--							<tr>-->
+<!--								<th scope="row" class="cell_bg riline"><p>공인인증서</p></th>-->
+<!--								<td colspan="2"><p>-->
+<!--									<label for="label_certificate1"><input type="radio" class="rdo ml10" value="NO" id="label_certificate1" name="SIGN_GUBUN" checked="checked" /> 사용안함</label>-->
+<!--									<label for="label_certificate2" class="ml10"><input type="radio" class="rdo" value="YES" id="label_certificate2" name="SIGN_GUBUN" /> 사용함</label>-->
+<!--                                    <span class="ml20"><a href="/hp/im/mh/csm/certInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link"  title="새창" >공인인증서 이용방법</a> <a href="/hp/im/mh/csm/possibleCertInfo.do" onclick="window.open(this.href,'','width=710px,height=575px'); return false;" class="btn_link"  title="새창" >사용가능한 공인인증서</a></span></p>-->
+<!--									<p class="t_desc03">공인인증서가 있는 분만 이용하세요. 공인인증서가 없어도 서비스 이용이 가능합니다.</p>-->
+<!--								</td>-->
+<!--							</tr>-->
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<div class="btnr">
+                                <a href="javascript:validation(self.document.form1);" class="btn btn_blue" id="lockTarget"><span>확인</span></a>
+							</div>
+						</div>
+
+<!--						<div class="line_lgray"></div>-->
+
+<!--						<ol class="list_no01">-->
+<!--							<li><p>공인인증서 이용이 어려운 회원님께서는 상담원(지역번호 없이) 1588-8700을 통해 이용해 주시기 바랍니다.</p></li>-->
+<!--							<li><p>상환방식변경 취소는 당일 신청건에 한해 가능하며, 취소요청은 상담원(지역번호없이)1588-8700을 통하여<br />해주시기 바랍니다.</p></li>-->
+<!--							<li><p>상환방식변경 신청 및 취소가능 시간 : 평일 09:00 ~ 18:00(영업시간내)</p></li>-->
+<!--							<li><p>신상정보 변경 대상고객 중 22시부터 익일 8시 30분 사이 신상정보를 변경한 고객은 08시 30분 이후 부터<br />이용이 가능합니다.</p></li>-->
+<!--						</ol>-->
+
+					</div>
+				</div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

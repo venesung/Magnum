@@ -1,0 +1,46 @@
+<%/*
+ * Project Name: �Ｚī�� % �̳뺣�̼� �w�gƮ
+ * File Name: NHPIMSSSIDVIEW110.jsp
+ * Author: �ＺSDS ����� ���
+ * Created on 2010. 02. 01.
+ *
+ * �ѽ��� ������� �Ｚī�� ������ ȣ�� �߰� ȭ��
+ *
+ * COPYRIGHT 2009 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */%>
+
+<!-- tab_script -->
+<div id="tab_script">
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+	
+	<%
+		String gubun = (String)request.getParameter("gubun");
+	%>
+	
+	<script type="text/javascript" src="/js/common-hp.js"></script>
+	<script type="text/javascript" src="/js/common-hp-validation.js"></script>
+	<script type="text/javascript" src="/js/common-main.js"></script>
+	<script type="text/javascript" language='javascript'>
+	function Initialize() {
+		if('<%=gubun%>' == 'login'){
+			parent.scardLogin();
+		}else if('<%=gubun%>' == 'applySidcare'){
+			parent.goTabPage("NHPIMSSSID001M002", true);
+		}else if('<%=gubun%>' == 'applyIdDoctor'){
+			parent.goTabPage("NHPIMSSIDT001M002", true);
+		}else if('<%=gubun%>' == 'downloadIdDoctor'){
+			parent.goTabPage("NHPIMSSIDT001M005", true);
+		}else if('<%=gubun%>' == 'introSidcare'){
+			parent.goTabPage("NHPIMSSSID001M001", true);
+		}else if('<%=gubun%>' == 'successApplySidcare'){
+			parent.openLayerPopup("/hp/im/ss/sid/nhpimsssid004.do");
+		}else if('<%=gubun%>' == 'introVbv'){
+			parent.goTabPage("NHPIMSSVBV001M001", true);
+		}else{	
+			parent.closeTab();
+		}
+	}
+	
+	</script>
+</div>
+<body onload="Initialize();"/>

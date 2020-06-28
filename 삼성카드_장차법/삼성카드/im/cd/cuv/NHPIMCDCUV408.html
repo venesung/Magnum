@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_superS_reward.png" alt="보유 약정한도를 전환하여 사용할 수 있습니다" /></h1>
+				</div>
+			<form id="ptForm" name="ptForm">
+				<input type="hidden" id="janAm" name="<%=janAm %>" />
+				<input type="hidden" id="toPCode" name="toPCode" />
+				<input type="hidden" id="toPoint" name="toPoint" />
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<div class="tab02 w810 clfix">
+						<ul>
+                            <li><a href="javascript:goTabPage401();">카드 이용내역</a></li>
+                            <li><a href="javascript:goTabPage403();">약정한도 차감내역</a></li>
+                            <li><a href="javascript:goTabPage406();">약정변경</a></li>
+                            <li class="on"><a href="javascript:goTabPage408();">약정한도 전환</a></li>    
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="flag_additional"><img class="flag_superS" src="/images/mh/img_point_big.jpg" /></div>
+					<h2><img src="/images/mh/h2_reward_change.png" alt="약정한도 전환이 가능합니다" /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp">
+							<span>약정한도는 최대 70만원 내에서 보너스포인트 및 S-Mile로 전환 가능 합니다.</span>
+						</div>
+
+						<table class="dtable01 dtable01_bill mt15" summary="월 약정금액 / 약정기간 신청 게시판입니다.">
+						<caption>월 약정금액 / 약정기간 신청</caption>
+						<colgroup><col width="8%" /><col width="*" /><col width="25%" /><col width="15%" /><col width="20%" /><col width="16%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col" class="cell_l10">전환 구분</th>
+								<th scope="col" class="cell_r10">사용가능약정한도</th>
+								<th scope="col">전환율</th>
+								<th scope="col" class="cell_r10">전환요청 약정한도</th>
+								<th scope="col" class="cell_r10">전환 결과</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="radio" class="rdo" name="mpointCk" value="2" title="보너스포인트 선택" /></td>
+								<td class="cell_l10">보너스포인트</td>
+								<td class="cell_r10 t_no"><%=janAm %> 원</td>
+								<td class="t_no">10:9</td>
+								<td class="cell_r10"><span class="input_point"><input type="text" class="txt" disabled="disabled" name="cPoint" title="보너스포인트 전환요청 약정한도 금액" />원</span></td>
+								<td class="cell_r10"><span class="t_no afterP" id="2">0</span> P</td>
+							</tr>
+							<tr>
+								<td><input type="radio" class="rdo" name="mpointCk" value="1" title="S마일 선택" /></td>
+								<td class="cell_l10">S마일</td>
+								<td class="cell_r10"><span class="t_no"><%=janAm %></span> 원</td>
+								<td class="t_no">15:1</td>
+								<td class="cell_r10"><span class="input_point"><input type="text" class="txt" disabled="disabled" name="cPoint" title="S마일 전환요청 약정한도 금액" />원</span></td>
+								<td class="cell_r10"><span class="t_no afterP" id="1">0</span> S</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl">
+								<span class="t_desc04">약정한도 전환 후 취소가 불가능하오니, 약정한도 전환 시 유의하시기 바랍니다.</span>
+                                <a href="javascript:setModify();" class="btn btn_s_blue ml5"><span>전환</span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

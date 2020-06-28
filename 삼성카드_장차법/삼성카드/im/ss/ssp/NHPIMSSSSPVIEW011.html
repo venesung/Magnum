@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+<div class="layer_spop" id="id_layer01">
+	<div class="pop_l_wrap">
+		<p class="img_l_pop flag_tl">&nbsp;</p>
+		<p class="img_l_pop flag_tr">&nbsp;</p>
+		<p class="img_l_pop flag_bl">&nbsp;</p>
+		<p class="img_l_pop flag_br">&nbsp;</p>
+		<input type="button" title="카드인증 레이어 닫기" value="카드인증 레이어닫기" onclick="closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+		<div class="pop_l_content">
+			<p class="img_txt"><img src="<%=resImg %>" alt="<%=resMsg %>" /></p>
+			<p class="txt_error"><%=resMsg%></p>
+			<p class="btnc">
+                <a href="javascript:closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+			</p>
+		</div>
+	</div><!-- //pop_l_wrap -->
+</div><!-- //layer_spop -->
+<!--// 여기까지 끝 -->
+
+</body>
+</html>
+

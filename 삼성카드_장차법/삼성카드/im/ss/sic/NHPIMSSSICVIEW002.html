@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<div class="top_visual">
+	<h1 class="none">실시간 휴대폰 문자서비스 S.InfoCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1200/3965_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSIC001M002', true);" class="mv_h1_btn"><img src="/images/ss/vis_btn_entry.png" alt="서비스 신청하기" border="0" /></a>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">	<!-- 100126 -->
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M001', true);">서비스소개</a></li>
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSSIC001M002', true);">신청/변경/해지</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M005', true);">가입정보보기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSIC001M006', true);">신용정보내역E-Mail신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMSSSIC001M007', true);">신용정보조회</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/ss/h2_sinfocare03.gif" alt="서비스 이용현황을 안내해 드립니다" /></h2>
+	<div class="content_block_inner pos_rel">
+		<img src="/images/ss/txt_sinfocare01.gif" alt="고객님은 현재 S.InfoCare 서비스를 이용하고 계십니다." class="txt_exp" />
+		<p class="t_11 t_gray">아래의 고객님의 정보를 확인해주세요</p>
+		<!--img src="/images/ss/img_service01.gif" alt="" class="ab_tr2" /-->
+		<img src="/images/ss/txt_sms05.png" alt="고객님은 S.InfoCare 서비스를 아래에서 신청하실 수 있습니다." class="txt_exp" />
+		<p class="t_11 t_gray">&nbsp;</p>
+		<!--img src="/images/ss/img_service01.gif" alt="" class="ab_tr2" /-->
+	</div>
+</div>
+
+
+<!-- content_block 약관동의 div -->
+<div class="content_block clfix"  id="id_infocare_step01" style="display:"><!-- 상단변경 -->
+	<h2><img src="/images/ss/h2_sinfocare01.gif" alt="약관에 동의해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+		<h3 class="none">S.InfoCare 약관</h3>
+		<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+			<div id="agreeDiv" class="agree" tabindex="0"></div>
+		</div></div>
+
+
+		<div class="btnset">
+			<div class="btnl">
+				<label for="label_agree1"><input type="radio" class="rdo" value="" id="label_agree1" name="id_agree" checked="checked" /> <strong class="t_point">동의</strong>&nbsp;&nbsp;&nbsp;</label>
+				<label for="label_agree2"><input type="radio" class="rdo" value="" id="label_agree2" name="id_agree" /> 동의안함</label>
+			</div>
+
+			<!-- btn -->
+			<div class="btnr">
+                <a href="javascript:agree()" class="btn btn_blue" id="btnAgreeSmsApply" title="새창"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSSIC001M001', true);" class="btn btn_white"><span>취소</span></a>
+			</div>
+			<div class="line_lgray">&nbsp;</div>
+<!-- 수정 100707 -->							
+					<ol class="list_no01">
+					<li><p>S.InfoCare서비스는 신청한 회원에 해서만 제공되는 유료서비스입니다.</p></li>
+					<li><p>단, 웹멤버 가입 즉시 신청 가능함</p></li>
+					<li><p>바로알림 가입중인 회원님은 바로알림을 먼저 해지하셔야 S.InfoCare 가입이 됩니다.</p></li>
+					<li><p>오전 06시~07시 30분 사이 바로알림 신청 시 다음날 오전8시부터 적용되며, 06시~07시 30분<br />
+							이외의 시간에 신청 해주시면 실시간으로 서비스 적용됩니다.</p></li>
+					<li><p>이용대상</p>
+						<ul class="list_dashed_t11">
+							<li><span class="t_desc03">정상카드와 휴대폰을 소지한 당사 회원</span></li>
+							<li><span class="t_desc03">법인카드, 가족카드, 체크카드 및 비신용카드로는 신청이 불가합니다.</span></li>
+						</ul>
+					</li>
+					<li><p>정상카드 미소지 또는 정확한 휴대폰번호를 등록/변경하지 않을 경우 자동 해지될 수 있습니다.<br />
+							자세한 서비스 제공내역과 이용방법은 상단 [서비스소개] 페이지를 참조하시기 바랍니다.</p></li>
+					</ol>
+<!--  //수정 100707 -->
+		</div>
+	</div>
+</div>
+
+<div id="id_infocare_step02">
+<form name="form1" method="post" >
+<input type="hidden" name="smsVerify" value="N" />
+	<div class="content_block clfix">
+
+	<!-- layer_popup 컨텐츠+메세지 -->
+		<!-- 자동결제 SMS 알림 선택 팝업 -->
+		<div id="id_layer02" class="pop_l_position pop_l_wrap_mix" style="position: absolute; top: 700px; left: 200px; z-index: 1000; display: none">
+			<div class="pop_l_wrap" style="height:335px;">
+				<p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+				<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="자동결제내역 SMS알림서비스 레이어 닫기" />
+				<p class="pop_tit"><strong>자동결제내역 SMS알림서비스는 보험료, 통신비, 교통비 등 <br />   매월 정기적인 자동결제요금의 내역을 SMS로 알려드리는<br /> 무료 옵션 서비스입니다.</strong></p>
+					<div class="pop_l_content">
+						<div class="pop_l_alert">
+						<p class="pop_sub_desc" style="letter-spacing:-1px">
+							-추가적으로 부과되는 수수료는 없습니다.<br />
+							-본 서비스는 개인신용카드 본인회원 중 유료SMS서비스 이용회원만 신청<br />&nbsp;&nbsp;가능합니다.<br />
+							-승인 다음 영업일에 결제내역이 발송됩니다.<br />
+							-교통비는 매월 사용금액 합계금액으로 월 1회 발송됩니다.<br />
+							-본인카드로 결제된 자동결제내역만 발송되며, 일부 내역은 발송 제외됩니다.
+						</p>
+	
+						<p class="pop_sub_desc mt20">자동결제내역 SMS알림서비스의 내용을 충분히 확인하셨습니까?</p>
+					</div>
+					<p class="btnc"><img src="/images/common/btn_s_confirm02.png" alt="확인" onclick="close_layer('id_layer02');" style="cursor:hand;" /></p>
+				</div>
+			</div>
+		</div>
+		<!-- layer_popup w640 -->
+		<!-- 누적금액 SMS 알림 선택 팝업 -->
+		<div id="id_layer04" class="pop_l_position" style="position: absolute; top: 700px; left: 200px; z-index: 1000; display: none">
+			<div class="pop_l_wrap pop_l_wrap640" style="height:445px;">
+			<p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none';" value="레이어닫기" title="누적이용금액 SMS알림서비스 레이어 닫기" />
+				<p class="pop_tit al_center"><strong>누적이용금액 SMS알림서비스는 삼성카드 회원님의 합리적인 소비생활을 위하여<br />누적이용금액(신용카드 이용금액 중 미 청구된 총 금액)을 SMS로 알려드리는 <br /> 무료 옵션 서비스입니다.</strong></p>
+				<div class="pop_l_content">
+					<p class="pop_sub_desc">
+						- 추가적으로 부과되는 수수료는 없습니다.<br />
+						- 본 서비스는 개인신용카드 본인회원 중 유료SMS서비스 이용회원만 신청 가능합니다.<br />&nbsp;&nbsp;(체크만, 법인만, 가족카드만 소지한 회원 및 생활비재테크 이용회원 신청불가)<br />
+						- 누적이용금액 = 승인시점의 본인카드 + 가족카드 이용대금 중 미 청구된 총 금액<br />&nbsp;&nbsp;(결제예정금액과 상이)<br />
+						- 일시불, 할부, 현금서비스, 해외사용내역이 포함된 금액입니다.<br />&nbsp;&nbsp;(카드론, 체크/법인/기프트/올앳카드 이용금액 및 연회비, 할부수수료, 자동차구매와 같은 <br />&nbsp;&nbsp;비일상적인 카드승인 건 등은 미포함)<br />
+						- 매출취소, 포인트사용, 자동결제, 페이백, 캐시백, 선입금 등의 금액은 당사로 매입이 확정된 후 <br />&nbsp;&nbsp;누적금액에 포함됩니다.<br />
+						- 본 서비스를 신청하시면 승인내역정보와 누적금액 외 포인트정보 등의 <br />&nbsp;&nbsp;추가 정보는 제공받을 수 없습니다. (승인내역+누적금액 통합하여 SMS 1건으로 발송됩니다.)<br />
+						- 기타 자세한 사항은 당사 CRM센터(1588-8700)으로 연락주시기 바랍니다.
+					</p>
+					<p class="mt20">누적이용금액 SMS알림서비스의 내용을 충분히 확인하셨습니까?</p>
+					<p class="btnc pt25"><img src="/images/common/btn_s_confirm02.png" alt="확인" onclick="close_layer('id_layer04');" style="cursor:hand;" /></p>				</div>
+			</div>
+		</div>
+
+		<h2><img src="/images/ss/h2_sinfocare04.gif" alt="카드정보를 확인해주세요" /></h2>
+		<div class="content_block_inner">
+			<table class="dtable02 dtable_inputfield" summary="카드번호, 카드비밀번호, 카드 CVC번호, 휴대폰 번호입력, 상품 선택, 서비스선택, 명세서 수령방법, 포인트결제여부, 자동결제 요금 문자 알림, 누적이용금액SMS알림으로 구성된 실서비스 신청 정보를 입력하는 게시판입니다.">
+			<caption>실서비스 신청 입력</caption>
+			<colgroup><col width="150" /><col width="*" /></colgroup><!-- 120910 수정 -->
+			<tbody>
+				<tr>
+					<th scope="row"><label for="cardIndex">카드번호</label></th>
+					<td><p>
+						<select name="cardIndex" id="cardIndex" style="width:360px">
+							<option></option>
+						</select>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>카드 비밀번호</p></th>
+					<td><p class="input_2char"><input type="password" class="txt" value="" name="cardPassword" title="비밀번호 앞 두자리" onkeypress="checkTypes(this, 'NUMB');" maxlength="2" style="ime-mode:false;" enc="on"/>
+					<em>**</em>(비밀번호 앞의 2자리)  &nbsp;<span id="usafeon_cardPassword"></span></p>
+					
+					<script type="text/javascript">
+						safeonAddNumberField("form1", "cardPassword");
+					</script>
+					</td>
+					
+				</tr>
+				<tr>
+					<th scope="row"><label for="cvcNo">카드 CVC번호</label></th>
+					<td><p class="input_3char"><input type="password" class="txt" value="" name="cvcNo" id="cvcNo" onkeypress="checkTypes(this, 'NUMB');" maxlength="3" style="ime-mode:false;" enc="on"/>
+					(카드 뒷면 19자리(아멕스카드의 경우 18자리) 숫자 중 뒤의 3자리)  &nbsp;<span id="usafeon_cvcNo"></span></p>
+					
+					<script type="text/javascript">
+						safeonAddNumberField("form1", "cvcNo");
+					</script>
+					</td>
+					
+				</tr>
+				<tr>
+					<th scope="row"><p>휴대폰 번호 입력</p></th>
+					<td><p>
+						<span class="input_phone">
+						<!-- 2013.04.19 SR S.InfoCare, 바로알림 신청변경해지 화면 수정요청 -->
+							000-0000-0000
+							<a href="javascript:goTabPageWithParam('NHPIMMHUFM001M001','ZONE=GBTO01');" class="btn btn_s_white"><span>변경하기</span></a>
+						</span>
+					</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>상품선택</p></th>
+					<td><p><input type="radio" class="rdo" id="id_goods" name="goodGubun" /> <label for="id_goods">S.InfoCare 월700원</label>
+					<span class="ml10 t_desc04">[3개월 무료 이용 혜택 제공]</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>서비스선택</p></th>
+					<td><p><label for="label_ss" class="mr10" id="svcRadio1" style="display:none;"><input type="radio" class="rdo" id="label_ss" name="prcType" value="1" />신청</label>
+						<label for="label_ss2" class="mr10" id="svcRadio2" style="display:none;"><input type="radio" class="rdo" id="label_ss2" name="prcType" value="2" onclick="goodGubunZDisable(2);" />변경</label>
+						<label for="label_ss3" class="mr10" id="svcRadio3" style="display:none;"><input type="radio" class="rdo" id="label_ss3" name="prcType" value="3" onclick="goodGubunZDisable(3);" />해지</label>
+						</p></td>
+				</tr>
+				
+				<tr><!-- 100308 -->
+					<th scope="row"><p>명세서 수령방법</p></th>
+					<td><p><input type="radio" class="rdo" id="label_giveemail" name="billMthd" value="2" checked="checked" /> <label for="label_giveemail">e메일 명세서</label></p></td>
+				</tr>
+				
+				<tr id="trPoint">
+					<th scope="row"><p>포인트결제여부</p></th>
+					<td><p><input type="radio" class="rdo" name="pointYN" title="포인트로 결제" />포인트결제 <input type="radio" class="rdo" name="pointYN" title="카드로 결제" />카드결제</p>
+					&nbsp; ※ 포인트결제를 선택하시면, 매월 보유 포인트로 우선 결제되며, <br />&nbsp;&nbsp;&nbsp;포인트가 부족할 경우의 차액은 카드대금으로 청구됩니다. <!-- SR내역 13.02.22 -->
+					</td>
+				</tr>
+				<tr id="trGoodsZ">
+					<th scope="row"><p>자동결제 요금 문자 알림</p></th>
+					<td><p>
+					  <label for="label_goodsZ_Y" class="mr10"><input type="radio" class="rdo" id="label_goodsZ_Y" name="goodGubunZ" value="Z" title="자동결제 요금 문자 알림 신청" /> 신청</label>
+					  <label for="label_goodsX_N" class="mr10"><input type="radio" class="rdo" id="label_goodsX_N" name="goodGubunZ" value="" title="자동결제 요금 문자 알림 미신청" /> 미신청</label>
+					</p></td>
+				</tr>
+				<tr id="trGoodsY">
+					<th scope="row"><p ><strong class="t_point_org">누적이용금액SMS알림</strong></p></th>
+					<td><p class="inpu_cardno"> 
+					 <input type="radio" class="rdo" id="label_goodsY_Y2" name="goodGubunY" value="Y" title="누적이용금액 SMS 알림 신청" />  <label for="label_goodsY_Y2" class="mr10"><strong class="t_point">신청</strong></label>
+					 <input type="radio" class="rdo" id="label_goodsY_N2" name="goodGubunY" value="" title="누적이용금액 SMS 알림 미신청" /> <label for="label_goodsY_N2"><strong class="t_point">미신청</strong></label>
+					</p></td>
+				</tr>
+				</div>
+			</tbody>
+			</table>
+	
+			<!-- btn -->
+			<div class="btnr">
+                <a href="javascript:applySMS()" class="btn btn_blue" id="btnApproveSmsApply"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSSIC001M001', true);" class="btn btn_white"><span>취소</span></a>
+			</div>
+	
+			<ol class="list_no01 list_cvc">
+				<li><p>결제 가능한 카드번호를 선택하세요.</p></li>
+				<li><p>보유중인 카드번호가 화면에 보이지 않을 경우는 정상카드가 없는 경우로써<br />S.InfoCare 서비스를 신청하실 수 없습니다.</p></li>
+				<li><p>S.InfoCare를 신청/변경/해지 하시려면 해당상품을 선택하신 후 확인을 누르세요.</p></li>
+				<li><p>바로알림 가입 고객이 S.InfoCare 가입을 원하시면 바로알림을 먼저 해지한 후<br />S.InfoCare 가입을 해주시기 바랍니다. <a href="javascript:goTabPage('NHPOMSSDSS001M002', true);" class="btn_link">바로알림 해지 바로가기</a></p></li>     
+				<li><p>S.InfoCare는 본 서비스를 신청한 회원에 대해서만 제공되는 서비스입니다.</p></li>
+				<li><p>무료 사용기간이 종료 후 유료서비스로 전환 됩니다.(신청 후 4개월차부터 요금 청구)</p></li>
+			</ol>
+	
+			<dl class="cvc_view">
+				<dt class="t_black"><strong class="t_point">CVC보는방법</strong></dt>
+				<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+				<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+			</dl>
+		</div>
+	</div>
+</form>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

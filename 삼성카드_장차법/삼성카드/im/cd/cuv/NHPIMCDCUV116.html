@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+	
+<!-- top_visual -->
+<div class="top_visual">    
+    <h1><img src="/images/mh/h1_foreign_uselist01.png" alt="해외에서 이용하신 카드승인내역입니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->       
+    <h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+    <div class="content_block_inner">        
+        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:cuvMovePage('getCardList','P');" class="default" onclick="return false;">법인카드</a></p>
+            <div class="childlayer">
+                <ul>
+					<!--<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="#">법인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCheckCardList','C');">체크카드</a></li>-->
+					<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="#">법인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCardList','C');">체크카드</a></li>
+                </ul>
+            </div>
+        </div>        
+        <span class="selectbox_r_txt">개인카드, 법인카드, 체크카드 중 조회하실 카드를 선택하세요.</span>
+
+        <div class="line_lgray">&nbsp;</div>
+ 		<%@ include file="/WEB-INF/jsp/hp/im/cd/cuv/NHPIMCDCUV101_info.jsp" %>
+	</div>
+</div>	
+ 		
+
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_uselist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">     
+	    <div class="tb_exp clfix">
+            <span>&nbsp;</span>
+            <span class="ab_tr t_desc03">
+                <a href="#" class="btn btn_s_gray"><span>국문보기</span></a><a href="javascript:cCorpSearch('4')" class="btn btn_s_white"><span>ENGLISH</span></a>
+            </span>
+        </div>
+        <table class="dtable02 dtable_inputfield" summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다.">
+        <caption>카드 이용내역 조회</caption>
+        <colgroup><col width="125" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <th scope="row"><p>이용지역</p></th>
+                <td><p>
+                    <label for="label_region" class="mr10"><input type="radio" class="rdo" id="label_region" name="id_region" onclick="clickRegion()" value="1" title="국내" /> 국내</label>
+                    <label for="label_region02"><input type="radio" class="rdo" id="label_region02" name="id_region" onclick="clickRegion()" value="2" title="해외" /> 해외</label>
+                </p></td>
+            </tr>
+			<!-- //국내카드이용내역 체크시 display -->
+			<tr id="region_no3" style="display:none;">
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="lebel_type01" class="mr10"><input type="radio" class="rdo" id="lebel_type01" onclick="clickType()" name="id_type" value="1" title="승인내역" /> 승인내역</label>
+					<label for="lebel_type02" class="mr10"><input type="radio" class="rdo" id="lebel_type02" onclick="clickType()" name="id_type" value="2" title="사용내역" /> 사용내역</label>
+				</p></td>
+			</tr>
+
+
+
+            <!-- //loop -->
+            <tr>
+                <th scope="row"><p>카드선택</p></th>
+                <td><p>
+      				<select name="card_state" id="select_6" style="width:100px" onchange="card_state_onchange(this.value);" title="카드상태 선택">
+						<option value="0">전체</option>
+						<option value="1">사용가능 카드</option>
+						<option value="2">사용불가능 카드</option>
+					</select>             
+                    <select title="카드종류 선택" style="width:360px" name="card_select">
+                    </select>
+
+                </p></td>
+            </tr>
+            <tr>
+                <th scope="row"><p>이용기간</p></th>
+                <td><p>
+					<a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a><a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a><a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a><a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a><a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3" style="width:30px">3개월</span></a><a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6" style="width:30px">6개월</span></a><br />
+                    <!--<span class="reset_date ml20">--><a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a><!--</span>-->
+                </p>
+                </td>
+            </tr>
+
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnr">
+            <!-- 100126 -->
+            <a href="javascript:before_cCorpSearch('1')" class="btn btn_blue"><span>조회</span></a>
+            <!-- //100126 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_foreign_uselist03.png" alt="해외 사용내역입니다" /></h2>
+	<p class="btnr mt_40 mb15">
+          <a href="#" class="btn btn_white"><span>다운로드</span></a>
+          <a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+    </p>	
+	<div class="d_easy">		
+		<table class="dtable01 dtable01_bill mt10" summary="이용일자, 사용지역, 이용가맹점, 이용금액, 접수금액, 청구금액, 환율, 결제일로 구성된 해외사용내역">
+		<caption>해외 사용내역</caption>		
+		<colgroup><col width="9%" /><col width="15%" /><col width="25%" /><col width="16%" /><col width="16%" /><col width="8%" /><col width="9%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10a">이용일자<br />(접수일자)</th>
+				<th scope="col" class="cell_l10">사용지역</th>
+				<th scope="col" class="cell_l10">이용가맹점 <br />(업종)</th>
+				<th scope="col" class="cell_r10">이용금액<br />접수금액(USD)</th>
+				<th scope="col" class="cell_r10">청구금액(원)</th>
+				<th scope="col">환율<br />(원/USD)</th>
+				<th scope="col">결제일</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10a">09.07.22</td>
+				<td class="cell_l10"><span class="nobreak_nolink w150">U.S</span></td>
+				<td class="cell_l10"><span class="nobreak_nolink w150">coffee 7gram</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1,000.000</span></td>
+				<td class="cell_r10"><span class="p_nowrap">1,000,000,000</span></td>
+				<td>1,291</td>
+				<td>09.07.22</td>
+			</tr>
+			<tr class="nodata"><td colspan="7">이용내역이 없습니다.</td></tr>
+        </tbody>
+        </table>
+        <!-- paginate -->
+        <div class="paginate">	${_page}  </div>
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnl">
+                <a href="javascript:goTabPage('NHPIMSSCSD');" class="btn btn_white"><span>해외 안심 서비스 &gt;</span></a>
+                <a href="javascript:goTabPage('NHPIMCSFEG');" class="btn btn_white"><span>해외이용문의 &gt;</span></a>
+                <a href="javascript:goTabPage('NHPIMCDCDI003');" class="btn btn_white"><span>해외이용안내 &gt;</span></a>
+            </p>
+			<p class="btnr">
+                <a href="#" class="btn btn_white"><span>다운로드</span></a>
+                <a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+            </p>
+        </div>
+		<iframe name="ifrm" frameborder="0" width="0" height="0" title="빈 프레임"></iframe>            
+    </div>
+</div>
+
+
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

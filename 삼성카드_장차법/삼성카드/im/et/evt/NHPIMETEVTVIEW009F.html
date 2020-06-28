@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<%@ taglib tagdir="/WEB-INF/tags" prefix="fileTag" %>
+
+<%@ page import="com.scard.common.web.LoginUtil"%>
+<%@ page import="com.scard.common.login.session.entity.*"%>
+<%@ page import="anyframe.common.Page" %>
+<%@ page import="com.scard.hp.im.et.evt.vo.ITCMEVENTWINTTVO" %>
+<%@ page import="com.scard.hp.im.et.evt.vos.NHPIMETEVT001VOS" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.scard.common.util.paging.*" %>
+<%@ page import="com.scard.common.util.*"%>
+<%@ page import="com.scard.hp.common.util.HpCommonUtil"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<% 
+					
+	String srchGubun1 = HpCommonUtil.getAsString(request.getParameter("srchGubun1"));
+	String srchGubun2 = HpCommonUtil.getAsString(request.getParameter("srchGubun2"));
+	ArrayList<ITCMEVENTWINTTVO>  personList = (ArrayList<ITCMEVENTWINTTVO> )request.getAttribute("personList");
+	ArrayList<ITCMEVENTWINTTVO>  winMyList = (ArrayList<ITCMEVENTWINTTVO> )request.getAttribute("winMyList");
+   //ITCMEVENTWINTTVO personData = (ITCMEVENTWINTTVO)request.getAttribute("personData");
+    String forwordID = (String)request.getAttribute("forwordID");
+    
+
+
+%>
+
+<title>삼성카드 이벤트 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+
+<script type="text/javascript">
+	function fnOnLoad(){
+//		alert("forwordID : " + '${forwordID}' + "/winner : " + '${winner}');
+		if('${forwordID}'=="search" && '${winner}'=="N"){
+				
+			parent.openLayerPopupNonXecure("/hp/im/et/evt/viewNHPIMETEVT008P.do", "");
+		}else if('${forwordID}'=="search" && '${winner}'=="Y"){
+            var url ="/hp/im/et/evt.do?method=getEventWinMyList&srchGubun2=<%=srchGubun2%>&srchGubun1=<%=srchGubun1%>&popFlag=Y";
+			//window.open(url,'win','menubar=0,resizable=1,scrollbars=1,width=750,height=540,left=0,top=0');
+			parent.openPopup(url, '<%=srchGubun1%>', '<%=srchGubun2%>', 'Y');
+		}
+	}
+</script>
+
+</head>
+<body onLoad="fnOnLoad();"></body>
+
+</html>

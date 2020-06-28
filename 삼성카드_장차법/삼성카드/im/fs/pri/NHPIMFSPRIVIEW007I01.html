@@ -1,0 +1,111 @@
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.scard.common.asis.util.DateUtil"%>
+<%@ page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00042INVO"%>
+<%
+	String plSeq		= (String)request.getAttribute("PL_SEQ");
+	String plRefererUrl	= (String)request.getAttribute("PL_REFERER_URL");
+
+	// 세션종료체크변수
+	String sessionErrCode	= (String)request.getAttribute("SESSION_ERR_CODE");
+	if(sessionErrCode == null){
+		sessionErrCode = "";
+	}
+	else{
+		sessionErrCode = sessionErrCode.trim();
+	}
+
+	HOMEHMV5HPR00042INVO resultVo = (HOMEHMV5HPR00042INVO)request.getAttribute("resultVo");
+	String reapCode = (String)request.getAttribute("respCode");
+	String errCode	= (String)request.getAttribute("errCode");
+	String errMsg	= (String)request.getAttribute("errMsg");
+
+	String realName		= (String)request.getAttribute("REAL_NAME");
+	String idenNo		= (String)request.getAttribute("IDEN_NO");
+	String idenNo1		= (String)request.getAttribute("IDEN_NO1");
+	String mobileNo1	= (String)request.getAttribute("MOBILE_NO1");
+	String mobileNo2	= (String)request.getAttribute("MOBILE_NO2");
+	String mobileNo3	= (String)request.getAttribute("MOBILE_NO3");
+	String mobileNo		= (String)request.getAttribute("MOBILE_NO");
+
+	String nowYmd = DateUtil.getToday("yyyy.MM.dd");
+
+	// click story
+	String scriptSrc = (String)request.getAttribute("scriptSrc");
+
+	String resultYn = "";
+	
+	if(resultVo == null){
+		// 시스템에러
+		resultYn = "E";
+	}
+	else{
+		if("00".equals(reapCode)){
+			resultYn = "Y";
+		}
+		else{
+			// 불가
+			// resultYn = "N";
+			resultYn = "E";
+		}
+	}
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+
+<title>프라임론 신청 완료 - 삼성카드</title>
+<!-- 크레센도 스크립트 start -->
+<%@ include file="/WEB-INF/jsp/hp/im/fs/pri/echoScriptPri.jsp" %>
+//컨버전 : 프라임론 신청 완료
+<script language="javascript" type="text/javascript"> 
+var EchoID = "samwed1";
+var EchoGoodNm = "";
+var EchoAmount = "";
+var EchoUIP = "";
+var EchoTarget = "samsungcard.com";
+var EchoLogSend = "";
+var EchoCV = "Y";
+var EchoPN = "40";
+</script>
+<script language="javascript" type="text/javascript" src="/primeloan/EchoScriptV2.js"></script>
+<!-- 크레센도 스크립트 end -->
+<script language="javascript" type="text/javascript">
+<!--
+function Go(){
+	var f = document.form1;
+
+<% if(!"".equals(sessionErrCode)){ %>
+	parent.sessionOut('<%=sessionErrCode%>');
+<% }else{ %>
+	<% if("Y".equals(resultYn)){ %>
+		<% if(scriptSrc != null && !"".equals(scriptSrc)){ %>
+		document.location.href="<%=scriptSrc%>";
+		<% } %>
+		parent.setApplyLoanRsltSucess('<%=nowYmd%>');
+	<% }else if("N".equals(resultYn)){ %>
+		parent.setApplyLoanRsltFail('<%=nowYmd%>');
+	<% }else{ %>
+		parent.setApplyLoanRsltError('<%=errMsg%>');
+	<% } %>
+<% } %>
+}
+-->
+</script>
+</head>
+
+<body onLoad="Go();">
+<form name="form1" method="post" target="_parent">
+<input type="hidden" name="REAL_NAME"	value="<%=realName%>" />
+<input type="hidden" name="IDEN_NO"		value="<%=idenNo%>" />
+<input type="hidden" name="MOBILE_NO1"	value="<%=mobileNo1%>" />
+<input type="hidden" name="MOBILE_NO2"	value="<%=mobileNo2%>" />
+<input type="hidden" name="MOBILE_NO3"	value="<%=mobileNo3%>" />
+<input type="hidden" name="MOBILE_NO"	value="<%=mobileNo%>" />
+
+<input type="hidden" name="PL_SEQ"				value="<%=plSeq %>" />
+<input type="hidden" name="PL_REFERER_URL"		value="<%=plRefererUrl %>" />
+</form>
+<!---END_ENC--->
+<form name="xecure"><input type="hidden" name="p" /></form>
+
+</body>
+</html>

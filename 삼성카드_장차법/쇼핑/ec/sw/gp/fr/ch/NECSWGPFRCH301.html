@@ -1,0 +1,221 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<title>잔액 환불 - 삼성카드 쇼핑</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://devshoppingmall.samsungcard.com:10080" />
+	<link rel="stylesheet" type="text/css" href="/css/gp/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/gp/shopping.css" />
+	<link rel="stylesheet" type="text/css" href="/css/gp/shopping_giftmall.css" />
+	
+	<link rel="stylesheet" type="text/css" href="/css/shopping.css" />
+	<link rel="stylesheet" type="text/css" href="/css/shopping_giftmall.css" />	
+	
+	<script type="text/javascript" src="/js/ec/sw/common/common.js"></script>
+	<script type="text/javascript" src="/js/modal.js"></script>
+</head>
+<body>
+<div id="skip_navi" class="none">
+	<a href="#contentWrap">주요내용 바로가기</a>
+</div>
+<div id="wrap" class="giftcardPlus_wrap">
+<!-- 공통 상단 시작 -->
+<link rel="stylesheet" type="text/css" href="/css/gp/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping.css" />
+<link rel="stylesheet" type="text/css" href="/css/gp/shopping_giftmall.css" />
+
+<script type="text/javascript" src="/js/ec/common/common.js"></script>
+<script type="text/javascript" src="/js/ec/common/modal.js"></script>
+<script type="text/javascript" src="/js/ec/sp/common/search.js"></script>
+<script type="text/javascript" src="/js/ec/common/embedswf.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/commonUIComponent.js"></script>
+<h1 class="conts_hidden">삼성카드 LifeStyle Service 쇼핑</h1>
+<div id="head">/WEB-INF/jsp/ec/sw/gp/fr/common/include/top.jsp</div>
+<!-- //공통 상단 끝 -->
+	
+	<!-- body content -->
+	<div id="contentWrap">
+		<div id="contentBody">
+<!-- 공통 좌측 시작 -->
+	<div id="conLeft">좌측메뉴</div>
+<!--// 공통 좌측메뉴 끝 -->
+			
+			<!-- CONTENTS -->
+		
+			
+			<div id="conRight" class="giftcard_plus">
+				<!-- location -->
+				<div class="location">공통 로케이션</div>
+				<!-- //location -->
+				
+				<div class="h2_wrap">
+					<h2><img src="/images/sw/gp/h2_balance_withdrawal.gif" alt="잔액 환불" /></h2>
+				</div>
+
+				<ul class="tab tab_cell160">
+                    <li><a href="javascript:refinfo();">잔액 환불 안내</a></li>    
+					<li class="on"><a>잔액 환불</a></li>	
+<!-- 수정 101018 -->
+                    <li><a href="javascript:refinfo1();">잔액 환불 상세</a></li>
+<!--// 수정 101018 -->						
+				</ul>
+				
+				<!-- 기프트카드 조회 -->
+				<p class="mt20 mb10">- 기명(회원)등록이 되어있지 않은 카드의 경우 카드정보를 직접 입력 후 조회</p>
+				<div class="board_input">
+				<table border="0" width="728" summary="Gift카드 플러스 정보, 카드번호 입력, 유효기간, CVC번호, 환불 가능 여부, 상태, 잔액으로 구성된 환불 가능 금액 조회">
+					<caption>환불 가능 금액 조회</caption>
+					<colgroup>
+						<col width="159" />
+						<col width="118" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th rowspan="4" scope="row">Gift카드 플러스 정보</th>
+							<td colspan="2"><input type="radio" name="selcard" id="card_01" class="chk" title="선택" /> 
+								<select	title="거래 Gift카드 선택" style="width: 165px;" name="sel_cardno">
+								<option>선택</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th class="th_w" scope="row"><label for="card_02"><input type="radio" name="selcard" id="card_02" class="chk" onclick="chcard('1');" />카드번호 입력</label></th>
+							<td>
+								<input type="text" name="card_no1" style="width: 60px;ime-mode:disabled" class="txt" value="" maxlength="4" title="카드번호 첫번째자리 입력" enc="on" /> <em>-</em>
+								<input type="text" name="card_no2" style="width: 60px;ime-mode:disabled"   class="txt" value="" maxlength="4" title="카드번호 두번째자리 입력" enc="on" /> <em>-</em>
+								<input type="password" name="card_no3" style="width: 60px;ime-mode:disabled" class="txt" value="" maxlength="4" title="카드번호 세번째자리 입력" enc="on" /> <em>-</em>
+								<input type="text" name="card_no4" style="width: 60px;" class="txt"	value="" maxlength="4" title="카드번호 네번째자리 입력" enc="on" />
+								<!--  키보드 암호 시작 -->
+								&nbsp;&nbsp;<span id="usafeon_card_no1|card_no2|card_no3|card_no4" title="마우스 입력"></span><!-- 110331 키패드 수정// -->
+								<!--  키보드 암호 끝 -->
+							</td>
+						</tr>
+						<tr>
+							<th class="th_w" scope="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;유효기간</th>
+							<td><select name="card_year" title="유효기간 년도선택" style="width: 70px;">
+								<option></option>
+							</select> 년 
+							<select name="card_month" title="유효기간 월선택" style="width: 60px;">
+								<option value="01">01</option>
+							</select> 월</td>
+						</tr>
+						<tr>
+							<th class="th_w" scope="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CVC번호</th>
+							<td><input name="card_cvc" type="password" style="width: 60px;" class="txt" value="" title="CVC번호 입력" maxlength="3" enc="on" />
+								<span><span class="t_11gray"><strong class="t_org">CVC</strong> 값은카드뒷면에 있는 값 3자리입니다</span>
+								<!--  키보드 암호 시작 -->
+								&nbsp;&nbsp;<span id="usafeon_card_cvc" title="마우스 입력"></span><!-- 110331 키패드 수정// -->
+								<!--  키보드 암호 끝 --></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">환불 가능 여부</th>
+							<td colspan="2"><div id="REF_STC"></div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">상태</th>
+							<td colspan="2"><div id="GFTP_CD_STCNM">-</div>
+							<input type="hidden" name="GFTP_CD_STC" vlaue="" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">잔액</th>
+							<td colspan="2"><span id="totBal">0</span>원</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				<ol class="t_org">
+						<li><p>※ 카드번호 선택 또는 입력 후 반드시 조회버튼을 눌려주세요.</p></li>
+				</ol>
+
+				<div class="al_right mt10">
+                    <span class="btn_point"><a href="javascript:goCardSearch();">조회</a></span>
+				</div>
+				<!-- //기프트카드 조회 -->
+				
+				<div>
+					
+					<div id="refYes" class="view_sum mt30" style="display:none">
+						<span>환불가능한 금액은</span>
+						<span class="number_balance t_org">
+						</span>
+						<span><strong>원</strong> 입니다.&nbsp;<span class="t_11gray">(환불 수수료 100원 차감)</span></span>
+					</div>
+
+					<div id="refNo" class="view_sum mt30" style="display:none">
+						<span>카드 잔액에서</span>
+
+						<span><strong>원</strong>을 추가로 사용하셔야 환불이 가능합니다</span>
+					</div>
+					
+					<div id="searchYes" style="display:none">
+						<h3 class="mt30"><img src="/images/sw/gp/h3_withdrawal_info.gif" alt="환불 받을 계좌 정보 입력" /></h3>
+						<div  class="board_input">
+							<table border="0" width="728" summary="환불 받을 은행 선택, 본인 소유 계좌번호, 예금주, 주민등록 번호로 구성된 환불 받을 계좌 정보 입력">
+							<caption>환불 받을 계좌 정보 입력</caption>
+							<colgroup><col width="159" /><col width="" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">환불 받을 은행 선택</th>
+									<td>
+										<select title="환불 받을 은행 선택" style="width:165px;" name="bc">									
+											<option value="">선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">본인 소유 계좌번호</th>
+									<td>
+										<input type="text" name ="acno" style="width:160px;ime-mode:disabled" class="txt" value="" title="계좌번호 입력" maxlength="20" enc="on" />
+										<span><span class="t_11">- 없이 등록해 주세요.</span>
+										<!--  키보드 암호 시작 -->
+										&nbsp;&nbsp;<span id="usafeon_acno" title="마우스 입력"></span><!-- 110331 키패드 수정// -->
+										<!--  키보드 암호 끝 --></span><br />
+										<p class="t_11gray mt5">회원 본인의 계좌번호로 신청하시고 계좌번호가 틀릴 경우 환불처리가 안되오니 반드시 확인 하시고 신청 하세요.</p>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">예금주</th>
+									<td>
+										<input type="text" name="dpwnm" style="width:100px;" class="txt" title="예금주 입력" maxlength="8" value="" />
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">주민등록 번호</th>
+									<td>
+										<input type="text" name="rrno_1" style="width:100px;ime-mode:disabled" class="txt"  title="주민번호 앞자리 입력" maxlength="6" value="" enc="on" />
+										<em>-</em>
+										<input type="password" name="rrno_2" style="width:100px;ime-mode:disabled" class="txt"  title="주민번호 뒷자리 입력" maxlength="7" value="" enc="on" />
+										<!--  키보드 암호 시작 -->
+										&nbsp;&nbsp;<span id="usafeon_rrno_1|rrno_2" title="마우스 입력"></span><!-- 110331 키패드 수정// -->
+										<!--  키보드 암호 끝 -->
+									</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+						
+						<div id="goappy" class="btn_big" style="display:''">
+                            <a href="javascript:goRefound();"><img src="/images/sw/gp/btn_application.gif" alt="신청하기" /></a>
+                            <a href="javascript:refinfo();"><img src="/images/sp/common/btn_cancle.gif" alt="취소" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- //CONTENTS -->
+			
+		</div>
+	</div>
+	<!-- //body content -->
+	
+
+<!-- 공통 풋터 시작 -->
+<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->
+</div>
+</body>
+</html>

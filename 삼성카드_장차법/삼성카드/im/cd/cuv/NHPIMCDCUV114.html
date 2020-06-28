@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_uselist01.png" alt="승인금액 합계는" />
+		<span class="t_0" title="123">
+		<span class="ico_no ico_no_thingray01">
+			<em>1</em></span>
+		</span>
+	<img src="/images/mh/h1_uselist02.png" alt="원입니다." /></h1>
+</div>
+<!-- content_block -->
+
+
+<div class="content_block content_block_m0 clfix"><!-- 100126 -->    
+    <h2><img src="/images/mh/h2_select_inqury_card.png" alt="조회하실 카드를 선택하세요" /></h2>
+    <div class="content_block_inner">        
+        <div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:cuvMovePage('getCardList','P');" class="default" onclick="return false;">법인카드</a></p>
+            <div class="childlayer">
+                <ul>
+					<!--<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="#">법인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCheckCardList','C');">체크카드</a></li>-->
+					<li><a href="javascript:cuvMovePage('getCardList','I');">개인카드</a></li>
+					<li><a href="#">법인카드</a></li>
+					<li><a href="javascript:cuvMovePage('getCardList','C');">체크카드</a></li>
+                </ul>
+            </div>
+        </div>        
+        <span class="selectbox_r_txt">개인카드, 법인카드, 체크카드 중 조회하실 카드를 선택하세요.</span>
+
+        <div class="line_lgray">&nbsp;</div>
+		<%@ include file="/WEB-INF/jsp/hp/im/cd/cuv/NHPIMCDCUV101_info.jsp" %>
+	</div>
+</div>	
+		<br /><br />
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_uselist01.png" alt="카드 이용내역을 조회하세요" /></h2>
+	<div class="content_block_inner">		        
+		<table class="dtable02 dtable_inputfield" summary="카드이용내역 조회를 위한 이용지역, 이용구분, 카드, 기간 선택하는 게시판입니다.">
+        <caption>카드 이용내역 조회</caption>
+        <colgroup><col width="125" /><col width="*" /></colgroup>
+        <tbody>
+            <!-- loop -->
+            <tr>
+                <th scope="row"><p>이용지역<%=rCardListCnt%></p></th>
+                <td><p>
+                    <label for="label_region" class="mr10"><input type="radio" class="rdo" id="label_region" name="id_region" onclick="clickRegion()" value="1" title="국내" /> 국내</label>
+                    <label for="label_region02"><input type="radio" class="rdo" id="label_region02" name="id_region" onclick="clickRegion()" value="2" title="해외"/> 해외</label>                    
+                </p></td>
+            </tr>
+			<!-- //국내카드이용내역 체크시 display -->
+			<tr id="region_no3" style="display:none;">
+				<th scope="row"><p>이용구분</p></th>
+				<td><p>
+					<label for="lebel_type01" class="mr10"><input type="radio" class="rdo" id="lebel_type01" onclick="clickType()" name="id_type" value="1" title="승인내역" /> 승인내역</label>
+					<label for="lebel_type02" class="mr10"><input type="radio" class="rdo" id="lebel_type02" onclick="clickType()" name="id_type" value="2" title="사용내역" /> 사용내역</label>
+				</p></td>
+			</tr>
+
+			<!-- //국내카드이용내역 체크시 display --> 
+			<tr id="region_no4" > 
+			    <th scope="row"><p>이용구분</p></th> 
+			    <td><p> 
+			        <label for="label_section" class="mr10"><input type="radio" class="rdo" id="label_section" name="id_section" value="1" title="일시불+할부" /> 일시불+할부</label> 
+			        <label for="label_section02"><input type="radio" class="rdo" id="label_section02" name="id_section" value="2" title="카드 취소내역" /> 카드 취소내역</label> 
+			    </p></td> 
+			</tr> 
+			
+
+
+            <!-- //loop -->
+            <tr>
+                <th scope="row"><p>상태/카드선택</p></th>
+                <td><p>
+					<select name="card_state" id="select_6" style="width:100px" onchange="card_state_onchange(this.value);" title="카드상태 선택">
+						<option value="0">전체</option>
+						<option value="1">사용가능 카드</option>
+						<option value="2">사용불가능 카드</option>
+					</select>	                
+                    <select title="카드종류 선택" style="width:360px" name="card_select">
+                    </select>
+
+                </p></td> 
+            </tr>
+            <tr>
+                <th scope="row"><p>이용기간</p></th>
+                <td id="id_cal_wrap"><p>
+					<a href="javascript:srchDate(1);" class="btn btn_s_white" id="btnDay"><span id="dateDay" style="width:20px">당일</span></a><a href="javascript:srchDate(2);" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a><a href="javascript:srchDate(3);" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">1개월</span></a><a href="javascript:srchDate(4);" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">2개월</span></a><a href="javascript:srchDate(5);" class="btn btn_s_white" id="btnMonth3"><span id="dateMonth3" style="width:30px">3개월</span></a><a href="javascript:srchDate(6);" class="btn btn_s_white" id="btnMonth6"><span id="dateMonth6" style="width:30px">6개월</span></a><br />
+                    <!--<span class="reset_date ml20">--><a href="javascript:srchDate(9);" class="btn btn_s_white" id="btnUser"><span id="dateUser" style="width:40px">날짜지정</span></a><!--</span>-->
+                </p>
+                </td>
+            </tr>
+
+        </tbody>
+        </table>
+
+        <!-- btn -->
+        <div class="btnr">
+            <!-- 100126 -->
+            <a href="javascript:before_cCorpSearch('1')" class="btn btn_blue"><span>조회</span></a>
+            <!-- //100126 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2 class="h2_uselist"><img src="/images/mh/h2_uselist03.png" alt="국내 이용내역입니다" /></h2>
+    <p class="btnr mt_40 mb15">
+		<a href="#" class="btn btn_white"><span>다운로드</span></a>
+		<a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>        
+    </p>	
+	<div class="d_easy">
+        <table class="dtable02 dtable_expand" summary="승인금액 합계, 일시불 합계, 할부 합계를 확인할 수 있는 게시판입니다">
+        <caption>국내이용금액 내역</caption>
+        <colgroup><col width="110" /><col width="*" /></colgroup>
+        <tbody>
+            <tr>
+                <th><p>이용내역 합계</p></th>
+                <td class="sum"><p>
+                    <em class="first_none">승인금액합계 <span class="t_no">0</span>원</em>
+                    <em>일시불 합계 <span class="t_no">0</span>원</em>
+                    <em>할부 합계 <span class="t_no">0</span>원</em>
+                </p></td>
+            </tr>
+        </tbody>
+        </table>
+		
+        <div class="tb_exp clfix mt20">
+            <span class="fl_left">&nbsp;</span>
+            <span class="ab_tr t_desc03"><img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" /> 삼성 보너스클럽&nbsp;&nbsp;
+            <img src="/images/common/ico_blueline.png" alt="블루라인" /> 블루라인</span>
+        </div>
+		
+		<table class="dtable01 dtable01_bill" summary="카드명, 이용자, 승인일, 승인시각, 이용가맹점, 승인금액, 이용구분, 할부개월, 승인번호, 취소여부, 포인트, 결제일로 구성된 국내 이용내역">
+		<caption>국내 이용내역</caption>				
+		<colgroup><col width="13%" /><col width="6%" /><col width="8%" /><col width="8%" /><col width="16%" /><col width="12%" /><col width="5%" /><col width="4%" /><col width="8%" /><col width="4%" /><col width="8%" /><col width="8%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l30a">카드명</th>
+				<th scope="col">이용자</th>
+				<th scope="col">승인일</th>
+				<th scope="col">승인시각</th>
+				<th scope="col" class="cell_l10">이용가맹점</th>				
+				<th scope="col" class="cell_r10">승인금액<br />(선불금액)</th>
+				<th scope="col">이용<br />구분</th>
+				<th scope="col">할부<br />개월</th>
+				<th scope="col">승인<br />번호</th>
+				<th scope="col">취소<br />여부</th>
+				<th scope="col">포인트</th>
+				<th scope="col">결제일</th>
+			</tr>
+		</thead>
+		<tbody>
+        <!-- loop -->
+            <tr>
+                <td class="cell_l30a"><span class="nobreak_nolink w120">0</span></td>
+                <td>0</td>
+                <td class="t_no">0</td>
+                <td class="t_no">0</td>
+                <td class="cell_l10"><span class="nobreak_nolink w120"><!-- 이용가맹점 -->
+							<img src="/images/common/ico_bonusclub.png" alt="삼성보너스클럽" />
+							<img src="/images/common/ico_blueline.png" alt="블루라인" />
+							<!-- a href= "javascript:window_open1(<%=appList.getChainNo()%>)"><%=appList.getChainName()%></a>-->
+                            <a href= "#" title="새창" >000</a>
+					</span>
+				</td>
+                <td class="cell_r10"><span class="p_nowrap">0</span>
+                </td>
+                <td>일시불</td>
+                <td>0</td>
+                <td>0</td>
+                <td>취소</td>
+                <td><a href="#">사용</a></td>
+                <td class="t_no">0</td>
+            </tr>
+			<tr class="nodata">
+				<td colspan="12">해당 기간내 거래승인내역이 없습니다.</td>
+			</tr>
+        </tbody>
+        </table>
+        <!-- paginate -->
+        <div class="paginate">	${_page}  </div>
+        <!-- btn -->
+        <div class="btnset">
+            <p class="btnr">
+                <a href="#" class="btn btn_white"><span>다운로드</span></a>		<!-- 12.11.22 SR -->
+                <a href="javascript:printPopup();" class="btn btn_white" title="새창"><span>인쇄</span></a>
+            </p>
+        </div>
+		<iframe name="ifrm" frameborder="0" width="0" height="0" title="빈프레임"></iframe>
+    </div>
+</div>
+
+</form>
+
+<!-- layer_popup 메세지 -->
+<div id="wrap">
+	<!-- layer_popup w640 -->
+	<div id="id_layer01" class="pop_l_position pop_l_position640">
+		<div class="pop_l_wrap pop_l_wrap640"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none';closeLayerPopup();" value="레이어닫기" title="영문주소관련 안내 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/mh/layer_tit_engaddr.png" alt="영문주소관련 안내사항" /></p>
+			<div class="pop_l_content">
+				<ul class="list_circle ">
+					<li><p>영문주소(Billing address)확인은 영어권 국가의 해외인터넷사이트중 일부 사이트들이 전자상거래 보안상의 이유로 카드사용자의 주소정보를 카드사와 확인하여 주문처리를 진행하는 절차로, 한국과 같은 비영어권국가에서는 지원하지 않는 서비스이나 비영어권국가의 카드사용자들에게까지도 해당 절차를 적용하여 사용자들의 불편을 초래하는 바, 고객님의 사용편의를 위해 당사에서는 아시아 최초로 영문주소확인서비스를 시행하였습니다.</p></li>
+					<li class="mt10"><p>국제기준상 주소확인은 승인절차와 무관하여 주소확인여부와 상관없이 카드승인이 이루어지나, 일부 사이트에서는 카드승인이 되더라도 주소확인이 되지 않을 경우 거래를 정상적으로 처리하지 않는 경우가 있으므로 사이트에서 주소확인문제로 거래(주문)를 진행하지 않는다는 안내 및 확인을 받으신 경우 당사에 영문주소를 등록하신 후 결제를 다시 해보시길 바랍니다.</p></li>
+					<li class="mt10"><p>주소확인문제로 사이트가 거래(주문)를 진행하지 않았으나 대금을 청구한 경우 당사 고객센타로 연락주시면 관련 Claim절차를 진행해드리도록 하겠습니다.</p></li>
+				</ul>
+			</div>			
+		</div>
+	</div>
+</div>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>

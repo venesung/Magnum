@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+
+<title>삼성 시그니처카드 옵션서비스 신청현황 조회 </title>
+<link rel="stylesheet" type="text/css" href="/css/admin.css" />
+
+<body>
+
+<div id="wrap">
+	<div class="contentBody">
+		<!-- location -->
+		<div class="location">
+			<table border="0" cellspacing="0" cellpadding="0" width="100%;">
+				<tr><td>
+				<span><span color="#808080"><strong>Home</strong></span></span>
+				<span>&gt;</span>
+				<span>내부업무지원</span>
+				<span>&gt;</span>
+				<span>시그니처카드 관리</span>
+				<span>&gt;</span>
+				<span>서비스 신청 현황</span>
+				</td>
+				<td style="text-align:right; padding-right:2px">
+				<img border="0" title="대외비" src="${pageContext.request.contextPath}/images/admin/secu.jpg" width="73" height="25" />
+				</td>
+				</tr>
+            </table>
+		</div>
+		<!-- //location -->
+		<!-- contents -->
+		<div class="contentWrap">
+			
+			<h2>삼성시그니처카드 옵션서비스 신청현황 조회</h2>
+
+			<!-- data table 검색 -->
+			<div class="search">
+				<form  method="post"  name="form" autocomplete="off">
+				<input type="hidden" name="ACTIONLOG_EVENT_DC" />
+				<input type="hidden"  name="xecure" value = "y" />
+				<table border="0" cellspacing="0" cellpadding="0" width="100%;" class="dtable_search">
+				<colgroup><col width="87"><col width=""></colgroup>
+					<tr>
+						<th>조회일자</th>
+						<td width ="400" >
+							<span class="reset_date ml20">
+								<fileTag:dblCalendarAddIf calendarId="hp_double_cal" inputClass="txt" startTitle="시작일" startInputName="searchFrom" startInputValue='<%=CommonUtil.strNullCheck(searchFrom,"")%>'
+								endTitle ="종료일" endInputName ="searchTo" endInputValue ='<%=CommonUtil.strNullCheck(searchTo,"")%>'/>
+							</span>
+					    </td>
+						<td align="left">
+							<span class="btn">
+								<span><input type="button" value="조회" title="조회버튼" onclick="checkForm1();" style="cursor:hand" /></span>
+							</span>  
+							&nbsp;
+
+						</td>
+					</tr>
+					<tr><td colspan="3" class="line"></td></tr>			
+					<tr>
+						<th>조회구분</th>
+						<td colspan="2">
+							<span class="reset_date ml20">
+							    <input type="radio" name="gubun" value="A" onClick="scode_reset();" <%if("A".equals(gubun)){ %>checked="checked"<%} %> title="전체" />전체  
+							    <input type="radio" name="gubun" value="I" onClick="scode_reset();" <%if("I".equals(gubun)){ %>checked="checked"<%} %> title="신청" />신청  
+							    <input type="radio" name="gubun" value="D" onClick="scode_reset();" <%if("D".equals(gubun)){ %>checked="checked"<%} %> title="취소" />취소
+							</span>
+					    </td>
+					</tr>
+					
+				</table>
+				</form>
+			</div>
+			<!-- //data table 검색 -->
+
+			<!-- data table 리스트 -->
+			 <table border="0" cellspacing="0" cellpadding="0" width="100%" class="dtable_list">
+			 <thead>
+			    <tr>
+					<th>구분</th><!-- 첫번째 타이틀에는 class="first"를 적용 -->
+					<th>신청아이템</th>
+					<th>성명</th>
+					<th>상품종류</th>
+					<th>카드번호</th>
+					<th>신청일시</th>
+					<th>담당자</th>					
+				</tr>
+			</thead>
+			<tbody>
+<%
+	DesManager dm = new DesManager("des.key.db");
+
+	 String string4="";   	//신청취소구분	[DBTYPE:char /LEN:4]
+	 String string5="";   	//제공서비스사은품명	[DBTYPE:char /LEN:30]
+	 String string6="";   	//고객성명	[DBTYPE:char /LEN:22]
+	 String string7="";   	//제공서비스분류명	[DBTYPE:char /LEN:22]
+	 String string8="";   	//카드번호	[DBTYPE:char /LEN:16]
+	 String string9="";   	//신청일자	[DBTYPE:char /LEN:10]
+	 String string10="";  	//담당자명	[DBTYPE:char /LEN:22]
+	
+	if(joltList != null){
+		for(int i = 0 ; i < joltList.length; i++){
+			string4 = joltList[i].getString4().trim();
+			string5 = joltList[i].getString5().trim();
+			string6 = joltList[i].getString6().trim();
+			string7 = joltList[i].getString7().trim();
+			string8 = joltList[i].getString8().trim();
+			string9 = joltList[i].getString9().trim();
+			string10 = joltList[i].getString10().trim();
+			
+			if (!CpxManager.decryptNumber(string8).trim().equals("")) {
+				string8 = CpxManager.decryptNumber(string8);
+			}
+%>
+
+			<tr>
+				<td class="first">
+					<%=HpCommonUtil.nullConvert(string4)%>
+				</td>
+				<td>
+					<%=HpCommonUtil.nullConvert(string5)%>
+				</td>
+				<td>
+					<%=HpCommonUtil.nullConvert(string6)%>
+				</td>
+				<td>
+					<%=HpCommonUtil.nullConvert(string7)%>
+				</td>
+				<td>
+					<%=StarsManager.convSubCardNo(HpCommonUtil.nullConvert(string8),4)+"XXXX"%>
+				</td>
+				<td>
+					<%=HpCommonUtil.nullConvert(string9)%>
+				</td>
+				<td>
+					<%=HpCommonUtil.nullConvert(string10)%>
+				</td>				
+			</tr>
+			<tr><td colspan="7" class="line"></td></tr>
+    
+<%
+		}
+		
+		if(Integer.parseInt(inVo.getProcCnt()) < 1){
+%>
+
+			<tr><td colspan="7" class="first"><%=message %></td></tr>
+
+			<tr><td colspan="7" class="line"></td></tr>
+
+<%			
+		}
+	}
+%>
+			</tbody>
+			</table>
+			
+			<!-- paging -->
+			<div class="paginate">
+				<div class="page">${_page}</div>
+			</div>			
+		</div>	<!-- //data table 리스트 -->
+</div>
+</div>
+<!--// 여기까지 끝 -->
+</body>
+</html>
+				

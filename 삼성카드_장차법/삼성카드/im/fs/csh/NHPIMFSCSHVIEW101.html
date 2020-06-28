@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+    <!-- top_visual -->
+    <div class="top_visual">
+        <h1><img src="/images/cd/h1_cashservice_fam.png" alt="가족카드로 현금서비스를 받을 수 있습니다" /></h1>
+    </div>
+
+    <!-- content_block -->
+<div class="content_block content_block_card clfix">
+    <div class="step"><img src="/images/cd/step_cashservice_fam01.png" alt="신청금액 및 카드정보 입력" />
+        <!--ol class="none">
+            <li><abbr>현재단계</abbr><strong>신청금액 및 카드정보 입력</strong></li>
+            <li>추가정보입력</li>
+            <li>입력내용 확인 및 서비스신청</li>
+            <li>신청완료</li>
+        </ol-->
+    </div>
+</div>
+    <!-- content_block -->
+    <div class="content_block content_block_m0 clfix">
+    <form name="form0" autocomplete="off">
+       <h2><img src="/images/cd/h2_cashservice_fam01.png" alt="신청금액과 카드정보를 입력하세요" /></h2>
+        <div class="content_block_inner">
+            <table class="dtable02 dtable_expand" summary="신청하신 카드의 현금서비스 한도 정보를 확인하실 수 있습니다.">
+            <caption>현금서비스 한도</caption>
+            <colgroup><col width="115" /><col width="*" /></colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row"><p>현금서비스 한도</p></th>
+                    <td class="sum"><p>
+                        <em class="first_none"><span class="t_no">1</span> 만원</em>
+                        <!--
+                        <em>카드대금결제 <span class="t_no">1,000,000</span>원</em>
+                        -->
+                        
+                    </p></td>
+                </tr>
+            </tbody>
+            </table>
+
+            <table class="dtable02 dtable_inputfield mt30" summary="입금구분, 현금서비스 신청금액, 카드종류, 카드 비밀번호, 카드 CVC번호 등 현금서비스 신청금액과 카드정보를 입력하실 수 있습니다.">
+            <caption>현금서비스 신청을 위한 정보입력</caption>
+            <colgroup><col width="115" /><col width="*" /></colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row"><p>입금구분</p></th>
+                    <td><p>
+                        <label for="jobGubun" class="mr10">
+                        <input type="radio" class="rdo" id="jobGubun" name="jobGubun" value="1" checked="checked" onclick="ChgGubun('1');" onkeydown="checkEnter();" title="본인통장 입금" /> 본인통장 입금</label>
+                        <!--
+                        <label for="label_appdom02" class="mr10">
+                        <input type="radio" class="rdo" id="label_appdom02" name="id_appdom" /> 카드대금결제(전액)</label>
+                        <label for="label_appdom03" class="mr10">
+                        <input type="radio" class="rdo" id="label_appdom03" name="id_appdom" /> 카드대금결제(일부)</label>
+                        -->
+                    </p></td>
+                </tr>
+                <!-- 
+                <tr>
+                    <th scope="row"><p>결제금액</p></th>
+                    <td><p><span class="t_no t_black"><%=request.getAttribute("ORI_IBM_AMT") %></span> 원<span class="ml10 t_desc04">리스 및 기타 비온라인 대출상품 당월 청구 금액 제외</span></p></td>
+                </tr>
+                 -->
+                <tr>
+                    <th scope="row"><p>현금서비스 신청금액</p></th>
+                    <td><p class="input_point">
+                        <input name="P_AMT" type="text" class="txt" maxlength="4" value="" onkeydown="checkEnter();" title="현금서비스 신청금액(만원단위)" onkeypress="checkTypes(this, 'NUMB');" />만원<span class="ml10 t_desc04">금액은 만원단위로 입력해주십시오</span>
+                    </p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><p>카드 종류</p></th>
+                    <td><p>1</p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><p>카드 비밀번호</p></th>
+                    <td>
+	                    <p>
+                        <span class="input_3char"><input type="password" name="PASSWD" maxlength="2" class="txt" value="" title="카드 비밀번호 앞 2자리" onkeypress="checkTypes(this, 'NUMB');" />비밀번호 앞 2자리</span>
+		               	<span id="usafeon_PASSWD"></span>
+	                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><p>카드 CVC 번호</p></th>
+                    <td>
+                    	<p>
+                    	<span class="input_3char"><input type="password" name="CVC" maxlength="3" class="txt" value="" title="카드 CVC 번호" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkEnter();" />카드 뒷면 19자리 숫자 중 뒤의 3자리</span> 	               	<span id="usafeon_SSNO1|SSNO2"></span>
+		               	<span id="usafeon_CVC"></span>
+                    	</p>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+
+            <!-- btnset -->
+            <div class="btnset">
+                <p class="btnr"><a href="javascript:checkForm(this.document.form0);" class="btn btn_blue"><span>확인</span></a></p>
+            </div>
+
+            
+            
+            <dl class="cvc_view ">
+                <dt class="t_black"><strong>CVC보는방법</strong></dt>
+                <dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+                <dd><img alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" src="/images/ss/img_cvc.jpg" /></dd>
+            </dl>
+            
+        </div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

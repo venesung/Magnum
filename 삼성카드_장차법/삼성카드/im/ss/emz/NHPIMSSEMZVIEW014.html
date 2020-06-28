@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+	<!-- layer_popup 컨텐츠+메세지 -->
+	<div id="id_layer02" class="pop_l_position pop_l_wrap_mix">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="closeLayerPopup(); show_select();" value="레이어닫기" title="선택선물 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/ss/layer_tit_gift_confirm.png" alt="선택한 선물을 확인해 주세요" /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert">
+					<p class="pop_sub_desc">
+						고객님은<strong class="t_point"> <%=result.getPdtNm() %></strong>를 선택하셨습니다.<br />신청 하시겠습니까?
+					</p>
+
+					<table class="dtable02" summary="선택하신 상품의 상품수, 현재 신청 회원수, 당첨 확률을 확인하실 수 있는 게시판입니다">
+					<caption>선택 상품 정보</caption>
+					<colgroup><col width="115" /><col width="*" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>상품수</p></th>
+							<td><p><span class="t_no">0</span> 개</p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><p>현재 신청 회원 수</p></th>
+							<td><p><span class="t_no">0</span> 명</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>당첨 확률</p></th>
+							<td><p><span class="t_no">0</span></p></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+                <p class="btnc"><a href="#" onclick="closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="#" onclick="closeLayerPopup();goTabPage('NHPIMSSEMZ001M001', true);"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+			</div>
+		</div>
+	</div>
+
+<!--// 여기까지 끝 -->
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/cd/pop_h1_cardappinfo2.png" alt="삼성카드 안내" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_cardappinfo2.png" alt="삼성카드 안내" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="popcard_content" class="h445">
+
+		<!-- 카드정보 안내 -->
+		<div class="content_block content_block_card">
+			<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+				<div class="cardinfo">
+					<p class="cardimg"><img src="<%=sCardImage %>" alt="<%=sCardTitle %>" /></p>
+					<div class="carddetail">
+						<p class="card_tit"><%=sCardTitle %></p>
+						<p><%=sCardSummary %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 카드정보 안내 -->
+
+
+		<!-- ksp -->
+		<!-- content_block -->
+		<div class="content_block content_block_card">
+			<div class="content_block_inner inner_top">
+				<!-- card_overview1 -->
+				<div class="list_card_overview">
+					<p class="p_no"><span class="ico_no ico_no_graymid<%=subIdxTxt%>"><em><%=subIdx%></em></span></p>
+					<p class="p_photo"><img src="<%=subImg %>" alt="<%=subTitle%>" /></p>
+					<div class="p_desc">
+						<p class="p_tit"><%=subTitle%></p>
+						<%=subText%>
+					</div>
+				</div>
+			</div>
+
+			<!-- content_block -->
+			<div class="notice_legal"><div class="box_con">
+				<ol class="list_desc">
+					<li><p>모든 서비스는 제휴업체 또는 카드사 사정에 의해 추가, 변경, 중단될 수 있으며, 그 내용을 사전에 알려드립니다.</p></li>
+					<li><p>필요 이상으로 카드를 발급받을 경우 신용등급이나 이용한도 등에 영향을 미칠수 있습니다.</p></li>
+					<li><p>당사는 상품설명 내용을 준수합니다.</p></li>
+				</ol>
+			</div></div>
+		</div>
+
+		<!-- // ksp -->
+
+		<!--  benefit -->
+		<!-- content_block -->
+		<div class="content_block content_block_card">
+			<div class="content_block_inner inner_top d_card_benefit">
+				<h2><img src="/images/cd/h2_overview_benefit.png" alt="기본 서비스 정보를 확인하세요" /></h2>
+				<!-- tab -->
+				<div class="box_white02"><p class="flag_tl">&nbsp;</p><p class="flag_tr">&nbsp;</p><p class="flag_bl">&nbsp;</p><p class="flag_br">&nbsp;</p>
+					<div class="category_tag">
+						<ul>
+						<c:forEach items="<%=cardServList%>" var="lst" varStatus="status">
+                            <li id="li_title_${status.index}" class="" onclick="setClicked(this);"><p><a href="javascript:goService('${status.index}')">${lst.hpCatTitle}<em>&nbsp;</em></a></p></li>
+						</c:forEach>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- 기본 서비스 정보  상세정보  -->
+		<div class="content_block content_block_card" id="div_svc_<%=idx%>" style="display:none">
+			<div class="content_block_inner inner_top">
+				<!-- card_overview2_benefit -->
+				<h3 class="none"><%=hpCatTitle %></h3>
+				<cms:include page="<%=serviceUrl %>" />
+			</div>
+		</div>
+		
+		<div class="content_block content_block_card" id="div_svc_<%=idx%>" style="display:none">
+			<div class="content_block_inner inner_top">
+				<!-- card_overview2_benefit -->
+				<h3 class="none"><%=hpCatTitle %></h3>
+				<cms:include page="<%=serviceUrl %>" />
+			</div>
+			<!-- list_card_benefit -->
+			<div class="list_card_benefit noline">
+				<p class="t_desc03">상기 서비스는 제휴업체 및 카드사의 사정에 따라 변경 또는 중단 될 수 있으며 그 내용을 사전에 알려드립니다. </p>
+			</div>
+			<!-- // 카드 서비스 혜택 -->
+		</div>
+		<!-- // 카드 서비스 혜택 -->
+	</div>
+	<!-- // benefit -->
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+
+</div>
+
+</body>
+</html>

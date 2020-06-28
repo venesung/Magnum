@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>자동이체안내 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_auto_payment.png" alt="자동이체안내" id="block_1_img" /><img src="/images/cm/h1_deposit_how.png" alt="무통장 입금안내" id="block_2_img" style="display:none;" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_available_certificates.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<h2><img src="/images/cm/h2_deposit_how01.png" alt="입금방법" /></h2>
+					<ol class="list_no01">
+						<li><p>회원님의 결제방법이 자동이체인 경우 통장에 입금하시면 되고, 무통장입금인 경우 무통장입금방법을 참조하셔서<br />입금하시면 됩니다.</p></li>
+						<li><p>만약 연체로 인하여 카드사용이 정지된 경우에는 무통장입금방법으로 입금하시면 입금즉시 카드재사용이 가능<br />(대구은행제외)하나, 통장에 잔고가 있는 경우 이중입금이 발생할 수 있으므로 주의하시기 바랍니다.</p></li>
+					</ol>
+
+					<div class="tab01 w680 mt30" id="block_1_tab" style="display:block;">
+						<ul>
+							<li class="on"><a href="javascript:showhide('block_1','block_2', '자동이체');">자동이체</a></li>
+							<li><a href="javascript:showhide('block_2','block_1','무통장입금');">무통장입금</a></li>
+						</ul>
+					</div>
+					<div class="tab01 w680 mt30"  id="block_2_tab" style="display:none;">
+						<ul>
+							<li><a href="javascript:showhide('block_1','block_2', '자동이체');">자동이체</a></li>
+							<li  class="on"><a href="javascript:showhide('block_2','block_1','무통장입금');">무통장입금</a></li>
+						</ul>
+					</div>
+
+		<span id="block_1" style="display:block;">
+					<cms:include page="/cms_content/hp/cm/ud/rec/NHPCMUDRECVIEW004C1.html" />
+
+			</span>
+			<span id="block_2" style="display:none;">
+					<cms:include page="/cms_content/hp/cm/ud/rec/NHPCMUDRECVIEW005C1.html" />
+		   </span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

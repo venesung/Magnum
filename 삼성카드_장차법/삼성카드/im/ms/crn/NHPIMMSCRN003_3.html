@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">삼성카드 회원으로 가입하세요</h1>
+					<div class="h1_desc"><img src="/images/ms/h1_singlejoin.jpg" alt="지금 삼성카드의 가족이 되시면 이러저러한 혜택을 풍성하게 많이많이 받으실 수 있습니다." /></div>
+				</div>
+
+				<div class="content_block content_block_card clfix">
+					<div class="top_step top_step_appcard top_step_appcard03">
+						<ol class="none">
+							<li>실명확인 - 가입서작성 전 실명 여부를 확인합니다.</li>
+							<li>약관 동의 - 약관을 꼼꼼히 읽어보신 후 동의해주세요</li>
+							<li><abbr>현재단계</abbr> <strong>신청서작성 - 고객님의 소중한 정보는 안전하게 보호하겠습니다.</strong></li>
+							<li>회원가입완료 - 삼성카드의 가족이 되신걸 환영합니다.</li>
+						</ol>
+					</div>
+				</div>
+
+				<form name="frm1" method="post" action="">
+				<input type="hidden" name="userName" maxlength="10" value="<%=userName %>" />
+				<input type="hidden" name="juminNo1" value="<%=juminNo1 %>" />
+				<input type="hidden" name="juminNo2" value="<%=juminNo2 %>" />
+				<input type="hidden" name="weddingAnniversary"	value="" />
+				<input type="hidden" name="mateBirthday"		value="" />
+				<input type="hidden" name="cardCode" value="" /> 
+				<input type="hidden" name="CHKSMS" value="${CHKSMS}" />
+				<input type="hidden" name="customerNo"      value="${CUSTOMER_NO}" />
+				<input type="hidden" name="birthdayYear"             value="<%= "19" + juminNo1.substring(0,2) %>" />
+				<input type="hidden" name="birthdayMonth"            value="<%=juminNo1.substring(2,4) %>" />
+				<input type="hidden" name="birthdayDay"              value="<%=juminNo1.substring(4,6) %>" />
+				<input type="hidden" name="lunarSolar"               value="<%= lunarSolar%>" />
+				<input type="hidden" name="marriedYn"                value="<%= marriedYn%>" />
+				<input type="hidden" name="weddingAnniversaryYear"  value="<%= weddingAnniversary1%>" />
+				<input type="hidden" name="weddingAnniversaryMonth" value="<%= weddingAnniversary2%>" />
+				<input type="hidden" name="weddingAnniversaryDay"   value="<%= weddingAnniversary3%>" />
+				<input type="hidden" name="mateBirthdayYear"        value="<%= mateBirthday1 %>" />
+				<input type="hidden" name="mateBirthdayMonth"       value="<%= mateBirthday2 %>" />
+				<input type="hidden" name="mateBirthdayDay"         value="<%= mateBirthday3 %>" />
+				<input type="hidden" name="mateLunarSolar"          value="<%=mateLunarSolar %>" />
+				<input type="hidden" name="yearlyIncome" 		value="000" />
+				<input type="hidden" name="realEstate" 		value="000" />
+				<input type="hidden" name="residentType" 		value="000" />
+				<input type="hidden" name="abodeCode" 			value="000" />
+				<input type="hidden" name="customChainCode"	value="000" />
+				<input type="hidden" name="hobbyCode"			value="000" />
+				<input type="hidden" name="carStatus"				value="" />
+				<input type="hidden" name="SERVICET"			value="<%=serviceT%>" />
+				<input type="hidden" name="onlineMallYn" value="<%=onlineMallYn %>" />
+
+				<%if(!cardViewYn.equals("N") ){%>
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ms/h2_webmembership_input01.png" alt="본인확인 정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 사항입니다.</div>
+						<table class="dtable02" summary="회원님의 아아디, 비밀번호, 이메일주소, 청구서 수령방법, 핸드폰번호 정보를 작성하는 게시판입니다.">
+						<caption>웹멤버쉽 정보 입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>삼성카드번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_cardno"><span class="pano">XXXX - XXXX - </span>
+										<input type="text" name="cardCode1" value="2644" maxlength="4" onkeyup="lengthCheck2(this.form, this.value);" class="txt" value="" title="카드번호 세번쨰" id="label_cardno01" /> - 
+										<input type="text" name="cardCode2" value="7901" maxlength="4" onkeyup="lengthCheck21(this.form, this.value);" class="txt" value="" title="카드번호 마지막" id="label_cardno02" /></span>
+										<label><input type="radio" class="chk" id="label_card_type" name="cardType" value="visa" title="비자/마스터/자체카드" onchange="changeCardType('0');" checked /></label><br />
+									<span class="input_cardno_sec"><span class="pano">XXXX - XXX - </span>
+										<input type="text" name="cardCode21" maxlength="3" onkeyup="lengthCheck_a2(this.form, this.value);" class="txt" value="" title="카드번호 세번째" id="label_cardno03" /> - 
+										<input type="text" name="cardCode22" maxlength="5" onkeyup="lengthCheck_a21(this.form, this.value);" class="txt" value="" title="카드번호 마지막" id="label_cardno04" /></span>
+										<label><input type="radio" class="chk" id="label_card_type2" name="cardType" value="amex" title="아멕스카드" onchange="changeCardType('1');"/></label><br />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>카드비밀번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_cardpassword"><input type="password" name="cardPasswd" class="txt" value="01" maxlength="2" onkeyup="lengthCheck4(this.form, this.value);" title="카드비밀번호 앞 두자리 입력" id="label_password" /> XX</span> <span class="t_desc04 ml10">카드비밀번호 앞 2자리</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>카드CVC번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_cardpassword"><input type="password" name="cvcNo" class="txt" value="405" maxlength="3" onkeyup="lengthCheck3(this.form, this.value);" title="카드CVC번호 세자리 입력" id="label_cvcno" /></span> <span class="t_desc04 ml10">카드 CVC번호 3자리</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<dl class="cvc_view_ms">
+							<dt class="t_black"><strong>CVC보는방법</strong></dt>
+							<dd class="t_desc03">CVC번호도 비밀번호와 마찬가지로 중요한 고객님의 정보입니다. 타인에게 누출되지 않도록 주의 해 주세요.</dd>
+							<dd><img src="/images/ss/img_cvc.jpg" alt="CVC번호 - 비자/마스터/UnionPay(은련)/국내 카드 : 카드 뒷면 19자리 또는 7자리 숫자 중 끝 3자리, 아멕스 카드 : 카드 뒷면 18자리 숫자 중 끝 3자리" /></dd>
+						</dl>
+					</div>
+				</div>
+				<%} %>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ms/h2_fill_joinin02.png" alt="부가정보를 입력하세요" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div class="neccessary"><em><abbr>필수입력사항</abbr></em>표시는 필수입력 사항입니다.</div>
+						<table class="dtable02" summary="회원님의 아아디, 비밀번호, 이메일주소, 청구서 수령방법, 핸드폰번호 정보를 작성하는 게시판입니다.">
+						<caption>웹멤버쉽 정보 입력</caption>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<th scope="row" class="cell_l"><p class="not_neccessary">성명(한글)</p></th>
+								<td class="cell_l02"><strong class="t_black"><%=userName %></strong></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p class="not_neccessary">주민등록번호</p></th>
+								<td  class="cell_l02"><strong class="t_black"><%=juminNo1 %> - *******</strong></td>
+							</tr>
+							<!-- //loop -->
+						
+							<!-- loop -->
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>아이디</p></th>
+								<td colspan="3" class="cell_l">
+								<span class="input_id"><input name="webId" type="text" class="txt"  maxlength="12" title="아이디" id="label_id" 
+									<%
+										if(userId.equals("")){
+									%>
+												value="buffoon5"  onchange="IDCheck='N'"	
+									<%
+										}else{
+									%>
+											value="<%=userId %>" onfocus="document.frm1.webpass.focus()"  onchange="IDCheck='Y'"
+									<%
+										}
+									%> /><a href="javascript:check();" class="btn btn_white" title="새창"><span>아이디 중복확인</span></a><span class="ico_fill ico_fill01"><em>O 사용가능  합니다</em></span></span>
+									
+								</td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_pass"><input type="password" class="txt" name="webpass" value="akakak12" title="비밀번호" id="label_pass" maxlength="12" />영문/숫자 혼용 6~12자리, 대소문자 구별</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>비밀번호 확인</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_pass al_top"><input type="password" class="txt" name="webpass1" value="akakak12" title="비밀번호확인" id="label_pass_ok" maxlength="12" onchange="checkPassword()" /><span id="chkPw" class="ico_fill ico_fill02"><em>X 비밀번호와 다릅니다.</em></span></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>이메일주소</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_email">
+										<input type="hidden" name="email"  maxlength="50" value="<%=email %>" onchange="mailCheck('N')"/>
+										<input name="emailId" type="text" class="txt" value="<%=emailId %>" title="이메일 아이디"  id="label_email" maxlength="30" onchange="mailCheck('N')" />&nbsp;@&nbsp;
+										<input name="emailAddr" maxlength="30" value="<%=emailAddr %>" onchange="mailCheck('N')" type="text" class="txt" value="" title="이메일공급자 직접입력"  id="label_email02" />
+										<select name="selemail" onchange="sel(this);" title="이메일공급자선택" id="label_email03">
+											<option value=" " selected="selected">선택</option>
+											<option value="dreamwiz.com">드림위즈</option>
+											<option value="empal.com">엠팔</option>
+											<option value="hanmail.net">한메일(다음)</option>
+											<option value="hotmail.com">hotmail</option>
+											<option value="korea.com">코리아</option>
+											<option value="lycos.co.kr">라이코스</option>
+											<option value="nate.com">네이트</option>
+											<option value="naver.com">네이버</option>
+											<option value="netian.com">네띠앙</option>
+											<option value="orgio.net">오르지오</option>
+											<option value="paran.com">파란</option>
+											<option value="chollian.net">천리안</option>
+											<option value="freechal.com">프리챌</option>
+											<option value="kebi.com">깨비</option>
+											<option value="unitel.co.kr">유니텔</option>
+											<option value="weppy.com">웨피</option>
+											<option value="samsung.com">삼성닷컴</option>
+                              				<option value="">직접입력</option>
+										</select><a href="javascript:searchEmail()" class="btn btn_white" title="새창"><span>이메일 중복확인</span></a>
+									</span>
+									<p class="t_desc03 mt10">핫메일(Hotmail"을 이메일 주소로 등록하실 경우 이메일 명세서 및 기타 안내정보 등의 이메일이 정상적으로 수신되지 않을 수 있으니 가급적 다른 메일 계정을 등록하여 주시기 바랍니다.</p>
+								</td>
+							</tr>
+							<% if( serviceT.equalsIgnoreCase("true")){ %>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>청구서 <br />수령방법</p></th>
+								<td colspan="3" class="cell_l">
+									<label for="label_letter_receipt01"><input type="radio" class="chk" id="label_letter_receipt01" name="billMthdEmail" value="etop" title="우편 수령" /> 우편</label><label for="label_letter_receipt02"><input type="radio" class="chk" id="label_letter_receipt02" name="billMthdEmail" value="ptoe" title="이메일 수령" checked/> 이메일</label>
+									<span><a href="javascript:pub()" class="btn_link" title="새창">이메일 명세서 혜택보기</a></span>
+								</td>
+							</tr>
+							<%} %>
+							<tr>
+								<th scope="row"><p class="neccessary"><em><abbr>필수입력사항</abbr></em>핸드폰 번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select name="handPhone1" title="핸드폰 앞자리" id="label_phone" >
+											<option value="" selected="selected">선택</option>
+			                           		<option value="010"  <%if(cellPhone1.equals("010")){%>selected="selected"<%} %>>010</option>
+			                           		<option value="011"  <%if(cellPhone1.equals("011")){%>selected="selected"<%} %>>011</option>
+			                           		<option value="016"  <%if(cellPhone1.equals("016")){%>selected="selected"<%} %>>016</option>
+		    	                       		<option value="017"  <%if(cellPhone1.equals("017")){%>selected="selected"<%} %>>017</option>
+                			           		<option value="018"  <%if(cellPhone1.equals("018")){%>selected="selected"<%} %>>018</option>
+                      	  	    			<option value="019"  <%if(cellPhone1.equals("019")){%>selected="selected"<%} %>>019</option>
+                    			       		<option value="0130" <%if(cellPhone1.equals("0130")){%>selected="selected"<%} %>>0130</option>
+										</select>
+										<input name="handPhone2" type="text" class="txt" value="<%=cellPhone2 %>" maxlength="4" title="핸드폰번호 가운데자리" id="label_phone02" onkeypress="checkLenN( this, 4,frm1.handPhone3);" />&nbsp;-&nbsp;
+										<input name="handPhone3" type="text" class="txt" value="<%=cellPhone3 %>" maxlength="4" title="핸드폰번호 뒷자리" id="label_phone03" onkeydown="checkLenB( this, frm1.handPhone2)" />
+										<%if(chksms.equalsIgnoreCase("true")){ %>
+										
+										
+										<%} %>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl"><span class="t_desc04">정확한 신용카드 정보를 안내하기 위해 본인의 이메일 주소/휴대폰번호를 꼭 입력해 주세요</span></p>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block fill_joinin clfix">
+					<p class="btnc"><a href="#"><img src="/images/common/btn_joinin.jpg" alt="회원가입" /></a></p>
+				</div>
+				</form>
+
+				<!-- footer_layer -->
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

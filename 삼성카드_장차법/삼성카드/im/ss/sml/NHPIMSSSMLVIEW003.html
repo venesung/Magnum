@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<img src="/guide/guide_header.png" alt="상단 유틸 영역" />
+	</div>
+	<div id="con_wrap" class="clfix">
+		<div id="gnb">
+			<img src="/guide/guide_gnb.png" alt="GNB 및 좌측 모듈 영역" />
+		</div>
+		<div id="content_module">
+			<img src="/guide/guide_content_module.png" alt="메인 모듈 영역" />
+		</div>
+	</div>
+	<div id="footer">
+		<img src="/guide/guide_footer.png" alt="Copytright 영역" />
+	</div>
+
+	<div id="tabbrowse_position">
+		<div id="tabbrowse_wrap">
+			<!-- tab_area -->
+			<div class="tabbrowse_header img_tabbrowse tabbrowse_mt">
+				<div class="tablist_wrap">
+					<ul class="clfix" id="id_tablist">
+						<li>국문최대일곱자...<input type="button" value="닫기" class="btn_tab" onMouseOver="t_over(this,'btn_tab');" onMouseOut="t_out(this,'btn_tab');" title="닫기" /></li>
+						<li class="on" onMouseOver="t_layer_show(this);" onMouseOut="t_layer_hide(this);">
+							<a href="#">카드이용내역</a> <input type="button" value="닫기" class="btn_tab" onMouseOver="t_over(this,'btn_tab');" onMouseOut="t_out(this,'btn_tab');" title="닫기" />
+							<div class="tabbrowse_sub">
+								<div><a href="#">국내이용내역</a><a href="#">청구내역 및 할부전환</a><a href="#">승인취소내역조회</a><a href="#">지역특화카드이용내역</a></div>
+								<div class="tabbrowse_sub_btm">&nbsp;</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- control_button -->
+			<div id="id_ctr_btn">
+			<input type="button" class="btn_previous" onMouseOver="t_over(this,'btn_previous');" onMouseOut="t_out(this,'btn_previous');" id="id_ctr_prev" title="이전" />
+			<input type="button" class="btn_next" onMouseOver="t_over(this,'btn_next');" onMouseOut="t_out(this,'btn_next');" id="id_ctr_next" title="다음" />
+			<input type="button" class="btn_close" onMouseOver="t_over(this,'btn_close');" onMouseOut="t_out(this,'btn_close');" onClick="hide_con('tabbrowse_position');" title="탭 브라우저 레이어 닫기" />
+			</div>
+
+			<div class="tabbrowse_content tabbrowse_content_pt0">
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">세이브 서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_saveservice.jpg" alt="전자, 쇼핑, 여행, 보험, 온라인 세이브 등 최대 70만원 다양한 가맹점에서 누리는 세이브 서비스" /></div>
+					<a href="#" class="btn_findbenefit"><img src="/images/common/btn_limit_inquiry.jpg" alt="한도조회" /></a>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab02 w810 h60">
+						<ul>
+							<li><a href="#">서비스 소개</a></li>
+							<li><a href="#">세이브의 종류</a></li>
+							<li><a href="#">상환방법/예시</a></li>
+							<li><a href="#">대상카드</a></li>
+							<li><a href="#">포인트 적립기준</a></li>
+							<li class="on"><a href="#">적립시뮬레이션</a>
+								<ul class="sub_tab">
+									<li><a href="#">세이브 적립</a></li>
+									<li class="on"><a href="#">파워세이브적립</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ss/h2_save_simul03.png" alt="파워 세이브 적립 포인트를 계산해 보세요" /></h2>
+					<div class="content_block_inner">
+
+						<div class="tb_exp clfix">
+							<span>회원님의 카드 사용액에 따라 적립되는 예상 포인트를 미리 계산하실 수 있습니다.</span>
+						</div>
+						<div class="savepoint_sim">
+							<table class="dtable01" summary="제휴사, 카드 사용액, 적립 포인트, 비고로 구성된 세이브 적립 포인트를 계산해 볼 수 있는 게시판입니다">
+							<caption>세이브 적립 포인트 계산</caption>
+							<colgroup><col width="18%" /><col width="35%" /><col width="15%" /><col width="32%" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="cell_l10">제휴사</th>
+									<th scope="col" class="cell_r10">카드 사용액</th>
+									<th scope="col" class="cell_r10">적립 포인트</th>
+									<th scope="col" class="cell_l10">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr>
+									<td class="cell_l10"><label for="label_simch01">이동통신 자동이체 <br />
+									(SKT, KT, LGT)</label></td>
+									<td class="cell_r10"><span class="bg_input"><input type="text" value="" id="label_simch01" title="카드 사용액 입력" /><em>&nbsp;</em></span> 만원</td>
+									<td class="cell_r10 cell_t10"><strong class="t_no t_point_org">234.000</strong> P</td>
+									<td class="cell_l10 ls01">5% 적립, <br />월 최대 60,000원 한하여 3,000 P 적립 </td>
+								</tr>
+								<!-- //loop -->
+								<tr>
+									<td class="cell_l10_et"><label for="label_simch02">S-oil (40P/ℓ)</label></td>
+									<td class="cell_r10"><span class="bg_input"><input type="text" value="" id="label_simch02" title="카드 사용액 입력" /><em>&nbsp;</em></span> 만원</td>
+									<td class="cell_r10 cell_t10"><strong class="t_no t_point_org">234.000</strong> P</td>
+									<td class="cell_l10 ls01">정유사 휘발유 고시가 기준<br />
+									(1일2회,1회10만원,40만원/월 한)<br />
+									직전3개월 월평균 일시불 및 할부<br />
+									이용실적이 30만원 이상 사용시<br />
+									일부 주유소 및 LPG 충전소 적립 제외</td>
+								</tr>
+								<tr>
+									<td class="cell_l10"><label for="label_simch03">일반 가맹점</label></td>
+									<td class="cell_r10"><span class="bg_input"><input type="text" value="" id="label_simch03" title="카드 사용액 입력" /><em>&nbsp;</em></span> 만원</td>
+									<td class="cell_r10 cell_t10"><strong class="t_no t_point_org">234.000</strong> P</td>
+									<td class="cell_l10 ls01">최소 0.8% 적립 (삼성카드 보너스 클럽 <br />
+									이용 시 최대 5% 적립 가능) </td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+
+						<div class="btnset">
+							<div class="btnl t_desc04">삼성카드 보너스 클럽 이용 시 최대 5% 적립 가능 합니다.<span class="ml10"><a href="#" class="btn_link">상세보기</a></span></div>
+                            <div class="btnr"><a href="#"><img src="/images/ss/btn_savepoint_simq.png" alt="시뮬레이션 조회" /></a></div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ss/h2_save_simul04.png" alt="파워 세이브 적립 포인트 시뮬레이션 결과입니다" /></h2>
+					<div class="content_block_inner">
+						<div class="savepoint_total">
+							<div class="flag_pencil"><img src="/images/ss/img_save_sim01.png" alt="" /></div>
+							<dl>
+								<dt>예상 카드 사용 총액</dt>
+								<dd><span class="t_tahoma24">1,522,000</span></dd>
+								<dt>총 적립 포인트</dt>
+								<dd><span class="t_tahoma24 t_point_org">243,000</span></dd>
+							</dl>
+						</div>
+						<ol class="list_no01 ml_10">
+							<li><p>상기 파워세이브 적립 시뮬레이션은 티클래스앤오일 카드 해당 적립 시뮬레이션 입니다. (S-Oil 이용 시 80P/ℓ 적립, 기본 적립률 0.8%) </p></li>
+							<li><p>티클래스앤오일 카드 외 카드는 S-Oil 40P/ℓ 적립률이 적용되고, 기본 적립률은 카드 기본 적립률이 적용됩니다.</p></li>
+							<li><p>본 시뮬레이션은 카드사용액으로만 계산한 예상 포인트이므로 회원님이 소지하신 대상카드에 따라 적립률이 달라질 수 있습니다.</p></li>
+							<li><p>이외 대상카드 적립포인트 시뮬레이션은 파워세이브 적립기준표를 참고하시기 바랍니다.</p></li>
+						</ol>
+							<div class="btnset">
+                            <div class="btnr"><a href="#"><img src="/images/ss/btn_sim_recal.png" alt="다시계산" /></a></div>
+						</div>
+					</div>
+				</div> 
+
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+
+			</div>
+			</div><div class="img_tabbrowse tabbrowse_bt"></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+
+</html>

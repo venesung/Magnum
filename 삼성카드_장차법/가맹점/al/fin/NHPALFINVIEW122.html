@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>비밀번호 변경 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+                <div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;<a href="/scchainmember.do?method=selectFin110">내 가맹점관리</a>&nbsp;&gt;&nbsp;<a href="/scchainmember.do?method=selectFin110">가맹점정보관리</a>&nbsp;&gt;&nbsp;웹회원정보변경</div>
+				<h1><img src="/images/al/h1_info_confirm.png" class="png24" alt="웹회원정보변경" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_info_confirm.png" class="png24" alt="가맹점 웹회원 정보를 확인 및 수정하실 수 있습니다" /></p>
+				<p class="ab_br2"><img src="/images/al/img_affl_m.jpg" alt="" /></p>
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block content_block_tab d_easy">
+				<!-- tab -->
+				<div class="tab01 w680">
+					<ul>
+                        <li class="png_bg"><a href="/scchainmember.do?method=selectFin120" class="png_bg">정보조회 및 변경</a></li>
+                        <li class="on png_bg"><a href="/scchainmember.do?method=selectFin122" class="png_bg">비밀번호 변경</a></li>
+                        <li class="png_bg"><a href="/scchainmember.do?method=selectFin124" class="png_bg">탈퇴신청</a></li>
+					</ul>
+				</div>
+
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_password_change.png" alt="비밀번호를 변경하실 수 있습니다" /></h2></div>
+					<div class="content_block_inner">
+
+						<p class="mb20 t_black">비밀번호 변경 후, 다시 로그인 후 사이트를 이용해 주세요.</p>
+
+						<table class="dtable02 dtable_service mb20" summary="기존아이디를 확인 하실 수 있습니다.">
+						<caption>기존아이디</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>아이디</p></th>
+								<td><p><strong class="t_black">${userId }</strong></p></td>
+							</tr>
+						</tbody>
+						</table>
+						<form class="sevice_write" action="" name="frm" method="post" autocomplete="off">
+						<table summary="기존비밀번호를 확인 후 새 비밀번호, 새 비밀번호를 확인을 통해 비밀번호를 변경 할 수 있습니다.">
+                        <caption>비밀번호 변경</caption>
+						<colgroup><col width="26%" /><col width="37%" /><col width="37%" /></colgroup>
+						<tbody>
+							<tr>
+								<td>
+									<div>
+										<label for="label_pw" class="t_11 t_gray">기존비밀번호</label>
+										<span class="bg_input"><input type="password" title="기존비밀번호" id="label_pw" style="width:133px" name="password" maxlength="12" /><em>&nbsp;</em></span>
+									</div>
+								</td>
+								<td>
+									<div>
+										<label for="label_newpw" class="t_11 t_gray">새 비밀번호</label>
+										<span class="bg_input"><input type="password" title="새비밀번호" id="label_newpw" style="width:133px" name="newPassword" maxlength="12" /><em>&nbsp;</em></span>
+										<!-- 가상키보드 적용-->
+										<span id="usafeon_newPassword"></span>
+									</div>
+								</td>
+								<td>
+									<div>
+										<label for="label_newpw_re" class="t_11 t_gray">새 비밀번호 확인</label>
+										<span class="bg_input"><input type="password" title="새비밀번호 확인" id="label_newpw_re" style="width:133px" name="newPasswordRe" maxlength="12" /><em>&nbsp;</em></span>
+										<!-- 가상키보드 적용-->
+										<span id="usafeon_newPasswordRe"></span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</form>
+
+						<!-- 100107 -->
+						<div class="btnset txt_pw">
+							<p class="btnl t_desc04">새로운 비밀번호는 영문자, 숫자, 영문+숫자 혼용하여 8~12자리로 입력해 주세요.<br>특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]</p>
+							<p class="btnr">
+                                <a href="javascript:goCheck();" class="btn btn_blue"><span>확인</span></a>
+                            <a href="javascript:document.frm.reset();" class="btn btn_white"><span>취소</span></a>
+							</p>
+						</div>
+						<!-- //100107 -->
+
+					</div>
+				</div>
+			</div>
+
+	<!-- content_block -->
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+
+</div>
+</body>
+</html>

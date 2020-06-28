@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+                <!-- top_visual -->
+                <div class="top_visual">
+                   <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+					<p class="btn_pointtip"><a href="javascript:goTabPage('NHPIMMHPIT001', true);" class="btn btn_s_white"><span>포인트 사용 Tip</span></a><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);" class="btn btn_s_white"><span>포인트종류별 적립/사용 안내</span></a></p>
+                 </div>
+                
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block clfix">
+                    <!--div class="flag_additional"><img src="/images/mh/img_saveservice02.jpg" class="flag_saveservice" alt="" /></div--><!-- 접근성TF 실사삭제 13.05.08 -->
+                    <h2><img src="/images/mh/h2_chk_point02.png" alt="선택하신 포인트 내용입니다" /></h2>
+                    <div class="content_block_inner">
+                        <h3 class="h3_point"><img src="/images/mh/h3_point_emoney.png" alt="e머니 포인트" /></h3>
+                        <table class="dtable01" summary="연차, 적립 포인트, 기 사용 포인트, 현재 남은 포인트 등으로 구성된 보유 포인트 내역을 확인할 수 있는 게시판입니다">
+                        <caption>보유 포인트 내역</caption>
+                        <colgroup><col width="16%" /><col width="28%" /><col width="28%" /><col width="28%" /></colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cell_l10 riline">연차</th>
+                                <th scope="col" colspan="2" class="cell_r10 riline">적립포인트</th>
+                                <th scope="col" class="cell_r10">기 사용 포인트</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td class="cell_l10 riline cell_bg" rowspan="2">합계</td>
+                                <td class="cell_r10 riline cell_bg">총 적립포인트</td>
+                                <td class="cell_r10 riline cell_bg">기 사용 포인트</td>
+                                <td class="cell_r10 cell_bg">현재 남은 포인트</td>
+                            </tr>
+                            <tr>
+                                <td class="cell_r10 riline"><em>0</em> P</td>
+                                <td class="cell_r10 riline"><em>0</em> P</td>
+                                <td class="cell_r10"><em>0</em> P</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="cell_l10 riline">0</th>
+                                <td colspan="2" class="cell_r10 riline"><span class="t_no">0</span> P</td>
+                                <td class="cell_r10 t_no"><span class="t_no">0</span> P</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <div class="btnset">
+                            <p class="btnl t_desc04">적립포인트가 없는 연도는 보이지 않습니다. <br />
+                            e머니포인트 적립은<span class="t_desc04 t_no">2005</span>년 <span class="t_desc04 t_no">11</span>월 중단 되었으며, 유효기간 만료에 따라 <span class="t_desc04 t_no">2011.1.31</span>일자로 서비스 종료되었습니다.</p>
+                        </div>
+                        
+						
+                </div>
+
+                </div>
+                <!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

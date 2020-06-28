@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+	<!-- layer_popup 메세지 -->
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" >
+		<div class="pop_l_wrap" style="height:500px;"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="move();" value="레이어닫기" title="분실신고 및 재발급 신청 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/cs/layer_tit_losecard_app01.png" alt="회원님의 분실신고 및  재발급 신청이 완료되었습니다" /></p>
+			<div class="pop_l_content" >			
+				<p class="pop_sub_desc02">카드 분실신고 및 재발급신청이 완료되었습니다.</p>
+				<p class="pop_sub_desc02"><strong class="t_point">처리결과</strong>를 꼭 확인하시기 바랍니다.</p>
+				<p class="pop_sub_desc02">재발급을 신청하신 카드는 <strong class="t_point">7-10일 이내에</strong> 받아보실 수 있습니다.</p>
+				<br/>		
+				<table class="dtable01" summary="분실카드 신청 처리결과(분실카드번호, 분실접수번호, 분실신고접수일시, 처리결과, 재발급여부)를 확인할 수 있는 화면입니다.">
+						<caption>분실카드 신청 처리결과 확인</caption>
+						<colgroup><col width="25%" /><col width="20%" /><col width="20%" /><col width="18%" /><col width="17%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">분실카드번호</th>
+								<th scope="col">분실접수번호</th>								
+								<th scope="col">분실신고접수일시</th>
+								<th scope="col">처리결과</th>
+								<th scope="col">재발급여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10">0</td>
+								<td class="t_no">0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td>재발급거부</td>
+							</tr>
+							<tr class="nodata"><td colspan="5">분실신고 내역이 없습니다.</td></tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+ 						<br/>
+                <p class="btnc"><a href="#" onclick="move();return false;"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+ 					<br/>
+ 					
+			</div>
+		</div>
+	</div>
+</body>
+</html>

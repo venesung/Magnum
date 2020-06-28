@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>검색결과없음 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<style type="text/css">
+.tabbrowse_content	{width:948px; padding:40px 0 0 0; *overflow:hidden}
+.tabbrowse_content	{padding-top:0}
+.top_visual	 {padding-top: 1px}
+.top_visual	 h1	{height:79px; padding-top:74px}
+.top_visual:nth-of-type(n)	{margin-left:-1px; border:0 none}
+.top_visual	 .h1_desc	{margin-left:70px}
+.top_step	 {margin-left: 70px; margin-top: 0; *margin-top: 0; _margin-top: 0}
+.ab_tr_sm	{position:absolute; right:69px; bottom: 0; z-index:0}
+.content_block_tab	{margin-top:0; padding-top:0; border-top:0 none}
+</style>
+<script type="text/javascript" language='javascript'>
+
+var searchGubun ="area";
+function search(){
+	var frm = document.searchFrm;
+
+	frm.main_code.value = category(frm.main_code_display);
+
+    if(frm.main_code.value !=""){
+    	frm.sub_code.value= category(frm.sub_code_display);
+    }
+
+    if(searchGubun !="subway"){
+   		frm.action = "/hp/im/ss/sbc/sbc.do?method=selectAreaSearchChainList";
+    }else{
+    	frm.action = "/hp/im/ss/sbc/sbc.do?method=selectSubwaySearchChainList";
+    }
+
+    alert(searchGubun);
+	frm.submit();
+}
+
+function category(code){
+	var codes ="";
+	 for(i=0; i < code.length; i++){
+	        if(code[i].checked){
+	            //alert(frm.main_code_display[i].value);
+	        	codes += code[i].value+"/";
+	        }
+	    }
+	return codes.substring(0,codes.length-1);
+}
+
+var before1 = "";
+
+function moveDiv(uid){
+
+	if(uid == "1"){
+
+	   view01.style.display ="";
+       view02.style.display ="none";
+       searchGubun = "area";
+	}else{
+
+	   view01.style.display ="none";
+	   view02.style.display ="";
+	   searchGubun = "subway";
+
+	}
+
+	selectTab(uid);
+}
+
+function selectTab(tabNum){
+    var tab = document.getElementById("tab");
+    var tabs = tab.getElementsByTagName("li");
+
+    for(i=1; i<=tabs.length; i++)
+    {
+        if(i ==tabNum){
+            tabs[i-1].className ="on";
+        }else{
+            tabs[i-1].className ="";
+        }
+    }
+
+}
+
+function check_submit(){
+	return false;
+}
+
+var i=0;
+function setPng25(obj) 
+{
+	i++;
+	if(i<3){
+	    obj.width=obj.height=1; 
+	    obj.className=obj.className.replace(/\bpng25\b/i,'');
+	    obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');" 
+	    obj.src='';  
+	    return ''; 
+	}
+
+}
+
+</script>
+</head>
+<body>
+                    <div class="w810 clfix pos_rel bordergrey mt10 h489">
+                           <p class="location t_desc04">서울특별시 &gt; 중구 &gt; 태평로2가 </p>
+                             <p><img src="/images/sam/sam_map_b.png" alt="" /></p>
+                    <!-- 레이어팝업 -->
+                        <div class="pop_l_wrap_benefit png25">
+                                <p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p> <p class="img_l_pop flag_br">&nbsp;</p>
+                                <div class="pop_l_wrap_benefit_inner">
+                                    <p class="al_center"><img src="/images/ss/tit_layer_benefit01.png" alt="삼성카드 우대혜택가맹점" /></p>
+                                    <p class="al_center pt15 pb5"><img src="/images/ss/txt_benefit_01.png" alt="전국 곳곳에서 누리는 특별한 혜택! 할인·적립 등 생활 구석구석에서 실속 혜택을 만나실 수 있습니다. " /></p>
+                                    <p class="al_center pt20 pb25"><img src="/images/ss/img_benefit_01.png" alt="" /></p>
+                                    <p class="t_point pl40">가맹점 검색 이용방법</p>
+                                    <ol class="list_desc pl40">
+                                        <li><p>검색결과가 나오지 않는 경우에는 <a href="#" class="btn_link">[목록 보기]</a>를 통해 검색 </p></li>
+                                        <li><p>검색결과에서 각 우대혜택 버튼 클릭시 혜택별 가맹점 정보 안내</p></li>
+                                        <li><p>지도상 아이콘 클릭 시 가맹점 상세정보 안내</p></li>
+                                        <li><p>SNS 공유 및 지도 인쇄, 빠른 길찾기 등 편리하고 유용한 서비스 이용 가능</p></li>
+                                    </ol>
+                                </div>
+                         </div>
+                    <!-- //레이어팝업 -->
+                     <p class="tab_close png25"><img src="/images/ss/tab_close.png" alt="지도 접기" /></p>
+                    </div>
+               
+                  <!-- //END 검색결과  -->
+                    <div class="w810 al_right mt10"><a href="javascript:parent.mapInfo();" class="btn_link">지도 이용방법 안내</a></div>
+
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

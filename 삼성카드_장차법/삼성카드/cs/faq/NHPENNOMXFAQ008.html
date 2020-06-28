@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8"pageEncoding="utf-8"%>
+<%--
+
+/**
+
+ * Filename    : NHPENNOMXFAQ008.jsp
+
+ * Comment     : 삼성카드 FAQ 만족도 IFrame 페이지
+
+ * History     : 03/29/2010 
+
+ * Version     : 1.0
+
+ */
+
+--%>
+
+<%@ include file="./include/CommonHeader.jsp" %>
+<jsp:useBean id="seWebManager" class="kr.co.spectra.enomix.web.control.SeWebManager" scope="session" />
+<%
+	Params req = new Params(request, false);
+	String strPrevURL = blockSQLHack(request.getHeader("REFERER")); 
+	String strCategoryId = blockSQLHack(req.getParam("category_id"));
+	String strCategoryName = blockSQLHack(req.getParam("category_name"));
+	String strParentId = blockSQLHack(req.getParam("parent_id",strCategoryId));
+	String strParentName = blockSQLHack(req.getParam("parent_name",strCategoryName)); 
+	String strLevel = blockSQLHack(req.getParam("level","1"));   
+	String strQuestionId = blockSQLHack(req.getParam("question_id"));
+	int iCheckFaq = Util.str2i(blockSQLHack(req.getParam("checkFaq", "0")), 0); // 0 : FAQ, 1 : TOP 10,  2: RAR
+	String strLogId = "";
+	FaqObject faqObj = null; 
+	SeRecordSet rsTempList = null;
+	faqObj = seWebManager.selectFaqObjectInfo(strQuestionId);
+	
+		
+		if(iCheckFaq <= 0)
+		{
+			
+			FaqLogObject faqLogObj = new FaqLogObject();
+			faqLogObj.nodeId = strCategoryId;
+			faqLogObj.logId = Util.getGuid();
+			faqLogObj.faqId = strQuestionId;
+			faqLogObj.feedback = -1;
+			faqLogObj.flagToMail = "N";
+			faqLogObj.feedbackContent = "";
+			faqLogObj.createdDate =  DateUtil.getCurrDate("yyyyMMddHHmmss");
+			seWebManager.insertFaqLog(faqLogObj);
+			seWebManager.updateFaqHit(strQuestionId, faqObj.hit + 1);	
+			
+			%>
+				<script type="text/javascript">
+				parent.document.frm02.log_id.value ='<%=faqLogObj.logId%>';
+				</script>
+			<%
+		
+
+		}	
+		else
+		{
+			strLogId = blockSQLHack(req.getParam("log_id"));
+		}
+		
+	
+%>

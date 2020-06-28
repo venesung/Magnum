@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>약관인쇄 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.3.2.min.js"></script>
+<script ype="text/javascript">
+	var initBody;
+
+	function beforePrint() {
+		boxes = document.body.innerHTML;
+		document.body.innerHTML = box.innerHTML;
+	}
+
+	function afterPrint() {
+		document.body.innerHTML = boxes;
+	}
+
+	function printArea() {
+		window.print();
+	}
+
+	function loadAgreement() {
+		<% if("true".equals(sAll)){	%>
+		agreeAll();
+		<% } else { %>
+		$(".agree").each(function(){$(this).load($(this).attr("agreePath"));});
+		<% } %>
+	}
+
+	window.onbeforeprint = beforePrint;
+	window.onafterprint = afterPrint;
+
+	function agreeAll()
+	{
+		var i=1;
+
+		box.innerHTML = "";
+
+		while(opener.document.getElementById("AgreeTitle" + i) != null)
+		{
+			box.innerHTML += "<h3 class='fl_left'>" + opener.document.getElementById("AgreeTitle" + i).innerHTML + "</h3>";
+			box.innerHTML += "<br /><br />";
+
+			box.innerHTML += opener.document.getElementById("AgreeContent" + i).innerHTML;
+			box.innerHTML += "<br /><br />";
+			i++;
+		}
+	}
+
+</script>
+</head>
+<body onLoad="loadAgreement();">
+<div id="pop_wrap">
+	<!-- header -->
+<!--	
+	<div id="pop_header">
+<% if("true".equals(sAll)){	%>
+		<h1><img src="/images/cd/pop_h1_agreement217.png" alt="개인회원 및 자동이체 약관 동의서" /></h1>
+<% } else {
+
+		String sTopImageId = sId.substring(sId.lastIndexOf('_') + 1).replaceAll("p","") ;
+%>
+		<h1><img src="/images/cd/pop_h1_agreement<%=sTopImageId %>.png" alt="<%=sTitle %>" /></h1>
+<% } %>
+	</div>
+-->
+
+		<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_agreement217.png" alt="개인회원 및 자동이체 약관 동의서" /></h1>
+		<!--h1><img src="/images/cd/pop_h1_agreement<%=sTopImageId %>.png" alt="<%=sTitle %>" /></h1--><!-- 여기 이미지 경로 알려주세요. 이미지 새로 작업해야 함 -->
+		</div>
+
+	<!-- content -->
+	<div id="pop_content" class="h445 yscroll" tabindex="0">
+		<div class="content_block content_block_card clfix">
+			<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+				<div class="agree" id="box" agreePath="/agreement/<%=sId%>.html" tabindex="0"></div>
+			</div></div>
+
+            <p class="btnc_30"><a href="javascript:printArea();"><img src="/images/common/btn_print.png" alt="인쇄하기" /></a></p>
+		</div>
+
+	</div>
+
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/ss/h1_loan_app_service.png" alt="국세납부대출신청 서비스" /></h1>
+				</div>
+				<div class="content_block content_block_tab clfix">
+					<div class="top_step_loan_app top_step_loan_app06">
+						<ol class="none">
+							<li><strong>카드선택</strong></li>
+							<li>한도조회</li>
+							<li>납세정보 및 세부코드입력</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 start ////////////////////////-->
+							<li>신청정보확인</li>
+							<li>약관동의</li>
+							<!-- ////////////////////////////// 20121127 신청단계 순서및 문구 변경되었음 mv_강승희 end ////////////////////////-->
+							<li><abbr>현재단계</abbr> 신청완료</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix"> 
+	<form name="form1" method="post">
+
+					<h2><img src="/images/ss/h2_cardloan_principalinterest_info.png" alt="카드론 원리금 납입안내 입니다" /></h2>
+					<div class="content_block_inner">
+
+						<div class="con_txt">
+							<img src="/images/ss/txt_nationaltax_payment_success.png" alt="국세납부 대출신청이 정상적으로 완료 되었습니다." />
+						</div>
+						
+						<div class="tb_exp clfix">
+							<span class="fl_left">&nbsp;</span>
+							<span class="ab_tr t_desc03">단위 : 원</span>
+						</div>
+						
+						<table class="dtable01" summary="회, 결제일, 원금, 이자, 계, 대출잔액으로 구성된 국세납부 대출신청 목록을 확인하실수 있는 게시판입니다">
+						<caption>국세납부 대출신청 목록</caption>
+						<colgroup><col width="100" /><col width="125" /><col width="98" /><col width="98" /><col width="107" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10 cell_bg riline">회</th>
+								<th scope="col" class="riline">결제일</th>
+								<th scope="col" class="cell_r10 riline">원금</th>
+								<th scope="col" class="cell_r10 riline">이자</th>
+								<th scope="col" class="cell_r10">계</th>
+								<th scope="col" class="cell_r10">대출잔액</th>
+							</tr>
+						</thead>
+							<%
+								reMap = (HashMap)simulList.get(simulList.size()-1);
+							%>
+						<tfoot>
+							<tr>
+								<td colspan="2" class="cell_l10 riline"><em>합계</em></td>
+								<td class="cell_r10 riline"><em><%=reMap.get("REPAYMENT") %></em></td>
+								<td class="cell_r10 riline"><em><%=reMap.get("INTEREST") %></em></td>
+								<td class="cell_r10"><em><%=reMap.get("SUBSUM") %></em></td>
+								<td class="cell_r10"><em></em></td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<!-- loop -->
+							<%for (int i = 0; i < simulList.size()-1; i++) { 
+								reMap = (HashMap)simulList.get(i);
+							%>
+							<tr>
+
+								<th scope="row" class="cell_l10 cell_bg"><%=reMap.get("LISTCNT")%>회</th>
+								<td scope="row" class="t_no riline"><%=reMap.get("SDATE")%></td>
+								<td scope="row" class="cell_r10 t_no riline"><%=reMap.get("REPAYMENT")%></td>
+								<td scope="row" class="cell_r10 t_no riline"><%=reMap.get("INTEREST")%></td>
+								<td scope="row" class="cell_r10 t_no"><%=reMap.get("SUBSUM")%></td>
+								<td scope="row" class="cell_r10 t_no"><%=reMap.get("REMAINDER")%></td>
+							</tr>
+							<%} %>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnr">
+	                            <a href="javascript:printTaxLoan();" class="btn btn_white"><span>조건출력</span></a>
+	                            <a href="javascript:goTabPage('NHPIMSSPSM003',true);" class="btn btn_blue"><span>확인</span></a>
+                            </p>
+						</div>
+
+						<div class="line_lgray"></div>
+
+						<ol class="list_no01">
+							<li><p>국세는 일단 납부되면 취소되지 아니하며, 잘못 납부된 세금이 일정한 절차를 거쳐 세무서에서 지급(환급)하게 됩니다.<br />잘 확인하신 후 신청하시기 바랍니다.</p></li>
+							<li><p>상기 원리금을 지정된 결제일에 맞춰 자동이체 계좌에 입금해 주시기 바랍니다.</p></li>
+						</ol>
+
+					</div>
+					
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

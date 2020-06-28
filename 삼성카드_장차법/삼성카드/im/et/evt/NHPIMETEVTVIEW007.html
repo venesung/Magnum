@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 이벤트 - 삼성카드</title>
+<div id="tab_script">
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/et.css" />
+<style type="text/css">.hidden{position:absolute; left:-1000px; top:0; width:0px; height:0px; font-size:1%; line-height:0; overflow:hidden;}</style>
+</div>
+</head>
+<body>
+<div class="content_block content_block_card">
+					<h2><img src="/images/et/h2_event_end.png" alt="종료된 이벤트입니다" /></h2>
+					<div class="content_block_inner">
+					<!-- 100326 added -->
+					<form name="frm1" method="post" action="">
+						<div class="tb_exp clfix">
+							<span class="fl_left">종료된 이벤트를 쉽게 찾아보세요</span>
+							<span class="ab_tr">
+								<span class="t_desc03">이벤트명</span>
+								<span class="input_idno"><input type="text" title="이벤트명" value="<%=srchGubun1 %>" maxlength="20" class="txt" name="endEvent" size="20" onKeyDown="return checkEnter()" /></span>&nbsp;
+								<a class="btn btn_s_blue" href="javascript:goEndEvent();"><span>조회</span></a>
+							</span>
+						</div>
+					</form>
+						<!-- board_list -->
+						<div class="board_list">
+							<table class="dtable01" summary="번호, 제목, 기간으로 구성된 종료된 이벤트">
+							<caption class="hidden">종료된 이벤트</caption>
+							<colgroup><col width="70" /><col width="*" /><col width="200" /></colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">기간</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- loop -->
+								<tr class="notice">
+									<td class="t_no">1</td>
+                                    <td class="cell_l"><a href="#">-_-</a></td>
+									<td class="t_no">0000.00.00-0000.00.00</td>
+
+								</tr>
+								<!-- loop -->
+								 	<tr class="nodata">
+									<td  colspan="3">조회된 결과가 없습니다.</td>
+									</tr>
+							</tbody>
+							</table>
+											<!-- paginate -->
+											<!-- 페이징 -->
+											<div class="paginate">
+												${_page}
+											</div>
+											<!-- //페이징 -->
+						</div>
+
+</div>
+			</div>
+</body>
+</html>

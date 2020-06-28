@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">실속 가득한 삼성카드 우대혜택 서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_intro_merc.jpg" alt="전국 어디서나, 가까운 우대혜택가맹점에서 할인·적립 등 특별한 혜택을 드립니다. 실속 가득한 삼성카드 우대혜택 서비스" /></div>
+					<a href="javascript:goTabPage('NHPIMSSSBC001M002', true);" class="btn_findbenefit"><img src="/images/ss/btn_find_benefit3.png" border="0" alt="우대혜택가맹점 검색" /></a>
+				</div>
+					
+					<!-- 여기서부터 시작 -->
+					<ul class="mv_subTabType1 mv_BenBranch">
+						<li><a href="javascript:goTabPage('NHPIMSSSBC001M001', true);" class="tab1"><span>서비스 전체보기</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSSBC001M006', true);" class="tab2"><span>보너스클럽</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSSBC001M016', true);" class="tab3"><span>페이백서비스</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSSBC001M026', true);" class="tab4"><span>블루라인서비스</span></a></li>
+						<li><a href="javascript:goTabPage('NHPIMSSSBC001M002', true);" class="tab5 on"><span>우대혜택 가맹점 찾기</span></a></li>
+					</ul>
+<!-- 여기까지 끝 -->
+				
+			
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<p class="mt30 mb15"><img src="/images/ss/h2_benefit_find.png" alt="우대혜택가맹점 찾기 (원하시는 지역, 업종, 우대혜택 등을 선택하셔서 빠르고 쉽게 찾아보세요." /></p>
+					<p  class="mb20">
+					<div id="divT1" style="display:">
+						<label for="id_category01"><input type="radio" value="1" id="id_category01" name="rdo_category" onclick="moveDiv('1');" checked="checked" title="지역으로 찾기" /> <span class="t_point"> 지역으로 찾기</span></label>
+						<label for="id_category02"><input type="radio" value="2" id="id_category02" name="rdo_category" onclick="moveDiv('2');" title="지하철역으로 찾기" />지하철역으로 찾기</label>
+					</div>
+					<div id="divT2" style="display:">
+						<label for="id_category03"><input type="radio" value="1" id="id_category03" name="rdo_category" onclick="moveDiv('1');" title="지역으로 찾기" /> 지역으로 찾기</label>
+						<label for="id_category04"><input type="radio" value="2" id="id_category04" name="rdo_category" onclick="moveDiv('2');" checked="checked" title="지하철역으로 찾기" /> <span class="t_point">지하철역으로 찾기</span></label>
+					</div>
+					</p>
+					<!-- top_block -->
+<script type="text/javascript">
+//<![CDATA[
+function resizeFrame_premium(){
+	var the_height = document.getElementById('iframe_autocomplete').contentWindow.document.body.scrollHeight;
+	document.getElementById('iframe_autocomplete').height = the_height;
+}
+addLoadEvent(funLoad);
+function addLoadEvent(func){
+	var oldonload = window.onload;
+	if(typeof window.onload != 'function'){
+		window.onload = func;
+	}else{
+		window.onload = function(){
+		oldonload();
+		func();};
+	}
+}
+function funLoad(){
+//	resizeFrame_premium();
+}
+//]]>
+</script>
+					<fieldset>
+					<div class="w810 clfix pos_rel zIndex100 bordergrey pb15" id="AKC_LAYER">
+						<p class="img_roundbox corner_tl">&nbsp;</p>
+						<p class="img_roundbox corner_tr">&nbsp;</p>
+						<p class="img_roundbox corner_bl">&nbsp;</p>
+						<p class="img_roundbox corner_br">&nbsp;</p>
+	                        <dl class="fl_left search_benefit clfix mt10 ml20" id="view01" style="display:">
+								<dt class="mt5"><img src="/images/ss/txt_benefit_join01.png" alt="가맹점명" /></dt>
+								<!-- 2012.05.02 가맹점명 자동완성 시작 -->
+								<dd><span class="bg_input_akc" id="ChainAKCFrm">
+									<input type="text" name="chain_name"  id="ChainAKCKwd" value="<%=vos.getChain_name() %>" title="검색어 입력" style="width:318px" /><em>&nbsp;</em>
+									</span>
+									<div id="ChainAKCDiv" style="DISPLAY: none; Z-INDEX: 300; POSITION: absolute;" >
+										<iframe id="ChainAKCIfrm" style="WIDTH: 100%; HEIGHT: 0px" name="ChainAKCIfrm" marginwidth="0" marginheight="0" src="/html/ts/chainAkc.html" frameborder="0" scrolling="no" title="빈 프레임">
+										</iframe>
+									</div>
+								</dd>
+								<!-- 2012.05.02 가맹점명 자동완성 끝 -->
+<!--
+								<dd><span class="bg_input"><input type="text" name="chain_name"  value="" title="" style="width:318px" /><em>&nbsp;</em></span></dd>
+-->
+							</dl>
+							<dl class="search_benefit0 clfix  ml20 pt0" id="view03" style="display:">
+								<dt class="mt5"><img src="/images/ss/txt_benefit_join05.png" alt="지역 선택" /></dt> 
+								<dd>
+									<fileTag:addressSelectChain selectedSido="<%=vos.getSido()%>" />
+								</dd>
+							</dl>
+							<dl class="search_benefit0 clfix  ml20 " id="view02" style="display:none">
+								<dt class="mt5"><img src="/images/ss/txt_benefit_join03.png" alt="노선 선택" /></dt> 
+								<dd>
+								<ul class="subway">
+									<fileTag:subwaySelectChain inputClass="sel_subway" />
+									</ul>
+								</dd>
+							</dl>
+
+						<dl class="fl_left search_benefit clfix mt10 ml20">
+							<dt><img src="/images/ss/txt_benefit_join02.png" alt="업종 선택" /></dt>
+							<dd class="t_desc04">
+								<label><input type="checkbox" value="A"   id="id_category03" name="main_code_display" onclick="chkMainCodeAll();" title="전체" /> 전체</label>
+								<label><input type="checkbox" value="100" id="id_category04" name="main_code_display" onclick="chkMainCode();" title="외식" /> 외식</label>
+								<label><input type="checkbox" value="200" id="id_category05" name="main_code_display" onclick="chkMainCode();" title="쇼핑" /> 쇼핑</label>
+								<label><input type="checkbox" value="300" id="id_category06" name="main_code_display" onclick="chkMainCode();" title="레저" /> 레저</label>
+								<label><input type="checkbox" value="400" id="id_category07" name="main_code_display" onclick="chkMainCode();" title="생활" /> 생활</label>
+							</dd>
+						</dl>
+						<dl class="fl_left search_benefit2 clfix mt10 ">
+							<dt class="mt5"><img src="/images/ss/txt_benefit_join04.png" alt="우대혜택서비스선택" /></dt>
+							<dd>
+								<ul class="service_category" style="width:260px;">
+                                    <li style="width:110px;">	<label><input type="checkbox" value="A"  id="id_category08" name="rdo_category" onclick="chkServiceAll();" title="전체" /> 전체</label></li>
+                                    <li style="width:150px;">	<label><input type="checkbox" value="gv" id="id_category09" name="rdo_category" onclick="chkService();" title="Gvalley 우대가맹점" /> <img src="/images/ss/icon_gvalley_s.png" alt="Gvalley 우대가맹점" /> Gvalley 우대가맹점</label></li>
+                                    <li style="width:110px;">	<label><input type="checkbox" value="bc" id="id_category10" name="rdo_category" onclick="chkService();" title="보너스클럽" /> <img src="/images/ss/icon_bonus_s.png" alt="보너스클럽" /> 보너스클럽</label></li>
+                                    <li style="width:150px;">	<label><input type="checkbox" value="mb" id="id_category11" name="rdo_category" onclick="chkService();" title="맞춤형 보너스클럽" /> <img src="/images/ss/icon_bonus_s.png" alt="보너스클럽" /> 맞춤형 보너스클럽</label></li>
+                                    <li style="width:110px;">	<label><input type="checkbox" value="pb" id="id_category12" name="rdo_category" onclick="chkService();" title="페이백" /> <img src="/images/ss/icon_payback_s.png" alt="페이백" /> 페이백</label></li>
+                                    <li style="width:150px;">	<label><input type="checkbox" value="bl" id="id_category13" name="rdo_category" onclick="chkService();" title="블루라인" /> <img src="/images/ss/icon_blueline_s.png" alt="블루라인" /> 블루라인</label></li>
+                                    <li style="width:110px;">	<label><input type="checkbox" value="mz" id="id_category14" name="rdo_category" onclick="chkService();" title="마이존" /> <img src="/images/ss/icon_apt_s.png" alt="마이존" /> 마이존</label></li>
+                                    <li style="width:150px;">	<label><input type="checkbox" value="mo" id="id_category15" name="rdo_category" onclick="chkService();" title="멤버스주유소" /> <img src="/images/ss/icon_oil_s.png" alt="멤버스주유소" /> 멤버스주유소</label></li>
+                                    <li style="width:110px;">	<label><input type="checkbox" value="ms" id="id_category16" name="rdo_category" onclick="chkService();" title="의료지원" /> <img src="/images/ss/icon_medical_s.png" alt="의료지원" /> 의료지원</label></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<p class="fl_right clfix mt10">
+                        <span class="t_desc04"><a href="javascript:bcInfo('');" class="btn_link">[주요 보너스클럽]</a>에서 더 큰 혜택을 확인하실 수 있습니다</span>
+                        <span style="padding:0 7px 0 10px;" class="t_desc04"><img src="/images/ss/ico_search_f5.png" alt="검색초기화" onclick="frmReset();" /> <a href="javascript:frmReset();">검색초기화</a></span>
+                        <span><a href="javascript:search('search');" class="btn btn_blue"><span>검색</span></a></span>
+					</p>                    
+					</fieldset>
+    
+					<!-- content -->
+					<div class="tab03 mt30 clfix"><!-- 100429 -->
+						<ul>
+						<div id="tabMap" style="display:">
+                            <li class="on"><a href="javascript:tabMove1('map');" onclick="this.className='on';">지도+목록보기</a></li>
+                            <li><a href="javascript:tabMove1('list')" onclick="this.className='on';">목록보기</a></li>
+						</div>
+						<div id="tabList" style="display:none">
+                            <li><a href="javascript:tabMove1('map');" onclick="this.className='on';">지도+목록보기</a></li>
+                            <li class="on"><a href="javascript:tabMove1('list')" onclick="this.className='on';">목록보기</a></li>
+						</div>
+						</ul>
+
+					</div>
+
+                    <!-- top_block -->
+				    <iframe src="" scrolling="no" width="100%" height="540" frameborder="0" name="content_frame" title="지도+목록보기 상세"></iframe>
+                </div>
+				<!-- content_block -->
+
+			<!-- layer_popup 메세지 -->
+
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="position:relative; left:180px;top:-900px; height:0; font-size:0; line-height:0; z-index:600;display:none">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="지역/지하철 선택 레이어 닫기" />
+			<p class="pop_tit2"><img src="/images/ss/layer_tit_subway_caution.png" alt="지역/지하철 선택을 안하시면 목록보기만 가능합니다" /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert02">
+					<p>지역/지하철 선택을 안하실 경우엔 지도검색이 <br />
+					불가하고 목록보기만 가능합니다.</p>
+					<p class="t_desc04 mt20">지도와 함께 보시려면 <strong class="t_black">취소버튼</strong>을 누르신 후 지역지정을 해주세요</p>
+				</div>
+				<p class="btnc">
+                <a href="#" onclick="searConfirm('Y');"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+                <a href="#" onclick="searConfirm('N');"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- cms_layer -->
+	<div id="id_layer04" class="pop_l_position" style="position:relative; left:140px;top:-650px; height:0; font-size:0; line-height:0; z-index:900;display:none">
+			<script type="text/javascript" language="javascript">
+			//callCmsContentHtmlAjax('/cms_content/hp/im/ss/sbc/NHPIMSSSBCVIEW003C1.html','id_layer04')
+			</script>
+			<jsp:include page="/cms_content/hp/im/ss/sbc/NHPIMSSSBCVIEW003C1.html" flush="false" />
+	</div>
+
+<!-- cms_layer -->
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

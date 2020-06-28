@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>결제예정금액 조회 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+				<h1><img src="/images/cm/h1_choose_card.png" alt="결제예정금액 조회" /></h1>
+				<p class="ab_br"><img src="/images/cm/img_inqurylist.jpg" alt="" /></p><!-- 100623 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+
+					<div class="btnset">
+						<p class="btnl mt18">페이지 내 정보를 엑셀다운로드 받거나 인쇄하실 수 있습니다.</p>
+						<p class="btnr"><a href="javascript:saveExcel(this);" name="excelATag" class="btn btn_white"><span>엑셀저장</span></a> <a href="javascript:printDiv('printDiv');" class="btn btn_white"><span>인쇄</span></a></p>
+					</div>
+				<div id="printDiv">
+					
+					<p class="mt30">아래에 입금하실 총 금액은 <strong class="t_black">12.12.12</strong> 현재까지 접수된 매출(취소매출포함)및 입금이 반영된 것이며,<br /> 청구서 조회의 결제금액과 다를 수 있습니다 . </p>
+					
+					<h2><img src="/images/cm/h2_bill_lookup01.png" alt="결제정보" /></h2>
+					<table class="dtable02 " summary="카드명, 카드번호, 회원명 등 결제정보를 확인할 수 있는 게시판입니다">
+					<caption>결제정보</caption>
+					<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><p>카드명</p></th>
+							<td><p>삼성카드</p></td>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p><span class="t_no">0000-0000-0000-0000</span></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>회원명</p></th>
+							<td colspan="3"><p>홍길동</p></td>
+
+						</tr>
+
+					</tbody>
+					</table>
+
+					<h2><img src="/images/cm/h2_bill_lookup02.png" alt="결제예정금액" /></h2><!-- 100503 -->
+
+					<table class="dtable01" summary="이번달 결제금액과 미 결제금액의 이용원금, 수수료 및 연체료 등 결제예정금액을 볼 수 있는 게시판입니다."><!-- 100518 -->
+					<caption>결제예정금액</caption>
+					<colgroup><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /><col width="20%" /></colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="2" class="riline boline_b0">이번달 결제금액</th>
+							<th scope="col" colspan="3" class="boline_b0">미 결제금액</th>
+						</tr>
+						<tr>
+							<th scope="col" class="cell_l10">이용원금</th>
+							<th scope="col" class="cell_r10 riline">수수료</th>
+							<th scope="col" class="cell_r10">이용원금</th>
+							<th scope="col" class="cell_r10">수수료</th>
+							<th scope="col" class="cell_r10">연체료</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="2" class="cell_l10 riline">입금하실 총 금액 (대출/리스 제외)</td>
+							<td colspan="3" class="cell_r10"><em>1</em></td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td class="t_no cell_l10">0</td>
+							<td class="t_no cell_r10 riline">0</td>
+							<td class="t_no cell_r10">0</td>
+							<td class="t_no cell_r10">0</td>
+							<td class="t_no cell_r10">0</td>
+						</tr>
+					</tbody>
+					</table>
+					
+					<div class="btnset">
+						<p class="btnl t_desc04">입금 은행 별 차이로 인해 전일 또는 전전일 입금하신 금액은 반영되지 않을 수 있으니 참조 하십시오.</p>
+					</div>
+			</div>
+					<div class="line_lgray mb0">&nbsp;</div>
+					<div class="btnset">
+						<p class="btnr">
+							<a href="javascript:goMenu('/apr.do?method=selectCardInfoList');" class="btn btn_white"><span>목록</span></a>
+						</p>
+					</div>
+
+					<div class="tb_exp clfix mt40">
+						<h2><img src="/images/cm/h2_bill_lookup05.png" alt="입금방법 안내" /></h2>
+						<span class="ab_tr"><a href="rec.do?method=selectInfo&amp;tab=1" class="btn_link">자동이체안내</a> <a href="rec.do?method=selectInfo&amp;tab=2" class="btn_link">무통장입금안내</a></span>
+					</div>
+					<ol class="list_no01">
+						<li><p>회원님의 결제방법이 자동이체인 경우 통장에 입금하시면 되고, 무통장입금인 경우 무통장입금방법을 참조하셔서 <br />입금하시면 됩니다.</p></li>
+						<li><p>만약 연체로 인하여 카드사용이 정지된 경우에는 무통장입금방법으로 입금하시면 입금즉시 카드재사용이 가능<br />
+						하나 (대구은행제외), 통장에 잔고가 있는 경우 이중입금이 발생할 수 있으므로 주의하시기 바랍니다.</p></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+
+</body>
+</html>

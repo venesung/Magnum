@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title><%=cardInfo.get("cardTitle") %> - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<style type="text/css">
+#wrap	{width:948px}
+#header	 {width:100%; height:30px; background:url('/images/cd/pop_bg_body948.png') no-repeat left top}
+#footer	{position:relative; width:100%; height:30px; background:url('/images/cd/pop_bg_body948.png') no-repeat left bottom}
+#footer	 .btn_close	{position:absolute; right:35px; top:4px; width:24px; height:24px; background:url('/images/cd/pop_bg_body948.png') no-repeat 941px 0}
+#header	a	{display:block; width:105px; height:30px; margin-left:60px}
+#header	a	em	{position:absolute; left:-5000em; top:-5000em; height:0; overflow:hidden}
+#contents	{width:948px; padding-bottom:150px}
+.flag_contents_tl	{position:absolute; left:-2px; top:-2px; width:10px; height:10px; background:url('/images/cd/bg_blue_round.png') no-repeat 0 0}
+.flag_contents_tr	{position:absolute; right:-2px; top:-2px; width:10px; height:10px; background:url('/images/cd/bg_blue_round.png') no-repeat -10px 0}
+.flag_contents_bl	{position:absolute; left:-2px; bottom:-2px; width:10px; height:10px; background:url('/images/cd/bg_blue_round.png') no-repeat 0 -10px}
+.flag_contents_br	{position:absolute; right:-2px; bottom:-2px; width:10px; height:10px; background:url('/images/cd/bg_blue_round.png') no-repeat -10px -10px}
+#contents	.top_visual	 {width:810px; height:200px; margin:0 0 0 69px; font-size:0; line-height:0}
+#contents	.top_visual	 em	{display:block; margin:60px 0 15px 0; color:#333; font:bold 16px "돋움"; letter-spacing:-1px}
+#contents	.top_visual	 h1	{padding:0 !important}
+#contents	.top_visual	 .p_photo	{position:absolute; right:22px; top:42px}
+#contents	.content_block	{width:810px; margin:0 0 0 68px; border:0 none}
+#contents	.content_block_card	{width:810px; margin:0 0 0 68px; border-top:1px solid #e6e6e6}
+#contents	.content_block_inner	{float:right; width:640px; margin-top:35px}
+
+/* fill_card */
+.find_id	{margin-top:0}
+.find_id	dl	{width:630px}
+.find_id	dt	{float:left; width:90px; padding:0 0 5px 10px; letter-spacing:-1px}
+.find_id	dt	label	{display:inline-block; padding-top:9px; color:#999; font:normal 11px "돋움"; letter-spacing:-1px}
+.find_id	dd	{float:left; width:520px; padding:0 0 5px 10px}
+.find_id	dd	 img	{vertical-align:top}
+.find_id_login	dd	{width:170px}
+.find_idfind_id_logindd	 img	{vertical-align:top}
+.find_id_login	dt.pw	{width:70px}
+.find_id_login	dd.pw	{width:256px}
+.find_id_login	dt.newpw	{width:80px}
+.find_id_login	dd.newpw	{width:135px}
+.find_id_login	dt.newpw2	{width:114px}
+.find_id_login	dd.newpw2	{width:243px}
+.find_id_login	dt.newpw3	{width:640px; font-size:12px}
+.find_id_login	dd.newpw3	{width:640px}
+.withdraw	dt	label	{color:#666; font:normal 12px "돋움";}
+.find_id	dd	 p.t_desc03	{margin-top:10px; margin-bottom:10px;}
+.jumin_txt	{padding-left:26px;}
+
+fieldset.fieldset_agree	 {position:static; height:auto}
+fieldset.fieldset_agree	 .tb_exp	 h4.fl_left	{color:#333; font-size:12px}
+fieldset.fieldset_agree	 legend	{position:static; margin:0 0 5px 10px; color:#333; font-size:12px; line-height:14px; visibility:visible}
+fieldset.fieldset_agree	 .ab_tr	{right:10px}
+fieldset.fieldset_agree	 label	{padding:0 10px}
+
+.content_block_namecheck	{width:810px; margin:30px 70px 0 70px; padding-top:40px; border-bottom:1px solid #E6E6E6; border-top:0; height:30px;}
+.content_block_namecheck .tb_exp span {padding-left:0;}
+.bg_input1	input	{display:inline-block; height:20px; margin:5px 0; padding:0; border:0 none; background:; color:#333; }
+</style>
+</head>
+<body>
+
+<div id="wrap">
+	<div id="header"><a href="#"><em>SAMSUNGCARD</em></a></div>
+	<div id="contents">
+		<c:if test="${not empty basicCardYn && basicCardYn == 'Y'}">
+		<div class="top_visual">
+		<h1><img src="/images/cd/h1_info_sscardapp.png" alt="삼성카드 신청 안내입니다" /></h1>
+		</div>
+		</c:if>
+		<c:if test="${empty basicCardYn || basicCardYn != 'Y'}">
+		<div class="top_visual">
+			<em><%=cardInfo.get("cardTitle") %></em>
+			<h1><img src="/images/cd/h1_info_sscardapp.png" alt="삼성카드 신청 안내입니다." /></h1>
+			<p class="p_photo"><img src="<%=cardInfo.get("bestImg02") %>" alt="<%=cardInfo.get("cardSummary") %>" /></p>
+		</div>
+		</c:if>
+		<!-- content_block -->
+		<div class="content_block"><a name="cardAppStep"></a>
+			<p class="step"><img src="/images/cd/step_alliance_join01.png" alt="" /></p>
+			<ol class="none">
+				<li><abbr>현재단계</abbr><strong>실명인증 및 약관동의</strong></li>
+				<li>신청정보입력</li>
+				<li>신청완료</li>
+			</ol>
+			<ol class="none" style="display:none">
+				<li>실명인증 및 약관동의</li>
+				<li><abbr>현재단계</abbr><strong>신청정보입력</strong></li>
+				<li>신청완료</li>
+			</ol>
+			<ol class="none" style="display:none">
+				<li>실명인증 및 약관동의</li>
+				<li>신청정보입력</li>
+				<li><abbr>현재단계</abbr><strong>신청완료</strong></li>
+			</ol>
+		</div>
+
+		<div id="id_fill_app">
+			<jsp:include page="/hp/im/cd/app.do?method=agreement" flush="true" />
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div id="footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+
+<div id="block_event_layer_loading" style="position:absolute;top:0px;left:0px;width:100%;background-color:white;filter:alpha(opacity=1);opacity:1/100;display:none;z-index:1100;">
+	<p id="block_event_layer_loading_back"></p>
+</div>
+<div id="loading_layer" align="center" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:none;z-index:1101;">
+	<div id="loading_layer_pop" class="pop_l_position " style="top:200px;left:250px;display:none;z-index:1101;">
+		<div class="pop_l_wrap h148"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p>
+			<p class="pop_tit_data"><img src="${pageContext.request.contextPath}/images/gr/pop_txt_data.png" alt="데이터를 불러오고 있습니다" /></p>
+			<div class="pop_l_content pop_l_guidance">
+				<div style="position:relative;left:0px;">
+					<!-- img src="${pageContext.request.contextPath}/images/gr/loading_bar.png" alt="" / -->
+					<img src="${pageContext.request.contextPath}/images/common/ajax-loader.gif" alt="Now loading..." />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="block_event_layer" style="position:absolute;top:0px;left:0px;width:100%;background-color:white;filter:alpha(opacity=1);opacity:1/100;display:none;z-index:1000;">
+	<p id="block_event_layer_back"></p>
+</div>
+<div id="layer_popup" align="center" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:none;z-index:1001;">
+	<div id="layer_popup_content"></div>
+</div>
+</body>
+</html>

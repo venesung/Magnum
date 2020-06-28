@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	<!-- top_visual -->
+	<div class="top_visual">
+		<h1><img src="/images/mh/h1_cashback.png" alt="캐시백현황을 조회하실 수 있습니다." /></h1>
+	</div>
+				
+	<!-- content_block -->
+	<div class="content_block content_block_m0 clfix"><!-- 100126 -->
+		<h2><img src="/images/mh/h2_cashback01.png" alt="캐시백현황을 조회하실 수 있습니다." /></h2>
+		<div class="content_block_inner">
+						
+
+			<table class="dtable02 dtable_inputfield" summary="매출금액, 캐쉬백금액으로 구성된 캐시백현황">
+			<caption>캐시백현황</caption>
+			<colgroup><col width="115" /><col width="*" /><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<tr>
+					<th scope="row"><p>매출금액</p></th>
+					<td class="pl10"><%=sl_sam %> 원</td>
+					<th scope="row"><p>캐쉬백금액</p></th>
+					<td class="pl10"><%=csb_sam %> 원</td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<!-- btn -->
+			<div class="btnset" style="margin-top: -5px;">
+				<div class="btnl" style="float:left"><p class=" t_desc04" >전월사용실적에 따라 차등지급 상세지급기준은 상품자세히 보기를 클릭하세요</p></div>
+				<div class="btnl" style="float:right">
+                    <a href="http://www.samsungcard.com/link/index.jsp?url=CHECK_CARD" class="btn btn_blue"><span>상품 자세히 보기</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- content_block -->
+	<div class="content_block clfix">
+		<h2><img src="/images/mh/h2_cashback02.png" alt="연도별 캐시백 조회 입니다." /></h2>
+		<div class="content_block_inner">
+			<div class="btnset">
+				<div class="btnl" style="float:right" >
+					<select  name="yyyy" title="년도 선택">
+					</select>
+					<a href="javascript:goGetResultHPF00013();" class="btn btn_s_blue"><span>조회</span></a>
+				</div>
+			</div>
+			<div class="d_easy">
+				<table class="dtable01 dtable01_bill mt5" summary="기준년월, 매출금액, 캐시백금액, 지급일자, 상세보기로 구성된 연도별 캐시백 조회">
+				<caption>연도별 캐시백 조회</caption>
+				<colgroup><col width="15" /><col width="15%" /><col width="23%" /><col width="30%" /><col width="17%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">기준년월</th>
+						<th scope="col" class="blNone cell_r10">매출금액</th>
+						<th scope="col" class="blNone cell_r10">캐시백금액</th>
+						<th scope="col" class="blNone">지급일자</th>
+						<th scope="col" class="blNone">상세보기</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10"><%=Crym %></td>
+						<td class="blNone cell_r10"><%=SlAm %></td>
+						<td class="blNone cell_r10"><%=CsbAm %></td>
+						<td class="blNone"><%=vo.getDsbDt() %></td>
+						<td class="blNone"><a href="#" class="btn btn_s_white" title="<%=Crym %> 캐시백 상세보기"><span>GO</span></a></td>
+					</tr>
+					<td><input type="hidden" name="parm_Crym" value="<%=vo.getCrym() %>" /></td>
+
+					<!-- //loop -->
+					<tr class="nodata">
+						<td colspan="5"><%=ERRORMESSAGE %></td>
+					</tr>
+				</tbody>
+				</table>
+						
+			</div>
+
+		</div>
+	</div>
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_read_privacy_policy2.png" alt="고객의 소중한 권리를 지켜 드리기 위하여 노력하겠습니다." /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100126 -->
+				<% 
+					String tab_index = (request.getParameter("tab_index") == null ? "002" : request.getParameter("tab_index"));
+				%> 
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li class="<%="002".equals(tab_index)?"on":"" %>"><a href="javascript:goView('002');">고객권리안내문</a></li>
+                            <li class="<%="001".equals(tab_index)?"on":"" %>"><a href="javascript:goView('001');">신용정보관리보호정책</a></li>
+                            <li class="<%="004".equals(tab_index)?"on":"" %>"><a href="javascript:goView('004');">신용정보활용체제</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<%
+				String url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C3.html";
+				if("000".equals(tab_index)) 			url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C1.html";
+				else if("001".equals(tab_index)) 		url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C2.html"; 
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW001C5.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

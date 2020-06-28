@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>처리결과 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+
+	<div id="id_layer01"  class="pop_l_position pop_l_wrap_alert">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onClick="javascript:closeLayerPopup();" value="레이어닫기" title="처리결과 조회 레이어 닫기" />
+		
+			<p class="pop_tit3"><img src="/images/mh/lpop_tit_searchResult.png" alt="처리결과 조회" /></p>
+
+			<div class="pop_l_content">
+					<p class="btn mt25">신청하신 <span class="t_point_org"><%=aplRcvAmt%></span>원이 <br />회원님의 자동이체 계좌에서 정상적으로 출금되었습니다.<br />이용해주셔서 감사합니다.</p>
+					<p class="btn mt25">신청하신 <span class="t_point_org"><%=aplRcvAmt%></span>원이 '<%=respHangul%>' 출금되지 않았습니다.  <br /> 확인 후 다시 이용부탁드립니다.<br /> 감사합니다. </p>
+					<p class="btn mt25">신청하신 <span class="t_point_org"><%=aplRcvAmt%></span>원이 처리중 입니다. <br /> 감사합니다. </p>
+					<p class="btn mt25"><%=respHangul%></p>
+			<p class="btn mt25">
+                <a href="javascript:goTabPage('NHPIMMHEMS022');closeLayerPopup();" class="btn btn_blue"><span>처리결과 조회</span></a>
+                <a href="javascript:goTabPage('NHPIMMHEMSINFO');closeLayerPopup();" class="btn btn_blue"><span>확인</span></a>
+			 </p>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>
+
+
+

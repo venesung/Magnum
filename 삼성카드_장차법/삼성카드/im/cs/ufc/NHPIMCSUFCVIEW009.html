@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_agree_private.png" alt="이용약관" /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">	
+					<ul class="mv_tabType1">
+						<li><a href="javascript:goView('000')">개인회원약관</a></li>
+						<li><a href="javascript:goView('002')">가맹점약관</a></li>
+						<li><a href="javascript:goView('004')">온라인통합약관</a></li>
+						<li class="w240"><a href="javascript:goView('006')">금융서비스-여신거래기본약관(가계용)</a></li>
+						<li class="w170"><a href="javascript:goView('009')">금융서비스-전세론약관</a></li>
+						<li><a href="javascript:goView('001')">법인회원약관</a></li>
+						<li><a href="javascript:goView('003')">웹멤버약관</a></li>
+						<li><a href="javascript:goView('005')">포인트이용기준</a></li>
+						<li class="w240"><a href="javascript:goView('008')">금융서비스-개인신용대출약관</a></li>
+						<li class="w170"><a href="javascript:goView('007')">체크카드회원약관</a></li>
+					</ul>
+							
+				<!-- 100126 
+					<%
+						String tab_index = (request.getParameter("tab_index") == null ? "000" : request.getParameter("tab_index"));
+					%>
+					<!-- tab_area -->
+					<!--div class="tab02 w810 h60">
+						<ul>
+							<li class="<%="000".equals(tab_index)?"on":"" %>"><a href="javascript:goView('000')">개인회원약관</a></li>
+							<li class="<%="001".equals(tab_index)?"on":"" %>"><a href="javascript:goView('001')">법인회원약관</a></li>
+							<li class="<%="002".equals(tab_index)?"on":"" %>"><a href="javascript:goView('002')">가맹점약관</a></li>
+							<li class="<%="003".equals(tab_index)?"on":"" %>"><a href="javascript:goView('003')">웹멤버약관</a></li>
+							<li class="<%="004".equals(tab_index)?"on":"" %>"><a href="javascript:goView('004')">온라인통합약관</a></li>
+							<li class="<%="005".equals(tab_index)?"on":"" %>"><a href="javascript:goView('005')">포인트이용기준</a></li>
+							<% if (("006".equals(tab_index))||("008".equals(tab_index))||("009".equals(tab_index))) {%>
+								<li class="on">
+							<% } else {%>
+								<li class="">
+							<% } %>
+								<a href="javascript:goView('006')">금융서비스약관</a>
+								<% if (("006".equals(tab_index))||("008".equals(tab_index))||("009".equals(tab_index))) {%>
+								<ul class="sub_tab">
+									<li class="<%="006".equals(tab_index)?"on":"" %>"><a href="javascript:goView('006')">여신거래기본약관(가계용)</a></li>
+									<li class="<%="008".equals(tab_index)?"on":"" %>"><a href="javascript:goView('008')">개인신용대출약관</a></li>
+									<li class="<%="009".equals(tab_index)?"on":"" %>"><a href="javascript:goView('009')">전세론약관</a></li>
+								</ul>
+								<%} %>
+							</li>
+							<li class="<%="007".equals(tab_index)?"on":"" %>"><a href="javascript:goView('007')">체크카드회원약관</a></li>
+						</ul>
+					</div-->
+				</div>
+
+				<!-- content_block -->
+				<%
+					String url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C1.html";
+					if("001".equals(tab_index)) 			 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C2.html";
+					else if("002".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C3.html";
+					else if("003".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C4.html";
+					else if("004".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C5.html";
+					else if("005".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C6.html";
+					else if("006".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C7.html";
+					else if("007".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C8.html";
+					else if("008".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C9.html";
+					else if("009".equals(tab_index))		 url = "/cms_content/hp/im/cs/ufc/NHPIMCSUFCVIEW009C10.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+	

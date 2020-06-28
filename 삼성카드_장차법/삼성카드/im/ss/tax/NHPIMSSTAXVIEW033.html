@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+	    <!-- top_visual -->
+	    <div class="top_visual">
+	   	<h1 class="none">지방세 카드납부 서비스</h1>
+	   	<div class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></div>
+	    </div>
+	
+		<!-- content_block -->
+		<div class="content_block content_block_tab2 clfix">
+			<div class="tab01 w810 h60">
+				<ul>
+					<li>
+						<a href="#">지방세납부</a>
+						<ul class="sub_tab">
+							<li><a href="#">지방세 납부안내</a></li>
+							<li><a href="#">지방세 납부하기</a></li>
+							<li><a href="#">지방세 납부 결과조회</a></li>
+						</ul>
+					</li>
+					<li class="on">
+						<a href="#">세정담당자</a>
+						<ul class="sub_tab">
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M001', true);">대사처리</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M002', true);">대사 결과조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M003', true);">단말기 승인내역 조회</a></li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M004', true);">단말기 매입내역 조회</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+		<!-- content_block -->
+		<div class="content_block content_block_card clfix">	<!-- 상단변경 -->
+			<iframe name="sform" width="0" height="0" frameborder="0" title="빈프레임"></iframe>
+			<iframe name="actionIfrm" src="" height="0" width="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" title="빈프레임"></iframe>
+			
+			<form name="searchForm" action="" method="post">
+				<input type="hidden" name="flag" />
+				<input type="hidden" name="oldDateFrom" value="${oldDateFrom}" />
+				<input type="hidden" name="oldDateEnd" value="${oldDateEnd}" />
+				<input type="hidden" name="srchDateFrom" value="${oldDateFrom}" />
+				<input type="hidden" name="srchDateEnd" value="${oldDateEnd}" />
+				<input type="hidden" name="srchDateGubun" value="${srchDateGubun}" />
+				<input type="hidden" name="srchType" value="${srchType}" />
+				<input type="hidden" name="srchText" value="${srchText}" />
+				<input type="hidden" name="typeGubun" value="${typeGubun}" />
+				<input type="hidden" name="typeGubun1" value="${typeGubun1}" />
+				<input type="hidden" name="srchStatus" value="${srchStatus}" />
+				<input type="hidden" name="page" value="${page}" />
+				<input type="hidden" name="taxOrgan" value="${taxOrgan}" />
+				<input type="hidden" name="taxType" value="${taxType}" />
+				<input type="hidden" name="taxPeriod" value="${taxPeriod}" />
+				<input type="hidden" name="distrt" value="${distrt}" />
+				<input type="hidden" name="taxNo" value="${taxNo}" />
+				
+				<input type="hidden" name="scardSystemId" value="tab" />
+			</form>
+			
+			
+			<h2><img src="/images/ss/h2_important_transact01.png" alt="처리할 대사를 조회해 주세요" /></h2>
+			<div class="content_block_inner">
+			
+			
+
+				<!-- d_complete -->
+				<div class="d_alert d_alert_s noline clfix">
+					<p class="ico_alert"><img src="/images/common/img_s_service_com.jpg" alt="" /></p>
+					<div class="p_desc">
+						<h2><img src="/images/ss/txt_cardpay_succ.png" alt="일괄적으로 매입 요청을 처리하시겠습니까?" /></h2>
+					</div>
+				</div>
+
+				<table class="dtable02 dtable_expand mt30" summary="대사결과 상세내역 중 해당기간 총 납부건수와 해당기간 총 납부금액을 확인하는 게시판입니다.">
+				<caption>대사결과 상세내역</caption>
+				<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<th scope="row"><p>해당기간 총 납부건수</p></th>
+						<td><p><span class="t_no">${taxPaymentCnt}</span> 건</p></td>
+						<th scope="row"><p>해당기간 총 납부금액</p></th>
+						<td><p><span class="t_no">${taxPaymentTotalAmt}</span> 원</p></td>
+					</tr>
+					<!-- //loop -->
+				</tbody>
+				</table>
+			<div id="list" style="display:none;">
+			
+			<form name="form" method="post" action="/hp/im/ss/tax/tax002.do?method=allBuyProcess">
+			
+			<input type="hidden" name="flag" />
+			<input type="hidden" name="progress" value="${progress}" />
+			<input type="hidden" name="page" value="${page}" />
+			<input type="hidden" name="listcount" />
+			<input type="hidden" name="list_cnt" value="${taxPaymentCnt}" />
+			
+				<table class="dtable01 dtable_inputfield mt20" >
+				<colgroup><col width="100%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">일괄매입데이터</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						NHPIMSSTAX001VO vo = new NHPIMSSTAX001VO();
+
+						if(rsList.size()<=0){
+					%>
+					<tr class="nodata"><td colspan="9">조회된 내용이 없습니다.</td></tr>
+					<% }else{
+						for(int i=1; i<=rsList.size(); i++){
+							vo = rsList.get(i-1);
+						%>
+						<tr>
+							<td >
+								<input type="hidden" name="payment_no<%=i%>" value="<%=vo.getPaymentNo().replace(",","")%>" />
+								
+								<input type="hidden" name="batch_status<%=i%>" value="<%=vo.getBatchStatus()%>" />
+								
+								<input type="text" name="status<%=i%>" style="width:22px" class="txt" maxlength="2" value="00" title="대사" onchange="chkStatus(this);" onkeyup="lengthCheck('<%=i%>')" />
+								    
+								<input type="hidden" name="origin_status<%=i%>" value="<%if("D00".equals(vo.getStatus().substring(0,3))){
+								    														out.print(vo.getStatus().substring(3,5));
+								    														}else if("B00".equals(vo.getStatus().substring(0,3))){
+								    														}%>" />
+								
+								<input type="hidden" name="reason<%=i%>" value="<%=vo.getCancelReason()%>" />
+							</td>
+						</tr>
+					<%}
+					} %>
+				</tbody>
+				</table>
+				</form>
+			</div>
+			
+				<div class="btnset">
+					<p class="btnr">
+                        <a href="javascript:reqProcess();" class="btn btn_white"><span>일괄매입요청</span></a>
+                        <a href="javascript:goSearch('cancel');" class="btn btn_white"><span>취소</span></a>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

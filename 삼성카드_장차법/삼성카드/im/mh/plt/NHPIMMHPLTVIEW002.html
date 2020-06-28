@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<div class="flag_additional"><img src="/images/mh/img_pla_service01.jpg" class="flag_health_support" alt="" /></div>
+	<h2><img src="/images/mh/h2_pla_service01.png" alt="서비스 안내입니다" /></h2>
+	<div class="content_block_inner">
+		<blockquote><img src="/images/mh/txt_pla_service01.png" alt="프리미엄 옵션서비스·국내선 무료항공권서비스를 조회하실 수 있습니다" /></blockquote>
+		<p class="mt20">삼성클래식플래티늄카드 및 삼성스카이패스플래티늄카드 고객께 제공되는<br />프리미엄 옵션서비스와 삼성골프플래티늄카드 및 삼성에스마일플래티늄카드<br />고객께 제공되는 동반자 국내선 무료항공권서비스의 신청기간과<br />이용실적을 조회하실 수 있습니다.</p>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_pla_service02.png" alt="사용한도입니다" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable01" summary="신청기간, 신청횟수, 연간 신청가능횟수로 구성된 사용한도를 확인할 수 있는 게시판입니다.">
+        <caption>플래티늄서비스 사용한도</caption>
+		<colgroup><col width="30%" /><col width="35%" /><col width="35%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">신청기간</th>
+				<th scope="col" class="cell_r10">신청횟수</th>
+				<th scope="col" class="cell_r10">연간 신청가능횟수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cell_l10 t_no">${APY_S_DT} ~ ${APY_E_DT}</td>
+				<td class="cell_r10 t_no">${APL_TMS}</td>
+				<td class="cell_r10 t_no">${APL_PSB_TMS}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_pla_service03.png" alt="상세내역조회결과입니다" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable01" summary="사용카드, 신청일자, 서비스내용으로 구성된 상세내역 조회 결과입니다.">
+        <caption>상세내역 조회 결과</caption>
+		<colgroup><col width="30%" /><col width="10%" /><col width="60%" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">사용카드</th>
+				<th scope="col">신청일자</th>
+				<th scope="col" class="cell_r10">서비스내용</th>
+<!--				<th scope="col" class="cell_r10">신청호텔</th>-->
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="nodata">
+				<td colspan="3">신청하신 내역이 없습니다.</td>
+			</tr>
+			<tr>
+				<td class="cell_l10 t_no">${CARD_NO_STAR }</td>
+				<td class="t_no">${APL_DT}</td>
+				<td class="cell_r10">${SV_FC_C_NM}${OFR_SV_DTC_NM}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_pla_service04.png" alt="이용방법 안내입니다" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>특급 호텔 2인 뷔페식사권, 국내선 동반자 왕복항공권, 삼성카드 여행 12만원 할인서비스 중 한가지를<br />선택하여 년 1회 이용하실 수 있습니다.</p></li>
+			<li><p>신청가능기간은 최초 카드 발급일 기준으로 매 1년이며, 해당기간 내 신청하지 않으면 연 1회 이용권한은<br />소멸됩니다.</p></li>
+		</ol>
+
+		<div class="line_lgray">&nbsp;</div>
+		<div class="tb_exp clfix">
+			<span class="fl_left"><strong class="t_black">세부 이용기준은 플래티늄카드 상품별 서비스 안내를 참조하여 주십시오.</strong></span>
+			<span class="fl_left mt10">
+				<a href="javascript:goView('P0688')" class="btn btn_white"><span>삼성플래티늄카드 상품안내 &gt;</span></a>
+				<a href="javascript:goView('P0790')" class="btn btn_white"><span>삼성스카이패스플래티늄카드 상품안내 &gt;</span></a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_pla_service04.png" alt="이용방법 안내입니다" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>동반자 국내선 무료항공권서비스는 삼성골프플래티늄카드, 삼성스카이패스플래티늄카드 본인카드를<br />소지하신 고객께 제공됩니다.  (가족카드 소지고객에게는 서비스가 제공되지 않습니다.)</p></li>
+			<li><p>신청가능기간은 최초 카드 발급일 기준으로 매 1년이며, 해당기간내 신청하지 않으면 연 1회 이용권한은<br />소멸됩니다.</p></li>
+		</ol>
+
+		<div class="line_lgray">&nbsp;</div>
+		<div class="tb_exp clfix">
+			<span class="fl_left"><strong class="t_black">세부 이용기준은 플래티늄카드 상품별 서비스 안내를 참조하여 주십시오.</strong></span>
+			<span class="fl_left mt10">
+				<a href="javascript:goView('P0688')" class="btn btn_white"><span>삼성플래티늄카드 상품안내 &gt;</span></a>
+				<a href="javascript:goView('P0790')" class="btn btn_white"><span>삼성스카이패스플래티늄카드 상품안내 &gt;</span></a>
+			</span>
+		</div>
+	</div>
+</div>
+				
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

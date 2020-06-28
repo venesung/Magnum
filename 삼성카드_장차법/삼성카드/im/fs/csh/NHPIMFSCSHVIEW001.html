@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none">현금서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3943_IMG_1.jpg" alt="24시간 생활 속 어디서나 현금서비스 - 밤늦게 갑자기 현금이 필요할 때도 통장에 카드결제대금이 부족할 때도 365일 24시간 바로바로 편리하게!" /></div>
+	<a href="#" class="mv_h1_btn"><img src="/images/fs/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+<!-- top_visual -->
+<!-- content_block -->
+	<form name="form1">
+		<input type="hidden" name="plain" value="" />
+		<input type="hidden" name="loadCnt" value="0" />
+		<input type="hidden" name="ssno" value="" />
+	</form>
+	<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+		<form name="form_main">
+			<!-- tab_area -->
+			<div class="tab01 w810">
+				<ul>
+					<li><a href="javascript:goTab(1);">서비스 안내</a></li>
+					<li class="on"><a href="#">신청</a></li>
+					<li><a href="javascript:goTab(2);">시뮬레이션</a></li>
+					<li><a href="javascript:goTab(3);">이용내역 조회</a></li><!-- SR 12 11 21  -->
+				</ul>
+			</div>
+			<input name="tabNo" type="hidden" />
+		</form>
+	</div>
+	<!-- content_block -->
+	
+	<div class="content_block content_block_card clfix">
+		<!-- section1 start-->
+		<h2><img src="/images/fs/h2_cash_srvc_01.gif" alt="회원님의 이용한도를 알아보세요" /></h2>
+
+		<div class="content_block_inner">
+			<p class="mb10"><strong>2012.02.03</strong> 현금서비스 이용한도 안내입니다.
+					<a href="/mainPage.do?menuId=NHPIMCD030201" class="btn btn_blue" target="_blank" title="새창"><span>상향신청</span></a>
+			</p>
+			<table class="dtable01" summary="이용한도, 이용한금액, 이용가능금액을 보여주는 표입니다">
+				<caption>현금서비스 이용한도 안내</caption>
+				<colgroup>
+				<col width="33%" />
+				<col width="34%" />
+				<col width="33%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">이용한도</th>
+						<th scope="col">이용한금액</th>
+						<th scope="col">이용가능금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span class="t_no">1</span> 원</td>
+						<td><span class="t_no">1</span> 원</td>
+						<td><span class="t_no">1</span> 원</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/>
+		</div>
+	</div>
+		<!-- section1 end--> 
+		<!-- section2 start-->
+		
+		<!-- content_block --> 
+
+		<!-- 100423 -->
+	<div class="content_block content_block_card clfix">
+		<h2><img src="/images/fs/h2_cardloan_cardinfo01.png" alt="카드정보를 입력하세요" /></h2>
+		<div class="content_block_inner fill_joinin" >
+			<p class="mb10">사용하실 카드를 선택하시고 카드정보를 입력하세요.</p>
+			<table class="dtable02" summary="카드번호, 카드비밀번호, 카드CVC번호를 입력하는 게시판입니다">
+				<caption>
+				가입신청정보 입력
+				</caption>
+				<tbody>
+					<tr>
+						<th scope="row" class="cell_l"><p class="not_neccessary">카드번호</p></th>
+						<td colspan="3" class="cell_l">
+							<label for="label_card_type1">
+								<input type="radio" class="chk" id="label_card_type1" name="cardName" value="visa" title="비자/마스터/UnionPay(은련)/자체 카드" checked="checked" onclick="setInputDisable(1);" />
+								&nbsp;비자/마스터/UnionPay(은련)/자체 카드
+							</label>
+							<span class="input_cardno">
+								<span class="pano">XXXX - XXXX - </span> <input type="text" name="cardNo1" value="" maxlength="4" title="카드번호 뒤에서 8자리부터 입력" class="txt" style="width: 38px;" onblur="checkTypesOnBlur(this,'NUMB');" onkeypress="checkTypes(this,'NUMB');" enc="on" />
+								 - <input type="text" name="cardNo2" value="" maxlength="4" class="txt" title="카드번호 뒤에서 4자리부터 입력" style="width: 38px;" onblur="checkTypesOnBlur(this,'NUMB');" onkeypress="checkTypes(this,'NUMB');" enc="on" />
+								&nbsp;<span id="usafeon_cardNo1|cardNo2" style="display: none"></span>
+							</span>
+							<br />
+							<br />
+							<label for="label_card_type2">
+								<input type="radio" class="chk" id="label_card_type2" name="cardName" value="amex" title="아멕스카드" onclick="setInputDisable(2);" />
+								&nbsp;아멕스카드
+							</label>
+							<span class="input_cardno" style="padding-bottom: 0">
+								<span class="pano">XXXX - XXX </span> <input type="text" name="amexcardNo1" maxlength="3" value="" class="txt" title="카드번호 뒤에서 8자리부터 입력" onblur="checkTypesOnBlur(this,'NUMB');" onkeypress="checkTypes(this,'NUMB');" disabled="disabled" enc="on" />
+								 - <input type="text" name="amexcardNo2" maxlength="5" value="" class="txt" title="카드번호 뒤에서 5자리부터 입력" onblur="checkTypesOnBlur(this,'NUMB');" onkeypress="checkTypes(this,'NUMB');" disabled="disabled" enc="on" />
+								<a href="javascript:safeonStartOther('frm1','cardNo1|cardNo2');" class="btn btn_s_white" id="btnVCardNo" title="마우스입력"><span>마우스입력</span></a>
+								<a href="javascript:safeonStartOther('frm1','amexcardNo1|amexcardNo2');" class="btn btn_s_white" id="btnACardNo" title="마우스입력" style="display:none;"><span>마우스입력</span></a>
+								<span id="usafeon_amexcardNo1|amexcardNo2" style="display:none;"></span>
+							</span>
+							<p class="t_desc03 mt10 ml110">카드번호 뒤 8자리를 입력해 주십시오.</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l"><p class="not_neccessary">카드비밀번호</p></th>
+						<td colspan="3" class="cell_l">
+							<span class="input_cardpassword">
+								<input id="cardIndex" class="txt" type="password" title="카드비밀번호 앞 두자리 입력" maxlength="2" value="" name="cardIndex" style="width:50px;" enc="on" /> XX
+							</span>
+							<span class="t_desc04 ml10">카드비밀번호 앞 2자리 </span>&nbsp;&nbsp;
+							<span id="usafeon_cardIndex"></span>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="cell_l"><p class="not_neccessary">카드CVC번호</p></th>
+						<td colspan="3" class="cell_l" style="position:relative; *z-index:1;">
+							<span class="input_cardpassword"><input id="cvcNumb" class="txt" type="password" title="카드CVC번호" maxlength="3" value="" name="cvcNumb" style="width:50px;" enc="on" /></span>
+							<span class="t_desc04 ml10">카드 CVC번호 3자리</span>&nbsp;&nbsp; <a href="#" class="a_point" onclick="view_cvc(); return false;" >CVC번호안내</a>&nbsp;&nbsp;
+							<span id="usafeon_cvcNumb"></span>
+<!--CVC 보는방법안내 start-->
+	<div class="pop_l_wrap" style="width:660px;height:370px;display:none; position:absolute; top:-204px; left:-145px;" id="cvcNo">
+		<div class="img_l_pop flag_tl"> </div>
+		<div class="img_l_pop flag_tr"> </div>
+		<div class="img_l_pop flag_bl"> </div>
+		<div class="img_l_pop flag_br"> </div>
+		<input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.style.display='none';" value="레이어닫기" title="CVC 보는방법안내 레이어 닫기" />
+		<p class="pop_tit"><img src="/images/fs/layer_tit_fs09.png" alt="CVC 보는방법안내" /></p>
+		<div class="pop_l_content">
+			<p class="pop_stit"><img src="/images/fs/layer_tit_fs10.png" alt="CVC번호 보는방법 - CVC 번호도 비밀번호와 마찬가지로 중요한 회원님의 정보입니다. 타인에게 누출되지 않도록 주의해 주세요." /></p>
+			<p class="pop_stit mt30"><img src="/images/fs/layer_ct_fs01.png" alt="CVC보는방법 이미지" /></p>
+			<ul class="conts_hidden">
+				<li>비자/마스터/국내용 카드 1 - 카드 뒷면 19자리 숫자 중 끝 3자리</li>
+				<li>비자/마스터/국내용 카드 2 - 카드 뒷면 7자리 숫자 중 끝 3자리</li>
+				<li>아멕스 카드 - 카드 뒷면 18자리 숫자 중 끝 3자리</li>
+			</ul>
+		</div>
+		<p class="btnc  mt30"><a href="#" onclick="this.parentNode.parentNode.style.display='none';  return false;"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+	</div>
+<!--CVC 보는방법안내 end--> 
+
+<!-- 오류메세지 -->
+<div id="msgLayer" style="display:none;" >
+<div class="pop_l_wrap" style="width:320px;height:185px;" id="cardNoErrLayer">
+<div class="img_l_pop flag_tl"> </div>
+<div class="img_l_pop flag_tr"> </div>
+<div class="img_l_pop flag_bl"> </div>
+<div class="img_l_pop flag_br"> </div>
+<div class="pop_l_content ct" style="text-align:center;">
+	<div class="pop_l_alert03 mt50">
+		<p class="tc" id="msgLayerMsg">카드번호를 잘못 입력하셨습니다.<br/>
+			확인하시고 다시 입력해 주시기 바랍니다.</p>
+		<p class="btnc"><a href="javascript:closeLayer('msgLayer');" class="btn btn_blue mt25" id="msgLayerConfirm"><span>확인</span></a></p>
+	</div>
+</div>
+</div>
+</div>
+<!-- 오류메세지 -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- section2 end-->
+
+	<div class="content_block content_block_card clfix">
+	<!-- section3 start-->
+			<h2><img src="/images/fs/h2_cash_requst01.png" alt="신청내용을 입력하세요" /></h2>
+			<div class="content_block_inner fill_joinin">
+				<p class="mb10">현금서비스 신청 내용을 입력하세요</p>
+				<table class="dtable02" summary="신청금액, 상환방법, 할부기간, 은행명, 계좌번호 정보를 작성하는 게시판입니다.">
+					<caption>현금서비스 신청내용 입력</caption>
+					<tbody>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">신청금액</p></th>
+							<td colspan="3" class="cell_l">
+								<input name="ableAmt" type="text" class="txt" value="" title="신청금액" id="ableAmt" maxlength="30" style="width:100px:" /> 만원
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">상환방법</p></th>
+							<td colspan="3" class="cell_l"><label>
+									<input type="radio" class="chk" name="cashHire" value="N" title="일시상환" onclick="cashHireChk(this.value);" />
+									&nbsp;일시상환</label>
+								<label>
+									<input type="radio" class="chk" name="cashHire" value="Y" title="할부상환" onclick="cashHireChk(this.value);" checked="checked" />
+									&nbsp;할부상환</label></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">할부기간</p></th>
+							<td colspan="3" class="cell_l"><p class="input_birth">
+									<select name="instalmentMonth" title="할부기간 달 선택" id="instalmentMonth" style="width:120px;">
+										<option value="" selected="selected">선택</option>
+										<option value="0006">6</option>
+										<option value="0005">5</option>
+										<option value="0004">4</option>
+										<option value="0003">3</option>
+										<option value="0002">2</option>
+									</select>
+									&nbsp;(최장 6개월까지 분할상환 선택 가능합니다.)</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">은행명</p></th>
+							<td colspan="3" class="cell_l"><p class="input_birth">
+									<select name="bankName" title="은행선택" id="bankName" style="width:200px;" onchange="checkBank();">
+											<option value="" >선택</option>
+					                        <option></option>
+									</select>
+							</p></td>
+						</tr>
+						<tr>
+							<th scope="row" class="cell_l"><p class="not_neccessary">계좌번호</p></th>
+							<td colspan="3" class="cell_l">
+								<input name="accountNo" type="text" class="txt" value="" title="계좌번호" id="accountNo" maxlength="30" style="width:200px" enc="on" />
+								<span id="usafeon_accountNo"></span>
+								<p class="t_desc03 mt10">계좌번호 자동이체계좌입니다. 본인명의 다른 계좌로도 입금 가능합니다.</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="btnset">
+					<p class="btnr"> <a href="javascript:frm1.reset()" class="btn btn_white"><span>다시작성</span></a> 
+						 <!-- a href="#" class="btn btn_blue" onclick="checkForm();return false();"><span>다음</span></a> </p-->
+						 <a href="javascript:checkForm();" class="btn btn_blue"><span>다음</span></a> </p>
+				</div>
+				
+				<div class="line_lgray"></div>
+	 
+				<ol class="list_no01">
+					<li><p>입금받으실 은행의 시스템 작업 또는 장애시 입금 지연 또는 취소 될 수 있습니다.</p></li>
+					<li><p>굿캐쉬 회원의 경우 기존에 안내해 드린 굿캐쉬 한도 내에서 이용하신 금액(현금서비스,대출)만큼 차감됩니다.</p></li>
+				</ol>
+			</div>
+
+	</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

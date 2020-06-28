@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_anypass_point_uselist.png" alt="빅앤빅 애니패스/지엔미 포인트카드 연간사용실적입니다." /></h1>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_anypass_point_uselist01.png" alt="연간사용실적을 조회하세요" /></h2>
+					<div class="content_block_inner">
+
+						<ol class="list_no01">
+							<li><p>본인 명의로 발급 받으신 <span class="t_black">모든 대상카드(가족카드 포함)의 합계 실적</span>을 조회하실 수 있습니다.<br />단, 빅앤빅, 애니패스포인트, 지엔미포인트카드 계열별로 각각 별도 합산됩니다.</p></li>
+							<li><p>매년 <span class="t_black">1/1~12/31일</span>까지의 당사 일시불+할부 합계금액 기준입니다. (당사 매출표 접수 기준)</p></li>
+							<li><p>해외, 통신료 자동이체, 교통카드 및 기타 실거래 승인이 아닌 매출도 매출표 접수일 기준으로 포함됩니다.</p></li>
+							<li><p>변경된 적립률은 <span class="t_black">해당 매출표가 접수된 다음날</span>부터 적용됩니다.</p></li>
+						</ol>
+
+						<table class="dtable02 dtable_inputfield mt30" summary="연간사용실적을 조회를 위해 조회년도를 선택하는 게시판입니다.">
+						<caption>연간사용실적 조회년도 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>조회년도 선택</p></th>
+								<td><p>
+									<select name="srch_year" title="조회년도 선택">
+										<option>00</option>							
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnr">
+                            <a href="javascript:fnSearch();" class="btn btn_blue"><span>조회</span></a>
+						</div>
+
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_anypass_point_uselist02.png" alt="해당 카드의 연간사용실적입니다" /></h2>
+					<div class="content_block_inner">
+
+						<table id="bagHistoryRtnList" class="dtable01 dtable01_bill" summary="상품명, 이용기간, 이용금액, 포인트적립으로 구성된 연간사용실적 조회결과입니다.">
+						<caption>연간사용실적 조회결과</caption>
+						<colgroup><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">상품명</th>
+								<th scope="col">이용기간</th>
+								<th scope="col" class="cell_r10">이용금액</th>
+								<th scope="col" class="cell_r10">포인트적립</th>
+							</tr>
+						</thead>
+						<tbody>						
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">00</td>
+								<td>00 ~ 00</td>
+								<td class="cell_r10">00</td>
+								<td class="cell_r10">00 ~ 00 %</td>
+							</tr>
+							<!-- //loop -->	
+							<tr class="nodata"><td colspan="4">조회 결과가 없습니다.</td></tr>
+						</tbody>
+						</table>
+
+					</div>
+					<!-- paginate -->
+					<div class="paginate">
+						<div class="paging">
+							<a id="btnMore" href="javascript:getMoreList()" class="btn btn_s_white" style="display:none;"><span>다음</span></a>
+						</div>
+					</div>						
+				</div>	
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>																			

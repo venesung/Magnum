@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_usebill_chk0910before.png" alt="체크카드 이용대금 명세서입니다" /></h1><!-- 100317 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_m0 clfix">
+	<div class="pt30">
+		<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+			<p><a href="javascript:goTabPage('NHPIMCKB');" class="default" onclick="return false;">체크카드</a></p>
+			<div class="childlayer">
+				<ul>
+					<li><a href="javascript:goTabPage('NHPIMCKB', true);">체크카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHCIB');">법인카드</a></li>
+					<li><a href="javascript:goTabPage('NHPIMMHPIB001');">개인카드</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="selectbox_r_txt">개인카드, 법인카드, 체크카드를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+	</div>
+</div>
+<!-- 100306 -->
+<!-- content_block -->
+<div class="content_block content_block_tab clfix">
+	<div class="tab01 w810">
+		<ul>
+			<li class="on"><span class="none">현재탭</span><a href="javascript:send2();">주요정보</a></li><!-- choose -->
+			<li><a href="javascript:send();">이용내역</a></li>
+			<!-- <li><a href="#">현황요약</a></li> 100317 -->
+		</ul>
+	</div>
+
+
+	<h2><img src="/images/mh/h2_inqury_card.png" alt="조회하실 카드를 선택해 주세요" /></h2>
+	<div class="content_block_inner">
+		<table class="dtable02 dtable_inputfield" summary="카드를 선택 할 수 있는 게시판입니다">
+		<caption> 카드선택</caption>
+		<colgroup><col width="20%" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select title="카드번호 선택" name="cardList" id="label_ch_card" style="width:360px" onchange="getChkBillDateByJQuery(this.value);">
+						<option>00</option>
+					</select>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>결제월</p></th>
+				<td><p></p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="btnset">
+			<p class="btnr"><a class="btn btn_blue" href="javascript:search();"><span>조회</span></a></p>
+		</div>
+	</div>
+</div>
+
+<!-- content_blcok -->
+<div class="content_block clfix">
+<!-- //100306 -->
+	<h2><img src="/images/mh/h2_duepay01.png" alt="입금하실 금액을 확인하세요" /></h2>
+	<div class="content_block_inner">
+		<!-- duepay_top 100317 -->
+
+		<!-- duepay-->
+		<div class="d_duepay d_duepay_past">
+			<!-- d_duepay_l -->
+			<div class="d_duepay_l">
+			<table class="dtable01" summary="전월 미결제금액, 당월 청구금액, 자유결제 최소결제 금액을 알 수 있는 게시판입니다">
+				<caption>결제예정금액</caption>
+				<colgroup><col width="60%" /><col width="40%" /></colgroup>
+				<tfoot>
+					<tr class="btm02">
+						<td class="cell_l10">합계</td>
+						<td class="cell_r10"><em class="t_point_org">0</em></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<!-- last_month -->
+						<tr>
+						<th scope="col" colspan="2" class="cell_l10"><strong>미리 입금하신금액</strong></th>
+					</tr>
+
+					<tr>
+						<td scope="row" class="cell_l10">미리 입금하신금액</td>
+						<td class="cell_r10  t_no">0원</td>
+					</tr>
+					<tr>
+					<td scope="row" class="cell_l10 boline_b0">소계</td>
+						<td class="cell_r10 boline_b0  t_no">0원</td>
+					</tr>
+					<!-- last_month -->
+					<tr>
+						<td scope="row" class="cell_l10">일시불</td>
+						<td class="cell_r10  t_no">0원</td>
+					</tr>
+					<tr>
+						<td scope="row" class="cell_l10">현금서비스</td>
+						<td class="cell_r10  t_no">원</td>
+					</tr>
+					<tr>
+						<td scope="row" class="cell_l10 boline_b0">소계</td>
+						<td class="cell_r10 boline_b0 t_no">원</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<!-- d_duepay_r -->
+			<div class="d_duepay_r">
+				<!-- tab_content -->
+				<div class="tab_con02 tab_con03 mt0">
+					<p class="mb20"><img src="/images/mh/txt_thx_for_mems.png" alt="회원님께 드리는 안내말씀" /></p>
+					<strong class="t_black"></strong>
+					<p class="mt20">0000000000000</p>
+				</div>
+			</div>
+			<div class="btnset">
+				<p class="btnl">
+					<a href="javascript:goTabPage('NHPIMMHPIT001');" class="btn btn_white"><span>포인트 상세조회 &gt;</span></a>
+					<a href="javascript:goTabPage('NHPIMCD030203');" class="btn btn_white"><span>카드 사용한도 &gt;</span></a>
+					<a href="javascript:goTabPage('NHPIMMHEPP006');" class="btn btn_white"><span>이메일 명세서 신청 &gt;</span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 100317_보유포인트삭제 -->
+
+<!-- 100126 -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_checkcard_info01.png" alt="체크카드 알차게 사용하는 법을 알려드립니다" /></h2>
+	<div class="content_block_inner">
+
+		<ul class="list_card_detail_info">
+			<!-- loop -->
+			<li>
+				<div class="p_photo"><img src="/images/mh/ico_info_airticket.jpg" alt="" /></div>
+				<div class="p_desc">
+					<p class="p_tit">항공권 5~8% 할인</p>
+					<ol class="list_no01">
+						<li><p>삼성카드 여행에서 항공권 예약시 <span class="t_point_org">국제선 8%, 국내선 아시아나 5%</span> 할인</p></li>
+						<li><p>예약문의 : 삼성카드 여행 (<a href="https://travel.samsungcard.com" class="btn_link" target="_blank" title="삼성카드 여행 새창">travel.samsungcard.com</a>) 1688-8200<br /><span class="t_desc03 pt5">일부 항공사는 제외될 수 있으므로, 예약시 사전확인 필요</span></p></li>
+					</ol>
+				</div>
+			</li>
+			<!-- //loop -->
+			<li class="noline">
+				<div class="p_photo"><img src="/images/mh/ico_info_lottery.jpg" alt="" /></div>
+				<div class="p_desc">
+					<p class="p_tit">최고 15%까지 소득공제 혜택, 최고 1천만원 복권당첨 기회</p>
+					<ol class="list_no01">
+						<li><p>연말 정산 시 당해 과세년도 <span class="t_point_org">총급여액의 15% 초과 금액의 15%</span>를 근로소득금액에서 공제<br /><span class="t_desc03 pt5">5백만원과 총급여액의 20% 해당 금액 중 적은 금액 한도 이내</span></p></li>
+						<li><p>매월 국세청 주관 체크카드 영수증 복권제도를 통해 최고 1천만원 복권 당첨금 지급<br /><span class="t_desc03 pt5">* 정부정책에 따라 상기내용은 변경될 수 있습니다.</span></p></li>
+					</ol>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- 100317 -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_checkcard_info05.png" alt="체크카드 이용안내입니다" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>체크카드는 제휴은행 예금계좌 잔액 내에서 사용하실 수 있는 카드로,<br />결제하신 금액은 거래 즉시 결제계좌에서 출금됩니다.</p></li>
+			<li><p>체크카드는 삼성카드 가맹점에서 일시불 결제시에 한하여 이용하실 수 있습니다.<br />
+				<span class="t_desc03 pt5">단, 항공사 기내판매 등 일부가맹점에서 이용이 제한될 수 있습니다.</span></p></li>
+			<li><p>체크카드 분실 시 즉시 당사(지역번호없이 1588-8900)와 제휴사 양사에 각각 신고하셔야 합니다.</p></li>
+			<li><p>해외 가맹점에서 체크카드 이용 시 소정의 수수료(<span class="t_point_org">이용금액의 1%</span>)가 부과되어 당사에 US $ 로 접수됩니다.</p></li>
+		</ol>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix"><!-- 100512 -->
+	<h2><img src="/images/mh/h2_checkcard_info03.png" alt="제휴사별 체크카드 이용제한시간 입니다" /></h2>
+	<div class="content_block_inner">
+		<!-- duepay-->
+		<div class="d_checkcard">
+			<!-- d_duepay_l -->
+			<div class="d_checkcard_l mr20">
+				<table class="dtable01" summary="제휴사, 제한시간으로 구성된 제휴사별 체크카드 이용제한시간">
+				<caption>제휴사별 체크카드 이용제한시간 게시판</caption>
+				<colgroup><col width="20%" /><col width="*" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">제휴사</th>
+						<th scope="col" class="cell_l10">제한시간</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10">동양증권</td>
+						<td class="cell_l10 t_no">05:00 ~ 05:05</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">SC제일</td>
+						<td class="cell_l10 t_no">00:00 ~ 00:30</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">CJ투자증권</td>
+						<td class="cell_l10 t_no">05:00 ~ 05:05</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">우리은행</td>
+						<td class="cell_l10 t_no">00:00 ~ 00:20 <br />단, 금요일은 00:30분 까지<br />2주차 토요일 23:50 ~ 익일 06:00</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
+			<!-- d_duepay_r -->
+			<div class="d_checkcard_l">
+				<table class="dtable01" summary="제휴사, 제한시간으로 구성된 제휴사별 체크카드 이용제한시간">
+				<caption>제휴사별 체크카드 이용제한시간 게시판</caption>
+				<colgroup><col width="20%" /><col width="*" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10">제휴사</th>
+						<th scope="col" class="cell_l10">제한시간</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="cell_l10">우체국</td>
+						<td class="cell_l10 t_no">00:00 ~ 00:10 / 04:00</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">미래에셋증권</td>
+						<td class="cell_l10 t_no">22:00 ~ 익일 07:30</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">새마을금고</td>
+						<td class="cell_l10 t_no">00:00 ~ 00:30</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">삼성증권</td>
+						<td class="cell_l10 t_no">04:05 ~ 07:05 / 23:00 ~23:40</td>
+					</tr>
+					<tr>
+						<td class="cell_l10">한국투자증권</td>
+						<td class="cell_l10 t_no">(평일 토요일) 06:00 ~ 07:30<br />22:00 ~ 22:30</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix"><!-- 100512 -->
+	<h2><img src="/images/mh/h2_checkcard_info04.png" alt="보너스포인트 이용안내입니다" /></h2>
+	<div class="content_block_inner">
+		<ol class="list_no01">
+			<li><p>보너스포인트, 빅포인트, 서비스포인트는 전국 5만여 보너스클럽에서 합산하여 사용하실 수 있습니다.<br />(1포인트는 1원 상당)<br />
+				   <span class="t_desc03">각 포인트의 적립 및 사용에 관한 자세한 내용은 홈페이지 내 포인트 이용기준을 참조하시기 바랍니다.</span></p></li>
+			<li><p>포인트의 유효기간은 보너스포인트 5년, 빅포인트 3년, 서비스포인트 1년이며 유효기간 내 미사용 시<br />자동 소멸됩니다.</p></li>
+			<li><p>상기 포인트는 양도, 상속의 대상이 아니며 연체·거래정지 등의 경우 포인트 사용이 제한됩니다.<br />
+				   상기 포인트는 카드이용계약이 해지, 해제 또는 이용자의 사망 등으로 종료하는 때 소멸됩니다.</p></li>
+		</ol>
+	</div>
+</div>
+<!-- //100317 -->
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

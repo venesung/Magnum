@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- //100219 -->
+					<div class="tab02 w810 h60">
+						<ul>
+						
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+							
+							
+                            <!--li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a>
+								<ul class="sub_tab">
+									<li class="on"><a href="javascript:goTabPage('NHPIMMHHSV005','true');">약정금액변경</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV006','true');">캐시백/포인트/카드대금 선택하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV007','true');">환불하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHHSV008','true');">환불결과조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card">
+					<!-- d_complete 100126 -->
+					<div class="d_alert clfix">
+						<p class="ico_alert"><img src="/images/common/img_service_chan.jpg" alt="" /></p>
+						<div class="p_desc">
+							<h2><img src="/images/mh/txt_change_living_ftech.png" alt="생활비재테크 서비스 약정금액이 변경되었습니다." /></h2>
+							<div class="txt">
+								생활비재테크서비스 약정금액이
+								1원에서 <strong class="t_black">2</strong>원으로 변경되었습니다.
+							</div>
+							
+							<div class="txt">
+								회원님은 (선불약정금액 - 충전잔고)의 금액인 차액 <u>3</u> 원이 발생하여,영업일 기준 다음날에 자동이체계좌로 입금처리하여 드립니다.
+							</div>
+							
+							<div class="txt">
+								<p class="t_desc04">변경된 약정금액 적용일은 <span class="t_black">
+								1975년 1월 1일
+								</span>부터 입니다.</p>
+							</div>
+							<div class="txt">
+                                생활비재테크서비스를 바로 사용하시려면,  <a href="javascript:goTabPage('NHPIMMHHSV003','true');" class="btn_link">즉시충전</a> (바로 옮겨놓기)를 하세요.<br />지금 바로 옮겨놓으시겠습니까?
+							</div>
+							<div class="btnl">
+                                <a href="javascript:goTabPage('NHPIMMHHSV003','true');"><img src="/images/common/btn_charging.png" alt="즉시충전하기" /></a>
+							</div>
+							<div class="btnr mb30">
+								<a class="btn btn_blue" href="javascript:goTabPage('NHPIMMHINFO2','true');"><span>확인</span></a>
+							</div>	
+						</div>
+					</div>
+					<!-- //d_complete 100126 -->
+				</div>
+				
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

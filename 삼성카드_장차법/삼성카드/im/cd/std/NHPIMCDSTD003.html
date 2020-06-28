@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_s_trend.png" alt="삼성카드 2 / 2+ 이용내역 입니다" /></h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<form name="form1" method="post" action="">
+
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M001','false');">카드이용실적확인</a></li>
+            <li><a href="javascript:goTabPage('NHPIMCDSTD001M002','false');">모바일기프트카드 SMS...</a></li>
+            <li class="on"><a href="javascript:goTabPage('NHPIMCDSTD001M003','false');" style="padding:0 6px 0 3px;">프리미엄기프트 이용내역</a></li>
+		</ul>
+	</div>
+
+	<h2><img src="/images/mh/h2_s_trend_gift01.png" alt="카드를 선택하세요" /></h2>
+	<div class="content_block_inner">
+		<p class="t_point">카드번호를 선택하시면, 고객님의 프리미엄기프트 이용내역을 조회하실 수 있습니다.</p>
+		<table class="dtable02 dtable_inputfield mt10" summary="카드선택 후 조회년도선택하면 카드이용내역 조회를 하실 수 있습니다.">
+		<caption>카드 이용내역 조회</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>카드선택</p></th>
+				<td><p>
+					<select name="sCard" title="카드종류 선택" style="width:370px">
+						<option></option>
+					</select>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><p>조회년도</p></th>
+				<td><p>
+					<select name="sYear" title="조회년도 선택" style="width:100px">
+						<option></option>
+					</select>
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div class="btnr">
+			<!-- 100126 -->
+            <a href="javascript:srchUseList('firstPage');" class="btn btn_blue"><span>조회</span></a>
+			<!-- //100126 -->
+		</div>
+
+	</div>
+</form>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+	<h2><img src="/images/mh/h2_s_primium.png" alt="프리미엄기프트카드 이용내역 입니다" /></h2>
+	<div class="content_block_inner">
+
+		<p class="t_point">삼성카드 2 / 2+ 프리미엄기프트 서비스 이용내역 입니다</p>
+		<table class="dtable02 dtable_inputfield mt10" summary="프리미엄기프트 사용가능여부 및 최초카드 발급월 등 서비스 이용내역 조회가 가능합니다. ">
+		<caption>삼성카드 2 / 2+ 프리미엄기프트 서비스 이용내역</caption>
+		<colgroup><col width="115" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>프리미엄기프트<br/> 사용가능여부</p></th>
+				<td style="padding:15px 0 0 0">
+					<p>
+						<label for="label_region01" class="mr10"><input type="checkbox" class="rdo" id="label_region01" name="id_region" onclick="return false;" title="백화점" /> 백화점 </label>
+						<label for="label_region02"><input type="checkbox" class="rdo" id="label_region02" name="id_region" onclick="return false;"  title="면세점" /> 면세점</label>
+						<label for="label_region03"><input type="checkbox" class="rdo" id="label_region03" name="id_region" onclick="return false;"  title="외식" /> 외식</label>
+						<label for="label_region04"><input type="checkbox" class="rdo" id="label_region04" name="id_region" onclick="return false;"  title="아울렛" /> 아울렛</label>
+						<label for="label_region05"><input type="checkbox" class="rdo" id="label_region05" name="id_region" onclick="return false;"  title="여행" /> 여행</label>
+
+					</p>
+				</td>
+			</tr>
+			
+			<tr>
+				<th scope="row"><p>최초카드 발급월</p></th>
+				<td><p>0</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="d_easy mt10">
+			<table class="dtable01 dtable01_bill mt5" summary="삼성카드 2 / 2+ 프리미엄기프트 서비스 이용내역으로 제공기프트, 이용일시, 카드번호, 이용가맹점, 이용금액, 할인금액으로 구성되어 있습니다.">
+			<caption>삼성카드 2 / 2+ 프리미엄기프트 서비스 이용내역</caption>
+			<colgroup><col width="15%" /><col width="14%" /><col width="20%" /><col width="18%" /><col width="18%" /><col width="15%" /></colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="cell_l10">제공기프트</th>
+					<th scope="col" class="blNone">이용일시</th>
+					<th scope="col" class="blNone">카드번호</th>
+					<th scope="col" class="blNone">이용가맹점</th>
+					<th scope="col" class="cell_r10 blNone">이용금액</th>
+					<th scope="col" class="cell_r10 blNone">할인금액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="cell_l10">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="blNone">0</td>
+					<td class="cell_r10 blNone">0</td>
+					<td class="cell_r10 blNone">0</td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<div class="paginate">
+				<div class="paging">
+                    <a href="javascript:srchUseList('prePage');" class="btn btn_s_white"><span>이전</span></a>
+                    <span> </span><a href="javascript:srchUseList('nextPage');" class="btn btn_s_white"><span>다음</span></a>
+				</div>
+			</div>
+
+			<div class="t_desc04 mt10 ml10">
+			<br/>
+			1. 카드 최초발급일 기준 1년간 대상 가맹점에서 건당 10만원 이상 최초 이용시 2만원 청구 할인됩니다.<br/>
+			2. 각 기프트 유형별 1회씩 할인 받으실 수 있습니다.<br/>
+			3. 할인 적용된 매출 취소시, 취소매출 접수 이후 대상 가맹점을 이용하신 내역부터 할인이 가능합니다.<br/>
+			4. 백화점/마트의 임대매장 및 일부 매장은 제휴사 사정에 따라 적립 제외될 수 있습니다. (ex. 상품권 구매 제외)<br/>
+			5. 여행의 경우 삼성카드 여행센터 내 해외 및 국내여행 상품만 해당됩니다. (항공권 구매 제외)
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+		

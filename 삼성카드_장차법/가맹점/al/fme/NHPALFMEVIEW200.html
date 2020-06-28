@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>아이디/비밀번호 찾기 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+                <div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;가맹점주 웹회원&nbsp;&gt;&nbsp;아이디/비밀번호 찾기</div>
+				<h1><img src="/images/al/h1_find_idpw.png" class="png24" alt="아이디/비밀번호 찾기" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_find_idpw.png" class="png24" alt="웹회원 아이디/비밀번호를 확인/수정 하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p>				
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_find_idpw.png" alt="가맹점 웹회원 여부를 확인하실 수 있습니다" /></h2></div>
+					<div class="content_block_inner">
+						<p><img src="/images/al/txt_find_idpw2.png" alt="하이픈 “-” 없이 다음 사항을 정확히 입력해 주세요." /></p>
+						<div class="line_lgray">&nbsp;</div>
+						<fieldset class="find_id mt30">
+							<legend>비밀번호찾기</legend>
+							<dl>
+								<dt><label for="label_merchant_num" class="t_12">가맹점 번호</label></dt>
+								<dd><span class="bg_input"><input type="text" name="chainNo" value="" title="아이디" id="label_merchant_num" style="width:257px" maxlength="12" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /><em>&nbsp;</em></span><span class="ml10 t_desc04">가맹점번호 8자리 이상</span></dd>
+								<dt><label for="label_business_num">사업자 등록번호</label></dt>
+								<dd><span class="bg_input"><input type="text" name="businessNo" value="" title="사업자 등록 번호" id="label_business_num" style="width:257px" maxlength="10" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB');" /><em>&nbsp;</em></span><span class="ml10 t_desc04">사업자번호 10자리 이상</span></dd>
+								<dt><label for="label_business_jumin">사업자 주민번호</label></dt>
+								<dd class="pos_rel">
+									<span class="bg_input">
+										<input type="password" name="idenNo" value="" title="사업자 주민 번호" id="label_business_jumin" style="width:163px" maxlength="13" onKeyDown="checkEnter();" enc="on" /><em>&nbsp;</em></span><span class="t_desc04 ab_tr">주민번호 13자리<br />(법인가맹점인 경우는 법인등록번호 13자리)<!-- style="width:257px" onKeyPress="checkTypes(this,'NUMB');" onBlur="checkTypesOnBlur(this, 'NUMB'); -->
+									</span>
+									<a href="javascript:safeonStartOther('frm', 'idenNo');" ><img src="/images/ms/btn_input_mouse.png" alt="마우스입력" /></a>
+									<span id="usafeon_idenNo" style="display:none;"></span>
+								</dd>
+							</dl>
+						</fieldset>
+						<div class="line_lgray">&nbsp;</div>
+						<div class="btnr">
+							<a href="javascript:selectChainId();" class="btn btn_blue"><span>확인</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

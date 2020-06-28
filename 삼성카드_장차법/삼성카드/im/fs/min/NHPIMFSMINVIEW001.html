@@ -1,0 +1,30 @@
+
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">원금 10%만, 부담없고 간편한 현금서비스 미니결제</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab01 w810">
+		<ul>
+            <li class="on"><span class="none">현재단계</span><a href="#">서비스안내</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSMIN001M002', true);">미니결제신청</a></li>
+            <li><a href="javascript:goTabPage( 'NHPIMFSMIN001M005', true);">신청결과조회</a></li>                            
+		</ul>
+	</div>
+</div>
+<!--cms_content시작-->
+<cms:include page="${result.targetPath}/${result.contentId}_hp_fi_view.html" flush="false"/>
+<!--cms_content시작-->
+				
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp" %>

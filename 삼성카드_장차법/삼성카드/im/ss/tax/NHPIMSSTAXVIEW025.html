@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="tab_title"></div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_header.jsp"%>
+<%
+	String organ = (String)request.getAttribute("organ") != null ? (String)request.getAttribute("organ") : "";
+	String payment_no = (String)request.getAttribute("payment_no") != null ? (String)request.getAttribute("payment_no") : "";
+	String sApprovalNo = (String)request.getAttribute("sApprovalNo") != null ? (String)request.getAttribute("sApprovalNo") : "";
+%>
+<!-- tab_script -->
+<div id="tab_script">
+<script type="text/javascript">
+function popup(allat_order_no,payment_no) {
+    var pop = window.open("/hp/im/ss/tax/tax001.do?method=getTaxPaymentListForPrint&allat_order_no="+allat_order_no+"&payment_no="+payment_no,"winName","width=470,height=625,scrollbars=no,toolbar=no,status=no,resize=no,menubar=no");
+   // pop.focus();
+}
+function gonext(organ, payment_no,approval_no){
+	
+    alert('처리가  정상적으로 완료되었습니다.');
+    popup(approval_no, payment_no);
+    goTabPage("NHPIMSSTAX001M003",true);
+    //tabSubmit("/hp/im/ss/tax/tax001.do?method=getTaxPayment&organ="+organ,document.initform);
+    
+}
+function $tabOnLoad() {
+	// Tab OnLoad Event (Body 테그의 OnLoad Event 함수 역할)
+	toggleLoading();
+	gonext('<%=organ %>','<%=payment_no %>','<%=sApprovalNo %>')
+}
+
+</script>
+</div>
+<!-- top_visual -->
+<div class="top_visual">
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+<form name="initform">
+</form>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix"></div>
+
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

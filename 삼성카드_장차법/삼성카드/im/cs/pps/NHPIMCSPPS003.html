@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>카드생활 백서 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<script type="text/javascript">
+//상세페이지
+	function goDetail(seq,newSeq){
+		document.frm.cPage.value=1;
+		document.frm.pageSize.value = 10;
+		document.frm.seqNo.value = seq;			 
+		document.frm.newSeq.value = newSeq;		
+		document.frm.action="/hp/im/cs/pps.do?method=getUseSayDetail";
+		document.frm.target="iframe";
+		document.frm.submit();
+	}
+
+	function goList(){
+		//alert(	document.frm.cPage.value);
+		document.frm.action="/hp/im/cs/pps.do?method=getUseSayList";
+		document.frm.target="iframe";
+		document.frm.submit();
+	}
+	function goEdit(str,seq){
+		document.frm.editFlag.value=str;
+		document.frm.seqNo.value=seq;
+		document.frm.action="/hp/im/cs/pps.do?method=editUseSay";
+		document.frm.target="iframe";
+		document.frm.submit();
+	}
+
+	function updateUseSayCom(seq){
+		document.frm.seqNo.value = seq
+		document.frm.action="/hp/im/cs/pps.do?method=updateUseSayCommend";
+		document.frm.target="hiddenFrame";
+		document.frm.submit();
+	}
+
+	function goDelete(seq){
+		if(confirm("삭제하시겠습니까?")){
+			document.frm.seqNo.value = seq
+			document.frm.action="/hp/im/cs/pps.do?method=deleteUseSay";
+			document.frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form name="frm" method="post" >
+				<!-- content_block -->
+				<div class="content_block content_block_m0 first_none clfix" style="margin-left:0px;">
+					<h2><img src="/images/cs/h2_cardlife_view.png" alt="카드생활 백서 상세내용입니다" /></h2>
+					<div class="content_block_inner">			
+						<!-- board_view -->
+						<div id="cs">
+						<div class="board_view">
+							<table class="dtable01" summary="카드생활 백서 상세내용을 확인하는 게시판입니다.">
+							<caption>카드생활 백서</caption>
+							<colgroup><col width="*" /><col width="240" /></colgroup>
+							<thead>
+								<tr>
+									<th colspan="2"><strong class="t_point">[<%=vo.getThemeName() %>]</strong> <%=vo.getModifyTitle()%></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th><%=vo.getWriteName() %>&nbsp;&nbsp;<span class="t_desc04"><%=vo.getWriteDate()%></span></th>
+									<th class="cell_r">조회&nbsp;&nbsp;<span class="t_black"><%=vo.getViewCount() %></span><span class="leline">추천&nbsp;&nbsp;<strong class="t_point_org t_no"><%=vo.getCommendCount() %></strong></span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:updateUseSayCom('<%=vo.getSeqNo() %>')" class="btn btn_s_white"><span>추천하기</span></a></th>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<div class="cell_contents">
+											<%=vo.getModifyContent()%>
+										</div>
+										<div class="cell_blog">블로그&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=vo.getBlogAddr() %>" class="a_point"><%= vo.getBlogAddr() %></a></div>
+									</td>
+								</tr>
+							</tbody>
+							</table>
+						
+							<!--btn -->
+							<div class="btnset">
+								<p class="btnl">
+									<%if (editSaveFlag == 1){  %>
+                                    <a href="javascript:goEdit('UP','<%= vo.getSeqNo()%>');" class="btn btn_white"><span>수정</span></a>
+                                    <a href="javascript:goDelete('<%= vo.getSeqNo()%>');" class="btn btn_white"><span>삭제</span></a>
+									<%} %>
+								</p>
+								<p class="btnr">
+                                    <a href="javascript:goList();" class="btn btn_white"><span>목록</span></a>
+								</p>
+							</div>
+							
+							<!-- pre_nex_article -->
+							<div class="prenext_article">
+								<table class="dtable01" summary="이전글과 다음글입니다.">
+                                <caption>이전글, 다음글</caption>
+								<colgroup><col width="55" /><col width="*" /></colgroup>
+									<tbody>
+										<%if(!"".equals(preTitle)){ %>
+										<tr>
+											<th>이전글</th>
+                                            <td class="cell_l"><a href="javascript:goDetail('<%= preSeq%>','<%= newPreSeq%>');"><%=preTitle %></a></td>
+										</tr>
+										<%} %>
+										<%if(!"".equals(nextTitle)){ %>
+										<tr>
+											<th>다음글</th>
+                                            <td class="cell_l"><a href="javascript:goDetail('<%= nextSeq %>','<%=newNextSeq %>');"><%=nextTitle %></a></td>
+										</tr>
+										<%} %>
+									</tbody>
+								</table>
+							</div>
+						
+						</div>
+						</div>
+					</div>
+				</div>
+				<iframe name="hiddenFrame" src="" frameborder="0" width="0" height="0" title="빈 프레임"></iframe>
+				
+				<!-- footer_layer -->
+				<div id="tabbrowse_footer">
+					<img src="/guide/guide_footer_layer.png" alt="Footer" />
+				</div>
+</body>
+</html>

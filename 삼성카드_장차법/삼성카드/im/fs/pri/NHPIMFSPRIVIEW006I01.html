@@ -1,0 +1,258 @@
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.scard.common.asis.util.DateUtil"%>
+<%@ page import="com.scard.hp.anylink.vo.HOMEHMV5HPR00041INVO"%>
+<%
+	String plSeq		= (String)request.getAttribute("PL_SEQ");
+	String plRefererUrl	= (String)request.getAttribute("PL_REFERER_URL");
+
+	if(!"HOMEPAGE".equals(plRefererUrl)){
+		plRefererUrl = "";
+	}
+
+	// 세션종료체크변수
+	String sessionErrCode	= (String)request.getAttribute("SESSION_ERR_CODE");
+	if(sessionErrCode == null){
+		sessionErrCode = "";
+	}
+	else{
+		sessionErrCode = sessionErrCode.trim();
+	}
+
+	HOMEHMV5HPR00041INVO resultVo = (HOMEHMV5HPR00041INVO)request.getAttribute("resultVo");
+
+	String errMsg		= (String)request.getAttribute("ERR_MSG");
+	if(errMsg == null) errMsg = "";
+	errMsg = errMsg.replaceAll("(?i)<br>","\n");
+
+	String realName		= (String)request.getAttribute("REAL_NAME");
+	String idenNo		= (String)request.getAttribute("IDEN_NO");
+	String idenNo1		= (String)request.getAttribute("IDEN_NO1");
+	String mobileNo1	= (String)request.getAttribute("MOBILE_NO1");
+	String mobileNo2	= (String)request.getAttribute("MOBILE_NO2");
+	String mobileNo3	= (String)request.getAttribute("MOBILE_NO3");
+	String mobileNo		= (String)request.getAttribute("MOBILE_NO");
+
+	String jobKindCode19= (String)request.getAttribute("jobKindCode19");
+	String goodCode7	= (String)request.getAttribute("goodCode7");
+	String corpName8	= (String)request.getAttribute("corpName8");
+	String cPhone1		= (String)request.getAttribute("cPhone1");
+	String cPhone2		= (String)request.getAttribute("cPhone2");
+	String cPhone3		= (String)request.getAttribute("cPhone3");
+	
+	String chargeDepart2= (String)request.getAttribute("chargeDepart2");
+	String applyChannelCd3= (String)request.getAttribute("applyChannelCd3");
+	String respChannelCd4= (String)request.getAttribute("respChannelCd4");
+	String progressNo5= (String)request.getAttribute("progressNo5");
+	String buyGuaranteeCode6= (String)request.getAttribute("buyGuaranteeCode6");
+	String jobCode9= (String)request.getAttribute("jobCode9");
+	String marriedYn10= (String)request.getAttribute("marriedYn10");
+	String coworkYn11= (String)request.getAttribute("coworkYn11");
+	String houseCode12= (String)request.getAttribute("houseCode12");
+	String householderRelation13= (String)request.getAttribute("householderRelation13");
+	String houseOwnCode14= (String)request.getAttribute("houseOwnCode14");
+	String corpCode15= (String)request.getAttribute("corpCode15");
+	String guarantorCode16= (String)request.getAttribute("guarantorCode16");
+	String simulCode17= (String)request.getAttribute("simulCode17");
+	String loginDepart18= (String)request.getAttribute("loginDepart18");
+	String applyAmount20= (String)request.getAttribute("applyAmount20");
+	String propertyTax21= (String)request.getAttribute("propertyTax21");
+	String workYear22= (String)request.getAttribute("workYear22");
+	String incomeAYear23= (String)request.getAttribute("incomeAYear23");
+	String livingYear24= (String)request.getAttribute("livingYear24");
+	String numHouseFamily25= (String)request.getAttribute("numHouseFamily25");
+	String numChildren26= (String)request.getAttribute("numChildren26");
+	String beforeHouseYear27= (String)request.getAttribute("beforeHouseYear27");
+	String guaranteeAmt28= (String)request.getAttribute("guaranteeAmt28");
+	String aptGuaranteeAmt29= (String)request.getAttribute("aptGuaranteeAmt29");
+	String houseGuaranteeAmt30= (String)request.getAttribute("houseGuaranteeAmt30");
+	String jobDistKindCode37= (String)request.getAttribute("jobDistKindCode37");
+	String enterCorpDate39= (String)request.getAttribute("enterCorpDate39");
+	String officePost40= (String)request.getAttribute("officePost40");
+	String officeCode41= (String)request.getAttribute("officeCode41");
+	String officeAddr42= (String)request.getAttribute("officeAddr42");
+	String officeAddr43= (String)request.getAttribute("officeAddr43");
+	String homePost44= (String)request.getAttribute("homePost44");
+	String homeCode45= (String)request.getAttribute("homeCode45");
+	String homeAddr46= (String)request.getAttribute("homeAddr46");
+	String homeAddr47= (String)request.getAttribute("homeAddr47");
+	String jobSort48= (String)request.getAttribute("jobSort48");
+	String jobSort49= (String)request.getAttribute("jobSort49");
+	String string19web= (String)request.getAttribute("string19web");
+
+
+	String sendString40 = ""; // 실행일자
+	String reapCode = "";
+	String string40 = "";
+	String string41 = "";
+	String string42 = "";
+	String string43 = "";
+	String string44 = "";
+	String string45 = "";
+	String string46 = "";
+	String string47 = "";
+	String string48 = "";
+	String string49 = "";
+	String string50 = "";
+
+	String resultYn = "";
+
+	if(resultVo != null){
+		sendString40 = resultVo.getString40(); // 실행일자
+		if(sendString40 != null && sendString40.trim().length() == 8){
+			sendString40 = DateUtil.changeDateType(sendString40,"yyyyMMdd", "yyyy.MM.dd");
+		}
+
+		reapCode = resultVo.getRespCode();
+		string40 = resultVo.getString40();
+		string41 = resultVo.getString41();
+		string42 = resultVo.getString42();
+		string43 = resultVo.getString43();
+		string44 = resultVo.getString44();
+		string45 = resultVo.getString45();
+		string46 = resultVo.getString46();
+		string47 = resultVo.getString47();
+		string48 = resultVo.getString48();
+		string49 = resultVo.getString49();
+		string50 = resultVo.getString50();
+	}
+	
+	if(resultVo == null){
+		// 불가
+		resultYn = "N";
+	}
+	else{
+		if("00".equals(reapCode)){
+			if("00".equals(jobKindCode19)){
+				// 불가
+				resultYn = "N";
+			}
+			else{
+				if("A".equals(resultVo.getString44().substring(0,1))){
+					// 승인
+					resultYn = "Y";
+				}
+				else{
+					// 불가
+					resultYn = "N";
+				}
+			}
+		}
+		else{
+			// 불가
+			resultYn = "N";
+		}
+	}
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+
+<title>삼성프라임론 - 삼성카드</title>
+<!-- 크레센도 스크립트 start -->
+<%@ include file="/WEB-INF/jsp/hp/im/fs/pri/echoScriptPri.jsp" %>
+<!-- 크레센도 스크립트 end -->
+<script language="javascript" type="text/javascript">
+<!--
+function Go(){
+	var f = document.form1;
+
+<% if(!"".equals(sessionErrCode)){ %>
+			parent.sessionOut('<%=sessionErrCode%>');
+<% }else{ %>
+	<% if(!"".equals(errMsg)){ %>
+			parent.setSimulationError(errMsg);
+	<% }else{ %>
+		
+		<% if("Y".equals(resultYn)){ %>
+			f.action = "/hp/im/fs/pri001.do?method=getPriLoanLimit";
+            f.submit();
+		<% }else{ %>
+			<% if("00".equals(reapCode)){ %>
+			parent.setSimulationFail('<%=sendString40%>');
+			<% }else{ %>
+			parent.setSimulationError('처리가 지연중입니다.\n잠시후 다시 이용해 주시기 바랍니다.[1]');
+			<% } %>
+		<% } %>
+	<% } %>
+<% } %>
+}
+-->
+</script>
+</head>
+
+<body onLoad="Go();">
+<form name="form1" method="post" target="_parent">
+<input type="hidden" name="resultVo"		value="<%=resultVo%>" />
+<input type="hidden" name="REAL_NAME"		value="<%=realName%>" />
+<input type="hidden" name="IDEN_NO"		value="<%=idenNo%>" />
+<input type="hidden" name="MOBILE_NO1"	value="<%=mobileNo1%>" />
+<input type="hidden" name="MOBILE_NO2"	value="<%=mobileNo2%>" />
+<input type="hidden" name="MOBILE_NO3"	value="<%=mobileNo3%>" />
+<input type="hidden" name="MOBILE_NO"		value="<%=mobileNo%>" />
+
+<input type="hidden" name="STRING40"		value="<%=string40%>" />
+<input type="hidden" name="STRING41"		value="<%=string41%>" />
+<input type="hidden" name="STRING42"		value="<%=string42%>" />
+<input type="hidden" name="STRING43"		value="<%=string43%>" />
+<input type="hidden" name="STRING44"		value="<%=string44%>" />
+<input type="hidden" name="STRING45"		value="<%=string45%>" />
+<input type="hidden" name="STRING46"		value="<%=string46%>" />
+<input type="hidden" name="STRING47"		value="<%=string47%>" />
+<input type="hidden" name="STRING48"		value="<%=string48%>" />
+<input type="hidden" name="STRING49"		value="<%=string49%>" />
+<input type="hidden" name="STRING50"		value="<%=string50%>" />
+
+<input type="hidden" name="goodCode7"		value="<%=goodCode7%>" />
+<input type="hidden" name="corpName8"		value="<%=corpName8%>" />
+<input type="hidden" name="cPhone1"		value="<%=cPhone1%>" />
+<input type="hidden" name="cPhone2"		value="<%=cPhone2%>" />
+<input type="hidden" name="cPhone3"		value="<%=cPhone3%>" />
+
+<input type="hidden" name="chargeDepart2"			value="<%=chargeDepart2%>" />
+<input type="hidden" name="applyChannelCd3"		value="<%=applyChannelCd3%>" />
+<input type="hidden" name="respChannelCd4"		value="<%=respChannelCd4%>" />
+<input type="hidden" name="progressNo5"			value="<%=progressNo5%>" />
+<input type="hidden" name="buyGuaranteeCode6"		value="<%=buyGuaranteeCode6%>" />
+<input type="hidden" name="jobCode9"				value="<%=jobCode9%>" />
+<input type="hidden" name="marriedYn10"			value="<%=marriedYn10%>" />
+<input type="hidden" name="coworkYn11"			value="<%=coworkYn11%>" />
+<input type="hidden" name="houseCode12"			value="<%=coworkYn11%>" />
+<input type="hidden" name="householderRelation13"	value="<%=householderRelation13%>" />
+<input type="hidden" name="houseOwnCode14"		value="<%=houseOwnCode14%>" />
+<input type="hidden" name="corpCode15"			value="<%=corpCode15%>" />
+<input type="hidden" name="guarantorCode16"		value="<%=guarantorCode16%>" />
+<input type="hidden" name="simulCode17"			value="<%=simulCode17%>" />
+<input type="hidden" name="loginDepart18"			value="<%=loginDepart18%>" />
+<input type="hidden" name="jobKindCode19"			value="<%=jobKindCode19%>" />
+<input type="hidden" name="applyAmount20"			value="<%=applyAmount20%>" />
+<input type="hidden" name="propertyTax21"			value="<%=propertyTax21%>" />
+<input type="hidden" name="workYear22"			value="<%=workYear22%>" />
+<input type="hidden" name="incomeAYear23"			value="<%=incomeAYear23%>" />
+<input type="hidden" name="livingYear24"			value="<%=livingYear24%>" />
+<input type="hidden" name="numHouseFamily25"		value="<%=numHouseFamily25%>" />
+<input type="hidden" name="numChildren26"			value="<%=numChildren26%>" />
+<input type="hidden" name="beforeHouseYear27"		value="<%=beforeHouseYear27%>" />
+<input type="hidden" name="guaranteeAmt28"		value="<%=guaranteeAmt28%>" />
+<input type="hidden" name="aptGuaranteeAmt29"		value="<%=aptGuaranteeAmt29%>" />
+<input type="hidden" name="houseGuaranteeAmt30"	value="<%=houseGuaranteeAmt30%>" />
+<input type="hidden" name="jobDistKindCode37"		value="<%=jobDistKindCode37%>" />
+<input type="hidden" name="enterCorpDate39"		value="<%=enterCorpDate39%>" />
+<input type="hidden" name="officePost40"			value="<%=officePost40%>" />
+<input type="hidden" name="officeCode41"			value="<%=officeCode41%>" />
+<input type="hidden" name="officeAddr42"			value="<%=officeAddr42%>" />
+<input type="hidden" name="officeAddr43"			value="<%=officeAddr43%>" />
+<input type="hidden" name="homePost44"			value="<%=homePost44%>" />
+<input type="hidden" name="homeCode45"			value="<%=homeCode45%>" />
+<input type="hidden" name="homeAddr46"			value="<%=homeAddr46%>" />
+<input type="hidden" name="homeAddr47"			value="<%=homeAddr47%>" />
+<input type="hidden" name="jobSort48"				value="<%=jobSort48%>" />
+<input type="hidden" name="jobSort49"				value="<%=jobSort49%>" />
+<input type="hidden" name="string19web"			value="<%=string19web%>" />
+
+<input type="hidden" name="PL_SEQ"				value="<%=plSeq %>" />
+<input type="hidden" name="PL_REFERER_URL"		value="<%=plRefererUrl %>" />
+</form>
+<!---END_ENC--->
+<form name="xecure"><input type="hidden" name="p" /></form>
+
+</body>
+</html>

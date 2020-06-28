@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/cs/h1_app_cardloss02.png" alt="카드분실/도난사고접수안내입니다" /></h1>
+				</div>					
+					
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/cs/h2_app_cardloss04.png" alt="사고매출을 확인 및 안내입니다" /></h2>
+					<div class="content_block_inner">
+						<ol class="list_no01">
+							<li><p>최근 2개월의 국내승인 내역입니다.</p></li>
+							<li><p>분실/도난으로 인해 발생된 사고매출은 건 별로 사고여부를 선택하신 후<br />사고매출 선택완료 버튼을 클릭해 주세요.</p></li>
+							<li><p>금융(현금서비스, 카드론) 및 해외 매출에서 사고가 발생했을 경우에는 담당 조사역과 면담 후 접수 가능합니다.</p></li>
+						</ol>
+
+						<div class="line_lgray_p0 mt20">&nbsp;</div>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnr"><a href="javascript:goEconomistInfo();" class="btn btn_white" title="새창"><span>담당조사역안내 &gt;</span></a></p><!-- 100326 -->
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block 100326 -->
+				<div class="content_block clfix">
+					<h2><img src="/images/cs/h2_app_cardloss05.png" alt="국내승인 내역을 확인, 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable01" summary="국내승인 내역을 확인(승인일, 승인시각, 이용가맹점, 승인금액, 할부개월, 승인번호, 사고여부)을 하실 수 있습니다.">
+						<caption>국내승인 내역 확인</caption>
+						<colgroup><col width="10%" /><col width="15%" /><col width="20%" /><col width="20%" /><col width="15%" /><col width="10%" /><col width="10%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">승인일</th>
+								<th scope="col">승인시각</th>
+								<th scope="col">이용가맹점</th>
+								<th scope="col">승인금액</th>
+								<th scope="col">할부개월</th>
+								<th scope="col">승인번호</th>
+								<th scope="col">사고여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="t_no">0</td>
+								<td>0</td>
+								<td><span class="t_no">0</span> 원<br />
+									<span class="t_no">(0</span> 원)
+								</td>
+								<td class="t_no">0</td>
+								<td class="t_no">0</td>
+								<td><input type="checkbox" name="OCC_SALES" value="" title="사고여부 선택" /></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<div class="btnr">
+							<a class="btn btn_blue" href="javascript:move();"><span>사고매출 선택 완료</span></a> <a class="btn btn_white" href="javascript:fnCancel();"><span>취소</span></a>
+						</div>												
+					</div>
+				</div>
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- //100219 -->
+					<div class="tab02 w810">
+						<ul>
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_reqmoney_pay01.png" alt="본인정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02" summary="현재 약정금액, 현재 남은 금액을 확인하고 요청금액을 입력하는 게시판입니다.">
+						<caption>요청금액 입력</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>현재 약정금액</p></th>
+								<td><p><span class="t_no">1</span> 원
+								<span class="t_desc03 ml10 mr10">(최대 2,000,000원까지 약정금액 증액가능합니다.)</span>
+                                <a href="javascript:goTabPage('NHPIMMHHSV005','true');" class="btn_link">약정금액변경하기</a></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>현재 남은 금액</p></th>
+								<td><p><span class="t_no">2</span> 원</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>요청금액</p></th>
+								<td><p><span class="input_point">
+								<input type="text" class="txt" name="parm_STRING7" id="label_reqmoney" title="요청 금액 입력"
+								maxlength="8"
+								onfocus="input_mode(this);"
+								onkeypress="javascript:checkTypes(this, 'NUMB');"
+							    onkeyup="javascript:addComma(this);"
+								onblur="javascript:checkTypesOnBlur(this, 'NUMB2');"
+								style="ime-mode:disabled"
+								/>원</span>
+								<span class="ml10 t_desc03">(최대 1원까지 가능)</span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnl t_desc04">※ 요청금액은 현재약정금액 – 현재 남은금액 범위 내에서 만원이상에서 원단위로 입력해주세요.</p>
+						</div>
+
+						<div class="line_lgray10">&nbsp;</div>
+
+						<div class="btnset">
+							<div class="btnl">
+								<ol class="list_desc">
+									<li><p>서비스 신청 후 결제일날 이전 또는 즉시 사용하고자 할 때 즉시충전(바로 옮겨놓기)를 하시면 됩니다. </p></li>
+									<li><p>즉시충전(바로 옮겨놓기)는 홈페이지나 상담전화 (지역번호 없이) 1588-8700으로 가능합니다. </p></li>
+									<li><p>단, 결제일전날 또는 결제일 당일 즉시충전하시더라도 결제일충전은 정상적으로 출금되오니 유의하시기 바랍니다. </p></li>
+								</ol>
+							</div>
+                            <p class="btnr"><a href="javascript:go_010();" class="btn btn_blue"><span>즉시 충전하기</span></a></p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_reqmoney_pay02.png" alt="자동이체 계좌정보를 확인해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<table class="dtable02" summary="자동이체계좌은행, 자동이체계좌번호등의 정보를 확인하고 즉시충전(바로 옮겨놓기), 즉시충전 가능은행, 즉시충전 가능 시간을 안내하는 게시판입니다.">
+						<caption>자동이체 계좌정보 확인 게시판</caption>
+						<colgroup><col width="115" /><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" colspan="2" class="riline"><p>자동이체계좌은행</p></th>
+								<td><p><%=mbBankName%></p></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="riline"><p>자동이체계좌번호</p></th>
+								<td><p class="t_no">
+								XXXXXXX
+								</p></td>
+							</tr>
+							<tr>
+								<th scope="row" colspan="2" class="riline"><p>즉시충전(바로 옮겨놓기)</p></th>
+								<td><p>
+									<ul class="list_circle mt10">
+										<li>전자금융거래법에 의해 고객님의 자동이체계좌로만 처리가 가능합니다.</li>
+										<li>다른 계좌로 신청하길 원하시면 회원님의 자동이체계좌를 <br />변경해야 합니다. <span><a href="javascript:goTabPage('NHPIMMHCSM003','true');" class="btn_link">계좌이체변경하기</a></span></li>
+									</ul>
+								</p></td>
+							</tr>
+							<tr>
+								<th class="riline" rowspan="2" scope="rowgroup"><p>즉시충전 가능은행</p></th>
+								<th class="riline" scope="row"><p>평일</p></th>
+								<td><p>18개 은행(국민, 농협, 우리, 신한, 하나, 외환, 기업, SC제일, 한국씨티, 새마을 금고, 대구, 부산, 경남, 전북, 광주, 우체국, 동양증권, 삼성증권)</p></td>
+							</tr>
+							<tr>
+								<th class="riline" scope="row"><p>휴일</p></th>
+								<td><p>17개 은행(국민, 농협, 우리, 신한, 하나, 외환, 기업, SC제일, 한국씨티, 새마을 금고, 대구, 부산, 전북, 광주, 우체국, 동양증권, 삼성증권)</p></td>
+							</tr>
+							<tr>
+								<th class="riline" rowspan="2" scope="rowgroup"><p>즉시충전 가능 시간</p></th>
+								<th class="riline" scope="row"><p>평일</p></th>
+								<td><p>08:30~22:00</p></td>
+							</tr>
+							<tr>
+								<th class="riline" scope="row"><p>휴일</p></th>
+								<td><p>08:30~22:00 (토,일,공휴일)</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btnset -->
+						<div class="btnset">
+							<p class="btnl t_desc04">가상계좌는 즉시충전(바로 옮겨놓기)가 불가능합니다. </p>
+						</div>
+
+					</div>
+				</div>
+				
+<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

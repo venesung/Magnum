@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+        <!-- d_complete -->
+        <div class="d_alert noline d_alert_s2 clfix">
+                <p class="ico_alert"><img src="/images/common/img_cardregister_com.jpg" alt="" /><img src="/images/cd/txt_com_urcardapp.png" alt="선택하신 카드신청이 완료되었습니다." /></p>
+        </div>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+        <h2><img src="/images/cd/h2_chk_card_applist.png" alt="카드 신청내역 확인하세요" /></h2>
+        <div class="content_block_inner fill_joinin">
+                <table class="dtable02" summary="카드신청을 위해 입력하셨던 성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지를 확인할 수 있는 게시판입니다.">
+                <caption>카드신청 내역 확인</caption>
+                <tbody>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>성명</p></th>
+                                <td class="cell_l"><%=vo.getCustomerName() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>주민등록번호</p></th>
+                                <td class="cell_l"><%=vo.getIdenNo1()%>-*******</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청카드명</p></th>
+                                <td class="cell_l"><%=vo.getCardName() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청일시</p></th>
+                                <td class="cell_l"><%=vo.getApplicationDate().substring(0,4) %>년 <%=vo.getApplicationDate().substring(4,6) %>월 <%=vo.getApplicationDate().substring(6,8) %>일 <%=vo.getApplicationTime().substring(0,2) %>시 <%=vo.getApplicationTime().substring(2,4) %>분</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>카드수령지</p></th>
+                                <td class="cell_l">[<%=vo.getZipCode1() %>-<%=vo.getZipCode2() %>] <%=vo.getAddrArea() %> <%=vo.getAddrDist() %></td>
+                        </tr>
+                </tbody>
+                </table>
+				
+                <table class="dtable02" summary="카드신청을위해 입력하셨던 가족1 성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지를 확인할 수 있는 게시판입니다.">
+                <caption>카드신청 내역 확인</caption>
+                <tbody>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>가족1 성명</p></th>
+                                <td class="cell_l"><%=vo.getFamilyName1() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>주민등록번호</p></th>
+                                <td class="cell_l"><%=vo.getFamilyIdenNo11()%>-*******</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청카드명</p></th>
+                                <td class="cell_l"><%=vo.getCardName() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청일시</p></th>
+                                <td class="cell_l"><%=vo.getApplicationDate().substring(0,4) %>년 <%=vo.getApplicationDate().substring(4,6) %>월 <%=vo.getApplicationDate().substring(6,8) %>일 <%=vo.getApplicationTime().substring(0,2) %>시 <%=vo.getApplicationTime().substring(2,4) %>분</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>카드수령지</p></th>
+                                <td class="cell_l">[<%=vo.getFamilyZipCode11() %>-<%=vo.getFamilyZipCode12() %>] <%=vo.getFamilyAddrArea1() %> <%=vo.getFamilyAddrDist1() %></td>
+                        </tr>
+                </tbody>
+                </table>
+				
+                <table class="dtable02" summary="카드신청을위해 입력하셨던 가족2 성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지를 확인할 수 있는 게시판입니다.">
+                <caption>카드신청 내역 확인</caption>
+                <tbody>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>가족2 성명</p></th>
+                                <td class="cell_l"><%=vo.getFamilyName2() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>주민등록번호</p></th>
+                                <td class="cell_l"><%=vo.getFamilyIdenNo21()%>-*******</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청카드명</p></th>
+                                <td class="cell_l"><%=vo.getCardName() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청일시</p></th>
+                                <td class="cell_l"><%=vo.getApplicationDate().substring(0,4) %>년 <%=vo.getApplicationDate().substring(4,6) %>월 <%=vo.getApplicationDate().substring(6,8) %>일 <%=vo.getApplicationTime().substring(0,2) %>시 <%=vo.getApplicationTime().substring(2,4) %>분</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>카드수령지</p></th>
+                                <td class="cell_l">[<%=vo.getFamilyZipCode21() %>-<%=vo.getFamilyZipCode22() %>] <%=vo.getFamilyAddrArea2() %> <%=vo.getFamilyAddrDist2() %></td>
+                        </tr>
+                </tbody>
+                </table>
+				
+                <table class="dtable02" summary="카드신청을위해 입력하셨던 가족3 성명, 주민등록번호, 신청카드명, 신청일시, 카드수령지를 확인할 수 있는 게시판입니다.">
+                <caption>카드신청 내역 확인</caption>
+                <tbody>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>가족3 성명</p></th>
+                                <td class="cell_l"><%=vo.getFamilyName3() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>주민등록번호</p></th>
+                                <td class="cell_l"><%=vo.getFamilyIdenNo31()%>-*******</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청카드명</p></th>
+                                <td class="cell_l"><%=vo.getCardName() %></td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>신청일시</p></th>
+                                <td class="cell_l"><%=vo.getApplicationDate().substring(0,4) %>년 <%=vo.getApplicationDate().substring(4,6) %>월 <%=vo.getApplicationDate().substring(6,8) %>일 <%=vo.getApplicationTime().substring(0,2) %>시 <%=vo.getApplicationTime().substring(2,4) %>분</td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>카드수령지</p></th>
+                                <td class="cell_l">[<%=vo.getFamilyZipCode31() %>-<%=vo.getFamilyZipCode32() %>] <%=vo.getFamilyAddrArea3() %> <%=vo.getFamilyAddrDist3() %></td>
+                        </tr>
+                </tbody>
+                </table>
+				
+                <div class="btnset">
+                        <p class="btnr"><a href="#" onclick="viewCardAppStatus();" class="btn btn_blue"><span>카드발급 조회하기</span></a></p>
+                        <p class="btnr"><a href="#" onclick="GoCjMemberCardApply();" class="btn btn_blue"><span>확인</span></a></p>
+                </div>
+        </div>
+
+        <hr />
+
+        <h2><img src="/images/cd/h2_chk_card_addinfo.png" alt="부가정보를 확인하세요" /></h2>
+        <div class="content_block_inner fill_joinin">
+                
+
+                <table class="dtable02" summary="카드신청 추가 입력(생일, 결혼여부, 결혼기념일, 자녀유무, 자녀생일, 배우자생일, 추천인정보)을 입력하는 게시판입니다">
+                <caption>카드신청 추가 입력</caption>
+                <tbody>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>생일</p></th>
+                                <td colspan="3" class="cell_l">
+                                        <span>
+                                                <select title="년도 선택" id="label_urbirth" onchange="setDay('label_urbirth');">
+                                                        <option>선택</option>
+                                                </select> 년
+                                                <select title="월 선택" id="label_urbirth2" onchange="setDay('label_urbirth');">
+                                                        <option>선택</option>
+                                                </select> 월
+                                                <select title="일 선택" id="label_urbirth3">
+                                                        <option>선택</option>
+                                                </select> 일
+                                                <input type="hidden" name="selfBirthday" />
+                                                <label for="label_birth_moon" class="ml20"><input type="radio" class="rdo" id="label_birth_moon" name="selfLunarSolar" value="2" title="음력" /> 음력</label><label for="label_birth_sun"><input type="radio" class="rdo" id="label_birth_sun" name="selfLunarSolar" title="양력" checked="checked" value="1" /> 양력</label>
+                                                <label for="label_birth_chk"><input type="checkbox" class="chk" value="알리미등록" id="label_birth_chk" name="chkMemo2" title="알리미 등록" /> 알리미 등록</label>
+                                                <input type="hidden" name="memo2" value="N" />
+                                        </span>
+                                </td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>결혼여부</p></th>
+                                <td colspan="3" class="cell_l">
+                                        <p><label for="label_marry_or_not"><input type="radio" class="chk" id="label_marry_or_not" name="marriedYn" title="미혼" checked="checked" value="N" onclick="hideMarriedInfo();" /> 미혼</label><label for="label_marry_or_not2"><input type="radio" class="chk" id="label_marry_or_not2" name="marriedYn" title="기혼" value="Y" onclick="showMarriedInfo();" /> 기혼</label></p>
+                                </td>
+                        </tr>
+                        <tr hideYn="Y" style="display:none">
+                                <th scope="row" class="cell_l"><p>결혼기념일</p></th>
+                                <td colspan="3" class="cell_l">
+                                        <span>
+                                                <select title="년도 선택" id="label_marry_date" onchange="setDay('label_marry_date');">
+                                                        <option>선택</option>
+                                                </select> 년
+                                                <select title="월 선택" id="label_marry_date2" onchange="setDay('label_marry_date');">
+                                                        <option>선택</option>
+                                                </select> 월
+                                                <select title="일 선택" id="label_marry_date3">
+                                                        <option>선택</option>
+                                                </select> 일
+                                                <input type="hidden" name="weddingAnniversary" />
+                                                <label for="label_marry_date_chk" class="ml20"><input type="checkbox" class="chk" value="알리미등록" id="label_marry_date_chk" name="chkMemo1" title="알리미 등록" /> 알리미 등록</label>
+                                                <input type="hidden" name="memo1" value="N" />
+                                        </span>
+                                </td>
+                        </tr>
+                        <tr hideYn="Y" style="display:none">
+								<th scope="row" class="cell_l"><p>자녀유무</p></th>
+								<td colspan="3" class="cell_l">
+									<p><label for="label_baby_or_not"><input type="radio" class="chk" id="label_baby_or_not"   name="childrenYn"  value="Y"  onclick="showChildInfo();" title="자녀 있음" /> 있음</label><label for="label_baby_or_not2"><input type="radio" class="chk" id="label_baby_or_not2" name="childrenYn"  value="N" onclick="hideChildInfo();" checked="checked"  title="자녀 없음" /> 없음</label></p>
+								</td>
+						</tr>
+						<tr hideYnCh="Y" style="display:none">
+								<th scope="row" class="cell_l"><p>자녀생일</p></th>
+								<td colspan="3" class="cell_l">
+									<span>
+										<select title="자녀생일 년도 선택" id="label_baby_birth" onchange="setDay('label_baby_birth');">
+											<option>선택</option>
+										</select> 년
+										<select title="자녀생일 월 선택" id="label_baby_birth2" onchange="setDay('label_baby_birth');">
+											<option>선택</option>				
+										</select> 월
+										<select title="자녀생일 일 선택" id="label_baby_birth3">
+											<option>선택</option>
+										</select> 일
+										<input type="hidden" name="childBirthday" />
+										<label for="label_spousebirth_moon" class="ml20"><input type="radio" class="rdo" id="label_childLunarsolar_moon" name="childLunarsolar" value="2" title="음력" /> 음력</label><label for="label_spousebirth_sun"><input type="radio" class="rdo" id="label_childLunarsolar_sun" name="childLunarsolar" checked="checked" value="1" title="양력" /> 양력</label>
+									</span>                                        
+								</td>
+					    </tr>
+                        <tr hideYn="Y" style="display:none">
+                                <th scope="row" class="cell_l"><p>배우자생일</p></th>
+                                <td colspan="3" class="cell_l">
+                                        <span>
+                                                <select title="배우자생일 년도 선택" id="label_spousebirth" onchange="setDay('label_spousebirth');">
+                                                        <option>선택</option>
+                                                </select> 년
+                                                <select title="배우자생일 월 선택" id="label_spousebirth2" onchange="setDay('label_spousebirth');">
+                                                        <option>선택</option>
+                                                </select> 월
+                                                <select title="배우자생일 일 선택" id="label_spousebirth3">
+                                                        <option>선택</option>
+                                                </select> 일
+                                                <input type="hidden" name="mateBirthday" />
+                                                <label for="label_spousebirth_moon" class="ml20"><input type="radio" class="rdo" id="label_spousebirth_moon" name="mateLunarSolar" value="2" title="음력" /> 음력</label><label for="label_spousebirth_sun"><input type="radio" class="rdo" id="label_spousebirth_sun" name="mateLunarSolar" checked="checked" value="1" title="양력" /> 양력</label>
+                                                <label for="label_spousebirth_chk"><input type="checkbox" class="chk" value="알리미등록" id="label_spousebirth_chk" name="chkMemo3" title="알리미 등록" /> 알리미 등록</label>
+                                                <input type="hidden" name="memo3" value="N" />
+                                        </span>
+                                </td>
+                        </tr>
+                        <tr>
+                                <th scope="row" class="cell_l"><p>추천인정보</p></th>
+                                <td colspan="3" class="cell_l">
+                                        <input type="text" class="txt" id="inviteNo" name="inviteNo" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인정보" />
+                                        <span class="t_desc03">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+                                </td>
+                        </tr>
+                                <tr>
+                                        <th scope="row" class="cell_l"><p>추천인정보</p></th>
+                                        <td colspan="3" class="cell_l">
+                                                <input type="text" class="txt" id="inviteNo" name="inviteNo" value="" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인정보" />
+                                                <span class="t_desc03">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <th scope="row" class="cell_l"><p>추천인정보</p></th>
+                                        <td colspan="3" class="cell_l">
+                                                <input type="text" class="txt" id="inviteNo" name="inviteNo" maxlength="8" onkeyup="this.value = this.value.toUpperCase();" onkeypress="checkTypes(this, 'ECNO');" title="추천인정보" />
+                                                <span class="t_desc03">해당고객만 입력해주세요. 예) C2010557 (영문은 대문자로 입력)</span>
+                                        </td>
+                                </tr>
+                </tbody>
+                </table>
+
+                <div class="btnset">
+                        <p class="btnl t_desc04">알리미 등록 : 등록한 기념일에 맞추어 D-3일에 E-mail과 SMS로 알려드리는 서비스입니다.</p>
+                        <p class="btnr"><a href="#" id="btnComplete" onclick="doComplete();" class="btn btn_white"><span>등록</span></a></p>
+                </div>
+        </div>
+</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

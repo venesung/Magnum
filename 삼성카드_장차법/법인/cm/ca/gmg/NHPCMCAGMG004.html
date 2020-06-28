@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>그룹명 중복 확인 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header2">
+		<h1 class="al_center"><img src="/images/cm/layer_tit_duplicate_groupname_check.png" alt="그룹명 중복을 확인하세요" /></h1>
+	</div>
+	-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/cm/layer_tit_duplicate_groupname_check.png" alt="그룹명 중복을 확인하세요" /></h1>
+	</div>
+		
+	<div id="pop_s_content2" style="margin-top:15px;">
+
+			<div class="pop_l_wrap al_center">
+
+				<div class="mb20"><span class="t_point t_no">123</span>는 사용할 수 있는 그룹명입니다.</div>
+
+				<p class="btnc"><a href="javascript:fncGetGroupList()"><img src="/images/common/btn_uses.png" alt="사용하기" /></a></p>
+
+ 				<div class="group_duplicat2">
+ 					<p class="pop_sub_desc02">다른 그룹명을 사용하려면 입력창에 입력 후 중복확인을 클릭하세요.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+					<dl>
+						<dt><label for="groupNm">다른 그룹명 입력</label></dt>
+						<dd><input class="txt" type="text" id="groupNm" name="groupNm" value="" maxlength="30" /></dd>
+					</dl>
+					<div style="margin:-42px 0 0 333px;">
+						<a href="javascript:check()" class="btn btn_s_white"><span>중복확인</span></a>
+					</div>
+				</div>
+				<input type="hidden" id="groupNm2" name="groupNm2" value="" />
+			</div>
+		</div>
+			<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+
+</div>
+</body>
+</html>

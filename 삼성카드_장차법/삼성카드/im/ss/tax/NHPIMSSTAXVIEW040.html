@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">지방세 카드납부 서비스</h1>
+					<p class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></p>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810 h60">
+						<ul>
+							<li class="on">
+								<a href="#">지방세납부</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMSSTAX001M001', true);">지방세 카드 납부안내</a></li>	<!-- 091203 -->
+									<li class="on"><a href="javascript:goTabPage('NHPIMSSTAX001M002', true);">지방세 카드 납부하기</a></li>
+									<li><a href="javascript:goTabPage('NHPIMSSTAX001M003', true);">지방세 납부 결과조회</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:goTabPage('NHPIMSSTAX002M001', true);">세정담당자</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<form name="initform" method="post">
+					<input type="hidden" name="payerNo" />
+					<input type="hidden" name="userGbn" />
+					<input type="hidden" name="cityCode" value="<%=organ.getCityCode() %>" />
+					<h2><img src="/images/ss/h2_localtax_search01.png" alt="납세자 정보를 입력해 주세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						<div class="tb_exp">
+							<span>환영합니다. <strong class="t_black"><%=organ.getCitykornm() %></strong>입니다.</span>
+						</div>
+						<table class="dtable02 dtable_inputfield" summary="납세자 주민번호(법인등록번호)와 납세자 성명(법인명)을 입력하는 게시판입니다.">
+						<caption>납세자 정보 입력</caption>
+						<colgroup><col width="30%" /><col width="70%" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>지방세 부과된 납세자 주민번호<br />(법인등록번호)</p></th>
+								<td><p class="input_idno"><input type="text" onkeypress="checkLenN(this, 6, form.payerNo2);checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled"  onblur="isNumeric(this)"  class="txt" value="" name ="payerNo1" title="주민등록번호 앞자리" />&nbsp;-&nbsp;<input type="password" onkeypress="checkLenN(this, 7, form.payerNm);checkTypes(this, 'NUMB');"  onblur="checkTypesOnBlur(this, 'NUMB');" style="ime-mode:disabled" name ="payerNo2" class="txt pw" value="" title="주민등록번호 뒷자리" /></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>지방세 부과된 납세자 성명<br />(법인명)</p></th>
+								<td><p><span class="input_name"><input type="text" name="payerNm" class="txt" maxlength="20" value="" title="성명" /></span></p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset" id="btn_style">
+							<p class="btnr">
+                                <a href="javascript:goInsert('01')" class="btn btn_white"><span>개인카드 납부</span></a>
+                                <a href="javascript:goInsert('04')" class="btn btn_white"><span>법인카드 납부</span></a>
+							</p>
+						</div>
+						
+						<div class="btnset" id="btn_style2" style="display:none;">
+							<p class="btnr">
+								<a class="btn btn_white"><span>개인카드 납부</span></a>
+								<a class="btn btn_white"><span>법인카드 납부</span></a>
+							</p>
+						</div>
+
+						<div class="line_lgray">&nbsp;</div>
+						
+						<ol class="list_no01 ml_10">
+							<li><p>지방세가 부과된 납세자가 개인인 경우는 주민번호와 성명을 입력하기 바랍니다.</p></li>
+							<li><p>지방세가 부과된 납세자가 법인인 경우는 법인등록번호 13자리와 법인명을 입력하기 바랍니다.</p></li>
+							<li><p>신용카드로 납부한 세금은 승인취소 및 결제방법(일시불/할부) 변경이 불가능하며 납세번호 및 납부자 주민번호가 다르거나,<br />납부금액이 상이할 경우 지방세 납부가 취소될 수 있으니 다시 한번 확인하고 납부하시기 바랍니다.</p></li>
+						</ol>
+
+					</div>
+					</form>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

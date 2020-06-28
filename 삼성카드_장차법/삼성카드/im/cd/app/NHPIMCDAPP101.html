@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+			<div class="top_visual">
+				<h1><img src="/images/mh/h1_cardapp_phone_reserved.png" alt="카드신청 전화예약을 접수하세요" /></h1>
+			</div>
+			
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_private_joining01.png" alt="개인정보 수집/이용 등에 대한 동의하세요" /></h2>
+					<div class="content_block_inner">
+						<!--p><img src="/images/ms/txt_ms_agreement01.png" alt="카드인증가입 또는 공인인증회원 가입시 처음 1회만 약관동의를 받습니다. 약관 동의는 가입 시 한번만 동의하여 주시면되며 신청하시기 전에 다음의 사항을 꼭 읽어주세요. 약관이 필요하실 경우, 인쇄하여 보관하시기 바랍니다." /></p-->
+						<p class="p_desc">삼성카드를 처음 신청하시는 분들을 위해 간단한 인적사항을 남겨 주시면 전문 상담원이 전화를 드려<br />카드발급을 도와드리는 간편신청 예약서비스입니다.</p>
+
+						<div class="line_lgray">&nbsp;</div>
+
+						<fieldset class="fieldset_agree">
+							<div class="tb_exp clfix pos_rel">
+								<h3>개인정보 수집/이용 등 약관</h3>
+								<span class="ab_tr"><a href="javascript:goTabPage('NHPIMCSUFCVIEW001')" class="btn_link" title="새창">개인정보취급방침 상세보기</a></span>
+							</div>
+							<div class="box_white w640"><p class="box_white flag_tr"></p><p class="box_white flag_bl"></p><div class="box_white_btm">
+								<div class="agree" id="agree1"  agreePath="/agreement/html_NHPIMCDAPP101.html" tabindex="0"></div>
+							</div></div>
+							<div class="btnl">
+								<label for="termsAgree1"><input type="radio" class="chk" value="accept" id="termsAgree1" name="termsAgree" title="약관 동의" /> 동의</label><label for="termsAgree2"><input type="radio" class="chk" value="deny" id="termsAgree2" name="termsAgree" title="약관 동의안함" /> 동의안함</label>
+							</div>
+						</fieldset>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_private_joining02.png" alt="개인 기본정보를 입력하세요" /></h2>
+					<div class="content_block_inner pos_rel fill_joinin">
+						<div class="tb_exp clfix">
+							<span class="ls01">입력하신 정보는 삼성카드의 기존 및 신규회윈의 구분에 이용되며 통화를 위한 목적 이외에 다른 용도로 사용되지 않습니다.</span>
+						</div>
+
+						<table class="dtable02" summary="개인 기본정보 중 성명, 주민등록번호, 신분증 확인, 발행일자, 휴대전화번호, 직장명, 신청카드, 통화시간, 추천인 ID, 본인 인증 방법 등을 입력하는 게시판입니다.">
+						<caption>개인 기본정보 입력</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>성명</p></th>
+								<td class="cell_l" colspan="2"><input type="text" name="reqName" class="txt" value="" id="reqName" title="성명 입력" maxlength="11" /></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>주민등록번호</p></th>
+								<td class="cell_l" colspan="2">
+								  <input type="text" name="idenNo1" class="txt" value="" maxlength="6" title="주민등록번호 앞자리" id="idenNo1" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 6, certForm.idenNo2);" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;<input type="password" name="idenNo2" class="txt" value="" maxlength="7" title="주민등록번호 뒷자리" id="idenNo2" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.idenNo1);" onblur="checkTypesOnBlur(this, 'NUMB');" /> <a href="javascript:verifyRealName(certForm)" class="btn btn_s_white" title="새창" id="label_zip"><span>실명확인</span></a></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>신분증 확인</p></th>
+								<td class="cell_l">
+									<label for="certificateGubun1"><input type="radio" class="chk" id="certificateGubun1" name="certificateGubun" onclick="changeCertificateGubun();" title="본인확인방법 주민등록번호" checked="checked" value="01" /> 주민등록번호</label><label for="certificateGubun2"><input type="radio" class="chk" id="certificateGubun2" name="certificateGubun" onclick="changeCertificateGubun();" title="본인확인방법 운전면허증" value="02" /> 운전면허증</label>
+								</td>
+								<td rowspan="2" align="right"><img id="certificateGubun1Img" name="certificateGubun1Img" src="/images/cd/img_ex_idcard.jpg" alt="주민등록증 샘플 이미지" /><img src="/images/cd/img_ex_driverlicense.jpg" id="certificateGubun2Img" name="certificateGubun2Img" alt="운전면허증 샘플 이미지" style="display:none;" /></td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p><span id="certificateGubunLabelView">발행일자</span></p></th>
+								<td class="cell_l">
+									<span id="certificateDistView"></span><input type="text" class="txt" align="left" value="" title="발행일자 입력" maxlength="8" id="certificateNo" name="certificateNo" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+								<td class="cell_l" colspan="2">
+									<span class="input_phone">
+										<select name="handPhone1" title="휴대전화번호 앞자리 선택" id="handPhone1">
+											<option value="" selected="selected">선택</option>
+											<option value="010">010</option>
+											<option value="011">011</option>
+											<option value="016">016</option>
+											<option value="017">017</option>
+											<option value="018">018</option>
+											<option value="019">019</option>
+										</select><input type="text" id="handPhone2" name="handPhone2" class="txt" value="" maxlength="4" title="휴대전화번호 가운데자리" onkeypress="checkTypes(this, 'NUMB'); checkLenN(this, 4, certForm.handPhone3);" onblur="checkTypesOnBlur(this, 'NUMB');" />&nbsp;-&nbsp;<input type="text" id="handPhone3" name="handPhone3" class="txt" value="" maxlength="4" title="휴대전화번호 뒷자리" onkeypress="checkTypes(this, 'NUMB');" onkeydown="checkLenB(this, certForm.handPhone2);" onblur="checkTypesOnBlur(this, 'NUMB');" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장명</p></th>
+								<td class="cell_l" colspan="2">
+									<input type="text" name="companyName" class="txt" id="companyName" value="" maxlength="30" title="직장명 입력" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>신청카드</p></th>
+								<td class="cell_l" colspan="2">
+									<select name="reqCardname" title="신청카드 선택" id="reqCardname">
+										<option value="" selected="selected">선택</option>
+										<option value="삼성지엔미e포인트카드">삼성지엔미e포인트카드</option>
+    			                        <option value="삼성애니패스e포인트카드">삼성애니패스e포인트카드</option>
+    			                        <option value="삼성 블루 아메리칸 엑스프레스카드">삼성 블루 아메리칸 엑스프레스카드</option>
+    			                        <option value="신세계 지엔미포인트 카드">신세계 지엔미포인트 카드</option>
+    			                        <option value="신세계 애니패스포인트카드">신세계 애니패스포인트카드</option>
+    			                        <option value="신세계 삼성쇼핑플래티늄카드">신세계 삼성쇼핑플래티늄카드</option>
+    			                        <option value="신세계 삼성에듀플래티늄카드">신세계 삼성에듀플래티늄카드</option>
+    			                        <option value="삼성온라인쇼핑카드">삼성온라인쇼핑카드</option>
+    			                        <option value="코스트코삼성카드">코스트코삼성카드</option>
+    			                        <option value="삼성티클래스카드">삼성티클래스카드</option>
+    			                        <option value="삼성오일앤세이브플러스카드">삼성오일앤세이브플러스카드</option>
+    			                        <option value="삼성티클래스앤오일카드">삼성티클래스앤오일카드</option>
+    				                    <option value="기타(상담원추천카드)">기타(상담원추천카드)</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>통화시간</p></th>
+								<td class="cell_l" colspan="2">
+									<select name="reqDate" title="통화시간 선택" id="reqDate" class="mr10">
+										<option value="" selected="selected">선택</option>
+										<option value="${reqDateList[0].ymd1}">${reqDateList[0].ymd2}</option>
+										<option value="${reqDateList[1].ymd1}">${reqDateList[1].ymd2}</option>
+										<option value="${reqDateList[2].ymd1}">${reqDateList[2].ymd2}</option>
+									</select>
+									<label for="dayType1"><input type="radio" class="chk" id="dayType1" name="dayType" checked="checked" value="AM" title="오전(9:00~12:00) 선택" /> 오전(9:00~12:00)</label><label for="dayType2"><input type="radio" class="chk" id="dayType2" name="dayType" value="PM" title="오후(13:00~18:00) 선택" /> 오후(13:00~18:00)</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>추천인 ID</p></th>
+								<td class="cell_l" colspan="2">
+									<input type="text" name="uchiSabun" class="txt" id="uchiSabun" value="" maxlength="10" title="추천인 ID 입력" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p><nobr>본인 인증 방법&nbsp;&nbsp;</nobr></p></th>
+								<td class="cell_l" colspan="2">
+									<label for="validationGubun1"><input type="radio" class="chk" id="validationGubun1" name="validationGubun" checked="checked" value="1" title="공인인증으로 본인인증" /> 공인인증</label><label for="validationGubun2"><input type="radio" class="chk" id="validationGubun2" name="validationGubun" value="2" title="휴대폰인증으로 본인인증" /> 휴대폰인증</label><span class="t_desc04 ls01">공인인증서가 없는 고객께서는 본인명의의 휴대폰으로 인증을 해주세요.</span>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- button -->
+						<div class="btnset">
+							<p class="btnl t_desc04"><span class="t_no t_desc03">1.</span> <span class="ls01 t_desc03">원하시는 카드상품을 미리 확인하시고 전화상담을 하면 쉽고 편리하게 안내 및 발급 받으실 수 있습니다.</span><br />
+							<span class="t_no t_desc03">2.</span> <span class="ls01 t_desc03">통화시간은 요청한 다음날(영업일 기준)부터 3일 이내에 연락 드립니다.</span></p>
+							<p class="btnr">
+                                <a href="javascript:goTabPage('NHPIMCDCPS001');" class="btn btn_s_white"><span>카드상품 둘러보기</span></a>
+							</p>
+						</div>
+
+						<p class="btnc"><a href="javascript:confirm();" id="lockTarget"><img src="/images/common/btn_l_confirm.png" alt="확인" /></a><!-- a href="#"><img src="/images/common/btn_cancel.png" alt="취소"></a /--></p>
+
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_private_joining03.png" alt="알려드립니다" /></h2>
+					<div class="content_block_inner pos_rel fill_joinin">
+						<div class="tb_exp clfix">
+							<span><strong>부정 카드발급 예방을 위한 본인 확인</strong></span>
+                            <span class="ab_tr"><a href="javascript:goTabPageWithParam('NHPIMMSLGIVIEW009','gubun=2')" class="btn_link">사용 가능한 인증서 안내</a></span>
+						</div>
+						<ol class="list_no01">
+							<li><p>타인에 의한 통화요청을 방지하기 위해 공인인증서 또는 휴대폰인증을 통해 본인확인을 하고 있습니다.</p></li>
+							<li><p>공인인증은 전자거래범용 인증서, 신용카드용 인증서 또는 2006년 8월 1일 이후 발급받으신<br />은행용 인증서를 사용하실 수 있습니다.</p></li>
+						</ol>
+					</div>
+				</div>
+				
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

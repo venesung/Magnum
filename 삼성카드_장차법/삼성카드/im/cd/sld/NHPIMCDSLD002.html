@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+  <h1 class="none">Sel-D 클럽</h1>
+  <div class="h1_desc"><img src="/images/cd/h1_sel_d.jpg" alt="나만의 스타일로 직접 디자인하는 나만의 디자인카드 셀디클럽" /></div>  <!-- 100126 -->
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">    <!-- 100126 -->
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- content_block -->
+<form name="form1" method="post" action="/sld.do" autocomplete="off">
+  <input type="hidden" name="method" value="best" />
+  <input type="hidden" name="selectedMonth" value="" />
+  <div class="content_block content_block_card clfix">
+    <h2><img src="/images/cd/h2_seld_thisbest.png" alt="이달의 베스트 셀디 이미지" /></h2>
+    <div class="content_block_inner">
+      <div class="tb_exp tb_exp_line clfix">
+        <%
+          String yyyymm = (String) request.getAttribute("yyyymm");    // 조회월
+          List<ITGSSELDBESTSELDPHOTOCONFTTVO> month_list = (ArrayList<ITGSSELDBESTSELDPHOTOCONFTTVO>) request.getAttribute("month_list");
+          List<ITGSSELDBESTSELDPHOTOCONFTTVO> rs_list = (ArrayList<ITGSSELDBESTSELDPHOTOCONFTTVO>) request.getAttribute("rs_list");
+
+          String lastMonth = HpCommonUtil.convertYYMMDD(yyyymm);
+          if (lastMonth != "") {
+        	  lastMonth += "의 베스트 셀디 이미지";
+          }
+
+        %>
+        <span class="fl_left"><strong><%=lastMonth%></strong></span>
+        <span class="ab_tr">
+          <select name="selectMon" title="선택" style="width:80px"></select>
+          <a href="javascript:searchGo();" class="btn btn_s_blue"><span>조회</span></a>
+        </span>
+      </div>
+      <ul class="list_card140 mt20">
+        <%
+          // 조회월
+          if(rs_list!=null && !rs_list.isEmpty()) {
+            for(ITGSSELDBESTSELDPHOTOCONFTTVO vo : rs_list) {
+              if(vo.getRecomm_month().equals(yyyymm)) {
+        %> 
+        <li>
+          <p class="p_card"><a href="javascript:openImagePopup('${IMG_URL}<%=vo.getSeld_image()%>', 'NEW')" title="새창"><img src="${IMG_URL}<%=vo.getSeld_image()%>" alt="" style="width:140px;height:89px;"/  ></a></p>
+          <p class="p_tit"><%= vo.getUser_name() %></p>
+          <p class="p_txt"><%= vo.getContents() %></p>
+        </li>
+        <%
+              }
+            }
+          }
+        %>
+      </ul>
+    </div>
+  </div>
+
+  <!-- content_block -->
+  <div class="content_block clfix">
+    <h2><img src="/images/cd/h2_seld_lastbest.png" alt="지난 베스트 셀디 이미지" /></h2>
+    <div class="content_block_inner">
+      <%
+        // 최근2개월
+        if(month_list!=null && !month_list.isEmpty()) {
+        	int i=0;
+          for(ITGSSELDBESTSELDPHOTOCONFTTVO month_vo : month_list) {
+      %>
+      <div class="tb_exp tb_exp_line <%= (i==0)?"":"mt30" %> clfix">
+        <h3><%= HpCommonUtil.convertYYMMDD(month_vo.getRecomm_month())%>의 베스트 셀디 이미지</h3>
+      </div>
+      <ul class="list_card140 mt20">
+        <%
+            if(rs_list!=null && !rs_list.isEmpty()) {
+              for(ITGSSELDBESTSELDPHOTOCONFTTVO vo : rs_list) {
+                if(month_vo.getRecomm_month().equals(vo.getRecomm_month())) {
+        %>
+        <li>
+          <p class="p_card"><a href="javascript:openImagePopup('${IMG_URL}<%=vo.getSeld_image()%>', 'NEW')"><img src="${IMG_URL}<%=vo.getSeld_image()%>" alt="" style="width:140px; height:89px;"/></a></p>
+          <p class="p_tit"><%= vo.getUser_name() %></p>
+          <p class="p_txt"><%= vo.getContents() %></p>
+        </li>
+        <%
+                }
+              }
+            }
+        %>
+      </ul>
+        <%
+            i++;
+          }//for
+        }
+        %>
+    </div>
+  </div>
+</form>
+
+<form name="mainForm" autocomplete="off">
+  <input type="hidden" name="method" value="bestView" />
+  <input type="hidden" name="imageFile" value="" />
+  <input type="hidden" name="imageType" value="" />
+</form>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

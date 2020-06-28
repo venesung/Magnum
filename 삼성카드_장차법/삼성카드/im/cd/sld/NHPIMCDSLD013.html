@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+  <div class="h1_desc"><img src="/images/cd/h1_sel_d.jpg" alt="나만의 스타일로 직접 디자인하는 나만의 디자인카드 셀디클럽" /></div>
+  <h1 class="none">나만의 디자인카드 셀디클럽</h1>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+  <!-- tab_area -->
+  <div class="tab01 w810">
+    <ul>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD001', true);">셀디클럽 소개</a></li>
+      <!--li><a href="javascript:goTabPage('NHPIMCDSLD002', true);">베스트 셀디 이미지</a></li>
+      <li><a href="javascript:goTabPage('NHPIMCDSLD004', true);">베스트 셀디 스토리</a></li-->
+      <li><a href="javascript:goTabPage('NHPIMCDSLD007', true);">포토 갤러리</a></li>
+      <li class="on"><a href="javascript:goTabPage('NHPIMCDSLD008', true);">셀디 이미지 교체</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+  <h2><img src="/images/cd/h2_app_seldinfo01.png" alt="셀디카드 이미지교체 신청 안내입니다" /></h2>
+  <div class="content_block_inner">
+    <ol class="list_no01">
+      <li><p>정확한 카드 재발급을 위해 신상정보를 확인해주세요.</p></li>
+      <li><p>신상정보에 변경사항이 있으신 경우 <a href="javascript:goTabPage('NHPIMMHUFM001M001', true);" class="a_point">신상정보조회변경</a>에서 확인, 변경해주시기 바랍니다.</p></li>
+      <li><p>이미지 교체 신청시 셀디 <span class="t_point_org">발급비 2,000원</span>이 부과됩니다.</p></li>
+      <li><p>교체 전 카드는 새로 발급받으신 카드 사용등록 후 사용이 중지됩니다.</p></li>
+      <li><p>교체신청은 하루에 한번만 가능합니다.</p></li>
+    </ol>
+
+    <table class="dtable01 mt30" summary="보유중인 셀디카드명과 카드 이미지를 확인 후 선택하실 수 있습니다. ">
+    <caption>셀디카드 선택</caption>
+      <colgroup><col width="40%" /><col width="50%" /><col width="10%" /></colgroup>
+      <thead>
+        <tr>
+          <th scope="col" class="cell_l10">카드명</th>
+          <th scope="col" class="cell_l10">카드이미지</th>
+          <th scope="col"><p>선택</p></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cell_l10">${modifyCardName}</td>
+          <td class="cell_l10 cell_img"><img src="/sld.do?method=getSeldImage&amp;IMAGE_NO=${modifyImageNo}&amp;IMAGE_TYPE=T" alt="${modifyCardName}" style="width:148px; height:89px;" /></td>
+          <td><input type="checkbox" name="checkbox" id="chbox" checked="checked" disabled="disabled" title="${modifyCardName} 선택" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- btnset -->
+    <div class="btnset">
+      <p class="btnl">
+        <a href="javascript:goTabPage('NHPIMCSSC001',true);" class="btn btn_white"><span>셀디카드 이미지 사용중지 &gt;</span></a>
+        <!--a href="javascript:popupCenterWindow('/seldi/selfDesign/seldTIP.html','710','580');" class="btn btn_white" title="새창"><span>셀디카드 Q&amp;A &gt;</span></a-->
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- content_block -->
+<div class="content_block clfix">
+  <h2><img src="/images/cd/h2_app_seldinfo03.png" alt="셀디카드 제작시 확인해주세요" /></h2>
+  <div class="content_block_inner fill_joinin">
+    <div class="mb30"><img src="/images/cd/step_seld02.png" alt="이미지편집" /></div>
+
+    <blockquote class="mb20"><img src="/images/cd/txt_seld_imgedit01.png" alt="이미지편집기로 셀디카드 이미지를 선택하세요" /></blockquote>
+    <p class="p_desc">셀디카드 발급을 신청하시는 회원께서는 본인 소유의 이미지 또는 사진을 업로드하시거나<br />삼성카드사에서 제공하는 포토갤러리의 이미지 중 하나를 선택해 사용하실 수 있습니다.<br />셀디카드 이미지 신청시 아래 사항을 확인 후 이미지를 신청하세요.</p>
+
+    <!-- btnset -->
+    <div class="btnset">
+      <p class="btnr"><a href="javascript:viewCardDesign();" class="btn btn_blue" title="새창"><span>이미지 편집기</span></a></p>
+    </div>
+
+    <div class="line_lgray"></div>
+
+    <blockquote class="mb20"><img src="/images/cd/txt_seld_imgedit02.png" alt="셀디카드 이미지 교체 참고사항" /></blockquote>
+    <ol class="list_no02 list_line">
+      <li><p class="ico_no ico_no_graymid01"><em>&nbsp;</em></p>
+        <p class="p_txt">삼성카드사는 회원께서 제출하신 이미지의 형식, 사이즈 등이 정해진 가이드를<br />벗어날 경우 업로드를 제한할 수 있습니다.</p>
+      </li>
+      <li><p class="ico_no ico_no_graymid02"><em>&nbsp;</em></p>
+        <p class="p_txt">회원 본인 소유의 이미지를 업로드하실 경우, 동 이미지의 사용에대한 법적인 책임은<br />전적으로 카드를 발급받은 회원 본인에게 있습니다.</p>
+      </li>
+      <li><p class="ico_no ico_no_graymid03"><em>&nbsp;</em></p>
+        <p class="p_txt">포토갤러리의 이미지 저작권은 삼성카드에 있습니다.<br />따라서 삼성카드 발급 신청 이외의 용도로는 사용하실 수 없습니다.</p>
+      </li>
+      <li><p class="ico_no ico_no_graymid04"><em>&nbsp;</em></p>
+        <p class="p_txt">제출하신 이미지와 실제 인쇄되어 발급되는 카드의 이미지는 다소<br />차이(생삭, 크기 등)가 발생할 수 있습니다..</p>
+      </li>
+      <li class="no_line"><p class="ico_no ico_no_graymid05"><em>&nbsp;</em></p>
+        <p class="p_txt">회원께서 제출하신 이미지가 다음 중 하나에 해당하는 경우에는 신청이 불가합니다. 다만, 삼성카드사는 회원께서<br />제출하신 이미지가 다음 중 하나에 해당하는 경우가 아니라도 동 이미지의 신청을 거절할 수 있습니다.</p>
+        <ul class="list_dashed mt10">
+          <li>연예인, 운동선수, 만화캐릭터, 유명인사 등 제3자의 초상권 또는 퍼블리시티권의 침해 여지가 있는 사진</li>
+          <li>성인물이나 외설적인 사진</li>
+          <li>회원 본인의 영상이 없는 인물사진 (초상권 침해 여지를 방지하기위함입니다.)</li>
+          <li>회원 본인이 촬영하지 아니한 사진 (단, 사진안에 회원 본인의 영상이 있는 경우에는 그러하지 아니합니다.)</li>
+          <li>브랜드가 들어간 상품 -서비스 등 상표권이나 의장권 침해 여지가 있는 사진 (예) 로고, 심볼마크, 약어 등)</li>
+          <li>정치적인 주제 등이 포함된 사진</li>
+          <li>광고가 포함된 사진 (예) 전화번호(080, 060), E-Mail 주소, 홈페이지 주소 등)</li>
+          <li>기타 선량한 풍속 위반, 염도감을 주는 사진 등</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="line_lgray"></div>
+
+    <p class="btnc_30"><a href="javascript:goImagePop();" title="새창"><img src="/images/common/btn_l_confirm.png" alt="확인" /></a><a href="javascript:goTabPage('NHPIMCDSLD008',true);"><img src="/images/common/btn_cancel02.png" alt="취소" /></a></p>
+
+  </div>
+</div>
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

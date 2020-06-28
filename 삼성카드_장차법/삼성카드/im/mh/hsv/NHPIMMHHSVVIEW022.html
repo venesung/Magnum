@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual_100327 -->
+				<div class="top_visual">
+					<h1 class="none">생활비재테크서비스</h1>
+					<div class="h1_desc"><img src="/images/mh/h1_living_service.jpg" alt="생활비재테크서비스. 신용카드 혜택은 기본! 생활비를 미리 충전하고 사용하시면 추가로 캐시백을 드립니다" /></div> <!-- 100407 -->
+
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix"><!-- 100219 -->
+					<div class="tab02 w810">
+						<ul>
+							
+							<!--2013.01.17 depth level 변경  -->
+							<li><a href="javascript:goView('000')">공지사항</a></li>
+							<li><a href="javascript:goView('002')">충전하기(옮겨놓기)안내</a></li>
+							<li><a href="javascript:goView('003')">약정금액변경 안내</a></li>
+							<li><a href="javascript:goView('004')">FAQ</a></li>
+							<li><a href="javascript:goView('005')">서비스약관</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMHINFO2','true');">서비스 이용하기</a></li>
+							
+							
+							<!--li><a href="javascript:goTabPage('NHPIMMHINFO','true');">생활비재테크서비스 안내</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMH001','true');">신청하기</a></li>>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV003','true');">즉시충전하기</a></li>
+							<li><a href="javascript:goTabPage('NHPIMMHHSV005','true');">변경하기</a></li>
+							<li class="on"><a href="javascript:goTabPage('NHPIMMH009','true');">조회하기</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMMH009','true');">이용내역 및 남은금액조회</a></li>
+									<li class="on"><a href="javascript:goTabPage('NHPIMMH010','true');">캐시백 정산내역조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMMH002','true');">해지하기</a></li-->
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix"><!-- 100219 -->
+					<h2><img src="/images/mh/h2_point_choice01.png" alt="캐시백 조회년도를 선택해 주세요" /></h2>
+					<div class="content_block_inner">
+
+						<div class="tb_exp clfix">
+							<span><font color="white">1년 단위로 조회됩니다.</font></span>
+							<span class="ab_tr">
+								<select title="년도 선택" style="width:80px" name="yyyy" onchange="search()">
+								</select>
+                                <a href="javascript:search();" class="btn btn_s_blue"><span>조회</span></a>
+							</span>
+						</div>
+
+						<table class="dtable01" summary="고객님께서 조회하신 기간 내 캐시백 정산일자, 캐시백 정산금액, 캐시백 지급방법을 확인하실 수 있는 게시판입니다.">
+						<caption>캐시백 정산관련 조회 결과</caption>
+						<colgroup><col width="20%" /><col width="40%" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">캐시백 정산일자</th>
+								<th scope="col" class="cell_r10">캐시백 정산금액</th>
+								<th scope="col">캐시백 지급방법</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no"><a href="javascript:go015('<%=vo1.getString5() %>')" title="캐시백 정산내역 상세보기">0</a></td>
+								<td class="cell_r10 t_no">0</td>
+								<td>0</td>
+							</tr>
+							<!-- //loop -->
+							<tr class="nodata">
+								<td colspan="3">0</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<ol class="list_desc ml_10">
+							<li><p>월별 캐시백 정산 금액을 클릭하면 상세보기 페이지 화면으로 이동됩니다.</p></li>
+							<li><p>캐시백 정산내역은 작년과 올해만 조회됩니다.</p></li>
+							<li><p>캐시백은 매월(결제일-10일경) 월 1회 회원님의 남은 금액(충전잔고)로 재 적립됩니다.</p></li>
+							<li><p>캐시백을 포인트로 지급받으시려면 아래 <a href="javascript:goTabPage('NHPIMMHHSV006','true');" class="btn_link">캐시백·포인트 선택하기</a> 메뉴에서 신청하시기 바랍니다.</p></li>
+							<li><p>캐시백적립은 매출건별로 캐시백(또는 포인트)금액이 적립되고, 소수점이하는 원단위 절사됩니다.</p></li>
+						</ol>
+
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix"><!-- 100219 -->
+					<h2><img src="/images/mh/h2_point_choice02.png" alt="캐시백 적립 및 정산내역 상세 보기입니다" /></h2>
+					<div class="content_block_inner">
+						<p>해당 기간내 캐시백 정산내역이 없을 경우에, 상세보기 페이지에서 조회하세요</p>
+						<div class="btnset">
+                            <p class="btnl"><a href="javascript:go015_1();" class="btn btn_white"><span>캐시백 정산내역 상세보기</span></a></p>
+						</div>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_point_choice03.png" alt="캐시백 지급율입니다" /></h2><!-- //100219 -->
+					<div class="content_block_inner">
+<!-- 수정 110614 -->
+						<table class="dtable01" summary="시작일자와 종료일자 별로 캐시백 지급율을 확인할 수 있는 게시판입니다.">
+						<caption>캐시백 지급율</caption>
+						<colgroup><col width="30%" /><col width="35%" /><col width="*" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">시작일자</th>
+								<th scope="col">종료일자</th>
+								<th scope="col" class="cell_r10">캐시백 지급율</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="cell_l10 t_no"><span class="t_no">0</span> 년 <span class="t_no">0</span> 월</td>
+								<td class="t_no"><span class="t_no">0</span> 년 <span class="t_no">0</span> 월 말일까지</td>
+								<td class="cell_r10"><span class="t_no">0</span> %</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="3">0</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<p class="ico_rice mt10 ml10">단, 캐시백률은 경우에 따라 일정범위에서 매월 변경될 수 있습니다.</p>
+<!--// 수정 110614 -->
+					</div>
+					
+				</div>				
+				
+</form>
+
+				<%
+				String url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				//if("001".equals(tab_index)) 				 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC2.html";
+				if("000".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC1.html";
+				else if("002".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC3.html";
+				else if("003".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC4.html";
+				else if("004".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/NHPIMMHHSVVIEWC5.html";
+				else if("005".equals(tab_index))		 url = "/cms_content/hp/im/mh/hsa/agr.html";
+				%>
+				<cms:include page="<%= url%>" flush="false"/>
+				<div class="content_block content_block_card clfix">
+					<div class="btnr">
+						<a class="btn btn_blue" href="javascript:goTabPage('NHPIMMHINFO2','true');"><span>확인</span></a>
+					</div>
+				</div>
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

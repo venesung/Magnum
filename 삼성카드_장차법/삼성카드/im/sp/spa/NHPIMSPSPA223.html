@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>회원정보변경 - 삼성카드</title>
+	<base href="https://www.samsungcard.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+<body>
+
+				<!-- top_visual -->
+				<!-- <div id="asas" class="top_visual">
+					<h1><img src="/images/mh/h1_memberinfo_modify.png" alt="고객님의 신상정보를 조회, 변경해보세요" /></h1>
+				</div>-->
+
+				<!-- content_block -->
+				
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_memberinfo_modify01.png" alt="개인 필수 정보입니다" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<div class="tb_exp clfix">
+							<p><strong class="t_black">000</strong> 고객님의 기본신상정보입니다.<br />
+							신상정보 변경을 원하시는 경우 아래의 변경버튼을 클릭하여 주시기 바랍니다.</p>
+						</div>
+
+						<table class="dtable02" summary="회원님의 성명(한글), 주민등록번호를 확인하고 자택전화번호, 휴대전화번호, E-mail 주소, E-mail 수신여부, 자택주소, 본인확인질문, 실제생일, 결혼여부, 결혼기념일, 배우자생일 등 개인 필수 정보를 확인하고 변경할 수 있는 게시판입니다">
+						<caption>개인 필수 정보</caption>
+						<colgroup><col width="20%" /><col width="80%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							
+							
+							<tr>
+								<th scope="row" class="cell_l"><p>성명(한글)</p></th>
+								<td class="cell_l02">00</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>주민등록번호</p></th>
+								<td class="cell_l02">00-xxxxxxx</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>자택전화번호</p></th>
+								<td class="cell_l">
+									<span class="input_phone">
+										<select name="homePhone1" title="자택번호 국번 선택" id="label_phone" onchange="" >
+											<option value="">없음</option>
+										</select><input name="homePhone2" type="text" class="txt" value="" title="자택전화번호 앞자리" maxlength="4" />&nbsp;-&nbsp;
+                                        <input name="homePhone3" type="text" class="txt" value="" title="자택전화번호 뒷자리" maxlength="4" onkeydown="checkLenB(this, frm1.homePhone2 )"  />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>휴대전화번호</p></th>
+								<td class="cell_l">
+									<span class="input_phone">
+										<select name="handPhone1" title="휴대전화번호 앞자리" id="label_handphone">
+											<option>00</option>
+                                        </select><input name="handPhone2" type="text" class="txt" value="" title="휴대전화번호 가운데자리" maxlength="4" />&nbsp;-&nbsp;
+                                        <input name="handPhone3" type="text" class="txt" value="" title="휴대전화번호 뒷자리" maxlength="4" onkeydown="checkLenB(this, frm1.handPhone2 )"  />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>E-mail 주소</p></th>
+								<td class="cell_l">
+									<span class="input_email">
+										<input name="emailId" type="text" class="txt" id="label_email" value="" title="이메일명" onchange="mailcheck='N'"  />&nbsp;@&nbsp;
+										<input name="emailAddr" type="text" class="txt" value="" title="이메일공급자 직접입력" onchange="mailcheck='N'" />
+										<select name="selemail" title="이메일공급자선택" onchange="sel(this);" >
+											<option selected="selected" value="">선택하세요</option>
+											<option value="dreamwiz.com">드림위즈</option>
+											<option value="empal.com">엠팔</option>
+											<option value="hanmail.net">한메일(다음)</option>
+											<option value="hotmail.com">hotmail</option>
+											<option value="korea.com">코리아</option>
+											<option value="lycos.co.kr">라이코스</option>
+											<option value="nate.com">네이트</option>
+											<option value="naver.com">네이버</option>
+											<option value="netian.com">네띠앙</option>
+											<option value="orgio.net">오르지오</option>
+											<option value="paran.com">파란</option>
+											<option value="yahoo.co.kr">야후</option>
+											<option value="chollian.net">천리안</option>
+											<option value="freechal.com">프리챌</option>
+											<option value="kebi.com">깨비</option>
+											<option value="unitel.co.kr">유니텔</option>
+											<option value="weppy.com">웨피</option>
+                    						<option value="">직접입력</option>
+                                        </select><a href="javascript:searchEmail();" class="btn btn_s_white" title="새창"><span>중복조회</span></a>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>E-mail 수신여부</p></th>
+								<td class="cell_l">
+									<label for="label_email_sand01"><input name="blueEmaildeny" type="radio" class="chk" id="label_email_sand01" title="수신" value="1" /> 수신</label>
+									<label for="label_email_sand02"><input name="blueEmaildeny" type="radio" class="chk" id="label_email_sand02" title="미수신" value="0" /> 미수신</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>자택주소</p></th>
+								<td class="cell_l">
+									<p class="input_address">
+
+										<input name="homeZip1" type="text" class="txt" value="" title="우편번호 앞자리"   />&nbsp;-&nbsp;
+                                        <input name="homeZip2" type="text" class="txt" value="" title="우편번호 뒷자리"  />
+										<a href="#" class="btn btn_s_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input name="homeAddrArea"  type="text" class="txt" value="" title="자택주소 상세입력" readonly="readonly" />
+										<input name="homeAddrDist" type="text" class="txt" value="" title="자택주소 상세입력2" onkeyup="CheckMsgLen(40,this);" onkeypress="CheckMsgLen(40,this);" maxlength="40" readonly="readonly" /></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>본인확인질문</p></th>
+								<td colspan="3" class="cell_l">
+									<p class="input_selfqa">
+										<select name="blueQuestion" title="본인확인질문 선택" id="label_question">
+          									<option>00</option>
+										</select> 은 무엇입니까?
+										<span class="answer"><input name="blueAnswer" type="text" class="txt" value="" title="본인확인답변 입력" /> 입니다.</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>실제생일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="birthdayYear" type="text" class="txt" value="" title="년" id="label_birthday01" maxlength="4" />&nbsp;년&nbsp;
+										<select name="birthdayMonth" title="달 선택" id="label_birthday02">
+											<option>00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="birthdayDay" title="일 선택" id="label_birthday03">
+											<option>00</option>
+										</select>&nbsp;일
+										<label for="label_birthday_type01"><input name="lunarSolar" type="radio" class="chk" value="1" id="label_birthday_type01" title="양력" /> 양력</label>
+										<label for="label_birthday_type02"><input name="lunarSolar" type="radio" class="chk" value="2" id="label_birthday_type02" title="음력" /> 음력</label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>결혼여부</p></th>
+								<td class="cell_l">
+									<label for="label_marrytype01"><input type="radio" class="chk" name="marriedYn" value="N" id="label_marrytype01" title="미혼" onclick="clickMar('1')" /> 미혼</label>
+									<label for="label_marrytype02"><input type="radio" class="chk" name="marriedYn" value="Y" id="label_marrytype02" title="기혼" onclick="clickMar('1')" /> 기혼</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>결혼기념일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="weddingAnniversaryYear" type="text" class="txt" value="" onchange="clickMar();" maxlenght="4" title="결혼기념일 년" id="label_marryday01" />&nbsp;년&nbsp;
+										<select name="weddingAnniversaryMonth" title="결혼기념일 달 선택" id="label_marryday02" onchange="clickMar();" >
+											<option >00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="weddingAnniversaryDay" title="결혼기념일 일 선택" id="label_marryday03" onchange="clickMar();">
+											<option>00</option>
+										</select>&nbsp;일
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>배우자생일</p></th>
+								<td class="cell_l">
+									<p class="input_birth">
+                                        <input name="mateBirthdayYear" type="text" class="txt" value="" maxlength="4" onchange="clickMar();" title="배우자생일 년" id="label_matchbirthday01" />&nbsp;년&nbsp;
+										<select name="mateBirthdayMonth" title="배우자생일 달 선택" id="label_matchbirthday02" onchange="clickMar();">
+											<option>00</option>
+										</select>&nbsp;월&nbsp;
+										<select name="mateBirthdayDay" title="배우자생일 일 선택" id="label_matchbirthday03" onchange="clickMar();">
+											<option >00</option>
+										</select>&nbsp;일
+										<label for="label_matchbirthday_type01"><input type="radio" class="chk" onchange="clickMar();" name="mateLunarSolar" value="1" id="label_matchbirthday_type01" title="양력" /> 양력</label>
+										<label for="label_matchbirthday_type02"><input type="radio" class="chk" onchange="clickMar();" name="mateLunarSolar" value="2" id="label_matchbirthday_type02" title="음력" /> 음력</label>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_memberinfo_modify02.png" alt="개인 선택 정보입니다" /></h2>
+					<div class="content_block_inner fill_joinin">
+						<table class="dtable02" summary="직장주소, 직장전화번호, 직업, 차량보유, 연소득, 부동산보유액, 주거형태, 주거소유형태, 주 이용업소, 취미로 구성된 개인 선택 정보를 확인하고 변경할 수 있는 게시판입니다">
+						<caption>개인 선택 정보</caption>
+						<tbody>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장주소</p></th>
+								<td colspan="3" class="cell_l">
+									<!-- 20130411 웹접근성(장차법)  onfocus="this.blur()" 제거-->
+									<p class="input_address">
+										<input name="officeZip1" type="text" class="txt" value="" title="우편번호 앞자리" />&nbsp;-&nbsp;
+                                        <input name="officeZip2" type="text" class="txt" value="" title="우편번호 뒷자리"  />
+										<a href="#" class="btn btn_s_white" title="새창"><span>우편번호 검색</span></a><br />
+										<span class="detail"><input name="officeAddrArea" type="text" class="txt" title="직장주소 상세입력" value="" readonly="readonly" />
+                                        <input name="officeAddrDist" type="text" class="txt" value="" title="직장주소 상세입력2" onkeyup="CheckMsgLen(40,this);" readonly="readonly" /></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>직장전화번호</p></th>
+								<td colspan="3" class="cell_l">
+									<span class="input_phone">
+										<select name="officePhone1" title="직장전화번호 국번 선택" id="label_wpphone">
+											<option>00</option>
+                                        </select><input name="officePhone2" type="text" class="txt"  title="직장전화번호 가운데자리" value="" maxlength="4" onblur="checkTypesOnBlur(this, 'TELNO')" />&nbsp;-&nbsp;
+                                        <input name="officePhone3" type="text" class="txt"  title="직장전화번호 뒷자리" value=""  maxlength="4" onkeydown="checkLenB(this, frm1.officePhone2 )"  onblur="checkTypesOnBlur(this, 'TELNO')" />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>직업</p></th>
+								<td colspan="3" class="cell_l">
+									<select name="blueJob" title="직업 선택" id="label_job">
+											<option>00</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><p>차량보유</p></th>
+								<td colspan="3" class="cell_l">
+									<label for="label_mycar01"><input type="radio" class="chk" name="carStatus" id="label_mycar01" value="Y" title="보유" /> 보유</label>
+									<label for="label_mycar02"><input type="radio" class="chk" name="carStatus" id="label_mycar02" value="N" title="미보유" /> 미보유</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>연소득</p></th>
+								<td class="cell_l02">
+									<select name="yearlyIncome" title="연소득 선택" id="label_income_year">
+										<option>00</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p>부동산보유액</p></th>
+								<td class="cell_l02">
+									<select name="realEstate" title="부동산 보유액" id="label_income_property">
+											<option>00</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>주거형태</p></th>
+								<td class="cell_l02">
+									<select name="residentType" title="주거형태 선택" id="label_living_type">
+											<option>00</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p>주거소유형태</p></th>
+								<td class="cell_l02">
+									<select name="abodeCode" title="주거소유형태 선택" id="label_incomeliving_type">
+										<option>00</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="cell_l"><p>주 이용업소</p></th>
+								<td class="cell_l02">
+									<select name="customChainCode" title="주 이용업소 선택" id="label_use_business">
+										<option>00</option>
+									</select>
+								</td>
+								<th scope="row" class="cell_l"><p>취미</p></th>
+								<td class="cell_l02">
+									<select name="hobbyCode" title="취미 선택" id="label_hobbytype">
+											<option>00</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+                            <p class="btnc"><a href="javascript:validation();"><img src="/images/common/btn_change.png" alt="변경" /></a></p>
+						</div>
+					</div>
+				</div>
+</body>
+</html>

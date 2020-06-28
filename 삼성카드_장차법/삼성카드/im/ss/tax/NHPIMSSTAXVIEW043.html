@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>법인카드 결제서비스 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body>
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/ss/pop_h1_payservice_corp.png" alt="법인카드결제 서비스" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/pop_h1_payservice_corp.png" alt="법인카드 결제서비스" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content5" style="margin:25px 0 20px 35px;">	
+		<p class="tb_exp al_left"><span><span class="t_desc04">문의</span> | 삼성카드 <strong class="t_black">1588-8700</strong></span></p>
+		<table class="dtable02 dtable_inputfield" summary="거래번호, 결제요청금액, 신용카드번호, 카드유효기간, 할부기간, 법인명, 사업자번호, 카드비밀번호로 구성된 개인카드 결제정보를 입력하는 게시판입니다.">
+        <caption>개인카드 결제정보 입력</caption>
+		<colgroup><col width="90" /><col width="*" /></colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><p>거래번호</p></th>
+				<td><p class="t_no"><%=tran_no %></p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>결제요청금액</p></th>
+				<td><p class="input_name">
+				<input type="text" name="payment_amount_txt" id="payment_amount_txt" style="text-align:right;" maxlength="15" class="txt" value="<%=payment_amount_text%>" readonly title="결제요청금액" /><a href="javascript:go_Btax();" class="ml10 btn_link">개인카드로결제하기</a>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>신용카드번호</p></th>
+				<td><p class="input_cardno">
+					<input name="card_no1" type="text" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyup="lengthCheck6(this.form, this.value);" title="카드번호 첫째 네자리" /> -
+					<input name="card_no2" type="text" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck7(this.form, this.value);" title="카드번호 두번째 네자리" /> -
+					<input name="card_no3" type="password" size="8" maxlength="4" class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck8(this.form, this.value);" title="카드번호 세번째 네자리" /> -
+					<input name="card_no4" type="password" size="8" maxlength="4"  class="txt" value="" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" onKeyUp="lengthCheck9(this.form, this.value);" title="카드번호 네번째 네자리" />
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드유효기간</p></th>
+				<td><p>
+					<select  name="sel_year" size="1"  title="년 선택">
+							<option value="12">2012</option>
+							<option value="13">2013</option>
+							<option value="14">2014</option>
+							<option value="15">2015</option>
+							<option value="16">2016</option>
+							<option value="17">2017</option>	<!-- 12.11.05 SR -->
+							<option value="18">2018</option>
+							<option value="19">2019</option>
+					</select> 년
+					<select name="sel_month" size="1"  title="월 선택">							
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option></select> 월
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>할부기간</p></th>
+				<td><p>
+					<select name="payment_month" id="payment_month" title="할부기간 선택" >							
+							<option selected="selected" value='0'>일시불</option>
+				</select>
+				<span class="ml10 t_desc04">법인카드 할부불가</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>법인명</p></th>
+				<td><p class="input_name"><input name="carduser_nm" id="carduser_nm" title="법인명" type="text" maxlength="30" class="txt" value="" />
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>사업자번호</p></th>
+				<td><p class="input_name"><input name="ssn_no" id="ssn_no" maxlength="10"  type="text" class="txt"  onkeyup="lengthCheck1(this.form, this.value);" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" value="" title="사업자번호" /><span class="t_desc04">(사업자 등록번호 10자리 입력)</span>
+				</p></td>
+			</tr>
+			<tr>
+				<th scope="row"><p>카드비밀번호</p></th>
+				<td><p class="input_2char"><input name="card_pass" type="password" onKeyDown="getOnlyNumberKey()" style="ime-mode:disabled" size="5" maxlength="2" class="txt" value="" title="비밀번호 앞 두자리" /><em>**</em>(비밀번호 앞의 2자리)
+				</p></td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="btnset"><p class="btnl t_desc04">취소가 불가능하오니 할부기간들을 잘 고려하여 결제하여 주십시오.</p></div>
+
+        <div class="btnc"><a href="javascript:go_ok();"><img src="/images/common/btn_s_pay.png" alt="결제하기" /></a>
+        <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></div>
+		</form>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+</div>
+		<iframe name="ifrm" frameborder="0" width="0" height="0"  align="center" title="빈프레임"></iframe>
+    <%@ include file="/WEB-INF/jsp/hpsub/common/footer.jsp"%> 	<!-- 12.11.05 SR -->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>일별매출 - 삼성카드</title>
+</head>
+<body>
+<table summary="접수일, 국내건수, 국내금액, 해외금액, 총건수, 이용금액, 봉사료, 수수료상세, 입금금액으로 구성된 일별매출 리스트입니다.">
+<caption class="conts_hidden">일별매출 리스트</caption>
+				<thead>
+					<tr>
+						<th scope="col" rowspan="2" class="cell_l10">접수일</th>
+						<th scope="col" rowspan="2">국내<br />건수</th>
+						<th scope="col" rowspan="2" class="cell_r10">국내금액</th>
+						<th scope="col" rowspan="2">해외<br />건수</th>
+						<th scope="col" rowspan="2" class="cell_r10">해외<br />금액</th>
+						<th scope="col" rowspan="2">총건수</th>
+						<th scope="col" rowspan="2" class="cell_r10">이용금액</th>
+						<th scope="col" rowspan="2" class="cell_r10 riline">봉사료</th>
+						<th scope="col" colspan="4" class="cell_c riline boline_b0">수수료상세</th>
+						<th scope="col" rowspan="2" class="cell_r10">입금금액</th>
+					</tr>
+					<tr>
+						<th scope="col" class="cell_r10">가맹점</th>
+						<th scope="col" class="cell_r10">SP<br />할부</th>
+						<th scope="col" class="cell_r10">빅<br />보너스</th>
+						<th scope="col" class="cell_r10 riline">기타</th>
+					</tr>
+				</thead>
+
+	<%					
+	int size = dayList.size();	
+		for(int i=0; i<size; i++){
+			dvo = (ITCHDAYSALETTVO)dayList.get(i);
+	%>
+					<tr>
+						<td class="cell_l10 t_no"><%= HpCommonUtil.getPatternDateString(dvo.getReceiveDate(),"yy.MM.dd")%></td>
+						<td class="t_no"><%= dvo.getReceiveCnt() %></td>
+						<td class="t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getReceiveAmt()) %></td>
+						<td class="t_no"><%= dvo.getReceiveFCnt() %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getReceiveFAmt()) %></td>
+						<td class="t_no"><%= dvo.getReceiveTCnt() %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getReceiveTAmt()) %></td>
+						<td class="cell_r10 t_no riline"><%= HpCommonUtil.getCommaStringForMoney(dvo.getServiceAmt()) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getFeeAmt()) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getMoointerestAmt()) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getBigBonusAmt()) %></td>
+						<td class="cell_r10 t_no riline"><%= HpCommonUtil.getCommaStringForMoney(dvo.getEtcAmt()) %></td>
+						<td class="cell_r10 t_no"><%= HpCommonUtil.getCommaStringForMoney(dvo.getDepositAmt()) %></td>
+					</tr>
+	<%	}
+	
+	%>
+	<%
+	if(size == 0)
+	{
+	%>
+		<tr>
+			<td colspan="13" align="center" class="cell_l10 t_no">일별 매출내역이 없습니다.</td>
+		</tr>		
+	<%
+	}else{
+		ITCHDAYSALETTVO svo = daySumList.get(0);
+	%>	
+		
+				<tfoot>
+					<tr>
+						<td class="cell_l10 t_no">합계</td>
+						<td class="t_no"><em><%=svo.getReceiveCnt()  %></em></td>
+						<td class="t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getReceiveAmt()) %></em></td>
+						<td class="t_no"><em><%=svo.getReceiveFCnt() %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getReceiveFAmt()) %></em></td>
+						<td class="t_no"><em><%=svo.getReceiveTCnt() %></em></td>
+						<td class="cell_r10 t_no "><em><%= HpCommonUtil.getCommaStringForMoney(svo.getReceiveTAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getServiceAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getFeeAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getMoointerestAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getBigBonusAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getEtcAmt()) %></em></td>
+						<td class="cell_r10 t_no"><em><%= HpCommonUtil.getCommaStringForMoney(svo.getDepositAmt()) %></em></td>
+					</tr>
+				</tfoot>	
+	<%} %>
+	</table>
+	
+</body>
+</html>

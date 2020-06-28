@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>결제일별 청구대상 기간 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript">
+
+function search()
+{
+	var frame = document.frm;
+	frame.action = "/hp/im/cd/cdi001.do?method=resultViewPage";
+	frame.method = "post";
+	frame.submit();
+}
+
+</script>
+</head>
+<body>
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_setperson_date.png" alt="결제일별 청구대상 기간입니다" /></h1>		
+	</div>
+ 	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_setperson_date.png" alt="결제일별 청구대상 기간입니다" /></h1>
+	</div>
+	
+	<!-- content -->
+	<form name = "frm" method="post">
+	<div id="pop_content" style="height:460px">		<!-- 100826 전체 수정 -->
+		<div class="content_block2 content_block_card d_alert">
+			<table class="dtable02" summary="조회월, 결제일을 조회하실 수 있습니다.">
+			<caption>조회일자, 결제일 선택</caption>
+			<colgroup><col width="20%" /><col width="35%" /><col width="20%" /><col width="25%" /></colgroup>
+                <tbody>
+                    <tr>
+                        <th><p>조회월</p></th >
+                        <td><p>
+                            <select name="YYYY" style="width:60px" title="조회 년 선택">
+                                <option></option>
+                            </select>년
+                            <select name="MM" style="width:50px" title="조회 월 선택">
+                                <option></option>
+                            </select>월</p></td>
+                        <th><p>결제일</p></th>
+                        <td><p>
+                            <select name="settlementDay" style="width:50px" title="결제일 선택">
+                                <option></option>
+                            </select>일</p></td>
+                    </tr>
+                </tbody>
+			</table>
+
+			<!-- btn -->
+			<div class="btnr mb20">
+                <a href="javascript:search();" class="btn btn_blue"><span>조회</span></a>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div> 
+</body>
+</html>

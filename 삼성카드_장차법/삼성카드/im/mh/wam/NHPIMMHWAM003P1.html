@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>최근 발신번호 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript">
+var n = (document.layers) ? 1:0;
+var ie = (document.all) ? 1:0;
+
+function overTip(boxObj){
+	if (ie) {
+		boxObj.style.visibility = "visible";
+		boxObj.filters.item(0).stop();
+	}
+}
+function outTip(boxObj){
+	if (ie) {
+		boxObj.style.visibility = "visible";
+		boxObj.filters.item(0).transition = 6;
+		boxObj.filters.item(0).apply();
+		boxObj.style.visibility = "hidden";
+		boxObj.filters.item(0).play();
+	}
+}
+
+function MM_findObj(n, d) { //v4.01
+var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+var i,p,v,obj,args=MM_showHideLayers.arguments;
+for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+obj.visibility=v; }
+}
+
+function selectTel(mtel){
+re = /-/gi;
+mtel = mtel.replace(re,"");
+
+for ( var i = 0; i <=4; i++ ) {
+	if (opener.document.frm1.mobile_phone_no[i].value == ""){
+		opener.document.frm1.mobile_phone_no[i].value=mtel;					
+		break;
+	}
+}
+}			
+function AddChar1(content) {
+var  truelen=0;
+var  mlen=0;
+var  temp="";
+for (j=0; j<content.length;j++){
+	onechar = content.charAt(j);
+	
+	if (escape(onechar) =='%0D'){
+	}else if (escape(onechar).length > 4) {
+		truelen=truelen+2;
+		mlen=2;
+	}else{
+		truelen=truelen+1;
+		mlen=1;
+	}
+	if (truelen==16){
+		temp=temp+content.substr(j,1)+"\n";
+		truelen=0;
+	}else if (truelen>16){
+		temp=temp+"\n"+content.substr(j,1);
+		truelen=mlen;
+	}else{
+		temp=temp+content.substr(j,1);
+	}   
+}		
+opener.document.frm1.SendWin.value = temp;
+}
+
+</script>
+</head>
+<body>
+
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/mh/pop_h1_inqury_lastno.png" alt="최근 발신번호 조회" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_inqury_lastno.png" alt="최근 발신번호 조회" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content" style="margin-top:15px;">
+		<table class="dtable01 mt5" summary="최근 발신일과 발신번호에 대한 조회 결과를 확인할 수 있는 게시판입니다.">
+		<caption>최근발신번호 조회 결과</caption>
+		<colgroup><col width="45" /><col width="65" /><col width="*" /></colgroup>
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">번호</th>
+				<th scope="col">발신일</th>
+				<th scope="col">발신번호</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if(cnt > 0){ 
+				
+				for(int i = 0 ; i < cnt ; i++){
+					
+					NHPIMMHWAM005VO vo = resultList.get(i);
+			
+			%>
+			<tr>
+				<td class="cell_l10 t_no"><%= i +1%></td>
+				<td class="t_no"><%=vo.getInsertDate().substring(2,4) + "." + vo.getInsertDate().substring(4,6) + "." + vo.getInsertDate().substring(6,8) %></td>
+                <td class="t_no"><a href="javascript:selectTel('<%= vo.getMobilePhoneNo().trim() %>');"><%= vo.getMobilePhoneNo().trim() %></a></td>
+			</tr>
+			<%	}	
+			}else{ %>
+			<tr>
+				<td class="cell_l10 t_no" colspan="3">최근 발신 내역이 존재하지 않습니다.</td>
+			</tr>
+			<%} %>
+		</tbody>
+		</table>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+</div>
+</body>
+</html>

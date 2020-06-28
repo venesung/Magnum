@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_reduct_income.png" alt="소득공제 내역입니다." /></h1>
+				</div>
+				
+				<!-- content_block 100304 -->
+				<div class="content_block content_block_card">
+					<div class="tab02 w810 clfix">
+						<ul>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM000', true)">소득공제 안내</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM001', true)">소득공제 내역조회</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHDLM004', true)">올앳카드 소득공제 내역조회</a></li>
+                            <li class="on"><a href="javascript:goTabPage('NHPIMMHDLM005', true)">소득공제 내역 발송신청</a></li>                
+						</ul>
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/mh/h2_reduct_income08.png" alt="소득공제 내역 발송신청을 하실 수 있습니다" /></h2>
+
+					<div class="content_block_inner">
+						<div id="mainFrm1">
+							<table class="dtable02 dtable_inputfiled" summary="소득공제 내역 발송신청을 위해 발송여부,발송형태,주소등을 입력하는 게시판입니다.">
+                            <caption>소득공제 내역 발송신청</caption>
+							<colgroup><col width="20%" /><col width="80%" /></colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="cell_l10"><p>2012년 발송여부</p></th>
+									<td class="cell_l10"><label for="label_main"><input type="checkbox" class="rdo" value="" title="발송신청" id="label_main" name="name_main"  onclick="set1();" /> 발송신청</label></td>
+								</tr>
+								<tr id="set1">
+									<th rowspan="3" class="cell_l10" scope="row"><p>발송형태</p></th>
+									<td class="cell_l10"><label for="label_give"><input type="radio" class="rdo" value="" id="label_give" name="name_give" onclick="set2();" title="이메일 발송" /> 이메일</label><label for="label_give2" class="ml20"><input type="radio" class="rdo" value="" id="label_give2" name="name_give" onclick="set2();" title="우편 발송" /> 우편</label></td>
+								</tr>
+								<tr id="set2">
+									<td class="cell_l10"><span class="input_email"><input type="text"  name ="email1" id="label_main01" class="txt" value="" title="이메일 아이디" disabled="disabled" /> @ <input type="text" name="email2" class="txt" value="" title="email 공급자 직접입력"  disabled="disabled" /></span>
+                                    <p style="padding-left: 0" class="t_desc04 mt5">주소정보 확인 및 변경은 <a href="javascript:goTabPage('NHPIMMHUFM001M001')" class="btn_link">회원정보조회 및 변경 메뉴</a>를 이용해 주시기 바랍니다.</p>
+									</td>
+								</tr>
+								
+								<tr id="set3">
+									<td class="cell_l10"><span class="input_idno"><input name="zipCode1" type="text" class="txt" maxlength="6" value="" title="우편번호앞자리" disabled="disabled" /> - <input name="zipCode2" type="text" maxlength="7" class="txt" value="" title="우편번호뒷자리" disabled="disabled" /></span><br/>
+									<span class="input_idno" style="margin-top: 5px;"><input type="text" class="txt" value="" title="주소앞부분" style="width: 160px;" disabled="disabled" /> <input type="text" class="txt" value="" title="주소뒷부분"  style="width: 308px;" disabled="disabled" /></span>
+                                    <p style="padding-left: 0" class="t_desc04 mt5">주소정보 확인 및 변경은 <a href="javascript:goTabPage('NHPIMMHUFM001M001')" class="btn_link">회원정보조회 및 변경 메뉴</a>를 이용해 주시기 바랍니다.</p>
+									</td>
+								</tr>
+								
+							</tbody>
+							</table>
+							<div class="btnl t_desc04 ml20">신용카드와 체크카드를 함께 소지하신 회원님은 신용카드 주소로 제공되며,<br/>체크카드만 소지하신 회원은 가장 최근 발급한 체크카드 주소로 발송됩니다.</div>
+						</div>
+						<div class="pop_l_content" id="mainFrm2" style="display:none" >
+								<p class="incomeText02">상담센타(<span>1588-8700</span>)으로 문의하여 주시기 바랍니다.</p>
+						</div>
+							
+						
+<!-- 111124 레이어팝업 추가부분-->
+
+					<div class="layer_spop" id="layer_31" style="top: 42%;display:none ">
+
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="주소확인 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle02"><img src="/images/mh/pop_h1_incom02.png" alt="고객님은 체크카드만 사용하시어 주소확인이 필요합니다. " /></p>
+								<p class="incomeText02">상담센타(<span>1588-8700</span>)으로 문의하여 주시기 바랍니다.</p>
+								<p class="btnc">
+									<a href="#" onclick="document.getElementById('layer_31').style.display='none';closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+									
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="주소확인 안내 레이어"></iframe>
+
+					</div><!-- //layer_spop -->
+
+
+					<div class="layer_spop" id="layer_03" style="top: 45%;display:none ">
+
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							
+								<input type="button" title="소득공제 내역 발송신청 취소 완료  레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+									
+									
+							
+							<div class="pop_l_content">
+								<p class="incomeTitle01"><img src="/images/mh/pop_h1_incom01.png" alt="소득공제 내역 발송신청 취소가 완료되었습니다." /></p>
+								<p class="btnc">
+									<a href="#" onclick="document.getElementById('layer_03').style.display='none';closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+									
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="소득공제 내역 발송신청 취소 완료 레이어"></iframe>
+
+					</div><!-- //layer_spop -->
+									
+					
+					<div class="layer_spop" id="layer_32" style="top: 42%;display:none ">
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="주소확인 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle02"><img src="/images/mh/pop_h1_incom03.png" alt="고객님은 가족카드만 사용하시어 주소확인이 필요합니다." /></p>
+								<p class="incomeText02">고객상담(<span>1588-8700</span>)으로 문의하여 주시기 바랍니다.</p>
+								<p class="btnc">
+									<a href="#" onclick="document.getElementById('layer_32').style.display='none';closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+									
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="주소확인 안내 레이어"></iframe>
+
+					</div><!-- //layer_spop -->
+						
+						
+
+					<div class="layer_spop" id="layer_33" style="top: 42%;display:none ">
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="인터넷 출력만 가능 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle04"><img src="/images/mh/pop_h1_incom04.png" alt="고객님은 인터넷 출력만 가능합니다." /></p>
+								<p class="incomeText04">연말정산 간소화 사이트 또는 당사 홈페이지 출력을<br/>이용해 주시기 바랍니다</p>
+								<p class="btnc">
+                                    <a href="http://www.yesone.go.kr" class="btn btn_blue" target="_blank" title="새창"><span>연말정산간소화 서비스 이용 바로가기</span></a> <a href="javascript:goTabPage('NHPIMMHDLM000', true);closeLayerPopup();" class="btn btn_white"><span style="left: 20px; padding-right: 20px;"> 취소</span></a>
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="인터넷 출력만 가능 안내 레이어"></iframe>
+					</div><!-- //layer_spop -->
+						
+						
+
+					<div class="layer_spop" id="layer_24" style="top: 42%;display:none ">
+
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="소득공제 적용대상 금액 없는 경우 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle05"><img src="/images/mh/pop_h1_incom05.png" alt="현재까지 사용하신 금액 중 소득공제 적용대상 금액이 없습니다. " /></p>
+								<p class="incomeText05">최종확정시까지 소득공제 적용대상 금액이 없을 경우  <br/>발송되지 않습니다</p>
+								<p class="btnc">
+									<a href="#" onclick="document.getElementById('layer_24').style.display='none';closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="소득공제 적용대상 금액 없는 경우 안내 레이어"></iframe>
+
+					</div><!-- //layer_spop -->
+
+
+					<div class="layer_spop"  id="layer_25"  style="top: 42%;display:none">
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="주소정보 오류 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle02"><img src="/images/mh/pop_h1_incom06.png" alt="주소정보가 올바르지 않습니다." /></p>
+								<p class="incomeText02">소득공제 내역 <span>발송지 주소정보</span>(우편, e-mail)를<br />확인해 주시기 바랍니다.</p>
+								<p class="btnc">
+									<a href="#" onclick="document.getElementById('layer_25').style.display='none';closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="주소정보 오류 안내 레이어 닫기"></iframe>
+					</div><!-- //layer_spop -->
+					
+					<div class="layer_spop" id="layer_99"  style="top: 42%;display:none">
+						<div class="pop_l_wrap">
+							<p class="img_l_pop flag_tl">&nbsp;</p>
+							<p class="img_l_pop flag_tr">&nbsp;</p>
+							<p class="img_l_pop flag_bl">&nbsp;</p>
+							<p class="img_l_pop flag_br">&nbsp;</p>
+							<input type="button" title="서비스이용 오류 안내 레이어 닫기" value="레이어닫기" onclick="this.parentNode.parentNode.style.display='none'; show_select();closeLayerPopup();" class="img_l_pop btn_close btn_input" />
+							<div class="pop_l_content">
+								<p class="incomeTitle03"><img src="/images/mh/pop_h1_incom07.png" alt="서비스 이용에 불편을 드려 죄송합니다." /></p>
+								<p class="incomeText03">서비스의 일시적인 장애가 발생하여 요청하신 페이지를 <br />
+										이용하실 수 없습니다. 잠시 후 다시 이용해 주시기 바랍니다.<br />
+										궁금하신 사항은 <strong>고객상담센터(1588-8700)</strong>로 문의해 주시기 바랍니다.</p>
+								<p class="btnc">
+                                    <a href="javascript:goTabPage('NHPIMMHDLM000', true);closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a>
+								</p>
+							</div>
+						</div><!-- //pop_l_wrap -->
+						<iframe frameborder="0" style="width: 468px; height: 298px; z-index: 400; background-color: transparent;position: absolute;left: 0;top: 0;" title="서비스이용 오류 안내 레이어 닫기"></iframe>
+					</div><!-- //layer_spop -->
+					
+
+					
+					
+<!-- //111124 레이어팝업 추가부분-->
+				
+				
+					</div>
+				</div>
+				<!-- content_block -->
+					<div id = "inSert" class="content_block content_block_t0 clfix" style="border-top:none; margin-top:10px;">
+						<!-- btn -->
+						<p class="btnr">
+                        <a href="javascript:submitInsert();" class="btn btn_blue"><span>등록</span></a>
+						</p>
+					</div>
+				    <div id = "Update" class="content_block content_block_t0 clfix" style="border-top:none; margin-top:10px;">
+						<!-- btn -->
+						<p class="btnr">
+                        <a href="javascript:submitDelete();" class="btn btn_blue"><span>발송취소</span></a>
+						</p>
+					</div>
+				    
+			    
+
+
+				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

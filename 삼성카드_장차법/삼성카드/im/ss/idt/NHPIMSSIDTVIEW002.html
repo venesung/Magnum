@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">금융안전 서비스 ID-Doctor</h1>
+	<div class="h1_desc"><img src="/images/ss/h1_safe_iddoctor.jpg" alt="금융안전 서비스 ID-Doctor - 고객님의 소중한 개인정보 유출 예방 및 정보 유출시 보상 해 드립니다" /></div>
+</div>
+				
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix">
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M001', true);">서비스소개</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M007', true);">이용안내</a></li>
+<% if (vIdenNoYn == "1") { %>		
+			<li class="on"><a href="javascript:openIpinPopup('NHPIMSSIDT001M002');" title="새창">등록하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M003');" title="새창">변경하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M004');" title="새창">해지하기</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M005');" title="새창">프로그램다운로드</a></li>
+			<!--li><a href="javascript:openIpinPopup('NHPIMSSIDT001M006');">주민등록번호도용방지서비스</a></li-->
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M008');" title="새창">명의도용차단설정</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M009');" title="새창">명의도용차단내역</a></li>
+			<li><a href="javascript:openIpinPopup('NHPIMSSIDT001M010');" title="새창">실명확인내역</a></li>
+<% } else { %>			
+			<li class="on"><a href="javascript:goTabPage('NHPIMSSIDT001M002', true);">등록하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M003', true);">변경하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M004', true);">해지하기</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M005', true);">프로그램다운로드</a></li>
+			<!--li><a href="javascript:goTabPage('NHPIMSSIDT001M006', true);">주민등록번호도용방지서비스</a></li-->
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M008', true);">명의도용차단설정</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M009', true);">명의도용차단내역</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSIDT001M010', true);">실명확인내역</a></li>
+<% } %>	
+		</ul>
+	</div>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<form name="form" id="form" method="post">
+	
+	<h2><img src="/images/ss/h2_sinfocare08.gif" alt="정액제를 선택해 주세요" /></h2>
+	<div class="content_block_inner pos_rel">
+	
+		<table class="dtable01" summary="정액제 상품구분, 이용료, 이용방법을 선택하고 확인할 수 있는 게시판입니다">
+		<caption>정액제 선택</caption>
+		<colgroup><col width="7%" /><col width="13%" /><col width="23%" /><col width="*" /></colgroup><!-- 091203 -->
+		<thead>
+			<tr>
+				<th scope="col" class="cell_l10">선택</th>
+				<th scope="col" class="cell_l10">상품구분</th>
+				<th scope="col" class="cell_l10">이용료</th>
+				<th scope="col" class="cell_l10">이용방법</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<!-- <td class="cell_l10"><input type="radio" name="applyType" id="label_airport01" value="2" <%if(applyType.equals("2")){%> disabled="disabled" <%}%> <%if(!applyType.equals("2")){%> checked="checked" <%}%> /></td> -->
+				<td class="cell_l10"><input type="radio" name="applyType" id="label_airport01" value="2" disabled="disabled" title="월간정액제" /></td>
+				<td class="cell_l10"><label for="label_airport01">월간정액제</label></td>
+				<td class="cell_l10">월<span class="t_no"><%=StringUtil.amountToString(payAmountMonthly)%></span> 원 (VAT포함)</td>
+				<td class="cell_l10">삼성카드 홈페이지에서 보안 프로그램 다운로드 설치 이용</td>
+			</tr>
+			<tr>
+				<!-- <td class="cell_l10"><input type="radio" name="applyType" id="label_airport01" value="3" <%if(applyType.equals("3")){%> disabled="disabled" <%}%> <%if(applyType.equals("2")){%> checked="checked" <%}%> /></td> -->
+				<td class="cell_l10"><input type="radio" name="applyType" id="label_airport02" value="3" disabled="disabled" title="연간정액제" /></td>
+				<td class="cell_l10"><label for="label_airport02">연간정액제</label></td>
+				<td class="cell_l10">년<span class="t_no"><%=StringUtil.amountToString(payAmountYearly)%></span> 원 (VAT포함)</td>
+				<td class="cell_l10">발송되는 USB장착시 자동설치 (설치 후 일반 USB처럼 이용가능)</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<!-- btn -->
+		<div id="id_service_apply" class="btnset" style="display: block;">
+			<p class="btnr">
+				<!-- <a href="javascript:goUrl();" class="btn btn_blue"><span>확인</span></a> -->
+                <a href="javascript:goUrltemp();" class="btn btn_blue"><span>확인</span></a>
+                <a href="javascript:goTabPage('NHPIMSSIDT001M001','false');" class="btn btn_white"><span>취소</span></a>
+			</p>
+		</div>
+		
+		<ol class="list_no01 list_cvc">
+			<li><p>2010년 7월 28일부터 금융안전서비스(ID-Doctor) 가입 중단되었습니다.<br />
+			단, 기존에 가입하신 회원님의 서비스 이용은 가능합니다.</p></li>
+			<li><p>자세한 서비스 제공내역과 이용방법은 상단 [이용안내] 페이지를 참조 하시기 바랍니다.</p></li>
+			<!-- <li><p>지금 즉시 가입을 원하시면 고객상담센터(지역번호없이)1588-8700으로 연락주시기 바랍니다.</p></li>
+			<li><p> 이용대상
+					 <br />- 정상카드와 휴대폰을 소지한 당사회원
+					 <br />- 법인카드, 가족카드, 체크카드 및 비신용카드로는 신청이 불가합니다.
+					 <br />- 월간정액제 가입회원이 개인정상 카드가 없는 경우 자동 해지될 수 있습니다.</p></li>
+			<li><p>자세한 서비스 제공내역과 이용방법은 상단 [이용안내] 페이지를 참조하시기 바랍니다.</p></li> -->
+		</ol>
+		
+	</div>
+	</form>
+</div>
+<form name="ipinfrm">
+    <input type="hidden" name="menu" value="" />
+</form> 
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

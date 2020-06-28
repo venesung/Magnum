@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title>부가기능 선택 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+
+<body>
+
+<div id="pop_s_wrap">
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/cd/pop_h1_additional.jpg" alt="부가기능 선택" /></h1>
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/cd/pop_h1_additional.jpg" alt="부가기능 선택" /></h1>
+	</div>
+
+
+
+
+		<!-- content -->
+		<div id="pop_s_content" style="margin-top:15px;">
+			<div class="view_1card view_1card_s">
+				<p class="p_card"><img src="<%=dtlVo.getListImg03()%>" alt="<%=dtlVo.getKindName()%>" /></p>
+				<div class="p_desc">
+					<p class="p_tit"><%=dtlVo.getKindName()%></p>
+					<dl>
+						<dt>브랜드</dt><dd>00</dd>
+						<dt>연회비</dt><dd>
+
+							<div class="p_annual">
+								<a id="NHPIMCDCPS203_L01" href="javascript:view_con('id_view_anual');fnSetReturnFocusId('NHPIMCDCPS203_L01','id_view_anual');" class="btn btn_s_white"><span>연회비 정보확인</span></a>
+								<!-- layer -->
+								<div class="flag_additional">
+								<div id="id_view_anual" style="position:absolute; left:-30px; top:-2px; z-index:900; display:none">
+									<div class="layer_annual">
+										<div class="btn_close" onclick="this.parentNode.parentNode.style.display='none';closeLayerPopup();">CLOSE</div>
+										<p class="pb25"><img src="/images/cd/txt_info_annual.png" alt="연회비 정보" /></p>
+										<table class="dtable02 mb5" summary="해외, 국내 각 항목별 연회비 정보입니다.">
+										<caption>연회비</caption>
+										<colgroup><col width="30%" /><col width="35%" /><col width="35%" /></colgroup>
+										<tbody>
+										<%if(ovalIssueCount > 0 || localIssueCount > 0){%>
+											<%if(ovalIssueCount > 0){%>  <%-- 해외 --%>
+												<%if(!"-1".equals(dtlVo.getFeeOvalComm())){%>					
+												<tr>
+													<th scope="row" rowspan="<%=ovalIssueCount %>"><p>해외</p></th>
+													<td class="boline_b0"><p class="t_desc04">본인</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeOvalComm()) || "".equals(dtlVo.getFeeOvalComm()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeOvalComm()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeOvalSpecial())){%>
+												<tr>
+													<td class="boline_b0"><p class="t_desc04">우대</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeOvalSpecial()) || "".equals(dtlVo.getFeeOvalSpecial()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeOvalSpecial()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeOvalVip())){%>												
+												<tr>
+													<td class="boline_b0"><p class="t_desc04">특별</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeOvalVip()) || "".equals(dtlVo.getFeeOvalVip()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeOvalVip()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeOvalFamily())){%>
+												<tr>
+													<td><p class="t_desc04">가족</p></td>
+													<td><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeOvalFamily()) || "".equals(dtlVo.getFeeOvalFamily()))? "없음" :
+	                                                                                    HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeOvalFamily()) ) %></p></td>
+												</tr>
+												<%} %>
+											<%} %>
+											<%if(localIssueCount > 0 ){%> <!-- 국내 -->														
+												<%if(!"-1".equals(dtlVo.getFeeLocalComm())){%>
+												<tr>
+													<th scope="row" rowspan="<%=localIssueCount %>"><p>국내</p></th>
+													<td class="boline_b0"><p class="t_desc04">본인</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeLocalComm()) || "".equals(dtlVo.getFeeLocalComm()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeLocalComm()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeLocalSpecial())){%>												
+												<tr>
+													<td class="boline_b0"><p class="t_desc04">우대</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeLocalSpecial()) || "".equals(dtlVo.getFeeLocalSpecial()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeLocalSpecial()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeLocalVip())){%>												
+												<tr>
+													<td class="boline_b0"><p class="t_desc04">특별</p></td>
+													<td class="boline_b0"><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeLocalVip()) || "".equals(dtlVo.getFeeLocalVip()))? "없음" :
+	                                                                                                      HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeLocalVip()) ) %></p></td>
+												</tr>
+												<%} %>
+												<%if(!"-1".equals(dtlVo.getFeeLocalFamily())){%>
+												<tr>
+													<td><p class="t_desc04">가족</p></td>
+													<td><p class="t_point_org t_11"><%= ("0".equals(dtlVo.getFeeLocalFamily()) || "".equals(dtlVo.getFeeLocalFamily()))? "없음" :
+	                                                                                    HpCommonUtil.amountToString( HpCommonUtil.StringToLong( dtlVo.getFeeLocalFamily()) ) %></p></td>
+												</tr>
+												<%} %>
+											<%} %>
+										<%}else{ %>
+											<tr>
+												<th scope="row" colspan="3"><p>발급불가</p></th>
+											</tr>
+										<%} %>											
+										</tbody>
+										</table>
+										<p class="t_desc03"><%=dtlVo.getIssueYearPay()%></p>
+									</div><div class="layer_annual_btm">&nbsp;</div>
+								</div>
+								</div>
+							</div>
+						</dd>
+						<dt>부가기능</dt><dd>00</dd>
+					</dl>
+				</div>
+			</div>
+
+			<div class="tb_exp clfix">
+				<span class=""><strong class="t_black">부가기능 선택</strong><span class="ml10 t_desc04">|&nbsp;&nbsp;원하시는 부가기능을 선택해주세요</span>
+                <span class="ab_tr"><a href="javascript:goClear()" class="btn btn_s_white"><span>다시선택</span></a></span>
+			</div>
+
+			<div class="p_desc_overview">
+				<dl>
+					<dt id="opt1_title" style="display:none;"></dt>
+					<dd id="opt1_cont"  class="" style="display:none"></dd>
+					<dt id="opt2_title" style="display:none"></dt>
+					<dd id="opt2_cont"  style="display:none"></dd>
+					<dt id="opt3_title" style="display:none"></dt>
+					<dd id="opt3_cont"  style="display:none"></dd>
+					<dt id="opt4_title" style="display:none"></dt>
+					<dd id="opt4_cont"  style="display:none"></dd>
+					<dt id="opt5_title" style="display:none"></dt>
+					<dd id="opt5_cont"  style="display:none"></dd>
+				</dl>
+			</div>
+
+        <div class="btnc"><a href="javascript:goApply();" title="새창"><img id="btn_apply" src="/images/common/btn_s_confirm.png" alt="확인" /></a></div>
+
+	</div>
+
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+
+</div>
+</body>
+</html>

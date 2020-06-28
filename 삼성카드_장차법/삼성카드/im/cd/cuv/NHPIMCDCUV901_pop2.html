@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>삼성카드 6 / 6+ 이용실적 조회 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body onLoad="OnLoad()">
+<div id="pop_wrap">
+		<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_card6_usedetail.png" alt=" 삼성카드 6 / 6+ 이용실적 조회입니다." /></h1>		
+	</div>
+
+<form name="form1" action="" method="post">
+	<input type="hidden" name="cardNo" 	id="cardNo" />
+	<input type="hidden" name="inqGb" 	id="inqGb" />
+	<input type="hidden" name="inqYm" 	id="inqYm" />
+
+	<!-- paging s -->
+	<input type="hidden"	id="goPage901Pop"	name="goPage901Pop"  />
+	<input type="hidden" 	id="PAGE901Pop"	    name="PAGE901Pop"    />
+	<input type="hidden" 	id="PREKEY901Pop"	name="PREKEY901Pop"  />
+	<input type="hidden" 	id="keyList901Pop"	name="keyList901Pop" />	
+ 
+	<!-- content -->
+	<div id="pop_content" class="h445" style="height:300px;">	<!-- 091203 -->
+		
+		<div class="content_block content_block_card clfix">
+			<div class="d_easy d_easy2 mt20"><!-- 100518 -->
+				<p class="al_right mb10">
+				<select name="select_year" title="조회 년도" >
+					<option>1234</option>
+				</select>
+				<a href="#" class="btn btn_s_blue" id="btn_search"><span>조회</span></a>
+				</p>		
+			<div class="d_easy d_easy2 mt20"><!-- 100518 -->
+				<table class="dtable01" summary="삼성카드 6 / 6+ 이용실적 조회 하실 수 있는 게시판입니다.">
+				<caption>삼성카드 6 / 6+ 이용실적 조회</caption>
+				<colgroup><col width="40%" /><col width="60%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col">사용년월</th>
+						<th scope="col">월매출 실적</th>
+					</tr>
+				</thead>
+                  <tbody id="list_result">
+                  </tbody>
+				</table>
+			</div>
+			
+		<p class="mt10">※ 이용실적 산정 시 주유업종 이용금액은 제외됩니다. <br />※ 전월 이용금액(일시불+할부) 30만원 이상 시(주유 사용 금액 제외) 할인서비스 별 월 3회, <br />&nbsp;&nbsp;&nbsp; 60만원 이상 시 할인서비스 별 월 6회 이용 가능 합니다.</p>
+		
+
+		</div> 
+		
+	</div>
+</div>
+		
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div> 
+</body>
+</html>

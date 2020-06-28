@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">지방세 카드납부 서비스</h1>
+					<p class="h1_desc"><img src="/images/ss/h1_localtax_payservice.jpg" alt="편리한 공과금 카드납부 지방세 카드납부 서비스 지방세, 편리한 인터넷 공과금납부로 시간을 절약하세요" /></p>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<div class="tab01 w810 h60">
+						<ul>
+							<li class="on">								
+								<a href="#">지방세납부</a>
+								<ul class="sub_tab">
+									<li><a href="javascript:goTabPage('NHPIMSSTAX001M001', true);">지방세 카드 납부안내</a></li>	<!-- 091203 -->
+									<li><a href="javascript:goTabPage('NHPIMSSTAX001M002', true);">지방세 카드 납부하기</a></li>
+									<li class="on"><a href="javascript:goTabPage('NHPIMSSTAX001M003', true);">지방세 납부 결과조회</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:goTabPage('NHPIMSSTAX002M001', true);">세정담당자</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- content_block -->
+				<div class="content_block content_block_card clfix">
+					<h2><img src="/images/ss/h2_localtax_search01.png" alt="납세자 정보를 입력해 주세요" /></h2>
+					<div class="content_block_inner pos_rel">
+<form name="initform" method="post">
+<input type="hidden" name="input" />
+<input type="hidden" name="flag" />
+<input type="hidden" name="payerNo" />
+<input type="hidden" name="search_date1" />
+<input type="hidden" name="search_date2" />
+<input type="hidden" name="btnCnt" value="0" />
+<input type="hidden" name="cardNo16" value="" /> 
+						<table class="dtable02 dtable_inputfield" summary="지방세 납부결과 조회를 위하여 주민등록번호와 카드번호를 입력하는 게시판입니다.">
+						<caption>지방세 납부결과 조회 게시판</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="label_id"><input type="radio" class="chk" value="" id="label_id" name="name_id" onclick="searchChange('1');" checked="checked" title="주민등록번호(법인등록번호)" /> 주민등록번호<br /><span class="ml20">(법인등록번호)</span></label></th>
+								<td >
+									<p class="input_idno">
+										<input name="payer_no1" onkeyup="lengthCheck1(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" type="text" class="txt" size="6" maxlength="6" value="" title="주민등록번호 앞자리" />&nbsp;-&nbsp;
+										<input name="payer_no2"  onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" type="password" class="txt pw" size="7" maxlength="7"  value="" title="주민등록번호 뒷자리" />
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="label_cardno"><input type="radio" class="chk" value="" id="label_cardno" name="name_id" onclick="searchChange('2');" title="카드번호" /> 카드번호</label></th>
+								<td>
+									<p class="input_phone">
+										<input type="text" class="txt" value="" onkeyup="lengthCheck3(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"  disabled="disabled" name="card_No1" size="4" maxlength="4" title="카드번호 첫째 네자리" /> -
+										<input type="text" class="txt" value="" onkeyup="lengthCheck4(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled" disabled="disabled" name="card_No2" size="4" maxlength="4" title="카드번호 두번째 네자리" /> - 
+										<input type="password" class="txt" value="" onkeyup="lengthCheck5(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"  disabled="disabled" name="card_No3" size="4" maxlength="4" title="카드번호 세번째 네자리" /> - 	
+										<input type="password" class="txt" value="" onkeyup="lengthCheck6(this.form, this.value);" onkeydown="getOnlyNumberKey()" style="ime-mode:disabled"  disabled="disabled" name="card_No4" size="4" maxlength="4" title="카드번호 네번째 네자리" />
+									</p>
+									<p class="t_desc04 mt10">아멕스카드는 15자리만 입력해주세요 (예 : 3779-1234-5678-901)</p>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<!-- btn -->
+						<div class="btnset">
+							<p class="btnl"><span class="t_desc03">신용카드로 납부한 세금은 승인취소 및 결제방법(일시불/할부) 변경이 불가능하며,<br />
+							납세번호 및 납부자 주민번호가 다르거나, 납부금액이 상이할 경우 지방세 납부가 취소 될 수 있으니 <br />
+							다시 한번 확인하고 납부하시기 바랍니다.</span></p>
+
+							<p class="btnr">
+                                <a href="javascript:go();" class="btn btn_blue"><span>조회</span></a>
+							</p>
+						</div>
+</form>
+					</div>
+					
+				</div>
+				<div class="content_block clfix" style="_overflow:hidden; _width:100%">
+					<h2><img src="/images/ss/h2_localtax_search02.png" alt="지방세 납부결과 상세내역입니다" /></h2>
+					<div class="content_block_inner pos_rel">
+						<table class="dtable02 dtable_expand" summary="지방세 납부결과 상세 내역 중 총 건수와 금액을 건단위로 확인하는 게시판입니다.">
+						<caption>지방세 납부 결과 상세내역 게시판</caption>
+						<colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<% 
+								NHPIMSSTAX001VO nhpimsstax001vo = new NHPIMSSTAX001VO();
+								
+								if(request.getAttribute("vo")!=null && request.getAttribute("vo")!=""){
+									nhpimsstax001vo = (NHPIMSSTAX001VO)request.getAttribute("vo"); 
+								}else{
+									nhpimsstax001vo.setResultCount("0");
+									nhpimsstax001vo.setResultSum("0");
+								}
+								
+								%>
+								<th scope="row"><p>해당기간 총 납부건수</p></th>
+								<td><p><span class="t_no"><%=nhpimsstax001vo.getResultCount()%></span> 건</p></td>
+								<th scope="row"><p>해당기간 총 납부금액</p></th>
+								<td><p><span class="t_no"><%=nhpimsstax001vo.getResultSum()%></span> 원</p></td>
+							</tr>
+							<!-- //loop -->
+						</tbody>
+						</table>
+
+						<table class="dtable01 mt20" summary="과세번호(납세번호), 사용자(법인명), 납부일자, 납수시간, 납부금액, 할부개월, 세목, 승인여부로 구성된 지방세 납부결과 상세내역을 확인하실 수 있는 게시판입니다.">
+						<caption>지방세 납부결과 상세내역 확인 게시판</caption>
+						<colgroup><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /><col width="12%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">과세번호<br/>(납세번호)</th>
+								<th scope="col">사용자<br />(법인명)</th>
+								<th scope="col">납부일자</th>
+								<th scope="col">납부시간</th>
+								<th scope="col" class="cell_r10">납부금액</th>
+								<th scope="col">할부개월</th>
+								<th scope="col">세목</th>
+								<th scope="col" class="cell_r10">승인여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%if((ArrayList)request.getAttribute("resultList")==null || ((ArrayList)request.getAttribute("resultList")).size() == 0){ %>
+								<tr class="StdTable-RowOdd">
+								  <td colspan="7" class="StdTable-Col1E nopadding" align="center">해당 조건에 맞는 납부내역이 없습니다.</td>
+								</tr>
+							<%}else{
+								ArrayList result = (ArrayList)request.getAttribute("resultList");
+								for(int i=0;i<result.size();i++){
+									NHPIMSSTAX001VO vo = (NHPIMSSTAX001VO)result.get(i);
+							%>
+                  			<%if ( i%2 == 0 ){%>
+        				         <tr class="StdTable-RowOdd">
+                  			<% }else{ %>
+                    		     <tr class="StdTable-RowEven">
+                  			<% }%>
+                   				   <td scope="col" class="cell_l10" >
+				                        <% if ("D0000".equals(vo.getStatus())&&"R9999".equals(vo.getStatus())){%>
+                                          <a href="javascript:popup(<%= vo.getPaymentNo()%>);" title="새창" ><%=vo.getTaxOrgan()+vo.getTaxType()+vo.getTaxPeriod()+vo.getDistrict()+vo.getTaxNo()%></a>
+				                        <% }else{%>
+                                          <a href="javascript:popup(<%= vo.getPaymentNo()%>);" title="새창" ><%=vo.getTaxOrgan()+vo.getTaxType()+vo.getTaxPeriod()+vo.getDistrict()+vo.getTaxNo()%></a>
+				                        <%} %>
+                    			  </td>
+                     			  <td scope="col" class="cell_l10"><%=vo.getPayerName()%></td>
+			                      <td scope="col"><%=vo.getApprovalDate().substring(0,4) %>.<%=vo.getApprovalDate().substring(4,6) %>.<%=vo.getApprovalDate().substring(6,8) %></td>
+		                          <td scope="col"><%=vo.getApprovalTime().substring(0,2) %>:<%=vo.getApprovalTime().substring(2,4) %>:<%=vo.getApprovalTime().substring(4,6) %></td>
+                                  <td scope="col" class="cell_r10"><%=FormatUtil.getMoney(vo.getPaymentAmount())%></td>
+			                      <td scope="col"><%=vo.getInstallmentMonth()%></td>
+			   					  <td scope="col"><%=vo.getCodeName() %></td>
+								  <td scope="col" class="cell_r10"><% if(vo.getStatus().equals("D0001")){%>취소<%} else{%>승인<% }%></td>
+                  			  </tr>
+							<%	}
+							} %>
+						</tbody>
+						</table>
+						<!-- btn -->
+						<div class="btnset">
+							<!-- <p class="btnl"><span class="t_desc03">조회 후 과세번호(OCR고지번호)를 클릭하시면 납부영수증을 인쇄하실 수 있습니다.</span></p> -->
+							<p class="btnl"><span class="t_desc04">조회 후 과세번호(OCR고지번호)를 클릭하시면 납부영수증을 인쇄하실 수 있습니다.</span><br /><span class="t_desc04">납부내역은 최근 6개월까지 조회됩니다.</span></p>
+						</div>
+						<div class="line_lgray">&nbsp;</div>
+						<ol class="list_no01">
+							<li><p>'11.3.2일부터 행정안전부의 지방세 통합 납부 서비스인 위텍스(<a href="http://www.wetax.go.kr" class="btn_link" title="위텍스 홈페이지 새창" target="_blank">www.wetax.go.kr</a>) 오픈으로<br />삼성카드 홈페이지에서 납부한 지방세 내역은 '11.2.28일 납부건까지만 조회됩니다.</p></li>
+							<li><p>위텍스를 통해 납부한 건은 위텍스 페이지에서 조회하시기 바랍니다.</p></li>
+						</ol>						
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

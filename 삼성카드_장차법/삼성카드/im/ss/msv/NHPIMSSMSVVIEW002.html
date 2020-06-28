@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1 class="none">사용 내역을 알려드리는 메일 알림서비스</h1>
+					<div class="h1_desc"><img src="/cms_content/images/ss/h1_mail.jpg" alt="사용 내역을 알려드리는 메일 알림서비스 -  카드 사용 내역을 다음날 안전하게 발송하여 알려드립니다 " /></div>
+					<!-- 
+					<a class="btn btn_white btn_addservice" href="#"><span>+ 담기</span></a>
+					-->
+				</div>
+
+				<div class="content_block content_block_tab2 clfix">
+					<!-- tab_area -->
+					<div class="tab01 w810">
+						<ul>
+                            <li><a href="javascript:intro()">서비스소개</a></li>
+                            <li class="on"><a href="javascript:apply()">서비스신청/해지</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block first_none clfix">
+					<h2><img src="/images/ss/h2_sinfocare05.gif" alt="서비스 이용여부를 확인 하세요" /></h2>
+					<div class="content_block_inner pos_rel">
+						<!--div class="flag_additional"><img src="/images/ss/img_letterpot01.png" alt="" class="flag_letterpot" /></div--><!-- 실사 삭제 13.03.18 -->
+						<img src="/images/ss/txt_mail01.gif" alt="회원님은 현재 메일 알림 서비스를 이용하고 계십니다." />
+						<img src="/images/ss/txt_mail02.gif" alt="회원님은 현재 메일 알림 서비스를 이용하고 있지 않습니다." />
+						<!-- <p class="t_11 t_gray">아래의 회원님의 정보를 확인해주세요</p> 100309 : 삭제 -->
+					</div>
+				</div>
+				<div class="content_block clfix">
+					<h2><img src="/images/ss/h2_mail01.gif" alt="메일서비스 수신에 동의해주세요" /></h2>
+					<div class="content_block_inner">
+						<table class="dtable02 dtable_inputfield" summary="메일서비스 수신 동의를 위한 수신이메일, 메일서비스 동의여부 선택을 입력하는 게시판입니다.">
+						<caption>메일서비스 수신 동의여부 선택</caption>
+						<colgroup><col width="115" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>수신이메일</p></th>
+								<td><p class="t_no">${email}</p></td>
+							</tr>
+							<tr>
+								<th scope="row"><p>메일서비스</p></th>
+								<td><p>
+									<label for="label_mail1" class="mr10"><input type="radio" title="신청선택" class="rdo" id="label_mail1" name="apply" value="1" /> 신청</label>
+									<label for="label_mail2"><input type="radio" class="rdo" title="해지선택" id="label_mail2" name="apply" value="0" /> 해지</label>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="btnset">
+							<p class="btnl ml10 t_desc04">이메일 주소 변경은 <a href="javascript:infoChange();" class="a_point">신상정보조회</a>에서 확인 후 변경하실 수 있습니다.</p>
+
+							<!-- btn -->
+							<div class="btnr">
+                                <a id="NHPIMSSMSVVIEW002_L01" href="javascript:mod('NHPIMSSMSVVIEW002_L01');" class="btn btn_blue" title="새창"><span>확인</span></a>
+                                <a href="javascript:infoChange();" class="btn btn_white"><span>주소변경</span></a>
+                                <a href="javascript:intro();" class="btn btn_white"><span>취소</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>
+

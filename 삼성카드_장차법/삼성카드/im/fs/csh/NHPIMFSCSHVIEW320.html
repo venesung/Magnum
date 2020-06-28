@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<div class="top_visual">
+	<h1 class="none">현금서비스</h1>
+	<div class="h1_desc"><img src="/cms_content/finance/goods/3943_IMG_1.jpg" alt="24시간 생활 속 어디서나 현금서비스. 밤늦게 갑자기 현금이 필요할 때도 통장에 카드결제대금이 부족할 때도 365일 24시간 바로바로 편리하게!" /></div>
+	<a href="#" onclick="goTab(1);return false;" class="mv_h1_btn"><img src="/images/fs/vis_btn_entry.png" alt="서비스 신청하기" /></a>
+</div>
+<!-- top_visual -->
+
+<form name="form1">
+	<input type="hidden" name="plain" value="" />
+	<input type="hidden" name="loadCnt" value="0" />
+	<input type="hidden" name="ssno" value="" />
+</form>
+
+
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+	<form name="form_main">
+		<!-- tab_area -->		
+	<div class="tab01 w810">
+<!-- 수정 13.01.18 VOC40 -->
+		<ul>
+			<li><a href="#" onclick="goTab(0);return false;">서비스 안내</a></li>
+			<li><a href="#" onclick="goTab(1);return false;">신청</a></li>
+			<li><a href="#" onclick="goTab(2);return false;">시뮬레이션</a></li>
+			<li class="on"><a href="#" onclick="return false;">이용내역조회</a></li>
+		</ul>
+<!--// 수정 13.01.18 VOC40 -->
+	</div>
+		<input name="tabNo" type="hidden" />
+	</form>
+</div>
+<!-- 여기부터 시작 --> 
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<h2><img src="/images/fs/h2_cash_search01.png" alt="현금서비스 기간별 이용내역조회입니다" /></h2>
+	<div class="content_block_inner" >
+		<div>
+		<form name="f" id="f">
+		<table class="dtable02 dtable_inputfield" summary="현금서비스 기간별 이용내역조회를 위해 이용기간을 선택하실수 있습니다.">
+			<caption>현금서비스 기간별 이용내역조회</caption>
+			<colgroup>
+			<col width="70" />
+			<col width="" />
+			</colgroup>
+			<tbody>
+				<tr id="region_no9">
+					<th scope="row"><p>이용기간</p></th>
+					<td id="id_cal_wraps">
+						<p>
+							<a href="#" onclick="selectDate(7);return false;" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1주일</span></a>
+							<a href="#" onclick="selectDate(30);return false;" class="btn btn_s_white" id="btnWeek"><span id="dateWeek" style="width:30px">1개월</span></a>
+							<a href="#" onclick="selectDate(90);return false;" class="btn btn_s_white" id="btnMonth1"><span id="dateMonth1" style="width:30px">3개월</span></a>
+							<a href="#" onclick="selectDate(180);return false;" class="btn btn_s_white" id="btnMonth2"><span id="dateMonth2" style="width:30px">6개월</span></a>
+						</p>
+					</td>
+					<th scope="row"><p>날짜지정</p></th>
+					<td id="id_cal_wrap">
+						<p>
+							<span class="reset_date"><fileTag:calendarAddIf calendarId="hp_single_cal1" title="시작하는날짜 새창열림" inputClass="txt" inputName="stDt" inputValue="<%=date%>" /></span>
+						</p>
+					</td>
+					<td id="id_cal_wrap">
+						<p>
+							<span class="reset_date">~&nbsp;&nbsp;<fileTag:calendarAddIf calendarId="hp_single_cal2" title="끝나는날짜  새창열림"  inputClass="txt" inputName="edDt" inputValue="<%=date%>" />
+							</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<div class="btnset">
+			<p class="btnr"> <a href="#" onclick="goSubmit();return false;" class="btn btn_blue"><span>조회</span></a> </p>
+		</div>
+		
+		<div class="line_lgray"></div>
+ 
+		<ol class="list_no01">
+			<li><p>신청하신 내용을 취소하시려면 처리결과란의 '취소가능'을 클릭하여 주시기 바랍니다.</p></li>
+			<li><p>이체완료 처리 된 건(은행처리/당사완료/이체완료로 표시된 건)은 취소하실 수 없습니다.</p></li>
+		</ol>
+	</div>
+</div>
+<!--cms_content끝-->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

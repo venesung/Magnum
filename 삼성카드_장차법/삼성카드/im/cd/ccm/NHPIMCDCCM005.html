@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>카드발급진단 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript">
+
+	function onLoad(){
+
+		if(navigator.appVersion.indexOf("MSIS 7") != -1 ||  
+		   navigator.appVersion.indexOf("MSIS 8") != -1){
+	
+			self.resizeTo(document.body.scrollWidth + 12, document.body.scrollHeight + 80);
+			
+		}else{
+	
+			self.resizeTo(document.body.scrollWidth + 12, document.body.scrollHeight + 50);
+	
+		}
+
+	}
+
+	function diagnosisCardIssue(reqGb){
+
+		form1.target="_self";
+		form1.method="post";
+		form1.action="/hp/im/cd/ccm001.do?method=diagnoseCardIssue";
+		form1.reqGb.value = reqGb;
+
+		form1.submit();
+
+	}
+	//컨펌창부분
+	function check(){
+		var result = confirm("신용정보가 즉시 조회되어 안내해드리는것으로  \n신용등급이 하락할 수 있습니다.");
+
+		if(result){
+			diagnosisCardIssue('1');
+		
+		}
+	}
+	
+
+</script>
+</head>
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_s_header">
+		<h1><img src="/images/mh/pop_h1_service_card_issue.png" alt="카드발급 가능여부 테스트 하기" /></h1>
+	</div>-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_service_card_issue.png" alt="카드발급 가능여부 테스트 하기" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_s_content" style="margin-top:15px;">
+		<p class="winpop_stit02"><strong class="t_black">죄송합니다.<br />현재 정보가 원활하게 이루어지지 않고 있습니다.<br />다시 조회하여 주십시오.</strong></p>
+		<p class="btnc">
+        <a href="javascript:check()"><img src="/images/common/btn_test.png" alt="테스트하기" /></a>		
+        <a href="javascript:window.close();"><img src="/images/common/btn_app_card.png" alt="카드신청" /></a></p>
+	</div>
+
+	<!-- footer -->
+	<div id="pop_s_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_s_close btn_input" onclick="window.close();" title="창닫기" /><!--100311 -->
+	</div>
+	<form name="form1">
+		<input type="hidden" name="reqGb" />
+	</form>
+</div>
+</body>
+</html>

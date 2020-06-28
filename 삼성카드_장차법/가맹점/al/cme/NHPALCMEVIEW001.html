@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>로그인 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+		
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+				<div id="location">웹멤버&nbsp;&gt;&nbsp;로그인</div>
+				<h1><img src="/images/al/h1_login.png" alt="가맹점 웹 로그인" /></h1><!-- 100415 -->
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_block_inner">
+					<div class="login_wrap">
+						<p>아이디 및 비밀번호는 영문 대소문자를 구별하오니 입력시 주의하시기 바랍니다.</p>
+						<div class="line_lgray">&nbsp;</div>
+						<fieldset class="login pos_rel">
+							<legend>로그인</legend>
+							<dl>
+								<dt><label for="label_id">아이디</label></dt>
+								<dd class="mb5"><span class="bg_input"><input type="text" value="" title="아이디" name="userId" id="label_id" style="width:233px" maxlength="12" style="ime-mode:disabled" onblur="checkTypesOnBlur(this, 'ECNO');" /><em>&nbsp;</em></span></dd>
+								<dt><label for="label_pw">비밀번호</label></dt>
+								<dd><span class="bg_input"><input type="password" value="" title="비밀번호" name="password" id="label_pw" style="width:233px" maxlength="12" style="ime-mode:disabled" onkeydown="checkEnter();" /><em>&nbsp;</em></span></dd>
+							</dl>
+							<p class="btn_login"><a href="javascript:webLogin()"><img src="/images/common/btn_login03.png" alt="로그인" /></a></p>
+						</fieldset>
+						<div class="btn change_line">
+                            <a href="/chainmember.do?method=selectChainIdForm" class="btn_link">아이디/비밀번호 찾기</a>
+						</div>
+					</div>
+					
+					<div class="notice">
+						<ol class="list_no01">
+							<li><p>회원정보 보호를 위하여 약 10분 동안 화면 이동이 없을 경우 자동 로그아웃 처리 됩니다.</p></li>
+							<li><p>원하시는 서비스를 이용하신 후 정보보호를 위해서 반드시 로그아웃 해 주십시오.</p></li>
+							<li><p>비밀번호는 주기적으로 변경 관리하시기 바라며 타인에게 노출되지 않도록 주의하시기 바랍니다.</p></li>
+                            <li><p>보안프로그램이 정상적으로 설치되지 않아 오류가 발생하는 경우 설치하세요.<a href="javascript:changeTabPage('NHPIMCSPCX001');" class="btn_link ml10">보안프로그램 설치</a></p></li>
+                            <li><p>웹사이트 문제해결 방법을 안내해 드립니다.<a href="javascript:changeTabPage('NHPIMCSPCX002');" class="btn_link ml10">인터넷 설정 변경</a></p></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+
+</div>
+</body>
+</html>

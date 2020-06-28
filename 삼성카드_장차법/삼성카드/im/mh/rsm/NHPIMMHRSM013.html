@@ -1,0 +1,55 @@
+<%-- 이 화면 삭제되었음 : 접근성 TF 13.04.10 --%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>자유결제서비스 안내 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<style type="text/css">
+#pop_wrap	{width:810px}
+#pop_header	 {width:100%; height:60px; background:url('/images/common/pop_bg_body810.jpg') no-repeat left top}
+#pop_header	 h1	{padding:19px 0 0 25px; font-size:0; line-height:0; background:transparent}
+#pop_footer	 .btn_close	{position:absolute; right:12px; top:4px; width:24px; height:24px; background:url('/images/common/pop_bg_body810.jpg') no-repeat 763px 0}
+.flash_freepay	{width:700px; margin:20px 0 20px 60px}
+#pop_content	 {position:relative; width:100%; margin:20px 0; overflow:auto}
+#pop_footer	{position:relative; width:100%; height:30px; background:url('/images/common/pop_bg_body810.jpg') no-repeat left bottom}
+</style>
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script src="/js/embedswf.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+	function FFn_EmbedMain()
+	{
+		var flashVars = {};
+		embedSWF("rsmLayer", "/flash/revolving/main.swf", "700", "480", { id:"FL_main" }, { allowScriptAccess:"always", allowFullscreen:"true", wmode:"transparent" }, flashVars );
+	}
+
+	function FLASH_LINK( id ){
+		opener.flash_link(id);		
+	}
+//]]>
+</script>
+</head>
+<body>
+<div id="pop_wrap">
+	<!-- header -->
+	<!--div id="pop_header">
+		<h1><img src="/images/mh/pop_h1_freepay.png" alt="자유결제서비스를 안내해드립니다" /></h1>
+	</div-->
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_freepay.png" alt="자유결제서비스를 안내해드립니다" /></h1>
+	</div>
+
+
+	<div class="flash_freepay"><div id="rsmLayer"><script language="javascript" type="text/javascript">FFn_EmbedMain();</script></div></div>
+ 
+	<!-- footer -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" /> <!-- 100311 -->
+	</div>
+ 
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@page import="com.scard.hp.im.fs.pvi.vo.NHPIMFSPVI001VO"%>
+<%
+NHPIMFSPVI001VO result = (NHPIMFSPVI001VO)request.getAttribute("result"); 
+%>
+<%@include file="/WEB-INF/jsp/common/tab_header.jsp" %>
+
+<div id="tab_title"></div>
+
+<!-- tab_script -->
+<div id="tab_script">
+	<link rel="stylesheet" type="text/css" href="/css/fs.css" />
+	<script type="text/javascript" src="/js/common-hp-ajax.js"></script>
+	
+	<script type="text/javascript">
+		function $tabOnLoad() {
+			// Tab OnLoad Event
+			
+			cmsOpen('${gubun}');
+		}
+		
+		function cmsOpen(idx){
+			
+			//cmsLink('subTab',idx,'/cms_content/hp/im/fs/mns/NHPIMFSMNSVIEW001C'+idx+'.html');
+		}
+
+		function svcStopMsg()
+		{
+			var msg = "보다 나은 서비스를 위해 상품을 개선 중으로\n"
+					+ "당분간 원금균등상환 방식인 무지개론만 이용 가능합니다.\n"
+					+ "마이너스론 상환 신청 및 대출/상환내역 조회는 이용 가능합니다.\n"
+					+ "※ 마이너스론 카드로는 모든 국내은행 CD기에서 마이너스론 이용이 가능합니다.";
+			alert(msg);
+		}
+	</script>
+</div>
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">마이너스통장처럼 편리한 마이너스론</h1>
+	<div class="h1_desc"><img src="<%=result.getTargetPath()%>/<%=result.getTopImg()%>" alt="<%=result.getDescription() %>" /></div>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block content_block_tab2 clfix"><!-- 100327 -->
+	<!-- tab_area -->
+	<div class="tab01 w810 h60">
+		<ul>
+            <li class="on"><a href="javascript:goTabPage('NHPIMFSMNS001',true);">서비스안내</a></li>
+			<!--
+			<li><a href="javascript:goTabPage('NHPIMFSMNS002',true)">시뮬레이션</a></li>
+			<li><a href="javascript:goTabPage('NHPIMFSMNS003',true)">신청</a></li>
+			-->
+            <li><a href="javascript:svcStopMsg();">시뮬레이션</a></li>
+            <li><a href="javascript:svcStopMsg();">신청</a></li>
+            <li><a href="javascript:goTabPage('NHPIMFSMNS004',true);">이용내역조회</a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+<!--cms_content시작-->
+<div id="cma_content">
+	<cms:include page="${result.targetPath}/${result.contentId}_hp_fi_view.html" flush="false" />
+</div>
+<!--cms_content끝-->
+<%@ include file="/WEB-INF/jsp/common/tab_footer.jsp"%>

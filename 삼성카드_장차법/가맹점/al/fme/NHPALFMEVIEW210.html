@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<title>아이디/비밀번호 찾기 - 삼성카드</title>
+	<link rel="stylesheet" type="text/css" href="/css/base_al.css" />
+	<link rel="stylesheet" type="text/css" href="/css/al.css" />
+</head>
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+	
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+<div class="con_wrap_left">공통 좌측메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+                <div id="location"><a href="/chain.do">가맹점주</a>&nbsp;&gt;&nbsp;가맹점주 웹회원&nbsp;&gt;&nbsp;아이디/비밀번호 찾기</div>
+				<h1><img src="/images/al/h1_find_idpw.png" class="png24" alt="아이디/비밀번호 찾기" /></h1>
+				<p class="h1_txt"><img src="/images/al/txt_find_idpw.png" class="png24" alt="웹회원 아이디/비밀번호를 확인/수정 하실 수 있습니다" /></p>
+				<p class="ab_br"><img src="/images/al/img_webmem.jpg" alt="" /></p>				
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<div class="content_n_wrap">
+					<div class="content_l_tit"><h2><img src="/images/al/h2_find_idpw_2.png" alt="회원님의 아이디를 안내해 드립니다." /></h2></div>
+					<div class="content_block_inner">
+						<p><img src="/images/al/txt_find_idpw3.png" alt="비밀번호 변경 후, 다시 로그인 후 사이트를 이용해 주세요." /></p>
+						<div class="line_lgray"></div>
+						<fieldset class="user_verify mt30">
+							<legend>비밀번호찾기</legend>
+							<dl>
+								<dt>아이디</dt>
+								<dd><strong class="t_black">${chainId}</strong></dd>
+								<dt><label for="label_newpass">새 비밀번호</label></dt>
+								<dd>
+									<span class="bg_input"><input type="password" value="" id="label_newpass" name="password" maxlength="12" style="width:257px;ime-mode:disabled" onblur="checkTypesOnBlur(this, 'PSWD');" /><em>&nbsp;</em></span>
+									<!-- 가상키보드 적용-->
+							    	<span id="usafeon_password"></span>
+							    	<br></br><span>비밀번호는 영문/숫자 혼용하여 8~12자리.<br />특수문자 선택입력 범위(필수옵션 아님) [ !@#$%^&amp;*() ]</span>
+								</dd>
+								<dt><label for="label_newpass_ok">새 비밀번호 확인</label></dt>
+								<dd>
+									<span class="bg_input"><input type="password" value="" id="label_newpass_ok" name="passwordRe" maxlength="12" style="width:257px;ime-mode:disabled" onblur="checkTypesOnBlur(this, 'PSWD');" /><em>&nbsp;</em></span>
+									<!-- 가상키보드 적용-->
+							    	<span id="usafeon_passwordRe">마우스입력</span>
+								</dd>
+							</dl>
+						</fieldset>
+						<div class="line_lgray">&nbsp;</div>
+						<div class="btnr">
+                            <a href="javascript:updateChainPassword();" class="btn btn_blue" ><span>비밀번호 변경</span></a>
+                            <a href="/chain.do" class="btn btn_white"><span>취소</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+
+</div>
+</body>
+</html>

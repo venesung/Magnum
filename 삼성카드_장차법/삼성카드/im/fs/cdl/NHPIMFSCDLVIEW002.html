@@ -1,0 +1,33 @@
+<%
+/*
+ * Project Name: 삼성카드 웹 이노베이션 프로젝트
+ * File Name: NHPIMFSCDLVIEW002.jsp
+ * Description : 카드론 거절신청 완료 처리 
+ * Author: 
+ * Created on 2011. 12. 26.
+ *
+ * COPYRIGHT 2010 SAMSUNG SDS. ALL RIGHT RESERVED.
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<div id="tab_title"></div>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<title>카드론 거절신청 완료 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/cd.css" />
+</head>
+<script type="text/javascript">
+function confirm() {
+	if("${resultCode}" == "00") {
+		parent.cardLoanOk();
+	}else{
+		parent.cardLoanError('${resultCode}');
+	}
+}
+</script>
+<body onLoad="confirm();">
+</body>
+</html>

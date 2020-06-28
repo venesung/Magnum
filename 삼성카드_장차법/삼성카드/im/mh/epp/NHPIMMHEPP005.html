@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>E-mail 중복확인 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/ms.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+</head>
+<body >
+
+<!-- 이메일 중복 확인 2단계 -->
+<div id="pop_s_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ms/layer_tit_email_dupcheck.png" alt="E-mail 중복확인" /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_s_content2">
+		<!-- 팝업 콘텐츠 -->
+		<div class="pop_l_wrap">
+				<div class="mslayer_conbox">				
+					<span class="t_point_org"><strong>'ㅁㅁㅁㅁㅁㅁㅁㅁㅁ'</strong></span>는 등록 가능한 E-mail입니다.
+				
+					<p class="mt10"><a href="javascript:go();" class="btn btn_blue"><span>본인 E-mail로 등록</span></a></p>
+				</div>
+				<p class="t_desc04 mt10 ml10">등록하시려면 [본인 E-mail로 등록]을 클릭하시기 바랍니다</p>
+			<div class="mslayer_conbox"><span class="t_point_org"><strong>'ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ'</strong></span>는 이미 등록된 E-mail입니다</div>
+				<ol class="list_no01 pop_numlist mt10 ml10">
+					<li><p>개인정보 보호를 위해 <span class="t_11 t_black">회원본인 E-mail</span>만 등록/사용하실 수 있습니다. </p></li>
+					<li><p>실제 본인 E-mail이 이미 등록된 경우는 가족등록, 타회원 오류등록 등의 <br />원인으로 인터넷 고객상담 또는 상담원 (지역번호없이) <span class="t_11 t_black">1588-8700</span> 으로 <br />
+					문의하시기 바랍니다</p></li>
+				</ol>
+
+				<div class="mslayer_subbox">
+					<dl>
+						<dt><label for="label_emailenter_sec01">E-mail</label></dt>
+						<dd><span class="input_emailcheck">
+						<input type="hidden" name="email"  size="20" maxlength="50" value="" />
+						<input name="emailid" maxlength="30" type="text" class="txt" id="label_emailenter_sec01" value="" title="이메일 아이디"
+						onkeypress="checkTypes(this, 'URL');"
+						onblur="checkTypesOnBlur(this, 'URL');"
+						style="ime-mode:disabled"
+						/>&nbsp;@&nbsp;
+						<input name="emailaddr" maxlength="30" type="text" class="txt" id="label_emailenter_sec02" value="" title="이메일 공급자 직접입력"
+						onkeypress="checkTypes(this, 'URL');"
+						onblur="checkTypesOnBlur(this, 'URL');"
+						style="ime-mode:disabled"
+						/>
+							<select name="selemail" id="STD_MENU" style="width:90px" onChange="sel(this)" title="이메일 공급자 선택">
+			                  <option value="" selected="selected">선택</option>
+			                  <option value="dreamwiz.com">드림위즈</option>
+			                  <option value="empal.com">엠팔</option>
+			                  <option value="hanmail.net">한메일(다음)</option>
+			                  <option value="hotmail.com">hotmail</option>
+			                  <option value="korea.com">코리아</option>
+			                  <option value="lycos.co.kr">라이코스</option>
+			                  <option value="nate.com">네이트</option>
+			                  <option value="naver.com">네이버</option>
+			                  <option value="netian.com">네띠앙</option>
+			                  <option value="orgio.net">오르지오</option>
+			                  <option value="paran.com">파란</option>
+			                  <!--option value="yahoo.co.kr">야후</option-->
+			                  <option value="">직접입력</option>
+							</select>
+							<input type="hidden" name="selemail_sub" value="" />
+						</span><a href="javascript" onClick="return go_check(self.document.wform);return false"><span>중복확인</span></a></dd>
+					</dl>
+				</div>
+
+		</div>
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+	<input type="button" class="btn_s_close btn_input" onClick="window.close();" title="창닫기" />
+	</div>
+</div>
+</body>
+</html>

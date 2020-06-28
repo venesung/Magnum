@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_usebill_chk.png" alt="회원님의 카드이용현황 요약정보입니다" /></h1><!-- 100317 -->
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab2 clfix">
+					<div class="pt30">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:150px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">법인카드</a></p>
+							<div class="childlayer">
+								<ul>
+									<li><a href="javascript:goTabPage('NHPIMMHCIB', 'true')">법인카드</a></li>
+									<li><a href="javascript:goTabPage('NHPIMMHPIB001', 'true')">개인카드</a></li>
+									<li><a href="javascript:goTabPage('NHPIMCKB', 'true');">체크카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt">개인카드, 법인카드, 체크카드를 조회하시려면 카드구분을 변경하시기 바랍니다</span>
+					</div>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block content_block_tab clfix">
+					<div class="tab01 w810">
+						<ul>
+							<li><a href="javascript:viewCiBillInfo();">주요정보</a></li><!-- choose -->
+							<li><a href="javascript:viewEmsInfo();">이용내역</a></li>
+							<li class="on"><span class="none">현재탭</span><a href="javascript:viewEmsStatus();">현황요약</a></li>
+						</ul>
+					</div>
+
+					<h2><img src="/images/mh/h2_cond_summ01.png" alt="그래프로 보는 회원님의 삼성카드 트렌드 입니다." /></h2>
+					<div class="content_block_inner">
+
+						<!-- ajax_duepay_tab -->
+						<div id="ajax_duepay_tab">
+							<div class="tab03 clfix">
+								<ul>
+									<li id="goodsLi" class="on"><span class="none">현재탭</span><a href="javascript:changeStatusInfo('goods')">상품별</a></li>
+									<li id="dayLi" ><a href="javascript:changeStatusInfo('day')">요일별</a></li>
+									<li id="currentLi" ><a href="javascript:changeStatusInfo('current')">최근결제금액</a></li>
+									<li id="jobLi" ><a href="javascript:changeStatusInfo('job')">이용업종별</a></li>
+								</ul>
+							</div>
+							<br />
+							<br />
+							<!-- tab_content 100315 -->
+							<jsp:include page="/WEB-INF/jsp/hp/im/mh/cib/NHPIMMHCIBVIEW009.jsp"/>
+						</div>
+						<!-- //ajax_duepay_tab -->
+					</div>
+				</div>
+
+
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cond_summ02.png" alt="원하는 대로 보는 카드이용내역 입니다." /></h2>
+					<div class="content_block_inner">
+						<div class="tb_exp clfix"><!-- 100304 -->
+							<span>이 달 카드이용내역을 <strong class="t_black">이용일별, 이용자별, 상품구분별</strong> 회원님이 원하는 대로 보실 수 있습니다.</span><br />
+							<span>조회기간은 최장 2개월까지 가능합니다.</span>
+						</div>
+
+
+						<div class="pos_rel_cal">캘린더 위치</div>
+						<table summary="조회기간을 선택하는 게시판입니다" class="dtable02 dtable_inputfield">
+							<caption>조회기간 선택</caption>
+							<colgroup><col width="100"/><col width="*"/></colgroup>
+							<tbody>
+								<tr>
+									<th class="cell_bg"><p>조회기간</p></th>
+									<td id="id_cal_wrap" colspan="3">
+										<div class="reset_date fl_left">날짜지정
+										
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btnset">
+							<p class="btnr"><a class="btn btn_blue" href="javascript:search();"><span>조회</span></a></p>
+						</div>
+
+						<table summary="이용일, 이용자, 상품구분, 이용가맹점, 당월청구금액, 이자 및 수수료로 구성된 카드이용내역을 확인하고 선택할 수 있는 게시판입니다." class="dtable01 mt20">
+						<caption>카드이용내역</caption>
+						<colgroup><col width="6%"/><col width="10%"/><col width="10%"/><col width="12%"/><col width="21%"/><col width="16%"/><col width="23%"/></colgroup><!-- 100503 -->
+						<thead id="sortImg">
+							<tr>
+								<th class="cell_l10" scope="col"><label><input type="checkbox" title="카드이용내역" onclick="selectUseInfo()" /></label></th>
+								<th scope="col">이용일<input  type="image" src="/images/common/btn_arrow_up.png" class="ico_sorting" alt="내림차순"  onclick="sortSearch('USE_DATE', this);" title="내림차순 정렬" /></th>
+								<th scope="col">이용자<input  type="image" src="/images/common/btn_arrow_down.png" class="ico_sorting" alt="내림차순"  onclick="sortSearch('USE_NAME', this);"title="내림차순 정렬" /></th>
+								<th scope="col">상품구분<input  type="image" src="/images/common/btn_arrow_down.png" class="ico_sorting" alt="오름차순정렬" onclick="sortSearch('GOODS_GUBUN', this);" title="오름차순 정렬" /></th>
+								<th class="cell_l10" scope="col">이용가맹점<input  type="image" src="/images/common/btn_arrow_down.png" class="ico_sorting" alt="내림차순"  onclick="sortSearch('MVP_CUST_NAME', this);" title="내림차순 정렬" /></th>
+								<th class="cell_r10" scope="col">당월청구금액<input  type="image" src="/images/common/btn_arrow_down.png" class="ico_sorting" alt="내림차순" onclick="sortSearch('BILLTOT', this);" title="내림차순 정렬" /></th>
+								<th class="cell_r10" scope="col">이자 및 수수료<input  type="image" src="/images/common/btn_arrow_down.png" class="ico_sorting" alt="내림차순" onclick="sortSearch('FEETOT', this);" title="내림차순 정렬" /></th>
+							</tr>
+						</thead>
+						</table>
+						<iframe id="detail" name="statusDetail" width="640" height="250" frameborder="0" title="빈프레임"></iframe>
+					</div>
+					<form name="tempXecureForm"><input type="hidden" name="p" /></form>
+				</div>
+
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_cond_summ03.png" alt="이달의 카드 생활백서 입니다." /></h2>
+					<div class="content_block_inner">
+						<p class="mb20">위의 이용내역에서 원하는 항목을 선택하시면 <br />
+						해당 항목의 <strong class="t_black">합계 및 이용금액의 비율</strong>을 손쉽게 확인하여 드리겠습니다.</p>
+						<a class="btn btn_blue" href="javascript:cal();"><span>선택항목 확인하기</span></a>
+						<div class="line_lgray"> </div>
+						<blockquote class="t_duepay mg0"><img alt="회원님께서 선택하신" src="/images/mh/txt_you_have_choosen.png"/><strong class="t_black" id="descCount">0</strong><img alt="건의 이용금액 합계는" src="/images/mh/txt_amount_of_used.png"/><br /><strong class="t_point_org" id="descSum">0</strong><img alt="원 이며," src="/images/mh/txt_won_and.png"/><img alt="이번달 이용금액 중" src="/images/mh/txt_this_month_used.png"/><strong class="t_point_org" id="descRate">0.0%</strong><img alt="를 차지합니다." src="/images/mh/txt_percent_of_occp.png"/></blockquote>
+						<div class="line_lgray"> </div>
+						<dl class="cvc_view_noborder">
+							<dt class="t_black"><strong class="t_point">사용TIP</strong></dt>
+							<dd class="t_desc03">이번 달에 커피전문점에서 이용한 현황이 궁금하셨던 커피 애호가인 김진주 회원님께서는, 
+							위의 표에서 이용가맹점으로 정렬 후<br />해당 건을 체크하고, '선택 항목 확인하기'버튼을 눌러 이용건수와 합계금액 비율을 한 눈에 확인하셨습니다.
+							</dd><!-- 100507 -->
+						</dl>
+						
+					</div>
+				</div>
+				
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

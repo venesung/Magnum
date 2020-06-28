@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+				<!-- top_visual -->
+				<div class="top_visual">
+					<h1><img src="/images/mh/h1_email_send.jpg" alt="이메일 명세서를 재전송합니다" /></h1>
+				</div>
+				<!-- content_block -->
+				<div id="cma_content">
+					<div class="content_block content_block_card clfix" >
+						<h2><img src="/images/mh/h2_email_selectcard01.png" alt="조회하실 카드를 선택하세요" />
+							<img src="https://samsungcard.com/images/mh/h2_email_send01.png" alt="이메일 명세서를 재전송 하실 수 있습니다" class="mt40" /> </h2>
+						<div class="content_block_inner" >
+							<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px">
+								<p class="btn">&nbsp;</p>
+								<p><a href="javascript:goTabPage('NHPIMMHEBS001','true');" class="default" onclick="return false;">체크카드</a></p>
+								<div class="childlayer">
+									<ul>
+										<!-- 탭에서 해당 화면 전환 
+										<li><a href="javascript:goTabPage('NHPIMMHEBSVIEW003','true');">개인카드</a></li>
+										<li><a href="javascript:goTabPage('NHPIMMHEBSVIEW004','true');">법인카드</a></li>
+										-->
+										<li><a href="javascript:tabSubmit('/hp/im/mh/ebs001.do?method=moveForm003');">개인카드</a></li>
+										<li><a href="javascript:tabSubmit('/hp/im/mh/ebs001.do?method=moveForm005');">법인카드</a></li>
+										<li><a href="javascript:goTabPage('NHPIMMHEBS001','true');">체크카드</a></li>
+									</ul>
+								</div>
+							</div>
+							<span class="selectbox_r_txt ">개인카드, 법인카드, 체크카드 중 조회하실 카드를 선택하세요.</span>
+							<div class="line_lgray">&nbsp;</div>
+							<div class="tb_exp clfix"> <span><strong class="t_point_org">00 고객님</strong>의 이메일명세서 정보는 다음과 같습니다.</span> </div>
+							<table class="dtable02 dtable_inputfield" summary="카드선택, 명세서 선택, 명세서 수신 이메일을 입력할 수 있는 게시판입니다">
+								<caption>
+								이메일명세서 정보
+								</caption>
+								<colgroup>
+								<col width="140" />
+								<col width="*" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><p>카드 선택</p></th>
+										<td><p>
+												<select name="CARD_SELECT" title="카드번호 선택" id="label_ch_card" style="width:360px" onchange="setSettleDay(this.selectedIndex);">
+													<option>00</option>
+												</select>
+											</p></td>
+									</tr>
+									<tr>
+										<th scope="row"><p>결제월</p></th>
+										<td><p>
+				                   				<input type="text"   name="SETTLE_DAY2" id="SETTLE_DAY2" value="" size="20" readonly="readonly" class="txt" /></p></td>
+									</tr>
+									
+									
+									
+									<tr>
+										<th scope="row" rowspan="2"><p>명세서 수신 이메일</p></th>
+										<td><p class="t_11"> <strong>기본 E-mail주소</strong>
+												<input type="text" name="email_addr1" id="email_addr1" value="" size="18" class="txt" title="이메일 아이디" />
+												@
+												<input type="text" name="email_addr2" value="" size="18" class="txt" title="이메일 공급자 직접입력" />
+												<select name="selectEmail" title="이메일 공급자 선택" style="width:100px" onchange="sel(this)">
+													<option value="" selected="selected">직접입력</option>
+		                              				<option value="naver.com">naver.com</option>
+		                              				<option value="hanmail.net">hanmail.net</option>
+		                              				<option value="hotmail.com">hotmail.com</option>
+		                              				<option value="nate.com">nate.com</option>
+		                              				<option value="empas.com">empas.com</option>
+		                              				<option value="dreamwiz.com">dreamwiz.com</option>
+		                              				<option value="freechal.com">freechal.com</option>
+		                              				<option value="lycos.co.kr">lycos.co.kr</option>
+		                             				<option value="korea.com">korea.com</option>
+		                             				<option value="gmail.com">gmail.com</option>
+		                              				<option value="hanmir.com">hanmir.com</option>
+												</select>
+											</p></td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- btn -->
+							<div class="btnset">
+								<p class="btnr"> <a href="javascript:goto_emforce();" class="btn btn_blue"><span>재전송신청</span></a> </p>
+							</div>
+				
+							<div class="line_lgray"></div>
+				 
+							<ol class="list_no01">
+								<li><p>이메일명세서 재전송 신청은 이메일 명세서를 신청한 후 <strong class="t_black">최소1개월</strong> 이상 되신 분만 신청하실 수 있습니다.</p></li>
+								<li><p>회원님께서 e-Mail 명세서를 신청한 체크카드만 조회됩니다.</p></li>
+								<li><p>재입력한 이메일 주소는 일회성으로, 이메일 정보를 변경하더라도 회원정보는 변경되지 않습니다.<br />회원정보 변경을 원하실 경우 <a href="javascript:goTabPage('NHPIMMHUFM001M001');" class="a_point">회원정보변경</a>에서 수정 가능합니다.</p></li>
+							</ol>
+						</div>
+					</div>
+				</div>				
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

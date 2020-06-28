@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="http://www.samsungcard.com" />
+	<link rel="stylesheet" type="text/css" href="/css/base_cm.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+	<title>선택데이터 - 삼성카드</title>
+</head>
+
+<body>
+
+<div class="accessbility"><a href="#content">본문 바로가기</a></div>
+
+<div id="wrap">
+<!-- 공통 Header 시작 -->
+	<div id="header">공통헤더</div>
+<!--// 공통 Header 끝 -->
+	<div id="con_wrap" class="clfix">
+<!-- 공통 좌측 메뉴 시작 -->
+		<div class="con_wrap_left">공통 좌측 메뉴</div>
+<!--// 공통 좌측 메뉴 끝 -->
+	<form name="mForm" method="post" autocomplete="off">
+		<div id="content">
+			<!-- top_visual -->
+			<div class="top_visual">
+<!-- 공통 로케이션 시작 -->
+				<div id="location">공통 로케이션 영역</div>
+<!-- 공통 로케이션 끝 -->
+<!-- 수정 101001 -->
+				<h1><img src="/images/cm/h1_standard_data_quiry5.png" alt="선택데이터 " /></h1>
+<!-- // 수정 101001 -->
+				<p class="ab_br"><img src="/images/cm/img_misreport.jpg" alt="" /></p><!-- 100413 -->
+			</div>
+
+			<!-- content_block -->
+			<div class="content_block">
+				<!-- d_complete -->
+				<div class="d_alert noline clfix"><!-- 100616 -->
+					<p class="ico_alert"><img src="/images/common/img_private_com.jpg" alt="" /></p>
+					<div class="p_desc">
+						<h2 class="mt40"><img src="/images/cm/h2_saveurchoice.png" alt="선택하신 항목이 저장되었습니다." /></h2>
+<!-- 수정 101005 -->
+						<p>데이터 양에 따라 엑셀 다운로드시 전체 데이터가 <br />저장되지 않을 수 있습니다.</p>
+						<p id="downNo1">- <strong class="t_point">15,000건 이상</strong>의 대량건은 "<strong class="t_point">텍스트 다운로드</strong>"만 가능합니다.</p>
+						<p id="downNo2">- 엑셀 다운로드시 데이터양에 따라 지연이 될 수 있습니다.</p>
+						<div class="btnl pt15">
+							<a id="downNo3" href="" name="excelATag1" onclick="saveExcelFile();"><img src="/images/common/btn_download_exc2.png" alt="엑셀다운로드" /></a>
+							<a href="" name="excelATag2" onClick="saveTxtFile();"><img src="/images/common/btn_download_txt.png" alt="텍스트다운로드" /></a>
+							<a href="javascript:goMenu('/mia.do?method=selectMisSelect');"><img src="/images/common/btn_b_list.png" alt="목록" /></a>
+						</div>
+<!-- // 수정 101005 -->
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	</form>
+<!-- 공통 풋터 시작 -->
+	<div id="footer">공통 풋터</div>
+<!--// 공통 풋터 끝 -->	
+</div>
+</body>
+</html>

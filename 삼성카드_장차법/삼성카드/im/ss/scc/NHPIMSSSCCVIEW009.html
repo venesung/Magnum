@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1 class="none">채무면제&middot;유예상품 S.CreditCare</h1>
+	<div class="h1_desc"><img src="/cms_content/lifecare/goods/fb1000/4371_IMG_1.jpg" alt="<%=result.getDescription() %>" /></div>
+	<a href="javascript:goTabPage('NHPIMSSSCC001M006', true);" class="mv_h1_btn depth5"><img src="/images/common/btn_apply_01.gif" alt="상품 신청하기" /></a>
+</div>
+
+
+<div class="content_block content_block_tab2 clfix">
+	<!-- tab_area -->
+	<div class="tab02 w810">
+		<ul>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M001', true);">상품소개</a></li><!-- 정기일반영 13.03.06 -->
+			<li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMSSSCC001M006', true);">상품 신청/조회</a></li><!-- 정기일반영 13.03.06 -->
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M002', true);">보상상담안내</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M003', true);">보상상담신청</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M004', true);">보상진행사항</a></li>
+			<li><a href="javascript:goTabPage('NHPIMSSSCC001M005', true);">고객지원</a></li>
+		</ul>
+	</div>
+</div>
+<!-- content_block -->
+<div class="content_block content_block_card clfix">
+	<div class="top_step_creditcare top_step_creditcare03">
+		<ol class="none">
+			<li>상품 유형 선택</li><!-- SR내역 13.03.06 -->
+			<li>약관 및 개인정보 처리 동의</li>
+			<li><abbr>현재단계</abbr><strong>건강상태 및 가입확인</strong></li>
+			<li>상품 신청완료</li><!-- SR내역 13.03.06 -->
+		</ol>
+	</div>
+
+	<h2><img src="/images/ss/h2_screditcare13.png" alt="건강상태 및 가입확인입니다." /></h2>
+	<div class="content_block_inner">
+		<p class="pl10"><img src="/images/ss/txt_ss_screditcare02.png" alt="건강상태 및 가입확인" /></p>
+
+		<div class="line_lgray">&nbsp;</div>
+		
+		<fieldset class="fieldset_agree">
+			<p class="pl10">암ㆍ뇌졸중ㆍ급성심근경색증ㆍ만성신부전증ㆍ주요장기이식으로 진단을 받거나 치료, 투약, 입원, 수술, 정밀  검사를 받으신 사실이 있습니까??</p>
+			<div class="btnl">
+				<label for="select01"><input type="radio" class="chk" id="select01" name="CHECK01" value="Y" title="있음" /> 있음</label><label for="select02"><input type="radio" class="chk" id="select02" name="CHECK01" value="N" checked="checked" title="없음" /> <strong class="t_point">없음</strong></label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree">
+			<p class="pl10">지난 6개월 동안 31일 이상 입원을 하신 사실이 있습니까?</p>
+			<div class="btnl">
+				<label for="select03"><input type="radio" class="chk" id="select03" name="CHECK02" value="Y" title="있음" /> 있음</label><label for="select04"><input type="radio" class="chk" id="select04" name="CHECK02" value="N" checked="checked" title="없음" /> <strong class="t_point">없음</strong></label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree">
+			<p class="pl10">본인은 S.CreditCare 상품이 개시되기 전에 발생한 사고나, 이 상품 가입 전 의사가 내린 진단 또는 현재 본인이 병을 앓고 있는 경우 그러한 병에 대해서는 상품의 효력이 발생되지 않는다는 점을 잘 이해하며 이에 동의합니다.</p><!-- SR내역 13.03.06 -->
+			<div class="btnl">
+				<label for="select05"><input type="radio" class="chk" id="select05" name="AGREE01_YN" value="Y" checked="checked" title="동의함" /> <strong class="t_point">동의함</strong></label><label for="select06"><input type="radio" class="chk" id="select06" name="AGREE01_YN" value="N" title="동의안함" /> 동의안함</label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree">
+			<p class="pl10"> S.CreditCare 상품은 가입 신청 후 삼성카드가 가입 처리한 날(가입 신청한 날로부터 3영업일 이내)의 24시부터 유효하며, 다만 질병 중 암을 원인으로 하는 보장의 경우는 그 날로부터 90일 이후에 효력이 발생한다는 점을 잘 이해하며 이에 동의합니다.</p><!-- SR내역 13.03.06 -->
+			<div class="btnl">
+				<label for="select07"><input type="radio" class="chk" id="select07" name="AGREE02_YN" value="Y" checked="checked" title="동의함" /> <strong class="t_point">동의함</strong></label><label for="select08"><input type="radio" class="chk" id="select08" name="AGREE02_YN" value="N" title="동의안함" /> 동의안함</label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree">
+			<p class="pl10">  본인은 상품 이용기간 중 연이어 두 달 동안 이용료가 승인되지 않은 경우, 본 상품이 자동해지되며 환불이 이루어지지 않음을 잘 이해하며 이에 동의합니다.</p><!-- SR내역 13.03.06 -->
+			<div class="btnl">
+				<label for="select09"><input type="radio" class="chk" id="select09" name="AGREE03_YN" value="Y" checked="checked" title="동의함" /> <strong class="t_point">동의함</strong></label><label for="select10"><input type="radio" class="chk" id="select10" name="AGREE03_YN" value="N" title="동의안함" /> 동의안함</label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<fieldset class="fieldset_agree">
+			<p class="pl10">본인은 본인의 신용카드로 S.CreditCare 상품 이용대금을 결제하는데 동의합니다.</p><!-- SR내역 13.03.06 -->
+			<div class="btnl">
+				<label for="select11"><input type="radio" class="chk" id="select11" name="AGREE04_YN" value="Y" checked="checked" title="동의함" /> <strong class="t_point">동의함</strong></label><label for="select12"><input type="radio" class="chk" id="select12" name="AGREE04_YN" value="N" title="동의안함" /> 동의안함</label>
+			</div>
+		</fieldset>
+		<div class="line_lgray">&nbsp;</div>
+
+		<div class="btnc">
+            <a href="javascript:Go();"><img src="/images/ss/btn_service_appl2.png" alt="상품 신청" /></a><!-- SR내역 13.03.06 -->
+		</div>
+		
+	</div>
+</div>
+<!-- content_block -->
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

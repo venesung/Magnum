@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+</head>
+
+<body>
+
+<!-- 여기부터 시작 -->
+
+
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+
+<form name="form1" method="post" >
+	<!-- layer_popup 컨텐츠+메세지 -->
+	<div id="id_layer02" class="pop_l_position pop_l_wrap_mix">
+		<div class="pop_l_wrap" style="height:354px;"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="hide_con('id_layer02');show_select();closeLayerPopup();" value="레이어닫기" title="서비스변경 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/mh/layer_tit_complete_modify.png" alt="변경이 완료 되었습니다." /></p>
+			<div class="pop_l_content">
+				<div class="pop_l_alert" style="height:195px;">
+					<table class="dtable02" summary="카드번호,휴대폰 번호, 성명, 상품, 수수료 결제방법, 자동결제내역 SMS알림, 누적이용금액 SMS알림으로 구성된 서비스 변경 정보를 확인할 수 있는 게시판입니다">
+					<caption>서비스 변경 정보</caption>
+					<colgroup><col width="135" /><col width="*" /></colgroup>
+					<tbody>
+						<!-- loop -->
+						<tr>
+							<th scope="row"><p>카드번호</p></th>
+							<td><p class="t_no" id="txtCardNo"></p></td>
+						</tr>
+						<!-- //loop -->
+						<tr>
+							<th scope="row"><p>휴대폰번호</p></th>
+							<td class="t_no"><p class="t_no" id="txtPhoneNo"></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>성명</p></th>
+							<td><p id="txtUserName"></p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>상품</p></th>
+							<td><p>S.InfoCare(월700원)</p></td>
+						</tr>
+					   <tr>
+							<th scope="row"><p>수수료 결제방법</p></th>
+							<td><p>포인트결제</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>자동결제내역 SMS알림</p></th>
+							<td><p>${gubunZTxt}</p></td>
+						</tr>
+						<tr>
+							<th scope="row"><p>누적이용금액 SMS알림</p></th>
+							<td><p>${gubunYTxt}</p></td>
+						</tr>
+					</tbody>
+					</table>
+					<p class="pop_sub_desc02">카드번호에 오류가 있을 시에는 삼성카드 대표전화 (지역번호없이)<br /><span class="t_black t_no">1588-8700</span>으로 연락하셔서 변경 및 확인해 주십시오.</p>
+				</div>
+                <p class="btnc pt20"><a href="javascript:goTabPage('NHPIMSSSIC001M001', true);" onclick="hide_con('id_layer02'); show_select();closeLayerPopup();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+<!--// 여기까지 끝 -->
+</body>
+</html>

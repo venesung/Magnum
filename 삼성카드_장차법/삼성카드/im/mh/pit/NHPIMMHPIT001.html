@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				
+                <!-- top_visual -->
+                <div class="top_visual">
+                    <h1><img src="/images/mh/h1_alluselist.png" alt="보유포인트를 조회하실 수 있습니다" /></h1><!-- 100616 -->
+			    </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_m0 clfix">
+                    <h2><img src="/images/mh/h2_chk_point01.png" alt="회원님의 포인트를 확인하세요" /></h2>
+                    <div class="content_block_inner">
+                        <jsp:include page="/WEB-INF/jsp/hp/im/mh/pit/NHPIMMHPIT002.jsp" flush="false" />
+                    </div>
+                </div>
+
+                <!-- content_block -->
+                <div class="content_block content_block_tab clfix">
+                    <div class="tab02 w810">
+                        <ul>
+                            <li class="on"><span class="none">현재탭</span><a href="javascript:goTabPage('NHPIMMHPIT001', true);" >포인트 사용 Tip</a></li>
+                            <li><a href="javascript:goTabPage('NHPIMMHPITV102C1', true);">포인트 종류별 적립/사용 안내</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <cms:include page="/cms_content/hp/im/mh/pit/NHPIMMHPITVIEW001C1.html" flush="false" />
+                
+                <!-- content_block -->
+                <div class="content_block content_block_tab clfix">
+                    <iframe src="http://shopping.samsungcard.com/ec/sp/ss/hp/hpFrame.do?method=selectBest" frameborder="0" width="810" height="295" title="포인트몰 해외/국내 BEST" scrolling="no"></iframe>
+                </div>
+                
+<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

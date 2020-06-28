@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>이용한도 운영 예제 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript">
+
+function popOnLoad(){
+		self.resizeTo(document.body.scrollWidth + 12, document.body.scrollHeight + 55);
+}
+</script>
+</head>
+<body onLoad="popOnLoad();">
+
+<div id="pop_wrap">
+	<!-- header -->
+	<!--
+	<div id="pop_header">
+		<h1><img src="${pageContext.request.contextPath}/images/mh/pop_h1_limit_ex.png" alt="이용한도 운영 예제입니다" /></h1>
+		<input type="button" class="btn_close btn_input" onclick="window.close();" title="창닫기" />
+	</div>
+	-->
+	
+	<div id="mvint_pheader">
+		<h1><img src="/images/mh/pop_h1_limit_ex.png" alt="이용한도 운영 예제입니다" /></h1>
+	</div>
+
+	<!-- content -->
+	<div id="pop_content">
+
+		<!--cms_content시작-->
+				<cms:include page="/cms_content/hp/im/cd/cdi/NHPIMCDCDI004C2.html" flush="false"></cms:include>
+		<!--cms_content끝-->
+
+	</div>
+
+	<!-- footer 100510 _pop_s_footer인경우는 btn_s_close -->
+	<div id="pop_footer">
+		<address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address>
+		<input type="button" class="btn_close btn_input" onClick="window.close();" title="창닫기" />
+	</div> 
+</div>
+</body>
+</html>

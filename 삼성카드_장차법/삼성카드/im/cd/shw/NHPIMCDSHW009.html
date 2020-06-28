@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>쇼룸 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/card_0322.css" />
+
+</head>
+<body>
+
+<div class="headerBox cate2">공통헤더</div>
+
+<!-- 비주얼 영역 -->
+<div class="visualBox">
+	<div class="visualLine">
+		<p>
+			<img src="/images/cd/shw/event/visual1.jpg" width="1000" height="205" alt="지금 삼성카드를 신청하시고, 놀라운 혜택을 경험하세요! 많은 분들의 선택하신 삼성카드, 지금 만나 보세요" />
+			<a href="#" class="layer popupEvent1" style="left:51px; top:153px;" title="새창"><img src="/images/cd/shw/event/txt_win.gif" width="83" height="15" alt="당첨자 발표" /></a>
+		</p>
+	</div>
+</div>
+<!-- 비주얼 영역 -->
+
+<div class="wrap">
+	<div class="contentsBox_sub padB50">
+		<p class="tab">
+			<img src="/images/cd/shw/event/tab_event_on1.gif" width="319" height="33" alt="이벤트" usemap="#tab_event" />
+			<map id="tab_event" name="tab_event">
+				<area shape="rect" coords="0,0,160,33" href="#" onClick="gotabType('start');" alt="진행중 이벤트" />
+				<area shape="rect" coords="160,0,319,33" href="#"  onclick="gotabType('end');"alt="종료된 이벤트" />
+			</map>			
+		</p>		
+
+		<div class="eventBox">
+			<table summary="제목, 이벤트 기간으로 구성된 이벤트 정보입니다." class="table_eventView marB10">
+				<caption>이벤트 보기</caption>
+				<colgroup>
+					<col width="158" />
+					<col width="782" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><span class="marL24"><img src="/images/cd/shw/event/table_th2.gif" alt="제목" /></span></th>
+						<td><%=article.getEvenName()%></td>
+					</tr>
+					<tr>
+						<th scope="row"><span class="marL24"><img src="/images/cd/shw/event/table_th3.gif" alt="이벤트 기간" /></span></th>
+						<td><%=article.getStartDate().replaceAll( "-", "." )%> ~ <%=article.getEndDate().replaceAll( "-", "." )%></td>
+					</tr>
+					<tr class="content">
+						<td colspan="2">
+						<%String tempCStr = article.getTargetPath() + "/" + article.getContentId() + "_SREVT.html";%>
+						<cms:include page="<%=tempCStr%>" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+            <p class="alignR marB25"><a href="#"><img src="/images/cd/shw/event/btn_list.gif" alt="리스트" class="marR15" /></a></p>
+
+			<table summary="이벤트의 이전글과 다음글을 확인하실 수 있습니다. " class="table_preNext">
+				<caption>이벤트 이전글 다음글</caption>
+				<colgroup>
+					<col width="168" />
+					<col width="638" />
+					<col width="134" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row"><span class="marL20"><img src="/images/cd/shw/event/table_th4.gif" alt="이전글" /></span></th>
+						<td class='title'>이전글이 없습니다.</td>
+						<td>&nbsp;</td>	
+					</tr>
+					<tr>
+						<th scope="row"><span class="marL20"><img src="/images/cd/shw/event/table_th5.gif" alt="다음글" /></span></th>
+						<td class='title'>다음글이 없습니다.</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+<!-- 레이어 영역 -->
+<div class="bg_dim"></div>
+<div id="popupEvent1" class="layer_popup">
+	<h3><img src="/images/cd/shw/popup/tit_event.png" width="809" height="45" alt="당첨자 발표" class="png24" /></h3>
+	<div class="contentBox" style="width:778px; padding:25px 0 23px 25px;">
+		<img src="/images/cd/shw/popup/img_event1.gif" alt="" class="floatL" />
+		<dl>
+			<dt><img src="/images/cd/shw/popup/txt_event1.gif" alt="이벤트에 참여해 주셔서 감사합니다. 앞으로도 고객과 함께하는 삼성카드가 되고자 더욱 노려가겠습니다. 고객님의 많은 관심과 참여 부탁드립니다." /></dt>
+			<dd>
+				이벤트 당첨 여부 확인은 <em>삼성카드 홈페이지<a href="http://www.samsungcard.com" target="_blank" title="새창">(http://www.samsungcard.com)</a></em><br /><b>이벤트 게시판&gt;당첨자 발표란</b>에서 확인해 주시기 바랍니다.
+				<p><a href="https://www.samsungcard.com/index.do?menuId=NHPIMETEVT003" target="_blank" title="새창"><img src="/images/cd/shw/popup/btn_winGo.gif" alt="당첨자 발표 바로가기" /></a></p>
+			</dd>
+		</dl>
+		<a href="#" class="btn_x"><img src="/images/cd/shw/popup/btn_x.gif" width="18" height="17" alt="당첨자발표 레이어 닫기" class="png24" /></a>
+	</div>
+	<img src="/images/cd/shw/popup/img_bot809.png" width="809" height="20" alt="" class="png24" />
+</div>
+<!-- 레이어 영역 -->
+
+<div class="footerBox">공통풋터</div>
+</body>
+</html>

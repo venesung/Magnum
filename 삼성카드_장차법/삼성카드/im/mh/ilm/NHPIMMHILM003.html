@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+				<!-- top_visual -->
+				<div class="top_visual"><!-- 100126 -->
+					<h1><img src="/images/mh/h1_deposit_views.jpg" alt="입금내역을 조회해 보세요" /></h1>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block content_block_m0 clfix">
+					<h2><img src="/images/mh/h2_deposit_views01.png" alt="조회하실 카드를 선택하세요" /></h2>
+					<div class="content_block_inner">
+						<div id="selectbox1" class="selectbox selectbox_dim" onclick="select.action(this,1);" style="width:130px"><p class="btn">&nbsp;</p>
+							<p><a href="#" class="default" onclick="return false;">법인카드</a></p>
+							<div class="childlayer">
+								<ul>
+                                    <li><a href="javascript:goIndividual();">개인카드</a></li>
+                                    <li><a href="javascript:goCorporate();">법인카드</a></li>
+								</ul>
+							</div>
+						</div>
+						<span class="selectbox_r_txt ">개인카드, 법인카드 중 조회하실 카드를 선택하세요.</span>
+ 
+						<div class="line_lgray">&nbsp;</div>
+						
+						<div class="tb_exp clfix">
+							<span>최근 <span class="t_point_org">3개월</span>동안 입금하신 내역입니다.</span>
+						</div>
+						<div class="tb_exp clfix">
+							<span>신규 가입시에는 20건만 조회가 가능하며, 모든 입금내역의 조회는 익일부터 가능합니다.</span>
+						</div>
+						
+						<table class="dtable02 dtable_inputfield" summary="최근 입금내역을 확인하실 카드를 선택 할 수 있는 게시판입니다">
+						<caption> 카드선택</caption>
+						<colgroup><col width="17%" /><col width="*" /></colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><p>카드선택</p></th>
+								<td><p>
+									<select title="카드번호 선택" id="label_ch_card" style="width:360px" name="card" onchange="changeCard()">
+										<option>00</option>
+									</select>
+								</p></td>
+							</tr>
+						</tbody>
+						</table>
+<!-- 100126 --> 
+						<div class="btnset">
+                            <p class="btnr"><a class="btn btn_blue" href="javascript:changeCard();"><span>조회</span></a></p>
+						</div>
+<!-- //100126 -->
+					</div>
+				</div>
+				
+				<!-- content_block -->
+				<div class="content_block clfix">
+					<h2><img src="/images/mh/h2_deposit_views02.png" alt="입금내역결과 조회입니다" /></h2>
+					<div class="content_block_inner">
+						<dl class="tb_views_period">
+							<dt>조회기간</dt>
+							<dd><strong class="t_point_org">00/00/00 ~ 00/00/00</strong></dd>
+							<dt>작성기준일</dt>
+							<dd>00년 00월 00일 현재</dd>
+						</dl>
+                        <table class="dtable01 " summary="입금일자, 구분, 입금경로, 입금액으로 구성된 입금내역결과를 보여주는 게시판입니다">
+						<caption>조회하신 카드의 입금내역</caption>
+						<colgroup><col width="27%" /><col width="27%" /><col width="27%" /><col width="19%" /></colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="cell_l10">입금일자</th>
+								<th scope="col" class="cell_l">구분</th>
+								<th scope="col" class="cell_l">입금경로</th>
+								<th scope="col" class="cell_r10">입금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="cell_l">0</td>
+								<td class="cell_l">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<!-- //loop -->
+							<tr>
+								<td class="cell_l10 t_no">0</td>
+								<td class="cell_l">-</td>
+								<td class="cell_l">0</td>
+								<td class="cell_r10 t_no">0</td>
+							</tr>
+							<tr class="nodata">
+								<td colspan="4">해당 데이터가 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				<!--// 여기까지 끝 -->
+</div>
+</body>
+</html>

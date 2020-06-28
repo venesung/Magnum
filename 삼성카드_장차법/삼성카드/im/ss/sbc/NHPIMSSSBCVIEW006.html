@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>검색 내 주요 보너스클럽 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/ss.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+
+<script type="text/javascript" language='javascript'>
+
+
+function search(){
+	var frm = document.searchForm;
+	frm.submit();
+
+}
+
+function benefitCss(){
+    var cssId = document.getElementById("benefitCss");
+    var aTag = cssId.getElementsByTagName("a");
+    <%if("Y".equals(allCheck)){%>
+		aTag[0].className ="btn btn_s_blue2";
+	<%}%>
+    <%if(!"".equals(s_vos.getBc()) && !"Y".equals(allCheck)){%>
+    	aTag[1].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getMb()) && !"Y".equals(allCheck)){%>
+    	aTag[2].className ="btn btn_s_blue2";
+	<%}%>
+    <%if(!"".equals(s_vos.getPb()) && !"Y".equals(allCheck)){%>
+    	aTag[3].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getBl()) && !"Y".equals(allCheck)){%>
+    	aTag[4].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getMz()) && !"Y".equals(allCheck)){%>
+    	aTag[5].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getMo()) && !"Y".equals(allCheck)){%>
+    	aTag[6].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getMs()) && !"Y".equals(allCheck)){%>
+    	aTag[7].className ="btn btn_s_blue2";
+	<%}%>
+	<%if(!"".equals(s_vos.getGv()) && !"Y".equals(allCheck)){%>
+		aTag[8].className ="btn btn_s_blue2";
+	<%}%>
+}
+
+function setPng24(obj) 
+{ 
+    obj.width=obj.height=1; 
+    obj.className=obj.className.replace(/\bpng24\b/i,''); 
+    obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');" 
+    obj.src='';  
+    return ''; 
+} 
+
+</script>
+</head>
+<body onLoad="resize();">
+
+<!-- Start 검색결과  -->
+<div class="w810 clfix pos_rel bordergrey mt10">
+	<!-- Start 결과좌측 보너스클럽,가맹점보기  -->
+	<div class="list_map_wrap" style="width:794px">
+		<div class="list_map_detail2 pb5" >
+			<span style="margin-bottom:10px; color:#333; font-size:12px;"><b>검색 내 주요 보너스클럽</b></span><span class=" t_normal t_desc03">(총 <%=b_vos.gettCnt() %>건)</span>
+			<ul class="list_map_no clfix">
+				<!-- loop -->
+				<c:forEach items="<%=rsList1%>" var="lst" varStatus="status">
+				<li>
+					<p class="mb5">
+					 <c:if test='${lst.main_image !=""}'>
+						<a href="javascript:parent.bcInfo('${lst.keychaincode}');">
+							<img src="${lst.main_image}" width="100"  height="60" alt="${lst.display_board_name}" />
+						</a>
+					 </c:if>
+					</p>
+					<p class="p_tit"><a href="javascript:parent.bcInfo('${lst.keychaincode}');">${lst.display_board_name}</a></p>
+					<p class="p_txt">${lst.address_city} ${lst.address_ku}</p>
+					<p class="p_point"><c:if test="${lst.rate != '' && lst.rate !='00%'}">${lst.rate}</c:if></p>
+				</li>
+				</c:forEach>
+				<!-- //loop -->
+			</ul>
+			<!-- paginate -->
+			<div class="paginate pb25">
+				<div class="paging">
+					${b_page}
+				</div>
+			</div>
+		</div>
+		<div class="greyline" style="width:809px;"></div>
+		<div class="list_map_detail2 pt10 ">
+			<span style="margin-bottom:10px; color:#333; font-size:12px;"><b>검색 내 혜택보기</b></span><span class=" t_normal t_desc03">(총 <%=s_vos.gettCnt() %>건)</span>
+			<div class="list_benefit_merc2" id="benefitCss">
+                <a href="javascript:parent.sub_search('');"   class="btn btn_s_blue3"><span>전체혜택</span></a>
+                <a href="javascript:parent.sub_search('bc');" class="btn btn_s_gray3"><span>보너스클럽</span></a>
+                <a href="javascript:parent.sub_search('mb');" class="btn btn_s_gray3"><span>맞춤형보너스클럽</span></a>
+                <a href="javascript:parent.sub_search('pb');" class="btn btn_s_gray3"><span>페이백</span></a>
+                <a href="javascript:parent.sub_search('bl');" class="btn btn_s_gray3"><span>블루라인</span></a>
+                <a href="javascript:parent.sub_search('mz');" class="btn btn_s_gray3"><span>마이존</span></a>
+                <a href="javascript:parent.sub_search('mo');" class="btn btn_s_gray3"><span>멤버스주유소</span></a>
+                <a href="javascript:parent.sub_search('ms');" class="btn btn_s_gray3"><span>의료지원</span></a>
+                <a href="javascript:parent.sub_search('gv');" class="btn btn_s_gray3"><span>Gvalley 우대가맹점</span></a>
+			</div>
+			<table class="dtable01" summary="가맹점 명,업종,지역,혜택,혜택상세로 구성된 검색 내 주요 보너스클럽 정보를 확인할 수 있는 화면입니다.">
+			<caption>검색 내 주요 보너스클럽 정보</caption>
+				<colgroup><col width="22%" /><col width="13%" /><col width="35%" /><col width="15%" /><col width="15%" /></colgroup>
+				<thead>
+					<tr>
+						<th class="cell_l10 t_11" scope="col">가맹점 명</th>
+						<th class="cell_l10 t_11" scope="col">업종</th>
+						<th class="cell_l10 t_11" scope="col">지역</th>
+						<th class="cell_l10 t_11" scope="col">혜택</th>
+						<th class="cell_l10 t_11" scope="col">혜택상세</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10 "><a href="javascript:parent.chainInfoList('${lst.chain_no}');">0</a></td>
+						<td class="cell_l10 t_gray">0 > 0</td>
+						<td class="cell_l10 t_gray">0}</td>
+						<td class="cell_l10"><img src="/images/ss/icon_bonus_s.png" alt="보너스클럽" /></td>
+						<td class="cell_l10 t_point_org t_11">0</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- paginate -->
+			<div class="paginate pb15">
+				<div class="paging">
+					${s_page}
+					<div class="btnr"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //END  결과좌측 보너스클럽,가맹점보기  -->
+</div>
+               
+<!-- //END 검색결과  -->
+<div class="w810  mt10">
+<p class="fl_left ico_rice " style="color:#000">위의 안내되는 매장 중 결제대행업체를 통해 결제가 이루어지는 일부 온라인매장은 우대혜택가맹점  (보너스클럽, 블루라인, 마이존 등)이 아닐 수 있습니다.  <br /> ex) 결제대행업체 가맹점명 : (주)이니시스, (주)올앳, KICC 등</p>
+<p class="fl_right"><a href="javascript:parent.mapInfo();" class="btn_link">지도 이용방법 안내</a></p>
+</div>
+
+<form name="frm">
+<input type="hidden" name="sPage" value="<%=s_vos.getcPage() %>" />
+<input type="hidden" name="bPage" value="<%=b_vos.getcPage() %>" />
+</form>
+<script type="text/javascript" language="javascript">
+	benefitCss();
+</script>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

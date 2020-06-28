@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+<title>취소할 선물 확인 - 삼성카드</title>
+<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/css/class.css" />
+<link rel="stylesheet" type="text/css" href="/css/mvint_pop.css" />
+<script type="text/javascript" src="/js/common-hp.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	function cancelGo(){
+		frm.submit();
+	}
+	function cancelOk(){
+	//	hide_con('id_layer02');
+		opener.goTabPage('NHPIMSSEMZ001M002', true);
+		window.close();
+	}
+//]]>
+</script>
+</head>
+<body>
+<div id="pop_s_wrap">
+	<!-- header -->
+	<div id="mvint_pheader">
+		<h1><img src="/images/ss/layer_tit_confirm_cancelgifts.png" alt="취소할 선물을 확인 해 주세요." /></h1>
+	</div>
+	<!-- content -->
+	<div id="pop_s_content3" style="padding-top:15px;">
+		<div class="pop_l_wrap">
+			<p class="pop_sub_desc">고객님은<strong class="t_point"> <%=result.getPdtNm() %></strong>를 선택하셨습니다.<br />취소 하시겠습니까? 취소 후 재 신청은 <strong class="t_point">1회만 허용</strong>됩니다.</p>
+
+			<table class="dtable02" summary="선택하신 상품의 상품수, 현재 신청 회원수, 당첨 확률을 확인하실 수 있는 게시판입니다">
+			<caption>선택 상품 정보</caption>
+			<colgroup><col width="115" /><col width="*" /></colgroup>
+			<tbody>
+				<!-- loop -->
+				<tr>
+					<th scope="row"><p>상품수</p></th>
+					<td><p><span class="t_no">0</span> 개</p></td>
+				</tr>
+				<!-- //loop -->
+				<tr>
+					<th scope="row"><p>현재 신청 회원 수</p></th>
+					<td><p><span class="t_no">0</span> 명</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><p>당첨 확률</p></th>
+					<td><p><span class="t_no">0</span></p></td>
+				</tr>
+			</tbody>
+			</table>
+            <p class="btnc"><a href="javascript:cancelGo();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a> <a href="javascript:window.close();"><img src="/images/common/btn_s_cancel.png" alt="취소" /></a></p>
+		</div>
+
+	</div>
+	<!-- footer -->
+	<div id="pop_s_footer2"><address class="none">Copyright 2013. SamsungCard. All Rights Reserved.</address></div>
+
+	<div id="id_layer03" class="pop_l_position pop_l_wrap_alert" style="">
+		<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onClick="this.parentNode.parentNode.style.display='none'; show_select();" value="레이어닫기" title="선물취소 레이어 닫기" />
+			<p class="pop_tit"><img src="/images/ss/layer_tit_cancel_app.png" alt="고객님의 취소 신청이 성공적으로 완료 되었습니다." /></p>
+			<div class="pop_l_content">
+				<p class="pop_l_alert">신청 취소 후 재 신청은 1회까지만 허용됩니다.<br />감사합니다.</p>
+                <p class="btnc"><a href="#" onClick="cancelOk();"><img src="/images/common/btn_s_confirm02.png" alt="확인" /></a></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

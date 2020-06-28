@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<base href="https://www.samsungcard.com" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cs_main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mv_submain.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ms_login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mh.css" />
+</head>
+
+<body>
+
+<div class="tabbrowse_content">
+<!-- 여기부터 시작 -->
+
+<!-- top_visual -->
+<div class="top_visual">
+	<h1><img src="/images/mh/h1_title.png" alt="나의 영문주소 입니다.." /></h1>
+</div>
+
+
+<!-- content_block -->
+<div class="content_block clfix">
+
+			<ol class="list_no01 list_desc t_11">
+				<li><p>일부 해외쇼핑몰은 자체 정책상,  시이트에 입력된 주소(Billing address)와 카드사에 등록된 주소가 일치해야만 거래(주문)를 진행합니다. <br />자세한 사항은 영문주소관련 안내사항을 참조해주시길 바랍니다.</p></li>
+				<li><p>영문주소는 총 10개까지 등록이 가능합니다. 10개의 주소 중 1개만 일치하면 정상적으로 승인 받으실 수 있습니다.</p></li>
+				<li><p>주소인증시 숫자로된 우편번호의 일치여부만 체크합니다. <br /> 영문상세주소는 고객님이 사이트에 입력하신 주소와 당사에 등록하신 주소가 띄어쓰기, 영문철자 상이 등으로 정확하게 일치하지 않을 <br />수 있어서 주소인증 전산 체크시에는 우편번호만 검증합니다.</p></li>
+			</ol>
+
+			<div class="d_easy d_easy2 mt10">
+				<table class="dtable01" summary="번호, 우편번호, 영문주소로 구성된 영문주소 등록 표입니다.">
+				<caption>영문주소</caption>
+				<colgroup><col width="6%" /><col width="6%" /><col width="20%" /><col width="68%" /></colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="cell_l10a"></th>
+						<th scope="col">번호</th>
+						<th scope="col">우편번호</th>
+						<th scope="col">영문주소</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<!-- loop -->
+					<tr>
+						<td class="cell_l10a"><input type="checkbox" class="type-checkbox" value="<%=lineCnt %>" name="WS_SEQ" title="00 선택" /></td>
+						<td>0</td>
+						<td>0</td>
+						<td align="left">0</td>
+					</tr>
+						<tr class="nodata"><td colspan="4">등록  내역이 없습니다.</td></tr>
+					<!-- //loop -->
+
+				</tbody>
+				</table>
+			</div>
+
+			<div class="btnset">
+					<p class="btnl"><a href="#" onclick="deleteOk();" class="btn btn_white"><span>삭제</span></a></p>
+                    <p class="btnr"><a id="NHPIMCDCUV150_L01" href="#" onclick="openInsertLayer('NHPIMCDCUV150_L01');form1.parmPostNum.focus();" class="btn btn_blue"><span>신규주소등록</span></a></p>
+			</div>
+
+</div>
+
+<!-- layer_popup 메세지 -->
+<div id="id_layer01" class="pop_l_position pop_l_position640" style="">
+	<div class="pop_l_wrap"><p class="img_l_pop flag_tl">&nbsp;</p><p class="img_l_pop flag_tr">&nbsp;</p><p class="img_l_pop flag_bl">&nbsp;</p><p class="img_l_pop flag_br">&nbsp;</p><input type="button" class="img_l_pop btn_close btn_input" onclick="this.parentNode.parentNode.style.display='none'; hide_con('id_layer01'); closeLayerPopup();" value="레이어닫기" title="신규 영문주소 등록 레이어 닫기" />
+    	<p class="pop_tit"><img src="/images/mh/layer_tit_newengaddr.png" alt="신규 영문주소 등록" /></p>
+    	<div class="pop_l_content">
+				<ol class="list_no01" style="height: 50px;"><!-- 111213 style="height: 50px" 추가 -->
+					<li><p>주소는 꼭 영문으로 입력해주시기 바랍니다.</p></li>
+					<li><p>신규 주소를 추가하시려면 우편번호 및 상세주소를 입력 후<br /> 등록버튼을눌러주세요</p></li>
+				</ol>
+				<table class="dtable02 mt20" summary="우편번호, 상세주소로 구성된 신규 영문주소 등록">
+				<caption>신규 영문주소 등록 </caption>
+				<colgroup><col width="115" /><col width="*" /></colgroup>
+				<tbody>
+					<tr>
+						<th scope="row" class="riline"><p>우편번호</p></th>
+						<td><p><input type="text" name="parmPostNum" class="txt" maxlength="9" style="ime-mode:disabled" title="우편번호 입력" /></p></td>
+					</tr>
+					<tr>
+						<th class="riline"><p>상세주소</p></th>
+						<td ><p><input type="text" name="parmEngAddress" class="txt" maxlength="100" style="width: 230px;ime-mode:disabled" title="상세주소 입력" /></p></td>
+					</tr>
+				</tbody>
+				</table>
+				<div class="btnc_30">
+					<a href="javascript:applyOk();" class="btn btn_blue"><span>등록완료</span></a>
+					<a href="#" onclick="hide_con('id_layer01'); closeLayerPopup();" class="btn btn_white"><span>취소</span></a>
+				</div>
+		</div>
+	</div>
+</div>
+</form>
+
+
+
+
+<!--// 여기까지 끝 -->
+</div>
+</body></html>
